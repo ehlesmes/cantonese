@@ -10,27 +10,34 @@
     <div id="loading-state" class="hidden" style="text-align: center; padding: 5rem; font-size: 1.5rem; color: #666;">Loading...</div>
     
     <header id="app-header" class="hidden">
-        <button id="prev-btn" class="nav-btn">←</button>
-        <div class="header-center">
-            <div id="progress-container">
-                <div id="progress-bar"></div>
-            </div>
+        <button id="home-btn" class="nav-btn">🏠</button>
+        <button id="prev-btn" class="nav-btn" style="margin-left: 0.5rem;">←</button>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
         </div>
-        <div class="header-controls">
-            <button id="next-btn" class="nav-btn">→</button>
-            <button id="header-restart-btn" class="nav-btn" title="Restart lesson">↺</button>
-            <button id="close-btn" class="nav-btn" title="Close and go home">✖</button>
-        </div>
+        <button id="next-btn" class="nav-btn">→</button>
     </header>
 
     <main id="app" class="hidden">
-        <div id="dashboard-view" class="view hidden"></div>
+        <div id="completion-overlay" class="hidden" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 100vh; background: rgba(255, 255, 255, 0.95); display: flex; justify-content: center; align-items: flex-start; z-index: 100; border-radius: 12px; overflow-y: auto; padding: 2rem 0;">
+            <div id="completion-content" style="width: 100%; max-width: 800px; margin: auto; text-align: center; padding: 2rem;">
+                <h2 style="font-size: 2.5rem; color: #e8491d; margin-bottom: 1rem;">Lesson Complete! 🎉</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Congratulations! you have finished this lesson.</p>
+                <div id="completion-stats" style="margin: 2rem 0;"></div>
+                <div style="display: flex; gap: 1rem; max-width: 500px; margin: 2rem auto 0;">
+                    <button id="restart-lesson-btn" class="secondary-btn" style="flex: 1; margin: 0; padding: 1rem; font-size: 1.1rem; border-radius: 8px; cursor: pointer; border: none; color: white;">Review Lesson</button>
+                    <button id="next-lesson-btn" class="action-btn" style="flex: 1; margin: 0; padding: 1rem; font-size: 1.1rem; border-radius: 8px; cursor: pointer; border: none; color: white;">Next Lesson</button>
+                </div>
+            </div>
+        </div>
 
-        <section id="page-card" style="text-align: center;">
+        <div id="dashboard-view" class="view hidden" style="width: 100%; max-width: 800px; margin: 0 auto; text-align: left;"></div>
+
+        <section id="page-card" style="text-align: center; max-width: 800px; margin: 0 auto;">
             <!-- Intro View -->
             <div id="intro-view" class="view hidden">
-                <h2 id="intro-title" style="font-size: 2.5rem; color: #35424a;"></h2>
-                <p id="intro-goal" style="font-size: 1.4rem; color: #666; margin-bottom: 2rem;"></p>
+                <h2 id="intro-title" style="font-size: 2rem; color: #35424a;"></h2>
+                <p id="intro-goal" style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;"></p>
             </div>
 
             <!-- Learn View -->
@@ -78,36 +85,35 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-
-            <!-- Completion View -->
-            <div id="completion-view" class="view hidden">
-                <h2 style="font-size: 2.5rem; color: #e8491d; margin-bottom: 1rem;">Lesson Complete! 🎉</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Here is a summary of your performance:</p>
-                <div id="completion-stats" style="margin: 2rem 0;"></div>
-            </div>
         </section>
     </main>
 
     <footer id="app-footer" class="hidden">
-        <div id="footer-actions" style="width: 100%;">
-            <button id="start-lesson-btn" class="action-btn hidden">Start Lesson</button>
-            <button id="learn-continue-btn" class="action-btn hidden">Continue</button>
-            <button id="check-scrambled-btn" class="action-btn hidden">Check Answer</button>
-            <button id="scrambled-continue-btn" class="action-btn hidden">Continue</button>
-            <button id="completion-continue-btn" class="action-btn hidden">Continue</button>
+        <!-- Intro Action -->
+        <button id="start-lesson-btn" class="action-btn hidden" style="margin: 0;">Start Lesson</button>
+        
+        <!-- Learn Action -->
+        <button id="learn-continue-btn" class="action-btn hidden" style="margin: 0;">Continue</button>
 
-            <div id="assessment-actions" class="hidden">
-                <div class="btn-group" style="display: flex; gap: 1rem;">
-                    <button id="incorrect-btn" class="error-btn" style="flex: 1; margin: 0;">Need to review</button>
-                    <button id="correct-btn" class="action-btn" style="flex: 1; margin: 0;">Continue</button>
-                </div>
+        <!-- Scrambled Checking Action -->
+        <button id="check-scrambled-btn" class="action-btn hidden" style="margin: 0;">Check Answer</button>
+
+        <!-- Standard Continue Action (Shared for solved scrambled / retries) -->
+        <button id="scrambled-continue-btn" class="action-btn hidden" style="margin: 0;">Continue</button>
+
+        <!-- Practice Reading Assessment -->
+        <div id="assessment-actions" class="hidden" style="width: 100%;">
+            <div class="btn-group" style="display: flex; gap: 1rem;">
+                <button id="incorrect-btn" class="error-btn" style="flex: 1; margin: 0;">Need to review</button>
+                <button id="correct-btn" class="action-btn" style="flex: 1; margin: 0;">Continue</button>
             </div>
+        </div>
 
-            <div id="retry-actions" class="hidden">
-                <div class="btn-group" style="display: flex; gap: 1rem;">
-                    <button id="retry-btn" class="secondary-btn" style="flex: 1; margin: 0;">Try Again</button>
-                    <button id="continue-btn" class="action-btn" style="flex: 1; margin: 0;">Continue</button>
-                </div>
+        <!-- Practice Retry -->
+        <div id="retry-actions" class="hidden" style="width: 100%;">
+            <div class="btn-group" style="display: flex; gap: 1rem;">
+                <button id="retry-btn" class="secondary-btn" style="flex: 1; margin: 0;">Try Again</button>
+                <button id="continue-btn" class="action-btn" style="flex: 1; margin: 0;">Continue</button>
             </div>
         </div>
     </footer>

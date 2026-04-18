@@ -3,34 +3,22 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #ffffff; /* Changed to white */
     color: #333;
-    padding-bottom: 90px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    padding-bottom: 90px; /* Reduced space for smaller footer */
 }
 
 #app-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem; /* Smaller padding */
     background: #fff;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea; /* Separation border */
+    position: sticky;
+    top: 0;
     z-index: 50;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-}
-
-.header-center {
-    flex: 1;
-    margin: 0 1.5rem;
-}
-
-.header-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04); /* Subtle shadow */
 }
 
 .nav-btn {
@@ -40,42 +28,67 @@ body {
     cursor: pointer;
     color: #35424a;
     padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: transform 0.2s ease;
-    width: 40px;
-    height: 40px;
+}
+
+.nav-btn:hover {
+    transform: scale(1.1);
+    color: #e8491d;
 }
 
 #progress-container {
+    flex: 1;
+    margin: 0 1.5rem;
     background-color: #eee;
     border-radius: 10px;
     height: 8px;
     overflow: hidden;
+}
+
+#app-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    min-height: 80px; /* Reduced footer size */
+    background: #fff;
+    border-top: 1px solid #eaeaea; /* Separation border */
+    padding: 1rem; /* Smaller padding */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04); /* Subtle shadow */
+}
+
+#app-footer > * {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#app-footer p {
+    text-align: center;
+    margin-top: 0;
 }
 
 main {
-    flex: 1;
-    width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertical center */
-    align-items: center;     /* Horizontal center */
-    box-sizing: border-box;
+    padding: 2rem 1rem; /* Adjusted padding */
+    background: transparent;
+    box-shadow: none;
+    position: relative;
 }
 
-#dashboard-view {
-    width: 100%;
-    max-width: 800px;
-}
-
-#page-card {
-    width: 100%;
+/* Removed floating chip style entirely */
+.card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 #progress-bar {

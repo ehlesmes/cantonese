@@ -2,19 +2,6 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.5.1] - 2026-04-18
-- Refactored the completion state into a standard page view, removing the overlay for a more integrated experience.
-- Redesigned the header to include navigation (`←`, `→`) alongside session controls (`↺` Restart, `✖` Close).
-- Simplified the footer to a singular 'Continue' action during lesson completion.
-- Optimized vertical and horizontal centering for all main content, including the lesson dashboard.
-
-## [0.5.0] - 2026-04-18
-- Introduced the **Lesson Dashboard**, now the default entry point for the application.
-- Added multi-level support (e.g., Level A1) with dynamic grouping of lessons.
-- Implemented lesson state tracking: 'Not Started', '⏳ In Progress', and '✅ Completed'.
-- Integrated a persistent 'Home' (🏠) button in the header for easy dashboard access.
-- Unified the 'Continue' button styling across the app for a consistent primary action.
-
 ## [0.4.3] - 2026-04-18
 - Redesigned the main app view to eliminate the floating 'card' style, opting for a seamless edge-to-edge layout with a clean white background.
 - Reduced the header and footer sizes (`80px` min-height) to maximize the readable content area.
