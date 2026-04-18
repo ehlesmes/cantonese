@@ -189,7 +189,6 @@ function setupExerciseActions() {
             
             // Transition UI
             document.getElementById('scrambled-display').classList.add('hidden');
-            document.getElementById('exercise-prompt').classList.add('hidden');
             document.getElementById('reading-display').classList.remove('hidden');
             document.getElementById('translation-section').classList.remove('hidden');
             document.getElementById('english-translation').classList.remove('hidden');
@@ -268,7 +267,6 @@ function renderPractice(page) {
     document.getElementById('translation-section').classList.add('hidden');
     document.getElementById('reading-display').classList.add('hidden');
     document.getElementById('scrambled-display').classList.add('hidden');
-    document.getElementById('exercise-prompt').classList.add('hidden');
     document.getElementById('scrambled-status').classList.add('hidden');
     
     const existingHint = document.getElementById('scrambled-hint');
@@ -302,7 +300,6 @@ function renderReading(page) {
 
 function renderScrambled(page) {
     document.getElementById('scrambled-display').classList.remove('hidden');
-    document.getElementById('exercise-prompt').classList.remove('hidden');
     document.getElementById('english-prompt').textContent = page.translation;
     
     const slots = document.getElementById('scrambled-slots');
