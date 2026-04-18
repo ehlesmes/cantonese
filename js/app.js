@@ -1,9 +1,11 @@
 let appState = {
+    activeView: 'dashboard',
     lessons: [],
     currentLessonIndex: 0,
     currentPageIndex: 0,
     scrambledSelection: [],
-    results: {}
+    results: {},
+    completedLessons: {}
 };
 
 async function initApp() {
@@ -29,7 +31,6 @@ async function initApp() {
         loadingState.classList.add('hidden');
         appElement.classList.remove('hidden');
         document.getElementById('app-header').classList.remove('hidden');
-        document.getElementById('app-footer').classList.remove('hidden');
     } catch (error) {
         console.error("Error initializing app:", error);
         loadingState.textContent = "Error loading content. Please try again later.";
@@ -49,17 +50,21 @@ function loadState() {
     const savedState = localStorage.getItem('cantoneseAppStateLinear');
     if (savedState) {
         const parsedState = JSON.parse(savedState);
+        appState.activeView = parsedState.activeView || 'dashboard';
         appState.currentLessonIndex = parsedState.currentLessonIndex || 0;
         appState.currentPageIndex = parsedState.currentPageIndex || 0;
         appState.results = parsedState.results || {};
+        appState.completedLessons = parsedState.completedLessons || {};
     }
 }
 
 function saveState() {
     localStorage.setItem('cantoneseAppStateLinear', JSON.stringify({
+        activeView: appState.activeView,
         currentLessonIndex: appState.currentLessonIndex,
         currentPageIndex: appState.currentPageIndex,
-        results: appState.results
+        results: appState.results,
+        completedLessons: appState.completedLessons
     }));
 }
 
@@ -87,6 +92,12 @@ function nextStep() {
 
 function setupNavigation() {
     // Top-level Navigation elements
+    document.getElementById('home-btn').addEventListener('click', () => {
+        appState.activeView = 'dashboard';
+        renderCurrentState();
+        saveState();
+    });
+
     document.getElementById('next-btn').addEventListener('click', () => nextStep());
     document.getElementById('start-lesson-btn').addEventListener('click', () => nextStep());
     document.getElementById('learn-continue-btn').addEventListener('click', () => nextStep());
@@ -100,6 +111,9 @@ function setupNavigation() {
             const prevLesson = appState.lessons[appState.currentLessonIndex];
             appState.currentPageIndex = prevLesson.pages.length - 1;
             renderCurrentState();
+        } else {
+            appState.activeView = 'dashboard';
+            renderCurrentState();
         }
         saveState();
     });
@@ -108,10 +122,15 @@ function setupNavigation() {
         if (appState.currentLessonIndex < appState.lessons.length - 1) {
             appState.currentLessonIndex++;
             appState.currentPageIndex = 0;
+            appState.activeView = 'lesson';
             hideCompletion();
             renderCurrentState();
-            saveState();
+        } else {
+            appState.activeView = 'dashboard';
+            hideCompletion();
+            renderCurrentState();
         }
+        saveState();
     });
 
     document.getElementById('restart-lesson-btn').addEventListener('click', () => {
@@ -222,15 +241,25 @@ function resetFooter() {
 }
 
 function renderCurrentState() {
+    // Hide all views first
+    document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+    resetFooter();
+
+    if (appState.activeView === 'dashboard') {
+        document.getElementById('app-header').classList.add('hidden');
+        document.getElementById('app-footer').classList.add('hidden');
+        renderDashboard();
+        return;
+    }
+
+    document.getElementById('app-header').classList.remove('hidden');
+    document.getElementById('app-footer').classList.remove('hidden');
+
     const lesson = appState.lessons[appState.currentLessonIndex];
     if (!lesson) return;
 
     const page = lesson.pages[appState.currentPageIndex];
     if (!page) return;
-
-    // Hide all views first
-    document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
-    resetFooter();
 
     // Update Progress Bar
     const progress = ((appState.currentPageIndex + 1) / lesson.pages.length) * 100;
@@ -244,6 +273,73 @@ function renderCurrentState() {
     } else if (page.type === 'practice') {
         renderPractice(page);
     }
+}
+
+function renderDashboard() {
+    const dashView = document.getElementById('dashboard-view');
+    dashView.classList.remove('hidden');
+    dashView.innerHTML = `<h1 style="color: #e8491d; text-align: center; margin-bottom: 2rem;">Cantonese Learning App</h1>`;
+
+    // Group lessons by level
+    const grouped = {};
+    appState.lessons.forEach((l, idx) => {
+        const level = l.level || 'A1';
+        if (!grouped[level]) grouped[level] = [];
+        grouped[level].push({ ...l, index: idx });
+    });
+
+    Object.keys(grouped).forEach(level => {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'level-group';
+        groupDiv.innerHTML = `<h2 class="level-header">Level ${level}</h2>`;
+
+        grouped[level].forEach((lesson) => {
+            const isCompleted = appState.completedLessons[lesson.index];
+            const isInProgress = !isCompleted && appState.currentLessonIndex === lesson.index && appState.currentPageIndex > 0;
+            
+            let actionHtml = `<button class="action-btn start-lesson-btn" data-index="${lesson.index}">Start</button>`;
+            let statusHtml = `Not Started`;
+
+            if (isCompleted) {
+                actionHtml = `<button class="secondary-btn review-lesson-btn" data-index="${lesson.index}">Review</button>`;
+                statusHtml = `✅ Completed`;
+            } else if (isInProgress) {
+                actionHtml = `<button class="action-btn continue-lesson-btn" data-index="${lesson.index}">Continue</button>`;
+                statusHtml = `⏳ In Progress`;
+            }
+
+            const card = document.createElement('div');
+            card.className = 'lesson-card';
+            card.innerHTML = `
+                <div class="lesson-info">
+                    <h3>${lesson.index + 1} - ${lesson.title}</h3>
+                    <p>${statusHtml}</p>
+                </div>
+                <div class="lesson-action">
+                    ${actionHtml}
+                </div>
+            `;
+            groupDiv.appendChild(card);
+        });
+
+        dashView.appendChild(groupDiv);
+    });
+
+    // Attach event listeners dynamically
+    dashView.querySelectorAll('.start-lesson-btn, .review-lesson-btn, .continue-lesson-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const idx = parseInt(e.target.dataset.index, 10);
+            appState.currentLessonIndex = idx;
+            
+            if (e.target.classList.contains('start-lesson-btn') || e.target.classList.contains('review-lesson-btn')) {
+                appState.currentPageIndex = 0;
+            }
+            
+            appState.activeView = 'lesson';
+            renderCurrentState();
+            saveState();
+        });
+    });
 }
 
 function renderIntro(page) {
@@ -353,6 +449,9 @@ function updateScrambledSlots() {
 }
 
 function showCompletion() {
+    appState.completedLessons[appState.currentLessonIndex] = true;
+    saveState();
+
     document.getElementById('completion-overlay').classList.remove('hidden');
     document.getElementById('app-header').classList.add('hidden');
     document.getElementById('app-footer').classList.add('hidden');

@@ -389,7 +389,63 @@ main {
     margin: 0.5rem;
 }
 
+/* Dashboard Styles */
+.level-group {
+    margin-bottom: 3rem;
+}
+
+.level-header {
+    font-size: 2.5rem;
+    color: #35424a;
+    border-bottom: 2px solid #e8491d;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.lesson-card {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lesson-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.lesson-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    color: #35424a;
+}
+
+.lesson-info p {
+    margin: 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.lesson-action {
+    min-width: 120px;
+}
+
 @media (max-width: 600px) {
+    .lesson-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .lesson-action {
+        width: 100%;
+    }
+}
     main {
         margin: 0;
         padding: 1.5rem;

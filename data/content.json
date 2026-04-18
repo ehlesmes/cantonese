@@ -149,7 +149,8 @@
         "translation": "Excuse me / Sorry.",
         "audio": "audio/lesson1/10.m4a"
       }
-    ]
+    ],
+    "level": "A1"
   },
   {
     "id": "lesson-2",
@@ -293,7 +294,8 @@
         "translation": "The bill, please.",
         "audio": "audio/lesson2/10.m4a"
       }
-    ]
+    ],
+    "level": "A1"
   },
   {
     "id": "lesson-3",
@@ -437,6 +439,7 @@
         "translation": "Almost there / That's about it.",
         "audio": "audio/lesson3/10.m4a"
       }
-    ]
+    ],
+    "level": "A1"
   }
 ]
