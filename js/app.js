@@ -77,6 +77,11 @@ function setupExerciseActions() {
                 if (existing) existing.remove();
                 
                 document.getElementById('translation-section').prepend(hintDiv);
+                // For scrambled, the translation is already visible as the prompt, 
+                // so we can hide the duplicate in the translation-section
+                document.getElementById('english-translation').classList.add('hidden');
+            } else {
+                document.getElementById('english-translation').classList.remove('hidden');
             }
         } else {
             section.classList.add('hidden');
@@ -100,8 +105,17 @@ function setupExerciseActions() {
         if (stripPunct(result) === stripPunct(exercise.text)) {
             statusEl.textContent = 'Correct! 🎉';
             statusEl.classList.add('success');
+            
+            // UI Transition: Hide scrambled UI, show reading/audio UI
+            document.getElementById('scrambled-display').classList.add('hidden');
+            document.getElementById('exercise-prompt').classList.add('hidden');
             document.getElementById('reading-display').classList.remove('hidden');
             document.getElementById('translation-section').classList.remove('hidden');
+            document.getElementById('english-translation').classList.remove('hidden');
+            
+            // Remove hint if visible
+            const hint = document.getElementById('scrambled-hint');
+            if (hint) hint.remove();
         } else {
             statusEl.textContent = 'Try again!';
             statusEl.classList.add('error');
@@ -200,6 +214,10 @@ function renderCurrentState() {
     const exercise = lesson.exercises[appState.currentExerciseIndex];
     document.getElementById('exercise-number').textContent = `${appState.currentExerciseIndex + 1} / ${lesson.exercises.length}`;
     document.getElementById('english-translation').textContent = exercise.translation;
+
+    // Always populate reading content so it's ready if revealed
+    document.getElementById('chinese-text').textContent = exercise.text;
+    document.getElementById('romanization').textContent = exercise.romanization;
 
     if (exercise.type === 'scrambled') {
         renderScrambled(exercise);
