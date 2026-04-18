@@ -105,8 +105,7 @@ function setupExerciseActions() {
     
     document.getElementById('incorrect-btn').addEventListener('click', () => {
         saveResult(false);
-        document.getElementById('assessment-actions').classList.add('hidden');
-        document.getElementById('retry-actions').classList.remove('hidden');
+        nextStep(); // Revert back to continuing immediately for regular exercises
     });
 
     document.getElementById('retry-btn').addEventListener('click', () => {
@@ -114,6 +113,10 @@ function setupExerciseActions() {
     });
 
     document.getElementById('continue-btn').addEventListener('click', () => {
+        nextStep();
+    });
+
+    document.getElementById('scrambled-continue-btn').addEventListener('click', () => {
         nextStep();
     });
 
@@ -140,7 +143,11 @@ function setupExerciseActions() {
             document.getElementById('reading-display').classList.remove('hidden');
             document.getElementById('translation-section').classList.remove('hidden');
             document.getElementById('english-translation').classList.remove('hidden');
-            document.getElementById('assessment-actions').classList.remove('hidden');
+            
+            // Hide assessment and retry actions, show single continue button
+            document.getElementById('assessment-actions').classList.add('hidden');
+            document.getElementById('retry-actions').classList.add('hidden');
+            document.getElementById('continue-action').classList.remove('hidden');
             
             // Remove hint if visible
             const hint = document.getElementById('scrambled-hint');
@@ -150,6 +157,10 @@ function setupExerciseActions() {
             saveResult(false);
             statusEl.textContent = 'Try again!';
             statusEl.classList.add('error');
+            
+            // Hide Check Answer button, show Retry/Continue prompt
+            document.getElementById('check-scrambled-btn').classList.add('hidden');
+            document.getElementById('retry-actions').classList.remove('hidden');
         }
     });
 }
@@ -263,7 +274,9 @@ function renderCurrentState() {
     document.getElementById('exercise-prompt').classList.add('hidden');
     document.getElementById('scrambled-status').classList.add('hidden');
     document.getElementById('retry-actions').classList.add('hidden');
+    document.getElementById('continue-action').classList.add('hidden');
     document.getElementById('assessment-actions').classList.remove('hidden');
+    document.getElementById('check-scrambled-btn').classList.remove('hidden');
     
     const existingHint = document.getElementById('scrambled-hint');
     if (existingHint) existingHint.remove();
