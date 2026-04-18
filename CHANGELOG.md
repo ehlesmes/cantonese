@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.2] - 2026-04-18
+- Stabilized Scrambled Exercise containers with strict `min-height` and fixed token heights to prevent UI layout shifting.
+- Unified `#app-footer` to have a strictly fixed height (`140px`) globally for a consistent UX across all pages.
+- Romanization in both Scrambled and Reading views is now hidden by default and gracefully fades in when hovering over the respective characters.
+
 ## [0.4.1] - 2026-04-18
 - Enforced strict pedagogical rule: Every vocabulary item on a "Learn" page MUST be explicitly used in an "Example" and subsequently tested in a "Practice" exercise.
 - Updated `content.json` to include detailed arrays of `examples` for every `learn` section.

@@ -19,15 +19,15 @@
 - [x] **Lesson Renderer:** Create functions to inject lesson metadata and exercises into the DOM.
 - [x] **Linear Pedagogy Shift:** Transition from bulk meta-data rendering to a sequential, paginated experience (Intro -> Learn -> Practice).
 - [x] **Pedagogical Integrity:** Enforce strict rule: all vocabulary must be demonstrated in an example and practiced in an exercise.
-- [x] **Navigation:** Add "Next/Previous" buttons for page navigation.
+- [x] **Navigation:** Sticky `app-header` with progress tracking and back arrow. Unified `app-footer` anchoring contextual buttons.
 - [x] **Persistence:** Use `localStorage` to save user's current lesson and completed pages.
 - [x] **Progress UI:** Display a simple progress bar for pages completed.
 - [x] **UI/UX Refinement:**
     - [x] Implemented "Scrambled Sentence" exercise type.
-    - [x] Add translation toggle (Hint).
-    - [x] Add self-assessment buttons (Yes/No).
-    - [x] Built grid layout for lesson completion stats.
-    - [x] Render "Examples" lists inside "Learn" pages.
+    - [x] Stabilize layout shifting on Scrambled drag/drop actions and fix footer sizes.
+    - [x] Hide romanization until character hover to test memory retention.
+    - [x] Built side-by-side layout for lesson completion stats.
+    - [x] Weave grammar, vocabulary, and examples into organic rich-text `Learn` paragraphs.
 
 - [x] **Quality Review:** Review and refine the curriculum map and lesson content for clarity, pedagogical accuracy, and engagement.
 - [ ] **Content Expansion:** Create JSON files for Lessons 4-10 (A2 level).
