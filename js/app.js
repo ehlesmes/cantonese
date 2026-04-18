@@ -30,7 +30,6 @@ async function initApp() {
         
         loadingState.classList.add('hidden');
         appElement.classList.remove('hidden');
-        document.getElementById('app-header').classList.remove('hidden');
     } catch (error) {
         console.error("Error initializing app:", error);
         loadingState.textContent = "Error loading content. Please try again later.";
@@ -72,7 +71,6 @@ function saveResult(isCorrect) {
     if (!appState.results[appState.currentLessonIndex]) {
         appState.results[appState.currentLessonIndex] = {};
     }
-    // Prevent true overwriting an earlier false for this specific page
     if (appState.results[appState.currentLessonIndex][appState.currentPageIndex] === false && isCorrect) {
         return;
     }
@@ -84,23 +82,43 @@ function nextStep() {
     if (appState.currentPageIndex < lesson.pages.length - 1) {
         appState.currentPageIndex++;
         renderCurrentState();
-    } else {
+    } else if (appState.activeView !== 'completion') {
         showCompletion();
+    } else {
+        goNextLesson();
     }
     saveState();
 }
 
+function goNextLesson() {
+    if (appState.currentLessonIndex < appState.lessons.length - 1) {
+        appState.currentLessonIndex++;
+        appState.currentPageIndex = 0;
+        appState.activeView = 'lesson';
+        appState.results[appState.currentLessonIndex] = {};
+        renderCurrentState();
+    } else {
+        appState.activeView = 'dashboard';
+        renderCurrentState();
+    }
+}
+
 function setupNavigation() {
-    // Top-level Navigation elements
-    document.getElementById('home-btn').addEventListener('click', () => {
+    document.getElementById('close-btn').addEventListener('click', () => {
         appState.activeView = 'dashboard';
         renderCurrentState();
         saveState();
     });
 
+    document.getElementById('header-restart-btn').addEventListener('click', () => {
+        restartLesson();
+    });
+
     document.getElementById('next-btn').addEventListener('click', () => nextStep());
     document.getElementById('start-lesson-btn').addEventListener('click', () => nextStep());
     document.getElementById('learn-continue-btn').addEventListener('click', () => nextStep());
+    document.getElementById('scrambled-continue-btn').addEventListener('click', () => nextStep());
+    document.getElementById('completion-continue-btn').addEventListener('click', () => nextStep());
 
     document.getElementById('prev-btn').addEventListener('click', () => {
         if (appState.currentPageIndex > 0) {
@@ -117,29 +135,14 @@ function setupNavigation() {
         }
         saveState();
     });
+}
 
-    document.getElementById('next-lesson-btn').addEventListener('click', () => {
-        if (appState.currentLessonIndex < appState.lessons.length - 1) {
-            appState.currentLessonIndex++;
-            appState.currentPageIndex = 0;
-            appState.activeView = 'lesson';
-            hideCompletion();
-            renderCurrentState();
-        } else {
-            appState.activeView = 'dashboard';
-            hideCompletion();
-            renderCurrentState();
-        }
-        saveState();
-    });
-
-    document.getElementById('restart-lesson-btn').addEventListener('click', () => {
-        appState.currentPageIndex = 0;
-        appState.results[appState.currentLessonIndex] = {}; // Clear results for review
-        hideCompletion();
-        renderCurrentState();
-        saveState();
-    });
+function restartLesson() {
+    appState.currentPageIndex = 0;
+    appState.activeView = 'lesson';
+    appState.results[appState.currentLessonIndex] = {};
+    renderCurrentState();
+    saveState();
 }
 
 function setupExerciseActions() {
@@ -179,14 +182,10 @@ function setupExerciseActions() {
     });
 
     document.getElementById('retry-btn').addEventListener('click', () => {
-        renderCurrentState(); // Resets the exercise
+        renderCurrentState();
     });
 
     document.getElementById('continue-btn').addEventListener('click', () => {
-        nextStep();
-    });
-
-    document.getElementById('scrambled-continue-btn').addEventListener('click', () => {
         nextStep();
     });
 
@@ -197,33 +196,26 @@ function setupExerciseActions() {
         const statusEl = document.getElementById('scrambled-status');
         
         statusEl.classList.remove('hidden', 'success', 'error');
-        
-        // Strip punctuation for comparison
         const stripPunct = (str) => str.replace(/[。，！？,.!?]/g, '').trim();
         
         if (stripPunct(result) === stripPunct(page.text)) {
             saveResult(true);
             statusEl.textContent = 'Correct! 🎉';
             statusEl.classList.add('success');
-            
-            // Transition UI
             document.getElementById('scrambled-display').classList.add('hidden');
             document.getElementById('reading-display').classList.remove('hidden');
             document.getElementById('translation-section').classList.remove('hidden');
             document.getElementById('english-translation').classList.remove('hidden');
-            
             document.getElementById('assessment-actions').classList.add('hidden');
             document.getElementById('retry-actions').classList.add('hidden');
             document.getElementById('check-scrambled-btn').classList.add('hidden');
             document.getElementById('scrambled-continue-btn').classList.remove('hidden');
-            
             const hint = document.getElementById('scrambled-hint');
             if (hint) hint.remove();
         } else {
             saveResult(false);
             statusEl.textContent = 'Try again!';
             statusEl.classList.add('error');
-            
             document.getElementById('check-scrambled-btn').classList.add('hidden');
             document.getElementById('retry-actions').classList.remove('hidden');
         }
@@ -235,13 +227,13 @@ function resetFooter() {
     document.getElementById('learn-continue-btn').classList.add('hidden');
     document.getElementById('check-scrambled-btn').classList.add('hidden');
     document.getElementById('scrambled-continue-btn').classList.add('hidden');
+    document.getElementById('completion-continue-btn').classList.add('hidden');
     document.getElementById('assessment-actions').classList.add('hidden');
     document.getElementById('retry-actions').classList.add('hidden');
     document.getElementById('hint-btn-container').classList.add('hidden');
 }
 
 function renderCurrentState() {
-    // Hide all views first
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
     resetFooter();
 
@@ -252,89 +244,72 @@ function renderCurrentState() {
         return;
     }
 
-    document.getElementById('app-header').classList.remove('hidden');
-    document.getElementById('app-footer').classList.remove('hidden');
-
     const lesson = appState.lessons[appState.currentLessonIndex];
     if (!lesson) return;
+
+    if (appState.activeView === 'completion') {
+        document.getElementById('app-header').classList.remove('hidden');
+        document.getElementById('app-footer').classList.remove('hidden');
+        document.getElementById('completion-continue-btn').classList.remove('hidden');
+        renderCompletion();
+        return;
+    }
+
+    document.getElementById('app-header').classList.remove('hidden');
+    document.getElementById('app-footer').classList.remove('hidden');
 
     const page = lesson.pages[appState.currentPageIndex];
     if (!page) return;
 
-    // Update Progress Bar
     const progress = ((appState.currentPageIndex + 1) / lesson.pages.length) * 100;
     document.getElementById('progress-bar').style.width = `${progress}%`;
 
-    // Render based on type
-    if (page.type === 'intro') {
-        renderIntro(page);
-    } else if (page.type === 'learn') {
-        renderLearn(page);
-    } else if (page.type === 'practice') {
-        renderPractice(page);
-    }
+    if (page.type === 'intro') renderIntro(page);
+    else if (page.type === 'learn') renderLearn(page);
+    else if (page.type === 'practice') renderPractice(page);
 }
 
 function renderDashboard() {
     const dashView = document.getElementById('dashboard-view');
     dashView.classList.remove('hidden');
     dashView.innerHTML = `<h1 style="color: #e8491d; text-align: center; margin-bottom: 2rem;">Cantonese Learning App</h1>`;
-
-    // Group lessons by level
     const grouped = {};
     appState.lessons.forEach((l, idx) => {
         const level = l.level || 'A1';
         if (!grouped[level]) grouped[level] = [];
         grouped[level].push({ ...l, index: idx });
     });
-
     Object.keys(grouped).forEach(level => {
         const groupDiv = document.createElement('div');
         groupDiv.className = 'level-group';
         groupDiv.innerHTML = `<h2 class="level-header">Level ${level}</h2>`;
-
         grouped[level].forEach((lesson) => {
             const isCompleted = appState.completedLessons[lesson.index];
             const isInProgress = !isCompleted && appState.currentLessonIndex === lesson.index && appState.currentPageIndex > 0;
-            
             let actionHtml = `<button class="action-btn start-lesson-btn" data-index="${lesson.index}">Start</button>`;
-            let statusHtml = `Not Started`;
-
+            let statusHtml = "Not Started";
             if (isCompleted) {
                 actionHtml = `<button class="secondary-btn review-lesson-btn" data-index="${lesson.index}">Review</button>`;
-                statusHtml = `✅ Completed`;
+                statusHtml = "✅ Completed";
             } else if (isInProgress) {
                 actionHtml = `<button class="action-btn continue-lesson-btn" data-index="${lesson.index}">Continue</button>`;
-                statusHtml = `⏳ In Progress`;
+                statusHtml = "⏳ In Progress";
             }
-
             const card = document.createElement('div');
-            card.className = 'lesson-card';
-            card.innerHTML = `
-                <div class="lesson-info">
-                    <h3>${lesson.index + 1} - ${lesson.title}</h3>
-                    <p>${statusHtml}</p>
-                </div>
-                <div class="lesson-action">
-                    ${actionHtml}
-                </div>
-            `;
+            card.className = "lesson-card";
+            card.innerHTML = `<div class="lesson-info"><h3>${lesson.index + 1} - ${lesson.title}</h3><p>${statusHtml}</p></div><div class="lesson-action">${actionHtml}</div>`;
             groupDiv.appendChild(card);
         });
-
         dashView.appendChild(groupDiv);
     });
-
-    // Attach event listeners dynamically
     dashView.querySelectorAll('.start-lesson-btn, .review-lesson-btn, .continue-lesson-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const idx = parseInt(e.target.dataset.index, 10);
             appState.currentLessonIndex = idx;
-            
             if (e.target.classList.contains('start-lesson-btn') || e.target.classList.contains('review-lesson-btn')) {
                 appState.currentPageIndex = 0;
+                appState.results[idx] = {};
             }
-            
             appState.activeView = 'lesson';
             renderCurrentState();
             saveState();
@@ -358,23 +333,17 @@ function renderLearn(page) {
 
 function renderPractice(page) {
     document.getElementById('practice-view').classList.remove('hidden');
-    
-    // Reset internal states
     document.getElementById('translation-section').classList.add('hidden');
     document.getElementById('reading-display').classList.add('hidden');
     document.getElementById('scrambled-display').classList.add('hidden');
     document.getElementById('scrambled-status').classList.add('hidden');
-    
     const existingHint = document.getElementById('scrambled-hint');
     if (existingHint) existingHint.remove();
     appState.scrambledSelection = [];
-
     document.getElementById('english-translation').textContent = page.translation;
     document.getElementById('chinese-text').textContent = page.text;
     document.getElementById('romanization').textContent = page.romanization;
-
     document.getElementById('hint-btn-container').classList.remove('hidden');
-
     if (page.exerciseType === 'scrambled') {
         renderScrambled(page);
         document.getElementById('check-scrambled-btn').classList.remove('hidden');
@@ -382,7 +351,6 @@ function renderPractice(page) {
         renderReading(page);
         document.getElementById('assessment-actions').classList.remove('hidden');
     }
-
     const audioPlayer = document.getElementById('audio-player');
     if (page.audio) {
         audioPlayer.src = page.audio;
@@ -397,21 +365,15 @@ function renderReading(page) {
 function renderScrambled(page) {
     document.getElementById('scrambled-display').classList.remove('hidden');
     document.getElementById('english-prompt').textContent = page.translation;
-    
     const slots = document.getElementById('scrambled-slots');
     const options = document.getElementById('scrambled-options');
     slots.innerHTML = '';
     options.innerHTML = '';
-
     const shuffled = [...page.tokens].sort(() => Math.random() - 0.5);
-    
     shuffled.forEach((token, index) => {
         const btn = document.createElement('div');
         btn.className = 'token';
-        btn.innerHTML = `
-            <span class="token-text">${token.t}</span>
-            <span class="token-romanization">${token.r}</span>
-        `;
+        btn.innerHTML = `<span class="token-text">${token.t}</span><span class="token-romanization">${token.r}</span>`;
         btn.dataset.index = index;
         btn.addEventListener('click', () => {
             if (!btn.classList.contains('selected')) {
@@ -430,10 +392,7 @@ function updateScrambledSlots() {
     appState.scrambledSelection.forEach((token, idx) => {
         const btn = document.createElement('div');
         btn.className = 'token';
-        btn.innerHTML = `
-            <span class="token-text">${token.t}</span>
-            <span class="token-romanization">${token.r}</span>
-        `;
+        btn.innerHTML = `<span class="token-text">${token.t}</span><span class="token-romanization">${token.r}</span>`;
         btn.addEventListener('click', () => {
             appState.scrambledSelection.splice(idx, 1);
             document.querySelectorAll('#scrambled-options .token').forEach(opt => {
@@ -450,32 +409,23 @@ function updateScrambledSlots() {
 
 function showCompletion() {
     appState.completedLessons[appState.currentLessonIndex] = true;
+    appState.activeView = 'completion';
+    renderCurrentState();
     saveState();
+}
 
-    document.getElementById('completion-overlay').classList.remove('hidden');
-    document.getElementById('app-header').classList.add('hidden');
-    document.getElementById('app-footer').classList.add('hidden');
-    
+function renderCompletion() {
     const lesson = appState.lessons[appState.currentLessonIndex];
     const results = appState.results[appState.currentLessonIndex] || {};
-    
+    document.getElementById('completion-view').classList.remove('hidden');
     let correctCount = 0;
     let wrongCount = 0;
-    
     let correctHtml = '';
     let wrongHtml = '';
-    
     lesson.pages.forEach((page, idx) => {
-        // Only practice pages are graded
         if (page.type !== 'practice') return;
-        
         const isCorrect = results[idx] === true;
-        
-        const itemHtml = `<div style="margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee;">
-            <div style="font-weight: bold;">${page.text}</div>
-            <div style="color: #666; font-size: 0.9rem; font-style: italic;">${page.translation}</div>
-        </div>`;
-        
+        const itemHtml = `<div style="margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee;"><div style="font-weight: bold;">Practice Example</div><div style="color: #666; font-size: 0.9rem;">${page.text}</div><div style="color: #666; font-size: 0.9rem; font-style: italic;">${page.translation}</div></div>`;
         if (isCorrect) {
             correctCount++;
             correctHtml += itemHtml;
@@ -484,29 +434,7 @@ function showCompletion() {
             wrongHtml += itemHtml;
         }
     });
-    
-    document.getElementById('completion-stats').innerHTML = `
-        <div style="display: flex; gap: 2rem; text-align: left; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 250px; background: #fed7d7; padding: 1.5rem; border-radius: 8px; border: 1px solid #feb2b2;">
-                <h3 style="color: #822727; margin-top: 0; display: flex; justify-content: space-between;">
-                    <span>Review</span> <span>${wrongCount}</span>
-                </h3>
-                ${wrongHtml || '<p style="color: #666; font-style: italic;">None!</p>'}
-            </div>
-            <div style="flex: 1; min-width: 250px; background: #c6f6d5; padding: 1.5rem; border-radius: 8px; border: 1px solid #9ae6b4;">
-                <h3 style="color: #22543d; margin-top: 0; display: flex; justify-content: space-between;">
-                    <span>Mastered</span> <span>${correctCount}</span>
-                </h3>
-                ${correctHtml || '<p style="color: #666; font-style: italic;">None!</p>'}
-            </div>
-        </div>
-    `;
-}
-
-function hideCompletion() {
-    document.getElementById('completion-overlay').classList.add('hidden');
-    document.getElementById('app-header').classList.remove('hidden');
-    document.getElementById('app-footer').classList.remove('hidden');
+    document.getElementById('completion-stats').innerHTML = `<div style="display: flex; gap: 2rem; text-align: left; justify-content: center; align-items: flex-start; flex-wrap: wrap;"><div style="flex: 1; min-width: 250px; background: #fed7d7; padding: 1.5rem; border-radius: 8px; border: 1px solid #feb2b2;"><h3 style="color: #822727; margin-top: 0; display: flex; justify-content: space-between;"><span>Review</span> <span>${wrongCount}</span></h3>${wrongHtml || '<p style="color: #666; font-style: italic;">None!</p>'}</div><div style="flex: 1; min-width: 250px; background: #c6f6d5; padding: 1.5rem; border-radius: 8px; border: 1px solid #9ae6b4;"><h3 style="color: #22543d; margin-top: 0; display: flex; justify-content: space-between;"><span>Mastered</span> <span>${correctCount}</span></h3>${correctHtml || '<p style="color: #666; font-style: italic;">None!</p>'}</div></div>`;
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
