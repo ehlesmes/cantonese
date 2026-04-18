@@ -78,38 +78,60 @@ main {
     margin: 2rem 0;
 }
 
-#learn-vocabulary-list {
-    list-style: none;
-    padding: 1.5rem 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-#learn-vocabulary-list li {
-    background: #fff;
-    padding: 1rem;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.vocab-term {
+.rich-text {
+    text-align: left;
     font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.rich-text p {
+    margin-bottom: 1.5rem;
+}
+
+.rich-text strong {
+    color: #35424a;
+    background: #f0f0f0;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.rich-text .translation {
+    font-style: italic;
+    color: #666;
+}
+
+.rich-text em {
+    display: block;
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid #e8491d;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    font-style: normal;
+}
+
+.rich-text em .ex-cn {
+    font-size: 1.4rem;
     font-weight: bold;
     color: #35424a;
     display: block;
 }
 
-.vocab-romanization {
+.rich-text em .ex-ro {
     color: #e8491d;
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    display: block;
+    margin: 0.2rem 0;
 }
 
-.vocab-meaning {
+.rich-text em .ex-en {
+    color: #666;
     display: block;
-    margin-top: 0.5rem;
 }
 
 #chinese-text {
