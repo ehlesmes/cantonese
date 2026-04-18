@@ -2,7 +2,8 @@ let appState = {
     lessons: [],
     currentLessonIndex: 0,
     currentExerciseIndex: 0,
-    scrambledSelection: []
+    scrambledSelection: [],
+    results: {}
 };
 
 async function initApp() {
@@ -48,14 +49,23 @@ function loadState() {
         const parsedState = JSON.parse(savedState);
         appState.currentLessonIndex = parsedState.currentLessonIndex || 0;
         appState.currentExerciseIndex = parsedState.currentExerciseIndex || 0;
+        appState.results = parsedState.results || {};
     }
 }
 
 function saveState() {
     localStorage.setItem('cantoneseAppState', JSON.stringify({
         currentLessonIndex: appState.currentLessonIndex,
-        currentExerciseIndex: appState.currentExerciseIndex
+        currentExerciseIndex: appState.currentExerciseIndex,
+        results: appState.results
     }));
+}
+
+function saveResult(isCorrect) {
+    if (!appState.results[appState.currentLessonIndex]) {
+        appState.results[appState.currentLessonIndex] = [];
+    }
+    appState.results[appState.currentLessonIndex][appState.currentExerciseIndex] = isCorrect;
 }
 
 function setupExerciseActions() {
@@ -64,32 +74,35 @@ function setupExerciseActions() {
         const lesson = appState.lessons[appState.currentLessonIndex];
         const exercise = lesson.exercises[appState.currentExerciseIndex];
 
-        if (section.classList.contains('hidden')) {
-            section.classList.remove('hidden');
-            // If it's a scrambled exercise, show the target text as a hint
-            if (exercise.type === 'scrambled') {
+        if (exercise.type === 'scrambled') {
+            const existing = document.getElementById('scrambled-hint');
+            if (existing) {
+                existing.remove();
+            } else {
                 const hintDiv = document.createElement('div');
                 hintDiv.id = 'scrambled-hint';
-                hintDiv.innerHTML = `<p style="color: #666; font-style: italic;">Answer: ${exercise.text}</p>`;
-                
-                // Remove existing hint if any
-                const existing = document.getElementById('scrambled-hint');
-                if (existing) existing.remove();
-                
-                document.getElementById('translation-section').prepend(hintDiv);
-                // For scrambled, the translation is already visible as the prompt, 
-                // so we can hide the duplicate in the translation-section
-                document.getElementById('english-translation').classList.add('hidden');
-            } else {
-                document.getElementById('english-translation').classList.remove('hidden');
+                hintDiv.innerHTML = `<p style="color: #666; font-size: 1.4rem; font-style: italic; margin: 1rem 0;">Answer: ${exercise.text}</p>`;
+                document.getElementById('english-prompt').insertAdjacentElement('afterend', hintDiv);
             }
         } else {
-            section.classList.add('hidden');
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+                document.getElementById('english-translation').classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
         }
     });
 
-    document.getElementById('correct-btn').addEventListener('click', () => nextStep());
-    document.getElementById('incorrect-btn').addEventListener('click', () => nextStep());
+    document.getElementById('correct-btn').addEventListener('click', () => {
+        saveResult(true);
+        nextStep();
+    });
+    
+    document.getElementById('incorrect-btn').addEventListener('click', () => {
+        saveResult(false);
+        nextStep();
+    });
 
     document.getElementById('check-scrambled-btn').addEventListener('click', () => {
         const lesson = appState.lessons[appState.currentLessonIndex];
@@ -136,6 +149,38 @@ function nextStep() {
 
 function showCompletion() {
     document.getElementById('completion-overlay').classList.remove('hidden');
+    
+    const lesson = appState.lessons[appState.currentLessonIndex];
+    const results = appState.results[appState.currentLessonIndex] || [];
+    
+    let correctCount = 0;
+    let wrongCount = 0;
+    
+    let statsHtml = `<ul style="text-align: left; max-height: 250px; overflow-y: auto; background: #f8f9fa; padding: 1rem; border-radius: 8px; list-style: none;">`;
+    
+    lesson.exercises.forEach((ex, idx) => {
+        const isCorrect = results[idx] === true;
+        if (isCorrect) correctCount++;
+        else if (results[idx] === false) wrongCount++;
+        
+        const icon = isCorrect ? '✅' : '❌';
+        statsHtml += `<li style="margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee;">
+            <div style="font-weight: bold;">${icon} Exercise ${idx + 1}</div>
+            <div style="color: #666; font-size: 0.9rem;">${ex.text}</div>
+            <div style="color: #666; font-size: 0.9rem; font-style: italic;">${ex.translation}</div>
+        </li>`;
+    });
+    
+    statsHtml += `</ul>`;
+    
+    document.getElementById('completion-stats').innerHTML = `
+        <h3 style="color: #35424a;">Results Summary</h3>
+        <p style="font-size: 1.1rem; font-weight: bold;">
+            <span style="color: #27ae60;">Correct: ${correctCount}</span> | 
+            <span style="color: #c0392b;">Incorrect: ${wrongCount}</span>
+        </p>
+        ${statsHtml}
+    `;
 }
 
 function hideCompletion() {
@@ -170,6 +215,7 @@ function setupNavigation() {
 
     document.getElementById('restart-lesson-btn').addEventListener('click', () => {
         appState.currentExerciseIndex = 0;
+        appState.results[appState.currentLessonIndex] = []; // Clear results for review
         hideCompletion();
         renderCurrentState();
         saveState();
