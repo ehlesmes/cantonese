@@ -1,7 +1,7 @@
 let appState = {
     lessons: [],
     currentLessonIndex: 0,
-    currentExerciseIndex: 0,
+    currentPageIndex: 0,
     scrambledSelection: [],
     results: {}
 };
@@ -44,48 +44,97 @@ function setupAudio() {
 }
 
 function loadState() {
-    const savedState = localStorage.getItem('cantoneseAppState');
+    const savedState = localStorage.getItem('cantoneseAppStateLinear');
     if (savedState) {
         const parsedState = JSON.parse(savedState);
         appState.currentLessonIndex = parsedState.currentLessonIndex || 0;
-        appState.currentExerciseIndex = parsedState.currentExerciseIndex || 0;
+        appState.currentPageIndex = parsedState.currentPageIndex || 0;
         appState.results = parsedState.results || {};
     }
 }
 
 function saveState() {
-    localStorage.setItem('cantoneseAppState', JSON.stringify({
+    localStorage.setItem('cantoneseAppStateLinear', JSON.stringify({
         currentLessonIndex: appState.currentLessonIndex,
-        currentExerciseIndex: appState.currentExerciseIndex,
+        currentPageIndex: appState.currentPageIndex,
         results: appState.results
     }));
 }
 
 function saveResult(isCorrect) {
     if (!appState.results[appState.currentLessonIndex]) {
-        appState.results[appState.currentLessonIndex] = [];
+        appState.results[appState.currentLessonIndex] = {};
     }
-    // Prevent a 'true' from overwriting an earlier 'false' for this specific session
-    if (appState.results[appState.currentLessonIndex][appState.currentExerciseIndex] === false && isCorrect) {
+    // Prevent true overwriting an earlier false for this specific page
+    if (appState.results[appState.currentLessonIndex][appState.currentPageIndex] === false && isCorrect) {
         return;
     }
-    appState.results[appState.currentLessonIndex][appState.currentExerciseIndex] = isCorrect;
+    appState.results[appState.currentLessonIndex][appState.currentPageIndex] = isCorrect;
+}
+
+function nextStep() {
+    const lesson = appState.lessons[appState.currentLessonIndex];
+    if (appState.currentPageIndex < lesson.pages.length - 1) {
+        appState.currentPageIndex++;
+        renderCurrentState();
+    } else {
+        showCompletion();
+    }
+    saveState();
+}
+
+function setupNavigation() {
+    // Top-level Navigation elements
+    document.getElementById('next-btn').addEventListener('click', () => nextStep());
+    document.getElementById('start-lesson-btn').addEventListener('click', () => nextStep());
+    document.getElementById('learn-continue-btn').addEventListener('click', () => nextStep());
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        if (appState.currentPageIndex > 0) {
+            appState.currentPageIndex--;
+            renderCurrentState();
+        } else if (appState.currentLessonIndex > 0) {
+            appState.currentLessonIndex--;
+            const prevLesson = appState.lessons[appState.currentLessonIndex];
+            appState.currentPageIndex = prevLesson.pages.length - 1;
+            renderCurrentState();
+        }
+        saveState();
+    });
+
+    document.getElementById('next-lesson-btn').addEventListener('click', () => {
+        if (appState.currentLessonIndex < appState.lessons.length - 1) {
+            appState.currentLessonIndex++;
+            appState.currentPageIndex = 0;
+            hideCompletion();
+            renderCurrentState();
+            saveState();
+        }
+    });
+
+    document.getElementById('restart-lesson-btn').addEventListener('click', () => {
+        appState.currentPageIndex = 0;
+        appState.results[appState.currentLessonIndex] = {}; // Clear results for review
+        hideCompletion();
+        renderCurrentState();
+        saveState();
+    });
 }
 
 function setupExerciseActions() {
     document.getElementById('hint-btn').addEventListener('click', () => {
         const section = document.getElementById('translation-section');
         const lesson = appState.lessons[appState.currentLessonIndex];
-        const exercise = lesson.exercises[appState.currentExerciseIndex];
+        const page = lesson.pages[appState.currentPageIndex];
 
-        if (exercise.type === 'scrambled') {
+        if (page.exerciseType === 'scrambled') {
             const existing = document.getElementById('scrambled-hint');
             if (existing) {
                 existing.remove();
             } else {
                 const hintDiv = document.createElement('div');
                 hintDiv.id = 'scrambled-hint';
-                hintDiv.innerHTML = `<p style="color: #666; font-size: 1.4rem; font-style: italic; margin: 1rem 0;">Answer: ${exercise.text}</p>`;
+                hintDiv.innerHTML = `<p style="color: #666; font-size: 1.4rem; font-style: italic; margin: 1rem 0;">Answer: ${page.text}</p>`;
                 document.getElementById('english-prompt').insertAdjacentElement('afterend', hintDiv);
             }
         } else {
@@ -105,7 +154,7 @@ function setupExerciseActions() {
     
     document.getElementById('incorrect-btn').addEventListener('click', () => {
         saveResult(false);
-        nextStep(); // Revert back to continuing immediately for regular exercises
+        nextStep();
     });
 
     document.getElementById('retry-btn').addEventListener('click', () => {
@@ -122,7 +171,7 @@ function setupExerciseActions() {
 
     document.getElementById('check-scrambled-btn').addEventListener('click', () => {
         const lesson = appState.lessons[appState.currentLessonIndex];
-        const exercise = lesson.exercises[appState.currentExerciseIndex];
+        const page = lesson.pages[appState.currentPageIndex];
         const result = appState.scrambledSelection.map(s => s.t).join('');
         const statusEl = document.getElementById('scrambled-status');
         
@@ -131,135 +180,32 @@ function setupExerciseActions() {
         // Strip punctuation for comparison
         const stripPunct = (str) => str.replace(/[。，！？,.!?]/g, '').trim();
         
-        if (stripPunct(result) === stripPunct(exercise.text)) {
-            // Only award 'true' if they got it right on the first try (no prior false)
+        if (stripPunct(result) === stripPunct(page.text)) {
             saveResult(true);
             statusEl.textContent = 'Correct! 🎉';
             statusEl.classList.add('success');
             
-            // UI Transition: Hide scrambled UI, show reading/audio UI
+            // Transition UI
             document.getElementById('scrambled-display').classList.add('hidden');
             document.getElementById('exercise-prompt').classList.add('hidden');
             document.getElementById('reading-display').classList.remove('hidden');
             document.getElementById('translation-section').classList.remove('hidden');
             document.getElementById('english-translation').classList.remove('hidden');
             
-            // Hide assessment and retry actions, show single continue button
             document.getElementById('assessment-actions').classList.add('hidden');
             document.getElementById('retry-actions').classList.add('hidden');
             document.getElementById('continue-action').classList.remove('hidden');
             
-            // Remove hint if visible
             const hint = document.getElementById('scrambled-hint');
             if (hint) hint.remove();
         } else {
-            // First time they get it wrong, it marks as false
             saveResult(false);
             statusEl.textContent = 'Try again!';
             statusEl.classList.add('error');
             
-            // Hide Check Answer button, show Retry/Continue prompt
             document.getElementById('check-scrambled-btn').classList.add('hidden');
             document.getElementById('retry-actions').classList.remove('hidden');
         }
-    });
-}
-
-function nextStep() {
-    const lesson = appState.lessons[appState.currentLessonIndex];
-    if (appState.currentExerciseIndex < lesson.exercises.length - 1) {
-        appState.currentExerciseIndex++;
-        renderCurrentState();
-    } else {
-        showCompletion();
-    }
-    saveState();
-}
-
-function showCompletion() {
-    document.getElementById('completion-overlay').classList.remove('hidden');
-    
-    const lesson = appState.lessons[appState.currentLessonIndex];
-    const results = appState.results[appState.currentLessonIndex] || [];
-    
-    let correctCount = 0;
-    let wrongCount = 0;
-    
-    let correctHtml = '';
-    let wrongHtml = '';
-    
-    lesson.exercises.forEach((ex, idx) => {
-        const isCorrect = results[idx] === true;
-        
-        const itemHtml = `<div style="margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee;">
-            <div style="font-weight: bold;">Exercise ${idx + 1}</div>
-            <div style="color: #666; font-size: 0.9rem;">${ex.text}</div>
-            <div style="color: #666; font-size: 0.9rem; font-style: italic;">${ex.translation}</div>
-        </div>`;
-        
-        if (isCorrect) {
-            correctCount++;
-            correctHtml += itemHtml;
-        } else if (results[idx] === false) {
-            wrongCount++;
-            wrongHtml += itemHtml;
-        }
-    });
-    
-    document.getElementById('completion-stats').innerHTML = `
-        <div style="display: flex; gap: 2rem; text-align: left; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 250px; background: #fed7d7; padding: 1.5rem; border-radius: 8px; border: 1px solid #feb2b2;">
-                <h3 style="color: #822727; margin-top: 0; display: flex; justify-content: space-between;">
-                    <span>Review</span> <span>${wrongCount}</span>
-                </h3>
-                ${wrongHtml || '<p style="color: #666; font-style: italic;">None!</p>'}
-            </div>
-            <div style="flex: 1; min-width: 250px; background: #c6f6d5; padding: 1.5rem; border-radius: 8px; border: 1px solid #9ae6b4;">
-                <h3 style="color: #22543d; margin-top: 0; display: flex; justify-content: space-between;">
-                    <span>Mastered</span> <span>${correctCount}</span>
-                </h3>
-                ${correctHtml || '<p style="color: #666; font-style: italic;">None!</p>'}
-            </div>
-        </div>
-    `;
-}
-
-function hideCompletion() {
-    document.getElementById('completion-overlay').classList.add('hidden');
-}
-
-function setupNavigation() {
-    document.getElementById('next-btn').addEventListener('click', () => nextStep());
-
-    document.getElementById('prev-btn').addEventListener('click', () => {
-        if (appState.currentExerciseIndex > 0) {
-            appState.currentExerciseIndex--;
-            renderCurrentState();
-        } else if (appState.currentLessonIndex > 0) {
-            appState.currentLessonIndex--;
-            const prevLesson = appState.lessons[appState.currentLessonIndex];
-            appState.currentExerciseIndex = prevLesson.exercises.length - 1;
-            renderCurrentState();
-        }
-        saveState();
-    });
-
-    document.getElementById('next-lesson-btn').addEventListener('click', () => {
-        if (appState.currentLessonIndex < appState.lessons.length - 1) {
-            appState.currentLessonIndex++;
-            appState.currentExerciseIndex = 0;
-            hideCompletion();
-            renderCurrentState();
-            saveState();
-        }
-    });
-
-    document.getElementById('restart-lesson-btn').addEventListener('click', () => {
-        appState.currentExerciseIndex = 0;
-        appState.results[appState.currentLessonIndex] = []; // Clear results for review
-        hideCompletion();
-        renderCurrentState();
-        saveState();
     });
 }
 
@@ -267,7 +213,57 @@ function renderCurrentState() {
     const lesson = appState.lessons[appState.currentLessonIndex];
     if (!lesson) return;
 
-    // Reset UI states
+    const page = lesson.pages[appState.currentPageIndex];
+    if (!page) return;
+
+    // Hide all views first
+    document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+
+    // Update Progress Bar
+    const progress = ((appState.currentPageIndex + 1) / lesson.pages.length) * 100;
+    document.getElementById('progress-bar').style.width = `${progress}%`;
+
+    // Render based on type
+    if (page.type === 'intro') {
+        renderIntro(page);
+    } else if (page.type === 'learn') {
+        renderLearn(page);
+    } else if (page.type === 'practice') {
+        renderPractice(page);
+    }
+}
+
+function renderIntro(page) {
+    document.getElementById('intro-view').classList.remove('hidden');
+    document.getElementById('intro-title').textContent = page.title;
+    document.getElementById('intro-goal').textContent = page.goal;
+}
+
+function renderLearn(page) {
+    document.getElementById('learn-view').classList.remove('hidden');
+    document.getElementById('learn-title').textContent = page.title;
+    document.getElementById('learn-text').textContent = page.text || '';
+    
+    const vocabList = document.getElementById('learn-vocabulary-list');
+    vocabList.innerHTML = '';
+    
+    if (page.vocabulary && page.vocabulary.length > 0) {
+        page.vocabulary.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span class="vocab-term">${item.term}</span>
+                <span class="vocab-romanization">${item.romanization}</span>
+                <span class="vocab-meaning">${item.meaning}</span>
+            `;
+            vocabList.appendChild(li);
+        });
+    }
+}
+
+function renderPractice(page) {
+    document.getElementById('practice-view').classList.remove('hidden');
+    
+    // Reset internal states
     document.getElementById('translation-section').classList.add('hidden');
     document.getElementById('reading-display').classList.add('hidden');
     document.getElementById('scrambled-display').classList.add('hidden');
@@ -280,71 +276,41 @@ function renderCurrentState() {
     
     const existingHint = document.getElementById('scrambled-hint');
     if (existingHint) existingHint.remove();
-    
     appState.scrambledSelection = [];
 
-    // Render Lesson Meta
-    document.getElementById('lesson-title').textContent = lesson.title;
-    document.getElementById('lesson-goal').textContent = lesson.goal;
-    document.getElementById('grammar-content').textContent = lesson.grammar;
-    document.getElementById('culture-content').textContent = lesson.culture;
+    document.getElementById('english-translation').textContent = page.translation;
+    document.getElementById('chinese-text').textContent = page.text;
+    document.getElementById('romanization').textContent = page.romanization;
 
-    const vocabList = document.getElementById('vocabulary-list');
-    vocabList.innerHTML = '';
-    lesson.vocabulary.forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-            <span class="vocab-term">${item.term}</span>
-            <span class="vocab-romanization">${item.romanization}</span>
-            <span class="vocab-meaning">${item.meaning}</span>
-        `;
-        vocabList.appendChild(li);
-    });
-
-    // Render Current Exercise
-    const exercise = lesson.exercises[appState.currentExerciseIndex];
-    document.getElementById('exercise-number').textContent = `${appState.currentExerciseIndex + 1} / ${lesson.exercises.length}`;
-    document.getElementById('english-translation').textContent = exercise.translation;
-
-    // Always populate reading content so it's ready if revealed
-    document.getElementById('chinese-text').textContent = exercise.text;
-    document.getElementById('romanization').textContent = exercise.romanization;
-
-    if (exercise.type === 'scrambled') {
-        renderScrambled(exercise);
-        // Hide assessment actions for scrambled until solved
+    if (page.exerciseType === 'scrambled') {
         document.getElementById('assessment-actions').classList.add('hidden');
+        renderScrambled(page);
     } else {
-        renderReading(exercise);
-        document.getElementById('assessment-actions').classList.remove('hidden');
+        renderReading(page);
     }
 
-    const progress = ((appState.currentExerciseIndex + 1) / lesson.exercises.length) * 100;
-    document.getElementById('progress-bar').style.width = `${progress}%`;
-
     const audioPlayer = document.getElementById('audio-player');
-    audioPlayer.src = exercise.audio;
-    audioPlayer.load();
+    if (page.audio) {
+        audioPlayer.src = page.audio;
+        audioPlayer.load();
+    }
 }
 
-function renderReading(exercise) {
+function renderReading(page) {
     document.getElementById('reading-display').classList.remove('hidden');
-    document.getElementById('chinese-text').textContent = exercise.text;
-    document.getElementById('romanization').textContent = exercise.romanization;
 }
 
-function renderScrambled(exercise) {
+function renderScrambled(page) {
     document.getElementById('scrambled-display').classList.remove('hidden');
     document.getElementById('exercise-prompt').classList.remove('hidden');
-    document.getElementById('english-prompt').textContent = exercise.translation;
+    document.getElementById('english-prompt').textContent = page.translation;
     
     const slots = document.getElementById('scrambled-slots');
     const options = document.getElementById('scrambled-options');
     slots.innerHTML = '';
     options.innerHTML = '';
 
-    // Shuffle tokens
-    const shuffled = [...exercise.tokens].sort(() => Math.random() - 0.5);
+    const shuffled = [...page.tokens].sort(() => Math.random() - 0.5);
     
     shuffled.forEach((token, index) => {
         const btn = document.createElement('div');
@@ -377,7 +343,6 @@ function updateScrambledSlots() {
         `;
         btn.addEventListener('click', () => {
             appState.scrambledSelection.splice(idx, 1);
-            // Reset option state
             document.querySelectorAll('#scrambled-options .token').forEach(opt => {
                 const optText = opt.querySelector('.token-text').textContent;
                 if (optText === token.t && opt.classList.contains('selected')) {
@@ -388,6 +353,60 @@ function updateScrambledSlots() {
         });
         slots.appendChild(btn);
     });
+}
+
+function showCompletion() {
+    document.getElementById('completion-overlay').classList.remove('hidden');
+    
+    const lesson = appState.lessons[appState.currentLessonIndex];
+    const results = appState.results[appState.currentLessonIndex] || {};
+    
+    let correctCount = 0;
+    let wrongCount = 0;
+    
+    let correctHtml = '';
+    let wrongHtml = '';
+    
+    lesson.pages.forEach((page, idx) => {
+        // Only practice pages are graded
+        if (page.type !== 'practice') return;
+        
+        const isCorrect = results[idx] === true;
+        
+        const itemHtml = `<div style="margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee;">
+            <div style="font-weight: bold;">${page.text}</div>
+            <div style="color: #666; font-size: 0.9rem; font-style: italic;">${page.translation}</div>
+        </div>`;
+        
+        if (isCorrect) {
+            correctCount++;
+            correctHtml += itemHtml;
+        } else if (results[idx] === false) {
+            wrongCount++;
+            wrongHtml += itemHtml;
+        }
+    });
+    
+    document.getElementById('completion-stats').innerHTML = `
+        <div style="display: flex; gap: 2rem; text-align: left; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px; background: #fed7d7; padding: 1.5rem; border-radius: 8px; border: 1px solid #feb2b2;">
+                <h3 style="color: #822727; margin-top: 0; display: flex; justify-content: space-between;">
+                    <span>Review</span> <span>${wrongCount}</span>
+                </h3>
+                ${wrongHtml || '<p style="color: #666; font-style: italic;">None!</p>'}
+            </div>
+            <div style="flex: 1; min-width: 250px; background: #c6f6d5; padding: 1.5rem; border-radius: 8px; border: 1px solid #9ae6b4;">
+                <h3 style="color: #22543d; margin-top: 0; display: flex; justify-content: space-between;">
+                    <span>Mastered</span> <span>${correctCount}</span>
+                </h3>
+                ${correctHtml || '<p style="color: #666; font-style: italic;">None!</p>'}
+            </div>
+        </div>
+    `;
+}
+
+function hideCompletion() {
+    document.getElementById('completion-overlay').classList.add('hidden');
 }
 
 document.addEventListener('DOMContentLoaded', initApp);

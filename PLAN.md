@@ -17,19 +17,16 @@
 ## Phase 2 Tasks
 - [x] **Data Loading:** Implement `js/app.js` to fetch and parse `data/content.json`.
 - [x] **Lesson Renderer:** Create functions to inject lesson metadata and exercises into the DOM.
-- [x] **Navigation:** Add "Next/Previous" buttons for lesson/exercise navigation.
-- [x] **Persistence:** Use `localStorage` to save user's current lesson and completed exercises.
-- [x] **Progress UI:** Display a simple progress bar or checklist for lessons completed.
+- [x] **Linear Pedagogy Shift:** Transition from bulk meta-data rendering to a sequential, paginated experience (Intro -> Learn -> Practice).
+- [x] **Navigation:** Add "Next/Previous" buttons for page navigation.
+- [x] **Persistence:** Use `localStorage` to save user's current lesson and completed pages.
+- [x] **Progress UI:** Display a simple progress bar for pages completed.
 - [x] **UI/UX Refinement:**
-    - [x] Improved vocabulary list layout (grid of cards).
-    - [x] Modernized details/summary for lesson metadata.
-    - [x] Replaced default audio player with custom "Play" button and card layout.
-    - [x] Add "Lesson Complete" celebratory screen.
-    - [x] Improve mobile navigation and responsive layout.
-    - [x] Add loading states and error handling for data fetching.
-    - [x] Add translation toggle (show/hide English).
-    - [x] Add self-assessment buttons (Correct/Incorrect).
-    - [x] Implement "Scrambled Sentence" exercise type.
+    - [x] Implemented "Scrambled Sentence" exercise type.
+    - [x] Add translation toggle (Hint).
+    - [x] Add self-assessment buttons (Yes/No).
+    - [x] Built grid layout for lesson completion stats.
+
 - [ ] **Quality Review:** Review and refine the curriculum map and lesson content for clarity, pedagogical accuracy, and engagement.
 - [ ] **Content Expansion:** Create JSON files for Lessons 4-10 (A2 level).
 

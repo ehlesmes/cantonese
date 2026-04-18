@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2026-04-18
+- Redesigned the core UX to a linear, paginated format (Learn -> Practice -> Learn).
+- Restructured `data/content.json` to define lessons as a sequence of pages (`intro`, `learn`, `practice`).
+- Removed bulk upfront metadata (grammar, culture, vocab) in favor of targeted "Learn" pages woven between exercises.
+- Added macOS TTS generated `.m4a` audio files for all A1 lessons.
+
 ## [0.3.1] - 2026-04-18
 - Refined scrambled exercise logic to ignore punctuation during comparison.
 - Added token-level romanization for scrambled exercises.

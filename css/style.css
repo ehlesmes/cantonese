@@ -78,61 +78,15 @@ main {
     margin: 2rem 0;
 }
 
-details {
-    background: #ffffff;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-details[open] {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-summary {
-    font-weight: 600;
-    cursor: pointer;
-    padding: 1rem 1.5rem;
-    background: #f8f9fa;
-    outline: none;
+#learn-vocabulary-list {
     list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-summary::-webkit-details-marker {
-    display: none;
-}
-
-summary::before {
-    content: '▶';
-    display: inline-block;
-    margin-right: 0.8rem;
-    font-size: 0.8rem;
-    transition: transform 0.2s ease;
-}
-
-details[open] summary::before {
-    transform: rotate(90deg);
-}
-
-#grammar-content, #culture-content {
-    padding: 1.5rem;
-    border-top: 1px solid #e9ecef;
-}
-
-#vocabulary-list {
-    list-style: none;
-    padding: 1.5rem;
-    border-top: 1px solid #e9ecef;
+    padding: 1.5rem 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
 }
 
-#vocabulary-list li {
+#learn-vocabulary-list li {
     background: #fff;
     padding: 1rem;
     border: 1px solid #eee;
