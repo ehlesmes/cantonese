@@ -258,6 +258,26 @@ function renderLearn(page) {
             vocabList.appendChild(li);
         });
     }
+
+    const examplesList = document.getElementById('learn-examples-list');
+    const examplesHeading = document.getElementById('learn-examples-heading');
+    examplesList.innerHTML = '';
+    
+    if (page.examples && page.examples.length > 0) {
+        examplesHeading.classList.remove('hidden');
+        page.examples.forEach(ex => {
+            const li = document.createElement('li');
+            li.style.cssText = 'margin-bottom: 1rem; padding: 1rem; background: #fff; border-radius: 6px; border: 1px solid #eee;';
+            li.innerHTML = `
+                <div style="font-size: 1.4rem; font-weight: bold; color: #35424a;">${ex.text}</div>
+                <div style="color: #e8491d; font-style: italic; font-size: 0.9rem;">${ex.romanization}</div>
+                <div style="color: #666; margin-top: 0.5rem;">${ex.translation}</div>
+            `;
+            examplesList.appendChild(li);
+        });
+    } else {
+        examplesHeading.classList.add('hidden');
+    }
 }
 
 function renderPractice(page) {

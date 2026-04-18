@@ -18,6 +18,7 @@
 - [x] **Data Loading:** Implement `js/app.js` to fetch and parse `data/content.json`.
 - [x] **Lesson Renderer:** Create functions to inject lesson metadata and exercises into the DOM.
 - [x] **Linear Pedagogy Shift:** Transition from bulk meta-data rendering to a sequential, paginated experience (Intro -> Learn -> Practice).
+- [x] **Pedagogical Integrity:** Enforce strict rule: all vocabulary must be demonstrated in an example and practiced in an exercise.
 - [x] **Navigation:** Add "Next/Previous" buttons for page navigation.
 - [x] **Persistence:** Use `localStorage` to save user's current lesson and completed pages.
 - [x] **Progress UI:** Display a simple progress bar for pages completed.
@@ -26,8 +27,9 @@
     - [x] Add translation toggle (Hint).
     - [x] Add self-assessment buttons (Yes/No).
     - [x] Built grid layout for lesson completion stats.
+    - [x] Render "Examples" lists inside "Learn" pages.
 
-- [ ] **Quality Review:** Review and refine the curriculum map and lesson content for clarity, pedagogical accuracy, and engagement.
+- [x] **Quality Review:** Review and refine the curriculum map and lesson content for clarity, pedagogical accuracy, and engagement.
 - [ ] **Content Expansion:** Create JSON files for Lessons 4-10 (A2 level).
 
 ## Phase 3 Tasks

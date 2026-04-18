@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.1] - 2026-04-18
+- Enforced strict pedagogical rule: Every vocabulary item on a "Learn" page MUST be explicitly used in an "Example" and subsequently tested in a "Practice" exercise.
+- Updated `content.json` to include detailed arrays of `examples` for every `learn` section.
+- Added visual rendering logic to `js/app.js` and `index.html` to seamlessly display Examples directly below the Vocabulary lists.
+- Updated Markdown documentation (`PLAN.md`, `CURRICULUM.md`, `CHANGELOG.md`) to explicitly declare these learning criteria.
+
 ## [0.4.0] - 2026-04-18
 - Redesigned the core UX to a linear, paginated format (Learn -> Practice -> Learn).
 - Restructured `data/content.json` to define lessons as a sequence of pages (`intro`, `learn`, `practice`).
