@@ -23,11 +23,11 @@
 - [x] **Persistence:** Use `localStorage` to save user's current lesson and completed pages.
 - [x] **Progress UI:** Display a simple progress bar for pages completed.
 - [x] **UI/UX Refinement:**
-    - [x] Implemented "Scrambled Sentence" exercise type.
     - [x] Stabilize layout shifting on Scrambled drag/drop actions and fix footer sizes.
     - [x] Hide romanization until character hover to test memory retention.
     - [x] Built side-by-side layout for lesson completion stats.
     - [x] Weave grammar, vocabulary, and examples into organic rich-text `Learn` paragraphs.
+    - [x] Streamline view: remove floating chip layout, shrink header/footer, add subtle borders, and replace "Yes/No" with direct actions.
 
 - [x] **Quality Review:** Review and refine the curriculum map and lesson content for clarity, pedagogical accuracy, and engagement.
 - [ ] **Content Expansion:** Create JSON files for Lessons 4-10 (A2 level).

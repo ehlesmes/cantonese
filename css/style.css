@@ -3,22 +3,22 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff; /* Changed to white */
     color: #333;
-    padding-bottom: 140px; /* Space for fixed footer */
+    padding-bottom: 90px; /* Reduced space for smaller footer */
 }
 
 #app-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1rem; /* Smaller padding */
     background: #fff;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid #eaeaea; /* Separation border */
     position: sticky;
     top: 0;
     z-index: 50;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04); /* Subtle shadow */
 }
 
 .nav-btn {
@@ -50,17 +50,17 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 140px; /* Consistent footer size */
+    min-height: 80px; /* Reduced footer size */
     background: #fff;
-    border-top: 1px solid #e9ecef;
-    padding: 1.2rem;
+    border-top: 1px solid #eaeaea; /* Separation border */
+    padding: 1rem; /* Smaller padding */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 50;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04); /* Subtle shadow */
 }
 
 #app-footer > * {
@@ -76,19 +76,19 @@ body {
 
 main {
     max-width: 900px;
-    margin: 1rem auto;
-    padding: 1rem;
+    margin: 0 auto;
+    padding: 2rem 1rem; /* Adjusted padding */
     background: transparent;
     box-shadow: none;
     position: relative;
 }
 
+/* Removed floating chip style entirely */
 .card {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.06);
-    padding: 2.5rem;
-    border: 1px solid #e9ecef;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 #progress-bar {
@@ -301,13 +301,20 @@ main {
     border: 1px solid #feb2b2;
 }
 
+.action-btn, .secondary-btn, .success-btn, .error-btn {
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
 .action-btn {
     background-color: #3182ce;
     width: 100%;
-    margin-top: 1rem;
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: 600;
 }
 
 .secondary-btn {

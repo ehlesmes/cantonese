@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <section id="page-card" class="card" style="text-align: center;">
+        <section id="page-card" style="text-align: center; max-width: 800px; margin: 0 auto;">
             <!-- Intro View -->
             <div id="intro-view" class="view hidden">
                 <h2 id="intro-title" style="font-size: 2rem; color: #35424a;"></h2>
@@ -46,7 +46,7 @@
             <!-- Practice View -->
             <div id="practice-view" class="view hidden">
                 <header class="exercise-header">
-                    <h3>Practice</h3>
+                    <h3 style="margin-top: 0;">Practice</h3>
                 </header>
                 
                 <div id="exercise-content" style="display: flex; flex-direction: column; align-items: center; gap: 2rem; margin: 2rem 0;">
@@ -100,18 +100,16 @@
 
         <!-- Practice Reading Assessment -->
         <div id="assessment-actions" class="hidden" style="width: 100%;">
-            <p>Did you get it right?</p>
             <div class="btn-group" style="display: flex; gap: 1rem;">
-                <button id="incorrect-btn" class="error-btn" style="flex: 1; padding: 1rem; border-radius: 8px; border: none; color: white; font-size: 1.1rem; cursor: pointer;">No</button>
-                <button id="correct-btn" class="success-btn" style="flex: 1; padding: 1rem; border-radius: 8px; border: none; color: white; font-size: 1.1rem; cursor: pointer;">Yes</button>
+                <button id="incorrect-btn" class="error-btn" style="flex: 1; margin: 0;">Need to review</button>
+                <button id="correct-btn" class="success-btn" style="flex: 1; margin: 0;">Continue</button>
             </div>
         </div>
 
         <!-- Practice Retry -->
         <div id="retry-actions" class="hidden" style="width: 100%;">
-            <p>Would you like to try again or continue?</p>
             <div class="btn-group" style="display: flex; gap: 1rem;">
-                <button id="retry-btn" class="secondary-btn" style="flex: 1; margin: 0; border: none; color: white; border-radius: 8px; cursor: pointer;">Try Again</button>
+                <button id="retry-btn" class="secondary-btn" style="flex: 1; margin: 0;">Try Again</button>
                 <button id="continue-btn" class="action-btn" style="flex: 1; margin: 0;">Continue</button>
             </div>
         </div>

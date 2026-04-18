@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.3] - 2026-04-18
+- Redesigned the main app view to eliminate the floating 'card' style, opting for a seamless edge-to-edge layout with a clean white background.
+- Reduced the header and footer sizes (`80px` min-height) to maximize the readable content area.
+- Added subtle box-shadows and borders to clearly delineate the sticky header and fixed footer.
+- Streamlined practice assessment buttons: replaced the "Did you get it right?" prompt and "Yes/No" buttons with clean, direct actions ("Need to review" and "Continue").
+
 ## [0.4.2] - 2026-04-18
 - Stabilized Scrambled Exercise containers with strict `min-height` and fixed token heights to prevent UI layout shifting.
 - Unified `#app-footer` to have a strictly fixed height (`140px`) globally for a consistent UX across all pages.
