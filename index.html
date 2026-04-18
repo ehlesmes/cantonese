@@ -12,8 +12,8 @@
     </header>
     <div id="loading-state" class="hidden">Loading...</div>
     <main id="app">
-        <div id="completion-overlay" class="hidden">
-            <div id="completion-content">
+        <div id="completion-overlay" class="hidden" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 100vh; background: rgba(255, 255, 255, 0.95); display: flex; justify-content: center; align-items: flex-start; z-index: 100; border-radius: 12px; overflow-y: auto; padding: 2rem 0;">
+            <div id="completion-content" style="width: 100%; max-width: 800px; margin: auto;">
                 <h2>Lesson Complete! 🎉</h2>
                 <p>Congratulations! you have finished this lesson.</p>
                 <div id="completion-stats" style="margin: 2rem 0;"></div>
@@ -82,6 +82,13 @@
                         <div class="btn-group">
                             <button id="incorrect-btn" class="error-btn">No</button>
                             <button id="correct-btn" class="success-btn">Yes</button>
+                        </div>
+                    </div>
+                    <div id="retry-actions" class="hidden">
+                        <p>Would you like to try again or continue?</p>
+                        <div class="btn-group">
+                            <button id="retry-btn" class="secondary-btn">Try Again</button>
+                            <button id="continue-btn" class="action-btn" style="margin-top: 0;">Continue</button>
                         </div>
                     </div>
                 </div>

@@ -65,6 +65,10 @@ function saveResult(isCorrect) {
     if (!appState.results[appState.currentLessonIndex]) {
         appState.results[appState.currentLessonIndex] = [];
     }
+    // Prevent a 'true' from overwriting an earlier 'false' for this specific session
+    if (appState.results[appState.currentLessonIndex][appState.currentExerciseIndex] === false && isCorrect) {
+        return;
+    }
     appState.results[appState.currentLessonIndex][appState.currentExerciseIndex] = isCorrect;
 }
 
@@ -101,6 +105,15 @@ function setupExerciseActions() {
     
     document.getElementById('incorrect-btn').addEventListener('click', () => {
         saveResult(false);
+        document.getElementById('assessment-actions').classList.add('hidden');
+        document.getElementById('retry-actions').classList.remove('hidden');
+    });
+
+    document.getElementById('retry-btn').addEventListener('click', () => {
+        renderCurrentState(); // Resets the exercise
+    });
+
+    document.getElementById('continue-btn').addEventListener('click', () => {
         nextStep();
     });
 
@@ -116,6 +129,8 @@ function setupExerciseActions() {
         const stripPunct = (str) => str.replace(/[。，！？,.!?]/g, '').trim();
         
         if (stripPunct(result) === stripPunct(exercise.text)) {
+            // Only award 'true' if they got it right on the first try (no prior false)
+            saveResult(true);
             statusEl.textContent = 'Correct! 🎉';
             statusEl.classList.add('success');
             
@@ -125,11 +140,14 @@ function setupExerciseActions() {
             document.getElementById('reading-display').classList.remove('hidden');
             document.getElementById('translation-section').classList.remove('hidden');
             document.getElementById('english-translation').classList.remove('hidden');
+            document.getElementById('assessment-actions').classList.remove('hidden');
             
             // Remove hint if visible
             const hint = document.getElementById('scrambled-hint');
             if (hint) hint.remove();
         } else {
+            // First time they get it wrong, it marks as false
+            saveResult(false);
             statusEl.textContent = 'Try again!';
             statusEl.classList.add('error');
         }
@@ -156,30 +174,42 @@ function showCompletion() {
     let correctCount = 0;
     let wrongCount = 0;
     
-    let statsHtml = `<ul style="text-align: left; max-height: 250px; overflow-y: auto; background: #f8f9fa; padding: 1rem; border-radius: 8px; list-style: none;">`;
+    let correctHtml = '';
+    let wrongHtml = '';
     
     lesson.exercises.forEach((ex, idx) => {
         const isCorrect = results[idx] === true;
-        if (isCorrect) correctCount++;
-        else if (results[idx] === false) wrongCount++;
         
-        const icon = isCorrect ? '✅' : '❌';
-        statsHtml += `<li style="margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee;">
-            <div style="font-weight: bold;">${icon} Exercise ${idx + 1}</div>
+        const itemHtml = `<div style="margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee;">
+            <div style="font-weight: bold;">Exercise ${idx + 1}</div>
             <div style="color: #666; font-size: 0.9rem;">${ex.text}</div>
             <div style="color: #666; font-size: 0.9rem; font-style: italic;">${ex.translation}</div>
-        </li>`;
+        </div>`;
+        
+        if (isCorrect) {
+            correctCount++;
+            correctHtml += itemHtml;
+        } else if (results[idx] === false) {
+            wrongCount++;
+            wrongHtml += itemHtml;
+        }
     });
     
-    statsHtml += `</ul>`;
-    
     document.getElementById('completion-stats').innerHTML = `
-        <h3 style="color: #35424a;">Results Summary</h3>
-        <p style="font-size: 1.1rem; font-weight: bold;">
-            <span style="color: #27ae60;">Correct: ${correctCount}</span> | 
-            <span style="color: #c0392b;">Incorrect: ${wrongCount}</span>
-        </p>
-        ${statsHtml}
+        <div style="display: flex; gap: 2rem; text-align: left; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px; background: #fed7d7; padding: 1.5rem; border-radius: 8px; border: 1px solid #feb2b2;">
+                <h3 style="color: #822727; margin-top: 0; display: flex; justify-content: space-between;">
+                    <span>Review</span> <span>${wrongCount}</span>
+                </h3>
+                ${wrongHtml || '<p style="color: #666; font-style: italic;">None!</p>'}
+            </div>
+            <div style="flex: 1; min-width: 250px; background: #c6f6d5; padding: 1.5rem; border-radius: 8px; border: 1px solid #9ae6b4;">
+                <h3 style="color: #22543d; margin-top: 0; display: flex; justify-content: space-between;">
+                    <span>Mastered</span> <span>${correctCount}</span>
+                </h3>
+                ${correctHtml || '<p style="color: #666; font-style: italic;">None!</p>'}
+            </div>
+        </div>
     `;
 }
 
@@ -232,6 +262,8 @@ function renderCurrentState() {
     document.getElementById('scrambled-display').classList.add('hidden');
     document.getElementById('exercise-prompt').classList.add('hidden');
     document.getElementById('scrambled-status').classList.add('hidden');
+    document.getElementById('retry-actions').classList.add('hidden');
+    document.getElementById('assessment-actions').classList.remove('hidden');
     
     const existingHint = document.getElementById('scrambled-hint');
     if (existingHint) existingHint.remove();
@@ -267,8 +299,11 @@ function renderCurrentState() {
 
     if (exercise.type === 'scrambled') {
         renderScrambled(exercise);
+        // Hide assessment actions for scrambled until solved
+        document.getElementById('assessment-actions').classList.add('hidden');
     } else {
         renderReading(exercise);
+        document.getElementById('assessment-actions').classList.remove('hidden');
     }
 
     const progress = ((appState.currentExerciseIndex + 1) / lesson.exercises.length) * 100;
