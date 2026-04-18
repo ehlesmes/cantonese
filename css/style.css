@@ -1,0 +1,387 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-bottom: #e8491d 4px solid;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+    position: relative;
+}
+
+#exercise-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#exercise-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.icon-btn {
+    background-color: #e8491d;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon-btn:hover {
+    background-color: #35424a;
+    transform: scale(1.05);
+}
+
+#progress-container {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-top: 1rem;
+    height: 10px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #e8491d;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#lesson-meta {
+    margin: 2rem 0;
+}
+
+details {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+details[open] {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    outline: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '▶';
+    display: inline-block;
+    margin-right: 0.8rem;
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+#grammar-content, #culture-content {
+    padding: 1.5rem;
+    border-top: 1px solid #e9ecef;
+}
+
+#vocabulary-list {
+    list-style: none;
+    padding: 1.5rem;
+    border-top: 1px solid #e9ecef;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+#vocabulary-list li {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.vocab-term {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #35424a;
+    display: block;
+}
+
+.vocab-romanization {
+    color: #e8491d;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.vocab-meaning {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+#chinese-text {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #35424a;
+}
+
+#romanization {
+    font-size: 1.2rem;
+    color: #666;
+    font-style: italic;
+}
+
+#exercise-actions {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.prompt-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.translation-text {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin: 1rem 0;
+}
+
+.secondary-btn {
+    background-color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+#assessment-actions p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.success-btn {
+    background-color: #27ae60;
+}
+
+.error-btn {
+    background-color: #c0392b;
+}
+
+.slots-container, .options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    min-height: 3rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.slots-container {
+    background-color: #edf2f7;
+    border: 2px dashed #cbd5e0;
+}
+
+.token {
+    background-color: #fff;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 3rem;
+    transition: all 0.2s ease;
+}
+
+.token .token-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #35424a;
+}
+
+.token .token-romanization {
+    font-size: 0.8rem;
+    color: #e8491d;
+    font-style: italic;
+    margin-top: 0.2rem;
+}
+
+.token:hover {
+    background-color: #f7fafc;
+    border-color: #3182ce;
+}
+
+.token.selected {
+    opacity: 0.3;
+    cursor: default;
+    transform: scale(0.95);
+}
+
+.status-message {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.status-message.success {
+    background-color: #c6f6d5;
+    color: #22543d;
+    border: 1px solid #9ae6b4;
+}
+
+.status-message.error {
+    background-color: #fed7d7;
+    color: #822727;
+    border: 1px solid #feb2b2;
+}
+
+.action-btn {
+    background-color: #3182ce;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.secondary-btn {
+    background-color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+#assessment-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.success-btn, .error-btn {
+    flex: 1;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#completion-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 12px;
+}
+
+#completion-content {
+    text-align: center;
+    padding: 3rem;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#completion-content h2 {
+    font-size: 2.5rem;
+    color: #e8491d;
+    margin-bottom: 1rem;
+}
+
+#completion-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+#loading-state {
+    text-align: center;
+    padding: 5rem;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+#completion-content button {
+    margin: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 0;
+        padding: 1.5rem;
+        border-radius: 0;
+    }
+
+    #exercise-card {
+        padding: 1.5rem;
+    }
+
+    #chinese-text {
+        font-size: 2rem;
+    }
+
+    #vocabulary-list {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}

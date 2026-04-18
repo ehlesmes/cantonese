@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantonese Learning App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cantonese Learning App</h1>
+    </header>
+    <div id="loading-state" class="hidden">Loading...</div>
+    <main id="app">
+        <div id="completion-overlay" class="hidden">
+            <div id="completion-content">
+                <h2>Lesson Complete! 🎉</h2>
+                <p>Congratulations! you have finished this lesson.</p>
+                <button id="next-lesson-btn">Next Lesson</button>
+                <button id="restart-lesson-btn">Review Lesson</button>
+            </div>
+        </div>
+
+        <header id="lesson-header">
+            <h2 id="lesson-title"></h2>
+            <p id="lesson-goal"></p>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+        </header>
+
+        <section id="lesson-meta">
+            <details id="grammar-section">
+                <summary>Grammar Notes</summary>
+                <div id="grammar-content"></div>
+            </details>
+            <details id="vocabulary-section">
+                <summary>Vocabulary</summary>
+                <ul id="vocabulary-list"></ul>
+            </details>
+            <details id="culture-section">
+                <summary>Culture Notes</summary>
+                <div id="culture-content"></div>
+            </details>
+        </section>
+
+        <section id="exercise-card">
+            <header class="exercise-header">
+                <h3>Exercise <span id="exercise-number"></span></h3>
+                <div id="exercise-prompt" class="hidden">Translate this sentence:</div>
+            </header>
+            
+            <div id="exercise-content">
+                <!-- Reading Mode -->
+                <div id="reading-display">
+                    <div id="text-display">
+                        <div id="chinese-text"></div>
+                        <div id="romanization"></div>
+                    </div>
+                    <button id="play-btn" class="icon-btn">🔊 Play</button>
+                </div>
+
+                <!-- Scrambled Mode -->
+                <div id="scrambled-display" class="hidden">
+                    <div id="english-prompt" class="prompt-text"></div>
+                    <div id="scrambled-slots" class="slots-container"></div>
+                    <div id="scrambled-options" class="options-container"></div>
+                    <div id="scrambled-status" class="status-message hidden"></div>
+                    <button id="check-scrambled-btn" class="action-btn">Check Answer</button>
+                </div>
+                
+                <div id="translation-section" class="hidden">
+                    <hr>
+                    <div id="english-translation" class="translation-text"></div>
+                </div>
+
+                <div id="exercise-actions">
+                    <button id="hint-btn" class="secondary-btn">Hint</button>
+                    <div id="assessment-actions">
+                        <p>Did you get it right?</p>
+                        <div class="btn-group">
+                            <button id="correct-btn" class="success-btn">Yes, I did!</button>
+                            <button id="incorrect-btn" class="error-btn">No, not yet.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <audio id="audio-player">
+                <source src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <nav id="navigation">
+            <button id="prev-btn">Previous</button>
+            <button id="next-btn">Next</button>
+        </nav>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

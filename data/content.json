@@ -1,0 +1,193 @@
+[
+  {
+    "id": "lesson-1",
+    "title": "Introduction to Cantonese",
+    "goal": "Greeting people and asking for names",
+    "grammar": "Basic sentence structure: Subject-Verb-Object. '你' (nei5) is 'you', '係' (hai6) is 'to be'. The particle '呢' (ne1) is used as a tag question, like 'how about...?'",
+    "vocabulary": [
+      {"term": "你好", "romanization": "nei5 hou2", "meaning": "Hello"},
+      {"term": "你", "romanization": "nei5", "meaning": "You"},
+      {"term": "我", "romanization": "ngo5", "meaning": "I"},
+      {"term": "係", "romanization": "hai6", "meaning": "To be"},
+      {"term": "叫", "romanization": "giu3", "meaning": "To be called"},
+      {"term": "咩", "romanization": "me1", "meaning": "What (in questions)"},
+      {"term": "名", "romanization": "meng2", "meaning": "Name"}
+    ],
+    "culture": "Cantonese greetings are often informal. Asking for names directly is common but '呢' helps soften the interaction.",
+    "exercises": [
+      {"id": 1, "type": "reading", "text": "你好！", "romanization": "nei5 hou2!", "translation": "Hello!", "audio": "audio/lesson1/1.mp3"},
+      {"id": 2, "type": "reading", "text": "你叫咩名？", "romanization": "nei5 giu3 me1 meng2?", "translation": "What is your name?", "audio": "audio/lesson1/2.mp3"},
+      {
+        "id": 3, 
+        "type": "scrambled", 
+        "text": "我叫小明。", 
+        "tokens": [
+          {"t": "我", "r": "ngo5"},
+          {"t": "叫", "r": "giu3"},
+          {"t": "小明", "r": "siu2 ming4"}
+        ], 
+        "romanization": "ngo5 giu3 siu2 ming4.", 
+        "translation": "My name is Siu Ming.", 
+        "audio": "audio/lesson1/3.mp3"
+      },
+      {"id": 4, "type": "reading", "text": "你呢？", "romanization": "nei5 ne1?", "translation": "How about you?", "audio": "audio/lesson1/4.mp3"},
+      {"id": 5, "type": "reading", "text": "早晨。", "romanization": "zou2 san4.", "translation": "Good morning.", "audio": "audio/lesson1/5.mp3"},
+      {"id": 6, "type": "reading", "text": "再見。", "romanization": "zoi3 gin3.", "translation": "Goodbye.", "audio": "audio/lesson1/6.mp3"},
+      {
+        "id": 7, 
+        "type": "scrambled", 
+        "text": "你係邊個？", 
+        "tokens": [
+          {"t": "你", "r": "nei5"},
+          {"t": "係", "r": "hai6"},
+          {"t": "邊個", "r": "bin1 go3"}
+        ], 
+        "romanization": "nei5 hai6 bin1 go3?", 
+        "translation": "Who are you?", 
+        "audio": "audio/lesson1/7.mp3"
+      },
+      {"id": 8, "type": "reading", "text": "我係學生。", "romanization": "ngo5 hai6 hok6 saang1.", "translation": "I am a student.", "audio": "audio/lesson1/8.mp3"},
+      {
+        "id": 9, 
+        "type": "scrambled", 
+        "text": "你好，我係David。", 
+        "tokens": [
+          {"t": "你好", "r": "nei5 hou2"},
+          {"t": "我", "r": "ngo5"},
+          {"t": "係", "r": "hai6"},
+          {"t": "David", "r": "David"}
+        ], 
+        "romanization": "nei5 hou2, ngo5 hai6 David.", 
+        "translation": "Hello, I am David.", 
+        "audio": "audio/lesson1/9.mp3"
+      },
+      {"id": 10, "type": "reading", "text": "唔好意思。", "romanization": "m4 hou2 ji3 si1.", "translation": "Excuse me / Sorry.", "audio": "audio/lesson1/10.mp3"}
+    ]
+  },
+  {
+    "id": "lesson-2",
+    "title": "Daily Needs",
+    "goal": "Shopping and ordering food",
+    "grammar": "Using '我要' (ngo5 jiu3) for 'I want'. Cantonese uses classifiers (like '個' - go3) before nouns, especially after numbers.",
+    "vocabulary": [
+      {"term": "我要", "romanization": "ngo5 jiu3", "meaning": "I want"},
+      {"term": "個", "romanization": "go3", "meaning": "Classifier"},
+      {"term": "幾多錢", "romanization": "gei2 do1 cin2", "meaning": "How much money?"},
+      {"term": "唔該", "romanization": "m4 goi1", "meaning": "Thank you/Please"},
+      {"term": "多謝", "romanization": "do1 ze6", "meaning": "Thank you (for a gift)"},
+      {"term": "一杯", "romanization": "jat1 bui1", "meaning": "One cup of"}
+    ],
+    "culture": "In a cha chaan teng (Hong Kong style café), '唔該' is the magic word for ordering, asking for the bill, or requesting water.",
+    "exercises": [
+      {"id": 1, "type": "reading", "text": "我要一個菠蘿包。", "romanization": "ngo5 jiu3 jat1 go3 bo1 lo4 baau1.", "translation": "I want a pineapple bun.", "audio": "audio/lesson2/1.mp3"},
+      {"id": 2, "type": "reading", "text": "呢個幾多錢？", "romanization": "ni1 go3 gei2 do1 cin2?", "translation": "How much is this?", "audio": "audio/lesson2/2.mp3"},
+      {"id": 3, "type": "reading", "text": "唔該。", "romanization": "m4 goi1.", "translation": "Please / Thank you.", "audio": "audio/lesson2/3.mp3"},
+      {
+        "id": 4, 
+        "type": "scrambled", 
+        "text": "我要一杯奶茶。", 
+        "tokens": [
+          {"t": "我", "r": "ngo5"},
+          {"t": "要", "r": "jiu3"},
+          {"t": "一杯", "r": "jat1 bui1"},
+          {"t": "奶茶", "r": "naai5 caa4"}
+        ], 
+        "romanization": "ngo5 jiu3 jat1 bui1 naai5 caa4.", 
+        "translation": "I want a cup of milk tea.", 
+        "audio": "audio/lesson2/4.mp3"
+      },
+      {"id": 5, "type": "reading", "text": "好貴呀。", "romanization": "hou2 gwai3 aa3.", "translation": "It's so expensive.", "audio": "audio/lesson2/5.mp3"},
+      {"id": 6, "type": "reading", "text": "好平。", "romanization": "hou2 peng4.", "translation": "It's very cheap.", "audio": "audio/lesson2/6.mp3"},
+      {
+        "id": 7, 
+        "type": "scrambled", 
+        "text": "有冇水？", 
+        "tokens": [
+          {"t": "有冇", "r": "jau5 mou5"},
+          {"t": "水", "r": "seoi2"}
+        ], 
+        "romanization": "jau5 mou5 seoi2?", 
+        "translation": "Do you have water?", 
+        "audio": "audio/lesson2/7.mp3"
+      },
+      {"id": 8, "type": "reading", "text": "我唔要。", "romanization": "ngo5 m4 jiu3.", "translation": "I don't want (it).", "audio": "audio/lesson2/8.mp3"},
+      {"id": 9, "type": "reading", "text": "多謝晒。", "romanization": "do1 ze6 saai3.", "translation": "Thank you very much.", "audio": "audio/lesson2/9.mp3"},
+      {
+        "id": 10, 
+        "type": "scrambled", 
+        "text": "唔該，埋單。", 
+        "tokens": [
+          {"t": "唔該", "r": "m4 goi1"},
+          {"t": "埋單", "r": "maai4 daan1"}
+        ], 
+        "romanization": "m4 goi1, maai4 daan1.", 
+        "translation": "The bill, please.", 
+        "audio": "audio/lesson2/10.mp3"
+      }
+    ]
+  },
+  {
+    "id": "lesson-3",
+    "title": "Time & Routines",
+    "goal": "Discussing time and daily schedule",
+    "grammar": "Time markers typically come before the verb. '依家' (ji1 gaa1) is 'now'.",
+    "vocabulary": [
+      {"term": "依家", "romanization": "ji1 gaa1", "meaning": "Now"},
+      {"term": "幾點", "romanization": "gei2 dim2", "meaning": "What time?"},
+      {"term": "早", "romanization": "zou2", "meaning": "Morning"},
+      {"term": "晏晝", "romanization": "aan3 zau3", "meaning": "Afternoon"},
+      {"term": "晚", "romanization": "maan5", "meaning": "Evening"},
+      {"term": "食飯", "romanization": "sik6 faan6", "meaning": "To eat meal"},
+      {"term": "起身", "romanization": "hei2 san1", "meaning": "Get up"}
+    ],
+    "culture": "Cantonese divides the day clearly with time-related vocabulary. Asking '食咗飯未?' (Have you eaten yet?) is a common social greeting similar to 'How are you?'.",
+    "exercises": [
+      {"id": 1, "type": "reading", "text": "依家幾點？", "romanization": "ji1 gaa1 gei2 dim2?", "translation": "What time is it now?", "audio": "audio/lesson3/1.mp3"},
+      {"id": 2, "type": "reading", "text": "我晏晝食飯。", "romanization": "ngo5 aan3 zau3 sik6 faan6.", "translation": "I eat in the afternoon.", "audio": "audio/lesson3/2.mp3"},
+      {"id": 3, "type": "reading", "text": "聽晚見。", "romanization": "teng1 maan5 gin3.", "translation": "See you tomorrow night.", "audio": "audio/lesson3/3.mp3"},
+      {
+        "id": 4, 
+        "type": "scrambled", 
+        "text": "你幾點起身？", 
+        "tokens": [
+          {"t": "你", "r": "nei5"},
+          {"t": "幾點", "r": "gei2 dim2"},
+          {"t": "起身", "r": "hei2 san1"}
+        ], 
+        "romanization": "nei5 gei2 dim2 hei2 san1?", 
+        "translation": "What time do you get up?", 
+        "audio": "audio/lesson3/4.mp3"
+      },
+      {"id": 5, "type": "reading", "text": "我七點起身。", "romanization": "ngo5 cat1 dim2 hei2 san1.", "translation": "I get up at seven.", "audio": "audio/lesson3/5.mp3"},
+      {"id": 6, "type": "reading", "text": "成日都落雨。", "romanization": "seng4 jat6 dou1 lok6 jyu5.", "translation": "It rains all day.", "audio": "audio/lesson3/6.mp3"},
+      {"id": 7, "type": "reading", "text": "有時好熱。", "romanization": "jau5 si4 hou2 jit6.", "translation": "Sometimes it's very hot.", 
+      "audio": "audio/lesson3/7.mp3"},
+      {
+        "id": 8, 
+        "type": "scrambled", 
+        "text": "聽日係星期幾？", 
+        "tokens": [
+          {"t": "聽日", "r": "teng1 jat6"},
+          {"t": "係", "r": "hai6"},
+          {"t": "星期幾", "r": "sing1 kei4 gei2"}
+        ], 
+        "romanization": "teng1 jat6 hai6 sing1 kei4 gei2?", 
+        "translation": "What day is tomorrow?", 
+        "audio": "audio/lesson3/8.mp3"
+      },
+      {"id": 9, "type": "reading", "text": "今晚有時間。", "romanization": "gam1 maan5 jau5 si4 gaan3.", "translation": "I have time tonight.", "audio": "audio/lesson3/9.mp3"},
+      {
+        "id": 10, 
+        "type": "scrambled", 
+        "text": "差唔多啦。", 
+        "tokens": [
+          {"t": "差唔多", "r": "caa1 m4 do1"},
+          {"t": "啦", "r": "laa1"}
+        ], 
+        "romanization": "caa1 m4 do1 laa1.", 
+        "translation": "Almost there / That's about it.", 
+        "audio": "audio/lesson3/10.mp3"
+      }
+    ]
+  }
+]
