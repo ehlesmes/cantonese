@@ -28,6 +28,8 @@ async function initApp() {
         
         loadingState.classList.add('hidden');
         appElement.classList.remove('hidden');
+        document.getElementById('app-header').classList.remove('hidden');
+        document.getElementById('app-footer').classList.remove('hidden');
     } catch (error) {
         console.error("Error initializing app:", error);
         loadingState.textContent = "Error loading content. Please try again later.";
@@ -194,7 +196,8 @@ function setupExerciseActions() {
             
             document.getElementById('assessment-actions').classList.add('hidden');
             document.getElementById('retry-actions').classList.add('hidden');
-            document.getElementById('continue-action').classList.remove('hidden');
+            document.getElementById('check-scrambled-btn').classList.add('hidden');
+            document.getElementById('scrambled-continue-btn').classList.remove('hidden');
             
             const hint = document.getElementById('scrambled-hint');
             if (hint) hint.remove();
@@ -209,6 +212,16 @@ function setupExerciseActions() {
     });
 }
 
+function resetFooter() {
+    document.getElementById('start-lesson-btn').classList.add('hidden');
+    document.getElementById('learn-continue-btn').classList.add('hidden');
+    document.getElementById('check-scrambled-btn').classList.add('hidden');
+    document.getElementById('scrambled-continue-btn').classList.add('hidden');
+    document.getElementById('assessment-actions').classList.add('hidden');
+    document.getElementById('retry-actions').classList.add('hidden');
+    document.getElementById('hint-btn-container').classList.add('hidden');
+}
+
 function renderCurrentState() {
     const lesson = appState.lessons[appState.currentLessonIndex];
     if (!lesson) return;
@@ -218,6 +231,7 @@ function renderCurrentState() {
 
     // Hide all views first
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+    resetFooter();
 
     // Update Progress Bar
     const progress = ((appState.currentPageIndex + 1) / lesson.pages.length) * 100;
@@ -237,12 +251,14 @@ function renderIntro(page) {
     document.getElementById('intro-view').classList.remove('hidden');
     document.getElementById('intro-title').textContent = page.title;
     document.getElementById('intro-goal').textContent = page.goal;
+    document.getElementById('start-lesson-btn').classList.remove('hidden');
 }
 
 function renderLearn(page) {
     document.getElementById('learn-view').classList.remove('hidden');
     document.getElementById('learn-title').textContent = page.title;
     document.getElementById('learn-content').innerHTML = page.contentHtml || '';
+    document.getElementById('learn-continue-btn').classList.remove('hidden');
 }
 
 function renderPractice(page) {
@@ -254,10 +270,6 @@ function renderPractice(page) {
     document.getElementById('scrambled-display').classList.add('hidden');
     document.getElementById('exercise-prompt').classList.add('hidden');
     document.getElementById('scrambled-status').classList.add('hidden');
-    document.getElementById('retry-actions').classList.add('hidden');
-    document.getElementById('continue-action').classList.add('hidden');
-    document.getElementById('assessment-actions').classList.remove('hidden');
-    document.getElementById('check-scrambled-btn').classList.remove('hidden');
     
     const existingHint = document.getElementById('scrambled-hint');
     if (existingHint) existingHint.remove();
@@ -267,11 +279,14 @@ function renderPractice(page) {
     document.getElementById('chinese-text').textContent = page.text;
     document.getElementById('romanization').textContent = page.romanization;
 
+    document.getElementById('hint-btn-container').classList.remove('hidden');
+
     if (page.exerciseType === 'scrambled') {
-        document.getElementById('assessment-actions').classList.add('hidden');
         renderScrambled(page);
+        document.getElementById('check-scrambled-btn').classList.remove('hidden');
     } else {
         renderReading(page);
+        document.getElementById('assessment-actions').classList.remove('hidden');
     }
 
     const audioPlayer = document.getElementById('audio-player');
@@ -342,6 +357,8 @@ function updateScrambledSlots() {
 
 function showCompletion() {
     document.getElementById('completion-overlay').classList.remove('hidden');
+    document.getElementById('app-header').classList.add('hidden');
+    document.getElementById('app-footer').classList.add('hidden');
     
     const lesson = appState.lessons[appState.currentLessonIndex];
     const results = appState.results[appState.currentLessonIndex] || {};
@@ -392,6 +409,8 @@ function showCompletion() {
 
 function hideCompletion() {
     document.getElementById('completion-overlay').classList.add('hidden');
+    document.getElementById('app-header').classList.remove('hidden');
+    document.getElementById('app-footer').classList.remove('hidden');
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
