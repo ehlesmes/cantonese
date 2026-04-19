@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet" href="/components/shared/variables.css" />
+<script src="/components/lesson_header/lesson_header.js" type="module"></script>
+<script src="/components/lesson_footer/lesson_footer.js" type="module"></script>
+
+<body>
+  <lesson-header id="header" lesson-name="My Lesson!"></lesson-header>
+  <lesson-footer id="footer" primary-text="Continue" secondary-text="Retry"></lesson-footer>
+  <script>
+    const controls = document.getElementById('header');
+    controls.addEventListener('restart', () => console.log('restart'));
+  </script>
+</body>

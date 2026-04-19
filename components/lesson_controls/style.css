@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  --md-sys-color-outline: #dcdcdc;
+  --md-sys-color-surface-variant: #eeeeee;
+  --md-sys-color-on-surface: #444444;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button {
+  background: none;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--md-sys-color-on-surface);
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--md-sys-color-surface-variant);
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background: var(--md-sys-color-outline);
+  margin: 0 4px;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-size: 20px;
+  font-variation-settings:
+    "FILL" var(--md-sys-color-outline),
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}

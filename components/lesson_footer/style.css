@@ -1,0 +1,57 @@
+:host {
+  display: block;
+  width: 100%;
+  /* Default fallback tokens if global variables are missing */
+  --md-sys-color-primary: #1a73e8;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-outline: #dadce0;
+  --md-sys-color-surface: #ffffff;
+  --md-sys-color-on-surface: #202124;
+  --md-sys-color-surface-variant: #f8fbff;
+}
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 24px;
+  height: 80px;
+  background-color: var(--md-sys-color-surface);
+  border-top: 1px solid var(--md-sys-color-outline);
+  box-sizing: border-box;
+  gap: 12px;
+  font-family: "Google Sans", "Roboto", system-ui, sans-serif;
+}
+button {
+  padding: 0 24px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+}
+.primary {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+.primary:hover {
+  opacity: 0.9;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3);
+}
+.secondary {
+  background-color: transparent;
+  color: var(--md-sys-color-primary);
+  border: 1px solid var(--md-sys-color-outline);
+}
+.secondary:hover {
+  background-color: var(--md-sys-color-surface-variant);
+  border-color: var(--md-sys-color-primary);
+}
+.hidden {
+  display: none;
+}

@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.lesson-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+main {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--md-sys-color-surface, #fff);
+}

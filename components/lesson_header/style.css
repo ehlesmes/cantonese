@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  width: 100%;
+  --md-sys-color-surface: #ffffff;
+  --md-sys-color-on-surface: #202124;
+  --md-sys-color-outline: #e0e0e0;
+  --md-sys-color-primary: #1a73e8;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 72px;
+  background-color: var(--md-sys-color-surface);
+  border-bottom: 1px solid var(--md-sys-color-outline);
+  box-sizing: border-box;
+  font-family:
+    "Google Sans",
+    "Roboto",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--md-sys-color-on-surface);
+  letter-spacing: -0.02em;
+}
