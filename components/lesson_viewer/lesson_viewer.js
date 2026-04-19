@@ -3,11 +3,11 @@ import "/components/lesson_footer/lesson_footer.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
-<link rel="stylesheet" href="/components/lesson/style.css" />
+<link rel="stylesheet" href="/components/lesson_viewer/style.css" />
 <div class="lesson-container">
-  <lesson-header id="h"></lesson-header>
+  <lesson-header id="header"></lesson-header>
   <main id="m"><slot></slot></main>
-  <lesson-footer id="f"></lesson-footer>
+  <lesson-footer id="footer"></lesson-footer>
 </div>
 `;
 
@@ -17,9 +17,8 @@ export class LessonViewer extends HTMLElement {
   }
   constructor() {
     super();
-    this.attachShadow({ mode: "open" }).appendChild(
-      viewerTemplate.content.cloneNode(true),
-    );
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
   connectedCallback() {
     this.shadowRoot.addEventListener(
@@ -32,13 +31,20 @@ export class LessonViewer extends HTMLElement {
     this.update();
   }
   update() {
-    const h = this.shadowRoot.getElementById("h"),
-      f = this.shadowRoot.getElementById("f");
-    if (h)
-      h.setAttribute("lesson-name", this.getAttribute("lesson-name") || "");
-    if (f) {
-      f.setAttribute("primary-text", this.getAttribute("primary-text") || "");
-      f.setAttribute(
+    const header = this.shadowRoot.getElementById("header");
+    const footer = this.shadowRoot.getElementById("footer");
+    if (header) {
+      header.setAttribute(
+        "lesson-name",
+        this.getAttribute("lesson-name") || "",
+      );
+    }
+    if (footer) {
+      footer.setAttribute(
+        "primary-text",
+        this.getAttribute("primary-text") || "",
+      );
+      footer.setAttribute(
         "secondary-text",
         this.getAttribute("secondary-text") || "",
       );
@@ -46,6 +52,6 @@ export class LessonViewer extends HTMLElement {
   }
 }
 
-if (!customElement.get("lesson-viewer")) {
+if (!customElements.get("lesson-viewer")) {
   customElements.define("lesson-viewer", LessonViewer);
 }

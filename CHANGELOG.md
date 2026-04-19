@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.4] - 2026-04-19
+We have developed a modular "Lesson Viewer" interface using native Web Components. Key technical milestones included:
+1. Iconography: Integrating Material Symbols into the Shadow DOM, resolving font-loading issues by using global <link> tags and CSSStyleSheet objects to prevent "blinking" (FOUC).
+2. Component Suite:
+ - lesson-controls: A toolbar for navigation and actions.
+ - lesson-header: A title bar that nests the controls.
+ - lesson-footer: A sticky action bar with primary (filled) and optional secondary (outlined) buttons.
+ - lesson-viewer: A layout-level component that pins the header and footer while providing a scrollable main area for content.
+3. Architecture:
+ - Communication: Using CustomEvent with bubbles: true and composed: true to propagate events across Shadow DOM boundaries.
+ - Composition: Using <slot> to allow external content injection into the viewer.
+ - Theming: Implementing a consistent palette via Material 3 Design Tokens (CSS Custom Properties like --md-sys-color-primary).
+ - Typography: Implementing 'Google Sans' with fallbacks to 'Roboto' and system fonts.
+
 ## [0.4.3] - 2026-04-18
 - Redesigned the main app view to eliminate the floating 'card' style, opting for a seamless edge-to-edge layout with a clean white background.
 - Reduced the header and footer sizes (`80px` min-height) to maximize the readable content area.

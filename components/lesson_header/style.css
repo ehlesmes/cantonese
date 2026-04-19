@@ -10,8 +10,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
-  height: 72px;
+  padding: 0 12px;
+  height: 60px;
   background-color: var(--md-sys-color-surface);
   border-bottom: 1px solid var(--md-sys-color-outline);
   box-sizing: border-box;

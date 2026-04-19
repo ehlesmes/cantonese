@@ -1,8 +1,11 @@
 :root {
   --md-sys-color-primary: #1a73e8;
   --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-outline: #dadce0;
+  --md-sys-color-outline: #e0e0e0;
   --md-sys-color-surface: #ffffff;
   --md-sys-color-on-surface: #202124;
-  --md-sys-color-surface-variant: #f8fbff;
+  --md-sys-color-surface-variant: #f8f9fa;
+  --md-sys-color-background: #ffffff;
+  --header-height: 72px;
+  --footer-height: 80px;
 }

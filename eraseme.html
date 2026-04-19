@@ -1,13 +1,23 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <link rel="stylesheet" href="/components/shared/variables.css" />
-<script src="/components/lesson_header/lesson_header.js" type="module"></script>
-<script src="/components/lesson_footer/lesson_footer.js" type="module"></script>
+<script src="/components/lesson_viewer/lesson_viewer.js" type="module"></script>
 
-<body>
-  <lesson-header id="header" lesson-name="My Lesson!"></lesson-header>
-  <lesson-footer id="footer" primary-text="Continue" secondary-text="Retry"></lesson-footer>
-  <script>
-    const controls = document.getElementById('header');
-    controls.addEventListener('restart', () => console.log('restart'));
-  </script>
+<body style="margin: 0">
+  <lesson-viewer
+        lesson-name="Component-Based Architecture"
+        primary-text="Next Lesson"
+        secondary-text="Previous">
+
+        <article class="content-body">
+            <h2>Encapsulated Lesson Viewer</h2>
+            <p>This entire layout is now managed by a single <code>&lt;lesson-viewer&gt;</code> component. The header and footer are internal to the component, while this text is injected via a <code>&lt;slot&gt;</code>.</p>
+
+            <p>Using slots allows the main page to focus on content while the component handles the layout constraints, such as keeping the header at the top and the footer at the bottom with a scrollable middle section.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.</p>
+        </article>
+    </lesson-viewer>
+
 </body>
