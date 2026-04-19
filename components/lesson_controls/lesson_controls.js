@@ -47,10 +47,9 @@ class LessonControls extends HTMLElement {
     ["restart", "prev", "next", "close"].forEach((id) => {
       this.shadowRoot.getElementById(id).onclick = () => {
         this.dispatchEvent(
-          new CustomEvent(`lesson-${id}`, {
+          new CustomEvent(id, {
             bubbles: true, // Travel up the DOM
             composed: true, // Cross shadow boundaries
-            detail: { originalId: id },
           }),
         );
       };
