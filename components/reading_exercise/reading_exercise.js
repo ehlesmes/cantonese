@@ -1,4 +1,5 @@
 import { iconStyles } from "/components/shared/shared_assets.js";
+import "/components/ui/icon_button/icon_button.js";
 import "/components/ui/tooltip/tooltip.js";
 
 const template = document.createElement("template");
@@ -7,11 +8,10 @@ template.innerHTML = `
 <div class="reading-wrapper">
   <div class="phrase-container">
     <ui-tooltip>
-      <button slot="trigger" class="cantonese-button" aria-label="Play audio and toggle translation">
-        <span class="cantonese-text"></span>
-      </button>
+      <div slot="trigger" class="cantonese-text"></div>
       <span slot="content" class="romanization-text"></span>
     </ui-tooltip>
+    <ui-icon-button id="play-audio" title="Play Audio">volume_up</ui-icon-button>
     <div class="translation-text"></div>
   </div>
 </div>
@@ -38,17 +38,14 @@ class ReadingExercise extends HTMLElement {
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this._btn = this.shadowRoot.querySelector(".cantonese-button");
+    this._playBtn = this.shadowRoot.getElementById("play-audio");
     this._cantoneseEl = this.shadowRoot.querySelector(".cantonese-text");
     this._romanizationEl = this.shadowRoot.querySelector(".romanization-text");
     this._translationEl = this.shadowRoot.querySelector(".translation-text");
   }
 
   connectedCallback() {
-    this._btn.onclick = () => {
-      this.playAudio();
-      this.toggleTranslation();
-    };
+    this._playBtn.onclick = () => this.playAudio();
     
     // Set default hidden state if attribute is missing
     if (!this.hasAttribute("translation-hidden")) {
@@ -97,12 +94,11 @@ class ReadingExercise extends HTMLElement {
         this._translationEl.classList.remove("hidden");
       }
     }
-    if (this._btn) this._btn.dataset.audioPath = audioPath;
+    this._audioPath = audioPath;
   }
 
   playAudio() {
-    const audioPath = this._btn.dataset.audioPath;
-    if (!audioPath) {
+    if (!this._audioPath) {
       console.error(
         "🚨 [ReadingExercise ERROR]: Missing 'audio-path' attribute! " +
         "Audio cannot play without a valid file source."
@@ -110,26 +106,21 @@ class ReadingExercise extends HTMLElement {
       return;
     }
 
-    const audio = new Audio(audioPath);
+    const audio = new Audio(this._audioPath);
     audio.play().catch(e => {
       console.error(
-        `🚨 [ReadingExercise ERROR]: Failed to play audio at '${audioPath}'. ` +
+        `🚨 [ReadingExercise ERROR]: Failed to play audio at '${this._audioPath}'. ` +
         "Check if the file exists and the path is correct.", e
       );
     });
 
     this.dispatchEvent(
       new CustomEvent("play-audio", {
-        detail: { audioPath },
+        detail: { audioPath: this._audioPath },
         bubbles: true,
         composed: true,
       }),
     );
-  }
-
-  toggleTranslation() {
-    const isHidden = this.getAttribute("translation-hidden") !== "false";
-    this.setAttribute("translation-hidden", isHidden ? "false" : "true");
   }
 }
 

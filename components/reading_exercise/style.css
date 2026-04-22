@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--comp-gap-medium);
   padding: calc(var(--md-sys-spacing-unit) * 6) 0 calc(var(--md-sys-spacing-unit) * 3);
   margin: var(--comp-gap-medium) 0;
 }
@@ -14,30 +15,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--comp-gap-small);
   width: 100%;
-}
-
-.cantonese-button {
-  background: var(--md-sys-color-surface-variant);
-  border: 1px solid var(--md-sys-color-outline);
-  border-radius: var(--md-sys-radius-medium);
-  padding: var(--comp-gap-medium) calc(var(--md-sys-spacing-unit) * 4);
-  cursor: pointer;
-  transition: border-color 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 120px;
-}
-
-.cantonese-button:hover {
-  border-color: var(--md-sys-color-primary);
 }
 
 .cantonese-text {
   font-size: 2.5rem;
   font-weight: bold;
   color: var(--md-sys-color-on-surface);
+  cursor: default;
+  line-height: 1.2;
+  display: block;
 }
 
 .romanization-text {
@@ -49,9 +37,8 @@
 .translation-text {
   font-size: 1.4rem;
   color: var(--md-sys-color-on-surface-variant);
-  margin-top: var(--comp-gap-medium);
-  width: 100%;
   text-align: center;
+  margin-top: var(--comp-gap-small);
 }
 
 .hidden {

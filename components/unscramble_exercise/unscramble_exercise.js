@@ -6,11 +6,9 @@ const template = document.createElement("template");
 template.innerHTML = `
 <link rel="stylesheet" href="components/unscramble_exercise/style.css" />
 <div class="unscramble-wrapper">
-  <div class="header-section">
+  <div class="phrase-container">
     <div class="translation-text"></div>
-    <div class="header-actions">
-      <ui-icon-button id="play-audio" title="Play Audio">volume_up</ui-icon-button>
-    </div>
+    <ui-icon-button id="play-audio" title="Play Audio">volume_up</ui-icon-button>
   </div>
 
   <div class="slots-container" id="slots"></div>

@@ -11,7 +11,7 @@
   margin: var(--comp-gap-medium) 0;
 }
 
-.header-section {
+.phrase-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,15 +19,12 @@
   width: 100%;
 }
 
-.header-actions {
-  display: flex;
-  gap: var(--comp-gap-small);
-}
-
 .translation-text {
-  font-size: 1.4rem;
-  color: var(--md-sys-color-on-surface-variant);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--md-sys-color-on-surface);
   text-align: center;
+  line-height: 1.2;
 }
 
 .slots-container, .pool-container {
