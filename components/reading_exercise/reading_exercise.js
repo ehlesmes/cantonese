@@ -1,14 +1,17 @@
 import { iconStyles } from "/components/shared/shared_assets.js";
+import "/components/ui/tooltip/tooltip.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
 <link rel="stylesheet" href="components/reading_exercise/style.css" />
 <div class="reading-wrapper">
   <div class="phrase-container">
-    <button class="cantonese-button" aria-label="Play audio and toggle translation">
-      <span class="cantonese-text"></span>
-      <span class="tooltip"></span>
-    </button>
+    <ui-tooltip>
+      <button slot="trigger" class="cantonese-button" aria-label="Play audio and toggle translation">
+        <span class="cantonese-text"></span>
+      </button>
+      <span slot="content" class="romanization-text"></span>
+    </ui-tooltip>
     <div class="translation-text"></div>
   </div>
 </div>
@@ -37,13 +40,14 @@ class ReadingExercise extends HTMLElement {
 
     this._btn = this.shadowRoot.querySelector(".cantonese-button");
     this._cantoneseEl = this.shadowRoot.querySelector(".cantonese-text");
-    this._tooltipEl = this.shadowRoot.querySelector(".tooltip");
+    this._romanizationEl = this.shadowRoot.querySelector(".romanization-text");
     this._translationEl = this.shadowRoot.querySelector(".translation-text");
   }
 
   connectedCallback() {
     this._btn.onclick = () => {
       this.playAudio();
+      this.toggleTranslation();
     };
     
     // Set default hidden state if attribute is missing
@@ -84,7 +88,7 @@ class ReadingExercise extends HTMLElement {
     });
 
     if (this._cantoneseEl) this._cantoneseEl.textContent = phrase;
-    if (this._tooltipEl) this._tooltipEl.textContent = romanization;
+    if (this._romanizationEl) this._romanizationEl.textContent = romanization;
     if (this._translationEl) {
       this._translationEl.textContent = translation;
       if (isHidden) {
@@ -121,6 +125,11 @@ class ReadingExercise extends HTMLElement {
         composed: true,
       }),
     );
+  }
+
+  toggleTranslation() {
+    const isHidden = this.getAttribute("translation-hidden") !== "false";
+    this.setAttribute("translation-hidden", isHidden ? "false" : "true");
   }
 }
 

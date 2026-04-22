@@ -1,49 +1,41 @@
 # Cantonese Learning App
 
-A static, component-based web application for learning Cantonese through lessons and interactive exercises. The application prioritizes simplicity, modularity, and a consistent visual style.
+A lightweight, component-focused web application for learning Cantonese. This project uses a "Pure Component" architecture, where all logic and styling are encapsulated within reusable Web Components.
 
 ## 🚀 Getting Started
 
-Since this is a static site with no build step, you can get up and running instantly.
-
 1.  **Clone the repository.**
-2.  **Open `index.html`** in any modern web browser.
-3.  Alternatively, for a better development experience with modules, serve the project using a local server (e.g., `npx serve .` or Live Server in VS Code).
+2.  **Open `eraseme.html`** (or any HTML file using the components) in a modern web browser.
+3.  For the best experience, use a local development server (e.g., `npx serve .`).
 
 ## 🏗️ Project Structure
 
-The project is organized around modular Web Components:
+-   `components/`: The heart of the application. Each UI element is a self-contained Web Component.
+    -   `shared/`: Global resources like `variables.css` and `shared_assets.js`.
+-   `audio/`: Audio assets for exercises and lessons.
 
--   `components/`: Contains all reusable UI elements.
-    -   Each component has its own folder with a `.js` and `style.css` file.
-    -   `shared/`: Contains global styles like `variables.css` (the source of truth for colors and layout) and `shared_assets.js`.
--   `audio/`: Repository for all lesson audio files.
--   `css/`: Global application styles (non-component specific).
--   `js/`: Global application logic and data fetching.
+## 🎨 Design Philosophy
 
-## 🎨 Best Practices & Contributions
+### 1. Component-First
+The application is built entirely from Web Components. Avoid creating global JS or CSS files. If a feature is needed, it should be a component or a shared utility within `components/shared/`.
 
-We follow a strict modular architecture. When contributing, please adhere to these standards:
+### 2. Complex Data Handling
+To pass complex data (like lists or objects) to components via static HTML, use JSON-serialized strings in attributes:
+```html
+<unscramble-exercise 
+  tokens='[["你", "nei5"], ["好", "hou2"]]'
+  translation="Hello"
+  audio-path="/audio/1.m4a">
+</unscramble-exercise>
+```
 
-### 1. Modular Components
--   **No Monoliths:** Do not put all logic in a single file. Break UI elements into small, testable Web Components.
--   **Shadow DOM:** Always use the Shadow DOM to encapsulate styles and behavior.
--   **Naming:** Use semantic names for components (e.g., `reading-exercise`) and their files.
+### 3. Visual Consistency
+Always utilize the CSS variables in `components/shared/variables.css` to ensure a unified Material Design aesthetic.
 
-### 2. Style Consistency
--   **CSS Variables:** Always use variables defined in `components/shared/variables.css` (e.g., `--md-sys-color-primary`, `--md-sys-spacing-unit`).
--   **No Hardcoding:** Never hardcode hex colors or pixel values that should be shared across the app.
--   **Material Aesthetic:** Aim for a clean, modern look with subtle shadows and consistent whitespace.
+## 🛠️ Contribution Guidelines
 
-### 3. Engineering Quality
--   **Semantic HTML:** Use proper tags like `<button>`, `<main>`, and `<header>` for accessibility.
--   **Error Handling:** Components should fail loudly with clear console errors if required attributes (like `audio-path`) are missing or malformed.
--   **Vanilla JS:** Use native browser APIs. Avoid external dependencies to keep the project lightweight and portable.
+-   **Encapsulation:** Use Shadow DOM for all components.
+-   **Validation:** Components must validate that required attributes (like `tokens` or `audio-path`) are present and log loud console errors if they are missing.
+-   **Modularity:** Keep components small and focused on a single task.
 
-## 🛠️ Contribution Workflow
-
-1.  **Research:** Analyze the current components to understand established patterns.
-2.  **Modularize:** Design your changes as surgical updates or new components.
-3.  **Validate:** Always test your changes in the context of the app (e.g., using `eraseme.html` for component isolation) before submitting.
-
-Happy learning and coding! 🇭🇰
+Happy learning! 🇭🇰

@@ -1,31 +1,21 @@
 import { iconStyles } from "/components/shared/shared_assets.js";
+import "/components/ui/icon_button/icon_button.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
-<!-- Material Symbols must be imported inside Shadow DOM if used directly, 
-     or inherited if using standard font-family -->
 <link rel="stylesheet" href="components/lesson_controls/style.css" />
 
 <div class="controls">
-  <button id="restart" title="Restart Lesson">
-      <span class="material-symbols-outlined">restart_alt</span>
-  </button>
+  <ui-icon-button id="restart" title="Restart Lesson">restart_alt</ui-icon-button>
 
   <div class="divider"></div>
 
-  <button id="prev" title="Previous Page">
-      <span class="material-symbols-outlined">arrow_back</span>
-  </button>
-
-  <button id="next" title="Next Page">
-      <span class="material-symbols-outlined">arrow_forward</span>
-  </button>
+  <ui-icon-button id="prev" title="Previous Page">arrow_back</ui-icon-button>
+  <ui-icon-button id="next" title="Next Page">arrow_forward</ui-icon-button>
 
   <div class="divider"></div>
 
-  <button id="close" title="Close">
-      <span class="material-symbols-outlined">close</span>
-  </button>
+  <ui-icon-button id="close" title="Close">close</ui-icon-button>
 </div>
 `;
 

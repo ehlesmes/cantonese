@@ -24,7 +24,6 @@
   padding: var(--comp-gap-medium) calc(var(--md-sys-spacing-unit) * 4);
   cursor: pointer;
   transition: border-color 0.2s ease;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,41 +40,10 @@
   color: var(--md-sys-color-on-surface);
 }
 
-/* Tooltip implementation */
-.tooltip {
-  visibility: hidden;
-  position: absolute;
-  bottom: 115%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--md-sys-color-on-surface);
-  color: var(--md-sys-color-surface);
-  text-align: center;
-  padding: 6px 12px;
-  border-radius: var(--md-sys-radius-small);
+.romanization-text {
   font-size: 1rem;
   font-weight: 500;
   font-style: italic;
-  white-space: nowrap;
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.tooltip::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: var(--md-sys-color-on-surface) transparent transparent transparent;
-}
-
-.cantonese-button:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
 }
 
 .translation-text {
