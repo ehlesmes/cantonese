@@ -1,105 +1,91 @@
 :host {
   display: block;
-  --button-size: 40px;
-  --btn-bg: #ffffff;
-  --btn-hover: #f0f0f0;
-  --btn-border: #e0e0e0;
-  --icon-color: #5f6368;
-  --primary-action-color: #e8491d;
-  --secondary-action-color: #35424a;
 }
 
 .translation-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin: 1rem 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  padding: calc(var(--md-sys-spacing-unit) * 6) 0 calc(var(--md-sys-spacing-unit) * 3);
+  margin: var(--comp-gap-medium) 0;
 }
 
-.phrase-display {
+.phrase-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.cantonese-text {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #35424a;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.phrase-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
-  font-size: 1.1rem;
-}
-
-.romanization.hidden {
-  display: none;
-}
-
-.romanization {
-  color: #e8491d;
-  font-style: italic;
-  font-weight: 500;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  height: 1.8rem;
-  display: flex;
-  align-items: center;
-}
-
-.meta-actions {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.meta-actions button {
+.cantonese-button {
+  background: var(--md-sys-color-surface-variant);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-radius-medium);
+  padding: var(--comp-gap-medium) calc(var(--md-sys-spacing-unit) * 4);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--button-size);
-  height: var(--button-size);
-  border: 1px solid var(--btn-border);
-  background: var(--btn-bg);
-  border-radius: 6px;
-  cursor: pointer;
-  color: var(--icon-color);
-  transition:
-    background 0.2s,
-    transform 0.1s;
+  min-width: 120px;
 }
 
-.meta-actions button:hover {
-  background: var(--btn-hover);
+.cantonese-button:hover {
+  border-color: var(--md-sys-color-primary);
 }
 
-.meta-actions button:active {
-  transform: scale(0.95);
+.cantonese-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--md-sys-color-on-surface);
 }
 
-.meta-actions .material-symbols-outlined {
-  font-size: 1.8rem;
+/* Tooltip implementation */
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--md-sys-color-on-surface);
+  color: var(--md-sys-color-surface);
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: var(--md-sys-radius-small);
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: italic;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
-/* Specific button styling for play/hint */
-#play-audio {
-  color: var(--primary-action-color);
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--md-sys-color-on-surface) transparent transparent transparent;
 }
-#show-hint {
-  color: var(--secondary-action-color);
+
+.cantonese-button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.translation-text {
+  font-size: 1.4rem;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-top: var(--comp-gap-medium);
+  width: 100%;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
 }

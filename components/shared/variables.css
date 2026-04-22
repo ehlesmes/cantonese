@@ -4,8 +4,20 @@
   --md-sys-color-outline: #e0e0e0;
   --md-sys-color-surface: #ffffff;
   --md-sys-color-on-surface: #202124;
+  --md-sys-color-on-surface-variant: #5f6368;
   --md-sys-color-surface-variant: #f8f9fa;
   --md-sys-color-background: #ffffff;
   --header-height: 72px;
   --footer-height: 80px;
+
+  /* Common Spacing & Radii */
+  --md-sys-spacing-unit: 8px;
+  --md-sys-radius-small: 4px;
+  --md-sys-radius-medium: 8px;
+  --md-sys-radius-large: 12px;
+  
+  /* Shared Component Vars */
+  --comp-button-size: 36px;
+  --comp-gap-small: 8px;
+  --comp-gap-medium: 16px;
 }
