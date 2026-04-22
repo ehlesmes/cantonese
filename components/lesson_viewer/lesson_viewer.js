@@ -33,10 +33,18 @@ export class LessonViewer extends HTMLElement {
   update() {
     const header = this.shadowRoot.getElementById("header");
     const footer = this.shadowRoot.getElementById("footer");
+    
+    const lessonName = this.getAttribute("lesson-name");
+    if (!lessonName) {
+      console.error(
+        "🚨 [LessonViewer ERROR]: Missing required attribute 'lesson-name'!"
+      );
+    }
+
     if (header) {
       header.setAttribute(
         "lesson-name",
-        this.getAttribute("lesson-name") || "",
+        lessonName || "",
       );
     }
     if (footer) {

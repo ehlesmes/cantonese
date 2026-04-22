@@ -43,6 +43,12 @@ export class LessonFooter extends HTMLElement {
     const primaryText = this.getAttribute("primary-text");
     const secondaryText = this.getAttribute("secondary-text");
 
+    if (!primaryText) {
+      console.error(
+        "🚨 [LessonFooter ERROR]: Missing required attribute 'primary-text'!"
+      );
+    }
+
     if (primaryBtn) {
       primaryBtn.textContent = primaryText || "Next";
     }

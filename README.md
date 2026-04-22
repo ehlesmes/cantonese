@@ -1,45 +1,49 @@
 # Cantonese Learning App
 
-An interactive web application designed to help users learn Cantonese from A1 to C1 proficiency. 
+A static, component-based web application for learning Cantonese through lessons and interactive exercises. The application prioritizes simplicity, modularity, and a consistent visual style.
 
-## Features
-- Structured lessons focusing on listening and reading.
-- Each lesson includes:
-  - Clear learning goals.
-  - Grammar and vocabulary explanations.
-  - 10-20 interactive exercises.
-- Romanization support for all text.
-- Static site architecture with browser-based progress tracking.
+## 🚀 Getting Started
 
-## Getting Started
+Since this is a static site with no build step, you can get up and running instantly.
 
-Because the app uses `fetch()` to load lesson data, you need to run it through a local web server to avoid CORS issues.
+1.  **Clone the repository.**
+2.  **Open `index.html`** in any modern web browser.
+3.  Alternatively, for a better development experience with modules, serve the project using a local server (e.g., `npx serve .` or Live Server in VS Code).
 
-### Option 1: Using Node.js (npx)
-If you have Node.js installed, run:
-```bash
-npx serve .
-```
+## 🏗️ Project Structure
 
-### Option 2: Using Python
-If you have Python installed, run:
-```bash
-python3 -m http.server
-```
+The project is organized around modular Web Components:
 
-### Option 3: VS Code
-If you use VS Code, you can use the **Live Server** extension.
+-   `components/`: Contains all reusable UI elements.
+    -   Each component has its own folder with a `.js` and `style.css` file.
+    -   `shared/`: Contains global styles like `variables.css` (the source of truth for colors and layout) and `shared_assets.js`.
+-   `audio/`: Repository for all lesson audio files.
+-   `css/`: Global application styles (non-component specific).
+-   `js/`: Global application logic and data fetching.
 
-Once the server is running, open the provided URL (usually `http://localhost:3000` or `http://localhost:8000`) in your browser.
+## 🎨 Best Practices & Contributions
 
-## Project Structure
-- `README.md`: Project overview and current status.
-- `PLAN.md`: Roadmap and development milestones.
-- `CHANGELOG.md`: Record of changes, experiments, and project history.
+We follow a strict modular architecture. When contributing, please adhere to these standards:
 
-## Status
-- **Phase:** Prototype Refinement
-- **Current Focus:** Polishing the UI/UX and finalizing core functionality for the A1 pilot.
-- **Architecture:** Static site with browser-based state management (LocalStorage).
+### 1. Modular Components
+-   **No Monoliths:** Do not put all logic in a single file. Break UI elements into small, testable Web Components.
+-   **Shadow DOM:** Always use the Shadow DOM to encapsulate styles and behavior.
+-   **Naming:** Use semantic names for components (e.g., `reading-exercise`) and their files.
 
-*For more details on progress, see [PLAN.md](PLAN.md) and [CHANGELOG.md](CHANGELOG.md).*
+### 2. Style Consistency
+-   **CSS Variables:** Always use variables defined in `components/shared/variables.css` (e.g., `--md-sys-color-primary`, `--md-sys-spacing-unit`).
+-   **No Hardcoding:** Never hardcode hex colors or pixel values that should be shared across the app.
+-   **Material Aesthetic:** Aim for a clean, modern look with subtle shadows and consistent whitespace.
+
+### 3. Engineering Quality
+-   **Semantic HTML:** Use proper tags like `<button>`, `<main>`, and `<header>` for accessibility.
+-   **Error Handling:** Components should fail loudly with clear console errors if required attributes (like `audio-path`) are missing or malformed.
+-   **Vanilla JS:** Use native browser APIs. Avoid external dependencies to keep the project lightweight and portable.
+
+## 🛠️ Contribution Workflow
+
+1.  **Research:** Analyze the current components to understand established patterns.
+2.  **Modularize:** Design your changes as surgical updates or new components.
+3.  **Validate:** Always test your changes in the context of the app (e.g., using `eraseme.html` for component isolation) before submitting.
+
+Happy learning and coding! 🇭🇰

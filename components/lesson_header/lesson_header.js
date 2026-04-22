@@ -23,6 +23,11 @@ class LessonHeader extends HTMLElement {
 
   attributeChangedCallback(name, oldVal, newVal) {
     if (name === "lesson-name") {
+      if (!newVal) {
+        console.error(
+          "🚨 [LessonHeader ERROR]: Missing required attribute 'lesson-name'!"
+        );
+      }
       this.shadowRoot.getElementById("lesson-title").textContent = newVal;
     }
   }
