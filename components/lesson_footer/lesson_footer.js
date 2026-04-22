@@ -1,9 +1,10 @@
 const footerTemplate = document.createElement("template");
 footerTemplate.innerHTML = `
+<link rel="stylesheet" href="/components/shared/button.css" />
 <link rel="stylesheet" href="/components/lesson_footer/style.css" />
 <footer>
-  <button id="secondary-btn" class="secondary hidden"></button>
-  <button id="primary-btn" class="primary"></button>
+  <button id="secondary-btn" class="btn-base btn-outline hidden"></button>
+  <button id="primary-btn" class="btn-base btn-filled"></button>
 </footer>
 `;
 

@@ -1,4 +1,5 @@
 import { iconStyles } from "/components/shared/shared_assets.js";
+import { speakCantonese } from "/components/shared/tts.js";
 import "/components/ui/icon_button/icon_button.js";
 import "/components/ui/tooltip/tooltip.js";
 
@@ -27,7 +28,6 @@ class ReadingExercise extends HTMLElement {
       "cantonese-phrase",
       "romanization",
       "translation",
-      "audio-path",
       "translation-hidden",
     ];
   }
@@ -47,7 +47,6 @@ class ReadingExercise extends HTMLElement {
   connectedCallback() {
     this._playBtn.onclick = () => this.playAudio();
     
-    // Set default hidden state if attribute is missing
     if (!this.hasAttribute("translation-hidden")) {
       this.setAttribute("translation-hidden", "true");
     }
@@ -65,7 +64,6 @@ class ReadingExercise extends HTMLElement {
     const phrase = this.getAttribute("cantonese-phrase") || "";
     const romanization = this.getAttribute("romanization") || "";
     const translation = this.getAttribute("translation") || "";
-    const audioPath = this.getAttribute("audio-path") || "";
     const isHidden = this.getAttribute("translation-hidden") !== "false";
 
     // Required Attributes Validation
@@ -73,7 +71,6 @@ class ReadingExercise extends HTMLElement {
       "cantonese-phrase": phrase,
       "romanization": romanization,
       "translation": translation,
-      "audio-path": audioPath,
     };
 
     Object.entries(required).forEach(([attr, val]) => {
@@ -94,29 +91,20 @@ class ReadingExercise extends HTMLElement {
         this._translationEl.classList.remove("hidden");
       }
     }
-    this._audioPath = audioPath;
   }
 
   playAudio() {
-    if (!this._audioPath) {
-      console.error(
-        "🚨 [ReadingExercise ERROR]: Missing 'audio-path' attribute! " +
-        "Audio cannot play without a valid file source."
-      );
+    const phrase = this.getAttribute("cantonese-phrase");
+    if (!phrase) {
+      console.error("🚨 [ReadingExercise ERROR]: Cannot play audio without 'cantonese-phrase'!");
       return;
     }
 
-    const audio = new Audio(this._audioPath);
-    audio.play().catch(e => {
-      console.error(
-        `🚨 [ReadingExercise ERROR]: Failed to play audio at '${this._audioPath}'. ` +
-        "Check if the file exists and the path is correct.", e
-      );
-    });
+    speakCantonese(phrase);
 
     this.dispatchEvent(
       new CustomEvent("play-audio", {
-        detail: { audioPath: this._audioPath },
+        detail: { phrase },
         bubbles: true,
         composed: true,
       }),

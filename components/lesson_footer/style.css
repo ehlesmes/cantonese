@@ -1,13 +1,6 @@
 :host {
   display: block;
   width: 100%;
-  /* Default fallback tokens if global variables are missing */
-  --md-sys-color-primary: #1a73e8;
-  --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-outline: #dadce0;
-  --md-sys-color-surface: #ffffff;
-  --md-sys-color-on-surface: #202124;
-  --md-sys-color-surface-variant: #f8fbff;
 }
 footer {
   display: flex;
@@ -24,33 +17,8 @@ footer {
 button {
   padding: 0 12px;
   height: 36px;
-  border-radius: 6px;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  outline: none;
-}
-.primary {
-  background-color: var(--md-sys-color-primary);
-  color: var(--md-sys-color-on-primary);
-}
-.primary:hover {
-  opacity: 0.9;
-  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3);
-}
-.secondary {
-  background-color: transparent;
-  color: var(--md-sys-color-primary);
-  border: 1px solid var(--md-sys-color-outline);
-}
-.secondary:hover {
-  background-color: var(--md-sys-color-surface-variant);
-  border-color: var(--md-sys-color-primary);
 }
 .hidden {
   display: none;

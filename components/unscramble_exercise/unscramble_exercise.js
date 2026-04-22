@@ -1,4 +1,5 @@
 import { iconStyles } from "/components/shared/shared_assets.js";
+import { speakCantonese } from "/components/shared/tts.js";
 import "/components/ui/icon_button/icon_button.js";
 import "/components/ui/tooltip/tooltip.js";
 
@@ -18,7 +19,7 @@ template.innerHTML = `
 
 class UnscrambleExercise extends HTMLElement {
   static get observedAttributes() {
-    return ["tokens", "status", "translation", "audio-path"];
+    return ["tokens", "status", "translation"];
   }
 
   constructor() {
@@ -167,10 +168,17 @@ class UnscrambleExercise extends HTMLElement {
   }
 
   playAudio() {
-    const audioPath = this.getAttribute("audio-path");
-    if (audioPath) {
-      new Audio(audioPath).play().catch(e => console.error("Audio error:", e));
-    }
+    if (this._originalTokens.length === 0) return;
+    const fullText = this._originalTokens.map(t => t.text).join("");
+    speakCantonese(fullText);
+
+    this.dispatchEvent(
+      new CustomEvent("play-audio", {
+        detail: { phrase: fullText },
+        bubbles: true,
+        composed: true,
+      }),
+    );
   }
 }
 

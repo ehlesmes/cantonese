@@ -1,0 +1,45 @@
+/* Shared Button Styles */
+
+.btn-base {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  border-radius: var(--md-sys-radius-small);
+  user-select: none;
+  border: none;
+}
+
+.btn-filled {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.btn-filled:hover:not([disabled]) {
+  opacity: 0.9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+  background-color: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-primary);
+}
+
+.btn-outline:hover:not([disabled]) {
+  background-color: var(--md-sys-color-surface-variant);
+  border-color: var(--md-sys-color-primary);
+}
+
+.btn-base:active:not([disabled]) {
+  transform: scale(0.95);
+}
+
+.btn-base[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
