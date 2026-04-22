@@ -36,7 +36,7 @@ class UnscrambleExercise extends HTMLElement {
     this._originalTokens = []; // [{text, romanization, id}]
     this._pool = [];
     this._slots = [];
-    this._status = "incomplete"; 
+    this._status = "incomplete";
   }
 
   get status() {
@@ -64,9 +64,11 @@ class UnscrambleExercise extends HTMLElement {
 
     const tokensAttr = this.getAttribute("tokens");
     const translation = this.getAttribute("translation") || "";
-    
+
     if (!tokensAttr) {
-      console.error("🚨 [UnscrambleExercise ERROR]: Missing required attribute 'tokens'!");
+      console.error(
+        "🚨 [UnscrambleExercise ERROR]: Missing required attribute 'tokens'!",
+      );
       return;
     }
 
@@ -75,9 +77,9 @@ class UnscrambleExercise extends HTMLElement {
       const newTokens = parsed.map((t, index) => ({
         text: t[0],
         romanization: t[1],
-        id: index
+        id: index,
       }));
-      
+
       // Only reset if tokens changed
       if (JSON.stringify(newTokens) !== JSON.stringify(this._originalTokens)) {
         this._originalTokens = newTokens;
@@ -86,7 +88,10 @@ class UnscrambleExercise extends HTMLElement {
         this._calculateStatus();
       }
     } catch (e) {
-      console.error("🚨 [UnscrambleExercise ERROR]: Failed to parse 'tokens' JSON!", e);
+      console.error(
+        "🚨 [UnscrambleExercise ERROR]: Failed to parse 'tokens' JSON!",
+        e,
+      );
     }
 
     if (this._translationEl) this._translationEl.textContent = translation;
@@ -111,19 +116,19 @@ class UnscrambleExercise extends HTMLElement {
 
   createTokenElement(token) {
     const tooltip = document.createElement("ui-tooltip");
-    
+
     const trigger = document.createElement("div");
     trigger.slot = "trigger";
     trigger.className = "token";
     trigger.innerHTML = `<span class="token-text">${token.text}</span>`;
-    
+
     const content = document.createElement("span");
     content.slot = "content";
     content.textContent = token.romanization;
-    
+
     tooltip.appendChild(trigger);
     tooltip.appendChild(content);
-    
+
     return tooltip;
   }
 
@@ -131,12 +136,14 @@ class UnscrambleExercise extends HTMLElement {
     const wasEmpty = this._pool.length === 0;
     const token = this._pool.splice(poolIndex, 1)[0];
     this._slots.push(token);
-    
+
     this._calculateStatus();
     this.render();
 
     if (!wasEmpty && this._pool.length === 0) {
-      this.dispatchEvent(new CustomEvent("complete", { bubbles: true, composed: true }));
+      this.dispatchEvent(
+        new CustomEvent("complete", { bubbles: true, composed: true }),
+      );
     }
   }
 
@@ -144,18 +151,20 @@ class UnscrambleExercise extends HTMLElement {
     const wasEmpty = this._pool.length === 0;
     const token = this._slots.splice(slotIndex, 1)[0];
     this._pool.push(token);
-    
+
     this._calculateStatus();
     this.render();
 
     if (wasEmpty && this._pool.length > 0) {
-      this.dispatchEvent(new CustomEvent("uncomplete", { bubbles: true, composed: true }));
+      this.dispatchEvent(
+        new CustomEvent("uncomplete", { bubbles: true, composed: true }),
+      );
     }
   }
 
   _calculateStatus() {
     let newStatus = "incomplete";
-    
+
     if (this._pool.length === 0 && this._slots.length > 0) {
       const isCorrect = this._slots.every((token, index) => token.id === index);
       newStatus = isCorrect ? "right" : "wrong";
@@ -169,7 +178,7 @@ class UnscrambleExercise extends HTMLElement {
 
   playAudio() {
     if (this._originalTokens.length === 0) return;
-    const fullText = this._originalTokens.map(t => t.text).join("");
+    const fullText = this._originalTokens.map((t) => t.text).join("");
     speakCantonese(fullText);
 
     this.dispatchEvent(

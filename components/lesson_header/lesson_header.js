@@ -25,7 +25,7 @@ class LessonHeader extends HTMLElement {
     if (name === "lesson-name") {
       if (!newVal) {
         console.error(
-          "🚨 [LessonHeader ERROR]: Missing required attribute 'lesson-name'!"
+          "🚨 [LessonHeader ERROR]: Missing required attribute 'lesson-name'!",
         );
       }
       this.shadowRoot.getElementById("lesson-title").textContent = newVal;

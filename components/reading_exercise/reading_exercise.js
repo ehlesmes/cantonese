@@ -46,11 +46,11 @@ class ReadingExercise extends HTMLElement {
 
   connectedCallback() {
     this._playBtn.onclick = () => this.playAudio();
-    
+
     if (!this.hasAttribute("translation-hidden")) {
       this.setAttribute("translation-hidden", "true");
     }
-    
+
     this.update();
   }
 
@@ -69,14 +69,14 @@ class ReadingExercise extends HTMLElement {
     // Required Attributes Validation
     const required = {
       "cantonese-phrase": phrase,
-      "romanization": romanization,
-      "translation": translation,
+      romanization: romanization,
+      translation: translation,
     };
 
     Object.entries(required).forEach(([attr, val]) => {
       if (!val) {
         console.error(
-          `🚨 [ReadingExercise ERROR]: Missing required attribute '${attr}'!`
+          `🚨 [ReadingExercise ERROR]: Missing required attribute '${attr}'!`,
         );
       }
     });
@@ -96,7 +96,9 @@ class ReadingExercise extends HTMLElement {
   playAudio() {
     const phrase = this.getAttribute("cantonese-phrase");
     if (!phrase) {
-      console.error("🚨 [ReadingExercise ERROR]: Cannot play audio without 'cantonese-phrase'!");
+      console.error(
+        "🚨 [ReadingExercise ERROR]: Cannot play audio without 'cantonese-phrase'!",
+      );
       return;
     }
 

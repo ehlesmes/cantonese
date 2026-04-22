@@ -46,7 +46,7 @@ export class LessonFooter extends HTMLElement {
 
     if (!primaryText) {
       console.error(
-        "🚨 [LessonFooter ERROR]: Missing required attribute 'primary-text'!"
+        "🚨 [LessonFooter ERROR]: Missing required attribute 'primary-text'!",
       );
     }
 

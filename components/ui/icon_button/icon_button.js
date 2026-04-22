@@ -33,7 +33,7 @@ class UiIconButton extends HTMLElement {
   _update() {
     if (!this._btn) return;
     this._btn.title = this.getAttribute("title") || "";
-    
+
     if (this.hasAttribute("disabled")) {
       this._btn.setAttribute("disabled", "");
     } else {
