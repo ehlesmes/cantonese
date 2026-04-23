@@ -1,19 +1,26 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <link rel="stylesheet" href="/components/shared/variables.css" />
 <script src="/components/lesson_viewer/lesson_viewer.js" type="module"></script>
-<script src="/components/reading_exercise/reading_exercise.js" type="module"></script>
+<script src="/components/reading_page/reading_page.js" type="module"></script>
 
 <body style="margin: 0">
   <lesson-viewer
-        lesson-name="Component-Based Architecture"
+        lesson-name="Basic Greetings"
         primary-text="Next Lesson"
         secondary-text="Previous">
 
-    <reading-exercise 
+    <reading-page 
       cantonese-phrase="你好！" 
       romanization="nei5 hou2!"
       translation="Hello!">
-    </reading-exercise>
+    </reading-page>
   </lesson-viewer>
 
+  <script>
+    // Listen for the assessment result
+    document.addEventListener('reading-result', (e) => {
+      console.log('User assessment result:', e.detail.success ? 'Passed' : 'Needs Practice');
+      alert(e.detail.success ? 'Great job!' : 'Keep practicing!');
+    });
+  </script>
 </body>
