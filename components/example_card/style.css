@@ -11,7 +11,9 @@
   flex-direction: column;
   gap: 4px;
   border-left: 4px solid var(--md-sys-color-primary);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .example-wrapper:hover {

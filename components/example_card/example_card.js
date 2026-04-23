@@ -54,7 +54,9 @@ class ExampleCard extends HTMLElement {
 
     // Validation
     if (!cantonese || !romanization || !translation) {
-      console.error("🚨 [ExampleCard ERROR]: Missing required attributes (cantonese, romanization, or translation)!");
+      console.error(
+        "🚨 [ExampleCard ERROR]: Missing required attributes (cantonese, romanization, or translation)!",
+      );
     }
 
     if (this._cantoneseEl) this._cantoneseEl.textContent = cantonese;
