@@ -45,6 +45,19 @@
 .slots-container {
   background-color: var(--md-sys-color-surface-variant);
   border: 1px dashed var(--md-sys-color-outline);
+  transition: background-color 0.3s ease, border-style 0.3s ease;
+}
+
+:host([status="right"]) .slots-container {
+  background-color: #e6f4ea; /* Success green tint */
+  border-style: solid;
+  border-color: #1e8e3e;
+}
+
+:host([status="wrong"]) .slots-container {
+  background-color: #fce8e6; /* Error red tint */
+  border-style: solid;
+  border-color: #d93025;
 }
 
 .pool-container {

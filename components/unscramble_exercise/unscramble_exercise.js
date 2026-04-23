@@ -72,26 +72,25 @@ class UnscrambleExercise extends HTMLElement {
       return;
     }
 
-    try {
-      const parsed = JSON.parse(tokensAttr);
-      const newTokens = parsed.map((t, index) => ({
-        text: t[0],
-        romanization: t[1],
-        id: index,
-      }));
-
-      // Only reset if tokens changed
-      if (JSON.stringify(newTokens) !== JSON.stringify(this._originalTokens)) {
-        this._originalTokens = newTokens;
+    if (this._lastTokensAttr !== tokensAttr) {
+      this._lastTokensAttr = tokensAttr;
+      try {
+        const parsed = JSON.parse(tokensAttr);
+        this._originalTokens = parsed.map((t, index) => ({
+          text: t[0],
+          romanization: t[1],
+          id: index,
+        }));
+        
         this._slots = [];
         this._pool = [...this._originalTokens].sort(() => Math.random() - 0.5);
         this._calculateStatus();
+      } catch (e) {
+        console.error(
+          "🚨 [UnscrambleExercise ERROR]: Failed to parse 'tokens' JSON!",
+          e,
+        );
       }
-    } catch (e) {
-      console.error(
-        "🚨 [UnscrambleExercise ERROR]: Failed to parse 'tokens' JSON!",
-        e,
-      );
     }
 
     if (this._translationEl) this._translationEl.textContent = translation;
@@ -176,8 +175,14 @@ class UnscrambleExercise extends HTMLElement {
     }
   }
 
-  playAudio() {
-    if (this._originalTokens.length === 0) return;
+  reset() {
+    this._slots = [];
+    this._pool = [...this._originalTokens].sort(() => Math.random() - 0.5);
+    this._calculateStatus();
+    this.render();
+  }
+
+  playAudio() {    if (this._originalTokens.length === 0) return;
     const fullText = this._originalTokens.map((t) => t.text).join("");
     speakCantonese(fullText);
 

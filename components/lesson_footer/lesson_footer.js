@@ -10,7 +10,7 @@ footerTemplate.innerHTML = `
 
 export class LessonFooter extends HTMLElement {
   static get observedAttributes() {
-    return ["primary-text", "secondary-text"];
+    return ["primary-text", "secondary-text", "primary-disabled", "secondary-disabled"];
   }
 
   constructor() {
@@ -43,6 +43,8 @@ export class LessonFooter extends HTMLElement {
 
     const primaryText = this.getAttribute("primary-text");
     const secondaryText = this.getAttribute("secondary-text");
+    const primaryDisabled = this.hasAttribute("primary-disabled") && this.getAttribute("primary-disabled") !== "false";
+    const secondaryDisabled = this.hasAttribute("secondary-disabled") && this.getAttribute("secondary-disabled") !== "false";
 
     if (!primaryText) {
       console.error(
@@ -52,12 +54,22 @@ export class LessonFooter extends HTMLElement {
 
     if (primaryBtn) {
       primaryBtn.textContent = primaryText || "Next";
+      if (primaryDisabled) {
+        primaryBtn.setAttribute("disabled", "");
+      } else {
+        primaryBtn.removeAttribute("disabled");
+      }
     }
 
     if (secondaryBtn) {
       if (secondaryText) {
         secondaryBtn.textContent = secondaryText;
         secondaryBtn.classList.remove("hidden");
+        if (secondaryDisabled) {
+          secondaryBtn.setAttribute("disabled", "");
+        } else {
+          secondaryBtn.removeAttribute("disabled");
+        }
       } else {
         secondaryBtn.classList.add("hidden");
       }
