@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  margin: var(--comp-gap-medium) 0;
+}
+
+.example-wrapper {
+  background: var(--md-sys-color-surface-variant);
+  border-radius: var(--md-sys-radius-medium);
+  padding: var(--comp-gap-small) var(--comp-gap-medium);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-left: 4px solid var(--md-sys-color-primary);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.example-wrapper:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.example-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--md-sys-color-primary);
+  letter-spacing: 0.05em;
+}
+
+.content-row {
+  display: flex;
+  align-items: center;
+  gap: var(--comp-gap-small);
+}
+
+.cantonese-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--md-sys-color-on-surface);
+  cursor: default;
+}
+
+.romanization-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.translation-text {
+  font-size: 1rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
