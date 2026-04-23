@@ -1,0 +1,58 @@
+# Design: Data-Driven Lesson Engine
+
+## Overview
+The Lesson Engine is a component-based system designed to render full lessons dynamically from JSON data. It transitions the app from static HTML files to a single-entry point architecture where a `lesson-manager` coordinates navigation, data fetching, and page rendering.
+
+## 🏗️ Architecture
+
+### 1. The `lesson-manager` Component
+Acts as the central controller:
+- **Input:** Takes a `lesson-id`.
+- **Fetching:** Coordinates the loading of lesson maps, explanation bundles, and atomic exercises.
+- **State:** Tracks `currentPageIndex` and maintains the "memory" of loaded content.
+- **Factory:** Dynamically creates page components (`reading-page`, `unscramble-page`, `explanation-page`) using `document.createElement()`.
+
+### 2. Navigation Flow
+- **Header Controls:** "Prev" and "Next" buttons in the `lesson-header` are always available for free navigation.
+- **Linear Progress:** "Continue" buttons on individual pages trigger a `next` transition.
+- **Events:** Pages fire results (e.g., `reading-result`) which the manager can capture for future progress tracking.
+
+## 📡 Data Loading Strategy
+
+### Lesson Map (`data/lessons.json`)
+Contains the high-level structure:
+```json
+{
+  "lesson_id": "L1",
+  "name": "Basic Greetings",
+  "pages": [
+    { "type": "explanation", "id": "intro_1" },
+    { "type": "reading", "id": "ex_101" },
+    { "type": "unscramble", "id": "ex_102" }
+  ]
+}
+```
+
+### Fetching Logic
+1.  **Map Request:** Load `lessons.json` to find the current lesson's page list.
+2.  **Explanations Bundle:** Load all explanations for the lesson in a single request (e.g., `data/explanations/L1.json`).
+3.  **Atomic Exercises:** Load each exercise (`reading` or `unscramble`) from separate files in the background (e.g., `data/exercises/1/1/ex_101.json`).
+4.  **Blocking:** If a user navigates to an exercise that hasn't finished loading, show a loading state; otherwise, transitions should be instant.
+
+> **Note:** Revisit the "Atomic Files" approach later to see if lesson-level bundling is more efficient for network performance.
+
+## ⚙️ Data Passing: Properties vs. Attributes
+To support dynamic creation via JS and improve performance, all exercise and page components will be updated to use **JS Property Setters**.
+
+- **Legacy Support:** Components will still support `setAttribute()` for static HTML testing.
+- **Manager Implementation:** The `lesson-manager` will pass data objects directly:
+  ```javascript
+  const el = document.createElement('reading-page');
+  el.cantonesePhrase = data.phrase; // No JSON serialization needed
+  ```
+
+## 🛠️ Implementation Steps
+1.  **Refactor Existing Components:** Add JS Setters to `ReadingExercise`, `UnscrambleExercise`, `ReadingPage`, etc.
+2.  **Create Mock Data:** Set up the folder structure in `data/` with sample JSON files.
+3.  **Implement `lesson-manager`:** Build the fetching and factory logic.
+4.  **Update `index.html`:** Create a single entry point that uses the manager.
