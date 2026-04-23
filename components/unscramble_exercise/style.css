@@ -75,7 +75,17 @@
   align-items: center;
   user-select: none;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+:host([status="right"]) .token {
+  cursor: default;
+  box-shadow: none;
+}
+
+:host([status="right"]) .token:hover {
+  border-color: var(--md-sys-color-outline);
+  transform: none;
 }
 
 .token:hover {

@@ -96,23 +96,29 @@ class UnscrambleExercise extends HTMLElement {
     if (this._translationEl) this._translationEl.textContent = translation;
     this.render();
   }
+render() {
+  const isSolved = this._status === "right";
 
-  render() {
-    this._slotsContainer.innerHTML = "";
-    this._slots.forEach((token, index) => {
-      const el = this.createTokenElement(token);
+  // Render Slots
+  this._slotsContainer.innerHTML = "";
+  this._slots.forEach((token, index) => {
+    const el = this.createTokenElement(token);
+    if (!isSolved) {
       el.onclick = () => this.moveToPool(index);
-      this._slotsContainer.appendChild(el);
-    });
+    }
+    this._slotsContainer.appendChild(el);
+  });
 
-    this._poolContainer.innerHTML = "";
-    this._pool.forEach((token, index) => {
-      const el = this.createTokenElement(token);
+  // Render Pool
+  this._poolContainer.innerHTML = "";
+  this._pool.forEach((token, index) => {
+    const el = this.createTokenElement(token);
+    if (!isSolved) {
       el.onclick = () => this.moveToSlots(index);
-      this._poolContainer.appendChild(el);
-    });
-  }
-
+    }
+    this._poolContainer.appendChild(el);
+  });
+}
   createTokenElement(token) {
     const tooltip = document.createElement("ui-tooltip");
 
