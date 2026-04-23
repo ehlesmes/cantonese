@@ -30,19 +30,16 @@ export class LessonViewer extends HTMLElement {
   }
   update() {
     const header = this.shadowRoot.getElementById("header");
-    
+
     const lessonName = this.getAttribute("lesson-name");
     if (!lessonName) {
       console.error(
-        "🚨 [LessonViewer ERROR]: Missing required attribute 'lesson-name'!"
+        "🚨 [LessonViewer ERROR]: Missing required attribute 'lesson-name'!",
       );
     }
 
     if (header) {
-      header.setAttribute(
-        "lesson-name",
-        lessonName || "",
-      );
+      header.setAttribute("lesson-name", lessonName || "");
     }
   }
 }

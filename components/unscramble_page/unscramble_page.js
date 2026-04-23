@@ -34,8 +34,12 @@ class UnscramblePage extends HTMLElement {
       this._update();
     });
     this.shadowRoot.addEventListener("uncomplete", () => this._update());
-    this.shadowRoot.addEventListener("primary-click", () => this._handlePrimaryClick());
-    this.shadowRoot.addEventListener("secondary-click", () => this._handleSecondaryClick());
+    this.shadowRoot.addEventListener("primary-click", () =>
+      this._handlePrimaryClick(),
+    );
+    this.shadowRoot.addEventListener("secondary-click", () =>
+      this._handleSecondaryClick(),
+    );
     this._update();
   }
 
@@ -47,7 +51,10 @@ class UnscramblePage extends HTMLElement {
     if (!this.shadowRoot) return;
 
     this._exercise.setAttribute("tokens", this.getAttribute("tokens") || "[]");
-    this._exercise.setAttribute("translation", this.getAttribute("translation") || "");
+    this._exercise.setAttribute(
+      "translation",
+      this.getAttribute("translation") || "",
+    );
 
     const status = this._exercise.getAttribute("status");
     const isFilled = status !== "incomplete";
@@ -65,11 +72,13 @@ class UnscramblePage extends HTMLElement {
   _handlePrimaryClick() {
     const status = this._exercise.getAttribute("status");
     if (status !== "incomplete") {
-      this.dispatchEvent(new CustomEvent("unscramble-result", {
-        detail: { success: status === "right" },
-        bubbles: true,
-        composed: true
-      }));
+      this.dispatchEvent(
+        new CustomEvent("unscramble-result", {
+          detail: { success: status === "right" },
+          bubbles: true,
+          composed: true,
+        }),
+      );
     }
   }
 

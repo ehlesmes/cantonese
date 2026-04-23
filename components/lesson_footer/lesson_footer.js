@@ -10,7 +10,12 @@ footerTemplate.innerHTML = `
 
 export class LessonFooter extends HTMLElement {
   static get observedAttributes() {
-    return ["primary-text", "secondary-text", "primary-disabled", "secondary-disabled"];
+    return [
+      "primary-text",
+      "secondary-text",
+      "primary-disabled",
+      "secondary-disabled",
+    ];
   }
 
   constructor() {
@@ -43,8 +48,12 @@ export class LessonFooter extends HTMLElement {
 
     const primaryText = this.getAttribute("primary-text");
     const secondaryText = this.getAttribute("secondary-text");
-    const primaryDisabled = this.hasAttribute("primary-disabled") && this.getAttribute("primary-disabled") !== "false";
-    const secondaryDisabled = this.hasAttribute("secondary-disabled") && this.getAttribute("secondary-disabled") !== "false";
+    const primaryDisabled =
+      this.hasAttribute("primary-disabled") &&
+      this.getAttribute("primary-disabled") !== "false";
+    const secondaryDisabled =
+      this.hasAttribute("secondary-disabled") &&
+      this.getAttribute("secondary-disabled") !== "false";
 
     if (!primaryText) {
       console.error(
