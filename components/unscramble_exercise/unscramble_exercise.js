@@ -104,7 +104,7 @@ class UnscrambleExercise extends HTMLElement {
     this._slots.forEach((token, index) => {
       const el = this.createTokenElement(token);
       if (!isSolved) {
-        el.onclick = () => this.moveToPool(index);
+        el.addEventListener("click", () => this.moveToPool(index));
       }
       this._slotsContainer.appendChild(el);
     });
@@ -114,7 +114,7 @@ class UnscrambleExercise extends HTMLElement {
     this._pool.forEach((token, index) => {
       const el = this.createTokenElement(token);
       if (!isSolved) {
-        el.onclick = () => this.moveToSlots(index);
+        el.addEventListener("click", () => this.moveToSlots(index));
       }
       this._poolContainer.appendChild(el);
     });

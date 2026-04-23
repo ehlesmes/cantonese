@@ -1,0 +1,14 @@
+{
+  "name": "cantonese-learning-app",
+  "version": "1.0.0",
+  "description": "A lightweight Cantonese learning web application.",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.0",
+    "happy-dom": "^17.0.0"
+  }
+}
