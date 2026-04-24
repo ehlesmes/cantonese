@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./explanation_page.js";
 
 describe("ExplanationPage Component", () => {
@@ -16,7 +16,7 @@ describe("ExplanationPage Component", () => {
     expect(element.shadowRoot).not.toBeNull();
   });
 
-  it("should render title, text, and example cards from content attribute", () => {
+  it("should render title, text, and example cards from content property", () => {
     const content = [
       { type: "title", value: "Hello" },
       { type: "text", value: "This is a test." },
@@ -27,7 +27,7 @@ describe("ExplanationPage Component", () => {
         translation: "Hello",
       },
     ];
-    element.setAttribute("content", JSON.stringify(content));
+    element.content = content;
 
     const shadowRoot = element.shadowRoot;
     const title = shadowRoot.querySelector("h1");
@@ -36,18 +36,24 @@ describe("ExplanationPage Component", () => {
 
     expect(title.textContent).toBe("Hello");
     expect(text.textContent).toBe("This is a test.");
-    expect(card.getAttribute("cantonese")).toBe("你好");
+    expect(card.cantonese).toBe("你好");
   });
 
-  describe("Properties", () => {
-    it("should update via content property and reflect to attribute", () => {
-      const content = [{ type: "title", value: "New Title" }];
-      element.content = content;
+  describe("Validation", () => {
+    it("should log error if required properties are missing", () => {
+      const consoleSpy = vi
+        .spyOn(console, "error")
+        .mockImplementation(() => {});
 
-      expect(element.getAttribute("content")).toBe(JSON.stringify(content));
-      expect(element.shadowRoot.querySelector("h1").textContent).toBe(
-        "New Title",
+      document.body.innerHTML = "";
+      element = document.createElement("explanation-page");
+      document.body.appendChild(element);
+
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'content'"),
       );
+
+      consoleSpy.mockRestore();
     });
   });
 });

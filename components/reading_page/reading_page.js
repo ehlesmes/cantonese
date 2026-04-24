@@ -13,10 +13,6 @@ template.innerHTML = `
 `;
 
 class ReadingPage extends HTMLElement {
-  static get observedAttributes() {
-    return ["cantonese-phrase", "romanization", "translation"];
-  }
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -35,8 +31,7 @@ class ReadingPage extends HTMLElement {
     return this._cantonesePhrase;
   }
   set cantonesePhrase(val) {
-    this._cantonesePhrase = val;
-    this.setAttribute("cantonese-phrase", val);
+    this._cantonesePhrase = val || "";
     this._update();
   }
 
@@ -44,8 +39,7 @@ class ReadingPage extends HTMLElement {
     return this._romanization;
   }
   set romanization(val) {
-    this._romanization = val;
-    this.setAttribute("romanization", val);
+    this._romanization = val || "";
     this._update();
   }
 
@@ -53,8 +47,7 @@ class ReadingPage extends HTMLElement {
     return this._translation;
   }
   set translation(val) {
-    this._translation = val;
-    this.setAttribute("translation", val);
+    this._translation = val || "";
     this._update();
   }
 
@@ -68,24 +61,28 @@ class ReadingPage extends HTMLElement {
     this._update();
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
-    if (oldVal === newVal) return;
-    switch (name) {
-      case "cantonese-phrase":
-        this._cantonesePhrase = newVal || "";
-        break;
-      case "romanization":
-        this._romanization = newVal || "";
-        break;
-      case "translation":
-        this._translation = newVal || "";
-        break;
-    }
-    this._update();
+  validate() {
+    const required = {
+      cantonesePhrase: this._cantonesePhrase,
+      romanization: this._romanization,
+      translation: this._translation,
+    };
+
+    Object.entries(required).forEach(([prop, val]) => {
+      if (!val) {
+        console.error(
+          `🚨 [ReadingPage ERROR]: Missing required property '${prop}'!`,
+        );
+      }
+    });
   }
 
   _update() {
     if (!this.shadowRoot) return;
+
+    if (this.isConnected) {
+      this.validate();
+    }
 
     // Pass data to exercise via properties
     this._exercise.cantonesePhrase = this._cantonesePhrase;
@@ -94,12 +91,12 @@ class ReadingPage extends HTMLElement {
 
     if (this._state === "initial") {
       this._exercise.translationHidden = true;
-      this._footer.setAttribute("primary-text", "Reveal Answer");
-      this._footer.removeAttribute("secondary-text");
+      this._footer.primaryText = "Reveal Answer";
+      this._footer.secondaryText = "";
     } else {
       this._exercise.translationHidden = false;
-      this._footer.setAttribute("primary-text", "Got it right");
-      this._footer.setAttribute("secondary-text", "Need practice");
+      this._footer.primaryText = "Got it right";
+      this._footer.secondaryText = "Need practice";
     }
   }
 

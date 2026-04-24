@@ -16,12 +16,12 @@ describe("UnscrambleExercise Component", () => {
     expect(element.shadowRoot).not.toBeNull();
   });
 
-  it("should initialize tokens and populate the pool", () => {
+  it("should initialize tokens and populate the pool via property", () => {
     const tokens = [
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.setAttribute("tokens", JSON.stringify(tokens));
+    element.tokens = tokens;
 
     const poolTokens = element.shadowRoot.querySelectorAll("#pool .token-text");
     expect(poolTokens.length).toBe(2);
@@ -33,7 +33,7 @@ describe("UnscrambleExercise Component", () => {
 
   it("should move tokens to slots when clicked and dispatch 'complete' when pool is empty", () => {
     const tokens = [["你", "nei5"]];
-    element.setAttribute("tokens", JSON.stringify(tokens));
+    element.tokens = tokens;
 
     const poolToken = element.shadowRoot.querySelector("#pool ui-tooltip");
     const completeSpy = vi.fn();
@@ -58,7 +58,7 @@ describe("UnscrambleExercise Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.setAttribute("tokens", JSON.stringify(tokens));
+    element.tokens = tokens;
 
     const getPoolToken = (text) =>
       Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
@@ -68,7 +68,7 @@ describe("UnscrambleExercise Component", () => {
     getPoolToken("你").click();
     getPoolToken("好").click();
 
-    expect(element.getAttribute("status")).toBe("right");
+    expect(element.status).toBe("right");
   });
 
   it("should set status to 'wrong' when tokens are moved in incorrect order", () => {
@@ -78,7 +78,7 @@ describe("UnscrambleExercise Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.setAttribute("tokens", JSON.stringify(tokens));
+    element.tokens = tokens;
 
     const getPoolToken = (text) =>
       Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
@@ -88,7 +88,7 @@ describe("UnscrambleExercise Component", () => {
     getPoolToken("好").click();
     getPoolToken("你").click();
 
-    expect(element.getAttribute("status")).toBe("wrong");
+    expect(element.status).toBe("wrong");
   });
 
   it("should move only the specifically clicked slot token back to the pool", () => {
@@ -98,7 +98,7 @@ describe("UnscrambleExercise Component", () => {
       ["B", "b"],
       ["C", "c"],
     ];
-    element.setAttribute("tokens", JSON.stringify(tokens));
+    element.tokens = tokens;
 
     const getPoolToken = (text) =>
       Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
@@ -115,7 +115,7 @@ describe("UnscrambleExercise Component", () => {
     getPoolToken("A").click();
     getPoolToken("C").click();
 
-    expect(element.getAttribute("status")).toBe("wrong");
+    expect(element.status).toBe("wrong");
     expect(
       element.shadowRoot.querySelectorAll("#slots ui-tooltip").length,
     ).toBe(3);
@@ -144,7 +144,7 @@ describe("UnscrambleExercise Component", () => {
       ["B", "b"],
       ["C", "c"],
     ];
-    element.setAttribute("tokens", JSON.stringify(tokens));
+    element.tokens = tokens;
 
     const getPoolToken = (text) =>
       Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
@@ -162,43 +162,46 @@ describe("UnscrambleExercise Component", () => {
     expect(slotTexts).toEqual(["B", "C", "A"]);
   });
 
-  describe("Properties", () => {
-    it("should update via tokens property and reflect to attribute", () => {
-      const tokens = [["你好", "nei5 hou2"]];
-      element.tokens = tokens;
+  it("should not reset state if same tokens are set via property", () => {
+    const tokens = [
+      ["A", "a"],
+      ["B", "b"],
+    ];
+    element.tokens = tokens;
 
-      expect(element.getAttribute("tokens")).toBe(JSON.stringify(tokens));
-      expect(element.shadowRoot.getElementById("pool").children.length).toBe(1);
-    });
+    // Move one to slots
+    const poolToken = element.shadowRoot.querySelector("#pool ui-tooltip");
+    poolToken.click();
 
-    it("should update translation via property", () => {
-      element.translation = "Hello";
-      expect(element.getAttribute("translation")).toBe("Hello");
-      expect(
-        element.shadowRoot.querySelector(".translation-text").textContent,
-      ).toBe("Hello");
-    });
+    const initialSlots =
+      element.shadowRoot.querySelectorAll("#slots ui-tooltip").length;
+    expect(initialSlots).toBe(1);
 
-    it("should not reset state if same tokens are set via property", () => {
-      const tokens = [
-        ["A", "a"],
-        ["B", "b"],
-      ];
-      element.tokens = tokens;
+    // Set same tokens again
+    element.tokens = tokens;
+    expect(
+      element.shadowRoot.querySelectorAll("#slots ui-tooltip").length,
+    ).toBe(1);
+  });
 
-      // Move one to slots
-      const poolToken = element.shadowRoot.querySelector("#pool ui-tooltip");
-      poolToken.click();
+  describe("Validation", () => {
+    it("should log error if required properties are missing", () => {
+      const consoleSpy = vi
+        .spyOn(console, "error")
+        .mockImplementation(() => {});
 
-      const initialSlots =
-        element.shadowRoot.querySelectorAll("#slots ui-tooltip").length;
-      expect(initialSlots).toBe(1);
+      document.body.innerHTML = "";
+      element = document.createElement("unscramble-exercise");
+      document.body.appendChild(element);
 
-      // Set same tokens again
-      element.tokens = tokens;
-      expect(
-        element.shadowRoot.querySelectorAll("#slots ui-tooltip").length,
-      ).toBe(1);
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'tokens'"),
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'translation'"),
+      );
+
+      consoleSpy.mockRestore();
     });
   });
 });

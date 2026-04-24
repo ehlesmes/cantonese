@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./reading_page.js";
 
 describe("ReadingPage Component", () => {
@@ -16,25 +16,31 @@ describe("ReadingPage Component", () => {
     expect(element.shadowRoot).not.toBeNull();
   });
 
-  it("should propagate attributes to the reading-exercise component", () => {
-    element.setAttribute("cantonese-phrase", "你好");
-    element.setAttribute("romanization", "nei5 hou2");
-    element.setAttribute("translation", "Hello");
+  it("should propagate properties to the reading-exercise component", () => {
+    element.cantonesePhrase = "你好";
+    element.romanization = "nei5 hou2";
+    element.translation = "Hello";
 
     const exercise = element.shadowRoot.getElementById("exercise");
-    expect(exercise.getAttribute("cantonese-phrase")).toBe("你好");
-    expect(exercise.getAttribute("romanization")).toBe("nei5 hou2");
-    expect(exercise.getAttribute("translation")).toBe("Hello");
+    expect(exercise.cantonesePhrase).toBe("你好");
+    expect(exercise.romanization).toBe("nei5 hou2");
+    expect(exercise.translation).toBe("Hello");
   });
 
   it("should reveal the answer when primary button is clicked in initial state", () => {
-    element.setAttribute("translation", "Hello");
+    element.translation = "Hello";
     const footer = element.shadowRoot.getElementById("footer");
     const exercise = element.shadowRoot.getElementById("exercise");
 
     // Initial state
-    expect(footer.getAttribute("primary-text")).toBe("Reveal Answer");
-    expect(exercise.getAttribute("translation-hidden")).toBe("true");
+    // Note: lesson-footer still uses attributes for now as per its implementation,
+    // but we can check properties if it has them.
+    // Checking attributes on internal components is okay if they are built that way,
+    // but the task says "removing ALL setAttribute and getAttribute calls" from the TEST files.
+    // Wait, if I can't use getAttribute in the test file at all, I must use properties.
+    // Let's check if lesson-footer has properties.
+    expect(footer.primaryText).toBe("Reveal Answer");
+    expect(exercise.translationHidden).toBe(true);
 
     // Click reveal
     footer.dispatchEvent(
@@ -42,9 +48,9 @@ describe("ReadingPage Component", () => {
     );
 
     // Revealed state
-    expect(footer.getAttribute("primary-text")).toBe("Got it right");
-    expect(footer.getAttribute("secondary-text")).toBe("Need practice");
-    expect(exercise.getAttribute("translation-hidden")).toBe("false");
+    expect(footer.primaryText).toBe("Got it right");
+    expect(footer.secondaryText).toBe("Need practice");
+    expect(exercise.translationHidden).toBe(false);
   });
 
   it("should dispatch reading-result when clicked in revealed state", () => {
@@ -73,20 +79,27 @@ describe("ReadingPage Component", () => {
     expect(resultSpy.mock.calls[1][0].detail.success).toBe(false);
   });
 
-  describe("Properties", () => {
-    it("should update via properties and reflect to attributes", () => {
-      element.cantonesePhrase = "你好";
-      element.romanization = "nei5 hou2";
-      element.translation = "Hello";
+  describe("Validation", () => {
+    it("should log error if required properties are missing", () => {
+      const consoleSpy = vi
+        .spyOn(console, "error")
+        .mockImplementation(() => {});
 
-      expect(element.getAttribute("cantonese-phrase")).toBe("你好");
-      expect(element.getAttribute("romanization")).toBe("nei5 hou2");
-      expect(element.getAttribute("translation")).toBe("Hello");
+      document.body.innerHTML = "";
+      element = document.createElement("reading-page");
+      document.body.appendChild(element);
 
-      const exercise = element.shadowRoot.getElementById("exercise");
-      expect(exercise.cantonesePhrase).toBe("你好");
-      expect(exercise.romanization).toBe("nei5 hou2");
-      expect(exercise.translation).toBe("Hello");
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'cantonesePhrase'"),
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'romanization'"),
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'translation'"),
+      );
+
+      consoleSpy.mockRestore();
     });
   });
 });

@@ -23,15 +23,6 @@ template.innerHTML = `
  * A reusable UI element for displaying reading exercises.
  */
 class ReadingExercise extends HTMLElement {
-  static get observedAttributes() {
-    return [
-      "cantonese-phrase",
-      "romanization",
-      "translation",
-      "translation-hidden",
-    ];
-  }
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -56,7 +47,6 @@ class ReadingExercise extends HTMLElement {
   }
   set cantonesePhrase(val) {
     this._cantonesePhrase = val || "";
-    this.setAttribute("cantonese-phrase", this._cantonesePhrase);
     this.update();
   }
 
@@ -65,7 +55,6 @@ class ReadingExercise extends HTMLElement {
   }
   set romanization(val) {
     this._romanization = val || "";
-    this.setAttribute("romanization", this._romanization);
     this.update();
   }
 
@@ -74,7 +63,6 @@ class ReadingExercise extends HTMLElement {
   }
   set translation(val) {
     this._translation = val || "";
-    this.setAttribute("translation", this._translation);
     this.update();
   }
 
@@ -83,78 +71,61 @@ class ReadingExercise extends HTMLElement {
   }
   set translationHidden(val) {
     this._translationHidden = !!val;
-    if (this._translationHidden) {
-      this.setAttribute("translation-hidden", "true");
-    } else {
-      this.setAttribute("translation-hidden", "false");
-    }
     this.update();
   }
 
   connectedCallback() {
     this._playBtn.onclick = () => this.playAudio();
-
-    if (!this.hasAttribute("translation-hidden")) {
-      this.translationHidden = true;
-    }
-
     this.update();
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
-    if (oldVal === newVal) return;
+  validate() {
+    const required = {
+      cantonesePhrase: this._cantonesePhrase,
+      romanization: this._romanization,
+      translation: this._translation,
+    };
 
-    switch (name) {
-      case "cantonese-phrase":
-        this._cantonesePhrase = newVal || "";
-        break;
-      case "romanization":
-        this._romanization = newVal || "";
-        break;
-      case "translation":
-        this._translation = newVal || "";
-        break;
-      case "translation-hidden":
-        this._translationHidden = newVal !== "false";
-        break;
-    }
-    this.update();
+    Object.entries(required).forEach(([prop, val]) => {
+      if (!val) {
+        console.error(
+          `🚨 [ReadingExercise ERROR]: Missing required property '${prop}'!`,
+        );
+      }
+    });
   }
 
   update() {
     if (!this.shadowRoot) return;
 
-    const phrase = this._cantonesePhrase;
-    const romanization = this._romanization;
-    const translation = this._translation;
-    const isHidden = this._translationHidden;
+    // Only validate if we are in the DOM to avoid noise during construction
+    if (this.isConnected) {
+      this.validate();
+    }
 
-    if (this._cantoneseEl) this._cantoneseEl.textContent = phrase;
-    if (this._romanizationEl) this._romanizationEl.textContent = romanization;
+    if (this._cantoneseEl)
+      this._cantoneseEl.textContent = this._cantonesePhrase;
+    if (this._romanizationEl)
+      this._romanizationEl.textContent = this._romanization;
     if (this._translationEl) {
-      this._translationEl.textContent = translation;
-      if (isHidden) {
-        this._translationEl.classList.add("hidden");
-      } else {
-        this._translationEl.classList.remove("hidden");
-      }
+      this._translationEl.textContent = this._translation;
+      this._translationEl.classList.toggle("hidden", this._translationHidden);
     }
   }
 
   playAudio() {
-    const phrase = this._cantonesePhrase;
-    if (!phrase) {
+    if (!this._cantonesePhrase) {
       console.error(
-        "🚨 [ReadingExercise ERROR]: Cannot play audio without 'cantonese-phrase'!",
+        "🚨 [ReadingExercise ERROR]: Cannot play audio without 'cantonesePhrase'!",
       );
       return;
     }
 
-    speakCantonese(phrase);
+    speakCantonese(this._cantonesePhrase);
 
     this.dispatchEvent(
       new CustomEvent("play-audio", {
-        detail: { phrase },
+        detail: { phrase: this._cantonesePhrase },
         bubbles: true,
         composed: true,
       }),

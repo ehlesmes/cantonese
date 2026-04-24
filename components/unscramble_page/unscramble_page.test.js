@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./unscramble_page.js";
 
 describe("UnscramblePage Component", () => {
@@ -21,26 +21,25 @@ describe("UnscramblePage Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.setAttribute("tokens", JSON.stringify(tokens));
+    element.tokens = tokens;
 
     const exercise = element.shadowRoot.getElementById("exercise");
     const footer = element.shadowRoot.getElementById("footer");
 
-    expect(exercise.getAttribute("tokens")).toBe(JSON.stringify(tokens));
-    expect(footer.getAttribute("primary-disabled")).toBe("true");
+    expect(exercise.tokens).toEqual(tokens);
+    expect(footer.primaryDisabled).toBe(true);
 
     // Complete the exercise correctly
-    // We'll call the internal method on exercise because triggering real clicks is slow here
     exercise.moveToSlots(0);
     exercise.moveToSlots(0);
 
     // Page should update footer
-    expect(footer.getAttribute("primary-disabled")).toBe("false");
+    expect(footer.primaryDisabled).toBe(false);
   });
 
   it("should dispatch unscramble-result when primary button is clicked after completion", () => {
     const tokens = [["你", "nei5"]];
-    element.setAttribute("tokens", JSON.stringify(tokens));
+    element.tokens = tokens;
     const exercise = element.shadowRoot.getElementById("exercise");
     const footer = element.shadowRoot.getElementById("footer");
 
@@ -59,18 +58,24 @@ describe("UnscramblePage Component", () => {
     expect(resultSpy.mock.calls[0][0].detail.success).toBe(true);
   });
 
-  describe("Properties", () => {
-    it("should update via properties and reflect to attributes", () => {
-      const tokens = [["你好", "nei5 hou2"]];
-      element.tokens = tokens;
-      element.translation = "Hello";
+  describe("Validation", () => {
+    it("should log error if required properties are missing", () => {
+      const consoleSpy = vi
+        .spyOn(console, "error")
+        .mockImplementation(() => {});
 
-      expect(element.getAttribute("tokens")).toBe(JSON.stringify(tokens));
-      expect(element.getAttribute("translation")).toBe("Hello");
+      document.body.innerHTML = "";
+      element = document.createElement("unscramble-page");
+      document.body.appendChild(element);
 
-      const exercise = element.shadowRoot.getElementById("exercise");
-      expect(exercise.tokens).toEqual(tokens);
-      expect(exercise.translation).toBe("Hello");
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'tokens'"),
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'translation'"),
+      );
+
+      consoleSpy.mockRestore();
     });
   });
 });

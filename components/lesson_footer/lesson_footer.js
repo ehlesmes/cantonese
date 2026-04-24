@@ -24,6 +24,42 @@ export class LessonFooter extends HTMLElement {
     this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
   }
 
+  get primaryText() {
+    return this.getAttribute("primary-text");
+  }
+  set primaryText(val) {
+    if (val) this.setAttribute("primary-text", val);
+    else this.removeAttribute("primary-text");
+  }
+
+  get secondaryText() {
+    return this.getAttribute("secondary-text");
+  }
+  set secondaryText(val) {
+    if (val) this.setAttribute("secondary-text", val);
+    else this.removeAttribute("secondary-text");
+  }
+
+  get primaryDisabled() {
+    return (
+      this.hasAttribute("primary-disabled") &&
+      this.getAttribute("primary-disabled") !== "false"
+    );
+  }
+  set primaryDisabled(val) {
+    this.setAttribute("primary-disabled", val ? "true" : "false");
+  }
+
+  get secondaryDisabled() {
+    return (
+      this.hasAttribute("secondary-disabled") &&
+      this.getAttribute("secondary-disabled") !== "false"
+    );
+  }
+  set secondaryDisabled(val) {
+    this.setAttribute("secondary-disabled", val ? "true" : "false");
+  }
+
   connectedCallback() {
     this.shadowRoot.getElementById("primary-btn").onclick = () => {
       this.dispatchEvent(

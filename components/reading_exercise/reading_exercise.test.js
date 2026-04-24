@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./reading_exercise.js";
 
 describe("ReadingExercise Component", () => {
@@ -16,10 +16,10 @@ describe("ReadingExercise Component", () => {
     expect(element.shadowRoot).not.toBeNull();
   });
 
-  it("should display the Cantonese phrase and romanization", async () => {
-    element.setAttribute("cantonese-phrase", "你好");
-    element.setAttribute("romanization", "nei5 hou2");
-    element.setAttribute("translation", "Hello");
+  it("should display the Cantonese phrase and romanization via properties", async () => {
+    element.cantonesePhrase = "你好";
+    element.romanization = "nei5 hou2";
+    element.translation = "Hello";
 
     const shadowRoot = element.shadowRoot;
     const cantoneseText = shadowRoot.querySelector(".cantonese-text");
@@ -31,22 +31,22 @@ describe("ReadingExercise Component", () => {
     expect(translationText.textContent).toBe("Hello");
   });
 
-  it("should hide translation by default and show it when translation-hidden is false", async () => {
-    element.setAttribute("translation", "Hello");
+  it("should hide translation by default and show it when translationHidden is false", async () => {
+    element.translation = "Hello";
     const translationEl = element.shadowRoot.querySelector(".translation-text");
 
-    // By default, it's hidden (connectedCallback sets translation-hidden="true" if not present)
+    // By default, it's hidden
     expect(translationEl.classList.contains("hidden")).toBe(true);
 
-    element.setAttribute("translation-hidden", "false");
+    element.translationHidden = false;
     expect(translationEl.classList.contains("hidden")).toBe(false);
 
-    element.setAttribute("translation-hidden", "true");
+    element.translationHidden = true;
     expect(translationEl.classList.contains("hidden")).toBe(true);
   });
 
   it("should dispatch 'play-audio' event when audio button is clicked", async () => {
-    element.setAttribute("cantonese-phrase", "你好");
+    element.cantonesePhrase = "你好";
     const playBtn = element.shadowRoot.getElementById("play-audio");
     const eventSpy = vi.fn();
 
@@ -59,7 +59,7 @@ describe("ReadingExercise Component", () => {
   });
 
   it("should call window.speechSynthesis.speak when audio button is clicked", async () => {
-    element.setAttribute("cantonese-phrase", "你好");
+    element.cantonesePhrase = "你好";
     const playBtn = element.shadowRoot.getElementById("play-audio");
 
     playBtn.click();
@@ -69,47 +69,28 @@ describe("ReadingExercise Component", () => {
     expect(utterance.text).toBe("你好");
   });
 
-  describe("Properties", () => {
-    it("should update via properties and reflect to attributes", () => {
-      element.cantonesePhrase = "你好";
-      element.romanization = "nei5 hou2";
-      element.translation = "Hello";
-      element.translationHidden = false;
+  describe("Validation", () => {
+    it("should log error if required properties are missing", () => {
+      const consoleSpy = vi
+        .spyOn(console, "error")
+        .mockImplementation(() => {});
 
-      expect(element.getAttribute("cantonese-phrase")).toBe("你好");
-      expect(element.getAttribute("romanization")).toBe("nei5 hou2");
-      expect(element.getAttribute("translation")).toBe("Hello");
-      expect(element.getAttribute("translation-hidden")).toBe("false");
+      // Clear body and re-add to trigger connectedCallback/validate
+      document.body.innerHTML = "";
+      element = document.createElement("reading-exercise");
+      document.body.appendChild(element);
 
-      const shadow = element.shadowRoot;
-      expect(shadow.querySelector(".cantonese-text").textContent).toBe("你好");
-      expect(shadow.querySelector(".romanization-text").textContent).toBe(
-        "nei5 hou2",
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'cantonesePhrase'"),
       );
-      expect(shadow.querySelector(".translation-text").textContent).toBe(
-        "Hello",
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'romanization'"),
       );
-      expect(
-        shadow.querySelector(".translation-text").classList.contains("hidden"),
-      ).toBe(false);
-    });
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'translation'"),
+      );
 
-    it("should handle translationHidden property correctly", () => {
-      element.translationHidden = true;
-      expect(element.getAttribute("translation-hidden")).toBe("true");
-      expect(
-        element.shadowRoot
-          .querySelector(".translation-text")
-          .classList.contains("hidden"),
-      ).toBe(true);
-
-      element.translationHidden = false;
-      expect(element.getAttribute("translation-hidden")).toBe("false");
-      expect(
-        element.shadowRoot
-          .querySelector(".translation-text")
-          .classList.contains("hidden"),
-      ).toBe(false);
+      consoleSpy.mockRestore();
     });
   });
 });

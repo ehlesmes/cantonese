@@ -13,10 +13,6 @@ template.innerHTML = `
 `;
 
 class UnscramblePage extends HTMLElement {
-  static get observedAttributes() {
-    return ["tokens", "translation"];
-  }
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -35,7 +31,6 @@ class UnscramblePage extends HTMLElement {
   set tokens(val) {
     if (Array.isArray(val)) {
       this._tokens = val;
-      this.setAttribute("tokens", JSON.stringify(val));
       this._update();
     }
   }
@@ -45,13 +40,12 @@ class UnscramblePage extends HTMLElement {
   }
   set translation(val) {
     this._translation = val || "";
-    this.setAttribute("translation", this._translation);
     this._update();
   }
 
   connectedCallback() {
     this.shadowRoot.addEventListener("complete", () => {
-      if (this._exercise.getAttribute("status") === "right") {
+      if (this._exercise.status === "right") {
         this._exercise.playAudio();
       }
       this._update();
@@ -66,41 +60,44 @@ class UnscramblePage extends HTMLElement {
     this._update();
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
-    if (oldVal === newVal) return;
-    if (name === "tokens") {
-      try {
-        this._tokens = JSON.parse(newVal);
-      } catch (e) {
-        console.error("🚨 [UnscramblePage ERROR]: Failed to parse tokens", e);
-      }
-    } else if (name === "translation") {
-      this._translation = newVal || "";
+  validate() {
+    if (this._tokens.length === 0) {
+      console.error(
+        "🚨 [UnscramblePage ERROR]: Missing required property 'tokens'!",
+      );
     }
-    this._update();
+    if (!this._translation) {
+      console.error(
+        "🚨 [UnscramblePage ERROR]: Missing required property 'translation'!",
+      );
+    }
   }
 
   _update() {
     if (!this.shadowRoot) return;
 
+    if (this.isConnected) {
+      this.validate();
+    }
+
     this._exercise.tokens = this._tokens;
     this._exercise.translation = this._translation;
 
-    const status = this._exercise.getAttribute("status");
+    const status = this._exercise.status;
     const isFilled = status !== "incomplete";
 
-    this._footer.setAttribute("primary-text", "Continue");
-    this._footer.setAttribute("primary-disabled", isFilled ? "false" : "true");
+    this._footer.primaryText = "Continue";
+    this._footer.primaryDisabled = !isFilled;
 
     if (status === "wrong") {
-      this._footer.setAttribute("secondary-text", "Try again");
+      this._footer.secondaryText = "Try again";
     } else {
-      this._footer.removeAttribute("secondary-text");
+      this._footer.secondaryText = "";
     }
   }
 
   _handlePrimaryClick() {
-    const status = this._exercise.getAttribute("status");
+    const status = this._exercise.status;
     if (status !== "incomplete") {
       this.dispatchEvent(
         new CustomEvent("unscramble-result", {

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./example_card.js";
 
 describe("ExampleCard Component", () => {
@@ -16,10 +16,10 @@ describe("ExampleCard Component", () => {
     expect(element.shadowRoot).not.toBeNull();
   });
 
-  it("should display the Cantonese text, romanization, and translation", () => {
-    element.setAttribute("cantonese", "你好");
-    element.setAttribute("romanization", "nei5 hou2");
-    element.setAttribute("translation", "Hello");
+  it("should display the Cantonese text, romanization, and translation via properties", () => {
+    element.cantonese = "你好";
+    element.romanization = "nei5 hou2";
+    element.translation = "Hello";
 
     const shadowRoot = element.shadowRoot;
     const cantoneseText = shadowRoot.querySelector(".cantonese-text");
@@ -32,7 +32,7 @@ describe("ExampleCard Component", () => {
   });
 
   it("should call window.speechSynthesis.speak when audio button is clicked", () => {
-    element.setAttribute("cantonese", "你好");
+    element.cantonese = "你好";
     const playBtn = element.shadowRoot.getElementById("play-audio");
 
     playBtn.click();
@@ -42,24 +42,27 @@ describe("ExampleCard Component", () => {
     expect(utterance.text).toBe("你好");
   });
 
-  describe("Properties", () => {
-    it("should update via properties and reflect to attributes", () => {
-      element.cantonese = "你好";
-      element.romanization = "nei5 hou2";
-      element.translation = "Hello";
+  describe("Validation", () => {
+    it("should log error if required properties are missing", () => {
+      const consoleSpy = vi
+        .spyOn(console, "error")
+        .mockImplementation(() => {});
 
-      expect(element.getAttribute("cantonese")).toBe("你好");
-      expect(element.getAttribute("romanization")).toBe("nei5 hou2");
-      expect(element.getAttribute("translation")).toBe("Hello");
+      document.body.innerHTML = "";
+      element = document.createElement("example-card");
+      document.body.appendChild(element);
 
-      const shadow = element.shadowRoot;
-      expect(shadow.querySelector(".cantonese-text").textContent).toBe("你好");
-      expect(shadow.querySelector(".romanization-text").textContent).toBe(
-        "nei5 hou2",
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'cantonese'"),
       );
-      expect(shadow.querySelector(".translation-text").textContent).toBe(
-        "Hello",
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'romanization'"),
       );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required property 'translation'"),
+      );
+
+      consoleSpy.mockRestore();
     });
   });
 });

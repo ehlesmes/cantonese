@@ -20,10 +20,6 @@ template.innerHTML = `
 `;
 
 class ExampleCard extends HTMLElement {
-  static get observedAttributes() {
-    return ["cantonese", "romanization", "translation"];
-  }
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -45,7 +41,6 @@ class ExampleCard extends HTMLElement {
   }
   set cantonese(val) {
     this._cantonese = val || "";
-    this.setAttribute("cantonese", this._cantonese);
     this.update();
   }
 
@@ -54,7 +49,6 @@ class ExampleCard extends HTMLElement {
   }
   set romanization(val) {
     this._romanization = val || "";
-    this.setAttribute("romanization", this._romanization);
     this.update();
   }
 
@@ -63,7 +57,6 @@ class ExampleCard extends HTMLElement {
   }
   set translation(val) {
     this._translation = val || "";
-    this.setAttribute("translation", this._translation);
     this.update();
   }
 
@@ -72,24 +65,28 @@ class ExampleCard extends HTMLElement {
     this.update();
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
-    if (oldVal === newVal) return;
-    switch (name) {
-      case "cantonese":
-        this._cantonese = newVal || "";
-        break;
-      case "romanization":
-        this._romanization = newVal || "";
-        break;
-      case "translation":
-        this._translation = newVal || "";
-        break;
-    }
-    this.update();
+  validate() {
+    const required = {
+      cantonese: this._cantonese,
+      romanization: this._romanization,
+      translation: this._translation,
+    };
+
+    Object.entries(required).forEach(([prop, val]) => {
+      if (!val) {
+        console.error(
+          `🚨 [ExampleCard ERROR]: Missing required property '${prop}'!`,
+        );
+      }
+    });
   }
 
   update() {
     if (!this.shadowRoot) return;
+
+    if (this.isConnected) {
+      this.validate();
+    }
 
     if (this._cantoneseEl) this._cantoneseEl.textContent = this._cantonese;
     if (this._romanizationEl)

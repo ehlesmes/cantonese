@@ -13,10 +13,6 @@ template.innerHTML = `
 `;
 
 class ExplanationPage extends HTMLElement {
-  static get observedAttributes() {
-    return ["content"];
-  }
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -31,7 +27,6 @@ class ExplanationPage extends HTMLElement {
   set content(val) {
     if (Array.isArray(val)) {
       this._content = val;
-      this.setAttribute("content", JSON.stringify(val));
       this._render();
     }
   }
@@ -48,20 +43,20 @@ class ExplanationPage extends HTMLElement {
     this._render();
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
-    if (oldVal === newVal) return;
-    if (name === "content") {
-      try {
-        this._content = JSON.parse(newVal);
-      } catch (e) {
-        console.error("🚨 [ExplanationPage ERROR]: Failed to parse content", e);
-      }
+  validate() {
+    if (this._content.length === 0) {
+      console.error(
+        "🚨 [ExplanationPage ERROR]: Missing required property 'content'!",
+      );
     }
-    this._render();
   }
 
   _render() {
     if (!this._contentWrapper) return;
+
+    if (this.isConnected) {
+      this.validate();
+    }
 
     this._contentWrapper.innerHTML = ""; // Clear existing content
 

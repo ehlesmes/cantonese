@@ -18,10 +18,6 @@ template.innerHTML = `
 `;
 
 class UnscrambleExercise extends HTMLElement {
-  static get observedAttributes() {
-    return ["tokens", "status", "translation"];
-  }
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -38,6 +34,7 @@ class UnscrambleExercise extends HTMLElement {
     this._slots = [];
     this._status = "incomplete";
     this._translation = "";
+    this._lastTokensJson = "";
   }
 
   get status() {
@@ -54,7 +51,6 @@ class UnscrambleExercise extends HTMLElement {
 
     this._lastTokensJson = jsonVal;
     this._setTokens(val);
-    this.setAttribute("tokens", jsonVal);
     this.update();
   }
 
@@ -64,39 +60,25 @@ class UnscrambleExercise extends HTMLElement {
   set translation(val) {
     if (this._translation === val) return;
     this._translation = val || "";
-    this.setAttribute("translation", this._translation);
     this.update();
   }
 
   connectedCallback() {
     this._playBtn.onclick = () => this.playAudio();
-    if (!this.hasAttribute("status")) {
-      this.setAttribute("status", "incomplete");
-    }
     this.update();
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
-    if (oldVal === newVal) return;
-
-    if (name === "status") {
-      this._status = newVal;
-    } else if (name === "tokens") {
-      if (this._lastTokensJson === newVal) return;
-      this._lastTokensJson = newVal;
-      try {
-        const parsed = JSON.parse(newVal);
-        this._setTokens(parsed);
-      } catch (e) {
-        console.error(
-          "🚨 [UnscrambleExercise ERROR]: Failed to parse tokens",
-          e,
-        );
-      }
-    } else if (name === "translation") {
-      this._translation = newVal || "";
+  validate() {
+    if (this._originalTokens.length === 0) {
+      console.error(
+        "🚨 [UnscrambleExercise ERROR]: Missing required property 'tokens'!",
+      );
     }
-    this.update();
+    if (!this._translation) {
+      console.error(
+        "🚨 [UnscrambleExercise ERROR]: Missing required property 'translation'!",
+      );
+    }
   }
 
   _setTokens(tokenArray) {
@@ -112,6 +94,10 @@ class UnscrambleExercise extends HTMLElement {
 
   update() {
     if (!this.shadowRoot) return;
+
+    if (this.isConnected) {
+      this.validate();
+    }
 
     if (this._translationEl)
       this._translationEl.textContent = this._translation;
@@ -198,7 +184,6 @@ class UnscrambleExercise extends HTMLElement {
 
     if (this._status !== newStatus) {
       this._status = newStatus;
-      this.setAttribute("status", newStatus);
     }
   }
 
