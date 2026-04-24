@@ -22,13 +22,21 @@ describe("UiTooltip Component", () => {
       <div slot="content">Tooltip info</div>
     `;
 
-    const triggerSlot = element.shadowRoot.querySelector('slot[name="trigger"]');
-    const contentSlot = element.shadowRoot.querySelector('slot[name="content"]');
+    const triggerSlot = element.shadowRoot.querySelector(
+      'slot[name="trigger"]',
+    );
+    const contentSlot = element.shadowRoot.querySelector(
+      'slot[name="content"]',
+    );
 
     expect(triggerSlot).not.toBeNull();
     expect(contentSlot).not.toBeNull();
-    
-    expect(element.querySelector('[slot="trigger"]').textContent).toBe("Hover me");
-    expect(element.querySelector('[slot="content"]').textContent).toBe("Tooltip info");
+
+    expect(element.querySelector('[slot="trigger"]').textContent).toBe(
+      "Hover me",
+    );
+    expect(element.querySelector('[slot="content"]').textContent).toBe(
+      "Tooltip info",
+    );
   });
 });
