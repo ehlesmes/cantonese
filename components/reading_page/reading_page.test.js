@@ -1,37 +1,38 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import "./reading_page.js";
+import { ReadingPage } from "./reading_page.js";
 
 describe("ReadingPage Component", () => {
   beforeEach(() => {
     document.body.innerHTML = "";
   });
 
-  it("should be defined and upgraded", () => {
-    const el = document.createElement("reading-page");
-    el.data = {
+  it("should be defined", () => {
+    const component = new ReadingPage({
       cantonesePhrase: "test",
       romanization: "test",
       translation: "test",
-    };
-    document.body.appendChild(el);
-    expect(customElements.get("reading-page")).toBeDefined();
-    expect(el).toBeInstanceOf(HTMLElement);
-    expect(el.shadowRoot).not.toBeNull();
+    });
+    expect(component).toBeInstanceOf(ReadingPage);
+    expect(component.shadowRoot).not.toBeNull();
   });
 
   it("should propagate data to the reading-exercise component", () => {
-    const el = document.createElement("reading-page");
-    el.data = {
+    const component = new ReadingPage({
       cantonesePhrase: "你好",
       romanization: "nei5 hou2",
       translation: "Hello",
-    };
-    document.body.appendChild(el);
+    });
 
-    const exercise = el.shadowRoot.getElementById("exercise");
-    expect(exercise.data.cantonesePhrase).toBe("你好");
-    expect(exercise.data.romanization).toBe("nei5 hou2");
-    expect(exercise.data.translation).toBe("Hello");
+    // Accessing internal class instance from the element's shadowRoot if needed,
+    // but in our refactor, the ID is set on the element.
+    // However, the test expects to check 'data' property.
+    // Since 'exercise' is a Component instance's element, it won't have .data unless we attached it.
+    // Wait, in my refactor: this._exercise = new ReadingExercise(); this._exercise.element.id = "exercise";
+    // So `exercise` variable here is the HTMLElement.
+    // But the class instance is `component._exercise`.
+    expect(component._exercise.data.cantonesePhrase).toBe("你好");
+    expect(component._exercise.data.romanization).toBe("nei5 hou2");
+    expect(component._exercise.data.translation).toBe("Hello");
   });
 
   it("should correctly return internal state via the data getter", () => {
@@ -40,30 +41,26 @@ describe("ReadingPage Component", () => {
       romanization: "nei5 hou2",
       translation: "Hello",
     };
-    const el = document.createElement("reading-page");
-    el.data = testData;
-    document.body.appendChild(el);
-    expect(el.data).toEqual(testData);
+    const component = new ReadingPage(testData);
+    expect(component.data).toEqual(testData);
   });
 
   it("should reveal the answer when primary button is clicked in initial state", () => {
-    const el = document.createElement("reading-page");
-    el.data = {
+    const component = new ReadingPage({
       cantonesePhrase: "你好",
       romanization: "nei5 hou2",
       translation: "Hello",
-    };
-    document.body.appendChild(el);
+    });
 
-    const footer = el.shadowRoot.getElementById("footer");
-    const exercise = el.shadowRoot.getElementById("exercise");
+    const footer = component._footer;
+    const exercise = component._exercise;
 
     // Initial state
     expect(footer.data.primaryText).toBe("Reveal Answer");
     expect(exercise.data.translationHidden).toBe(true);
 
     // Click reveal
-    footer.dispatchEvent(
+    footer.element.dispatchEvent(
       new CustomEvent("primary-click", { bubbles: true, composed: true }),
     );
 
@@ -74,33 +71,31 @@ describe("ReadingPage Component", () => {
   });
 
   it("should dispatch reading-result when clicked in revealed state", () => {
-    const el = document.createElement("reading-page");
-    el.data = {
+    const component = new ReadingPage({
       cantonesePhrase: "你好",
       romanization: "nei5 hou2",
       translation: "Hello",
-    };
-    document.body.appendChild(el);
+    });
 
-    const footer = el.shadowRoot.getElementById("footer");
+    const footer = component._footer;
 
     // Move to revealed state
-    footer.dispatchEvent(
+    footer.element.dispatchEvent(
       new CustomEvent("primary-click", { bubbles: true, composed: true }),
     );
 
     const resultSpy = vi.fn();
-    el.addEventListener("reading-result", resultSpy);
+    component.element.addEventListener("reading-result", resultSpy);
 
     // Click "Got it right"
-    footer.dispatchEvent(
+    footer.element.dispatchEvent(
       new CustomEvent("primary-click", { bubbles: true, composed: true }),
     );
     expect(resultSpy).toHaveBeenCalled();
     expect(resultSpy.mock.calls[0][0].detail.success).toBe(true);
 
     // Click "Need practice"
-    footer.dispatchEvent(
+    footer.element.dispatchEvent(
       new CustomEvent("secondary-click", { bubbles: true, composed: true }),
     );
     expect(resultSpy).toHaveBeenCalledTimes(2);
@@ -111,28 +106,13 @@ describe("ReadingPage Component", () => {
     it("should log error if required data properties are missing", () => {
       const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      const el = document.createElement("reading-page");
-      document.body.appendChild(el);
+      new ReadingPage();
 
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining("Missing required data property"),
       );
 
       errorSpy.mockRestore();
-    });
-  });
-
-  describe("Late Upgrade", () => {
-    it("should handle data property set before the element is connected", () => {
-      const el = document.createElement("reading-page");
-      el.data = {
-        cantonesePhrase: "你好",
-        romanization: "nei5",
-        translation: "hello",
-      };
-      document.body.appendChild(el);
-      const exercise = el.shadowRoot.getElementById("exercise");
-      expect(exercise.data.cantonesePhrase).toBe("你好");
     });
   });
 });

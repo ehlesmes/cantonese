@@ -1,55 +1,40 @@
-const footerTemplate = document.createElement("template");
-footerTemplate.innerHTML = `
-<link rel="stylesheet" href="/components/shared/button.css" />
-<link rel="stylesheet" href="/components/lesson_footer/style.css" />
-<footer>
-  <button id="secondary-btn" class="btn-base btn-outline hidden"></button>
-  <button id="primary-btn" class="btn-base btn-filled"></button>
-</footer>
-`;
+import { Component } from "/components/shared/component.js";
 
-export class LessonFooter extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
+export class LessonFooter extends Component {
+  /**
+   * @param {Object} [options]
+   * @param {string} [options.primaryText]
+   * @param {string} [options.secondaryText]
+   * @param {boolean} [options.primaryDisabled]
+   * @param {boolean} [options.secondaryDisabled]
+   */
+  constructor(options = {}) {
+    super("/components/lesson_footer/style.css");
 
-    this._data = {
-      primaryText: "",
-      secondaryText: "",
-      primaryDisabled: false,
-      secondaryDisabled: false,
-    };
-  }
+    const baseStyle = document.createElement("link");
+    baseStyle.rel = "stylesheet";
+    baseStyle.href = "/components/shared/button.css";
+    this.shadowRoot.appendChild(baseStyle);
 
-  get data() {
-    return this._data;
-  }
-  set data(val) {
-    this._data = { ...this._data, ...val };
-    this.update();
-  }
+    this._footer = document.createElement("footer");
 
-  connectedCallback() {
-    this._upgradeProperty("data");
-    this.shadowRoot.getElementById("primary-btn").onclick = () => {
-      this.dispatchEvent(
-        new CustomEvent("primary-click", { bubbles: true, composed: true }),
-      );
-    };
-    this.shadowRoot.getElementById("secondary-btn").onclick = () => {
-      this.dispatchEvent(
-        new CustomEvent("secondary-click", { bubbles: true, composed: true }),
-      );
-    };
-    this.update();
-  }
+    this._secondaryBtn = document.createElement("button");
+    this._secondaryBtn.id = "secondary-btn";
+    this._secondaryBtn.className = "btn-base btn-outline hidden";
+    this._footer.appendChild(this._secondaryBtn);
 
-  _upgradeProperty(prop) {
-    if (Object.hasOwn(this, prop)) {
-      const value = this[prop];
-      delete this[prop];
-      this[prop] = value;
+    this._primaryBtn = document.createElement("button");
+    this._primaryBtn.id = "primary-btn";
+    this._primaryBtn.className = "btn-base btn-filled";
+    this._footer.appendChild(this._primaryBtn);
+
+    this.shadowRoot.appendChild(this._footer);
+
+    this._primaryBtn.onclick = () => this.dispatch("primary-click");
+    this._secondaryBtn.onclick = () => this.dispatch("secondary-click");
+
+    if (Object.keys(options).length > 0) {
+      this.data = options;
     }
   }
 
@@ -62,40 +47,20 @@ export class LessonFooter extends HTMLElement {
   }
 
   update() {
-    if (!this.shadowRoot) return;
+    this.validate();
 
-    if (this.isConnected) {
-      this.validate();
-    }
+    const { primaryText, secondaryText, primaryDisabled, secondaryDisabled } =
+      this._data;
 
-    const primaryBtn = this.shadowRoot.getElementById("primary-btn");
-    const secondaryBtn = this.shadowRoot.getElementById("secondary-btn");
+    this._primaryBtn.textContent = primaryText || "Next";
+    this._primaryBtn.disabled = Boolean(primaryDisabled);
 
-    if (primaryBtn) {
-      primaryBtn.textContent = this._data.primaryText || "Next";
-      if (this._data.primaryDisabled) {
-        primaryBtn.setAttribute("disabled", "");
-      } else {
-        primaryBtn.removeAttribute("disabled");
-      }
-    }
-
-    if (secondaryBtn) {
-      if (this._data.secondaryText) {
-        secondaryBtn.textContent = this._data.secondaryText;
-        secondaryBtn.classList.remove("hidden");
-        if (this._data.secondaryDisabled) {
-          secondaryBtn.setAttribute("disabled", "");
-        } else {
-          secondaryBtn.removeAttribute("disabled");
-        }
-      } else {
-        secondaryBtn.classList.add("hidden");
-      }
+    if (secondaryText) {
+      this._secondaryBtn.textContent = secondaryText;
+      this._secondaryBtn.classList.remove("hidden");
+      this._secondaryBtn.disabled = Boolean(secondaryDisabled);
+    } else {
+      this._secondaryBtn.classList.add("hidden");
     }
   }
-}
-
-if (!customElements.get("lesson-footer")) {
-  customElements.define("lesson-footer", LessonFooter);
 }

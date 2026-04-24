@@ -1,69 +1,65 @@
+import { Component } from "/components/shared/component.js";
 import { iconStyles } from "/components/shared/shared_assets.js";
 import { speakCantonese } from "/components/shared/tts.js";
-import "/components/ui/icon_button/icon_button.js";
-import "/components/ui/tooltip/tooltip.js";
-
-const template = document.createElement("template");
-template.innerHTML = `
-<link rel="stylesheet" href="/components/reading_exercise/style.css" />
-<div class="reading-wrapper">
-  <div class="phrase-container">
-    <ui-tooltip>
-      <div slot="trigger" class="cantonese-text"></div>
-      <span slot="content" class="romanization-text"></span>
-    </ui-tooltip>
-    <ui-icon-button id="play-audio" title="Play Audio">volume_up</ui-icon-button>
-    <div class="translation-text"></div>
-  </div>
-</div>
-`;
+import { IconButton } from "/components/ui/icon_button/icon_button.js";
+import { Tooltip } from "/components/ui/tooltip/tooltip.js";
 
 /**
  * ReadingExercise Component
  * A reusable UI element for displaying reading exercises.
  */
-class ReadingExercise extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
+export class ReadingExercise extends Component {
+  /**
+   * @param {Object} [options]
+   * @param {string} [options.cantonesePhrase]
+   * @param {string} [options.romanization]
+   * @param {string} [options.translation]
+   * @param {boolean} [options.translationHidden]
+   */
+  constructor(options = {}) {
+    super("/components/reading_exercise/style.css");
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this._playBtn = this.shadowRoot.getElementById("play-audio");
-    this._cantoneseEl = this.shadowRoot.querySelector(".cantonese-text");
-    this._romanizationEl = this.shadowRoot.querySelector(".romanization-text");
-    this._translationEl = this.shadowRoot.querySelector(".translation-text");
+    this._container = document.createElement("div");
+    this._container.className = "reading-wrapper";
 
-    // Internal state
-    this._data = {
-      cantonesePhrase: "",
-      romanization: "",
-      translation: "",
+    const phraseContainer = document.createElement("div");
+    phraseContainer.className = "phrase-container";
+
+    this._tooltip = new Tooltip();
+
+    this._cantoneseEl = document.createElement("div");
+    this._cantoneseEl.slot = "trigger";
+    this._cantoneseEl.className = "cantonese-text";
+    this._tooltip.element.appendChild(this._cantoneseEl);
+
+    this._romanizationEl = document.createElement("span");
+    this._romanizationEl.slot = "content";
+    this._romanizationEl.className = "romanization-text";
+    this._tooltip.element.appendChild(this._romanizationEl);
+
+    phraseContainer.appendChild(this._tooltip.element);
+
+    this._playBtn = new IconButton({
+      title: "Play Audio",
+      icon: "volume_up",
+    });
+    this._playBtn.element.id = "play-audio";
+    phraseContainer.appendChild(this._playBtn.element);
+
+    this._translationEl = document.createElement("div");
+    this._translationEl.className = "translation-text";
+    phraseContainer.appendChild(this._translationEl);
+
+    this._container.appendChild(phraseContainer);
+    this.shadowRoot.appendChild(this._container);
+
+    this._playBtn.element.onclick = () => this.playAudio();
+
+    this.data = {
       translationHidden: true,
+      ...options,
     };
-  }
-
-  get data() {
-    return this._data;
-  }
-
-  set data(val) {
-    this._data = { ...this._data, ...val };
-    this.update();
-  }
-
-  connectedCallback() {
-    this._upgradeProperty("data");
-    this._playBtn.onclick = () => this.playAudio();
-    this.update();
-  }
-
-  _upgradeProperty(prop) {
-    if (Object.hasOwn(this, prop)) {
-      const value = this[prop];
-      delete this[prop];
-      this[prop] = value;
-    }
   }
 
   validate() {
@@ -78,21 +74,14 @@ class ReadingExercise extends HTMLElement {
   }
 
   update() {
-    if (!this.shadowRoot) return;
-
-    if (this.isConnected) {
-      this.validate();
-    }
-
+    this.validate();
     const { cantonesePhrase, romanization, translation, translationHidden } =
       this._data;
 
-    if (this._cantoneseEl) this._cantoneseEl.textContent = cantonesePhrase;
-    if (this._romanizationEl) this._romanizationEl.textContent = romanization;
-    if (this._translationEl) {
-      this._translationEl.textContent = translation;
-      this._translationEl.classList.toggle("hidden", translationHidden);
-    }
+    this._cantoneseEl.textContent = cantonesePhrase || "";
+    this._romanizationEl.textContent = romanization || "";
+    this._translationEl.textContent = translation || "";
+    this._translationEl.classList.toggle("hidden", Boolean(translationHidden));
   }
 
   playAudio() {
@@ -106,16 +95,6 @@ class ReadingExercise extends HTMLElement {
 
     speakCantonese(cantonesePhrase);
 
-    this.dispatchEvent(
-      new CustomEvent("play-audio", {
-        detail: { phrase: cantonesePhrase },
-        bubbles: true,
-        composed: true,
-      }),
-    );
+    this.dispatch("play-audio", { phrase: cantonesePhrase });
   }
-}
-
-if (!customElements.get("reading-exercise")) {
-  customElements.define("reading-exercise", ReadingExercise);
 }

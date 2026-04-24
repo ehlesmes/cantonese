@@ -1,42 +1,42 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import "./tooltip.js";
+import { Tooltip } from "./tooltip.js";
 
-describe("UiTooltip Component", () => {
-  let element;
+describe("Tooltip Component", () => {
+  let component;
 
   beforeEach(() => {
     document.body.innerHTML = "";
-    element = document.createElement("ui-tooltip");
-    document.body.appendChild(element);
+    component = new Tooltip();
+    document.body.appendChild(component.element);
   });
 
-  it("should be defined and upgraded", () => {
-    expect(customElements.get("ui-tooltip")).toBeDefined();
-    expect(element).toBeInstanceOf(HTMLElement);
-    expect(element.shadowRoot).not.toBeNull();
+  it("should be defined", () => {
+    expect(component).toBeInstanceOf(Tooltip);
+    expect(component.element).toBeInstanceOf(HTMLElement);
+    expect(component.shadowRoot).not.toBeNull();
   });
 
   it("should render slots correctly", () => {
-    element.innerHTML = `
+    component.element.innerHTML = `
       <span slot="trigger">Hover me</span>
       <div slot="content">Tooltip info</div>
     `;
 
-    const triggerSlot = element.shadowRoot.querySelector(
+    const triggerSlot = component.shadowRoot.querySelector(
       'slot[name="trigger"]',
     );
-    const contentSlot = element.shadowRoot.querySelector(
+    const contentSlot = component.shadowRoot.querySelector(
       'slot[name="content"]',
     );
 
     expect(triggerSlot).not.toBeNull();
     expect(contentSlot).not.toBeNull();
 
-    expect(element.querySelector('[slot="trigger"]').textContent).toBe(
-      "Hover me",
-    );
-    expect(element.querySelector('[slot="content"]').textContent).toBe(
-      "Tooltip info",
-    );
+    expect(
+      component.element.querySelector('[slot="trigger"]').textContent,
+    ).toBe("Hover me");
+    expect(
+      component.element.querySelector('[slot="content"]').textContent,
+    ).toBe("Tooltip info");
   });
 });

@@ -15,11 +15,10 @@
     ></script>
   </head>
   <body style="margin: 0">
-    <lesson-viewer id="viewer"></lesson-viewer>
-
     <script type="module">
-      const viewer = document.getElementById("viewer");
-      viewer.data = { lessonId: "1.1" };
+      import { LessonViewer } from "/components/lesson_viewer/lesson_viewer.js";
+      const viewer = new LessonViewer({ lessonId: "1.1" });
+      document.body.appendChild(viewer.element);
     </script>
   </body>
 </html>

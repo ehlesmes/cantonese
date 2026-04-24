@@ -1,65 +1,77 @@
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-/>
-<link rel="stylesheet" href="/components/shared/variables.css" />
-<script src="/components/lesson_viewer/lesson_viewer.js" type="module"></script>
-<script
-  src="/components/explanation_page/explanation_page.js"
-  type="module"
-></script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explanation</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="/components/shared/variables.css" />
+    <script
+      src="/components/lesson_viewer/lesson_viewer.js"
+      type="module"
+    ></script>
+    <script
+      src="/components/explanation_page/explanation_page.js"
+      type="module"
+    ></script>
+  </head>
+  <body style="margin: 0; background-color: #f8f9fa">
+    <script type="module">
+      import { LessonViewer } from "/components/lesson_viewer/lesson_viewer.js";
+      import { ExplanationPage } from "/components/explanation_page/explanation_page.js";
 
-<body style="margin: 0; background-color: #f8f9fa">
-  <lesson-viewer id="viewer">
-    <explanation-page id="page"></explanation-page>
-  </lesson-viewer>
+      const viewer = new LessonViewer({
+        lessonName: "Grammar: The Verb 'To Be'",
+      });
 
-  <script type="module">
-    document.getElementById("viewer").data = {
-      lessonName: "Grammar: The Verb 'To Be'",
-    };
+      const content = [
+        { type: "title", value: "The Verb 係 (hai6)" },
+        {
+          type: "text",
+          value:
+            "In Cantonese, the verb <strong>係 (hai6)</strong> is used to link a subject with a noun or a pronoun. It is the equivalent of 'am,' 'is,' or 'are' in English.",
+        },
+        {
+          type: "example",
+          cantonese: "我係學生。",
+          romanization: "ngo5 hai6 hok6 saang1.",
+          translation: "I am a student.",
+        },
+        {
+          type: "text",
+          value:
+            "Unlike English, 係 does not change its form depending on the subject. You can use it with pronouns (I, you, he/she) or names.",
+        },
+        {
+          type: "example",
+          cantonese: "佢係老師。",
+          romanization: "keoi5 hai6 lou5 si1.",
+          translation: "He/She is a teacher.",
+        },
+        {
+          type: "text",
+          value:
+            "To say something is 'not' something, you simply add the negation particle <strong>唔 (m4)</strong> before the verb.",
+        },
+        {
+          type: "example",
+          cantonese: "我唔係醫生。",
+          romanization: "ngo5 m4 hai6 ji1 sang1.",
+          translation: "I am not a doctor.",
+        },
+      ];
 
-    const content = [
-      { type: "title", value: "The Verb 係 (hai6)" },
-      {
-        type: "text",
-        value:
-          "In Cantonese, the verb <strong>係 (hai6)</strong> is used to link a subject with a noun or a pronoun. It is the equivalent of 'am,' 'is,' or 'are' in English.",
-      },
-      {
-        type: "example",
-        cantonese: "我係學生。",
-        romanization: "ngo5 hai6 hok6 saang1.",
-        translation: "I am a student.",
-      },
-      {
-        type: "text",
-        value:
-          "Unlike English, 係 does not change its form depending on the subject. You can use it with pronouns (I, you, he/she) or names.",
-      },
-      {
-        type: "example",
-        cantonese: "佢係老師。",
-        romanization: "keoi5 hai6 lou5 si1.",
-        translation: "He/She is a teacher.",
-      },
-      {
-        type: "text",
-        value:
-          "To say something is 'not' something, you simply add the negation particle <strong>唔 (m4)</strong> before the verb.",
-      },
-      {
-        type: "example",
-        cantonese: "我唔係醫生。",
-        romanization: "ngo5 m4 hai6 ji1 sang1.",
-        translation: "I am not a doctor.",
-      },
-    ];
+      const page = new ExplanationPage({ content });
 
-    document.getElementById("page").data = { content };
+      viewer.shadowRoot.getElementById("m").appendChild(page.element);
+      document.body.appendChild(viewer.element);
 
-    document.addEventListener("explanation-complete", () => {
-      alert("Explanation finished! Moving to practice...");
-    });
-  </script>
-</body>
+      document.addEventListener("explanation-complete", () => {
+        alert("Explanation finished! Moving to practice...");
+      });
+    </script>
+  </body>
+</html>

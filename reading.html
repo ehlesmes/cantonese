@@ -1,31 +1,47 @@
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-/>
-<link rel="stylesheet" href="/components/shared/variables.css" />
-<script src="/components/lesson_viewer/lesson_viewer.js" type="module"></script>
-<script src="/components/reading_page/reading_page.js" type="module"></script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading Exercise</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="/components/shared/variables.css" />
+    <script
+      src="/components/lesson_viewer/lesson_viewer.js"
+      type="module"
+    ></script>
+    <script
+      src="/components/reading_page/reading_page.js"
+      type="module"
+    ></script>
+  </head>
+  <body style="margin: 0">
+    <script type="module">
+      import { LessonViewer } from "/components/lesson_viewer/lesson_viewer.js";
+      import { ReadingPage } from "/components/reading_page/reading_page.js";
 
-<body style="margin: 0">
-  <lesson-viewer id="viewer">
-    <reading-page id="page"></reading-page>
-  </lesson-viewer>
+      const viewer = new LessonViewer({ lessonName: "Basic Greetings" });
+      const page = new ReadingPage({
+        cantonesePhrase: "你好！",
+        romanization: "nei5 hou2!",
+        translation: "Hello!",
+      });
 
-  <script type="module">
-    document.getElementById("viewer").data = { lessonName: "Basic Greetings" };
-    document.getElementById("page").data = {
-      cantonesePhrase: "你好！",
-      romanization: "nei5 hou2!",
-      translation: "Hello!",
-    };
+      // For manual setup in reading.html, we mimic how LessonViewer handles sub-pages
+      viewer.shadowRoot.getElementById("m").appendChild(page.element);
+      document.body.appendChild(viewer.element);
 
-    // Listen for the assessment result
-    document.addEventListener("reading-result", (e) => {
-      console.log(
-        "User assessment result:",
-        e.detail.success ? "Passed" : "Needs Practice",
-      );
-      alert(e.detail.success ? "Great job!" : "Keep practicing!");
-    });
-  </script>
-</body>
+      // Listen for the assessment result
+      document.addEventListener("reading-result", (e) => {
+        console.log(
+          "User assessment result:",
+          e.detail.success ? "Passed" : "Needs Practice",
+        );
+        alert(e.detail.success ? "Great job!" : "Keep practicing!");
+      });
+    </script>
+  </body>
+</html>

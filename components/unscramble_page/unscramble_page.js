@@ -1,63 +1,50 @@
-import "/components/unscramble_exercise/unscramble_exercise.js";
-import "/components/lesson_footer/lesson_footer.js";
+import { Component } from "/components/shared/component.js";
+import { UnscrambleExercise } from "/components/unscramble_exercise/unscramble_exercise.js";
+import { LessonFooter } from "/components/lesson_footer/lesson_footer.js";
 
-const template = document.createElement("template");
-template.innerHTML = `
-<link rel="stylesheet" href="/components/unscramble_page/style.css" />
-<div class="page-container">
-  <main>
-    <unscramble-exercise id="exercise"></unscramble-exercise>
-  </main>
-  <lesson-footer id="footer"></lesson-footer>
-</div>
-`;
+export class UnscramblePage extends Component {
+  /**
+   * @param {Object} [options]
+   * @param {Array<[string, string]>} [options.tokens]
+   * @param {string} [options.translation]
+   */
+  constructor(options = {}) {
+    super("/components/unscramble_page/style.css");
 
-class UnscramblePage extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    const container = document.createElement("div");
+    container.className = "page-container";
 
-    this._exercise = this.shadowRoot.getElementById("exercise");
-    this._footer = this.shadowRoot.getElementById("footer");
+    const main = document.createElement("main");
+    this._exercise = new UnscrambleExercise(options);
+    this._exercise.element.id = "exercise";
+    main.appendChild(this._exercise.element);
+    container.appendChild(main);
 
-    this._data = {
-      tokens: [],
-      translation: "",
-    };
-  }
+    this._footer = new LessonFooter({
+      primaryText: "Continue",
+      primaryDisabled: true,
+    });
+    this._footer.element.id = "footer";
+    container.appendChild(this._footer.element);
 
-  get data() {
-    return this._data;
-  }
-  set data(val) {
-    this._data = { ...this._data, ...val };
-    this._update();
-  }
+    this.shadowRoot.appendChild(container);
 
-  connectedCallback() {
-    this._upgradeProperty("data");
-    this.shadowRoot.addEventListener("complete", () => {
+    this.element.addEventListener("complete", () => {
       if (this._exercise.status === "right") {
         this._exercise.playAudio();
       }
-      this._update();
+      this.update();
     });
-    this.shadowRoot.addEventListener("uncomplete", () => this._update());
-    this.shadowRoot.addEventListener("primary-click", () =>
+    this.element.addEventListener("uncomplete", () => this.update());
+    this.element.addEventListener("primary-click", () =>
       this._handlePrimaryClick(),
     );
-    this.shadowRoot.addEventListener("secondary-click", () =>
+    this.element.addEventListener("secondary-click", () =>
       this._handleSecondaryClick(),
     );
-    this._update();
-  }
 
-  _upgradeProperty(prop) {
-    if (Object.hasOwn(this, prop)) {
-      const value = this[prop];
-      delete this[prop];
-      this[prop] = value;
+    if (Object.keys(options).length > 0) {
+      this.data = options;
     }
   }
 
@@ -74,12 +61,8 @@ class UnscramblePage extends HTMLElement {
     }
   }
 
-  _update() {
-    if (!this.shadowRoot) return;
-
-    if (this.isConnected) {
-      this.validate();
-    }
+  update() {
+    this.validate();
 
     this._exercise.data = {
       tokens: this._data.tokens,
@@ -99,22 +82,12 @@ class UnscramblePage extends HTMLElement {
   _handlePrimaryClick() {
     const status = this._exercise.status;
     if (status === "right" || status === "wrong") {
-      this.dispatchEvent(
-        new CustomEvent("unscramble-result", {
-          detail: { success: status === "right" },
-          bubbles: true,
-          composed: true,
-        }),
-      );
+      this.dispatch("unscramble-result", { success: status === "right" });
     }
   }
 
   _handleSecondaryClick() {
     this._exercise.reset();
-    this._update();
+    this.update();
   }
-}
-
-if (!customElements.get("unscramble-page")) {
-  customElements.define("unscramble-page", UnscramblePage);
 }

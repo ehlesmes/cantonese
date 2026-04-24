@@ -1,22 +1,25 @@
-const template = document.createElement("template");
-template.innerHTML = `
-<link rel="stylesheet" href="/components/ui/tooltip/style.css" />
-<div class="tooltip-container">
-  <slot name="trigger"></slot>
-  <div class="tooltip">
-    <slot name="content"></slot>
-  </div>
-</div>
-`;
+import { Component } from "/components/shared/component.js";
 
-class UiTooltip extends HTMLElement {
+export class Tooltip extends Component {
   constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-  }
-}
+    super("/components/ui/tooltip/style.css");
 
-if (!customElements.get("ui-tooltip")) {
-  customElements.define("ui-tooltip", UiTooltip);
+    const container = document.createElement("div");
+    container.className = "tooltip-container";
+
+    const triggerSlot = document.createElement("slot");
+    triggerSlot.name = "trigger";
+    container.appendChild(triggerSlot);
+
+    const tooltipDiv = document.createElement("div");
+    tooltipDiv.className = "tooltip";
+
+    const contentSlot = document.createElement("slot");
+    contentSlot.name = "content";
+    tooltipDiv.appendChild(contentSlot);
+
+    container.appendChild(tooltipDiv);
+
+    this.shadowRoot.appendChild(container);
+  }
 }

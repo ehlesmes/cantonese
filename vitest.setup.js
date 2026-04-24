@@ -10,11 +10,18 @@ global.SpeechSynthesisUtterance = class {
   }
 };
 
-global.window.speechSynthesis = {
+const mockSpeechSynthesis = {
   speak: vi.fn(),
   cancel: vi.fn(),
   getVoices: vi.fn(() => [{ lang: "zh-HK", name: "Cantonese (Hong Kong)" }]),
+  onvoiceschanged: null,
 };
+
+Object.defineProperty(global.window, "speechSynthesis", {
+  value: mockSpeechSynthesis,
+  writable: true,
+  configurable: true,
+});
 
 // Also mock adoptedStyleSheets as Happy DOM might not fully support it depending on version
 if (!("adoptedStyleSheets" in Document.prototype)) {

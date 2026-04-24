@@ -1,18 +1,17 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import "./unscramble_page.js";
+import { UnscramblePage } from "./unscramble_page.js";
 
 describe("UnscramblePage Component", () => {
   beforeEach(() => {
     document.body.innerHTML = "";
   });
 
-  it("should be defined and upgraded", () => {
-    const el = document.createElement("unscramble-page");
-    el.data = { tokens: [["test", "test"]], translation: "test" };
-    document.body.appendChild(el);
-    expect(customElements.get("unscramble-page")).toBeDefined();
-    expect(el).toBeInstanceOf(HTMLElement);
-    expect(el.shadowRoot).not.toBeNull();
+  it("should be defined", () => {
+    const page = new UnscramblePage();
+    page.data = { tokens: [["test", "test"]], translation: "test" };
+    document.body.appendChild(page.element);
+    expect(page).toBeInstanceOf(UnscramblePage);
+    expect(page.shadowRoot).not.toBeNull();
   });
 
   it("should propagate tokens to the unscramble-exercise and enable footer on complete", () => {
@@ -20,21 +19,21 @@ describe("UnscramblePage Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    const el = document.createElement("unscramble-page");
-    el.data = { tokens, translation: "Hello" };
-    document.body.appendChild(el);
+    const page = new UnscramblePage();
+    page.data = { tokens, translation: "Hello" };
+    document.body.appendChild(page.element);
 
-    const exercise = el.shadowRoot.getElementById("exercise");
-    const footer = el.shadowRoot.getElementById("footer");
+    const exercise = page._exercise;
+    const footer = page._footer;
 
     expect(exercise.data.tokens).toEqual(tokens);
     expect(footer.data.primaryDisabled).toBe(true);
 
-    // Complete the exercise (order doesn't matter for enabling continue)
+    // Complete the exercise
     const getPoolToken = (text) =>
-      Array.from(exercise.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
-        (el) => el.querySelector(".token-text").textContent === text,
-      );
+      Array.from(exercise.shadowRoot.querySelectorAll("#pool .token-text"))
+        .find((el) => el.textContent === text)
+        .closest("#pool > *");
 
     getPoolToken("你").click();
     getPoolToken("好").click();
@@ -51,28 +50,28 @@ describe("UnscramblePage Component", () => {
       ],
       translation: "Hello",
     };
-    const el = document.createElement("unscramble-page");
-    el.data = testData;
-    document.body.appendChild(el);
-    expect(el.data).toEqual(testData);
+    const page = new UnscramblePage();
+    page.data = testData;
+    document.body.appendChild(page.element);
+    expect(page.data).toEqual(testData);
   });
 
   it("should dispatch unscramble-result when primary button is clicked after completion", () => {
     const tokens = [["你", "nei5"]];
-    const el = document.createElement("unscramble-page");
-    el.data = { tokens, translation: "you" };
-    document.body.appendChild(el);
-    const exercise = el.shadowRoot.getElementById("exercise");
-    const footer = el.shadowRoot.getElementById("footer");
+    const page = new UnscramblePage();
+    page.data = { tokens, translation: "you" };
+    document.body.appendChild(page.element);
+    const exercise = page._exercise;
+    const footer = page._footer;
 
     const resultSpy = vi.fn();
-    el.addEventListener("unscramble-result", resultSpy);
+    page.element.addEventListener("unscramble-result", resultSpy);
 
     // Complete correctly
     exercise.moveToSlots(0);
 
     // Click continue
-    footer.dispatchEvent(
+    footer.element.dispatchEvent(
       new CustomEvent("primary-click", { bubbles: true, composed: true }),
     );
 
@@ -86,21 +85,20 @@ describe("UnscramblePage Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    const el = document.createElement("unscramble-page");
-    el.data = { tokens, translation: "Hello" };
-    document.body.appendChild(el);
-    const exercise = el.shadowRoot.getElementById("exercise");
-    const footer = el.shadowRoot.getElementById("footer");
+    const page = new UnscramblePage();
+    page.data = { tokens, translation: "Hello" };
+    document.body.appendChild(page.element);
+    const exercise = page._exercise;
+    const footer = page._footer;
 
     const resultSpy = vi.fn();
-    el.addEventListener("unscramble-result", resultSpy);
+    page.element.addEventListener("unscramble-result", resultSpy);
 
     // Complete incorrectly (tokens are shuffled in pool, click them)
-    // The test might need to find specific tokens to ensure wrong order
     const getPoolToken = (text) =>
-      Array.from(exercise.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
-        (el) => el.querySelector(".token-text").textContent === text,
-      );
+      Array.from(exercise.shadowRoot.querySelectorAll("#pool .token-text"))
+        .find((el) => el.textContent === text)
+        .closest("#pool > *");
 
     // Original order is 你(0), 好(1).
     // Move in order: 好, 你
@@ -112,7 +110,7 @@ describe("UnscramblePage Component", () => {
     expect(footer.data.secondaryText).toBe("Try again");
 
     // Click continue
-    footer.dispatchEvent(
+    footer.element.dispatchEvent(
       new CustomEvent("primary-click", { bubbles: true, composed: true }),
     );
 
@@ -124,24 +122,13 @@ describe("UnscramblePage Component", () => {
     it("should log error if required data properties are missing", () => {
       const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      const el = document.createElement("unscramble-page");
-      document.body.appendChild(el);
+      new UnscramblePage();
 
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining("Missing required data property"),
       );
 
       errorSpy.mockRestore();
-    });
-  });
-
-  describe("Late Upgrade", () => {
-    it("should handle data property set before the element is connected", () => {
-      const el = document.createElement("unscramble-page");
-      el.data = { tokens: [["你", "nei5"]], translation: "you" };
-      document.body.appendChild(el);
-      const exercise = el.shadowRoot.getElementById("exercise");
-      expect(exercise.data.tokens).toEqual([["你", "nei5"]]);
     });
   });
 });

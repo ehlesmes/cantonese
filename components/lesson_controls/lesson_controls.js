@@ -1,84 +1,61 @@
+import { Component } from "/components/shared/component.js";
 import { iconStyles } from "/components/shared/shared_assets.js";
-import "/components/ui/icon_button/icon_button.js";
-
-const template = document.createElement("template");
-template.innerHTML = `
-<link rel="stylesheet" href="/components/lesson_controls/style.css" />
-
-<div class="controls">
-  <ui-icon-button id="restart" title="Restart Lesson">restart_alt</ui-icon-button>
-
-  <div class="divider"></div>
-
-  <ui-icon-button id="prev" title="Previous Page">arrow_back</ui-icon-button>
-  <ui-icon-button id="next" title="Next Page">arrow_forward</ui-icon-button>
-
-  <div class="divider"></div>
-
-  <ui-icon-button id="close" title="Close">close</ui-icon-button>
-</div>
-`;
+import { IconButton } from "/components/ui/icon_button/icon_button.js";
 
 /**
  * LessonControls Component
  * A reusable UI element for lesson navigation and actions.
  */
-class LessonControls extends HTMLElement {
+export class LessonControls extends Component {
   constructor() {
-    super();
-    // Attach a shadow root to ensure styles are encapsulated
-    this.attachShadow({ mode: "open" });
+    super("/components/lesson_controls/style.css");
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this._data = {};
-  }
+    this._container = document.createElement("div");
+    this._container.className = "controls";
 
-  get data() {
-    return this._data;
-  }
-  set data(val) {
-    this._data = { ...this._data, ...val };
-    this.update();
-  }
-
-  connectedCallback() {
-    this._upgradeProperty("data");
-    // Add event listeners
-    ["restart", "prev", "next", "close"].forEach((id) => {
-      this.shadowRoot.getElementById(id).onclick = () => {
-        this.dispatchEvent(
-          new CustomEvent(id, {
-            bubbles: true, // Travel up the DOM
-            composed: true, // Cross shadow boundaries
-          }),
-        );
-      };
+    this._restartBtn = new IconButton({
+      title: "Restart Lesson",
+      icon: "restart_alt",
     });
-    this.update();
+    this._restartBtn.element.id = "restart";
+    this._container.appendChild(this._restartBtn.element);
+
+    const divider1 = document.createElement("div");
+    divider1.className = "divider";
+    this._container.appendChild(divider1);
+
+    this._prevBtn = new IconButton({
+      title: "Previous Page",
+      icon: "arrow_back",
+    });
+    this._prevBtn.element.id = "prev";
+    this._container.appendChild(this._prevBtn.element);
+
+    this._nextBtn = new IconButton({
+      title: "Next Page",
+      icon: "arrow_forward",
+    });
+    this._nextBtn.element.id = "next";
+    this._container.appendChild(this._nextBtn.element);
+
+    const divider2 = document.createElement("div");
+    divider2.className = "divider";
+    this._container.appendChild(divider2);
+
+    this._closeBtn = new IconButton({
+      title: "Close",
+      icon: "close",
+    });
+    this._closeBtn.element.id = "close";
+    this._container.appendChild(this._closeBtn.element);
+
+    this.shadowRoot.appendChild(this._container);
+
+    // Setup event listeners
+    this._restartBtn.element.onclick = () => this.dispatch("restart");
+    this._prevBtn.element.onclick = () => this.dispatch("prev");
+    this._nextBtn.element.onclick = () => this.dispatch("next");
+    this._closeBtn.element.onclick = () => this.dispatch("close");
   }
-
-  _upgradeProperty(prop) {
-    if (Object.hasOwn(this, prop)) {
-      const value = this[prop];
-      delete this[prop];
-      this[prop] = value;
-    }
-  }
-
-  validate() {
-    // No required properties for LessonControls currently
-  }
-
-  update() {
-    if (!this.shadowRoot) return;
-
-    if (this.isConnected) {
-      this.validate();
-    }
-  }
-}
-
-if (!customElements.get("lesson-controls")) {
-  customElements.define("lesson-controls", LessonControls);
 }

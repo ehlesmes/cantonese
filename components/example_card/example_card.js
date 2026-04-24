@@ -1,63 +1,63 @@
+import { Component } from "/components/shared/component.js";
 import { iconStyles } from "/components/shared/shared_assets.js";
 import { speakCantonese } from "/components/shared/tts.js";
-import "/components/ui/icon_button/icon_button.js";
-import "/components/ui/tooltip/tooltip.js";
+import { IconButton } from "/components/ui/icon_button/icon_button.js";
+import { Tooltip } from "/components/ui/tooltip/tooltip.js";
 
-const template = document.createElement("template");
-template.innerHTML = `
-<link rel="stylesheet" href="/components/example_card/style.css" />
-<div class="example-wrapper">
-  <div class="example-label">Example</div>
-  <div class="content-row">
-    <ui-tooltip>
-      <div slot="trigger" class="cantonese-text"></div>
-      <span slot="content" class="romanization-text"></span>
-    </ui-tooltip>
-    <ui-icon-button id="play-audio" title="Listen">volume_up</ui-icon-button>
-  </div>
-  <div class="translation-text"></div>
-</div>
-`;
-
-class ExampleCard extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
+export class ExampleCard extends Component {
+  /**
+   * @param {Object} [options]
+   * @param {string} [options.cantonese]
+   * @param {string} [options.romanization]
+   * @param {string} [options.translation]
+   */
+  constructor(options = {}) {
+    super("/components/example_card/style.css");
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this._playBtn = this.shadowRoot.getElementById("play-audio");
-    this._cantoneseEl = this.shadowRoot.querySelector(".cantonese-text");
-    this._romanizationEl = this.shadowRoot.querySelector(".romanization-text");
-    this._translationEl = this.shadowRoot.querySelector(".translation-text");
+    this._wrapper = document.createElement("div");
+    this._wrapper.className = "example-wrapper";
 
-    this._data = {
-      cantonese: "",
-      romanization: "",
-      translation: "",
-    };
-  }
+    const label = document.createElement("div");
+    label.className = "example-label";
+    label.textContent = "Example";
+    this._wrapper.appendChild(label);
 
-  get data() {
-    return this._data;
-  }
-  set data(val) {
-    this._data = { ...this._data, ...val };
-    this.update();
-  }
+    const contentRow = document.createElement("div");
+    contentRow.className = "content-row";
 
-  connectedCallback() {
-    this._upgradeProperty("data");
-    this._playBtn.onclick = () => this.playAudio();
-    this.update();
-  }
+    this._tooltip = new Tooltip();
 
-  _upgradeProperty(prop) {
-    if (Object.hasOwn(this, prop)) {
-      const value = this[prop];
-      delete this[prop];
-      this[prop] = value;
-    }
+    this._cantoneseEl = document.createElement("div");
+    this._cantoneseEl.slot = "trigger";
+    this._cantoneseEl.className = "cantonese-text";
+    this._tooltip.element.appendChild(this._cantoneseEl);
+
+    this._romanizationEl = document.createElement("span");
+    this._romanizationEl.slot = "content";
+    this._romanizationEl.className = "romanization-text";
+    this._tooltip.element.appendChild(this._romanizationEl);
+
+    contentRow.appendChild(this._tooltip.element);
+
+    this._playBtn = new IconButton({
+      title: "Listen",
+      icon: "volume_up",
+    });
+    this._playBtn.element.id = "play-audio";
+    contentRow.appendChild(this._playBtn.element);
+
+    this._wrapper.appendChild(contentRow);
+
+    this._translationEl = document.createElement("div");
+    this._translationEl.className = "translation-text";
+    this._wrapper.appendChild(this._translationEl);
+
+    this.shadowRoot.appendChild(this._wrapper);
+
+    this._playBtn.element.onclick = () => this.playAudio();
+
+    this.data = options;
   }
 
   validate() {
@@ -72,17 +72,14 @@ class ExampleCard extends HTMLElement {
   }
 
   update() {
-    if (!this.shadowRoot) return;
-
-    if (this.isConnected) {
-      this.validate();
-    }
-
+    this.validate();
     const { cantonese, romanization, translation } = this._data;
 
-    if (this._cantoneseEl) this._cantoneseEl.textContent = cantonese;
-    if (this._romanizationEl) this._romanizationEl.textContent = romanization;
-    if (this._translationEl) this._translationEl.textContent = translation;
+    if (this._cantoneseEl) this._cantoneseEl.textContent = cantonese || "";
+    if (this._romanizationEl)
+      this._romanizationEl.textContent = romanization || "";
+    if (this._translationEl)
+      this._translationEl.textContent = translation || "";
   }
 
   playAudio() {
@@ -91,8 +88,4 @@ class ExampleCard extends HTMLElement {
       speakCantonese(cantonese);
     }
   }
-}
-
-if (!customElements.get("example-card")) {
-  customElements.define("example-card", ExampleCard);
 }

@@ -1,52 +1,71 @@
+import { Component } from "/components/shared/component.js";
 import { iconStyles } from "/components/shared/shared_assets.js";
 
-const template = document.createElement("template");
-template.innerHTML = `
-<link rel="stylesheet" href="/components/shared/button.css" />
-<link rel="stylesheet" href="/components/ui/icon_button/style.css" />
-<button class="btn-base icon-button">
-  <span class="material-symbols-outlined"><slot></slot></span>
-</button>
-`;
+export class IconButton extends Component {
+  /**
+   * @param {Object} [options]
+   * @param {string} [options.title]
+   * @param {boolean} [options.disabled]
+   * @param {"filled"|"outline"} [options.variant]
+   * @param {string} [options.icon]
+   */
+  constructor(options = {}) {
+    super("/components/ui/icon_button/style.css");
 
-class UiIconButton extends HTMLElement {
-  static get observedAttributes() {
-    return ["title", "disabled", "variant"];
-  }
+    // Add base button styles
+    const baseStyle = document.createElement("link");
+    baseStyle.rel = "stylesheet";
+    baseStyle.href = "/components/shared/button.css";
+    this.shadowRoot.appendChild(baseStyle);
 
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
+    // Apply shared icon font styles
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-    this._btn = this.shadowRoot.querySelector("button");
-  }
 
-  connectedCallback() {
-    this._update();
-  }
+    this._btn = document.createElement("button");
+    this._btn.className = "btn-base icon-button";
 
-  attributeChangedCallback() {
-    this._update();
-  }
+    const iconSpan = document.createElement("span");
+    iconSpan.className = "material-symbols-outlined";
 
-  _update() {
-    if (!this._btn) return;
-    this._btn.title = this.getAttribute("title") || "";
+    const slot = document.createElement("slot");
+    iconSpan.appendChild(slot);
+    this._btn.appendChild(iconSpan);
 
-    if (this.hasAttribute("disabled")) {
-      this._btn.setAttribute("disabled", "");
-    } else {
-      this._btn.removeAttribute("disabled");
+    this.shadowRoot.appendChild(this._btn);
+
+    if (options.icon) {
+      this.element.textContent = options.icon;
     }
 
-    // Handle variant
-    const variant = this.getAttribute("variant") || "outline";
-    this._btn.classList.remove("btn-filled", "btn-outline");
-    this._btn.classList.add(`btn-${variant}`);
-  }
-}
+    this.data = options;
 
-if (!customElements.get("ui-icon-button")) {
-  customElements.define("ui-icon-button", UiIconButton);
+    // Proxy click events from the button to the root element
+    this._btn.onclick = (e) => {
+      if (this._data.disabled) {
+        e.stopPropagation();
+        return;
+      }
+      // The original click event will still bubble, but we might want to ensure it's clean
+    };
+  }
+
+  update() {
+    const { title, disabled, variant = "outline", icon } = this._data;
+
+    if (this._btn) {
+      this._btn.title = title || "";
+      if (disabled) {
+        this._btn.disabled = true;
+      } else {
+        this._btn.disabled = false;
+      }
+
+      this._btn.classList.remove("btn-filled", "btn-outline");
+      this._btn.classList.add(`btn-${variant}`);
+    }
+
+    if (icon && this.element.textContent !== icon) {
+      this.element.textContent = icon;
+    }
+  }
 }

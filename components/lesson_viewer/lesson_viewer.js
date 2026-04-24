@@ -1,74 +1,56 @@
-import "/components/lesson_header/lesson_header.js";
-import "/components/reading_page/reading_page.js";
-import "/components/unscramble_page/unscramble_page.js";
-import "/components/explanation_page/explanation_page.js";
+import { Component } from "/components/shared/component.js";
+import { LessonHeader } from "/components/lesson_header/lesson_header.js";
+import { ReadingPage } from "/components/reading_page/reading_page.js";
+import { UnscramblePage } from "/components/unscramble_page/unscramble_page.js";
+import { ExplanationPage } from "/components/explanation_page/explanation_page.js";
 
-const template = document.createElement("template");
-template.innerHTML = `
-<link rel="stylesheet" href="/components/lesson_viewer/style.css" />
-<div class="lesson-container">
-  <div id="header-root"></div>
-  <main id="m"></main>
-</div>
-`;
+const PAGE_MAP = {
+  reading: ReadingPage,
+  unscramble: UnscramblePage,
+  explanation: ExplanationPage,
+};
 
-export class LessonViewer extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-    this._headerRoot = this.shadowRoot.getElementById("header-root");
+export class LessonViewer extends Component {
+  /**
+   * @param {Object} [options]
+   * @param {string} [options.lessonId]
+   * @param {string} [options.lessonName]
+   */
+  constructor(options = {}) {
+    super("/components/lesson_viewer/style.css");
+
+    this._container = document.createElement("div");
+    this._container.className = "lesson-container";
+
+    this._headerRoot = document.createElement("div");
+    this._headerRoot.id = "header-root";
+    this._container.appendChild(this._headerRoot);
+
+    this._main = document.createElement("main");
+    this._main.id = "m";
+    this._container.appendChild(this._main);
+
+    this.shadowRoot.appendChild(this._container);
+
     this._header = null;
-    this._main = this.shadowRoot.getElementById("m");
-
-    this._data = {
-      lessonId: "",
-      lessonName: "",
-    };
-
     this._lessonData = null;
     this._currentPageIndex = 0;
     this._pageCache = new Map(); // Store exercise data
     this._loadPromise = Promise.resolve();
-  }
 
-  get data() {
-    return this._data;
-  }
-  set data(val) {
-    const oldId = this._data.lessonId;
-    this._data = { ...this._data, ...val };
-    this.update();
-
-    if (this._data.lessonId && this._data.lessonId !== oldId) {
-      this._loadPromise = this.loadLesson(this._data.lessonId);
-    }
-  }
-
-  /**
-   * Returns a promise that resolves when the current loading task is complete.
-   * Useful for testing and coordinating transitions.
-   */
-  get ready() {
-    return this._loadPromise;
-  }
-
-  connectedCallback() {
-    this._upgradeProperty("data");
-
-    // Header Navigation Listeners (on shadowRoot as they are internal)
-    this.shadowRoot.addEventListener("restart", () => this.navigateTo(0));
-    this.shadowRoot.addEventListener("prev", () =>
+    // Internal Event Listeners
+    this.element.addEventListener("restart", () => this.navigateTo(0));
+    this.element.addEventListener("prev", () =>
       this.navigateTo(this._currentPageIndex - 1),
     );
-    this.shadowRoot.addEventListener("next", () =>
+    this.element.addEventListener("next", () =>
       this.navigateTo(this._currentPageIndex + 1),
     );
-    this.shadowRoot.addEventListener("close", () => {
+    this.element.addEventListener("close", () => {
       console.warn("Lesson closed (Main menu navigation not implemented)");
     });
 
-    // Page Event Listeners (on _main container to catch bubbling events from dynamic children)
+    // Page Event Listeners
     this._main.addEventListener("reading-result", () =>
       this.navigateTo(this._currentPageIndex + 1),
     );
@@ -79,28 +61,38 @@ export class LessonViewer extends HTMLElement {
       this.navigateTo(this._currentPageIndex + 1),
     );
 
-    this.update();
+    this.data = options;
   }
 
-  _upgradeProperty(prop) {
-    if (Object.hasOwn(this, prop)) {
-      const value = this[prop];
-      delete this[prop];
-      this[prop] = value;
+  set data(val) {
+    const oldId = this._data.lessonId;
+    this._data = { ...this._data, ...val };
+    this.update();
+
+    if (this._data.lessonId && this._data.lessonId !== oldId) {
+      this._loadPromise = this.loadLesson(this._data.lessonId);
     }
   }
 
+  get data() {
+    return this._data;
+  }
+
+  /**
+   * Returns a promise that resolves when the current loading task is complete.
+   */
+  get ready() {
+    return this._loadPromise;
+  }
+
   validate() {
-    if (!this._data.lessonId) {
-      console.error(
-        "🚨 [LessonViewer ERROR]: Missing required data property 'lessonId'!",
-      );
+    if (!this._data.lessonId && !this._data.lessonName) {
+      // In standalone mode (reading.html), lessonId might be missing initially
     }
   }
 
   async loadLesson(lessonId) {
     try {
-      // Hierarchical ID format: chapter.lesson (e.g. 1.1)
       const [chapter] = lessonId.split(".");
       const response = await fetch(`/data/lessons/${chapter}/${lessonId}.json`);
       if (!response.ok) {
@@ -114,7 +106,6 @@ export class LessonViewer extends HTMLElement {
       this.update();
       this.renderPage(0);
 
-      // Background pre-fetch atomic exercises
       this.prefetchExercises();
     } catch {
       console.error("🚨 [LessonViewer ERROR]: Failed to load lesson data");
@@ -122,9 +113,7 @@ export class LessonViewer extends HTMLElement {
   }
 
   async prefetchExercises() {
-    if (!this._lessonData) {
-      return;
-    }
+    if (!this._lessonData) return;
     const [chapter, lessonNum] = this._data.lessonId.split(".");
 
     for (const page of this._lessonData.pages) {
@@ -148,13 +137,18 @@ export class LessonViewer extends HTMLElement {
     }
 
     const pageDef = this._lessonData.pages[index];
-    this._main.innerHTML = '<div class="loading">Loading...</div>';
+
+    // Show loading state programmatically
+    this._main.innerHTML = "";
+    const loading = document.createElement("div");
+    loading.className = "loading";
+    loading.textContent = "Loading...";
+    this._main.appendChild(loading);
 
     let pageData;
     if (pageDef.type === "explanation") {
       pageData = { content: pageDef.content };
     } else {
-      // Check cache for exercise data
       pageData = this._pageCache.get(pageDef.id);
       if (!pageData) {
         try {
@@ -165,24 +159,34 @@ export class LessonViewer extends HTMLElement {
           pageData = await response.json();
           this._pageCache.set(pageDef.id, pageData);
         } catch {
-          this._main.innerHTML = `<div class="error">Failed to load page: ${pageDef.id}</div>`;
+          this._main.innerHTML = "";
+          const error = document.createElement("div");
+          error.className = "error";
+          error.textContent = `Failed to load page: ${pageDef.id}`;
+          this._main.appendChild(error);
           return;
         }
       }
     }
 
-    const el = document.createElement(`${pageDef.type}-page`);
-    el.data = pageData;
+    const PageClass = PAGE_MAP[pageDef.type];
+    if (!PageClass) {
+      this._main.innerHTML = "";
+      const error = document.createElement("div");
+      error.className = "error";
+      error.textContent = `Unknown page type: ${pageDef.type}`;
+      this._main.appendChild(error);
+      return;
+    }
 
+    const pageInstance = new PageClass(pageData);
     this._main.innerHTML = "";
-    this._main.appendChild(el);
+    this._main.appendChild(pageInstance.element);
     this._main.scrollTop = 0;
   }
 
   navigateTo(index) {
-    if (!this._lessonData) {
-      return Promise.resolve();
-    }
+    if (!this._lessonData) return Promise.resolve();
     if (index < 0 || index >= this._lessonData.pages.length) {
       console.warn("End of lesson or out of bounds navigation attempted");
       return Promise.resolve();
@@ -193,25 +197,13 @@ export class LessonViewer extends HTMLElement {
   }
 
   update() {
-    if (!this.shadowRoot) return;
+    this.validate();
 
-    if (this.isConnected) {
-      this.validate();
-    }
-
-    // Truly lazy-create the header only when we have a name to give it
-    if (!this._header && this._headerRoot && this._data.lessonName) {
-      this._header = document.createElement("lesson-header");
-      this._header.id = "header";
-      // We set the data BEFORE appending to DOM so the header connects in a valid state
-      this._header.data = { lessonName: this._data.lessonName };
-      this._headerRoot.appendChild(this._header);
+    if (!this._header && this._data.lessonName) {
+      this._header = new LessonHeader({ lessonName: this._data.lessonName });
+      this._headerRoot.appendChild(this._header.element);
     } else if (this._header && this._data.lessonName) {
       this._header.data = { lessonName: this._data.lessonName };
     }
   }
-}
-
-if (!customElements.get("lesson-viewer")) {
-  customElements.define("lesson-viewer", LessonViewer);
 }

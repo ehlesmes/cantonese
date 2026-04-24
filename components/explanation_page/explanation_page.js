@@ -1,55 +1,38 @@
-import "/components/lesson_footer/lesson_footer.js";
-import "/components/example_card/example_card.js";
+import { Component } from "/components/shared/component.js";
+import { LessonFooter } from "/components/lesson_footer/lesson_footer.js";
+import { ExampleCard } from "/components/example_card/example_card.js";
 
-const template = document.createElement("template");
-template.innerHTML = `
-<link rel="stylesheet" href="/components/explanation_page/style.css" />
-<div class="page-container">
-  <main>
-    <div class="content-wrapper" id="content"></div>
-  </main>
-  <lesson-footer id="footer"></lesson-footer>
-</div>
-`;
+export class ExplanationPage extends Component {
+  /**
+   * @param {Object} [options]
+   * @param {Array<{type: string, value?: string, cantonese?: string, romanization?: string, translation?: string}>} [options.content]
+   */
+  constructor(options = {}) {
+    super("/components/explanation_page/style.css");
 
-class ExplanationPage extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-    this._contentWrapper = this.shadowRoot.getElementById("content");
-    this._footer = this.shadowRoot.getElementById("footer");
-    this._data = {
-      content: [],
-    };
-  }
+    this._data = { content: [] };
 
-  get data() {
-    return this._data;
-  }
-  set data(val) {
-    this._data = { ...this._data, ...val };
-    this._render();
-  }
+    const container = document.createElement("div");
+    container.className = "page-container";
 
-  connectedCallback() {
-    this._upgradeProperty("data");
-    this.shadowRoot.addEventListener("primary-click", () => {
-      this.dispatchEvent(
-        new CustomEvent("explanation-complete", {
-          bubbles: true,
-          composed: true,
-        }),
-      );
+    const main = document.createElement("main");
+    this._contentWrapper = document.createElement("div");
+    this._contentWrapper.className = "content-wrapper";
+    this._contentWrapper.id = "content";
+    main.appendChild(this._contentWrapper);
+    container.appendChild(main);
+
+    this._footer = new LessonFooter({ primaryText: "Continue" });
+    container.appendChild(this._footer.element);
+
+    this.shadowRoot.appendChild(container);
+
+    this.element.addEventListener("primary-click", () => {
+      this.dispatch("explanation-complete");
     });
-    this._render();
-  }
 
-  _upgradeProperty(prop) {
-    if (Object.hasOwn(this, prop)) {
-      const value = this[prop];
-      delete this[prop];
-      this[prop] = value;
+    if (Object.keys(options).length > 0) {
+      this.data = options;
     }
   }
 
@@ -61,21 +44,17 @@ class ExplanationPage extends HTMLElement {
     }
   }
 
-  _render() {
-    if (!this._contentWrapper) return;
+  update() {
+    this.validate();
 
-    if (this.isConnected) {
-      this.validate();
-    }
-
-    // Initialize footer
     if (this._footer) {
       this._footer.data = { primaryText: "Continue" };
     }
 
     this._contentWrapper.innerHTML = ""; // Clear existing content
 
-    this._data.content.forEach((chunk) => {
+    const content = this._data.content || [];
+    content.forEach((chunk) => {
       let el;
       switch (chunk.type) {
         case "title":
@@ -84,16 +63,17 @@ class ExplanationPage extends HTMLElement {
           break;
         case "text":
           el = document.createElement("p");
-          el.innerHTML = chunk.value; // Allow bold tags etc.
+          this._renderRichText(el, chunk.value || "");
           break;
-        case "example":
-          el = document.createElement("example-card");
-          el.data = {
+        case "example": {
+          const card = new ExampleCard({
             cantonese: chunk.cantonese,
             romanization: chunk.romanization,
             translation: chunk.translation,
-          };
+          });
+          el = card.element;
           break;
+        }
         default:
           console.warn(
             `⚠️ [ExplanationPage]: Unknown chunk type "${chunk.type}"`,
@@ -102,8 +82,20 @@ class ExplanationPage extends HTMLElement {
       if (el) this._contentWrapper.appendChild(el);
     });
   }
-}
 
-if (!customElements.get("explanation-page")) {
-  customElements.define("explanation-page", ExplanationPage);
+  /**
+   * Simple parser to avoid innerHTML for basic formatting like <strong>.
+   */
+  _renderRichText(parent, text) {
+    const parts = text.split(/(<strong>.*?<\/strong>)/g);
+    parts.forEach((part) => {
+      if (part.startsWith("<strong>")) {
+        const strong = document.createElement("strong");
+        strong.textContent = part.replace(/<\/?strong>/g, "");
+        parent.appendChild(strong);
+      } else {
+        parent.appendChild(document.createTextNode(part));
+      }
+    });
+  }
 }

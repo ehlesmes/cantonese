@@ -1,44 +1,28 @@
-import "/components/lesson_controls/lesson_controls.js";
+import { Component } from "/components/shared/component.js";
+import { LessonControls } from "/components/lesson_controls/lesson_controls.js";
 
-const headerTemplate = document.createElement("template");
-headerTemplate.innerHTML = `
-<link rel="stylesheet" href="/components/lesson_header/style.css" />
+export class LessonHeader extends Component {
+  /**
+   * @param {Object} [options]
+   * @param {string} [options.lessonName]
+   */
+  constructor(options = {}) {
+    super("/components/lesson_header/style.css");
 
-<header>
-  <div class="title" id="lesson-title">Lesson</div>
-  <lesson-controls></lesson-controls>
-</header>
-`;
+    const header = document.createElement("header");
 
-class LessonHeader extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(headerTemplate.content.cloneNode(true));
-    this._data = {
-      lessonName: "",
-    };
-  }
+    this._titleEl = document.createElement("div");
+    this._titleEl.className = "title";
+    this._titleEl.id = "lesson-title";
+    this._titleEl.textContent = "Lesson";
+    header.appendChild(this._titleEl);
 
-  get data() {
-    return this._data;
-  }
-  set data(val) {
-    this._data = { ...this._data, ...val };
-    this.update();
-  }
+    this._controls = new LessonControls();
+    header.appendChild(this._controls.element);
 
-  connectedCallback() {
-    this._upgradeProperty("data");
-    this.update();
-  }
+    this.shadowRoot.appendChild(header);
 
-  _upgradeProperty(prop) {
-    if (Object.hasOwn(this, prop)) {
-      const value = this[prop];
-      delete this[prop];
-      this[prop] = value;
-    }
+    this.data = options;
   }
 
   validate() {
@@ -50,17 +34,7 @@ class LessonHeader extends HTMLElement {
   }
 
   update() {
-    if (!this.shadowRoot) return;
-
-    if (this.isConnected) {
-      this.validate();
-    }
-
-    this.shadowRoot.getElementById("lesson-title").textContent =
-      this._data.lessonName || "";
+    this.validate();
+    this._titleEl.textContent = this._data.lessonName || "";
   }
-}
-
-if (!customElements.get("lesson-header")) {
-  customElements.define("lesson-header", LessonHeader);
 }
