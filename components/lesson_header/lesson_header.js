@@ -11,25 +11,44 @@ headerTemplate.innerHTML = `
 `;
 
 class LessonHeader extends HTMLElement {
-  static get observedAttributes() {
-    return ["lesson-name"];
-  }
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(headerTemplate.content.cloneNode(true));
+    this._data = {
+      lessonName: "",
+    };
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
-    if (name === "lesson-name") {
-      if (!newVal) {
-        console.error(
-          "🚨 [LessonHeader ERROR]: Missing required attribute 'lesson-name'!",
-        );
-      }
-      this.shadowRoot.getElementById("lesson-title").textContent = newVal;
+  get data() {
+    return this._data;
+  }
+  set data(val) {
+    this._data = { ...this._data, ...val };
+    this.update();
+  }
+
+  connectedCallback() {
+    this.update();
+  }
+
+  validate() {
+    if (!this._data.lessonName) {
+      console.error(
+        "🚨 [LessonHeader ERROR]: Missing required data property 'lessonName'!",
+      );
     }
+  }
+
+  update() {
+    if (!this.shadowRoot) return;
+
+    if (this.isConnected) {
+      this.validate();
+    }
+
+    this.shadowRoot.getElementById("lesson-title").textContent =
+      this._data.lessonName || "";
   }
 }
 

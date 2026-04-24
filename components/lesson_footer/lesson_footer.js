@@ -9,55 +9,25 @@ footerTemplate.innerHTML = `
 `;
 
 export class LessonFooter extends HTMLElement {
-  static get observedAttributes() {
-    return [
-      "primary-text",
-      "secondary-text",
-      "primary-disabled",
-      "secondary-disabled",
-    ];
-  }
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
+
+    this._data = {
+      primaryText: "Next",
+      secondaryText: "",
+      primaryDisabled: false,
+      secondaryDisabled: false,
+    };
   }
 
-  get primaryText() {
-    return this.getAttribute("primary-text");
+  get data() {
+    return this._data;
   }
-  set primaryText(val) {
-    if (val) this.setAttribute("primary-text", val);
-    else this.removeAttribute("primary-text");
-  }
-
-  get secondaryText() {
-    return this.getAttribute("secondary-text");
-  }
-  set secondaryText(val) {
-    if (val) this.setAttribute("secondary-text", val);
-    else this.removeAttribute("secondary-text");
-  }
-
-  get primaryDisabled() {
-    return (
-      this.hasAttribute("primary-disabled") &&
-      this.getAttribute("primary-disabled") !== "false"
-    );
-  }
-  set primaryDisabled(val) {
-    this.setAttribute("primary-disabled", val ? "true" : "false");
-  }
-
-  get secondaryDisabled() {
-    return (
-      this.hasAttribute("secondary-disabled") &&
-      this.getAttribute("secondary-disabled") !== "false"
-    );
-  }
-  set secondaryDisabled(val) {
-    this.setAttribute("secondary-disabled", val ? "true" : "false");
+  set data(val) {
+    this._data = { ...this._data, ...val };
+    this.update();
   }
 
   connectedCallback() {
@@ -71,35 +41,30 @@ export class LessonFooter extends HTMLElement {
         new CustomEvent("secondary-click", { bubbles: true, composed: true }),
       );
     };
-    this.updateButtons();
+    this.update();
   }
 
-  attributeChangedCallback() {
-    this.updateButtons();
+  validate() {
+    if (!this._data.primaryText) {
+      console.error(
+        "🚨 [LessonFooter ERROR]: Missing required data property 'primaryText'!",
+      );
+    }
   }
 
-  updateButtons() {
+  update() {
+    if (!this.shadowRoot) return;
+
+    if (this.isConnected) {
+      this.validate();
+    }
+
     const primaryBtn = this.shadowRoot.getElementById("primary-btn");
     const secondaryBtn = this.shadowRoot.getElementById("secondary-btn");
 
-    const primaryText = this.getAttribute("primary-text");
-    const secondaryText = this.getAttribute("secondary-text");
-    const primaryDisabled =
-      this.hasAttribute("primary-disabled") &&
-      this.getAttribute("primary-disabled") !== "false";
-    const secondaryDisabled =
-      this.hasAttribute("secondary-disabled") &&
-      this.getAttribute("secondary-disabled") !== "false";
-
-    if (!primaryText) {
-      console.error(
-        "🚨 [LessonFooter ERROR]: Missing required attribute 'primary-text'!",
-      );
-    }
-
     if (primaryBtn) {
-      primaryBtn.textContent = primaryText || "Next";
-      if (primaryDisabled) {
+      primaryBtn.textContent = this._data.primaryText || "Next";
+      if (this._data.primaryDisabled) {
         primaryBtn.setAttribute("disabled", "");
       } else {
         primaryBtn.removeAttribute("disabled");
@@ -107,10 +72,10 @@ export class LessonFooter extends HTMLElement {
     }
 
     if (secondaryBtn) {
-      if (secondaryText) {
-        secondaryBtn.textContent = secondaryText;
+      if (this._data.secondaryText) {
+        secondaryBtn.textContent = this._data.secondaryText;
         secondaryBtn.classList.remove("hidden");
-        if (secondaryDisabled) {
+        if (this._data.secondaryDisabled) {
           secondaryBtn.setAttribute("disabled", "");
         } else {
           secondaryBtn.removeAttribute("disabled");

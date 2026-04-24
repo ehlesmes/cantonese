@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./lesson_header.js";
 
 describe("LessonHeader Component", () => {
@@ -17,8 +17,21 @@ describe("LessonHeader Component", () => {
   });
 
   it("should display the lesson name", () => {
-    element.setAttribute("lesson-name", "Greetings");
+    element.data = { lessonName: "Greetings" };
     const title = element.shadowRoot.getElementById("lesson-title");
     expect(title.textContent).toBe("Greetings");
+  });
+
+  describe("Validation", () => {
+    it("should log an error if lessonName is missing", () => {
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+      element.data = { lessonName: "" };
+      expect(errorSpy).toHaveBeenCalledWith(
+        expect.stringContaining(
+          "🚨 [LessonHeader ERROR]: Missing required data property 'lessonName'!",
+        ),
+      );
+      errorSpy.mockRestore();
+    });
   });
 });

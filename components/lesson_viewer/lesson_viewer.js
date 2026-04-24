@@ -10,36 +10,52 @@ template.innerHTML = `
 `;
 
 export class LessonViewer extends HTMLElement {
-  static get observedAttributes() {
-    return ["lesson-name"];
-  }
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this._header = this.shadowRoot.getElementById("header");
+    this._main = this.shadowRoot.getElementById("m");
+
+    this._data = {
+      lessonId: "",
+      lessonName: "",
+    };
   }
+
+  get data() {
+    return this._data;
+  }
+  set data(val) {
+    this._data = { ...this._data, ...val };
+    this.update();
+  }
+
   connectedCallback() {
     this.shadowRoot.addEventListener(
       "lesson-restart",
-      () => (this.shadowRoot.getElementById("m").scrollTop = 0),
+      () => (this._main.scrollTop = 0),
     );
     this.update();
   }
-  attributeChangedCallback() {
-    this.update();
-  }
-  update() {
-    const header = this.shadowRoot.getElementById("header");
 
-    const lessonName = this.getAttribute("lesson-name");
-    if (!lessonName) {
+  validate() {
+    if (!this._data.lessonName) {
       console.error(
-        "🚨 [LessonViewer ERROR]: Missing required attribute 'lesson-name'!",
+        "🚨 [LessonViewer ERROR]: Missing required data property 'lessonName'!",
       );
     }
+  }
 
-    if (header) {
-      header.setAttribute("lesson-name", lessonName || "");
+  update() {
+    if (!this.shadowRoot) return;
+
+    if (this.isConnected) {
+      this.validate();
+    }
+
+    if (this._header) {
+      this._header.data = { lessonName: this._data.lessonName || "" };
     }
   }
 }

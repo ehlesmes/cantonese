@@ -30,6 +30,16 @@ class LessonControls extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    this._data = {};
+  }
+
+  get data() {
+    return this._data;
+  }
+  set data(val) {
+    this._data = { ...this._data, ...val };
+    this.update();
   }
 
   connectedCallback() {
@@ -44,6 +54,19 @@ class LessonControls extends HTMLElement {
         );
       };
     });
+    this.update();
+  }
+
+  validate() {
+    // No required properties for LessonControls currently
+  }
+
+  update() {
+    if (!this.shadowRoot) return;
+
+    if (this.isConnected) {
+      this.validate();
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./lesson_controls.js";
 
 describe("LessonControls Component", () => {
@@ -28,6 +28,15 @@ describe("LessonControls Component", () => {
       button.click();
 
       expect(eventSpy).toHaveBeenCalled();
+    });
+  });
+
+  describe("Validation", () => {
+    it("should not log any error if data is empty (no required properties)", () => {
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+      element.data = {};
+      expect(errorSpy).not.toHaveBeenCalled();
+      errorSpy.mockRestore();
     });
   });
 });

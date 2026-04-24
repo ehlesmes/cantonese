@@ -17,8 +17,10 @@ describe("LessonFooter Component", () => {
   });
 
   it("should dispatch primary-click and secondary-click events", () => {
-    element.setAttribute("primary-text", "Primary");
-    element.setAttribute("secondary-text", "Secondary");
+    element.data = {
+      primaryText: "Primary",
+      secondaryText: "Secondary",
+    };
 
     const primarySpy = vi.fn();
     const secondarySpy = vi.fn();
@@ -33,11 +35,13 @@ describe("LessonFooter Component", () => {
     expect(secondarySpy).toHaveBeenCalled();
   });
 
-  it("should update button text and disabled state based on attributes", () => {
-    element.setAttribute("primary-text", "Go");
-    element.setAttribute("secondary-text", "Back");
-    element.setAttribute("primary-disabled", "true");
-    element.setAttribute("secondary-disabled", "true");
+  it("should update button text and disabled state based on data", () => {
+    element.data = {
+      primaryText: "Go",
+      secondaryText: "Back",
+      primaryDisabled: true,
+      secondaryDisabled: true,
+    };
 
     const primaryBtn = element.shadowRoot.getElementById("primary-btn");
     const secondaryBtn = element.shadowRoot.getElementById("secondary-btn");
@@ -47,9 +51,24 @@ describe("LessonFooter Component", () => {
     expect(primaryBtn.hasAttribute("disabled")).toBe(true);
     expect(secondaryBtn.hasAttribute("disabled")).toBe(true);
 
-    element.setAttribute("primary-disabled", "false");
-    element.setAttribute("secondary-disabled", "false");
+    element.data = {
+      primaryDisabled: false,
+      secondaryDisabled: false,
+    };
     expect(primaryBtn.hasAttribute("disabled")).toBe(false);
     expect(secondaryBtn.hasAttribute("disabled")).toBe(false);
+  });
+
+  describe("Validation", () => {
+    it("should log an error if primaryText is missing", () => {
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+      element.data = { primaryText: "" };
+      expect(errorSpy).toHaveBeenCalledWith(
+        expect.stringContaining(
+          "🚨 [LessonFooter ERROR]: Missing required data property 'primaryText'!",
+        ),
+      );
+      errorSpy.mockRestore();
+    });
   });
 });

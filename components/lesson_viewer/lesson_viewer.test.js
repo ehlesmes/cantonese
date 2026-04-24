@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./lesson_viewer.js";
 
 describe("LessonViewer Component", () => {
@@ -17,8 +17,21 @@ describe("LessonViewer Component", () => {
   });
 
   it("should propagate lesson-name to the lesson-header", () => {
-    element.setAttribute("lesson-name", "Unit 1: Basics");
+    element.data = { lessonName: "Unit 1: Basics" };
     const header = element.shadowRoot.getElementById("header");
-    expect(header.getAttribute("lesson-name")).toBe("Unit 1: Basics");
+    expect(header.data.lessonName).toBe("Unit 1: Basics");
+  });
+
+  describe("Validation", () => {
+    it("should log an error if lessonName is missing", () => {
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+      element.data = { lessonName: "" };
+      expect(errorSpy).toHaveBeenCalledWith(
+        expect.stringContaining(
+          "🚨 [LessonViewer ERROR]: Missing required data property 'lessonName'!",
+        ),
+      );
+      errorSpy.mockRestore();
+    });
   });
 });
