@@ -30,12 +30,22 @@ Contains the high-level structure:
 
 ```json
 {
-  "lessonId": "1.1",
-  "name": "Basic Greetings",
-  "pages": [
-    { "type": "explanation", "id": "1.1.1" },
-    { "type": "reading", "id": "1.1.2" },
-    { "type": "unscramble", "id": "1.1.3" }
+  "chapters": [
+    {
+      "id": "1",
+      "name": "Level 1: The Basics",
+      "lessons": [
+        {
+          "id": "1.1",
+          "name": "Basic Greetings",
+          "pages": [
+            { "type": "explanation", "id": "1.1.1" },
+            { "type": "reading", "id": "1.1.2" },
+            { "type": "unscramble", "id": "1.1.3" }
+          ]
+        }
+      ]
+    }
   ]
 }
 ```
