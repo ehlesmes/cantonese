@@ -37,10 +37,35 @@ class UnscrambleExercise extends HTMLElement {
     this._pool = [];
     this._slots = [];
     this._status = "incomplete";
+    this._translation = "";
   }
 
   get status() {
     return this._status;
+  }
+
+  get tokens() {
+    return this._originalTokens.map((t) => [t.text, t.romanization]);
+  }
+  set tokens(val) {
+    if (!Array.isArray(val)) return;
+    const jsonVal = JSON.stringify(val);
+    if (this._lastTokensJson === jsonVal) return;
+
+    this._lastTokensJson = jsonVal;
+    this._setTokens(val);
+    this.setAttribute("tokens", jsonVal);
+    this.update();
+  }
+
+  get translation() {
+    return this._translation;
+  }
+  set translation(val) {
+    if (this._translation === val) return;
+    this._translation = val || "";
+    this.setAttribute("translation", this._translation);
+    this.update();
   }
 
   connectedCallback() {
@@ -52,48 +77,44 @@ class UnscrambleExercise extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
+    if (oldVal === newVal) return;
+
     if (name === "status") {
       this._status = newVal;
-    } else {
-      this.update();
+    } else if (name === "tokens") {
+      if (this._lastTokensJson === newVal) return;
+      this._lastTokensJson = newVal;
+      try {
+        const parsed = JSON.parse(newVal);
+        this._setTokens(parsed);
+      } catch (e) {
+        console.error(
+          "🚨 [UnscrambleExercise ERROR]: Failed to parse tokens",
+          e,
+        );
+      }
+    } else if (name === "translation") {
+      this._translation = newVal || "";
     }
+    this.update();
+  }
+
+  _setTokens(tokenArray) {
+    this._originalTokens = tokenArray.map((t, index) => ({
+      text: t[0],
+      romanization: t[1],
+      id: index,
+    }));
+    this._slots = [];
+    this._pool = [...this._originalTokens].sort(() => Math.random() - 0.5);
+    this._calculateStatus();
   }
 
   update() {
     if (!this.shadowRoot) return;
 
-    const tokensAttr = this.getAttribute("tokens");
-    const translation = this.getAttribute("translation") || "";
-
-    if (!tokensAttr) {
-      console.error(
-        "🚨 [UnscrambleExercise ERROR]: Missing required attribute 'tokens'!",
-      );
-      return;
-    }
-
-    if (this._lastTokensAttr !== tokensAttr) {
-      this._lastTokensAttr = tokensAttr;
-      try {
-        const parsed = JSON.parse(tokensAttr);
-        this._originalTokens = parsed.map((t, index) => ({
-          text: t[0],
-          romanization: t[1],
-          id: index,
-        }));
-
-        this._slots = [];
-        this._pool = [...this._originalTokens].sort(() => Math.random() - 0.5);
-        this._calculateStatus();
-      } catch (e) {
-        console.error(
-          "🚨 [UnscrambleExercise ERROR]: Failed to parse 'tokens' JSON!",
-          e,
-        );
-      }
-    }
-
-    if (this._translationEl) this._translationEl.textContent = translation;
+    if (this._translationEl)
+      this._translationEl.textContent = this._translation;
     this.render();
   }
   render() {

@@ -25,6 +25,37 @@ class ReadingPage extends HTMLElement {
     this._exercise = this.shadowRoot.getElementById("exercise");
     this._footer = this.shadowRoot.getElementById("footer");
     this._state = "initial"; // initial, revealed
+
+    this._cantonesePhrase = "";
+    this._romanization = "";
+    this._translation = "";
+  }
+
+  get cantonesePhrase() {
+    return this._cantonesePhrase;
+  }
+  set cantonesePhrase(val) {
+    this._cantonesePhrase = val;
+    this.setAttribute("cantonese-phrase", val);
+    this._update();
+  }
+
+  get romanization() {
+    return this._romanization;
+  }
+  set romanization(val) {
+    this._romanization = val;
+    this.setAttribute("romanization", val);
+    this._update();
+  }
+
+  get translation() {
+    return this._translation;
+  }
+  set translation(val) {
+    this._translation = val;
+    this.setAttribute("translation", val);
+    this._update();
   }
 
   connectedCallback() {
@@ -37,33 +68,36 @@ class ReadingPage extends HTMLElement {
     this._update();
   }
 
-  attributeChangedCallback() {
+  attributeChangedCallback(name, oldVal, newVal) {
+    if (oldVal === newVal) return;
+    switch (name) {
+      case "cantonese-phrase":
+        this._cantonesePhrase = newVal || "";
+        break;
+      case "romanization":
+        this._romanization = newVal || "";
+        break;
+      case "translation":
+        this._translation = newVal || "";
+        break;
+    }
     this._update();
   }
 
   _update() {
     if (!this.shadowRoot) return;
 
-    // Pass attributes to exercise
-    this._exercise.setAttribute(
-      "cantonese-phrase",
-      this.getAttribute("cantonese-phrase") || "",
-    );
-    this._exercise.setAttribute(
-      "romanization",
-      this.getAttribute("romanization") || "",
-    );
-    this._exercise.setAttribute(
-      "translation",
-      this.getAttribute("translation") || "",
-    );
+    // Pass data to exercise via properties
+    this._exercise.cantonesePhrase = this._cantonesePhrase;
+    this._exercise.romanization = this._romanization;
+    this._exercise.translation = this._translation;
 
     if (this._state === "initial") {
-      this._exercise.setAttribute("translation-hidden", "true");
+      this._exercise.translationHidden = true;
       this._footer.setAttribute("primary-text", "Reveal Answer");
       this._footer.removeAttribute("secondary-text");
     } else {
-      this._exercise.setAttribute("translation-hidden", "false");
+      this._exercise.translationHidden = false;
       this._footer.setAttribute("primary-text", "Got it right");
       this._footer.setAttribute("secondary-text", "Need practice");
     }

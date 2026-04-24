@@ -23,9 +23,7 @@ describe("UnscrambleExercise Component", () => {
     ];
     element.setAttribute("tokens", JSON.stringify(tokens));
 
-    const poolTokens = element.shadowRoot.querySelectorAll(
-      "#pool .token-text",
-    );
+    const poolTokens = element.shadowRoot.querySelectorAll("#pool .token-text");
     expect(poolTokens.length).toBe(2);
 
     const texts = Array.from(poolTokens).map((el) => el.textContent);
@@ -43,14 +41,13 @@ describe("UnscrambleExercise Component", () => {
 
     poolToken.click();
 
-    const slotTokens = element.shadowRoot.querySelectorAll(
-      "#slots .token-text",
-    );
+    const slotTokens =
+      element.shadowRoot.querySelectorAll("#slots .token-text");
     expect(slotTokens.length).toBe(1);
     expect(slotTokens[0].textContent).toBe("你");
-    expect(element.shadowRoot.querySelectorAll("#pool .token-text").length).toBe(
-      0,
-    );
+    expect(
+      element.shadowRoot.querySelectorAll("#pool .token-text").length,
+    ).toBe(0);
     expect(completeSpy).toHaveBeenCalled();
   });
 
@@ -119,7 +116,9 @@ describe("UnscrambleExercise Component", () => {
     getPoolToken("C").click();
 
     expect(element.getAttribute("status")).toBe("wrong");
-    expect(element.shadowRoot.querySelectorAll("#slots ui-tooltip").length).toBe(3);
+    expect(
+      element.shadowRoot.querySelectorAll("#slots ui-tooltip").length,
+    ).toBe(3);
 
     // Click "A" in slots to move it back to pool
     const tokenA = getSlotToken("A");
@@ -128,7 +127,7 @@ describe("UnscrambleExercise Component", () => {
     const slotTexts = Array.from(
       element.shadowRoot.querySelectorAll("#slots .token-text"),
     ).map((el) => el.textContent);
-    
+
     const poolTexts = Array.from(
       element.shadowRoot.querySelectorAll("#pool .token-text"),
     ).map((el) => el.textContent);
@@ -161,5 +160,45 @@ describe("UnscrambleExercise Component", () => {
     ).map((el) => el.textContent);
 
     expect(slotTexts).toEqual(["B", "C", "A"]);
+  });
+
+  describe("Properties", () => {
+    it("should update via tokens property and reflect to attribute", () => {
+      const tokens = [["你好", "nei5 hou2"]];
+      element.tokens = tokens;
+
+      expect(element.getAttribute("tokens")).toBe(JSON.stringify(tokens));
+      expect(element.shadowRoot.getElementById("pool").children.length).toBe(1);
+    });
+
+    it("should update translation via property", () => {
+      element.translation = "Hello";
+      expect(element.getAttribute("translation")).toBe("Hello");
+      expect(
+        element.shadowRoot.querySelector(".translation-text").textContent,
+      ).toBe("Hello");
+    });
+
+    it("should not reset state if same tokens are set via property", () => {
+      const tokens = [
+        ["A", "a"],
+        ["B", "b"],
+      ];
+      element.tokens = tokens;
+
+      // Move one to slots
+      const poolToken = element.shadowRoot.querySelector("#pool ui-tooltip");
+      poolToken.click();
+
+      const initialSlots =
+        element.shadowRoot.querySelectorAll("#slots ui-tooltip").length;
+      expect(initialSlots).toBe(1);
+
+      // Set same tokens again
+      element.tokens = tokens;
+      expect(
+        element.shadowRoot.querySelectorAll("#slots ui-tooltip").length,
+      ).toBe(1);
+    });
   });
 });

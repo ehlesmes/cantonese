@@ -38,4 +38,16 @@ describe("ExplanationPage Component", () => {
     expect(text.textContent).toBe("This is a test.");
     expect(card.getAttribute("cantonese")).toBe("你好");
   });
+
+  describe("Properties", () => {
+    it("should update via content property and reflect to attribute", () => {
+      const content = [{ type: "title", value: "New Title" }];
+      element.content = content;
+
+      expect(element.getAttribute("content")).toBe(JSON.stringify(content));
+      expect(element.shadowRoot.querySelector("h1").textContent).toBe(
+        "New Title",
+      );
+    });
+  });
 });

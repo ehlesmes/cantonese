@@ -68,4 +68,48 @@ describe("ReadingExercise Component", () => {
     const utterance = window.speechSynthesis.speak.mock.calls[0][0];
     expect(utterance.text).toBe("你好");
   });
+
+  describe("Properties", () => {
+    it("should update via properties and reflect to attributes", () => {
+      element.cantonesePhrase = "你好";
+      element.romanization = "nei5 hou2";
+      element.translation = "Hello";
+      element.translationHidden = false;
+
+      expect(element.getAttribute("cantonese-phrase")).toBe("你好");
+      expect(element.getAttribute("romanization")).toBe("nei5 hou2");
+      expect(element.getAttribute("translation")).toBe("Hello");
+      expect(element.getAttribute("translation-hidden")).toBe("false");
+
+      const shadow = element.shadowRoot;
+      expect(shadow.querySelector(".cantonese-text").textContent).toBe("你好");
+      expect(shadow.querySelector(".romanization-text").textContent).toBe(
+        "nei5 hou2",
+      );
+      expect(shadow.querySelector(".translation-text").textContent).toBe(
+        "Hello",
+      );
+      expect(
+        shadow.querySelector(".translation-text").classList.contains("hidden"),
+      ).toBe(false);
+    });
+
+    it("should handle translationHidden property correctly", () => {
+      element.translationHidden = true;
+      expect(element.getAttribute("translation-hidden")).toBe("true");
+      expect(
+        element.shadowRoot
+          .querySelector(".translation-text")
+          .classList.contains("hidden"),
+      ).toBe(true);
+
+      element.translationHidden = false;
+      expect(element.getAttribute("translation-hidden")).toBe("false");
+      expect(
+        element.shadowRoot
+          .querySelector(".translation-text")
+          .classList.contains("hidden"),
+      ).toBe(false);
+    });
+  });
 });

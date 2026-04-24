@@ -22,6 +22,18 @@ class ExplanationPage extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this._contentWrapper = this.shadowRoot.getElementById("content");
+    this._content = [];
+  }
+
+  get content() {
+    return this._content;
+  }
+  set content(val) {
+    if (Array.isArray(val)) {
+      this._content = val;
+      this.setAttribute("content", JSON.stringify(val));
+      this._render();
+    }
   }
 
   connectedCallback() {
@@ -36,50 +48,47 @@ class ExplanationPage extends HTMLElement {
     this._render();
   }
 
-  attributeChangedCallback() {
+  attributeChangedCallback(name, oldVal, newVal) {
+    if (oldVal === newVal) return;
+    if (name === "content") {
+      try {
+        this._content = JSON.parse(newVal);
+      } catch (e) {
+        console.error("🚨 [ExplanationPage ERROR]: Failed to parse content", e);
+      }
+    }
     this._render();
   }
 
   _render() {
     if (!this._contentWrapper) return;
 
-    const contentAttr = this.getAttribute("content");
-    if (!contentAttr) return;
+    this._contentWrapper.innerHTML = ""; // Clear existing content
 
-    try {
-      const chunks = JSON.parse(contentAttr);
-      this._contentWrapper.innerHTML = ""; // Clear existing content
-
-      chunks.forEach((chunk) => {
-        let el;
-        switch (chunk.type) {
-          case "title":
-            el = document.createElement("h1");
-            el.textContent = chunk.value;
-            break;
-          case "text":
-            el = document.createElement("p");
-            el.innerHTML = chunk.value; // Allow bold tags etc.
-            break;
-          case "example":
-            el = document.createElement("example-card");
-            el.setAttribute("cantonese", chunk.cantonese);
-            el.setAttribute("romanization", chunk.romanization);
-            el.setAttribute("translation", chunk.translation);
-            break;
-          default:
-            console.warn(
-              `⚠️ [ExplanationPage]: Unknown chunk type "${chunk.type}"`,
-            );
-        }
-        if (el) this._contentWrapper.appendChild(el);
-      });
-    } catch (e) {
-      console.error(
-        "🚨 [ExplanationPage ERROR]: Failed to parse content JSON",
-        e,
-      );
-    }
+    this._content.forEach((chunk) => {
+      let el;
+      switch (chunk.type) {
+        case "title":
+          el = document.createElement("h1");
+          el.textContent = chunk.value;
+          break;
+        case "text":
+          el = document.createElement("p");
+          el.innerHTML = chunk.value; // Allow bold tags etc.
+          break;
+        case "example":
+          el = document.createElement("example-card");
+          el.cantonese = chunk.cantonese;
+          el.romanization = chunk.romanization;
+          el.translation = chunk.translation;
+          break;
+        default:
+          console.warn(
+            `⚠️ [ExplanationPage]: Unknown chunk type "${chunk.type}"`,
+          );
+      }
+      if (el) this._contentWrapper.appendChild(el);
+    });
   }
 }
 

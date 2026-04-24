@@ -37,7 +37,9 @@ describe("ReadingPage Component", () => {
     expect(exercise.getAttribute("translation-hidden")).toBe("true");
 
     // Click reveal
-    footer.dispatchEvent(new CustomEvent("primary-click", { bubbles: true, composed: true }));
+    footer.dispatchEvent(
+      new CustomEvent("primary-click", { bubbles: true, composed: true }),
+    );
 
     // Revealed state
     expect(footer.getAttribute("primary-text")).toBe("Got it right");
@@ -47,21 +49,44 @@ describe("ReadingPage Component", () => {
 
   it("should dispatch reading-result when clicked in revealed state", () => {
     const footer = element.shadowRoot.getElementById("footer");
-    
+
     // Move to revealed state
-    footer.dispatchEvent(new CustomEvent("primary-click", { bubbles: true, composed: true }));
+    footer.dispatchEvent(
+      new CustomEvent("primary-click", { bubbles: true, composed: true }),
+    );
 
     const resultSpy = vi.fn();
     element.addEventListener("reading-result", resultSpy);
 
     // Click "Got it right"
-    footer.dispatchEvent(new CustomEvent("primary-click", { bubbles: true, composed: true }));
+    footer.dispatchEvent(
+      new CustomEvent("primary-click", { bubbles: true, composed: true }),
+    );
     expect(resultSpy).toHaveBeenCalled();
     expect(resultSpy.mock.calls[0][0].detail.success).toBe(true);
 
     // Click "Need practice"
-    footer.dispatchEvent(new CustomEvent("secondary-click", { bubbles: true, composed: true }));
+    footer.dispatchEvent(
+      new CustomEvent("secondary-click", { bubbles: true, composed: true }),
+    );
     expect(resultSpy).toHaveBeenCalledTimes(2);
     expect(resultSpy.mock.calls[1][0].detail.success).toBe(false);
+  });
+
+  describe("Properties", () => {
+    it("should update via properties and reflect to attributes", () => {
+      element.cantonesePhrase = "你好";
+      element.romanization = "nei5 hou2";
+      element.translation = "Hello";
+
+      expect(element.getAttribute("cantonese-phrase")).toBe("你好");
+      expect(element.getAttribute("romanization")).toBe("nei5 hou2");
+      expect(element.getAttribute("translation")).toBe("Hello");
+
+      const exercise = element.shadowRoot.getElementById("exercise");
+      expect(exercise.cantonesePhrase).toBe("你好");
+      expect(exercise.romanization).toBe("nei5 hou2");
+      expect(exercise.translation).toBe("Hello");
+    });
   });
 });

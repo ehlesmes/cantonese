@@ -24,6 +24,29 @@ class UnscramblePage extends HTMLElement {
 
     this._exercise = this.shadowRoot.getElementById("exercise");
     this._footer = this.shadowRoot.getElementById("footer");
+
+    this._tokens = [];
+    this._translation = "";
+  }
+
+  get tokens() {
+    return this._tokens;
+  }
+  set tokens(val) {
+    if (Array.isArray(val)) {
+      this._tokens = val;
+      this.setAttribute("tokens", JSON.stringify(val));
+      this._update();
+    }
+  }
+
+  get translation() {
+    return this._translation;
+  }
+  set translation(val) {
+    this._translation = val || "";
+    this.setAttribute("translation", this._translation);
+    this._update();
   }
 
   connectedCallback() {
@@ -43,18 +66,25 @@ class UnscramblePage extends HTMLElement {
     this._update();
   }
 
-  attributeChangedCallback() {
+  attributeChangedCallback(name, oldVal, newVal) {
+    if (oldVal === newVal) return;
+    if (name === "tokens") {
+      try {
+        this._tokens = JSON.parse(newVal);
+      } catch (e) {
+        console.error("🚨 [UnscramblePage ERROR]: Failed to parse tokens", e);
+      }
+    } else if (name === "translation") {
+      this._translation = newVal || "";
+    }
     this._update();
   }
 
   _update() {
     if (!this.shadowRoot) return;
 
-    this._exercise.setAttribute("tokens", this.getAttribute("tokens") || "[]");
-    this._exercise.setAttribute(
-      "translation",
-      this.getAttribute("translation") || "",
-    );
+    this._exercise.tokens = this._tokens;
+    this._exercise.translation = this._translation;
 
     const status = this._exercise.getAttribute("status");
     const isFilled = status !== "incomplete";

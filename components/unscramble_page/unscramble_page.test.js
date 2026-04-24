@@ -17,9 +17,12 @@ describe("UnscramblePage Component", () => {
   });
 
   it("should propagate tokens to the unscramble-exercise and enable footer on complete", () => {
-    const tokens = [["你", "nei5"], ["好", "hou2"]];
+    const tokens = [
+      ["你", "nei5"],
+      ["好", "hou2"],
+    ];
     element.setAttribute("tokens", JSON.stringify(tokens));
-    
+
     const exercise = element.shadowRoot.getElementById("exercise");
     const footer = element.shadowRoot.getElementById("footer");
 
@@ -30,7 +33,7 @@ describe("UnscramblePage Component", () => {
     // We'll call the internal method on exercise because triggering real clicks is slow here
     exercise.moveToSlots(0);
     exercise.moveToSlots(0);
-    
+
     // Page should update footer
     expect(footer.getAttribute("primary-disabled")).toBe("false");
   });
@@ -48,9 +51,26 @@ describe("UnscramblePage Component", () => {
     exercise.moveToSlots(0);
 
     // Click continue
-    footer.dispatchEvent(new CustomEvent("primary-click", { bubbles: true, composed: true }));
+    footer.dispatchEvent(
+      new CustomEvent("primary-click", { bubbles: true, composed: true }),
+    );
 
     expect(resultSpy).toHaveBeenCalled();
     expect(resultSpy.mock.calls[0][0].detail.success).toBe(true);
+  });
+
+  describe("Properties", () => {
+    it("should update via properties and reflect to attributes", () => {
+      const tokens = [["你好", "nei5 hou2"]];
+      element.tokens = tokens;
+      element.translation = "Hello";
+
+      expect(element.getAttribute("tokens")).toBe(JSON.stringify(tokens));
+      expect(element.getAttribute("translation")).toBe("Hello");
+
+      const exercise = element.shadowRoot.getElementById("exercise");
+      expect(exercise.tokens).toEqual(tokens);
+      expect(exercise.translation).toBe("Hello");
+    });
   });
 });

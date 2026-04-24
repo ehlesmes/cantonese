@@ -42,44 +42,92 @@ class ReadingExercise extends HTMLElement {
     this._cantoneseEl = this.shadowRoot.querySelector(".cantonese-text");
     this._romanizationEl = this.shadowRoot.querySelector(".romanization-text");
     this._translationEl = this.shadowRoot.querySelector(".translation-text");
+
+    // Internal state
+    this._cantonesePhrase = "";
+    this._romanization = "";
+    this._translation = "";
+    this._translationHidden = true;
+  }
+
+  // Property Getters/Setters
+  get cantonesePhrase() {
+    return this._cantonesePhrase;
+  }
+  set cantonesePhrase(val) {
+    this._cantonesePhrase = val || "";
+    this.setAttribute("cantonese-phrase", this._cantonesePhrase);
+    this.update();
+  }
+
+  get romanization() {
+    return this._romanization;
+  }
+  set romanization(val) {
+    this._romanization = val || "";
+    this.setAttribute("romanization", this._romanization);
+    this.update();
+  }
+
+  get translation() {
+    return this._translation;
+  }
+  set translation(val) {
+    this._translation = val || "";
+    this.setAttribute("translation", this._translation);
+    this.update();
+  }
+
+  get translationHidden() {
+    return this._translationHidden;
+  }
+  set translationHidden(val) {
+    this._translationHidden = !!val;
+    if (this._translationHidden) {
+      this.setAttribute("translation-hidden", "true");
+    } else {
+      this.setAttribute("translation-hidden", "false");
+    }
+    this.update();
   }
 
   connectedCallback() {
     this._playBtn.onclick = () => this.playAudio();
 
     if (!this.hasAttribute("translation-hidden")) {
-      this.setAttribute("translation-hidden", "true");
+      this.translationHidden = true;
     }
 
     this.update();
   }
 
-  attributeChangedCallback() {
+  attributeChangedCallback(name, oldVal, newVal) {
+    if (oldVal === newVal) return;
+
+    switch (name) {
+      case "cantonese-phrase":
+        this._cantonesePhrase = newVal || "";
+        break;
+      case "romanization":
+        this._romanization = newVal || "";
+        break;
+      case "translation":
+        this._translation = newVal || "";
+        break;
+      case "translation-hidden":
+        this._translationHidden = newVal !== "false";
+        break;
+    }
     this.update();
   }
 
   update() {
     if (!this.shadowRoot) return;
 
-    const phrase = this.getAttribute("cantonese-phrase") || "";
-    const romanization = this.getAttribute("romanization") || "";
-    const translation = this.getAttribute("translation") || "";
-    const isHidden = this.getAttribute("translation-hidden") !== "false";
-
-    // Required Attributes Validation
-    const required = {
-      "cantonese-phrase": phrase,
-      romanization: romanization,
-      translation: translation,
-    };
-
-    Object.entries(required).forEach(([attr, val]) => {
-      if (!val) {
-        console.error(
-          `🚨 [ReadingExercise ERROR]: Missing required attribute '${attr}'!`,
-        );
-      }
-    });
+    const phrase = this._cantonesePhrase;
+    const romanization = this._romanization;
+    const translation = this._translation;
+    const isHidden = this._translationHidden;
 
     if (this._cantoneseEl) this._cantoneseEl.textContent = phrase;
     if (this._romanizationEl) this._romanizationEl.textContent = romanization;
@@ -94,7 +142,7 @@ class ReadingExercise extends HTMLElement {
   }
 
   playAudio() {
-    const phrase = this.getAttribute("cantonese-phrase");
+    const phrase = this._cantonesePhrase;
     if (!phrase) {
       console.error(
         "🚨 [ReadingExercise ERROR]: Cannot play audio without 'cantonese-phrase'!",

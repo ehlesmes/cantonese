@@ -34,6 +34,37 @@ class ExampleCard extends HTMLElement {
     this._cantoneseEl = this.shadowRoot.querySelector(".cantonese-text");
     this._romanizationEl = this.shadowRoot.querySelector(".romanization-text");
     this._translationEl = this.shadowRoot.querySelector(".translation-text");
+
+    this._cantonese = "";
+    this._romanization = "";
+    this._translation = "";
+  }
+
+  get cantonese() {
+    return this._cantonese;
+  }
+  set cantonese(val) {
+    this._cantonese = val || "";
+    this.setAttribute("cantonese", this._cantonese);
+    this.update();
+  }
+
+  get romanization() {
+    return this._romanization;
+  }
+  set romanization(val) {
+    this._romanization = val || "";
+    this.setAttribute("romanization", this._romanization);
+    this.update();
+  }
+
+  get translation() {
+    return this._translation;
+  }
+  set translation(val) {
+    this._translation = val || "";
+    this.setAttribute("translation", this._translation);
+    this.update();
   }
 
   connectedCallback() {
@@ -41,33 +72,35 @@ class ExampleCard extends HTMLElement {
     this.update();
   }
 
-  attributeChangedCallback() {
+  attributeChangedCallback(name, oldVal, newVal) {
+    if (oldVal === newVal) return;
+    switch (name) {
+      case "cantonese":
+        this._cantonese = newVal || "";
+        break;
+      case "romanization":
+        this._romanization = newVal || "";
+        break;
+      case "translation":
+        this._translation = newVal || "";
+        break;
+    }
     this.update();
   }
 
   update() {
     if (!this.shadowRoot) return;
 
-    const cantonese = this.getAttribute("cantonese") || "";
-    const romanization = this.getAttribute("romanization") || "";
-    const translation = this.getAttribute("translation") || "";
-
-    // Validation
-    if (!cantonese || !romanization || !translation) {
-      console.error(
-        "🚨 [ExampleCard ERROR]: Missing required attributes (cantonese, romanization, or translation)!",
-      );
-    }
-
-    if (this._cantoneseEl) this._cantoneseEl.textContent = cantonese;
-    if (this._romanizationEl) this._romanizationEl.textContent = romanization;
-    if (this._translationEl) this._translationEl.textContent = translation;
+    if (this._cantoneseEl) this._cantoneseEl.textContent = this._cantonese;
+    if (this._romanizationEl)
+      this._romanizationEl.textContent = this._romanization;
+    if (this._translationEl)
+      this._translationEl.textContent = this._translation;
   }
 
   playAudio() {
-    const cantonese = this.getAttribute("cantonese");
-    if (cantonese) {
-      speakCantonese(cantonese);
+    if (this._cantonese) {
+      speakCantonese(this._cantonese);
     }
   }
 }
