@@ -6,25 +6,25 @@ The main index that defines the order of pages in a lesson.
 
 ```json
 {
-  "lesson_id": "L1",
+  "lessonId": "1.1",
   "name": "Basic Greetings",
   "chapter": "1",
-  "lesson_number": "1",
+  "lessonNumber": "1",
   "pages": [
-    { "type": "explanation", "id": "intro_hello" },
-    { "type": "reading", "id": "read_hello" },
-    { "type": "unscramble", "id": "unscramble_hello" }
+    { "type": "explanation", "id": "1.1.1" },
+    { "type": "reading", "id": "1.1.2" },
+    { "type": "unscramble", "id": "1.1.3" }
   ]
 }
 ```
 
-## 2. Explanation Bundle (`data/explanations/<lesson_id>.json`)
+## 2. Explanation Bundle (`data/explanations/1.1.json`)
 
 A lesson-level bundle containing all static content chunks for a specific lesson.
 
 ```json
 {
-  "intro_hello": [
+  "1.1.1": [
     { "type": "title", "value": "Saying Hello" },
     {
       "type": "text",
@@ -40,7 +40,7 @@ A lesson-level bundle containing all static content chunks for a specific lesson
 }
 ```
 
-## 3. Reading Exercise (`data/exercises/<chapter>/<lesson>/<id>.json`)
+## 3. Reading Exercise (`data/exercises/1/1/1.1.2.json`)
 
 Atomic data for a reading practice screen.
 
@@ -52,7 +52,7 @@ Atomic data for a reading practice screen.
 }
 ```
 
-## 4. Unscramble Exercise (`data/exercises/<chapter>/<lesson>/<id>.json`)
+## 4. Unscramble Exercise (`data/exercises/1/1/1.1.3.json`)
 
 Atomic data for a word reordering screen.
 

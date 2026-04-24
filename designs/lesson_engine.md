@@ -30,12 +30,12 @@ Contains the high-level structure:
 
 ```json
 {
-  "lesson_id": "L1",
+  "lessonId": "1.1",
   "name": "Basic Greetings",
   "pages": [
-    { "type": "explanation", "id": "intro_1" },
-    { "type": "reading", "id": "ex_101" },
-    { "type": "unscramble", "id": "ex_102" }
+    { "type": "explanation", "id": "1.1.1" },
+    { "type": "reading", "id": "1.1.2" },
+    { "type": "unscramble", "id": "1.1.3" }
   ]
 }
 ```
@@ -43,8 +43,8 @@ Contains the high-level structure:
 ### Fetching Logic
 
 1.  **Map Request:** Load `lessons.json` to find the current lesson's page list.
-2.  **Explanations Bundle:** Load all explanations for the lesson in a single request (e.g., `data/explanations/L1.json`).
-3.  **Atomic Exercises:** Load each exercise (`reading` or `unscramble`) from separate files in the background (e.g., `data/exercises/1/1/ex_101.json`).
+2.  **Explanations Bundle:** Load all explanations for the lesson in a single request (e.g., `data/explanations/1.1.json`).
+3.  **Atomic Exercises:** Load each exercise (`reading` or `unscramble`) from separate files in the background (e.g., `data/exercises/1/1/1.1.2.json`).
 4.  **Blocking:** If a user navigates to an exercise that hasn't finished loading, show a loading state; otherwise, transitions should be instant.
 
 > **Note:** Revisit the "Atomic Files" approach later to see if lesson-level bundling is more efficient for network performance.
