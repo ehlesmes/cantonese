@@ -6,6 +6,15 @@ export default defineConfig({
     environment: "happy-dom",
     globals: true,
     setupFiles: ["./vitest.setup.js"],
+    environmentOptions: {
+      happyDOM: {
+        settings: {
+          disableCSSFileLoading: true,
+          handleDisabledFileLoadingAsSuccess: true,
+          disableJavaScriptFileLoading: true,
+        },
+      },
+    },
   },
   resolve: {
     alias: {

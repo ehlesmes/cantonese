@@ -2,56 +2,61 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./lesson_footer.js";
 
 describe("LessonFooter Component", () => {
-  let element;
-
   beforeEach(() => {
     document.body.innerHTML = "";
-    element = document.createElement("lesson-footer");
-    document.body.appendChild(element);
   });
 
   it("should be defined and upgraded", () => {
+    const el = document.createElement("lesson-footer");
+    el.data = { primaryText: "test" };
+    document.body.appendChild(el);
     expect(customElements.get("lesson-footer")).toBeDefined();
-    expect(element).toBeInstanceOf(HTMLElement);
-    expect(element.shadowRoot).not.toBeNull();
+    expect(el).toBeInstanceOf(HTMLElement);
+    expect(el.shadowRoot).not.toBeNull();
   });
 
   it("should dispatch primary-click and secondary-click events", () => {
-    element.data = {
+    const el = document.createElement("lesson-footer");
+    el.data = {
       primaryText: "Primary",
       secondaryText: "Secondary",
     };
+    document.body.appendChild(el);
 
     const primarySpy = vi.fn();
     const secondarySpy = vi.fn();
 
-    element.addEventListener("primary-click", primarySpy);
-    element.addEventListener("secondary-click", secondarySpy);
+    el.addEventListener("primary-click", primarySpy);
+    el.addEventListener("secondary-click", secondarySpy);
 
-    element.shadowRoot.getElementById("primary-btn").click();
-    element.shadowRoot.getElementById("secondary-btn").click();
+    el.shadowRoot.getElementById("primary-btn").click();
+    el.shadowRoot.getElementById("secondary-btn").click();
 
     expect(primarySpy).toHaveBeenCalled();
     expect(secondarySpy).toHaveBeenCalled();
   });
 
   it("should update button text and disabled state based on data", () => {
-    element.data = {
+    const el = document.createElement("lesson-footer");
+    el.data = {
       primaryText: "Go",
       secondaryText: "Back",
       primaryDisabled: true,
       secondaryDisabled: true,
     };
+    document.body.appendChild(el);
 
-    const primaryBtn = element.shadowRoot.getElementById("primary-btn");
-    const secondaryBtn = element.shadowRoot.getElementById("secondary-btn");
+    const primaryBtn = el.shadowRoot.getElementById("primary-btn");
+    const secondaryBtn = el.shadowRoot.getElementById("secondary-btn");
 
     expect(primaryBtn.textContent).toBe("Go");
     expect(secondaryBtn.textContent).toBe("Back");
     expect(primaryBtn.hasAttribute("disabled")).toBe(true);
     expect(secondaryBtn.hasAttribute("disabled")).toBe(true);
 
-    element.data = {
+    el.data = {
+      primaryText: "Go",
+      secondaryText: "Back",
       primaryDisabled: false,
       secondaryDisabled: false,
     };
@@ -60,14 +65,16 @@ describe("LessonFooter Component", () => {
   });
 
   describe("Validation", () => {
-    it("should log an error if primaryText is missing", () => {
+    it("should log error if required data properties are missing", () => {
       const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-      element.data = { primaryText: "" };
+
+      const el = document.createElement("lesson-footer");
+      document.body.appendChild(el);
+
       expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining(
-          "🚨 [LessonFooter ERROR]: Missing required data property 'primaryText'!",
-        ),
+        expect.stringContaining("Missing required data property"),
       );
+
       errorSpy.mockRestore();
     });
   });

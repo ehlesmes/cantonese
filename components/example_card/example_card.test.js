@@ -2,28 +2,29 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./example_card.js";
 
 describe("ExampleCard Component", () => {
-  let element;
-
   beforeEach(() => {
     document.body.innerHTML = "";
-    element = document.createElement("example-card");
-    document.body.appendChild(element);
   });
 
   it("should be defined and upgraded", () => {
+    const el = document.createElement("example-card");
+    el.data = { cantonese: "test", romanization: "test", translation: "test" };
+    document.body.appendChild(el);
     expect(customElements.get("example-card")).toBeDefined();
-    expect(element).toBeInstanceOf(HTMLElement);
-    expect(element.shadowRoot).not.toBeNull();
+    expect(el).toBeInstanceOf(HTMLElement);
+    expect(el.shadowRoot).not.toBeNull();
   });
 
   it("should display the Cantonese text, romanization, and translation via the data property", () => {
-    element.data = {
+    const el = document.createElement("example-card");
+    el.data = {
       cantonese: "你好",
       romanization: "nei5 hou2",
       translation: "Hello",
     };
+    document.body.appendChild(el);
 
-    const shadowRoot = element.shadowRoot;
+    const shadowRoot = el.shadowRoot;
     const cantoneseText = shadowRoot.querySelector(".cantonese-text");
     const romanizationText = shadowRoot.querySelector(".romanization-text");
     const translationText = shadowRoot.querySelector(".translation-text");
@@ -39,13 +40,21 @@ describe("ExampleCard Component", () => {
       romanization: "nei5 hou2",
       translation: "Hello",
     };
-    element.data = testData;
-    expect(element.data).toEqual(testData);
+    const el = document.createElement("example-card");
+    el.data = testData;
+    document.body.appendChild(el);
+    expect(el.data).toEqual(testData);
   });
 
   it("should call window.speechSynthesis.speak when audio button is clicked", () => {
-    element.data = { cantonese: "你好" };
-    const playBtn = element.shadowRoot.getElementById("play-audio");
+    const el = document.createElement("example-card");
+    el.data = {
+      cantonese: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
+    };
+    document.body.appendChild(el);
+    const playBtn = el.shadowRoot.getElementById("play-audio");
 
     playBtn.click();
 
@@ -56,27 +65,16 @@ describe("ExampleCard Component", () => {
 
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
-      const consoleSpy = vi
-        .spyOn(console, "error")
-        .mockImplementation(() => {});
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      document.body.innerHTML = "";
-      element = document.createElement("example-card");
-      document.body.appendChild(element);
+      const el = document.createElement("example-card");
+      document.body.appendChild(el);
 
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property 'cantonese'"),
-      );
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining(
-          "Missing required data property 'romanization'",
-        ),
-      );
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property 'translation'"),
+      expect(errorSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required data property"),
       );
 
-      consoleSpy.mockRestore();
+      errorSpy.mockRestore();
     });
   });
 

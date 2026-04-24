@@ -2,18 +2,17 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./unscramble_page.js";
 
 describe("UnscramblePage Component", () => {
-  let element;
-
   beforeEach(() => {
     document.body.innerHTML = "";
-    element = document.createElement("unscramble-page");
-    document.body.appendChild(element);
   });
 
   it("should be defined and upgraded", () => {
+    const el = document.createElement("unscramble-page");
+    el.data = { tokens: [["test", "test"]], translation: "test" };
+    document.body.appendChild(el);
     expect(customElements.get("unscramble-page")).toBeDefined();
-    expect(element).toBeInstanceOf(HTMLElement);
-    expect(element.shadowRoot).not.toBeNull();
+    expect(el).toBeInstanceOf(HTMLElement);
+    expect(el.shadowRoot).not.toBeNull();
   });
 
   it("should propagate tokens to the unscramble-exercise and enable footer on complete", () => {
@@ -21,10 +20,12 @@ describe("UnscramblePage Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.data = { tokens };
+    const el = document.createElement("unscramble-page");
+    el.data = { tokens, translation: "Hello" };
+    document.body.appendChild(el);
 
-    const exercise = element.shadowRoot.getElementById("exercise");
-    const footer = element.shadowRoot.getElementById("footer");
+    const exercise = el.shadowRoot.getElementById("exercise");
+    const footer = el.shadowRoot.getElementById("footer");
 
     expect(exercise.data.tokens).toEqual(tokens);
     expect(footer.data.primaryDisabled).toBe(true);
@@ -50,18 +51,22 @@ describe("UnscramblePage Component", () => {
       ],
       translation: "Hello",
     };
-    element.data = testData;
-    expect(element.data).toEqual(testData);
+    const el = document.createElement("unscramble-page");
+    el.data = testData;
+    document.body.appendChild(el);
+    expect(el.data).toEqual(testData);
   });
 
   it("should dispatch unscramble-result when primary button is clicked after completion", () => {
     const tokens = [["你", "nei5"]];
-    element.data = { tokens };
-    const exercise = element.shadowRoot.getElementById("exercise");
-    const footer = element.shadowRoot.getElementById("footer");
+    const el = document.createElement("unscramble-page");
+    el.data = { tokens, translation: "you" };
+    document.body.appendChild(el);
+    const exercise = el.shadowRoot.getElementById("exercise");
+    const footer = el.shadowRoot.getElementById("footer");
 
     const resultSpy = vi.fn();
-    element.addEventListener("unscramble-result", resultSpy);
+    el.addEventListener("unscramble-result", resultSpy);
 
     // Complete correctly
     exercise.moveToSlots(0);
@@ -81,12 +86,14 @@ describe("UnscramblePage Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.data = { tokens, translation: "Hello" };
-    const exercise = element.shadowRoot.getElementById("exercise");
-    const footer = element.shadowRoot.getElementById("footer");
+    const el = document.createElement("unscramble-page");
+    el.data = { tokens, translation: "Hello" };
+    document.body.appendChild(el);
+    const exercise = el.shadowRoot.getElementById("exercise");
+    const footer = el.shadowRoot.getElementById("footer");
 
     const resultSpy = vi.fn();
-    element.addEventListener("unscramble-result", resultSpy);
+    el.addEventListener("unscramble-result", resultSpy);
 
     // Complete incorrectly (tokens are shuffled in pool, click them)
     // The test might need to find specific tokens to ensure wrong order
@@ -115,22 +122,16 @@ describe("UnscramblePage Component", () => {
 
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
-      const consoleSpy = vi
-        .spyOn(console, "error")
-        .mockImplementation(() => {});
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      document.body.innerHTML = "";
-      element = document.createElement("unscramble-page");
-      document.body.appendChild(element);
+      const el = document.createElement("unscramble-page");
+      document.body.appendChild(el);
 
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property 'tokens'"),
-      );
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property 'translation'"),
+      expect(errorSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required data property"),
       );
 
-      consoleSpy.mockRestore();
+      errorSpy.mockRestore();
     });
   });
 

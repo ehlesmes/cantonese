@@ -2,7 +2,7 @@ import "/components/lesson_controls/lesson_controls.js";
 
 const headerTemplate = document.createElement("template");
 headerTemplate.innerHTML = `
-<link rel="stylesheet" href="components/lesson_header/style.css" />
+<link rel="stylesheet" href="/components/lesson_header/style.css" />
 
 <header>
   <div class="title" id="lesson-title">Lesson</div>

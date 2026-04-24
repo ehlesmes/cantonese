@@ -23,14 +23,3 @@ if (!("adoptedStyleSheets" in Document.prototype)) {
 if (!("adoptedStyleSheets" in ShadowRoot.prototype)) {
   ShadowRoot.prototype.adoptedStyleSheets = [];
 }
-
-// Mock fetch to prevent network errors when components try to load CSS via <link> tags
-global.window.fetch = vi.fn().mockImplementation((url) => {
-  if (url.endsWith(".css")) {
-    return Promise.resolve({
-      ok: true,
-      text: () => Promise.resolve(""),
-    });
-  }
-  return Promise.reject(new Error(`Unhandled fetch to ${url}`));
-});

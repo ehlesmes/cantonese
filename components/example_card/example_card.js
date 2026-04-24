@@ -5,7 +5,7 @@ import "/components/ui/tooltip/tooltip.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
-<link rel="stylesheet" href="components/example_card/style.css" />
+<link rel="stylesheet" href="/components/example_card/style.css" />
 <div class="example-wrapper">
   <div class="example-label">Example</div>
   <div class="content-row">

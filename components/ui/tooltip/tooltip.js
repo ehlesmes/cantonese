@@ -1,6 +1,6 @@
 const template = document.createElement("template");
 template.innerHTML = `
-<link rel="stylesheet" href="components/ui/tooltip/style.css" />
+<link rel="stylesheet" href="/components/ui/tooltip/style.css" />
 <div class="tooltip-container">
   <slot name="trigger"></slot>
   <div class="tooltip">

@@ -3,7 +3,7 @@ import "/components/ui/icon_button/icon_button.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
-<link rel="stylesheet" href="components/lesson_controls/style.css" />
+<link rel="stylesheet" href="/components/lesson_controls/style.css" />
 
 <div class="controls">
   <ui-icon-button id="restart" title="Restart Lesson">restart_alt</ui-icon-button>

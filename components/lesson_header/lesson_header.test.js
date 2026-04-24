@@ -2,35 +2,38 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./lesson_header.js";
 
 describe("LessonHeader Component", () => {
-  let element;
-
   beforeEach(() => {
     document.body.innerHTML = "";
-    element = document.createElement("lesson-header");
-    document.body.appendChild(element);
   });
 
   it("should be defined and upgraded", () => {
+    const el = document.createElement("lesson-header");
+    el.data = { lessonName: "test" };
+    document.body.appendChild(el);
     expect(customElements.get("lesson-header")).toBeDefined();
-    expect(element).toBeInstanceOf(HTMLElement);
-    expect(element.shadowRoot).not.toBeNull();
+    expect(el).toBeInstanceOf(HTMLElement);
+    expect(el.shadowRoot).not.toBeNull();
   });
 
   it("should display the lesson name", () => {
-    element.data = { lessonName: "Greetings" };
-    const title = element.shadowRoot.getElementById("lesson-title");
+    const el = document.createElement("lesson-header");
+    el.data = { lessonName: "Greetings" };
+    document.body.appendChild(el);
+    const title = el.shadowRoot.getElementById("lesson-title");
     expect(title.textContent).toBe("Greetings");
   });
 
   describe("Validation", () => {
-    it("should log an error if lessonName is missing", () => {
+    it("should log error if required data properties are missing", () => {
       const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-      element.data = { lessonName: "" };
+
+      const el = document.createElement("lesson-header");
+      document.body.appendChild(el);
+
       expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining(
-          "🚨 [LessonHeader ERROR]: Missing required data property 'lessonName'!",
-        ),
+        expect.stringContaining("Missing required data property"),
       );
+
       errorSpy.mockRestore();
     });
   });

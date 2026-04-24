@@ -15,7 +15,7 @@ export class LessonFooter extends HTMLElement {
     this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
 
     this._data = {
-      primaryText: "Next",
+      primaryText: "",
       secondaryText: "",
       primaryDisabled: false,
       secondaryDisabled: false,

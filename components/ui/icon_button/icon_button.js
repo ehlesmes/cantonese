@@ -3,7 +3,7 @@ import { iconStyles } from "/components/shared/shared_assets.js";
 const template = document.createElement("template");
 template.innerHTML = `
 <link rel="stylesheet" href="/components/shared/button.css" />
-<link rel="stylesheet" href="components/ui/icon_button/style.css" />
+<link rel="stylesheet" href="/components/ui/icon_button/style.css" />
 <button class="btn-base icon-button">
   <span class="material-symbols-outlined"><slot></slot></span>
 </button>

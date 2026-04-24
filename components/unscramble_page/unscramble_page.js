@@ -3,7 +3,7 @@ import "/components/lesson_footer/lesson_footer.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
-<link rel="stylesheet" href="components/unscramble_page/style.css" />
+<link rel="stylesheet" href="/components/unscramble_page/style.css" />
 <div class="page-container">
   <main>
     <unscramble-exercise id="exercise"></unscramble-exercise>

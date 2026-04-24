@@ -3,12 +3,12 @@ import "/components/example_card/example_card.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
-<link rel="stylesheet" href="components/explanation_page/style.css" />
+<link rel="stylesheet" href="/components/explanation_page/style.css" />
 <div class="page-container">
   <main>
     <div class="content-wrapper" id="content"></div>
   </main>
-  <lesson-footer id="footer" primary-text="Continue"></lesson-footer>
+  <lesson-footer id="footer"></lesson-footer>
 </div>
 `;
 
@@ -18,6 +18,7 @@ class ExplanationPage extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this._contentWrapper = this.shadowRoot.getElementById("content");
+    this._footer = this.shadowRoot.getElementById("footer");
     this._data = {
       content: [],
     };
@@ -65,6 +66,11 @@ class ExplanationPage extends HTMLElement {
 
     if (this.isConnected) {
       this.validate();
+    }
+
+    // Initialize footer
+    if (this._footer) {
+      this._footer.data = { primaryText: "Continue" };
     }
 
     this._contentWrapper.innerHTML = ""; // Clear existing content

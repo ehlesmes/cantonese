@@ -3,7 +3,7 @@ import "/components/lesson_footer/lesson_footer.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
-<link rel="stylesheet" href="components/reading_page/style.css" />
+<link rel="stylesheet" href="/components/reading_page/style.css" />
 <div class="page-container">
   <main>
     <reading-exercise id="exercise"></reading-exercise>

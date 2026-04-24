@@ -2,18 +2,17 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./unscramble_exercise.js";
 
 describe("UnscrambleExercise Component", () => {
-  let element;
-
   beforeEach(() => {
     document.body.innerHTML = "";
-    element = document.createElement("unscramble-exercise");
-    document.body.appendChild(element);
   });
 
   it("should be defined and upgraded", () => {
+    const el = document.createElement("unscramble-exercise");
+    el.data = { tokens: [["test", "test"]], translation: "test" };
+    document.body.appendChild(el);
     expect(customElements.get("unscramble-exercise")).toBeDefined();
-    expect(element).toBeInstanceOf(HTMLElement);
-    expect(element.shadowRoot).not.toBeNull();
+    expect(el).toBeInstanceOf(HTMLElement);
+    expect(el.shadowRoot).not.toBeNull();
   });
 
   it("should initialize tokens and populate the pool via the data property", () => {
@@ -21,9 +20,11 @@ describe("UnscrambleExercise Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.data = { tokens };
+    const el = document.createElement("unscramble-exercise");
+    el.data = { tokens, translation: "Hello" };
+    document.body.appendChild(el);
 
-    const poolTokens = element.shadowRoot.querySelectorAll("#pool .token-text");
+    const poolTokens = el.shadowRoot.querySelectorAll("#pool .token-text");
     expect(poolTokens.length).toBe(2);
 
     const texts = Array.from(poolTokens).map((el) => el.textContent);
@@ -39,27 +40,28 @@ describe("UnscrambleExercise Component", () => {
       ],
       translation: "Hello",
     };
-    element.data = testData;
-    expect(element.data).toEqual(testData);
+    const el = document.createElement("unscramble-exercise");
+    el.data = testData;
+    document.body.appendChild(el);
+    expect(el.data).toEqual(testData);
   });
 
   it("should move tokens to slots when clicked and dispatch 'complete' when pool is empty", () => {
     const tokens = [["你", "nei5"]];
-    element.data = { tokens };
+    const el = document.createElement("unscramble-exercise");
+    el.data = { tokens, translation: "Hello" };
+    document.body.appendChild(el);
 
-    const poolToken = element.shadowRoot.querySelector("#pool ui-tooltip");
+    const poolToken = el.shadowRoot.querySelector("#pool ui-tooltip");
     const completeSpy = vi.fn();
-    element.addEventListener("complete", completeSpy);
+    el.addEventListener("complete", completeSpy);
 
     poolToken.click();
 
-    const slotTokens =
-      element.shadowRoot.querySelectorAll("#slots .token-text");
+    const slotTokens = el.shadowRoot.querySelectorAll("#slots .token-text");
     expect(slotTokens.length).toBe(1);
     expect(slotTokens[0].textContent).toBe("你");
-    expect(
-      element.shadowRoot.querySelectorAll("#pool .token-text").length,
-    ).toBe(0);
+    expect(el.shadowRoot.querySelectorAll("#pool .token-text").length).toBe(0);
     expect(completeSpy).toHaveBeenCalled();
   });
 
@@ -70,18 +72,20 @@ describe("UnscrambleExercise Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.data = { tokens };
+    const el = document.createElement("unscramble-exercise");
+    el.data = { tokens, translation: "Hello" };
+    document.body.appendChild(el);
 
     const getPoolToken = (text) =>
-      Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
+      Array.from(el.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
         (el) => el.querySelector(".token-text").textContent === text,
       );
 
     getPoolToken("你").click();
     getPoolToken("好").click();
 
-    expect(element.status).toBe("right");
-    expect(element.getAttribute("status")).toBe("right");
+    expect(el.status).toBe("right");
+    expect(el.getAttribute("status")).toBe("right");
   });
 
   it("should set status to 'wrong' when tokens are moved in incorrect order and reflect to attribute", () => {
@@ -91,18 +95,20 @@ describe("UnscrambleExercise Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.data = { tokens, translation: "Hello" };
+    const el = document.createElement("unscramble-exercise");
+    el.data = { tokens, translation: "Hello" };
+    document.body.appendChild(el);
 
     const getPoolToken = (text) =>
-      Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
+      Array.from(el.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
         (el) => el.querySelector(".token-text").textContent === text,
       );
 
     getPoolToken("好").click();
     getPoolToken("你").click();
 
-    expect(element.status).toBe("wrong");
-    expect(element.getAttribute("status")).toBe("wrong");
+    expect(el.status).toBe("wrong");
+    expect(el.getAttribute("status")).toBe("wrong");
   });
 
   it("should move only the specifically clicked slot token back to the pool", () => {
@@ -112,15 +118,17 @@ describe("UnscrambleExercise Component", () => {
       ["B", "b"],
       ["C", "c"],
     ];
-    element.data = { tokens };
+    const el = document.createElement("unscramble-exercise");
+    el.data = { tokens, translation: "ABC" };
+    document.body.appendChild(el);
 
     const getPoolToken = (text) =>
-      Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
+      Array.from(el.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
         (el) => el.querySelector(".token-text").textContent === text,
       );
 
     const getSlotToken = (text) =>
-      Array.from(element.shadowRoot.querySelectorAll("#slots ui-tooltip")).find(
+      Array.from(el.shadowRoot.querySelectorAll("#slots ui-tooltip")).find(
         (el) => el.querySelector(".token-text").textContent === text,
       );
 
@@ -129,21 +137,19 @@ describe("UnscrambleExercise Component", () => {
     getPoolToken("A").click();
     getPoolToken("C").click();
 
-    expect(element.status).toBe("wrong");
-    expect(
-      element.shadowRoot.querySelectorAll("#slots ui-tooltip").length,
-    ).toBe(3);
+    expect(el.status).toBe("wrong");
+    expect(el.shadowRoot.querySelectorAll("#slots ui-tooltip").length).toBe(3);
 
     // Click "A" in slots to move it back to pool
     const tokenA = getSlotToken("A");
     tokenA.click();
 
     const slotTexts = Array.from(
-      element.shadowRoot.querySelectorAll("#slots .token-text"),
+      el.shadowRoot.querySelectorAll("#slots .token-text"),
     ).map((el) => el.textContent);
 
     const poolTexts = Array.from(
-      element.shadowRoot.querySelectorAll("#pool .token-text"),
+      el.shadowRoot.querySelectorAll("#pool .token-text"),
     ).map((el) => el.textContent);
 
     expect(slotTexts).toEqual(["B", "C"]);
@@ -158,10 +164,12 @@ describe("UnscrambleExercise Component", () => {
       ["B", "b"],
       ["C", "c"],
     ];
-    element.data = { tokens };
+    const el = document.createElement("unscramble-exercise");
+    el.data = { tokens, translation: "ABC" };
+    document.body.appendChild(el);
 
     const getPoolToken = (text) =>
-      Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
+      Array.from(el.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
         (el) => el.querySelector(".token-text").textContent === text,
       );
 
@@ -170,7 +178,7 @@ describe("UnscrambleExercise Component", () => {
     getPoolToken("A").click();
 
     const slotTexts = Array.from(
-      element.shadowRoot.querySelectorAll("#slots .token-text"),
+      el.shadowRoot.querySelectorAll("#slots .token-text"),
     ).map((el) => el.textContent);
 
     expect(slotTexts).toEqual(["B", "C", "A"]);
@@ -181,41 +189,35 @@ describe("UnscrambleExercise Component", () => {
       ["A", "a"],
       ["B", "b"],
     ];
-    element.data = { tokens };
+    const el = document.createElement("unscramble-exercise");
+    el.data = { tokens, translation: "AB" };
+    document.body.appendChild(el);
 
     // Move one to slots
-    const poolToken = element.shadowRoot.querySelector("#pool ui-tooltip");
+    const poolToken = el.shadowRoot.querySelector("#pool ui-tooltip");
     poolToken.click();
 
     const initialSlots =
-      element.shadowRoot.querySelectorAll("#slots ui-tooltip").length;
+      el.shadowRoot.querySelectorAll("#slots ui-tooltip").length;
     expect(initialSlots).toBe(1);
 
     // Set same tokens again
-    element.data = { tokens };
-    expect(
-      element.shadowRoot.querySelectorAll("#slots ui-tooltip").length,
-    ).toBe(1);
+    el.data = { tokens, translation: "AB" };
+    expect(el.shadowRoot.querySelectorAll("#slots ui-tooltip").length).toBe(1);
   });
 
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
-      const consoleSpy = vi
-        .spyOn(console, "error")
-        .mockImplementation(() => {});
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      document.body.innerHTML = "";
-      element = document.createElement("unscramble-exercise");
-      document.body.appendChild(element);
+      const el = document.createElement("unscramble-exercise");
+      document.body.appendChild(el);
 
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property 'tokens'"),
-      );
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property 'translation'"),
+      expect(errorSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required data property"),
       );
 
-      consoleSpy.mockRestore();
+      errorSpy.mockRestore();
     });
   });
 

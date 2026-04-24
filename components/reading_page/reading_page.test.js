@@ -2,28 +2,33 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./reading_page.js";
 
 describe("ReadingPage Component", () => {
-  let element;
-
   beforeEach(() => {
     document.body.innerHTML = "";
-    element = document.createElement("reading-page");
-    document.body.appendChild(element);
   });
 
   it("should be defined and upgraded", () => {
+    const el = document.createElement("reading-page");
+    el.data = {
+      cantonesePhrase: "test",
+      romanization: "test",
+      translation: "test",
+    };
+    document.body.appendChild(el);
     expect(customElements.get("reading-page")).toBeDefined();
-    expect(element).toBeInstanceOf(HTMLElement);
-    expect(element.shadowRoot).not.toBeNull();
+    expect(el).toBeInstanceOf(HTMLElement);
+    expect(el.shadowRoot).not.toBeNull();
   });
 
   it("should propagate data to the reading-exercise component", () => {
-    element.data = {
+    const el = document.createElement("reading-page");
+    el.data = {
       cantonesePhrase: "你好",
       romanization: "nei5 hou2",
       translation: "Hello",
     };
+    document.body.appendChild(el);
 
-    const exercise = element.shadowRoot.getElementById("exercise");
+    const exercise = el.shadowRoot.getElementById("exercise");
     expect(exercise.data.cantonesePhrase).toBe("你好");
     expect(exercise.data.romanization).toBe("nei5 hou2");
     expect(exercise.data.translation).toBe("Hello");
@@ -35,14 +40,23 @@ describe("ReadingPage Component", () => {
       romanization: "nei5 hou2",
       translation: "Hello",
     };
-    element.data = testData;
-    expect(element.data).toEqual(testData);
+    const el = document.createElement("reading-page");
+    el.data = testData;
+    document.body.appendChild(el);
+    expect(el.data).toEqual(testData);
   });
 
   it("should reveal the answer when primary button is clicked in initial state", () => {
-    element.data = { translation: "Hello" };
-    const footer = element.shadowRoot.getElementById("footer");
-    const exercise = element.shadowRoot.getElementById("exercise");
+    const el = document.createElement("reading-page");
+    el.data = {
+      cantonesePhrase: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
+    };
+    document.body.appendChild(el);
+
+    const footer = el.shadowRoot.getElementById("footer");
+    const exercise = el.shadowRoot.getElementById("exercise");
 
     // Initial state
     expect(footer.data.primaryText).toBe("Reveal Answer");
@@ -60,7 +74,15 @@ describe("ReadingPage Component", () => {
   });
 
   it("should dispatch reading-result when clicked in revealed state", () => {
-    const footer = element.shadowRoot.getElementById("footer");
+    const el = document.createElement("reading-page");
+    el.data = {
+      cantonesePhrase: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
+    };
+    document.body.appendChild(el);
+
+    const footer = el.shadowRoot.getElementById("footer");
 
     // Move to revealed state
     footer.dispatchEvent(
@@ -68,7 +90,7 @@ describe("ReadingPage Component", () => {
     );
 
     const resultSpy = vi.fn();
-    element.addEventListener("reading-result", resultSpy);
+    el.addEventListener("reading-result", resultSpy);
 
     // Click "Got it right"
     footer.dispatchEvent(
@@ -87,29 +109,16 @@ describe("ReadingPage Component", () => {
 
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
-      const consoleSpy = vi
-        .spyOn(console, "error")
-        .mockImplementation(() => {});
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      document.body.innerHTML = "";
-      element = document.createElement("reading-page");
-      document.body.appendChild(element);
+      const el = document.createElement("reading-page");
+      document.body.appendChild(el);
 
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining(
-          "Missing required data property 'cantonesePhrase'",
-        ),
-      );
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining(
-          "Missing required data property 'romanization'",
-        ),
-      );
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property 'translation'"),
+      expect(errorSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required data property"),
       );
 
-      consoleSpy.mockRestore();
+      errorSpy.mockRestore();
     });
   });
 

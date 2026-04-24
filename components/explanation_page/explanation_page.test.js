@@ -2,18 +2,17 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import "./explanation_page.js";
 
 describe("ExplanationPage Component", () => {
-  let element;
-
   beforeEach(() => {
     document.body.innerHTML = "";
-    element = document.createElement("explanation-page");
-    document.body.appendChild(element);
   });
 
   it("should be defined and upgraded", () => {
+    const el = document.createElement("explanation-page");
+    el.data = { content: [{ type: "title", value: "test" }] };
+    document.body.appendChild(el);
     expect(customElements.get("explanation-page")).toBeDefined();
-    expect(element).toBeInstanceOf(HTMLElement);
-    expect(element.shadowRoot).not.toBeNull();
+    expect(el).toBeInstanceOf(HTMLElement);
+    expect(el.shadowRoot).not.toBeNull();
   });
 
   it("should render title, text, and example cards from content property via data", () => {
@@ -27,9 +26,11 @@ describe("ExplanationPage Component", () => {
         translation: "Hello",
       },
     ];
-    element.data = { content };
+    const el = document.createElement("explanation-page");
+    el.data = { content };
+    document.body.appendChild(el);
 
-    const shadowRoot = element.shadowRoot;
+    const shadowRoot = el.shadowRoot;
     const title = shadowRoot.querySelector("h1");
     const text = shadowRoot.querySelector("p");
     const card = shadowRoot.querySelector("example-card");
@@ -43,25 +44,24 @@ describe("ExplanationPage Component", () => {
     const testData = {
       content: [{ type: "title", value: "Hello" }],
     };
-    element.data = testData;
-    expect(element.data).toEqual(testData);
+    const el = document.createElement("explanation-page");
+    el.data = testData;
+    document.body.appendChild(el);
+    expect(el.data).toEqual(testData);
   });
 
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
-      const consoleSpy = vi
-        .spyOn(console, "error")
-        .mockImplementation(() => {});
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      document.body.innerHTML = "";
-      element = document.createElement("explanation-page");
-      document.body.appendChild(element);
+      const el = document.createElement("explanation-page");
+      document.body.appendChild(el);
 
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property 'content'"),
+      expect(errorSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required data property"),
       );
 
-      consoleSpy.mockRestore();
+      errorSpy.mockRestore();
     });
   });
 

@@ -5,7 +5,7 @@ import "/components/ui/tooltip/tooltip.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
-<link rel="stylesheet" href="components/unscramble_exercise/style.css" />
+<link rel="stylesheet" href="/components/unscramble_exercise/style.css" />
 <div class="unscramble-wrapper">
   <div class="phrase-container">
     <div class="translation-text"></div>
