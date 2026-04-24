@@ -1,0 +1,9 @@
+{
+  "chapters": [
+    {
+      "id": "1",
+      "name": "Level 1: The Basics",
+      "lessons": [{ "id": "1.1", "name": "Basic Greetings" }]
+    }
+  ]
+}
