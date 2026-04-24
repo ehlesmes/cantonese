@@ -87,18 +87,18 @@ class UnscramblePage extends HTMLElement {
     };
 
     const status = this._exercise.status;
-    const isFilled = status !== "incomplete";
+    const isFinished = status === "right" || status === "wrong";
 
     this._footer.data = {
       primaryText: "Continue",
-      primaryDisabled: !isFilled,
+      primaryDisabled: !isFinished,
       secondaryText: status === "wrong" ? "Try again" : "",
     };
   }
 
   _handlePrimaryClick() {
     const status = this._exercise.status;
-    if (status !== "incomplete") {
+    if (status === "right" || status === "wrong") {
       this.dispatchEvent(
         new CustomEvent("unscramble-result", {
           detail: { success: status === "right" },

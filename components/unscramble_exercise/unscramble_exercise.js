@@ -112,20 +112,20 @@ class UnscrambleExercise extends HTMLElement {
 
     // Render Slots
     this._slotsContainer.innerHTML = "";
-    this._slots.forEach((token, index) => {
+    this._slots.forEach((token) => {
       const el = this.createTokenElement(token);
       if (!isSolved) {
-        el.addEventListener("click", () => this.moveToPool(index));
+        el.addEventListener("click", () => this.moveToPool(token.id));
       }
       this._slotsContainer.appendChild(el);
     });
 
     // Render Pool
     this._poolContainer.innerHTML = "";
-    this._pool.forEach((token, index) => {
+    this._pool.forEach((token) => {
       const el = this.createTokenElement(token);
       if (!isSolved) {
-        el.addEventListener("click", () => this.moveToSlots(index));
+        el.addEventListener("click", () => this.moveToSlots(token.id));
       }
       this._poolContainer.appendChild(el);
     });
@@ -148,8 +148,11 @@ class UnscrambleExercise extends HTMLElement {
     return tooltip;
   }
 
-  moveToSlots(poolIndex) {
+  moveToSlots(tokenId) {
     const wasEmpty = this._pool.length === 0;
+    const poolIndex = this._pool.findIndex((t) => t.id === tokenId);
+    if (poolIndex === -1) return;
+
     const token = this._pool.splice(poolIndex, 1)[0];
     this._slots.push(token);
 
@@ -163,8 +166,11 @@ class UnscrambleExercise extends HTMLElement {
     }
   }
 
-  moveToPool(slotIndex) {
+  moveToPool(tokenId) {
     const wasEmpty = this._pool.length === 0;
+    const slotIndex = this._slots.findIndex((t) => t.id === tokenId);
+    if (slotIndex === -1) return;
+
     const token = this._slots.splice(slotIndex, 1)[0];
     this._pool.push(token);
 
@@ -188,6 +194,7 @@ class UnscrambleExercise extends HTMLElement {
 
     if (this._status !== newStatus) {
       this._status = newStatus;
+      this.setAttribute("status", newStatus);
     }
   }
 

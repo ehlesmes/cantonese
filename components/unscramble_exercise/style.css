@@ -51,15 +51,13 @@
 }
 
 :host([status="right"]) .slots-container {
-  background-color: #e6f4ea; /* Success green tint */
   border-style: solid;
-  border-color: #1e8e3e;
+  border-color: var(--md-sys-color-success);
 }
 
 :host([status="wrong"]) .slots-container {
-  background-color: #fce8e6; /* Error red tint */
   border-style: solid;
-  border-color: #d93025;
+  border-color: var(--md-sys-color-error);
 }
 
 .pool-container {
@@ -80,13 +78,19 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-:host([status="right"]) .token {
+:host([status="right"]) #slots .token {
+  background-color: var(--md-sys-color-success-container);
+  border-color: var(--md-sys-color-success);
   cursor: default;
   box-shadow: none;
 }
 
-:host([status="right"]) .token:hover {
-  border-color: var(--md-sys-color-outline);
+:host([status="wrong"]) #slots .token {
+  background-color: var(--md-sys-color-error-container);
+  border-color: var(--md-sys-color-error);
+}
+
+:host([status="right"]) #slots .token:hover {
   transform: none;
 }
 

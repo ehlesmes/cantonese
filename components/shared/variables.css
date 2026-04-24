@@ -7,6 +7,11 @@
   --md-sys-color-on-surface-variant: #5f6368;
   --md-sys-color-surface-variant: #f8f9fa;
   --md-sys-color-background: #ffffff;
+  --md-sys-color-success: #1e8e3e;
+  --md-sys-color-success-container: #e6f4ea;
+  --md-sys-color-error: #d93025;
+  --md-sys-color-error-container: #fce8e6;
+
   --header-height: 72px;
   --footer-height: 80px;
 

@@ -24,9 +24,12 @@ The footer buttons automatically react to the status of the internal `unscramble
 
 - **Condition:** All tokens are in slots, but the order is incorrect.
 - **Footer:**
-  - Primary Button: "Continue" (Disabled)
+  - Primary Button: "Continue" (Enabled)
   - Secondary Button: "Try again"
-- **Action:** Clicking "Try again" resets the exercise (shuffles tokens back to the pool).
+- **Visuals:** Tokens in the slots container must have a **red** background.
+- **Action:**
+  - Clicking "Try again" resets the exercise.
+  - Clicking "Continue" dispatches the `unscramble-result` event with `success: false`.
 
 ### Correct State (`right`)
 
@@ -34,9 +37,10 @@ The footer buttons automatically react to the status of the internal `unscramble
 - **Footer:**
   - Primary Button: "Continue" (Enabled)
   - Secondary Button: Hidden
-- **Action:** Clicking "Continue" dispatches the `unscramble-result` event. Success audio plays automatically upon reaching this state.
+- **Visuals:** Tokens in the slots container must have a **green** background.
+- **Action:** Clicking "Continue" dispatches the `unscramble-result` event with `success: true`. Success audio plays automatically upon reaching this state.
 
 ## 3. Events
 
-- `unscramble-result`: Dispatched when the user clicks the primary button after a correct solution.
-  - `detail.success` (Boolean): `true`.
+- `unscramble-result`: Dispatched when the user clicks the primary button after all tokens are in slots.
+  - `detail.success` (Boolean): `true` if correct, `false` if incorrect.

@@ -15,22 +15,38 @@ export function speakCantonese(text) {
 
   const utterance = new SpeechSynthesisUtterance(text);
 
-  // Try to find a Cantonese voice (zh-HK)
-  const voices = window.speechSynthesis.getVoices();
-  const cantoneseVoice = voices.find(
-    (v) => v.lang === "zh-HK" || v.lang === "zh_HK",
-  );
+  // Try to find a Cantonese voice
+  const findVoice = () => {
+    const voices = window.speechSynthesis.getVoices();
+    return voices.find((v) => {
+      const lang = v.lang.toLowerCase().replace("_", "-");
+      return (
+        lang === "zh-hk" ||
+        lang === "yue-hk" ||
+        v.name.toLowerCase().includes("cantonese") ||
+        v.name.toLowerCase().includes("hong kong")
+      );
+    });
+  };
+
+  const cantoneseVoice = findVoice();
 
   if (cantoneseVoice) {
     utterance.voice = cantoneseVoice;
   } else {
-    // Fallback: set lang and hope the OS handles it
+    // If voices aren't loaded yet, the browser might need a moment.
+    // We set the lang as a fallback.
     utterance.lang = "zh-HK";
-    console.warn(
-      "⚠️ TTS Warning: Native Cantonese (zh-HK) voice not found. Falling back to browser-selected voice for this locale.",
-    );
   }
 
-  utterance.rate = 0.85; // Slightly slower for language learners
+  utterance.rate = 0.85;
   window.speechSynthesis.speak(utterance);
+}
+
+// Pre-warm the voices list
+if ("speechSynthesis" in window) {
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged = () => {
+    window.speechSynthesis.getVoices();
+  };
 }
