@@ -32,6 +32,7 @@ class ExplanationPage extends HTMLElement {
   }
 
   connectedCallback() {
+    this._upgradeProperty("data");
     this.shadowRoot.addEventListener("primary-click", () => {
       this.dispatchEvent(
         new CustomEvent("explanation-complete", {
@@ -41,6 +42,14 @@ class ExplanationPage extends HTMLElement {
       );
     });
     this._render();
+  }
+
+  _upgradeProperty(prop) {
+    if (this.hasOwnProperty(prop)) {
+      const value = this[prop];
+      delete this[prop];
+      this[prop] = value;
+    }
   }
 
   validate() {

@@ -79,4 +79,19 @@ describe("ExampleCard Component", () => {
       consoleSpy.mockRestore();
     });
   });
+
+  describe("Late Upgrade", () => {
+    it("should handle data property set before the element is connected", () => {
+      const el = document.createElement("example-card");
+      el.data = {
+        cantonese: "你好",
+        romanization: "nei5 hou2",
+        translation: "Hello",
+      };
+      document.body.appendChild(el);
+      expect(el.shadowRoot.querySelector(".cantonese-text").textContent).toBe(
+        "你好",
+      );
+    });
+  });
 });

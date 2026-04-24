@@ -38,6 +38,7 @@ class ReadingPage extends HTMLElement {
   }
 
   connectedCallback() {
+    this._upgradeProperty("data");
     this.shadowRoot.addEventListener("primary-click", () =>
       this._handlePrimaryClick(),
     );
@@ -45,6 +46,14 @@ class ReadingPage extends HTMLElement {
       this._handleSecondaryClick(),
     );
     this._update();
+  }
+
+  _upgradeProperty(prop) {
+    if (this.hasOwnProperty(prop)) {
+      const value = this[prop];
+      delete this[prop];
+      this[prop] = value;
+    }
   }
 
   validate() {
@@ -76,11 +85,15 @@ class ReadingPage extends HTMLElement {
     };
 
     if (this._state === "initial") {
-      this._footer.primaryText = "Reveal Answer";
-      this._footer.secondaryText = "";
+      this._footer.data = {
+        primaryText: "Reveal Answer",
+        secondaryText: "",
+      };
     } else {
-      this._footer.primaryText = "Got it right";
-      this._footer.secondaryText = "Need practice";
+      this._footer.data = {
+        primaryText: "Got it right",
+        secondaryText: "Need practice",
+      };
     }
   }
 

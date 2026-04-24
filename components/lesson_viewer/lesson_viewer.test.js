@@ -34,4 +34,14 @@ describe("LessonViewer Component", () => {
       errorSpy.mockRestore();
     });
   });
+
+  describe("Late Upgrade", () => {
+    it("should handle data property set before the element is connected", () => {
+      const el = document.createElement("lesson-viewer");
+      el.data = { lessonName: "Greetings" };
+      document.body.appendChild(el);
+      const header = el.shadowRoot.getElementById("header");
+      expect(header.data.lessonName).toBe("Greetings");
+    });
+  });
 });

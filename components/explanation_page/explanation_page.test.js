@@ -64,4 +64,13 @@ describe("ExplanationPage Component", () => {
       consoleSpy.mockRestore();
     });
   });
+
+  describe("Late Upgrade", () => {
+    it("should handle data property set before the element is connected", () => {
+      const el = document.createElement("explanation-page");
+      el.data = { content: [{ type: "title", value: "Hello" }] };
+      document.body.appendChild(el);
+      expect(el.shadowRoot.querySelector("h1").textContent).toBe("Hello");
+    });
+  });
 });

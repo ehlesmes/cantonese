@@ -36,6 +36,7 @@ class UnscramblePage extends HTMLElement {
   }
 
   connectedCallback() {
+    this._upgradeProperty("data");
     this.shadowRoot.addEventListener("complete", () => {
       if (this._exercise.status === "right") {
         this._exercise.playAudio();
@@ -50,6 +51,14 @@ class UnscramblePage extends HTMLElement {
       this._handleSecondaryClick(),
     );
     this._update();
+  }
+
+  _upgradeProperty(prop) {
+    if (this.hasOwnProperty(prop)) {
+      const value = this[prop];
+      delete this[prop];
+      this[prop] = value;
+    }
   }
 
   validate() {
@@ -80,14 +89,11 @@ class UnscramblePage extends HTMLElement {
     const status = this._exercise.status;
     const isFilled = status !== "incomplete";
 
-    this._footer.primaryText = "Continue";
-    this._footer.primaryDisabled = !isFilled;
-
-    if (status === "wrong") {
-      this._footer.secondaryText = "Try again";
-    } else {
-      this._footer.secondaryText = "";
-    }
+    this._footer.data = {
+      primaryText: "Continue",
+      primaryDisabled: !isFilled,
+      secondaryText: status === "wrong" ? "Try again" : "",
+    };
   }
 
   _handlePrimaryClick() {

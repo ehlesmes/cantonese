@@ -43,6 +43,7 @@ class LessonControls extends HTMLElement {
   }
 
   connectedCallback() {
+    this._upgradeProperty("data");
     // Add event listeners
     ["restart", "prev", "next", "close"].forEach((id) => {
       this.shadowRoot.getElementById(id).onclick = () => {
@@ -55,6 +56,14 @@ class LessonControls extends HTMLElement {
       };
     });
     this.update();
+  }
+
+  _upgradeProperty(prop) {
+    if (this.hasOwnProperty(prop)) {
+      const value = this[prop];
+      delete this[prop];
+      this[prop] = value;
+    }
   }
 
   validate() {

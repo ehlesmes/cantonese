@@ -216,4 +216,13 @@ describe("UnscrambleExercise Component", () => {
       consoleSpy.mockRestore();
     });
   });
+
+  describe("Late Upgrade", () => {
+    it("should handle data property set before the element is connected", () => {
+      const el = document.createElement("unscramble-exercise");
+      el.data = { tokens: [["你", "nei5"]], translation: "you" };
+      document.body.appendChild(el);
+      expect(el.shadowRoot.querySelector(".token-text").textContent).toBe("你");
+    });
+  });
 });

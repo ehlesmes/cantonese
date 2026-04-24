@@ -31,6 +31,7 @@ export class LessonFooter extends HTMLElement {
   }
 
   connectedCallback() {
+    this._upgradeProperty("data");
     this.shadowRoot.getElementById("primary-btn").onclick = () => {
       this.dispatchEvent(
         new CustomEvent("primary-click", { bubbles: true, composed: true }),
@@ -42,6 +43,14 @@ export class LessonFooter extends HTMLElement {
       );
     };
     this.update();
+  }
+
+  _upgradeProperty(prop) {
+    if (this.hasOwnProperty(prop)) {
+      const value = this[prop];
+      delete this[prop];
+      this[prop] = value;
+    }
   }
 
   validate() {

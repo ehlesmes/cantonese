@@ -71,4 +71,21 @@ describe("LessonFooter Component", () => {
       errorSpy.mockRestore();
     });
   });
+
+  describe("Late Upgrade", () => {
+    it("should handle data property set before the element is connected", () => {
+      const el = document.createElement("lesson-footer");
+      const testData = { primaryText: "Late Upgrade" };
+
+      // Set property before connecting to DOM
+      el.data = testData;
+
+      document.body.appendChild(el);
+
+      expect(el.data.primaryText).toBe("Late Upgrade");
+      expect(el.shadowRoot.getElementById("primary-btn").textContent).toBe(
+        "Late Upgrade",
+      );
+    });
+  });
 });

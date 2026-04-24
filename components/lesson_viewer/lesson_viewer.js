@@ -32,11 +32,20 @@ export class LessonViewer extends HTMLElement {
   }
 
   connectedCallback() {
+    this._upgradeProperty("data");
     this.shadowRoot.addEventListener(
       "lesson-restart",
       () => (this._main.scrollTop = 0),
     );
     this.update();
+  }
+
+  _upgradeProperty(prop) {
+    if (this.hasOwnProperty(prop)) {
+      const value = this[prop];
+      delete this[prop];
+      this[prop] = value;
+    }
   }
 
   validate() {

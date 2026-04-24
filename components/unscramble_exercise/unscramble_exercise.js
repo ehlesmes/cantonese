@@ -59,8 +59,17 @@ class UnscrambleExercise extends HTMLElement {
   }
 
   connectedCallback() {
+    this._upgradeProperty("data");
     this._playBtn.onclick = () => this.playAudio();
     this.update();
+  }
+
+  _upgradeProperty(prop) {
+    if (this.hasOwnProperty(prop)) {
+      const value = this[prop];
+      delete this[prop];
+      this[prop] = value;
+    }
   }
 
   validate() {

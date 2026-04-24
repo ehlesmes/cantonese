@@ -110,4 +110,19 @@ describe("ReadingExercise Component", () => {
       consoleSpy.mockRestore();
     });
   });
+
+  describe("Late Upgrade", () => {
+    it("should handle data property set before the element is connected", () => {
+      const el = document.createElement("reading-exercise");
+      el.data = {
+        cantonesePhrase: "你好",
+        romanization: "nei5",
+        translation: "hello",
+      };
+      document.body.appendChild(el);
+      expect(el.shadowRoot.querySelector(".cantonese-text").textContent).toBe(
+        "你好",
+      );
+    });
+  });
 });

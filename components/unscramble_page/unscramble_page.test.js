@@ -27,14 +27,14 @@ describe("UnscramblePage Component", () => {
     const footer = element.shadowRoot.getElementById("footer");
 
     expect(exercise.data.tokens).toEqual(tokens);
-    expect(footer.primaryDisabled).toBe(true);
+    expect(footer.data.primaryDisabled).toBe(true);
 
     // Complete the exercise correctly
     exercise.moveToSlots(0);
     exercise.moveToSlots(0);
 
     // Page should update footer
-    expect(footer.primaryDisabled).toBe(false);
+    expect(footer.data.primaryDisabled).toBe(false);
   });
 
   it("should correctly return internal state via the data getter", () => {
@@ -88,6 +88,16 @@ describe("UnscramblePage Component", () => {
       );
 
       consoleSpy.mockRestore();
+    });
+  });
+
+  describe("Late Upgrade", () => {
+    it("should handle data property set before the element is connected", () => {
+      const el = document.createElement("unscramble-page");
+      el.data = { tokens: [["你", "nei5"]], translation: "you" };
+      document.body.appendChild(el);
+      const exercise = el.shadowRoot.getElementById("exercise");
+      expect(exercise.data.tokens).toEqual([["你", "nei5"]]);
     });
   });
 });

@@ -29,7 +29,16 @@ class LessonHeader extends HTMLElement {
   }
 
   connectedCallback() {
+    this._upgradeProperty("data");
     this.update();
+  }
+
+  _upgradeProperty(prop) {
+    if (this.hasOwnProperty(prop)) {
+      const value = this[prop];
+      delete this[prop];
+      this[prop] = value;
+    }
   }
 
   validate() {

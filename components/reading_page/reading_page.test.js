@@ -45,7 +45,7 @@ describe("ReadingPage Component", () => {
     const exercise = element.shadowRoot.getElementById("exercise");
 
     // Initial state
-    expect(footer.primaryText).toBe("Reveal Answer");
+    expect(footer.data.primaryText).toBe("Reveal Answer");
     expect(exercise.data.translationHidden).toBe(true);
 
     // Click reveal
@@ -54,8 +54,8 @@ describe("ReadingPage Component", () => {
     );
 
     // Revealed state
-    expect(footer.primaryText).toBe("Got it right");
-    expect(footer.secondaryText).toBe("Need practice");
+    expect(footer.data.primaryText).toBe("Got it right");
+    expect(footer.data.secondaryText).toBe("Need practice");
     expect(exercise.data.translationHidden).toBe(false);
   });
 
@@ -110,6 +110,20 @@ describe("ReadingPage Component", () => {
       );
 
       consoleSpy.mockRestore();
+    });
+  });
+
+  describe("Late Upgrade", () => {
+    it("should handle data property set before the element is connected", () => {
+      const el = document.createElement("reading-page");
+      el.data = {
+        cantonesePhrase: "你好",
+        romanization: "nei5",
+        translation: "hello",
+      };
+      document.body.appendChild(el);
+      const exercise = el.shadowRoot.getElementById("exercise");
+      expect(exercise.data.cantonesePhrase).toBe("你好");
     });
   });
 });
