@@ -29,11 +29,16 @@ describe("UnscramblePage Component", () => {
     expect(exercise.data.tokens).toEqual(tokens);
     expect(footer.data.primaryDisabled).toBe(true);
 
-    // Complete the exercise correctly
-    exercise.moveToSlots(0);
-    exercise.moveToSlots(0);
+    // Complete the exercise (order doesn't matter for enabling continue)
+    const getPoolToken = (text) =>
+      Array.from(exercise.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
+        (el) => el.querySelector(".token-text").textContent === text,
+      );
 
-    // Page should update footer
+    getPoolToken("你").click();
+    getPoolToken("好").click();
+
+    // Page should update footer once all tokens are in slots
     expect(footer.data.primaryDisabled).toBe(false);
   });
 
@@ -68,6 +73,44 @@ describe("UnscramblePage Component", () => {
 
     expect(resultSpy).toHaveBeenCalled();
     expect(resultSpy.mock.calls[0][0].detail.success).toBe(true);
+  });
+
+  it("should enable Continue button and dispatch success: false when finished incorrectly", () => {
+    vi.spyOn(Math, "random").mockReturnValue(0.1);
+    const tokens = [
+      ["你", "nei5"],
+      ["好", "hou2"],
+    ];
+    element.data = { tokens, translation: "Hello" };
+    const exercise = element.shadowRoot.getElementById("exercise");
+    const footer = element.shadowRoot.getElementById("footer");
+
+    const resultSpy = vi.fn();
+    element.addEventListener("unscramble-result", resultSpy);
+
+    // Complete incorrectly (tokens are shuffled in pool, click them)
+    // The test might need to find specific tokens to ensure wrong order
+    const getPoolToken = (text) =>
+      Array.from(exercise.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
+        (el) => el.querySelector(".token-text").textContent === text,
+      );
+
+    // Original order is 你(0), 好(1).
+    // Move in order: 好, 你
+    getPoolToken("好").click();
+    getPoolToken("你").click();
+
+    expect(exercise.status).toBe("wrong");
+    expect(footer.data.primaryDisabled).toBe(false);
+    expect(footer.data.secondaryText).toBe("Try again");
+
+    // Click continue
+    footer.dispatchEvent(
+      new CustomEvent("primary-click", { bubbles: true, composed: true }),
+    );
+
+    expect(resultSpy).toHaveBeenCalled();
+    expect(resultSpy.mock.calls[0][0].detail.success).toBe(false);
   });
 
   describe("Validation", () => {

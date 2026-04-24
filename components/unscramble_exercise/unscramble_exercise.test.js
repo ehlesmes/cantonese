@@ -81,16 +81,17 @@ describe("UnscrambleExercise Component", () => {
     getPoolToken("好").click();
 
     expect(element.status).toBe("right");
+    expect(element.getAttribute("status")).toBe("right");
   });
 
-  it("should set status to 'wrong' when tokens are moved in incorrect order", () => {
+  it("should set status to 'wrong' when tokens are moved in incorrect order and reflect to attribute", () => {
     vi.spyOn(Math, "random").mockReturnValue(0.1);
 
     const tokens = [
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.data = { tokens };
+    element.data = { tokens, translation: "Hello" };
 
     const getPoolToken = (text) =>
       Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
@@ -101,6 +102,7 @@ describe("UnscrambleExercise Component", () => {
     getPoolToken("你").click();
 
     expect(element.status).toBe("wrong");
+    expect(element.getAttribute("status")).toBe("wrong");
   });
 
   it("should move only the specifically clicked slot token back to the pool", () => {
