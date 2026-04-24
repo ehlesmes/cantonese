@@ -59,7 +59,7 @@ class LessonControls extends HTMLElement {
   }
 
   _upgradeProperty(prop) {
-    if (this.hasOwnProperty(prop)) {
+    if (Object.hasOwn(this, prop)) {
       const value = this[prop];
       delete this[prop];
       this[prop] = value;

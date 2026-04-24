@@ -1,6 +1,7 @@
 # Design: Exercise and Explanation Data Formats
 
 ## 1. Lesson Map (`data/lessons.json`)
+
 The main index that defines the order of pages in a lesson.
 
 ```json
@@ -18,24 +19,29 @@ The main index that defines the order of pages in a lesson.
 ```
 
 ## 2. Explanation Bundle (`data/explanations/<lesson_id>.json`)
+
 A lesson-level bundle containing all static content chunks for a specific lesson.
 
 ```json
 {
   "intro_hello": [
     { "type": "title", "value": "Saying Hello" },
-    { "type": "text", "value": "In Cantonese, we use <strong>你好</strong> to greet people." },
-    { 
-      "type": "example", 
-      "cantonese": "你好。", 
-      "romanization": "nei5 hou2.", 
-      "translation": "Hello." 
+    {
+      "type": "text",
+      "value": "In Cantonese, we use <strong>你好</strong> to greet people."
+    },
+    {
+      "type": "example",
+      "cantonese": "你好。",
+      "romanization": "nei5 hou2.",
+      "translation": "Hello."
     }
   ]
 }
 ```
 
 ## 3. Reading Exercise (`data/exercises/<chapter>/<lesson>/<id>.json`)
+
 Atomic data for a reading practice screen.
 
 ```json
@@ -47,6 +53,7 @@ Atomic data for a reading practice screen.
 ```
 
 ## 4. Unscramble Exercise (`data/exercises/<chapter>/<lesson>/<id>.json`)
+
 Atomic data for a word reordering screen.
 
 ```json
