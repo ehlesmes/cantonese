@@ -21,25 +21,17 @@ class UnscramblePage extends HTMLElement {
     this._exercise = this.shadowRoot.getElementById("exercise");
     this._footer = this.shadowRoot.getElementById("footer");
 
-    this._tokens = [];
-    this._translation = "";
+    this._data = {
+      tokens: [],
+      translation: "",
+    };
   }
 
-  get tokens() {
-    return this._tokens;
+  get data() {
+    return this._data;
   }
-  set tokens(val) {
-    if (Array.isArray(val)) {
-      this._tokens = val;
-      this._update();
-    }
-  }
-
-  get translation() {
-    return this._translation;
-  }
-  set translation(val) {
-    this._translation = val || "";
+  set data(val) {
+    this._data = { ...this._data, ...val };
     this._update();
   }
 
@@ -61,14 +53,14 @@ class UnscramblePage extends HTMLElement {
   }
 
   validate() {
-    if (this._tokens.length === 0) {
+    if (!this._data.tokens || this._data.tokens.length === 0) {
       console.error(
-        "🚨 [UnscramblePage ERROR]: Missing required property 'tokens'!",
+        "🚨 [UnscramblePage ERROR]: Missing required data property 'tokens'!",
       );
     }
-    if (!this._translation) {
+    if (!this._data.translation) {
       console.error(
-        "🚨 [UnscramblePage ERROR]: Missing required property 'translation'!",
+        "🚨 [UnscramblePage ERROR]: Missing required data property 'translation'!",
       );
     }
   }
@@ -80,8 +72,10 @@ class UnscramblePage extends HTMLElement {
       this.validate();
     }
 
-    this._exercise.tokens = this._tokens;
-    this._exercise.translation = this._translation;
+    this._exercise.data = {
+      tokens: this._data.tokens,
+      translation: this._data.translation,
+    };
 
     const status = this._exercise.status;
     const isFilled = status !== "incomplete";

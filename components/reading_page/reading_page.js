@@ -22,32 +22,18 @@ class ReadingPage extends HTMLElement {
     this._footer = this.shadowRoot.getElementById("footer");
     this._state = "initial"; // initial, revealed
 
-    this._cantonesePhrase = "";
-    this._romanization = "";
-    this._translation = "";
+    this._data = {
+      cantonesePhrase: "",
+      romanization: "",
+      translation: "",
+    };
   }
 
-  get cantonesePhrase() {
-    return this._cantonesePhrase;
+  get data() {
+    return this._data;
   }
-  set cantonesePhrase(val) {
-    this._cantonesePhrase = val || "";
-    this._update();
-  }
-
-  get romanization() {
-    return this._romanization;
-  }
-  set romanization(val) {
-    this._romanization = val || "";
-    this._update();
-  }
-
-  get translation() {
-    return this._translation;
-  }
-  set translation(val) {
-    this._translation = val || "";
+  set data(val) {
+    this._data = { ...this._data, ...val };
     this._update();
   }
 
@@ -62,16 +48,11 @@ class ReadingPage extends HTMLElement {
   }
 
   validate() {
-    const required = {
-      cantonesePhrase: this._cantonesePhrase,
-      romanization: this._romanization,
-      translation: this._translation,
-    };
-
-    Object.entries(required).forEach(([prop, val]) => {
-      if (!val) {
+    const required = ["cantonesePhrase", "romanization", "translation"];
+    required.forEach((prop) => {
+      if (!this._data[prop]) {
         console.error(
-          `🚨 [ReadingPage ERROR]: Missing required property '${prop}'!`,
+          `🚨 [ReadingPage ERROR]: Missing required data property '${prop}'!`,
         );
       }
     });
@@ -84,17 +65,20 @@ class ReadingPage extends HTMLElement {
       this.validate();
     }
 
-    // Pass data to exercise via properties
-    this._exercise.cantonesePhrase = this._cantonesePhrase;
-    this._exercise.romanization = this._romanization;
-    this._exercise.translation = this._translation;
+    const { cantonesePhrase, romanization, translation } = this._data;
+
+    // Pass data to exercise via property
+    this._exercise.data = {
+      cantonesePhrase,
+      romanization,
+      translation,
+      translationHidden: this._state === "initial",
+    };
 
     if (this._state === "initial") {
-      this._exercise.translationHidden = true;
       this._footer.primaryText = "Reveal Answer";
       this._footer.secondaryText = "";
     } else {
-      this._exercise.translationHidden = false;
       this._footer.primaryText = "Got it right";
       this._footer.secondaryText = "Need practice";
     }

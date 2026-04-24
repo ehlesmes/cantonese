@@ -16,31 +16,37 @@ describe("ReadingPage Component", () => {
     expect(element.shadowRoot).not.toBeNull();
   });
 
-  it("should propagate properties to the reading-exercise component", () => {
-    element.cantonesePhrase = "你好";
-    element.romanization = "nei5 hou2";
-    element.translation = "Hello";
+  it("should propagate data to the reading-exercise component", () => {
+    element.data = {
+      cantonesePhrase: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
+    };
 
     const exercise = element.shadowRoot.getElementById("exercise");
-    expect(exercise.cantonesePhrase).toBe("你好");
-    expect(exercise.romanization).toBe("nei5 hou2");
-    expect(exercise.translation).toBe("Hello");
+    expect(exercise.data.cantonesePhrase).toBe("你好");
+    expect(exercise.data.romanization).toBe("nei5 hou2");
+    expect(exercise.data.translation).toBe("Hello");
+  });
+
+  it("should correctly return internal state via the data getter", () => {
+    const testData = {
+      cantonesePhrase: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
+    };
+    element.data = testData;
+    expect(element.data).toEqual(testData);
   });
 
   it("should reveal the answer when primary button is clicked in initial state", () => {
-    element.translation = "Hello";
+    element.data = { translation: "Hello" };
     const footer = element.shadowRoot.getElementById("footer");
     const exercise = element.shadowRoot.getElementById("exercise");
 
     // Initial state
-    // Note: lesson-footer still uses attributes for now as per its implementation,
-    // but we can check properties if it has them.
-    // Checking attributes on internal components is okay if they are built that way,
-    // but the task says "removing ALL setAttribute and getAttribute calls" from the TEST files.
-    // Wait, if I can't use getAttribute in the test file at all, I must use properties.
-    // Let's check if lesson-footer has properties.
     expect(footer.primaryText).toBe("Reveal Answer");
-    expect(exercise.translationHidden).toBe(true);
+    expect(exercise.data.translationHidden).toBe(true);
 
     // Click reveal
     footer.dispatchEvent(
@@ -50,7 +56,7 @@ describe("ReadingPage Component", () => {
     // Revealed state
     expect(footer.primaryText).toBe("Got it right");
     expect(footer.secondaryText).toBe("Need practice");
-    expect(exercise.translationHidden).toBe(false);
+    expect(exercise.data.translationHidden).toBe(false);
   });
 
   it("should dispatch reading-result when clicked in revealed state", () => {
@@ -80,7 +86,7 @@ describe("ReadingPage Component", () => {
   });
 
   describe("Validation", () => {
-    it("should log error if required properties are missing", () => {
+    it("should log error if required data properties are missing", () => {
       const consoleSpy = vi
         .spyOn(console, "error")
         .mockImplementation(() => {});
@@ -90,13 +96,17 @@ describe("ReadingPage Component", () => {
       document.body.appendChild(element);
 
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'cantonesePhrase'"),
+        expect.stringContaining(
+          "Missing required data property 'cantonesePhrase'",
+        ),
       );
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'romanization'"),
+        expect.stringContaining(
+          "Missing required data property 'romanization'",
+        ),
       );
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'translation'"),
+        expect.stringContaining("Missing required data property 'translation'"),
       );
 
       consoleSpy.mockRestore();

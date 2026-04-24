@@ -35,42 +35,20 @@ class ReadingExercise extends HTMLElement {
     this._translationEl = this.shadowRoot.querySelector(".translation-text");
 
     // Internal state
-    this._cantonesePhrase = "";
-    this._romanization = "";
-    this._translation = "";
-    this._translationHidden = true;
+    this._data = {
+      cantonesePhrase: "",
+      romanization: "",
+      translation: "",
+      translationHidden: true,
+    };
   }
 
-  // Property Getters/Setters
-  get cantonesePhrase() {
-    return this._cantonesePhrase;
-  }
-  set cantonesePhrase(val) {
-    this._cantonesePhrase = val || "";
-    this.update();
+  get data() {
+    return this._data;
   }
 
-  get romanization() {
-    return this._romanization;
-  }
-  set romanization(val) {
-    this._romanization = val || "";
-    this.update();
-  }
-
-  get translation() {
-    return this._translation;
-  }
-  set translation(val) {
-    this._translation = val || "";
-    this.update();
-  }
-
-  get translationHidden() {
-    return this._translationHidden;
-  }
-  set translationHidden(val) {
-    this._translationHidden = !!val;
+  set data(val) {
+    this._data = { ...this._data, ...val };
     this.update();
   }
 
@@ -80,16 +58,11 @@ class ReadingExercise extends HTMLElement {
   }
 
   validate() {
-    const required = {
-      cantonesePhrase: this._cantonesePhrase,
-      romanization: this._romanization,
-      translation: this._translation,
-    };
-
-    Object.entries(required).forEach(([prop, val]) => {
-      if (!val) {
+    const required = ["cantonesePhrase", "romanization", "translation"];
+    required.forEach((prop) => {
+      if (!this._data[prop]) {
         console.error(
-          `🚨 [ReadingExercise ERROR]: Missing required property '${prop}'!`,
+          `🚨 [ReadingExercise ERROR]: Missing required data property '${prop}'!`,
         );
       }
     });
@@ -98,34 +71,35 @@ class ReadingExercise extends HTMLElement {
   update() {
     if (!this.shadowRoot) return;
 
-    // Only validate if we are in the DOM to avoid noise during construction
     if (this.isConnected) {
       this.validate();
     }
 
-    if (this._cantoneseEl)
-      this._cantoneseEl.textContent = this._cantonesePhrase;
-    if (this._romanizationEl)
-      this._romanizationEl.textContent = this._romanization;
+    const { cantonesePhrase, romanization, translation, translationHidden } =
+      this._data;
+
+    if (this._cantoneseEl) this._cantoneseEl.textContent = cantonesePhrase;
+    if (this._romanizationEl) this._romanizationEl.textContent = romanization;
     if (this._translationEl) {
-      this._translationEl.textContent = this._translation;
-      this._translationEl.classList.toggle("hidden", this._translationHidden);
+      this._translationEl.textContent = translation;
+      this._translationEl.classList.toggle("hidden", translationHidden);
     }
   }
 
   playAudio() {
-    if (!this._cantonesePhrase) {
+    const { cantonesePhrase } = this._data;
+    if (!cantonesePhrase) {
       console.error(
         "🚨 [ReadingExercise ERROR]: Cannot play audio without 'cantonesePhrase'!",
       );
       return;
     }
 
-    speakCantonese(this._cantonesePhrase);
+    speakCantonese(cantonesePhrase);
 
     this.dispatchEvent(
       new CustomEvent("play-audio", {
-        detail: { phrase: this._cantonesePhrase },
+        detail: { phrase: cantonesePhrase },
         bubbles: true,
         composed: true,
       }),

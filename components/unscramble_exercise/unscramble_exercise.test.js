@@ -16,12 +16,12 @@ describe("UnscrambleExercise Component", () => {
     expect(element.shadowRoot).not.toBeNull();
   });
 
-  it("should initialize tokens and populate the pool via property", () => {
+  it("should initialize tokens and populate the pool via the data property", () => {
     const tokens = [
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.tokens = tokens;
+    element.data = { tokens };
 
     const poolTokens = element.shadowRoot.querySelectorAll("#pool .token-text");
     expect(poolTokens.length).toBe(2);
@@ -31,9 +31,21 @@ describe("UnscrambleExercise Component", () => {
     expect(texts).toContain("好");
   });
 
+  it("should correctly return internal state via the data getter", () => {
+    const testData = {
+      tokens: [
+        ["你", "nei5"],
+        ["好", "hou2"],
+      ],
+      translation: "Hello",
+    };
+    element.data = testData;
+    expect(element.data).toEqual(testData);
+  });
+
   it("should move tokens to slots when clicked and dispatch 'complete' when pool is empty", () => {
     const tokens = [["你", "nei5"]];
-    element.tokens = tokens;
+    element.data = { tokens };
 
     const poolToken = element.shadowRoot.querySelector("#pool ui-tooltip");
     const completeSpy = vi.fn();
@@ -58,7 +70,7 @@ describe("UnscrambleExercise Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.tokens = tokens;
+    element.data = { tokens };
 
     const getPoolToken = (text) =>
       Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
@@ -78,7 +90,7 @@ describe("UnscrambleExercise Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.tokens = tokens;
+    element.data = { tokens };
 
     const getPoolToken = (text) =>
       Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
@@ -98,7 +110,7 @@ describe("UnscrambleExercise Component", () => {
       ["B", "b"],
       ["C", "c"],
     ];
-    element.tokens = tokens;
+    element.data = { tokens };
 
     const getPoolToken = (text) =>
       Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
@@ -144,7 +156,7 @@ describe("UnscrambleExercise Component", () => {
       ["B", "b"],
       ["C", "c"],
     ];
-    element.tokens = tokens;
+    element.data = { tokens };
 
     const getPoolToken = (text) =>
       Array.from(element.shadowRoot.querySelectorAll("#pool ui-tooltip")).find(
@@ -167,7 +179,7 @@ describe("UnscrambleExercise Component", () => {
       ["A", "a"],
       ["B", "b"],
     ];
-    element.tokens = tokens;
+    element.data = { tokens };
 
     // Move one to slots
     const poolToken = element.shadowRoot.querySelector("#pool ui-tooltip");
@@ -178,14 +190,14 @@ describe("UnscrambleExercise Component", () => {
     expect(initialSlots).toBe(1);
 
     // Set same tokens again
-    element.tokens = tokens;
+    element.data = { tokens };
     expect(
       element.shadowRoot.querySelectorAll("#slots ui-tooltip").length,
     ).toBe(1);
   });
 
   describe("Validation", () => {
-    it("should log error if required properties are missing", () => {
+    it("should log error if required data properties are missing", () => {
       const consoleSpy = vi
         .spyOn(console, "error")
         .mockImplementation(() => {});
@@ -195,10 +207,10 @@ describe("UnscrambleExercise Component", () => {
       document.body.appendChild(element);
 
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'tokens'"),
+        expect.stringContaining("Missing required data property 'tokens'"),
       );
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'translation'"),
+        expect.stringContaining("Missing required data property 'translation'"),
       );
 
       consoleSpy.mockRestore();

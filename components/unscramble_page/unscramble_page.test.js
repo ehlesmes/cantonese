@@ -21,12 +21,12 @@ describe("UnscramblePage Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    element.tokens = tokens;
+    element.data = { tokens };
 
     const exercise = element.shadowRoot.getElementById("exercise");
     const footer = element.shadowRoot.getElementById("footer");
 
-    expect(exercise.tokens).toEqual(tokens);
+    expect(exercise.data.tokens).toEqual(tokens);
     expect(footer.primaryDisabled).toBe(true);
 
     // Complete the exercise correctly
@@ -37,9 +37,21 @@ describe("UnscramblePage Component", () => {
     expect(footer.primaryDisabled).toBe(false);
   });
 
+  it("should correctly return internal state via the data getter", () => {
+    const testData = {
+      tokens: [
+        ["你", "nei5"],
+        ["好", "hou2"],
+      ],
+      translation: "Hello",
+    };
+    element.data = testData;
+    expect(element.data).toEqual(testData);
+  });
+
   it("should dispatch unscramble-result when primary button is clicked after completion", () => {
     const tokens = [["你", "nei5"]];
-    element.tokens = tokens;
+    element.data = { tokens };
     const exercise = element.shadowRoot.getElementById("exercise");
     const footer = element.shadowRoot.getElementById("footer");
 
@@ -59,7 +71,7 @@ describe("UnscramblePage Component", () => {
   });
 
   describe("Validation", () => {
-    it("should log error if required properties are missing", () => {
+    it("should log error if required data properties are missing", () => {
       const consoleSpy = vi
         .spyOn(console, "error")
         .mockImplementation(() => {});
@@ -69,10 +81,10 @@ describe("UnscramblePage Component", () => {
       document.body.appendChild(element);
 
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'tokens'"),
+        expect.stringContaining("Missing required data property 'tokens'"),
       );
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'translation'"),
+        expect.stringContaining("Missing required data property 'translation'"),
       );
 
       consoleSpy.mockRestore();

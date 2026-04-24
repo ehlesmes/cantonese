@@ -16,7 +16,7 @@ describe("ExplanationPage Component", () => {
     expect(element.shadowRoot).not.toBeNull();
   });
 
-  it("should render title, text, and example cards from content property", () => {
+  it("should render title, text, and example cards from content property via data", () => {
     const content = [
       { type: "title", value: "Hello" },
       { type: "text", value: "This is a test." },
@@ -27,7 +27,7 @@ describe("ExplanationPage Component", () => {
         translation: "Hello",
       },
     ];
-    element.content = content;
+    element.data = { content };
 
     const shadowRoot = element.shadowRoot;
     const title = shadowRoot.querySelector("h1");
@@ -36,11 +36,19 @@ describe("ExplanationPage Component", () => {
 
     expect(title.textContent).toBe("Hello");
     expect(text.textContent).toBe("This is a test.");
-    expect(card.cantonese).toBe("你好");
+    expect(card.data.cantonese).toBe("你好");
+  });
+
+  it("should correctly return internal state via the data getter", () => {
+    const testData = {
+      content: [{ type: "title", value: "Hello" }],
+    };
+    element.data = testData;
+    expect(element.data).toEqual(testData);
   });
 
   describe("Validation", () => {
-    it("should log error if required properties are missing", () => {
+    it("should log error if required data properties are missing", () => {
       const consoleSpy = vi
         .spyOn(console, "error")
         .mockImplementation(() => {});
@@ -50,7 +58,7 @@ describe("ExplanationPage Component", () => {
       document.body.appendChild(element);
 
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'content'"),
+        expect.stringContaining("Missing required data property 'content'"),
       );
 
       consoleSpy.mockRestore();

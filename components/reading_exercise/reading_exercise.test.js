@@ -16,10 +16,12 @@ describe("ReadingExercise Component", () => {
     expect(element.shadowRoot).not.toBeNull();
   });
 
-  it("should display the Cantonese phrase and romanization via properties", async () => {
-    element.cantonesePhrase = "你好";
-    element.romanization = "nei5 hou2";
-    element.translation = "Hello";
+  it("should display the Cantonese phrase and romanization via the data property", async () => {
+    element.data = {
+      cantonesePhrase: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
+    };
 
     const shadowRoot = element.shadowRoot;
     const cantoneseText = shadowRoot.querySelector(".cantonese-text");
@@ -31,22 +33,33 @@ describe("ReadingExercise Component", () => {
     expect(translationText.textContent).toBe("Hello");
   });
 
+  it("should correctly return internal state via the data getter", () => {
+    const testData = {
+      cantonesePhrase: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
+      translationHidden: false,
+    };
+    element.data = testData;
+    expect(element.data).toEqual(testData);
+  });
+
   it("should hide translation by default and show it when translationHidden is false", async () => {
-    element.translation = "Hello";
+    element.data = { translation: "Hello" };
     const translationEl = element.shadowRoot.querySelector(".translation-text");
 
     // By default, it's hidden
     expect(translationEl.classList.contains("hidden")).toBe(true);
 
-    element.translationHidden = false;
+    element.data = { translationHidden: false };
     expect(translationEl.classList.contains("hidden")).toBe(false);
 
-    element.translationHidden = true;
+    element.data = { translationHidden: true };
     expect(translationEl.classList.contains("hidden")).toBe(true);
   });
 
   it("should dispatch 'play-audio' event when audio button is clicked", async () => {
-    element.cantonesePhrase = "你好";
+    element.data = { cantonesePhrase: "你好" };
     const playBtn = element.shadowRoot.getElementById("play-audio");
     const eventSpy = vi.fn();
 
@@ -59,7 +72,7 @@ describe("ReadingExercise Component", () => {
   });
 
   it("should call window.speechSynthesis.speak when audio button is clicked", async () => {
-    element.cantonesePhrase = "你好";
+    element.data = { cantonesePhrase: "你好" };
     const playBtn = element.shadowRoot.getElementById("play-audio");
 
     playBtn.click();
@@ -70,7 +83,7 @@ describe("ReadingExercise Component", () => {
   });
 
   describe("Validation", () => {
-    it("should log error if required properties are missing", () => {
+    it("should log error if required data properties are missing", () => {
       const consoleSpy = vi
         .spyOn(console, "error")
         .mockImplementation(() => {});
@@ -81,13 +94,17 @@ describe("ReadingExercise Component", () => {
       document.body.appendChild(element);
 
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'cantonesePhrase'"),
+        expect.stringContaining(
+          "Missing required data property 'cantonesePhrase'",
+        ),
       );
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'romanization'"),
+        expect.stringContaining(
+          "Missing required data property 'romanization'",
+        ),
       );
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'translation'"),
+        expect.stringContaining("Missing required data property 'translation'"),
       );
 
       consoleSpy.mockRestore();

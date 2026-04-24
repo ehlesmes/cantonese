@@ -33,33 +33,28 @@ class UnscrambleExercise extends HTMLElement {
     this._pool = [];
     this._slots = [];
     this._status = "incomplete";
-    this._translation = "";
     this._lastTokensJson = "";
+    this._data = {
+      tokens: [],
+      translation: "",
+    };
   }
 
   get status() {
     return this._status;
   }
 
-  get tokens() {
-    return this._originalTokens.map((t) => [t.text, t.romanization]);
+  get data() {
+    return this._data;
   }
-  set tokens(val) {
-    if (!Array.isArray(val)) return;
-    const jsonVal = JSON.stringify(val);
-    if (this._lastTokensJson === jsonVal) return;
+  set data(val) {
+    const oldTokensJson = JSON.stringify(this._data.tokens);
+    this._data = { ...this._data, ...val };
+    const newTokensJson = JSON.stringify(this._data.tokens);
 
-    this._lastTokensJson = jsonVal;
-    this._setTokens(val);
-    this.update();
-  }
-
-  get translation() {
-    return this._translation;
-  }
-  set translation(val) {
-    if (this._translation === val) return;
-    this._translation = val || "";
+    if (oldTokensJson !== newTokensJson) {
+      this._setTokens(this._data.tokens);
+    }
     this.update();
   }
 
@@ -69,14 +64,14 @@ class UnscrambleExercise extends HTMLElement {
   }
 
   validate() {
-    if (this._originalTokens.length === 0) {
+    if (!this._data.tokens || this._data.tokens.length === 0) {
       console.error(
-        "🚨 [UnscrambleExercise ERROR]: Missing required property 'tokens'!",
+        "🚨 [UnscrambleExercise ERROR]: Missing required data property 'tokens'!",
       );
     }
-    if (!this._translation) {
+    if (!this._data.translation) {
       console.error(
-        "🚨 [UnscrambleExercise ERROR]: Missing required property 'translation'!",
+        "🚨 [UnscrambleExercise ERROR]: Missing required data property 'translation'!",
       );
     }
   }
@@ -100,7 +95,7 @@ class UnscrambleExercise extends HTMLElement {
     }
 
     if (this._translationEl)
-      this._translationEl.textContent = this._translation;
+      this._translationEl.textContent = this._data.translation;
     this.render();
   }
   render() {

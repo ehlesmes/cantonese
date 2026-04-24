@@ -18,17 +18,17 @@ class ExplanationPage extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this._contentWrapper = this.shadowRoot.getElementById("content");
-    this._content = [];
+    this._data = {
+      content: [],
+    };
   }
 
-  get content() {
-    return this._content;
+  get data() {
+    return this._data;
   }
-  set content(val) {
-    if (Array.isArray(val)) {
-      this._content = val;
-      this._render();
-    }
+  set data(val) {
+    this._data = { ...this._data, ...val };
+    this._render();
   }
 
   connectedCallback() {
@@ -44,9 +44,9 @@ class ExplanationPage extends HTMLElement {
   }
 
   validate() {
-    if (this._content.length === 0) {
+    if (!this._data.content || this._data.content.length === 0) {
       console.error(
-        "🚨 [ExplanationPage ERROR]: Missing required property 'content'!",
+        "🚨 [ExplanationPage ERROR]: Missing required data property 'content'!",
       );
     }
   }
@@ -60,7 +60,7 @@ class ExplanationPage extends HTMLElement {
 
     this._contentWrapper.innerHTML = ""; // Clear existing content
 
-    this._content.forEach((chunk) => {
+    this._data.content.forEach((chunk) => {
       let el;
       switch (chunk.type) {
         case "title":
@@ -73,9 +73,11 @@ class ExplanationPage extends HTMLElement {
           break;
         case "example":
           el = document.createElement("example-card");
-          el.cantonese = chunk.cantonese;
-          el.romanization = chunk.romanization;
-          el.translation = chunk.translation;
+          el.data = {
+            cantonese: chunk.cantonese,
+            romanization: chunk.romanization,
+            translation: chunk.translation,
+          };
           break;
         default:
           console.warn(

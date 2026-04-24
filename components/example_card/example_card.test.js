@@ -16,10 +16,12 @@ describe("ExampleCard Component", () => {
     expect(element.shadowRoot).not.toBeNull();
   });
 
-  it("should display the Cantonese text, romanization, and translation via properties", () => {
-    element.cantonese = "你好";
-    element.romanization = "nei5 hou2";
-    element.translation = "Hello";
+  it("should display the Cantonese text, romanization, and translation via the data property", () => {
+    element.data = {
+      cantonese: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
+    };
 
     const shadowRoot = element.shadowRoot;
     const cantoneseText = shadowRoot.querySelector(".cantonese-text");
@@ -31,8 +33,18 @@ describe("ExampleCard Component", () => {
     expect(translationText.textContent).toBe("Hello");
   });
 
+  it("should correctly return internal state via the data getter", () => {
+    const testData = {
+      cantonese: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
+    };
+    element.data = testData;
+    expect(element.data).toEqual(testData);
+  });
+
   it("should call window.speechSynthesis.speak when audio button is clicked", () => {
-    element.cantonese = "你好";
+    element.data = { cantonese: "你好" };
     const playBtn = element.shadowRoot.getElementById("play-audio");
 
     playBtn.click();
@@ -43,7 +55,7 @@ describe("ExampleCard Component", () => {
   });
 
   describe("Validation", () => {
-    it("should log error if required properties are missing", () => {
+    it("should log error if required data properties are missing", () => {
       const consoleSpy = vi
         .spyOn(console, "error")
         .mockImplementation(() => {});
@@ -53,13 +65,15 @@ describe("ExampleCard Component", () => {
       document.body.appendChild(element);
 
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'cantonese'"),
+        expect.stringContaining("Missing required data property 'cantonese'"),
       );
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'romanization'"),
+        expect.stringContaining(
+          "Missing required data property 'romanization'",
+        ),
       );
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required property 'translation'"),
+        expect.stringContaining("Missing required data property 'translation'"),
       );
 
       consoleSpy.mockRestore();

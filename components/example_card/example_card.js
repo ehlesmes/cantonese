@@ -31,32 +31,18 @@ class ExampleCard extends HTMLElement {
     this._romanizationEl = this.shadowRoot.querySelector(".romanization-text");
     this._translationEl = this.shadowRoot.querySelector(".translation-text");
 
-    this._cantonese = "";
-    this._romanization = "";
-    this._translation = "";
+    this._data = {
+      cantonese: "",
+      romanization: "",
+      translation: "",
+    };
   }
 
-  get cantonese() {
-    return this._cantonese;
+  get data() {
+    return this._data;
   }
-  set cantonese(val) {
-    this._cantonese = val || "";
-    this.update();
-  }
-
-  get romanization() {
-    return this._romanization;
-  }
-  set romanization(val) {
-    this._romanization = val || "";
-    this.update();
-  }
-
-  get translation() {
-    return this._translation;
-  }
-  set translation(val) {
-    this._translation = val || "";
+  set data(val) {
+    this._data = { ...this._data, ...val };
     this.update();
   }
 
@@ -66,16 +52,11 @@ class ExampleCard extends HTMLElement {
   }
 
   validate() {
-    const required = {
-      cantonese: this._cantonese,
-      romanization: this._romanization,
-      translation: this._translation,
-    };
-
-    Object.entries(required).forEach(([prop, val]) => {
-      if (!val) {
+    const required = ["cantonese", "romanization", "translation"];
+    required.forEach((prop) => {
+      if (!this._data[prop]) {
         console.error(
-          `🚨 [ExampleCard ERROR]: Missing required property '${prop}'!`,
+          `🚨 [ExampleCard ERROR]: Missing required data property '${prop}'!`,
         );
       }
     });
@@ -88,16 +69,17 @@ class ExampleCard extends HTMLElement {
       this.validate();
     }
 
-    if (this._cantoneseEl) this._cantoneseEl.textContent = this._cantonese;
-    if (this._romanizationEl)
-      this._romanizationEl.textContent = this._romanization;
-    if (this._translationEl)
-      this._translationEl.textContent = this._translation;
+    const { cantonese, romanization, translation } = this._data;
+
+    if (this._cantoneseEl) this._cantoneseEl.textContent = cantonese;
+    if (this._romanizationEl) this._romanizationEl.textContent = romanization;
+    if (this._translationEl) this._translationEl.textContent = translation;
   }
 
   playAudio() {
-    if (this._cantonese) {
-      speakCantonese(this._cantonese);
+    const { cantonese } = this._data;
+    if (cantonese) {
+      speakCantonese(cantonese);
     }
   }
 }
