@@ -1,11 +1,10 @@
 import { Component } from "../../shared/component.js";
-import {ValidationError} from "../../shared/validation_error.js";
 
 export class Tooltip extends Component {
   constructor(data) {
     super(import.meta.url);
 
-    this.validate(data, ['trigger', 'content']);
+    this.validate(data, ["trigger", "content"]);
 
     const container = document.createElement("div");
     container.className = "tooltip-container";
@@ -25,8 +24,8 @@ export class Tooltip extends Component {
 
     this.shadowRoot.appendChild(container);
 
-    data.trigger.slot = 'trigger';
-    data.content.slot = 'content';
+    data.trigger.slot = "trigger";
+    data.content.slot = "content";
 
     this.element.appendChild(data.trigger);
     this.element.appendChild(data.content);

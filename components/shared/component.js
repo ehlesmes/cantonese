@@ -1,4 +1,4 @@
-import {ValidationError} from './validation_error.js';
+import { ValidationError } from "./validation_error.js";
 
 /**
  * Base class for all UI components.
@@ -15,7 +15,7 @@ export class Component {
   }
 
   validate(data, properties) {
-    properties.forEach(name => {
+    properties.forEach((name) => {
       if (!data[name]) {
         throw new ValidationError(`Missing property: ${name}`);
       }

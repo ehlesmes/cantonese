@@ -17,8 +17,8 @@ export class IconButton extends Component {
     // Apply shared icon font styles
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
-    this.validate(data, ['title', 'icon']);
-    const {title, icon, filled, disabled} = data;
+    this.validate(data, ["title", "icon"]);
+    const { title, icon, filled, disabled } = data;
 
     this._disabled = disabled;
 

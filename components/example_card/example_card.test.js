@@ -10,9 +10,9 @@ describe("ExampleCard Component", () => {
 
   it("should be defined", () => {
     const component = new ExampleCard({
-        cantonese: "test",
-        romanization: "test",
-        translation: "test",
+      cantonese: "test",
+      romanization: "test",
+      translation: "test",
     });
     expect(component).toBeDefined();
     expect(component.element).toBeDefined();
@@ -21,9 +21,9 @@ describe("ExampleCard Component", () => {
 
   it("should display the Cantonese text, romanization, and translation via the data property", () => {
     const component = new ExampleCard({
-        cantonese: "你好",
-        romanization: "nei5 hou2",
-        translation: "Hello",
+      cantonese: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
     });
     document.body.appendChild(component.element);
 
@@ -39,9 +39,9 @@ describe("ExampleCard Component", () => {
 
   it("should call window.speechSynthesis.speak when audio button is clicked", () => {
     const component = new ExampleCard({
-        cantonese: "你好",
-        romanization: "nei5 hou2",
-        translation: "Hello",
+      cantonese: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
     });
     document.body.appendChild(component.element);
     const playBtn = component.shadowRoot.getElementById("play-audio");
@@ -56,9 +56,8 @@ describe("ExampleCard Component", () => {
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
       expect(() => {
-      new ExampleCard({});
-      }).toThrowError(
-        "Missing property: cantonese");
+        new ExampleCard({});
+      }).toThrowError("Missing property: cantonese");
     });
   });
 });
