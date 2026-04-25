@@ -15,6 +15,9 @@ export class Component {
   }
 
   validate(data, properties) {
+    if (!data) {
+      throw new ValidationError('data is undefined');
+    }
     properties.forEach((name) => {
       if (!data[name]) {
         throw new ValidationError(`Missing property: ${name}`);

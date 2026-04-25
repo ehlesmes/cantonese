@@ -22,15 +22,10 @@ describe("LessonHeader Component", () => {
 
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
-      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-
-      new LessonHeader();
-
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property"),
-      );
-
-      errorSpy.mockRestore();
+      expect(() => {
+      new LessonHeader({});
+      }).toThrowError(
+"Missing property: lessonName");
     });
   });
 });

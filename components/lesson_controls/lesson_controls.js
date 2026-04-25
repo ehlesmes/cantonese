@@ -7,8 +7,8 @@ import { IconButton } from "../ui/icon_button/icon_button.js";
  * A reusable UI element for lesson navigation and actions.
  */
 export class LessonControls extends Component {
-  constructor(config = {}) {
-    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
+  constructor() {
+    super(import.meta.url);
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
     this._container = document.createElement("div");
@@ -57,7 +57,5 @@ export class LessonControls extends Component {
     this._prevBtn.element.onclick = () => this.dispatch("prev");
     this._nextBtn.element.onclick = () => this.dispatch("next");
     this._closeBtn.element.onclick = () => this.dispatch("close");
-
-    this.update();
   }
 }

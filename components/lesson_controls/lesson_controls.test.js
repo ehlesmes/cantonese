@@ -29,14 +29,4 @@ describe("LessonControls Component", () => {
       expect(eventSpy).toHaveBeenCalled();
     });
   });
-
-  describe("Validation", () => {
-    it("should not log any error if data is empty (no required properties)", () => {
-      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-      new LessonControls();
-
-      expect(errorSpy).not.toHaveBeenCalled();
-      errorSpy.mockRestore();
-    });
-  });
 });
