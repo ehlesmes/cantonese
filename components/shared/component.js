@@ -1,3 +1,5 @@
+import {ValidationError} from './validation_error.js';
+
 /**
  * Base class for all UI components.
  * Manages the root element (always a <div>), shadow DOM, and basic data updates.

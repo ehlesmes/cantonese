@@ -1,6 +1,5 @@
 import { Component } from "../../shared/component.js";
 import { iconStyles, buttonStyles } from "../../shared/shared_assets.js";
-import { ValidationError } from "../../shared/validation_error.js";
 
 export class IconButton extends Component {
   /**
@@ -19,8 +18,7 @@ export class IconButton extends Component {
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
     this.validate(data, ['title', 'icon']);
-
-    const {title, icon, filled, disabled} = this.validate(data);
+    const {title, icon, filled, disabled} = data;
 
     this._disabled = disabled;
 
