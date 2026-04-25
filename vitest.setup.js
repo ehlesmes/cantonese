@@ -1,4 +1,4 @@
-import { vi, beforeEach, afterEach } from "vitest";
+import { vi } from "vitest";
 
 // Mocking window.speechSynthesis and related APIs since Happy DOM doesn't have them
 global.SpeechSynthesisUtterance = class {
@@ -30,14 +30,3 @@ if (!("adoptedStyleSheets" in Document.prototype)) {
 if (!("adoptedStyleSheets" in ShadowRoot.prototype)) {
   ShadowRoot.prototype.adoptedStyleSheets = [];
 }
-
-beforeEach(() => {
-  vi.spyOn(console, "error").mockImplementation(() => {});
-  vi.spyOn(console, "warn").mockImplementation(() => {});
-});
-
-afterEach(() => {
-  expect(console.error).not.toHaveBeenCalled();
-  expect(console.warn).not.toHaveBeenCalled();
-  vi.restoreAllMocks();
-});

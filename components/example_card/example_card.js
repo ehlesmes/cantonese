@@ -14,7 +14,7 @@ export class ExampleCard extends Component {
    * @param {string} [config.data.translation]
    */
   constructor(config = {}) {
-    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
+    super(config, import.meta.url);
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
     this._wrapper = document.createElement("div");
@@ -28,17 +28,19 @@ export class ExampleCard extends Component {
     const contentRow = document.createElement("div");
     contentRow.className = "content-row";
 
-    this._tooltip = new Tooltip();
-
     this._cantoneseEl = document.createElement("div");
-    this._cantoneseEl.slot = "trigger";
     this._cantoneseEl.className = "cantonese-text";
-    this._tooltip.element.appendChild(this._cantoneseEl);
+    this._cantoneseEl.textContent = this._data.cantonese;
 
     this._romanizationEl = document.createElement("span");
-    this._romanizationEl.slot = "content";
     this._romanizationEl.className = "romanization-text";
-    this._tooltip.element.appendChild(this._romanizationEl);
+    this._romanizationEl.textContent = this._data.romanization;
+
+    this._tooltip = new Tooltip({
+      trigger: this._cantoneseEl,
+      content: this._romanizationEl,
+    });
+    this._tooltip.element.id = "tooltip";
 
     contentRow.appendChild(this._tooltip.element);
 
@@ -53,6 +55,7 @@ export class ExampleCard extends Component {
 
     this._translationEl = document.createElement("div");
     this._translationEl.className = "translation-text";
+    this._translationEl.textContent = this._data.translation;
     this._wrapper.appendChild(this._translationEl);
 
     this.shadowRoot.appendChild(this._wrapper);
@@ -72,12 +75,9 @@ export class ExampleCard extends Component {
   }
 
   update() {
-    this.validate();
-    const { cantonese, romanization, translation } = this._data;
-
-    this._cantoneseEl.textContent = cantonese;
-    this._romanizationEl.textContent = romanization;
-    this._translationEl.textContent = translation;
+    this._cantoneseEl.textContent = this._data.cantonese;
+    this._romanizationEl.textContent = this._data.romanization;
+    this._translationEl.textContent = this._data.translation;
   }
 
   playAudio() {
