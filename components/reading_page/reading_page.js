@@ -4,11 +4,10 @@ import { LessonFooter } from "../lesson_footer/lesson_footer.js";
 import { PageRegistry } from "../shared/page_registry.js";
 
 export class ReadingPage extends Component {
-  /**
-   * @param {Object} [config]
-   */
-  constructor(config = {}) {
-    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
+  constructor(data) {
+    super(import.meta.url);
+
+    this.validate(data, ["cantonese", "romanization", "translation"]);
 
     this._state = "initial"; // initial, revealed
 
@@ -17,12 +16,12 @@ export class ReadingPage extends Component {
 
     const main = document.createElement("main");
     // Initial exercise setup. Its data will be set in update()
-    this._exercise = new ReadingExercise();
+    this._exercise = new ReadingExercise(data);
     this._exercise.element.id = "exercise";
     main.appendChild(this._exercise.element);
     container.appendChild(main);
 
-    this._footer = new LessonFooter({ data: { primaryText: "Reveal Answer" } });
+    this._footer = new LessonFooter({ primaryText: "Reveal Answer" });
     this._footer.element.id = "footer";
     container.appendChild(this._footer.element);
 
@@ -36,17 +35,6 @@ export class ReadingPage extends Component {
     );
 
     this.update();
-  }
-
-  validate() {
-    const required = ["cantonesePhrase", "romanization", "translation"];
-    required.forEach((prop) => {
-      if (!this._data[prop]) {
-        console.error(
-          `🚨 [ReadingPage ERROR]: Missing required data property '${prop}'!`,
-        );
-      }
-    });
   }
 
   update() {

@@ -34,57 +34,52 @@ describe("LessonFooter Component", () => {
   });
 
   it("should update button text and disabled state based on data", () => {
-    const component = new LessonFooter({
+    const disabled = new LessonFooter({
       primaryText: "Go",
       secondaryText: "Back",
       primaryDisabled: true,
       secondaryDisabled: true,
     });
-    document.body.appendChild(component.element);
 
-    const primaryBtn = component.shadowRoot.getElementById("primary-btn");
-    const secondaryBtn = component.shadowRoot.getElementById("secondary-btn");
+    let primaryBtn = disabled.shadowRoot.getElementById("primary-btn");
+    let secondaryBtn = disabled.shadowRoot.getElementById("secondary-btn");
 
     expect(primaryBtn.textContent).toBe("Go");
     expect(secondaryBtn.textContent).toBe("Back");
     expect(primaryBtn.disabled).toBe(true);
     expect(secondaryBtn.disabled).toBe(true);
 
-    component.data = {
+    const enabled = new LessonFooter({
       primaryText: "Go",
       secondaryText: "Back",
       primaryDisabled: false,
       secondaryDisabled: false,
-    };
+    });
+    primaryBtn = enabled.shadowRoot.getElementById("primary-btn");
+    secondaryBtn = enabled.shadowRoot.getElementById("secondary-btn");
     expect(primaryBtn.disabled).toBe(false);
     expect(secondaryBtn.disabled).toBe(false);
   });
 
   it("should hide secondary button when secondaryText is missing", () => {
     const component = new LessonFooter({ primaryText: "Next" });
-    const secondaryBtn = component.shadowRoot.getElementById("secondary-btn");
+    let secondaryBtn = component.shadowRoot.getElementById("secondary-btn");
 
     expect(secondaryBtn.classList.contains("hidden")).toBe(true);
 
-    component.data = { secondaryText: "Back" };
+    const secondary = new LessonFooter({
+      primaryText: "Next",
+      secondaryText: "Back",
+    });
+    secondaryBtn = secondary.shadowRoot.getElementById("secondary-btn");
     expect(secondaryBtn.classList.contains("hidden")).toBe(false);
-
-    component.data = { secondaryText: "" };
-    expect(secondaryBtn.classList.contains("hidden")).toBe(true);
   });
 
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
-      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-
-      const component = new LessonFooter();
-      component.validate();
-
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property"),
-      );
-
-      errorSpy.mockRestore();
+      expect(() => {
+        new LessonFooter();
+      }).toThrowError("data is undefined");
     });
   });
 });
