@@ -8,11 +8,9 @@ describe("ReadingExercise Component", () => {
 
   it("should be defined", () => {
     const component = new ReadingExercise({
-      data: {
-        cantonesePhrase: "test",
+        cantonese: "test",
         romanization: "test",
         translation: "test",
-      },
     });
     expect(component).toBeInstanceOf(ReadingExercise);
     expect(component.shadowRoot).not.toBeNull();
@@ -20,11 +18,9 @@ describe("ReadingExercise Component", () => {
 
   it("should display the Cantonese phrase and romanization via the data property", () => {
     const component = new ReadingExercise({
-      data: {
-        cantonesePhrase: "你好",
+        cantonese: "你好",
         romanization: "nei5 hou2",
         translation: "Hello",
-      },
     });
 
     const shadowRoot = component.shadowRoot;
@@ -37,24 +33,11 @@ describe("ReadingExercise Component", () => {
     expect(translationText.textContent).toBe("Hello");
   });
 
-  it("should correctly return internal state via the data getter", () => {
-    const testData = {
-      cantonesePhrase: "你好",
-      romanization: "nei5 hou2",
-      translation: "Hello",
-      translationHidden: false,
-    };
-    const component = new ReadingExercise({ data: testData });
-    expect(component.data).toEqual(testData);
-  });
-
-  it("should hide translation by default and show it when translationHidden is false", () => {
+  it("should hide translation by default and show it on demand", () => {
     const component = new ReadingExercise({
-      data: {
-        cantonesePhrase: "test",
+        cantonese: "test",
         romanization: "test",
         translation: "Hello",
-      },
     });
 
     const translationEl =
@@ -63,20 +46,15 @@ describe("ReadingExercise Component", () => {
     // By default (from data object), it's hidden
     expect(translationEl.classList.contains("hidden")).toBe(true);
 
-    component.data = { translationHidden: false };
+    component.showTranslation();
     expect(translationEl.classList.contains("hidden")).toBe(false);
-
-    component.data = { translationHidden: true };
-    expect(translationEl.classList.contains("hidden")).toBe(true);
   });
 
   it("should dispatch 'play-audio' event when audio button is clicked", () => {
     const component = new ReadingExercise({
-      data: {
-        cantonesePhrase: "你好",
+        cantonese: "你好",
         romanization: "test",
         translation: "test",
-      },
     });
     document.body.appendChild(component.element);
 
@@ -93,11 +71,9 @@ describe("ReadingExercise Component", () => {
 
   it("should call window.speechSynthesis.speak when audio button is clicked", () => {
     const component = new ReadingExercise({
-      data: {
-        cantonesePhrase: "你好",
+        cantonese: "你好",
         romanization: "test",
         translation: "test",
-      },
     });
 
     const playBtn = component.shadowRoot.getElementById("play-audio");
@@ -110,25 +86,9 @@ describe("ReadingExercise Component", () => {
 
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
-      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-
-      new ReadingExercise({ data: {} });
-
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining(
-          "Missing required data property 'cantonesePhrase'",
-        ),
-      );
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining(
-          "Missing required data property 'romanization'",
-        ),
-      );
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property 'translation'"),
-      );
-
-      errorSpy.mockRestore();
+      expect(() => {
+      new ReadingExercise({});
+      }).toThrowError('Missing property: cantonese');
     });
   });
 });
