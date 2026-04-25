@@ -7,19 +7,19 @@ describe("ExplanationPage Component", () => {
   });
 
   it("should be defined", () => {
-    const component = new ExplanationPage({
-      content: [{ type: "title", value: "Test Title" }],
-    });
+    const component = new ExplanationPage({ data: { content: [] } });
     expect(component).toBeDefined();
     expect(component.shadowRoot).not.toBeNull();
   });
 
   it("should render title and text content", () => {
     const component = new ExplanationPage({
-      content: [
-        { type: "title", value: "Test Title" },
-        { type: "text", value: "Test Text" },
-      ],
+      data: {
+        content: [
+          { type: "title", value: "Test Title" },
+          { type: "text", value: "Test Text" },
+        ],
+      },
     });
 
     const content = component.shadowRoot.getElementById("content");
@@ -29,7 +29,9 @@ describe("ExplanationPage Component", () => {
 
   it("should render bold text using <strong> correctly", () => {
     const component = new ExplanationPage({
-      content: [{ type: "text", value: "Hello <strong>World</strong>" }],
+      data: {
+        content: [{ type: "text", value: "Hello <strong>World</strong>" }],
+      },
     });
 
     const content = component.shadowRoot.getElementById("content");
@@ -39,7 +41,9 @@ describe("ExplanationPage Component", () => {
 
   it("should dispatch explanation-complete when footer primary button is clicked", () => {
     const component = new ExplanationPage({
-      content: [{ type: "title", value: "Title" }],
+      data: {
+        content: [{ type: "title", value: "Title" }],
+      },
     });
 
     const spy = vi.fn();

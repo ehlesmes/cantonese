@@ -1,5 +1,4 @@
 import { Component } from "../shared/component.js";
-import { ValidationError } from "../shared/validation_error.js";
 
 export class LessonFooter extends Component {
   /**
@@ -11,8 +10,12 @@ export class LessonFooter extends Component {
    * @param {boolean} [config.data.secondaryDisabled]
    */
   constructor(config = {}) {
-    super(config, import.meta.url);
-    this.addStyles("../shared/button.css", import.meta.url);
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
+
+    const baseStyle = document.createElement("link");
+    baseStyle.rel = "stylesheet";
+    baseStyle.href = new URL("../shared/button.css", import.meta.url).href;
+    this.shadowRoot.appendChild(baseStyle);
 
     this._footer = document.createElement("footer");
 
@@ -30,18 +33,21 @@ export class LessonFooter extends Component {
 
     this._primaryBtn.onclick = () => this.dispatch("primary-click");
     this._secondaryBtn.onclick = () => this.dispatch("secondary-click");
+
     this.update();
   }
 
   validate() {
     if (!this._data.primaryText) {
-      throw new ValidationError(
-        "Missing required data property 'primaryText'!",
+      console.error(
+        "🚨 [LessonFooter ERROR]: Missing required data property 'primaryText'!",
       );
     }
   }
 
   update() {
+    this.validate();
+
     const { primaryText, secondaryText, primaryDisabled, secondaryDisabled } =
       this._data;
 

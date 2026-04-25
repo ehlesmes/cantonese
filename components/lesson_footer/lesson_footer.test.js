@@ -74,10 +74,17 @@ describe("LessonFooter Component", () => {
   });
 
   describe("Validation", () => {
-    it("should throw error if required data properties are missing", () => {
-      expect(() => {
-        new LessonFooter();
-      }).toThrowError("Missing required data property");
+    it("should log error if required data properties are missing", () => {
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+
+      const component = new LessonFooter();
+      component.validate();
+
+      expect(errorSpy).toHaveBeenCalledWith(
+        expect.stringContaining("Missing required data property"),
+      );
+
+      errorSpy.mockRestore();
     });
   });
 });

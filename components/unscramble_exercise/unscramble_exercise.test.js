@@ -7,10 +7,8 @@ describe("UnscrambleExercise Component", () => {
   });
 
   it("should be defined", () => {
-    const component = new UnscrambleExercise({
-      tokens: [["test", "test"]],
-      translation: "test",
-    });
+    const component = new UnscrambleExercise();
+    component.data = { tokens: [["test", "test"]], translation: "test" };
     document.body.appendChild(component.element);
     expect(component).toBeInstanceOf(UnscrambleExercise);
     expect(component.shadowRoot).not.toBeNull();
@@ -21,15 +19,15 @@ describe("UnscrambleExercise Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    const component = new UnscrambleExercise({ tokens, translation: "Hello" });
+    const component = new UnscrambleExercise();
+    component.data = { tokens, translation: "Hello" };
     document.body.appendChild(component.element);
 
-    const poolTokens = component.shadowRoot.querySelector("#pool").children;
+    const poolTokens =
+      component.shadowRoot.querySelectorAll("#pool .token-text");
     expect(poolTokens.length).toBe(2);
 
-    const texts = Array.from(poolTokens).map(
-      (el) => el.shadowRoot.querySelector(".token-text").textContent,
-    );
+    const texts = Array.from(poolTokens).map((el) => el.textContent);
     expect(texts).toContain("你");
     expect(texts).toContain("好");
   });
@@ -42,30 +40,27 @@ describe("UnscrambleExercise Component", () => {
       ],
       translation: "Hello",
     };
-    const component = new UnscrambleExercise(testData);
+    const component = new UnscrambleExercise();
+    component.data = testData;
     document.body.appendChild(component.element);
     expect(component.data).toEqual(testData);
   });
 
   it("should move tokens to slots when clicked and dispatch 'complete' when pool is empty", () => {
     const tokens = [["你", "nei5"]];
-    const component = new UnscrambleExercise({ tokens, translation: "Hello" });
+    const component = new UnscrambleExercise();
+    component.data = { tokens, translation: "Hello" };
     document.body.appendChild(component.element);
 
     // Tokens are now just Tooltip elements (their elements)
     const poolToken = component.shadowRoot.querySelector("#pool > *");
-    expect(poolToken).toBe('1');
     const completeSpy = vi.fn();
     component.element.addEventListener("complete", completeSpy);
 
     poolToken.click();
 
-    const slotChildren = Array.from(
-      component.shadowRoot.querySelector("#slots"),
-    );
-    const slotTokens = slotChildren.map((el) =>
-      el.shadowRoot.querySelector(".token-text"),
-    );
+    const slotTokens =
+      component.shadowRoot.querySelectorAll("#slots .token-text");
     expect(slotTokens.length).toBe(1);
     expect(slotTokens[0].textContent).toBe("你");
     expect(
@@ -81,7 +76,8 @@ describe("UnscrambleExercise Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    const component = new UnscrambleExercise({ tokens, translation: "Hello" });
+    const component = new UnscrambleExercise();
+    component.data = { tokens, translation: "Hello" };
     document.body.appendChild(component.element);
 
     const getPoolToken = (text) =>
@@ -103,7 +99,8 @@ describe("UnscrambleExercise Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    const component = new UnscrambleExercise({ tokens, translation: "Hello" });
+    const component = new UnscrambleExercise();
+    component.data = { tokens, translation: "Hello" };
     document.body.appendChild(component.element);
 
     const getPoolToken = (text) =>
@@ -125,7 +122,8 @@ describe("UnscrambleExercise Component", () => {
       ["B", "b"],
       ["C", "c"],
     ];
-    const component = new UnscrambleExercise({ tokens, translation: "ABC" });
+    const component = new UnscrambleExercise();
+    component.data = { tokens, translation: "ABC" };
     document.body.appendChild(component.element);
 
     const getPoolToken = (text) =>
@@ -170,7 +168,8 @@ describe("UnscrambleExercise Component", () => {
       ["B", "b"],
       ["C", "c"],
     ];
-    const component = new UnscrambleExercise({ tokens, translation: "ABC" });
+    const component = new UnscrambleExercise();
+    component.data = { tokens, translation: "ABC" };
     document.body.appendChild(component.element);
 
     const getPoolToken = (text) =>
@@ -194,7 +193,8 @@ describe("UnscrambleExercise Component", () => {
       ["A", "a"],
       ["B", "b"],
     ];
-    const component = new UnscrambleExercise({ tokens, translation: "AB" });
+    const component = new UnscrambleExercise();
+    component.data = { tokens, translation: "AB" };
     document.body.appendChild(component.element);
 
     // Move one to slots

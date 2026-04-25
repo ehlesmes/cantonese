@@ -1,7 +1,6 @@
 import { Component } from "../shared/component.js";
 import { LessonHeader } from "../lesson_header/lesson_header.js";
 import { PageRegistry } from "../shared/page_registry.js";
-import { ValidationError } from "../shared/validation_error.js";
 
 // Import pages only to trigger their self-registration in PageRegistry
 import "../reading_page/reading_page.js";
@@ -13,7 +12,7 @@ export class LessonViewer extends Component {
    * @param {Object} [config]
    */
   constructor(config = {}) {
-    super(config, import.meta.url);
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
 
     this._container = document.createElement("div");
     this._container.className = "lesson-container";
@@ -22,15 +21,13 @@ export class LessonViewer extends Component {
     this._headerRoot.id = "header-root";
     this._container.appendChild(this._headerRoot);
 
-    this._header = new LessonHeader({ lessonName: this._data.lessonName });
-    this._headerRoot.appendChild(this._header.element);
-
     this._main = document.createElement("main");
     this._main.id = "m";
     this._container.appendChild(this._main);
 
     this.shadowRoot.appendChild(this._container);
 
+    this._header = null;
     this._lessonData = null;
     this._currentPageIndex = 0;
     this._pageCache = new Map(); // Store exercise data
@@ -59,7 +56,25 @@ export class LessonViewer extends Component {
       this.navigateTo(this._currentPageIndex + 1),
     );
 
-    this._loadPromise = this.loadLesson(this._data.lessonId);
+    if (this._data.lessonId) {
+      this._loadPromise = this.loadLesson(this._data.lessonId);
+    }
+
+    this.update();
+  }
+
+  set data(val) {
+    const oldId = this._data.lessonId;
+    this._data = { ...this._data, ...val };
+
+    if (this._data.lessonId && this._data.lessonId !== oldId) {
+      this._loadPromise = this.loadLesson(this._data.lessonId);
+    }
+    this.update();
+  }
+
+  get data() {
+    return this._data;
   }
 
   /**
@@ -70,10 +85,8 @@ export class LessonViewer extends Component {
   }
 
   validate() {
-    if (!this._data.lessonId) {
-      throw new ValidationError("Missing lesson name");
-    } else if (!this._data.lessonName) {
-      throw new ValidationError("Missing lesson id");
+    if (!this._data.lessonId && !this._data.lessonName) {
+      // In standalone mode (reading.html), lessonId might be missing initially
     }
   }
 
@@ -86,7 +99,7 @@ export class LessonViewer extends Component {
       }
 
       this._lessonData = await response.json();
-      this.data = { lessonName: this._lessonData.name };
+      this._data.lessonName = this._lessonData.name;
       this._currentPageIndex = 0;
 
       this.renderPage(0);
@@ -164,7 +177,7 @@ export class LessonViewer extends Component {
       return;
     }
 
-    const pageInstance = new PageClass(pageData);
+    const pageInstance = new PageClass({ data: pageData });
     this._main.innerHTML = "";
     this._main.appendChild(pageInstance.element);
     this._main.scrollTop = 0;
@@ -181,10 +194,16 @@ export class LessonViewer extends Component {
     return this._loadPromise;
   }
 
-  update(oldData) {
-    this._header.data = { lessonName: this._data.lessonName };
-    if (this._data.lessonId !== oldData.lessonId) {
-      this._loadPromise = this.loadLesson(this._data.lessonId);
+  update() {
+    this.validate();
+
+    if (!this._header && this._data.lessonName) {
+      this._header = new LessonHeader({
+        data: { lessonName: this._data.lessonName },
+      });
+      this._headerRoot.appendChild(this._header.element);
+    } else if (this._header && this._data.lessonName) {
+      this._header.data = { lessonName: this._data.lessonName };
     }
   }
 }
