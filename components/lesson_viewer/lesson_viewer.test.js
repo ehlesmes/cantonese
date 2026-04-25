@@ -1,5 +1,8 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { LessonViewer } from "./lesson_viewer.js";
+// Important: Import pages to register them in PageRegistry
+import "../reading_page/reading_page.js";
+import "../explanation_page/explanation_page.js";
 
 describe("LessonViewer Component", () => {
   beforeEach(() => {
@@ -15,7 +18,9 @@ describe("LessonViewer Component", () => {
   });
 
   it("should be defined", () => {
-    const component = new LessonViewer({ lessonId: "1.1", lessonName: "test" });
+    const component = new LessonViewer({
+      data: { lessonId: "1.1", lessonName: "test" },
+    });
     expect(component).toBeDefined();
     expect(component.element).toBeDefined();
     expect(component.shadowRoot).not.toBeNull();
@@ -23,8 +28,10 @@ describe("LessonViewer Component", () => {
 
   it("should propagate lesson-name to the lesson-header", () => {
     const component = new LessonViewer({
-      lessonId: "1.1",
-      lessonName: "Unit 1: Basics",
+      data: {
+        lessonId: "1.1",
+        lessonName: "Unit 1: Basics",
+      },
     });
     document.body.appendChild(component.element);
     // LessonHeader also has a shadowRoot. We need to go into it.
@@ -73,7 +80,7 @@ describe("LessonViewer Component", () => {
     });
 
     it("should load lesson data and render the first page", async () => {
-      const component = new LessonViewer({ lessonId: "1.1" });
+      const component = new LessonViewer({ data: { lessonId: "1.1" } });
       document.body.appendChild(component.element);
 
       // Wait for the component to finish loading
@@ -88,7 +95,7 @@ describe("LessonViewer Component", () => {
     });
 
     it("should navigate between pages", async () => {
-      const component = new LessonViewer({ lessonId: "1.1" });
+      const component = new LessonViewer({ data: { lessonId: "1.1" } });
       document.body.appendChild(component.element);
 
       await component.ready;
@@ -106,7 +113,7 @@ describe("LessonViewer Component", () => {
     });
 
     it("should navigate forward on page events", async () => {
-      const component = new LessonViewer({ lessonId: "1.1" });
+      const component = new LessonViewer({ data: { lessonId: "1.1" } });
       document.body.appendChild(component.element);
 
       await component.ready;
@@ -133,7 +140,7 @@ describe("LessonViewer Component", () => {
     });
 
     it("should navigate back when 'prev' event is received", async () => {
-      const component = new LessonViewer({ lessonId: "1.1" });
+      const component = new LessonViewer({ data: { lessonId: "1.1" } });
       document.body.appendChild(component.element);
 
       await component.ready;
@@ -159,7 +166,7 @@ describe("LessonViewer Component", () => {
     });
 
     it("should reset to first page when 'restart' event is received", async () => {
-      const component = new LessonViewer({ lessonId: "1.1" });
+      const component = new LessonViewer({ data: { lessonId: "1.1" } });
       document.body.appendChild(component.element);
 
       await component.ready;

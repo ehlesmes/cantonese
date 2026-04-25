@@ -1,36 +1,38 @@
 # Cantonese Learning App
 
-A lightweight, component-focused web application for learning Cantonese. This project uses a "Pure Component" architecture, where all logic and styling are encapsulated within reusable Web Components.
+A lightweight, component-focused web application for learning Cantonese. This project uses a **Class-based Shadow DOM** architecture, where UI elements are encapsulated within reusable JavaScript classes that manage their own styling and logic via the Shadow DOM.
 
 ## 🚀 Getting Started
 
 1.  **Clone the repository.**
-2.  **Open `reading.html` or `unscramble.html`** in a modern web browser.
+2.  **Open `demo_lesson.html`** in a modern web browser.
 3.  For the best experience, use a local development server (e.g., `npx serve .`).
 
 ## 🏗️ Project Structure
 
-- `components/`: The heart of the application. Each UI element is a self-contained Web Component.
-  - `ui/`: Generic reusable UI elements like `icon_button` and `tooltip`.
+- `components/`: The heart of the application. Each UI element is a self-contained Class.
+  - `ui/`: Generic reusable UI elements like `IconButton` and `Tooltip`.
   - `shared/`: Global resources like `variables.css`, `shared_assets.js`, and `tts.js`.
 - `audio/`: Repository for legacy or supplemental audio assets.
 
 ## 🎨 Design Philosophy
 
-### 1. Component-First
+### 1. Component Classes
 
-The application is built entirely from Web Components. Avoid creating global JS or CSS files. Logic and styles must be encapsulated within components.
+The application is built using a custom `Component` base class. Avoid creating global JS or CSS files. Logic and styles must be encapsulated within the component class.
 
-### 2. Complex Data Handling
+### 2. Manual Instantiation
 
-To pass complex data (like lists or objects) to components via static HTML, use JSON-serialized strings in attributes:
+Components are instantiated programmatically in JavaScript.
 
-```html
-<unscramble-exercise
-  tokens='[["你", "nei5"], ["好", "hou2"]]'
-  translation="Hello"
->
-</unscramble-exercise>
+```javascript
+import { ReadingPage } from "./components/reading_page/reading_page.js";
+const page = new ReadingPage({
+  cantonesePhrase: "你好",
+  romanization: "nei5 hou2",
+  translation: "Hello",
+});
+document.body.appendChild(page.element);
 ```
 
 ### 3. Audio & TTS

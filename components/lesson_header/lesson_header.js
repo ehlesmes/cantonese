@@ -1,13 +1,14 @@
-import { Component } from "/components/shared/component.js";
-import { LessonControls } from "/components/lesson_controls/lesson_controls.js";
+import { Component } from "../shared/component.js";
+import { LessonControls } from "../lesson_controls/lesson_controls.js";
 
 export class LessonHeader extends Component {
   /**
-   * @param {Object} [options]
-   * @param {string} [options.lessonName]
+   * @param {Object} [config]
+   * @param {Object} [config.data]
+   * @param {string} [config.data.lessonName]
    */
-  constructor(options = {}) {
-    super("/components/lesson_header/style.css");
+  constructor(config = {}) {
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
 
     const header = document.createElement("header");
 
@@ -22,7 +23,7 @@ export class LessonHeader extends Component {
 
     this.shadowRoot.appendChild(header);
 
-    this.data = options;
+    this.update();
   }
 
   validate() {

@@ -1,28 +1,29 @@
-import { Component } from "/components/shared/component.js";
-import { UnscrambleExercise } from "/components/unscramble_exercise/unscramble_exercise.js";
-import { LessonFooter } from "/components/lesson_footer/lesson_footer.js";
+import { Component } from "../shared/component.js";
+import { UnscrambleExercise } from "../unscramble_exercise/unscramble_exercise.js";
+import { LessonFooter } from "../lesson_footer/lesson_footer.js";
+import { PageRegistry } from "../shared/page_registry.js";
 
 export class UnscramblePage extends Component {
   /**
-   * @param {Object} [options]
-   * @param {Array<[string, string]>} [options.tokens]
-   * @param {string} [options.translation]
+   * @param {Object} [config]
    */
-  constructor(options = {}) {
-    super("/components/unscramble_page/style.css");
+  constructor(config = {}) {
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
 
     const container = document.createElement("div");
     container.className = "page-container";
 
     const main = document.createElement("main");
-    this._exercise = new UnscrambleExercise(options);
+    this._exercise = new UnscrambleExercise();
     this._exercise.element.id = "exercise";
     main.appendChild(this._exercise.element);
     container.appendChild(main);
 
     this._footer = new LessonFooter({
-      primaryText: "Continue",
-      primaryDisabled: true,
+      data: {
+        primaryText: "Continue",
+        primaryDisabled: true,
+      },
     });
     this._footer.element.id = "footer";
     container.appendChild(this._footer.element);
@@ -35,7 +36,9 @@ export class UnscramblePage extends Component {
       }
       this.update();
     });
-    this.element.addEventListener("uncomplete", () => this.update());
+    this.element.addEventListener("uncomplete", () => {
+      this.update();
+    });
     this.element.addEventListener("primary-click", () =>
       this._handlePrimaryClick(),
     );
@@ -43,9 +46,7 @@ export class UnscramblePage extends Component {
       this._handleSecondaryClick(),
     );
 
-    if (Object.keys(options).length > 0) {
-      this.data = options;
-    }
+    this.update();
   }
 
   validate() {
@@ -88,6 +89,7 @@ export class UnscramblePage extends Component {
 
   _handleSecondaryClick() {
     this._exercise.reset();
-    this.update();
   }
 }
+
+PageRegistry.set("unscramble", UnscramblePage);

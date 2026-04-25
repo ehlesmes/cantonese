@@ -1,16 +1,14 @@
-import { Component } from "/components/shared/component.js";
-import { LessonFooter } from "/components/lesson_footer/lesson_footer.js";
-import { ExampleCard } from "/components/example_card/example_card.js";
+import { Component } from "../shared/component.js";
+import { LessonFooter } from "../lesson_footer/lesson_footer.js";
+import { ExampleCard } from "../example_card/example_card.js";
+import { PageRegistry } from "../shared/page_registry.js";
 
 export class ExplanationPage extends Component {
   /**
-   * @param {Object} [options]
-   * @param {Array<{type: string, value?: string, cantonese?: string, romanization?: string, translation?: string}>} [options.content]
+   * @param {Object} [config]
    */
-  constructor(options = {}) {
-    super("/components/explanation_page/style.css");
-
-    this._data = { content: [] };
+  constructor(config = {}) {
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
 
     const container = document.createElement("div");
     container.className = "page-container";
@@ -22,7 +20,7 @@ export class ExplanationPage extends Component {
     main.appendChild(this._contentWrapper);
     container.appendChild(main);
 
-    this._footer = new LessonFooter({ primaryText: "Continue" });
+    this._footer = new LessonFooter({ data: { primaryText: "Continue" } });
     container.appendChild(this._footer.element);
 
     this.shadowRoot.appendChild(container);
@@ -31,9 +29,7 @@ export class ExplanationPage extends Component {
       this.dispatch("explanation-complete");
     });
 
-    if (Object.keys(options).length > 0) {
-      this.data = options;
-    }
+    this.update();
   }
 
   validate() {
@@ -67,9 +63,11 @@ export class ExplanationPage extends Component {
           break;
         case "example": {
           const card = new ExampleCard({
-            cantonese: chunk.cantonese,
-            romanization: chunk.romanization,
-            translation: chunk.translation,
+            data: {
+              cantonese: chunk.cantonese,
+              romanization: chunk.romanization,
+              translation: chunk.translation,
+            },
           });
           el = card.element;
           break;
@@ -99,3 +97,5 @@ export class ExplanationPage extends Component {
     });
   }
 }
+
+PageRegistry.set("explanation", ExplanationPage);

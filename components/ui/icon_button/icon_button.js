@@ -1,21 +1,22 @@
-import { Component } from "/components/shared/component.js";
-import { iconStyles } from "/components/shared/shared_assets.js";
+import { Component } from "../../shared/component.js";
+import { iconStyles } from "../../shared/shared_assets.js";
 
 export class IconButton extends Component {
   /**
-   * @param {Object} [options]
-   * @param {string} [options.title]
-   * @param {boolean} [options.disabled]
-   * @param {"filled"|"outline"} [options.variant]
-   * @param {string} [options.icon]
+   * @param {Object} [config]
+   * @param {Object} [config.data]
+   * @param {string} [config.data.title]
+   * @param {boolean} [config.data.disabled]
+   * @param {"filled"|"outline"} [config.data.variant]
+   * @param {string} [config.data.icon]
    */
-  constructor(options = {}) {
-    super("/components/ui/icon_button/style.css");
+  constructor(config = {}) {
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
 
     // Add base button styles
     const baseStyle = document.createElement("link");
     baseStyle.rel = "stylesheet";
-    baseStyle.href = "/components/shared/button.css";
+    baseStyle.href = new URL("../../shared/button.css", import.meta.url).href;
     this.shadowRoot.appendChild(baseStyle);
 
     // Apply shared icon font styles
@@ -33,20 +34,15 @@ export class IconButton extends Component {
 
     this.shadowRoot.appendChild(this._btn);
 
-    if (options.icon) {
-      this.element.textContent = options.icon;
-    }
-
-    this.data = options;
-
     // Proxy click events from the button to the root element
     this._btn.onclick = (e) => {
       if (this._data.disabled) {
         e.stopPropagation();
         return;
       }
-      // The original click event will still bubble, but we might want to ensure it's clean
     };
+
+    this.update();
   }
 
   update() {

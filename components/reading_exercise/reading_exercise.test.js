@@ -8,9 +8,11 @@ describe("ReadingExercise Component", () => {
 
   it("should be defined", () => {
     const component = new ReadingExercise({
-      cantonesePhrase: "test",
-      romanization: "test",
-      translation: "test",
+      data: {
+        cantonesePhrase: "test",
+        romanization: "test",
+        translation: "test",
+      },
     });
     expect(component).toBeInstanceOf(ReadingExercise);
     expect(component.shadowRoot).not.toBeNull();
@@ -18,9 +20,11 @@ describe("ReadingExercise Component", () => {
 
   it("should display the Cantonese phrase and romanization via the data property", () => {
     const component = new ReadingExercise({
-      cantonesePhrase: "你好",
-      romanization: "nei5 hou2",
-      translation: "Hello",
+      data: {
+        cantonesePhrase: "你好",
+        romanization: "nei5 hou2",
+        translation: "Hello",
+      },
     });
 
     const shadowRoot = component.shadowRoot;
@@ -40,15 +44,17 @@ describe("ReadingExercise Component", () => {
       translation: "Hello",
       translationHidden: false,
     };
-    const component = new ReadingExercise(testData);
+    const component = new ReadingExercise({ data: testData });
     expect(component.data).toEqual(testData);
   });
 
   it("should hide translation by default and show it when translationHidden is false", () => {
     const component = new ReadingExercise({
-      cantonesePhrase: "test",
-      romanization: "test",
-      translation: "Hello",
+      data: {
+        cantonesePhrase: "test",
+        romanization: "test",
+        translation: "Hello",
+      },
     });
 
     const translationEl =
@@ -66,9 +72,11 @@ describe("ReadingExercise Component", () => {
 
   it("should dispatch 'play-audio' event when audio button is clicked", () => {
     const component = new ReadingExercise({
-      cantonesePhrase: "你好",
-      romanization: "test",
-      translation: "test",
+      data: {
+        cantonesePhrase: "你好",
+        romanization: "test",
+        translation: "test",
+      },
     });
     document.body.appendChild(component.element);
 
@@ -85,9 +93,11 @@ describe("ReadingExercise Component", () => {
 
   it("should call window.speechSynthesis.speak when audio button is clicked", () => {
     const component = new ReadingExercise({
-      cantonesePhrase: "你好",
-      romanization: "test",
-      translation: "test",
+      data: {
+        cantonesePhrase: "你好",
+        romanization: "test",
+        translation: "test",
+      },
     });
 
     const playBtn = component.shadowRoot.getElementById("play-audio");
@@ -102,7 +112,7 @@ describe("ReadingExercise Component", () => {
     it("should log error if required data properties are missing", () => {
       const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      new ReadingExercise();
+      new ReadingExercise({ data: {} });
 
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining(

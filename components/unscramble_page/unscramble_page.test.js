@@ -7,8 +7,9 @@ describe("UnscramblePage Component", () => {
   });
 
   it("should be defined", () => {
-    const page = new UnscramblePage();
-    page.data = { tokens: [["test", "test"]], translation: "test" };
+    const page = new UnscramblePage({
+      data: { tokens: [["test", "test"]], translation: "test" },
+    });
     document.body.appendChild(page.element);
     expect(page).toBeInstanceOf(UnscramblePage);
     expect(page.shadowRoot).not.toBeNull();
@@ -19,8 +20,7 @@ describe("UnscramblePage Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    const page = new UnscramblePage();
-    page.data = { tokens, translation: "Hello" };
+    const page = new UnscramblePage({ data: { tokens, translation: "Hello" } });
     document.body.appendChild(page.element);
 
     const exercise = page._exercise;
@@ -50,16 +50,14 @@ describe("UnscramblePage Component", () => {
       ],
       translation: "Hello",
     };
-    const page = new UnscramblePage();
-    page.data = testData;
+    const page = new UnscramblePage({ data: testData });
     document.body.appendChild(page.element);
     expect(page.data).toEqual(testData);
   });
 
   it("should dispatch unscramble-result when primary button is clicked after completion", () => {
     const tokens = [["你", "nei5"]];
-    const page = new UnscramblePage();
-    page.data = { tokens, translation: "you" };
+    const page = new UnscramblePage({ data: { tokens, translation: "you" } });
     document.body.appendChild(page.element);
     const exercise = page._exercise;
     const footer = page._footer;
@@ -85,8 +83,7 @@ describe("UnscramblePage Component", () => {
       ["你", "nei5"],
       ["好", "hou2"],
     ];
-    const page = new UnscramblePage();
-    page.data = { tokens, translation: "Hello" };
+    const page = new UnscramblePage({ data: { tokens, translation: "Hello" } });
     document.body.appendChild(page.element);
     const exercise = page._exercise;
     const footer = page._footer;
@@ -122,7 +119,7 @@ describe("UnscramblePage Component", () => {
     it("should log error if required data properties are missing", () => {
       const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      new UnscramblePage();
+      new UnscramblePage({ data: {} });
 
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining("Missing required data property"),

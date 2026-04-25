@@ -1,19 +1,20 @@
-import { Component } from "/components/shared/component.js";
+import { Component } from "../shared/component.js";
 
 export class LessonFooter extends Component {
   /**
-   * @param {Object} [options]
-   * @param {string} [options.primaryText]
-   * @param {string} [options.secondaryText]
-   * @param {boolean} [options.primaryDisabled]
-   * @param {boolean} [options.secondaryDisabled]
+   * @param {Object} [config]
+   * @param {Object} [config.data]
+   * @param {string} [config.data.primaryText]
+   * @param {string} [config.data.secondaryText]
+   * @param {boolean} [config.data.primaryDisabled]
+   * @param {boolean} [config.data.secondaryDisabled]
    */
-  constructor(options = {}) {
-    super("/components/lesson_footer/style.css");
+  constructor(config = {}) {
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
 
     const baseStyle = document.createElement("link");
     baseStyle.rel = "stylesheet";
-    baseStyle.href = "/components/shared/button.css";
+    baseStyle.href = new URL("../shared/button.css", import.meta.url).href;
     this.shadowRoot.appendChild(baseStyle);
 
     this._footer = document.createElement("footer");
@@ -33,9 +34,7 @@ export class LessonFooter extends Component {
     this._primaryBtn.onclick = () => this.dispatch("primary-click");
     this._secondaryBtn.onclick = () => this.dispatch("secondary-click");
 
-    if (Object.keys(options).length > 0) {
-      this.data = options;
-    }
+    this.update();
   }
 
   validate() {

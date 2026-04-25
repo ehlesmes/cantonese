@@ -1,23 +1,18 @@
-import { Component } from "/components/shared/component.js";
-import { LessonHeader } from "/components/lesson_header/lesson_header.js";
-import { ReadingPage } from "/components/reading_page/reading_page.js";
-import { UnscramblePage } from "/components/unscramble_page/unscramble_page.js";
-import { ExplanationPage } from "/components/explanation_page/explanation_page.js";
+import { Component } from "../shared/component.js";
+import { LessonHeader } from "../lesson_header/lesson_header.js";
+import { PageRegistry } from "../shared/page_registry.js";
 
-const PAGE_MAP = {
-  reading: ReadingPage,
-  unscramble: UnscramblePage,
-  explanation: ExplanationPage,
-};
+// Import pages only to trigger their self-registration in PageRegistry
+import "../reading_page/reading_page.js";
+import "../unscramble_page/unscramble_page.js";
+import "../explanation_page/explanation_page.js";
 
 export class LessonViewer extends Component {
   /**
-   * @param {Object} [options]
-   * @param {string} [options.lessonId]
-   * @param {string} [options.lessonName]
+   * @param {Object} [config]
    */
-  constructor(options = {}) {
-    super("/components/lesson_viewer/style.css");
+  constructor(config = {}) {
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
 
     this._container = document.createElement("div");
     this._container.className = "lesson-container";
@@ -57,21 +52,25 @@ export class LessonViewer extends Component {
     this._main.addEventListener("unscramble-result", () =>
       this.navigateTo(this._currentPageIndex + 1),
     );
-    this._main.addEventListener("explanation-complete", () =>
+    this.element.addEventListener("explanation-complete", () =>
       this.navigateTo(this._currentPageIndex + 1),
     );
 
-    this.data = options;
+    if (this._data.lessonId) {
+      this._loadPromise = this.loadLesson(this._data.lessonId);
+    }
+
+    this.update();
   }
 
   set data(val) {
     const oldId = this._data.lessonId;
     this._data = { ...this._data, ...val };
-    this.update();
 
     if (this._data.lessonId && this._data.lessonId !== oldId) {
       this._loadPromise = this.loadLesson(this._data.lessonId);
     }
+    this.update();
   }
 
   get data() {
@@ -94,7 +93,7 @@ export class LessonViewer extends Component {
   async loadLesson(lessonId) {
     try {
       const [chapter] = lessonId.split(".");
-      const response = await fetch(`/data/lessons/${chapter}/${lessonId}.json`);
+      const response = await fetch(`data/lessons/${chapter}/${lessonId}.json`);
       if (!response.ok) {
         throw new Error(`Failed to load lesson: ${lessonId}`);
       }
@@ -103,7 +102,6 @@ export class LessonViewer extends Component {
       this._data.lessonName = this._lessonData.name;
       this._currentPageIndex = 0;
 
-      this.update();
       this.renderPage(0);
 
       this.prefetchExercises();
@@ -118,7 +116,7 @@ export class LessonViewer extends Component {
 
     for (const page of this._lessonData.pages) {
       if (page.type === "reading" || page.type === "unscramble") {
-        const url = `/data/exercises/${chapter}/${lessonNum}/${page.id}.json`;
+        const url = `data/exercises/${chapter}/${lessonNum}/${page.id}.json`;
         fetch(url)
           .then((res) => res.json())
           .then((data) => this._pageCache.set(page.id, data))
@@ -154,7 +152,7 @@ export class LessonViewer extends Component {
         try {
           const [chapter, lessonNum] = this._data.lessonId.split(".");
           const response = await fetch(
-            `/data/exercises/${chapter}/${lessonNum}/${pageDef.id}.json`,
+            `data/exercises/${chapter}/${lessonNum}/${pageDef.id}.json`,
           );
           pageData = await response.json();
           this._pageCache.set(pageDef.id, pageData);
@@ -169,7 +167,7 @@ export class LessonViewer extends Component {
       }
     }
 
-    const PageClass = PAGE_MAP[pageDef.type];
+    const PageClass = PageRegistry.get(pageDef.type);
     if (!PageClass) {
       this._main.innerHTML = "";
       const error = document.createElement("div");
@@ -179,7 +177,7 @@ export class LessonViewer extends Component {
       return;
     }
 
-    const pageInstance = new PageClass(pageData);
+    const pageInstance = new PageClass({ data: pageData });
     this._main.innerHTML = "";
     this._main.appendChild(pageInstance.element);
     this._main.scrollTop = 0;
@@ -200,7 +198,9 @@ export class LessonViewer extends Component {
     this.validate();
 
     if (!this._header && this._data.lessonName) {
-      this._header = new LessonHeader({ lessonName: this._data.lessonName });
+      this._header = new LessonHeader({
+        data: { lessonName: this._data.lessonName },
+      });
       this._headerRoot.appendChild(this._header.element);
     } else if (this._header && this._data.lessonName) {
       this._header.data = { lessonName: this._data.lessonName };

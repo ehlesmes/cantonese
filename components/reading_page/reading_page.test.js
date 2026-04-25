@@ -8,9 +8,11 @@ describe("ReadingPage Component", () => {
 
   it("should be defined", () => {
     const component = new ReadingPage({
-      cantonesePhrase: "test",
-      romanization: "test",
-      translation: "test",
+      data: {
+        cantonesePhrase: "test",
+        romanization: "test",
+        translation: "test",
+      },
     });
     expect(component).toBeInstanceOf(ReadingPage);
     expect(component.shadowRoot).not.toBeNull();
@@ -18,18 +20,13 @@ describe("ReadingPage Component", () => {
 
   it("should propagate data to the reading-exercise component", () => {
     const component = new ReadingPage({
-      cantonesePhrase: "你好",
-      romanization: "nei5 hou2",
-      translation: "Hello",
+      data: {
+        cantonesePhrase: "你好",
+        romanization: "nei5 hou2",
+        translation: "Hello",
+      },
     });
 
-    // Accessing internal class instance from the element's shadowRoot if needed,
-    // but in our refactor, the ID is set on the element.
-    // However, the test expects to check 'data' property.
-    // Since 'exercise' is a Component instance's element, it won't have .data unless we attached it.
-    // Wait, in my refactor: this._exercise = new ReadingExercise(); this._exercise.element.id = "exercise";
-    // So `exercise` variable here is the HTMLElement.
-    // But the class instance is `component._exercise`.
     expect(component._exercise.data.cantonesePhrase).toBe("你好");
     expect(component._exercise.data.romanization).toBe("nei5 hou2");
     expect(component._exercise.data.translation).toBe("Hello");
@@ -41,15 +38,17 @@ describe("ReadingPage Component", () => {
       romanization: "nei5 hou2",
       translation: "Hello",
     };
-    const component = new ReadingPage(testData);
+    const component = new ReadingPage({ data: testData });
     expect(component.data).toEqual(testData);
   });
 
   it("should reveal the answer when primary button is clicked in initial state", () => {
     const component = new ReadingPage({
-      cantonesePhrase: "你好",
-      romanization: "nei5 hou2",
-      translation: "Hello",
+      data: {
+        cantonesePhrase: "你好",
+        romanization: "nei5 hou2",
+        translation: "Hello",
+      },
     });
 
     const footer = component._footer;
@@ -72,9 +71,11 @@ describe("ReadingPage Component", () => {
 
   it("should dispatch reading-result when clicked in revealed state", () => {
     const component = new ReadingPage({
-      cantonesePhrase: "你好",
-      romanization: "nei5 hou2",
-      translation: "Hello",
+      data: {
+        cantonesePhrase: "你好",
+        romanization: "nei5 hou2",
+        translation: "Hello",
+      },
     });
 
     const footer = component._footer;
@@ -106,7 +107,7 @@ describe("ReadingPage Component", () => {
     it("should log error if required data properties are missing", () => {
       const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      new ReadingPage();
+      new ReadingPage({ data: {} });
 
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining("Missing required data property"),

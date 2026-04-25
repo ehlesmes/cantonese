@@ -13,7 +13,7 @@ Acts as the central controller:
 - **Input:** Takes a `lessonId` via its `data` property.
 - **Fetching:** Coordinates the loading of lesson maps, explanation bundles, and atomic exercises.
 - **State:** Tracks `currentPageIndex` and maintains the "memory" of loaded content.
-- **Factory:** Dynamically creates page components (`reading-page`, `unscramble-page`, `explanation-page`) using `document.createElement()`.
+- **Factory:** Dynamically creates page components (`ReadingPage`, `UnscramblePage`, `ExplanationPage`) via the `PageRegistry`.
 - **UI Wrapper:** Contains the `lesson-header` and a main container for dynamic page injection.
 
 ### 2. Navigation Flow

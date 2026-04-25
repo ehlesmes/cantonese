@@ -1,8 +1,8 @@
-import { Component } from "/components/shared/component.js";
+import { Component } from "../../shared/component.js";
 
 export class Tooltip extends Component {
   constructor() {
-    super("/components/ui/tooltip/style.css");
+    super({ cssPath: "./style.css", baseUrl: import.meta.url });
 
     const container = document.createElement("div");
     container.className = "tooltip-container";

@@ -1,14 +1,14 @@
-import { Component } from "/components/shared/component.js";
-import { iconStyles } from "/components/shared/shared_assets.js";
-import { IconButton } from "/components/ui/icon_button/icon_button.js";
+import { Component } from "../shared/component.js";
+import { iconStyles } from "../shared/shared_assets.js";
+import { IconButton } from "../ui/icon_button/icon_button.js";
 
 /**
  * LessonControls Component
  * A reusable UI element for lesson navigation and actions.
  */
 export class LessonControls extends Component {
-  constructor() {
-    super("/components/lesson_controls/style.css");
+  constructor(config = {}) {
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
     this._container = document.createElement("div");
@@ -57,5 +57,7 @@ export class LessonControls extends Component {
     this._prevBtn.element.onclick = () => this.dispatch("prev");
     this._nextBtn.element.onclick = () => this.dispatch("next");
     this._closeBtn.element.onclick = () => this.dispatch("close");
+
+    this.update();
   }
 }

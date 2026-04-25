@@ -1,24 +1,35 @@
 /**
  * Base class for all UI components.
- * Manages the root element, shadow DOM, and basic data updates.
+ * Manages the root element (always a <div>), shadow DOM, and basic data updates.
  */
 export class Component {
   /**
-   * @param {string} [cssPath] - Optional path to a stylesheet to load in the shadow DOM.
-   * @param {string} [tagName="div"] - The tag name for the root element.
+   * @param {Object} [config]
+   * @param {string} [config.cssPath] - Optional path to a stylesheet relative to the component.
+   * @param {string} [config.baseUrl] - Base URL to resolve relative cssPath (usually import.meta.url).
+   * @param {Object} [config.data] - Initial data for the component.
    */
-  constructor(cssPath, tagName = "div") {
-    this.element = document.createElement(tagName);
+  constructor(config = {}) {
+    this.element = document.createElement("div");
     this.shadowRoot = this.element.attachShadow({ mode: "open" });
+
+    const { cssPath, baseUrl, data, ...rest } = config;
 
     if (cssPath) {
       const link = document.createElement("link");
       link.rel = "stylesheet";
-      link.href = cssPath;
+
+      if (baseUrl && !cssPath.startsWith("/") && !cssPath.includes("://")) {
+        link.href = new URL(cssPath, baseUrl).href;
+      } else {
+        link.href = cssPath;
+      }
+
       this.shadowRoot.appendChild(link);
     }
 
-    this._data = {};
+    this._data = data || rest || {};
+    // Subclasses should call update() at the end of their constructor
   }
 
   get data() {

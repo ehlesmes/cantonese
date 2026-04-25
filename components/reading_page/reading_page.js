@@ -1,16 +1,14 @@
-import { Component } from "/components/shared/component.js";
-import { ReadingExercise } from "/components/reading_exercise/reading_exercise.js";
-import { LessonFooter } from "/components/lesson_footer/lesson_footer.js";
+import { Component } from "../shared/component.js";
+import { ReadingExercise } from "../reading_exercise/reading_exercise.js";
+import { LessonFooter } from "../lesson_footer/lesson_footer.js";
+import { PageRegistry } from "../shared/page_registry.js";
 
 export class ReadingPage extends Component {
   /**
-   * @param {Object} [options]
-   * @param {string} [options.cantonesePhrase]
-   * @param {string} [options.romanization]
-   * @param {string} [options.translation]
+   * @param {Object} [config]
    */
-  constructor(options = {}) {
-    super("/components/reading_page/style.css");
+  constructor(config = {}) {
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
 
     this._state = "initial"; // initial, revealed
 
@@ -18,12 +16,13 @@ export class ReadingPage extends Component {
     container.className = "page-container";
 
     const main = document.createElement("main");
-    this._exercise = new ReadingExercise(options);
+    // Initial exercise setup. Its data will be set in update()
+    this._exercise = new ReadingExercise();
     this._exercise.element.id = "exercise";
     main.appendChild(this._exercise.element);
     container.appendChild(main);
 
-    this._footer = new LessonFooter({ primaryText: "Reveal Answer" });
+    this._footer = new LessonFooter({ data: { primaryText: "Reveal Answer" } });
     this._footer.element.id = "footer";
     container.appendChild(this._footer.element);
 
@@ -36,9 +35,7 @@ export class ReadingPage extends Component {
       this._handleSecondaryClick(),
     );
 
-    if (Object.keys(options).length > 0) {
-      this.data = options;
-    }
+    this.update();
   }
 
   validate() {
@@ -93,3 +90,5 @@ export class ReadingPage extends Component {
     }
   }
 }
+
+PageRegistry.set("reading", ReadingPage);

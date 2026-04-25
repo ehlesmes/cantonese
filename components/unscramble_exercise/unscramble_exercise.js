@@ -1,17 +1,18 @@
-import { Component } from "/components/shared/component.js";
-import { iconStyles } from "/components/shared/shared_assets.js";
-import { speakCantonese } from "/components/shared/tts.js";
-import { IconButton } from "/components/ui/icon_button/icon_button.js";
-import { Tooltip } from "/components/ui/tooltip/tooltip.js";
+import { Component } from "../shared/component.js";
+import { iconStyles } from "../shared/shared_assets.js";
+import { speakCantonese } from "../shared/tts.js";
+import { IconButton } from "../ui/icon_button/icon_button.js";
+import { Tooltip } from "../ui/tooltip/tooltip.js";
 
 export class UnscrambleExercise extends Component {
   /**
-   * @param {Object} [options]
-   * @param {Array<[string, string]>} [options.tokens]
-   * @param {string} [options.translation]
+   * @param {Object} [config]
+   * @param {Object} [config.data]
+   * @param {Array<[string, string]>} [config.data.tokens]
+   * @param {string} [config.data.translation]
    */
-  constructor(options = {}) {
-    super("/components/unscramble_exercise/style.css");
+  constructor(config = {}) {
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
     this._container = document.createElement("div");
@@ -51,7 +52,10 @@ export class UnscrambleExercise extends Component {
     this._slots = [];
     this._status = "incomplete";
 
-    this.data = options;
+    if (this._data.tokens) {
+      this._setTokens(this._data.tokens);
+    }
+    this.update();
   }
 
   get status() {
