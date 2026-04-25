@@ -3,7 +3,6 @@ import { iconStyles } from "../shared/shared_assets.js";
 import { speakCantonese } from "../shared/tts.js";
 import { IconButton } from "../ui/icon_button/icon_button.js";
 import { Tooltip } from "../ui/tooltip/tooltip.js";
-import { ValidationError } from "../shared/validation_error.js";
 
 /**
  * ReadingExercise Component
@@ -19,7 +18,7 @@ export class ReadingExercise extends Component {
    * @param {boolean} [config.data.translationHidden]
    */
   constructor(config = {}) {
-    super(config, import.meta.url);
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
     this._container = document.createElement("div");
@@ -28,17 +27,17 @@ export class ReadingExercise extends Component {
     const phraseContainer = document.createElement("div");
     phraseContainer.className = "phrase-container";
 
+    this._tooltip = new Tooltip();
+
     this._cantoneseEl = document.createElement("div");
+    this._cantoneseEl.slot = "trigger";
     this._cantoneseEl.className = "cantonese-text";
+    this._tooltip.element.appendChild(this._cantoneseEl);
 
     this._romanizationEl = document.createElement("span");
+    this._romanizationEl.slot = "content";
     this._romanizationEl.className = "romanization-text";
-
-    this._tooltip = new Tooltip({
-      trigger: this._cantoneseEl,
-      content: this._romanizationEl,
-    });
-    this._tooltip.element.id = "tooltip";
+    this._tooltip.element.appendChild(this._romanizationEl);
 
     phraseContainer.appendChild(this._tooltip.element);
 
@@ -69,7 +68,7 @@ export class ReadingExercise extends Component {
     const required = ["cantonesePhrase", "romanization", "translation"];
     required.forEach((prop) => {
       if (!this._data[prop]) {
-        throw new ValidationError(
+        console.error(
           `🚨 [ReadingExercise ERROR]: Missing required data property '${prop}'!`,
         );
       }
@@ -77,12 +76,13 @@ export class ReadingExercise extends Component {
   }
 
   update() {
+    this.validate();
     const { cantonesePhrase, romanization, translation, translationHidden } =
       this._data;
 
-    this._cantoneseEl.textContent = cantonesePhrase;
-    this._romanizationEl.textContent = romanization;
-    this._translationEl.textContent = translation;
+    this._cantoneseEl.textContent = cantonesePhrase || "";
+    this._romanizationEl.textContent = romanization || "";
+    this._translationEl.textContent = translation || "";
     this._translationEl.classList.toggle("hidden", Boolean(translationHidden));
   }
 

@@ -8,7 +8,7 @@ import { IconButton } from "../ui/icon_button/icon_button.js";
  */
 export class LessonControls extends Component {
   constructor(config = {}) {
-    super(config, import.meta.url);
+    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
     this._container = document.createElement("div");
@@ -57,5 +57,7 @@ export class LessonControls extends Component {
     this._prevBtn.element.onclick = () => this.dispatch("prev");
     this._nextBtn.element.onclick = () => this.dispatch("next");
     this._closeBtn.element.onclick = () => this.dispatch("close");
+
+    this.update();
   }
 }

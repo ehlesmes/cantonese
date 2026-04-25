@@ -7,14 +7,13 @@ import { ValidationError } from "../shared/validation_error.js";
 
 export class ExampleCard extends Component {
   /**
-   * @param {Object} [config]
-   * @param {Object} [config.data]
-   * @param {string} [config.data.cantonese]
-   * @param {string} [config.data.romanization]
-   * @param {string} [config.data.translation]
+   * @param {Object} [data]
+   * @param {string} [data.cantonese]
+   * @param {string} [data.romanization]
+   * @param {string} [data.translation]
    */
-  constructor(config = {}) {
-    super(config, import.meta.url);
+  constructor(data) {
+    super(import.meta.url);
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
     this._wrapper = document.createElement("div");

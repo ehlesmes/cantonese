@@ -54,6 +54,7 @@ describe("UnscrambleExercise Component", () => {
 
     // Tokens are now just Tooltip elements (their elements)
     const poolToken = component.shadowRoot.querySelector("#pool > *");
+    expect(poolToken).toBe('1');
     const completeSpy = vi.fn();
     component.element.addEventListener("complete", completeSpy);
 
@@ -65,7 +66,6 @@ describe("UnscrambleExercise Component", () => {
     const slotTokens = slotChildren.map((el) =>
       el.shadowRoot.querySelector(".token-text"),
     );
-    console.info(component.shadowRoot.innerHTML);
     expect(slotTokens.length).toBe(1);
     expect(slotTokens[0].textContent).toBe("你");
     expect(

@@ -1,36 +1,34 @@
 import { Component } from "../../shared/component.js";
-import { ValidationError } from "../../shared/validation_error.js";
+import {ValidationError} from "../../shared/validation_error.js";
 
 export class Tooltip extends Component {
-  constructor(data = {}) {
-    super(data, import.meta.url);
+  constructor(data) {
+    super(import.meta.url);
+
+    this.validate(data, ['trigger', 'content']);
 
     const container = document.createElement("div");
     container.className = "tooltip-container";
 
-    container.appendChild(this._data.trigger);
+    const triggerSlot = document.createElement("slot");
+    triggerSlot.name = "trigger";
+    container.appendChild(triggerSlot);
 
     const tooltipDiv = document.createElement("div");
     tooltipDiv.className = "tooltip";
 
-    container.appendChild(this._data.content);
+    const contentSlot = document.createElement("slot");
+    contentSlot.name = "content";
+    tooltipDiv.appendChild(contentSlot);
 
     container.appendChild(tooltipDiv);
 
     this.shadowRoot.appendChild(container);
-  }
 
-  validate() {
-    const required = ["trigger", "content"];
-    required.forEach((prop) => {
-      if (!this._data[prop]) {
-        throw new ValidationError(`Missing required data property '${prop}'!`);
-      }
-    });
-  }
+    data.trigger.slot = 'trigger';
+    data.content.slot = 'content';
 
-  update(oldData) {
-    oldData.trigger.replaceWith(this._data.trigger);
-    oldData.content.replaceWith(this._data.content);
+    this.element.appendChild(data.trigger);
+    this.element.appendChild(data.content);
   }
 }

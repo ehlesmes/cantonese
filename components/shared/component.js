@@ -4,17 +4,20 @@
  */
 export class Component {
   /**
-   * @param {Object} [data] - Initial data for the component.
-   * @param {string} [cssPath] - Optional path to a stylesheet relative to the component.
    * @param {string} [baseUrl] - Base URL to resolve relative cssPath (usually import.meta.url).
    */
-  constructor(data, baseUrl) {
+  constructor(baseUrl) {
     this.element = document.createElement("div");
     this.shadowRoot = this.element.attachShadow({ mode: "open" });
-    this.addStyles("./styles.css", baseUrl);
+    this.addStyles("./style.css", baseUrl);
+  }
 
-    this._data = data;
-    this.validate();
+  validate(data, properties) {
+    properties.forEach(name => {
+      if (!data[name]) {
+        throw new ValidationError(`Missing property: ${name}`);
+      }
+    });
   }
 
   addStyles(cssPath, baseUrl) {
@@ -27,33 +30,6 @@ export class Component {
       link.href = cssPath;
     }
     this.shadowRoot.appendChild(link);
-  }
-
-  get data() {
-    return this._data;
-  }
-
-  set data(val) {
-    const oldData = this._data;
-    this._data = { ...this._data, ...val };
-    this.validate();
-    this.update(oldData);
-  }
-
-  /**
-   * To be overridden by subclasses.
-   * Called whenever data is set.
-   */
-  validate() {
-    // Override in subclass.
-  }
-
-  /**
-   * To be overridden by subclasses.
-   * Called whenever data is set.
-   */
-  update(_oldData) {
-    // Override in subclass
   }
 
   /**

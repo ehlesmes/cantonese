@@ -2,35 +2,37 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { Tooltip } from "./tooltip.js";
 
 describe("Tooltip Component", () => {
+  const trigger = document.createElement('span');
+  trigger.innerText = 'Hover me';
+
+  const content = document.createElement('div');
+  content.innerText = 'Tooltip info';
+
   beforeEach(() => {
     document.body.innerHTML = "";
   });
 
   it("should be defined", () => {
-    const component = new Tooltip({
-      trigger: document.createElement("div"),
-      content: document.createElement("div"),
-    });
+    const component = new Tooltip({trigger, content});
     expect(component).toBeInstanceOf(Tooltip);
     expect(component.element).toBeInstanceOf(HTMLElement);
     expect(component.shadowRoot).not.toBeNull();
   });
 
   it("should render slots correctly", () => {
-    const trigger = document.createElement("span");
-    trigger.id = "trigger";
-    trigger.innerText = "Hover me";
-    const content = document.createElement("div");
-    content.id = "content";
-    content.innerText = "Tooltip info";
+    const component = new Tooltip({trigger, content});
 
-    const component = new Tooltip({ trigger, content });
+    const triggerSlot = component.shadowRoot.querySelector('slot[name="trigger"]');
+    const contentSlot = component.shadowRoot.querySelector('slot[name="content"]');
 
-    expect(component.shadowRoot.querySelector("#trigger").textContent).toBe(
-      "Hover me",
-    );
-    expect(component.shadowRoot.querySelector("#content").textContent).toBe(
-      "Tooltip info",
-    );
+    expect(triggerSlot).not.toBeNull();
+    expect(contentSlot).not.toBeNull();
+
+    // The slotted elements should be assigned to the slots
+    const assignedTrigger = triggerSlot.assignedNodes()[0];
+    const assignedContent = contentSlot.assignedNodes()[0];
+
+    expect(assignedTrigger.textContent).toBe("Hover me");
+    expect(assignedContent.textContent).toBe("Tooltip info");
   });
 });
