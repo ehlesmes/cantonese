@@ -18,6 +18,8 @@ export class IconButton extends Component {
     // Apply shared icon font styles
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
+    this.validate(data, ['title', 'icon']);
+
     const {title, icon, filled, disabled} = this.validate(data);
 
     this._disabled = disabled;
@@ -45,15 +47,5 @@ export class IconButton extends Component {
         return;
       }
     };
-  }
-
-  validate(data) {
-    const required = ["title", "icon"];
-    required.forEach((prop) => {
-      if (!data[prop]) {
-        throw new ValidationError(`Missing required data property '${prop}'!`);
-      }
-    });
-    return data;
   }
 }

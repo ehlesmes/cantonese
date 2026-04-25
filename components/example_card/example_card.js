@@ -6,15 +6,19 @@ import { Tooltip } from "../ui/tooltip/tooltip.js";
 
 export class ExampleCard extends Component {
   /**
-   * @param {Object} [config]
-   * @param {Object} [config.data]
-   * @param {string} [config.data.cantonese]
-   * @param {string} [config.data.romanization]
-   * @param {string} [config.data.translation]
+   * @param {Object} [data]
+   * @param {string} [data.cantonese]
+   * @param {string} [data.romanization]
+   * @param {string} [data.translation]
    */
-  constructor(config = {}) {
-    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
+  constructor(data) {
+    super(import.meta.url);
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
+
+    this.validate(data, ['cantonese', 'romanization', 'translation']);
+
+    const { cantonese, romanization, translation } = data;
+    this._cantonese = cantonese;
 
     this._wrapper = document.createElement("div");
     this._wrapper.className = "example-wrapper";
@@ -27,17 +31,16 @@ export class ExampleCard extends Component {
     const contentRow = document.createElement("div");
     contentRow.className = "content-row";
 
-    this._tooltip = new Tooltip();
-
     this._cantoneseEl = document.createElement("div");
-    this._cantoneseEl.slot = "trigger";
     this._cantoneseEl.className = "cantonese-text";
-    this._tooltip.element.appendChild(this._cantoneseEl);
+    this._cantoneseEl.textContent = cantonese;
 
     this._romanizationEl = document.createElement("span");
-    this._romanizationEl.slot = "content";
     this._romanizationEl.className = "romanization-text";
-    this._tooltip.element.appendChild(this._romanizationEl);
+    this._romanizationEl.textContent = romanization;
+
+    this._tooltip = new Tooltip({trigger: this._cantoneseEl, content:
+    this._romanizationEl});
 
     contentRow.appendChild(this._tooltip.element);
 
@@ -52,41 +55,15 @@ export class ExampleCard extends Component {
 
     this._translationEl = document.createElement("div");
     this._translationEl.className = "translation-text";
+    this._translationEl.textContent = translation;
     this._wrapper.appendChild(this._translationEl);
 
     this.shadowRoot.appendChild(this._wrapper);
 
     this._playBtn.element.onclick = () => this.playAudio();
-
-    this.update();
-  }
-
-  validate() {
-    const required = ["cantonese", "romanization", "translation"];
-    required.forEach((prop) => {
-      if (!this._data[prop]) {
-        console.error(
-          `🚨 [ExampleCard ERROR]: Missing required data property '${prop}'!`,
-        );
-      }
-    });
-  }
-
-  update() {
-    this.validate();
-    const { cantonese, romanization, translation } = this._data;
-
-    if (this._cantoneseEl) this._cantoneseEl.textContent = cantonese || "";
-    if (this._romanizationEl)
-      this._romanizationEl.textContent = romanization || "";
-    if (this._translationEl)
-      this._translationEl.textContent = translation || "";
   }
 
   playAudio() {
-    const { cantonese } = this._data;
-    if (cantonese) {
-      speakCantonese(cantonese);
-    }
+    speakCantonese(this._cantonese);
   }
 }
