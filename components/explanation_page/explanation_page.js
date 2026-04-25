@@ -2,13 +2,14 @@ import { Component } from "../shared/component.js";
 import { LessonFooter } from "../lesson_footer/lesson_footer.js";
 import { ExampleCard } from "../example_card/example_card.js";
 import { PageRegistry } from "../shared/page_registry.js";
+import { ValidationError } from "../shared/validation_error.js";
 
 export class ExplanationPage extends Component {
   /**
    * @param {Object} [config]
    */
   constructor(config = {}) {
-    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
+    super(config, import.meta.url);
 
     const container = document.createElement("div");
     container.className = "page-container";
@@ -17,10 +18,12 @@ export class ExplanationPage extends Component {
     this._contentWrapper = document.createElement("div");
     this._contentWrapper.className = "content-wrapper";
     this._contentWrapper.id = "content";
+    this.update();
+
     main.appendChild(this._contentWrapper);
     container.appendChild(main);
 
-    this._footer = new LessonFooter({ data: { primaryText: "Continue" } });
+    this._footer = new LessonFooter({ primaryText: "Continue" });
     container.appendChild(this._footer.element);
 
     this.shadowRoot.appendChild(container);
@@ -28,28 +31,18 @@ export class ExplanationPage extends Component {
     this.element.addEventListener("primary-click", () => {
       this.dispatch("explanation-complete");
     });
-
-    this.update();
   }
 
   validate() {
     if (!this._data.content || this._data.content.length === 0) {
-      console.error(
-        "🚨 [ExplanationPage ERROR]: Missing required data property 'content'!",
-      );
+      throw new ValidationError("Missing required data property 'content'!");
     }
   }
 
   update() {
-    this.validate();
-
-    if (this._footer) {
-      this._footer.data = { primaryText: "Continue" };
-    }
-
     this._contentWrapper.innerHTML = ""; // Clear existing content
 
-    const content = this._data.content || [];
+    const content = this._data.content;
     content.forEach((chunk) => {
       let el;
       switch (chunk.type) {
@@ -73,7 +66,7 @@ export class ExplanationPage extends Component {
           break;
         }
         default:
-          console.warn(
+          throw new ValidationError(
             `⚠️ [ExplanationPage]: Unknown chunk type "${chunk.type}"`,
           );
       }
