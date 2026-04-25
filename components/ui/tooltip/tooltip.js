@@ -3,7 +3,7 @@ import { ValidationError } from "../../shared/validation_error.js";
 
 export class Tooltip extends Component {
   constructor(data = {}) {
-    super(data, "./style.css", import.meta.url);
+    super(data, import.meta.url);
 
     const container = document.createElement("div");
     container.className = "tooltip-container";

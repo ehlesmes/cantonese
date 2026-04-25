@@ -8,25 +8,25 @@ export class Component {
    * @param {string} [cssPath] - Optional path to a stylesheet relative to the component.
    * @param {string} [baseUrl] - Base URL to resolve relative cssPath (usually import.meta.url).
    */
-  constructor(data, cssPath, baseUrl) {
+  constructor(data, baseUrl) {
     this.element = document.createElement("div");
     this.shadowRoot = this.element.attachShadow({ mode: "open" });
-
-    if (cssPath) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-
-      if (baseUrl && !cssPath.startsWith("/") && !cssPath.includes("://")) {
-        link.href = new URL(cssPath, baseUrl).href;
-      } else {
-        link.href = cssPath;
-      }
-
-      this.shadowRoot.appendChild(link);
-    }
+    this.addStyles("./styles.css", baseUrl);
 
     this._data = data;
     this.validate();
+  }
+
+  addStyles(cssPath, baseUrl) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+
+    if (baseUrl && !cssPath.startsWith("/") && !cssPath.includes("://")) {
+      link.href = new URL(cssPath, baseUrl).href;
+    } else {
+      link.href = cssPath;
+    }
+    this.shadowRoot.appendChild(link);
   }
 
   get data() {

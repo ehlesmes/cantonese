@@ -26,10 +26,10 @@ describe("Tooltip Component", () => {
 
     const component = new Tooltip({ trigger, content });
 
-    expect(component.element.querySelector("#trigger").textContent).toBe(
+    expect(component.shadowRoot.querySelector("#trigger").textContent).toBe(
       "Hover me",
     );
-    expect(component.element.querySelector("#content").textContent).toBe(
+    expect(component.shadowRoot.querySelector("#content").textContent).toBe(
       "Tooltip info",
     );
   });

@@ -22,3 +22,8 @@ iconStyles.replaceSync(`
   font-feature-settings: 'liga';
 }
 `);
+
+export const buttonStyles = {
+  outline: "btn-outline",
+  filled: "btn-filled",
+};

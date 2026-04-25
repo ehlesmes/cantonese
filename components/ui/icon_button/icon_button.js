@@ -1,36 +1,36 @@
 import { Component } from "../../shared/component.js";
-import { iconStyles } from "../../shared/shared_assets.js";
+import { iconStyles, buttonStyles } from "../../shared/shared_assets.js";
+import { ValidationError } from "../../shared/validation_error.js";
 
 export class IconButton extends Component {
   /**
-   * @param {Object} [config]
-   * @param {Object} [config.data]
-   * @param {string} [config.data.title]
-   * @param {boolean} [config.data.disabled]
-   * @param {"filled"|"outline"} [config.data.variant]
-   * @param {string} [config.data.icon]
+   * @param {Object} [data]
+   * @param {string} [data.title]
+   * @param {string} [data.icon]
+   * @param {boolean} [data.filled]
+   * @param {boolean} [data.disabled]
    */
-  constructor(config = {}) {
-    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
+  constructor(data = {}) {
+    super(data, import.meta.url);
 
-    // Add base button styles
-    const baseStyle = document.createElement("link");
-    baseStyle.rel = "stylesheet";
-    baseStyle.href = new URL("../../shared/button.css", import.meta.url).href;
-    this.shadowRoot.appendChild(baseStyle);
+    this.addStyles("../../shared/button.css", import.meta.url);
 
     // Apply shared icon font styles
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
     this._btn = document.createElement("button");
+    this._btn.title = this._data.title;
+    this._btn.disabled = Boolean(this._data.disabled);
     this._btn.className = "btn-base icon-button";
+    this._btn.classList.add(
+      this._data.filled ? buttonStyles.filled : buttonStyles.outlined,
+    );
 
-    const iconSpan = document.createElement("span");
-    iconSpan.className = "material-symbols-outlined";
+    this._iconSpan = document.createElement("span");
+    this._iconSpan.textContent = this._data.icon;
+    this._iconSpan.className = "material-symbols-outlined";
 
-    const slot = document.createElement("slot");
-    iconSpan.appendChild(slot);
-    this._btn.appendChild(iconSpan);
+    this._btn.appendChild(this._iconSpan);
 
     this.shadowRoot.appendChild(this._btn);
 
@@ -41,27 +41,25 @@ export class IconButton extends Component {
         return;
       }
     };
+  }
 
-    this.update();
+  validate() {
+    const required = ["title", "icon"];
+    required.forEach((prop) => {
+      if (!this._data[prop]) {
+        throw new ValidationError(`Missing required data property '${prop}'!`);
+      }
+    });
   }
 
   update() {
-    const { title, disabled, variant = "outline", icon } = this._data;
+    this._btn.title = this.data.title;
+    this._btn.disabled = Boolean(this.data.disabled);
 
-    if (this._btn) {
-      this._btn.title = title || "";
-      if (disabled) {
-        this._btn.disabled = true;
-      } else {
-        this._btn.disabled = false;
-      }
-
-      this._btn.classList.remove("btn-filled", "btn-outline");
-      this._btn.classList.add(`btn-${variant}`);
-    }
-
-    if (icon && this.element.textContent !== icon) {
-      this.element.textContent = icon;
-    }
+    this._btn.classList.remove(buttonStyles.outline, buttonStyles.filled);
+    this._btn.classList.add(
+      this._data.filled ? buttonStyles.filled : buttonStyles.outline,
+    );
+    this._iconSpan.textContent = this._data.icon;
   }
 }
