@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { LessonHeader } from "./lesson_header.js";
 
 describe("LessonHeader Component", () => {
@@ -22,15 +22,9 @@ describe("LessonHeader Component", () => {
 
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
-      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-
-      new LessonHeader();
-
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property"),
-      );
-
-      errorSpy.mockRestore();
+      expect(() => {
+        new LessonHeader();
+      }).toThrowError("Missing required data property");
     });
   });
 });

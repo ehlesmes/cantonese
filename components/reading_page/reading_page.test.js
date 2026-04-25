@@ -8,11 +8,9 @@ describe("ReadingPage Component", () => {
 
   it("should be defined", () => {
     const component = new ReadingPage({
-      data: {
-        cantonesePhrase: "test",
-        romanization: "test",
-        translation: "test",
-      },
+      cantonesePhrase: "test",
+      romanization: "test",
+      translation: "test",
     });
     expect(component).toBeInstanceOf(ReadingPage);
     expect(component.shadowRoot).not.toBeNull();
@@ -20,11 +18,9 @@ describe("ReadingPage Component", () => {
 
   it("should propagate data to the reading-exercise component", () => {
     const component = new ReadingPage({
-      data: {
-        cantonesePhrase: "你好",
-        romanization: "nei5 hou2",
-        translation: "Hello",
-      },
+      cantonesePhrase: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
     });
 
     expect(component._exercise.data.cantonesePhrase).toBe("你好");
@@ -38,17 +34,15 @@ describe("ReadingPage Component", () => {
       romanization: "nei5 hou2",
       translation: "Hello",
     };
-    const component = new ReadingPage({ data: testData });
+    const component = new ReadingPage(testData);
     expect(component.data).toEqual(testData);
   });
 
   it("should reveal the answer when primary button is clicked in initial state", () => {
     const component = new ReadingPage({
-      data: {
-        cantonesePhrase: "你好",
-        romanization: "nei5 hou2",
-        translation: "Hello",
-      },
+      cantonesePhrase: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
     });
 
     const footer = component._footer;
@@ -71,11 +65,9 @@ describe("ReadingPage Component", () => {
 
   it("should dispatch reading-result when clicked in revealed state", () => {
     const component = new ReadingPage({
-      data: {
-        cantonesePhrase: "你好",
-        romanization: "nei5 hou2",
-        translation: "Hello",
-      },
+      cantonesePhrase: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
     });
 
     const footer = component._footer;
@@ -105,15 +97,9 @@ describe("ReadingPage Component", () => {
 
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
-      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-
-      new ReadingPage({ data: {} });
-
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property"),
-      );
-
-      errorSpy.mockRestore();
+      expect(() => {
+        new ReadingPage({ data: {} });
+      }).toThrowError("Missing required data property");
     });
   });
 });

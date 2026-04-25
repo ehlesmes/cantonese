@@ -3,6 +3,7 @@ import { iconStyles } from "../shared/shared_assets.js";
 import { speakCantonese } from "../shared/tts.js";
 import { IconButton } from "../ui/icon_button/icon_button.js";
 import { Tooltip } from "../ui/tooltip/tooltip.js";
+import { ValidationError } from "../shared/validation_error.js";
 
 export class UnscrambleExercise extends Component {
   /**
@@ -12,7 +13,7 @@ export class UnscrambleExercise extends Component {
    * @param {string} [config.data.translation]
    */
   constructor(config = {}) {
-    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
+    super(config, import.meta.url);
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
     this._container = document.createElement("div");
@@ -55,36 +56,22 @@ export class UnscrambleExercise extends Component {
     if (this._data.tokens) {
       this._setTokens(this._data.tokens);
     }
-    this.update();
+    this._translationEl.textContent = this._data.translation;
+    this.render();
   }
 
   get status() {
     return this._status;
   }
 
-  get data() {
-    return this._data;
-  }
-
-  set data(val) {
-    const oldTokensJson = JSON.stringify(this._data.tokens || []);
-    this._data = { ...this._data, ...val };
-    const newTokensJson = JSON.stringify(this._data.tokens || []);
-
-    if (oldTokensJson !== newTokensJson) {
-      this._setTokens(this._data.tokens);
-    }
-    this.update();
-  }
-
   validate() {
     if (!this._data.tokens || this._data.tokens.length === 0) {
-      console.error(
+      throw new ValidationError(
         "🚨 [UnscrambleExercise ERROR]: Missing required data property 'tokens'!",
       );
     }
     if (!this._data.translation) {
-      console.error(
+      throw new ValidationError(
         "🚨 [UnscrambleExercise ERROR]: Missing required data property 'translation'!",
       );
     }
@@ -101,9 +88,14 @@ export class UnscrambleExercise extends Component {
     this._calculateStatus();
   }
 
-  update() {
-    this.validate();
-    this._translationEl.textContent = this._data.translation || "";
+  update(oldData) {
+    const oldTokensJson = JSON.stringify(oldData.tokens);
+    const newTokensJson = JSON.stringify(this._data.tokens);
+
+    if (oldTokensJson !== newTokensJson) {
+      this._setTokens(this._data.tokens);
+    }
+    this._translationEl.textContent = this._data.translation;
     this.render();
   }
 
@@ -132,10 +124,7 @@ export class UnscrambleExercise extends Component {
   }
 
   createTokenElement(token) {
-    const tooltip = new Tooltip();
-
     const trigger = document.createElement("div");
-    trigger.slot = "trigger";
     trigger.className = "token";
 
     const textSpan = document.createElement("span");
@@ -144,11 +133,9 @@ export class UnscrambleExercise extends Component {
     trigger.appendChild(textSpan);
 
     const content = document.createElement("span");
-    content.slot = "content";
     content.textContent = token.romanization;
 
-    tooltip.element.appendChild(trigger);
-    tooltip.element.appendChild(content);
+    const tooltip = new Tooltip({ trigger, content });
 
     return tooltip.element;
   }
