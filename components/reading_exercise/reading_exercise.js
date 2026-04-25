@@ -19,8 +19,8 @@ export class ReadingExercise extends Component {
     super(import.meta.url);
     this.shadowRoot.adoptedStyleSheets = [iconStyles];
 
-    this.validate(data, ['cantonese', 'romanization', 'translation']);
-    const {cantonese, romanization, translation} = data;
+    this.validate(data, ["cantonese", "romanization", "translation"]);
+    const { cantonese, romanization, translation } = data;
     this._cantonese = cantonese;
 
     this._container = document.createElement("div");
@@ -37,8 +37,10 @@ export class ReadingExercise extends Component {
     this._romanizationEl.className = "romanization-text";
     this._romanizationEl.textContent = romanization;
 
-    this._tooltip = new Tooltip({trigger: this._cantoneseEl, content:
-    this._romanizationEl});
+    this._tooltip = new Tooltip({
+      trigger: this._cantoneseEl,
+      content: this._romanizationEl,
+    });
 
     phraseContainer.appendChild(this._tooltip.element);
 

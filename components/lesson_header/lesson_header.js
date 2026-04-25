@@ -9,8 +9,8 @@ export class LessonHeader extends Component {
   constructor(data) {
     super(import.meta.url);
 
-    this.validate(data, ['lessonName']);
-    const {lessonName} = data;
+    this.validate(data, ["lessonName"]);
+    const { lessonName } = data;
 
     const header = document.createElement("header");
 
