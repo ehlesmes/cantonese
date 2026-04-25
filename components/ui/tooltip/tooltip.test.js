@@ -2,41 +2,35 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { Tooltip } from "./tooltip.js";
 
 describe("Tooltip Component", () => {
-  let component;
-
   beforeEach(() => {
     document.body.innerHTML = "";
-    component = new Tooltip();
-    document.body.appendChild(component.element);
   });
 
   it("should be defined", () => {
+    const component = new Tooltip({
+      trigger: document.createElement("div"),
+      content: document.createElement("div"),
+    });
     expect(component).toBeInstanceOf(Tooltip);
     expect(component.element).toBeInstanceOf(HTMLElement);
     expect(component.shadowRoot).not.toBeNull();
   });
 
   it("should render slots correctly", () => {
-    component.element.innerHTML = `
-      <span slot="trigger">Hover me</span>
-      <div slot="content">Tooltip info</div>
-    `;
+    const trigger = document.createElement("span");
+    trigger.id = "trigger";
+    trigger.innerText = "Hover me";
+    const content = document.createElement("div");
+    content.id = "content";
+    content.innerText = "Tooltip info";
 
-    const triggerSlot = component.shadowRoot.querySelector(
-      'slot[name="trigger"]',
+    const component = new Tooltip({ trigger, content });
+
+    expect(component.element.querySelector("#trigger").textContent).toBe(
+      "Hover me",
     );
-    const contentSlot = component.shadowRoot.querySelector(
-      'slot[name="content"]',
+    expect(component.element.querySelector("#content").textContent).toBe(
+      "Tooltip info",
     );
-
-    expect(triggerSlot).not.toBeNull();
-    expect(contentSlot).not.toBeNull();
-
-    expect(
-      component.element.querySelector('[slot="trigger"]').textContent,
-    ).toBe("Hover me");
-    expect(
-      component.element.querySelector('[slot="content"]').textContent,
-    ).toBe("Tooltip info");
   });
 });

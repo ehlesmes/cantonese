@@ -4,16 +4,13 @@
  */
 export class Component {
   /**
-   * @param {Object} [config]
-   * @param {string} [config.cssPath] - Optional path to a stylesheet relative to the component.
-   * @param {string} [config.baseUrl] - Base URL to resolve relative cssPath (usually import.meta.url).
-   * @param {Object} [config.data] - Initial data for the component.
+   * @param {Object} [data] - Initial data for the component.
+   * @param {string} [cssPath] - Optional path to a stylesheet relative to the component.
+   * @param {string} [baseUrl] - Base URL to resolve relative cssPath (usually import.meta.url).
    */
-  constructor(config = {}) {
+  constructor(data, cssPath, baseUrl) {
     this.element = document.createElement("div");
     this.shadowRoot = this.element.attachShadow({ mode: "open" });
-
-    const { cssPath, baseUrl, data, ...rest } = config;
 
     if (cssPath) {
       const link = document.createElement("link");
@@ -28,8 +25,8 @@ export class Component {
       this.shadowRoot.appendChild(link);
     }
 
-    this._data = data || rest || {};
-    // Subclasses should call update() at the end of their constructor
+    this._data = data;
+    this.validate();
   }
 
   get data() {
@@ -37,15 +34,25 @@ export class Component {
   }
 
   set data(val) {
+    const oldData = this._data;
     this._data = { ...this._data, ...val };
-    this.update();
+    this.validate();
+    this.update(oldData);
   }
 
   /**
    * To be overridden by subclasses.
    * Called whenever data is set.
    */
-  update() {
+  validate() {
+    // Override in subclass.
+  }
+
+  /**
+   * To be overridden by subclasses.
+   * Called whenever data is set.
+   */
+  update(_oldData) {
     // Override in subclass
   }
 

@@ -3,6 +3,7 @@ import { iconStyles } from "../shared/shared_assets.js";
 import { speakCantonese } from "../shared/tts.js";
 import { IconButton } from "../ui/icon_button/icon_button.js";
 import { Tooltip } from "../ui/tooltip/tooltip.js";
+import { ValidationError } from "../shared/validation_error.js";
 
 export class ExampleCard extends Component {
   /**
@@ -65,9 +66,7 @@ export class ExampleCard extends Component {
     const required = ["cantonese", "romanization", "translation"];
     required.forEach((prop) => {
       if (!this._data[prop]) {
-        console.error(
-          `🚨 [ExampleCard ERROR]: Missing required data property '${prop}'!`,
-        );
+        throw new ValidationError(`Missing required data property '${prop}'!`);
       }
     });
   }
@@ -76,17 +75,12 @@ export class ExampleCard extends Component {
     this.validate();
     const { cantonese, romanization, translation } = this._data;
 
-    if (this._cantoneseEl) this._cantoneseEl.textContent = cantonese || "";
-    if (this._romanizationEl)
-      this._romanizationEl.textContent = romanization || "";
-    if (this._translationEl)
-      this._translationEl.textContent = translation || "";
+    this._cantoneseEl.textContent = cantonese;
+    this._romanizationEl.textContent = romanization;
+    this._translationEl.textContent = translation;
   }
 
   playAudio() {
-    const { cantonese } = this._data;
-    if (cantonese) {
-      speakCantonese(cantonese);
-    }
+    speakCantonese(this._data.cantonese);
   }
 }
