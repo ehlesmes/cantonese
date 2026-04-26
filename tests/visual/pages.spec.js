@@ -49,4 +49,27 @@ test.describe("Page Component Visual Tests", () => {
     await page.waitForSelector(".page-container");
     await expect(page).toHaveScreenshot("explanation-page.png");
   });
+
+  test("Congratulations Page - With Next Lesson", async ({ page }) => {
+    await page.goto("/congratulations.html");
+    // Initial render is with next lesson
+    await page.waitForSelector(".page-container");
+    await expect(page).toHaveScreenshot("congratulations-with-next.png");
+  });
+
+  test("Congratulations Page - Without Next Lesson", async ({ page }) => {
+    await page.goto("/congratulations.html");
+    await page.waitForSelector(".page-container");
+    await page.click("text=Without Next Lesson");
+    // Wait a bit for re-render
+    await page.waitForTimeout(200);
+    await expect(page).toHaveScreenshot("congratulations-without-next.png");
+  });
+
+  test("Demo Lesson - Full View", async ({ page }) => {
+    await page.goto("/demo_lesson.html");
+    // Wait for content to load
+    await page.waitForSelector(".page-container");
+    await expect(page).toHaveScreenshot("demo-lesson-initial.png");
+  });
 });

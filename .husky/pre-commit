@@ -1,2 +1,2 @@
 #!/bin/sh
-npx lint-staged && npm run lint && npm run test:run
+npx lint-staged && npm run lint && npm run test:run && npm run test:visual
