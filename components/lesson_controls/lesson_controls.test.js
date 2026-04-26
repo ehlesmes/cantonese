@@ -29,4 +29,14 @@ describe("LessonControls Component", () => {
       expect(eventSpy).toHaveBeenCalled();
     });
   });
+
+  it("should hide navigation buttons when hideNavigation is true", () => {
+    const component = new LessonControls({ hideNavigation: true });
+    const shadowRoot = component.shadowRoot;
+
+    expect(shadowRoot.getElementById("restart")).toBeNull();
+    expect(shadowRoot.getElementById("prev")).toBeNull();
+    expect(shadowRoot.getElementById("next")).toBeNull();
+    expect(shadowRoot.getElementById("close")).not.toBeNull();
+  });
 });

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice System Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="/components/shared/variables.css" />
+  </head>
+  <body style="margin: 0">
+    <div id="app"></div>
+    <script type="module">
+      import { LessonViewer } from "./components/lesson_viewer/lesson_viewer.js";
+      import { PracticeViewer } from "./components/practice_viewer/practice_viewer.js";
+
+      const app = document.getElementById("app");
+
+      function showLesson() {
+        app.innerHTML = "";
+        const viewer = new LessonViewer({
+          lessonId: "1.1",
+          lessonName: "Basic Greetings",
+        });
+        viewer.element.addEventListener("go-home", showHome);
+        app.appendChild(viewer.element);
+      }
+
+      function showPractice() {
+        app.innerHTML = "";
+        const viewer = new PracticeViewer();
+        viewer.element.addEventListener("go-home", showHome);
+        app.appendChild(viewer.element);
+      }
+
+      function showHome() {
+        app.innerHTML = `
+          <div style="padding: 2rem; display: flex; flex-direction: column; gap: 1rem; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif;">
+            <h1>Cantonese Learning</h1>
+            <button id="start-lesson" style="padding: 1rem 2rem; font-size: 1.2rem; cursor: pointer;">Start Lesson 1.1</button>
+            <button id="start-practice" style="padding: 1rem 2rem; font-size: 1.2rem; cursor: pointer;">Practice Session</button>
+            <button id="clear-data" style="margin-top: 2rem; color: red; cursor: pointer;">Clear All Progress</button>
+          </div>
+        `;
+        document.getElementById("start-lesson").onclick = showLesson;
+        document.getElementById("start-practice").onclick = showPractice;
+        document.getElementById("clear-data").onclick = () => {
+          localStorage.removeItem("cantonese_progress");
+          alert("Progress cleared");
+          showHome();
+        };
+      }
+
+      showHome();
+    </script>
+  </body>
+</html>

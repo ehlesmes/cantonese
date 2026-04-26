@@ -51,6 +51,18 @@ describe("LessonHeader Component", () => {
     expect(progressBar.style.width).toBe("0%");
   });
 
+  it("should hide navigation controls when hideNavigation is true", () => {
+    const component = new LessonHeader({
+      lessonName: "test",
+      hideNavigation: true,
+    });
+    // The controls are in a separate component, we check if they are hidden there
+    const controls = component.shadowRoot.querySelector("header").lastChild;
+    // controls is the element of LessonControls
+    const restartBtn = controls.shadowRoot.getElementById("restart");
+    expect(restartBtn).toBeNull();
+  });
+
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
       expect(() => {

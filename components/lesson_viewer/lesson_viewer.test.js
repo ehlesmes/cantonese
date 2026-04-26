@@ -1,10 +1,26 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { LessonViewer } from "./lesson_viewer.js";
+import { Progress } from "../shared/progress.js";
+
+vi.mock("../shared/progress.js", () => ({
+  Progress: {
+    getLessonProgress: vi.fn(() => 0),
+    saveLessonProgress: vi.fn(),
+    completeLesson: vi.fn(),
+    addExercisesToPractice: vi.fn(),
+  },
+}));
 
 describe("LessonViewer Component", () => {
   const mockLesson = [
     { id: "1.1.1", type: "explanation", content: [] },
     { id: "1.1.2", type: "reading" },
+    {
+      id: "1.1.3",
+      type: "congratulations",
+      title: "Done",
+      summary: "Good job",
+    },
   ];
 
   const mockExercise = {
@@ -15,6 +31,8 @@ describe("LessonViewer Component", () => {
 
   beforeEach(() => {
     document.body.innerHTML = "";
+    vi.clearAllMocks();
+    Progress.getLessonProgress.mockReturnValue(0);
     vi.stubGlobal(
       "fetch",
       vi.fn((url) => {
@@ -60,6 +78,20 @@ describe("LessonViewer Component", () => {
     expect(
       main.firstElementChild.shadowRoot.querySelector(".page-container"),
     ).not.toBeNull();
+  });
+
+  it("should start at saved progress index", async () => {
+    Progress.getLessonProgress.mockReturnValue(1);
+    const component = new LessonViewer({
+      lessonId: "1.1",
+      lessonName: "Test Lesson",
+    });
+    await component.ready;
+
+    expect(component._currentPageIndex).toBe(1);
+    expect(global.fetch).toHaveBeenCalledWith(
+      expect.stringContaining("1.1.2.json"),
+    );
   });
 
   it("should navigate between pages", async () => {
@@ -110,12 +142,27 @@ describe("LessonViewer Component", () => {
     const header = component.querySelector("#header");
     const progressBar = header.shadowRoot.querySelector(".progress-bar");
 
-    // Page 1 of 2: progress should be 50%
-    expect(progressBar.style.width).toBe("50%");
+    // Page 1 of 3: progress should be ~33.3%
+    expect(progressBar.style.width).toBe("33.33333333333333%");
 
     await component.navigateTo(1);
-    // Page 2 of 2: progress should be 100%
-    expect(progressBar.style.width).toBe("100%");
+    // Page 2 of 3: progress should be ~66.6%
+    expect(progressBar.style.width).toBe("66.66666666666666%");
+  });
+
+  it("should complete lesson and add to practice when rendering congratulations", async () => {
+    const component = new LessonViewer({
+      lessonId: "1.1",
+      lessonName: "Test Lesson",
+    });
+    await component.ready;
+
+    await component.navigateTo(2); // Congratulations page
+
+    expect(Progress.completeLesson).toHaveBeenCalledWith("1.1");
+    expect(Progress.addExercisesToPractice).toHaveBeenCalledWith([
+      "1/1/1.1.2.json",
+    ]);
   });
 
   describe("Validation", () => {

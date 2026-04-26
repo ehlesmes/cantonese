@@ -6,12 +6,13 @@ export class LessonHeader extends Component {
    * @param {Object} [data]
    * @param {string} [data.lessonName]
    * @param {number} [data.progress] - Number between 0 and 1
+   * @param {boolean} [data.hideNavigation]
    */
   constructor(data) {
     super(import.meta.url);
 
     this.validate(data, ["lessonName"]);
-    const { lessonName, progress = 0 } = data;
+    const { lessonName, progress = 0, hideNavigation = false } = data;
 
     const headerContainer = document.createElement("div");
     headerContainer.className = "header-container";
@@ -24,7 +25,7 @@ export class LessonHeader extends Component {
     this._titleEl.textContent = lessonName;
     header.appendChild(this._titleEl);
 
-    this._controls = new LessonControls();
+    this._controls = new LessonControls({ hideNavigation });
     header.appendChild(this._controls.element);
 
     headerContainer.appendChild(header);

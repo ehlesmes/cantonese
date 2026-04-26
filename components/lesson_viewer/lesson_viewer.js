@@ -1,6 +1,7 @@
 import { Component } from "../shared/component.js";
 import { LessonHeader } from "../lesson_header/lesson_header.js";
 import { PageRegistry } from "../shared/page_registry.js";
+import { Progress } from "../shared/progress.js";
 
 // Import pages only to trigger their self-registration in PageRegistry
 import "../reading_page/reading_page.js";
@@ -86,9 +87,14 @@ export class LessonViewer extends Component {
       }
 
       this._lessonData = await response.json();
-      this._currentPageIndex = 0;
+      this._currentPageIndex = Progress.getLessonProgress(this._lessonId);
 
-      await this._renderPage(0);
+      // Ensure index is within bounds (e.g., if lesson data changed)
+      if (this._currentPageIndex >= this._lessonData.length) {
+        this._currentPageIndex = 0;
+      }
+
+      await this._renderPage(this._currentPageIndex);
       this._prefetchExercises();
     } catch (e) {
       console.error("🚨 [LessonViewer ERROR]: Failed to load lesson data", e);
@@ -128,6 +134,13 @@ export class LessonViewer extends Component {
       pageData = { content: pageDef.content };
     } else if (pageDef.type === "congratulations") {
       pageData = { ...pageDef };
+      // Mark lesson as completed and add exercises to practice
+      Progress.completeLesson(this._lessonId);
+      const [chapter, lessonNum] = this._lessonId.split(".");
+      const exerciseIds = this._lessonData
+        .filter((p) => p.type === "reading" || p.type === "unscramble")
+        .map((p) => `${chapter}/${lessonNum}/${p.id}.json`);
+      Progress.addExercisesToPractice(exerciseIds);
     } else {
       pageData = this._pageCache.get(pageDef.id);
       if (!pageData) {
@@ -185,6 +198,7 @@ export class LessonViewer extends Component {
       return Promise.resolve();
     }
     this._currentPageIndex = index;
+    Progress.saveLessonProgress(this._lessonId, index);
     this._loadPromise = this._renderPage(index);
     return this._loadPromise;
   }

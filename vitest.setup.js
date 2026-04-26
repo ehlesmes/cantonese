@@ -23,10 +23,25 @@ Object.defineProperty(global.window, "speechSynthesis", {
   configurable: true,
 });
 
-// Also mock adoptedStyleSheets as Happy DOM might not fully support it depending on version
-if (!("adoptedStyleSheets" in Document.prototype)) {
-  Document.prototype.adoptedStyleSheets = [];
-}
-if (!("adoptedStyleSheets" in ShadowRoot.prototype)) {
-  ShadowRoot.prototype.adoptedStyleSheets = [];
-}
+// Mock localStorage
+const localStorageMock = (() => {
+  let store = {};
+  return {
+    getItem: vi.fn((key) => store[key] || null),
+    setItem: vi.fn((key, value) => {
+      store[key] = value.toString();
+    }),
+    clear: vi.fn(() => {
+      store = {};
+    }),
+    removeItem: vi.fn((key) => {
+      delete store[key];
+    }),
+  };
+})();
+
+Object.defineProperty(global.window, "localStorage", {
+  value: localStorageMock,
+  writable: true,
+  configurable: true,
+});
