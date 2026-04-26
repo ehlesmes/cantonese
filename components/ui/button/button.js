@@ -67,13 +67,12 @@ export class Button extends Component {
       configurable: true,
     });
 
-    this._button.onclick = (e) => {
+    this._button.addEventListener("click", (e) => {
       if (this._button.disabled) {
-        e.stopPropagation();
-        return;
+        e.stopImmediatePropagation();
+        e.preventDefault();
       }
-      this.dispatch("click", { originalEvent: e });
-    };
+    });
   }
 
   _validateButtonData(data) {

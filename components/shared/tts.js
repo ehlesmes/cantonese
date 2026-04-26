@@ -13,9 +13,6 @@ export function speakCantonese(text) {
   // Cancel any ongoing speech
   window.speechSynthesis.cancel();
 
-  const utterance = new SpeechSynthesisUtterance(text);
-
-  // Try to find a Cantonese voice
   const findVoice = () => {
     const voices = window.speechSynthesis.getVoices();
     return voices.find((v) => {
@@ -29,18 +26,36 @@ export function speakCantonese(text) {
     });
   };
 
-  const cantoneseVoice = findVoice();
+  const speak = (voice) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    if (voice) {
+      utterance.voice = voice;
+    } else {
+      utterance.lang = "zh-HK";
+    }
+    utterance.rate = 0.85;
+    window.speechSynthesis.speak(utterance);
+  };
 
-  if (cantoneseVoice) {
-    utterance.voice = cantoneseVoice;
+  const initialVoice = findVoice();
+
+  if (initialVoice) {
+    speak(initialVoice);
+  } else if (window.speechSynthesis.getVoices().length === 0) {
+    // If voices aren't loaded yet, wait for them.
+    const onVoicesChanged = () => {
+      const lateVoice = findVoice();
+      speak(lateVoice);
+      window.speechSynthesis.removeEventListener(
+        "voiceschanged",
+        onVoicesChanged,
+      );
+    };
+    window.speechSynthesis.addEventListener("voiceschanged", onVoicesChanged);
   } else {
-    // If voices aren't loaded yet, the browser might need a moment.
-    // We set the lang as a fallback.
-    utterance.lang = "zh-HK";
+    // Voices are loaded but no Cantonese voice found, use fallback lang
+    speak(null);
   }
-
-  utterance.rate = 0.85;
-  window.speechSynthesis.speak(utterance);
 }
 
 // Pre-warm the voices list

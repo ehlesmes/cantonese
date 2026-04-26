@@ -54,15 +54,11 @@ export class LessonViewer extends Component {
     });
 
     // Page Event Listeners
-    this._main.addEventListener("reading-result", () =>
-      this.navigateTo(this._currentPageIndex + 1),
-    );
-    this._main.addEventListener("unscramble-result", () =>
-      this.navigateTo(this._currentPageIndex + 1),
-    );
-    this.element.addEventListener("explanation-complete", () =>
-      this.navigateTo(this._currentPageIndex + 1),
-    );
+    const nextHandler = () => this.navigateTo(this._currentPageIndex + 1);
+    this._main.addEventListener("reading-result", nextHandler);
+    this._main.addEventListener("unscramble-result", nextHandler);
+    this.element.addEventListener("explanation-complete", nextHandler);
+
     this.element.addEventListener("next-lesson", () => {
       this.dispatch("close");
     });
@@ -106,7 +102,10 @@ export class LessonViewer extends Component {
     const [chapter, lessonNum] = this._lessonId.split(".");
 
     for (const page of this._lessonData) {
-      if (page.type === "reading" || page.type === "unscramble") {
+      if (
+        (page.type === "reading" || page.type === "unscramble") &&
+        !this._pageCache.has(page.id)
+      ) {
         const url = `data/exercises/${chapter}/${lessonNum}/${page.id}.json`;
         fetch(url)
           .then((res) => res.json())

@@ -59,6 +59,11 @@ export class UnscrambleExercise extends Component {
 
     this._playBtn.element.addEventListener("click", () => this.playAudio());
 
+    this._tokenElements = new Map();
+    this._originalTokens.forEach((token) => {
+      this._tokenElements.set(token.id, this.createTokenElement(token));
+    });
+
     this._pool = [];
     this._slots = [];
 
@@ -82,21 +87,15 @@ export class UnscrambleExercise extends Component {
     const isSolved = this.status === "right";
     this.element.setAttribute("status", this.status);
 
-    this._slotsContainer.innerHTML = "";
     this._slots.forEach((token) => {
-      const el = this.createTokenElement(token);
-      if (!isSolved) {
-        el.onclick = () => this.moveToPool(token.id);
-      }
+      const el = this._tokenElements.get(token.id);
+      el.onclick = isSolved ? null : () => this.moveToPool(token.id);
       this._slotsContainer.appendChild(el);
     });
 
-    this._poolContainer.innerHTML = "";
     this._pool.forEach((token) => {
-      const el = this.createTokenElement(token);
-      if (!isSolved) {
-        el.onclick = () => this.moveToSlots(token.id);
-      }
+      const el = this._tokenElements.get(token.id);
+      el.onclick = isSolved ? null : () => this.moveToSlots(token.id);
       this._poolContainer.appendChild(el);
     });
   }
