@@ -6,6 +6,7 @@ import { PageRegistry } from "../shared/page_registry.js";
 import "../reading_page/reading_page.js";
 import "../unscramble_page/unscramble_page.js";
 import "../explanation_page/explanation_page.js";
+import "../congratulations_page/congratulations_page.js";
 
 export class LessonViewer extends Component {
   /**
@@ -61,6 +62,12 @@ export class LessonViewer extends Component {
     this.element.addEventListener("explanation-complete", () =>
       this.navigateTo(this._currentPageIndex + 1),
     );
+    this.element.addEventListener("next-lesson", () => {
+      this.dispatch("close");
+    });
+    this.element.addEventListener("go-home", () => {
+      this.dispatch("close");
+    });
   }
 
   /**

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Congratulations</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="/components/shared/variables.css" />
+    <script
+      src="/components/lesson_viewer/lesson_viewer.js"
+      type="module"
+    ></script>
+    <script
+      src="/components/congratulations_page/congratulations_page.js"
+      type="module"
+    ></script>
+  </head>
+  <body
+    style="
+      margin: 0;
+      background-color: #f8f9fa;
+      font-family: var(--md-sys-font-family);
+    "
+  >
+    <div
+      style="
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        display: flex;
+        gap: 10px;
+      "
+    >
+      <button onclick="renderPage(true)">With Next Lesson</button>
+      <button onclick="renderPage(false)">Without Next Lesson</button>
+    </div>
+    <script type="module">
+      import { LessonViewer } from "./components/lesson_viewer/lesson_viewer.js";
+      import { CongratulationsPage } from "./components/congratulations_page/congratulations_page.js";
+
+      const viewer = new LessonViewer({
+        lessonId: "demo-congrats",
+        lessonName: "Greeting: Hello",
+      });
+      document.body.appendChild(viewer.element);
+
+      const main = viewer.shadowRoot.getElementById("m");
+
+      window.renderPage = (hasNext) => {
+        main.innerHTML = "";
+        const data = {
+          title: "Lesson Complete!",
+          summary:
+            "You've learned how to say hello and practiced reading and unscrambling common greetings.",
+        };
+        if (hasNext) {
+          data.nextLessonId = "1.2";
+        }
+
+        const page = new CongratulationsPage(data);
+        main.appendChild(page.element);
+      };
+
+      // Initial render
+      renderPage(true);
+
+      document.addEventListener("next-lesson", (e) => {
+        alert("Next lesson: " + e.detail.nextLessonId);
+      });
+      document.addEventListener("go-home", () => {
+        alert("Going home...");
+      });
+    </script>
+  </body>
+</html>
