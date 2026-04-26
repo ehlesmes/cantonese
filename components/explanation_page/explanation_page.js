@@ -5,22 +5,29 @@ import { PageRegistry } from "../shared/page_registry.js";
 
 export class ExplanationPage extends Component {
   /**
-   * @param {Object} [config]
+   * @param {Object} data
+   * @param {Array<Object>} data.content
    */
-  constructor(config = {}) {
-    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
+  constructor(data) {
+    super(import.meta.url);
+
+    this.validate(data, ["content"]);
 
     const container = document.createElement("div");
     container.className = "page-container";
 
     const main = document.createElement("main");
-    this._contentWrapper = document.createElement("div");
-    this._contentWrapper.className = "content-wrapper";
-    this._contentWrapper.id = "content";
-    main.appendChild(this._contentWrapper);
+    const contentWrapper = document.createElement("div");
+    contentWrapper.className = "content-wrapper";
+    contentWrapper.id = "content";
+
+    this._renderContent(contentWrapper, data.content);
+
+    main.appendChild(contentWrapper);
     container.appendChild(main);
 
-    this._footer = new LessonFooter({ data: { primaryText: "Continue" } });
+    this._footer = new LessonFooter({ primaryText: "Continue" });
+    this._footer.element.id = "footer";
     container.appendChild(this._footer.element);
 
     this.shadowRoot.appendChild(container);
@@ -28,28 +35,13 @@ export class ExplanationPage extends Component {
     this.element.addEventListener("primary-click", () => {
       this.dispatch("explanation-complete");
     });
-
-    this.update();
   }
 
-  validate() {
-    if (!this._data.content || this._data.content.length === 0) {
-      console.error(
-        "🚨 [ExplanationPage ERROR]: Missing required data property 'content'!",
-      );
-    }
-  }
-
-  update() {
-    this.validate();
-
-    if (this._footer) {
-      this._footer.data = { primaryText: "Continue" };
-    }
-
-    this._contentWrapper.innerHTML = ""; // Clear existing content
-
-    const content = this._data.content || [];
+  /**
+   * @param {HTMLElement} wrapper
+   * @param {Array<Object>} content
+   */
+  _renderContent(wrapper, content) {
     content.forEach((chunk) => {
       let el;
       switch (chunk.type) {
@@ -63,11 +55,9 @@ export class ExplanationPage extends Component {
           break;
         case "example": {
           const card = new ExampleCard({
-            data: {
-              cantonese: chunk.cantonese,
-              romanization: chunk.romanization,
-              translation: chunk.translation,
-            },
+            cantonese: chunk.cantonese,
+            romanization: chunk.romanization,
+            translation: chunk.translation,
           });
           el = card.element;
           break;
@@ -77,7 +67,7 @@ export class ExplanationPage extends Component {
             `⚠️ [ExplanationPage]: Unknown chunk type "${chunk.type}"`,
           );
       }
-      if (el) this._contentWrapper.appendChild(el);
+      if (el) wrapper.appendChild(el);
     });
   }
 

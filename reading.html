@@ -18,22 +18,28 @@
       type="module"
     ></script>
   </head>
-  <body style="margin: 0">
+  <body
+    style="
+      margin: 0;
+      background-color: #f8f9fa;
+      font-family: var(--md-sys-font-family);
+    "
+  >
     <script type="module">
       import { LessonViewer } from "./components/lesson_viewer/lesson_viewer.js";
       import { ReadingPage } from "./components/reading_page/reading_page.js";
 
       const viewer = new LessonViewer({
-        lessonName: "Basic Greetings",
-        lessonId: "1.1",
+        lessonId: "demo-reading",
+        lessonName: "Reading Practice",
       });
+
       const page = new ReadingPage({
-        cantonesePhrase: "你好！",
+        cantonese: "你好！",
         romanization: "nei5 hou2!",
         translation: "Hello!",
       });
 
-      // For manual setup in reading.html, we mimic how LessonViewer handles sub-pages
       viewer.shadowRoot.getElementById("m").appendChild(page.element);
       document.body.appendChild(viewer.element);
 

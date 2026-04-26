@@ -75,6 +75,54 @@ describe("LessonFooter Component", () => {
     expect(secondaryBtn.classList.contains("hidden")).toBe(false);
   });
 
+  describe("Dynamic Updates", () => {
+    let component;
+    let primaryBtn;
+    let secondaryBtn;
+
+    beforeEach(() => {
+      component = new LessonFooter({ primaryText: "Initial Primary" });
+      primaryBtn = component.shadowRoot.getElementById("primary-btn");
+      secondaryBtn = component.shadowRoot.getElementById("secondary-btn");
+    });
+
+    it("should update primary button text and visibility", () => {
+      component.setPrimary("Updated Primary");
+      expect(primaryBtn.textContent).toBe("Updated Primary");
+      expect(primaryBtn.classList.contains("hidden")).toBe(false);
+
+      component.setPrimary(null);
+      expect(primaryBtn.classList.contains("hidden")).toBe(true);
+    });
+
+    it("should update secondary button text and visibility", () => {
+      expect(secondaryBtn.classList.contains("hidden")).toBe(true);
+
+      component.setSecondary("Updated Secondary");
+      expect(secondaryBtn.textContent).toBe("Updated Secondary");
+      expect(secondaryBtn.classList.contains("hidden")).toBe(false);
+
+      component.setSecondary(null);
+      expect(secondaryBtn.classList.contains("hidden")).toBe(true);
+    });
+
+    it("should update primary button disabled state", () => {
+      expect(primaryBtn.disabled).toBe(false);
+      component.setPrimaryDisabled(true);
+      expect(primaryBtn.disabled).toBe(true);
+      component.setPrimaryDisabled(false);
+      expect(primaryBtn.disabled).toBe(false);
+    });
+
+    it("should update secondary button disabled state", () => {
+      expect(secondaryBtn.disabled).toBe(false);
+      component.setSecondaryDisabled(true);
+      expect(secondaryBtn.disabled).toBe(true);
+      component.setSecondaryDisabled(false);
+      expect(secondaryBtn.disabled).toBe(false);
+    });
+  });
+
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
       expect(() => {

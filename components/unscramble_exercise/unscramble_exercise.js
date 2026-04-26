@@ -6,14 +6,25 @@ import { Tooltip } from "../ui/tooltip/tooltip.js";
 
 export class UnscrambleExercise extends Component {
   /**
-   * @param {Object} [config]
-   * @param {Object} [config.data]
-   * @param {Array<[string, string]>} [config.data.tokens]
-   * @param {string} [config.data.translation]
+   * @param {Object} data
+   * @param {Array<[string, string]>} data.tokens
+   * @param {string} data.translation
    */
-  constructor(config = {}) {
-    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
-    this.shadowRoot.adoptedStyleSheets = [iconStyles];
+  constructor(data) {
+    super(import.meta.url);
+    this.shadowRoot.adoptedStyleSheets = [
+      ...this.shadowRoot.adoptedStyleSheets,
+      iconStyles,
+    ];
+
+    this.validate(data, ["tokens", "translation"]);
+    const { tokens, translation } = data;
+
+    this._originalTokens = tokens.map((t, index) => ({
+      text: t[0],
+      romanization: t[1],
+      id: index,
+    }));
 
     this._container = document.createElement("div");
     this._container.className = "unscramble-wrapper";
@@ -21,9 +32,10 @@ export class UnscrambleExercise extends Component {
     const phraseContainer = document.createElement("div");
     phraseContainer.className = "phrase-container";
 
-    this._translationEl = document.createElement("div");
-    this._translationEl.className = "translation-text";
-    phraseContainer.appendChild(this._translationEl);
+    const translationEl = document.createElement("div");
+    translationEl.className = "translation-text";
+    translationEl.textContent = translation;
+    phraseContainer.appendChild(translationEl);
 
     this._playBtn = new IconButton({
       title: "Play Audio",
@@ -47,70 +59,29 @@ export class UnscrambleExercise extends Component {
 
     this._playBtn.element.onclick = () => this.playAudio();
 
-    this._originalTokens = []; // [{text, romanization, id}]
     this._pool = [];
     this._slots = [];
-    this._status = "incomplete";
 
-    if (this._data.tokens) {
-      this._setTokens(this._data.tokens);
-    }
-    this.update();
+    this.reset();
   }
 
   get status() {
-    return this._status;
+    if (this._pool.length > 0) return "incomplete";
+    if (this._slots.length === 0) return "incomplete";
+    const isCorrect = this._slots.every((token, index) => token.id === index);
+    return isCorrect ? "right" : "wrong";
   }
 
-  get data() {
-    return this._data;
-  }
-
-  set data(val) {
-    const oldTokensJson = JSON.stringify(this._data.tokens || []);
-    this._data = { ...this._data, ...val };
-    const newTokensJson = JSON.stringify(this._data.tokens || []);
-
-    if (oldTokensJson !== newTokensJson) {
-      this._setTokens(this._data.tokens);
-    }
-    this.update();
-  }
-
-  validate() {
-    if (!this._data.tokens || this._data.tokens.length === 0) {
-      console.error(
-        "🚨 [UnscrambleExercise ERROR]: Missing required data property 'tokens'!",
-      );
-    }
-    if (!this._data.translation) {
-      console.error(
-        "🚨 [UnscrambleExercise ERROR]: Missing required data property 'translation'!",
-      );
-    }
-  }
-
-  _setTokens(tokenArray = []) {
-    this._originalTokens = tokenArray.map((t, index) => ({
-      text: t[0],
-      romanization: t[1],
-      id: index,
-    }));
+  reset() {
     this._slots = [];
     this._pool = [...this._originalTokens].sort(() => Math.random() - 0.5);
-    this._calculateStatus();
-  }
-
-  update() {
-    this.validate();
-    this._translationEl.textContent = this._data.translation || "";
     this.render();
   }
 
   render() {
-    const isSolved = this._status === "right";
+    const isSolved = this.status === "right";
+    this.element.setAttribute("status", this.status);
 
-    // Render Slots
     this._slotsContainer.innerHTML = "";
     this._slots.forEach((token) => {
       const el = this.createTokenElement(token);
@@ -120,7 +91,6 @@ export class UnscrambleExercise extends Component {
       this._slotsContainer.appendChild(el);
     });
 
-    // Render Pool
     this._poolContainer.innerHTML = "";
     this._pool.forEach((token) => {
       const el = this.createTokenElement(token);
@@ -132,10 +102,7 @@ export class UnscrambleExercise extends Component {
   }
 
   createTokenElement(token) {
-    const tooltip = new Tooltip();
-
     const trigger = document.createElement("div");
-    trigger.slot = "trigger";
     trigger.className = "token";
 
     const textSpan = document.createElement("span");
@@ -144,40 +111,38 @@ export class UnscrambleExercise extends Component {
     trigger.appendChild(textSpan);
 
     const content = document.createElement("span");
-    content.slot = "content";
     content.textContent = token.romanization;
 
-    tooltip.element.appendChild(trigger);
-    tooltip.element.appendChild(content);
+    const tooltip = new Tooltip({
+      trigger,
+      content,
+    });
 
     return tooltip.element;
   }
 
   moveToSlots(tokenId) {
-    const wasEmpty = this._pool.length === 0;
     const poolIndex = this._pool.findIndex((t) => t.id === tokenId);
     if (poolIndex === -1) return;
 
     const token = this._pool.splice(poolIndex, 1)[0];
     this._slots.push(token);
 
-    this._calculateStatus();
     this.render();
 
-    if (!wasEmpty && this._pool.length === 0) {
+    if (this._pool.length === 0) {
       this.dispatch("complete");
     }
   }
 
   moveToPool(tokenId) {
-    const wasEmpty = this._pool.length === 0;
     const slotIndex = this._slots.findIndex((t) => t.id === tokenId);
     if (slotIndex === -1) return;
 
+    const wasEmpty = this._pool.length === 0;
     const token = this._slots.splice(slotIndex, 1)[0];
     this._pool.push(token);
 
-    this._calculateStatus();
     this.render();
 
     if (wasEmpty && this._pool.length > 0) {
@@ -185,32 +150,9 @@ export class UnscrambleExercise extends Component {
     }
   }
 
-  _calculateStatus() {
-    let newStatus = "incomplete";
-
-    if (this._pool.length === 0 && this._slots.length > 0) {
-      const isCorrect = this._slots.every((token, index) => token.id === index);
-      newStatus = isCorrect ? "right" : "wrong";
-    }
-
-    if (this._status !== newStatus) {
-      this._status = newStatus;
-      this.element.setAttribute("status", newStatus);
-    }
-  }
-
-  reset() {
-    this._slots = [];
-    this._pool = [...this._originalTokens].sort(() => Math.random() - 0.5);
-    this._calculateStatus();
-    this.render();
-  }
-
   playAudio() {
-    if (this._originalTokens.length === 0) return;
     const fullText = this._originalTokens.map((t) => t.text).join("");
     speakCantonese(fullText);
-
     this.dispatch("play-audio", { phrase: fullText });
   }
 }

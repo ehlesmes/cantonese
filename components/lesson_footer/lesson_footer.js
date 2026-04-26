@@ -11,7 +11,7 @@ export class LessonFooter extends Component {
   constructor(data) {
     super(import.meta.url);
 
-    this.addStyles("../shared/button.css");
+    this.addStyles("../shared/button.css", import.meta.url);
 
     this.validate(data, ["primaryText"]);
     const { primaryText, secondaryText, primaryDisabled, secondaryDisabled } =
@@ -41,5 +41,47 @@ export class LessonFooter extends Component {
 
     this._primaryBtn.onclick = () => this.dispatch("primary-click");
     this._secondaryBtn.onclick = () => this.dispatch("secondary-click");
+  }
+
+  /**
+   * Updates the primary button text and visibility.
+   * @param {string|null} text - The button text. If null/undefined, the button is hidden.
+   */
+  setPrimary(text) {
+    if (text) {
+      this._primaryBtn.textContent = text;
+      this._primaryBtn.classList.remove("hidden");
+    } else {
+      this._primaryBtn.classList.add("hidden");
+    }
+  }
+
+  /**
+   * Updates the secondary button text and visibility.
+   * @param {string|null} text - The button text. If null/undefined, the button is hidden.
+   */
+  setSecondary(text) {
+    if (text) {
+      this._secondaryBtn.textContent = text;
+      this._secondaryBtn.classList.remove("hidden");
+    } else {
+      this._secondaryBtn.classList.add("hidden");
+    }
+  }
+
+  /**
+   * Sets the primary button's disabled state.
+   * @param {boolean} disabled
+   */
+  setPrimaryDisabled(disabled) {
+    this._primaryBtn.disabled = Boolean(disabled);
+  }
+
+  /**
+   * Sets the secondary button's disabled state.
+   * @param {boolean} disabled
+   */
+  setSecondaryDisabled(disabled) {
+    this._secondaryBtn.disabled = Boolean(disabled);
   }
 }

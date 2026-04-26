@@ -17,7 +17,10 @@ export class ReadingExercise extends Component {
    */
   constructor(data) {
     super(import.meta.url);
-    this.shadowRoot.adoptedStyleSheets = [iconStyles];
+    this.shadowRoot.adoptedStyleSheets = [
+      ...this.shadowRoot.adoptedStyleSheets,
+      iconStyles,
+    ];
 
     this.validate(data, ["cantonese", "romanization", "translation"]);
     const { cantonese, romanization, translation } = data;

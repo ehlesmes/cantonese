@@ -1,3 +1,4 @@
+import { baseStyles } from "./shared_assets.js";
 import { ValidationError } from "./validation_error.js";
 
 /**
@@ -11,6 +12,7 @@ export class Component {
   constructor(baseUrl) {
     this.element = document.createElement("div");
     this.shadowRoot = this.element.attachShadow({ mode: "open" });
+    this.shadowRoot.adoptedStyleSheets = [baseStyles];
     this.addStyles("./style.css", baseUrl);
   }
 
@@ -35,6 +37,10 @@ export class Component {
       link.href = cssPath;
     }
     this.shadowRoot.appendChild(link);
+  }
+
+  querySelector(selector) {
+    return this.shadowRoot.querySelector(selector);
   }
 
   /**

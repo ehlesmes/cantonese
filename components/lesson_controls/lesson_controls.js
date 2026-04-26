@@ -9,7 +9,10 @@ import { IconButton } from "../ui/icon_button/icon_button.js";
 export class LessonControls extends Component {
   constructor() {
     super(import.meta.url);
-    this.shadowRoot.adoptedStyleSheets = [iconStyles];
+    this.shadowRoot.adoptedStyleSheets = [
+      ...this.shadowRoot.adoptedStyleSheets,
+      iconStyles,
+    ];
 
     this._container = document.createElement("div");
     this._container.className = "controls";

@@ -9,7 +9,7 @@ export class ReadingPage extends Component {
 
     this.validate(data, ["cantonese", "romanization", "translation"]);
 
-    this._state = "initial"; // initial, revealed
+    this._revealed = false;
 
     const container = document.createElement("div");
     container.className = "page-container";
@@ -33,47 +33,26 @@ export class ReadingPage extends Component {
     this.element.addEventListener("secondary-click", () =>
       this._handleSecondaryClick(),
     );
-
-    this.update();
   }
 
-  update() {
-    this.validate();
-    const { cantonesePhrase, romanization, translation } = this._data;
-
-    // Pass data to exercise
-    this._exercise.data = {
-      cantonesePhrase,
-      romanization,
-      translation,
-      translationHidden: this._state === "initial",
-    };
-
-    if (this._state === "initial") {
-      this._footer.data = {
-        primaryText: "Reveal Answer",
-        secondaryText: "",
-      };
-    } else {
-      this._footer.data = {
-        primaryText: "Got it right",
-        secondaryText: "Need practice",
-      };
-    }
+  _reveal() {
+    this._revealed = true;
+    this._exercise.showTranslation();
+    this._footer.setPrimary("Got it right");
+    this._footer.setSecondary("Need practice");
   }
 
   _handlePrimaryClick() {
-    if (this._state === "initial") {
-      this._state = "revealed";
+    if (!this._revealed) {
+      this._reveal();
       this._exercise.playAudio();
-      this.update();
     } else {
       this.dispatch("reading-result", { success: true });
     }
   }
 
   _handleSecondaryClick() {
-    if (this._state === "revealed") {
+    if (this._revealed) {
       this.dispatch("reading-result", { success: false });
     }
   }

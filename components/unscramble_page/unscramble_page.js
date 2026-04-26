@@ -5,25 +5,27 @@ import { PageRegistry } from "../shared/page_registry.js";
 
 export class UnscramblePage extends Component {
   /**
-   * @param {Object} [config]
+   * @param {Object} data
+   * @param {Array<[string, string]>} data.tokens
+   * @param {string} data.translation
    */
-  constructor(config = {}) {
-    super({ cssPath: "./style.css", baseUrl: import.meta.url, ...config });
+  constructor(data) {
+    super(import.meta.url);
+
+    this.validate(data, ["tokens", "translation"]);
 
     const container = document.createElement("div");
     container.className = "page-container";
 
     const main = document.createElement("main");
-    this._exercise = new UnscrambleExercise();
+    this._exercise = new UnscrambleExercise(data);
     this._exercise.element.id = "exercise";
     main.appendChild(this._exercise.element);
     container.appendChild(main);
 
     this._footer = new LessonFooter({
-      data: {
-        primaryText: "Continue",
-        primaryDisabled: true,
-      },
+      primaryText: "Continue",
+      primaryDisabled: true,
     });
     this._footer.element.id = "footer";
     container.appendChild(this._footer.element);
@@ -34,50 +36,27 @@ export class UnscramblePage extends Component {
       if (this._exercise.status === "right") {
         this._exercise.playAudio();
       }
-      this.update();
+      this._updateFooter();
     });
+
     this.element.addEventListener("uncomplete", () => {
-      this.update();
+      this._updateFooter();
     });
+
     this.element.addEventListener("primary-click", () =>
       this._handlePrimaryClick(),
     );
     this.element.addEventListener("secondary-click", () =>
       this._handleSecondaryClick(),
     );
-
-    this.update();
   }
 
-  validate() {
-    if (!this._data.tokens || this._data.tokens.length === 0) {
-      console.error(
-        "🚨 [UnscramblePage ERROR]: Missing required data property 'tokens'!",
-      );
-    }
-    if (!this._data.translation) {
-      console.error(
-        "🚨 [UnscramblePage ERROR]: Missing required data property 'translation'!",
-      );
-    }
-  }
-
-  update() {
-    this.validate();
-
-    this._exercise.data = {
-      tokens: this._data.tokens,
-      translation: this._data.translation,
-    };
-
+  _updateFooter() {
     const status = this._exercise.status;
     const isFinished = status === "right" || status === "wrong";
 
-    this._footer.data = {
-      primaryText: "Continue",
-      primaryDisabled: !isFinished,
-      secondaryText: status === "wrong" ? "Try again" : "",
-    };
+    this._footer.setPrimaryDisabled(!isFinished);
+    this._footer.setSecondary(status === "wrong" ? "Try again" : null);
   }
 
   _handlePrimaryClick() {
@@ -89,6 +68,7 @@ export class UnscramblePage extends Component {
 
   _handleSecondaryClick() {
     this._exercise.reset();
+    this._updateFooter();
   }
 }
 

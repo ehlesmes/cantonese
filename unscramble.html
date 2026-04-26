@@ -18,12 +18,21 @@
       type="module"
     ></script>
   </head>
-  <body style="margin: 0">
+  <body
+    style="
+      margin: 0;
+      background-color: #f8f9fa;
+      font-family: var(--md-sys-font-family);
+    "
+  >
     <script type="module">
       import { LessonViewer } from "./components/lesson_viewer/lesson_viewer.js";
       import { UnscramblePage } from "./components/unscramble_page/unscramble_page.js";
 
-      const viewer = new LessonViewer({ lessonName: "Basic Greetings" });
+      const viewer = new LessonViewer({
+        lessonId: "demo-unscramble",
+        lessonName: "Basic Greetings",
+      });
       const page = new UnscramblePage({
         tokens: [
           ["我", "ngo5"],

@@ -2,6 +2,13 @@
 // Note: The font itself must be loaded via a <link> tag in the index.html
 // because @import is often restricted in constructable stylesheets.
 export const iconStyles = new CSSStyleSheet();
+export const baseStyles = new CSSStyleSheet();
+
+baseStyles.replaceSync(`
+  :host {
+    font-family: var(--md-sys-font-family);
+  }
+`);
 
 iconStyles.replaceSync(`
 .material-symbols-outlined {

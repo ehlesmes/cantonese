@@ -15,7 +15,10 @@ export class IconButton extends Component {
     this.addStyles("../../shared/button.css", import.meta.url);
 
     // Apply shared icon font styles
-    this.shadowRoot.adoptedStyleSheets = [iconStyles];
+    this.shadowRoot.adoptedStyleSheets = [
+      ...this.shadowRoot.adoptedStyleSheets,
+      iconStyles,
+    ];
 
     this.validate(data, ["title", "icon"]);
     const { title, icon, filled, disabled } = data;
@@ -25,7 +28,7 @@ export class IconButton extends Component {
     this._button = document.createElement("button");
     this._button.title = title;
     this._button.disabled = Boolean(disabled);
-    this._button.className = "button-base icon-button";
+    this._button.className = "btn-base icon-button";
     this._button.classList.add(
       filled ? buttonStyles.filled : buttonStyles.outline,
     );

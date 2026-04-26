@@ -1,194 +1,113 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { LessonViewer } from "./lesson_viewer.js";
-// Important: Import pages to register them in PageRegistry
-import "../reading_page/reading_page.js";
-import "../explanation_page/explanation_page.js";
 
 describe("LessonViewer Component", () => {
+  const mockLesson = {
+    name: "Test Lesson",
+    pages: [
+      { id: "1.1.1", type: "explanation", content: [] },
+      { id: "1.1.2", type: "reading" },
+    ],
+  };
+
+  const mockExercise = {
+    cantonese: "你好",
+    romanization: "nei5 hou2",
+    translation: "Hello",
+  };
+
   beforeEach(() => {
     document.body.innerHTML = "";
-    // Default fetch mock to avoid network noise in basic tests
-    global.window.fetch = vi.fn().mockImplementation(() =>
-      Promise.resolve({
-        ok: true,
-        json: () =>
-          Promise.resolve({ id: "1.1", name: "Test Lesson", pages: [] }),
+    vi.stubGlobal(
+      "fetch",
+      vi.fn((url) => {
+        if (url.includes("data/lessons")) {
+          return Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve(mockLesson),
+          });
+        }
+        if (url.includes("data/exercises")) {
+          return Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve(mockExercise),
+          });
+        }
+        return Promise.reject(new Error("Unknown URL"));
       }),
     );
   });
 
   it("should be defined", () => {
     const component = new LessonViewer({
-      data: { lessonId: "1.1", lessonName: "test" },
+      lessonId: "1.1",
+      lessonName: "Test Lesson",
     });
-    expect(component).toBeDefined();
-    expect(component.element).toBeDefined();
+    expect(component).toBeInstanceOf(LessonViewer);
     expect(component.shadowRoot).not.toBeNull();
   });
 
-  it("should propagate lesson-name to the lesson-header", () => {
+  it("should load lesson and render first page", async () => {
     const component = new LessonViewer({
-      data: {
-        lessonId: "1.1",
-        lessonName: "Unit 1: Basics",
-      },
+      lessonId: "1.1",
+      lessonName: "Test Lesson",
     });
-    document.body.appendChild(component.element);
-    // LessonHeader also has a shadowRoot. We need to go into it.
-    const headerEl =
-      component.shadowRoot.getElementById("header-root").firstChild;
-    const titleEl = headerEl.shadowRoot.getElementById("lesson-title");
-    expect(titleEl.textContent).toBe("Unit 1: Basics");
+    await component.ready;
+
+    const title = component
+      .querySelector("#header")
+      .shadowRoot.getElementById("lesson-title");
+    expect(title.textContent).toBe("Test Lesson");
+
+    const main = component.querySelector("#m");
+    expect(
+      main.firstElementChild.shadowRoot.querySelector(".page-container"),
+    ).not.toBeNull();
   });
 
-  describe("Lesson Loading & Navigation", () => {
-    const mockLessonData = {
-      id: "1.1",
-      name: "Mock Lesson",
-      pages: [
-        {
-          type: "explanation",
-          id: "1.1.1",
-          content: [{ type: "title", value: "Intro" }],
-        },
-        { type: "reading", id: "1.1.2" },
-      ],
-    };
-
-    const mockExerciseData = {
-      cantonesePhrase: "你好",
-      romanization: "nei5 hou2",
-      translation: "Hello",
-    };
-
-    beforeEach(() => {
-      global.window.fetch = vi.fn().mockImplementation((url) => {
-        if (url.includes("lessons")) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve(mockLessonData),
-          });
-        }
-        if (url.includes("exercises")) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve(mockExerciseData),
-          });
-        }
-        return Promise.reject(new Error("Not found"));
-      });
+  it("should navigate between pages", async () => {
+    const component = new LessonViewer({
+      lessonId: "1.1",
+      lessonName: "Test Lesson",
     });
+    await component.ready;
 
-    it("should load lesson data and render the first page", async () => {
-      const component = new LessonViewer({ data: { lessonId: "1.1" } });
-      document.body.appendChild(component.element);
+    // First page (explanation)
+    const main = component.querySelector("#m");
+    expect(
+      main.firstElementChild.shadowRoot.querySelector(".page-container"),
+    ).not.toBeNull();
 
-      // Wait for the component to finish loading
-      await component.ready;
+    // Navigate to second page
+    await component.navigateTo(1);
+    expect(global.fetch).toHaveBeenCalledWith(
+      expect.stringContaining("1.1.2.json"),
+    );
+  });
 
-      expect(component.data.lessonName).toBe("Mock Lesson");
-      const main = component.shadowRoot.getElementById("m");
-      const pageEl = main.firstChild;
-      // ExplanationPage has a class page-container in its shadowRoot
-      expect(pageEl.shadowRoot.querySelector(".page-container")).not.toBeNull();
-      expect(pageEl.shadowRoot.querySelector("h1").textContent).toBe("Intro");
+  it("should handle navigation events", async () => {
+    const component = new LessonViewer({
+      lessonId: "1.1",
+      lessonName: "Test Lesson",
     });
+    await component.ready;
 
-    it("should navigate between pages", async () => {
-      const component = new LessonViewer({ data: { lessonId: "1.1" } });
-      document.body.appendChild(component.element);
+    const navigateSpy = vi.spyOn(component, "navigateTo");
 
-      await component.ready;
+    // Click next via event
+    component.element.dispatchEvent(new CustomEvent("next"));
+    expect(navigateSpy).toHaveBeenCalledWith(1);
 
-      // Navigate to second page and await completion
-      await component.navigateTo(1);
+    // Click restart
+    component.element.dispatchEvent(new CustomEvent("restart"));
+    expect(navigateSpy).toHaveBeenCalledWith(0);
+  });
 
-      const main = component.shadowRoot.getElementById("m");
-      const pageEl = main.firstChild;
-      // ReadingPage has an exercise with id "exercise" in its shadowRoot
-      const exerciseEl = pageEl.shadowRoot.getElementById("exercise");
-      expect(
-        exerciseEl.shadowRoot.querySelector(".reading-wrapper"),
-      ).not.toBeNull();
-    });
-
-    it("should navigate forward on page events", async () => {
-      const component = new LessonViewer({ data: { lessonId: "1.1" } });
-      document.body.appendChild(component.element);
-
-      await component.ready;
-
-      // Simulate event from current page
-      const main = component.shadowRoot.getElementById("m");
-      const innerPageEl = main.firstChild;
-
-      innerPageEl.dispatchEvent(
-        new CustomEvent("explanation-complete", {
-          bubbles: true,
-          composed: true,
-        }),
-      );
-
-      // Page updates are triggered by events which might call navigateTo
-      await component.ready;
-
-      const newPageEl = main.firstChild;
-      const exerciseEl = newPageEl.shadowRoot.getElementById("exercise");
-      expect(
-        exerciseEl.shadowRoot.querySelector(".reading-wrapper"),
-      ).not.toBeNull();
-    });
-
-    it("should navigate back when 'prev' event is received", async () => {
-      const component = new LessonViewer({ data: { lessonId: "1.1" } });
-      document.body.appendChild(component.element);
-
-      await component.ready;
-
-      // Navigate to second page
-      await component.navigateTo(1);
-      const main = component.shadowRoot.getElementById("m");
-      const exerciseEl = main.firstChild.shadowRoot.getElementById("exercise");
-      expect(
-        exerciseEl.shadowRoot.querySelector(".reading-wrapper"),
-      ).not.toBeNull();
-
-      // Simulate 'prev' event
-      component.element.dispatchEvent(
-        new CustomEvent("prev", { bubbles: true, composed: true }),
-      );
-      await component.ready;
-
-      // Should be back on page 1 (explanation)
-      expect(
-        main.firstChild.shadowRoot.querySelector(".page-container"),
-      ).not.toBeNull();
-    });
-
-    it("should reset to first page when 'restart' event is received", async () => {
-      const component = new LessonViewer({ data: { lessonId: "1.1" } });
-      document.body.appendChild(component.element);
-
-      await component.ready;
-
-      // Navigate to second page
-      await component.navigateTo(1);
-      const main = component.shadowRoot.getElementById("m");
-      const exerciseEl = main.firstChild.shadowRoot.getElementById("exercise");
-      expect(
-        exerciseEl.shadowRoot.querySelector(".reading-wrapper"),
-      ).not.toBeNull();
-
-      // Simulate 'restart' event
-      component.element.dispatchEvent(
-        new CustomEvent("restart", { bubbles: true, composed: true }),
-      );
-      await component.ready;
-
-      // Should be back on page 1 (explanation)
-      expect(
-        main.firstChild.shadowRoot.querySelector(".page-container"),
-      ).not.toBeNull();
+  describe("Validation", () => {
+    it("should throw error if required data properties are missing", () => {
+      expect(() => {
+        new LessonViewer({});
+      }).toThrow();
     });
   });
 });

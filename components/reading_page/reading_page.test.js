@@ -23,9 +23,9 @@ describe("ReadingPage Component", () => {
       translation: "Hello",
     });
 
-    expect(component._exercise.data.cantonese).toBe("你好");
-    expect(component._exercise.data.romanization).toBe("nei5 hou2");
-    expect(component._exercise.data.translation).toBe("Hello");
+    expect(
+      component.shadowRoot.querySelector("#exercise").shadowRoot.textContent,
+    ).toBe("你好nei5 hou2Hello");
   });
 
   it("should reveal the answer when primary button is clicked in initial state", () => {
@@ -35,22 +35,27 @@ describe("ReadingPage Component", () => {
       translation: "Hello",
     });
 
-    const footer = component._footer;
-    const exercise = component._exercise;
+    const footerEl = component.querySelector("#footer");
+    const exerciseEl = component.querySelector("#exercise");
+
+    const primaryBtn = footerEl.shadowRoot.getElementById("primary-btn");
+    const secondaryBtn = footerEl.shadowRoot.getElementById("secondary-btn");
+    const translation =
+      exerciseEl.shadowRoot.querySelector(".translation-text");
 
     // Initial state
-    expect(footer.data.primaryText).toBe("Reveal Answer");
-    expect(exercise.data.translationHidden).toBe(true);
+    expect(primaryBtn.textContent).toBe("Reveal Answer");
+    expect(secondaryBtn.classList.contains("hidden")).toBe(true);
+    expect(translation.classList.contains("hidden")).toBe(true);
 
     // Click reveal
-    footer.element.dispatchEvent(
-      new CustomEvent("primary-click", { bubbles: true, composed: true }),
-    );
+    primaryBtn.click();
 
     // Revealed state
-    expect(footer.data.primaryText).toBe("Got it right");
-    expect(footer.data.secondaryText).toBe("Need practice");
-    expect(exercise.data.translationHidden).toBe(false);
+    expect(primaryBtn.textContent).toBe("Got it right");
+    expect(secondaryBtn.textContent).toBe("Need practice");
+    expect(secondaryBtn.classList.contains("hidden")).toBe(false);
+    expect(translation.classList.contains("hidden")).toBe(false);
   });
 
   it("should dispatch reading-result when clicked in revealed state", () => {
@@ -60,42 +65,32 @@ describe("ReadingPage Component", () => {
       translation: "Hello",
     });
 
-    const footer = component._footer;
+    const footerEl = component.querySelector("#footer");
+    const primaryBtn = footerEl.shadowRoot.getElementById("primary-btn");
+    const secondaryBtn = footerEl.shadowRoot.getElementById("secondary-btn");
 
     // Move to revealed state
-    footer.element.dispatchEvent(
-      new CustomEvent("primary-click", { bubbles: true, composed: true }),
-    );
+    primaryBtn.click();
 
     const resultSpy = vi.fn();
     component.element.addEventListener("reading-result", resultSpy);
 
-    // Click "Got it right"
-    footer.element.dispatchEvent(
-      new CustomEvent("primary-click", { bubbles: true, composed: true }),
-    );
+    // Click "Got it right" (primary)
+    primaryBtn.click();
     expect(resultSpy).toHaveBeenCalled();
     expect(resultSpy.mock.calls[0][0].detail.success).toBe(true);
 
-    // Click "Need practice"
-    footer.element.dispatchEvent(
-      new CustomEvent("secondary-click", { bubbles: true, composed: true }),
-    );
+    // Click "Need practice" (secondary)
+    secondaryBtn.click();
     expect(resultSpy).toHaveBeenCalledTimes(2);
     expect(resultSpy.mock.calls[1][0].detail.success).toBe(false);
   });
 
   describe("Validation", () => {
-    it("should log error if required data properties are missing", () => {
-      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-
-      new ReadingPage({ data: {} });
-
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Missing required data property"),
-      );
-
-      errorSpy.mockRestore();
+    it("should throw error if required data properties are missing", () => {
+      expect(() => {
+        new ReadingPage({});
+      }).toThrow();
     });
   });
 });

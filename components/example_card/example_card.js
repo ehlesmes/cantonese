@@ -13,7 +13,11 @@ export class ExampleCard extends Component {
    */
   constructor(data) {
     super(import.meta.url);
-    this.shadowRoot.adoptedStyleSheets = [iconStyles];
+    this.element.classList.add("example-card");
+    this.shadowRoot.adoptedStyleSheets = [
+      ...this.shadowRoot.adoptedStyleSheets,
+      iconStyles,
+    ];
 
     this.validate(data, ["cantonese", "romanization", "translation"]);
 
