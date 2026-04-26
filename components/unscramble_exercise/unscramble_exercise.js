@@ -1,7 +1,7 @@
 import { Component } from "../shared/component.js";
 import { iconStyles } from "../shared/shared_assets.js";
 import { speakCantonese } from "../shared/tts.js";
-import { IconButton } from "../ui/icon_button/icon_button.js";
+import { Button } from "../ui/button/button.js";
 import { Tooltip } from "../ui/tooltip/tooltip.js";
 
 export class UnscrambleExercise extends Component {
@@ -37,7 +37,7 @@ export class UnscrambleExercise extends Component {
     translationEl.textContent = translation;
     phraseContainer.appendChild(translationEl);
 
-    this._playBtn = new IconButton({
+    this._playBtn = new Button({
       title: "Play Audio",
       icon: "volume_up",
     });
@@ -57,7 +57,7 @@ export class UnscrambleExercise extends Component {
 
     this.shadowRoot.appendChild(this._container);
 
-    this._playBtn.element.onclick = () => this.playAudio();
+    this._playBtn.element.addEventListener("click", () => this.playAudio());
 
     this._pool = [];
     this._slots = [];

@@ -44,6 +44,18 @@
   cursor: not-allowed;
 }
 
+.text-button {
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.icon-button {
+  padding: 8px;
+  width: 48px;
+  height: 48px;
+}
+
 .btn-base.hidden {
   display: none;
 }

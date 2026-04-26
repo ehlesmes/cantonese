@@ -11,7 +11,7 @@ A lightweight, component-focused web application for learning Cantonese. This pr
 ## 🏗️ Project Structure
 
 - `components/`: The heart of the application. Each UI element is a self-contained Class.
-  - `ui/`: Generic reusable UI elements like `IconButton` and `Tooltip`.
+  - `ui/`: Generic reusable UI elements like `Button` and `Tooltip`.
   - `shared/`: Global resources like `variables.css`, `shared_assets.js`, and `tts.js`.
 - `audio/`: Repository for legacy or supplemental audio assets.
 

@@ -25,7 +25,7 @@ describe("ReadingPage Component", () => {
 
     expect(
       component.shadowRoot.querySelector("#exercise").shadowRoot.textContent,
-    ).toBe("你好nei5 hou2Hello");
+    ).toBe("你好nei5 hou2volume_upHello");
   });
 
   it("should reveal the answer when primary button is clicked in initial state", () => {

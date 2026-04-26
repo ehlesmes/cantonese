@@ -1,7 +1,7 @@
 import { Component } from "../shared/component.js";
 import { iconStyles } from "../shared/shared_assets.js";
 import { speakCantonese } from "../shared/tts.js";
-import { IconButton } from "../ui/icon_button/icon_button.js";
+import { Button } from "../ui/button/button.js";
 import { Tooltip } from "../ui/tooltip/tooltip.js";
 
 export class ExampleCard extends Component {
@@ -50,7 +50,7 @@ export class ExampleCard extends Component {
 
     contentRow.appendChild(this._tooltip.element);
 
-    this._playBtn = new IconButton({
+    this._playBtn = new Button({
       title: "Listen",
       icon: "volume_up",
     });
@@ -66,7 +66,7 @@ export class ExampleCard extends Component {
 
     this.shadowRoot.appendChild(this._wrapper);
 
-    this._playBtn.element.onclick = () => this.playAudio();
+    this._playBtn.element.addEventListener("click", () => this.playAudio());
   }
 
   playAudio() {

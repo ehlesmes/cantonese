@@ -1,6 +1,6 @@
 import { Component } from "../shared/component.js";
 import { iconStyles } from "../shared/shared_assets.js";
-import { IconButton } from "../ui/icon_button/icon_button.js";
+import { Button } from "../ui/button/button.js";
 
 /**
  * LessonControls Component
@@ -23,7 +23,7 @@ export class LessonControls extends Component {
     this._container.className = "controls";
 
     if (!hideNavigation) {
-      this._restartBtn = new IconButton({
+      this._restartBtn = new Button({
         title: "Restart Lesson",
         icon: "restart_alt",
       });
@@ -34,14 +34,14 @@ export class LessonControls extends Component {
       divider1.className = "divider";
       this._container.appendChild(divider1);
 
-      this._prevBtn = new IconButton({
+      this._prevBtn = new Button({
         title: "Previous Page",
         icon: "arrow_back",
       });
       this._prevBtn.element.id = "prev";
       this._container.appendChild(this._prevBtn.element);
 
-      this._nextBtn = new IconButton({
+      this._nextBtn = new Button({
         title: "Next Page",
         icon: "arrow_forward",
       });
@@ -53,7 +53,7 @@ export class LessonControls extends Component {
       this._container.appendChild(divider2);
     }
 
-    this._closeBtn = new IconButton({
+    this._closeBtn = new Button({
       title: "Close",
       icon: "close",
     });
@@ -64,10 +64,18 @@ export class LessonControls extends Component {
 
     // Setup event listeners
     if (!hideNavigation) {
-      this._restartBtn.element.onclick = () => this.dispatch("restart");
-      this._prevBtn.element.onclick = () => this.dispatch("prev");
-      this._nextBtn.element.onclick = () => this.dispatch("next");
+      this._restartBtn.element.addEventListener("click", () =>
+        this.dispatch("restart"),
+      );
+      this._prevBtn.element.addEventListener("click", () =>
+        this.dispatch("prev"),
+      );
+      this._nextBtn.element.addEventListener("click", () =>
+        this.dispatch("next"),
+      );
     }
-    this._closeBtn.element.onclick = () => this.dispatch("close");
+    this._closeBtn.element.addEventListener("click", () =>
+      this.dispatch("close"),
+    );
   }
 }

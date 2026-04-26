@@ -1,4 +1,5 @@
 import { Component } from "../shared/component.js";
+import { Button } from "../ui/button/button.js";
 
 export class LessonFooter extends Component {
   /**
@@ -11,36 +12,39 @@ export class LessonFooter extends Component {
   constructor(data) {
     super(import.meta.url);
 
-    this.addStyles("../shared/button.css", import.meta.url);
-
     this.validate(data, ["primaryText"]);
     const { primaryText, secondaryText, primaryDisabled, secondaryDisabled } =
       data;
 
     this._footer = document.createElement("footer");
 
-    this._secondaryBtn = document.createElement("button");
-    this._secondaryBtn.id = "secondary-btn";
-    this._secondaryBtn.className = "btn-base btn-outline";
-    if (secondaryText) {
-      this._secondaryBtn.textContent = secondaryText;
-      this._secondaryBtn.disabled = Boolean(secondaryDisabled);
-    } else {
-      this._secondaryBtn.classList.add("hidden");
+    this._secondaryBtn = new Button({
+      label: secondaryText || "Secondary",
+      variant: "outline",
+      disabled: secondaryDisabled,
+    });
+    this._secondaryBtn.element.id = "secondary-btn";
+    if (!secondaryText) {
+      this._secondaryBtn.element.classList.add("hidden");
     }
-    this._footer.appendChild(this._secondaryBtn);
+    this._footer.appendChild(this._secondaryBtn.element);
 
-    this._primaryBtn = document.createElement("button");
-    this._primaryBtn.id = "primary-btn";
-    this._primaryBtn.className = "btn-base btn-filled";
-    this._primaryBtn.textContent = primaryText;
-    this._primaryBtn.disabled = Boolean(primaryDisabled);
-    this._footer.appendChild(this._primaryBtn);
+    this._primaryBtn = new Button({
+      label: primaryText,
+      variant: "filled",
+      disabled: primaryDisabled,
+    });
+    this._primaryBtn.element.id = "primary-btn";
+    this._footer.appendChild(this._primaryBtn.element);
 
     this.shadowRoot.appendChild(this._footer);
 
-    this._primaryBtn.onclick = () => this.dispatch("primary-click");
-    this._secondaryBtn.onclick = () => this.dispatch("secondary-click");
+    this._primaryBtn.element.addEventListener("click", () =>
+      this.dispatch("primary-click"),
+    );
+    this._secondaryBtn.element.addEventListener("click", () =>
+      this.dispatch("secondary-click"),
+    );
   }
 
   /**
@@ -49,10 +53,10 @@ export class LessonFooter extends Component {
    */
   setPrimary(text) {
     if (text) {
-      this._primaryBtn.textContent = text;
-      this._primaryBtn.classList.remove("hidden");
+      this._primaryBtn.label = text;
+      this._primaryBtn.element.classList.remove("hidden");
     } else {
-      this._primaryBtn.classList.add("hidden");
+      this._primaryBtn.element.classList.add("hidden");
     }
   }
 
@@ -62,10 +66,10 @@ export class LessonFooter extends Component {
    */
   setSecondary(text) {
     if (text) {
-      this._secondaryBtn.textContent = text;
-      this._secondaryBtn.classList.remove("hidden");
+      this._secondaryBtn.label = text;
+      this._secondaryBtn.element.classList.remove("hidden");
     } else {
-      this._secondaryBtn.classList.add("hidden");
+      this._secondaryBtn.element.classList.add("hidden");
     }
   }
 
@@ -74,7 +78,7 @@ export class LessonFooter extends Component {
    * @param {boolean} disabled
    */
   setPrimaryDisabled(disabled) {
-    this._primaryBtn.disabled = Boolean(disabled);
+    this._primaryBtn.disabled = disabled;
   }
 
   /**
@@ -82,6 +86,6 @@ export class LessonFooter extends Component {
    * @param {boolean} disabled
    */
   setSecondaryDisabled(disabled) {
-    this._secondaryBtn.disabled = Boolean(disabled);
+    this._secondaryBtn.disabled = disabled;
   }
 }
