@@ -2,13 +2,10 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import { LessonViewer } from "./lesson_viewer.js";
 
 describe("LessonViewer Component", () => {
-  const mockLesson = {
-    name: "Test Lesson",
-    pages: [
-      { id: "1.1.1", type: "explanation", content: [] },
-      { id: "1.1.2", type: "reading" },
-    ],
-  };
+  const mockLesson = [
+    { id: "1.1.1", type: "explanation", content: [] },
+    { id: "1.1.2", type: "reading" },
+  ];
 
   const mockExercise = {
     cantonese: "你好",

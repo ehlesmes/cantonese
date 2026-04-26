@@ -11,7 +11,7 @@ The Lesson Engine is a component-based system designed to render full lessons dy
 Acts as the central controller:
 
 - **Input:** Takes a `lessonId` via its `data` property.
-- **Fetching:** Coordinates the loading of lesson maps, explanation bundles, and atomic exercises.
+- **Fetching:** Coordinates the loading of lesson manifests and atomic exercises.
 - **State:** Tracks `currentPageIndex` and maintains the "memory" of loaded content.
 - **Factory:** Dynamically creates page components (`ReadingPage`, `UnscramblePage`, `ExplanationPage`) via the `PageRegistry`.
 - **UI Wrapper:** Contains the `lesson-header` and a main container for dynamic page injection.
@@ -26,30 +26,26 @@ Acts as the central controller:
 
 ### 1. Lesson Detail (`data/lessons/1/1.1.json`)
 
-The complete manifest for a lesson, including inlined explanations.
+The manifest for a lesson, containing the order of pages and inlined explanation content.
 
 ```json
-{
-  "id": "1.1",
-  "name": "Basic Greetings",
-  "pages": [
-    {
-      "type": "explanation",
-      "id": "1.1.1",
-      "content": [
-        { "type": "title", "value": "Greetings" },
-        { "type": "text", "value": "Use 你好 to say hello." }
-      ]
-    },
-    { "type": "reading", "id": "1.1.2" },
-    { "type": "unscramble", "id": "1.1.3" }
-  ]
-}
+[
+  {
+    "type": "explanation",
+    "id": "1.1.1",
+    "content": [
+      { "type": "title", "value": "Greetings" },
+      { "type": "text", "value": "Use 你好 to say hello." }
+    ]
+  },
+  { "type": "reading", "id": "1.1.2" },
+  { "type": "unscramble", "id": "1.1.3" }
+]
 ```
 
 ### Fetching Logic
 
-1.  **Lesson Request:** Load the specific lesson file (e.g., `data/lessons/1/1.1.json`) to find the name, pages, and inlined explanation content.
+1.  **Lesson Request:** Load the specific lesson file (e.g., `data/lessons/1/1.1.json`) to get the list of pages.
 2.  **Atomic Exercises:** Load each exercise (`reading` or `unscramble`) from separate files in the background (e.g., `data/exercises/1/1/1.1.2.json`).
 3.  **Blocking:** If a user navigates to an exercise that hasn't finished loading, show a loading state; otherwise, transitions should be instant.
 

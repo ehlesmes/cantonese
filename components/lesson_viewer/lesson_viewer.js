@@ -92,7 +92,7 @@ export class LessonViewer extends Component {
     if (!this._lessonData) return;
     const [chapter, lessonNum] = this._lessonId.split(".");
 
-    for (const page of this._lessonData.pages) {
+    for (const page of this._lessonData) {
       if (page.type === "reading" || page.type === "unscramble") {
         const url = `data/exercises/${chapter}/${lessonNum}/${page.id}.json`;
         fetch(url)
@@ -104,15 +104,11 @@ export class LessonViewer extends Component {
   }
 
   async _renderPage(index) {
-    if (
-      !this._lessonData ||
-      index < 0 ||
-      index >= this._lessonData.pages.length
-    ) {
+    if (!this._lessonData || index < 0 || index >= this._lessonData.length) {
       return;
     }
 
-    const pageDef = this._lessonData.pages[index];
+    const pageDef = this._lessonData[index];
 
     this._main.innerHTML = "";
     const loading = document.createElement("div");
@@ -171,7 +167,7 @@ export class LessonViewer extends Component {
 
   navigateTo(index) {
     if (!this._lessonData) return Promise.resolve();
-    if (index < 0 || index >= this._lessonData.pages.length) {
+    if (index < 0 || index >= this._lessonData.length) {
       console.warn("End of lesson or out of bounds navigation attempted");
       return Promise.resolve();
     }
