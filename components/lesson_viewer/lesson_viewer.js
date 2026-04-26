@@ -126,6 +126,8 @@ export class LessonViewer extends Component {
     let pageData;
     if (pageDef.type === "explanation") {
       pageData = { content: pageDef.content };
+    } else if (pageDef.type === "congratulations") {
+      pageData = { ...pageDef };
     } else {
       pageData = this._pageCache.get(pageDef.id);
       if (!pageData) {
@@ -162,6 +164,10 @@ export class LessonViewer extends Component {
       this._main.innerHTML = "";
       this._main.appendChild(pageInstance.element);
       this._main.scrollTop = 0;
+
+      // Update progress in header
+      const progress = (index + 1) / this._lessonData.length;
+      this._header.setProgress(progress);
     } catch (e) {
       console.error("🚨 [LessonViewer ERROR]: Failed to render page", e);
       this._main.innerHTML = "";
