@@ -1,0 +1,37 @@
+[
+  {
+    "type": "explanation",
+    "id": "3.2.1",
+    "content": [
+      { "type": "title", "value": "Common Foods" },
+      { "type": "text", "value": "Let's learn some common food items." },
+      {
+        "type": "example",
+        "cantonese": "飯",
+        "romanization": "faan6",
+        "translation": "Rice"
+      },
+      {
+        "type": "example",
+        "cantonese": "麵",
+        "romanization": "min6",
+        "translation": "Noodles"
+      },
+      {
+        "type": "example",
+        "cantonese": "點心",
+        "romanization": "dim2 sam1",
+        "translation": "Dim Sum"
+      }
+    ]
+  },
+  { "type": "reading", "id": "3.2.2" },
+  { "type": "unscramble", "id": "3.2.3" },
+  {
+    "type": "congratulations",
+    "id": "3.2.4",
+    "title": "Yum!",
+    "summary": "You've learned names for rice, noodles, and dim sum.",
+    "nextLessonId": "3.3"
+  }
+]

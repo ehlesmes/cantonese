@@ -1,0 +1,28 @@
+[
+  {
+    "type": "explanation",
+    "id": "3.3.1",
+    "content": [
+      { "type": "title", "value": "Ordering" },
+      {
+        "type": "text",
+        "value": "Let's put it all together to order at a restaurant."
+      },
+      {
+        "type": "example",
+        "cantonese": "唔該，我要飯。",
+        "romanization": "m4 goi1, ngo5 jiu3 faan6.",
+        "translation": "Excuse me, I want rice."
+      }
+    ]
+  },
+  { "type": "reading", "id": "3.3.2" },
+  { "type": "unscramble", "id": "3.3.3" },
+  {
+    "type": "congratulations",
+    "id": "3.3.4",
+    "title": "Full Curriculum!",
+    "summary": "You've completed all current lessons. Great job!",
+    "nextLessonId": null
+  }
+]

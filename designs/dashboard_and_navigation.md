@@ -4,13 +4,16 @@
 
 This design transitions the application from a collection of demo pages into a cohesive Single Page Application (SPA). It introduces a central "App Shell" with tabbed navigation and a data-driven Dashboard to manage the user's learning journey.
 
+**Note:** Existing `demo_*.html` pages will remain as isolated test environments for debugging and visual verification, while the main user experience will be consolidated into `index.html`.
+
 ## 🏗️ Architecture: The App Shell
 
-The Shell acts as the root component that manages global state and top-level navigation.
+The Shell acts as the root component that manages global state, routing, and top-level navigation.
 
+- **Hash-Based Routing:** The application uses URL hashes (e.g., `#/home`, `#/vocabulary`) to manage navigation state. This enables "Back" button support and bookmarking without complex server-side logic.
 - **Navigation:** A top header containing tabs for "Home" and "Vocabulary".
 - **Conditional Visibility:** The navigation header is hidden when a `LessonViewer` or `PracticeViewer` is active to ensure an immersive, focused experience.
-- **Event Driven:** The Shell listens for `go-home` events from sub-components to return the user to the Dashboard.
+- **Event Driven:** The Shell listens for `go-home` events from sub-components to update the routing state and return the user to the Dashboard.
 
 ## 🧩 Component Hierarchy
 
@@ -18,7 +21,7 @@ To maintain simplicity and reusability, the UI is broken down into surgical, foc
 
 ### 1. Global Shell Components
 
-- **`AppShell`**: Orchestrates the top-level view switching.
+- **`AppShell`**: Orchestrates the top-level view switching and handles `hashchange` events.
 - **`TabNav`**: The top header navigation container.
 - **`TabButton`**: An individual navigation item with "active" state styling.
 

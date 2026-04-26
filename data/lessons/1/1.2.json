@@ -1,0 +1,37 @@
+[
+  {
+    "type": "explanation",
+    "id": "1.2.1",
+    "content": [
+      { "type": "title", "value": "Pronouns" },
+      { "type": "text", "value": "Let's learn how to refer to people." },
+      {
+        "type": "example",
+        "cantonese": "我",
+        "romanization": "ngo5",
+        "translation": "I / Me"
+      },
+      {
+        "type": "example",
+        "cantonese": "你",
+        "romanization": "nei5",
+        "translation": "You"
+      },
+      {
+        "type": "example",
+        "cantonese": "佢",
+        "romanization": "keoi5",
+        "translation": "He / She / It"
+      }
+    ]
+  },
+  { "type": "reading", "id": "1.2.2" },
+  { "type": "unscramble", "id": "1.2.3" },
+  {
+    "type": "congratulations",
+    "id": "1.2.4",
+    "title": "Pronouns Mastered!",
+    "summary": "You can now refer to yourself and others in Cantonese.",
+    "nextLessonId": "1.3"
+  }
+]

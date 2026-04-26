@@ -1,0 +1,28 @@
+[
+  {
+    "type": "explanation",
+    "id": "1.3.1",
+    "content": [
+      { "type": "title", "value": "Simple Sentences" },
+      {
+        "type": "text",
+        "value": "The word <strong>係</strong> (hai6) means 'to be' (am/is/are)."
+      },
+      {
+        "type": "example",
+        "cantonese": "我係老師。",
+        "romanization": "ngo5 hai6 lou5 si1.",
+        "translation": "I am a teacher."
+      }
+    ]
+  },
+  { "type": "reading", "id": "1.3.2" },
+  { "type": "unscramble", "id": "1.3.3" },
+  {
+    "type": "congratulations",
+    "id": "1.3.4",
+    "title": "Sentences Complete!",
+    "summary": "You can now build basic 'to be' sentences.",
+    "nextLessonId": "2.1"
+  }
+]

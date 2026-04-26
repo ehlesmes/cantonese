@@ -1,0 +1,38 @@
+[
+  {
+    "type": "explanation",
+    "id": "3.1.1",
+    "content": [
+      { "type": "title", "value": "Common Drinks" },
+      { "type": "text", "value": "Let's learn some basic drink names." },
+      {
+        "type": "example",
+        "cantonese": "水",
+        "romanization": "seoi2",
+        "translation": "Water"
+      },
+      {
+        "type": "example",
+        "cantonese": "茶",
+        "romanization": "caa4",
+        "translation": "Tea"
+      },
+      {
+        "type": "example",
+        "cantonese": "咖啡",
+        "romanization": "gaa3 fe1",
+        "translation": "Coffee"
+      }
+    ]
+  },
+  { "type": "reading", "id": "3.1.2" },
+  { "type": "unscramble", "id": "3.1.3" },
+  { "type": "reading", "id": "3.1.4" },
+  {
+    "type": "congratulations",
+    "id": "3.1.5",
+    "title": "Cheers!",
+    "summary": "You know how to say water, tea, and coffee in Cantonese.",
+    "nextLessonId": "3.2"
+  }
+]

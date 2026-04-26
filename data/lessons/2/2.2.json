@@ -1,0 +1,25 @@
+[
+  {
+    "type": "explanation",
+    "id": "2.2.1",
+    "content": [
+      { "type": "title", "value": "Numbers 6-10" },
+      { "type": "text", "value": "Now let's finish the first ten numbers." },
+      {
+        "type": "example",
+        "cantonese": "六, 七, 八, 九, 十",
+        "romanization": "luk6, cat1, baat3, gau2, sap6",
+        "translation": "6, 7, 8, 9, 10"
+      }
+    ]
+  },
+  { "type": "reading", "id": "2.2.2" },
+  { "type": "unscramble", "id": "2.2.3" },
+  {
+    "type": "congratulations",
+    "id": "2.2.4",
+    "title": "Perfect Ten!",
+    "summary": "You can now count from 1 to 10 in Cantonese.",
+    "nextLessonId": "2.3"
+  }
+]
