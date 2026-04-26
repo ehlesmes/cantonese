@@ -28,7 +28,7 @@ Components are instantiated programmatically in JavaScript.
 ```javascript
 import { ReadingPage } from "./components/reading_page/reading_page.js";
 const page = new ReadingPage({
-  cantonesePhrase: "你好",
+  cantonese: "你好",
   romanization: "nei5 hou2",
   translation: "Hello",
 });

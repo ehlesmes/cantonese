@@ -6,7 +6,7 @@ The `reading-page` coordinates a `reading-exercise` and a `lesson-footer` to gui
 
 The component accepts a single `data` object property:
 
-- `cantonesePhrase` (String): The text in Cantonese characters.
+- `cantonese` (String): The text in Cantonese characters.
 - `romanization` (String): The Jyutping or other romanization.
 - `translation` (String): The English meaning.
 

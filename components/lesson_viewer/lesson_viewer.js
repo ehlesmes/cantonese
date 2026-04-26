@@ -154,10 +154,19 @@ export class LessonViewer extends Component {
       return;
     }
 
-    const pageInstance = new PageClass(pageData);
-    this._main.innerHTML = "";
-    this._main.appendChild(pageInstance.element);
-    this._main.scrollTop = 0;
+    try {
+      const pageInstance = new PageClass(pageData);
+      this._main.innerHTML = "";
+      this._main.appendChild(pageInstance.element);
+      this._main.scrollTop = 0;
+    } catch (e) {
+      console.error("🚨 [LessonViewer ERROR]: Failed to render page", e);
+      this._main.innerHTML = "";
+      const error = document.createElement("div");
+      error.className = "error";
+      error.textContent = `Failed to render page: ${e.message}`;
+      this._main.appendChild(error);
+    }
   }
 
   navigateTo(index) {
