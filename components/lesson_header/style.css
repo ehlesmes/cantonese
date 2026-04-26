@@ -13,9 +13,25 @@ header {
   padding: 0 12px;
   height: 60px;
   background-color: var(--md-sys-color-surface);
-  border-bottom: 1px solid var(--md-sys-color-outline);
   box-sizing: border-box;
   font-family: var(--md-sys-font-family);
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+}
+.progress-container {
+  height: 4px;
+  background-color: transparent;
+  width: 100%;
+}
+.progress-bar {
+  height: 100%;
+  background-color: var(--md-sys-color-primary);
+  width: 0%;
+  transition: width 0.3s ease;
 }
 .title {
   font-weight: 700;

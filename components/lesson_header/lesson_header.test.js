@@ -20,6 +20,37 @@ describe("LessonHeader Component", () => {
     expect(title.textContent).toBe("Greetings");
   });
 
+  it("should initialize with progress if provided", () => {
+    const component = new LessonHeader({ lessonName: "test", progress: 0.5 });
+    const progressBar = component.shadowRoot.querySelector(".progress-bar");
+    expect(progressBar.style.width).toBe("50%");
+  });
+
+  it("should update progress when setProgress is called", () => {
+    const component = new LessonHeader({ lessonName: "test" });
+    const progressBar = component.shadowRoot.querySelector(".progress-bar");
+
+    component.setProgress(0.75);
+    expect(progressBar.style.width).toBe("75%");
+
+    component.setProgress(1);
+    expect(progressBar.style.width).toBe("100%");
+
+    component.setProgress(0);
+    expect(progressBar.style.width).toBe("0%");
+  });
+
+  it("should clamp progress between 0 and 1", () => {
+    const component = new LessonHeader({ lessonName: "test" });
+    const progressBar = component.shadowRoot.querySelector(".progress-bar");
+
+    component.setProgress(1.5);
+    expect(progressBar.style.width).toBe("100%");
+
+    component.setProgress(-0.5);
+    expect(progressBar.style.width).toBe("0%");
+  });
+
   describe("Validation", () => {
     it("should log error if required data properties are missing", () => {
       expect(() => {

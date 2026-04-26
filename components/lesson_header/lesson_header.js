@@ -5,12 +5,16 @@ export class LessonHeader extends Component {
   /**
    * @param {Object} [data]
    * @param {string} [data.lessonName]
+   * @param {number} [data.progress] - Number between 0 and 1
    */
   constructor(data) {
     super(import.meta.url);
 
     this.validate(data, ["lessonName"]);
-    const { lessonName } = data;
+    const { lessonName, progress = 0 } = data;
+
+    const headerContainer = document.createElement("div");
+    headerContainer.className = "header-container";
 
     const header = document.createElement("header");
 
@@ -23,6 +27,24 @@ export class LessonHeader extends Component {
     this._controls = new LessonControls();
     header.appendChild(this._controls.element);
 
-    this.shadowRoot.appendChild(header);
+    headerContainer.appendChild(header);
+
+    this._progressContainer = document.createElement("div");
+    this._progressContainer.className = "progress-container";
+    this._progressBar = document.createElement("div");
+    this._progressBar.className = "progress-bar";
+    this._progressContainer.appendChild(this._progressBar);
+    headerContainer.appendChild(this._progressContainer);
+
+    this.shadowRoot.appendChild(headerContainer);
+    this.setProgress(progress);
+  }
+
+  /**
+   * @param {number} value - Number between 0 and 1
+   */
+  setProgress(value) {
+    const percentage = Math.max(0, Math.min(1, value)) * 100;
+    this._progressBar.style.width = `${percentage}%`;
   }
 }

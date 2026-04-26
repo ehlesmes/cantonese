@@ -100,6 +100,24 @@ describe("LessonViewer Component", () => {
     expect(navigateSpy).toHaveBeenCalledWith(0);
   });
 
+  it("should update header progress on navigation", async () => {
+    const component = new LessonViewer({
+      lessonId: "1.1",
+      lessonName: "Test Lesson",
+    });
+    await component.ready;
+
+    const header = component.querySelector("#header");
+    const progressBar = header.shadowRoot.querySelector(".progress-bar");
+
+    // Page 1 of 2: progress should be 50%
+    expect(progressBar.style.width).toBe("50%");
+
+    await component.navigateTo(1);
+    // Page 2 of 2: progress should be 100%
+    expect(progressBar.style.width).toBe("100%");
+  });
+
   describe("Validation", () => {
     it("should throw error if required data properties are missing", () => {
       expect(() => {
