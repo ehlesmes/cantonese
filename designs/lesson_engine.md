@@ -14,11 +14,12 @@ Acts as the central controller:
 - **Fetching:** Coordinates the loading of lesson manifests and atomic exercises.
 - **State:** Tracks `currentPageIndex` and maintains the "memory" of loaded content.
 - **Factory:** Dynamically creates page components (`ReadingPage`, `UnscramblePage`, `ExplanationPage`) via the `PageRegistry`.
-- **UI Wrapper:** Contains the `lesson-header` and a main container for dynamic page injection.
+- **UI Wrapper:** Contains the `lesson-header` (with an integrated progress bar) and a main container for dynamic page injection.
 
 ### 2. Navigation Flow
 
 - **Header Controls:** "Prev" and "Next" buttons in the `lesson-header` are always available for free navigation.
+- **Progress Bar:** A thin color bar at the bottom of the header that updates as the user progresses through the lesson.
 - **Linear Progress:** "Continue" buttons on individual pages trigger a `next` transition.
 - **Events:** Pages fire results (e.g., `reading-result`) which the manager can capture for future progress tracking.
 
