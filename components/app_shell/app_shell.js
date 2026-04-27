@@ -4,6 +4,7 @@ import { LessonViewer } from "../lesson_viewer/lesson_viewer.js";
 
 // Trigger self-registration of pages
 import "../dashboard_page/dashboard_page.js";
+import "../vocabulary_page/vocabulary_page.js";
 
 export class AppShell extends Component {
   constructor() {

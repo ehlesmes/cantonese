@@ -185,4 +185,34 @@ export const Progress = {
     });
     return count;
   },
+
+  /**
+   * Returns the level of a specific exercise.
+   * @param {string} exerciseId
+   * @returns {number|null}
+   */
+  getExerciseLevel(exerciseId) {
+    const state = this._getState();
+    for (let i = 1; i <= MAX_LEVEL; i++) {
+      if (state.practice.levels[i].includes(exerciseId)) {
+        return i;
+      }
+    }
+    return null;
+  },
+
+  /**
+   * Returns all exercises currently in the SRS system with their levels.
+   * @returns {Array<{id: string, level: number}>}
+   */
+  getAllPracticeExercises() {
+    const state = this._getState();
+    const result = [];
+    for (let i = 1; i <= MAX_LEVEL; i++) {
+      state.practice.levels[i].forEach((id) => {
+        result.push({ id, level: i });
+      });
+    }
+    return result;
+  },
 };

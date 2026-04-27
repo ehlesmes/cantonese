@@ -139,4 +139,24 @@ describe("Progress Utility", () => {
     const session = Progress.getPracticeSession();
     expect(session).toEqual(["low.json", "high.json"]);
   });
+
+  it("should get exercise level", () => {
+    Progress.addExercisesToPractice(["test.json"]);
+    expect(Progress.getExerciseLevel("test.json")).toBe(1);
+
+    Progress.updatePracticeResult("test.json", true);
+    expect(Progress.getExerciseLevel("test.json")).toBe(2);
+
+    expect(Progress.getExerciseLevel("non-existent")).toBe(null);
+  });
+
+  it("should get all practice exercises with levels", () => {
+    Progress.addExercisesToPractice(["e1.json", "e2.json"]);
+    Progress.updatePracticeResult("e2.json", true);
+
+    const all = Progress.getAllPracticeExercises();
+    expect(all).toContainEqual({ id: "e1.json", level: 1 });
+    expect(all).toContainEqual({ id: "e2.json", level: 2 });
+    expect(all.length).toBe(2);
+  });
 });
