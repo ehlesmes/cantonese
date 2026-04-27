@@ -6,8 +6,6 @@ describe("ActionCard Component", () => {
     id: "test-card",
     title: "Next Lesson",
     description: "Continue where you left off",
-    icon: "play_arrow",
-    actionText: "Start",
   };
 
   beforeEach(() => {
@@ -22,25 +20,6 @@ describe("ActionCard Component", () => {
     expect(card.shadowRoot.querySelector(".card-description").textContent).toBe(
       mockData.description,
     );
-  });
-
-  it("should render the correct icon", () => {
-    const card = new ActionCard(mockData);
-    expect(card.shadowRoot.querySelector(".card-icon").textContent).toBe(
-      mockData.icon,
-    );
-  });
-
-  it("should dispatch 'action-click' when button is clicked", () => {
-    const card = new ActionCard(mockData);
-    const handler = vi.fn();
-    card.element.addEventListener("action-click", handler);
-
-    // Find the Button component's root element inside the card footer
-    const btnEl = card.shadowRoot.querySelector(".card-footer").firstChild;
-    btnEl.click();
-
-    expect(handler).toHaveBeenCalled();
   });
 
   it("should dispatch 'action-click' when card is clicked", () => {

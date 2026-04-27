@@ -99,15 +99,11 @@ export class DashboardPage extends Component {
           id: "next-lesson-card",
           title: "Next Lesson",
           description: this._nextLesson.lessonName,
-          icon: "play_arrow",
-          actionText: "Start",
         }
       : {
           id: "next-lesson-card",
           title: "All Caught Up!",
           description: "You've finished all available lessons.",
-          icon: "check_circle",
-          actionText: "Review",
         };
 
     const nextCard = new ActionCard(nextLessonData);
@@ -115,8 +111,6 @@ export class DashboardPage extends Component {
       id: "practice-card",
       title: "Practice Review",
       description: `${practiceCount} exercises ready for review`,
-      icon: "fitness_center",
-      actionText: "Practice",
     });
 
     this._heroSlot.replaceChildren(nextCard.element, practiceCard.element);
