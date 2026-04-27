@@ -111,11 +111,20 @@ This document defines the critical paths (User Journeys) that a learner takes th
 
 ---
 
-## 🧪 Testing Strategy (Playwright E2E)
+## 🧪 Testing Strategy (Hybrid Approach)
 
-### 1. State Injection
+We utilize a **Hybrid Approach** within Playwright that combines behavioral assertions with visual "milestones" to ensure both functional correctness and aesthetic integrity.
 
-Instead of manually performing 10 lessons to test the Practice flow, tests will inject state directly into `LocalStorage` before navigation:
+### 1. The Checkpoint Pattern
+
+Journey tests in Playwright will follow a "Checkpoint" pattern where behavioral actions are followed by visual snapshots of significant UI states:
+
+- **Behavioral Assertions:** Verify logic, routing, and data (e.g., `expect(page).toHaveURL(/.*#\/home/)`).
+- **Visual Milestones:** Verify layout and integration (e.g., `expect(page).toHaveScreenshot('dashboard-initial.png')`). This ensures that components like the Header and Nav are correctly integrated within the App Shell.
+
+### 2. State Injection
+
+Instead of manually performing 10 lessons to test a specific flow, tests will inject state directly into `LocalStorage` before navigation:
 
 ```javascript
 await page.addInitScript(() => {
@@ -123,14 +132,14 @@ await page.addInitScript(() => {
 });
 ```
 
-### 2. Behavioral Verification
+### 3. Tool Responsibility (Playwright)
 
-Tests will focus on **outcomes** rather than visual pixels:
+Playwright is the sole tool for these journeys as it provides a real browser environment to verify:
 
-- Checking URL hash changes (`#/home` -> `#/lesson/1.1`).
-- Verifying element presence and text content (e.g., `expect(statusIcon).toHaveClass('completed')`).
-- Intercepting `fetch` calls to ensure data is requested from the correct paths.
+- **Hash-based routing:** Checking URL changes during navigation.
+- **Component Integration:** Ensuring the Header, Nav, and Main content regions coexist correctly.
+- **Persistence:** Verifying that actions in one view (e.g., completing a lesson) are correctly reflected in another (e.g., the Vocabulary tab) via `LocalStorage`.
 
-### 3. Location
+### 4. Location
 
-E2E tests will be stored in `tests/e2e/*.spec.js` to separate them from the `tests/visual/` regression suite.
+E2E journey tests will be stored in `tests/e2e/*.spec.js`. This separates them from the existing component-level visual tests in `tests/visual/`.
