@@ -69,15 +69,15 @@ To maintain simplicity and reusability, the UI is broken down into surgical, foc
 
 1. **[DONE] App Shell & TabNav:** Establish the navigation framework.
 2. **[DONE] ActionCard & StatusIcon:** Build the atomic UI units.
-3. **[IN PROGRESS] LessonRow & ChapterAccordion:** Build the roadmap structure. (LessonRow is DONE)
+3. **[DONE] LessonRow & ChapterAccordion:** Build the roadmap structure.
 
 ### Phase 2: The Dashboard
 
-1. **DashboardPage:** Connect components to the `Progress` utility.
-2. **Next Lesson Logic:** Implement the "Smart Shortcut" helper.
-3. **Integration:** Update `LessonViewer` and `PracticeViewer` to dispatch `go-home`.
+1. **[DONE] DashboardPage:** Connect components to the `Progress` utility.
+2. **[DONE] Next Lesson Logic:** Implement the "Smart Shortcut" helper.
+3. **[DONE] Integration:** Update `LessonViewer` and `AppShell` to handle routing and "go-home" events.
 
 ### Phase 3: Vocabulary
 
-1. **VocabularyPage:** Implement data fetching for completed lesson exercises.
-2. **SRSBadge:** Add mastery level indicators to the cards.
+1. **[TODO] VocabularyPage:** Implement data fetching for completed lesson exercises.
+2. **[TODO] SRSBadge:** Add mastery level indicators to the cards.
