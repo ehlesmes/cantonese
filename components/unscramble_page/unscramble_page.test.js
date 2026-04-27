@@ -27,7 +27,7 @@ describe("UnscramblePage Component", () => {
     const primaryBtn = footer.shadowRoot.getElementById("primary-btn");
     const exercise = component._exercise;
 
-    expect(primaryBtn.disabled).toBe(true);
+    expect(primaryBtn.component.disabled).toBe(true);
 
     // Complete the exercise correctly
     const getPoolToken = (text) =>
@@ -38,7 +38,7 @@ describe("UnscramblePage Component", () => {
     getPoolToken("你").click();
     getPoolToken("好").click();
 
-    expect(primaryBtn.disabled).toBe(false);
+    expect(primaryBtn.component.disabled).toBe(false);
     expect(exercise.status).toBe("right");
   });
 
@@ -60,7 +60,7 @@ describe("UnscramblePage Component", () => {
     getPoolToken("你").click();
 
     expect(secondaryBtn.classList.contains("hidden")).toBe(false);
-    expect(secondaryBtn.label).toBe("Try again");
+    expect(secondaryBtn.component.label).toBe("Try again");
     expect(exercise.status).toBe("wrong");
   });
 

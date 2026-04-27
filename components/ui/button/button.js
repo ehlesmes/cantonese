@@ -24,10 +24,6 @@ export class Button extends Component {
 
     // Initial state
     this.disabled = data.disabled || false;
-
-    // Sync properties
-    this.proxyProperty("disabled");
-    this.proxyProperty("label");
   }
 
   render(data) {

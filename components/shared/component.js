@@ -11,6 +11,11 @@ export class Component {
    */
   constructor(baseUrl) {
     this.element = document.createElement("div");
+    // NOTE: We are currently using the .component property for instance access.
+    // In the future, we may consider introducing a proxy pattern (getters/setters
+    // on this.element) if we want the component to behave more like a native
+    // HTMLElement (e.g., button.disabled = true).
+    this.element.component = this;
     this.shadowRoot = this.element.attachShadow({ mode: "open" });
     this.shadowRoot.adoptedStyleSheets = [baseStyles];
     if (baseUrl) {
@@ -57,20 +62,6 @@ export class Component {
       if (!data[name]) {
         throw new ValidationError(`Missing property: ${name}`);
       }
-    });
-  }
-
-  /**
-   * Syncs a property from the root element to the component instance.
-   * @param {string} propertyName
-   */
-  proxyProperty(propertyName) {
-    Object.defineProperty(this.element, propertyName, {
-      get: () => this[propertyName],
-      set: (v) => {
-        this[propertyName] = v;
-      },
-      configurable: true,
     });
   }
 

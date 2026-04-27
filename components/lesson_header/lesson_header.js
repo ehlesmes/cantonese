@@ -14,7 +14,6 @@ export class LessonHeader extends Component {
     this._progress = 0;
 
     this.render(data);
-    this.proxyProperty("progress");
 
     this.progress = data.progress || 0;
   }

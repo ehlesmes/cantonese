@@ -51,7 +51,7 @@ describe("ReadingPage Component", () => {
       exerciseEl.shadowRoot.querySelector(".translation-text");
 
     // Initial state
-    expect(primaryBtn.label).toBe("Reveal Answer");
+    expect(primaryBtn.component.label).toBe("Reveal Answer");
     expect(secondaryBtn.classList.contains("hidden")).toBe(true);
     expect(translation.classList.contains("hidden")).toBe(true);
 
@@ -59,8 +59,8 @@ describe("ReadingPage Component", () => {
     primaryBtn.click();
 
     // Revealed state
-    expect(primaryBtn.label).toBe("Got it right");
-    expect(secondaryBtn.label).toBe("Need practice");
+    expect(primaryBtn.component.label).toBe("Got it right");
+    expect(secondaryBtn.component.label).toBe("Need practice");
     expect(secondaryBtn.classList.contains("hidden")).toBe(false);
     expect(translation.classList.contains("hidden")).toBe(false);
   });
