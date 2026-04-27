@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "compliance:structural": "node scripts/structural_compliance.js",
     "prepare": "husky"
   },
   "lint-staged": {

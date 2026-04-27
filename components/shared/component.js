@@ -40,9 +40,13 @@ export class Component {
    * @param {string} [props.title]
    * @param {string} [props.slot]
    * @param {string} [props.type]
+   * @param {boolean} [props.open]
    * @returns {HTMLElement}
    */
-  html(tag, { className, id, textContent, href, title, slot, type } = {}) {
+  html(
+    tag,
+    { className, id, textContent, href, title, slot, type, open } = {},
+  ) {
     const el = document.createElement(tag);
     if (className) el.className = className;
     if (id) el.id = id;
@@ -51,6 +55,7 @@ export class Component {
     if (title) el.title = title;
     if (slot) el.slot = slot;
     if (type) el.type = type;
+    if (open !== undefined) el.open = open;
     return el;
   }
 
