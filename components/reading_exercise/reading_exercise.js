@@ -17,28 +17,34 @@ export class ReadingExercise extends Component {
    */
   constructor(data) {
     super(import.meta.url);
+    this.validate(data, ["cantonese", "romanization", "translation"]);
+    this._data = data;
+
+    this.render();
+    this.setupEventListeners();
+  }
+
+  render() {
+    const { cantonese, romanization, translation } = this._data;
+
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,
       iconStyles,
     ];
 
-    this.validate(data, ["cantonese", "romanization", "translation"]);
-    const { cantonese, romanization, translation } = data;
-    this._cantonese = cantonese;
+    this._container = this.html("div", { className: "reading-wrapper" });
 
-    this._container = document.createElement("div");
-    this._container.className = "reading-wrapper";
+    const phraseContainer = this.html("div", { className: "phrase-container" });
 
-    const phraseContainer = document.createElement("div");
-    phraseContainer.className = "phrase-container";
+    this._cantoneseEl = this.html("div", {
+      className: "cantonese-text",
+      textContent: cantonese,
+    });
 
-    this._cantoneseEl = document.createElement("div");
-    this._cantoneseEl.className = "cantonese-text";
-    this._cantoneseEl.textContent = cantonese;
-
-    this._romanizationEl = document.createElement("span");
-    this._romanizationEl.className = "romanization-text";
-    this._romanizationEl.textContent = romanization;
+    this._romanizationEl = this.html("span", {
+      className: "romanization-text",
+      textContent: romanization,
+    });
 
     this._tooltip = new Tooltip({
       trigger: this._cantoneseEl,
@@ -54,15 +60,18 @@ export class ReadingExercise extends Component {
     this._playBtn.element.id = "play-audio";
     phraseContainer.appendChild(this._playBtn.element);
 
-    this._translationEl = document.createElement("div");
-    this._translationEl.className = "translation-text";
-    this._translationEl.textContent = translation;
+    this._translationEl = this.html("div", {
+      className: "translation-text",
+      textContent: translation,
+    });
     this._translationEl.classList.toggle("hidden", true);
     phraseContainer.appendChild(this._translationEl);
 
     this._container.appendChild(phraseContainer);
     this.shadowRoot.appendChild(this._container);
+  }
 
+  setupEventListeners() {
     this._playBtn.element.addEventListener("click", () => this.playAudio());
   }
 
@@ -71,8 +80,8 @@ export class ReadingExercise extends Component {
   }
 
   playAudio() {
-    speakCantonese(this._cantonese);
+    speakCantonese(this._data.cantonese);
 
-    this.dispatch("play-audio", { phrase: this._cantonese });
+    this.dispatch("play-audio", { phrase: this._data.cantonese });
   }
 }

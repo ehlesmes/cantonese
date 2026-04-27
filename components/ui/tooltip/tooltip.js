@@ -3,20 +3,24 @@ import { Component } from "../../shared/component.js";
 export class Tooltip extends Component {
   constructor(data) {
     super(import.meta.url);
-
     this.validate(data, ["trigger", "content"]);
+    this._data = data;
 
-    const container = document.createElement("div");
-    container.className = "tooltip-container";
+    this.render();
+  }
 
-    const triggerSlot = document.createElement("slot");
+  render() {
+    const { trigger, content } = this._data;
+
+    const container = this.html("div", { className: "tooltip-container" });
+
+    const triggerSlot = this.html("slot");
     triggerSlot.name = "trigger";
     container.appendChild(triggerSlot);
 
-    const tooltipDiv = document.createElement("div");
-    tooltipDiv.className = "tooltip";
+    const tooltipDiv = this.html("div", { className: "tooltip" });
 
-    const contentSlot = document.createElement("slot");
+    const contentSlot = this.html("slot");
     contentSlot.name = "content";
     tooltipDiv.appendChild(contentSlot);
 
@@ -24,10 +28,10 @@ export class Tooltip extends Component {
 
     this.shadowRoot.appendChild(container);
 
-    data.trigger.slot = "trigger";
-    data.content.slot = "content";
+    trigger.slot = "trigger";
+    content.slot = "content";
 
-    this.element.appendChild(data.trigger);
-    this.element.appendChild(data.content);
+    this.element.appendChild(trigger);
+    this.element.appendChild(content);
   }
 }

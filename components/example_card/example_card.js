@@ -13,34 +13,40 @@ export class ExampleCard extends Component {
    */
   constructor(data) {
     super(import.meta.url);
+    this.validate(data, ["cantonese", "romanization", "translation"]);
+    this._data = data;
+
+    this.render();
+    this.setupEventListeners();
+  }
+
+  render() {
+    const { cantonese, romanization, translation } = this._data;
+
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,
       iconStyles,
     ];
 
-    this.validate(data, ["cantonese", "romanization", "translation"]);
+    this._wrapper = this.html("div", { className: "example-wrapper" });
 
-    const { cantonese, romanization, translation } = data;
-    this._cantonese = cantonese;
-
-    this._wrapper = document.createElement("div");
-    this._wrapper.className = "example-wrapper";
-
-    const label = document.createElement("div");
-    label.className = "example-label";
-    label.textContent = "Example";
+    const label = this.html("div", {
+      className: "example-label",
+      textContent: "Example",
+    });
     this._wrapper.appendChild(label);
 
-    const contentRow = document.createElement("div");
-    contentRow.className = "content-row";
+    const contentRow = this.html("div", { className: "content-row" });
 
-    this._cantoneseEl = document.createElement("div");
-    this._cantoneseEl.className = "cantonese-text";
-    this._cantoneseEl.textContent = cantonese;
+    this._cantoneseEl = this.html("div", {
+      className: "cantonese-text",
+      textContent: cantonese,
+    });
 
-    this._romanizationEl = document.createElement("span");
-    this._romanizationEl.className = "romanization-text";
-    this._romanizationEl.textContent = romanization;
+    this._romanizationEl = this.html("span", {
+      className: "romanization-text",
+      textContent: romanization,
+    });
 
     this._tooltip = new Tooltip({
       trigger: this._cantoneseEl,
@@ -58,17 +64,20 @@ export class ExampleCard extends Component {
 
     this._wrapper.appendChild(contentRow);
 
-    this._translationEl = document.createElement("div");
-    this._translationEl.className = "translation-text";
-    this._translationEl.textContent = translation;
+    this._translationEl = this.html("div", {
+      className: "translation-text",
+      textContent: translation,
+    });
     this._wrapper.appendChild(this._translationEl);
 
     this.shadowRoot.appendChild(this._wrapper);
+  }
 
+  setupEventListeners() {
     this._playBtn.element.addEventListener("click", () => this.playAudio());
   }
 
   playAudio() {
-    speakCantonese(this._cantonese);
+    speakCantonese(this._data.cantonese);
   }
 }

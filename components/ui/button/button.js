@@ -18,8 +18,21 @@ export class Button extends Component {
   constructor(data) {
     super(import.meta.url);
     this.validate(data);
+    this._data = data;
 
-    const { label, icon, variant = "outline", disabled = false, title } = data;
+    this.render();
+    this.setupEventListeners();
+
+    // Initial state
+    this.disabled = data.disabled || false;
+
+    // Sync properties
+    this.proxyProperty("disabled");
+    this.proxyProperty("label");
+  }
+
+  render() {
+    const { label, icon, variant = "outline", title } = this._data;
 
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,
@@ -48,14 +61,9 @@ export class Button extends Component {
     }
 
     this.shadowRoot.appendChild(this._button);
+  }
 
-    // Initial state
-    this.disabled = disabled;
-
-    // Sync properties
-    this.proxyProperty("disabled");
-    this.proxyProperty("label");
-
+  setupEventListeners() {
     this._button.addEventListener("click", (e) => {
       if (this._button.disabled) {
         e.stopImmediatePropagation();
