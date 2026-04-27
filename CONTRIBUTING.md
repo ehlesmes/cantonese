@@ -13,8 +13,10 @@
 
 All components should follow a standardized rendering lifecycle:
 
-- **Constructor:** Performs data validation, state initialization, and calls `this.render()`.
-- **render():** Responsible for all DOM construction. This separates logic from structure.
+- **Constructor:** Performs data validation, state initialization, and calls `this.render(data)`.
+- **render(data):** Responsible for all DOM construction using the passed data object. This separates initialization logic from structure.
+- **Instance Reference:** Every component must attach itself to its root element via `this.element.component = this`. This allows accessing the JS class instance from a DOM reference.
+- **Properties over Methods:** Prefer getter/setter properties (e.g., `footer.primaryDisabled = true`) over action-based methods (e.g., `footer.setPrimaryDisabled(true)`) to make components feel like native elements.
 - **Validation:** Always use `this.validate(data, ['prop1', 'prop2'])` from the base `Component` class.
 
 ### Shadow DOM & Styling
@@ -26,27 +28,27 @@ All components should follow a standardized rendering lifecycle:
 
 ## 2. Page Structure
 
-All "Page" components (those rendered in `LessonViewer` or `PracticeViewer`) must follow this DOM hierarchy to ensure consistent layout and scrolling behavior:
+All "Page" components (those rendered in `LessonViewer` or `PracticeViewer`) should extend `BasePage`. `BasePage` provides a standard layout (header/main/footer) and forwards footer events.
+
+Subclasses should implement:
+
+- **renderContent(data):** To define the page-specific UI within the pre-constructed `this.contentWrapper`.
+- **handlePrimaryClick() / handleSecondaryClick():** To respond to footer button actions.
+
+Example:
 
 ```javascript
-render() {
-  const container = document.createElement('div');
-  container.className = 'page-container';
+export class ReadingPage extends BasePage {
+  constructor(data) {
+    super(data, ["cantonese", "romanization", "translation"], import.meta.url, {
+      primaryText: "Reveal Answer",
+    });
+  }
 
-  const main = document.createElement('main');
-  const contentWrapper = document.createElement('div');
-  contentWrapper.className = 'content-wrapper';
-
-  // Component-specific content goes in contentWrapper
-
-  main.appendChild(contentWrapper);
-  container.appendChild(main);
-
-  // Footer is optional but follows main if present
-  this._footer = new LessonFooter({ ... });
-  container.appendChild(this._footer.element);
-
-  this.shadowRoot.appendChild(container);
+  renderContent(data) {
+    this._exercise = new ReadingExercise(data);
+    this.contentWrapper.appendChild(this._exercise.element);
+  }
 }
 ```
 
