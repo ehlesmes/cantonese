@@ -7,18 +7,37 @@ describe("AppShell Component", () => {
     // Stub fetch for LessonProvider and other data loading
     vi.stubGlobal(
       "fetch",
-      vi.fn().mockResolvedValue({
-        ok: true,
-        json: () =>
-          Promise.resolve({
-            chapters: [
-              {
-                chapterId: "1",
-                chapterName: "Chapter 1",
-                lessons: [{ lessonId: "1.1", lessonName: "Test Lesson 1.1" }],
-              },
-            ],
-          }),
+      vi.fn().mockImplementation((url) => {
+        if (url === "data/lessons.json") {
+          return Promise.resolve({
+            ok: true,
+            json: () =>
+              Promise.resolve({
+                chapters: [
+                  {
+                    chapterId: "1",
+                    chapterName: "Chapter 1",
+                    lessons: [
+                      { lessonId: "1.1", lessonName: "Test Lesson 1.1" },
+                    ],
+                  },
+                ],
+              }),
+          });
+        }
+        if (url === "data/lessons/1/1.1.json") {
+          return Promise.resolve({
+            ok: true,
+            json: () =>
+              Promise.resolve([
+                {
+                  type: "explanation",
+                  content: [{ type: "text", value: "test" }],
+                },
+              ]),
+          });
+        }
+        return Promise.reject(new Error(`Unknown fetch URL: ${url}`));
       }),
     );
 
@@ -109,5 +128,23 @@ describe("AppShell Component", () => {
     shell.handleRoute();
 
     expect(activeHashSpy).toHaveBeenCalledWith("#/vocabulary");
+  });
+
+  it("should load PracticeViewer when navigating to #/practice", async () => {
+    const shell = new AppShell();
+    window.location.hash = "#/practice";
+    await shell.handleRoute();
+
+    // PracticeViewer uses a shadow root, so we check for the existence of the element
+    // by looking for the child node that is the PracticeViewer instance.
+    expect(shell._currentView.constructor.name).toBe("PracticeViewer");
+  });
+
+  it("should load LessonViewer when navigating to #/lesson/1.1", async () => {
+    const shell = new AppShell();
+    window.location.hash = "#/lesson/1.1";
+    await shell.handleRoute();
+
+    expect(shell._currentView.constructor.name).toBe("LessonViewer");
   });
 });

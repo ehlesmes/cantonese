@@ -2,6 +2,7 @@ import { Component } from "../shared/component.js";
 import { PageRegistry } from "../shared/page_registry.js";
 import { LessonViewer } from "../lesson_viewer/lesson_viewer.js";
 import { LessonProvider } from "../shared/lesson_provider.js";
+import { PracticeViewer } from "../practice_viewer/practice_viewer.js";
 
 // Trigger self-registration of pages
 import "../dashboard_page/dashboard_page.js";
@@ -89,6 +90,8 @@ export class AppShell extends Component {
       // Resolve the name before creating the viewer to avoid "Loading..." header flicker
       const lessonName = await LessonProvider.getLessonName(lessonId);
       nextView = new LessonViewer({ lessonId, lessonName });
+    } else if (hash === "#/practice") {
+      nextView = new PracticeViewer();
     } else {
       const route = path || "home";
       const PageClass = PageRegistry.get(route);
