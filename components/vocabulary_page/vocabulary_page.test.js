@@ -1,8 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { VocabularyPage } from "./vocabulary_page.js";
 import { Progress } from "../shared/progress.js";
-import { ExampleCard } from "../example_card/example_card.js";
-import { SrsBadge } from "../ui/srs_badge/srs_badge.js";
+import { VocabularyItem } from "../vocabulary_item/vocabulary_item.js";
 
 describe("VocabularyPage Component", () => {
   beforeEach(() => {
@@ -20,7 +19,7 @@ describe("VocabularyPage Component", () => {
     expect(emptyState.textContent).toContain("No vocabulary unlocked yet");
   });
 
-  it("should render cards for unlocked exercises", async () => {
+  it("should render items for unlocked exercises", async () => {
     // 1. Setup Progress
     Progress.addExercisesToPractice(["1/1/1.1.2.json"]);
 
@@ -48,16 +47,10 @@ describe("VocabularyPage Component", () => {
     // Wait for async load
     await new Promise((resolve) => setTimeout(resolve, 50));
 
-    const cardContainers = page.shadowRoot.querySelectorAll(".card-container");
-    expect(cardContainers.length).toBe(1);
-
-    const firstCard = cardContainers[0].querySelector("div");
-    expect(firstCard.component).toBeInstanceOf(ExampleCard);
-
-    const badgeOverlay = cardContainers[0].querySelector(".badge-overlay");
-    const badge = badgeOverlay.querySelector("div");
-    expect(badge.component).toBeInstanceOf(SrsBadge);
-    expect(badge.component.level).toBe(1);
+    const items = page.shadowRoot.querySelectorAll("div.vocab-list > div");
+    expect(items.length).toBe(1);
+    expect(items[0].component).toBeInstanceOf(VocabularyItem);
+    expect(items[0].component._data.level).toBe(1);
   });
 
   it("should handle unscramble format correctly", async () => {
@@ -84,12 +77,11 @@ describe("VocabularyPage Component", () => {
     const page = new VocabularyPage();
     await new Promise((resolve) => setTimeout(resolve, 50));
 
-    const cardContainer = page.shadowRoot.querySelector(".card-container");
-    const cardElement = cardContainer.querySelector("div");
-    const cardComponent = cardElement.component;
+    const item = page.shadowRoot.querySelector("div.vocab-list > div");
+    expect(item.component).toBeInstanceOf(VocabularyItem);
 
-    // The card should have converted tokens to strings
-    expect(cardComponent._cantonese).toBe("我係");
+    // The item should have converted tokens to strings
+    expect(item.component._data.cantonese).toBe("我係");
   });
 
   it("should correctly display exercises after lesson completion (integration)", async () => {
@@ -143,20 +135,16 @@ describe("VocabularyPage Component", () => {
     const page = new VocabularyPage();
     await new Promise((resolve) => setTimeout(resolve, 50));
 
-    const cardContainers = page.shadowRoot.querySelectorAll(".card-container");
-    expect(cardContainers.length).toBe(2);
+    const items = page.shadowRoot.querySelectorAll("div.vocab-list > div");
+    expect(items.length).toBe(2);
 
-    // Verify first card (Reading)
-    const card1 = cardContainers[0].querySelector("div").component;
-    expect(card1._cantonese).toBe("你好");
+    // Verify first item (Reading)
+    expect(items[0].component._data.cantonese).toBe("你好");
 
-    // Verify second card (Unscramble)
-    const card2 = cardContainers[1].querySelector("div").component;
-    expect(card2._cantonese).toBe("我係");
+    // Verify second item (Unscramble)
+    expect(items[1].component._data.cantonese).toBe("我係");
 
     // Verify SRS levels are initialized to 1
-    const badge =
-      cardContainers[0].querySelector(".badge-overlay div").component;
-    expect(badge.level).toBe(1);
+    expect(items[0].component._data.level).toBe(1);
   });
 });

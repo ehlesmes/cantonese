@@ -1,8 +1,7 @@
 import { Component } from "../shared/component.js";
 import { PageRegistry } from "../shared/page_registry.js";
 import { Progress } from "../shared/progress.js";
-import { ExampleCard } from "../example_card/example_card.js";
-import { SrsBadge } from "../ui/srs_badge/srs_badge.js";
+import { VocabularyItem } from "../vocabulary_item/vocabulary_item.js";
 
 export class VocabularyPage extends Component {
   constructor() {
@@ -74,26 +73,18 @@ export class VocabularyPage extends Component {
     this._list.replaceChildren();
 
     exercises.forEach((ex) => {
-      const cardContainer = this.html("div", { className: "card-container" });
-
       // Handle both Reading and Unscramble formats
-      const cardData = {
+      const vocabData = {
         cantonese:
           ex.cantonese || ex.tokens?.map((t) => t[0]).join("") || "Error",
         romanization:
           ex.romanization || ex.tokens?.map((t) => t[1]).join(" ") || "Error",
         translation: ex.translation || "Error",
+        level: ex.level,
       };
 
-      const card = new ExampleCard(cardData);
-      cardContainer.appendChild(card.element);
-
-      const badgeOverlay = this.html("div", { className: "badge-overlay" });
-      const badge = new SrsBadge({ level: ex.level });
-      badgeOverlay.appendChild(badge.element);
-      cardContainer.appendChild(badgeOverlay);
-
-      this._list.appendChild(cardContainer);
+      const item = new VocabularyItem(vocabData);
+      this._list.appendChild(item.element);
     });
   }
 }
