@@ -23,14 +23,13 @@ export class BasePage extends Component {
   ) {
     super(baseUrl);
     this.validate(data, requiredProps);
-    this._footerConfig = footerConfig;
 
-    this.render();
+    this.render(footerConfig);
     this.setupEventListeners();
     this.renderContent(data);
   }
 
-  render() {
+  render(footerConfig) {
     // Layout containers
     this.container = this.html("div", { className: "page-container" });
     this.main = this.html("main");
@@ -40,7 +39,7 @@ export class BasePage extends Component {
     this.container.appendChild(this.main);
 
     // Initialize footer with provided config
-    this.footer = new LessonFooter(this._footerConfig);
+    this.footer = new LessonFooter(footerConfig);
     this.footer.element.id = "footer";
     this.container.appendChild(this.footer.element);
 

@@ -13,17 +13,14 @@ export class AppShell extends Component {
   }
 
   render() {
-    const container = document.createElement("div");
-    container.className = "app-shell";
+    const container = this.html("div", { className: "app-shell" });
 
     // Navigation Header Slot
-    this._header = document.createElement("header");
-    this._header.className = "app-header";
+    this._header = this.html("header", { className: "app-header" });
     container.appendChild(this._header);
 
     // Main Content Slot
-    this._main = document.createElement("main");
-    this._main.className = "app-content";
+    this._main = this.html("main", { className: "app-content" });
     container.appendChild(this._main);
 
     this.shadowRoot.appendChild(container);

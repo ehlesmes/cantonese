@@ -4,10 +4,6 @@ import { speakCantonese } from "../shared/tts.js";
 import { Button } from "../ui/button/button.js";
 import { Tooltip } from "../ui/tooltip/tooltip.js";
 
-/**
- * ReadingExercise Component
- * A reusable UI element for displaying reading exercises.
- */
 export class ReadingExercise extends Component {
   /**
    * @param {Object} [data]
@@ -18,14 +14,14 @@ export class ReadingExercise extends Component {
   constructor(data) {
     super(import.meta.url);
     this.validate(data, ["cantonese", "romanization", "translation"]);
-    this._data = data;
+    this._cantonese = data.cantonese;
 
-    this.render();
+    this.render(data);
     this.setupEventListeners();
   }
 
-  render() {
-    const { cantonese, romanization, translation } = this._data;
+  render(data) {
+    const { cantonese, romanization, translation } = data;
 
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,
@@ -80,8 +76,8 @@ export class ReadingExercise extends Component {
   }
 
   playAudio() {
-    speakCantonese(this._data.cantonese);
+    speakCantonese(this._cantonese);
 
-    this.dispatch("play-audio", { phrase: this._data.cantonese });
+    this.dispatch("play-audio", { phrase: this._cantonese });
   }
 }

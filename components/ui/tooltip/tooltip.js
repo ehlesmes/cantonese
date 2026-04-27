@@ -4,13 +4,12 @@ export class Tooltip extends Component {
   constructor(data) {
     super(import.meta.url);
     this.validate(data, ["trigger", "content"]);
-    this._data = data;
 
-    this.render();
+    this.render(data);
   }
 
-  render() {
-    const { trigger, content } = this._data;
+  render(data) {
+    const { trigger, content } = data;
 
     const container = this.html("div", { className: "tooltip-container" });
 

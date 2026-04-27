@@ -26,22 +26,19 @@ export class LessonViewer extends Component {
     this._currentPageIndex = 0;
     this._pageCache = new Map();
 
-    this.render();
+    this.render({ lessonName });
     this.setupEventListeners();
 
     this._loadPromise = this._loadLesson(this._lessonId);
   }
+  render(data) {
+    this._container = this.html("div", { className: "lesson-container" });
 
-  render() {
-    this._container = document.createElement("div");
-    this._container.className = "lesson-container";
-
-    this._header = new LessonHeader({ lessonName: this._lessonName });
+    this._header = new LessonHeader({ lessonName: data.lessonName });
     this._header.element.id = "header";
     this._container.appendChild(this._header.element);
 
-    this._main = document.createElement("main");
-    this._main.id = "m";
+    this._main = this.html("main", { id: "m" });
     this._container.appendChild(this._main);
 
     this.shadowRoot.appendChild(this._container);
@@ -130,9 +127,10 @@ export class LessonViewer extends Component {
     const pageDef = this._lessonData[index];
 
     this._main.innerHTML = "";
-    const loading = document.createElement("div");
-    loading.className = "loading";
-    loading.textContent = "Loading...";
+    const loading = this.html("div", {
+      className: "loading",
+      textContent: "Loading...",
+    });
     this._main.appendChild(loading);
 
     let pageData;
@@ -159,9 +157,10 @@ export class LessonViewer extends Component {
           this._pageCache.set(pageDef.id, pageData);
         } catch {
           this._main.innerHTML = "";
-          const error = document.createElement("div");
-          error.className = "error";
-          error.textContent = `Failed to load page: ${pageDef.id}`;
+          const error = this.html("div", {
+            className: "error",
+            textContent: `Failed to load page: ${pageDef.id}`,
+          });
           this._main.appendChild(error);
           return;
         }
@@ -171,9 +170,10 @@ export class LessonViewer extends Component {
     const PageClass = PageRegistry.get(pageDef.type);
     if (!PageClass) {
       this._main.innerHTML = "";
-      const error = document.createElement("div");
-      error.className = "error";
-      error.textContent = `Unknown page type: ${pageDef.type}`;
+      const error = this.html("div", {
+        className: "error",
+        textContent: `Unknown page type: ${pageDef.type}`,
+      });
       this._main.appendChild(error);
       return;
     }
@@ -190,9 +190,10 @@ export class LessonViewer extends Component {
     } catch (e) {
       console.error("🚨 [LessonViewer ERROR]: Failed to render page", e);
       this._main.innerHTML = "";
-      const error = document.createElement("div");
-      error.className = "error";
-      error.textContent = `Failed to render page: ${e.message}`;
+      const error = this.html("div", {
+        className: "error",
+        textContent: `Failed to render page: ${e.message}`,
+      });
       this._main.appendChild(error);
     }
   }

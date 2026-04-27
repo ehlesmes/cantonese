@@ -14,14 +14,14 @@ export class ExampleCard extends Component {
   constructor(data) {
     super(import.meta.url);
     this.validate(data, ["cantonese", "romanization", "translation"]);
-    this._data = data;
+    this._cantonese = data.cantonese;
 
-    this.render();
+    this.render(data);
     this.setupEventListeners();
   }
 
-  render() {
-    const { cantonese, romanization, translation } = this._data;
+  render(data) {
+    const { cantonese, romanization, translation } = data;
 
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,
@@ -78,6 +78,6 @@ export class ExampleCard extends Component {
   }
 
   playAudio() {
-    speakCantonese(this._data.cantonese);
+    speakCantonese(this._cantonese);
   }
 }

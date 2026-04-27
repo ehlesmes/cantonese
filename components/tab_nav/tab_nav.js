@@ -7,21 +7,20 @@ export class TabNav extends Component {
    */
   constructor(options) {
     super(import.meta.url);
-    this._tabs = options.tabs;
     this._buttons = new Map();
 
-    this.render();
+    this.render(options);
   }
 
-  render() {
-    const nav = document.createElement("nav");
-    nav.className = "tab-nav";
+  render(options) {
+    const nav = this.html("nav", { className: "tab-nav" });
 
-    this._tabs.forEach((tab) => {
-      const btn = document.createElement("a");
-      btn.className = "tab-button";
-      btn.href = tab.hash;
-      btn.textContent = tab.label;
+    options.tabs.forEach((tab) => {
+      const btn = this.html("a", {
+        className: "tab-button",
+        textContent: tab.label,
+        href: tab.hash,
+      });
 
       nav.appendChild(btn);
       this._buttons.set(tab.hash, btn);

@@ -20,24 +20,32 @@ export class Component {
 
   /**
    * Standard rendering lifecycle method.
-   * Subclasses should override this.
+   * @param {Object} [data]
    */
-  render() {}
+  render(_data) {}
 
   /**
-   * Helper to create elements with classes and content.
+   * Helper to create elements with classes, content, and common properties.
    * @param {string} tag
    * @param {Object} [props]
    * @param {string} [props.className]
    * @param {string} [props.id]
    * @param {string} [props.textContent]
+   * @param {string} [props.href]
+   * @param {string} [props.title]
+   * @param {string} [props.slot]
+   * @param {string} [props.type]
    * @returns {HTMLElement}
    */
-  html(tag, { className, id, textContent } = {}) {
+  html(tag, { className, id, textContent, href, title, slot, type } = {}) {
     const el = document.createElement(tag);
     if (className) el.className = className;
     if (id) el.id = id;
     if (textContent) el.textContent = textContent;
+    if (href) el.href = href;
+    if (title) el.title = title;
+    if (slot) el.slot = slot;
+    if (type) el.type = type;
     return el;
   }
 

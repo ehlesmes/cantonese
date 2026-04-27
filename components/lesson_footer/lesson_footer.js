@@ -11,19 +11,17 @@ export class LessonFooter extends Component {
    */
   constructor(data) {
     super(import.meta.url);
-
     this.validate(data, ["primaryText"]);
-    this._data = data;
 
-    this.render();
+    this.render(data);
     this.setupEventListeners();
   }
 
-  render() {
+  render(data) {
     const { primaryText, secondaryText, primaryDisabled, secondaryDisabled } =
-      this._data;
+      data;
 
-    this._footer = document.createElement("footer");
+    this._footer = this.html("footer");
 
     this._secondaryBtn = new Button({
       label: secondaryText || "Secondary",

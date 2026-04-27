@@ -18,9 +18,8 @@ export class Button extends Component {
   constructor(data) {
     super(import.meta.url);
     this.validate(data);
-    this._data = data;
 
-    this.render();
+    this.render(data);
     this.setupEventListeners();
 
     // Initial state
@@ -31,8 +30,8 @@ export class Button extends Component {
     this.proxyProperty("label");
   }
 
-  render() {
-    const { label, icon, variant = "outline", title } = this._data;
+  render(data) {
+    const { label, icon, variant = "outline", title } = data;
 
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,

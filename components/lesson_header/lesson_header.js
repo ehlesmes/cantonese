@@ -10,19 +10,17 @@ export class LessonHeader extends Component {
    */
   constructor(data) {
     super(import.meta.url);
-
     this.validate(data, ["lessonName"]);
-    this._data = data;
     this._progress = 0;
 
-    this.render();
+    this.render(data);
     this.proxyProperty("progress");
 
     this.progress = data.progress || 0;
   }
 
-  render() {
-    const { lessonName, hideNavigation = false } = this._data;
+  render(data) {
+    const { lessonName, hideNavigation = false } = data;
 
     const headerContainer = this.html("div", { className: "header-container" });
     const header = this.html("header");
