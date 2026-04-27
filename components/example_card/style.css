@@ -18,7 +18,7 @@
 
 .example-wrapper:hover {
   transform: translateX(4px);
-  box-shadow: 0 2px 8px var(--md-sys-color-shadow-light);
+  box-shadow: 0 2px 8px var(--md-sys-color-shadow);
 }
 
 .example-label {

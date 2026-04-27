@@ -23,7 +23,7 @@
 
 .btn-filled:hover:not([disabled]) {
   opacity: 0.9;
-  box-shadow: 0 1px 3px var(--md-sys-color-shadow-heavy);
+  box-shadow: 0 1px 3px var(--md-sys-color-shadow);
 }
 
 .btn-outline {

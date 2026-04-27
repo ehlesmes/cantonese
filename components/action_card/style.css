@@ -20,7 +20,7 @@
 .action-card:hover {
   background-color: var(--md-sys-color-surface-variant);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--md-sys-color-shadow-heavy);
+  box-shadow: 0 4px 8px var(--md-sys-color-shadow);
 }
 
 .action-card:active {
