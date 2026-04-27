@@ -1,7 +1,7 @@
 [
   {
     "type": "explanation",
-    "id": "1.2.1",
+    "pageId": "1.2.1",
     "content": [
       { "type": "title", "value": "Pronouns" },
       { "type": "text", "value": "Let's learn how to refer to people." },
@@ -25,11 +25,11 @@
       }
     ]
   },
-  { "type": "reading", "id": "1.2.2" },
-  { "type": "unscramble", "id": "1.2.3" },
+  { "type": "reading", "pageId": "1.2.2" },
+  { "type": "unscramble", "pageId": "1.2.3" },
   {
     "type": "congratulations",
-    "id": "1.2.4",
+    "pageId": "1.2.4",
     "title": "Pronouns Mastered!",
     "summary": "You can now refer to yourself and others in Cantonese.",
     "nextLessonId": "1.3"

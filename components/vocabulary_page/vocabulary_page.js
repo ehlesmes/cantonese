@@ -46,12 +46,13 @@ export class VocabularyPage extends Component {
       const exercises = await Promise.all(
         practiceItems.map(async (item) => {
           try {
-            const response = await fetch(`data/exercises/${item.id}`);
-            if (!response.ok) throw new Error(`Failed to fetch ${item.id}`);
+            const response = await fetch(`data/exercises/${item.exerciseId}`);
+            if (!response.ok)
+              throw new Error(`Failed to fetch ${item.exerciseId}`);
             const data = await response.json();
             return { ...data, level: item.level };
           } catch (e) {
-            console.warn(`Error loading exercise ${item.id}`, e);
+            console.warn(`Error loading exercise ${item.exerciseId}`, e);
             return null;
           }
         }),

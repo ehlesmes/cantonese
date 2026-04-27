@@ -1,7 +1,7 @@
 [
   {
     "type": "explanation",
-    "id": "2.1.1",
+    "pageId": "2.1.1",
     "content": [
       { "type": "title", "value": "Numbers 1-5" },
       { "type": "text", "value": "Let's learn the first five numbers." },
@@ -13,11 +13,11 @@
       }
     ]
   },
-  { "type": "reading", "id": "2.1.2" },
-  { "type": "unscramble", "id": "2.1.3" },
+  { "type": "reading", "pageId": "2.1.2" },
+  { "type": "unscramble", "pageId": "2.1.3" },
   {
     "type": "congratulations",
-    "id": "2.1.4",
+    "pageId": "2.1.4",
     "title": "High Five!",
     "summary": "You've learned the numbers from 1 to 5.",
     "nextLessonId": "2.2"

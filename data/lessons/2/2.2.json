@@ -1,7 +1,7 @@
 [
   {
     "type": "explanation",
-    "id": "2.2.1",
+    "pageId": "2.2.1",
     "content": [
       { "type": "title", "value": "Numbers 6-10" },
       { "type": "text", "value": "Now let's finish the first ten numbers." },
@@ -13,11 +13,11 @@
       }
     ]
   },
-  { "type": "reading", "id": "2.2.2" },
-  { "type": "unscramble", "id": "2.2.3" },
+  { "type": "reading", "pageId": "2.2.2" },
+  { "type": "unscramble", "pageId": "2.2.3" },
   {
     "type": "congratulations",
-    "id": "2.2.4",
+    "pageId": "2.2.4",
     "title": "Perfect Ten!",
     "summary": "You can now count from 1 to 10 in Cantonese.",
     "nextLessonId": "2.3"

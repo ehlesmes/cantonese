@@ -13,10 +13,10 @@ vi.mock("../shared/progress.js", () => ({
 
 describe("LessonViewer Component", () => {
   const mockLesson = [
-    { id: "1.1.1", type: "explanation", content: [] },
-    { id: "1.1.2", type: "reading" },
+    { pageId: "1.1.1", type: "explanation", content: [] },
+    { pageId: "1.1.2", type: "reading" },
     {
-      id: "1.1.3",
+      pageId: "1.1.3",
       type: "congratulations",
       title: "Done",
       summary: "Good job",

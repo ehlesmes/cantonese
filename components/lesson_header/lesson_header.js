@@ -56,4 +56,12 @@ export class LessonHeader extends Component {
     const percentage = this._progress * 100;
     this._progressBar.style.width = `${percentage}%`;
   }
+
+  get lessonName() {
+    return this._titleEl.textContent;
+  }
+
+  set lessonName(value) {
+    this._titleEl.textContent = value;
+  }
 }

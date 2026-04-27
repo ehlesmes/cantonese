@@ -50,7 +50,7 @@ export class DashboardPage extends Component {
 
   setupEventListeners() {
     // Event delegation for cards and roadmap items
-    this.element.addEventListener("action-click", (e) => {
+    this._container.addEventListener("action-click", (e) => {
       const cardId = e.target.id;
 
       if (cardId === "practice-card") {
@@ -58,12 +58,12 @@ export class DashboardPage extends Component {
       } else if (cardId === "next-lesson-card") {
         const id = this._nextLesson
           ? this._nextLesson.lessonId
-          : this._chapters[0]?.lessons[0].id;
+          : this._chapters[0]?.lessons[0].lessonId;
         if (id) window.location.hash = `#/lesson/${id}`;
       }
     });
 
-    this.element.addEventListener("lesson-click", (e) => {
+    this._container.addEventListener("lesson-click", (e) => {
       window.location.hash = `#/lesson/${e.detail.lessonId}`;
     });
   }

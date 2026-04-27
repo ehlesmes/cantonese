@@ -161,11 +161,11 @@ export const Progress = {
     const state = this._getState();
     for (const chapter of chapters) {
       for (const lesson of chapter.lessons) {
-        if (!state.lessons[lesson.id]?.completed) {
+        if (!state.lessons[lesson.lessonId]?.completed) {
           return {
-            chapterId: chapter.id,
-            lessonId: lesson.id,
-            lessonName: lesson.name,
+            chapterId: chapter.chapterId,
+            lessonId: lesson.lessonId,
+            lessonName: lesson.lessonName,
           };
         }
       }
@@ -203,14 +203,14 @@ export const Progress = {
 
   /**
    * Returns all exercises currently in the SRS system with their levels.
-   * @returns {Array<{id: string, level: number}>}
+   * @returns {Array<{exerciseId: string, level: number}>}
    */
   getAllPracticeExercises() {
     const state = this._getState();
     const result = [];
     for (let i = 1; i <= MAX_LEVEL; i++) {
-      state.practice.levels[i].forEach((id) => {
-        result.push({ id, level: i });
+      state.practice.levels[i].forEach((exerciseId) => {
+        result.push({ exerciseId, level: i });
       });
     }
     return result;

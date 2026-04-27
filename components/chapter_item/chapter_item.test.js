@@ -3,9 +3,9 @@ import { ChapterItem } from "./chapter_item.js";
 
 describe("ChapterItem Component", () => {
   const mockData = {
-    id: "1",
-    name: "Basics",
-    lessons: [{ id: "1.1", name: "Greetings" }],
+    chapterId: "1",
+    chapterName: "Basics",
+    lessons: [{ lessonId: "1.1", lessonName: "Greetings" }],
     progress: { 1.1: { completed: true } },
     open: true,
   };
@@ -15,8 +15,10 @@ describe("ChapterItem Component", () => {
   });
 
   describe("Validation", () => {
-    it("should throw if id is missing", () => {
-      expect(() => new ChapterItem({ name: "A", lessons: [] })).toThrow();
+    it("should throw if chapterId is missing", () => {
+      expect(
+        () => new ChapterItem({ chapterName: "A", lessons: [] }),
+      ).toThrow();
     });
   });
 

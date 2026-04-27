@@ -105,13 +105,15 @@ export class LessonViewer extends Component {
     for (const page of this._lessonData) {
       if (
         (page.type === "reading" || page.type === "unscramble") &&
-        !this._pageCache.has(page.id)
+        !this._pageCache.has(page.pageId)
       ) {
-        const url = `data/exercises/${chapter}/${lessonNum}/${page.id}.json`;
+        const url = `data/exercises/${chapter}/${lessonNum}/${page.pageId}.json`;
         fetch(url)
           .then((res) => res.json())
-          .then((data) => this._pageCache.set(page.id, data))
-          .catch(() => console.warn(`Failed to prefetch exercise ${page.id}`));
+          .then((data) => this._pageCache.set(page.pageId, data))
+          .catch(() =>
+            console.warn(`Failed to prefetch exercise ${page.pageId}`),
+          );
       }
     }
   }
@@ -139,22 +141,22 @@ export class LessonViewer extends Component {
       const [chapter, lessonNum] = this._lessonId.split(".");
       const exerciseIds = this._lessonData
         .filter((p) => p.type === "reading" || p.type === "unscramble")
-        .map((p) => `${chapter}/${lessonNum}/${p.id}.json`);
+        .map((p) => `${chapter}/${lessonNum}/${p.pageId}.json`);
       Progress.addExercisesToPractice(exerciseIds);
     } else {
-      pageData = this._pageCache.get(pageDef.id);
+      pageData = this._pageCache.get(pageDef.pageId);
       if (!pageData) {
         try {
           const [chapter, lessonNum] = this._lessonId.split(".");
           const response = await fetch(
-            `data/exercises/${chapter}/${lessonNum}/${pageDef.id}.json`,
+            `data/exercises/${chapter}/${lessonNum}/${pageDef.pageId}.json`,
           );
           pageData = await response.json();
-          this._pageCache.set(pageDef.id, pageData);
+          this._pageCache.set(pageDef.pageId, pageData);
         } catch {
           const error = this.html("div", {
             className: "error",
-            textContent: `Failed to load page: ${pageDef.id}`,
+            textContent: `Failed to load page: ${pageDef.pageId}`,
           });
           this._main.replaceChildren(error);
           return;

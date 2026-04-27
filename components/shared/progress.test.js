@@ -155,8 +155,8 @@ describe("Progress Utility", () => {
     Progress.updatePracticeResult("e2.json", true);
 
     const all = Progress.getAllPracticeExercises();
-    expect(all).toContainEqual({ id: "e1.json", level: 1 });
-    expect(all).toContainEqual({ id: "e2.json", level: 2 });
+    expect(all).toContainEqual({ exerciseId: "e1.json", level: 1 });
+    expect(all).toContainEqual({ exerciseId: "e2.json", level: 2 });
     expect(all.length).toBe(2);
   });
 });

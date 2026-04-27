@@ -4,8 +4,8 @@ import { ChapterAccordion } from "./chapter_accordion.js";
 describe("ChapterAccordion Component", () => {
   const mockData = {
     chapters: [
-      { id: "1", name: "Basics", lessons: [] },
-      { id: "2", name: "Numbers", lessons: [] },
+      { chapterId: "1", chapterName: "Basics", lessons: [] },
+      { chapterId: "2", chapterName: "Numbers", lessons: [] },
     ],
     progress: {},
     activeChapterId: "2",
