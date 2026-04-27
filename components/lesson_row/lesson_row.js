@@ -33,7 +33,7 @@ export class LessonRow extends Component {
     const info = this.html("div", { className: "lesson-info" });
     const idEl = this.html("span", {
       className: "lesson-id",
-      textContent: lessonId,
+      textContent: `Lesson ${lessonId}`,
     });
     const nameEl = this.html("span", {
       className: "lesson-name",

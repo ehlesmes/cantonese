@@ -22,18 +22,12 @@ export class ChapterItem extends Component {
   }
 
   render(data) {
-    const { id, name, lessons, progress, open } = data;
+    const { name, lessons, progress, open } = data;
 
     const details = this.html("details", { open: Boolean(open) });
     const summary = this.html("summary");
 
     const info = this.html("div", { className: "chapter-info" });
-    info.appendChild(
-      this.html("span", {
-        className: "chapter-id",
-        textContent: `Chapter ${id}`,
-      }),
-    );
     info.appendChild(
       this.html("span", { className: "chapter-name", textContent: name }),
     );

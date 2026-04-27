@@ -15,7 +15,7 @@ describe("LessonRow Component", () => {
   it("should render lesson id and name", () => {
     const row = new LessonRow(mockData);
     expect(row.shadowRoot.querySelector(".lesson-id").textContent).toBe(
-      mockData.lessonId,
+      `Lesson ${mockData.lessonId}`,
     );
     expect(row.shadowRoot.querySelector(".lesson-name").textContent).toBe(
       mockData.lessonName,

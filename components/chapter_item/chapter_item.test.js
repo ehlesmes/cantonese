@@ -20,11 +20,8 @@ describe("ChapterItem Component", () => {
     });
   });
 
-  it("should render chapter id and name", () => {
+  it("should render chapter name", () => {
     const item = new ChapterItem(mockData);
-    expect(item.shadowRoot.querySelector(".chapter-id").textContent).toContain(
-      "Chapter 1",
-    );
     expect(item.shadowRoot.querySelector(".chapter-name").textContent).toBe(
       "Basics",
     );
