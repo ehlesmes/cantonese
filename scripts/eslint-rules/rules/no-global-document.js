@@ -1,4 +1,4 @@
-import { isComponentClass } from "../ast-utils.js";
+import { createComponentVisitor } from "../ast-utils.js";
 
 export default {
   meta: {
@@ -8,18 +8,8 @@ export default {
     },
   },
   create(context) {
-    let inComponent = false;
-
-    return {
-      ClassDeclaration(node) {
-        if (isComponentClass(node)) inComponent = true;
-      },
-      "ClassDeclaration:exit"() {
-        inComponent = false;
-      },
+    return createComponentVisitor({
       MemberExpression(node) {
-        if (!inComponent) return;
-
         // Allow document.createElement and createTextNode, block everything else
         const allowedMethods = ["createElement", "createTextNode"];
         if (
@@ -33,6 +23,6 @@ export default {
           });
         }
       },
-    };
+    });
   },
 };

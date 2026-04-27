@@ -19,6 +19,76 @@ export const findConstructor = (node) =>
   );
 
 /**
+ * Finds the super() call in a constructor body.
+ * @param {ASTNode} constructorNode
+ * @returns {ASTNode|undefined}
+ */
+export const findSuperCall = (constructorNode) => {
+  if (!constructorNode?.value?.body?.body) return undefined;
+  return constructorNode.value.body.body.find(
+    (s) =>
+      s.type === "ExpressionStatement" &&
+      s.expression.type === "CallExpression" &&
+      s.expression.callee.type === "Super",
+  );
+};
+
+/**
+ * Converts a snake_case string to PascalCase.
+ * @param {string} str
+ * @returns {string}
+ */
+export const toPascalCase = (str) =>
+  str
+    .split("_")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join("");
+
+/**
+ * Checks if a method name follows the getFoo/setFoo pattern.
+ * @param {string} name
+ * @returns {boolean}
+ */
+export const isGetterSetterName = (name) =>
+  (name.startsWith("set") || name.startsWith("get")) &&
+  name.length > 3 &&
+  name[3] === name[3].toUpperCase();
+
+/**
+ * Creates a visitor that tracks whether we are inside a component class.
+ * @param {Object} visitors - Rule visitors
+ * @returns {Object}
+ */
+export const createComponentVisitor = (visitors) => {
+  let inComponent = false;
+
+  const componentVisitors = {
+    ClassDeclaration(node) {
+      if (isComponentClass(node)) inComponent = true;
+      if (visitors.ClassDeclaration) visitors.ClassDeclaration(node);
+    },
+    "ClassDeclaration:exit"(node) {
+      if (visitors["ClassDeclaration:exit"])
+        visitors["ClassDeclaration:exit"](node);
+      inComponent = false;
+    },
+  };
+
+  // Wrap other visitors to check inComponent
+  Object.keys(visitors).forEach((key) => {
+    if (key !== "ClassDeclaration" && key !== "ClassDeclaration:exit") {
+      componentVisitors[key] = (node) => {
+        if (inComponent) {
+          visitors[key](node);
+        }
+      };
+    }
+  });
+
+  return componentVisitors;
+};
+
+/**
  * Checks if a method or constructor contains a call to a specific method.
  * Defaults to checking calls on 'this' (e.g., this.render()).
  * @param {ASTNode} containerNode

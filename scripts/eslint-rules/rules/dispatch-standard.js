@@ -1,4 +1,4 @@
-import { isComponentClass } from "../ast-utils.js";
+import { createComponentVisitor } from "../ast-utils.js";
 
 export default {
   meta: {
@@ -9,18 +9,8 @@ export default {
     },
   },
   create(context) {
-    let inComponent = false;
-
-    return {
-      ClassDeclaration(node) {
-        if (isComponentClass(node)) inComponent = true;
-      },
-      "ClassDeclaration:exit"() {
-        inComponent = false;
-      },
+    return createComponentVisitor({
       CallExpression(node) {
-        if (!inComponent) return;
-
         const isDispatchEvent =
           node.callee.type === "MemberExpression" &&
           node.callee.property.name === "dispatchEvent";
@@ -33,6 +23,6 @@ export default {
           });
         }
       },
-    };
+    });
   },
 };

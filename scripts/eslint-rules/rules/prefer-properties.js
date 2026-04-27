@@ -1,4 +1,4 @@
-import { isComponentClass } from "../ast-utils.js";
+import { isComponentClass, isGetterSetterName } from "../ast-utils.js";
 
 export default {
   meta: {
@@ -14,13 +14,7 @@ export default {
         // node.parent is ClassBody, node.parent.parent is ClassDeclaration
         if (!isComponentClass(node.parent.parent)) return;
 
-        const name = node.key.name;
-        const isGetterSetterPattern =
-          (name.startsWith("set") || name.startsWith("get")) &&
-          name.length > 3 &&
-          name[3] === name[3].toUpperCase();
-
-        if (isGetterSetterPattern) {
+        if (isGetterSetterName(node.key.name)) {
           context.report({
             node,
             message:

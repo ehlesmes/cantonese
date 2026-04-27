@@ -1,4 +1,5 @@
 import path from "path";
+import { toPascalCase } from "../ast-utils.js";
 
 export default {
   meta: {
@@ -19,11 +20,7 @@ export default {
         // Ignore shared files or index files
         if (basename === "index" || basename === "component") return;
 
-        const expectedName = basename
-          .split("_")
-          .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-          .join("");
-
+        const expectedName = toPascalCase(basename);
         const actualName = node.declaration.id.name;
 
         if (actualName !== expectedName) {

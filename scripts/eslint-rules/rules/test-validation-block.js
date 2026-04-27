@@ -1,4 +1,4 @@
-import fs from "fs";
+import { isTestFile, getComponentSource } from "../test-utils.js";
 
 export default {
   meta: {
@@ -9,13 +9,13 @@ export default {
     },
   },
   create(context) {
-    if (!context.filename.endsWith(".test.js")) return {};
+    if (!isTestFile(context)) return {};
+
     return {
       Program(node) {
-        const componentFile = context.filename.replace(".test.js", ".js");
-        if (!fs.existsSync(componentFile)) return;
+        const componentSource = getComponentSource(context);
+        if (!componentSource) return;
 
-        const componentSource = fs.readFileSync(componentFile, "utf-8");
         if (
           componentSource.includes("validate(") &&
           !context.sourceCode.getText().includes('describe("Validation"')

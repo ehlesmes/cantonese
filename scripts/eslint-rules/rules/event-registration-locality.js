@@ -1,4 +1,4 @@
-import { isComponentClass } from "../ast-utils.js";
+import { createComponentVisitor } from "../ast-utils.js";
 
 export default {
   meta: {
@@ -9,25 +9,20 @@ export default {
     },
   },
   create(context) {
-    let inComponent = false;
     let inSetupEvents = false;
 
-    return {
-      ClassDeclaration(node) {
-        if (isComponentClass(node)) inComponent = true;
-      },
-      "ClassDeclaration:exit"() {
-        inComponent = false;
-      },
+    return createComponentVisitor({
       MethodDefinition(node) {
-        if (node.key.name === "setupEventListeners") inSetupEvents = true;
+        if (node.key.name === "setupEventListeners") {
+          inSetupEvents = true;
+        }
       },
       "MethodDefinition:exit"(node) {
-        if (node.key.name === "setupEventListeners") inSetupEvents = false;
+        if (node.key.name === "setupEventListeners") {
+          inSetupEvents = false;
+        }
       },
       CallExpression(node) {
-        if (!inComponent) return;
-
         const isAddListener =
           node.callee.type === "MemberExpression" &&
           node.callee.property.name === "addEventListener";
@@ -40,6 +35,6 @@ export default {
           });
         }
       },
-    };
+    });
   },
 };

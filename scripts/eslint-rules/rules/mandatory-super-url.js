@@ -1,9 +1,8 @@
-import { isComponentClass, findConstructor } from "../ast-utils.js";
-
-const isSuperCall = (statement) =>
-  statement.type === "ExpressionStatement" &&
-  statement.expression.type === "CallExpression" &&
-  statement.expression.callee.type === "Super";
+import {
+  isComponentClass,
+  findConstructor,
+  findSuperCall,
+} from "../ast-utils.js";
 
 const hasValidSuperArg = (superCallNode) => {
   return superCallNode.expression.arguments.some(
@@ -35,7 +34,7 @@ export default {
         const constructor = findConstructor(node);
         if (!constructor) return;
 
-        const superCall = constructor.value.body.body.find(isSuperCall);
+        const superCall = findSuperCall(constructor);
         if (!superCall || !hasValidSuperArg(superCall)) {
           context.report({
             node: superCall || constructor,

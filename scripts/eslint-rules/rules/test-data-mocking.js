@@ -1,3 +1,5 @@
+import { isTestFile } from "../test-utils.js";
+
 export default {
   meta: {
     type: "problem",
@@ -7,7 +9,7 @@ export default {
     },
   },
   create(context) {
-    if (!context.filename.endsWith(".test.js")) return {};
+    if (!isTestFile(context)) return {};
     return {
       Program(node) {
         const source = context.sourceCode.getText();
