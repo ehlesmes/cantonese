@@ -67,9 +67,9 @@ To maintain simplicity and reusability, the UI is broken down into surgical, foc
 
 ### Phase 1: Core Components
 
-1. **App Shell & TabNav:** Establish the navigation framework.
-2. **ActionCard & StatusIcon:** Build the atomic UI units.
-3. **LessonRow & ChapterAccordion:** Build the roadmap structure.
+1. **[DONE] App Shell & TabNav:** Establish the navigation framework.
+2. **[DONE] ActionCard & StatusIcon:** Build the atomic UI units.
+3. **[IN PROGRESS] LessonRow & ChapterAccordion:** Build the roadmap structure. (LessonRow is DONE)
 
 ### Phase 2: The Dashboard
 
