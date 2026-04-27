@@ -63,7 +63,7 @@ export class AppShell extends Component {
 
     // Update active tab in Nav if it exists
     if (this._nav && !isFocusMode) {
-      this._nav.setActiveHash(hash);
+      this._nav.activeHash = hash;
     }
   }
 

@@ -20,10 +20,10 @@ describe("TabNav Component", () => {
     expect(buttons[0].getAttribute("href")).toBe("#/home");
   });
 
-  it("should update active state when setActiveHash is called", () => {
+  it("should update active state when setting activeHash", () => {
     const nav = new TabNav({ tabs: mockTabs });
 
-    nav.setActiveHash("#/vocabulary");
+    nav.activeHash = "#/vocabulary";
 
     const buttons = nav.shadowRoot.querySelectorAll(".tab-button");
     expect(buttons[0].classList.contains("active")).toBe(false);
@@ -32,7 +32,7 @@ describe("TabNav Component", () => {
 
   it("should handle unknown hashes gracefully", () => {
     const nav = new TabNav({ tabs: mockTabs });
-    nav.setActiveHash("#/unknown");
+    nav.activeHash = "#/unknown";
 
     const active = nav.shadowRoot.querySelector(".active");
     expect(active).toBeNull();

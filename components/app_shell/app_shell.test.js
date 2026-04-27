@@ -67,15 +67,18 @@ describe("AppShell Component", () => {
 
   it("should update active tab in nav on routing", () => {
     const shell = new AppShell();
+    const activeHashSpy = vi.fn();
     const mockNav = {
       element: document.createElement("div"),
-      setActiveHash: vi.fn(),
+      set activeHash(val) {
+        activeHashSpy(val);
+      },
     };
     shell.setNav(mockNav);
 
     window.location.hash = "#/vocabulary";
     shell.handleRoute();
 
-    expect(mockNav.setActiveHash).toHaveBeenCalledWith("#/vocabulary");
+    expect(activeHashSpy).toHaveBeenCalledWith("#/vocabulary");
   });
 });

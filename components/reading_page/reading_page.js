@@ -19,9 +19,9 @@ export class ReadingPage extends BasePage {
 
   _reveal() {
     this._revealed = true;
-    this._exercise.showTranslation();
-    this.footer.setPrimary("Got it right");
-    this.footer.setSecondary("Need practice");
+    this._exercise.translationVisible = true;
+    this.footer.primaryText = "Got it right";
+    this.footer.secondaryText = "Need practice";
   }
 
   handlePrimaryClick() {

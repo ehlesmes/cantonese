@@ -87,38 +87,38 @@ describe("LessonFooter Component", () => {
     });
 
     it("should update primary button text and visibility", () => {
-      component.setPrimary("Updated Primary");
+      component.primaryText = "Updated Primary";
       expect(primaryBtn.component.label).toBe("Updated Primary");
       expect(primaryBtn.classList.contains("hidden")).toBe(false);
 
-      component.setPrimary(null);
+      component.primaryText = null;
       expect(primaryBtn.classList.contains("hidden")).toBe(true);
     });
 
     it("should update secondary button text and visibility", () => {
       expect(secondaryBtn.classList.contains("hidden")).toBe(true);
 
-      component.setSecondary("Updated Secondary");
+      component.secondaryText = "Updated Secondary";
       expect(secondaryBtn.component.label).toBe("Updated Secondary");
       expect(secondaryBtn.classList.contains("hidden")).toBe(false);
 
-      component.setSecondary(null);
+      component.secondaryText = null;
       expect(secondaryBtn.classList.contains("hidden")).toBe(true);
     });
 
     it("should update primary button disabled state", () => {
       expect(primaryBtn.component.disabled).toBe(false);
-      component.setPrimaryDisabled(true);
+      component.primaryDisabled = true;
       expect(primaryBtn.component.disabled).toBe(true);
-      component.setPrimaryDisabled(false);
+      component.primaryDisabled = false;
       expect(primaryBtn.component.disabled).toBe(false);
     });
 
     it("should update secondary button disabled state", () => {
       expect(secondaryBtn.component.disabled).toBe(false);
-      component.setSecondaryDisabled(true);
+      component.secondaryDisabled = true;
       expect(secondaryBtn.component.disabled).toBe(true);
-      component.setSecondaryDisabled(false);
+      component.secondaryDisabled = false;
       expect(secondaryBtn.component.disabled).toBe(false);
     });
   });

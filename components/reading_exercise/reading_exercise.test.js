@@ -45,9 +45,11 @@ describe("ReadingExercise Component", () => {
 
     // By default (from data object), it's hidden
     expect(translationEl.classList.contains("hidden")).toBe(true);
+    expect(component.translationVisible).toBe(false);
 
-    component.showTranslation();
+    component.translationVisible = true;
     expect(translationEl.classList.contains("hidden")).toBe(false);
+    expect(component.translationVisible).toBe(true);
   });
 
   it("should dispatch 'play-audio' event when audio button is clicked", () => {

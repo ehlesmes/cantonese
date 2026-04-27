@@ -39,8 +39,8 @@ export class UnscramblePage extends BasePage {
     const status = this._exercise.status;
     const isFinished = status === "right" || status === "wrong";
 
-    this.footer.setPrimaryDisabled(!isFinished);
-    this.footer.setSecondary(status === "wrong" ? "Try again" : null);
+    this.footer.primaryDisabled = !isFinished;
+    this.footer.secondaryText = status === "wrong" ? "Try again" : null;
   }
 
   handlePrimaryClick() {

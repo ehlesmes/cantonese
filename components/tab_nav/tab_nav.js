@@ -31,9 +31,15 @@ export class TabNav extends Component {
 
   /**
    * Updates the visual active state based on the current hash.
-   * @param {string} currentHash
    */
-  setActiveHash(currentHash) {
+  get activeHash() {
+    for (const [hash, btn] of this._buttons) {
+      if (btn.classList.contains("active")) return hash;
+    }
+    return null;
+  }
+
+  set activeHash(currentHash) {
     // Remove active class from all
     this._buttons.forEach((btn) => btn.classList.remove("active"));
 

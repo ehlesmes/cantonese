@@ -71,8 +71,12 @@ export class ReadingExercise extends Component {
     this._playBtn.element.addEventListener("click", () => this.playAudio());
   }
 
-  showTranslation() {
-    this._translationEl.classList.toggle("hidden", false);
+  get translationVisible() {
+    return !this._translationEl.classList.contains("hidden");
+  }
+
+  set translationVisible(value) {
+    this._translationEl.classList.toggle("hidden", !value);
   }
 
   playAudio() {

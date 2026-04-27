@@ -55,10 +55,13 @@ export class LessonFooter extends Component {
   }
 
   /**
-   * Updates the primary button text and visibility.
-   * @param {string|null} text - The button text. If null/undefined, the button is hidden.
+   * Primary button text. Setting to null/undefined hides the button.
    */
-  setPrimary(text) {
+  get primaryText() {
+    return this._primaryBtn.label;
+  }
+
+  set primaryText(text) {
     if (text) {
       this._primaryBtn.label = text;
       this._primaryBtn.element.classList.remove("hidden");
@@ -68,10 +71,13 @@ export class LessonFooter extends Component {
   }
 
   /**
-   * Updates the secondary button text and visibility.
-   * @param {string|null} text - The button text. If null/undefined, the button is hidden.
+   * Secondary button text. Setting to null/undefined hides the button.
    */
-  setSecondary(text) {
+  get secondaryText() {
+    return this._secondaryBtn.label;
+  }
+
+  set secondaryText(text) {
     if (text) {
       this._secondaryBtn.label = text;
       this._secondaryBtn.element.classList.remove("hidden");
@@ -80,19 +86,19 @@ export class LessonFooter extends Component {
     }
   }
 
-  /**
-   * Sets the primary button's disabled state.
-   * @param {boolean} disabled
-   */
-  setPrimaryDisabled(disabled) {
+  get primaryDisabled() {
+    return this._primaryBtn.disabled;
+  }
+
+  set primaryDisabled(disabled) {
     this._primaryBtn.disabled = disabled;
   }
 
-  /**
-   * Sets the secondary button's disabled state.
-   * @param {boolean} disabled
-   */
-  setSecondaryDisabled(disabled) {
+  get secondaryDisabled() {
+    return this._secondaryBtn.disabled;
+  }
+
+  set secondaryDisabled(disabled) {
     this._secondaryBtn.disabled = disabled;
   }
 }
