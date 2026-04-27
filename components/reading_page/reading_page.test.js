@@ -3,7 +3,7 @@ import { ReadingPage } from "./reading_page.js";
 
 describe("ReadingPage Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should be defined", () => {

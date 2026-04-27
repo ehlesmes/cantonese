@@ -22,7 +22,7 @@ describe("PracticeViewer Component", () => {
   };
 
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
     vi.clearAllMocks();
 
     vi.stubGlobal(

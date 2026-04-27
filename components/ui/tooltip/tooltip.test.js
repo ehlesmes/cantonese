@@ -9,7 +9,7 @@ describe("Tooltip Component", () => {
   content.innerText = "Tooltip info";
 
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should be defined", () => {

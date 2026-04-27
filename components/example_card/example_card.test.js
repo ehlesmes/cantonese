@@ -3,7 +3,7 @@ import { ExampleCard } from "./example_card.js";
 
 describe("ExampleCard Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
     // Reset mocks
     vi.restoreAllMocks();
   });

@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+}
+
+details {
+  width: 100%;
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  padding: var(--comp-gap-medium);
+  cursor: pointer;
+  list-style: none;
+  background-color: var(--md-sys-color-surface);
+  transition: background-color 0.2s ease;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:hover {
+  background-color: var(--md-sys-color-surface-variant);
+}
+
+.chapter-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter-id {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+  text-transform: uppercase;
+}
+
+.chapter-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+}
+
+.lesson-list {
+  background-color: var(--md-sys-color-surface);
+  padding-left: var(--comp-gap-medium);
+}
+
+.expand-icon {
+  color: var(--md-sys-color-on-surface-variant);
+  transition: transform 0.3s ease;
+}
+
+details[open] .expand-icon {
+  transform: rotate(180deg);
+}

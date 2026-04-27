@@ -126,12 +126,11 @@ export class LessonViewer extends Component {
 
     const pageDef = this._lessonData[index];
 
-    this._main.innerHTML = "";
     const loading = this.html("div", {
       className: "loading",
       textContent: "Loading...",
     });
-    this._main.appendChild(loading);
+    this._main.replaceChildren(loading);
 
     let pageData;
     if (pageDef.type === "explanation") {
@@ -156,12 +155,11 @@ export class LessonViewer extends Component {
           pageData = await response.json();
           this._pageCache.set(pageDef.id, pageData);
         } catch {
-          this._main.innerHTML = "";
           const error = this.html("div", {
             className: "error",
             textContent: `Failed to load page: ${pageDef.id}`,
           });
-          this._main.appendChild(error);
+          this._main.replaceChildren(error);
           return;
         }
       }
@@ -169,19 +167,17 @@ export class LessonViewer extends Component {
 
     const PageClass = PageRegistry.get(pageDef.type);
     if (!PageClass) {
-      this._main.innerHTML = "";
       const error = this.html("div", {
         className: "error",
         textContent: `Unknown page type: ${pageDef.type}`,
       });
-      this._main.appendChild(error);
+      this._main.replaceChildren(error);
       return;
     }
 
     try {
       const pageInstance = new PageClass(pageData);
-      this._main.innerHTML = "";
-      this._main.appendChild(pageInstance.element);
+      this._main.replaceChildren(pageInstance.element);
       this._main.scrollTop = 0;
 
       // Update progress in header
@@ -189,12 +185,11 @@ export class LessonViewer extends Component {
       this._header.progress = progress;
     } catch (e) {
       console.error("🚨 [LessonViewer ERROR]: Failed to render page", e);
-      this._main.innerHTML = "";
       const error = this.html("div", {
         className: "error",
         textContent: `Failed to render page: ${e.message}`,
       });
-      this._main.appendChild(error);
+      this._main.replaceChildren(error);
     }
   }
 

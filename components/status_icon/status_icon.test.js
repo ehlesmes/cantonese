@@ -3,7 +3,7 @@ import { StatusIcon } from "./status_icon.js";
 
 describe("StatusIcon Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should render the correct icon for 'completed'", () => {

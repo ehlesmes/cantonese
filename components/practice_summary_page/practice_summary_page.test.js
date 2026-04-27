@@ -3,7 +3,7 @@ import { PracticeSummaryPage } from "./practice_summary_page.js";
 
 describe("PracticeSummaryPage Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should be defined", () => {

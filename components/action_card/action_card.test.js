@@ -3,6 +3,7 @@ import { ActionCard } from "./action_card.js";
 
 describe("ActionCard Component", () => {
   const mockData = {
+    id: "test-card",
     title: "Next Lesson",
     description: "Continue where you left off",
     icon: "play_arrow",
@@ -10,7 +11,7 @@ describe("ActionCard Component", () => {
   };
 
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should render title and description", () => {
@@ -55,7 +56,9 @@ describe("ActionCard Component", () => {
 
   describe("Validation", () => {
     it("should throw error if required properties are missing", () => {
-      expect(() => new ActionCard({})).toThrow("Missing property: title");
+      expect(() => new ActionCard({ id: "id" })).toThrow(
+        "Missing property: title",
+      );
     });
   });
 });

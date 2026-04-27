@@ -3,7 +3,7 @@ import { PracticeEmptyPage } from "./practice_empty_page.js";
 
 describe("PracticeEmptyPage Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should be defined", () => {

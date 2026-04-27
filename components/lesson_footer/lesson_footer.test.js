@@ -3,7 +3,7 @@ import { LessonFooter } from "./lesson_footer.js";
 
 describe("LessonFooter Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should be defined", () => {

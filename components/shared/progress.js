@@ -150,4 +150,39 @@ export const Progress = {
 
     this._saveState(state);
   },
+
+  /**
+   * Identifies the next lesson the user should take.
+   * Returns the first lesson that is not completed.
+   * @param {Array} chapters - The list of chapters and lessons from lessons.json
+   * @returns {{chapterId: string, lessonId: string, lessonName: string} | null}
+   */
+  getNextLesson(chapters) {
+    const state = this._getState();
+    for (const chapter of chapters) {
+      for (const lesson of chapter.lessons) {
+        if (!state.lessons[lesson.id]?.completed) {
+          return {
+            chapterId: chapter.id,
+            lessonId: lesson.id,
+            lessonName: lesson.name,
+          };
+        }
+      }
+    }
+    return null;
+  },
+
+  /**
+   * Returns a count of all exercises in the SRS system.
+   * @returns {number}
+   */
+  getPracticeCount() {
+    const state = this._getState();
+    let count = 0;
+    Object.values(state.practice.levels).forEach((levelArray) => {
+      count += levelArray.length;
+    });
+    return count;
+  },
 };

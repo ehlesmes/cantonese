@@ -5,6 +5,7 @@ import { Button } from "../ui/button/button.js";
 export class ActionCard extends Component {
   /**
    * @param {Object} data
+   * @param {string} data.id
    * @param {string} data.title
    * @param {string} data.description
    * @param {string} data.icon
@@ -12,7 +13,8 @@ export class ActionCard extends Component {
    */
   constructor(data) {
     super(import.meta.url);
-    this.validate(data, ["title", "description", "icon", "actionText"]);
+    this.validate(data, ["id", "title", "description", "icon", "actionText"]);
+    this.element.id = data.id;
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,
       iconStyles,

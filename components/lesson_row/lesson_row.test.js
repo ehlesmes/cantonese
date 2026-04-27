@@ -9,7 +9,7 @@ describe("LessonRow Component", () => {
   };
 
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should render lesson id and name", () => {

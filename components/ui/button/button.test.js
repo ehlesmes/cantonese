@@ -3,7 +3,7 @@ import { Button } from "./button.js";
 
 describe("Button Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should render with a label", () => {

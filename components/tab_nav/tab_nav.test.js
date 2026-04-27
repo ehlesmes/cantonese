@@ -8,7 +8,7 @@ describe("TabNav Component", () => {
   ];
 
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should render all provided tabs", () => {

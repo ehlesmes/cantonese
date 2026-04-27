@@ -18,6 +18,7 @@ All components should follow a standardized rendering lifecycle:
 - **setupEventListeners():** Attaches all event listeners. This keeps the `render` method declarative and focused on structure.
 - **Instance Reference:** Every component must attach itself to its root element via `this.element.component = this`. This allows accessing the JS class instance from a DOM reference.
 - **Properties over Methods:** Prefer getter/setter properties (e.g., `footer.primaryDisabled = true`) over action-based methods (e.g., `footer.setPrimaryDisabled(true)`) to make components feel like native elements.
+- **Non-Destructive Updates:** Avoid destructive re-rendering patterns such as `container.innerHTML = ""`. When content needs to be swapped or updated, prefer targeted updates to specific elements or use `element.replaceChildren(...nodes)` to maintain semantic integrity and prevent unnecessary layout shifts.
 - **Validation:** Always use `this.validate(data, ['prop1', 'prop2'])` from the base `Component` class.
 
 ### Shadow DOM & Styling

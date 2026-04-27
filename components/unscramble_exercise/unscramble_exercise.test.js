@@ -11,7 +11,7 @@ describe("UnscrambleExercise Component", () => {
   };
 
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
     vi.spyOn(Math, "random").mockReturnValue(0.1); // Ensure deterministic shuffle
   });
 

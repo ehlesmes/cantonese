@@ -3,7 +3,7 @@ import { LessonHeader } from "./lesson_header.js";
 
 describe("LessonHeader Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should be defined", () => {

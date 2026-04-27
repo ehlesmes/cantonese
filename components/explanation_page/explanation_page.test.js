@@ -16,7 +16,7 @@ describe("ExplanationPage Component", () => {
   };
 
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should be defined", () => {

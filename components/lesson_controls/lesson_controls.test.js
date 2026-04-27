@@ -3,7 +3,7 @@ import { LessonControls } from "./lesson_controls.js";
 
 describe("LessonControls Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should be defined", () => {

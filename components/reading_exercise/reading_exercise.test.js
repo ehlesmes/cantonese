@@ -3,7 +3,7 @@ import { ReadingExercise } from "./reading_exercise.js";
 
 describe("ReadingExercise Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
   });
 
   it("should be defined", () => {

@@ -30,7 +30,7 @@ describe("LessonViewer Component", () => {
   };
 
   beforeEach(() => {
-    document.body.innerHTML = "";
+    document.body.replaceChildren();
     vi.clearAllMocks();
     Progress.getLessonProgress.mockReturnValue(0);
     vi.stubGlobal(

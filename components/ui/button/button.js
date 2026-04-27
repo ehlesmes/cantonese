@@ -80,12 +80,9 @@ export class Button extends Component {
   }
 
   set label(value) {
-    if (this._button.querySelector(".material-symbols-outlined")) {
-      this._button.innerHTML = "";
-      this._button.classList.remove("icon-button");
-      this._button.classList.add("text-button");
-    }
-    this._button.textContent = value;
+    this._button.classList.remove("icon-button");
+    this._button.classList.add("text-button");
+    this._button.replaceChildren(value);
   }
 
   get label() {

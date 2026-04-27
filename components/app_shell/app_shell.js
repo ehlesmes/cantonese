@@ -1,4 +1,9 @@
 import { Component } from "../shared/component.js";
+import { PageRegistry } from "../shared/page_registry.js";
+import { LessonViewer } from "../lesson_viewer/lesson_viewer.js";
+
+// Trigger self-registration of pages
+import "../dashboard_page/dashboard_page.js";
 
 export class AppShell extends Component {
   constructor() {
@@ -9,7 +14,18 @@ export class AppShell extends Component {
     this._onHashChange = () => this.handleRoute();
 
     this.render();
+    this.setupEventListeners();
     this.setupRouting();
+  }
+
+  setupEventListeners() {
+    // Listen for events from sub-components to return home
+    this.element.addEventListener("go-home", () => {
+      window.location.hash = "#/home";
+    });
+    this.element.addEventListener("close", () => {
+      window.location.hash = "#/home";
+    });
   }
 
   render() {
@@ -53,13 +69,35 @@ export class AppShell extends Component {
    */
   async handleRoute() {
     const hash = window.location.hash || "#/home";
+    const path = hash.substring(2); // Remove '#/'
 
     // Determine if we should be in "Focus Mode" (hide nav)
     const isFocusMode =
       hash.startsWith("#/lesson/") || hash.startsWith("#/practice");
     this.toggleFocusMode(isFocusMode);
 
-    // View switching logic will go here in Phase 2
+    let nextView;
+
+    if (hash.startsWith("#/lesson/")) {
+      const lessonId = hash.replace("#/lesson/", "");
+      // In a real app, we'd look up the lesson name from the manifest
+      // For now, LessonViewer handles its own data loading
+      nextView = new LessonViewer({ lessonId, lessonName: "Loading..." });
+    } else {
+      const route = path || "home";
+      const PageClass = PageRegistry.get(route);
+      if (PageClass) {
+        nextView = new PageClass();
+      } else {
+        console.error(`Unknown route: ${route}`);
+        // Fallback to home
+        window.location.hash = "#/home";
+        return;
+      }
+    }
+
+    this._currentView = nextView;
+    this._main.replaceChildren(nextView.element);
 
     // Update active tab in Nav if it exists
     if (this._nav && !isFocusMode) {
@@ -85,7 +123,6 @@ export class AppShell extends Component {
    */
   setNav(navComponent) {
     this._nav = navComponent;
-    this._header.innerHTML = "";
-    this._header.appendChild(navComponent.element);
+    this._header.replaceChildren(navComponent.element);
   }
 }

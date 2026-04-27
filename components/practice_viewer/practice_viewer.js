@@ -72,18 +72,16 @@ export class PracticeViewer extends Component {
   _showPage(type, data = {}) {
     const PageClass = PageRegistry.get(type);
     if (!PageClass) {
-      this._main.innerHTML = "";
       const error = this.html("div", {
         className: "error",
         textContent: `Unknown page type: ${type}`,
       });
-      this._main.appendChild(error);
+      this._main.replaceChildren(error);
       return;
     }
 
     const pageInstance = new PageClass(data);
-    this._main.innerHTML = "";
-    this._main.appendChild(pageInstance.element);
+    this._main.replaceChildren(pageInstance.element);
     this._main.scrollTop = 0;
   }
 
@@ -91,12 +89,11 @@ export class PracticeViewer extends Component {
     const exerciseId = this._session[this._currentIndex];
     this._header.progress = this._currentIndex / this._session.length;
 
-    this._main.innerHTML = "";
     const loading = this.html("div", {
       className: "loading",
       textContent: "Loading exercise...",
     });
-    this._main.appendChild(loading);
+    this._main.replaceChildren(loading);
 
     try {
       const response = await fetch(`data/exercises/${exerciseId}`);
@@ -107,12 +104,11 @@ export class PracticeViewer extends Component {
       this._showPage(data.type, data);
     } catch (e) {
       console.error("🚨 [PracticeViewer ERROR]:", e);
-      this._main.innerHTML = "";
       const error = this.html("div", {
         className: "error",
         textContent: `Error: ${e.message}`,
       });
-      this._main.appendChild(error);
+      this._main.replaceChildren(error);
     }
   }
 

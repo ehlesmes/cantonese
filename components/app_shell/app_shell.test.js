@@ -1,9 +1,20 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { AppShell } from "./app_shell.js";
+import { PageRegistry } from "../shared/page_registry.js";
 
 describe("AppShell Component", () => {
   beforeEach(() => {
-    document.body.innerHTML = "";
+    // Register mock for vocabulary to avoid routing errors in tests
+    PageRegistry.set(
+      "vocabulary",
+      class MockPage {
+        constructor() {
+          this.element = document.createElement("div");
+        }
+      },
+    );
+
+    document.body.replaceChildren();
     window.location.hash = "";
     vi.clearAllMocks();
   });

@@ -29,6 +29,15 @@ export default [
       "object-shorthand": "error",
       "prefer-template": "error",
       "no-multiple-empty-lines": ["error", { max: 1, maxEOF: 0 }],
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector:
+            "AssignmentExpression[left.property.name='innerHTML'][right.value='']",
+          message:
+            "Prefer surgical updates over destructive re-rendering. Respect the DOM as a persistent semantic structure rather than a disposable string buffer. Consider using element.replaceChildren() to maintain intentionality and semantic integrity.",
+        },
+      ],
     },
   },
   prettierConfig, // Must be last to override conflicting rules
