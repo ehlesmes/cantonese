@@ -86,7 +86,7 @@ export class PracticeViewer extends Component {
 
   async _renderCurrentExercise() {
     const exerciseId = this._session[this._currentIndex];
-    this._header.setProgress(this._currentIndex / this._session.length);
+    this._header.progress = this._currentIndex / this._session.length;
 
     this._main.innerHTML = '<div class="loading">Loading exercise...</div>';
 
@@ -122,7 +122,7 @@ export class PracticeViewer extends Component {
   }
 
   _showSummary() {
-    this._header.setProgress(1);
+    this._header.progress = 1;
     this._showPage("practice-summary", {
       score: this._score,
       total: this._session.length,

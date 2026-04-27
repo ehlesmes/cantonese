@@ -26,17 +26,17 @@ describe("LessonHeader Component", () => {
     expect(progressBar.style.width).toBe("50%");
   });
 
-  it("should update progress when setProgress is called", () => {
+  it("should update progress when setting the progress property", () => {
     const component = new LessonHeader({ lessonName: "test" });
     const progressBar = component.shadowRoot.querySelector(".progress-bar");
 
-    component.setProgress(0.75);
+    component.progress = 0.75;
     expect(progressBar.style.width).toBe("75%");
 
-    component.setProgress(1);
+    component.progress = 1;
     expect(progressBar.style.width).toBe("100%");
 
-    component.setProgress(0);
+    component.progress = 0;
     expect(progressBar.style.width).toBe("0%");
   });
 
@@ -44,10 +44,10 @@ describe("LessonHeader Component", () => {
     const component = new LessonHeader({ lessonName: "test" });
     const progressBar = component.shadowRoot.querySelector(".progress-bar");
 
-    component.setProgress(1.5);
+    component.progress = 1.5;
     expect(progressBar.style.width).toBe("100%");
 
-    component.setProgress(-0.5);
+    component.progress = -0.5;
     expect(progressBar.style.width).toBe("0%");
   });
 

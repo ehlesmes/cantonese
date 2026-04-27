@@ -186,7 +186,7 @@ export class LessonViewer extends Component {
 
       // Update progress in header
       const progress = (index + 1) / this._lessonData.length;
-      this._header.setProgress(progress);
+      this._header.progress = progress;
     } catch (e) {
       console.error("🚨 [LessonViewer ERROR]: Failed to render page", e);
       this._main.innerHTML = "";

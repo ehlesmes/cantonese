@@ -13,23 +13,25 @@ export class LessonHeader extends Component {
 
     this.validate(data, ["lessonName"]);
     this._data = data;
+    this._progress = 0;
 
     this.render();
-    this.setProgress(data.progress || 0);
+    this.proxyProperty("progress");
+
+    this.progress = data.progress || 0;
   }
 
   render() {
     const { lessonName, hideNavigation = false } = this._data;
 
-    const headerContainer = document.createElement("div");
-    headerContainer.className = "header-container";
+    const headerContainer = this.html("div", { className: "header-container" });
+    const header = this.html("header");
 
-    const header = document.createElement("header");
-
-    this._titleEl = document.createElement("div");
-    this._titleEl.className = "title";
-    this._titleEl.id = "lesson-title";
-    this._titleEl.textContent = lessonName;
+    this._titleEl = this.html("div", {
+      className: "title",
+      id: "lesson-title",
+      textContent: lessonName,
+    });
     header.appendChild(this._titleEl);
 
     this._controls = new LessonControls({ hideNavigation });
@@ -37,21 +39,23 @@ export class LessonHeader extends Component {
 
     headerContainer.appendChild(header);
 
-    this._progressContainer = document.createElement("div");
-    this._progressContainer.className = "progress-container";
-    this._progressBar = document.createElement("div");
-    this._progressBar.className = "progress-bar";
+    this._progressContainer = this.html("div", {
+      className: "progress-container",
+    });
+    this._progressBar = this.html("div", { className: "progress-bar" });
     this._progressContainer.appendChild(this._progressBar);
     headerContainer.appendChild(this._progressContainer);
 
     this.shadowRoot.appendChild(headerContainer);
   }
 
-  /**
-   * @param {number} value - Number between 0 and 1
-   */
-  setProgress(value) {
-    const percentage = Math.max(0, Math.min(1, value)) * 100;
+  get progress() {
+    return this._progress;
+  }
+
+  set progress(value) {
+    this._progress = Math.max(0, Math.min(1, value));
+    const percentage = this._progress * 100;
     this._progressBar.style.width = `${percentage}%`;
   }
 }

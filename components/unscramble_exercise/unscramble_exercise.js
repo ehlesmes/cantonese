@@ -18,46 +18,13 @@ export class UnscrambleExercise extends Component {
     ];
 
     this.validate(data, ["tokens", "translation"]);
-    const { tokens, translation } = data;
+    this._data = data;
 
-    this._originalTokens = tokens.map((t, index) => ({
+    this._originalTokens = data.tokens.map((t, index) => ({
       text: t[0],
       romanization: t[1],
       id: index,
     }));
-
-    this._container = document.createElement("div");
-    this._container.className = "unscramble-wrapper";
-
-    const phraseContainer = document.createElement("div");
-    phraseContainer.className = "phrase-container";
-
-    const translationEl = document.createElement("div");
-    translationEl.className = "translation-text";
-    translationEl.textContent = translation;
-    phraseContainer.appendChild(translationEl);
-
-    this._playBtn = new Button({
-      title: "Play Audio",
-      icon: "volume_up",
-    });
-    phraseContainer.appendChild(this._playBtn.element);
-
-    this._container.appendChild(phraseContainer);
-
-    this._slotsContainer = document.createElement("div");
-    this._slotsContainer.className = "slots-container";
-    this._slotsContainer.id = "slots";
-    this._container.appendChild(this._slotsContainer);
-
-    this._poolContainer = document.createElement("div");
-    this._poolContainer.className = "pool-container";
-    this._poolContainer.id = "pool";
-    this._container.appendChild(this._poolContainer);
-
-    this.shadowRoot.appendChild(this._container);
-
-    this._playBtn.element.addEventListener("click", () => this.playAudio());
 
     this._tokenElements = new Map();
     this._originalTokens.forEach((token) => {
@@ -67,7 +34,47 @@ export class UnscrambleExercise extends Component {
     this._pool = [];
     this._slots = [];
 
+    this.render();
+    this.setupEventListeners();
     this.reset();
+  }
+
+  render() {
+    this._container = this.html("div", { className: "unscramble-wrapper" });
+
+    const phraseContainer = this.html("div", { className: "phrase-container" });
+
+    this._translationEl = this.html("div", {
+      className: "translation-text",
+      textContent: this._data.translation,
+    });
+    phraseContainer.appendChild(this._translationEl);
+
+    this._playBtn = new Button({
+      title: "Play Audio",
+      icon: "volume_up",
+    });
+    phraseContainer.appendChild(this._playBtn.element);
+
+    this._container.appendChild(phraseContainer);
+
+    this._slotsContainer = this.html("div", {
+      className: "slots-container",
+      id: "slots",
+    });
+    this._container.appendChild(this._slotsContainer);
+
+    this._poolContainer = this.html("div", {
+      className: "pool-container",
+      id: "pool",
+    });
+    this._container.appendChild(this._poolContainer);
+
+    this.shadowRoot.appendChild(this._container);
+  }
+
+  setupEventListeners() {
+    this._playBtn.element.addEventListener("click", () => this.playAudio());
   }
 
   get status() {
@@ -80,13 +87,14 @@ export class UnscrambleExercise extends Component {
   reset() {
     this._slots = [];
     this._pool = [...this._originalTokens].sort(() => Math.random() - 0.5);
-    this.render();
+    this.update();
   }
 
-  render() {
+  update() {
     const isSolved = this.status === "right";
     this.element.setAttribute("status", this.status);
 
+    // Non-destructive update: appendChild moves existing nodes
     this._slots.forEach((token) => {
       const el = this._tokenElements.get(token.id);
       el.onclick = isSolved ? null : () => this.moveToPool(token.id);
@@ -101,16 +109,14 @@ export class UnscrambleExercise extends Component {
   }
 
   createTokenElement(token) {
-    const trigger = document.createElement("div");
-    trigger.className = "token";
-
-    const textSpan = document.createElement("span");
-    textSpan.className = "token-text";
-    textSpan.textContent = token.text;
+    const trigger = this.html("div", { className: "token" });
+    const textSpan = this.html("span", {
+      className: "token-text",
+      textContent: token.text,
+    });
     trigger.appendChild(textSpan);
 
-    const content = document.createElement("span");
-    content.textContent = token.romanization;
+    const content = this.html("span", { textContent: token.romanization });
 
     const tooltip = new Tooltip({
       trigger,
@@ -127,7 +133,7 @@ export class UnscrambleExercise extends Component {
     const token = this._pool.splice(poolIndex, 1)[0];
     this._slots.push(token);
 
-    this.render();
+    this.update();
 
     if (this._pool.length === 0) {
       this.dispatch("complete");
@@ -142,7 +148,7 @@ export class UnscrambleExercise extends Component {
     const token = this._slots.splice(slotIndex, 1)[0];
     this._pool.push(token);
 
-    this.render();
+    this.update();
 
     if (wasEmpty && this._pool.length > 0) {
       this.dispatch("uncomplete");
