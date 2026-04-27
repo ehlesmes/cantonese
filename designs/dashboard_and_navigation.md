@@ -79,5 +79,5 @@ To maintain simplicity and reusability, the UI is broken down into surgical, foc
 
 ### Phase 3: Vocabulary
 
-1. **[TODO] VocabularyPage:** Implement data fetching for completed lesson exercises.
-2. **[TODO] SRSBadge:** Add mastery level indicators to the cards.
+1. **[DONE] VocabularyPage:** Implement data fetching for completed lesson exercises.
+2. **[DONE] SRSBadge:** Add mastery level indicators to the cards.

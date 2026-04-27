@@ -33,17 +33,17 @@ A practice session consists of **10 exercises**:
 
 ## 🛠️ Implementation
 
-### 1. Data Migration
+### 1. [DONE] Data Migration
 
 Add `"type": "reading"` or `"type": "unscramble"` to all existing exercise files in `data/exercises/`.
 
-### 2. `Progress` Utility Additions
+### 2. [DONE] `Progress` Utility Additions
 
 - `getPracticeSession()`: Returns 10 exercises based on the selection algorithm.
 - `updatePracticeResult(exerciseId, isCorrect)`: Handles level transitions and saves to `localStorage`.
 - `addLessonToPractice(lessonId, exerciseIds)`: Scans for duplicates before adding new IDs to Level 1.
 
-### 3. `PracticeViewer` Component
+### 3. [DONE] `PracticeViewer` Component
 
 A new top-level component that:
 
