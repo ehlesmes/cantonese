@@ -1,0 +1,54 @@
+:host {
+  display: block;
+}
+
+.action-card {
+  background-color: var(--md-sys-color-surface-variant);
+  border-radius: var(--md-sys-radius-large);
+  padding: var(--comp-gap-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--comp-gap-small);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.action-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--comp-gap-small);
+}
+
+.card-icon {
+  color: var(--md-sys-color-primary);
+  font-size: 32px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--md-sys-color-on-surface);
+}
+
+.card-description {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  flex-grow: 1;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.card-footer {
+  margin-top: var(--comp-gap-small);
+  display: flex;
+  justify-content: flex-end;
+}

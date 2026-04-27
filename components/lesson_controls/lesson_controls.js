@@ -13,16 +13,21 @@ export class LessonControls extends Component {
    */
   constructor(config = {}) {
     super(import.meta.url);
-    const { hideNavigation = false } = config;
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,
       iconStyles,
     ];
 
-    this._container = document.createElement("div");
-    this._container.className = "controls";
+    this._hideNavigation = config.hideNavigation || false;
 
-    if (!hideNavigation) {
+    this.render();
+    this.setupEventListeners();
+  }
+
+  render() {
+    this._container = this.html("div", { className: "controls" });
+
+    if (!this._hideNavigation) {
       this._restartBtn = new Button({
         title: "Restart Lesson",
         icon: "restart_alt",
@@ -30,8 +35,7 @@ export class LessonControls extends Component {
       this._restartBtn.element.id = "restart";
       this._container.appendChild(this._restartBtn.element);
 
-      const divider1 = document.createElement("div");
-      divider1.className = "divider";
+      const divider1 = this.html("div", { className: "divider" });
       this._container.appendChild(divider1);
 
       this._prevBtn = new Button({
@@ -48,8 +52,7 @@ export class LessonControls extends Component {
       this._nextBtn.element.id = "next";
       this._container.appendChild(this._nextBtn.element);
 
-      const divider2 = document.createElement("div");
-      divider2.className = "divider";
+      const divider2 = this.html("div", { className: "divider" });
       this._container.appendChild(divider2);
     }
 
@@ -61,9 +64,10 @@ export class LessonControls extends Component {
     this._container.appendChild(this._closeBtn.element);
 
     this.shadowRoot.appendChild(this._container);
+  }
 
-    // Setup event listeners
-    if (!hideNavigation) {
+  setupEventListeners() {
+    if (!this._hideNavigation) {
       this._restartBtn.element.addEventListener("click", () =>
         this.dispatch("restart"),
       );

@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+.lesson-row {
+  display: flex;
+  align-items: center;
+  padding: var(--comp-gap-medium);
+  gap: var(--comp-gap-medium);
+  cursor: pointer;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+  transition: background-color 0.2s ease;
+}
+
+.lesson-row:hover {
+  background-color: var(--md-sys-color-surface-variant);
+}
+
+.lesson-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.lesson-id {
+  font-size: 0.75rem;
+  color: var(--md-sys-color-on-surface-variant);
+  font-weight: 500;
+}
+
+.lesson-name {
+  font-size: 1rem;
+  color: var(--md-sys-color-on-surface);
+}
+
+.arrow {
+  color: var(--md-sys-color-outline);
+}
+
+.lesson-row:last-child {
+  border-bottom: none;
+}

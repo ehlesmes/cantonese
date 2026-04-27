@@ -13,8 +13,9 @@
 
 All components should follow a standardized rendering lifecycle:
 
-- **Constructor:** Performs data validation, state initialization, and calls `this.render(data)`.
+- **Constructor:** Performs data validation, state initialization, and calls `this.render(data)` and `this.setupEventListeners()`.
 - **render(data):** Responsible for all DOM construction using the passed data object. This separates initialization logic from structure.
+- **setupEventListeners():** Attaches all event listeners. This keeps the `render` method declarative and focused on structure.
 - **Instance Reference:** Every component must attach itself to its root element via `this.element.component = this`. This allows accessing the JS class instance from a DOM reference.
 - **Properties over Methods:** Prefer getter/setter properties (e.g., `footer.primaryDisabled = true`) over action-based methods (e.g., `footer.setPrimaryDisabled(true)`) to make components feel like native elements.
 - **Validation:** Always use `this.validate(data, ['prop1', 'prop2'])` from the base `Component` class.
