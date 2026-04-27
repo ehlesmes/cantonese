@@ -12,7 +12,9 @@ export class PracticeSummaryPage extends BasePage {
       primaryText: "Practice More",
       secondaryText: "Finish",
     });
+  }
 
+  renderContent(data) {
     const title = this.html("h1", { textContent: "Practice Complete!" });
     this.contentWrapper.appendChild(title);
 

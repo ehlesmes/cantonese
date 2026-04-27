@@ -6,7 +6,9 @@ export class PracticeEmptyPage extends BasePage {
     super({}, [], import.meta.url, {
       primaryText: "Go Home",
     });
+  }
 
+  renderContent() {
     const title = this.html("h1", { textContent: "No exercises yet!" });
     this.contentWrapper.appendChild(title);
 

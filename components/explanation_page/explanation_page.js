@@ -9,7 +9,9 @@ export class ExplanationPage extends BasePage {
    */
   constructor(data) {
     super(data, ["content"], import.meta.url);
+  }
 
+  renderContent(data) {
     this.contentWrapper.id = "content";
     this._renderContent(this.contentWrapper, data.content);
   }

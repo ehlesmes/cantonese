@@ -23,7 +23,14 @@ export class BasePage extends Component {
   ) {
     super(baseUrl);
     this.validate(data, requiredProps);
+    this._footerConfig = footerConfig;
 
+    this.render();
+    this.setupEventListeners();
+    this.renderContent(data);
+  }
+
+  render() {
     // Layout containers
     this.container = this.html("div", { className: "page-container" });
     this.main = this.html("main");
@@ -33,12 +40,14 @@ export class BasePage extends Component {
     this.container.appendChild(this.main);
 
     // Initialize footer with provided config
-    this.footer = new LessonFooter(footerConfig);
+    this.footer = new LessonFooter(this._footerConfig);
     this.footer.element.id = "footer";
     this.container.appendChild(this.footer.element);
 
     this.shadowRoot.appendChild(this.container);
+  }
 
+  setupEventListeners() {
     // Standard footer event forwarding
     this.element.addEventListener("primary-click", () =>
       this.handlePrimaryClick(),
@@ -47,6 +56,12 @@ export class BasePage extends Component {
       this.handleSecondaryClick(),
     );
   }
+
+  /**
+   * Subclasses should override this to render their specific content.
+   * @param {Object} _data
+   */
+  renderContent(_data) {}
 
   /**
    * Subclasses should override this to handle primary button clicks.

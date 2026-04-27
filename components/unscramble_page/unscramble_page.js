@@ -13,11 +13,16 @@ export class UnscramblePage extends BasePage {
       primaryText: "Continue",
       primaryDisabled: true,
     });
+  }
 
+  renderContent(data) {
     this._exercise = new UnscrambleExercise(data);
     this._exercise.element.id = "exercise";
     this.contentWrapper.appendChild(this._exercise.element);
+  }
 
+  setupEventListeners() {
+    super.setupEventListeners();
     this.element.addEventListener("complete", () => {
       if (this._exercise.status === "right") {
         this._exercise.playAudio();

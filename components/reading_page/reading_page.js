@@ -9,7 +9,9 @@ export class ReadingPage extends BasePage {
     });
 
     this._revealed = false;
+  }
 
+  renderContent(data) {
     this._exercise = new ReadingExercise(data);
     this._exercise.element.id = "exercise";
     this.contentWrapper.appendChild(this._exercise.element);

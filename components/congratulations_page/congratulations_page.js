@@ -16,7 +16,9 @@ export class CongratulationsPage extends BasePage {
     });
 
     this._nextLessonId = data.nextLessonId;
+  }
 
+  renderContent(data) {
     const titleEl = this.html("h1", { textContent: data.title });
     this.contentWrapper.appendChild(titleEl);
 
