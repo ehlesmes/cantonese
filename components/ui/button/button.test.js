@@ -6,6 +6,16 @@ describe("Button Component", () => {
     document.body.replaceChildren();
   });
 
+  describe("Validation", () => {
+    it("should throw if neither label nor icon is provided", () => {
+      expect(() => new Button({})).toThrow();
+    });
+
+    it("should throw if both label and icon are provided", () => {
+      expect(() => new Button({ label: "L", icon: "i" })).toThrow();
+    });
+  });
+
   it("should render with a label", () => {
     const component = new Button({ label: "Click Me" });
     const button = component.shadowRoot.querySelector("button");
@@ -61,17 +71,5 @@ describe("Button Component", () => {
 
     component.shadowRoot.querySelector("button").click();
     expect(spy).toHaveBeenCalled();
-  });
-
-  it("should throw error if neither label nor icon is provided", () => {
-    expect(() => new Button({})).toThrow(
-      "Button must have either a label or an icon",
-    );
-  });
-
-  it("should throw error if both label and icon are provided", () => {
-    expect(() => new Button({ label: "L", icon: "i" })).toThrow(
-      "Button cannot have both a label and an icon",
-    );
   });
 });

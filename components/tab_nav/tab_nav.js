@@ -7,6 +7,7 @@ export class TabNav extends Component {
    */
   constructor(options) {
     super(import.meta.url);
+    this.validate(options, ["tabs"]);
     this._buttons = new Map();
 
     this.render(options);

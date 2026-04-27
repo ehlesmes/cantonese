@@ -1,4 +1,4 @@
-import { BasePage } from "../shared/page.js";
+import { BasePage } from "../shared/base_page.js";
 import { UnscrambleExercise } from "../unscramble_exercise/unscramble_exercise.js";
 import { PageRegistry } from "../shared/page_registry.js";
 

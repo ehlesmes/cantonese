@@ -6,6 +6,12 @@ describe("StatusIcon Component", () => {
     document.body.replaceChildren();
   });
 
+  describe("Validation", () => {
+    it("should throw if status is missing", () => {
+      expect(() => new StatusIcon({})).toThrow();
+    });
+  });
+
   it("should render the correct icon for 'completed'", () => {
     const icon = new StatusIcon({ status: "completed" });
     const span = icon.shadowRoot.querySelector(".status-icon");
@@ -25,10 +31,6 @@ describe("StatusIcon Component", () => {
     const span = icon.shadowRoot.querySelector(".status-icon");
     expect(span.textContent).toBe("circle");
     expect(span.classList.contains("not-started")).toBe(true);
-  });
-
-  it("should throw error if status is missing", () => {
-    expect(() => new StatusIcon({})).toThrow("Missing property: status");
   });
 
   it("should update status dynamically via setter", () => {

@@ -4,6 +4,7 @@ import { Progress } from "./progress.js";
 describe("Progress Utility", () => {
   beforeEach(() => {
     window.localStorage.clear();
+    document.body.replaceChildren();
     vi.clearAllMocks();
   });
 

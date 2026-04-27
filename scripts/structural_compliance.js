@@ -24,9 +24,30 @@ function checkDirectoryStructure(dir) {
   }
 
   jsFiles.forEach((jsFile) => {
-    // 2. Verify Style Existence
+    // 2. Verify Style Existence and Compliance
     if (!items.includes("style.css")) {
       errors.push(`[Structure] ${dir}: Component is missing "style.css".`);
+    } else {
+      const cssPath = path.join(dir, "style.css");
+      const cssContent = fs.readFileSync(cssPath, "utf-8");
+
+      // Check for hardcoded colors
+      const hexMatch = cssContent.match(/#[0-9a-fA-F]{3,8}/);
+      const rgbMatch = cssContent.match(/rgba?\(.*?\)/);
+      if (hexMatch || rgbMatch) {
+        errors.push(
+          `[Styles] ${cssPath}: Hardcoded colors (${
+            hexMatch || rgbMatch
+          }) detected. Use --md-sys-* tokens.`,
+        );
+      }
+
+      // Check for :host selector
+      if (!cssContent.includes(":host")) {
+        errors.push(
+          `[Styles] ${cssPath}: Missing ":host" selector. Components must style their custom element root.`,
+        );
+      }
     }
 
     // 3. Verify Test Existence
@@ -59,7 +80,7 @@ function walk(dir) {
   }
 }
 
-console.log("🏗️  Verifying File-System Structure Compliance...");
+console.info("🏗️  Verifying File-System Structure Compliance...");
 walk(COMPONENTS_DIR);
 
 if (errors.length > 0) {
@@ -67,6 +88,6 @@ if (errors.length > 0) {
   errors.forEach((err) => console.error(err));
   process.exit(1);
 } else {
-  console.log("\n✅ Component structure adheres to project standards.\n");
+  console.info("\n✅ Component structure adheres to project standards.\n");
   process.exit(0);
 }

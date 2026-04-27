@@ -32,6 +32,7 @@ export class LessonHeader extends Component {
     header.appendChild(this._titleEl);
 
     this._controls = new LessonControls({ hideNavigation });
+    this._controls.element.id = "controls";
     header.appendChild(this._controls.element);
 
     headerContainer.appendChild(header);

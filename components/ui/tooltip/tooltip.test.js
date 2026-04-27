@@ -12,6 +12,16 @@ describe("Tooltip Component", () => {
     document.body.replaceChildren();
   });
 
+  describe("Validation", () => {
+    it("should throw if trigger is missing", () => {
+      expect(() => new Tooltip({ content })).toThrow();
+    });
+
+    it("should throw if content is missing", () => {
+      expect(() => new Tooltip({ trigger })).toThrow();
+    });
+  });
+
   it("should be defined", () => {
     const component = new Tooltip({ trigger, content });
     expect(component).toBeInstanceOf(Tooltip);

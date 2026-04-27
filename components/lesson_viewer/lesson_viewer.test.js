@@ -114,7 +114,7 @@ describe("LessonViewer Component", () => {
     );
   });
 
-  it("should handle navigation events", async () => {
+  it("should navigate when header control buttons are clicked", async () => {
     const component = new LessonViewer({
       lessonId: "1.1",
       lessonName: "Test Lesson",
@@ -122,14 +122,33 @@ describe("LessonViewer Component", () => {
     await component.ready;
 
     const navigateSpy = vi.spyOn(component, "navigateTo");
+    const header = component.shadowRoot.querySelector("#header");
+    const controls = header.shadowRoot.getElementById("controls");
 
-    // Click next via event
-    component.element.dispatchEvent(new CustomEvent("next"));
+    // Click Next
+    controls.shadowRoot.getElementById("next").click();
     expect(navigateSpy).toHaveBeenCalledWith(1);
 
-    // Click restart
-    component.element.dispatchEvent(new CustomEvent("restart"));
+    // Click Restart
+    controls.shadowRoot.getElementById("restart").click();
     expect(navigateSpy).toHaveBeenCalledWith(0);
+  });
+
+  it("should dispatch 'close' when header close button is clicked", async () => {
+    const component = new LessonViewer({
+      lessonId: "1.1",
+      lessonName: "Test Lesson",
+    });
+    await component.ready;
+
+    const closeSpy = vi.fn();
+    component.element.addEventListener("close", closeSpy);
+
+    const header = component.shadowRoot.querySelector("#header");
+    const controls = header.shadowRoot.getElementById("controls");
+    controls.shadowRoot.getElementById("close").click();
+
+    expect(closeSpy).toHaveBeenCalled();
   });
 
   it("should update header progress on navigation", async () => {

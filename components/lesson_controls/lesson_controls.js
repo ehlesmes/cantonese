@@ -13,6 +13,7 @@ export class LessonControls extends Component {
    */
   constructor(config = {}) {
     super(import.meta.url);
+    this.validate(config);
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,
       iconStyles,

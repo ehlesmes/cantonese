@@ -15,7 +15,7 @@
 main {
   flex: 1;
   overflow-y: auto;
-  background-color: var(--md-sys-color-surface, #fff);
+  background-color: var(--md-sys-color-surface);
   display: flex;
   flex-direction: column;
 }
@@ -33,7 +33,7 @@ main {
 .summary-container h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--md-sys-color-primary, #6750a4);
+  color: var(--md-sys-color-primary);
 }
 
 .score-display {

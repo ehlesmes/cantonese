@@ -13,5 +13,5 @@
 main {
   flex: 1;
   overflow-y: auto;
-  background-color: var(--md-sys-color-surface, #fff);
+  background-color: var(--md-sys-color-surface);
 }

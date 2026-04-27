@@ -6,6 +6,12 @@ describe("LessonControls Component", () => {
     document.body.replaceChildren();
   });
 
+  describe("Validation", () => {
+    it("should not throw with empty config", () => {
+      expect(() => new LessonControls()).not.toThrow();
+    });
+  });
+
   it("should be defined", () => {
     const component = new LessonControls();
     expect(component).toBeDefined();

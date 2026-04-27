@@ -1,4 +1,4 @@
-import { BasePage } from "../shared/page.js";
+import { BasePage } from "../shared/base_page.js";
 import { ExampleCard } from "../example_card/example_card.js";
 import { PageRegistry } from "../shared/page_registry.js";
 

@@ -6,7 +6,12 @@
   --md-sys-color-on-surface: #202124;
   --md-sys-color-on-surface-variant: #5f6368;
   --md-sys-color-surface-variant: #f8f9fa;
+  --md-sys-color-surface-container-low: #f5f5f5;
+  --md-sys-color-surface-container-lowest: #ffffff;
   --md-sys-color-background: #ffffff;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.1);
+  --md-sys-color-shadow-light: rgba(0, 0, 0, 0.05);
+  --md-sys-color-shadow-heavy: rgba(0, 0, 0, 0.2);
   --md-sys-color-success: #1e8e3e;
   --md-sys-color-success-container: #e6f4ea;
   --md-sys-color-error: #d93025;

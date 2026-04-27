@@ -1,4 +1,4 @@
-import { BasePage } from "../shared/page.js";
+import { BasePage } from "../shared/base_page.js";
 import { PageRegistry } from "../shared/page_registry.js";
 
 export class PracticeEmptyPage extends BasePage {

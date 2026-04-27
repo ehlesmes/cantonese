@@ -15,6 +15,16 @@ describe("ChapterAccordion Component", () => {
     document.body.replaceChildren();
   });
 
+  describe("Validation", () => {
+    it("should throw if chapters is missing", () => {
+      expect(() => new ChapterAccordion({ progress: {} })).toThrow();
+    });
+
+    it("should throw if progress is missing", () => {
+      expect(() => new ChapterAccordion({ chapters: [] })).toThrow();
+    });
+  });
+
   it("should render all chapters", () => {
     const accordion = new ChapterAccordion(mockData);
     const items = accordion.shadowRoot.querySelectorAll(

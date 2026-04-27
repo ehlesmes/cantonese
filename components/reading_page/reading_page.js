@@ -1,4 +1,4 @@
-import { BasePage } from "../shared/page.js";
+import { BasePage } from "../shared/base_page.js";
 import { ReadingExercise } from "../reading_exercise/reading_exercise.js";
 import { PageRegistry } from "../shared/page_registry.js";
 

@@ -14,6 +14,12 @@ describe("ChapterItem Component", () => {
     document.body.replaceChildren();
   });
 
+  describe("Validation", () => {
+    it("should throw if id is missing", () => {
+      expect(() => new ChapterItem({ name: "A", lessons: [] })).toThrow();
+    });
+  });
+
   it("should render chapter id and name", () => {
     const item = new ChapterItem(mockData);
     expect(item.shadowRoot.querySelector(".chapter-id").textContent).toContain(

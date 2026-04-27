@@ -53,9 +53,6 @@ export class LessonViewer extends Component {
     this.element.addEventListener("next", () =>
       this.navigateTo(this._currentPageIndex + 1),
     );
-    this.element.addEventListener("close", () => {
-      console.warn("Lesson closed (Main menu navigation not implemented)");
-    });
 
     // Page Event Listeners
     const nextHandler = () => this.navigateTo(this._currentPageIndex + 1);

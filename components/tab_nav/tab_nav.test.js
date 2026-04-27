@@ -11,6 +11,12 @@ describe("TabNav Component", () => {
     document.body.replaceChildren();
   });
 
+  describe("Validation", () => {
+    it("should throw if tabs are missing", () => {
+      expect(() => new TabNav({})).toThrow();
+    });
+  });
+
   it("should render all provided tabs", () => {
     const nav = new TabNav({ tabs: mockTabs });
     const buttons = nav.shadowRoot.querySelectorAll(".tab-button");

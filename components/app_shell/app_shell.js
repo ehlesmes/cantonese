@@ -26,6 +26,8 @@ export class AppShell extends Component {
     this.element.addEventListener("close", () => {
       window.location.hash = "#/home";
     });
+
+    window.addEventListener("hashchange", this._onHashChange);
   }
 
   render() {
@@ -46,8 +48,6 @@ export class AppShell extends Component {
    * Sets up the hash-based routing listeners.
    */
   setupRouting() {
-    window.addEventListener("hashchange", this._onHashChange);
-
     // Initial route - set default if empty
     if (!window.location.hash) {
       window.location.hash = "#/home";
@@ -121,7 +121,7 @@ export class AppShell extends Component {
    * Injects the navigation component into the shell.
    * @param {HTMLElement} navComponent
    */
-  setNav(navComponent) {
+  set nav(navComponent) {
     this._nav = navComponent;
     this._header.replaceChildren(navComponent.element);
   }

@@ -70,7 +70,7 @@ describe("AppShell Component", () => {
     };
     mockNav.element.id = "mock-nav";
 
-    shell.setNav(mockNav);
+    shell.nav = mockNav;
 
     const header = shell.shadowRoot.querySelector(".app-header");
     expect(header.querySelector("#mock-nav")).not.toBeNull();
@@ -85,7 +85,7 @@ describe("AppShell Component", () => {
         activeHashSpy(val);
       },
     };
-    shell.setNav(mockNav);
+    shell.nav = mockNav;
 
     window.location.hash = "#/vocabulary";
     shell.handleRoute();

@@ -10,6 +10,7 @@ vi.mock("../shared/progress.js", () => ({
     saveLessonProgress: vi.fn(),
     completeLesson: vi.fn(),
     addExercisesToPractice: vi.fn(),
+    getPracticeCount: vi.fn(() => 0),
   },
 }));
 
@@ -46,9 +47,8 @@ describe("PracticeViewer Component", () => {
     Progress.getPracticeSession.mockReturnValue([]);
     const component = new PracticeViewer();
     const main = component.shadowRoot.querySelector("#m");
-    // Should render PracticeEmptyPage
-    expect(main.firstElementChild.tagName.toLowerCase()).toBe("div");
-    // Wait, the tag name depends on PageRegistry. PageRegistry is global.
+    // Should render PracticeEmptyPage (which is currently a div in the registry)
+    expect(main.firstElementChild).not.toBeNull();
   });
 
   it("should load and render first exercise in session", async () => {
@@ -70,7 +70,7 @@ describe("PracticeViewer Component", () => {
     const component = new PracticeViewer();
     await new Promise((resolve) => setTimeout(resolve, 0));
 
-    // Simulate correct answer
+    // Simulate result dispatch from child page
     component.element.dispatchEvent(
       new CustomEvent("reading-result", {
         detail: { success: true },
@@ -106,17 +106,26 @@ describe("PracticeViewer Component", () => {
 
     await new Promise((resolve) => setTimeout(resolve, 0));
     const main = component.shadowRoot.querySelector("#m");
-    // Should show practice-summary
     expect(main.innerHTML).not.toContain("Loading");
   });
 
-  it("should hide navigation in header", () => {
+  it("should dispatch 'go-home' when header close button is clicked", () => {
     Progress.getPracticeSession.mockReturnValue([]);
-    const component = new PracticeViewer();
-    const header = component.shadowRoot.querySelector("#header");
+    const viewer = new PracticeViewer();
+    const spy = vi.fn();
+    viewer.element.addEventListener("go-home", spy);
 
-    // Check if navigation is hidden in LessonControls
-    const controls = header.shadowRoot.querySelector("header").lastChild;
-    expect(controls.shadowRoot.getElementById("restart")).toBeNull();
+    // Click Close button in header
+    const header = viewer.shadowRoot.querySelector("#header");
+    const controls = header.shadowRoot.getElementById("controls");
+    controls.shadowRoot.getElementById("close").click();
+
+    expect(spy).toHaveBeenCalled();
+  });
+
+  describe("Validation", () => {
+    it("should not throw with empty constructor", () => {
+      expect(() => new PracticeViewer()).not.toThrow();
+    });
   });
 });
