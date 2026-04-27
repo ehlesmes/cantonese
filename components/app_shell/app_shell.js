@@ -1,6 +1,7 @@
 import { Component } from "../shared/component.js";
 import { PageRegistry } from "../shared/page_registry.js";
 import { LessonViewer } from "../lesson_viewer/lesson_viewer.js";
+import { LessonProvider } from "../shared/lesson_provider.js";
 
 // Trigger self-registration of pages
 import "../dashboard_page/dashboard_page.js";
@@ -26,6 +27,10 @@ export class AppShell extends Component {
     });
     this.element.addEventListener("close", () => {
       window.location.hash = "#/home";
+    });
+    this.element.addEventListener("next-lesson", (e) => {
+      const { nextLessonId } = e.detail;
+      window.location.hash = `#/lesson/${nextLessonId}`;
     });
 
     window.addEventListener("hashchange", this._onHashChange);
@@ -81,9 +86,9 @@ export class AppShell extends Component {
 
     if (hash.startsWith("#/lesson/")) {
       const lessonId = hash.replace("#/lesson/", "");
-      // In a real app, we'd look up the lesson name from the manifest
-      // For now, LessonViewer handles its own data loading
-      nextView = new LessonViewer({ lessonId, lessonName: "Loading..." });
+      // Resolve the name before creating the viewer to avoid "Loading..." header flicker
+      const lessonName = await LessonProvider.getLessonName(lessonId);
+      nextView = new LessonViewer({ lessonId, lessonName });
     } else {
       const route = path || "home";
       const PageClass = PageRegistry.get(route);

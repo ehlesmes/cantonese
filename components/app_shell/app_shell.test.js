@@ -4,6 +4,24 @@ import { PageRegistry } from "../shared/page_registry.js";
 
 describe("AppShell Component", () => {
   beforeEach(() => {
+    // Stub fetch for LessonProvider and other data loading
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            chapters: [
+              {
+                chapterId: "1",
+                chapterName: "Chapter 1",
+                lessons: [{ lessonId: "1.1", lessonName: "Test Lesson 1.1" }],
+              },
+            ],
+          }),
+      }),
+    );
+
     // Register mock for vocabulary to avoid routing errors in tests
     PageRegistry.set(
       "vocabulary",

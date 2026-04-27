@@ -63,6 +63,25 @@ To maintain simplicity and reusability, the UI is broken down into surgical, foc
 - **Sorting (MVP):** Default to "Lesson Order".
 - **Lazy Loading (Future):** Implement on-demand rendering if the exercise count grows significantly.
 
+## 🧭 Lesson Navigation & Name Resolution
+
+To ensure a polished user experience without "Loading..." flickers or data duplication, the application uses a hybrid approach to resolve lesson metadata during navigation.
+
+### 1. The Strategy
+
+- **Clean URLs:** Navigation uses simple hashes (e.g., `#/lesson/1.1`) to ensure they are bookmarkable and readable.
+- **Single Source of Truth:** All lesson names and chapter structures are maintained exclusively in `data/lessons.json`.
+- **Pre-emptive Resolution:** The `AppShell` acts as a gatekeeper for routing. Before instantiating a `LessonViewer`, it ensures the global lesson manifest is loaded and resolves the `lessonName` for the given `lessonId`.
+
+### 2. Implementation Details
+
+- **`LessonProvider`:** A shared utility that fetches and caches `data/lessons.json`.
+- **Routing Gatekeeper:**
+  1. `AppShell` detects a `#/lesson/:id` route.
+  2. It requests the lesson name from `LessonProvider`.
+  3. Once resolved, it passes both `lessonId` and `lessonName` to the `LessonViewer` constructor.
+- **Immediate Rendering:** Because the name is resolved _before_ the viewer is created, the `LessonHeader` can render the correct title immediately, avoiding a "Loading..." state.
+
 ## 🛠️ Implementation Roadmap (MVP First)
 
 ### Phase 1: Core Components
