@@ -18,7 +18,6 @@ export class UnscrambleExercise extends Component {
     ];
 
     this.validate(data, ["tokens", "translation"]);
-    this._data = data;
 
     this._originalTokens = data.tokens.map((t, index) => ({
       text: t[0],
@@ -34,19 +33,19 @@ export class UnscrambleExercise extends Component {
     this._pool = [];
     this._slots = [];
 
-    this.render();
+    this.render(data);
     this.setupEventListeners();
     this.reset();
   }
 
-  render() {
+  render(data) {
     this._container = this.html("div", { className: "unscramble-wrapper" });
 
     const phraseContainer = this.html("div", { className: "phrase-container" });
 
     this._translationEl = this.html("div", {
       className: "translation-text",
-      textContent: this._data.translation,
+      textContent: data.translation,
     });
     phraseContainer.appendChild(this._translationEl);
 
