@@ -38,8 +38,8 @@ describe("CongratulationsPage Component", () => {
     const primaryBtn = footer.shadowRoot.getElementById("primary-btn");
     const secondaryBtn = footer.shadowRoot.getElementById("secondary-btn");
 
-    expect(primaryBtn.textContent).toBe("Next Lesson");
-    expect(secondaryBtn.textContent).toBe("Back Home");
+    expect(primaryBtn.label).toBe("Next Lesson");
+    expect(secondaryBtn.label).toBe("Back Home");
     expect(secondaryBtn.classList.contains("hidden")).toBe(false);
   });
 
@@ -49,7 +49,7 @@ describe("CongratulationsPage Component", () => {
     const primaryBtn = footer.shadowRoot.getElementById("primary-btn");
     const secondaryBtn = footer.shadowRoot.getElementById("secondary-btn");
 
-    expect(primaryBtn.textContent).toBe("Back Home");
+    expect(primaryBtn.label).toBe("Back Home");
     expect(secondaryBtn.classList.contains("hidden")).toBe(true);
   });
 

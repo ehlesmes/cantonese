@@ -12,7 +12,14 @@ export class LessonHeader extends Component {
     super(import.meta.url);
 
     this.validate(data, ["lessonName"]);
-    const { lessonName, progress = 0, hideNavigation = false } = data;
+    this._data = data;
+
+    this.render();
+    this.setProgress(data.progress || 0);
+  }
+
+  render() {
+    const { lessonName, hideNavigation = false } = this._data;
 
     const headerContainer = document.createElement("div");
     headerContainer.className = "header-container";
@@ -38,7 +45,6 @@ export class LessonHeader extends Component {
     headerContainer.appendChild(this._progressContainer);
 
     this.shadowRoot.appendChild(headerContainer);
-    this.setProgress(progress);
   }
 
   /**

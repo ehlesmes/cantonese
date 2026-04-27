@@ -22,7 +22,17 @@ export class LessonViewer extends Component {
 
     this._lessonId = lessonId;
     this._lessonName = lessonName;
+    this._lessonData = null;
+    this._currentPageIndex = 0;
+    this._pageCache = new Map();
 
+    this.render();
+    this.setupEventListeners();
+
+    this._loadPromise = this._loadLesson(this._lessonId);
+  }
+
+  render() {
     this._container = document.createElement("div");
     this._container.className = "lesson-container";
 
@@ -35,12 +45,9 @@ export class LessonViewer extends Component {
     this._container.appendChild(this._main);
 
     this.shadowRoot.appendChild(this._container);
+  }
 
-    this._lessonData = null;
-    this._currentPageIndex = 0;
-    this._pageCache = new Map();
-    this._loadPromise = this._loadLesson(this._lessonId);
-
+  setupEventListeners() {
     // Internal Event Listeners
     this.element.addEventListener("restart", () => this.navigateTo(0));
     this.element.addEventListener("prev", () =>

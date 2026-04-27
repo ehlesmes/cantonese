@@ -1,41 +1,24 @@
-import { Component } from "../shared/component.js";
-import { LessonFooter } from "../lesson_footer/lesson_footer.js";
+import { BasePage } from "../shared/page.js";
 import { PageRegistry } from "../shared/page_registry.js";
 
-export class PracticeEmptyPage extends Component {
+export class PracticeEmptyPage extends BasePage {
   constructor() {
-    super(import.meta.url);
-
-    const container = document.createElement("div");
-    container.className = "page-container";
-
-    const main = document.createElement("main");
-    const contentWrapper = document.createElement("div");
-    contentWrapper.className = "content-wrapper";
-
-    const title = document.createElement("h1");
-    title.textContent = "No exercises yet!";
-    contentWrapper.appendChild(title);
-
-    const message = document.createElement("p");
-    message.textContent =
-      "Complete some lessons first to add exercises to your practice queue.";
-    contentWrapper.appendChild(message);
-
-    main.appendChild(contentWrapper);
-    container.appendChild(main);
-
-    this._footer = new LessonFooter({
+    super({}, [], import.meta.url, {
       primaryText: "Go Home",
     });
-    this._footer.element.id = "footer";
-    container.appendChild(this._footer.element);
 
-    this.shadowRoot.appendChild(container);
+    const title = this.html("h1", { textContent: "No exercises yet!" });
+    this.contentWrapper.appendChild(title);
 
-    this.element.addEventListener("primary-click", () => {
-      this.dispatch("go-home");
+    const message = this.html("p", {
+      textContent:
+        "Complete some lessons first to add exercises to your practice queue.",
     });
+    this.contentWrapper.appendChild(message);
+  }
+
+  handlePrimaryClick() {
+    this.dispatch("go-home");
   }
 }
 

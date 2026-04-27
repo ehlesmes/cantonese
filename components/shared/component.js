@@ -13,10 +13,35 @@ export class Component {
     this.element = document.createElement("div");
     this.shadowRoot = this.element.attachShadow({ mode: "open" });
     this.shadowRoot.adoptedStyleSheets = [baseStyles];
-    this.addStyles("./style.css", baseUrl);
+    if (baseUrl) {
+      this.addStyles("./style.css", baseUrl);
+    }
   }
 
-  validate(data, properties) {
+  /**
+   * Standard rendering lifecycle method.
+   * Subclasses should override this.
+   */
+  render() {}
+
+  /**
+   * Helper to create elements with classes and content.
+   * @param {string} tag
+   * @param {Object} [props]
+   * @param {string} [props.className]
+   * @param {string} [props.id]
+   * @param {string} [props.textContent]
+   * @returns {HTMLElement}
+   */
+  html(tag, { className, id, textContent } = {}) {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    if (id) el.id = id;
+    if (textContent) el.textContent = textContent;
+    return el;
+  }
+
+  validate(data, properties = []) {
     if (!data) {
       throw new ValidationError("data is undefined");
     }
@@ -24,6 +49,20 @@ export class Component {
       if (!data[name]) {
         throw new ValidationError(`Missing property: ${name}`);
       }
+    });
+  }
+
+  /**
+   * Syncs a property from the root element to the component instance.
+   * @param {string} propertyName
+   */
+  proxyProperty(propertyName) {
+    Object.defineProperty(this.element, propertyName, {
+      get: () => this[propertyName],
+      set: (v) => {
+        this[propertyName] = v;
+      },
+      configurable: true,
     });
   }
 

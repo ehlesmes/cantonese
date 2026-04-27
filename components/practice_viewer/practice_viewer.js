@@ -17,6 +17,13 @@ export class PracticeViewer extends Component {
     this._currentIndex = 0;
     this._score = 0;
 
+    this.render();
+    this.setupEventListeners();
+
+    this._startNewSession();
+  }
+
+  render() {
     this._container = document.createElement("div");
     this._container.className = "practice-container";
 
@@ -32,7 +39,9 @@ export class PracticeViewer extends Component {
     this._container.appendChild(this._main);
 
     this.shadowRoot.appendChild(this._container);
+  }
 
+  setupEventListeners() {
     // Results from exercise pages
     this.element.addEventListener("reading-result", (e) =>
       this._handleResult(e),
@@ -48,8 +57,6 @@ export class PracticeViewer extends Component {
 
     // Global events
     this.element.addEventListener("close", () => this.dispatch("go-home"));
-
-    this._startNewSession();
   }
 
   _startNewSession() {

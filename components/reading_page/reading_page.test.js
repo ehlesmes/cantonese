@@ -23,9 +23,16 @@ describe("ReadingPage Component", () => {
       translation: "Hello",
     });
 
+    const exercise = component.shadowRoot.querySelector("#exercise");
     expect(
-      component.shadowRoot.querySelector("#exercise").shadowRoot.textContent,
-    ).toBe("你好nei5 hou2volume_upHello");
+      exercise.shadowRoot.querySelector(".cantonese-text").textContent,
+    ).toBe("你好");
+    expect(
+      exercise.shadowRoot.querySelector(".romanization-text").textContent,
+    ).toBe("nei5 hou2");
+    expect(
+      exercise.shadowRoot.querySelector(".translation-text").textContent,
+    ).toBe("Hello");
   });
 
   it("should reveal the answer when primary button is clicked in initial state", () => {
@@ -44,7 +51,7 @@ describe("ReadingPage Component", () => {
       exerciseEl.shadowRoot.querySelector(".translation-text");
 
     // Initial state
-    expect(primaryBtn.textContent).toBe("Reveal Answer");
+    expect(primaryBtn.label).toBe("Reveal Answer");
     expect(secondaryBtn.classList.contains("hidden")).toBe(true);
     expect(translation.classList.contains("hidden")).toBe(true);
 
@@ -52,8 +59,8 @@ describe("ReadingPage Component", () => {
     primaryBtn.click();
 
     // Revealed state
-    expect(primaryBtn.textContent).toBe("Got it right");
-    expect(secondaryBtn.textContent).toBe("Need practice");
+    expect(primaryBtn.label).toBe("Got it right");
+    expect(secondaryBtn.label).toBe("Need practice");
     expect(secondaryBtn.classList.contains("hidden")).toBe(false);
     expect(translation.classList.contains("hidden")).toBe(false);
   });

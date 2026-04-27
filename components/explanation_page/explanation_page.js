@@ -1,40 +1,21 @@
-import { Component } from "../shared/component.js";
-import { LessonFooter } from "../lesson_footer/lesson_footer.js";
+import { BasePage } from "../shared/page.js";
 import { ExampleCard } from "../example_card/example_card.js";
 import { PageRegistry } from "../shared/page_registry.js";
 
-export class ExplanationPage extends Component {
+export class ExplanationPage extends BasePage {
   /**
    * @param {Object} data
    * @param {Array<Object>} data.content
    */
   constructor(data) {
-    super(import.meta.url);
+    super(data, ["content"], import.meta.url);
 
-    this.validate(data, ["content"]);
+    this.contentWrapper.id = "content";
+    this._renderContent(this.contentWrapper, data.content);
+  }
 
-    const container = document.createElement("div");
-    container.className = "page-container";
-
-    const main = document.createElement("main");
-    const contentWrapper = document.createElement("div");
-    contentWrapper.className = "content-wrapper";
-    contentWrapper.id = "content";
-
-    this._renderContent(contentWrapper, data.content);
-
-    main.appendChild(contentWrapper);
-    container.appendChild(main);
-
-    this._footer = new LessonFooter({ primaryText: "Continue" });
-    this._footer.element.id = "footer";
-    container.appendChild(this._footer.element);
-
-    this.shadowRoot.appendChild(container);
-
-    this.element.addEventListener("primary-click", () => {
-      this.dispatch("explanation-complete");
-    });
+  handlePrimaryClick() {
+    this.dispatch("explanation-complete");
   }
 
   /**

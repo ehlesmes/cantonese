@@ -48,8 +48,9 @@ Always utilize the CSS variables in `components/shared/variables.css` to ensure 
 
 ## 🛠️ Contribution Guidelines
 
+For detailed engineering standards, structural patterns, and architectural philosophy, please see **[CONTRIBUTING.md](./CONTRIBUTING.md)**.
+
 - **Encapsulation:** Use Shadow DOM for all components.
-- **Validation:** Components must validate that required attributes (like `tokens` or `cantonese-phrase`) are present and log loud console errors if they are missing.
 - **Modularity:** Keep components small and focused on a single task.
 
 Happy learning! 🇭🇰

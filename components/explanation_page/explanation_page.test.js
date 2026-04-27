@@ -36,7 +36,7 @@ describe("ExplanationPage Component", () => {
     expect(content.querySelector("strong").textContent).toBe("important");
 
     // ExampleCard is a component, its content is in its shadow DOM
-    const exampleCard = content.querySelector(".example-card");
+    const exampleCard = content.querySelector("#content > div:last-child");
     expect(exampleCard.shadowRoot.querySelector(".content-row")).not.toBeNull();
   });
 

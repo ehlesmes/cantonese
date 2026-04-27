@@ -17,20 +17,18 @@ export class Button extends Component {
    */
   constructor(data) {
     super(import.meta.url);
+    this.validate(data);
 
-    this._validateButtonData(data);
     const { label, icon, variant = "outline", disabled = false, title } = data;
 
-    this.addStyles("./style.css", import.meta.url);
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,
       iconStyles,
     ];
 
-    this._button = document.createElement("button");
-    this._button.className = "btn-base";
-    this._button.classList.add(buttonStyles[variant] || buttonStyles.outline);
-    this._button.disabled = Boolean(disabled);
+    this._button = this.html("button", {
+      className: `btn-base ${buttonStyles[variant] || buttonStyles.outline}`,
+    });
 
     if (title) {
       this._button.title = title;
@@ -38,9 +36,10 @@ export class Button extends Component {
 
     if (icon) {
       this._button.classList.add("icon-button");
-      const iconSpan = document.createElement("span");
-      iconSpan.className = "material-symbols-outlined";
-      iconSpan.textContent = icon;
+      const iconSpan = this.html("span", {
+        className: "material-symbols-outlined",
+        textContent: icon,
+      });
       this._button.appendChild(iconSpan);
       if (!title) this._button.title = icon.replace(/_/g, " ");
     } else if (label) {
@@ -50,22 +49,12 @@ export class Button extends Component {
 
     this.shadowRoot.appendChild(this._button);
 
-    // Sync properties to the root element for easier testing and access
-    Object.defineProperty(this.element, "textContent", {
-      get: () => this._button.textContent,
-      set: (v) => {
-        this.label = v;
-      },
-      configurable: true,
-    });
+    // Initial state
+    this.disabled = disabled;
 
-    Object.defineProperty(this.element, "disabled", {
-      get: () => this._button.disabled,
-      set: (v) => {
-        this.disabled = v;
-      },
-      configurable: true,
-    });
+    // Sync properties
+    this.proxyProperty("disabled");
+    this.proxyProperty("label");
 
     this._button.addEventListener("click", (e) => {
       if (this._button.disabled) {
@@ -75,10 +64,8 @@ export class Button extends Component {
     });
   }
 
-  _validateButtonData(data) {
-    if (!data) {
-      throw new ValidationError("data is undefined");
-    }
+  validate(data) {
+    super.validate(data);
     if (!data.label && !data.icon) {
       throw new ValidationError("Button must have either a label or an icon");
     }
@@ -96,6 +83,10 @@ export class Button extends Component {
       this._button.classList.add("text-button");
     }
     this._button.textContent = value;
+  }
+
+  get label() {
+    return this._button.textContent;
   }
 
   set disabled(value) {

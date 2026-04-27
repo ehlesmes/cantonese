@@ -13,8 +13,15 @@ export class LessonFooter extends Component {
     super(import.meta.url);
 
     this.validate(data, ["primaryText"]);
+    this._data = data;
+
+    this.render();
+    this.setupEventListeners();
+  }
+
+  render() {
     const { primaryText, secondaryText, primaryDisabled, secondaryDisabled } =
-      data;
+      this._data;
 
     this._footer = document.createElement("footer");
 
@@ -38,7 +45,9 @@ export class LessonFooter extends Component {
     this._footer.appendChild(this._primaryBtn.element);
 
     this.shadowRoot.appendChild(this._footer);
+  }
 
+  setupEventListeners() {
     this._primaryBtn.element.addEventListener("click", () =>
       this.dispatch("primary-click"),
     );

@@ -44,8 +44,8 @@ describe("LessonFooter Component", () => {
     let primaryBtn = disabled.shadowRoot.getElementById("primary-btn");
     let secondaryBtn = disabled.shadowRoot.getElementById("secondary-btn");
 
-    expect(primaryBtn.textContent).toBe("Go");
-    expect(secondaryBtn.textContent).toBe("Back");
+    expect(primaryBtn.label).toBe("Go");
+    expect(secondaryBtn.label).toBe("Back");
     expect(primaryBtn.disabled).toBe(true);
     expect(secondaryBtn.disabled).toBe(true);
 
@@ -88,7 +88,7 @@ describe("LessonFooter Component", () => {
 
     it("should update primary button text and visibility", () => {
       component.setPrimary("Updated Primary");
-      expect(primaryBtn.textContent).toBe("Updated Primary");
+      expect(primaryBtn.label).toBe("Updated Primary");
       expect(primaryBtn.classList.contains("hidden")).toBe(false);
 
       component.setPrimary(null);
@@ -99,7 +99,7 @@ describe("LessonFooter Component", () => {
       expect(secondaryBtn.classList.contains("hidden")).toBe(true);
 
       component.setSecondary("Updated Secondary");
-      expect(secondaryBtn.textContent).toBe("Updated Secondary");
+      expect(secondaryBtn.label).toBe("Updated Secondary");
       expect(secondaryBtn.classList.contains("hidden")).toBe(false);
 
       component.setSecondary(null);

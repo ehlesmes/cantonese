@@ -60,7 +60,7 @@ describe("UnscramblePage Component", () => {
     getPoolToken("你").click();
 
     expect(secondaryBtn.classList.contains("hidden")).toBe(false);
-    expect(secondaryBtn.textContent).toBe("Try again");
+    expect(secondaryBtn.label).toBe("Try again");
     expect(exercise.status).toBe("wrong");
   });
 
