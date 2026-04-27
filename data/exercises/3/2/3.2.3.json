@@ -1,7 +1,9 @@
 {
   "type": "unscramble",
-  "cantonese": "我要食麵。",
-  "romanization": "ngo5 jiu3 sik6 min6.",
-  "translation": "I want to eat noodles.",
-  "words": ["我", "要", "食麵"]
+  "tokens": [
+    ["我", "ngo5"],
+    ["要", "jiu3"],
+    ["食麵", "sik6 min6"]
+  ],
+  "translation": "I want to eat noodles."
 }

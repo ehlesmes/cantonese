@@ -1,7 +1,9 @@
 {
   "type": "unscramble",
-  "cantonese": "佢係老師。",
-  "romanization": "keoi5 hai6 lou5 si1.",
-  "translation": "He is a teacher.",
-  "words": ["佢", "係", "老師"]
+  "tokens": [
+    ["佢", "keoi5"],
+    ["係", "hai6"],
+    ["老師", "lou5 si1"]
+  ],
+  "translation": "He is a teacher."
 }

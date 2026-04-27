@@ -1,7 +1,9 @@
 {
   "type": "unscramble",
-  "cantonese": "八, 九, 十。",
-  "romanization": "baat3, gau2, sap6.",
-  "translation": "Eight, nine, ten.",
-  "words": ["八", "九", "十"]
+  "tokens": [
+    ["八", "baat3"],
+    ["九", "gau2"],
+    ["十", "sap6"]
+  ],
+  "translation": "Eight, nine, ten."
 }

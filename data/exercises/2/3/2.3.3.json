@@ -1,7 +1,9 @@
 {
   "type": "unscramble",
-  "cantonese": "我要兩個。",
-  "romanization": "ngo5 jiu3 loeng5 go3.",
-  "translation": "I want two (of them).",
-  "words": ["我", "要", "兩個"]
+  "tokens": [
+    ["我", "ngo5"],
+    ["要", "jiu3"],
+    ["兩個", "loeng5 go3"]
+  ],
+  "translation": "I want two (of them)."
 }

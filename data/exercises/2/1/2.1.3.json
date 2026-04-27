@@ -1,7 +1,9 @@
 {
   "type": "unscramble",
-  "cantonese": "一, 二, 三。",
-  "romanization": "jat1, ji6, saam1.",
-  "translation": "One, two, three.",
-  "words": ["一", "二", "三"]
+  "tokens": [
+    ["一", "jat1"],
+    ["二", "ji6"],
+    ["三", "saam1"]
+  ],
+  "translation": "One, two, three."
 }
