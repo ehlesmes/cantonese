@@ -12,11 +12,13 @@ export default {
     if (!isTestFile(context)) return {};
     return {
       Program(node) {
-        if (
-          !context.sourceCode
-            .getText()
-            .includes("document.body.replaceChildren()")
-        ) {
+        const source = context.sourceCode.getText();
+        const usesDom =
+          source.includes("document") ||
+          source.includes("window") ||
+          source.includes("components/");
+
+        if (usesDom && !source.includes("document.body.replaceChildren()")) {
           context.report({
             node,
             message:

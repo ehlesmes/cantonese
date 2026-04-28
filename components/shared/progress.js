@@ -10,14 +10,24 @@ export const Progress = {
    * @returns {Object}
    */
   _getState() {
-    try {
-      const data = window.localStorage.getItem(STORAGE_KEY);
-      const rawState = data ? JSON.parse(data) : null;
-      return migrateOrRecover(rawState);
-    } catch (e) {
-      console.error("Failed to load progress from localStorage", e);
-      return migrateOrRecover(null);
+    const data = window.localStorage.getItem(STORAGE_KEY);
+    let rawState = null;
+    if (data) {
+      try {
+        rawState = JSON.parse(data);
+      } catch (e) {
+        console.error("Failed to parse progress from localStorage", e);
+      }
     }
+
+    const state = migrateOrRecover(rawState);
+
+    // Auto-repair: if we had data but it was invalid or needed migration, save the fixed version.
+    if (data && JSON.stringify(rawState) !== JSON.stringify(state)) {
+      this._saveState(state);
+    }
+
+    return state;
   },
 
   /**

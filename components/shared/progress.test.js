@@ -159,4 +159,62 @@ describe("Progress Utility", () => {
     expect(all).toContainEqual({ exerciseId: "e2.json", level: 2 });
     expect(all.length).toBe(2);
   });
+
+  describe("Recovery and Migration", () => {
+    it("should recover from completely corrupted state", () => {
+      window.localStorage.setItem("cantonese_progress", "invalid-json");
+      const progress = Progress.getLessonProgress("1.1");
+      expect(progress).toBe(0);
+
+      const state = JSON.parse(
+        window.localStorage.getItem("cantonese_progress"),
+      );
+      expect(state.version).toBe(1);
+      expect(state.practice.levels[1]).toEqual([]);
+    });
+
+    it("should recover missing fields from partial state", () => {
+      const partial = { version: 1, lessons: {} }; // Missing practice
+      window.localStorage.setItem(
+        "cantonese_progress",
+        JSON.stringify(partial),
+      );
+
+      const session = Progress.getPracticeSession();
+      expect(session).toEqual([]);
+
+      const state = JSON.parse(
+        window.localStorage.getItem("cantonese_progress"),
+      );
+      expect(state.practice.levels[1]).toBeDefined();
+    });
+
+    it("should filter out non-string IDs from practice levels", () => {
+      const corrupted = {
+        version: 1,
+        lessons: {},
+        practice: {
+          levels: {
+            1: ["valid.json", 123, { id: "bad" }],
+            2: [],
+            3: [],
+            4: [],
+            5: [],
+            6: [],
+            7: [],
+            8: [],
+            9: [],
+            10: [],
+          },
+        },
+      };
+      window.localStorage.setItem(
+        "cantonese_progress",
+        JSON.stringify(corrupted),
+      );
+
+      const all = Progress.getAllPracticeExercises();
+      expect(all).toEqual([{ exerciseId: "valid.json", level: 1 }]);
+    });
+  });
 });

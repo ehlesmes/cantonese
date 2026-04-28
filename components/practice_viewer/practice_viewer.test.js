@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { PracticeViewer } from "./practice_viewer.js";
 import { Progress } from "../shared/progress.js";
+import { ExerciseProvider } from "../shared/exercise_provider.js";
 
 vi.mock("../shared/progress.js", () => ({
   Progress: {
@@ -11,6 +12,12 @@ vi.mock("../shared/progress.js", () => ({
     completeLesson: vi.fn(),
     addExercisesToPractice: vi.fn(),
     getPracticeCount: vi.fn(() => 0),
+  },
+}));
+
+vi.mock("../shared/exercise_provider.js", () => ({
+  ExerciseProvider: {
+    getExercise: vi.fn(),
   },
 }));
 
@@ -26,16 +33,7 @@ describe("PracticeViewer Component", () => {
   beforeEach(() => {
     document.body.replaceChildren();
     vi.clearAllMocks();
-
-    vi.stubGlobal(
-      "fetch",
-      vi.fn(() =>
-        Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve(mockExercise),
-        }),
-      ),
-    );
+    ExerciseProvider.getExercise.mockResolvedValue(mockExercise);
   });
 
   it("should be defined", () => {
@@ -59,9 +57,7 @@ describe("PracticeViewer Component", () => {
     // We need to wait for the fetch in _renderCurrentExercise
     await new Promise((resolve) => setTimeout(resolve, 0));
 
-    expect(global.fetch).toHaveBeenCalledWith(
-      expect.stringContaining("1/1/1.1.2.json"),
-    );
+    expect(ExerciseProvider.getExercise).toHaveBeenCalledWith("1/1/1.1.2.json");
     const main = component.shadowRoot.querySelector("#m");
     expect(main.innerHTML).not.toContain("Loading");
   });
@@ -87,9 +83,7 @@ describe("PracticeViewer Component", () => {
 
     // Should move to next exercise
     await new Promise((resolve) => setTimeout(resolve, 0));
-    expect(global.fetch).toHaveBeenCalledWith(
-      expect.stringContaining("ex2.json"),
-    );
+    expect(ExerciseProvider.getExercise).toHaveBeenCalledWith("ex2.json");
   });
 
   it("should show summary after last exercise", async () => {
