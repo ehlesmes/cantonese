@@ -22,6 +22,30 @@
       ]
     },
     {
+      "type": "dialog",
+      "pageId": "1.1.1b",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你好。",
+          "romanization": "nei5 hou2.",
+          "translation": "Hello."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "你好，你好嗎？",
+          "romanization": "nei5 hou2, nei5 hou2 maa3?",
+          "translation": "Hello, how are you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我很好，多謝。",
+          "romanization": "ngo5 han2 hou2, do1 ze6.",
+          "translation": "I am very well, thank you."
+        }
+      ]
+    },
+    {
       "type": "reading",
       "pageId": "1.1.2"
     },

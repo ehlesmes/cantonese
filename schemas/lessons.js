@@ -6,6 +6,7 @@ const pageBase = {
     "explanation",
     "reading",
     "unscramble",
+    "dialog",
     "congratulations",
   ]),
 };
@@ -34,6 +35,19 @@ const explanationPage = {
   ...pageBase,
   type: (val) => val === "explanation",
   content: [explanationContent],
+};
+
+const dialogLine = {
+  speaker: Validators.isString,
+  cantonese: Validators.isString,
+  romanization: Validators.isString,
+  translation: Validators.isString,
+};
+
+const dialogPage = {
+  ...pageBase,
+  type: (val) => val === "dialog",
+  lines: [dialogLine],
 };
 
 const congratulationsPage = {
@@ -72,6 +86,7 @@ export const Schemas = {
           explanation: explanationPage,
           reading: readingPage,
           unscramble: unscramblePage,
+          dialog: dialogPage,
           congratulations: congratulationsPage,
         };
         const schema = schemas[item.type];

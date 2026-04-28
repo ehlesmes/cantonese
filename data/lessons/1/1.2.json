@@ -34,6 +34,36 @@
       ]
     },
     {
+      "type": "dialog",
+      "pageId": "1.2.1b",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你好嗎？",
+          "romanization": "nei5 hou2 maa3?",
+          "translation": "How are you?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我好，你呢？",
+          "romanization": "ngo5 hou2, nei5 ne1?",
+          "translation": "I'm good, and you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "佢呢？",
+          "romanization": "keoi5 ne1?",
+          "translation": "And him?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "佢都好。",
+          "romanization": "keoi5 dou1 hou2.",
+          "translation": "He is also good."
+        }
+      ]
+    },
+    {
       "type": "reading",
       "pageId": "1.2.2"
     },

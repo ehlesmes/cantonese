@@ -60,6 +60,7 @@ export class LessonViewer extends Component {
     this._main.addEventListener("reading-result", nextHandler);
     this._main.addEventListener("unscramble-result", nextHandler);
     this.element.addEventListener("explanation-complete", nextHandler);
+    this.element.addEventListener("dialog-complete", nextHandler);
 
     this.element.addEventListener("go-home", () => {
       this.dispatch("close");
