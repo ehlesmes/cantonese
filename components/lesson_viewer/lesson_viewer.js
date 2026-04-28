@@ -119,6 +119,8 @@ export class LessonViewer extends Component {
     let pageData;
     if (pageDef.type === "explanation") {
       pageData = { content: pageDef.content };
+    } else if (pageDef.type === "dialog") {
+      pageData = { lines: pageDef.lines };
     } else if (pageDef.type === "congratulations") {
       pageData = { ...pageDef };
       // Mark lesson as completed and add exercises to practice
