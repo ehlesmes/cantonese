@@ -19,6 +19,10 @@
 - [ ] **(P4) E2E Journey Testing:** Implement Playwright E2E tests for the core User Journeys defined in `designs/user_journeys.md`, utilizing state injection and the "Checkpoint" pattern to verify component integration and state persistence.
 - [ ] **(P4) Visual Testing Coverage:** Several components (e.g., `DashboardPage`, `ActionCard`, `TabNav`) lack visual regression tests; expand `tests/visual/pages.spec.js` to ensure consistent UI across updates.
 
+## Tooling & Infrastructure
+
+- [ ] **(P4) TypeScript + JSX Migration:** Refactor the codebase to TypeScript and adopt JSX for component rendering to improve type safety and maintainability.
+
 ## Proposed Features
 
 - [ ] **(P1) Dialogue System:** Implement a dialogue viewer that uses two voices when available, or applies pitch/rate shifts as a fallback when only one is available. (_currently iterating_)
