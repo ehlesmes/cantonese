@@ -6,6 +6,7 @@ This project is a static Cantonese learning web application. State is handled en
 
 - **Architecture:** Keep it simple. Vanilla HTML/CSS/JS is preferred. Adhere strictly to the structural and stylistic standards defined in `CONTRIBUTING.md`.
 - **Surgical Changes:** Do not get creative. Change as little as possible to achieve the desired result. Avoid changing anything at all (code, logic, styles, or structure) unless explicitly requested or judged to be necessary.
+- **Pragmatic Dependencies:** Favor standard Web APIs, but do not spend excessive time or tokens reimplementing complex functionality if a well-established library would be significantly more efficient to adopt. Consult with the user before adding a new dependency.
 - **Verification:** Every task must be verified with a test or manual check before marking as complete.
 - **Task Granularity:** Break large features into small, testable tasks.
 

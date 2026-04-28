@@ -4,7 +4,7 @@
 
 - **Simplicity over Abstraction:** Prefer direct, readable vanilla JS over complex patterns or unnecessary abstractions.
 - **Surgical Changes:** Minimize the surface area of your changes. Do not refactor unrelated code or "clean up" files unless it is essential to the task.
-- **Zero External Dependencies:** Avoid adding new npm packages or external libraries. Stick to standard Web APIs.
+- **Pragmatic Minimalism:** While we prefer standard Web APIs and avoid bloating the project with unnecessary npm packages, we are open to using existing tools if they provide clear utility and prevent wasting effort on reimplementing standard functionality. Prioritize efficiency and reliability over a "not invented here" mentality.
 - **Verification First:** No change is complete without empirical verification (tests or manual checks).
 
 ## 1. Component Architecture
