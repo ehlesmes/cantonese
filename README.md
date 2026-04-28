@@ -1,56 +1,44 @@
 # Cantonese Learning App
 
-A lightweight, component-focused web application for learning Cantonese. This project uses a **Class-based Shadow DOM** architecture, where UI elements are encapsulated within reusable JavaScript classes that manage their own styling and logic via the Shadow DOM.
+A lightweight, component-focused web application for learning Cantonese.
 
 ## 🚀 Getting Started
 
-1.  **Clone the repository.**
-2.  **Open `demo_lesson.html`** in a modern web browser.
-3.  For the best experience, use a local development server (e.g., `npx serve .`).
+1. **Clone the repository.**
+2. **Serve the project:**
+   ```bash
+   npx serve .
+   ```
+3. **Open the app:** Navigate to `http://localhost:3000/index.html`.
 
-## 🏗️ Project Structure
+## 📚 How to Use
 
-- `components/`: The heart of the application. Each UI element is a self-contained Class.
-  - `ui/`: Generic reusable UI elements like `Button` and `Tooltip`.
-  - `shared/`: Global resources like `variables.css`, `shared_assets.js`, and `tts.js`.
-- `audio/`: Repository for legacy or supplemental audio assets.
+- **Dashboard:** Your central hub for navigation, tracking lesson progress, and accessing the practice system.
+- **Lessons:** Navigate to a lesson from the roadmap to start learning.
+- **Practice:** Access the "Practice Review" card to reinforce learned material through spaced repetition.
+- **Advanced Tools:** Navigate to `/#/advanced` to view and modify local state.
 
-## 🎨 Design Philosophy
+## 🛠️ Development & Contribution
 
-### 1. Component Classes
+This project follows a strict architectural philosophy. Before contributing, please read **[CONTRIBUTING.md](./CONTRIBUTING.md)** for:
 
-The application is built using a custom `Component` base class. Avoid creating global JS or CSS files. Logic and styles must be encapsulated within the component class.
+- Engineering standards and architectural philosophy.
+- Component lifecycle and communication patterns.
+- Testing requirements.
 
-### 2. Manual Instantiation
+### Key Directories
 
-Components are instantiated programmatically in JavaScript.
+- `/components`: The UI component library.
+- `/designs`: Design documents and user journeys.
+- `/data`: The lesson and exercise content.
+- `/scripts`: Development and compliance utilities.
 
-```javascript
-import { ReadingPage } from "./components/reading_page/reading_page.js";
-const page = new ReadingPage({
-  cantonese: "你好",
-  romanization: "nei5 hou2",
-  translation: "Hello",
-});
-document.body.appendChild(page.element);
-```
+### Quality Checks
 
-### 3. Audio & TTS
+Ensure your changes meet project standards:
 
-The application uses the browser's native **Web Speech API** for Text-to-Speech.
-
-- Components automatically speak Cantonese using the `zh-HK` locale.
-- Ensure your system has a Cantonese voice installed for the best experience.
-
-### 4. Visual Consistency
-
-Always utilize the CSS variables in `components/shared/variables.css` to ensure a unified Material Design aesthetic.
-
-## 🛠️ Contribution Guidelines
-
-For detailed engineering standards, structural patterns, and architectural philosophy, please see **[CONTRIBUTING.md](./CONTRIBUTING.md)**.
-
-- **Encapsulation:** Use Shadow DOM for all components.
-- **Modularity:** Keep components small and focused on a single task.
+- `npm run lint`: Check code quality.
+- `npm run test`: Run all tests.
+- `npm run compliance`: Verify data and structural consistency.
 
 Happy learning! 🇭🇰
