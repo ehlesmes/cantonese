@@ -1,6 +1,29 @@
 :host {
   display: block;
   height: 100%;
+  width: 100%;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  padding: var(--comp-gap-medium);
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 700px;
 }
 
 .dialog-list {
@@ -8,4 +31,5 @@
   flex-direction: column;
   gap: 16px;
   padding-bottom: 32px;
+  width: 100%;
 }

@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { DialogLine } from "./dialog_line.js";
+import { Tooltip } from "../ui/tooltip/tooltip.js";
 import * as tts from "../shared/tts.js";
 
 describe("DialogLine", () => {
@@ -17,14 +18,21 @@ describe("DialogLine", () => {
     voiceConfig = { index: 0, pitch: 1.0, rate: 0.85 };
   });
 
-  it("should render speaker name and text", () => {
+  it("should render circular play button and text bubble with tooltip", () => {
     const component = new DialogLine(data, voiceConfig, 0);
     const shadow = component.shadowRoot;
 
-    expect(shadow.querySelector(".speaker-name").textContent).toBe("A");
-    expect(shadow.querySelector(".cantonese").textContent).toBe("你好");
-    expect(shadow.querySelector(".romanization").textContent).toBe("nei5 hou2");
     expect(shadow.querySelector(".translation").textContent).toBe("Hello");
+
+    // Check play button is the first child (avatar position)
+    const playBtn = shadow.getElementById("play-audio");
+    expect(playBtn).not.toBeNull();
+    expect(playBtn.classList.contains("speaker-avatar-btn")).toBe(true);
+
+    // Check tooltip
+    const textContent = shadow.querySelector(".bubble").firstElementChild;
+    const tooltip = textContent.firstElementChild;
+    expect(tooltip.component).toBeInstanceOf(Tooltip);
   });
 
   it("should set speaker-index attribute", () => {

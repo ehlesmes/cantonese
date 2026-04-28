@@ -36,6 +36,7 @@ export class Button extends Component {
 
     this._button = this.html("button", {
       className: `btn-base ${buttonStyles[variant] || buttonStyles.outline}`,
+      part: "button",
     });
 
     if (title) {

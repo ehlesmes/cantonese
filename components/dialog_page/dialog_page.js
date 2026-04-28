@@ -19,21 +19,10 @@ export class DialogPage extends BasePage {
         data.lines && data.lines.length > 1 ? "Next Line" : "Continue",
     };
     super(data, ["lines"], import.meta.url, footerConfig);
-
-    this._fullData = data;
-    this._currentLineIndex = 0;
-    this._speakerVoices = new Map();
-
-    this._initializeVoices();
-    this.renderContent(data);
   }
 
-  _initializeVoices() {
-    if (!this._fullData || !this._fullData.lines) return;
-
-    const uniqueSpeakers = [
-      ...new Set(this._fullData.lines.map((line) => line.speaker)),
-    ];
+  _initializeVoices(data) {
+    const uniqueSpeakers = [...new Set(data.lines.map((line) => line.speaker))];
     const systemVoiceCount = getCantoneseVoiceCount();
 
     uniqueSpeakers.forEach((speakerId, index) => {
@@ -53,26 +42,33 @@ export class DialogPage extends BasePage {
   }
 
   renderContent(data) {
-    if (!data || !data.lines) return;
+    // Set up state since this is called during super()
+    this._fullData = data;
+    this._currentLineIndex = 0;
+    this._speakerVoices = new Map();
+    this._initializeVoices(data);
 
-    this.contentWrapper.replaceChildren();
-    const list = this.html("div", { className: "dialog-list" });
+    this._list = this.html("div", { className: "dialog-list" });
+    this.contentWrapper.appendChild(this._list);
 
-    // Show lines up to currentLineIndex
-    for (let i = 0; i <= this._currentLineIndex; i++) {
-      const lineData = data.lines[i];
-      const speakerInfo = this._speakerVoices.get(lineData.speaker);
+    // Initial first line
+    this._appendLine(0);
+  }
 
-      const line = new DialogLine(
-        lineData,
-        speakerInfo.config,
-        speakerInfo.speakerIndex,
-      );
-      line.element.classList.add("dialog-line");
-      list.appendChild(line.element);
-    }
+  _appendLine(index) {
+    const lineData = this._fullData.lines[index];
+    const speakerInfo = this._speakerVoices.get(lineData.speaker);
 
-    this.contentWrapper.appendChild(list);
+    const line = new DialogLine(
+      lineData,
+      speakerInfo.config,
+      speakerInfo.speakerIndex,
+    );
+    line.element.classList.add("dialog-line");
+    this._list.appendChild(line.element);
+
+    // Auto-play audio for the new line
+    line.playAudio();
   }
 
   handlePrimaryClick() {
@@ -90,12 +86,12 @@ export class DialogPage extends BasePage {
         this.footer.primaryText = "Continue";
       }
 
-      this.renderContent(this._fullData);
+      this._appendLine(this._currentLineIndex);
 
       // Scroll the last line into view
-      const lines = this.contentWrapper.querySelectorAll("dialog-line");
+      const lines = this._list.querySelectorAll(".dialog-line");
       if (lines.length > 0) {
-        lines[lines.length - 1].element.scrollIntoView({
+        lines[lines.length - 1].scrollIntoView({
           behavior: "smooth",
           block: "nearest",
         });

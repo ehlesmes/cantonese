@@ -6,56 +6,74 @@
 
 .line-container {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 12px;
-  border-radius: 12px;
-  background-color: var(--md-sys-color-surface-container-low);
-  border: 1px solid var(--md-sys-color-outline-variant);
+  align-items: flex-end;
+  gap: 12px;
+  max-width: 90%;
 }
 
 :host([speaker-index="1"]) .line-container {
-  background-color: var(--md-sys-color-secondary-container);
-  border-color: var(--md-sys-color-secondary);
+  flex-direction: row-reverse;
+  margin-left: auto;
 }
 
-.speaker-name {
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: var(--md-sys-color-primary);
-  text-transform: uppercase;
+.speaker-avatar-btn {
+  flex-shrink: 0;
+  --md-sys-color-primary: var(--md-sys-color-primary-container);
+  --md-sys-color-on-primary: var(--md-sys-color-on-primary-container);
 }
 
-:host([speaker-index="1"]) .speaker-name {
-  color: var(--md-sys-color-on-secondary-container);
+:host([speaker-index="1"]) .speaker-avatar-btn {
+  --md-sys-color-primary: var(--md-sys-color-secondary-container);
+  --md-sys-color-on-primary: var(--md-sys-color-on-secondary-container);
 }
 
-.text-row {
+/* Ensure circular shape for the button component and its internal element */
+.speaker-avatar-btn {
+  border-radius: 50% !important;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.speaker-avatar-btn::part(button) {
+  border-radius: 50% !important;
+  width: 40px;
+  height: 40px;
+}
+
+.bubble {
+  padding: 12px 16px;
+  border-radius: 16px 16px 16px 4px;
+  background-color: var(--md-sys-color-surface-container-low);
+  border: 1px solid var(--md-sys-color-outline-variant);
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.content {
-  flex: 1;
+:host([speaker-index="1"]) .bubble {
+  border-radius: 16px 16px 4px 16px;
+  background-color: var(--md-sys-color-secondary-container);
+  border-color: var(--md-sys-color-outline);
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .cantonese {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--md-sys-color-on-surface);
-  margin-bottom: 4px;
-}
-
-.romanization {
-  font-size: 0.9rem;
-  color: var(--md-sys-color-on-surface-variant);
-  font-style: italic;
-  margin-bottom: 4px;
+  border-bottom: 1px dotted var(--md-sys-color-outline);
+  cursor: help;
+  display: inline-block;
+  width: fit-content;
 }
 
 .translation {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--md-sys-color-on-surface-variant);
 }

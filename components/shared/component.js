@@ -39,6 +39,7 @@ export class Component {
    * @param {string} [props.href]
    * @param {string} [props.title]
    * @param {string} [props.slot]
+   * @param {string} [props.part]
    * @param {string} [props.type]
    * @param {string} [props.value]
    * @param {boolean} [props.open]
@@ -46,7 +47,18 @@ export class Component {
    */
   html(
     tag,
-    { className, id, textContent, href, title, slot, type, value, open } = {},
+    {
+      className,
+      id,
+      textContent,
+      href,
+      title,
+      slot,
+      part,
+      type,
+      value,
+      open,
+    } = {},
   ) {
     const el = document.createElement(tag);
     if (className) el.className = className;
@@ -55,6 +67,7 @@ export class Component {
     if (href) el.href = href;
     if (title) el.title = title;
     if (slot) el.slot = slot;
+    if (part) el.setAttribute("part", part);
     if (type) el.type = type;
     if (value !== undefined) el.value = value;
     if (open !== undefined) el.open = open;

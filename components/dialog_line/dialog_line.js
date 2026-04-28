@@ -1,6 +1,7 @@
 import { Component } from "../shared/component.js";
 import { speakCantonese } from "../shared/tts.js";
 import { Button } from "../ui/button/button.js";
+import { Tooltip } from "../ui/tooltip/tooltip.js";
 
 /**
  * DialogLine Component
@@ -41,13 +42,8 @@ export class DialogLine extends Component {
 
     const container = this.html("div", { className: "line-container" });
 
-    const speaker = this.html("div", {
-      className: "speaker-name",
-      textContent: this._data.speaker,
-    });
-
-    const textRow = this.html("div", { className: "text-row" });
-    const content = this.html("div", { className: "content" });
+    const bubble = this.html("div", { className: "bubble" });
+    const textContent = this.html("div", { className: "text-content" });
 
     const cantonese = this.html("div", {
       className: "cantonese",
@@ -57,6 +53,12 @@ export class DialogLine extends Component {
       className: "romanization",
       textContent: this._data.romanization,
     });
+
+    this._tooltip = new Tooltip({
+      trigger: cantonese,
+      content: romanization,
+    });
+
     const translation = this.html("div", {
       className: "translation",
       textContent: this._data.translation,
@@ -68,10 +70,11 @@ export class DialogLine extends Component {
       title: "Play audio",
     });
     this._playBtn.element.id = "play-audio";
+    this._playBtn.element.classList.add("speaker-avatar-btn");
 
-    content.append(cantonese, romanization, translation);
-    textRow.append(content, this._playBtn.element);
-    container.append(speaker, textRow);
+    textContent.append(this._tooltip.element, translation);
+    bubble.append(textContent);
+    container.append(this._playBtn.element, bubble);
 
     this.shadowRoot.appendChild(container);
   }

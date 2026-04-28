@@ -25,25 +25,37 @@ describe("DialogPage", () => {
     };
     vi.stubGlobal("speechSynthesis", {
       getVoices: () => [{ lang: "zh-HK", name: "Alice" }],
+      cancel: vi.fn(),
+      speak: vi.fn(),
     });
     // Mock getCantoneseVoiceCount to return 1 for fallback testing
     vi.spyOn(tts, "getCantoneseVoiceCount").mockReturnValue(1);
   });
 
-  it("should show only the first line initially", () => {
+  it("should show only the first line initially and play audio", () => {
+    const spy = vi.spyOn(tts, "speakCantonese");
     const component = new DialogPage(data);
     const lines = component.shadowRoot.querySelectorAll(".dialog-line");
     expect(lines.length).toBe(1);
     expect(component.footer.primaryText).toBe("Next Line");
+    expect(spy).toHaveBeenCalledWith(
+      data.lines[0].cantonese,
+      expect.any(Object),
+    );
   });
 
-  it("should show the next line when 'Next Line' is clicked", () => {
+  it("should show the next line and play its audio when 'Next Line' is clicked", () => {
     const component = new DialogPage(data);
+    const spy = vi.spyOn(tts, "speakCantonese");
     component.handlePrimaryClick();
 
     const lines = component.shadowRoot.querySelectorAll(".dialog-line");
     expect(lines.length).toBe(2);
     expect(component.footer.primaryText).toBe("Continue");
+    expect(spy).toHaveBeenCalledWith(
+      data.lines[1].cantonese,
+      expect.any(Object),
+    );
   });
 
   it("should dispatch dialog-complete when clicking continue on the last line", () => {
