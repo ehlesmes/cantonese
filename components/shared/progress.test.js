@@ -166,6 +166,13 @@ describe("Progress Utility", () => {
       const progress = Progress.getLessonProgress("1.1");
       expect(progress).toBe(0);
 
+      // Assert that we logged the error
+      expect(console.error).toHaveBeenCalledWith(
+        "Failed to parse progress from localStorage",
+        expect.any(SyntaxError),
+      );
+      vi.mocked(console.error).mockClear();
+
       const state = JSON.parse(
         window.localStorage.getItem("cantonese_progress"),
       );

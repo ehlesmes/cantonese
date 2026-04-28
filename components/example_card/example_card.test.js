@@ -5,7 +5,7 @@ describe("ExampleCard Component", () => {
   beforeEach(() => {
     document.body.replaceChildren();
     // Reset mocks
-    vi.restoreAllMocks();
+    vi.clearAllMocks();
   });
 
   it("should be defined", () => {

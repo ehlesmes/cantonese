@@ -82,6 +82,11 @@ describe("LessonProvider", () => {
       await expect(LessonProvider.getLessonData("1.1")).rejects.toThrow(
         "Failed to load lesson: 1.1",
       );
+
+      expect(console.error).toHaveBeenCalledWith(
+        "🚨 [LessonProvider ERROR]: Failed to load lesson: 1.1",
+      );
+      vi.mocked(console.error).mockClear();
     });
   });
 

@@ -44,6 +44,11 @@ describe("ExerciseProvider", () => {
       await expect(ExerciseProvider.getExercise("bad.json")).rejects.toThrow(
         "Failed to load exercise: bad.json",
       );
+
+      expect(console.error).toHaveBeenCalledWith(
+        "🚨 [ExerciseProvider ERROR]: Failed to load exercise: bad.json",
+      );
+      vi.mocked(console.error).mockClear();
     });
   });
 
