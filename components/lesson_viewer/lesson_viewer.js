@@ -10,6 +10,7 @@ import "../reading_page/reading_page.js";
 import "../unscramble_page/unscramble_page.js";
 import "../explanation_page/explanation_page.js";
 import "../congratulations_page/congratulations_page.js";
+import "../dialog_page/dialog_page.js";
 
 export class LessonViewer extends Component {
   /**

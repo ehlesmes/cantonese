@@ -1,14 +1,16 @@
 import { Validators, validateObject } from "./validator.js";
 
+export const PAGE_TYPES = [
+  "explanation",
+  "reading",
+  "unscramble",
+  "dialog",
+  "congratulations",
+];
+
 const pageBase = {
   pageId: Validators.isString,
-  type: Validators.isType([
-    "explanation",
-    "reading",
-    "unscramble",
-    "dialog",
-    "congratulations",
-  ]),
+  type: Validators.isType(PAGE_TYPES),
 };
 
 const explanationContent = {

@@ -4,6 +4,11 @@ import { Progress } from "../shared/progress.js";
 import { LessonProvider } from "../shared/lesson_provider.js";
 import { ExerciseProvider } from "../shared/exercise_provider.js";
 
+vi.mock("../shared/tts.js", () => ({
+  getCantoneseVoiceCount: vi.fn(() => 1),
+  speakCantonese: vi.fn(),
+}));
+
 vi.mock("../shared/progress.js", () => ({
   Progress: {
     getLessonProgress: vi.fn(() => 0),
@@ -32,8 +37,21 @@ describe("LessonViewer Component", () => {
     pages: [
       { pageId: "1.1.1", type: "explanation", content: [] },
       { pageId: "1.1.2", type: "reading" },
+      { pageId: "1.1.3", type: "unscramble" },
       {
-        pageId: "1.1.3",
+        pageId: "1.1.4",
+        type: "dialog",
+        lines: [
+          {
+            speaker: "A",
+            cantonese: "你好",
+            romanization: "nei5 hou2",
+            translation: "Hello",
+          },
+        ],
+      },
+      {
+        pageId: "1.1.5",
         type: "congratulations",
         title: "Done",
         summary: "Good job",
@@ -50,12 +68,23 @@ describe("LessonViewer Component", () => {
     translation: "Hello",
   };
 
+  const mockUnscramble = {
+    version: 1,
+    type: "unscramble",
+    tokens: [["你好", "nei5 hou2"]],
+    translation: "Hello",
+  };
+
   beforeEach(() => {
     document.body.replaceChildren();
     vi.clearAllMocks();
     Progress.getLessonProgress.mockReturnValue(0);
     LessonProvider.getLessonData.mockResolvedValue(mockLesson);
-    ExerciseProvider.getExercise.mockResolvedValue(mockExercise);
+    ExerciseProvider.getExercise.mockImplementation((path) => {
+      if (path.includes("1.1.2.json")) return Promise.resolve(mockExercise);
+      if (path.includes("1.1.3.json")) return Promise.resolve(mockUnscramble);
+      return Promise.reject(new Error("Unknown exercise path"));
+    });
   });
 
   it("should be defined", () => {
@@ -166,12 +195,37 @@ describe("LessonViewer Component", () => {
     const header = component.querySelector("#header");
     const progressBar = header.shadowRoot.querySelector(".progress-bar");
 
-    // Page 1 of 3: progress should be ~33.3%
-    expect(progressBar.style.width).toBe("33.33333333333333%");
+    // Page 1 of 5: progress should be 20%
+    expect(progressBar.style.width).toBe("20%");
 
     await component.navigateTo(1);
-    // Page 2 of 3: progress should be ~66.6%
-    expect(progressBar.style.width).toBe("66.66666666666666%");
+    // Page 2 of 5: progress should be 40%
+    expect(progressBar.style.width).toBe("40%");
+  });
+
+  it("should render all page types correctly", async () => {
+    const component = new LessonViewer({
+      lessonId: "1.1",
+      lessonName: "Test Lesson",
+    });
+    await component.ready;
+
+    for (let i = 0; i < mockLesson.pages.length; i++) {
+      await component.navigateTo(i);
+      const main = component.querySelector("#m");
+      const page = main.firstElementChild;
+      expect(page).not.toBeNull();
+
+      // Check for error message
+      const error =
+        page.shadowRoot?.querySelector(".error") ||
+        page.querySelector(".error");
+      if (error) {
+        throw new Error(
+          `Page type ${mockLesson.pages[i].type} failed to render: ${error.textContent}`,
+        );
+      }
+    }
   });
 
   it("should complete lesson and add to practice when rendering congratulations", async () => {
@@ -181,11 +235,12 @@ describe("LessonViewer Component", () => {
     });
     await component.ready;
 
-    await component.navigateTo(2); // Congratulations page
+    await component.navigateTo(4); // Congratulations page (index 4 now)
 
     expect(Progress.completeLesson).toHaveBeenCalledWith("1.1");
     expect(Progress.addExercisesToPractice).toHaveBeenCalledWith([
       "1/1/1.1.2.json",
+      "1/1/1.1.3.json",
     ]);
   });
 
