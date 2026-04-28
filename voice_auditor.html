@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Voice Auditor</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      .voice-item {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      .match {
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cantonese Voice Auditor</h1>
+    <div style="margin-bottom: 20px">
+      <label for="phrase">Phrase to speak:</label>
+      <input
+        type="text"
+        id="phrase"
+        value="你好嗎？"
+        style="width: 200px; padding: 5px"
+      />
+    </div>
+    <div id="results">Loading voices...</div>
+
+    <div id="results">Loading voices...</div>
+
+    <hr />
+    <h3>Dialogue Simulation</h3>
+    <button onclick="runMultiVoiceDialog()">Run Multi-Voice Dialogue</button>
+    <button onclick="runPitchDialog()">
+      Run Pitch-Differentiated Dialogue
+    </button>
+
+    <script>
+      function speak(voiceName, pitch = 1.0, rate = 1.0, text) {
+        return new Promise((resolve) => {
+          const utterance = new SpeechSynthesisUtterance(text);
+          const voices = window.speechSynthesis.getVoices();
+          utterance.voice = voices.find((v) => v.name === voiceName);
+          utterance.pitch = pitch;
+          utterance.rate = rate;
+          utterance.onend = resolve;
+          window.speechSynthesis.speak(utterance);
+        });
+      }
+
+      async function runMultiVoiceDialog() {
+        const voices = window.speechSynthesis
+          .getVoices()
+          .filter((v) => v.lang.includes("zh-HK") || v.lang.includes("yue"));
+        if (voices.length < 2) {
+          alert("Need at least 2 Cantonese voices.");
+          return;
+        }
+        const A = voices[0].name;
+        const B = voices[1].name;
+
+        await speak(A, 1, 1, "你好，今日天氣幾好喎。");
+        await speak(B, 1, 1, "係呀，好啱出街行下。");
+        await speak(A, 1, 1, "不如我哋去飲茶啦？");
+        await speak(B, 1, 1, "好主意，你想去邊間？");
+      }
+
+      async function runPitchDialog() {
+        const voices = window.speechSynthesis
+          .getVoices()
+          .filter((v) => v.lang.includes("zh-HK") || v.lang.includes("yue"));
+        if (voices.length < 1) return;
+        const voice = voices[0].name;
+
+        // Speaker A: Higher pitch, faster rate (Excited)
+        // Speaker B: Lower pitch, slower rate (Calm/Thoughtful)
+        await speak(voice, 1.5, 1.1, "你食咗飯未呀？");
+        await speak(voice, 0.6, 0.9, "未呀... 我諗緊食咩好。");
+        await speak(voice, 1.5, 1.1, "不如一齊食雲吞麵？");
+        await speak(voice, 0.6, 0.9, "好啊... 聽落唔錯。");
+      }
+
+      window.speechSynthesis.onvoiceschanged = listVoices;
+      listVoices();
+    </script>
+  </body>
+</html>

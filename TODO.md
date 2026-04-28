@@ -21,6 +21,8 @@
 
 ## Proposed Features
 
+- [ ] **(P1) Dialogue System:** Implement a dialogue viewer that uses two voices when available, or applies pitch/rate shifts as a fallback when only one is available. (_currently iterating_)
+- [ ] **(P2) Voice Configuration:** Implement a voice selector and configuration tool in the Advanced settings to manage preferred voices and mappings. (_currently iterating_)
 - [ ] **(P3) Searchable Glossary:** Add a search bar to the Vocabulary page to filter unlocked items.
 - [ ] **(P3) Streak Counter:** Implement a daily study streak tracker on the dashboard using `LocalStorage`.
 - [ ] **(P3) Unscramble UX Update:** Change the unscramble exercise behavior to show a "Show Answer" button instead of disabling the "Continue" button.
