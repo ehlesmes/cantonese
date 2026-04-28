@@ -1,5 +1,5 @@
 import { Component } from "../shared/component.js";
-import { PageRegistry } from "../shared/page_registry.js";
+import { Routes } from "../shared/routes.js";
 import { Progress } from "../shared/progress.js";
 import { LessonProvider } from "../shared/lesson_provider.js";
 import { ActionCard } from "../action_card/action_card.js";
@@ -55,17 +55,17 @@ export class DashboardPage extends Component {
       const cardId = e.target.id;
 
       if (cardId === "practice-card") {
-        window.location.hash = "#/practice";
+        window.location.hash = Routes.PRACTICE;
       } else if (cardId === "next-lesson-card") {
         const id = this._nextLesson
           ? this._nextLesson.lessonId
           : this._chapters[0]?.lessons[0].lessonId;
-        if (id) window.location.hash = `#/lesson/${id}`;
+        if (id) window.location.hash = Routes.lesson(id);
       }
     });
 
     this._container.addEventListener("lesson-click", (e) => {
-      window.location.hash = `#/lesson/${e.detail.lessonId}`;
+      window.location.hash = Routes.lesson(e.detail.lessonId);
     });
   }
 
@@ -125,4 +125,4 @@ export class DashboardPage extends Component {
   }
 }
 
-PageRegistry.set("home", DashboardPage);
+Routes.register(Routes.HOME, DashboardPage);

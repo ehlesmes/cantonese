@@ -3,7 +3,6 @@
 ## Technical Debt & Documentation
 
 - [ ] **(P1) Component Event Contracts:** Document the list of custom events (`dispatch`) used for cross-component communication (e.g., `go-home`, `next-lesson`, `close`) to make the data flow more explicit.
-- [ ] **(P1) Routing Map:** Create a central registry or documented list of all valid hash routes (`#/home`, `#/lesson/:id`, `#/practice`, `#/advanced`) to avoid "magic string" dependencies.
 - [ ] **(P4) Global Styles Strategy:** Document the usage guidelines for `adoptedStyleSheets` vs. component-level `style.css` in `CONTRIBUTING.md`.
 
 ## Feature Improvements

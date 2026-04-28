@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { DashboardPage } from "./dashboard_page.js";
+import { Routes } from "../shared/routes.js";
 
 describe("DashboardPage Component", () => {
   beforeEach(() => {
@@ -30,7 +31,7 @@ describe("DashboardPage Component", () => {
     const practiceCard = page.shadowRoot.querySelector("#practice-card");
     practiceCard.component.shadowRoot.querySelector(".action-card").click();
 
-    expect(window.location.hash).toBe("#/practice");
+    expect(window.location.hash).toBe(Routes.PRACTICE);
   });
 
   it("should navigate to lesson when next lesson card is clicked", () => {
@@ -47,6 +48,6 @@ describe("DashboardPage Component", () => {
     const nextCard = page.shadowRoot.querySelector("#next-lesson-card");
     nextCard.component.shadowRoot.querySelector(".action-card").click();
 
-    expect(window.location.hash).toBe("#/lesson/1.1");
+    expect(window.location.hash).toBe(Routes.lesson("1.1"));
   });
 });

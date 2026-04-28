@@ -1,10 +1,11 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { TabNav } from "./tab_nav.js";
+import { Routes } from "../shared/routes.js";
 
 describe("TabNav Component", () => {
   const mockTabs = [
-    { label: "Home", hash: "#/home" },
-    { label: "Vocabulary", hash: "#/vocabulary" },
+    { label: "Home", hash: Routes.HOME },
+    { label: "Vocabulary", hash: Routes.VOCABULARY },
   ];
 
   beforeEach(() => {
@@ -23,13 +24,13 @@ describe("TabNav Component", () => {
 
     expect(buttons.length).toBe(2);
     expect(buttons[0].textContent).toBe("Home");
-    expect(buttons[0].getAttribute("href")).toBe("#/home");
+    expect(buttons[0].getAttribute("href")).toBe(Routes.HOME);
   });
 
   it("should update active state when setting activeHash", () => {
     const nav = new TabNav({ tabs: mockTabs });
 
-    nav.activeHash = "#/vocabulary";
+    nav.activeHash = Routes.VOCABULARY;
 
     const buttons = nav.shadowRoot.querySelectorAll(".tab-button");
     expect(buttons[0].classList.contains("active")).toBe(false);

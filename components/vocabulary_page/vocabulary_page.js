@@ -1,5 +1,5 @@
 import { Component } from "../shared/component.js";
-import { PageRegistry } from "../shared/page_registry.js";
+import { Routes } from "../shared/routes.js";
 import { Progress } from "../shared/progress.js";
 import { VocabularyItem } from "../vocabulary_item/vocabulary_item.js";
 
@@ -89,4 +89,4 @@ export class VocabularyPage extends Component {
   }
 }
 
-PageRegistry.set("vocabulary", VocabularyPage);
+Routes.register(Routes.VOCABULARY, VocabularyPage);

@@ -1,5 +1,5 @@
 import { Component } from "../shared/component.js";
-import { PageRegistry } from "../shared/page_registry.js";
+import { Routes } from "../shared/routes.js";
 import { LessonViewer } from "../lesson_viewer/lesson_viewer.js";
 import { LessonProvider } from "../shared/lesson_provider.js";
 import { PracticeViewer } from "../practice_viewer/practice_viewer.js";
@@ -25,14 +25,14 @@ export class AppShell extends Component {
   setupEventListeners() {
     // Listen for events from sub-components to return home
     this.element.addEventListener("go-home", () => {
-      window.location.hash = "#/home";
+      window.location.hash = Routes.HOME;
     });
     this.element.addEventListener("close", () => {
-      window.location.hash = "#/home";
+      window.location.hash = Routes.HOME;
     });
     this.element.addEventListener("next-lesson", (e) => {
       const { nextLessonId } = e.detail;
-      window.location.hash = `#/lesson/${nextLessonId}`;
+      window.location.hash = Routes.lesson(nextLessonId);
     });
 
     window.addEventListener("hashchange", this._onHashChange);
@@ -58,7 +58,7 @@ export class AppShell extends Component {
   setupRouting() {
     // Initial route - set default if empty
     if (!window.location.hash) {
-      window.location.hash = "#/home";
+      window.location.hash = Routes.HOME;
     } else {
       this.handleRoute();
     }
@@ -76,32 +76,29 @@ export class AppShell extends Component {
    * Handles route changes and switches views.
    */
   async handleRoute() {
-    const hash = window.location.hash || "#/home";
-    const path = hash.substring(2); // Remove '#/'
+    const hash = window.location.hash || Routes.HOME;
 
     // Determine if we should be in "Focus Mode" (hide nav)
-    const isFocusMode =
-      hash.startsWith("#/lesson/") || hash.startsWith("#/practice");
+    const isFocusMode = Routes.isFocusMode(hash);
     this.toggleFocusMode(isFocusMode);
 
     let nextView;
 
-    if (hash.startsWith("#/lesson/")) {
-      const lessonId = hash.replace("#/lesson/", "");
+    const lessonId = Routes.parseLessonId(hash);
+    if (lessonId) {
       // Resolve the name before creating the viewer to avoid "Loading..." header flicker
       const lessonName = await LessonProvider.getLessonName(lessonId);
       nextView = new LessonViewer({ lessonId, lessonName });
-    } else if (hash === "#/practice") {
+    } else if (hash === Routes.PRACTICE) {
       nextView = new PracticeViewer();
     } else {
-      const route = path || "home";
-      const PageClass = PageRegistry.get(route);
+      const PageClass = Routes.getComponent(hash);
       if (PageClass) {
         nextView = new PageClass();
       } else {
-        console.error(`Unknown route: ${route}`);
+        console.error(`Unknown route: ${hash}`);
         // Fallback to home
-        window.location.hash = "#/home";
+        window.location.hash = Routes.HOME;
         return;
       }
     }

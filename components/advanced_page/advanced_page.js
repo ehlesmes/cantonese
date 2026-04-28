@@ -1,5 +1,5 @@
 import { Component } from "../shared/component.js";
-import { PageRegistry } from "../shared/page_registry.js";
+import { Routes } from "../shared/routes.js";
 
 export class AdvancedPage extends Component {
   constructor() {
@@ -36,4 +36,4 @@ export class AdvancedPage extends Component {
   }
 }
 
-PageRegistry.set("advanced", AdvancedPage);
+Routes.register(Routes.ADVANCED, AdvancedPage);

@@ -26,6 +26,7 @@
     <script type="module">
       import { AppShell } from "./components/app_shell/app_shell.js";
       import { TabNav } from "./components/tab_nav/tab_nav.js";
+      import { Routes } from "./components/shared/routes.js";
 
       // Initialize Shell
       const shell = new AppShell();
@@ -34,8 +35,8 @@
       // Initialize Nav
       const nav = new TabNav({
         tabs: [
-          { label: "Home", hash: "#/home" },
-          { label: "Vocabulary", hash: "#/vocabulary" },
+          { label: "Home", hash: Routes.HOME },
+          { label: "Vocabulary", hash: Routes.VOCABULARY },
         ],
       });
 

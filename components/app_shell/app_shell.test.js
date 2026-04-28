@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { AppShell } from "./app_shell.js";
-import { PageRegistry } from "../shared/page_registry.js";
+import { Routes } from "../shared/routes.js";
 
 describe("AppShell Component", () => {
   beforeEach(() => {
@@ -47,8 +47,8 @@ describe("AppShell Component", () => {
     );
 
     // Register mock for vocabulary to avoid routing errors in tests
-    PageRegistry.set(
-      "vocabulary",
+    Routes.register(
+      Routes.VOCABULARY,
       class MockPage {
         constructor() {
           this.element = document.createElement("div");
@@ -72,11 +72,11 @@ describe("AppShell Component", () => {
 
   it("should navigate to #/home by default if no hash exists", () => {
     new AppShell();
-    expect(window.location.hash).toBe("#/home");
+    expect(window.location.hash).toBe(Routes.HOME);
   });
 
   it("should hide navigation in Focus Mode (lessons)", () => {
-    window.location.hash = "#/lesson/1.1";
+    window.location.hash = Routes.lesson("1.1");
     const shell = new AppShell();
     const header = shell.shadowRoot.querySelector(".app-header");
 
@@ -84,7 +84,7 @@ describe("AppShell Component", () => {
   });
 
   it("should hide navigation in Focus Mode (practice)", () => {
-    window.location.hash = "#/practice";
+    window.location.hash = Routes.PRACTICE;
     const shell = new AppShell();
     const header = shell.shadowRoot.querySelector(".app-header");
 
@@ -95,11 +95,11 @@ describe("AppShell Component", () => {
     const shell = new AppShell();
     const header = shell.shadowRoot.querySelector(".app-header");
 
-    window.location.hash = "#/home";
+    window.location.hash = Routes.HOME;
     shell.handleRoute();
     expect(header.classList.contains("hidden")).toBe(false);
 
-    window.location.hash = "#/vocabulary";
+    window.location.hash = Routes.VOCABULARY;
     shell.handleRoute();
     expect(header.classList.contains("hidden")).toBe(false);
   });
@@ -129,15 +129,15 @@ describe("AppShell Component", () => {
     };
     shell.nav = mockNav;
 
-    window.location.hash = "#/vocabulary";
+    window.location.hash = Routes.VOCABULARY;
     shell.handleRoute();
 
-    expect(activeHashSpy).toHaveBeenCalledWith("#/vocabulary");
+    expect(activeHashSpy).toHaveBeenCalledWith(Routes.VOCABULARY);
   });
 
   it("should load PracticeViewer when navigating to #/practice", async () => {
     const shell = new AppShell();
-    window.location.hash = "#/practice";
+    window.location.hash = Routes.PRACTICE;
     await shell.handleRoute();
 
     // PracticeViewer uses a shadow root, so we check for the existence of the element
@@ -147,7 +147,7 @@ describe("AppShell Component", () => {
 
   it("should load LessonViewer when navigating to #/lesson/1.1", async () => {
     const shell = new AppShell();
-    window.location.hash = "#/lesson/1.1";
+    window.location.hash = Routes.lesson("1.1");
     await shell.handleRoute();
 
     expect(shell._currentView.constructor.name).toBe("LessonViewer");
