@@ -32,14 +32,12 @@ describe("Lesson Schemas", () => {
         version: 1,
         pages: [
           {
-            pageId: "1",
             type: "explanation",
             content: [{ type: "title", value: "Hi" }],
           },
-          { pageId: "2", type: "reading" },
-          { pageId: "3", type: "unscramble" },
+          { exerciseId: "2", type: "reading" },
+          { exerciseId: "3", type: "unscramble" },
           {
-            pageId: "4",
             type: "congratulations",
             title: "T",
             summary: "S",
@@ -55,7 +53,6 @@ describe("Lesson Schemas", () => {
         version: 1,
         pages: [
           {
-            pageId: "1",
             type: "explanation",
             content: [
               {
@@ -76,7 +73,6 @@ describe("Lesson Schemas", () => {
         version: 1,
         pages: [
           {
-            pageId: "1",
             type: "explanation",
             content: [{ type: "example", value: "should not have value" }],
           },
@@ -96,7 +92,6 @@ describe("Lesson Schemas", () => {
         version: 1,
         pages: [
           {
-            pageId: "1",
             type: "explanation",
             content: [{ type: "title", value: 123 }], // Invalid value type
           },
@@ -111,7 +106,7 @@ describe("Lesson Schemas", () => {
     it("should catch unknown page type", () => {
       const data = {
         version: 1,
-        pages: [{ pageId: "1", type: "magic" }],
+        pages: [{ type: "magic" }],
       };
       expect(validateObject(data, Schemas.lessonDetail)).toContain(
         'pages[0].Unknown page type "magic"',

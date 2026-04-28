@@ -35,11 +35,10 @@ describe("LessonViewer Component", () => {
   const mockLesson = {
     version: 1,
     pages: [
-      { pageId: "1.1.1", type: "explanation", content: [] },
-      { pageId: "1.1.2", type: "reading" },
-      { pageId: "1.1.3", type: "unscramble" },
+      { type: "explanation", content: [] },
+      { exerciseId: "1.1.2", type: "reading" },
+      { exerciseId: "1.1.3", type: "unscramble" },
       {
-        pageId: "1.1.4",
         type: "dialog",
         lines: [
           {
@@ -51,7 +50,6 @@ describe("LessonViewer Component", () => {
         ],
       },
       {
-        pageId: "1.1.5",
         type: "congratulations",
         title: "Done",
         summary: "Good job",

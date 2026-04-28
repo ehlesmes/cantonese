@@ -3,7 +3,6 @@
   "pages": [
     {
       "type": "explanation",
-      "pageId": "2.3.1",
       "content": [
         {
           "type": "title",
@@ -33,19 +32,18 @@
     },
     {
       "type": "reading",
-      "pageId": "2.3.2"
+      "exerciseId": "2.3.2"
     },
     {
       "type": "unscramble",
-      "pageId": "2.3.3"
+      "exerciseId": "2.3.3"
     },
     {
       "type": "reading",
-      "pageId": "2.3.4"
+      "exerciseId": "2.3.4"
     },
     {
       "type": "congratulations",
-      "pageId": "2.3.5",
       "title": "Counting Complete!",
       "summary": "You can now count objects using the 'go3' classifier.",
       "nextLessonId": "3.1"

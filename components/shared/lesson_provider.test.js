@@ -56,7 +56,7 @@ describe("LessonProvider", () => {
     it("should fetch and cache lesson detail", async () => {
       const mockLesson = {
         version: 1,
-        pages: [{ pageId: "1.1.1", type: "reading" }],
+        pages: [{ exerciseId: "1.1.1", type: "reading" }],
       };
 
       fetch.mockResolvedValue({

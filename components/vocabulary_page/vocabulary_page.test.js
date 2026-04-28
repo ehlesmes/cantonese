@@ -88,16 +88,16 @@ describe("VocabularyPage Component", () => {
     // 1. Simulate Lesson Completion (mimicking LessonViewer logic)
     const lessonId = "1.1";
     const lessonData = [
-      { type: "reading", pageId: "1.1.2" },
-      { type: "unscramble", pageId: "1.1.3" },
-      { type: "congratulations", pageId: "1.1.4" },
+      { type: "reading", exerciseId: "1.1.2" },
+      { type: "unscramble", exerciseId: "1.1.3" },
+      { type: "congratulations" },
     ];
 
     Progress.completeLesson(lessonId);
     const [chapter, lessonNum] = lessonId.split(".");
     const exerciseIds = lessonData
       .filter((p) => p.type === "reading" || p.type === "unscramble")
-      .map((p) => `${chapter}/${lessonNum}/${p.pageId}.json`);
+      .map((p) => `${chapter}/${lessonNum}/${p.exerciseId}.json`);
     Progress.addExercisesToPractice(exerciseIds);
 
     // 2. Mock Fetch for these exercises

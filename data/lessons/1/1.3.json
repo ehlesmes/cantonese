@@ -3,7 +3,6 @@
   "pages": [
     {
       "type": "explanation",
-      "pageId": "1.3.1",
       "content": [
         {
           "type": "title",
@@ -23,15 +22,14 @@
     },
     {
       "type": "reading",
-      "pageId": "1.3.2"
+      "exerciseId": "1.3.2"
     },
     {
       "type": "unscramble",
-      "pageId": "1.3.3"
+      "exerciseId": "1.3.3"
     },
     {
       "type": "congratulations",
-      "pageId": "1.3.4",
       "title": "Sentences Complete!",
       "summary": "You can now build basic 'to be' sentences.",
       "nextLessonId": "2.1"

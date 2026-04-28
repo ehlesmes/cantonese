@@ -3,7 +3,6 @@
   "pages": [
     {
       "type": "explanation",
-      "pageId": "2.2.1",
       "content": [
         {
           "type": "title",
@@ -23,15 +22,14 @@
     },
     {
       "type": "reading",
-      "pageId": "2.2.2"
+      "exerciseId": "2.2.2"
     },
     {
       "type": "unscramble",
-      "pageId": "2.2.3"
+      "exerciseId": "2.2.3"
     },
     {
       "type": "congratulations",
-      "pageId": "2.2.4",
       "title": "Perfect Ten!",
       "summary": "You can now count from 1 to 10 in Cantonese.",
       "nextLessonId": "2.3"

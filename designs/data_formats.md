@@ -27,7 +27,6 @@ The manifest that defines the order of pages and contains inlined explanations.
   "pages": [
     {
       "type": "explanation",
-      "pageId": "1.1.1",
       "content": [
         { "type": "title", "value": "Saying Hello" },
         {
@@ -42,11 +41,10 @@ The manifest that defines the order of pages and contains inlined explanations.
         }
       ]
     },
-    { "type": "reading", "pageId": "1.1.2" },
-    { "type": "unscramble", "pageId": "1.1.3" },
+    { "type": "reading", "exerciseId": "1.1.2" },
+    { "type": "unscramble", "exerciseId": "1.1.3" },
     {
       "type": "congratulations",
-      "pageId": "1.1.4",
       "title": "Lesson Complete!",
       "summary": "You've learned basic greetings.",
       "nextLessonId": "1.2"

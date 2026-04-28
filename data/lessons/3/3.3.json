@@ -3,7 +3,6 @@
   "pages": [
     {
       "type": "explanation",
-      "pageId": "3.3.1",
       "content": [
         {
           "type": "title",
@@ -23,15 +22,14 @@
     },
     {
       "type": "reading",
-      "pageId": "3.3.2"
+      "exerciseId": "3.3.2"
     },
     {
       "type": "unscramble",
-      "pageId": "3.3.3"
+      "exerciseId": "3.3.3"
     },
     {
       "type": "congratulations",
-      "pageId": "3.3.4",
       "title": "Full Curriculum!",
       "summary": "You've completed all current lessons. Great job!",
       "nextLessonId": null

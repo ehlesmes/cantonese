@@ -9,7 +9,6 @@ export const PAGE_TYPES = [
 ];
 
 const pageBase = {
-  pageId: Validators.isString,
   type: Validators.isType(PAGE_TYPES),
 };
 
@@ -60,8 +59,16 @@ const congratulationsPage = {
   nextLessonId: (val) => val === null || Validators.isString(val),
 };
 
-const readingPage = { ...pageBase, type: (val) => val === "reading" };
-const unscramblePage = { ...pageBase, type: (val) => val === "unscramble" };
+const readingPage = {
+  ...pageBase,
+  type: (val) => val === "reading",
+  exerciseId: Validators.isString,
+};
+const unscramblePage = {
+  ...pageBase,
+  type: (val) => val === "unscramble",
+  exerciseId: Validators.isString,
+};
 
 export const Schemas = {
   lessonsJson: {

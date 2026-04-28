@@ -18,7 +18,7 @@ Transition from manual, fragmented JSON management to a human-readable, Markdown
 ## Implementation Path
 
 1.  **Authoring Source of Truth:** All curriculum content lives in `/curriculum`.
-2.  **Schema Enforcement:** Each Markdown file will include a YAML-like front-matter block to define `type`, `pageId`, and other required metadata.
+2.  **Schema Enforcement:** Each Markdown file will include a YAML-like front-matter block to define `type`, `exerciseId`, and other required metadata.
 3.  **Compilation Utility:** A new tool (`scripts/compile_curriculum.js`) will:
     - Recursively traverse `/curriculum`.
     - Parse Markdown/front-matter into native objects.

@@ -99,7 +99,7 @@ export class LessonViewer extends Component {
 
     const paths = this._pages
       .filter((p) => p.type === "reading" || p.type === "unscramble")
-      .map((p) => `${chapter}/${lessonNum}/${p.pageId}.json`);
+      .map((p) => `${chapter}/${lessonNum}/${p.exerciseId}.json`);
 
     ExerciseProvider.prefetch(paths);
   }
@@ -129,17 +129,17 @@ export class LessonViewer extends Component {
       const [chapter, lessonNum] = this._lessonId.split(".");
       const exerciseIds = this._pages
         .filter((p) => p.type === "reading" || p.type === "unscramble")
-        .map((p) => `${chapter}/${lessonNum}/${p.pageId}.json`);
+        .map((p) => `${chapter}/${lessonNum}/${p.exerciseId}.json`);
       Progress.addExercisesToPractice(exerciseIds);
     } else {
       try {
         const [chapter, lessonNum] = this._lessonId.split(".");
-        const path = `${chapter}/${lessonNum}/${pageDef.pageId}.json`;
+        const path = `${chapter}/${lessonNum}/${pageDef.exerciseId}.json`;
         pageData = await ExerciseProvider.getExercise(path);
       } catch {
         const error = this.html("div", {
           className: "error",
-          textContent: `Failed to load page: ${pageDef.pageId}`,
+          textContent: `Failed to load page: ${pageDef.exerciseId}`,
         });
         this._main.replaceChildren(error);
         return;

@@ -3,7 +3,6 @@
   "pages": [
     {
       "type": "explanation",
-      "pageId": "3.2.1",
       "content": [
         {
           "type": "title",
@@ -35,15 +34,14 @@
     },
     {
       "type": "reading",
-      "pageId": "3.2.2"
+      "exerciseId": "3.2.2"
     },
     {
       "type": "unscramble",
-      "pageId": "3.2.3"
+      "exerciseId": "3.2.3"
     },
     {
       "type": "congratulations",
-      "pageId": "3.2.4",
       "title": "Yum!",
       "summary": "You've learned names for rice, noodles, and dim sum.",
       "nextLessonId": "3.3"

@@ -34,7 +34,6 @@ describe("AppShell Component", () => {
                 version: 1,
                 pages: [
                   {
-                    pageId: "1.1.1",
                     type: "explanation",
                     content: [{ type: "text", value: "test" }],
                   },
