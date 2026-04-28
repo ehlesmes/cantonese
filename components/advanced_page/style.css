@@ -1,0 +1,26 @@
+:host {
+  display: block;
+}
+
+.advanced-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.storage-item {
+  display: flex;
+  margin-bottom: 1rem;
+  gap: 10px;
+  align-items: center;
+}
+
+input {
+  padding: 0.5rem;
+  flex-grow: 1;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
