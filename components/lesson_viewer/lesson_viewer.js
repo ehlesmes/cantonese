@@ -2,6 +2,8 @@ import { Component } from "../shared/component.js";
 import { LessonHeader } from "../lesson_header/lesson_header.js";
 import { PageRegistry } from "../shared/page_registry.js";
 import { Progress } from "../shared/progress.js";
+import { LessonProvider } from "../shared/lesson_provider.js";
+import { ExerciseProvider } from "../shared/exercise_provider.js";
 
 // Import pages only to trigger their self-registration in PageRegistry
 import "../reading_page/reading_page.js";
@@ -22,9 +24,8 @@ export class LessonViewer extends Component {
 
     this._lessonId = lessonId;
     this._lessonName = lessonName;
-    this._lessonData = null;
+    this._pages = [];
     this._currentPageIndex = 0;
-    this._pageCache = new Map();
 
     this.render({ lessonName });
     this.setupEventListeners();
@@ -74,17 +75,12 @@ export class LessonViewer extends Component {
 
   async _loadLesson(lessonId) {
     try {
-      const [chapter] = lessonId.split(".");
-      const response = await fetch(`data/lessons/${chapter}/${lessonId}.json`);
-      if (!response.ok) {
-        throw new Error(`Failed to load lesson: ${lessonId}`);
-      }
-
-      this._lessonData = await response.json();
+      const data = await LessonProvider.getLessonData(lessonId);
+      this._pages = data.pages;
       this._currentPageIndex = Progress.getLessonProgress(this._lessonId);
 
-      // Ensure index is within bounds (e.g., if lesson data changed)
-      if (this._currentPageIndex >= this._lessonData.length) {
+      // Ensure index is within bounds
+      if (this._currentPageIndex >= this._pages.length) {
         this._currentPageIndex = 0;
       }
 
@@ -95,32 +91,23 @@ export class LessonViewer extends Component {
     }
   }
 
-  async _prefetchExercises() {
-    if (!this._lessonData) return;
+  _prefetchExercises() {
+    if (!this._pages) return;
     const [chapter, lessonNum] = this._lessonId.split(".");
 
-    for (const page of this._lessonData) {
-      if (
-        (page.type === "reading" || page.type === "unscramble") &&
-        !this._pageCache.has(page.pageId)
-      ) {
-        const url = `data/exercises/${chapter}/${lessonNum}/${page.pageId}.json`;
-        fetch(url)
-          .then((res) => res.json())
-          .then((data) => this._pageCache.set(page.pageId, data))
-          .catch(() =>
-            console.warn(`Failed to prefetch exercise ${page.pageId}`),
-          );
-      }
-    }
+    const paths = this._pages
+      .filter((p) => p.type === "reading" || p.type === "unscramble")
+      .map((p) => `${chapter}/${lessonNum}/${p.pageId}.json`);
+
+    ExerciseProvider.prefetch(paths);
   }
 
   async _renderPage(index) {
-    if (!this._lessonData || index < 0 || index >= this._lessonData.length) {
+    if (!this._pages || index < 0 || index >= this._pages.length) {
       return;
     }
 
-    const pageDef = this._lessonData[index];
+    const pageDef = this._pages[index];
 
     const loading = this.html("div", {
       className: "loading",
@@ -136,28 +123,22 @@ export class LessonViewer extends Component {
       // Mark lesson as completed and add exercises to practice
       Progress.completeLesson(this._lessonId);
       const [chapter, lessonNum] = this._lessonId.split(".");
-      const exerciseIds = this._lessonData
+      const exerciseIds = this._pages
         .filter((p) => p.type === "reading" || p.type === "unscramble")
         .map((p) => `${chapter}/${lessonNum}/${p.pageId}.json`);
       Progress.addExercisesToPractice(exerciseIds);
     } else {
-      pageData = this._pageCache.get(pageDef.pageId);
-      if (!pageData) {
-        try {
-          const [chapter, lessonNum] = this._lessonId.split(".");
-          const response = await fetch(
-            `data/exercises/${chapter}/${lessonNum}/${pageDef.pageId}.json`,
-          );
-          pageData = await response.json();
-          this._pageCache.set(pageDef.pageId, pageData);
-        } catch {
-          const error = this.html("div", {
-            className: "error",
-            textContent: `Failed to load page: ${pageDef.pageId}`,
-          });
-          this._main.replaceChildren(error);
-          return;
-        }
+      try {
+        const [chapter, lessonNum] = this._lessonId.split(".");
+        const path = `${chapter}/${lessonNum}/${pageDef.pageId}.json`;
+        pageData = await ExerciseProvider.getExercise(path);
+      } catch {
+        const error = this.html("div", {
+          className: "error",
+          textContent: `Failed to load page: ${pageDef.pageId}`,
+        });
+        this._main.replaceChildren(error);
+        return;
       }
     }
 
@@ -177,7 +158,7 @@ export class LessonViewer extends Component {
       this._main.scrollTop = 0;
 
       // Update progress in header
-      const progress = (index + 1) / this._lessonData.length;
+      const progress = (index + 1) / this._pages.length;
       this._header.progress = progress;
     } catch (e) {
       console.error("🚨 [LessonViewer ERROR]: Failed to render page", e);
@@ -190,8 +171,8 @@ export class LessonViewer extends Component {
   }
 
   navigateTo(index) {
-    if (!this._lessonData) return Promise.resolve();
-    if (index < 0 || index >= this._lessonData.length) {
+    if (!this._pages) return Promise.resolve();
+    if (index < 0 || index >= this._pages.length) {
       console.warn("End of lesson or out of bounds navigation attempted");
       return Promise.resolve();
     }

@@ -1,3 +1,5 @@
+import { migrateOrRecover } from "../../schemas/progress.js";
+
 const STORAGE_KEY = "cantonese_progress";
 const MAX_LEVEL = 10;
 const SESSION_SIZE = 10;
@@ -10,19 +12,11 @@ export const Progress = {
   _getState() {
     try {
       const data = window.localStorage.getItem(STORAGE_KEY);
-      const state = data
-        ? JSON.parse(data)
-        : { version: 1, lessons: {}, practice: { levels: {} } };
-
-      // Initialize levels if they don't exist
-      if (!state.practice.levels) state.practice.levels = {};
-      for (let i = 1; i <= MAX_LEVEL; i++) {
-        if (!state.practice.levels[i]) state.practice.levels[i] = [];
-      }
-      return state;
+      const rawState = data ? JSON.parse(data) : null;
+      return migrateOrRecover(rawState);
     } catch (e) {
       console.error("Failed to load progress from localStorage", e);
-      return { version: 1, lessons: {}, practice: { levels: {} } };
+      return migrateOrRecover(null);
     }
   },
 

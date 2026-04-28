@@ -1,6 +1,7 @@
 import { Component } from "../shared/component.js";
 import { PageRegistry } from "../shared/page_registry.js";
 import { Progress } from "../shared/progress.js";
+import { LessonProvider } from "../shared/lesson_provider.js";
 import { ActionCard } from "../action_card/action_card.js";
 import { ChapterAccordion } from "../chapter_accordion/chapter_accordion.js";
 
@@ -70,9 +71,7 @@ export class DashboardPage extends Component {
 
   async loadData() {
     try {
-      const response = await fetch("data/lessons.json");
-      if (!response.ok) throw new Error("Failed to fetch lessons.json");
-      const data = await response.json();
+      const data = await LessonProvider.getManifest();
       this._chapters = data.chapters;
       this.updateContent();
     } catch (e) {
@@ -110,7 +109,7 @@ export class DashboardPage extends Component {
     const practiceCard = new ActionCard({
       id: "practice-card",
       title: "Practice Review",
-      description: `${practiceCount} exercises ready for review`,
+      description: `${practiceCount} exercises in rotation`,
     });
 
     this._heroSlot.replaceChildren(nextCard.element, practiceCard.element);

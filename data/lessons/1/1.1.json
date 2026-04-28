@@ -1,28 +1,40 @@
-[
-  {
-    "type": "explanation",
-    "pageId": "1.1.1",
-    "content": [
-      { "type": "title", "value": "Saying Hello" },
-      {
-        "type": "text",
-        "value": "In Cantonese, we use <strong>你好</strong> to greet people."
-      },
-      {
-        "type": "example",
-        "cantonese": "你好。",
-        "romanization": "nei5 hou2.",
-        "translation": "Hello."
-      }
-    ]
-  },
-  { "type": "reading", "pageId": "1.1.2" },
-  { "type": "unscramble", "pageId": "1.1.3" },
-  {
-    "type": "congratulations",
-    "pageId": "1.1.4",
-    "title": "Lesson Complete!",
-    "summary": "You've learned how to say hello and practiced reading and unscrambling common greetings.",
-    "nextLessonId": "1.2"
-  }
-]
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "pageId": "1.1.1",
+      "content": [
+        {
+          "type": "title",
+          "value": "Saying Hello"
+        },
+        {
+          "type": "text",
+          "value": "In Cantonese, we use <strong>你好</strong> to greet people."
+        },
+        {
+          "type": "example",
+          "cantonese": "你好。",
+          "romanization": "nei5 hou2.",
+          "translation": "Hello."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "pageId": "1.1.2"
+    },
+    {
+      "type": "unscramble",
+      "pageId": "1.1.3"
+    },
+    {
+      "type": "congratulations",
+      "pageId": "1.1.4",
+      "title": "Lesson Complete!",
+      "summary": "You've learned how to say hello and practiced reading and unscrambling common greetings.",
+      "nextLessonId": "1.2"
+    }
+  ]
+}

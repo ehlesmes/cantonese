@@ -2,6 +2,7 @@ import { Component } from "../shared/component.js";
 import { LessonHeader } from "../lesson_header/lesson_header.js";
 import { PageRegistry } from "../shared/page_registry.js";
 import { Progress } from "../shared/progress.js";
+import { ExerciseProvider } from "../shared/exercise_provider.js";
 
 // Import pages to trigger registration
 import "../reading_page/reading_page.js";
@@ -96,11 +97,7 @@ export class PracticeViewer extends Component {
     this._main.replaceChildren(loading);
 
     try {
-      const response = await fetch(`data/exercises/${exerciseId}`);
-      if (!response.ok)
-        throw new Error(`Failed to load exercise: ${exerciseId}`);
-      const data = await response.json();
-
+      const data = await ExerciseProvider.getExercise(exerciseId);
       this._showPage(data.type, data);
     } catch (e) {
       console.error("🚨 [PracticeViewer ERROR]:", e);

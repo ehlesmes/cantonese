@@ -10,7 +10,7 @@ describe("DashboardPage Component", () => {
       vi.fn(() =>
         Promise.resolve({
           ok: true,
-          json: () => Promise.resolve({ chapters: [] }),
+          json: () => Promise.resolve({ version: 1, chapters: [] }),
         }),
       ),
     );

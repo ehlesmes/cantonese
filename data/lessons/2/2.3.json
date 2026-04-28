@@ -1,39 +1,54 @@
-[
-  {
-    "type": "explanation",
-    "pageId": "2.3.1",
-    "content": [
-      { "type": "title", "value": "Counting Objects" },
-      {
-        "type": "text",
-        "value": "In Cantonese, we use 'classifiers' between a number and a noun. The most common one is <strong>個</strong> (go3)."
-      },
-      {
-        "type": "example",
-        "cantonese": "三個",
-        "romanization": "saam1 go3",
-        "translation": "Three (of something)"
-      },
-      {
-        "type": "text",
-        "value": "Note: For 'two' when counting, we use <strong>兩</strong> (loeng5) instead of <strong>二</strong> (ji6)."
-      },
-      {
-        "type": "example",
-        "cantonese": "兩個",
-        "romanization": "loeng5 go3",
-        "translation": "Two (of something)"
-      }
-    ]
-  },
-  { "type": "reading", "pageId": "2.3.2" },
-  { "type": "unscramble", "pageId": "2.3.3" },
-  { "type": "reading", "pageId": "2.3.4" },
-  {
-    "type": "congratulations",
-    "pageId": "2.3.5",
-    "title": "Counting Complete!",
-    "summary": "You can now count objects using the 'go3' classifier.",
-    "nextLessonId": "3.1"
-  }
-]
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "pageId": "2.3.1",
+      "content": [
+        {
+          "type": "title",
+          "value": "Counting Objects"
+        },
+        {
+          "type": "text",
+          "value": "In Cantonese, we use 'classifiers' between a number and a noun. The most common one is <strong>個</strong> (go3)."
+        },
+        {
+          "type": "example",
+          "cantonese": "三個",
+          "romanization": "saam1 go3",
+          "translation": "Three (of something)"
+        },
+        {
+          "type": "text",
+          "value": "Note: For 'two' when counting, we use <strong>兩</strong> (loeng5) instead of <strong>二</strong> (ji6)."
+        },
+        {
+          "type": "example",
+          "cantonese": "兩個",
+          "romanization": "loeng5 go3",
+          "translation": "Two (of something)"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "pageId": "2.3.2"
+    },
+    {
+      "type": "unscramble",
+      "pageId": "2.3.3"
+    },
+    {
+      "type": "reading",
+      "pageId": "2.3.4"
+    },
+    {
+      "type": "congratulations",
+      "pageId": "2.3.5",
+      "title": "Counting Complete!",
+      "summary": "You can now count objects using the 'go3' classifier.",
+      "nextLessonId": "3.1"
+    }
+  ]
+}

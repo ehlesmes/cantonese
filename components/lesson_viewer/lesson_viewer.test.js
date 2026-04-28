@@ -1,6 +1,8 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { LessonViewer } from "./lesson_viewer.js";
 import { Progress } from "../shared/progress.js";
+import { LessonProvider } from "../shared/lesson_provider.js";
+import { ExerciseProvider } from "../shared/exercise_provider.js";
 
 vi.mock("../shared/progress.js", () => ({
   Progress: {
@@ -11,19 +13,38 @@ vi.mock("../shared/progress.js", () => ({
   },
 }));
 
+vi.mock("../shared/lesson_provider.js", () => ({
+  LessonProvider: {
+    getLessonData: vi.fn(),
+  },
+}));
+
+vi.mock("../shared/exercise_provider.js", () => ({
+  ExerciseProvider: {
+    getExercise: vi.fn(),
+    prefetch: vi.fn(),
+  },
+}));
+
 describe("LessonViewer Component", () => {
-  const mockLesson = [
-    { pageId: "1.1.1", type: "explanation", content: [] },
-    { pageId: "1.1.2", type: "reading" },
-    {
-      pageId: "1.1.3",
-      type: "congratulations",
-      title: "Done",
-      summary: "Good job",
-    },
-  ];
+  const mockLesson = {
+    version: 1,
+    pages: [
+      { pageId: "1.1.1", type: "explanation", content: [] },
+      { pageId: "1.1.2", type: "reading" },
+      {
+        pageId: "1.1.3",
+        type: "congratulations",
+        title: "Done",
+        summary: "Good job",
+        nextLessonId: "1.2",
+      },
+    ],
+  };
 
   const mockExercise = {
+    version: 1,
+    type: "reading",
     cantonese: "你好",
     romanization: "nei5 hou2",
     translation: "Hello",
@@ -33,24 +54,8 @@ describe("LessonViewer Component", () => {
     document.body.replaceChildren();
     vi.clearAllMocks();
     Progress.getLessonProgress.mockReturnValue(0);
-    vi.stubGlobal(
-      "fetch",
-      vi.fn((url) => {
-        if (url.includes("data/lessons")) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve(mockLesson),
-          });
-        }
-        if (url.includes("data/exercises")) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve(mockExercise),
-          });
-        }
-        return Promise.reject(new Error("Unknown URL"));
-      }),
-    );
+    LessonProvider.getLessonData.mockResolvedValue(mockLesson);
+    ExerciseProvider.getExercise.mockResolvedValue(mockExercise);
   });
 
   it("should be defined", () => {
@@ -89,7 +94,7 @@ describe("LessonViewer Component", () => {
     await component.ready;
 
     expect(component._currentPageIndex).toBe(1);
-    expect(global.fetch).toHaveBeenCalledWith(
+    expect(ExerciseProvider.getExercise).toHaveBeenCalledWith(
       expect.stringContaining("1.1.2.json"),
     );
   });
@@ -109,7 +114,7 @@ describe("LessonViewer Component", () => {
 
     // Navigate to second page
     await component.navigateTo(1);
-    expect(global.fetch).toHaveBeenCalledWith(
+    expect(ExerciseProvider.getExercise).toHaveBeenCalledWith(
       expect.stringContaining("1.1.2.json"),
     );
   });

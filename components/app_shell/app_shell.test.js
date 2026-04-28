@@ -13,6 +13,7 @@ describe("AppShell Component", () => {
             ok: true,
             json: () =>
               Promise.resolve({
+                version: 1,
                 chapters: [
                   {
                     chapterId: "1",
@@ -29,12 +30,16 @@ describe("AppShell Component", () => {
           return Promise.resolve({
             ok: true,
             json: () =>
-              Promise.resolve([
-                {
-                  type: "explanation",
-                  content: [{ type: "text", value: "test" }],
-                },
-              ]),
+              Promise.resolve({
+                version: 1,
+                pages: [
+                  {
+                    pageId: "1.1.1",
+                    type: "explanation",
+                    content: [{ type: "text", value: "test" }],
+                  },
+                ],
+              }),
           });
         }
         return Promise.reject(new Error(`Unknown fetch URL: ${url}`));

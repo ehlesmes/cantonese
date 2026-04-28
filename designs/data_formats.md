@@ -6,6 +6,7 @@ The high-level structure defining chapters and their lessons.
 
 ```json
 {
+  "version": 1,
   "chapters": [
     {
       "chapterId": "1",
@@ -21,34 +22,37 @@ The high-level structure defining chapters and their lessons.
 The manifest that defines the order of pages and contains inlined explanations.
 
 ```json
-[
-  {
-    "type": "explanation",
-    "pageId": "1.1.1",
-    "content": [
-      { "type": "title", "value": "Saying Hello" },
-      {
-        "type": "text",
-        "value": "In Cantonese, we use <strong>你好</strong> to greet people."
-      },
-      {
-        "type": "example",
-        "cantonese": "你好。",
-        "romanization": "nei5 hou2.",
-        "translation": "Hello."
-      }
-    ]
-  },
-  { "type": "reading", "pageId": "1.1.2" },
-  { "type": "unscramble", "pageId": "1.1.3" },
-  {
-    "type": "congratulations",
-    "pageId": "1.1.4",
-    "title": "Lesson Complete!",
-    "summary": "You've learned basic greetings.",
-    "nextLessonId": "1.2"
-  }
-]
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "pageId": "1.1.1",
+      "content": [
+        { "type": "title", "value": "Saying Hello" },
+        {
+          "type": "text",
+          "value": "In Cantonese, we use <strong>你好</strong> to greet people."
+        },
+        {
+          "type": "example",
+          "cantonese": "你好。",
+          "romanization": "nei5 hou2.",
+          "translation": "Hello."
+        }
+      ]
+    },
+    { "type": "reading", "pageId": "1.1.2" },
+    { "type": "unscramble", "pageId": "1.1.3" },
+    {
+      "type": "congratulations",
+      "pageId": "1.1.4",
+      "title": "Lesson Complete!",
+      "summary": "You've learned basic greetings.",
+      "nextLessonId": "1.2"
+    }
+  ]
+}
 ```
 
 ## 3. Reading Exercise (`data/exercises/1/1/1.1.2.json`)
@@ -57,6 +61,7 @@ Atomic data for a reading practice screen.
 
 ```json
 {
+  "version": 1,
   "type": "reading",
   "cantonese": "你好嗎？",
   "romanization": "nei5 hou2 maa3?",
@@ -70,6 +75,7 @@ Atomic data for a word reordering screen.
 
 ```json
 {
+  "version": 1,
   "type": "unscramble",
   "tokens": [
     ["我", "ngo5"],
@@ -79,3 +85,37 @@ Atomic data for a word reordering screen.
   "translation": "I am a student"
 }
 ```
+
+## 5. Local Storage Progress (`cantonese_progress`)
+
+Stored in `localStorage` under the key `cantonese_progress`.
+
+```json
+{
+  "version": 1,
+  "lessons": {
+    "1.1": {
+      "lastPageIndex": 2,
+      "completed": true
+    }
+  },
+  "practice": {
+    "levels": {
+      "1": ["1/1/1.1.2.json"],
+      "2": ["1/1/1.1.3.json"],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
+    }
+  }
+}
+```
+
+- **`version`**: Schema version for future migrations.
+- **`lessons`**: Map of `lessonId` to user progress.
+- **`practice.levels`**: SRS levels (1-10). Each contains an array of exercise paths relative to `data/exercises/`.

@@ -1,5 +1,7 @@
 import fs from "fs";
 import path from "path";
+import { validateObject } from "../schemas/validator.js";
+import { Schemas } from "../schemas/lessons.js";
 
 const DATA_DIR = "./data";
 const errors = [];
@@ -7,145 +9,9 @@ const errors = [];
 /**
  * Utility to report validation errors with clear context.
  */
-function reportError(file, message) {
-  errors.push(`[Data] ${file}: ${message}`);
+function report(filePath, errorList) {
+  errorList.forEach((err) => errors.push(`[Data] ${filePath}: ${err}`));
 }
-
-/**
- * Type checkers
- */
-const isString = (val) => typeof val === "string";
-const isArray = (val) => Array.isArray(val);
-const isType = (types) => (val) => types.includes(val);
-
-/**
- * Validates an object against a schema.
- * Supports:
- * - "required": field must exist.
- * - Function: custom validation logic.
- * - Object: nested validation.
- * - [Object]: array of objects validation.
- */
-function validateObject(obj, schema, filePath, prefix = "") {
-  if (!obj || typeof obj !== "object" || Array.isArray(obj)) {
-    reportError(
-      filePath,
-      `${prefix || "Root"} expected object, got ${typeof obj}`,
-    );
-    return;
-  }
-
-  // Check required fields and custom rules
-  for (const key in schema) {
-    const fieldPath = prefix ? `${prefix}.${key}` : key;
-    const rule = schema[key];
-    const value = obj[key];
-
-    if (rule === "required") {
-      if (value === undefined) {
-        reportError(filePath, `Missing required field "${fieldPath}"`);
-      }
-    } else if (typeof rule === "function") {
-      if (!rule(value, obj)) {
-        reportError(
-          filePath,
-          `Invalid or missing value for "${fieldPath}": ${JSON.stringify(value)}`,
-        );
-      }
-    } else if (isArray(rule)) {
-      if (!isArray(value)) {
-        reportError(filePath, `"${fieldPath}" must be an array`);
-      } else {
-        const itemSchema = rule[0];
-        value.forEach((item, index) => {
-          const itemPath = `${fieldPath}[${index}]`;
-          if (typeof itemSchema === "object") {
-            validateObject(item, itemSchema, filePath, itemPath);
-          } else if (typeof itemSchema === "function") {
-            if (!itemSchema(item)) {
-              reportError(filePath, `Invalid value at "${itemPath}"`);
-            }
-          }
-        });
-      }
-    } else if (typeof rule === "object") {
-      if (value === undefined) {
-        reportError(filePath, `Missing required object "${fieldPath}"`);
-      } else {
-        validateObject(value, rule, filePath, fieldPath);
-      }
-    }
-  }
-
-  // Check for unknown keys
-  for (const key in obj) {
-    if (!(key in schema)) {
-      reportError(
-        filePath,
-        `Unknown field "${prefix ? `${prefix}.${key}` : key}"`,
-      );
-    }
-  }
-}
-
-/**
- * Schemas
- */
-const lessonsJsonSchema = {
-  chapters: [
-    {
-      chapterId: isString,
-      chapterName: isString,
-      lessons: [
-        {
-          lessonId: isString,
-          lessonName: isString,
-        },
-      ],
-    },
-  ],
-};
-
-const pageBaseSchema = {
-  pageId: isString,
-  type: isType(["explanation", "reading", "unscramble", "congratulations"]),
-};
-
-const congratulationsPageSchema = {
-  ...pageBaseSchema,
-  title: isString,
-  summary: isString,
-  nextLessonId: (val) => val === null || isString(val),
-};
-
-const explanationContentSchema = {
-  type: isType(["title", "text", "example"]),
-  value: (val, obj) => {
-    if (obj && obj.type === "example") return val === undefined;
-    return isString(val);
-  },
-  cantonese: (val, obj) =>
-    obj && obj.type === "example" ? isString(val) : val === undefined,
-  romanization: (val, obj) =>
-    obj && obj.type === "example" ? isString(val) : val === undefined,
-  translation: (val, obj) =>
-    obj && obj.type === "example" ? isString(val) : val === undefined,
-};
-
-const readingExerciseSchema = {
-  type: (val) => val === "reading",
-  cantonese: isString,
-  romanization: isString,
-  translation: isString,
-};
-
-const unscrambleExerciseSchema = {
-  type: (val) => val === "unscramble",
-  tokens: (val) =>
-    isArray(val) &&
-    val.every((t) => isArray(t) && t.length === 2 && t.every(isString)),
-  translation: isString,
-};
 
 /**
  * Validation Tasks
@@ -155,9 +21,10 @@ function validateLessonsJson() {
   if (!fs.existsSync(filePath)) return;
   try {
     const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    validateObject(data, lessonsJsonSchema, filePath);
+    const errs = validateObject(data, Schemas.lessonsJson);
+    report(filePath, errs);
   } catch (e) {
-    reportError(filePath, `Failed to parse JSON: ${e.message}`);
+    errors.push(`[Data] ${filePath}: Failed to parse JSON: ${e.message}`);
   }
 }
 
@@ -176,27 +43,10 @@ function validateLessonFiles() {
       const filePath = path.join(chapterPath, file);
       try {
         const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-        if (!isArray(data)) {
-          reportError(filePath, "Root must be an array of pages");
-          return;
-        }
-        data.forEach((page, index) => {
-          const prefix = `[${index}]`;
-          if (page.type === "explanation") {
-            validateObject(
-              page,
-              { ...pageBaseSchema, content: [explanationContentSchema] },
-              filePath,
-              prefix,
-            );
-          } else if (page.type === "congratulations") {
-            validateObject(page, congratulationsPageSchema, filePath, prefix);
-          } else {
-            validateObject(page, pageBaseSchema, filePath, prefix);
-          }
-        });
+        const errs = validateObject(data, Schemas.lessonDetail);
+        report(filePath, errs);
       } catch (e) {
-        reportError(filePath, `Failed to parse JSON: ${e.message}`);
+        errors.push(`[Data] ${filePath}: Failed to parse JSON: ${e.message}`);
       }
     });
   });
@@ -215,15 +65,17 @@ function validateExerciseFiles() {
       } else if (item.endsWith(".json")) {
         try {
           const data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+          let errs = [];
           if (data.type === "reading") {
-            validateObject(data, readingExerciseSchema, fullPath);
+            errs = validateObject(data, Schemas.readingExercise);
           } else if (data.type === "unscramble") {
-            validateObject(data, unscrambleExerciseSchema, fullPath);
+            errs = validateObject(data, Schemas.unscrambleExercise);
           } else {
-            reportError(fullPath, `Unknown exercise type: ${data.type}`);
+            errs.push(`Unknown exercise type: ${data.type}`);
           }
+          report(fullPath, errs);
         } catch (e) {
-          reportError(fullPath, `Failed to parse JSON: ${e.message}`);
+          errors.push(`[Data] ${fullPath}: Failed to parse JSON: ${e.message}`);
         }
       }
     });
@@ -238,7 +90,8 @@ validateExerciseFiles();
 
 if (errors.length > 0) {
   console.error("\n❌ Data compliance check failed:\n");
-  errors.forEach((err) => console.error(err));
+  const uniqueErrors = [...new Set(errors)];
+  uniqueErrors.forEach((err) => console.error(err));
   process.exit(1);
 } else {
   console.info("\n✅ Data adheres to project standards.\n");

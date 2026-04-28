@@ -16,6 +16,7 @@ vi.mock("../shared/progress.js", () => ({
 
 describe("PracticeViewer Component", () => {
   const mockExercise = {
+    version: 1,
     type: "reading",
     cantonese: "你好",
     romanization: "nei5 hou2",
