@@ -85,21 +85,34 @@ _Discussing free-time activities._
   - `3.4.3` (Unscramble): `ngo5 zung1 ji3 tai2 syu1`
   - `3.4.4` (Reading): `teng1 go1`
 
-## Lesson 3.5: Essential Particles
+## Lesson 3.5: Softening Particles (aa3, laa3)
 
-_Mastering the most common sentence endings._
+_Learning how to change the mood of a sentence._
 
-- **Concepts:** Focusing on `aa3/aa1` (softening/questions), `laa3/laa1` (already/suggestions), and `ge3` (possession/characteristics).
+- **Concepts:** Focusing on `aa3/aa1` (softening/questions) and `laa3/laa1` (already/suggestions).
 - **Examples:**
   - `aa3` (呀) - Softens a sentence or ends an open question.
   - `laa3` (喇) - Indicates a change of state (already).
-  - `ge3` (嘅) - Possession (my/your) or describing things.
 - **Dialogues:**
   - **Dialogue 1 (Usage):**
-    - A: `ngo5 heoi3 sik6 faan6 laa3.` (我去食飯喇。 - "I'm going to eat now/already.")
-    - B: `hou2 aa3. ni1 go3 hai6 me1 je5 ge3?` (好呀。呢個係咩嘢嘅？ - "Okay. What is this for/whose is this?")
-    - A: `hai6 ngo5 ge3.` (係我嘅。 - "It's mine.")
+    - A: `ngo5 heoi3 sik6 faan6 laa3.` (我去食飯喇。 - "I'm going to eat now.")
+    - B: `hou2 aa3. nei5 heoi3 bin1 dou6 sik6 aa3?` (好呀。你去邊度食呀？)
 - **Exercises:**
   - `3.5.2` (Reading): `hou2 aa3`
   - `3.5.3` (Unscramble): `ngo5 heoi3 sik6 faan6 laa3`
-  - `3.5.4` (Reading): `hai6 ngo5 ge3`
+
+## Lesson 3.6: Possession & Attributes (ge3)
+
+_The essential structural particle for 'belonging'._
+
+- **Concepts:** The possessive marker `ge3` (嘅).
+- **Examples:**
+  - `ge3` (嘅) - Possession (my/your) or describing things.
+  - `ngo5 ge3` (我嘅) - Mine.
+- **Dialogues:**
+  - **Dialogue 1 (Possession):**
+    - A: `ni1 go3 hai6 m4 hai6 nei5 ge3 syu1 aa3?` (呢個係唔係你嘅書呀？)
+    - B: `唔係。係佢嘅。` (m4 hai6. hai6 keoi5 ge3. - "No. It is his.")
+- **Exercises:**
+  - `3.6.2` (Reading): `ngo5 ge3`
+  - `3.6.3` (Unscramble): `ni1 go3 hai6 m4 hai6 nei5 ge3 aa3?`

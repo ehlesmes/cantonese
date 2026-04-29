@@ -23,13 +23,13 @@
         },
         {
           "type": "text",
-          "value": "In formal settings, you might hear <strong>識到你係我嘅榮幸</strong> (sik1 dou2 nei5 hai6 ngo5 ge3 wing4 hang6), which is a very polite way to say 'It is my honor to meet you'."
+          "value": "In formal settings, you might hear <strong>好榮幸識到你</strong> (hou2 wing4 hang6 sik1 dou2 nei5), which is a polite way to say 'Very honored to meet you'."
         },
         {
           "type": "example",
-          "cantonese": "識到你係我嘅榮幸",
-          "romanization": "sik1 dou2 nei5 hai6 ngo5 ge3 wing4 hang6",
-          "translation": "It is my honor to meet you"
+          "cantonese": "好榮幸識到你",
+          "romanization": "hou2 wing4 hang6 sik1 dou2 nei5",
+          "translation": "Very honored to meet you"
         }
       ]
     },
@@ -46,9 +46,9 @@
         },
         {
           "speaker": "B",
-          "cantonese": "黃小姐，你好。識到你係我嘅榮幸。",
-          "romanization": "wong4 siu2 ze2, nei5 hou2. sik1 dou2 nei5 hai6 ngo5 ge3 wing4 hang6.",
-          "translation": "Miss Wong, hello. It is my honor to meet you."
+          "cantonese": "黃小姐，你好。好榮幸識到你。",
+          "romanization": "wong4 siu2 ze2, nei5 hou2. hou2 wing4 hang6 sik1 dou2 nei5.",
+          "translation": "Miss Wong, hello. Very honored to meet you."
         },
         {
           "speaker": "C",

@@ -4,10 +4,10 @@
     {
       "type": "explanation",
       "content": [
-        { "type": "title", "value": "Essential Particles" },
+        { "type": "title", "value": "Softening Particles" },
         {
           "type": "text",
-          "value": "Cantonese is famous for its sentence-final particles. These small words don't have a meaning on their own but change the 'flavor' or mood of a sentence. Let's look at three essential ones: <strong>呀</strong> (aa3), <strong>喇</strong> (laa3), and <strong>嘅</strong> (ge3)."
+          "value": "Cantonese is famous for its sentence-final particles. These small words don't have a meaning on their own but change the 'flavor' or mood of a sentence. Let's look at two essential ones: <strong>呀</strong> (aa3) and <strong>喇</strong> (laa3)."
         },
         {
           "type": "example",
@@ -17,19 +17,13 @@
         },
         {
           "type": "text",
-          "value": "<strong>喇</strong> (laa3) often indicates a change of state, like 'already' or 'now'. <strong>嘅</strong> (ge3) is used for possession (like 's in English) or to emphasize a characteristic."
+          "value": "<strong>喇</strong> (laa3) indicates a change of state, like 'already' or 'now'. It's often used when you are about to do something or when something has just happened."
         },
         {
           "type": "example",
           "cantonese": "我去食飯喇",
           "romanization": "ngo5 heoi3 sik6 faan6 laa3",
-          "translation": "I'm going to eat now / already"
-        },
-        {
-          "type": "example",
-          "cantonese": "我嘅",
-          "romanization": "ngo5 ge3",
-          "translation": "Mine (My + 'ge3')"
+          "translation": "I'm going to eat now"
         }
       ]
     },
@@ -46,31 +40,23 @@
         },
         {
           "speaker": "B",
-          "cantonese": "好呀。呢個係咩嘢嘅？",
-          "romanization": "hou2 aa3. ni1 go3 hai6 me1 je5 ge3?",
-          "translation": "Okay. What is this?"
+          "cantonese": "好呀。你去邊度食呀？",
+          "romanization": "hou2 aa3. nei5 heoi3 bin1 dou6 sik6 aa3?",
+          "translation": "Okay. Where are you going to eat?"
         },
         {
           "speaker": "A",
-          "cantonese": "係我嘅。",
-          "romanization": "hai6 ngo5 ge3.",
-          "translation": "It is mine."
-        },
-        {
-          "speaker": "B",
-          "cantonese": "係唔係呀？",
-          "romanization": "hai6 m4 hai6 aa3?",
-          "translation": "Really?"
+          "cantonese": "我喺屋企食。",
+          "romanization": "ngo5 hai2 uk1 kei2 sik6.",
+          "translation": "I'm eating at home."
         }
       ]
     },
-    { "type": "reading", "exerciseId": "3.5.4" },
-    { "type": "unscramble", "exerciseId": "3.5.5" },
     {
       "type": "congratulations",
-      "title": "Chapter 3 Complete!",
-      "summary": "You've mastered pronouns, basic questions, and essential particles. Your Cantonese is becoming much more natural!",
-      "nextLessonId": "4.1"
+      "title": "Particles Mastered!",
+      "summary": "You've learned how to use 'aa3' and 'laa3' to sound more natural.",
+      "nextLessonId": "3.6"
     }
   ]
 }

@@ -18,9 +18,9 @@
         },
         {
           "type": "example",
-          "cantonese": "詩",
-          "romanization": "si1",
-          "translation": "Poem"
+          "cantonese": "三",
+          "romanization": "saam1",
+          "translation": "Three"
         },
         {
           "type": "text",
@@ -28,9 +28,9 @@
         },
         {
           "type": "example",
-          "cantonese": "史",
-          "romanization": "si2",
-          "translation": "History"
+          "cantonese": "好",
+          "romanization": "hou2",
+          "translation": "Good"
         },
         {
           "type": "text",
@@ -38,9 +38,9 @@
         },
         {
           "type": "example",
-          "cantonese": "試",
-          "romanization": "si3",
-          "translation": "To try"
+          "cantonese": "四",
+          "romanization": "sei3",
+          "translation": "Four"
         }
       ]
     },

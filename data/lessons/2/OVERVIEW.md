@@ -75,14 +75,14 @@ _Formal and informal introductions of third parties._
 - **Concepts:** `呢位係` (This is) and more formal phrases.
 - **Examples:**
   - `ni1 wai2 hai6` (呢位係) - This (person) is...
-  - `sik1 dou2 nei5 hai6 ngo5 ge3 wing4 hang6` (識到你係我嘅榮幸) - It's my honor to meet you (Formal)
+  - `hou2 wing4 hang6 sik1 dou2 nei5` (好榮幸識到你) - Very honored to meet you (Formal)
 - **Dialogue:**
   - A: `can4 sin1 saang1, ni1 wai2 hai6 wong4 siu2 ze2.` (陳先生，呢位係黃小姐。)
-  - B: `wong4 siu2 ze2, nei5 hou2. sik1 dou2 nei5 hai6 ngo5 ge3 wing4 hang6.` (黃小姐，你好。識到你係我嘅榮幸。)
-  - C: `can4 sin1 saang1, nei5 taai3 haak3 hei3 laa3.` (陳先生，你太客氣喇。 - "You're too kind/polite")
+  - B: `wong4 siu2 ze2, nei5 hou2. hou2 wing4 hang6 sik1 dou2 nei5.` (黃小姐，你好。好榮幸識到你。)
+  - C: `can4 sin1 saang1, nei5 taai3 haak3 hei3 laa3.` (陳先生，你太客氣喇。)
 - **Exercises:**
   - `2.4.2` (Reading): `ni1 wai2 hai6 wong4 siu2 ze2`
-  - `2.4.3` (Unscramble): `sik1 dou2 nei5 hai6 ngo5 ge3 wing4 hang6`
+  - `2.4.3` (Unscramble): `hou2 wing4 hang6 sik1 dou2 nei5`
 
 ## Lesson 2.5: See You Later & "Yum Cha"
 

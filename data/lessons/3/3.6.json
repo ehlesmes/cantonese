@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Possession: ge3" },
+        {
+          "type": "text",
+          "value": "The particle <strong>嘅</strong> (ge3) is used to indicate possession, similar to ''s' in English. Simply add it after a person or pronoun."
+        },
+        {
+          "type": "example",
+          "cantonese": "我嘅",
+          "romanization": "ngo5 ge3",
+          "translation": "Mine / My"
+        },
+        {
+          "type": "example",
+          "cantonese": "你嘅",
+          "romanization": "nei5 ge3",
+          "translation": "Yours / Your"
+        },
+        {
+          "type": "example",
+          "cantonese": "佢嘅書",
+          "romanization": "keoi5 ge3 syu1",
+          "translation": "His/Her book"
+        },
+        {
+          "type": "text",
+          "value": "It can also be used at the end of a sentence to emphasize a characteristic or to mean 'the one that is...'"
+        },
+        {
+          "type": "example",
+          "cantonese": "邊個嘅？",
+          "romanization": "bin1 go3 ge3?",
+          "translation": "Whose is it? (Which one's?)"
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "3.6.2" },
+    { "type": "unscramble", "exerciseId": "3.6.3" },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "呢個係唔係你嘅書呀？",
+          "romanization": "ni1 go3 hai6 m4 hai6 nei5 ge3 syu1 aa3?",
+          "translation": "Is this your book?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "唔係。係佢嘅。",
+          "romanization": "m4 hai6. hai6 keoi5 ge3.",
+          "translation": "No. It is his."
+        },
+        {
+          "speaker": "A",
+          "cantonese": "哦，好呀。",
+          "romanization": "o4, hou2 aa3.",
+          "translation": "Oh, okay."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Chapter 3 Complete!",
+      "summary": "You've mastered pronouns, basic questions, and the foundational particle 'ge3'. Your Cantonese is becoming much more structural and natural!",
+      "nextLessonId": "4.1"
+    }
+  ]
+}

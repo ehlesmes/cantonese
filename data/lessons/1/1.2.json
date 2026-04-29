@@ -18,9 +18,9 @@
         },
         {
           "type": "example",
-          "cantonese": "時",
-          "romanization": "si4",
-          "translation": "Time"
+          "cantonese": "人",
+          "romanization": "jan4",
+          "translation": "Person"
         },
         {
           "type": "text",
@@ -28,9 +28,9 @@
         },
         {
           "type": "example",
-          "cantonese": "市",
-          "romanization": "si5",
-          "translation": "Market"
+          "cantonese": "你",
+          "romanization": "nei5",
+          "translation": "You"
         },
         {
           "type": "text",
@@ -38,9 +38,9 @@
         },
         {
           "type": "example",
-          "cantonese": "事",
+          "cantonese": "是",
           "romanization": "si6",
-          "translation": "Matter / Incident"
+          "translation": "Yes / Correct"
         },
         {
           "type": "title",

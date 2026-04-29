@@ -6,9 +6,9 @@ Welcome to the first chapter of your Cantonese journey! This chapter establishes
 
 - **Concepts:** High Level (1), High Rising (2), Mid Level (3).
 - **Examples:**
-  - `si1` (詩) - Poem
-  - `si2` (史) - History
-  - `si3` (試) - To try
+  - `saam1` (三) - Three
+  - `hou2` (好) - Good
+  - `sei3` (四) - Four
 - **Exercises:**
   - `1.1.2` (Reading): Differentiation between Tone 1, 2, 3.
   - `1.1.3` (Unscramble): Tone order challenge.
@@ -17,9 +17,9 @@ Welcome to the first chapter of your Cantonese journey! This chapter establishes
 
 - **Concepts:** Low Falling (4), Low Rising (5), Low Level (6), and Syllabic Nasals (`m`, `ng`).
 - **Examples:**
-  - `si4` (時) - Time
-  - `si5` (市) - Market
-  - `si6` (事) - Matter
+  - `jan4` (人) - Person
+  - `nei5` (你) - You
+  - `si6` (是) - Yes
   - `m4` (唔) - Not
   - `ng5` (五) - Five
 - **Exercises:**
@@ -30,16 +30,16 @@ Welcome to the first chapter of your Cantonese journey! This chapter establishes
 
 - **Concepts:** Aspiration (puff of air) distinction for B/P, D/T, and G/K.
 - **Examples:**
-  - **B/P:** `baak3` (百) / `paak3` (拍)
-  - **D/T:** `dung1` (東) / `tung1` (通)
+  - **B/P:** `baat3` (八) / `paak3` (拍)
+  - **D/T:** `daai6` (大) / `taai3` (太)
   - **G/K:** `gaa1` (加) / `kaa1` (卡)
 - **Exercises:**
   - `1.3.2` (Reading): B vs P differentiation.
-  - `1.3.3` (Unscramble): B vs P sentence building (`八拍`).
+  - `1.3.3` (Unscramble): B vs P challenge.
   - `1.3.4` (Reading): D vs T differentiation.
-  - `1.3.5` (Unscramble): D vs T sentence building (`太大`).
+  - `1.3.5` (Unscramble): D vs T challenge.
   - `1.3.6` (Reading): G vs K differentiation.
-  - `1.3.7` (Unscramble): G vs K sentence building (`各卡`).
+  - `1.3.7` (Unscramble): G vs K challenge.
 
 ## Lesson 1.4: Basic Vowels
 
@@ -73,7 +73,7 @@ Welcome to the first chapter of your Cantonese journey! This chapter establishes
 - **Concepts:** Nasal endings (`-m`, `-n`, `-ng`) and Stop endings (`-p`, `-t`, `-k`).
 - **Examples:**
   - **Nasals:** `saam1` (三), `san1` (新), `sang1` (生)
-  - **Stops:** `saap3` (霎), `saat3` (殺), `saak3` (索)
+  - **Stops:** `jap6` (入), `baat3` (八), `luk6` (六)
 - **Exercises:**
-  - `1.6.2` (Reading): Nasal and Stop differentiation (`三生`).
-  - `1.6.3` (Unscramble): Final consonant review (`新生`).
+  - `1.6.2` (Reading): Nasal and Stop differentiation.
+  - `1.6.3` (Unscramble): Final consonant review.

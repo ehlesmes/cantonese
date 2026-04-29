@@ -49,21 +49,21 @@
         },
         {
           "type": "example",
-          "cantonese": "霎",
-          "romanization": "saap3",
-          "translation": "Suddenly (-p ending)"
+          "cantonese": "入",
+          "romanization": "jap6",
+          "translation": "Enter (-p ending)"
         },
         {
           "type": "example",
-          "cantonese": "殺",
-          "romanization": "saat3",
-          "translation": "Kill (-t ending)"
+          "cantonese": "八",
+          "romanization": "baat3",
+          "translation": "Eight (-t ending)"
         },
         {
           "type": "example",
-          "cantonese": "索",
-          "romanization": "saak3",
-          "translation": "Rope (-k ending)"
+          "cantonese": "六",
+          "romanization": "luk6",
+          "translation": "Six (-k ending)"
         }
       ]
     },
