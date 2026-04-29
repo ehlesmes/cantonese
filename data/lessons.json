@@ -32,7 +32,8 @@
         { "lessonId": "3.2", "lessonName": "Asking Yes/No Questions" },
         { "lessonId": "3.3", "lessonName": "Professions" },
         { "lessonId": "3.4", "lessonName": "Hobbies" },
-        { "lessonId": "3.5", "lessonName": "Essential Particles" }
+        { "lessonId": "3.5", "lessonName": "Softening Particles (aa3, laa3)" },
+        { "lessonId": "3.6", "lessonName": "Possession & Attributes (ge3)" }
       ]
     },
     {
@@ -50,6 +51,17 @@
           "lessonId": "4.5",
           "lessonName": "Everyday Classifiers & Possessives"
         }
+      ]
+    },
+    {
+      "chapterId": "5",
+      "chapterName": "Chapter 5: Context & Nuance",
+      "lessons": [
+        { "lessonId": "5.1", "lessonName": "Where? (Location & Placement)" },
+        { "lessonId": "5.2", "lessonName": "When? (Time & Dates)" },
+        { "lessonId": "5.3", "lessonName": "How? (Manner & Method)" },
+        { "lessonId": "5.4", "lessonName": "Why? (Cause & Effect)" },
+        { "lessonId": "5.5", "lessonName": "Expressive Particles (Flavoring)" }
       ]
     }
   ]

@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "Advanced Particles"
+        },
+        {
+          "type": "text",
+          "value": "Particles are the soul of Cantonese. They add emotional nuance that is often hard to translate directly."
+        },
+        {
+          "type": "title",
+          "value": "zaa3: Only / Just"
+        },
+        {
+          "type": "text",
+          "value": "Use <strong>咋</strong> (zaa3) to emphasize that something is 'only' or 'just' a certain amount or state."
+        },
+        {
+          "type": "example",
+          "cantonese": "兩個人咋",
+          "romanization": "loeng5 go3 jan4 zaa3",
+          "translation": "Only two people"
+        },
+        {
+          "type": "title",
+          "value": "gwaa3: Uncertainty"
+        },
+        {
+          "type": "text",
+          "value": "Use <strong>啩</strong> (gwaa3) when you think something is true but aren't 100% sure. It's like saying 'I guess' or 'I suppose'."
+        },
+        {
+          "type": "example",
+          "cantonese": "係啩",
+          "romanization": "hai6 gwaa3",
+          "translation": "I suppose so / Probably"
+        },
+        {
+          "type": "title",
+          "value": "bo3: Realization / Warning"
+        },
+        {
+          "type": "text",
+          "value": "Use <strong>噃</strong> (bo3) to indicate a new realization, a mild warning, or to draw attention to a fact."
+        },
+        {
+          "type": "example",
+          "cantonese": "好噃",
+          "romanization": "hou2 bo3",
+          "translation": "That's good! (expressing a positive realization)"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "5.5.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "5.5.3"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "佢哋幾多個人去呀？",
+          "romanization": "keoi5 dei6 gei2 do1 go3 jan4 heoi3 aa3?",
+          "translation": "How many of them are going?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "三個人咋。",
+          "romanization": "saam1 go3 jan4 zaa3.",
+          "translation": "Only three people."
+        },
+        {
+          "speaker": "A",
+          "cantonese": "係啩。",
+          "romanization": "hai6 gwaa3.",
+          "translation": "I suppose so."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Chapter 5 Complete!",
+      "summary": "You've mastered the 'W-questions' and learned how to add expressive nuance to your speech. You are becoming a very natural Cantonese speaker!",
+      "nextLessonId": null
+    }
+  ]
+}

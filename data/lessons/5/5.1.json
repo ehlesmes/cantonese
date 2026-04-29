@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "Where: bin1 dou6"
+        },
+        {
+          "type": "text",
+          "value": "To ask 'where', use <strong>邊度</strong> (bin1 dou6). To say someone is 'at' or 'in' a place, use the verb <strong>喺</strong> (hai2)."
+        },
+        {
+          "type": "example",
+          "cantonese": "邊度？",
+          "romanization": "bin1 dou6?",
+          "translation": "Where?"
+        },
+        {
+          "type": "example",
+          "cantonese": "喺屋企",
+          "romanization": "hai2 uk1 kei2",
+          "translation": "At home"
+        },
+        {
+          "type": "title",
+          "value": "Going Places"
+        },
+        {
+          "type": "text",
+          "value": "You already know <strong>去</strong> (heoi3) means 'to go'. Combine it with locations to say where you're heading."
+        },
+        {
+          "type": "example",
+          "cantonese": "去公司",
+          "romanization": "heoi3 gung1 si1",
+          "translation": "Go to the office"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "5.1.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "5.1.3"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你喺邊度呀？",
+          "romanization": "nei5 hai2 bin1 dou6 aa3?",
+          "translation": "Where are you?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我喺屋企。你呢？",
+          "romanization": "ngo5 hai2 uk1 kei2. nei5 ne1?",
+          "translation": "I'm at home. And you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我喺公司。",
+          "romanization": "ngo5 hai2 gung1 si1.",
+          "translation": "I'm at the office."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Location Mastered!",
+      "summary": "You can now ask where people are and talk about common locations like home and the office.",
+      "nextLessonId": "5.2"
+    }
+  ]
+}

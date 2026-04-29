@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "How: dim2 joeng2"
+        },
+        {
+          "type": "text",
+          "value": "To ask 'how' (in what way), use <strong>點樣</strong> (dim2 joeng2). This is useful for asking about transportation or directions."
+        },
+        {
+          "type": "example",
+          "cantonese": "點樣？",
+          "romanization": "dim2 joeng2?",
+          "translation": "How? / In what way?"
+        },
+        {
+          "type": "title",
+          "value": "Transportation"
+        },
+        {
+          "type": "example",
+          "cantonese": "搭車",
+          "romanization": "daap3 ce1",
+          "translation": "To take a car, bus, or train (lit: 'board vehicle')"
+        },
+        {
+          "type": "example",
+          "cantonese": "行路",
+          "romanization": "haang4 lou6",
+          "translation": "To walk (lit: 'walk road')"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "5.3.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "5.3.3"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你點樣去公司呀？",
+          "romanization": "nei5 dim2 joeng2 heoi3 gung1 si1 aa3?",
+          "translation": "How do you go to the office?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我搭車。你呢？",
+          "romanization": "ngo5 daap3 ce1. nei5 ne1?",
+          "translation": "I take the bus/car. And you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我行路。",
+          "romanization": "ngo5 haang4 lou6.",
+          "translation": "I walk."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Manner Mastered!",
+      "summary": "You can now explain how you do things and ask for methods of transportation.",
+      "nextLessonId": "5.4"
+    }
+  ]
+}

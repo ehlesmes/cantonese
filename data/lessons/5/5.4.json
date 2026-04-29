@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "Why: dim2 gaai2"
+        },
+        {
+          "type": "text",
+          "value": "To ask 'why', use <strong>點解</strong> (dim2 gaai2). To answer, start your sentence with <strong>因為</strong> (jan1 wai6), which means 'because'."
+        },
+        {
+          "type": "example",
+          "cantonese": "點解？",
+          "romanization": "dim2 gaai2?",
+          "translation": "Why?"
+        },
+        {
+          "type": "example",
+          "cantonese": "因為",
+          "romanization": "jan1 wai6",
+          "translation": "Because"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "5.4.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "5.4.3"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你點解今日唔去公司呀？",
+          "romanization": "nei5 dim2 gaai2 gam1 jat6 m4 heoi3 gung1 si1 aa3?",
+          "translation": "Why aren't you going to the office today?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "因為我今日喺屋企做嘢。",
+          "romanization": "jan1 wai6 ngo5 gam1 jat6 hai2 uk1 kei2 zou6 je5.",
+          "translation": "Because I'm working at home today."
+        },
+        {
+          "speaker": "A",
+          "cantonese": "哦，好呀。",
+          "romanization": "o4, hou2 aa3.",
+          "translation": "Oh, okay."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Reasoning Mastered!",
+      "summary": "You can now ask for reasons and explain your actions using 'because'.",
+      "nextLessonId": "5.5"
+    }
+  ]
+}

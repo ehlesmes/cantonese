@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "When: gei2 si4"
+        },
+        {
+          "type": "text",
+          "value": "To ask 'when', use <strong>幾時</strong> (gei2 si4). Here are the two most important time words for daily planning."
+        },
+        {
+          "type": "example",
+          "cantonese": "今日",
+          "romanization": "gam1 jat6",
+          "translation": "Today"
+        },
+        {
+          "type": "example",
+          "cantonese": "聽日",
+          "romanization": "ting1 jat6",
+          "translation": "Tomorrow"
+        },
+        {
+          "type": "text",
+          "value": "To say 'then' or 'again' in the sense of 'until next time', use <strong>再</strong> (zoi3)."
+        },
+        {
+          "type": "example",
+          "cantonese": "聽日再見",
+          "romanization": "ting1 jat6 zoi3 gin3",
+          "translation": "See you again tomorrow"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "5.2.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "5.2.3"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你幾時去公司呀？",
+          "romanization": "nei5 gei2 si4 heoi3 gung1 si1 aa3?",
+          "translation": "When are you going to the office?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我今日唔去。我聽日先去。",
+          "romanization": "ngo5 gam1 jat6 m4 heoi3. ngo5 ting1 jat6 sin1 heoi3.",
+          "translation": "I'm not going today. I'm going tomorrow."
+        },
+        {
+          "speaker": "A",
+          "cantonese": "好呀，聽日見。",
+          "romanization": "hou2 aa3, ting1 jat6 gin3.",
+          "translation": "Okay, see you tomorrow."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Time Mastered!",
+      "summary": "You can now make plans and ask about the timing of events.",
+      "nextLessonId": "5.3"
+    }
+  ]
+}
