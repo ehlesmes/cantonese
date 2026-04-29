@@ -12,24 +12,6 @@
         { "lessonId": "1.5", "lessonName": "Unique Vowels & Diphthongs" },
         { "lessonId": "1.6", "lessonName": "Ending Consonants" }
       ]
-    },
-    {
-      "chapterId": "2",
-      "chapterName": "Chapter 2: The Basics",
-      "lessons": [
-        { "lessonId": "2.1", "lessonName": "Basic Greetings" },
-        { "lessonId": "2.2", "lessonName": "Pronouns" },
-        { "lessonId": "2.3", "lessonName": "Simple Sentences" }
-      ]
-    },
-    {
-      "chapterId": "3",
-      "chapterName": "Chapter 3: Numbers & Quantities",
-      "lessons": [
-        { "lessonId": "3.1", "lessonName": "Numbers 1-5" },
-        { "lessonId": "3.2", "lessonName": "Numbers 6-10" },
-        { "lessonId": "3.3", "lessonName": "Counting Objects" }
-      ]
     }
   ]
 }
