@@ -1,92 +1,79 @@
 # Chapter 1: Pronunciation (Jyutping)
 
-Welcome to the first chapter of your Cantonese journey! Before we dive into vocabulary and grammar, it's crucial to establish a strong foundation in pronunciation. Cantonese is a tonal language, meaning the pitch of your voice can completely change the meaning of a word.
+Welcome to the first chapter of your Cantonese journey! This chapter establishes your foundation in **Jyutping** pronunciation.
 
-This chapter will focus on teaching you **Jyutping**, the most widely used and standardized romanization system for Cantonese.
+## Lesson 1.1: Upper Register Tones
 
-## What is Jyutping?
+- **Concepts:** High Level (1), High Rising (2), Mid Level (3).
+- **Examples:**
+  - `si1` (詩) - Poem
+  - `si2` (史) - History
+  - `si3` (試) - To try
+- **Exercises:**
+  - `1.1.2` (Reading): Differentiation between Tone 1, 2, 3.
+  - `1.1.3` (Unscramble): Tone order challenge.
 
-Jyutping uses the English alphabet and numbers (1-6) to represent the sounds and tones of Cantonese characters. It consists of three main parts for each syllable:
+## Lesson 1.2: Lower Register Tones & Nasals
 
-1. **Initial Consonant** (starts the syllable)
-2. **Final** (Vowel + optional Ending Consonant)
-3. **Tone** (represented by a number 1-6)
+- **Concepts:** Low Falling (4), Low Rising (5), Low Level (6), and Syllabic Nasals (`m`, `ng`).
+- **Examples:**
+  - `si4` (時) - Time
+  - `si5` (市) - Market
+  - `si6` (事) - Matter
+  - `m4` (唔) - Not
+  - `ng5` (五) - Five
+- **Exercises:**
+  - `1.2.2` (Reading): Comparing Nasals and Lower Tones.
+  - `1.2.3` (Unscramble): Constructing basic nasal-based phrases.
 
-## Lesson Breakdown
+## Lesson 1.3: Initials & Aspiration
 
-To make learning easier, this chapter is divided into six focused lessons:
+- **Concepts:** Aspiration (puff of air) distinction for B/P, D/T, and G/K.
+- **Examples:**
+  - **B/P:** `baak3` (百) / `paak3` (拍)
+  - **D/T:** `dung1` (東) / `tung1` (通)
+  - **G/K:** `gaa1` (加) / `kaa1` (卡)
+- **Exercises:**
+  - `1.3.2` (Reading): B vs P differentiation.
+  - `1.3.3` (Unscramble): B vs P sentence building (`八拍`).
+  - `1.3.4` (Reading): D vs T differentiation.
+  - `1.3.5` (Unscramble): D vs T sentence building (`太大`).
+  - `1.3.6` (Reading): G vs K differentiation.
+  - `1.3.7` (Unscramble): G vs K sentence building (`各卡`).
 
-- **Lesson 1.1: Upper Register Tones** - Focuses on Tones 1, 2, and 3.
-- **Lesson 1.2: Lower Register Tones & Nasals** - Focuses on Tones 4, 5, 6, and syllabic nasals (m, ng).
-- **Lesson 1.3: Initials & Aspiration** - Focuses on the "puff of air" distinction (e.g., p vs b).
-- **Lesson 1.4: Basic Vowels** - Focuses on simple vowels: aa, i, u, e, o.
-- **Lesson 1.5: Unique Vowels & Diphthongs** - Focuses on oe, eo, yu and vowel combinations.
-- **Lesson 1.6: Ending Consonants** - Focuses on Nasal endings (-m, -n, -ng) and Stop endings (-p, -t, -k).
+## Lesson 1.4: Basic Vowels
 
-## 1. Tones
+- **Concepts:** Simple vowels: `aa`, `i`, `u`, `e`, `o`.
+- **Examples:**
+  - `faa1` (花) - Flower (`aa`)
+  - `si1` (詩) - Poem (`i`)
+  - `fu3` (褲) - Pants (`u`)
+  - `de6` (地) - Ground (`e`)
+  - `ho2` (可) - Can (`o`)
+- **Exercises:**
+  - `1.4.2` (Reading): Simple vowel recognition (`花地`).
+  - `1.4.3` (Unscramble): Combining basic vowels (`可以`).
 
-Cantonese has six distinct tones. Mastering these is the most important part of learning the language.
+## Lesson 1.5: Unique Vowels & Diphthongs
 
-| Tone  | Description | Example (Jyutping) | Meaning      |
-| :---- | :---------- | :----------------- | :----------- |
-| **1** | High Level  | **si1**            | 詩 (Poem)    |
-| **2** | High Rising | **si2**            | 史 (History) |
-| **3** | Mid Level   | **si3**            | 試 (To try)  |
-| **4** | Low Falling | **si4**            | 時 (Time)    |
-| **5** | Low Rising  | **si5**            | 市 (Market)  |
-| **6** | Low Level   | **si6**            | 事 (Matter)  |
+- **Concepts:** Complex vowels (`oe`, `eo`, `yu`) and Diphthongs (`ai`, `au`, `ei`, `oi`).
+- **Examples:**
+  - `hoeng1` (香) - Fragrant (`oe`)
+  - `syu1` (書) - Book (`yu`)
+  - `maai5` (買) - Buy (`ai`)
+  - `maau1` (貓) - Cat (`au`)
+  - `nei5` (你) - You (`ei`)
+  - `hoi1` (開) - Open (`oi`)
+- **Exercises:**
+  - `1.5.2` (Reading): Recognizing complex vowels (`買貓`).
+  - `1.5.3` (Unscramble): Diphthong combination (`開心`).
 
-## 2. Initial Consonants
+## Lesson 1.6: Ending Consonants
 
-Most Cantonese initials are similar to English, but pay close attention to aspiration (a puff of air).
-
-| Sound  | Description         | Example (Jyutping) | Meaning            |
-| :----- | :------------------ | :----------------- | :----------------- |
-| **b**  | Unaspirated 'p'     | **baak3**          | 百 (Hundred)       |
-| **p**  | Aspirated 'p'       | **paak3**          | 拍 (Clap)          |
-| **d**  | Unaspirated 't'     | **daai6**          | 大 (Big)           |
-| **t**  | Aspirated 't'       | **taai3**          | 太 (Too/Excessive) |
-| **g**  | Unaspirated 'k'     | **gaa1**           | 加 (Add)           |
-| **k**  | Aspirated 'k'       | **kaa1**           | 卡 (Card)          |
-| **z**  | Unaspirated 'ts/ch' | **zo2**            | 左 (Left)          |
-| **c**  | Aspirated 'ts/ch'   | **co2**            | 坐 (Sit)           |
-| **ng** | Like "sing"         | **ngo5**           | 我 (I/Me)          |
-| **j**  | Like English 'y'    | **jan4**           | 人 (Person)        |
-
-## 3. Basic Vowels
-
-Cantonese simple vowels are clear and distinct.
-
-| Vowel  | Approximation       | Example (Jyutping) | Meaning     |
-| :----- | :------------------ | :----------------- | :---------- |
-| **aa** | Long 'ah' (father)  | **faa1**           | 花 (Flower) |
-| **i**  | Like 'ee' in 'see'  | **si1**            | 詩 (Poem)   |
-| **u**  | Like 'oo' in 'boot' | **fu3**            | 褲 (Pants)  |
-| **e**  | Like 'e' in 'met'   | **de6**            | 地 (Ground) |
-| **o**  | Like 'aw' in 'law'  | **ho2**            | 可 (Can)    |
-
-## 4. Unique Vowels & Diphthongs
-
-These sounds are more specific to Cantonese and require practice.
-
-| Sound       | Approximation      | Example (Jyutping) | Meaning       |
-| :---------- | :----------------- | :----------------- | :------------ |
-| **oe / eo** | Like French 'eu'   | **hoeng1**         | 香 (Fragrant) |
-| **yu**      | Like French 'u'    | **syu1**           | 書 (Book)     |
-| **ai**      | Like 'eye'         | **maai5**          | 買 (Buy)      |
-| **au**      | Like 'ow' in 'now' | **maau1**          | 貓 (Cat)      |
-| **ei**      | Like 'ay' in 'say' | **nei5**           | 你 (You)      |
-| **oi**      | Like 'oy' in 'boy' | **hoi1**           | 開 (Open)     |
-
-## 5. Ending Consonants
-
-Syllables can end in Nasals (continuous) or Stops (abrupt).
-
-| Type      | Ending  | Example (Jyutping) | Meaning         |
-| :-------- | :------ | :----------------- | :-------------- |
-| **Nasal** | **-m**  | **saam1**          | 三 (Three)      |
-|           | **-n**  | **san1**           | 新 (New)        |
-|           | **-ng** | **sang1**          | 生 (Birth/Life) |
-| **Stop**  | **-p**  | **saap3**          | 霎 (Suddenly)   |
-|           | **-t**  | **saat3**          | 殺 (Kill)       |
-|           | **-k**  | **saak3**          | 索 (Rope)       |
+- **Concepts:** Nasal endings (`-m`, `-n`, `-ng`) and Stop endings (`-p`, `-t`, `-k`).
+- **Examples:**
+  - **Nasals:** `saam1` (三), `san1` (新), `sang1` (生)
+  - **Stops:** `saap3` (霎), `saat3` (殺), `saak3` (索)
+- **Exercises:**
+  - `1.6.2` (Reading): Nasal and Stop differentiation (`三生`).
+  - `1.6.3` (Unscramble): Final consonant review (`新生`).
