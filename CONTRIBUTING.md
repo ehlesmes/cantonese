@@ -5,6 +5,7 @@
 - **Simplicity over Abstraction:** Prefer direct, readable vanilla JS over complex patterns or unnecessary abstractions.
 - **Surgical Changes:** Minimize the surface area of your changes. Do not refactor unrelated code or "clean up" files unless it is essential to the task.
 - **Pragmatic Minimalism:** While we prefer standard Web APIs and avoid bloating the project with unnecessary npm packages, we are open to using existing tools if they provide clear utility and prevent wasting effort on reimplementing standard functionality. Prioritize efficiency and reliability over a "not invented here" mentality.
+- **Compact UI:** Prefer information-dense, compact layouts. Minimize unnecessary whitespace (padding, margins, and gaps) to ensure efficient use of screen real estate.
 - **Verification First:** No change is complete without empirical verification (tests or manual checks).
 
 ## 1. Component Architecture
