@@ -34,6 +34,26 @@ Each lesson in the `OVERVIEW.md` must follow this structure:
 - Every concept introduced in an `explanation` page **must** be tested in at least one subsequent exercise in that same lesson.
 - **Vocabulary Coverage:** If a Cantonese word is used as an example in an explanation, it should ideally appear in a practice exercise to reinforce the sound/meaning.
 
+### High-Frequency Vocabulary
+
+- Prioritize practical, everyday words over abstract examples, even when teaching pronunciation (Chapter 1).
+- Avoid using words just for their phonetic value if they are rarely used in conversation.
+
+### Avoid Rote Memorization
+
+- Do not introduce complex sentences or phrases if the underlying grammar (e.g., particles, possessives) has not yet been taught.
+- Keep early lessons focused on structural building blocks.
+
+### Isolate Grammar Pillars
+
+- Give foundational grammatical concepts (like the possessive `ge3`) their own dedicated lessons rather than grouping them with other particles.
+- This ensures the student masters the structural impact of the grammar before moving on.
+
+### Vocabulary Recycling
+
+- Intentionally re-use nouns and verbs from earlier chapters in later exercises.
+- This builds a compounding vocabulary web and reinforces long-term retention.
+
 ### Minimum Engagement
 
 - Each explanation page must be followed by at least **one Reading exercise** and **one Unscramble exercise**.
