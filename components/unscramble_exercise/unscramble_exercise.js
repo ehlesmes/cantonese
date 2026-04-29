@@ -73,7 +73,28 @@ export class UnscrambleExercise extends Component {
     this.shadowRoot.appendChild(this._container);
   }
 
-  setupEventListeners() {}
+  setupEventListeners() {
+    this._container.addEventListener("click", (e) => {
+      // Prevent interaction if the exercise is already solved
+      if (this.status === "right") {
+        return;
+      }
+
+      const tokenEl = e.target.closest(".token-component");
+      if (!tokenEl) {
+        return;
+      }
+
+      const tokenId = parseInt(tokenEl.dataset.tokenId, 10);
+
+      // Delegate behavior based on which container the token is currently in
+      if (this._poolContainer.contains(tokenEl)) {
+        this.moveToSlots(tokenId);
+      } else if (this._slotsContainer.contains(tokenEl)) {
+        this.moveToPool(tokenId);
+      }
+    });
+  }
 
   get status() {
     if (this._pool.length > 0) return "incomplete";
@@ -89,19 +110,16 @@ export class UnscrambleExercise extends Component {
   }
 
   update() {
-    const isSolved = this.status === "right";
     this.element.setAttribute("status", this.status);
 
     // Non-destructive update: appendChild moves existing nodes
     this._slots.forEach((token) => {
       const el = this._tokenElements.get(token.id);
-      el.onclick = isSolved ? null : () => this.moveToPool(token.id);
       this._slotsContainer.appendChild(el);
     });
 
     this._pool.forEach((token) => {
       const el = this._tokenElements.get(token.id);
-      el.onclick = isSolved ? null : () => this.moveToSlots(token.id);
       this._poolContainer.appendChild(el);
     });
   }
@@ -120,6 +138,10 @@ export class UnscrambleExercise extends Component {
       trigger,
       content,
     });
+
+    // Add identifier for event delegation
+    tooltip.element.classList.add("token-component");
+    tooltip.element.dataset.tokenId = token.id;
 
     return tooltip.element;
   }
