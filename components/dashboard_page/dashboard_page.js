@@ -60,12 +60,17 @@ export class DashboardPage extends Component {
         const id = this._nextLesson
           ? this._nextLesson.lessonId
           : this._chapters[0]?.lessons[0].lessonId;
-        if (id) window.location.hash = Routes.lesson(id);
+        if (id) {
+          Progress.startLesson(id, true);
+          window.location.hash = Routes.lesson(id);
+        }
       }
     });
 
     this._container.addEventListener("lesson-click", (e) => {
-      window.location.hash = Routes.lesson(e.detail.lessonId);
+      const id = e.detail.lessonId;
+      Progress.startLesson(id, true);
+      window.location.hash = Routes.lesson(id);
     });
   }
 
@@ -89,6 +94,7 @@ export class DashboardPage extends Component {
   updateContent() {
     const state = Progress._getState();
     const progress = state.lessons;
+    const activeLesson = state.activeLesson;
     this._nextLesson = Progress.getNextLesson(this._chapters);
     const practiceCount = Progress.getPracticeCount();
 
@@ -118,6 +124,7 @@ export class DashboardPage extends Component {
     const accordion = new ChapterAccordion({
       chapters: this._chapters,
       progress,
+      activeLesson,
       activeChapterId: this._nextLesson?.chapterId,
     });
 

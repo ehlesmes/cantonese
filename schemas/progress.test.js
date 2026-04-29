@@ -10,9 +10,10 @@ import { validateObject } from "./validator.js";
 describe("Progress Schema", () => {
   it("should validate a correct progress object", () => {
     const validState = {
-      version: 1,
+      version: 2,
+      activeLesson: { id: "1.1", pageIndex: 2 },
       lessons: {
-        1.1: { lastPageIndex: 2, completed: true },
+        1.1: { completed: true },
       },
       practice: {
         levels: {
@@ -62,20 +63,22 @@ describe("migrateOrRecover", () => {
   it("should return default state for null/undefined", () => {
     const state = migrateOrRecover(null);
     expect(state.version).toBe(CURRENT_VERSION);
+    expect(state.activeLesson).toEqual({ id: null, pageIndex: 0 });
     expect(state.lessons).toEqual({});
     expect(Object.keys(state.practice.levels).length).toBe(MAX_LEVEL);
   });
 
-  it("should recover partial data", () => {
+  it("should recover and migrate v1 partial data", () => {
     const partialState = {
+      version: 1,
       lessons: {
         1.1: { lastPageIndex: 5 },
       },
     };
     const recovered = migrateOrRecover(partialState);
     expect(recovered.version).toBe(CURRENT_VERSION);
+    expect(recovered.activeLesson).toEqual({ id: "1.1", pageIndex: 5 });
     expect(recovered.lessons["1.1"]).toEqual({
-      lastPageIndex: 5,
       completed: false,
     });
     expect(recovered.practice.levels[1]).toEqual([]);

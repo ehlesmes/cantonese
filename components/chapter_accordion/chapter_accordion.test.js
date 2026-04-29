@@ -8,6 +8,7 @@ describe("ChapterAccordion Component", () => {
       { chapterId: "2", chapterName: "Numbers", lessons: [] },
     ],
     progress: {},
+    activeLesson: { id: null, pageIndex: 0 },
     activeChapterId: "2",
   };
 
@@ -17,11 +18,29 @@ describe("ChapterAccordion Component", () => {
 
   describe("Validation", () => {
     it("should throw if chapters is missing", () => {
-      expect(() => new ChapterAccordion({ progress: {} })).toThrow();
+      expect(
+        () =>
+          new ChapterAccordion({
+            progress: {},
+            activeLesson: { id: null, pageIndex: 0 },
+          }),
+      ).toThrow();
     });
 
     it("should throw if progress is missing", () => {
-      expect(() => new ChapterAccordion({ chapters: [] })).toThrow();
+      expect(
+        () =>
+          new ChapterAccordion({
+            chapters: [],
+            activeLesson: { id: null, pageIndex: 0 },
+          }),
+      ).toThrow();
+    });
+
+    it("should throw if activeLesson is missing", () => {
+      expect(
+        () => new ChapterAccordion({ chapters: [], progress: {} }),
+      ).toThrow();
     });
   });
 

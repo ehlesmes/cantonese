@@ -37,7 +37,23 @@ describe("ExampleCard Component", () => {
     expect(translationText.textContent).toBe("Hello");
   });
 
-  it("should call window.speechSynthesis.speak when audio button is clicked", () => {
+  it("should call window.speechSynthesis.speak when the card (wrapper) is clicked", () => {
+    const component = new ExampleCard({
+      cantonese: "你好",
+      romanization: "nei5 hou2",
+      translation: "Hello",
+    });
+    document.body.appendChild(component.element);
+    const wrapper = component.shadowRoot.querySelector(".example-wrapper");
+
+    wrapper.click();
+
+    expect(window.speechSynthesis.speak).toHaveBeenCalled();
+    const utterance = window.speechSynthesis.speak.mock.calls[0][0];
+    expect(utterance.text).toBe("你好");
+  });
+
+  it("should call window.speechSynthesis.speak when audio button is clicked (via bubbling)", () => {
     const component = new ExampleCard({
       cantonese: "你好",
       romanization: "nei5 hou2",

@@ -44,24 +44,56 @@ export const Progress = {
 
   /**
    * Saves the user's progress in a specific lesson.
+   * Only saves if the lesson is the active one.
    * @param {string} lessonId
    * @param {number} pageIndex
    */
   saveLessonProgress(lessonId, pageIndex) {
     const state = this._getState();
-    if (!state.lessons[lessonId]) state.lessons[lessonId] = {};
-    state.lessons[lessonId].lastPageIndex = pageIndex;
-    this._saveState(state);
+    if (state.activeLesson.id === lessonId) {
+      state.activeLesson.pageIndex = pageIndex;
+      this._saveState(state);
+    }
   },
 
   /**
    * Gets the saved page index for a lesson.
+   * Only returns non-zero if the lesson is the active one.
    * @param {string} lessonId
    * @returns {number}
    */
   getLessonProgress(lessonId) {
     const state = this._getState();
-    return state.lessons[lessonId]?.lastPageIndex ?? 0;
+    if (state.activeLesson.id === lessonId) {
+      return state.activeLesson.pageIndex;
+    }
+    return 0;
+  },
+
+  /**
+   * Prepares a lesson for starting/resuming.
+   * Resets progress if it's a different lesson or forceRestart is true.
+   * @param {string} lessonId
+   * @param {boolean} [forceRestart=false]
+   */
+  startLesson(lessonId, forceRestart = false) {
+    const state = this._getState();
+    const isCompleted = state.lessons[lessonId]?.completed;
+
+    if (state.activeLesson.id !== lessonId || (isCompleted && forceRestart)) {
+      state.activeLesson = { id: lessonId, pageIndex: 0 };
+      this._saveState(state);
+    }
+  },
+
+  /**
+   * Checks if a lesson is marked as completed.
+   * @param {string} lessonId
+   * @returns {boolean}
+   */
+  isLessonCompleted(lessonId) {
+    const state = this._getState();
+    return Boolean(state.lessons[lessonId]?.completed);
   },
 
   /**

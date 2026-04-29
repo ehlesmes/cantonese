@@ -1,5 +1,6 @@
 import { Component } from "../shared/component.js";
 import { Routes } from "../shared/routes.js";
+import { Progress } from "../shared/progress.js";
 import { LessonViewer } from "../lesson_viewer/lesson_viewer.js";
 import { LessonProvider } from "../shared/lesson_provider.js";
 import { PracticeViewer } from "../practice_viewer/practice_viewer.js";
@@ -88,6 +89,7 @@ export class AppShell extends Component {
     if (lessonId) {
       // Resolve the name before creating the viewer to avoid "Loading..." header flicker
       const lessonName = await LessonProvider.getLessonName(lessonId);
+      Progress.startLesson(lessonId);
       nextView = new LessonViewer({ lessonId, lessonName });
     } else if (hash === Routes.PRACTICE) {
       nextView = new PracticeViewer();

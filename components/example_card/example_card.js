@@ -74,7 +74,7 @@ export class ExampleCard extends Component {
   }
 
   setupEventListeners() {
-    this._playBtn.element.addEventListener("click", () => this.playAudio());
+    this._wrapper.addEventListener("click", () => this.playAudio());
   }
 
   playAudio() {

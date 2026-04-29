@@ -8,12 +8,19 @@ export class ChapterItem extends Component {
    * @param {string} data.chapterId
    * @param {string} data.chapterName
    * @param {Array} data.lessons
-   * @param {Object} data.progress - Object mapping lessonId to { completed, lastPageIndex }
+   * @param {Object} data.progress - Object mapping lessonId to { completed }
+   * @param {Object} data.activeLesson - { id, pageIndex }
    * @param {boolean} [data.open=false]
    */
   constructor(data) {
     super(import.meta.url);
-    this.validate(data, ["chapterId", "chapterName", "lessons", "progress"]);
+    this.validate(data, [
+      "chapterId",
+      "chapterName",
+      "lessons",
+      "progress",
+      "activeLesson",
+    ]);
     this.shadowRoot.adoptedStyleSheets = [
       ...this.shadowRoot.adoptedStyleSheets,
       iconStyles,
@@ -22,7 +29,7 @@ export class ChapterItem extends Component {
   }
 
   render(data) {
-    const { chapterName, lessons, progress, open } = data;
+    const { chapterName, lessons, progress, activeLesson, open } = data;
 
     const details = this.html("details", { open: Boolean(open) });
     const summary = this.html("summary");
@@ -50,7 +57,7 @@ export class ChapterItem extends Component {
       const lessonProgress = progress[lesson.lessonId] || {};
       const status = lessonProgress.completed
         ? "completed"
-        : lessonProgress.lastPageIndex > 0
+        : activeLesson.id === lesson.lessonId && activeLesson.pageIndex > 0
           ? "in-progress"
           : "not-started";
 

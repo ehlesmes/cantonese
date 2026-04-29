@@ -13,9 +13,38 @@ describe("Progress Utility", () => {
     expect(progress).toBe(0);
   });
 
-  it("should save and retrieve lesson progress", () => {
+  it("should save and retrieve lesson progress only for active lesson", () => {
+    Progress.startLesson("1.1");
     Progress.saveLessonProgress("1.1", 5);
     expect(Progress.getLessonProgress("1.1")).toBe(5);
+
+    // Should return 0 for non-active lesson
+    expect(Progress.getLessonProgress("1.2")).toBe(0);
+  });
+
+  it("should restart lesson only if forceRestart is true or lesson is different", () => {
+    Progress.startLesson("1.1");
+    Progress.saveLessonProgress("1.1", 5);
+    Progress.completeLesson("1.1");
+
+    // Starting again without forceRestart should NOT reset to 0 (because it's the same active lesson)
+    Progress.startLesson("1.1");
+    expect(Progress.getLessonProgress("1.1")).toBe(5);
+
+    // Starting again WITH forceRestart should reset to 0
+    Progress.startLesson("1.1", true);
+    expect(Progress.getLessonProgress("1.1")).toBe(0);
+  });
+
+  it("should only keep progress for one lesson at a time", () => {
+    Progress.startLesson("1.1");
+    Progress.saveLessonProgress("1.1", 5);
+
+    Progress.startLesson("1.2");
+    Progress.saveLessonProgress("1.2", 3);
+
+    expect(Progress.getLessonProgress("1.2")).toBe(3);
+    expect(Progress.getLessonProgress("1.1")).toBe(0);
   });
 
   it("should mark lesson as completed", () => {
@@ -176,12 +205,48 @@ describe("Progress Utility", () => {
       const state = JSON.parse(
         window.localStorage.getItem("cantonese_progress"),
       );
-      expect(state.version).toBe(1);
+      expect(state.version).toBe(2);
+      expect(state.activeLesson).toEqual({ id: null, pageIndex: 0 });
       expect(state.practice.levels[1]).toEqual([]);
     });
 
+    it("should migrate v1 state to v2", () => {
+      const v1State = {
+        version: 1,
+        lessons: {
+          1.1: { lastPageIndex: 5, completed: false },
+          1.2: { lastPageIndex: 2, completed: true },
+        },
+        practice: {
+          levels: {
+            1: ["test.json"],
+            2: [],
+            3: [],
+            4: [],
+            5: [],
+            6: [],
+            7: [],
+            8: [],
+            9: [],
+            10: [],
+          },
+        },
+      };
+      window.localStorage.setItem(
+        "cantonese_progress",
+        JSON.stringify(v1State),
+      );
+
+      const state = Progress._getState();
+      expect(state.version).toBe(2);
+      expect(state.activeLesson).toEqual({ id: "1.1", pageIndex: 5 });
+      expect(state.lessons["1.1"].completed).toBe(false);
+      expect(state.lessons["1.2"].completed).toBe(true);
+      expect(state.practice.levels[1]).toContain("test.json");
+    });
+
     it("should recover missing fields from partial state", () => {
-      const partial = { version: 1, lessons: {} }; // Missing practice
+      const partial = { version: 2, lessons: {} }; // Missing activeLesson and practice
       window.localStorage.setItem(
         "cantonese_progress",
         JSON.stringify(partial),
@@ -193,6 +258,7 @@ describe("Progress Utility", () => {
       const state = JSON.parse(
         window.localStorage.getItem("cantonese_progress"),
       );
+      expect(state.activeLesson).toBeDefined();
       expect(state.practice.levels[1]).toBeDefined();
     });
 
