@@ -36,7 +36,7 @@ export default [
       "arch/test-validation-block": "error",
       "arch/test-event-verification": "error",
       "arch/test-data-mocking": "error",
-      "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+      "no-unused-vars": "error",
       "no-console": ["warn", { allow: ["warn", "error", "info"] }],
       eqeqeq: ["error", "always"],
       curly: ["error", "all"],

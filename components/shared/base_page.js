@@ -58,9 +58,9 @@ export class BasePage extends Component {
 
   /**
    * Subclasses should override this to render their specific content.
-   * @param {Object} _data
+   * @param {Object} data
    */
-  renderContent(_data) {}
+  renderContent() {}
 
   /**
    * Subclasses should override this to handle primary button clicks.

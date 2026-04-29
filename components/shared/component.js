@@ -27,7 +27,7 @@ export class Component {
    * Standard rendering lifecycle method.
    * @param {Object} [data]
    */
-  render(_data) {}
+  render() {}
 
   /**
    * Helper to create elements with classes, content, and common properties.
