@@ -6,15 +6,11 @@
       "content": [
         {
           "type": "title",
-          "value": "Basic Vowels"
+          "value": "Basic Vowels: aa and i"
         },
         {
           "type": "text",
-          "value": "Cantonese simple vowels are clear and distinct. Let's learn the most common ones."
-        },
-        {
-          "type": "title",
-          "value": "aa and i"
+          "value": "Cantonese simple vowels are clear and distinct. Let's start with the long 'aa' and the high 'i'."
         },
         {
           "type": "example",
@@ -31,11 +27,19 @@
       ]
     },
     {
+      "type": "reading",
+      "exerciseId": "1.4.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "1.4.3"
+    },
+    {
       "type": "explanation",
       "content": [
         {
           "type": "title",
-          "value": "u, e, and o"
+          "value": "Basic Vowels: u, e, and o"
         },
         {
           "type": "example",
@@ -59,11 +63,11 @@
     },
     {
       "type": "reading",
-      "exerciseId": "1.4.2"
+      "exerciseId": "1.4.4"
     },
     {
       "type": "unscramble",
-      "exerciseId": "1.4.3"
+      "exerciseId": "1.4.5"
     },
     {
       "type": "congratulations",

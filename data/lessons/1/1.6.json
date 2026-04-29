@@ -6,14 +6,6 @@
       "content": [
         {
           "type": "title",
-          "value": "Ending Consonants"
-        },
-        {
-          "type": "text",
-          "value": "Cantonese syllables can end in continuous nasal sounds or abrupt stop sounds."
-        },
-        {
-          "type": "title",
           "value": "Nasal Endings (-m, -n, -ng)"
         },
         {
@@ -35,6 +27,14 @@
           "translation": "Birth (-ng ending)"
         }
       ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "1.6.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "1.6.3"
     },
     {
       "type": "explanation",
@@ -69,11 +69,11 @@
     },
     {
       "type": "reading",
-      "exerciseId": "1.6.2"
+      "exerciseId": "1.6.4"
     },
     {
       "type": "unscramble",
-      "exerciseId": "1.6.3"
+      "exerciseId": "1.6.5"
     },
     {
       "type": "congratulations",

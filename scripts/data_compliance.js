@@ -16,7 +16,7 @@ function report(filePath, errorList) {
 // Registry of all available data
 const Registry = {
   lessons: new Map(), // lessonId -> { chapterId, filePath, exists: boolean }
-  exercises: new Map(), // relativePath -> { type, fullPath }
+  exercises: new Map(), // relativePath -> { type, fullPath, content: Object }
 };
 
 /**
@@ -39,6 +39,7 @@ function registerExercises() {
           Registry.exercises.set(relPath, {
             type: content.type,
             fullPath,
+            content,
           });
         } catch (e) {
           errors.push(`[Data] ${fullPath}: Failed to parse JSON: ${e.message}`);
@@ -102,12 +103,30 @@ function validateLessonDetails() {
       const errs = validateObject(data, Schemas.lessonDetail);
       report(meta.filePath, errs);
 
-      // Cross-reference checks
+      // Pedagogical and Cross-reference checks
+      let explanationCount = 0;
+      let readingCount = 0;
+      let unscrambleCount = 0;
+      const explanationChars = new Set();
+      const exerciseChars = new Set();
+
       data.pages.forEach((page, index) => {
         const pagePath = `pages[${index}]`;
 
+        if (page.type === "explanation") {
+          explanationCount++;
+          page.content.forEach((item) => {
+            if (item.type === "example" && item.cantonese) {
+              [...item.cantonese].forEach((c) => explanationChars.add(c));
+            }
+          });
+        }
+
         // Check Exercise References
         if (page.type === "reading" || page.type === "unscramble") {
+          if (page.type === "reading") readingCount++;
+          if (page.type === "unscramble") unscrambleCount++;
+
           const lessonPart = lessonId.split(".")[1];
           const expectedRelPath = path.join(
             meta.chapterId,
@@ -120,10 +139,22 @@ function validateLessonDetails() {
             errors.push(
               `[Data] ${meta.filePath}: ${pagePath} references non-existent exercise: ${expectedRelPath}`,
             );
-          } else if (exercise.type !== page.type) {
-            errors.push(
-              `[Data] ${meta.filePath}: ${pagePath} type ("${page.type}") does not match exercise type ("${exercise.type}") in ${expectedRelPath}`,
-            );
+          } else {
+            if (exercise.type !== page.type) {
+              errors.push(
+                `[Data] ${meta.filePath}: ${pagePath} type ("${page.type}") does not match exercise type ("${exercise.type}") in ${expectedRelPath}`,
+              );
+            }
+            // Collect characters from exercise content (using cached registry data)
+            const exData = exercise.content;
+            if (exData.cantonese) {
+              [...exData.cantonese].forEach((c) => exerciseChars.add(c));
+            }
+            if (exData.tokens) {
+              exData.tokens.forEach(([char]) =>
+                [...char].forEach((c) => exerciseChars.add(c)),
+              );
+            }
           }
         }
 
@@ -136,6 +167,27 @@ function validateLessonDetails() {
           }
         }
       });
+
+      // Report pedagogical failures
+      if (readingCount < explanationCount) {
+        errors.push(
+          `[Pedagogy] ${meta.filePath}: Not enough reading exercises. Found ${readingCount}, expected at least ${explanationCount} (one per explanation page).`,
+        );
+      }
+      if (unscrambleCount < explanationCount) {
+        errors.push(
+          `[Pedagogy] ${meta.filePath}: Not enough unscramble exercises. Found ${unscrambleCount}, expected at least ${explanationCount} (one per explanation page).`,
+        );
+      }
+
+      const missingChars = [...explanationChars].filter(
+        (c) => !exerciseChars.has(c) && !/[\s，。！？、,.:;?!'"]/.test(c),
+      );
+      if (missingChars.length > 0) {
+        errors.push(
+          `[Pedagogy] ${meta.filePath}: Characters introduced in explanations but never tested in exercises: ${missingChars.join(", ")}`,
+        );
+      }
     } catch (e) {
       errors.push(
         `[Data] ${meta.filePath}: Failed to parse JSON: ${e.message}`,

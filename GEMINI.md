@@ -10,6 +10,11 @@ This project is a static Cantonese learning web application. State is handled en
 - **Verification:** Every task must be verified with a test or manual check before marking as complete.
 - **Task Granularity:** Break large features into small, testable tasks.
 
+## Data & Content Standards
+
+- **Standards:** Follow the pedagogical and structural rules in `designs/CONTENT_GUIDELINES.md` for creating new lessons and exercises. Every lesson must have an `OVERVIEW.md` manifest in its chapter folder.
+- **Validation:** Data is automatically validated via pre-commit hooks. The `npm run compliance:data` script enforces schema adherence, referential integrity, and pedagogical quality (e.g., character coverage and exercise ratios).
+
 ## Interaction Style
 
 - Be direct and objective. Avoid sycophancy, excessive politeness, or performative enthusiasm. Remember that being "nice" is sometimes the opposite of being kind and helpful; prioritizing clarity, brevity, and accuracy is the most professional approach.

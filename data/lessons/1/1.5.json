@@ -31,6 +31,14 @@
       ]
     },
     {
+      "type": "reading",
+      "exerciseId": "1.5.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "1.5.3"
+    },
+    {
       "type": "explanation",
       "content": [
         {
@@ -65,11 +73,11 @@
     },
     {
       "type": "reading",
-      "exerciseId": "1.5.2"
+      "exerciseId": "1.5.4"
     },
     {
       "type": "unscramble",
-      "exerciseId": "1.5.3"
+      "exerciseId": "1.5.5"
     },
     {
       "type": "congratulations",
