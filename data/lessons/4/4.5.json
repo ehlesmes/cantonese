@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "Beyond 'go3': Everyday Classifiers"
+        },
+        {
+          "type": "text",
+          "value": "While <strong>個</strong> (go3) is universal, Cantonese has specific classifiers for different shapes and categories. Using the correct one makes your Cantonese sound much more natural."
+        },
+        {
+          "type": "title",
+          "value": "zek3 and bun2"
+        },
+        {
+          "type": "example",
+          "cantonese": "隻",
+          "romanization": "zek3",
+          "translation": "Classifier for animals (cats, dogs, birds, etc.)"
+        },
+        {
+          "type": "example",
+          "cantonese": "本",
+          "romanization": "bun2",
+          "translation": "Classifier for book-like objects (books, magazines)"
+        },
+        {
+          "type": "title",
+          "value": "Possessive Shortcuts"
+        },
+        {
+          "type": "text",
+          "value": "You already know <strong>嘅</strong> (ge3) for possession. However, when talking about a specific noun, you can often drop 'ge3' and use the <strong>Classifier</strong> instead!"
+        },
+        {
+          "type": "example",
+          "cantonese": "我隻貓",
+          "romanization": "ngo5 zek3 maau1",
+          "translation": "My cat (more natural than 'ngo5 ge3 maau1')"
+        },
+        {
+          "type": "example",
+          "cantonese": "你本書",
+          "romanization": "nei5 bun2 syu1",
+          "translation": "Your book"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "4.5.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "4.5.3"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "呢本係唔係你嘅書呀？",
+          "romanization": "ni1 bun2 hai6 m4 hai6 nei5 ge3 syu1 aa3?",
+          "translation": "Is this your book?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "係呀。呢本係我本書。",
+          "romanization": "hai6 aa3. ni1 bun2 hai6 ngo5 bun2 syu1.",
+          "translation": "Yes. This (book) is my book."
+        },
+        {
+          "speaker": "A",
+          "cantonese": "好呀。",
+          "romanization": "hou2 aa3.",
+          "translation": "Good."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Chapter 4 Complete!",
+      "summary": "You've mastered the core grammar of Cantonese: Classifiers! You can now count, point, and describe possessions naturally.",
+      "nextLessonId": null
+    }
+  ]
+}

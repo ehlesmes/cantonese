@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "Question Words with Classifiers"
+        },
+        {
+          "type": "text",
+          "value": "When asking 'which' or 'how many' about specific objects or people, you must include a classifier."
+        },
+        {
+          "type": "title",
+          "value": "Which one: bin1"
+        },
+        {
+          "type": "text",
+          "value": "<strong>邊個</strong> (bin1 go3) means 'which one'. It is also the most common way to say 'who' in Cantonese."
+        },
+        {
+          "type": "example",
+          "cantonese": "邊個？",
+          "romanization": "bin1 go3?",
+          "translation": "Which one? / Who?"
+        },
+        {
+          "type": "title",
+          "value": "How many: gei2 do1"
+        },
+        {
+          "type": "text",
+          "value": "To ask 'how many', use <strong>幾多</strong> (gei2 do1) followed by the classifier."
+        },
+        {
+          "type": "example",
+          "cantonese": "幾多個？",
+          "romanization": "gei2 do1 go3?",
+          "translation": "How many?"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "4.4.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "4.4.3"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "邊個係先生呀？",
+          "romanization": "bin1 go3 hai6 sin1 saang1 aa3?",
+          "translation": "Which one is the teacher?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "呢個。",
+          "romanization": "ni1 go3.",
+          "translation": "This one."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你哋幾多個人呀？",
+          "romanization": "nei5 dei6 gei2 do1 go3 jan4 aa3?",
+          "translation": "How many people are you?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我哋兩個。",
+          "romanization": "ngo5 dei6 loeng5 go3.",
+          "translation": "We are two (people)."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Questions Mastered!",
+      "summary": "You can now ask 'which one' and 'how many' using the correct classifier syntax.",
+      "nextLessonId": "4.5"
+    }
+  ]
+}

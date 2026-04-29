@@ -34,6 +34,23 @@
         { "lessonId": "3.4", "lessonName": "Hobbies" },
         { "lessonId": "3.5", "lessonName": "Essential Particles" }
       ]
+    },
+    {
+      "chapterId": "4",
+      "chapterName": "Chapter 4: Identifying & Quantifying",
+      "lessons": [
+        { "lessonId": "4.1", "lessonName": "Numbers 1-10 & The Rule of Two" },
+        { "lessonId": "4.2", "lessonName": "The Universal Classifier (go3)" },
+        { "lessonId": "4.3", "lessonName": "Specifiers (This & That)" },
+        {
+          "lessonId": "4.4",
+          "lessonName": "Question Words (Which & How Many)"
+        },
+        {
+          "lessonId": "4.5",
+          "lessonName": "Everyday Classifiers & Possessives"
+        }
+      ]
     }
   ]
 }
