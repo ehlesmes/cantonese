@@ -120,6 +120,67 @@ function registerLessonsManifest() {
   }
 }
 
+const PUNCTUATION_REGEX = /[\s，。！？、,.:;?!'"]/g;
+const CJK_REGEX = /[\u4E00-\u9FFF]/g;
+const SYLLABLE_REGEX = /^[a-z]+[1-6][，。！？、,.:;?!'"]*$/;
+
+/**
+ * Validates a Cantonese/Romanization/Translation triplet.
+ * Used for both exercises and explanation examples.
+ */
+function validateCantoneseTriplet(
+  cantonese,
+  romanization,
+  translation,
+  context,
+) {
+  const errs = [];
+
+  // Basic presence
+  if (!cantonese || cantonese.trim().length === 0) {
+    errs.push(`${context}: Cantonese text is missing or empty.`);
+  }
+  if (!romanization || romanization.trim().length === 0) {
+    errs.push(`${context}: Romanization is missing or empty.`);
+  }
+  if (!translation || translation.trim().length === 0) {
+    errs.push(`${context}: Translation is missing or empty.`);
+  }
+
+  if (errs.length > 0) return errs;
+
+  const cleanCantonese = cantonese.replace(PUNCTUATION_REGEX, "");
+  const cjkChars = cantonese.match(CJK_REGEX) || [];
+  const syllables = romanization.trim().split(/\s+/);
+
+  // Check if it's just punctuation
+  if (cleanCantonese.length === 0) {
+    errs.push(
+      `${context}: Cantonese text contains no characters (only punctuation/whitespace).`,
+    );
+  }
+
+  // Syllable format check
+  syllables.forEach((s, i) => {
+    if (!SYLLABLE_REGEX.test(s)) {
+      errs.push(
+        `${context}: Invalid romanization syllable at index ${i}: "${s}". Must be [a-z]+[1-6].`,
+      );
+    }
+  });
+
+  // 1:1 Sync check for CJK characters
+  // If the text is pure CJK (no Latin), we can be very strict about 1:1.
+  const hasLatin = /[a-zA-Z]/.test(cleanCantonese);
+  if (!hasLatin && cjkChars.length !== syllables.length) {
+    errs.push(
+      `${context}: Romanization sync error. Cantonese has ${cjkChars.length} characters, but romanization has ${syllables.length} syllables.`,
+    );
+  }
+
+  return errs;
+}
+
 /**
  * Step 3: Validate individual lesson files and their cross-references
  */
@@ -144,10 +205,34 @@ function validateLessonDetails() {
 
         if (page.type === "explanation") {
           explanationCount++;
-          page.content.forEach((item) => {
-            if (item.type === "example" && item.cantonese) {
-              [...item.cantonese].forEach((c) => explanationChars.add(c));
+          page.content.forEach((item, itemIdx) => {
+            if (item.type === "example") {
+              const context = `${pagePath}.content[${itemIdx}]`;
+              const tripletErrs = validateCantoneseTriplet(
+                item.cantonese,
+                item.romanization,
+                item.translation,
+                context,
+              );
+              report(meta.filePath, tripletErrs);
+
+              if (item.cantonese) {
+                [...item.cantonese].forEach((c) => explanationChars.add(c));
+              }
             }
+          });
+        }
+
+        if (page.type === "dialog") {
+          page.lines.forEach((line, lineIdx) => {
+            const context = `${pagePath}.lines[${lineIdx}]`;
+            const tripletErrs = validateCantoneseTriplet(
+              line.cantonese,
+              line.romanization,
+              line.translation,
+              context,
+            );
+            report(meta.filePath, tripletErrs);
           });
         }
 
@@ -239,19 +324,60 @@ function validateExerciseDetails() {
       const data = JSON.parse(fs.readFileSync(meta.fullPath, "utf-8"));
       let errs = [];
       if (data.type === "reading") {
-        errs = validateObject(data, Schemas.readingExercise);
-        // Romanization sync check (1:1 char to syllable)
-        const chars = data.cantonese.replace(/[\s，。！？、,.:;?!'"]/g, "");
-        const syllables = data.romanization.trim().split(/\s+/);
-        if (chars.length !== syllables.length) {
-          errs.push(
-            `Romanization sync error: Cantonese has ${chars.length} characters, but romanization has ${syllables.length} syllables.`,
-          );
-        }
+        errs = [
+          ...validateObject(data, Schemas.readingExercise),
+          ...validateCantoneseTriplet(
+            data.cantonese,
+            data.romanization,
+            data.translation,
+            "Reading Exercise",
+          ),
+        ];
       } else if (data.type === "unscramble") {
         errs = validateObject(data, Schemas.unscrambleExercise);
-        if (data.tokens && data.tokens.length < 2) {
-          errs.push("Unscramble exercise must have at least two tokens.");
+
+        if (data.tokens) {
+          if (data.tokens.length < 2) {
+            errs.push("Unscramble exercise must have at least two tokens.");
+          }
+
+          data.tokens.forEach(([char, rom], i) => {
+            const context = `Token ${i} ("${char}")`;
+            const cleanChar = char.replace(PUNCTUATION_REGEX, "");
+            const cjkChars = char.match(CJK_REGEX) || [];
+            const tokenSyllables = rom.trim().split(/\s+/);
+
+            if (cleanChar.length === 0 && char.length > 0) {
+              errs.push(
+                `${context}: Contains only punctuation. Punctuation should be attached to characters or omitted from tokens.`,
+              );
+            }
+            if (char.trim().length === 0) {
+              errs.push(`${context}: Empty Cantonese text.`);
+            }
+
+            tokenSyllables.forEach((s) => {
+              if (!SYLLABLE_REGEX.test(s)) {
+                errs.push(`${context}: Invalid romanization syllable "${s}".`);
+              }
+            });
+
+            // 1:1 check within token for CJK
+            const hasLatin = /[a-zA-Z]/.test(cleanChar);
+            if (
+              !hasLatin &&
+              cjkChars.length !== tokenSyllables.length &&
+              cjkChars.length > 0
+            ) {
+              errs.push(
+                `${context}: Sync error. ${cjkChars.length} chars vs ${tokenSyllables.length} syllables.`,
+              );
+            }
+          });
+        }
+
+        if (!data.translation || data.translation.trim().length === 0) {
+          errs.push("Translation must not be empty.");
         }
       } else {
         errs.push(`Unknown exercise type: ${data.type}`);
