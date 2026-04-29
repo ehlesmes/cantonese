@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Asking Yes/No Questions" },
+        {
+          "type": "text",
+          "value": "There are two main ways to ask yes/no questions in Cantonese. The most common is the <strong>A-not-A</strong> structure, where you state the verb, followed by <strong>唔</strong> (m4 - not), and then the verb again."
+        },
+        {
+          "type": "example",
+          "cantonese": "係唔係",
+          "romanization": "hai6 m4 hai6",
+          "translation": "Is it or is it not? (Yes or no?)"
+        },
+        {
+          "type": "example",
+          "cantonese": "食唔食",
+          "romanization": "sik6 m4 sik6",
+          "translation": "Eat or not eat?"
+        },
+        {
+          "type": "text",
+          "value": "Another way, more common in formal speech or to sound softer, is to add the particle <strong>嗎</strong> (maa3) at the end of a statement."
+        },
+        {
+          "type": "example",
+          "cantonese": "你好嗎？",
+          "romanization": "nei5 hou2 maa3?",
+          "translation": "How are you? (Literally: You good?)"
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "3.2.2" },
+    { "type": "unscramble", "exerciseId": "3.2.3" },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你食唔食飯呀？",
+          "romanization": "nei5 sik6 m4 sik6 faan6 aa3?",
+          "translation": "Are you eating?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我食。你呢？",
+          "romanization": "ngo5 sik6. nei5 ne1?",
+          "translation": "I am. What about you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我唔食喇。",
+          "romanization": "ngo5 m4 sik6 laa3.",
+          "translation": "I'm not eating (already)."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "係唔係呀？",
+          "romanization": "hai6 m4 hai6 aa3?",
+          "translation": "Really? (Is it or not?)"
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "3.2.4" },
+    { "type": "unscramble", "exerciseId": "3.2.5" },
+    {
+      "type": "congratulations",
+      "title": "Questions Mastered!",
+      "summary": "You can now ask basic yes/no questions using two different methods.",
+      "nextLessonId": "3.3"
+    }
+  ]
+}

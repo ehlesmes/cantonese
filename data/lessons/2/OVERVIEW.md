@@ -16,7 +16,7 @@ _Balancing formal greetings with daily colloquialisms._
   - `haa1 lo3` (哈囉) - Hello (Colloquial)
 - **Dialogues:**
   - **Dialogue 1 (Formal Morning):**
-    - A: `zou2 san1, Wong4 sin1 saang1.` (早晨，黃先生。)
+    - A: `zou2 san1, wong4 sin1 saang1.` (早晨，黃先生。)
     - B: `zou2 san1, nei5 hou2 maa3?` (早晨，你好嗎？)
     - A: `ngo5 hou2 hou2, jau6 lau4 nei5?` (我好好，有勞你？ - "I'm fine, thanks for asking")
   - **Dialogue 2 (Colloquial):**
@@ -40,14 +40,14 @@ _Self-introductions and identity._
   - `hou2 gou1 hing3 sik1 dou2 nei5` (好高興識到你) - Nice to meet you
 - **Dialogues:**
   - **Dialogue 1 (Basic Intro):**
-    - A: `nei5 hou2! ngo5 giu3 Aa3 Ming4.` (你好！我叫阿明。)
-    - B: `Aa3 Ming4, nei5 hou2. ngo5 hai6 Aa3 Ling4.` (阿明，你好。我係阿玲。)
+    - A: `nei5 hou2! ngo5 giu3 aa3 ming4.` (你好！我叫阿明。)
+    - B: `aa3 ming4, nei5 hou2. ngo5 hai6 aa3 ling4.` (阿明，你好。我係阿玲。)
   - **Dialogue 2 (Inquiring Name):**
     - A: `nei5 hou2! nei5 giu3 me1 meng2 aa3?` (你好！你叫咩名呀？)
-    - B: `ngo5 giu3 Aa3 Keong4. nei5 ne1?` (我叫阿強。你呢？)
-    - A: `ngo5 hai6 Aa3 Fan1. hou2 gou1 hing3 sik1 dou2 nei5.` (我係阿芬。好高興識到你。)
+    - B: `ngo5 giu3 aa3 koeng4. nei5 ne1?` (我叫阿強。你呢？)
+    - A: `ngo5 hai6 aa3 fan1. hou2 gou1 hing3 sik1 dou2 nei5.` (我係阿芬。好高興識到你。)
 - **Exercises:**
-  - `2.2.2` (Reading): `ngo5 giu3 Aa3 Ming4`
+  - `2.2.2` (Reading): `ngo5 giu3 aa3 ming4`
   - `2.2.3` (Unscramble): `nei5 giu3 me1 meng2?`
   - `2.2.4` (Reading): `hou2 gou1 hing3 sik1 dou2 nei5`
 
@@ -61,7 +61,7 @@ _Introducing the most common Cantonese colloquialisms._
   - `sik6 zo2 laa3` (食咗喇) - Eaten already
   - `heoi3 bin1 aa3?` (去邊呀？) - Where are you going?
 - **Dialogue:**
-  - A: `Aa3 Ling4! sik6 zo2 faan6 mei6 aa3?` (阿玲！食咗飯未呀？)
+  - A: `aa3 ling4! sik6 zo2 faan6 mei6 aa3?` (阿玲！食咗飯未呀？)
   - B: `sik6 zo2 laa3, nei5 ne1?` (食咗喇，你呢？)
   - A: `ngo5 mei6 aa3. ngo5 heoi3 sik6 faan6.` (我未呀。我食飯。 - "I haven't. I'm going to eat.")
 - **Exercises:**
@@ -77,11 +77,11 @@ _Formal and informal introductions of third parties._
   - `ni1 wai2 hai6` (呢位係) - This (person) is...
   - `sik1 dou2 nei5 hai6 ngo5 ge3 wing4 hang6` (識到你係我嘅榮幸) - It's my honor to meet you (Formal)
 - **Dialogue:**
-  - A: `Chan4 sin1 saang1, ni1 wai2 hai6 Wong4 si2 zi2.` (陳先生，呢位係黃小姐。)
-  - B: `Wong4 si2 zi2, nei5 hou2. sik1 dou2 nei5 hai6 ngo5 ge3 wing4 hang6.` (黃小姐，你好。識到你係我嘅榮幸。)
-  - C: `Chan4 sin1 saang1, nei5 taai3 haak3 hei3 laa3.` (陳先生，你太客氣喇。 - "You're too kind/polite")
+  - A: `can4 sin1 saang1, ni1 wai2 hai6 wong4 siu2 ze2.` (陳先生，呢位係黃小姐。)
+  - B: `wong4 siu2 ze2, nei5 hou2. sik1 dou2 nei5 hai6 ngo5 ge3 wing4 hang6.` (黃小姐，你好。識到你係我嘅榮幸。)
+  - C: `can4 sin1 saang1, nei5 taai3 haak3 hei3 laa3.` (陳先生，你太客氣喇。 - "You're too kind/polite")
 - **Exercises:**
-  - `2.4.2` (Reading): `ni1 wai2 hai6 Wong4 si2 zi2`
+  - `2.4.2` (Reading): `ni1 wai2 hai6 wong4 siu2 ze2`
   - `2.4.3` (Unscramble): `sik1 dou2 nei5 hai6 ngo5 ge3 wing4 hang6`
 
 ## Lesson 2.5: See You Later & "Yum Cha"
@@ -96,10 +96,10 @@ _Closing a conversation and making future plans._
   - `baai1 baai3` (拜拜) - Bye bye (Colloquial)
 - **Dialogues:**
   - **Dialogue 1 (Formal Closing):**
-    - A: `Chan4 sin1 saang1, ngo5 sin1 zau2 laa3. zoi3 gin3.` (陳先生，我先走喇。再見。 - "I'll be going first. Goodbye.")
+    - A: `can4 sin1 saang1, ngo5 sin1 zau2 laa3. zoi3 gin3.` (陳先生，我先走喇。再見。 - "I'll be going first. Goodbye.")
     - B: `hou2, zoi3 gin3.` (好，再見。)
   - **Dialogue 2 (Informal):**
-    - A: `Aa3 Ming4, baai1 baai3! dak1 haan4 jam2 caa4 aa3!` (阿明，拜拜！得閒飲茶呀！)
+    - A: `aa3 ming4, baai1 baai3! dak1 haan4 jam2 caa4 aa3!` (阿明，拜拜！得閒飲茶呀！)
     - B: `hou2 aa3! ting1 jat6 gin3.` (好呀！聽日見。)
 - **Exercises:**
   - `2.5.2` (Reading): `dak1 haan4 jam2 caa4`

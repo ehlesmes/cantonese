@@ -44,7 +44,7 @@ Each lesson in the `OVERVIEW.md` must follow this structure:
 
 - When applicable, chapters should cover both formal and colloquial expressions and vocabulary.
 - When teaching about social interactions, lessons must include **both a formal and an informal dialogue** to show the contrast in particle usage and vocabulary (e.g., `你好` vs. `點呀？`).
-- The lesson should help studends understand not just *what* to say, but *when* to say it.
+- The lesson should help studends understand not just _what_ to say, but _when_ to say it.
 
 ## 3. Agent Self-Critique Prompt
 
@@ -55,7 +55,8 @@ Before finalizing any lesson content, agents should run this self-critique:
 > 1. **Pedagogical Flow:** Does the lesson build logically from the previous one?
 > 2. **Concept/Exercise Mapping:** Is every concept taught in the explanation actually tested in an exercise? (e.g., if I taught Tone 4, is there an exercise specifically for Tone 4?)
 > 3. **Clarity:** Would a person with zero Cantonese knowledge understand this explanation?
-> 4. **Accuracy:** Do the Jyutping romanizations match the Cantonese characters perfectly?
-> 5. **Formatting:** Does the JSON adhere strictly to the schema (no extra fields, correct types)?"
+> 4. **Accuracy:** Do the Jyutping romanizations match the Cantonese characters perfectly? (e.g., `siu2 ze2` for 小姐)
+> 5. **Formatting:** Is all Jyutping romanization **entirely lowercase**? (e.g., `aa3 ming4`, not `Aa3 Ming4`).
+> 6. **JSON Schema:** Does the JSON adhere strictly to the schema (no extra fields, correct types)?
 
 If any answer is "No," the agent must iterate on the content before submitting.

@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Hobbies" },
+        {
+          "type": "text",
+          "value": "To talk about what you like to do, use the verb <strong>鍾意</strong> (zung1 ji3 - to like). You can ask <strong>你鍾意做咩呀？</strong> (nei5 zung1 ji3 zou6 me1 aa3?) to find out about someone's hobbies."
+        },
+        {
+          "type": "example",
+          "cantonese": "鍾意",
+          "romanization": "zung1 ji3",
+          "translation": "To like"
+        },
+        {
+          "type": "text",
+          "value": "Common hobbies include <strong>睇書</strong> (tai2 syu1 - reading books) and <strong>聽歌</strong> (teng1 go1 - listening to music/songs)."
+        },
+        {
+          "type": "example",
+          "cantonese": "睇書",
+          "romanization": "tai2 syu1",
+          "translation": "To read books"
+        },
+        {
+          "type": "example",
+          "cantonese": "聽歌",
+          "romanization": "teng1 go1",
+          "translation": "To listen to music"
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "3.4.2" },
+    { "type": "unscramble", "exerciseId": "3.4.3" },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你鍾意做咩呀？",
+          "romanization": "nei5 zung1 ji3 zou6 me1 aa3?",
+          "translation": "What do you like to do?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我鍾意睇書。你呢？",
+          "romanization": "ngo5 zung1 ji3 tai2 syu1. nei5 ne1?",
+          "translation": "I like reading books. What about you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我鍾意聽歌。",
+          "romanization": "ngo5 zung1 ji3 teng1 go1.",
+          "translation": "I like listening to music."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "好呀。",
+          "romanization": "hou2 aa3.",
+          "translation": "Good."
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "3.4.4" },
+    { "type": "unscramble", "exerciseId": "3.4.5" },
+    {
+      "type": "congratulations",
+      "title": "Hobbies Mastered!",
+      "summary": "You can now share and ask about interests in Cantonese.",
+      "nextLessonId": "3.5"
+    }
+  ]
+}

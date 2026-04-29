@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Professions" },
+        {
+          "type": "text",
+          "value": "To ask someone what they do for a living, you can ask <strong>你做咩呀？</strong> (nei5 zou6 me1 aa3?), which literally means 'You do what?'. A slightly more complete version is <strong>你做咩嘢呀？</strong> (nei5 zou6 me1 je5 aa3?)."
+        },
+        {
+          "type": "example",
+          "cantonese": "做咩呀？",
+          "romanization": "zou6 me1 aa3?",
+          "translation": "Do what? / What do you do?"
+        },
+        {
+          "type": "text",
+          "value": "Here are two common professions to start with: <strong>學生</strong> (hok6 saang1 - student) and <strong>先生</strong> (sin1 saang1 - teacher). Note that '先生' can also mean 'Mister' or 'husband' depending on the context!"
+        },
+        {
+          "type": "example",
+          "cantonese": "學生",
+          "romanization": "hok6 saang1",
+          "translation": "Student"
+        },
+        {
+          "type": "example",
+          "cantonese": "先生",
+          "romanization": "sin1 saang1",
+          "translation": "Teacher / Mister"
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "3.3.2" },
+    { "type": "unscramble", "exerciseId": "3.3.3" },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你好！你做咩呀？",
+          "romanization": "nei5 hou2! nei5 zou6 me1 aa3?",
+          "translation": "Hello! What do you do?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我係學生。你呢？",
+          "romanization": "ngo5 hai6 hok6 saang1. nei5 ne1?",
+          "translation": "I am a student. What about you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我係先生。",
+          "romanization": "ngo5 hai6 sin1 saang1.",
+          "translation": "I am a teacher."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "你好，先生。",
+          "romanization": "nei5 hou2, sin1 saang1.",
+          "translation": "Hello, teacher/sir."
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "3.3.4" },
+    { "type": "unscramble", "exerciseId": "3.3.5" },
+    {
+      "type": "congratulations",
+      "title": "Professions Mastered!",
+      "summary": "You can now talk about what people do for work.",
+      "nextLessonId": "3.4"
+    }
+  ]
+}

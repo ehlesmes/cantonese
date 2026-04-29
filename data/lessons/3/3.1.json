@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Expanding Pronouns" },
+        {
+          "type": "text",
+          "value": "Now that you know <strong>我</strong> (ngo5 - I) and <strong>你</strong> (nei5 - You), let's learn how to talk about others and groups. The word for 'he', 'she', or 'it' is <strong>佢</strong> (keoi5). Cantonese doesn't distinguish gender in its pronouns."
+        },
+        {
+          "type": "example",
+          "cantonese": "佢",
+          "romanization": "keoi5",
+          "translation": "He / She / It"
+        },
+        {
+          "type": "text",
+          "value": "To make a pronoun plural, we simply add <strong>哋</strong> (dei6) to the end. This is how we form 'we', 'you all', and 'they'."
+        },
+        {
+          "type": "example",
+          "cantonese": "我哋",
+          "romanization": "ngo5 dei6",
+          "translation": "We"
+        },
+        {
+          "type": "example",
+          "cantonese": "你哋",
+          "romanization": "nei5 dei6",
+          "translation": "You all"
+        },
+        {
+          "type": "example",
+          "cantonese": "佢哋",
+          "romanization": "keoi5 dei6",
+          "translation": "They"
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "3.1.2" },
+    { "type": "unscramble", "exerciseId": "3.1.3" },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你哋好。",
+          "romanization": "nei5 dei6 hou2.",
+          "translation": "Hello to you all."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "你好！佢係黃小姐。",
+          "romanization": "nei5 hou2! keoi5 hai6 wong4 siu2 ze2.",
+          "translation": "Hello! She is Miss Wong."
+        },
+        {
+          "speaker": "A",
+          "cantonese": "佢哋去邊呀？",
+          "romanization": "keoi5 dei6 heoi3 bin1 aa3?",
+          "translation": "Where are they going?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "佢哋去食飯。",
+          "romanization": "keoi5 dei6 heoi3 sik6 faan6.",
+          "translation": "They are going to eat."
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "3.1.4" },
+    { "type": "unscramble", "exerciseId": "3.1.5" },
+    {
+      "type": "congratulations",
+      "title": "Pronouns Mastered!",
+      "summary": "You can now refer to individuals and groups in Cantonese.",
+      "nextLessonId": "3.2"
+    }
+  ]
+}
