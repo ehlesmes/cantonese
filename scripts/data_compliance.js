@@ -16,8 +16,30 @@ function report(filePath, errorList) {
 // Registry of all available data
 const Registry = {
   lessons: new Map(), // lessonId -> { chapterId, filePath, exists: boolean }
-  exercises: new Map(), // relativePath -> { type, fullPath, content: Object }
+  exercises: new Map(), // relativePath -> { type, fullPath, content: Object, referenced: boolean }
+  allLessonIds: [], // lessonId in order of appearance in manifest
+  lessonFilesOnDisk: new Set(), // Full paths of all .json files in data/lessons/
 };
+
+/**
+ * Step 0: Scan for all potential data files on disk
+ */
+function scanDisk() {
+  const lessonsDir = path.join(DATA_DIR, "lessons");
+  if (fs.existsSync(lessonsDir)) {
+    const walk = (dir) => {
+      fs.readdirSync(dir).forEach((item) => {
+        const fullPath = path.join(dir, item);
+        if (fs.statSync(fullPath).isDirectory()) {
+          walk(fullPath);
+        } else if (item.endsWith(".json")) {
+          Registry.lessonFilesOnDisk.add(path.resolve(fullPath));
+        }
+      });
+    };
+    walk(lessonsDir);
+  }
+}
 
 /**
  * Step 1: Scan and register all available exercises
@@ -40,6 +62,7 @@ function registerExercises() {
             type: content.type,
             fullPath,
             content,
+            referenced: false,
           });
         } catch (e) {
           errors.push(`[Data] ${fullPath}: Failed to parse JSON: ${e.message}`);
@@ -67,6 +90,12 @@ function registerLessonsManifest() {
 
     data.chapters.forEach((chapter) => {
       chapter.lessons.forEach((lesson) => {
+        if (Registry.lessons.has(lesson.lessonId)) {
+          errors.push(
+            `[Data] ${filePath}: Duplicate lessonId found: "${lesson.lessonId}"`,
+          );
+        }
+        Registry.allLessonIds.push(lesson.lessonId);
         const lessonFilePath = path.join(
           DATA_DIR,
           "lessons",
@@ -140,6 +169,7 @@ function validateLessonDetails() {
               `[Data] ${meta.filePath}: ${pagePath} references non-existent exercise: ${expectedRelPath}`,
             );
           } else {
+            exercise.referenced = true;
             if (exercise.type !== page.type) {
               errors.push(
                 `[Data] ${meta.filePath}: ${pagePath} type ("${page.type}") does not match exercise type ("${exercise.type}") in ${expectedRelPath}`,
@@ -159,10 +189,14 @@ function validateLessonDetails() {
         }
 
         // Check Next Lesson References
-        if (page.type === "congratulations" && page.nextLessonId) {
-          if (!Registry.lessons.has(page.nextLessonId)) {
+        if (page.type === "congratulations") {
+          const currentIndex = Registry.allLessonIds.indexOf(lessonId);
+          const expectedNextId =
+            Registry.allLessonIds[currentIndex + 1] || null;
+
+          if (page.nextLessonId !== expectedNextId) {
             errors.push(
-              `[Data] ${meta.filePath}: ${pagePath} references non-existent nextLessonId: "${page.nextLessonId}"`,
+              `[Data] ${meta.filePath}: ${pagePath} has incorrect nextLessonId. Expected "${expectedNextId}", found "${page.nextLessonId}"`,
             );
           }
         }
@@ -206,8 +240,19 @@ function validateExerciseDetails() {
       let errs = [];
       if (data.type === "reading") {
         errs = validateObject(data, Schemas.readingExercise);
+        // Romanization sync check (1:1 char to syllable)
+        const chars = data.cantonese.replace(/[\s，。！？、,.:;?!'"]/g, "");
+        const syllables = data.romanization.trim().split(/\s+/);
+        if (chars.length !== syllables.length) {
+          errs.push(
+            `Romanization sync error: Cantonese has ${chars.length} characters, but romanization has ${syllables.length} syllables.`,
+          );
+        }
       } else if (data.type === "unscramble") {
         errs = validateObject(data, Schemas.unscrambleExercise);
+        if (data.tokens && data.tokens.length < 2) {
+          errs.push("Unscramble exercise must have at least two tokens.");
+        }
       } else {
         errs.push(`Unknown exercise type: ${data.type}`);
       }
@@ -220,11 +265,37 @@ function validateExerciseDetails() {
   });
 }
 
+/**
+ * Step 5: Final orphaned files check
+ */
+function reportOrphans() {
+  // Orphaned Exercises
+  Registry.exercises.forEach((meta, relPath) => {
+    if (!meta.referenced) {
+      errors.push(`[Data] Orphaned exercise file: data/exercises/${relPath}`);
+    }
+  });
+
+  // Orphaned Lessons
+  const registeredLessonFiles = new Set(
+    [...Registry.lessons.values()].map((m) => path.resolve(m.filePath)),
+  );
+  Registry.lessonFilesOnDisk.forEach((fullPath) => {
+    if (!registeredLessonFiles.has(fullPath)) {
+      errors.push(
+        `[Data] Orphaned lesson file: ${path.relative(process.cwd(), fullPath)}`,
+      );
+    }
+  });
+}
+
 console.info("🔍 Verifying Data Compliance (Strict Mode)...");
+scanDisk();
 registerExercises();
 registerLessonsManifest();
 validateLessonDetails();
 validateExerciseDetails();
+reportOrphans();
 
 if (errors.length > 0) {
   console.error("\n❌ Data compliance check failed:\n");
