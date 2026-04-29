@@ -9,7 +9,7 @@
   padding: var(--comp-gap-small) var(--comp-gap-medium);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   border-left: 4px solid var(--md-sys-color-primary);
   transition:
     transform 0.2s ease,
@@ -22,12 +22,25 @@
   box-shadow: 0 2px 8px var(--md-sys-color-shadow);
 }
 
+.example-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .example-label {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--md-sys-color-primary);
   letter-spacing: 0.05em;
+}
+
+#play-audio {
+  --md-sys-color-primary: var(--md-sys-color-on-surface-variant);
+  transform: scale(0.65);
+  transform-origin: left center;
+  margin: -4px 0;
 }
 
 .content-row {

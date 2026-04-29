@@ -14,6 +14,8 @@
   border-radius: var(--md-sys-radius-small);
   user-select: none;
   border: none;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .btn-filled {

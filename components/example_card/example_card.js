@@ -30,11 +30,20 @@ export class ExampleCard extends Component {
 
     this._wrapper = this.html("div", { className: "example-wrapper" });
 
+    const header = this.html("div", { className: "example-header" });
     const label = this.html("div", {
       className: "example-label",
       textContent: "Example",
     });
-    this._wrapper.appendChild(label);
+    header.appendChild(label);
+
+    this._playBtn = new Button({
+      title: "Listen",
+      icon: "volume_up",
+    });
+    this._playBtn.element.id = "play-audio";
+    header.appendChild(this._playBtn.element);
+    this._wrapper.appendChild(header);
 
     const contentRow = this.html("div", { className: "content-row" });
 
@@ -54,14 +63,6 @@ export class ExampleCard extends Component {
     });
 
     contentRow.appendChild(this._tooltip.element);
-
-    this._playBtn = new Button({
-      title: "Listen",
-      icon: "volume_up",
-    });
-    this._playBtn.element.id = "play-audio";
-    contentRow.appendChild(this._playBtn.element);
-
     this._wrapper.appendChild(contentRow);
 
     this._translationEl = this.html("div", {
