@@ -3,29 +3,32 @@
   "chapters": [
     {
       "chapterId": "1",
-      "chapterName": "Chapter 1: The Basics",
+      "chapterName": "Chapter 1: Pronunciation",
       "lessons": [
-        { "lessonId": "1.1", "lessonName": "Basic Greetings" },
-        { "lessonId": "1.2", "lessonName": "Pronouns" },
-        { "lessonId": "1.3", "lessonName": "Simple Sentences" }
+        { "lessonId": "1.1", "lessonName": "Upper Tones (1, 2, 3)" },
+        { "lessonId": "1.2", "lessonName": "Lower Tones & Nasals" },
+        { "lessonId": "1.3", "lessonName": "Initials & Aspiration" },
+        { "lessonId": "1.4", "lessonName": "Basic Vowels" },
+        { "lessonId": "1.5", "lessonName": "Unique Vowels & Diphthongs" },
+        { "lessonId": "1.6", "lessonName": "Ending Consonants" }
       ]
     },
     {
       "chapterId": "2",
-      "chapterName": "Chapter 2: Numbers & Quantities",
+      "chapterName": "Chapter 2: The Basics",
       "lessons": [
-        { "lessonId": "2.1", "lessonName": "Numbers 1-5" },
-        { "lessonId": "2.2", "lessonName": "Numbers 6-10" },
-        { "lessonId": "2.3", "lessonName": "Counting Objects" }
+        { "lessonId": "2.1", "lessonName": "Basic Greetings" },
+        { "lessonId": "2.2", "lessonName": "Pronouns" },
+        { "lessonId": "2.3", "lessonName": "Simple Sentences" }
       ]
     },
     {
       "chapterId": "3",
-      "chapterName": "Chapter 3: Food & Drink",
+      "chapterName": "Chapter 3: Numbers & Quantities",
       "lessons": [
-        { "lessonId": "3.1", "lessonName": "Common Drinks" },
-        { "lessonId": "3.2", "lessonName": "Common Foods" },
-        { "lessonId": "3.3", "lessonName": "Ordering" }
+        { "lessonId": "3.1", "lessonName": "Numbers 1-5" },
+        { "lessonId": "3.2", "lessonName": "Numbers 6-10" },
+        { "lessonId": "3.3", "lessonName": "Counting Objects" }
       ]
     }
   ]

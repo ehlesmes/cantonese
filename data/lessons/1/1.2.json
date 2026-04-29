@@ -6,58 +6,61 @@
       "content": [
         {
           "type": "title",
-          "value": "Pronouns"
+          "value": "Lower Register Tones"
         },
         {
           "type": "text",
-          "value": "Let's learn how to refer to people."
+          "value": "The 'Lower' tones (4, 5, and 6) are spoken in a deeper, more relaxed part of your voice range. Try to drop your jaw slightly and relax your throat."
+        },
+        {
+          "type": "text",
+          "value": "<strong>Tone 4 (Low Falling):</strong> The lowest tone. It often sounds like a low, relaxed grumble or a tired sigh."
         },
         {
           "type": "example",
-          "cantonese": "我",
-          "romanization": "ngo5",
-          "translation": "I / Me"
+          "cantonese": "時",
+          "romanization": "si4",
+          "translation": "Time"
+        },
+        {
+          "type": "text",
+          "value": "<strong>Tone 5 (Low Rising):</strong> Starts low and rises slightly to the middle. It sounds like you are asking a question in a low, gravelly voice."
         },
         {
           "type": "example",
-          "cantonese": "你",
-          "romanization": "nei5",
-          "translation": "You"
+          "cantonese": "市",
+          "romanization": "si5",
+          "translation": "Market"
+        },
+        {
+          "type": "text",
+          "value": "<strong>Tone 6 (Low Level):</strong> A low, flat tone. It is similar to Tone 3, but much lower in pitch."
         },
         {
           "type": "example",
-          "cantonese": "佢",
-          "romanization": "keoi5",
-          "translation": "He / She / It"
-        }
-      ]
-    },
-    {
-      "type": "dialog",
-      "lines": [
-        {
-          "speaker": "A",
-          "cantonese": "你好嗎？",
-          "romanization": "nei5 hou2 maa3?",
-          "translation": "How are you?"
+          "cantonese": "事",
+          "romanization": "si6",
+          "translation": "Matter / Incident"
         },
         {
-          "speaker": "B",
-          "cantonese": "我好，你呢？",
-          "romanization": "ngo5 hou2, nei5 ne1?",
-          "translation": "I'm good, and you?"
+          "type": "title",
+          "value": "Syllabic Nasals"
         },
         {
-          "speaker": "A",
-          "cantonese": "佢呢？",
-          "romanization": "keoi5 ne1?",
-          "translation": "And him?"
+          "type": "text",
+          "value": "In Cantonese, some sounds are just hummed through the nose without any vowels at all!"
         },
         {
-          "speaker": "B",
-          "cantonese": "佢都好。",
-          "romanization": "keoi5 dou1 hou2.",
-          "translation": "He is also good."
+          "type": "example",
+          "cantonese": "唔",
+          "romanization": "m4",
+          "translation": "Not"
+        },
+        {
+          "type": "example",
+          "cantonese": "五",
+          "romanization": "ng5",
+          "translation": "Five"
         }
       ]
     },
@@ -71,8 +74,8 @@
     },
     {
       "type": "congratulations",
-      "title": "Pronouns Mastered!",
-      "summary": "You can now refer to yourself and others in Cantonese.",
+      "title": "Lower Tones Mastered!",
+      "summary": "You've learned to distinguish the deeper tones and hummed syllables.",
       "nextLessonId": "1.3"
     }
   ]

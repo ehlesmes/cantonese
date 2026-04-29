@@ -6,17 +6,40 @@
       "content": [
         {
           "type": "title",
-          "value": "Simple Sentences"
+          "value": "Initials & Aspiration"
         },
         {
           "type": "text",
-          "value": "The word <strong>係</strong> (hai6) means 'to be' (am/is/are)."
+          "value": "In Cantonese, many consonants come in pairs: <strong>Unaspirated</strong> (no air) and <strong>Aspirated</strong> (a puff of air)."
+        },
+        {
+          "type": "text",
+          "value": "Try this: Hold your hand in front of your mouth. When you say an 'aspirated' sound, you should feel a strong burst of air!"
+        }
+      ]
+    },
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "The B and P Pair"
+        },
+        {
+          "type": "text",
+          "value": "In Jyutping, 'b' is like the 'p' in 'spin' (no air), while 'p' is like the 'p' in 'pin' (lots of air)."
         },
         {
           "type": "example",
-          "cantonese": "我係老師。",
-          "romanization": "ngo5 hai6 lou5 si1.",
-          "translation": "I am a teacher."
+          "cantonese": "百",
+          "romanization": "baak3",
+          "translation": "Hundred"
+        },
+        {
+          "type": "example",
+          "cantonese": "拍",
+          "romanization": "paak3",
+          "translation": "Clap"
         }
       ]
     },
@@ -29,10 +52,76 @@
       "exerciseId": "1.3.3"
     },
     {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "The D and T Pair"
+        },
+        {
+          "type": "text",
+          "value": "Similar to B and P, 'd' is unaspirated (like 't' in 'stop') and 't' is aspirated (like 't' in 'top')."
+        },
+        {
+          "type": "example",
+          "cantonese": "東",
+          "romanization": "dung1",
+          "translation": "East"
+        },
+        {
+          "type": "example",
+          "cantonese": "通",
+          "romanization": "tung1",
+          "translation": "Through"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "1.3.4"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "1.3.5"
+    },
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "The G and K Pair"
+        },
+        {
+          "type": "text",
+          "value": "'g' is unaspirated (like 'k' in 'skill') and 'k' is aspirated (like 'k' in 'kill')."
+        },
+        {
+          "type": "example",
+          "cantonese": "加",
+          "romanization": "gaa1",
+          "translation": "Add"
+        },
+        {
+          "type": "example",
+          "cantonese": "卡",
+          "romanization": "kaa1",
+          "translation": "Card"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "1.3.6"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "1.3.7"
+    },
+    {
       "type": "congratulations",
-      "title": "Sentences Complete!",
-      "summary": "You can now build basic 'to be' sentences.",
-      "nextLessonId": "2.1"
+      "title": "Aspiration Mastered!",
+      "summary": "You've learned to distinguish between plain and 'breathy' consonants.",
+      "nextLessonId": "1.4"
     }
   ]
 }

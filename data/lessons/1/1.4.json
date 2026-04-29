@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "Basic Vowels"
+        },
+        {
+          "type": "text",
+          "value": "Cantonese simple vowels are clear and distinct. Let's learn the most common ones."
+        },
+        {
+          "type": "title",
+          "value": "aa and i"
+        },
+        {
+          "type": "example",
+          "cantonese": "花",
+          "romanization": "faa1",
+          "translation": "Flower (aa vowel)"
+        },
+        {
+          "type": "example",
+          "cantonese": "詩",
+          "romanization": "si1",
+          "translation": "Poem (i vowel)"
+        }
+      ]
+    },
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "u, e, and o"
+        },
+        {
+          "type": "example",
+          "cantonese": "褲",
+          "romanization": "fu3",
+          "translation": "Pants (u vowel)"
+        },
+        {
+          "type": "example",
+          "cantonese": "地",
+          "romanization": "de6",
+          "translation": "Ground (e vowel)"
+        },
+        {
+          "type": "example",
+          "cantonese": "可",
+          "romanization": "ho2",
+          "translation": "Can (o vowel)"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "1.4.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "1.4.3"
+    },
+    {
+      "type": "congratulations",
+      "title": "Basic Vowels Mastered!",
+      "summary": "You've learned the fundamental vowel sounds of Cantonese.",
+      "nextLessonId": "1.5"
+    }
+  ]
+}

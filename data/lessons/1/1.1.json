@@ -6,40 +6,41 @@
       "content": [
         {
           "type": "title",
-          "value": "Saying Hello"
+          "value": "Upper Register Tones"
         },
         {
           "type": "text",
-          "value": "In Cantonese, we use <strong>你好</strong> to greet people."
+          "value": "Cantonese is a tonal language. The pitch of your voice changes the meaning of the word. Let's learn the first three tones: 1, 2, and 3."
+        },
+        {
+          "type": "text",
+          "value": "<strong>Tone 1 (High Level):</strong> Like a high, flat note in music. Keep it steady and high."
         },
         {
           "type": "example",
-          "cantonese": "你好。",
-          "romanization": "nei5 hou2.",
-          "translation": "Hello."
-        }
-      ]
-    },
-    {
-      "type": "dialog",
-      "lines": [
-        {
-          "speaker": "A",
-          "cantonese": "你好。",
-          "romanization": "nei5 hou2.",
-          "translation": "Hello."
+          "cantonese": "詩",
+          "romanization": "si1",
+          "translation": "Poem"
         },
         {
-          "speaker": "B",
-          "cantonese": "你好，你好嗎？",
-          "romanization": "nei5 hou2, nei5 hou2 maa3?",
-          "translation": "Hello, how are you?"
+          "type": "text",
+          "value": "<strong>Tone 2 (High Rising):</strong> Start in the middle and slide up to the top, like you're asking a surprised 'What?'."
         },
         {
-          "speaker": "A",
-          "cantonese": "我很好，多謝。",
-          "romanization": "ngo5 han2 hou2, do1 ze6.",
-          "translation": "I am very well, thank you."
+          "type": "example",
+          "cantonese": "史",
+          "romanization": "si2",
+          "translation": "History"
+        },
+        {
+          "type": "text",
+          "value": "<strong>Tone 3 (Mid Level):</strong> Keep your voice flat but at a comfortable middle pitch."
+        },
+        {
+          "type": "example",
+          "cantonese": "試",
+          "romanization": "si3",
+          "translation": "To try"
         }
       ]
     },
@@ -53,8 +54,8 @@
     },
     {
       "type": "congratulations",
-      "title": "Lesson Complete!",
-      "summary": "You've learned how to say hello and practiced reading and unscrambling common greetings.",
+      "title": "Upper Tones Mastered!",
+      "summary": "You've learned to distinguish high, rising, and mid pitches.",
       "nextLessonId": "1.2"
     }
   ]

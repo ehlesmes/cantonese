@@ -137,7 +137,9 @@ function validateLessonDetails() {
         }
       });
     } catch (e) {
-      errors.push(`[Data] ${meta.filePath}: Failed to parse JSON: ${e.message}`);
+      errors.push(
+        `[Data] ${meta.filePath}: Failed to parse JSON: ${e.message}`,
+      );
     }
   });
 }
@@ -146,7 +148,7 @@ function validateLessonDetails() {
  * Step 4: Validate all exercise files structurally (already registered)
  */
 function validateExerciseDetails() {
-  Registry.exercises.forEach((meta, relPath) => {
+  Registry.exercises.forEach((meta) => {
     try {
       const data = JSON.parse(fs.readFileSync(meta.fullPath, "utf-8"));
       let errs = [];
@@ -178,6 +180,8 @@ if (errors.length > 0) {
   uniqueErrors.forEach((err) => console.error(err));
   process.exit(1);
 } else {
-  console.info("\n✅ Data adheres to project standards (All cross-references valid).\n");
+  console.info(
+    "\n✅ Data adheres to project standards (All cross-references valid).\n",
+  );
   process.exit(0);
 }
