@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Greetings & Registers" },
+        {
+          "type": "text",
+          "value": "Cantonese has different ways to say 'hello' depending on how formal the situation is. For most formal or neutral situations, we use <strong>你好</strong> (nei5 hou2). However, among friends, it is much more common to use <strong>哈囉</strong> (haa1 lo3) or ask <strong>點呀？</strong> (dim2 aa3?), which means 'What's up?' or 'How's it going?'."
+        },
+        {
+          "type": "example",
+          "cantonese": "你好",
+          "romanization": "nei5 hou2",
+          "translation": "Hello (Formal/Neutral)"
+        },
+        {
+          "type": "example",
+          "cantonese": "點呀？",
+          "romanization": "dim2 aa3?",
+          "translation": "What's up? / How's it going?"
+        },
+        {
+          "type": "text",
+          "value": "We also have specific greetings for different times of day. <strong>早晨</strong> (zou2 san1) is the ubiquitous 'Good morning'. For afternoon and evening, we use <strong>午安</strong> (ng5 on1) and <strong>晚安</strong> (maan5 on1), though these are more formal and less common in casual speech than 'zou2 san1'."
+        },
+        {
+          "type": "example",
+          "cantonese": "早晨",
+          "romanization": "zou2 san1",
+          "translation": "Good morning"
+        },
+        {
+          "type": "example",
+          "cantonese": "午安",
+          "romanization": "ng5 on1",
+          "translation": "Good afternoon"
+        },
+        {
+          "type": "example",
+          "cantonese": "晚安",
+          "romanization": "maan5 on1",
+          "translation": "Good evening"
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "2.1.2" },
+    { "type": "unscramble", "exerciseId": "2.1.3" },
+    { "type": "reading", "exerciseId": "2.1.4" },
+    { "type": "unscramble", "exerciseId": "2.1.5" },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "早晨，黃先生。",
+          "romanization": "zou2 san1, wong4 sin1 saang1.",
+          "translation": "Good morning, Mr. Wong."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "早晨，你好嗎？",
+          "romanization": "zou2 san1, nei5 hou2 maa3?",
+          "translation": "Good morning, how are you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我好好，有勞你？",
+          "romanization": "ngo5 hou2 hou2, jau6 lau4 nei5?",
+          "translation": "I'm very well, thanks for asking (lit: 'troubled you')."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "哈囉！點呀？",
+          "romanization": "haa1 lo3! dim2 aa3?",
+          "translation": "Hello! What's up?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "幾好呀，你呢？",
+          "romanization": "gei2 hou2 aa3, nei5 ne1?",
+          "translation": "Quite good, and you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我都係噉啦。",
+          "romanization": "ngo5 dou1 hai6 gam2 laa1.",
+          "translation": "I'm just the same / so-so."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Lesson 2.1 Complete!",
+      "summary": "You've mastered both formal and informal greetings, including how to say hello at different times of day.",
+      "nextLessonId": "2.2"
+    }
+  ]
+}

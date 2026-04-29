@@ -12,6 +12,17 @@
         { "lessonId": "1.5", "lessonName": "Unique Vowels & Diphthongs" },
         { "lessonId": "1.6", "lessonName": "Ending Consonants" }
       ]
+    },
+    {
+      "chapterId": "2",
+      "chapterName": "Chapter 2: Greetings & Introductions",
+      "lessons": [
+        { "lessonId": "2.1", "lessonName": "Hello and \"What's Up?\"" },
+        { "lessonId": "2.2", "lessonName": "Who are You?" },
+        { "lessonId": "2.3", "lessonName": "Cultural Small Talk" },
+        { "lessonId": "2.4", "lessonName": "Presenting Others" },
+        { "lessonId": "2.5", "lessonName": "See You Later & \"Yum Cha\"" }
+      ]
     }
   ]
 }

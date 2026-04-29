@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Who are You?" },
+        {
+          "type": "text",
+          "value": "To introduce yourself in Cantonese, you can use <strong>我係</strong> (ngo5 hai6) meaning 'I am' or <strong>我叫</strong> (ngo5 giu3) meaning 'I am called'. When asking someone else their name, the standard phrase is <strong>你叫咩名？</strong> (nei5 giu3 me1 meng2?)."
+        },
+        {
+          "type": "example",
+          "cantonese": "我係",
+          "romanization": "ngo5 hai6",
+          "translation": "I am"
+        },
+        {
+          "type": "example",
+          "cantonese": "我叫",
+          "romanization": "ngo5 giu3",
+          "translation": "I am called / My name is"
+        },
+        {
+          "type": "example",
+          "cantonese": "你叫咩名？",
+          "romanization": "nei5 giu3 me1 meng2?",
+          "translation": "What is your name?"
+        },
+        {
+          "type": "text",
+          "value": "After meeting someone for the first time, it is polite to say <strong>好高興識到你</strong> (hou2 gou1 hing3 sik1 dou2 nei5), which translates to 'Nice to meet you'."
+        },
+        {
+          "type": "example",
+          "cantonese": "好高興識到你",
+          "romanization": "hou2 gou1 hing3 sik1 dou2 nei5",
+          "translation": "Nice to meet you"
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "2.2.2" },
+    { "type": "unscramble", "exerciseId": "2.2.3" },
+    { "type": "reading", "exerciseId": "2.2.4" },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你好！我叫阿明。",
+          "romanization": "nei5 hou2! ngo5 giu3 aa3 ming4.",
+          "translation": "Hello! My name is Ah Ming."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "阿明，你好。我係阿玲。",
+          "romanization": "aa3 ming4, nei5 hou2. ngo5 hai6 aa3 ling4.",
+          "translation": "Ah Ming, hello. I am Ah Ling."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你好！你叫咩名呀？",
+          "romanization": "nei5 hou2! nei5 giu3 me1 meng2 aa3?",
+          "translation": "Hello! What is your name?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我叫阿強。你呢？",
+          "romanization": "ngo5 giu3 aa3 koeng4. nei5 ne1?",
+          "translation": "My name is Ah Keong. And you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我係阿芬。好高興識到你。",
+          "romanization": "ngo5 hai6 aa3 fan1. hou2 gou1 hing3 sik1 dou2 nei5.",
+          "translation": "I am Ah Fan. Nice to meet you."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Lesson 2.2 Complete!",
+      "summary": "You can now introduce yourself, ask for someone's name, and express pleasure in meeting new people.",
+      "nextLessonId": "2.3"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Saying Goodbye" },
+        {
+          "type": "text",
+          "value": "The formal way to say goodbye in Cantonese is <strong>再見</strong> (zoi3 gin3). However, you'll more often hear people say <strong>聽日見</strong> (ting1 jat6 gin3) meaning 'See you tomorrow' or simply the loanword <strong>拜拜</strong> (baai1 baai3)."
+        },
+        {
+          "type": "example",
+          "cantonese": "再見",
+          "romanization": "zoi3 gin3",
+          "translation": "Goodbye"
+        },
+        {
+          "type": "example",
+          "cantonese": "聽日見",
+          "romanization": "ting1 jat6 gin3",
+          "translation": "See you tomorrow"
+        },
+        {
+          "type": "example",
+          "cantonese": "拜拜",
+          "romanization": "baai1 baai3",
+          "translation": "Bye bye"
+        },
+        {
+          "type": "text",
+          "value": "A very common social closing is <strong>得閒飲茶</strong> (dak1 haan4 jam2 caa4), which literally means 'When you're free, let's have tea'. Similar to 'we should do lunch sometime', it's a friendly way to end a conversation, even if no immediate plans are made."
+        },
+        {
+          "type": "example",
+          "cantonese": "得閒飲茶",
+          "romanization": "dak1 haan4 jam2 caa4",
+          "translation": "Let's have tea when you're free"
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "2.5.2" },
+    { "type": "unscramble", "exerciseId": "2.5.3" },
+    { "type": "reading", "exerciseId": "2.5.4" },
+    { "type": "reading", "exerciseId": "2.5.5" },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "我先走喇。再見。",
+          "romanization": "ngo5 sin1 zau2 laa1. zoi3 gin3.",
+          "translation": "I'll be going first. Goodbye."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "好，再見。",
+          "romanization": "hou2, zoi3 gin3.",
+          "translation": "Okay, goodbye."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "阿明，拜拜！得閒飲茶呀！",
+          "romanization": "aa3 ming4, baai1 baai3! dak1 haan4 jam2 caa4 aa3!",
+          "translation": "Ah Ming, bye bye! Let's have tea sometime!"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "好呀！聽日見。",
+          "romanization": "hou2 aa3! ting1 jat6 gin3.",
+          "translation": "Okay! See you tomorrow."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Chapter 2 Complete!",
+      "summary": "You've successfully learned how to start and end conversations in Cantonese. You're ready to explore more topics!",
+      "nextLessonId": null
+    }
+  ]
+}
