@@ -1,5 +1,7 @@
 # Design: Exercise and Lesson Data Formats
 
+This document serves as the primary source of truth for the JSON data structures used in the app. For programmatic validation rules, see `schemas/`.
+
 ## 1. Lesson Manifest (`data/lessons.json`)
 
 The high-level structure defining chapters and their lessons.
@@ -19,7 +21,7 @@ The high-level structure defining chapters and their lessons.
 
 ## 2. Lesson Detail (`data/lessons/1/1.1.json`)
 
-The manifest that defines the order of pages and contains inlined explanations.
+The manifest that defines the order of pages and contains inlined explanations and dialogues.
 
 ```json
 {
@@ -44,6 +46,23 @@ The manifest that defines the order of pages and contains inlined explanations.
     { "type": "reading", "exerciseId": "1.1.2" },
     { "type": "unscramble", "exerciseId": "1.1.3" },
     {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你好！",
+          "romanization": "nei5 hou2!",
+          "translation": "Hello!"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "你好嗎？",
+          "romanization": "nei5 hou2 maa3?",
+          "translation": "How are you?"
+        }
+      ]
+    },
+    {
       "type": "congratulations",
       "title": "Lesson Complete!",
       "summary": "You've learned basic greetings.",
@@ -53,7 +72,25 @@ The manifest that defines the order of pages and contains inlined explanations.
 }
 ```
 
-## 3. Reading Exercise (`data/exercises/1/1/1.1.2.json`)
+## 3. Dialogue Page Schema
+
+A dialogue page consists of a list of dialogue lines between speakers.
+
+```json
+{
+  "type": "dialog",
+  "lines": [
+    {
+      "speaker": "Speaker Name",
+      "cantonese": "Cantonese Text",
+      "romanization": "Jyutping",
+      "translation": "English Translation"
+    }
+  ]
+}
+```
+
+## 4. Reading Exercise (`data/exercises/1/1/1.1.2.json`)
 
 Atomic data for a reading practice screen.
 
@@ -67,7 +104,7 @@ Atomic data for a reading practice screen.
 }
 ```
 
-## 4. Unscramble Exercise (`data/exercises/1/1/1.1.3.json`)
+## 5. Unscramble Exercise (`data/exercises/1/1/1.1.3.json`)
 
 Atomic data for a word reordering screen.
 
@@ -84,7 +121,7 @@ Atomic data for a word reordering screen.
 }
 ```
 
-## 5. Local Storage Progress (`cantonese_progress`)
+## 6. Local Storage Progress (`cantonese_progress`)
 
 Stored in `localStorage` under the key `cantonese_progress`.
 

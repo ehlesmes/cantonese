@@ -40,6 +40,12 @@ Each lesson in the `OVERVIEW.md` must follow this structure:
 - This ensures that every concept introduced is immediately verified.
 - For introductory pages that do not introduce new Cantonese characters, consider merging them with the first conceptual page to maintain this rhythm.
 
+### The "Formal vs. Informal" Balance
+
+- When applicable, chapters should cover both formal and colloquial expressions and vocabulary.
+- When teaching about social interactions, lessons must include **both a formal and an informal dialogue** to show the contrast in particle usage and vocabulary (e.g., `你好` vs. `點呀？`).
+- The lesson should help studends understand not just *what* to say, but *when* to say it.
+
 ## 3. Agent Self-Critique Prompt
 
 Before finalizing any lesson content, agents should run this self-critique:
