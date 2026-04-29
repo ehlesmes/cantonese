@@ -13,7 +13,7 @@ This project is a static Cantonese learning web application. State is handled en
 
 ## Data & Content Standards
 
-- **Standards:** Follow the pedagogical and structural rules in `designs/CONTENT_GUIDELINES.md` for creating new lessons and exercises. Every lesson must have an `OVERVIEW.md` manifest in its chapter folder.
+- **Standards:** Follow the pedagogical and structural rules in `data/CONTENT_GUIDELINES.md` for creating new lessons and exercises. Every lesson must have an `OVERVIEW.md` manifest in its chapter folder.
 - **Source of Truth:** Use `designs/data_formats.md` as the primary reference for JSON structures.
 - **Validation:** Data is automatically validated via pre-commit hooks. The `npm run compliance:data` script enforces schema adherence, referential integrity, and pedagogical quality (e.g., character coverage and exercise ratios).
 
@@ -23,7 +23,7 @@ When creating a new chapter or lesson, follow these steps:
 
 1. **Register Chapter:** Add the new chapter and lesson IDs to `data/lessons.json`.
 2. **Directory Structure:** Create the chapter folder in `data/lessons/[chapterID]/` and exercise subfolders in `data/exercises/[chapterID]/`.
-3. **Draft Overview:** Create `OVERVIEW.md` in the chapter folder following `designs/CONTENT_GUIDELINES.md`.
+3. **Draft Overview:** Create `OVERVIEW.md` in the chapter folder following `data/CONTENT_GUIDELINES.md`.
 4. **Approval:** Obtain user approval for the `OVERVIEW.md` before proceeding.
 5. **Implement Content:** Generate lesson JSON files and exercise JSON files.
 6. **Compliance Check:** Run `npm run compliance:data` to verify everything.
