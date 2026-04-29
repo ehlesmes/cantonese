@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+.audio-controls {
+  display: flex;
+  gap: var(--comp-gap-small);
+  justify-content: center;
+}

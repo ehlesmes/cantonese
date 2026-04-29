@@ -1,8 +1,8 @@
 import { Component } from "../shared/component.js";
 import { iconStyles } from "../shared/shared_assets.js";
 import { speakCantonese } from "../shared/tts.js";
-import { Button } from "../ui/button/button.js";
 import { Tooltip } from "../ui/tooltip/tooltip.js";
+import { AudioControls } from "../ui/audio_controls/audio_controls.js";
 
 export class ReadingExercise extends Component {
   /**
@@ -49,12 +49,12 @@ export class ReadingExercise extends Component {
 
     phraseContainer.appendChild(this._tooltip.element);
 
-    this._playBtn = new Button({
-      title: "Play Audio",
-      icon: "volume_up",
+    this._audioControls = new AudioControls({
+      onPlay: () => this.playAudio(),
+      onPlaySlow: () => this.playAudio(0.1),
     });
-    this._playBtn.element.id = "play-audio";
-    phraseContainer.appendChild(this._playBtn.element);
+    this._audioControls.element.classList.add("audio-controls");
+    phraseContainer.appendChild(this._audioControls.element);
 
     this._translationEl = this.html("div", {
       className: "translation-text",
@@ -67,9 +67,7 @@ export class ReadingExercise extends Component {
     this.shadowRoot.appendChild(this._container);
   }
 
-  setupEventListeners() {
-    this._playBtn.element.addEventListener("click", () => this.playAudio());
-  }
+  setupEventListeners() {}
 
   get translationVisible() {
     return !this._translationEl.classList.contains("hidden");
@@ -79,9 +77,9 @@ export class ReadingExercise extends Component {
     this._translationEl.classList.toggle("hidden", !value);
   }
 
-  playAudio() {
-    speakCantonese(this._cantonese);
+  playAudio(rate = 0.85) {
+    speakCantonese(this._cantonese, { rate });
 
-    this.dispatch("play-audio", { phrase: this._cantonese });
+    this.dispatch("play-audio", { phrase: this._cantonese, rate });
   }
 }

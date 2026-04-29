@@ -60,7 +60,8 @@ describe("ReadingExercise Component", () => {
     });
     document.body.appendChild(component.element);
 
-    const playBtn = component.shadowRoot.getElementById("play-audio");
+    const audioControls = component.shadowRoot.querySelector(".audio-controls");
+    const playBtn = audioControls.shadowRoot.getElementById("play-audio");
     const eventSpy = vi.fn();
 
     component.element.addEventListener("play-audio", eventSpy);
@@ -71,6 +72,28 @@ describe("ReadingExercise Component", () => {
     expect(event.detail.phrase).toBe("你好");
   });
 
+  it("should dispatch 'play-audio' event with slow rate when slow audio button is clicked", () => {
+    const component = new ReadingExercise({
+      cantonese: "你好",
+      romanization: "test",
+      translation: "test",
+    });
+    document.body.appendChild(component.element);
+
+    const audioControls = component.shadowRoot.querySelector(".audio-controls");
+    const playSlowBtn =
+      audioControls.shadowRoot.getElementById("play-audio-slow");
+    const eventSpy = vi.fn();
+
+    component.element.addEventListener("play-audio", eventSpy);
+    playSlowBtn.click();
+
+    expect(eventSpy).toHaveBeenCalled();
+    const event = eventSpy.mock.calls[0][0];
+    expect(event.detail.phrase).toBe("你好");
+    expect(event.detail.rate).toBe(0.1);
+  });
+
   it("should call window.speechSynthesis.speak when audio button is clicked", () => {
     const component = new ReadingExercise({
       cantonese: "你好",
@@ -78,7 +101,8 @@ describe("ReadingExercise Component", () => {
       translation: "test",
     });
 
-    const playBtn = component.shadowRoot.getElementById("play-audio");
+    const audioControls = component.shadowRoot.querySelector(".audio-controls");
+    const playBtn = audioControls.shadowRoot.getElementById("play-audio");
     playBtn.click();
 
     expect(window.speechSynthesis.speak).toHaveBeenCalled();

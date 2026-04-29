@@ -1,8 +1,8 @@
 import { Component } from "../shared/component.js";
 import { iconStyles } from "../shared/shared_assets.js";
 import { speakCantonese } from "../shared/tts.js";
-import { Button } from "../ui/button/button.js";
 import { Tooltip } from "../ui/tooltip/tooltip.js";
+import { AudioControls } from "../ui/audio_controls/audio_controls.js";
 
 export class UnscrambleExercise extends Component {
   /**
@@ -49,11 +49,12 @@ export class UnscrambleExercise extends Component {
     });
     phraseContainer.appendChild(this._translationEl);
 
-    this._playBtn = new Button({
-      title: "Play Audio",
-      icon: "volume_up",
+    this._audioControls = new AudioControls({
+      onPlay: () => this.playAudio(),
+      onPlaySlow: () => this.playAudio(0.1),
     });
-    phraseContainer.appendChild(this._playBtn.element);
+    this._audioControls.element.classList.add("audio-controls");
+    phraseContainer.appendChild(this._audioControls.element);
 
     this._container.appendChild(phraseContainer);
 
@@ -72,9 +73,7 @@ export class UnscrambleExercise extends Component {
     this.shadowRoot.appendChild(this._container);
   }
 
-  setupEventListeners() {
-    this._playBtn.element.addEventListener("click", () => this.playAudio());
-  }
+  setupEventListeners() {}
 
   get status() {
     if (this._pool.length > 0) return "incomplete";
@@ -154,9 +153,9 @@ export class UnscrambleExercise extends Component {
     }
   }
 
-  playAudio() {
+  playAudio(rate = 0.85) {
     const fullText = this._originalTokens.map((t) => t.text).join("");
-    speakCantonese(fullText);
-    this.dispatch("play-audio", { phrase: fullText });
+    speakCantonese(fullText, { rate });
+    this.dispatch("play-audio", { phrase: fullText, rate });
   }
 }
