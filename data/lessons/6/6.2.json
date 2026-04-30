@@ -63,7 +63,7 @@
       "lines": [
         {
           "speaker": "A",
-          "cantonese": "你有無妹妹呀？",
+          "cantonese": "你有冇妹妹呀？",
           "romanization": "nei5 jau5 mou5 mui4 mui2 aa3?",
           "translation": "Do you have any younger sisters?"
         },
@@ -92,15 +92,15 @@
         },
         {
           "speaker": "B",
-          "cantonese": "幾好呀。你有無哥哥呀？",
+          "cantonese": "幾好呀。你有冇哥哥呀？",
           "romanization": "gei2 hou2 aa3. nei5 jau5 mou5 go4 go1 aa3?",
           "translation": "Quite good. Do you have any older brothers?"
         },
         {
           "speaker": "A",
-          "cantonese": "有呀，我有一個哥哥。",
-          "romanization": "jau5 aa3, ngo5 jau5 jat1 go3 go4 go1.",
-          "translation": "Yes, I have one older brother."
+          "cantonese": "有呀。我有一個哥哥。",
+          "romanization": "jau5 aa3. ngo5 jau5 jat1 go3 go4 go1.",
+          "translation": "Yes. I have one older brother."
         }
       ]
     },

@@ -8,22 +8,22 @@ This chapter explores the personal world of the learner, covering possession, fa
 - **Examples:**
   - `jau5` (有) - Have
   - `mou5` (冇) - Not have
-  - `jau5 mou5?` (有無？) - Have or not have?
+  - `jau5 mou5?` (有冇？) - Have or not have?
   - `jau5 syu1` (有書) - Have a book (Recycled from Ch 4)
   - `mou5 maau1` (冇貓) - Not have a cat (Recycled from Ch 4)
 - **Dialogues:**
   - **Dialogue 1 (Formal - Personal Items):**
-    - A: `nei5 jau5 mou5 syu1 aa3?` (你有無書呀？ - "Do you have any books?")
+    - A: `nei5 jau5 mou5 syu1 aa3?` (你有冇書呀？ - "Do you have any books?")
     - B: `jau5 aa3. ngo5 jau5 saam1 bun2 syu1.` (有呀。我有三本書。)
     - A: `nei5 ne1? nei5 hai6 m4 hai6 hok6 saang1 aa3?` (你呢？你係唔係學生呀？)
   - **Dialogue 2 (Informal - Pets):**
-    - A: `wai2, nei5 jau5 mou5 maau1 aa3?` (喂，你有無貓呀？)
+    - A: `wai2, nei5 jau5 mou5 maau1 aa3?` (喂，你有冇貓呀？)
     - B: `mou5 wo3. ngo5 jau5 gau2.` (冇喎。我有狗。)
 - **Exercises:**
   - `6.1.2` (Reading): `jau5, mou5`
   - `6.1.3` (Reading): `jau5 mou5?`
   - `6.1.7` (Reading): `貓，書`
-  - `6.1.8` (Reading): `你，呀`
+  - `6.1.8` (Reading): `你有冇呀？`
   - `6.1.4` (Unscramble): `ngo5 jau5 saam1 bun2 syu1.`
   - `6.1.5` (Unscramble): `ngo5 mou5 maau1.`
   - `6.1.6` (Unscramble): `nei5 jau5 mou5 syu1 aa3?`
@@ -40,11 +40,11 @@ This chapter explores the personal world of the learner, covering possession, fa
   - `uk1 kei2 jan4` (屋企人) - Family members
 - **Dialogues:**
   - **Dialogue 1 (Formal - Family Size):**
-    - A: `nei5 jau5 mou5 mui4 mui2 aa3?` (你有無妹妹呀？)
+    - A: `nei5 jau5 mou5 mui4 mui2 aa3?` (你有冇妹妹呀？)
     - B: `mou5 aa3. ngo5 jau5 loeng5 go3 go4 go1.` (冇呀。我有兩個哥哥。)
   - **Dialogue 2 (Informal - Family Well-being):**
     - A: `wai2, nei5 uk1 kei2 jan4 hou2 maa3?` (喂，你屋企人好嗎？)
-    - B: `gei2 hou2 aa3. nei5 jau5 mou5 go4 go1 aa3?` (幾好呀。你有無哥哥呀？)
+    - B: `gei2 hou2 aa3. nei5 jau5 mou5 go4 go1 aa3?` (幾好呀。你有冇哥哥呀？)
 - **Exercises:**
   - `6.2.2` (Reading): `ba4 ba1, ma4 ma1`
   - `6.2.4` (Reading): `go4 go1, mui4 mui2`

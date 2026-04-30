@@ -36,11 +36,11 @@
         },
         {
           "type": "text",
-          "value": "Just like the 'A-not-A' structure you learned earlier, you can ask if someone has something by saying <strong>有無</strong> (jau5 mou5)."
+          "value": "Just like the 'A-not-A' structure you learned earlier, you can ask if someone has something by saying <strong>有冇</strong> (jau5 mou5)."
         },
         {
           "type": "example",
-          "cantonese": "你有無書呀？",
+          "cantonese": "你有冇書呀？",
           "romanization": "nei5 jau5 mou5 syu1 aa3?",
           "translation": "Do you have any books?"
         }
@@ -79,7 +79,7 @@
       "lines": [
         {
           "speaker": "A",
-          "cantonese": "你有無書呀？",
+          "cantonese": "你有冇書呀？",
           "romanization": "nei5 jau5 mou5 syu1 aa3?",
           "translation": "Do you have any books?"
         },
@@ -102,7 +102,7 @@
       "lines": [
         {
           "speaker": "A",
-          "cantonese": "喂，你有無貓呀？",
+          "cantonese": "喂，你有冇貓呀？",
           "romanization": "wai2, nei5 jau5 mou5 maau1 aa3?",
           "translation": "Hey, do you have a cat?"
         },
