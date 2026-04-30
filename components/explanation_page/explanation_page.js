@@ -58,7 +58,7 @@ export class ExplanationPage extends BasePage {
    * Simple parser to avoid innerHTML for basic formatting like <strong>.
    */
   _renderRichText(parent, text) {
-    const parts = text.split(/(<strong>.*?<\/strong>|<em>.*?<\/em>)/g);
+    const parts = text.split(/(<strong>.*?<\/strong>|<em>.*?<\/em>|<br>)/g);
     parts.forEach((part) => {
       if (part.startsWith("<strong>")) {
         const strong = document.createElement("strong");
@@ -68,6 +68,8 @@ export class ExplanationPage extends BasePage {
         const em = document.createElement("em");
         em.textContent = part.replace(/<\/?em>/g, "");
         parent.appendChild(em);
+      } else if (part === "<br>") {
+        parent.appendChild(document.createElement("br"));
       } else {
         parent.appendChild(document.createTextNode(part));
       }
