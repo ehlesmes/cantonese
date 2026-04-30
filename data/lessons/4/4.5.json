@@ -55,8 +55,20 @@
       "exerciseId": "4.5.2"
     },
     {
+      "type": "reading",
+      "exerciseId": "4.5.4"
+    },
+    {
+      "type": "reading",
+      "exerciseId": "4.5.5"
+    },
+    {
       "type": "unscramble",
       "exerciseId": "4.5.3"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "4.5.6"
     },
     {
       "type": "dialog",

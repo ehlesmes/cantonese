@@ -23,6 +23,16 @@
         },
         {
           "type": "text",
+          "value": "When you want to return a question to the other person, you can say <strong>你呢？</strong> (nei5 ne1?), meaning 'And you?'."
+        },
+        {
+          "type": "example",
+          "cantonese": "你呢？",
+          "romanization": "nei5 ne1?",
+          "translation": "And you?"
+        },
+        {
+          "type": "text",
           "value": "Another common 'small talk' greeting when you see someone on the street is <strong>去邊呀？</strong> (heoi3 bin1 aa3?), meaning 'Where are you going?'. Again, it is often just a friendly acknowledgement rather than an intrusive question."
         },
         {
@@ -34,8 +44,10 @@
       ]
     },
     { "type": "reading", "exerciseId": "2.3.2" },
-    { "type": "unscramble", "exerciseId": "2.3.3" },
     { "type": "reading", "exerciseId": "2.3.4" },
+    { "type": "reading", "exerciseId": "2.3.5" },
+    { "type": "reading", "exerciseId": "2.3.6" },
+    { "type": "unscramble", "exerciseId": "2.3.3" },
     {
       "type": "dialog",
       "lines": [

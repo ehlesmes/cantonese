@@ -26,6 +26,26 @@
           "cantonese": "你叫咩名？",
           "romanization": "nei5 giu3 me1 meng2?",
           "translation": "What is your name?"
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "2.2.6" },
+    { "type": "reading", "exerciseId": "2.2.10" },
+    { "type": "unscramble", "exerciseId": "2.2.3" },
+    { "type": "reading", "exerciseId": "2.2.5" },
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Names and Politeness" },
+        {
+          "type": "text",
+          "value": "In casual settings, names are often prefixed with <strong>阿</strong> (aa3). For example, a person named Ming (明) would be called <strong>阿明</strong> (aa3 ming4)."
+        },
+        {
+          "type": "example",
+          "cantonese": "阿明",
+          "romanization": "aa3 ming4",
+          "translation": "Ah Ming (Common name format)"
         },
         {
           "type": "text",
@@ -40,8 +60,10 @@
       ]
     },
     { "type": "reading", "exerciseId": "2.2.2" },
-    { "type": "unscramble", "exerciseId": "2.2.3" },
     { "type": "reading", "exerciseId": "2.2.4" },
+    { "type": "reading", "exerciseId": "2.2.7" },
+    { "type": "unscramble", "exerciseId": "2.2.9" },
+    { "type": "unscramble", "exerciseId": "2.2.8" },
     {
       "type": "dialog",
       "lines": [

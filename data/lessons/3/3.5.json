@@ -40,20 +40,23 @@
         },
         {
           "speaker": "B",
-          "cantonese": "好呀。你去邊度食呀？",
-          "romanization": "hou2 aa3. nei5 heoi3 bin1 dou6 sik6 aa3?",
-          "translation": "Okay. Where are you going to eat?"
+          "cantonese": "好呀。你去邊呀？",
+          "romanization": "hou2 aa3. nei5 heoi3 bin1 aa3?",
+          "translation": "Okay. Where are you going?"
         },
         {
           "speaker": "A",
-          "cantonese": "我喺屋企食。",
-          "romanization": "ngo5 hai2 uk1 kei2 sik6.",
-          "translation": "I'm eating at home."
+          "cantonese": "我去食飯。",
+          "romanization": "ngo5 heoi3 sik6 faan6.",
+          "translation": "I'm going to eat."
         }
       ]
     },
+    { "type": "reading", "exerciseId": "3.5.4" },
+    { "type": "unscramble", "exerciseId": "3.5.5" },
     {
       "type": "congratulations",
+
       "title": "Particles Mastered!",
       "summary": "You've learned how to use 'aa3' and 'laa3' to sound more natural.",
       "nextLessonId": "3.6"

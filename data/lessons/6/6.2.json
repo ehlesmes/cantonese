@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "Family Members: uk1 kei2 jan4"
+        },
+        {
+          "type": "text",
+          "value": "Talking about family is a great way to practice numbers and classifiers. 'Family members' in Cantonese is literally 'at home people' (<strong>屋企人</strong> - uk1 kei2 jan4)."
+        },
+        {
+          "type": "example",
+          "cantonese": "爸爸",
+          "romanization": "ba4 ba1",
+          "translation": "Dad / Father"
+        },
+        {
+          "type": "example",
+          "cantonese": "媽媽",
+          "romanization": "ma4 ma1",
+          "translation": "Mom / Mother"
+        },
+        {
+          "type": "example",
+          "cantonese": "哥哥",
+          "romanization": "go4 go1",
+          "translation": "Older brother"
+        },
+        {
+          "type": "example",
+          "cantonese": "妹妹",
+          "romanization": "mui4 mui2",
+          "translation": "Younger sister"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.2.2"
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.2.4"
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.2.5"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "6.2.3"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "6.2.6"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你有無妹妹呀？",
+          "romanization": "nei5 jau5 mou5 mui4 mui2 aa3?",
+          "translation": "Do you have any younger sisters?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "冇呀。我有兩個哥哥。",
+          "romanization": "mou5 aa3. ngo5 jau5 loeng5 go3 go4 go1.",
+          "translation": "No. I have two older brothers."
+        },
+        {
+          "speaker": "A",
+          "cantonese": "哦，佢哋係唔係學生呀？",
+          "romanization": "o4, keoi5 dei6 hai6 m4 hai6 hok6 saang1 aa3?",
+          "translation": "Oh, are they students?"
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "喂，你屋企人好嗎？",
+          "romanization": "wai2, nei5 uk1 kei2 jan4 hou2 maa3?",
+          "translation": "Hey, how is your family?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "幾好呀。你有無哥哥呀？",
+          "romanization": "gei2 hou2 aa3. nei5 jau5 mou5 go4 go1 aa3?",
+          "translation": "Quite good. Do you have any older brothers?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "有呀，我有一個哥哥。",
+          "romanization": "jau5 aa3, ngo5 jau5 jat1 go3 go4 go1.",
+          "translation": "Yes, I have one older brother."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Family Mastered!",
+      "summary": "You can now describe your family and use classifiers to count people correctly.",
+      "nextLessonId": "6.3"
+    }
+  ]
+}

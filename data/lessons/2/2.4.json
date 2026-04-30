@@ -20,7 +20,16 @@
           "cantonese": "呢位係黃小姐",
           "romanization": "ni1 wai2 hai6 wong4 siu2 ze2",
           "translation": "This is Miss Wong"
-        },
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "2.4.7" },
+    { "type": "reading", "exerciseId": "2.4.2" },
+    { "type": "unscramble", "exerciseId": "2.4.6" },
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Formal Meetings" },
         {
           "type": "text",
           "value": "In formal settings, you might hear <strong>好榮幸識到你</strong> (hou2 wing4 hang6 sik1 dou2 nei5), which is a polite way to say 'Very honored to meet you'."
@@ -33,7 +42,8 @@
         }
       ]
     },
-    { "type": "reading", "exerciseId": "2.4.2" },
+    { "type": "reading", "exerciseId": "2.4.4" },
+    { "type": "reading", "exerciseId": "2.4.5" },
     { "type": "unscramble", "exerciseId": "2.4.3" },
     {
       "type": "dialog",

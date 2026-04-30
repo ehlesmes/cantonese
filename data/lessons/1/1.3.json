@@ -98,6 +98,12 @@
         },
         {
           "type": "example",
+          "cantonese": "各",
+          "romanization": "gok3",
+          "translation": "Each"
+        },
+        {
+          "type": "example",
           "cantonese": "卡",
           "romanization": "kaa1",
           "translation": "Card"

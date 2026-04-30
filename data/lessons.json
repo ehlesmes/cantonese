@@ -63,6 +63,17 @@
         { "lessonId": "5.4", "lessonName": "Why? (Cause & Effect)" },
         { "lessonId": "5.5", "lessonName": "Expressive Particles (Flavoring)" }
       ]
+    },
+    {
+      "chapterId": "6",
+      "chapterName": "Chapter 6: My World",
+      "lessons": [
+        { "lessonId": "6.1", "lessonName": "To Have & Not Have (jau5, mou5)" },
+        { "lessonId": "6.2", "lessonName": "Family Members (uk1 kei2 jan4)" },
+        { "lessonId": "6.3", "lessonName": "Origins & Nationalities" },
+        { "lessonId": "6.4", "lessonName": "Abilities & Languages (sik1)" },
+        { "lessonId": "6.5", "lessonName": "Conversational Flow (laa1, ne1)" }
+      ]
     }
   ]
 }

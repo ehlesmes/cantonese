@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "Suggestions: laa1"
+        },
+        {
+          "type": "text",
+          "value": "To make a suggestion or a request (like 'Let's...' in English), add <strong>啦</strong> (laa1) to the end of a verb. This is softer and more natural than just stating the action."
+        },
+        {
+          "type": "example",
+          "cantonese": "講啦",
+          "romanization": "gong2 laa1",
+          "translation": "Speak (suggestion) / Say it"
+        },
+        {
+          "type": "example",
+          "cantonese": "去啦",
+          "romanization": "heoi3 laa1",
+          "translation": "Let's go / Go (suggestion)"
+        },
+        {
+          "type": "title",
+          "value": "The Bounce Back: ne1"
+        },
+        {
+          "type": "text",
+          "value": "When you want to 'bounce' a question back to the other person, add <strong>呢</strong> (ne1) to a noun or pronoun. It's the standard way to say 'And...?' or 'What about...?'."
+        },
+        {
+          "type": "example",
+          "cantonese": "你呢？",
+          "romanization": "nei5 ne1?",
+          "translation": "And you? / What about you?"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.5.2"
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.5.4"
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.5.5"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "6.5.3"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "6.5.6"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "我哋講廣東話啦！",
+          "romanization": "ngo5 dei6 gong2 gwong2 dung1 waa2 laa1!",
+          "translation": "Let's speak Cantonese!"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "好呀！我識講，你呢？",
+          "romanization": "hou2 aa3! ngo5 sik1 gong2, nei5 ne1?",
+          "translation": "Okay! I know how to speak, and you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我都識。",
+          "romanization": "ngo5 dou1 sik1.",
+          "translation": "I also know how."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "不如講廣東話啦？",
+          "romanization": "bat1 jyu4 gong2 gwong2 dung1 waa2 laa1?",
+          "translation": "How about speaking Cantonese?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "好。我識呀，你呢？",
+          "romanization": "hou2. ngo5 sik1 aa3, nei5 ne1?",
+          "translation": "Sure. I can, you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我都識呀！",
+          "romanization": "ngo5 dou1 sik1 aa3!",
+          "translation": "I also know how!"
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Chapter 6 Complete!",
+      "summary": "You've mastered the personal world of family, origins, and abilities. You've also learned how to keep a conversation flowing naturally using particles.",
+      "nextLessonId": null
+    }
+  ]
+}

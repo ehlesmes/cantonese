@@ -26,7 +26,17 @@
           "cantonese": "拜拜",
           "romanization": "baai1 baai3",
           "translation": "Bye bye"
-        },
+        }
+      ]
+    },
+    { "type": "reading", "exerciseId": "2.5.4" },
+    { "type": "reading", "exerciseId": "2.5.6" },
+    { "type": "reading", "exerciseId": "2.5.5" },
+    { "type": "unscramble", "exerciseId": "2.5.3" },
+    {
+      "type": "explanation",
+      "content": [
+        { "type": "title", "value": "Social Closing" },
         {
           "type": "text",
           "value": "A very common social closing is <strong>得閒飲茶</strong> (dak1 haan4 jam2 caa4), which literally means 'When you're free, let's have tea'. Similar to 'we should do lunch sometime', it's a friendly way to end a conversation, even if no immediate plans are made."
@@ -40,9 +50,8 @@
       ]
     },
     { "type": "reading", "exerciseId": "2.5.2" },
-    { "type": "unscramble", "exerciseId": "2.5.3" },
-    { "type": "reading", "exerciseId": "2.5.4" },
-    { "type": "reading", "exerciseId": "2.5.5" },
+    { "type": "reading", "exerciseId": "2.5.8" },
+    { "type": "unscramble", "exerciseId": "2.5.7" },
     {
       "type": "dialog",
       "lines": [

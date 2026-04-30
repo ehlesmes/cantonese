@@ -41,7 +41,20 @@
           "cantonese": "是",
           "romanization": "si6",
           "translation": "Yes / Correct"
-        },
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "1.2.2"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "1.2.3"
+    },
+    {
+      "type": "explanation",
+      "content": [
         {
           "type": "title",
           "value": "Syllabic Nasals"
@@ -66,11 +79,11 @@
     },
     {
       "type": "reading",
-      "exerciseId": "1.2.2"
+      "exerciseId": "1.2.4"
     },
     {
       "type": "unscramble",
-      "exerciseId": "1.2.3"
+      "exerciseId": "1.2.5"
     },
     {
       "type": "congratulations",

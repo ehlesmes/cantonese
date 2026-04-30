@@ -10,10 +10,12 @@ This chapter introduces the fundamental building blocks of counting and identify
   - `loeng5` (兩) - Two (of something)
   - `luk6, cat1, baat3, gau2, sap6` (六, 七, 八, 九, 十) - 6, 7, 8, 9, 10
 - **Exercises:**
-  - `4.1.2` (Reading): `jat1, ji6, saam1, sei3, ng5`
-  - `4.1.3` (Unscramble): `loeng5` vs `ji6`
-  - `4.1.4` (Reading): `luk6, cat1, baat3, gau2, sap6`
-  - `4.1.5` (Unscramble): Number sequence challenge.
+  - `4.1.2` (Reading): `jat1, ji6, saam1`
+  - `4.1.6` (Reading): `sei3, ng5, loeng5`
+  - `4.1.3` (Unscramble): `jat1, ji6, saam1` sequence.
+  - `4.1.4` (Reading): `luk6, cat1, baat3`
+  - `4.1.7` (Reading): `gau2, sap6`
+  - `4.1.5` (Unscramble): `baat3, gau2, sap6` sequence.
 
 ## Lesson 4.2: The Universal Classifier (go3)
 
@@ -24,11 +26,12 @@ This chapter introduces the fundamental building blocks of counting and identify
   - `loeng5 go3 hok6 saang1` (兩個學生) - Two students
 - **Dialogues:**
   - **Dialogue 1 (Counting People):**
-    - A: `nei5 dei6 gei2 do1 go3 jan4 aa3?` (你哋幾多個人呀？ - "How many of you are there?")
+    - A: `nei5 dei6 hai6 m4 hai6 saam1 go3 jan4 aa3?` (你哋係唔係三個人呀？ - "Are you three people?")
     - B: `ngo5 dei6 saam1 go3 jan4.` (我哋三個人。 - "We are three people.")
 - **Exercises:**
   - `4.2.2` (Reading): `jat1 go3 jan4`
-  - `4.2.3` (Unscramble): `saam1 go3 hok6 saang1`
+  - `4.2.4` (Reading): `loeng5 go3 hok6 saang1`
+  - `4.2.3` (Unscramble): `keoi5 dei6 hai6 saam1 go3 hok6 saang1`
 
 ## Lesson 4.3: Specifiers (This & That)
 
@@ -43,7 +46,8 @@ This chapter introduces the fundamental building blocks of counting and identify
     - B: `m4 hai6. go2 go3 sin1 hai6.` (唔係。嗰個先係。 - "No. That one is.")
 - **Exercises:**
   - `4.3.2` (Reading): `ni1 go3 jan4`
-  - `4.3.3` (Unscramble): `go2 go3 hai6 m4 hai6?`
+  - `4.3.4` (Reading): `go2 go3 hok6 saang1`
+  - `4.3.3` (Unscramble): `ni1 go3 hai6 m4 hai6 hok6 saang1 aa3?`
 
 ## Lesson 4.4: Question Words (Which & How Many)
 
@@ -59,8 +63,10 @@ This chapter introduces the fundamental building blocks of counting and identify
     - A: `gei2 do1 go3 jan4 aa3?` (幾多個人呀？)
     - B: `loeng5 go3.` (兩個。)
 - **Exercises:**
-  - `4.4.2` (Reading): `bin1 go3`
-  - `4.4.3` (Unscramble): `gei2 do1 go3 jan4?`
+  - `4.4.2` (Reading): `bin1 go3?`
+  - `4.4.4` (Reading): `gei2 do1 go3?`
+  - `4.4.5` (Unscramble): `gei2 do1 go3 jan4 aa3?`
+  - `4.4.3` (Unscramble): `bin1 go3 hai6 sin1 saang1 aa3?`
 
 ## Lesson 4.5: Everyday Classifiers & Possessives
 
@@ -76,4 +82,7 @@ This chapter introduces the fundamental building blocks of counting and identify
     - B: `hai6 aa3. ni1 bun2 hai6 ngo5 bun2 syu1.` (係呀。呢本係我本書。)
 - **Exercises:**
   - `4.5.2` (Reading): `zek3 maau1`
-  - `4.5.3` (Unscramble): `ngo5 bun2 syu1`
+  - `4.5.4` (Reading): `ni1 bun2 syu1`
+  - `4.5.5` (Reading): `ngo5 bun2 syu1`
+  - `4.5.3` (Unscramble): `ni1 bun2 hai6 ngo5 bun2 syu1`
+  - `4.5.6` (Unscramble): `go2 zek3 hai6 ngo5 zek3 maau1`

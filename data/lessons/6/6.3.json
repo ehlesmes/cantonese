@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "Origins: bin1 dou6 jan4"
+        },
+        {
+          "type": "text",
+          "value": "To ask someone what country they are from, you ask if they are a 'where person' (<strong>邊度人</strong> - bin1 dou6 jan4)."
+        },
+        {
+          "type": "example",
+          "cantonese": "邊度人？",
+          "romanization": "bin1 dou6 jan4?",
+          "translation": "From where? (Nationality)"
+        },
+        {
+          "type": "title",
+          "value": "Nationalities"
+        },
+        {
+          "type": "text",
+          "value": "Simply add <strong>人</strong> (jan4 - person) to the end of a country name to state a nationality."
+        },
+        {
+          "type": "example",
+          "cantonese": "美國",
+          "romanization": "mei5 gwok3",
+          "translation": "USA"
+        },
+        {
+          "type": "example",
+          "cantonese": "英國",
+          "romanization": "jing1 gwok3",
+          "translation": "UK"
+        },
+        {
+          "type": "example",
+          "cantonese": "美國人",
+          "romanization": "mei5 gwok3 jan4",
+          "translation": "American person"
+        },
+        {
+          "type": "example",
+          "cantonese": "英國人",
+          "romanization": "jing1 gwok3 jan4",
+          "translation": "British person"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.3.2"
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.3.4"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "6.3.3"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "6.3.5"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你好！你係邊度人呀？",
+          "romanization": "nei5 hou2! nei5 hai6 bin1 dou6 jan4 aa3?",
+          "translation": "Hello! Where are you from?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我係美國人。你呢？",
+          "romanization": "ngo5 hai6 mei5 gwok3 jan4. nei5 ne1?",
+          "translation": "I am American. And you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我係英國人。",
+          "romanization": "ngo5 hai6 jing1 gwok3 jan4.",
+          "translation": "I am British."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "喂，你邊度人呀？",
+          "romanization": "wai2, nei5 bin1 dou6 jan4 aa3?",
+          "translation": "Hey, where are you from?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "美國人囉。你呢？",
+          "romanization": "mei5 gwok3 jan4 lo1. nei5 ne1?",
+          "translation": "American. And you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "英國。",
+          "romanization": "jing1 gwok3.",
+          "translation": "UK."
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Origins Mastered!",
+      "summary": "You can now discuss where you and others are from and describe nationalities.",
+      "nextLessonId": "6.4"
+    }
+  ]
+}

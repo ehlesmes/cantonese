@@ -2,9 +2,9 @@
   "version": 1,
   "type": "unscramble",
   "tokens": [
-    ["人", "jan4"],
     ["你", "nei5"],
-    ["是", "si6"]
+    ["是", "si6"],
+    ["人", "jan4"]
   ],
-  "translation": "Person, you, yes"
+  "translation": "You are a person"
 }

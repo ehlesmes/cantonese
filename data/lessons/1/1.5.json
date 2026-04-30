@@ -18,9 +18,9 @@
         },
         {
           "type": "example",
-          "cantonese": "香",
-          "romanization": "hoeng1",
-          "translation": "Fragrant (oe vowel)"
+          "cantonese": "香港",
+          "romanization": "hoeng1 gong2",
+          "translation": "Hong Kong"
         },
         {
           "type": "example",
@@ -65,9 +65,9 @@
         },
         {
           "type": "example",
-          "cantonese": "開",
-          "romanization": "hoi1",
-          "translation": "Open (oi vowel)"
+          "cantonese": "開心",
+          "romanization": "hoi1 sam1",
+          "translation": "Happy (oi vowel)"
         }
       ]
     },
@@ -76,8 +76,12 @@
       "exerciseId": "1.5.4"
     },
     {
-      "type": "unscramble",
+      "type": "reading",
       "exerciseId": "1.5.5"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "1.5.6"
     },
     {
       "type": "congratulations",

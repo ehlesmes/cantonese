@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "type": "explanation",
+      "content": [
+        {
+          "type": "title",
+          "value": "Existence and Possession"
+        },
+        {
+          "type": "text",
+          "value": "To say you 'have' something or that something 'exists', use <strong>有</strong> (jau5). The negative form is <strong>冇</strong> (mou5), which means 'not have' or 'not exist'."
+        },
+        {
+          "type": "example",
+          "cantonese": "有",
+          "romanization": "jau5",
+          "translation": "Have / Exist"
+        },
+        {
+          "type": "example",
+          "cantonese": "冇",
+          "romanization": "mou5",
+          "translation": "Not have / Not exist"
+        },
+        {
+          "type": "example",
+          "cantonese": "冇貓",
+          "romanization": "mou5 maau1",
+          "translation": "Not have a cat"
+        },
+        {
+          "type": "title",
+          "value": "Asking Questions: jau5 mou5"
+        },
+        {
+          "type": "text",
+          "value": "Just like the 'A-not-A' structure you learned earlier, you can ask if someone has something by saying <strong>有無</strong> (jau5 mou5)."
+        },
+        {
+          "type": "example",
+          "cantonese": "你有無書呀？",
+          "romanization": "nei5 jau5 mou5 syu1 aa3?",
+          "translation": "Do you have any books?"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.1.2"
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.1.3"
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.1.7"
+    },
+    {
+      "type": "reading",
+      "exerciseId": "6.1.8"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "6.1.4"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "6.1.5"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "6.1.6"
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "你有無書呀？",
+          "romanization": "nei5 jau5 mou5 syu1 aa3?",
+          "translation": "Do you have any books?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "有呀。我有三本書。",
+          "romanization": "jau5 aa3. ngo5 jau5 saam1 bun2 syu1.",
+          "translation": "Yes. I have three books."
+        },
+        {
+          "speaker": "A",
+          "cantonese": "你呢？你係唔係學生呀？",
+          "romanization": "nei5 ne1? nei5 hai6 m4 hai6 hok6 saang1 aa3?",
+          "translation": "And you? Are you a student?"
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "喂，你有無貓呀？",
+          "romanization": "wai2, nei5 jau5 mou5 maau1 aa3?",
+          "translation": "Hey, do you have a cat?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "冇喎。我有狗。",
+          "romanization": "mou5 wo3. ngo5 jau5 gau2.",
+          "translation": "No. I have a dog."
+        },
+        {
+          "speaker": "A",
+          "cantonese": "係呀？",
+          "romanization": "hai6 aa4?",
+          "translation": "Oh really?"
+        }
+      ]
+    },
+    {
+      "type": "congratulations",
+      "title": "Possession Mastered!",
+      "summary": "You've learned how to express what you have and ask others about their belongings.",
+      "nextLessonId": "6.2"
+    }
+  ]
+}

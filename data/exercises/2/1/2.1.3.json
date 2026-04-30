@@ -2,8 +2,10 @@
   "version": 1,
   "type": "unscramble",
   "tokens": [
-    ["你好，", "nei5 hou2"],
-    ["早晨", "zou2 san1"]
+    ["你", "nei5"],
+    ["好！", "hou2!"],
+    ["點", "dim2"],
+    ["呀？", "aa3?"]
   ],
-  "translation": "Hello, good morning"
+  "translation": "Hello! What's up?"
 }

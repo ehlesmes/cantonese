@@ -41,6 +41,10 @@
       "exerciseId": "4.2.2"
     },
     {
+      "type": "reading",
+      "exerciseId": "4.2.4"
+    },
+    {
       "type": "unscramble",
       "exerciseId": "4.2.3"
     },
@@ -49,15 +53,15 @@
       "lines": [
         {
           "speaker": "A",
-          "cantonese": "你哋幾多個人呀？",
-          "romanization": "nei5 dei6 gei2 do1 go3 jan4 aa3?",
-          "translation": "How many of you (people) are there?"
+          "cantonese": "你哋係唔係三個人呀？",
+          "romanization": "nei5 dei6 hai6 m4 hai6 saam1 go3 jan4 aa3?",
+          "translation": "Are you (people) three people?"
         },
         {
           "speaker": "B",
-          "cantonese": "我哋三個人。",
-          "romanization": "ngo5 dei6 saam1 go3 jan4.",
-          "translation": "We are three people."
+          "cantonese": "係呀。我哋三個人。",
+          "romanization": "hai6 aa3. ngo5 dei6 saam1 go3 jan4.",
+          "translation": "Yes. We are three people."
         },
         {
           "speaker": "A",

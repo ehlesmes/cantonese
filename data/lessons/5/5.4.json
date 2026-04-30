@@ -35,6 +35,10 @@
       "exerciseId": "5.4.3"
     },
     {
+      "type": "unscramble",
+      "exerciseId": "5.4.4"
+    },
+    {
       "type": "dialog",
       "lines": [
         {

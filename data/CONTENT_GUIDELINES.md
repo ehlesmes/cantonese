@@ -33,6 +33,7 @@ Each lesson in the `OVERVIEW.md` must follow this structure:
 
 - Every concept introduced in an `explanation` page **must** be tested in at least one subsequent exercise in that same lesson.
 - **Vocabulary Coverage:** If a Cantonese word is used as an example in an explanation, it should ideally appear in a practice exercise to reinforce the sound/meaning.
+- **Dialogue Flexibility:** Dialogues are permitted to include a small amount of vocabulary that hasn't been explicitly taught, provided the meaning can be clearly inferred from the translation and context. This flexibility does **not** apply to new grammatical concepts or structures, which must always be taught first.
 
 ### High-Frequency Vocabulary
 
@@ -54,10 +55,18 @@ Each lesson in the `OVERVIEW.md` must follow this structure:
 - Intentionally re-use nouns and verbs from earlier chapters in later exercises.
 - This builds a compounding vocabulary web and reinforces long-term retention.
 
-### Minimum Engagement
+### Focus on Conceptual Units
 
-- Each explanation page must be followed by at least **one Reading exercise** and **one Unscramble exercise**.
-- This ensures that every concept introduced is immediately verified.
+- While each page should ideally focus on a single primary concept, closely related sub-concepts (e.g., a set of pronouns or contrasting tones) may be grouped together to provide context.
+- The goal is coherence—if a page introduces multiple items, ensure the subsequent exercises verify each one without overwhelming the student.
+
+### Exercise Types and Engagement
+
+- **Reading Exercises:** Keep these short (typically 2-3 Cantonese characters). Best for vocabulary, short phrases, set expressions, or things that require memorization (e.g., "one, two, three", "my book", "our mother"). **Every reading exercise must make conceptual sense**; do not arbitrarily group unrelated characters just to meet vocabulary coverage.
+- **Unscramble Exercises:** Use these for testing word order, more complex expressions, full sentences (e.g., "This is my mother, and that is her book"), or differentiating concepts. **Every unscramble exercise must make conceptual sense** and be a coherent phrase or sentence; do not use them as a random collection of characters. **All characters used must have been previously introduced in an explanation page.**
+- **Pronunciation Exception:** In lessons explicitly teaching pronunciation (e.g., Chapter 1), exercises may test unrelated characters to focus on sound/tone differentiation. However, these exercises must still be kept very short (around 3 characters).
+- Each explanation page must be followed by one or more **Reading exercises** and one or more **Unscramble exercises**.
+- This ensures that every concept introduced is immediately and thoroughly verified. Multiple exercises are encouraged if the concept requires diverse testing.
 - For introductory pages that do not introduce new Cantonese characters, consider merging them with the first conceptual page to maintain this rhythm.
 
 ### The "Formal vs. Informal" Balance
@@ -75,7 +84,7 @@ Before finalizing any lesson content, agents should run this self-critique:
 > 1. **Pedagogical Flow:** Does the lesson build logically from the previous one?
 > 2. **Concept/Exercise Mapping:** Is every concept taught in the explanation actually tested in an exercise? (e.g., if I taught Tone 4, is there an exercise specifically for Tone 4?)
 > 3. **Clarity:** Would a person with zero Cantonese knowledge understand this explanation?
-> 4. **Accuracy:** Do the Jyutping romanizations match the Cantonese characters perfectly? (e.g., `siu2 ze2` for 小姐)
+> 4. **Accuracy:** Do the Jyutping romanizations match the Cantonese characters perfectly, and is the English translation semantically correct and natural? (e.g., `siu2 ze2` for 小姐, translated as "Miss")
 > 5. **Formatting:** Is all Jyutping romanization **entirely lowercase**? (e.g., `aa3 ming4`, not `Aa3 Ming4`).
 > 6. **JSON Schema:** Does the JSON adhere strictly to the schema (no extra fields, correct types)?
 

@@ -14,6 +14,12 @@
         },
         {
           "type": "example",
+          "cantonese": "幾時？",
+          "romanization": "gei2 si4?",
+          "translation": "When?"
+        },
+        {
+          "type": "example",
           "cantonese": "今日",
           "romanization": "gam1 jat6",
           "translation": "Today"
@@ -43,6 +49,10 @@
     {
       "type": "unscramble",
       "exerciseId": "5.2.3"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "5.2.4"
     },
     {
       "type": "dialog",

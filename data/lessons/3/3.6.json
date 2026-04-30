@@ -46,15 +46,15 @@
       "lines": [
         {
           "speaker": "A",
-          "cantonese": "呢個係唔係你嘅書呀？",
-          "romanization": "ni1 go3 hai6 m4 hai6 nei5 ge3 syu1 aa3?",
-          "translation": "Is this your book?"
+          "cantonese": "佢係唔係你嘅先生呀？",
+          "romanization": "keoi5 hai6 m4 hai6 nei5 ge3 sin1 saang1 aa3?",
+          "translation": "Is he your teacher?"
         },
         {
           "speaker": "B",
-          "cantonese": "唔係。係佢嘅。",
-          "romanization": "m4 hai6. hai6 keoi5 ge3.",
-          "translation": "No. It is his."
+          "cantonese": "唔係。係佢嘅先生。",
+          "romanization": "m4 hai6. hai6 keoi5 ge3 sin1 saang1.",
+          "translation": "No. He is his teacher."
         },
         {
           "speaker": "A",
@@ -64,6 +64,8 @@
         }
       ]
     },
+    { "type": "reading", "exerciseId": "3.6.4" },
+    { "type": "unscramble", "exerciseId": "3.6.5" },
     {
       "type": "congratulations",
       "title": "Chapter 3 Complete!",

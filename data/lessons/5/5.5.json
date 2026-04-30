@@ -65,6 +65,14 @@
       "exerciseId": "5.5.3"
     },
     {
+      "type": "unscramble",
+      "exerciseId": "5.5.4"
+    },
+    {
+      "type": "unscramble",
+      "exerciseId": "5.5.5"
+    },
+    {
       "type": "dialog",
       "lines": [
         {
@@ -91,7 +99,7 @@
       "type": "congratulations",
       "title": "Chapter 5 Complete!",
       "summary": "You've mastered the 'W-questions' and learned how to add expressive nuance to your speech. You are becoming a very natural Cantonese speaker!",
-      "nextLessonId": null
+      "nextLessonId": "6.1"
     }
   ]
 }

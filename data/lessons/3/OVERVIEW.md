@@ -20,9 +20,10 @@ _Learning how to refer to others and groups._
     - A: `keoi5 dei6 heoi3 bin1 aa3?` (佢哋去邊呀？)
     - B: `keoi5 dei6 heoi3 sik6 faan6.` (佢哋去食飯。)
 - **Exercises:**
-  - `3.1.2` (Reading): `ngo5 dei6`
-  - `3.1.3` (Unscramble): `keoi5 dei6 heoi3 bin1 aa3?`
-  - `3.1.4` (Reading): `keoi5 hai6 wong4 siu2 ze2`
+  - `3.1.2` (Reading): `你哋、我哋`
+  - `3.1.3` (Unscramble): `佢哋去邊呀？`
+  - `3.1.4` (Reading): `佢係`
+  - `3.1.5` (Unscramble): `佢哋去食飯`
 
 ## Lesson 3.2: Asking Yes/No Questions
 
@@ -41,9 +42,10 @@ _The essential "A-not-A" question structure._
     - A: `nei5 hou2 maa3?` (你好嗎？)
     - B: `ngo5 hou2 hou2.` (我好好。)
 - **Exercises:**
-  - `3.2.2` (Reading): `hai6 m4 hai6`
-  - `3.2.3` (Unscramble): `nei5 sik6 m4 sik6 faan6 aa3?`
-  - `3.2.4` (Reading): `hou2 maa3`
+  - `3.2.2` (Reading): `係唔係`
+  - `3.2.3` (Unscramble): `你食唔食飯呀？`
+  - `3.2.4` (Reading): `你食飯好嗎？`
+  - `3.2.5` (Unscramble): `我唔食喇`
 
 ## Lesson 3.3: Professions
 
@@ -63,8 +65,10 @@ _Talking about what you do for work._
     - A: `wong4 siu2 ze2, nei5 zou6 me1 je5 aa3?` (黃小姐，你做咩嘢呀？)
     - B: `ngo5 hai6 sin1 saang1.` (我係先生。)
 - **Exercises:**
-  - `3.3.2` (Reading): `zou6 me1 aa3`
-  - `3.3.3` (Unscramble): `ngo5 hai6 hok6 saang1`
+  - `3.3.2` (Reading): `做咩呀？`
+  - `3.3.3` (Unscramble): `我係學生`
+  - `3.3.4` (Reading): `學生、先生`
+  - `3.3.5` (Unscramble): `你好，先生`
 
 ## Lesson 3.4: Hobbies
 
@@ -81,9 +85,10 @@ _Discussing free-time activities._
     - B: `ngo5 zung1 ji3 tai2 syu1. nei5 ne1?` (我鍾意睇書。你呢？)
     - A: `ngo5 zung1 ji3 teng1 go1.` (我鍾意聽歌。)
 - **Exercises:**
-  - `3.4.2` (Reading): `zung1 ji3`
-  - `3.4.3` (Unscramble): `ngo5 zung1 ji3 tai2 syu1`
-  - `3.4.4` (Reading): `teng1 go1`
+  - `3.4.2` (Reading): `鍾意`
+  - `3.4.3` (Unscramble): `我鍾意睇書`
+  - `3.4.4` (Reading): `睇書、聽歌`
+  - `3.4.5` (Unscramble): `我鍾意聽歌`
 
 ## Lesson 3.5: Softening Particles (aa3, laa3)
 
@@ -96,10 +101,13 @@ _Learning how to change the mood of a sentence._
 - **Dialogues:**
   - **Dialogue 1 (Usage):**
     - A: `ngo5 heoi3 sik6 faan6 laa3.` (我去食飯喇。 - "I'm going to eat now.")
-    - B: `hou2 aa3. nei5 heoi3 bin1 dou6 sik6 aa3?` (好呀。你去邊度食呀？)
+    - B: `hou2 aa3. nei5 heoi3 bin1 aa3?` (好呀. 你去邊呀？)
+    - A: `ngo5 heoi3 sik6 faan6.` (我去食飯。)
 - **Exercises:**
-  - `3.5.2` (Reading): `hou2 aa3`
-  - `3.5.3` (Unscramble): `ngo5 heoi3 sik6 faan6 laa3`
+  - `3.5.2` (Reading): `好呀`
+  - `3.5.3` (Unscramble): `我去食飯喇`
+  - `3.5.4` (Reading): `我去食飯喇`
+  - `3.5.5` (Unscramble): `好呀，你呢？`
 
 ## Lesson 3.6: Possession & Attributes (ge3)
 
@@ -111,8 +119,10 @@ _The essential structural particle for 'belonging'._
   - `ngo5 ge3` (我嘅) - Mine.
 - **Dialogues:**
   - **Dialogue 1 (Possession):**
-    - A: `ni1 go3 hai6 m4 hai6 nei5 ge3 syu1 aa3?` (呢個係唔係你嘅書呀？)
-    - B: `唔係。係佢嘅。` (m4 hai6. hai6 keoi5 ge3. - "No. It is his.")
+    - A: `佢係唔係你嘅先生呀？` (keoi5 hai6 m4 hai6 nei5 ge3 sin1 saang1 aa3? - "Is he your teacher?")
+    - B: `唔係。係佢嘅先生。` (m4 hai6. hai6 keoi5 ge3 sin1 saang1. - "No. He is his teacher.")
 - **Exercises:**
-  - `3.6.2` (Reading): `ngo5 ge3`
-  - `3.6.3` (Unscramble): `ni1 go3 hai6 m4 hai6 nei5 ge3 aa3?`
+  - `3.6.2` (Reading): `我嘅`
+  - `3.6.3` (Unscramble): `佢係我嘅先生`
+  - `3.6.4` (Reading): `你嘅`
+  - `3.6.5` (Unscramble): `佢哋係你嘅先生嗎？`

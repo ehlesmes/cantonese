@@ -121,7 +121,11 @@ function registerLessonsManifest() {
 }
 
 const PUNCTUATION_REGEX = /[\s，。！？、,.:;?!'"]/g;
-const CJK_REGEX = /[\u4E00-\u9FFF]/g;
+// CJK Unified Ideographs block (Chinese characters).
+// We avoid using a global (/g) regex here because .test() is stateful; it maintains
+// a 'lastIndex' property that causes it to skip characters when used in loops.
+// To find all matches safely, we iterate over characters or use .filter().
+const CJK_REGEX = /[\u4E00-\u9FFF]/;
 const SYLLABLE_REGEX = /^[a-z]+[1-6][，。！？、,.:;?!'"]*$/;
 
 /**
@@ -150,7 +154,7 @@ function validateCantoneseTriplet(
   if (errs.length > 0) return errs;
 
   const cleanCantonese = cantonese.replace(PUNCTUATION_REGEX, "");
-  const cjkChars = cantonese.match(CJK_REGEX) || [];
+  const cjkChars = [...cantonese].filter((c) => CJK_REGEX.test(c));
   const syllables = romanization.trim().split(/\s+/);
 
   // Check if it's just punctuation
@@ -185,8 +189,11 @@ function validateCantoneseTriplet(
  * Step 3: Validate individual lesson files and their cross-references
  */
 function validateLessonDetails() {
-  Registry.lessons.forEach((meta, lessonId) => {
-    if (!meta.exists) return;
+  const allTaughtChars = new Set();
+
+  Registry.allLessonIds.forEach((lessonId) => {
+    const meta = Registry.lessons.get(lessonId);
+    if (!meta || !meta.exists) return;
 
     try {
       const data = JSON.parse(fs.readFileSync(meta.filePath, "utf-8"));
@@ -197,8 +204,8 @@ function validateLessonDetails() {
       let explanationCount = 0;
       let readingCount = 0;
       let unscrambleCount = 0;
-      const explanationChars = new Set();
-      const exerciseChars = new Set();
+      const lessonExplanationChars = new Set();
+      const lessonReadingChars = new Set();
 
       data.pages.forEach((page, index) => {
         const pagePath = `pages[${index}]`;
@@ -217,7 +224,12 @@ function validateLessonDetails() {
               report(meta.filePath, tripletErrs);
 
               if (item.cantonese) {
-                [...item.cantonese].forEach((c) => explanationChars.add(c));
+                [...item.cantonese].forEach((c) => {
+                  if (CJK_REGEX.test(c)) {
+                    allTaughtChars.add(c);
+                    lessonExplanationChars.add(c);
+                  }
+                });
               }
             }
           });
@@ -260,15 +272,35 @@ function validateLessonDetails() {
                 `[Data] ${meta.filePath}: ${pagePath} type ("${page.type}") does not match exercise type ("${exercise.type}") in ${expectedRelPath}`,
               );
             }
-            // Collect characters from exercise content (using cached registry data)
+
+            // Character validation logic
             const exData = exercise.content;
+            const exChars = new Set();
+
             if (exData.cantonese) {
-              [...exData.cantonese].forEach((c) => exerciseChars.add(c));
+              [...exData.cantonese].forEach((c) => {
+                if (CJK_REGEX.test(c)) exChars.add(c);
+              });
             }
             if (exData.tokens) {
-              exData.tokens.forEach(([char]) =>
-                [...char].forEach((c) => exerciseChars.add(c)),
+              exData.tokens.forEach(([char]) => {
+                [...char].forEach((c) => {
+                  if (CJK_REGEX.test(c)) exChars.add(c);
+                });
+              });
+            }
+
+            // 1. Check if characters have been taught (Cumulative)
+            const untaught = [...exChars].filter((c) => !allTaughtChars.has(c));
+            if (untaught.length > 0) {
+              errors.push(
+                `[Pedagogy] ${meta.filePath}: ${pagePath} uses characters that haven't been introduced in explanations: ${untaught.join(", ")}`,
               );
+            }
+
+            // 2. Track characters taught in THIS lesson's reading exercises
+            if (page.type === "reading") {
+              exChars.forEach((c) => lessonReadingChars.add(c));
             }
           }
         }
@@ -299,12 +331,12 @@ function validateLessonDetails() {
         );
       }
 
-      const missingChars = [...explanationChars].filter(
-        (c) => !exerciseChars.has(c) && !/[\s，。！？、,.:;?!'"]/.test(c),
+      const missingChars = [...lessonExplanationChars].filter(
+        (c) => !lessonReadingChars.has(c),
       );
       if (missingChars.length > 0) {
         errors.push(
-          `[Pedagogy] ${meta.filePath}: Characters introduced in explanations but never tested in exercises: ${missingChars.join(", ")}`,
+          `[Pedagogy] ${meta.filePath}: Characters introduced in explanations but never tested in reading exercises: ${missingChars.join(", ")}`,
         );
       }
     } catch (e) {
@@ -344,7 +376,7 @@ function validateExerciseDetails() {
           data.tokens.forEach(([char, rom], i) => {
             const context = `Token ${i} ("${char}")`;
             const cleanChar = char.replace(PUNCTUATION_REGEX, "");
-            const cjkChars = char.match(CJK_REGEX) || [];
+            const cjkChars = [...char].filter((c) => CJK_REGEX.test(c));
             const tokenSyllables = rom.trim().split(/\s+/);
 
             if (cleanChar.length === 0 && char.length > 0) {

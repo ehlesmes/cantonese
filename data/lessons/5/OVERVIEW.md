@@ -13,6 +13,7 @@ This chapter moves beyond simple identification and focuses on the "W-questions"
 - **Exercises:**
   - `5.1.2` (Reading): `喺屋企，去公司`
   - `5.1.3` (Unscramble): `你喺邊度呀？`
+  - `5.1.4` (Unscramble): `我喺屋企`
 
 ## Lesson 5.2: When? (Time & Dates)
 
@@ -25,6 +26,7 @@ This chapter moves beyond simple identification and focuses on the "W-questions"
 - **Exercises:**
   - `5.2.2` (Reading): `今日，聽日`
   - `5.2.3` (Unscramble): `幾時去呀？`
+  - `5.2.4` (Unscramble): `今日我去公司`
 
 ## Lesson 5.3: How? (Manner & Method)
 
@@ -36,6 +38,7 @@ This chapter moves beyond simple identification and focuses on the "W-questions"
 - **Exercises:**
   - `5.3.2` (Reading): `搭車，行路`
   - `5.3.3` (Unscramble): `點樣去呀？`
+  - `5.3.4` (Unscramble): `我搭車去`
 
 ## Lesson 5.4: Why? (Cause & Effect)
 
@@ -46,6 +49,7 @@ This chapter moves beyond simple identification and focuses on the "W-questions"
 - **Exercises:**
   - `5.4.2` (Reading): `因為...`
   - `5.4.3` (Unscramble): `點解唔去呀？`
+  - `5.4.4` (Unscramble): `因為我喺屋企`
 
 ## Lesson 5.5: Expressive Particles (Flavoring)
 
@@ -57,3 +61,5 @@ This chapter moves beyond simple identification and focuses on the "W-questions"
 - **Exercises:**
   - `5.5.2` (Reading): `兩個人咋`
   - `5.5.3` (Unscramble): `佢喺屋企啩`
+  - `5.5.4` (Unscramble): `三個人咋`
+  - `5.5.5` (Unscramble): `好大噃`
