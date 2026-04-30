@@ -44,32 +44,32 @@
         },
         {
           "type": "example",
-          "cantonese": "你本書",
-          "romanization": "nei5 bun2 syu1",
-          "translation": "Your book"
+          "cantonese": "可以",
+          "romanization": "ho2 ji5",
+          "translation": "Can / May"
+        },
+        {
+          "type": "example",
+          "cantonese": "借",
+          "romanization": "ze3",
+          "translation": "Borrow / Lend"
+        },
+        {
+          "type": "example",
+          "cantonese": "當然",
+          "romanization": "dong1 jin4",
+          "translation": "Of course"
         }
       ]
     },
-    {
-      "type": "reading",
-      "exerciseId": "4.5.2"
-    },
-    {
-      "type": "reading",
-      "exerciseId": "4.5.4"
-    },
-    {
-      "type": "reading",
-      "exerciseId": "4.5.5"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "4.5.3"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "4.5.6"
-    },
+    { "type": "reading", "exerciseId": "4.5.2" },
+    { "type": "reading", "exerciseId": "4.5.4" },
+    { "type": "reading", "exerciseId": "4.5.5" },
+    { "type": "reading", "exerciseId": "4.5.7" },
+    { "type": "reading", "exerciseId": "4.5.8" },
+    { "type": "reading", "exerciseId": "4.5.9" },
+    { "type": "unscramble", "exerciseId": "4.5.3" },
+    { "type": "unscramble", "exerciseId": "4.5.6" },
     {
       "type": "dialog",
       "lines": [
@@ -90,6 +90,23 @@
           "cantonese": "好呀。",
           "romanization": "hou2 aa3.",
           "translation": "Good."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳經理，我可以借呢兩本書嗎？",
+          "romanization": "can4 ging1 lei5, ngo5 ho2 ji5 ze3 ni1 loeng5 bun2 syu1 maa1?",
+          "translation": "Manager Chan, may I borrow these two books?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "當然可以，呢度請。",
+          "romanization": "dong1 jin4 ho2 ji5, ni1 dou6 ceng2.",
+          "translation": "Of course, please (take them) here."
         }
       ]
     },

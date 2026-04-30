@@ -20,11 +20,18 @@
           "cantonese": "呢位係黃小姐",
           "romanization": "ni1 wai2 hai6 wong4 siu2 ze2",
           "translation": "This is Miss Wong"
+        },
+        {
+          "type": "example",
+          "cantonese": "朋友",
+          "romanization": "pang4 jau5",
+          "translation": "Friend"
         }
       ]
     },
     { "type": "reading", "exerciseId": "2.4.7" },
     { "type": "reading", "exerciseId": "2.4.2" },
+    { "type": "reading", "exerciseId": "2.4.8" },
     { "type": "unscramble", "exerciseId": "2.4.6" },
     {
       "type": "explanation",
@@ -65,6 +72,29 @@
           "cantonese": "陳先生，你太客氣喇。",
           "romanization": "can4 sin1 saang1, nei5 taai3 haak3 hei3 laa3.",
           "translation": "Mr. Chan, you're too kind / polite."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "喂阿明，呢個係我朋友阿強。",
+          "romanization": "wai2 aa3 ming4, ni1 go3 hai6 ngo5 pang4 jau5 aa3 koeng4.",
+          "translation": "Hey Ah Ming, this is my friend Ah Keung."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "你好！阿強，你好嗎？",
+          "romanization": "nei5 hou2! aa3 koeng4, nei5 hou2 maa3?",
+          "translation": "Hello! Ah Keung, how are you?"
+        },
+        {
+          "speaker": "C",
+          "cantonese": "幾好呀，多謝。",
+          "romanization": "gei2 hou2 aa3, do1 ze6.",
+          "translation": "Quite good, thanks."
         }
       ]
     },

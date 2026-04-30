@@ -40,6 +40,20 @@
           "cantonese": "去邊呀？",
           "romanization": "heoi3 bin1 aa3?",
           "translation": "Where are you going?"
+        },
+        {
+          "type": "title",
+          "value": "Formal Small Talk"
+        },
+        {
+          "type": "text",
+          "value": "In a more formal setting, such as with a boss or an older acquaintance, it's polite to ask if they are busy: <strong>忙唔忙呀？</strong> (mong4 m4 mong4 aa3?)."
+        },
+        {
+          "type": "example",
+          "cantonese": "忙唔忙呀？",
+          "romanization": "mong4 m4 mong4 aa3?",
+          "translation": "Are you busy?"
         }
       ]
     },
@@ -47,7 +61,31 @@
     { "type": "reading", "exerciseId": "2.3.4" },
     { "type": "reading", "exerciseId": "2.3.5" },
     { "type": "reading", "exerciseId": "2.3.6" },
+    { "type": "reading", "exerciseId": "2.3.7" },
     { "type": "unscramble", "exerciseId": "2.3.3" },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳先生，你好。你忙唔忙呀？",
+          "romanization": "can4 sin1 saang1, nei5 hou2. nei5 mong4 m4 mong4 aa3?",
+          "translation": "Mr. Chan, hello. Are you busy?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "唔係好忙。你呢？",
+          "romanization": "m4 hai6 hou2 mong4. nei5 ne1?",
+          "translation": "Not very busy. And you?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "我都唔係好忙。",
+          "romanization": "ngo5 dou1 m4 hai6 hou2 mong4.",
+          "translation": "I'm not very busy either."
+        }
+      ]
+    },
     {
       "type": "dialog",
       "lines": [

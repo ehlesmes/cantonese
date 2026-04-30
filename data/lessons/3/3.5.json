@@ -24,10 +24,31 @@
           "cantonese": "我去食飯喇",
           "romanization": "ngo5 heoi3 sik6 faan6 laa3",
           "translation": "I'm going to eat now"
+        },
+        {
+          "type": "example",
+          "cantonese": "經理",
+          "romanization": "ging1 lei5",
+          "translation": "Manager"
+        },
+        {
+          "type": "example",
+          "cantonese": "麻煩",
+          "romanization": "maa4 faan4",
+          "translation": "Trouble / Please (polite)"
+        },
+        {
+          "type": "example",
+          "cantonese": "簽名",
+          "romanization": "cin1 ming4",
+          "translation": "Sign signature"
         }
       ]
     },
     { "type": "reading", "exerciseId": "3.5.2" },
+    { "type": "reading", "exerciseId": "3.5.6" },
+    { "type": "reading", "exerciseId": "3.5.7" },
+    { "type": "reading", "exerciseId": "3.5.8" },
     { "type": "unscramble", "exerciseId": "3.5.3" },
     {
       "type": "dialog",
@@ -49,6 +70,29 @@
           "cantonese": "我去食飯。",
           "romanization": "ngo5 heoi3 sik6 faan6.",
           "translation": "I'm going to eat."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳經理，麻煩幫我簽個名。",
+          "romanization": "can4 ging1 lei5, maa4 faan4 bong1 ngo5 cin1 go3 ming4.",
+          "translation": "Manager Chan, please help me sign (this)."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "好嘅，簽喺呢度係咪？",
+          "romanization": "hou2 ge3, cin1 hai2 ni1 dou6 hai6 mai6?",
+          "translation": "Okay, sign here, right?"
+        },
+        {
+          "speaker": "A",
+          "cantonese": "係，唔該晒。",
+          "romanization": "hai6, m4 goi1 saai3.",
+          "translation": "Yes, thank you very much."
         }
       ]
     },

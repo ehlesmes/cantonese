@@ -36,28 +36,43 @@
         },
         {
           "type": "example",
-          "cantonese": "幾多個？",
-          "romanization": "gei2 do1 go3?",
-          "translation": "How many?"
+          "cantonese": "需要",
+          "romanization": "seoi1 jiu3",
+          "translation": "Need"
+        },
+        {
+          "type": "example",
+          "cantonese": "部",
+          "romanization": "bou6",
+          "translation": "Classifier for machines/computers"
+        },
+        {
+          "type": "example",
+          "cantonese": "幾多",
+          "romanization": "gei2 do1",
+          "translation": "How many"
+        },
+        {
+          "type": "example",
+          "cantonese": "部",
+          "romanization": "bou6",
+          "translation": "Classifier (machines)"
+        },
+        {
+          "type": "example",
+          "cantonese": "電腦",
+          "romanization": "din6 nou5",
+          "translation": "Computer"
         }
       ]
     },
-    {
-      "type": "reading",
-      "exerciseId": "4.4.2"
-    },
-    {
-      "type": "reading",
-      "exerciseId": "4.4.4"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "4.4.5"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "4.4.3"
-    },
+    { "type": "reading", "exerciseId": "4.4.2" },
+    { "type": "reading", "exerciseId": "4.4.4" },
+    { "type": "reading", "exerciseId": "4.4.6" },
+    { "type": "reading", "exerciseId": "4.4.7" },
+    { "type": "reading", "exerciseId": "4.4.8" },
+    { "type": "unscramble", "exerciseId": "4.4.5" },
+    { "type": "unscramble", "exerciseId": "4.4.3" },
     {
       "type": "dialog",
       "lines": [
@@ -72,6 +87,23 @@
           "cantonese": "呢個。",
           "romanization": "ni1 go3.",
           "translation": "This one."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳經理，貴公司需要幾多部電腦？",
+          "romanization": "can4 ging1 lei5, gwai3 gung1 si1 seoi1 jiu3 gei2 do1 bou6 din6 nou5?",
+          "translation": "Manager Chan, how many computers does your company need?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我哋需要五部電腦。",
+          "romanization": "ngo5 dei6 seoi1 jiu3 ng5 bou6 din6 nou5.",
+          "translation": "We need five computers."
         }
       ]
     },

@@ -34,24 +34,23 @@
         },
         {
           "type": "example",
-          "cantonese": "去公司",
-          "romanization": "heoi3 gung1 si1",
-          "translation": "Go to the office"
+          "cantonese": "而家",
+          "romanization": "ji4 gaa1",
+          "translation": "Right now"
+        },
+        {
+          "type": "example",
+          "cantonese": "辦公室",
+          "romanization": "baan6 gung1 sat1",
+          "translation": "Office (formal)"
         }
       ]
     },
-    {
-      "type": "reading",
-      "exerciseId": "5.1.2"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.1.3"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.1.4"
-    },
+    { "type": "reading", "exerciseId": "5.1.2" },
+    { "type": "reading", "exerciseId": "5.1.5" },
+    { "type": "reading", "exerciseId": "5.1.6" },
+    { "type": "unscramble", "exerciseId": "5.1.3" },
+    { "type": "unscramble", "exerciseId": "5.1.4" },
     {
       "type": "dialog",
       "lines": [
@@ -72,6 +71,23 @@
           "cantonese": "我喺公司。",
           "romanization": "ngo5 hai2 gung1 si1.",
           "translation": "I'm at the office."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳經理，請問你而家喺邊度？",
+          "romanization": "can4 ging1 lei5, ceng2 man6 nei5 ji4 gaa1 hai2 bin1 dou6?",
+          "translation": "Manager Chan, may I ask where you are right now?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我而家喺辦公室。",
+          "romanization": "ngo5 ji4 gaa1 hai2 baan6 gung1 sat1.",
+          "translation": "I am in the office (formal)."
         }
       ]
     },

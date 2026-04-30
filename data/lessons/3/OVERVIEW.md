@@ -80,15 +80,21 @@ _Discussing free-time activities._
   - `tai2 syu1` (睇書) - Read books
   - `teng1 go1` (聽歌) - Listen to songs
 - **Dialogues:**
-  - **Dialogue 1 (Hobbies):**
+  - **Dialogue 1 (Informal - Hobbies):**
     - A: `nei5 zung1 ji3 zou6 me1 aa3?` (你鍾意做咩呀？)
     - B: `ngo5 zung1 ji3 tai2 syu1. nei5 ne1?` (我鍾意睇書。你呢？)
     - A: `ngo5 zung1 ji3 teng1 go1.` (我鍾意聽歌。)
+  - **Dialogue 2 (Formal - Inquiring Hobbies):**
+    - A: `wong4 sin1 saang1, ceng2 man6 nei5 ping4 si4 jau5 me1 si3 hou3 ni1?` (黃先生，請問你平時有咩嗜好呢？)
+    - B: `ngo5 bei2 gaau3 zung1 ji3 leoi5 jau4.` (我比較鍾意旅遊。)
+    - A: `ming4 baak6, do1 ze6 fan2 hoeng2.` (明白，多謝分享。)
 - **Exercises:**
-  - `3.4.2` (Reading): `鍾意`
-  - `3.4.3` (Unscramble): `我鍾意睇書`
-  - `3.4.4` (Reading): `睇書、聽歌`
-  - `3.4.5` (Unscramble): `我鍾意聽歌`
+  - `3.4.2` (Reading): `睇書` (Covers: 睇, 書)
+  - `3.4.6` (Reading): `嗜好` (Covers: 嗜, 好)
+  - `3.4.7` (Reading): `旅遊` (Covers: 旅, 遊)
+  - `3.4.3` (Unscramble): `我鍾意聽歌` (Covers: 我, 鍾, 意, 聽, 歌)
+  - `3.4.4` (Reading): `鍾意` (Covers: 鍾, 意)
+  - `3.4.5` (Unscramble): `你鍾意做咩呀？` (Covers: 你, 鍾, 意, 做, 咩, 呀)
 
 ## Lesson 3.5: Softening Particles (aa3, laa3)
 
@@ -99,15 +105,20 @@ _Learning how to change the mood of a sentence._
   - `aa3` (呀) - Softens a sentence or ends an open question.
   - `laa3` (喇) - Indicates a change of state (already).
 - **Dialogues:**
-  - **Dialogue 1 (Usage):**
-    - A: `ngo5 heoi3 sik6 faan6 laa3.` (我去食飯喇。 - "I'm going to eat now.")
-    - B: `hou2 aa3. nei5 heoi3 bin1 aa3?` (好呀. 你去邊呀？)
+  - **Dialogue 1 (Informal - Usage):**
+    - A: `ngo5 heoi3 sik6 faan6 laa3.` (我去食飯喇。)
+    - B: `hou2 aa3. nei5 heoi3 bin1 aa3?` (好呀。你去邊呀？)
     - A: `ngo5 heoi3 sik6 faan6.` (我去食飯。)
+  - **Dialogue 2 (Formal - Request):**
+    - A: `can4 ging1 lei5, maa4 faan4 bong1 ngo5 cin1 go3 ming4.` (陳經理，麻煩幫我簽個名。)
+    - B: `hou2 ge3, cin1 hai2 ni1 dou6 hai6 mai6?` (好嘅，簽喺呢度係咪？)
+    - A: `hai6, m4 goi1 saai3.` (係，唔該晒。)
 - **Exercises:**
-  - `3.5.2` (Reading): `好呀`
-  - `3.5.3` (Unscramble): `我去食飯喇`
-  - `3.5.4` (Reading): `我去食飯喇`
-  - `3.5.5` (Unscramble): `好呀，你呢？`
+  - `3.5.2` (Reading): `好呀` (Covers: 好, 呀)
+  - `3.5.6` (Reading): `經理` (Covers: 經, 理)
+  - `3.5.7` (Reading): `麻煩` (Covers: 麻煩)
+  - `3.5.8` (Reading): `簽名` (Covers: 簽, 名)
+  - `3.5.3` (Unscramble): `我去食飯喇` (Covers: 我, 去, 食, 飯, 喇)
 
 ## Lesson 3.6: Possession & Attributes (ge3)
 
@@ -118,11 +129,16 @@ _The essential structural particle for 'belonging'._
   - `ge3` (嘅) - Possession (my/your) or describing things.
   - `ngo5 ge3` (我嘅) - Mine.
 - **Dialogues:**
-  - **Dialogue 1 (Possession):**
-    - A: `佢係唔係你嘅先生呀？` (keoi5 hai6 m4 hai6 nei5 ge3 sin1 saang1 aa3? - "Is he your teacher?")
-    - B: `唔係。係佢嘅先生。` (m4 hai6. hai6 keoi5 ge3 sin1 saang1. - "No. He is his teacher.")
+  - **Dialogue 1 (Informal - Possession):**
+    - A: `keoi5 hai6 m4 hai6 nei5 ge3 sin1 saang1 aa3?` (佢係唔係你嘅先生呀？)
+    - B: `m4 hai6. hai6 keoi5 ge3 sin1 saang1.` (唔係。係佢嘅先生。)
+    - A: `o4, hou2 aa3.` (哦，好呀。)
+  - **Dialogue 2 (Formal - Identifying Belongings):**
+    - A: `ni1 fan6 man4 gin2 hai6 mai6 can4 ging1 lei5 ge3?` (呢份文件係咪陳經理嘅？)
+    - B: `hai6, hai6 keoi5 ge3.` (係，係佢嘅。)
 - **Exercises:**
-  - `3.6.2` (Reading): `我嘅`
-  - `3.6.3` (Unscramble): `佢係我嘅先生`
-  - `3.6.4` (Reading): `你嘅`
-  - `3.6.5` (Unscramble): `佢哋係你嘅先生嗎？`
+  - `3.6.2` (Reading): `我嘅` (Covers: 我, 嘅)
+  - `3.6.6` (Reading): `文件` (Covers: 文, 件)
+  - `3.6.3` (Unscramble): `佢係我嘅先生` (Covers: 佢, 係, 我, 嘅, 先, 生)
+  - `3.6.4` (Reading): `你嘅` (Covers: 你, 嘅)
+  - `3.6.5` (Unscramble): `佢哋係你嘅先生嗎？` (Covers: 佢, 哋, 係, 你, 嘅, 先, 生, 嗎)

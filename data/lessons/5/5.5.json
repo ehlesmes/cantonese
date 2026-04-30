@@ -50,28 +50,31 @@
         },
         {
           "type": "example",
-          "cantonese": "好噃",
-          "romanization": "hou2 bo3",
-          "translation": "That's good! (expressing a positive realization)"
+          "cantonese": "業績",
+          "romanization": "jip6 zik1",
+          "translation": "Performance / Business results"
+        },
+        {
+          "type": "example",
+          "cantonese": "增長",
+          "romanization": "zang1 zoeng2",
+          "translation": "Increase / Growth"
+        },
+        {
+          "type": "example",
+          "cantonese": "噃",
+          "romanization": "bo3",
+          "translation": "Particle"
         }
       ]
     },
-    {
-      "type": "reading",
-      "exerciseId": "5.5.2"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.5.3"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.5.4"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.5.5"
-    },
+    { "type": "reading", "exerciseId": "5.5.2" },
+    { "type": "reading", "exerciseId": "5.5.6" },
+    { "type": "reading", "exerciseId": "5.5.7" },
+    { "type": "reading", "exerciseId": "5.5.8" },
+    { "type": "unscramble", "exerciseId": "5.5.3" },
+    { "type": "unscramble", "exerciseId": "5.5.4" },
+    { "type": "unscramble", "exerciseId": "5.5.5" },
     {
       "type": "dialog",
       "lines": [
@@ -92,6 +95,23 @@
           "cantonese": "係啩。",
           "romanization": "hai6 gwaa3.",
           "translation": "I suppose so."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳經理，據悉本月業績將會增長。",
+          "romanization": "can4 ging1 lei5, geoi3 sik1 bun2 jyut6 jip6 zik1 zoeng1 wui5 zang1 zoeng2.",
+          "translation": "Manager Chan, it is understood that the performance this month will increase."
+        },
+        {
+          "speaker": "B",
+          "cantonese": "係，確係如此。",
+          "romanization": "hai6, kok3 hai6 jyu4 ci2.",
+          "translation": "Yes, that is indeed the case."
         }
       ]
     },

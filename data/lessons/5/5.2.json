@@ -36,24 +36,23 @@
         },
         {
           "type": "example",
-          "cantonese": "聽日再見",
-          "romanization": "ting1 jat6 zoi3 gin3",
-          "translation": "See you again tomorrow"
+          "cantonese": "會議",
+          "romanization": "wui2 ji5",
+          "translation": "Meeting"
+        },
+        {
+          "type": "example",
+          "cantonese": "下星期",
+          "romanization": "haa6 sing1 kei4",
+          "translation": "Next week"
         }
       ]
     },
-    {
-      "type": "reading",
-      "exerciseId": "5.2.2"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.2.3"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.2.4"
-    },
+    { "type": "reading", "exerciseId": "5.2.2" },
+    { "type": "reading", "exerciseId": "5.2.5" },
+    { "type": "reading", "exerciseId": "5.2.6" },
+    { "type": "unscramble", "exerciseId": "5.2.3" },
+    { "type": "unscramble", "exerciseId": "5.2.4" },
     {
       "type": "dialog",
       "lines": [
@@ -74,6 +73,23 @@
           "cantonese": "好呀，聽日見。",
           "romanization": "hou2 aa3, ting1 jat6 gin3.",
           "translation": "Okay, see you tomorrow."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳經理，會議幾時舉行？",
+          "romanization": "can4 ging1 lei5, wui2 ji5 gei2 si4 heoi2 hang4?",
+          "translation": "Manager Chan, when will the meeting be held?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "會議下星期舉行。",
+          "romanization": "wui2 ji5 haa6 sing1 kei4 heoi2 hang4.",
+          "translation": "The meeting will be held next week."
         }
       ]
     },

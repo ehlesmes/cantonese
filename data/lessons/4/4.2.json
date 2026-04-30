@@ -30,24 +30,30 @@
         },
         {
           "type": "example",
-          "cantonese": "兩個學生",
-          "romanization": "loeng5 go3 hok6 saang1",
-          "translation": "Two students (Remember to use 'loeng5' here!)"
+          "cantonese": "貴公司",
+          "romanization": "gwai3 gung1 si1",
+          "translation": "Your company (Formal)"
+        },
+        {
+          "type": "example",
+          "cantonese": "位",
+          "romanization": "wai2",
+          "translation": "Classifier for people (Polite)"
+        },
+        {
+          "type": "example",
+          "cantonese": "員工",
+          "romanization": "jyun4 gung1",
+          "translation": "Employee"
         }
       ]
     },
-    {
-      "type": "reading",
-      "exerciseId": "4.2.2"
-    },
-    {
-      "type": "reading",
-      "exerciseId": "4.2.4"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "4.2.3"
-    },
+    { "type": "reading", "exerciseId": "4.2.2" },
+    { "type": "reading", "exerciseId": "4.2.4" },
+    { "type": "reading", "exerciseId": "4.2.5" },
+    { "type": "reading", "exerciseId": "4.2.6" },
+    { "type": "reading", "exerciseId": "4.2.7" },
+    { "type": "unscramble", "exerciseId": "4.2.3" },
     {
       "type": "dialog",
       "lines": [
@@ -68,6 +74,23 @@
           "cantonese": "好呀。",
           "romanization": "hou2 aa3.",
           "translation": "Okay."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳經理，請問貴公司有幾多位員工？",
+          "romanization": "can4 ging1 lei5, ceng2 man6 gwai3 gung1 si1 jau5 gei2 do1 wai6 jyun4 gung1?",
+          "translation": "Manager Chan, may I ask how many employees your company has?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我哋公司有十位員工。",
+          "romanization": "ngo5 dei6 gung1 si1 jau5 sap6 wai6 jyun4 gung1.",
+          "translation": "Our company has ten employees."
         }
       ]
     },

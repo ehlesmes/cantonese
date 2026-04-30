@@ -71,12 +71,18 @@ _Introducing the most common Cantonese colloquialisms._
   - `sik6 zo2 laa3` (食咗喇) - Eaten already
   - `nei5 ne1?` (你呢？) - And you?
   - `heoi3 bin1 aa3?` (去邊呀？) - Where are you going?
-- **Dialogue:**
-  - A: `阿玲！食咗飯未呀？` (阿玲！食咗飯未呀？)
-  - B: `食咗喇，你呢？` (食咗喇，你呢？)
-  - A: `我未呀。我宜家去食飯。` (我未呀。我宜家去食飯。 - "I haven't. I'm going to eat now.")
+- **Dialogues:**
+  - **Dialogue 1 (Formal - Busy Inquiry):**
+    - A: `can4 sin1 saang1, nei5 hou2. nei5 mong4 m4 mong4 aa3?` (陳先生，你好。你忙唔忙呀？)
+    - B: `m4 hai6 hou2 mong4. nei5 ne1?` (唔係好忙。你呢？)
+    - A: `ngo5 dou1 m4 hai6 hou2 mong4.` (我都唔係好忙。)
+  - **Dialogue 2 (Informal - Eating):**
+    - A: `aa3 ling4! sik6 zo2 faan6 mei6 aa3?` (阿玲！食咗飯未呀？)
+    - B: `sik6 zo2 laa3, nei5 ne1?` (食咗喇，你呢？)
+    - A: `ngo5 mei6 aa3. ngo5 ji4 gaa1 heoi3 sik6 faan6.` (我未呀。我宜家去食飯。)
 - **Exercises:**
-  - `2.3.2` (Reading): `食咗飯未？` (Covers: 食, 咗, 飯, 未)
+  - `2.3.6` (Reading): `去邊呀？` (Covers: 去, 邊, 呀)
+  - `2.3.7` (Reading): `忙唔忙呀？` (Covers: 忙, 唔, 呀)
   - `2.3.3` (Unscramble): `食咗喇，你呢？` (Covers: 食, 咗, 喇, 你, 呢)
   - `2.3.4` (Reading): `食咗喇` (Covers: 食, 咗, 喇)
   - `2.3.5` (Reading): `你呢？` (Covers: 你, 呢)
@@ -90,12 +96,18 @@ _Formal and informal introductions of third parties._
 - **Examples:**
   - `ni1 wai2 hai6` (呢位係) - This (person) is...
   - `hou2 wing4 hang6 sik1 dou2 nei5` (好榮幸識到你) - Very honored to meet you (Formal)
-- **Dialogue:**
-  - A: `陳先生，呢位係黃小姐。` (陳先生，呢位係黃小姐。)
-  - B: `黃小姐，你好。好榮幸識到你。` (黃小姐，你好。好榮幸識到你。)
-  - C: `陳先生，你太客氣喇。` (陳先生，你太客氣喇。)
+- **Dialogues:**
+  - **Dialogue 1 (Formal - Presenting Others):**
+    - A: `can4 sin1 saang1, ni1 wai2 hai6 wong4 siu2 ze2.` (陳先生，呢位係黃小姐。)
+    - B: `wong4 siu2 ze2, nei5 hou2. hou2 wing4 hang6 sik1 dou2 nei5.` (黃小姐，你好。好榮幸識到你。)
+    - C: `can4 sin1 saang1, nei5 taai3 haak3 hei3 laa3.` (陳先生，你太客氣喇。)
+  - **Dialogue 2 (Informal - Introducing Friends):**
+    - A: `wai2 aa3 ming4, ni1 go3 hai6 ngo5 pang4 jau5 aa3 koeng4.` (喂阿明，呢個係我朋友阿強。)
+    - B: `nei5 hou2! aa3 koeng4, nei5 hou2 maa3?` (你好！阿強，你好嗎？)
+    - C: `gei2 hou2 aa3, do1 ze6.` (幾好呀，多謝。)
 - **Exercises:**
   - `2.4.2` (Reading): `呢位係黃小姐` (Covers: 呢, 位, 係, 黃, 小, 姐)
+  - `2.4.8` (Reading): `朋友` (Covers: 朋, 友)
   - `2.4.3` (Unscramble): `好榮幸識到你` (Covers: 好, 榮, 幸, 識, 到, 你)
   - `2.4.4` (Reading): `好榮幸` (Covers: 好, 榮, 幸)
   - `2.4.5` (Reading): `識到你` (Covers: 識, 到, 你)

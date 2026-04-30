@@ -14,30 +14,55 @@
         },
         {
           "type": "example",
-          "cantonese": "點解？",
-          "romanization": "dim2 gaai2?",
+          "cantonese": "點解",
+          "romanization": "dim2 gaai2",
           "translation": "Why?"
+        },
+        {
+          "type": "example",
+          "cantonese": "解",
+          "romanization": "gaai2",
+          "translation": "Explain"
         },
         {
           "type": "example",
           "cantonese": "因為",
           "romanization": "jan1 wai6",
           "translation": "Because"
+        },
+        {
+          "type": "example",
+          "cantonese": "因",
+          "romanization": "jan1",
+          "translation": "Cause"
+        },
+        {
+          "type": "example",
+          "cantonese": "為",
+          "romanization": "wai6",
+          "translation": "For"
+        },
+        {
+          "type": "example",
+          "cantonese": "項目",
+          "romanization": "hong6 muk6",
+          "translation": "Project"
+        },
+        {
+          "type": "example",
+          "cantonese": "人手",
+          "romanization": "jan4 sau2",
+          "translation": "Manpower / staff"
         }
       ]
     },
-    {
-      "type": "reading",
-      "exerciseId": "5.4.2"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.4.3"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.4.4"
-    },
+    { "type": "reading", "exerciseId": "5.4.2" },
+    { "type": "reading", "exerciseId": "5.4.5" },
+    { "type": "reading", "exerciseId": "5.4.6" },
+    { "type": "reading", "exerciseId": "5.4.7" },
+    { "type": "reading", "exerciseId": "5.4.8" },
+    { "type": "unscramble", "exerciseId": "5.4.3" },
+    { "type": "unscramble", "exerciseId": "5.4.4" },
     {
       "type": "dialog",
       "lines": [
@@ -58,6 +83,23 @@
           "cantonese": "哦，好呀。",
           "romanization": "o4, hou2 aa3.",
           "translation": "Oh, okay."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳經理，點解項目會延期？",
+          "romanization": "can4 ging1 lei5, dim2 gaai2 hong6 muk6 wui5 jin4 kei4?",
+          "translation": "Manager Chan, why is the project delayed?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "因為人手不足。",
+          "romanization": "jan1 wai6 jan4 sau2 bat1 zuk1.",
+          "translation": "Because of a shortage of staff."
         }
       ]
     },

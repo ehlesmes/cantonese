@@ -26,28 +26,61 @@
           "type": "example",
           "cantonese": "搭車",
           "romanization": "daap3 ce1",
-          "translation": "To take a car, bus, or train (lit: 'board vehicle')"
+          "translation": "To take a car, bus, or train"
+        },
+        {
+          "type": "example",
+          "cantonese": "搭",
+          "romanization": "daap3",
+          "translation": "To board"
+        },
+        {
+          "type": "example",
+          "cantonese": "車",
+          "romanization": "ce1",
+          "translation": "Vehicle"
         },
         {
           "type": "example",
           "cantonese": "行路",
           "romanization": "haang4 lou6",
           "translation": "To walk (lit: 'walk road')"
+        },
+        {
+          "type": "example",
+          "cantonese": "行",
+          "romanization": "haang4",
+          "translation": "To walk"
+        },
+        {
+          "type": "example",
+          "cantonese": "路",
+          "romanization": "lou6",
+          "translation": "Road"
+        },
+        {
+          "type": "example",
+          "cantonese": "同事",
+          "romanization": "tung4 si6",
+          "translation": "Colleague"
+        },
+        {
+          "type": "example",
+          "cantonese": "地鐵",
+          "romanization": "dei6 tit3",
+          "translation": "Subway / MTR"
         }
       ]
     },
-    {
-      "type": "reading",
-      "exerciseId": "5.3.2"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.3.3"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "5.3.4"
-    },
+    { "type": "reading", "exerciseId": "5.3.2" },
+    { "type": "reading", "exerciseId": "5.3.5" },
+    { "type": "reading", "exerciseId": "5.3.6" },
+    { "type": "reading", "exerciseId": "5.3.7" },
+    { "type": "reading", "exerciseId": "5.3.8" },
+    { "type": "reading", "exerciseId": "5.3.9" },
+    { "type": "reading", "exerciseId": "5.3.10" },
+    { "type": "unscramble", "exerciseId": "5.3.3" },
+    { "type": "unscramble", "exerciseId": "5.3.4" },
     {
       "type": "dialog",
       "lines": [
@@ -68,6 +101,23 @@
           "cantonese": "我行路。",
           "romanization": "ngo5 haang4 lou6.",
           "translation": "I walk."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳經理，請問貴公司同事係點樣去會議嘅？",
+          "romanization": "can4 ging1 lei5, ceng2 man6 gwai3 gung1 si1 tung4 si6 hai6 dim2 joeng2 heoi3 wui2 ji5 ge3?",
+          "translation": "Manager Chan, may I ask how your company colleagues go to the meeting?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "佢哋搭地鐵去。",
+          "romanization": "keoi5 dei6 daap3 dei6 tit3 heoi3.",
+          "translation": "They take the subway."
         }
       ]
     },

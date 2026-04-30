@@ -32,24 +32,23 @@
         },
         {
           "type": "example",
-          "cantonese": "嗰個學生",
-          "romanization": "go2 go3 hok6 saang1",
-          "translation": "That student"
+          "cantonese": "報告",
+          "romanization": "bou3 gou3",
+          "translation": "Report"
+        },
+        {
+          "type": "example",
+          "cantonese": "份",
+          "romanization": "fan6",
+          "translation": "Classifier for documents/reports"
         }
       ]
     },
-    {
-      "type": "reading",
-      "exerciseId": "4.3.2"
-    },
-    {
-      "type": "reading",
-      "exerciseId": "4.3.4"
-    },
-    {
-      "type": "unscramble",
-      "exerciseId": "4.3.3"
-    },
+    { "type": "reading", "exerciseId": "4.3.2" },
+    { "type": "reading", "exerciseId": "4.3.4" },
+    { "type": "reading", "exerciseId": "4.3.5" },
+    { "type": "reading", "exerciseId": "4.3.6" },
+    { "type": "unscramble", "exerciseId": "4.3.3" },
     {
       "type": "dialog",
       "lines": [
@@ -70,6 +69,23 @@
           "cantonese": "哦，你好，阿明。",
           "romanization": "o4, nei5 hou2, aa3 ming4.",
           "translation": "Oh, hello, Ah Ming."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "陳經理，呢份報告係咪嗰份？",
+          "romanization": "can4 ging1 lei5, ni1 fan6 bou3 gou3 hai6 mai6 go2 fan6?",
+          "translation": "Manager Chan, is this report that one?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "係，嗰份先係。",
+          "romanization": "hai6, go2 fan6 sin1 hai6.",
+          "translation": "Yes, that one is."
         }
       ]
     },

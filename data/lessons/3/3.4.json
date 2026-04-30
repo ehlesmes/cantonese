@@ -30,6 +30,18 @@
           "cantonese": "聽歌",
           "romanization": "teng1 go1",
           "translation": "To listen to music"
+        },
+        {
+          "type": "example",
+          "cantonese": "嗜好",
+          "romanization": "si3 hou3",
+          "translation": "Hobbies"
+        },
+        {
+          "type": "example",
+          "cantonese": "旅遊",
+          "romanization": "leoi5 jau4",
+          "translation": "Traveling"
         }
       ]
     },
@@ -64,7 +76,32 @@
         }
       ]
     },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "黃先生，請問你平時有咩嗜好呢？",
+          "romanization": "wong4 sin1 saang1, ceng2 man6 nei5 ping4 si4 jau5 me1 si3 hou3 ni1?",
+          "translation": "Mr. Wong, may I ask what hobbies you usually have?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "我比較鍾意旅遊。",
+          "romanization": "ngo5 bei2 gaau3 zung1 ji3 leoi5 jau4.",
+          "translation": "I prefer traveling."
+        },
+        {
+          "speaker": "A",
+          "cantonese": "明白，多謝分享。",
+          "romanization": "ming4 baak6, do1 ze6 fan2 hoeng2.",
+          "translation": "Understood, thank you for sharing."
+        }
+      ]
+    },
     { "type": "reading", "exerciseId": "3.4.4" },
+    { "type": "reading", "exerciseId": "3.4.6" },
+    { "type": "reading", "exerciseId": "3.4.7" },
     { "type": "unscramble", "exerciseId": "3.4.5" },
     {
       "type": "congratulations",

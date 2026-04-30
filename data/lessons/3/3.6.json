@@ -36,10 +36,17 @@
           "cantonese": "邊個嘅？",
           "romanization": "bin1 go3 ge3?",
           "translation": "Whose is it? (Which one's?)"
+        },
+        {
+          "type": "example",
+          "cantonese": "文件",
+          "romanization": "man4 gin2",
+          "translation": "Document"
         }
       ]
     },
     { "type": "reading", "exerciseId": "3.6.2" },
+    { "type": "reading", "exerciseId": "3.6.6" },
     { "type": "unscramble", "exerciseId": "3.6.3" },
     {
       "type": "dialog",
@@ -61,6 +68,23 @@
           "cantonese": "哦，好呀。",
           "romanization": "o4, hou2 aa3.",
           "translation": "Oh, okay."
+        }
+      ]
+    },
+    {
+      "type": "dialog",
+      "lines": [
+        {
+          "speaker": "A",
+          "cantonese": "呢份文件係咪陳經理嘅？",
+          "romanization": "ni1 fan6 man4 gin2 hai6 mai6 can4 ging1 lei5 ge3?",
+          "translation": "Is this document Manager Chan's?"
+        },
+        {
+          "speaker": "B",
+          "cantonese": "係，係佢嘅。",
+          "romanization": "hai6, hai6 keoi5 ge3.",
+          "translation": "Yes, it is his."
         }
       ]
     },
