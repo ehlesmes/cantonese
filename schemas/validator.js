@@ -39,13 +39,9 @@ export function validateObject(obj, schema, prefix = "") {
       const result = rule(value, obj);
       if (Array.isArray(result)) {
         // Function returned detailed errors
-        errors.push(
-          ...result.map((err) => (prefix ? `${prefix}.${err}` : err)),
-        );
+        errors.push(...result.map((err) => (prefix ? `${prefix}.${err}` : err)));
       } else if (!result) {
-        errors.push(
-          `Invalid or missing value for "${fieldPath}": ${JSON.stringify(value)}`,
-        );
+        errors.push(`Invalid or missing value for "${fieldPath}": ${JSON.stringify(value)}`);
       }
     } else if (Validators.isArray(rule)) {
       if (!Validators.isArray(value)) {

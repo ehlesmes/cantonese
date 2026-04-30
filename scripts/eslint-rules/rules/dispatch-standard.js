@@ -4,16 +4,14 @@ export default {
   meta: {
     type: "problem",
     docs: {
-      description:
-        "Enforce using this.dispatch() instead of raw dispatchEvent calls.",
+      description: "Enforce using this.dispatch() instead of raw dispatchEvent calls.",
     },
   },
   create(context) {
     return createComponentVisitor({
       CallExpression(node) {
         const isDispatchEvent =
-          node.callee.type === "MemberExpression" &&
-          node.callee.property.name === "dispatchEvent";
+          node.callee.type === "MemberExpression" && node.callee.property.name === "dispatchEvent";
 
         if (isDispatchEvent) {
           context.report({

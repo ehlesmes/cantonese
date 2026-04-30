@@ -25,10 +25,7 @@ export class PracticeSummaryPage extends BasePage {
     this.contentWrapper.appendChild(scoreDisplay);
 
     const message = this.html("p", {
-      textContent:
-        data.score === data.total
-          ? "Perfect! 加油!"
-          : "Good job! Keep practicing!",
+      textContent: data.score === data.total ? "Perfect! 加油!" : "Good job! Keep practicing!",
     });
     this.contentWrapper.appendChild(message);
   }

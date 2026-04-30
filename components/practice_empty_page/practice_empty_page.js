@@ -13,8 +13,7 @@ export class PracticeEmptyPage extends BasePage {
     this.contentWrapper.appendChild(title);
 
     const message = this.html("p", {
-      textContent:
-        "Complete some lessons first to add exercises to your practice queue.",
+      textContent: "Complete some lessons first to add exercises to your practice queue.",
     });
     this.contentWrapper.appendChild(message);
   }

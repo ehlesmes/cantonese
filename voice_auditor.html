@@ -23,12 +23,7 @@
     <h1>Cantonese Voice Auditor</h1>
     <div style="margin-bottom: 20px">
       <label for="phrase">Phrase to speak:</label>
-      <input
-        type="text"
-        id="phrase"
-        value="你好嗎？"
-        style="width: 200px; padding: 5px"
-      />
+      <input type="text" id="phrase" value="你好嗎？" style="width: 200px; padding: 5px" />
     </div>
     <div id="results">Loading voices...</div>
 
@@ -37,9 +32,7 @@
     <hr />
     <h3>Dialogue Simulation</h3>
     <button onclick="runMultiVoiceDialog()">Run Multi-Voice Dialogue</button>
-    <button onclick="runPitchDialog()">
-      Run Pitch-Differentiated Dialogue
-    </button>
+    <button onclick="runPitchDialog()">Run Pitch-Differentiated Dialogue</button>
 
     <script>
       function speak(voiceName, pitch = 1.0, rate = 1.0, text) {

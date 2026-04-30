@@ -2,7 +2,9 @@
 
 ## Overview
 
-To provide a seamless learning experience, the application tracks user progress in lessons and stores it in `localStorage`. This allows users to resume a lesson from the last visited page and see their completion status.
+To provide a seamless learning experience, the application tracks user progress in lessons and
+stores it in `localStorage`. This allows users to resume a lesson from the last visited page and see
+their completion status.
 
 ## 💾 Storage Schema
 
@@ -42,13 +44,16 @@ A singleton utility providing a clean API for storage operations:
 
 - `saveLessonProgress(lessonId, pageIndex)`: Updates the last visited page.
 - `getLessonProgress(lessonId)`: Retrieves the saved index.
-- `completeLesson(lessonId)`: Marks as completed and returns a list of new exercises to be added to practice.
+- `completeLesson(lessonId)`: Marks as completed and returns a list of new exercises to be added to
+  practice.
 
 ### 2. `LessonViewer` Integration
 
 - **On Load:** Fetches progress. If `lastPageIndex` exists, it starts there instead of index 0.
-- **On Navigation:** Automatically saves the new index and updates the **visual progress bar** in the header.
-- **On Completion:** When the `congratulations` page is rendered, it marks the lesson as completed and triggers the "Add to Practice" logic.
+- **On Navigation:** Automatically saves the new index and updates the **visual progress bar** in
+  the header.
+- **On Completion:** When the `congratulations` page is rendered, it marks the lesson as completed
+  and triggers the "Add to Practice" logic.
 
 ## 🎨 Visual Feedback
 
@@ -58,5 +63,7 @@ A singleton utility providing a clean API for storage operations:
 
 ## 🧪 Verification Plan
 
-- **Unit Tests:** Verify that `Progress` utility correctly serializes/deserializes to `localStorage`.
-- **Manual Check:** Refreshing `demo_lesson.html` during a lesson should return the user to the same page.
+- **Unit Tests:** Verify that `Progress` utility correctly serializes/deserializes to
+  `localStorage`.
+- **Manual Check:** Refreshing `demo_lesson.html` during a lesson should return the user to the same
+  page.

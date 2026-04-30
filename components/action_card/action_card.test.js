@@ -14,9 +14,7 @@ describe("ActionCard Component", () => {
 
   it("should render title and description", () => {
     const card = new ActionCard(mockData);
-    expect(card.shadowRoot.querySelector(".card-title").textContent).toBe(
-      mockData.title,
-    );
+    expect(card.shadowRoot.querySelector(".card-title").textContent).toBe(mockData.title);
     expect(card.shadowRoot.querySelector(".card-description").textContent).toBe(
       mockData.description,
     );
@@ -35,9 +33,7 @@ describe("ActionCard Component", () => {
 
   describe("Validation", () => {
     it("should throw error if required properties are missing", () => {
-      expect(() => new ActionCard({ id: "id" })).toThrow(
-        "Missing property: title",
-      );
+      expect(() => new ActionCard({ id: "id" })).toThrow("Missing property: title");
     });
   });
 });

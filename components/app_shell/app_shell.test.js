@@ -18,9 +18,7 @@ describe("AppShell Component", () => {
                   {
                     chapterId: "1",
                     chapterName: "Chapter 1",
-                    lessons: [
-                      { lessonId: "1.1", lessonName: "Test Lesson 1.1" },
-                    ],
+                    lessons: [{ lessonId: "1.1", lessonName: "Test Lesson 1.1" }],
                   },
                 ],
               }),

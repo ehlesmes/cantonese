@@ -2,12 +2,15 @@
 
 ## Objective
 
-Implement a new `dialog` page type for lessons to display conversations between two or more speakers. The dialog lines will be defined inline within the lesson JSON and will support automatic voice differentiation using the existing TTS utility.
+Implement a new `dialog` page type for lessons to display conversations between two or more
+speakers. The dialog lines will be defined inline within the lesson JSON and will support automatic
+voice differentiation using the existing TTS utility.
 
 ## Key Files & Context
 
 - `schemas/lessons.js`: Needs updates to validate the new `dialog` page type.
-- `components/shared/tts.js`: Needs updates to handle different voices or fallbacks based on speaker ID.
+- `components/shared/tts.js`: Needs updates to handle different voices or fallbacks based on speaker
+  ID.
 - `components/dialog_page/`: New component for rendering the whole dialog sequence.
 - `components/dialog_line/`: New component for individual dialog lines.
 - `components/lesson_viewer/lesson_viewer.js`: Must import `dialog_page` so it self-registers.
@@ -34,8 +37,8 @@ const dialogPage = {
 };
 ```
 
-Add `"dialog"` to `pageBase.type` valid types.
-Add `dialog: dialogPage` to the `schemas` map in `lessonDetail.pages`.
+Add `"dialog"` to `pageBase.type` valid types. Add `dialog: dialogPage` to the `schemas` map in
+`lessonDetail.pages`.
 
 ### 2. Enhance TTS Service (`components/shared/tts.js`)
 
@@ -43,7 +46,8 @@ Update `speakCantonese(text, options = {})` to accept a `speakerId`.
 
 - Extract a list of all matching Cantonese voices.
 - Use the speaker ID (e.g., 'A', 'B') to assign a specific voice index.
-- If only one voice is available, use standard parameters for the primary speaker and alter `pitch` (e.g., 0.8) and `rate` (e.g., 0.9) for alternate speakers.
+- If only one voice is available, use standard parameters for the primary speaker and alter `pitch`
+  (e.g., 0.8) and `rate` (e.g., 0.9) for alternate speakers.
 
 ### 3. Create `dialog-line` Component
 
@@ -59,12 +63,14 @@ Update `speakCantonese(text, options = {})` to accept a `speakerId`.
 - State management: Track the `currentLineIndex` (starting at 0).
 - Map over `data.lines` up to `currentLineIndex` and dynamically create `dialog-line` elements.
 - Render a "Next Line" button. Clicking it increments `currentLineIndex` and shows the next line.
-- Once all lines are shown, the button should change to "Continue". Clicking it emits the `next` event, similar to `explanation-page`.
+- Once all lines are shown, the button should change to "Continue". Clicking it emits the `next`
+  event, similar to `explanation-page`.
 - Register the component in `PageRegistry`.
 
 ### 5. Update Lesson Viewer (`components/lesson_viewer/lesson_viewer.js`)
 
-- Import `../dialog_page/dialog_page.js` to ensure the component self-registers when the application boots.
+- Import `../dialog_page/dialog_page.js` to ensure the component self-registers when the application
+  boots.
 
 ### 6. Update Lesson Data (`data/lessons/1/*.json`)
 

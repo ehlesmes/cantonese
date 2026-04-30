@@ -5,8 +5,7 @@ export default {
   meta: {
     type: "suggestion",
     docs: {
-      description:
-        "Ensure exported class names match their snake_case filenames in PascalCase.",
+      description: "Ensure exported class names match their snake_case filenames in PascalCase.",
     },
   },
   create(context) {

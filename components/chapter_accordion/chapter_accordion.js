@@ -21,9 +21,7 @@ export class ChapterAccordion extends Component {
 
     chapters.forEach((chapter, index) => {
       // Open the specified chapter, or the first one if none specified
-      const isOpen = activeChapterId
-        ? chapter.chapterId === activeChapterId
-        : index === 0;
+      const isOpen = activeChapterId ? chapter.chapterId === activeChapterId : index === 0;
 
       const item = new ChapterItem({
         ...chapter,

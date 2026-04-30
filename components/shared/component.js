@@ -45,21 +45,7 @@ export class Component {
    * @param {boolean} [props.open]
    * @returns {HTMLElement}
    */
-  html(
-    tag,
-    {
-      className,
-      id,
-      textContent,
-      href,
-      title,
-      slot,
-      part,
-      type,
-      value,
-      open,
-    } = {},
-  ) {
+  html(tag, { className, id, textContent, href, title, slot, part, type, value, open } = {}) {
     const el = document.createElement(tag);
     if (className) el.className = className;
     if (id) el.id = id;

@@ -33,8 +33,7 @@ export class VocabularyPage extends Component {
       this._list.replaceChildren(
         this.html("div", {
           className: "empty-state",
-          textContent:
-            "No vocabulary unlocked yet. Complete lessons to build your list!",
+          textContent: "No vocabulary unlocked yet. Complete lessons to build your list!",
         }),
       );
       return;
@@ -46,8 +45,7 @@ export class VocabularyPage extends Component {
         practiceItems.map(async (item) => {
           try {
             const response = await fetch(`data/exercises/${item.exerciseId}`);
-            if (!response.ok)
-              throw new Error(`Failed to fetch ${item.exerciseId}`);
+            if (!response.ok) throw new Error(`Failed to fetch ${item.exerciseId}`);
             const data = await response.json();
             return { ...data, level: item.level };
           } catch (e) {
@@ -75,10 +73,8 @@ export class VocabularyPage extends Component {
     exercises.forEach((ex) => {
       // Handle both Reading and Unscramble formats
       const vocabData = {
-        cantonese:
-          ex.cantonese || ex.tokens?.map((t) => t[0]).join("") || "Error",
-        romanization:
-          ex.romanization || ex.tokens?.map((t) => t[1]).join(" ") || "Error",
+        cantonese: ex.cantonese || ex.tokens?.map((t) => t[0]).join("") || "Error",
+        romanization: ex.romanization || ex.tokens?.map((t) => t[1]).join(" ") || "Error",
         translation: ex.translation || "Error",
         level: ex.level,
       };

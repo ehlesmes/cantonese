@@ -14,9 +14,7 @@ export const isComponentClass = (node) =>
  * @returns {ASTNode|undefined}
  */
 export const findConstructor = (node) =>
-  node.body.body.find(
-    (m) => m.type === "MethodDefinition" && m.kind === "constructor",
-  );
+  node.body.body.find((m) => m.type === "MethodDefinition" && m.kind === "constructor");
 
 /**
  * Finds the super() call in a constructor body.
@@ -68,8 +66,7 @@ export const createComponentVisitor = (visitors) => {
       if (visitors.ClassDeclaration) visitors.ClassDeclaration(node);
     },
     "ClassDeclaration:exit"(node) {
-      if (visitors["ClassDeclaration:exit"])
-        visitors["ClassDeclaration:exit"](node);
+      if (visitors["ClassDeclaration:exit"]) visitors["ClassDeclaration:exit"](node);
       inComponent = false;
     },
   };
@@ -119,9 +116,7 @@ export const hasCallTo = (containerNode, methodName, objectName = "this") => {
     ) {
       const { object, property } = s.expression.callee;
       const isCorrectObject =
-        objectName === "this"
-          ? object.type === "ThisExpression"
-          : object.name === objectName;
+        objectName === "this" ? object.type === "ThisExpression" : object.name === objectName;
       return isCorrectObject && property.name === methodName;
     }
     return false;

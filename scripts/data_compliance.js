@@ -91,9 +91,7 @@ function registerLessonsManifest() {
     data.chapters.forEach((chapter) => {
       chapter.lessons.forEach((lesson) => {
         if (Registry.lessons.has(lesson.lessonId)) {
-          errors.push(
-            `[Data] ${filePath}: Duplicate lessonId found: "${lesson.lessonId}"`,
-          );
+          errors.push(`[Data] ${filePath}: Duplicate lessonId found: "${lesson.lessonId}"`);
         }
         Registry.allLessonIds.push(lesson.lessonId);
         const lessonFilePath = path.join(
@@ -132,12 +130,7 @@ const SYLLABLE_REGEX = /^[a-z]+[1-6][，。！？、,.:;?!'"]*$/;
  * Validates a Cantonese/Romanization/Translation triplet.
  * Used for both exercises and explanation examples.
  */
-function validateCantoneseTriplet(
-  cantonese,
-  romanization,
-  translation,
-  context,
-) {
+function validateCantoneseTriplet(cantonese, romanization, translation, context) {
   const errs = [];
 
   // Basic presence
@@ -159,9 +152,7 @@ function validateCantoneseTriplet(
 
   // Check if it's just punctuation
   if (cleanCantonese.length === 0) {
-    errs.push(
-      `${context}: Cantonese text contains no characters (only punctuation/whitespace).`,
-    );
+    errs.push(`${context}: Cantonese text contains no characters (only punctuation/whitespace).`);
   }
 
   // Syllable format check
@@ -254,11 +245,7 @@ function validateLessonDetails() {
           if (page.type === "unscramble") unscrambleCount++;
 
           const lessonPart = lessonId.split(".")[1];
-          const expectedRelPath = path.join(
-            meta.chapterId,
-            lessonPart,
-            `${page.exerciseId}.json`,
-          );
+          const expectedRelPath = path.join(meta.chapterId, lessonPart, `${page.exerciseId}.json`);
 
           const exercise = Registry.exercises.get(expectedRelPath);
           if (!exercise) {
@@ -308,8 +295,7 @@ function validateLessonDetails() {
         // Check Next Lesson References
         if (page.type === "congratulations") {
           const currentIndex = Registry.allLessonIds.indexOf(lessonId);
-          const expectedNextId =
-            Registry.allLessonIds[currentIndex + 1] || null;
+          const expectedNextId = Registry.allLessonIds[currentIndex + 1] || null;
 
           if (page.nextLessonId !== expectedNextId) {
             errors.push(
@@ -331,18 +317,14 @@ function validateLessonDetails() {
         );
       }
 
-      const missingChars = [...lessonExplanationChars].filter(
-        (c) => !lessonReadingChars.has(c),
-      );
+      const missingChars = [...lessonExplanationChars].filter((c) => !lessonReadingChars.has(c));
       if (missingChars.length > 0) {
         errors.push(
           `[Pedagogy] ${meta.filePath}: Characters introduced in explanations but never tested in reading exercises: ${missingChars.join(", ")}`,
         );
       }
     } catch (e) {
-      errors.push(
-        `[Data] ${meta.filePath}: Failed to parse JSON: ${e.message}`,
-      );
+      errors.push(`[Data] ${meta.filePath}: Failed to parse JSON: ${e.message}`);
     }
   });
 }
@@ -396,11 +378,7 @@ function validateExerciseDetails() {
 
             // 1:1 check within token for CJK
             const hasLatin = /[a-zA-Z]/.test(cleanChar);
-            if (
-              !hasLatin &&
-              cjkChars.length !== tokenSyllables.length &&
-              cjkChars.length > 0
-            ) {
+            if (!hasLatin && cjkChars.length !== tokenSyllables.length && cjkChars.length > 0) {
               errs.push(
                 `${context}: Sync error. ${cjkChars.length} chars vs ${tokenSyllables.length} syllables.`,
               );
@@ -416,9 +394,7 @@ function validateExerciseDetails() {
       }
       report(meta.fullPath, errs);
     } catch (e) {
-      errors.push(
-        `[Data] ${meta.fullPath}: Failed to parse JSON: ${e.message}`,
-      );
+      errors.push(`[Data] ${meta.fullPath}: Failed to parse JSON: ${e.message}`);
     }
   });
 }
@@ -440,9 +416,7 @@ function reportOrphans() {
   );
   Registry.lessonFilesOnDisk.forEach((fullPath) => {
     if (!registeredLessonFiles.has(fullPath)) {
-      errors.push(
-        `[Data] Orphaned lesson file: ${path.relative(process.cwd(), fullPath)}`,
-      );
+      errors.push(`[Data] Orphaned lesson file: ${path.relative(process.cwd(), fullPath)}`);
     }
   });
 }
@@ -461,8 +435,6 @@ if (errors.length > 0) {
   uniqueErrors.forEach((err) => console.error(err));
   process.exit(1);
 } else {
-  console.info(
-    "\n✅ Data adheres to project standards (All cross-references valid).\n",
-  );
+  console.info("\n✅ Data adheres to project standards (All cross-references valid).\n");
   process.exit(0);
 }

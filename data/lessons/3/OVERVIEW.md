@@ -1,12 +1,14 @@
 # Chapter 3: Small Talk & Pronouns
 
-This chapter expands on basic greetings by introducing essential pronouns, yes/no question structures, and topics for small talk like professions and hobbies.
+This chapter expands on basic greetings by introducing essential pronouns, yes/no question
+structures, and topics for small talk like professions and hobbies.
 
 ## Lesson 3.1: Expanding Pronouns
 
 _Learning how to refer to others and groups._
 
-- **Concepts:** Formalizing "He/She/It" (`keoi5`) and introducing the plural marker `dei6` ("We", "You all", "They").
+- **Concepts:** Formalizing "He/She/It" (`keoi5`) and introducing the plural marker `dei6` ("We",
+  "You all", "They").
 - **Examples:**
   - `keoi5` (佢) - He / She / It
   - `ngo5 dei6` (我哋) - We
@@ -29,7 +31,8 @@ _Learning how to refer to others and groups._
 
 _The essential "A-not-A" question structure._
 
-- **Concepts:** The "A-not-A" structure (Verb + m4 + Verb) for asking yes/no questions. Using the `maa3` particle for formal yes/no questions.
+- **Concepts:** The "A-not-A" structure (Verb + m4 + Verb) for asking yes/no questions. Using the
+  `maa3` particle for formal yes/no questions.
 - **Examples:**
   - `hai6 m4 hai6` (係唔係) - Is it? / Yes or no?
   - `sik6 m4 sik6` (食唔食) - Eat or not eat?
@@ -85,7 +88,8 @@ _Discussing free-time activities._
     - B: `ngo5 zung1 ji3 tai2 syu1. nei5 ne1?` (我鍾意睇書。你呢？)
     - A: `ngo5 zung1 ji3 teng1 go1.` (我鍾意聽歌。)
   - **Dialogue 2 (Formal - Inquiring Hobbies):**
-    - A: `wong4 sin1 saang1, ceng2 man6 nei5 ping4 si4 jau5 me1 si3 hou3 ni1?` (黃先生，請問你平時有咩嗜好呢？)
+    - A: `wong4 sin1 saang1, ceng2 man6 nei5 ping4 si4 jau5 me1 si3 hou3 ni1?`
+      (黃先生，請問你平時有咩嗜好呢？)
     - B: `ngo5 bei2 gaau3 zung1 ji3 leoi5 jau4.` (我比較鍾意旅遊。)
     - A: `ming4 baak6, do1 ze6 fan2 hoeng2.` (明白，多謝分享。)
 - **Exercises:**

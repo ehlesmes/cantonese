@@ -34,16 +34,12 @@ describe("ChapterItem Component", () => {
 
   it("should render chapter name", () => {
     const item = new ChapterItem(mockData);
-    expect(item.shadowRoot.querySelector(".chapter-name").textContent).toBe(
-      "Basics",
-    );
+    expect(item.shadowRoot.querySelector(".chapter-name").textContent).toBe("Basics");
   });
 
   it("should render lessons with correct status", () => {
     const item = new ChapterItem(mockData);
-    const lessonRows = Array.from(
-      item.shadowRoot.querySelectorAll("div.lesson-list > *"),
-    );
+    const lessonRows = Array.from(item.shadowRoot.querySelectorAll("div.lesson-list > *"));
 
     // 1.1 should be completed
     expect(lessonRows[0].component.status).toBe("completed");

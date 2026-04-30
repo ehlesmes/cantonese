@@ -23,10 +23,7 @@ export class ReadingExercise extends Component {
   render(data) {
     const { cantonese, romanization, translation } = data;
 
-    this.shadowRoot.adoptedStyleSheets = [
-      ...this.shadowRoot.adoptedStyleSheets,
-      iconStyles,
-    ];
+    this.shadowRoot.adoptedStyleSheets = [...this.shadowRoot.adoptedStyleSheets, iconStyles];
 
     this._container = this.html("div", { className: "reading-wrapper" });
 

@@ -4,8 +4,7 @@ export default {
   meta: {
     type: "problem",
     docs: {
-      description:
-        "Enforce a 'Validation' describe block for components with validate().",
+      description: "Enforce a 'Validation' describe block for components with validate().",
     },
   },
   create(context) {

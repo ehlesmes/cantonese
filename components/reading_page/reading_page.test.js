@@ -24,15 +24,9 @@ describe("ReadingPage Component", () => {
     });
 
     const exercise = component.shadowRoot.querySelector("#exercise");
-    expect(
-      exercise.shadowRoot.querySelector(".cantonese-text").textContent,
-    ).toBe("你好");
-    expect(
-      exercise.shadowRoot.querySelector(".romanization-text").textContent,
-    ).toBe("nei5 hou2");
-    expect(
-      exercise.shadowRoot.querySelector(".translation-text").textContent,
-    ).toBe("Hello");
+    expect(exercise.shadowRoot.querySelector(".cantonese-text").textContent).toBe("你好");
+    expect(exercise.shadowRoot.querySelector(".romanization-text").textContent).toBe("nei5 hou2");
+    expect(exercise.shadowRoot.querySelector(".translation-text").textContent).toBe("Hello");
   });
 
   it("should reveal the answer when primary button is clicked in initial state", () => {
@@ -47,8 +41,7 @@ describe("ReadingPage Component", () => {
 
     const primaryBtn = footerEl.shadowRoot.getElementById("primary-btn");
     const secondaryBtn = footerEl.shadowRoot.getElementById("secondary-btn");
-    const translation =
-      exerciseEl.shadowRoot.querySelector(".translation-text");
+    const translation = exerciseEl.shadowRoot.querySelector(".translation-text");
 
     // Initial state
     expect(primaryBtn.component.label).toBe("Reveal Answer");

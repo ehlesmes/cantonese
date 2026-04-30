@@ -22,16 +22,10 @@ export const ExerciseProvider = {
       const data = await response.json();
 
       // Validate based on type
-      const schema =
-        data.type === "reading"
-          ? Schemas.readingExercise
-          : Schemas.unscrambleExercise;
+      const schema = data.type === "reading" ? Schemas.readingExercise : Schemas.unscrambleExercise;
       const errors = validateObject(data, schema);
       if (errors.length > 0) {
-        console.error(
-          `🚨 [ExerciseProvider]: Validation failed for ${path}`,
-          errors,
-        );
+        console.error(`🚨 [ExerciseProvider]: Validation failed for ${path}`, errors);
       }
 
       this._cache.set(path, data);

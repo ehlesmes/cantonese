@@ -4,8 +4,7 @@ export default {
   meta: {
     type: "problem",
     docs: {
-      description:
-        "Enforce registering event listeners only within setupEventListeners().",
+      description: "Enforce registering event listeners only within setupEventListeners().",
     },
   },
   create(context) {

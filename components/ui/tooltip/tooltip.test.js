@@ -32,12 +32,8 @@ describe("Tooltip Component", () => {
   it("should render slots correctly", () => {
     const component = new Tooltip({ trigger, content });
 
-    const triggerSlot = component.shadowRoot.querySelector(
-      'slot[name="trigger"]',
-    );
-    const contentSlot = component.shadowRoot.querySelector(
-      'slot[name="content"]',
-    );
+    const triggerSlot = component.shadowRoot.querySelector('slot[name="trigger"]');
+    const contentSlot = component.shadowRoot.querySelector('slot[name="content"]');
 
     expect(triggerSlot).not.toBeNull();
     expect(contentSlot).not.toBeNull();

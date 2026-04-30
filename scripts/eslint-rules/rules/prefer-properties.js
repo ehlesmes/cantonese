@@ -4,8 +4,7 @@ export default {
   meta: {
     type: "suggestion",
     docs: {
-      description:
-        "Prefer ES6 get/set keywords over method prefixes like get... or set....",
+      description: "Prefer ES6 get/set keywords over method prefixes like get... or set....",
     },
   },
   create(context) {

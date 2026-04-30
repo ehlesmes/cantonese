@@ -23,10 +23,7 @@ describe("Page Type Compliance", () => {
   });
 
   it("all page types should be explicitly handled in LessonViewer.js rendering logic", () => {
-    const viewerPath = path.resolve(
-      process.cwd(),
-      "components/lesson_viewer/lesson_viewer.js",
-    );
+    const viewerPath = path.resolve(process.cwd(), "components/lesson_viewer/lesson_viewer.js");
     const content = fs.readFileSync(viewerPath, "utf-8");
 
     PAGE_TYPES.forEach((type) => {
@@ -46,10 +43,7 @@ describe("Page Type Compliance", () => {
   });
 
   it("all exercise types should be included in practice session logic in LessonViewer.js", () => {
-    const viewerPath = path.resolve(
-      process.cwd(),
-      "components/lesson_viewer/lesson_viewer.js",
-    );
+    const viewerPath = path.resolve(process.cwd(), "components/lesson_viewer/lesson_viewer.js");
     const content = fs.readFileSync(viewerPath, "utf-8");
 
     // Types that should be added to practice when lesson is completed
@@ -57,9 +51,7 @@ describe("Page Type Compliance", () => {
 
     EXERCISE_TYPES.forEach((type) => {
       // Look for the filter logic in _prefetchExercises and _renderPage (congratulations block)
-      const count = (
-        content.match(new RegExp(`p.type === "${type}"`, "g")) || []
-      ).length;
+      const count = (content.match(new RegExp(`p.type === "${type}"`, "g")) || []).length;
       expect(
         count,
         `Exercise type "${type}" should be included in prefetching and practice session logic (expected at least 2 occurrences in LessonViewer.js).`,

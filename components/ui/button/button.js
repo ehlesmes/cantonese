@@ -29,10 +29,7 @@ export class Button extends Component {
   render(data) {
     const { label, icon, variant = "outline", title } = data;
 
-    this.shadowRoot.adoptedStyleSheets = [
-      ...this.shadowRoot.adoptedStyleSheets,
-      iconStyles,
-    ];
+    this.shadowRoot.adoptedStyleSheets = [...this.shadowRoot.adoptedStyleSheets, iconStyles];
 
     this._button = this.html("button", {
       className: `btn-base ${buttonStyles[variant] || buttonStyles.outline}`,
@@ -74,9 +71,7 @@ export class Button extends Component {
       throw new ValidationError("Button must have either a label or an icon");
     }
     if (data.label && data.icon) {
-      throw new ValidationError(
-        "Button cannot have both a label and an icon (MVP constraint)",
-      );
+      throw new ValidationError("Button cannot have both a label and an icon (MVP constraint)");
     }
   }
 

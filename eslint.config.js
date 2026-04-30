@@ -50,8 +50,7 @@ export default [
       "no-restricted-syntax": [
         "error",
         {
-          selector:
-            "AssignmentExpression[left.property.name='innerHTML'][right.value='']",
+          selector: "AssignmentExpression[left.property.name='innerHTML'][right.value='']",
           message:
             "Prefer surgical updates over destructive re-rendering. Respect the DOM as a persistent semantic structure rather than a disposable string buffer. Consider using element.replaceChildren() to maintain intentionality and semantic integrity.",
         },

@@ -11,9 +11,7 @@ function checkDirectoryStructure(dir) {
   if (IGNORED_FOLDERS.includes(folderName)) return;
 
   const items = fs.readdirSync(dir);
-  const jsFiles = items.filter(
-    (f) => f.endsWith(".js") && !f.endsWith(".test.js"),
-  );
+  const jsFiles = items.filter((f) => f.endsWith(".js") && !f.endsWith(".test.js"));
 
   // 1. Verify that a component directory has a main .js file matching the folder name
   const expectedMainFile = `${folderName}.js`;
@@ -53,9 +51,7 @@ function checkDirectoryStructure(dir) {
     // 3. Verify Test Existence
     const testFile = jsFile.replace(".js", ".test.js");
     if (!items.includes(testFile)) {
-      errors.push(
-        `[Structure] ${dir}: Missing test file "${testFile}" for "${jsFile}".`,
-      );
+      errors.push(`[Structure] ${dir}: Missing test file "${testFile}" for "${jsFile}".`);
     }
   });
 }

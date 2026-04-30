@@ -1,8 +1,4 @@
-import {
-  isComponentClass,
-  findConstructor,
-  findSuperCall,
-} from "../ast-utils.js";
+import { isComponentClass, findConstructor, findSuperCall } from "../ast-utils.js";
 
 const hasValidSuperArg = (superCallNode) => {
   return superCallNode.expression.arguments.some(
@@ -22,8 +18,7 @@ export default {
   meta: {
     type: "problem",
     docs: {
-      description:
-        "Enforce passing import.meta.url to super() for style loading.",
+      description: "Enforce passing import.meta.url to super() for style loading.",
     },
   },
   create(context) {

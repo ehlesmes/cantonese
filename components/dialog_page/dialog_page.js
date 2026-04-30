@@ -15,8 +15,7 @@ export class DialogPage extends BasePage {
   constructor(data) {
     // Initial footer config
     const footerConfig = {
-      primaryText:
-        data.lines && data.lines.length > 1 ? "Next Line" : "Continue",
+      primaryText: data.lines && data.lines.length > 1 ? "Next Line" : "Continue",
     };
     super(data, ["lines"], import.meta.url, footerConfig);
   }
@@ -59,11 +58,7 @@ export class DialogPage extends BasePage {
     const lineData = this._fullData.lines[index];
     const speakerInfo = this._speakerVoices.get(lineData.speaker);
 
-    const line = new DialogLine(
-      lineData,
-      speakerInfo.config,
-      speakerInfo.speakerIndex,
-    );
+    const line = new DialogLine(lineData, speakerInfo.config, speakerInfo.speakerIndex);
     line.element.classList.add("dialog-line");
     this._list.appendChild(line.element);
 
@@ -72,15 +67,13 @@ export class DialogPage extends BasePage {
   }
 
   handlePrimaryClick() {
-    const isLastLine =
-      this._currentLineIndex === this._fullData.lines.length - 1;
+    const isLastLine = this._currentLineIndex === this._fullData.lines.length - 1;
 
     if (isLastLine) {
       this.dispatch("dialog-complete");
     } else {
       this._currentLineIndex++;
-      const isNowLastLine =
-        this._currentLineIndex === this._fullData.lines.length - 1;
+      const isNowLastLine = this._currentLineIndex === this._fullData.lines.length - 1;
 
       if (isNowLastLine) {
         this.footer.primaryText = "Continue";

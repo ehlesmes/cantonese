@@ -76,10 +76,7 @@ describe("PracticeViewer Component", () => {
       }),
     );
 
-    expect(Progress.updatePracticeResult).toHaveBeenCalledWith(
-      "ex1.json",
-      true,
-    );
+    expect(Progress.updatePracticeResult).toHaveBeenCalledWith("ex1.json", true);
 
     // Should move to next exercise
     await new Promise((resolve) => setTimeout(resolve, 0));

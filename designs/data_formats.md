@@ -1,6 +1,7 @@
 # Design: Exercise and Lesson Data Formats
 
-This document serves as the primary source of truth for the JSON data structures used in the app. For programmatic validation rules, see `schemas/`.
+This document serves as the primary source of truth for the JSON data structures used in the app.
+For programmatic validation rules, see `schemas/`.
 
 ## 1. Lesson Manifest (`data/lessons.json`)
 
@@ -153,4 +154,5 @@ Stored in `localStorage` under the key `cantonese_progress`.
 
 - **`version`**: Schema version for future migrations.
 - **`lessons`**: Map of `lessonId` to user progress.
-- **`practice.levels`**: SRS levels (1-10). Each contains an array of exercise paths relative to `data/exercises/`.
+- **`practice.levels`**: SRS levels (1-10). Each contains an array of exercise paths relative to
+  `data/exercises/`.

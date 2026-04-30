@@ -17,9 +17,7 @@ describe("LessonRow Component", () => {
     expect(row.shadowRoot.querySelector(".lesson-id").textContent).toBe(
       `Lesson ${mockData.lessonId}`,
     );
-    expect(row.shadowRoot.querySelector(".lesson-name").textContent).toBe(
-      mockData.lessonName,
-    );
+    expect(row.shadowRoot.querySelector(".lesson-name").textContent).toBe(mockData.lessonName);
   });
 
   it("should render a StatusIcon with correct status", () => {

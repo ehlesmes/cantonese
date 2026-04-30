@@ -25,10 +25,7 @@ export class VocabularyItem extends Component {
   render() {
     const { cantonese, romanization, translation, level } = this._data;
 
-    this.shadowRoot.adoptedStyleSheets = [
-      ...this.shadowRoot.adoptedStyleSheets,
-      iconStyles,
-    ];
+    this.shadowRoot.adoptedStyleSheets = [...this.shadowRoot.adoptedStyleSheets, iconStyles];
 
     this._row = this.html("div", { className: "vocab-row" });
 

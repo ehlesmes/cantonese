@@ -18,8 +18,7 @@ export class LessonFooter extends Component {
   }
 
   render(data) {
-    const { primaryText, secondaryText, primaryDisabled, secondaryDisabled } =
-      data;
+    const { primaryText, secondaryText, primaryDisabled, secondaryDisabled } = data;
 
     this._footer = this.html("footer");
 
@@ -46,12 +45,8 @@ export class LessonFooter extends Component {
   }
 
   setupEventListeners() {
-    this._primaryBtn.element.addEventListener("click", () =>
-      this.dispatch("primary-click"),
-    );
-    this._secondaryBtn.element.addEventListener("click", () =>
-      this.dispatch("secondary-click"),
-    );
+    this._primaryBtn.element.addEventListener("click", () => this.dispatch("primary-click"));
+    this._secondaryBtn.element.addEventListener("click", () => this.dispatch("secondary-click"));
   }
 
   /**

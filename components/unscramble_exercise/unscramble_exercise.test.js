@@ -23,8 +23,7 @@ describe("UnscrambleExercise Component", () => {
 
   it("should initialize tokens and populate the pool", () => {
     const component = new UnscrambleExercise(testData);
-    const poolTokens =
-      component.shadowRoot.querySelectorAll("#pool .token-text");
+    const poolTokens = component.shadowRoot.querySelectorAll("#pool .token-text");
     expect(poolTokens.length).toBe(2);
 
     const texts = Array.from(poolTokens).map((el) => el.textContent);
@@ -44,13 +43,10 @@ describe("UnscrambleExercise Component", () => {
 
     poolToken.click();
 
-    const slotTokens =
-      component.shadowRoot.querySelectorAll("#slots .token-text");
+    const slotTokens = component.shadowRoot.querySelectorAll("#slots .token-text");
     expect(slotTokens.length).toBe(1);
     expect(slotTokens[0].textContent).toBe("你");
-    expect(
-      component.shadowRoot.querySelectorAll("#pool .token-text").length,
-    ).toBe(0);
+    expect(component.shadowRoot.querySelectorAll("#pool .token-text").length).toBe(0);
     expect(completeSpy).toHaveBeenCalled();
   });
 
@@ -73,9 +69,9 @@ describe("UnscrambleExercise Component", () => {
     getPoolToken("C").click();
     getPoolToken("A").click();
 
-    const slotTexts = Array.from(
-      component.shadowRoot.querySelectorAll("#slots .token-text"),
-    ).map((el) => el.textContent);
+    const slotTexts = Array.from(component.shadowRoot.querySelectorAll("#slots .token-text")).map(
+      (el) => el.textContent,
+    );
 
     expect(slotTexts).toEqual(["B", "C", "A"]);
   });
@@ -131,8 +127,7 @@ describe("UnscrambleExercise Component", () => {
     document.body.appendChild(component.element);
 
     const audioControls = component.shadowRoot.querySelector(".audio-controls");
-    const playSlowBtn =
-      audioControls.shadowRoot.getElementById("play-audio-slow");
+    const playSlowBtn = audioControls.shadowRoot.getElementById("play-audio-slow");
     const eventSpy = vi.fn();
 
     component.element.addEventListener("play-audio", eventSpy);

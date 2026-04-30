@@ -1,6 +1,7 @@
 # Reading Page Component Requirements
 
-The `reading-page` coordinates a `reading-exercise` and a `lesson-footer` to guide the user through a single reading task.
+The `reading-page` coordinates a `reading-exercise` and a `lesson-footer` to guide the user through
+a single reading task.
 
 ## 1. Data Input
 
@@ -20,7 +21,8 @@ The page maintains an internal `_state` to control the flow:
 - **Footer:**
   - Primary Button: "Reveal Answer"
   - Secondary Button: Hidden
-- **Action:** Clicking the primary button transitions the page to the `revealed` state and triggers audio playback.
+- **Action:** Clicking the primary button transitions the page to the `revealed` state and triggers
+  audio playback.
 
 ### Revealed State (`revealed`)
 
@@ -33,4 +35,5 @@ The page maintains an internal `_state` to control the flow:
 ## 3. Events
 
 - `reading-result`: Dispatched when the user makes a final assessment in the `revealed` state.
-  - `detail.success` (Boolean): `true` if "Got it right" was clicked, `false` if "Need practice" was clicked.
+  - `detail.success` (Boolean): `true` if "Got it right" was clicked, `false` if "Need practice" was
+    clicked.

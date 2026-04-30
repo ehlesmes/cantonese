@@ -4,8 +4,7 @@ export default {
   meta: {
     type: "problem",
     docs: {
-      description:
-        "Ensure components using this.dispatch() have event verification in tests.",
+      description: "Ensure components using this.dispatch() have event verification in tests.",
     },
   },
   create(context) {
@@ -20,8 +19,7 @@ export default {
 
         if (
           componentSource.includes("this.dispatch(") &&
-          (!testSource.includes("addEventListener") ||
-            !testSource.includes("vi.fn()"))
+          (!testSource.includes("addEventListener") || !testSource.includes("vi.fn()"))
         ) {
           context.report({
             node,

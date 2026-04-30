@@ -36,8 +36,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: var(--md-sys-color-on-surface) transparent transparent
-    transparent;
+  border-color: var(--md-sys-color-on-surface) transparent transparent transparent;
 }
 
 .tooltip-container:hover .tooltip {

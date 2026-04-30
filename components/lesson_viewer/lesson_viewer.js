@@ -49,12 +49,8 @@ export class LessonViewer extends Component {
   setupEventListeners() {
     // Internal Event Listeners
     this.element.addEventListener("restart", () => this.navigateTo(0));
-    this.element.addEventListener("prev", () =>
-      this.navigateTo(this._currentPageIndex - 1),
-    );
-    this.element.addEventListener("next", () =>
-      this.navigateTo(this._currentPageIndex + 1),
-    );
+    this.element.addEventListener("prev", () => this.navigateTo(this._currentPageIndex - 1));
+    this.element.addEventListener("next", () => this.navigateTo(this._currentPageIndex + 1));
 
     // Page Event Listeners
     const nextHandler = () => this.navigateTo(this._currentPageIndex + 1);

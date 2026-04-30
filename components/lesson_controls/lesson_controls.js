@@ -14,10 +14,7 @@ export class LessonControls extends Component {
   constructor(config = {}) {
     super(import.meta.url);
     this.validate(config);
-    this.shadowRoot.adoptedStyleSheets = [
-      ...this.shadowRoot.adoptedStyleSheets,
-      iconStyles,
-    ];
+    this.shadowRoot.adoptedStyleSheets = [...this.shadowRoot.adoptedStyleSheets, iconStyles];
 
     this._hideNavigation = config.hideNavigation || false;
 
@@ -69,18 +66,10 @@ export class LessonControls extends Component {
 
   setupEventListeners() {
     if (!this._hideNavigation) {
-      this._restartBtn.element.addEventListener("click", () =>
-        this.dispatch("restart"),
-      );
-      this._prevBtn.element.addEventListener("click", () =>
-        this.dispatch("prev"),
-      );
-      this._nextBtn.element.addEventListener("click", () =>
-        this.dispatch("next"),
-      );
+      this._restartBtn.element.addEventListener("click", () => this.dispatch("restart"));
+      this._prevBtn.element.addEventListener("click", () => this.dispatch("prev"));
+      this._nextBtn.element.addEventListener("click", () => this.dispatch("next"));
     }
-    this._closeBtn.element.addEventListener("click", () =>
-      this.dispatch("close"),
-    );
+    this._closeBtn.element.addEventListener("click", () => this.dispatch("close"));
   }
 }

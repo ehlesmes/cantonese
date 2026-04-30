@@ -13,23 +13,29 @@ A lightweight, component-focused web application for learning Cantonese.
 
 ## ✨ Features
 
-- **Standardized Learning:** Lessons follow a consistent structure: Explanation → Examples → Practice.
+- **Standardized Learning:** Lessons follow a consistent structure: Explanation → Examples →
+  Practice.
 - **Interactive Exercises:** Includes Cantonese-to-English translation and word unscrambling.
 - **Cantonese TTS:** Native pronunciation using the browser's Web Speech API.
-- **Voice Customization:** Select and audition your preferred Cantonese voice in the **Advanced Settings** (`/#/advanced`) page.
-- **SRS Practice:** Completed exercises are added to a spaced-repetition system for long-term retention.
+- **Voice Customization:** Select and audition your preferred Cantonese voice in the **Advanced
+  Settings** (`/#/advanced`) page.
+- **SRS Practice:** Completed exercises are added to a spaced-repetition system for long-term
+  retention.
 - **Offline First:** All progress is stored locally in your browser.
 
 ## 📚 How to Use
 
-- **Dashboard:** Your central hub for navigation, tracking lesson progress, and accessing the practice system.
+- **Dashboard:** Your central hub for navigation, tracking lesson progress, and accessing the
+  practice system.
 - **Lessons:** Navigate to a lesson from the roadmap to start learning.
-- **Practice:** Access the "Practice Review" card to reinforce learned material through spaced repetition.
+- **Practice:** Access the "Practice Review" card to reinforce learned material through spaced
+  repetition.
 - **Advanced Tools:** Navigate to `/#/advanced` to view and modify local state.
 
 ## 🛠️ Development & Contribution
 
-This project follows a strict architectural philosophy. Before contributing, please read **[CONTRIBUTING.md](./CONTRIBUTING.md)** for:
+This project follows a strict architectural philosophy. Before contributing, please read
+**[CONTRIBUTING.md](./CONTRIBUTING.md)** for:
 
 - Engineering standards and architectural philosophy.
 - Component lifecycle and communication patterns.

@@ -42,17 +42,11 @@ export class PracticeViewer extends Component {
 
   setupEventListeners() {
     // Results from exercise pages
-    this.element.addEventListener("reading-result", (e) =>
-      this._handleResult(e),
-    );
-    this.element.addEventListener("unscramble-result", (e) =>
-      this._handleResult(e),
-    );
+    this.element.addEventListener("reading-result", (e) => this._handleResult(e));
+    this.element.addEventListener("unscramble-result", (e) => this._handleResult(e));
 
     // Summary page events
-    this.element.addEventListener("retry-practice", () =>
-      this._startNewSession(),
-    );
+    this.element.addEventListener("retry-practice", () => this._startNewSession());
 
     // Global events
     this.element.addEventListener("close", () => this.dispatch("go-home"));

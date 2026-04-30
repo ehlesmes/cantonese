@@ -19,12 +19,7 @@ export class DialogLine extends Component {
    */
   constructor(data, voiceConfig, speakerIndex) {
     super(import.meta.url);
-    this.validate(data, [
-      "speaker",
-      "cantonese",
-      "romanization",
-      "translation",
-    ]);
+    this.validate(data, ["speaker", "cantonese", "romanization", "translation"]);
 
     this._data = data;
     this._voiceConfig = voiceConfig;

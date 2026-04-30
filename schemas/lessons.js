@@ -1,12 +1,6 @@
 import { Validators, validateObject } from "./validator.js";
 
-export const PAGE_TYPES = [
-  "explanation",
-  "reading",
-  "unscramble",
-  "dialog",
-  "congratulations",
-];
+export const PAGE_TYPES = ["explanation", "reading", "unscramble", "dialog", "congratulations"];
 
 const pageBase = {
   type: Validators.isType(PAGE_TYPES),
@@ -19,17 +13,11 @@ const explanationContent = {
     return Validators.isString(val);
   },
   cantonese: (val, obj) =>
-    obj && obj.type === "example"
-      ? Validators.isString(val)
-      : val === undefined,
+    obj && obj.type === "example" ? Validators.isString(val) : val === undefined,
   romanization: (val, obj) =>
-    obj && obj.type === "example"
-      ? Validators.isString(val)
-      : val === undefined,
+    obj && obj.type === "example" ? Validators.isString(val) : val === undefined,
   translation: (val, obj) =>
-    obj && obj.type === "example"
-      ? Validators.isString(val)
-      : val === undefined,
+    obj && obj.type === "example" ? Validators.isString(val) : val === undefined,
 };
 
 const explanationPage = {
@@ -118,12 +106,7 @@ export const Schemas = {
     type: (val) => val === "unscramble",
     tokens: (val) =>
       Validators.isArray(val) &&
-      val.every(
-        (t) =>
-          Validators.isArray(t) &&
-          t.length === 2 &&
-          t.every(Validators.isString),
-      ),
+      val.every((t) => Validators.isArray(t) && t.length === 2 && t.every(Validators.isString)),
     translation: Validators.isString,
   },
 };

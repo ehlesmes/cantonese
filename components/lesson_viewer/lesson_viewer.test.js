@@ -101,15 +101,11 @@ describe("LessonViewer Component", () => {
     });
     await component.ready;
 
-    const title = component
-      .querySelector("#header")
-      .shadowRoot.getElementById("lesson-title");
+    const title = component.querySelector("#header").shadowRoot.getElementById("lesson-title");
     expect(title.textContent).toBe("Test Lesson");
 
     const main = component.querySelector("#m");
-    expect(
-      main.firstElementChild.shadowRoot.querySelector(".page-container"),
-    ).not.toBeNull();
+    expect(main.firstElementChild.shadowRoot.querySelector(".page-container")).not.toBeNull();
   });
 
   it("should start at saved progress index", async () => {
@@ -135,9 +131,7 @@ describe("LessonViewer Component", () => {
 
     // First page (explanation)
     const main = component.querySelector("#m");
-    expect(
-      main.firstElementChild.shadowRoot.querySelector(".page-container"),
-    ).not.toBeNull();
+    expect(main.firstElementChild.shadowRoot.querySelector(".page-container")).not.toBeNull();
 
     // Navigate to second page
     await component.navigateTo(1);
@@ -215,9 +209,7 @@ describe("LessonViewer Component", () => {
       expect(page).not.toBeNull();
 
       // Check for error message
-      const error =
-        page.shadowRoot?.querySelector(".error") ||
-        page.querySelector(".error");
+      const error = page.shadowRoot?.querySelector(".error") || page.querySelector(".error");
       if (error) {
         throw new Error(
           `Page type ${mockLesson.pages[i].type} failed to render: ${error.textContent}`,

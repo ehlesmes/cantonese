@@ -23,10 +23,7 @@ export class ExampleCard extends Component {
   render(data) {
     const { cantonese, romanization, translation } = data;
 
-    this.shadowRoot.adoptedStyleSheets = [
-      ...this.shadowRoot.adoptedStyleSheets,
-      iconStyles,
-    ];
+    this.shadowRoot.adoptedStyleSheets = [...this.shadowRoot.adoptedStyleSheets, iconStyles];
 
     this._wrapper = this.html("div", { className: "example-wrapper" });
 

@@ -2,18 +2,25 @@
 
 ## Overview
 
-This design transitions the application from a collection of demo pages into a cohesive Single Page Application (SPA). It introduces a central "App Shell" with tabbed navigation and a data-driven Dashboard to manage the user's learning journey.
+This design transitions the application from a collection of demo pages into a cohesive Single Page
+Application (SPA). It introduces a central "App Shell" with tabbed navigation and a data-driven
+Dashboard to manage the user's learning journey.
 
-**Note:** Existing `demo_*.html` pages will remain as isolated test environments for debugging and visual verification, while the main user experience will be consolidated into `index.html`.
+**Note:** Existing `demo_*.html` pages will remain as isolated test environments for debugging and
+visual verification, while the main user experience will be consolidated into `index.html`.
 
 ## 🏗️ Architecture: The App Shell
 
 The Shell acts as the root component that manages global state, routing, and top-level navigation.
 
-- **Hash-Based Routing:** The application uses URL hashes (e.g., `#/home`, `#/vocabulary`) to manage navigation state. This enables "Back" button support and bookmarking without complex server-side logic.
+- **Hash-Based Routing:** The application uses URL hashes (e.g., `#/home`, `#/vocabulary`) to manage
+  navigation state. This enables "Back" button support and bookmarking without complex server-side
+  logic.
 - **Navigation:** A top header containing tabs for "Home" and "Vocabulary".
-- **Conditional Visibility:** The navigation header is hidden when a `LessonViewer` or `PracticeViewer` is active to ensure an immersive, focused experience.
-- **Event Driven:** The Shell listens for `go-home` events from sub-components to update the routing state and return the user to the Dashboard.
+- **Conditional Visibility:** The navigation header is hidden when a `LessonViewer` or
+  `PracticeViewer` is active to ensure an immersive, focused experience.
+- **Event Driven:** The Shell listens for `go-home` events from sub-components to update the routing
+  state and return the user to the Dashboard.
 
 ## 🧩 Component Hierarchy
 
@@ -32,8 +39,10 @@ To maintain simplicity and reusability, the UI is broken down into surgical, foc
 - **`ActionCard`**: A reusable card for high-priority tasks (e.g., "Next Lesson", "Practice").
 - **`ChapterAccordion`**: The roadmap container using `<details>` and `<summary>`.
 - **`ChapterItem`**: Manages the state of an individual chapter.
-- **`LessonRow`**: A single row representing a lesson, handling its own status display and click events.
-- **`StatusIcon`**: A micro-component that renders the visual state of a lesson (Not Started, In Progress, Completed).
+- **`LessonRow`**: A single row representing a lesson, handling its own status display and click
+  events.
+- **`StatusIcon`**: A micro-component that renders the visual state of a lesson (Not Started, In
+  Progress, Completed).
 
 ### 3. Vocabulary Components
 
@@ -46,8 +55,10 @@ To maintain simplicity and reusability, the UI is broken down into surgical, foc
 
 ### 1. Hero Section (Quick Actions)
 
-- **Next Lesson:** Uses `Progress.getLessonProgress` to identify the first unfinished lesson in the roadmap.
-- **Practice Review:** Displays the total count of exercises currently in Level 1 through Level 10 of the SRS.
+- **Next Lesson:** Uses `Progress.getLessonProgress` to identify the first unfinished lesson in the
+  roadmap.
+- **Practice Review:** Displays the total count of exercises currently in Level 1 through Level 10
+  of the SRS.
 
 ### 2. The Roadmap (Chapter Accordion)
 
@@ -61,17 +72,23 @@ To maintain simplicity and reusability, the UI is broken down into surgical, foc
 
 - **Unlocked Only (MVP):** Initially, only show exercises from lessons where `completed: true`.
 - **Sorting (MVP):** Default to "Lesson Order".
-- **Lazy Loading (Future):** Implement on-demand rendering if the exercise count grows significantly.
+- **Lazy Loading (Future):** Implement on-demand rendering if the exercise count grows
+  significantly.
 
 ## 🧭 Lesson Navigation & Name Resolution
 
-To ensure a polished user experience without "Loading..." flickers or data duplication, the application uses a hybrid approach to resolve lesson metadata during navigation.
+To ensure a polished user experience without "Loading..." flickers or data duplication, the
+application uses a hybrid approach to resolve lesson metadata during navigation.
 
 ### 1. The Strategy
 
-- **Clean URLs:** Navigation uses simple hashes (e.g., `#/lesson/1.1`) to ensure they are bookmarkable and readable.
-- **Single Source of Truth:** All lesson names and chapter structures are maintained exclusively in `data/lessons.json`.
-- **Pre-emptive Resolution:** The `AppShell` acts as a gatekeeper for routing. Before instantiating a `LessonViewer`, it ensures the global lesson manifest is loaded and resolves the `lessonName` for the given `lessonId`.
+- **Clean URLs:** Navigation uses simple hashes (e.g., `#/lesson/1.1`) to ensure they are
+  bookmarkable and readable.
+- **Single Source of Truth:** All lesson names and chapter structures are maintained exclusively in
+  `data/lessons.json`.
+- **Pre-emptive Resolution:** The `AppShell` acts as a gatekeeper for routing. Before instantiating
+  a `LessonViewer`, it ensures the global lesson manifest is loaded and resolves the `lessonName`
+  for the given `lessonId`.
 
 ### 2. Implementation Details
 
@@ -80,7 +97,8 @@ To ensure a polished user experience without "Loading..." flickers or data dupli
   1. `AppShell` detects a `#/lesson/:id` route.
   2. It requests the lesson name from `LessonProvider`.
   3. Once resolved, it passes both `lessonId` and `lessonName` to the `LessonViewer` constructor.
-- **Immediate Rendering:** Because the name is resolved _before_ the viewer is created, the `LessonHeader` can render the correct title immediately, avoiding a "Loading..." state.
+- **Immediate Rendering:** Because the name is resolved _before_ the viewer is created, the
+  `LessonHeader` can render the correct title immediately, avoiding a "Loading..." state.
 
 ## 🛠️ Implementation Roadmap (MVP First)
 
@@ -94,7 +112,8 @@ To ensure a polished user experience without "Loading..." flickers or data dupli
 
 1. **[DONE] DashboardPage:** Connect components to the `Progress` utility.
 2. **[DONE] Next Lesson Logic:** Implement the "Smart Shortcut" helper.
-3. **[DONE] Integration:** Update `LessonViewer` and `AppShell` to handle routing and "go-home" events.
+3. **[DONE] Integration:** Update `LessonViewer` and `AppShell` to handle routing and "go-home"
+   events.
 
 ### Phase 3: Vocabulary
 

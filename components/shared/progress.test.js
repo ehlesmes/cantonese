@@ -64,9 +64,7 @@ describe("Progress Utility", () => {
     Progress.addExercisesToPractice(["1/1/1.1.2.json"]);
     Progress.addExercisesToPractice(["1/1/1.1.2.json"]);
     const state = JSON.parse(window.localStorage.getItem("cantonese_progress"));
-    expect(
-      state.practice.levels[1].filter((id) => id === "1/1/1.1.2.json").length,
-    ).toBe(1);
+    expect(state.practice.levels[1].filter((id) => id === "1/1/1.1.2.json").length).toBe(1);
   });
 
   it("should promote exercise level on success", () => {
@@ -100,9 +98,7 @@ describe("Progress Utility", () => {
     window.localStorage.setItem("cantonese_progress", JSON.stringify(state));
 
     Progress.updatePracticeResult("fail.json", false);
-    const updatedState = JSON.parse(
-      window.localStorage.getItem("cantonese_progress"),
-    );
+    const updatedState = JSON.parse(window.localStorage.getItem("cantonese_progress"));
     expect(updatedState.practice.levels[3]).not.toContain("fail.json");
     expect(updatedState.practice.levels[1]).toContain("fail.json");
   });
@@ -129,9 +125,7 @@ describe("Progress Utility", () => {
     window.localStorage.setItem("cantonese_progress", JSON.stringify(state));
 
     Progress.updatePracticeResult("cap.json", true);
-    const updatedState = JSON.parse(
-      window.localStorage.getItem("cantonese_progress"),
-    );
+    const updatedState = JSON.parse(window.localStorage.getItem("cantonese_progress"));
     expect(updatedState.practice.levels[10]).toContain("cap.json");
   });
 
@@ -202,9 +196,7 @@ describe("Progress Utility", () => {
       );
       vi.mocked(console.error).mockClear();
 
-      const state = JSON.parse(
-        window.localStorage.getItem("cantonese_progress"),
-      );
+      const state = JSON.parse(window.localStorage.getItem("cantonese_progress"));
       expect(state.version).toBe(2);
       expect(state.activeLesson).toEqual({ id: null, pageIndex: 0 });
       expect(state.practice.levels[1]).toEqual([]);
@@ -232,10 +224,7 @@ describe("Progress Utility", () => {
           },
         },
       };
-      window.localStorage.setItem(
-        "cantonese_progress",
-        JSON.stringify(v1State),
-      );
+      window.localStorage.setItem("cantonese_progress", JSON.stringify(v1State));
 
       const state = Progress._getState();
       expect(state.version).toBe(2);
@@ -247,17 +236,12 @@ describe("Progress Utility", () => {
 
     it("should recover missing fields from partial state", () => {
       const partial = { version: 2, lessons: {} }; // Missing activeLesson and practice
-      window.localStorage.setItem(
-        "cantonese_progress",
-        JSON.stringify(partial),
-      );
+      window.localStorage.setItem("cantonese_progress", JSON.stringify(partial));
 
       const session = Progress.getPracticeSession();
       expect(session).toEqual([]);
 
-      const state = JSON.parse(
-        window.localStorage.getItem("cantonese_progress"),
-      );
+      const state = JSON.parse(window.localStorage.getItem("cantonese_progress"));
       expect(state.activeLesson).toBeDefined();
       expect(state.practice.levels[1]).toBeDefined();
     });
@@ -281,10 +265,7 @@ describe("Progress Utility", () => {
           },
         },
       };
-      window.localStorage.setItem(
-        "cantonese_progress",
-        JSON.stringify(corrupted),
-      );
+      window.localStorage.setItem("cantonese_progress", JSON.stringify(corrupted));
 
       const all = Progress.getAllPracticeExercises();
       expect(all).toEqual([{ exerciseId: "valid.json", level: 1 }]);

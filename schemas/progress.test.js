@@ -1,10 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  ProgressSchema,
-  migrateOrRecover,
-  CURRENT_VERSION,
-  MAX_LEVEL,
-} from "./progress.js";
+import { ProgressSchema, migrateOrRecover, CURRENT_VERSION, MAX_LEVEL } from "./progress.js";
 import { validateObject } from "./validator.js";
 
 describe("Progress Schema", () => {

@@ -2,7 +2,9 @@
 
 ## Overview
 
-This document defines the critical paths (User Journeys) that a learner takes through the Cantonese Learning App. These flows ensure that individual components interact correctly to deliver a cohesive experience. These journeys will be verified using Playwright E2E tests.
+This document defines the critical paths (User Journeys) that a learner takes through the Cantonese
+Learning App. These flows ensure that individual components interact correctly to deliver a cohesive
+experience. These journeys will be verified using Playwright E2E tests.
 
 ---
 
@@ -107,24 +109,31 @@ This document defines the critical paths (User Journeys) that a learner takes th
 - **Action:** User manually selects Lesson 1.1 from the roadmap and completes it again.
 - **Verification:**
   - Congratulations page appears normally.
-  - **Crucial:** SRS level for 1.1 exercises remains at Level 3 (not reset to Level 1 or duplicated).
+  - **Crucial:** SRS level for 1.1 exercises remains at Level 3 (not reset to Level 1 or
+    duplicated).
 
 ---
 
 ## 🧪 Testing Strategy (Hybrid Approach)
 
-We utilize a **Hybrid Approach** within Playwright that combines behavioral assertions with visual "milestones" to ensure both functional correctness and aesthetic integrity.
+We utilize a **Hybrid Approach** within Playwright that combines behavioral assertions with visual
+"milestones" to ensure both functional correctness and aesthetic integrity.
 
 ### 1. The Checkpoint Pattern
 
-Journey tests in Playwright will follow a "Checkpoint" pattern where behavioral actions are followed by visual snapshots of significant UI states:
+Journey tests in Playwright will follow a "Checkpoint" pattern where behavioral actions are followed
+by visual snapshots of significant UI states:
 
-- **Behavioral Assertions:** Verify logic, routing, and data (e.g., `expect(page).toHaveURL(/.*#\/home/)`).
-- **Visual Milestones:** Verify layout and integration (e.g., `expect(page).toHaveScreenshot('dashboard-initial.png')`). This ensures that components like the Header and Nav are correctly integrated within the App Shell.
+- **Behavioral Assertions:** Verify logic, routing, and data (e.g.,
+  `expect(page).toHaveURL(/.*#\/home/)`).
+- **Visual Milestones:** Verify layout and integration (e.g.,
+  `expect(page).toHaveScreenshot('dashboard-initial.png')`). This ensures that components like the
+  Header and Nav are correctly integrated within the App Shell.
 
 ### 2. State Injection
 
-Instead of manually performing 10 lessons to test a specific flow, tests will inject state directly into `LocalStorage` before navigation:
+Instead of manually performing 10 lessons to test a specific flow, tests will inject state directly
+into `LocalStorage` before navigation:
 
 ```javascript
 await page.addInitScript(() => {
@@ -138,8 +147,10 @@ Playwright is the sole tool for these journeys as it provides a real browser env
 
 - **Hash-based routing:** Checking URL changes during navigation.
 - **Component Integration:** Ensuring the Header, Nav, and Main content regions coexist correctly.
-- **Persistence:** Verifying that actions in one view (e.g., completing a lesson) are correctly reflected in another (e.g., the Vocabulary tab) via `LocalStorage`.
+- **Persistence:** Verifying that actions in one view (e.g., completing a lesson) are correctly
+  reflected in another (e.g., the Vocabulary tab) via `LocalStorage`.
 
 ### 4. Location
 
-E2E journey tests will be stored in `tests/e2e/*.spec.js`. This separates them from the existing component-level visual tests in `tests/visual/`.
+E2E journey tests will be stored in `tests/e2e/*.spec.js`. This separates them from the existing
+component-level visual tests in `tests/visual/`.

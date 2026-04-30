@@ -9,10 +9,7 @@ export class StatusIcon extends Component {
   constructor(data) {
     super(import.meta.url);
     this.validate(data, ["status"]);
-    this.shadowRoot.adoptedStyleSheets = [
-      ...this.shadowRoot.adoptedStyleSheets,
-      iconStyles,
-    ];
+    this.shadowRoot.adoptedStyleSheets = [...this.shadowRoot.adoptedStyleSheets, iconStyles];
     this.render();
     this.status = data.status;
   }

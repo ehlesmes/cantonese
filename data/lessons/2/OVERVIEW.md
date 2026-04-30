@@ -1,6 +1,7 @@
 # Chapter 2: Greetings, Introductions & Small Talk
 
-This chapter covers the essentials of starting and ending conversations in both formal and colloquial settings.
+This chapter covers the essentials of starting and ending conversations in both formal and
+colloquial settings.
 
 ## Lesson 2.1: Hello and "What's Up?"
 
@@ -35,7 +36,8 @@ _Balancing formal greetings with daily colloquialisms._
 
 _Self-introductions and identity._
 
-- **Concepts:** `我係` (I am) vs `我叫` (I am called). Expressing pleasure in meeting. Common name prefixes (`阿`).
+- **Concepts:** `我係` (I am) vs `我叫` (I am called). Expressing pleasure in meeting. Common name
+  prefixes (`阿`).
 - **Examples:**
   - `ngo5 hai6` (我係) - I am
   - `ngo5 giu3` (我叫) - My name is
@@ -65,7 +67,8 @@ _Self-introductions and identity._
 
 _Introducing the most common Cantonese colloquialisms._
 
-- **Concepts:** Asking about eating as a greeting (`食咗飯未？`), "Where are you going?" (`去邊呀？`), and return questions (`你呢？`).
+- **Concepts:** Asking about eating as a greeting (`食咗飯未？`), "Where are you going?"
+  (`去邊呀？`), and return questions (`你呢？`).
 - **Examples:**
   - `sik6 zo2 faan6 mei6?` (食咗飯未？) - Have you eaten yet? (Common greeting)
   - `sik6 zo2 laa3` (食咗喇) - Eaten already
@@ -99,7 +102,8 @@ _Formal and informal introductions of third parties._
 - **Dialogues:**
   - **Dialogue 1 (Formal - Presenting Others):**
     - A: `can4 sin1 saang1, ni1 wai2 hai6 wong4 siu2 ze2.` (陳先生，呢位係黃小姐。)
-    - B: `wong4 siu2 ze2, nei5 hou2. hou2 wing4 hang6 sik1 dou2 nei5.` (黃小姐，你好。好榮幸識到你。)
+    - B: `wong4 siu2 ze2, nei5 hou2. hou2 wing4 hang6 sik1 dou2 nei5.`
+      (黃小姐，你好。好榮幸識到你。)
     - C: `can4 sin1 saang1, nei5 taai3 haak3 hei3 laa3.` (陳先生，你太客氣喇。)
   - **Dialogue 2 (Informal - Introducing Friends):**
     - A: `wai2 aa3 ming4, ni1 go3 hai6 ngo5 pang4 jau5 aa3 koeng4.` (喂阿明，呢個係我朋友阿強。)

@@ -38,33 +38,23 @@ describe("ChapterAccordion Component", () => {
     });
 
     it("should throw if activeLesson is missing", () => {
-      expect(
-        () => new ChapterAccordion({ chapters: [], progress: {} }),
-      ).toThrow();
+      expect(() => new ChapterAccordion({ chapters: [], progress: {} })).toThrow();
     });
   });
 
   it("should render all chapters", () => {
     const accordion = new ChapterAccordion(mockData);
-    const items = accordion.shadowRoot.querySelectorAll(
-      ".chapter-accordion > *",
-    );
+    const items = accordion.shadowRoot.querySelectorAll(".chapter-accordion > *");
     expect(items.length).toBe(2);
   });
 
   it("should open the active chapter", () => {
     const accordion = new ChapterAccordion(mockData);
-    const items = accordion.shadowRoot.querySelectorAll(
-      ".chapter-accordion > *",
-    );
+    const items = accordion.shadowRoot.querySelectorAll(".chapter-accordion > *");
 
     // First chapter should be closed
-    expect(items[0].component.shadowRoot.querySelector("details").open).toBe(
-      false,
-    );
+    expect(items[0].component.shadowRoot.querySelector("details").open).toBe(false);
     // Second chapter (active) should be open
-    expect(items[1].component.shadowRoot.querySelector("details").open).toBe(
-      true,
-    );
+    expect(items[1].component.shadowRoot.querySelector("details").open).toBe(true);
   });
 });

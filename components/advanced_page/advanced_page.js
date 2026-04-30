@@ -27,22 +27,18 @@ export class AdvancedPage extends Component {
     header.appendChild(
       this.html("p", {
         className: "page-description",
-        textContent:
-          "Configure system-wide preferences and inspect local storage.",
+        textContent: "Configure system-wide preferences and inspect local storage.",
       }),
     );
     container.appendChild(header);
 
     // 1. Voice Settings Section
     const voiceSection = this.html("section", { className: "settings-card" });
-    voiceSection.appendChild(
-      this.html("h2", { textContent: "Cantonese Voice" }),
-    );
+    voiceSection.appendChild(this.html("h2", { textContent: "Cantonese Voice" }));
     voiceSection.appendChild(
       this.html("p", {
         className: "section-hint",
-        textContent:
-          "Choose the voice used for all Cantonese text-to-speech features.",
+        textContent: "Choose the voice used for all Cantonese text-to-speech features.",
       }),
     );
 
@@ -73,14 +69,11 @@ export class AdvancedPage extends Component {
     const storageSection = this.html("section", {
       className: "settings-card",
     });
-    storageSection.appendChild(
-      this.html("h2", { textContent: "Storage Inspector" }),
-    );
+    storageSection.appendChild(this.html("h2", { textContent: "Storage Inspector" }));
     storageSection.appendChild(
       this.html("p", {
         className: "section-hint",
-        textContent:
-          "Directly view and edit raw application state stored in LocalStorage.",
+        textContent: "Directly view and edit raw application state stored in LocalStorage.",
       }),
     );
 
@@ -91,9 +84,7 @@ export class AdvancedPage extends Component {
       const row = this.html("div", { className: "storage-row" });
 
       const info = this.html("div", { className: "storage-info" });
-      info.appendChild(
-        this.html("span", { className: "storage-key", textContent: key }),
-      );
+      info.appendChild(this.html("span", { className: "storage-key", textContent: key }));
 
       const input = this.html("input", { className: "storage-input", value });
       info.appendChild(input);
@@ -128,9 +119,7 @@ export class AdvancedPage extends Component {
 
   updateVoiceList() {
     this._voices = getAvailableVoices();
-    const preferredName = localStorage.getItem(
-      "cantonese_preferred_voice_name",
-    );
+    const preferredName = localStorage.getItem("cantonese_preferred_voice_name");
 
     this._voiceSelect.replaceChildren();
     if (this._voices.length === 0) {
@@ -181,17 +170,11 @@ export class AdvancedPage extends Component {
     });
 
     this._onVoicesChanged = () => this.updateVoiceList();
-    window.speechSynthesis.addEventListener(
-      "voiceschanged",
-      this._onVoicesChanged,
-    );
+    window.speechSynthesis.addEventListener("voiceschanged", this._onVoicesChanged);
   }
 
   disconnectedCallback() {
-    window.speechSynthesis.removeEventListener(
-      "voiceschanged",
-      this._onVoicesChanged,
-    );
+    window.speechSynthesis.removeEventListener("voiceschanged", this._onVoicesChanged);
   }
 }
 

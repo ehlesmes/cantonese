@@ -79,12 +79,8 @@ describe("Lesson Schemas", () => {
         ],
       };
       const errors = validateObject(data, Schemas.lessonDetail);
-      expect(errors.join()).toContain(
-        'Invalid or missing value for "content[0].value"',
-      );
-      expect(errors.join()).toContain(
-        'Invalid or missing value for "content[0].cantonese"',
-      );
+      expect(errors.join()).toContain('Invalid or missing value for "content[0].value"');
+      expect(errors.join()).toContain('Invalid or missing value for "content[0].cantonese"');
     });
 
     it("should catch invalid explanation content", () => {
@@ -98,9 +94,7 @@ describe("Lesson Schemas", () => {
         ],
       };
       const errors = validateObject(data, Schemas.lessonDetail);
-      expect(errors.join()).toContain(
-        'Invalid or missing value for "content[0].value": 123',
-      );
+      expect(errors.join()).toContain('Invalid or missing value for "content[0].value": 123');
     });
 
     it("should catch unknown page type", () => {

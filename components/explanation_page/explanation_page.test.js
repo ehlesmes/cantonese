@@ -30,9 +30,7 @@ describe("ExplanationPage Component", () => {
     const content = component.querySelector("#content");
 
     expect(content.querySelector("h1").textContent).toBe("Test Title");
-    expect(content.querySelector("p").textContent).toBe(
-      "This is important text.",
-    );
+    expect(content.querySelector("p").textContent).toBe("This is important text.");
     expect(content.querySelector("strong").textContent).toBe("important");
 
     // ExampleCard is a component, its content is in its shadow DOM

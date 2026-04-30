@@ -20,9 +20,7 @@ export function speakCantonese(text, config = {}, explicitVoice) {
   const { index = 0, pitch = 1.0, rate = 0.85 } = config;
 
   if (!("speechSynthesis" in window)) {
-    console.error(
-      "🚨 TTS Error: Speech Synthesis not supported in this browser.",
-    );
+    console.error("🚨 TTS Error: Speech Synthesis not supported in this browser.");
     return;
   }
 
@@ -37,9 +35,7 @@ export function speakCantonese(text, config = {}, explicitVoice) {
     if (explicitVoice) {
       utterance.voice = explicitVoice;
     } else {
-      const preferredName = window.localStorage.getItem(
-        "cantonese_preferred_voice_name",
-      );
+      const preferredName = window.localStorage.getItem("cantonese_preferred_voice_name");
       const preferredVoice = voices.find((v) => v.name === preferredName);
 
       if (preferredVoice) {
@@ -56,20 +52,14 @@ export function speakCantonese(text, config = {}, explicitVoice) {
 
   const currentVoices = getAvailableVoices();
 
-  if (
-    currentVoices.length > 0 ||
-    window.speechSynthesis.getVoices().length > 0
-  ) {
+  if (currentVoices.length > 0 || window.speechSynthesis.getVoices().length > 0) {
     speak(currentVoices);
   } else {
     // If voices aren't loaded yet, wait for them.
     const onVoicesChanged = () => {
       const lateVoices = getAvailableVoices();
       speak(lateVoices);
-      window.speechSynthesis.removeEventListener(
-        "voiceschanged",
-        onVoicesChanged,
-      );
+      window.speechSynthesis.removeEventListener("voiceschanged", onVoicesChanged);
     };
     window.speechSynthesis.addEventListener("voiceschanged", onVoicesChanged);
   }

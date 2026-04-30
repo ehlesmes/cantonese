@@ -1,6 +1,7 @@
 # Congratulations Page Component Requirements
 
-The `congratulations-page` is shown at the end of a lesson to celebrate completion and provide navigation options for what to do next.
+The `congratulations-page` is shown at the end of a lesson to celebrate completion and provide
+navigation options for what to do next.
 
 ## 1. Data Input
 

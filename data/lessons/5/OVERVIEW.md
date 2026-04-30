@@ -1,6 +1,7 @@
 # Chapter 5: Context & Nuance
 
-This chapter moves beyond simple identification and focuses on the "W-questions" (Where, When, How, Why) and the expressive particles that add flavor and nuance to Cantonese speech.
+This chapter moves beyond simple identification and focuses on the "W-questions" (Where, When, How,
+Why) and the expressive particles that add flavor and nuance to Cantonese speech.
 
 ## Lesson 5.1: Where? (Location & Placement)
 
@@ -61,7 +62,9 @@ This chapter moves beyond simple identification and focuses on the "W-questions"
     - B: `ngo5 daap3 ce1. nei5 ne1?` (我搭車。你呢？)
     - A: `ngo5 haang4 lou6.` (我行路。)
   - **Dialogue 2 (Formal - Business Travel):**
-    - A: `can4 ging1 lei5, ceng2 man6 gwai3 gung1 si1 tung4 si6 hai6 dim2 joeng2 heoi3 wui2 ji5 ge3?` (陳經理，請問貴公司同事係點樣去會議嘅？)
+    - A:
+      `can4 ging1 lei5, ceng2 man6 gwai3 gung1 si1 tung4 si6 hai6 dim2 joeng2 heoi3 wui2 ji5 ge3?`
+      (陳經理，請問貴公司同事係點樣去會議嘅？)
     - B: `keoi5 dei6 daap3 dei6 tit3 heoi3.` (佢哋搭地鐵去。)
 - **Exercises:**
   - `5.3.2` (Reading): `搭車，行路` (Covers: 搭, 車, 行, 路)
@@ -110,7 +113,8 @@ This chapter moves beyond simple identification and focuses on the "W-questions"
     - B: `saam1 go3 jan4 zaa3.` (三個人咋。)
     - A: `hai6 gwaa3.` (係啩。)
   - **Dialogue 2 (Formal - Business Report):**
-    - A: `can4 ging1 lei5, geoi3 sik1 bun2 jyut6 jip6 zik1 zoeng1 wui5 zang1 zoeng2.` (陳經理，據悉本月業績將會增長。)
+    - A: `can4 ging1 lei5, geoi3 sik1 bun2 jyut6 jip6 zik1 zoeng1 wui5 zang1 zoeng2.`
+      (陳經理，據悉本月業績將會增長。)
     - B: `hai6, kok3 hai6 jyu4 ci2.` (係，確係如此。)
 - **Exercises:**
   - `5.5.2` (Reading): `兩個人咋` (Covers: 兩, 個, 人)

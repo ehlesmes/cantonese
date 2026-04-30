@@ -4,8 +4,7 @@ export default {
   meta: {
     type: "problem",
     docs: {
-      description:
-        "Ensure imported shared styles are assigned to adoptedStyleSheets.",
+      description: "Ensure imported shared styles are assigned to adoptedStyleSheets.",
     },
   },
   create(context) {
@@ -16,9 +15,7 @@ export default {
         node.specifiers.forEach((spec) => {
           if (
             spec.type === "ImportSpecifier" &&
-            ["iconStyles", "baseStyles", "buttonStyles"].includes(
-              spec.imported.name,
-            )
+            ["iconStyles", "baseStyles", "buttonStyles"].includes(spec.imported.name)
           ) {
             importedStyles.add(spec.local.name);
           }

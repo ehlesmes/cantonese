@@ -70,12 +70,10 @@ describe("DashboardPage Component", () => {
     const accordionHost = roadmap.querySelector("div"); // host for ChapterAccordion
     const accordion = accordionHost.component;
 
-    const chapterItemHost =
-      accordion.shadowRoot.querySelector(".chapter-accordion").firstChild;
+    const chapterItemHost = accordion.shadowRoot.querySelector(".chapter-accordion").firstChild;
     const chapterItem = chapterItemHost.component;
 
-    const lessonRowHost =
-      chapterItem.shadowRoot.querySelector(".lesson-list").firstChild;
+    const lessonRowHost = chapterItem.shadowRoot.querySelector(".lesson-list").firstChild;
     const innerRow = lessonRowHost.shadowRoot.querySelector(".lesson-row");
 
     innerRow.click();

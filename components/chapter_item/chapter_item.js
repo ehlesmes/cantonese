@@ -14,17 +14,8 @@ export class ChapterItem extends Component {
    */
   constructor(data) {
     super(import.meta.url);
-    this.validate(data, [
-      "chapterId",
-      "chapterName",
-      "lessons",
-      "progress",
-      "activeLesson",
-    ]);
-    this.shadowRoot.adoptedStyleSheets = [
-      ...this.shadowRoot.adoptedStyleSheets,
-      iconStyles,
-    ];
+    this.validate(data, ["chapterId", "chapterName", "lessons", "progress", "activeLesson"]);
+    this.shadowRoot.adoptedStyleSheets = [...this.shadowRoot.adoptedStyleSheets, iconStyles];
     this.render(data);
   }
 

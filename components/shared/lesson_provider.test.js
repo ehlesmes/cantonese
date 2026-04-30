@@ -46,9 +46,7 @@ describe("LessonProvider", () => {
         ok: false,
       });
 
-      await expect(LessonProvider.getManifest()).rejects.toThrow(
-        "Failed to load lessons.json",
-      );
+      await expect(LessonProvider.getManifest()).rejects.toThrow("Failed to load lessons.json");
     });
   });
 

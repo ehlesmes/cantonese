@@ -1,6 +1,7 @@
 # Chapter 1: Pronunciation (Jyutping)
 
-Welcome to the first chapter of your Cantonese journey! This chapter establishes your foundation in **Jyutping** pronunciation.
+Welcome to the first chapter of your Cantonese journey! This chapter establishes your foundation in
+**Jyutping** pronunciation.
 
 ## Lesson 1.1: Upper Register Tones
 

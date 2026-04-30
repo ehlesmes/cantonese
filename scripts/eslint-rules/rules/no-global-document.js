@@ -12,10 +12,7 @@ export default {
       MemberExpression(node) {
         // Allow document.createElement and createTextNode, block everything else
         const allowedMethods = ["createElement", "createTextNode"];
-        if (
-          node.object.name === "document" &&
-          !allowedMethods.includes(node.property.name)
-        ) {
+        if (node.object.name === "document" && !allowedMethods.includes(node.property.name)) {
           context.report({
             node,
             message:

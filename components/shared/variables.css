@@ -19,8 +19,7 @@
   --md-sys-color-error-container: #fce8e6;
 
   /* Typography */
-  --md-sys-font-family:
-    "Google Sans", "Roboto", system-ui, -apple-system, sans-serif;
+  --md-sys-font-family: "Google Sans", "Roboto", system-ui, -apple-system, sans-serif;
 
   --header-height: 72px;
   --footer-height: 80px;

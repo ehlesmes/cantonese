@@ -24,9 +24,7 @@ describe("CongratulationsPage Component", () => {
 
   it("should render title and summary", () => {
     const component = new CongratulationsPage(testDataWithNext);
-    expect(component.shadowRoot.querySelector("h1").textContent).toBe(
-      "Lesson Complete!",
-    );
+    expect(component.shadowRoot.querySelector("h1").textContent).toBe("Lesson Complete!");
     expect(component.shadowRoot.querySelector("p").textContent).toBe(
       "Great job on finishing the lesson.",
     );

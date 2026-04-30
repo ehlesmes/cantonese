@@ -46,9 +46,7 @@ export class ExplanationPage extends BasePage {
           break;
         }
         default:
-          console.warn(
-            `⚠️ [ExplanationPage]: Unknown chunk type "${chunk.type}"`,
-          );
+          console.warn(`⚠️ [ExplanationPage]: Unknown chunk type "${chunk.type}"`);
       }
       if (el) wrapper.appendChild(el);
     });

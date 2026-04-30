@@ -4,8 +4,7 @@ export default {
   meta: {
     type: "problem",
     docs: {
-      description:
-        "Enforce document.body.replaceChildren() for test isolation.",
+      description: "Enforce document.body.replaceChildren() for test isolation.",
     },
   },
   create(context) {

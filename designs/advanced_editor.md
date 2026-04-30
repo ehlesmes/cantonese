@@ -2,7 +2,8 @@
 
 ## Objective
 
-Provide a developer-friendly interface to view and manage application state stored in `localStorage`.
+Provide a developer-friendly interface to view and manage application state stored in
+`localStorage`.
 
 ## User Journey
 
@@ -21,5 +22,7 @@ Provide a developer-friendly interface to view and manage application state stor
 
 ## Technical Considerations
 
-- **Schema Sharing:** Use a shared module for validation rules to ensure consistency between the build-time compliance check and runtime debugging.
-- **State Handling:** Editing should update the view state immediately, with "Save" explicitly syncing to `localStorage`.
+- **Schema Sharing:** Use a shared module for validation rules to ensure consistency between the
+  build-time compliance check and runtime debugging.
+- **State Handling:** Editing should update the view state immediately, with "Save" explicitly
+  syncing to `localStorage`.

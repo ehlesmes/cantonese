@@ -61,9 +61,7 @@ describe("Validator Engine", () => {
       const data = { meta: { id: 123, tags: "none" } };
       const errors = validateObject(data, schema);
       expect(errors).toContain('Invalid or missing value for "meta.id": 123');
-      expect(errors).toContain(
-        'Invalid or missing value for "meta.tags": "none"',
-      );
+      expect(errors).toContain('Invalid or missing value for "meta.tags": "none"');
     });
   });
 
@@ -89,9 +87,7 @@ describe("Validator Engine", () => {
       expect(validateObject(data, schema)).toEqual([]);
 
       const invalid = { tags: ["a", 1] };
-      expect(validateObject(invalid, schema)).toContain(
-        'Invalid value at "tags[1]"',
-      );
+      expect(validateObject(invalid, schema)).toContain('Invalid value at "tags[1]"');
     });
   });
 
@@ -106,25 +102,18 @@ describe("Validator Engine", () => {
       };
 
       expect(validateObject({ val: 1 }, unionSchema)).toEqual([]);
-      expect(validateObject({ val: 2 }, unionSchema)).toEqual([
-        "Value must be 1",
-      ]);
+      expect(validateObject({ val: 2 }, unionSchema)).toEqual(["Value must be 1"]);
     });
 
     it("should handle deep union errors via array return", () => {
       const itemSchema = { type: Validators.isString };
       const schema = {
-        pages: [
-          (item) =>
-            item.type === "valid" ? [] : validateObject(item, itemSchema),
-        ],
+        pages: [(item) => (item.type === "valid" ? [] : validateObject(item, itemSchema))],
       };
 
       const data = { pages: [{ type: "valid" }, { type: 123 }] };
       const errors = validateObject(data, schema);
-      expect(errors).toContain(
-        'pages[1].Invalid or missing value for "type": 123',
-      );
+      expect(errors).toContain('pages[1].Invalid or missing value for "type": 123');
     });
   });
 });

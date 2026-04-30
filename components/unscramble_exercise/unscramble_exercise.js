@@ -12,10 +12,7 @@ export class UnscrambleExercise extends Component {
    */
   constructor(data) {
     super(import.meta.url);
-    this.shadowRoot.adoptedStyleSheets = [
-      ...this.shadowRoot.adoptedStyleSheets,
-      iconStyles,
-    ];
+    this.shadowRoot.adoptedStyleSheets = [...this.shadowRoot.adoptedStyleSheets, iconStyles];
 
     this.validate(data, ["tokens", "translation"]);
 

@@ -4,8 +4,7 @@ export default {
   meta: {
     type: "problem",
     docs: {
-      description:
-        "Enforce mandatory lifecycle calls in Component constructors.",
+      description: "Enforce mandatory lifecycle calls in Component constructors.",
     },
   },
   create(context) {
@@ -54,18 +53,11 @@ export default {
 
         // 3. Enforce setupEventListeners call if the method is defined locally
         // Skip for BasePage subclasses because BasePage constructor calls it.
-        const hasSetupMethod = node.body.body.some(
-          (m) => m.key?.name === "setupEventListeners",
-        );
-        if (
-          !extendsBasePage &&
-          hasSetupMethod &&
-          !hasCallTo(constructor, "setupEventListeners")
-        ) {
+        const hasSetupMethod = node.body.body.some((m) => m.key?.name === "setupEventListeners");
+        if (!extendsBasePage && hasSetupMethod && !hasCallTo(constructor, "setupEventListeners")) {
           context.report({
             node: constructor,
-            message:
-              "setupEventListeners() defined but never called in constructor.",
+            message: "setupEventListeners() defined but never called in constructor.",
           });
         }
       },

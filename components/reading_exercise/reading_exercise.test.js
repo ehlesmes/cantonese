@@ -40,8 +40,7 @@ describe("ReadingExercise Component", () => {
       translation: "Hello",
     });
 
-    const translationEl =
-      component.shadowRoot.querySelector(".translation-text");
+    const translationEl = component.shadowRoot.querySelector(".translation-text");
 
     // By default (from data object), it's hidden
     expect(translationEl.classList.contains("hidden")).toBe(true);
@@ -81,8 +80,7 @@ describe("ReadingExercise Component", () => {
     document.body.appendChild(component.element);
 
     const audioControls = component.shadowRoot.querySelector(".audio-controls");
-    const playSlowBtn =
-      audioControls.shadowRoot.getElementById("play-audio-slow");
+    const playSlowBtn = audioControls.shadowRoot.getElementById("play-audio-slow");
     const eventSpy = vi.fn();
 
     component.element.addEventListener("play-audio", eventSpy);

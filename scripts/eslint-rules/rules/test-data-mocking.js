@@ -4,8 +4,7 @@ export default {
   meta: {
     type: "problem",
     docs: {
-      description:
-        "Enforce vi.stubGlobal('fetch', ...) for tests involving network calls.",
+      description: "Enforce vi.stubGlobal('fetch', ...) for tests involving network calls.",
     },
   },
   create(context) {

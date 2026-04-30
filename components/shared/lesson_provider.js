@@ -25,10 +25,7 @@ export const LessonProvider = {
       .then((data) => {
         const errors = validateObject(data, Schemas.lessonsJson);
         if (errors.length > 0) {
-          console.error(
-            "🚨 [LessonProvider]: Validation failed for lessons.json",
-            errors,
-          );
+          console.error("🚨 [LessonProvider]: Validation failed for lessons.json", errors);
         }
         this._manifestCache = data;
         this._manifestPromise = null;
@@ -58,10 +55,7 @@ export const LessonProvider = {
       const data = await response.json();
       const errors = validateObject(data, Schemas.lessonDetail);
       if (errors.length > 0) {
-        console.error(
-          `🚨 [LessonProvider]: Validation failed for ${lessonId}.json`,
-          errors,
-        );
+        console.error(`🚨 [LessonProvider]: Validation failed for ${lessonId}.json`, errors);
       }
 
       this._lessonCache.set(lessonId, data);

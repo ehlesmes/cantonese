@@ -44,8 +44,6 @@ export class AudioControls extends Component {
 
   setupEventListeners() {
     this._playBtn.element.addEventListener("click", () => this._onPlay());
-    this._playSlowBtn.element.addEventListener("click", () =>
-      this._onPlaySlow(),
-    );
+    this._playSlowBtn.element.addEventListener("click", () => this._onPlaySlow());
   }
 }

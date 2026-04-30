@@ -38,17 +38,11 @@ describe("VocabularyItem Component", () => {
     // Check Tooltip (Cantonese + Romanization)
     const tooltip = row.querySelector("div:nth-child(2)");
     expect(tooltip.component).toBeInstanceOf(Tooltip);
-    expect(item.shadowRoot.querySelector(".cantonese-text").textContent).toBe(
-      "你好",
-    );
-    expect(
-      item.shadowRoot.querySelector(".romanization-text").textContent,
-    ).toBe("nei5 hou2");
+    expect(item.shadowRoot.querySelector(".cantonese-text").textContent).toBe("你好");
+    expect(item.shadowRoot.querySelector(".romanization-text").textContent).toBe("nei5 hou2");
 
     // Check Translation
-    expect(item.shadowRoot.querySelector(".translation-text").textContent).toBe(
-      "Hello",
-    );
+    expect(item.shadowRoot.querySelector(".translation-text").textContent).toBe("Hello");
 
     // Check Play Button
     const playBtn = row.querySelector(".play-btn");

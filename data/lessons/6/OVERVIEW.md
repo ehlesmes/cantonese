@@ -1,10 +1,12 @@
 # Chapter 6: My World
 
-This chapter explores the personal world of the learner, covering possession, family relationships, origins, and the nuances of social interaction.
+This chapter explores the personal world of the learner, covering possession, family relationships,
+origins, and the nuances of social interaction.
 
 ## Lesson 6.1: To Have & Not Have (jau5, mou5)
 
-- **Concepts:** Expressing existence and possession with `jau5` (have) and `mou5` (not have). Asking "Do you have...?" (`jau5 mou5`).
+- **Concepts:** Expressing existence and possession with `jau5` (have) and `mou5` (not have). Asking
+  "Do you have...?" (`jau5 mou5`).
 - **Examples:**
   - `jau5` (有) - Have
   - `mou5` (冇) - Not have
@@ -75,7 +77,8 @@ This chapter explores the personal world of the learner, covering possession, fa
 
 ## Lesson 6.4: Abilities & Languages (sik1)
 
-- **Concepts:** Using `sik1` (to know how to / to understand) for languages and skills. Introduction of the verb `gong2` (to speak).
+- **Concepts:** Using `sik1` (to know how to / to understand) for languages and skills. Introduction
+  of the verb `gong2` (to speak).
 - **Examples:**
   - `sik1` (識) - To know / To understand
   - `m4 sik1` (唔識) - Not know

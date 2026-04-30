@@ -15,12 +15,7 @@ export class BasePage extends Component {
    * @param {string} [footerConfig.secondaryText]
    * @param {boolean} [footerConfig.primaryDisabled=false]
    */
-  constructor(
-    data,
-    requiredProps,
-    baseUrl,
-    footerConfig = { primaryText: "Continue" },
-  ) {
+  constructor(data, requiredProps, baseUrl, footerConfig = { primaryText: "Continue" }) {
     super(baseUrl);
     this.validate(data, requiredProps);
 
@@ -48,12 +43,8 @@ export class BasePage extends Component {
 
   setupEventListeners() {
     // Standard footer event forwarding
-    this.element.addEventListener("primary-click", () =>
-      this.handlePrimaryClick(),
-    );
-    this.element.addEventListener("secondary-click", () =>
-      this.handleSecondaryClick(),
-    );
+    this.element.addEventListener("primary-click", () => this.handlePrimaryClick());
+    this.element.addEventListener("secondary-click", () => this.handleSecondaryClick());
   }
 
   /**

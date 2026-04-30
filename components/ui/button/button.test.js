@@ -33,18 +33,10 @@ describe("Button Component", () => {
 
   it("should apply variant classes", () => {
     const filled = new Button({ label: "Filled", variant: "filled" });
-    expect(
-      filled.shadowRoot
-        .querySelector("button")
-        .classList.contains("btn-filled"),
-    ).toBe(true);
+    expect(filled.shadowRoot.querySelector("button").classList.contains("btn-filled")).toBe(true);
 
     const outline = new Button({ label: "Outline", variant: "outline" });
-    expect(
-      outline.shadowRoot
-        .querySelector("button")
-        .classList.contains("btn-outline"),
-    ).toBe(true);
+    expect(outline.shadowRoot.querySelector("button").classList.contains("btn-outline")).toBe(true);
   });
 
   it("should handle disabled state", () => {
@@ -59,9 +51,7 @@ describe("Button Component", () => {
   it("should update label via setter", () => {
     const component = new Button({ label: "Initial" });
     component.label = "Updated";
-    expect(component.shadowRoot.querySelector("button").textContent).toBe(
-      "Updated",
-    );
+    expect(component.shadowRoot.querySelector("button").textContent).toBe("Updated");
   });
 
   it("should dispatch click event", () => {

@@ -13,10 +13,7 @@ export class LessonRow extends Component {
     super(import.meta.url);
     this.validate(data, ["lessonId", "lessonName", "status"]);
     this._lessonId = data.lessonId;
-    this.shadowRoot.adoptedStyleSheets = [
-      ...this.shadowRoot.adoptedStyleSheets,
-      iconStyles,
-    ];
+    this.shadowRoot.adoptedStyleSheets = [...this.shadowRoot.adoptedStyleSheets, iconStyles];
     this.render(data);
     this.setupEventListeners();
     this.status = data.status;

@@ -7,17 +7,13 @@ export const ProgressSchema = {
   version: Validators.isNumber,
   activeLesson: (val) => {
     if (!val || typeof val !== "object" || Array.isArray(val)) return false;
-    return (
-      (val.id === null || typeof val.id === "string") &&
-      typeof val.pageIndex === "number"
-    );
+    return (val.id === null || typeof val.id === "string") && typeof val.pageIndex === "number";
   },
   lessons: (val) => {
     if (!val || typeof val !== "object" || Array.isArray(val)) return false;
     return Object.values(val).every(
       (lessonProgress) =>
-        lessonProgress.completed === undefined ||
-        typeof lessonProgress.completed === "boolean",
+        lessonProgress.completed === undefined || typeof lessonProgress.completed === "boolean",
     );
   },
   practice: {
@@ -26,10 +22,7 @@ export const ProgressSchema = {
       return Object.entries(val).every(([key, value]) => {
         const level = parseInt(key, 10);
         return (
-          level >= 1 &&
-          level <= 10 &&
-          Validators.isArray(value) &&
-          value.every(Validators.isString)
+          level >= 1 && level <= 10 && Validators.isArray(value) && value.every(Validators.isString)
         );
       });
     },
@@ -90,20 +83,12 @@ export function migrateOrRecover(state) {
 
   // Recover version
   recovered.version =
-    typeof currentState.version === "number"
-      ? currentState.version
-      : CURRENT_VERSION;
+    typeof currentState.version === "number" ? currentState.version : CURRENT_VERSION;
 
   // Recover activeLesson
-  if (
-    currentState.activeLesson &&
-    typeof currentState.activeLesson === "object"
-  ) {
+  if (currentState.activeLesson && typeof currentState.activeLesson === "object") {
     recovered.activeLesson = {
-      id:
-        typeof currentState.activeLesson.id === "string"
-          ? currentState.activeLesson.id
-          : null,
+      id: typeof currentState.activeLesson.id === "string" ? currentState.activeLesson.id : null,
       pageIndex:
         typeof currentState.activeLesson.pageIndex === "number"
           ? currentState.activeLesson.pageIndex
@@ -120,8 +105,7 @@ export function migrateOrRecover(state) {
     Object.entries(currentState.lessons).forEach(([lessonId, data]) => {
       if (data && typeof data === "object") {
         recovered.lessons[lessonId] = {
-          completed:
-            typeof data.completed === "boolean" ? data.completed : false,
+          completed: typeof data.completed === "boolean" ? data.completed : false,
         };
       }
     });
