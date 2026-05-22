@@ -4,7 +4,7 @@
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 40
+    "occurrences": 61
   },
   {
     "character": "巴士",
@@ -18,7 +18,7 @@
     "jyutping": "baai1baai3",
     "translation": "bye-bye / goodbye (loanword)",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 6
+    "occurrences": 8
   },
   {
     "character": "八",
@@ -35,6 +35,34 @@
     "occurrences": 4
   },
   {
+    "character": "菠蘿包",
+    "jyutping": "bo1lo1baau1",
+    "translation": "pineapple bun (sweet crusted bun, usually containing no pineapple)",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 8
+  },
+  {
+    "character": "杯",
+    "jyutping": "bui1",
+    "translation": "cup / glass / mug (classifier for drinks)",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 11
+  },
+  {
+    "character": "叉燒",
+    "jyutping": "caa1siu1",
+    "translation": "barbecued pork / char siu",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 3
+  },
+  {
+    "character": "茶餐廳",
+    "jyutping": "caa4caan1teng1",
+    "translation": "Hong Kong style café / diner",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 5
+  },
+  {
     "character": "七",
     "jyutping": "cat1",
     "translation": "seven",
@@ -46,6 +74,13 @@
     "jyutping": "cin2",
     "translation": "money",
     "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 6
+  },
+  {
+    "character": "蛋撻",
+    "jyutping": "daan6taat1",
+    "translation": "egg tart",
+    "firstIntroducedIn": "03-dining-out.md",
     "occurrences": 5
   },
   {
@@ -63,11 +98,32 @@
     "occurrences": 2
   },
   {
+    "character": "定",
+    "jyutping": "ding6",
+    "translation": "or (used exclusively in alternative questions)",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 12
+  },
+  {
+    "character": "碟",
+    "jyutping": "dip6",
+    "translation": "plate / dish (classifier for food dishes)",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 4
+  },
+  {
     "character": "多謝",
     "jyutping": "do1ze6",
     "translation": "thank you (for a gift, compliment, or hospitality)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 1
+    "occurrences": 2
+  },
+  {
+    "character": "凍",
+    "jyutping": "dung3",
+    "translation": "cold / iced",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 9
   },
   {
     "character": "飛",
@@ -82,6 +138,13 @@
     "translation": "Canada",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 2
+  },
+  {
+    "character": "咖啡",
+    "jyutping": "gaa3fe1",
+    "translation": "coffee (loanword)",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 8
   },
   {
     "character": "街",
@@ -102,7 +165,7 @@
     "jyutping": "gaau2dim6",
     "translation": "done / finished / settled / resolved",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 6
+    "occurrences": 9
   },
   {
     "character": "雞",
@@ -130,14 +193,14 @@
     "jyutping": "ge3",
     "translation": "particle / possessive particle / nominalizing particle / final assertive particle",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 2
+    "occurrences": 4
   },
   {
     "character": "幾多",
     "jyutping": "gei2do1",
     "translation": "how many / how much",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "叫",
@@ -158,7 +221,7 @@
     "jyutping": "go3",
     "translation": "general measure word / individual / unit",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 1
+    "occurrences": 7
   },
   {
     "character": "講",
@@ -186,7 +249,7 @@
     "jyutping": "hai6",
     "translation": "to be / to be (am/is/are) / yes",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 19
+    "occurrences": 20
   },
   {
     "character": "係唔係",
@@ -214,7 +277,14 @@
     "jyutping": "hou2",
     "translation": "good / fine / very / quite",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 4
+    "occurrences": 9
+  },
+  {
+    "character": "飲",
+    "jyutping": "jam2",
+    "translation": "to drink",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 7
   },
   {
     "character": "人",
@@ -228,7 +298,7 @@
     "jyutping": "jat1",
     "translation": "one",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 1
+    "occurrences": 9
   },
   {
     "character": "日",
@@ -245,11 +315,18 @@
     "occurrences": 1
   },
   {
+    "character": "嘢食",
+    "jyutping": "je5sik6",
+    "translation": "snacks / food / things to eat",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 1
+  },
+  {
     "character": "二",
     "jyutping": "ji6",
     "translation": "two",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 7
+    "occurrences": 12
   },
   {
     "character": "二十",
@@ -263,7 +340,7 @@
     "jyutping": "jin6gam1",
     "translation": "cash",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "英國",
@@ -280,11 +357,18 @@
     "occurrences": 2
   },
   {
+    "character": "熱",
+    "jyutping": "jit6",
+    "translation": "hot",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 8
+  },
+  {
     "character": "要",
     "jyutping": "jiu3",
     "translation": "to want / need / must / demand",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 7
+    "occurrences": 17
   },
   {
     "character": "要唔要",
@@ -292,6 +376,13 @@
     "translation": "do you want / want or not (A-not-A question form)",
     "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 2
+  },
+  {
+    "character": "鴛鴦",
+    "jyutping": "jyun1joeng1",
+    "translation": "yuanyang (drink mixing coffee and milk tea)",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 3
   },
   {
     "character": "佢",
@@ -305,28 +396,42 @@
     "jyutping": "keoi5dei6",
     "translation": "they / them",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "啦",
     "jyutping": "laa1",
     "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 6
+    "occurrences": 18
+  },
+  {
+    "character": "靚",
+    "jyutping": "leng3",
+    "translation": "high quality",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 1
   },
   {
     "character": "靚仔",
     "jyutping": "leng3zai2",
-    "translation": "handsome boy / handsome man / handsome",
+    "translation": "handsome boy / handsome man / handsome / handsome boy / plain white rice (restaurant slang)",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 1
+    "occurrences": 7
+  },
+  {
+    "character": "檸茶",
+    "jyutping": "leng4caa4",
+    "translation": "lemon tea",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 3
   },
   {
     "character": "兩",
     "jyutping": "loeng5",
     "translation": "two / pair (used with classifiers)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 6
+    "occurrences": 14
   },
   {
     "character": "六",
@@ -352,9 +457,9 @@
   {
     "character": "唔該",
     "jyutping": "m4goi1",
-    "translation": "excuse me",
+    "translation": "excuse me / excuse me / please / thank you (for service or help)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 6
+    "occurrences": 15
   },
   {
     "character": "買",
@@ -364,11 +469,18 @@
     "occurrences": 6
   },
   {
+    "character": "埋單",
+    "jyutping": "maai5daan1",
+    "translation": "to pay the bill / get the check",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 2
+  },
+  {
     "character": "蚊",
     "jyutping": "man1",
     "translation": "dollar (spoken Cantonese colloquial unit of currency)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 17
+    "occurrences": 18
   },
   {
     "character": "咩嘢",
@@ -385,6 +497,13 @@
     "occurrences": 4
   },
   {
+    "character": "未",
+    "jyutping": "mei6",
+    "translation": "not yet / have not",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 5
+  },
+  {
     "character": "名",
     "jyutping": "meng2",
     "translation": "name",
@@ -399,6 +518,13 @@
     "occurrences": 2
   },
   {
+    "character": "奶茶",
+    "jyutping": "naai5caa4",
+    "translation": "milk tea (typically Hong Kong-style)",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 7
+  },
+  {
     "character": "呢",
     "jyutping": "ne1",
     "translation": "sentence-final particle for queries (how about / what about)",
@@ -410,7 +536,7 @@
     "jyutping": "nei5",
     "translation": "you",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 12
+    "occurrences": 16
   },
   {
     "character": "你哋",
@@ -438,7 +564,7 @@
     "jyutping": "ngo5",
     "translation": "I / I / me",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 25
+    "occurrences": 38
   },
   {
     "character": "我哋",
@@ -452,14 +578,14 @@
     "jyutping": "ni1dou6",
     "translation": "here",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "呢個",
     "jyutping": "ni1go3",
     "translation": "this one",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 8
+    "occurrences": 9
   },
   {
     "character": "朋友",
@@ -487,7 +613,14 @@
     "jyutping": "saam1sap6",
     "translation": "thirty",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 2
+    "occurrences": 3
+  },
+  {
+    "character": "西多士",
+    "jyutping": "sai1do1si2",
+    "translation": "French toast (loanword)",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 1
   },
   {
     "character": "新",
@@ -585,14 +718,14 @@
     "jyutping": "sik6",
     "translation": "to eat",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 6
+    "occurrences": 12
   },
   {
     "character": "想",
     "jyutping": "soeng2",
     "translation": "want to / to want to / would like to / think",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 10
+    "occurrences": 18
   },
   {
     "character": "薯片",
@@ -606,7 +739,7 @@
     "jyutping": "tung4maai4",
     "translation": "and / with / together with",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 3
+    "occurrences": 6
   },
   {
     "character": "喂",
@@ -620,7 +753,7 @@
     "jyutping": "zaau2",
     "translation": "to give change / look for / seek",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "隻",
@@ -628,6 +761,13 @@
     "translation": "classifier for animals",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
     "occurrences": 1
+  },
+  {
+    "character": "咗",
+    "jyutping": "zo2",
+    "translation": "verbal aspect suffix indicating completed action (perfective aspect)",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 14
   },
   {
     "character": "早晨",

@@ -15,6 +15,9 @@ chapters:
   - chapter: 4
     title: "Where Things Are: Presence & Places"
     file: "04-existentials-places.md"
+  - chapter: 5
+    title: "Time-Telling & Continuous Action"
+    file: "05-time-continuous.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -138,28 +141,33 @@ particle layering, and mastering native-speed idiomatic expressions._
 
 ## 2. Dynamic Chapter Pipeline
 
-Below is our immediate **locked look-ahead window** for the first four chapters
-of the course, translating our spiraled progression into progressive text
-lessons.
+Below is our immediate **active look-ahead window** and progress status of the
+chapters, translating our spiraled progression into progressive text lessons.
 
 - **Chapter 0: Pronunciation & Jyutping Fundamentals
-  (`00-pronunciation-jyutping.md`)**
+  (`00-pronunciation-jyutping.md`)** [COMPLETED]
   - _Focus_: Ear-training, the 6 tones, consonants, and vowel lengths.
     Exclamation slang (`喂[wai2]`, `吓[haa2]`) included.
-- **Chapter 1: Greetings & Who You Are (`01-greetings.md`)**
+- **Chapter 1: Greetings & Who You Are (`01-greetings.md`)** [COMPLETED]
   - _Focus_: Meeting people, personal identity. Integrates pronouns, the
     equative `係`, A-not-A question form, and the friendly softener particle
     `呀`.
 - **Chapter 2: Essential Purchases & Daily Slang (`02-shopping-slang.md`)**
+  [COMPLETED]
   - _Focus_: Convenience store buys, prices, and dollars. Integrates auxiliary
     verbs `想`/`要`, demonstratives `呢個`/`嗰個`, loanwords (`的士`, `巴士`),
     and the critical slang `搞掂`.
-- **Chapter 3: Dining Out & Ordering (`03-dining-out.md`)**
+- **Chapter 3: Dining Out & Ordering (`03-dining-out.md`)** [IN PROGRESS /
+  CURRENT]
   - _Focus_: Café culture (`茶餐廳`). Integrates classifiers (`個`, `杯`),
     making choices (`定`/`同埋`), asking for the bill (`埋單`), the softener
     particle `啦`, and our first aspect marker `咗`.
 - **Chapter 4: Where Things Are: Presence & Places
-  (`04-existentials-places.md`)**
+  (`04-existentials-places.md`)** [ACTIVE LOOK-AHEAD]
   - _Focus_: Finding things, asking for locations. Integrates existentials
     `有`/`冇`, the locative `喺`, directional markers (`上面`, `入面`), and the
     obviousness particle `囉`.
+- **Chapter 5: Time-Telling & Continuous Action (`05-time-continuous.md`)**
+  [ACTIVE LOOK-AHEAD]
+  - _Focus_: Expressing time, hours, minutes, and schedules. Integrates the
+    continuous aspect particle `緊` and slacking slang `Hea`.

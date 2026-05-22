@@ -19,16 +19,16 @@
     "type": "noun"
   },
   {
-    "char": "百",
-    "jyutping": "baak3",
-    "definition": "hundred",
-    "type": "numeral"
-  },
-  {
     "char": "拜拜",
     "jyutping": "baai1baai3",
     "definition": "bye-bye / goodbye (loanword)",
     "type": "expression"
+  },
+  {
+    "char": "百",
+    "jyutping": "baak3",
+    "definition": "hundred",
+    "type": "numeral"
   },
   {
     "char": "八",
@@ -88,6 +88,12 @@
     "char": "錢",
     "jyutping": "cin2",
     "definition": "money",
+    "type": "noun"
+  },
+  {
+    "char": "蛋撻",
+    "jyutping": "daan6taat1",
+    "definition": "egg tart",
     "type": "noun"
   },
   {
@@ -154,11 +160,23 @@
     "notes": "Example: A定B? (A or B?)"
   },
   {
+    "char": "碟",
+    "jyutping": "dip6",
+    "definition": "plate / dish (classifier for food dishes)",
+    "type": "classifier"
+  },
+  {
     "char": "多謝",
     "jyutping": "do1ze6",
     "definition": "thank you (for a gift, compliment, or hospitality)",
     "type": "expression",
     "notes": "Used when receiving tangible items, gifts, money, or compliments."
+  },
+  {
+    "char": "凍",
+    "jyutping": "dung3",
+    "definition": "cold / iced",
+    "type": "adjective"
   },
   {
     "char": "返工",
@@ -253,18 +271,6 @@
     "notes": "Attaches directly to verbs to show ongoing action (equivalent to Mandarin 正在 zhèngzài)."
   },
   {
-    "char": "幾多",
-    "jyutping": "gei2do1",
-    "definition": "how many / how much",
-    "type": "pronoun"
-  },
-  {
-    "char": "幾時",
-    "jyutping": "gei2si4",
-    "definition": "when / what time",
-    "type": "pronoun"
-  },
-  {
     "char": "九",
     "jyutping": "gau2",
     "definition": "nine",
@@ -278,21 +284,33 @@
     "notes": "Indicates possession (like 's, equivalent to Mandarin 的 de) or asserts a state."
   },
   {
+    "char": "幾多",
+    "jyutping": "gei2do1",
+    "definition": "how many / how much",
+    "type": "pronoun"
+  },
+  {
+    "char": "幾時",
+    "jyutping": "gei2si4",
+    "definition": "when / what time",
+    "type": "pronoun"
+  },
+  {
     "char": "叫",
     "jyutping": "giu3",
     "definition": "to be called / to call",
     "type": "verb"
   },
   {
-    "char": "嗰個",
-    "jyutping": "go2go3",
-    "definition": "that one",
-    "type": "pronoun"
-  },
-  {
     "char": "嗰度",
     "jyutping": "go2dou6",
     "definition": "there",
+    "type": "pronoun"
+  },
+  {
+    "char": "嗰個",
+    "jyutping": "go2go3",
+    "definition": "that one",
     "type": "pronoun"
   },
   {
@@ -308,15 +326,15 @@
     "type": "verb"
   },
   {
-    "char": "貴",
-    "jyutping": "gwai3",
-    "definition": "expensive",
-    "type": "adjective"
-  },
-  {
     "char": "攰",
     "jyutping": "gui6",
     "definition": "tired / exhausted",
+    "type": "adjective"
+  },
+  {
+    "char": "貴",
+    "jyutping": "gwai3",
+    "definition": "expensive",
     "type": "adjective"
   },
   {
@@ -485,6 +503,12 @@
     "type": "numeral"
   },
   {
+    "char": "現金",
+    "jyutping": "jin6gam1",
+    "definition": "cash",
+    "type": "noun"
+  },
+  {
     "char": "英國",
     "jyutping": "jing1gwok3",
     "definition": "United Kingdom / Britain",
@@ -497,10 +521,10 @@
     "type": "noun"
   },
   {
-    "char": "現金",
-    "jyutping": "jin6gam1",
-    "definition": "cash",
-    "type": "noun"
+    "char": "熱",
+    "jyutping": "jit6",
+    "definition": "hot",
+    "type": "adjective"
   },
   {
     "char": "要",
@@ -557,6 +581,12 @@
     "definition": "handsome boy / plain white rice (restaurant slang)",
     "type": "noun",
     "notes": "Double meaning: standard colloquial term for handsome guy, but in茶餐廳 it means plain steamed white rice."
+  },
+  {
+    "char": "檸茶",
+    "jyutping": "leng4caa4",
+    "definition": "lemon tea",
+    "type": "noun"
   },
   {
     "char": "囉",
@@ -672,6 +702,12 @@
     "type": "noun"
   },
   {
+    "char": "未",
+    "jyutping": "mei6",
+    "definition": "not yet / have not",
+    "type": "adverb"
+  },
+  {
     "char": "名",
     "jyutping": "meng2",
     "definition": "name",
@@ -774,6 +810,12 @@
     "type": "numeral"
   },
   {
+    "char": "西多士",
+    "jyutping": "sai1do1si2",
+    "definition": "French toast (loanword)",
+    "type": "noun"
+  },
+  {
     "char": "細佬",
     "jyutping": "sai3lou2",
     "definition": "younger brother",
@@ -807,12 +849,6 @@
     "char": "水",
     "jyutping": "seoi2",
     "definition": "water",
-    "type": "noun"
-  },
-  {
-    "char": "薯片",
-    "jyutping": "syu4pin2",
-    "definition": "potato chips / crisps",
     "type": "noun"
   },
   {
@@ -868,6 +904,12 @@
     "jyutping": "soeng2",
     "definition": "to want to / would like to / think",
     "type": "auxiliary verb"
+  },
+  {
+    "char": "薯片",
+    "jyutping": "syu4pin2",
+    "definition": "potato chips / crisps",
+    "type": "noun"
   },
   {
     "char": "睇",
