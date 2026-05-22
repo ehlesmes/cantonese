@@ -78,21 +78,18 @@ Before writing any chapter content, you must perform a cognitive load audit:
 3. Ensure every single Chinese character discussed, used in dialogues, or found
    in exercises has correct inline annotations matching the dictionary.
 
-### Phase D: Verification & Automated Pipeline
+### Phase D: Automated Hook Validation & Git Commit
 
-Run the full verification suite to ensure zero regressions:
+Our repository is armed with a highly optimized Husky pre-commit hook that
+automatically executes code formatting (Prettier), syntax linting (ESLint),
+vocabulary database compiling (`npm run track`), formatting validation
+(`npm run validate`), and project portability checks on every single commit.
 
-1. Validate vocabulary alignment in the drafted chapter:
-   `npm run vocab:verify -- content/<chapter-filename>.md`
-2. Run the overall formatting validator: `npm run validate`
-3. Compile the global vocabulary database and index files: `npm run track`
-4. Verify linting and E2E test suites pass successfully:
-   `npm run lint && npm run test`
+To streamline and speed up your workflow:
 
-### Phase E: Git Commit
-
-Once all automated checks pass, stage the new files, modified dictionary, and
-updated roadmap:
-
-- Commit the changes using a structured, descriptive commit message:
-  `git commit -m 'feat: implement Chapter X: [Title] and update curriculum roadmap'`
+1. Stage all your created and modified files: `git add .`
+2. Commit directly using a structured, descriptive commit message:
+   `git commit -m 'feat: implement Chapter X: [Title] and update curriculum roadmap'`
+3. If the pre-commit hook fails, simply read the terminal diagnostic output,
+   repair any reported formatting, schema, or portability errors, and attempt
+   the commit again. Rely on this hook as your single, unified safety net.
