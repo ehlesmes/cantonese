@@ -7,3 +7,15 @@ if [ -n "$staged_md_files" ]; then
   prettier --prose-wrap always --print-width 80 --write $staged_md_files
   git add $staged_md_files
 fi
+
+# Run Cantonese chapter format validator if curriculum or any chapter file is staged
+staged_chapters_or_curriculum=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^content/[0-9]{2}-.*\.md$|^content/curriculum\.md$' || true)
+
+if [ -n "$staged_chapters_or_curriculum" ]; then
+  echo "Validating Cantonese course content formatting and curriculum alignment..."
+  node scripts/validate-format.js
+
+  echo "Updating vocabulary database and glossary..."
+  node scripts/track-vocabulary.js
+  git add content/vocabulary.json content/vocabulary.md
+fi

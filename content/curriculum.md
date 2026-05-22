@@ -1,3 +1,19 @@
+---
+chapters:
+  - chapter: 0
+    title: "Pronunciation & Jyutping Fundamentals"
+    file: "00-pronunciation-jyutping.md"
+  - chapter: 1
+    title: "Greetings & Who You Are"
+    file: "01-greetings.md"
+  - chapter: 2
+    title: "Essential Purchases & Daily Slang"
+    file: "02-shopping-slang.md"
+  - chapter: 3
+    title: "Dining Out & Ordering"
+    file: "03-dining-out.md"
+---
+
 # Colloquial Cantonese Course: Living Curriculum Roadmap
 
 This document serves as our agile, progressive syllabus, utilizing a **Spiraled

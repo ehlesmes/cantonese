@@ -143,7 +143,7 @@ question: |
   B) 多謝[do1ze6|thank you for a gift]
   C) 唔使客氣[m4sai2 haak3hei3|you are welcome]
 answer: B
-explanation: "多謝" (do1ze6) is used for gifts, compliments, or concrete favors. "唔該" (m4goi1) is reserved for services or help.
+explanation: 多謝[do1ze6|thank you for a gift] is used for gifts, compliments, or concrete favors. 唔該[m4goi1|excuse me / thank you for service] is reserved for services or help.
 ```
 ````
 
@@ -155,7 +155,7 @@ question: |
   Fill in the blank with the correct verb for "to eat":
   我[ngo5|I]想[soeng2|want to] ____ 點心[dim2sam1|dim sum]。
 answer: 食[sik6|to eat]
-explanation: "食" (sik6) is the colloquial Cantonese verb for "to eat" (equivalent to Mandarin 吃 chī).
+explanation: 食[sik6|to eat] is the colloquial Cantonese verb for "to eat" (equivalent to Mandarin 吃 chī).
 ```
 ````
 
@@ -165,7 +165,7 @@ explanation: "食" (sik6) is the colloquial Cantonese verb for "to eat" (equival
 ```exercise
 question: Translate "Excuse me, I want to buy this one." into Cantonese.
 answer: 唔該[m4goi1|excuse me]，我[ngo5|I]想[soeng2|want to]買[maai5|buy]呢個[ni1go3|this one]。
-explanation: "唔該" (m4goi1) is used for "excuse me", "我" (ngo5) is "I", "想" (soeng2) is "want to", "買" (maai5) is "buy", and "呢個" (ni1go3) is "this one".
+explanation: 唔該[m4goi1|excuse me] is used for "excuse me", 我[ngo5|I] is "I", 想[soeng2|want to] is "want to", 買[maai5|buy] is "buy", and 呢個[ni1go3|this one] is "this one".
 ```
 ````
 
