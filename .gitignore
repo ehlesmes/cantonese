@@ -1,3 +1,4 @@
 node_modules/
 .antigravitycli/
 .DS_Store
+tmp/

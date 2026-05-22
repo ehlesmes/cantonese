@@ -5,7 +5,8 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "validate": "node scripts/validate-format.js",
+    "validate": "node scripts/validate-format.js && node scripts/validate-portability.js",
+    "validate:portability": "node scripts/validate-portability.js",
     "track": "node scripts/track-vocabulary.js",
     "lint": "eslint ."
   },

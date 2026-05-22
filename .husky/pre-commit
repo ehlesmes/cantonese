@@ -31,3 +31,6 @@ if [ -n "$staged_chapters_or_curriculum" ]; then
   node scripts/track-vocabulary.js
   git add content/vocabulary.json content/vocabulary.md
 fi
+
+echo "Verifying project portability (no hardcoded absolute paths)..."
+node scripts/validate-portability.js
