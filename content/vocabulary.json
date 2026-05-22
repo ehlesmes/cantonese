@@ -2,9 +2,30 @@
   {
     "character": "呀",
     "jyutping": "aa3",
-    "translation": "particle",
+    "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 22
+  },
+  {
+    "character": "拜拜",
+    "jyutping": "baai1baai3",
+    "translation": "bye-bye / goodbye (loanword)",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 4
+  },
+  {
+    "character": "哋",
+    "jyutping": "dei6",
+    "translation": "plural suffix",
+    "firstIntroducedIn": "01-greetings.md",
     "occurrences": 1
+  },
+  {
+    "character": "加拿大",
+    "jyutping": "gaa1naa4daai6",
+    "translation": "Canada",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 2
   },
   {
     "character": "街",
@@ -30,9 +51,30 @@
   {
     "character": "嘅",
     "jyutping": "ge3",
-    "translation": "particle",
+    "translation": "particle / possessive particle / nominalizing particle / final assertive particle",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 1
+    "occurrences": 2
+  },
+  {
+    "character": "叫",
+    "jyutping": "giu3",
+    "translation": "to be called / to call",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 7
+  },
+  {
+    "character": "講",
+    "jyutping": "gong2",
+    "translation": "to speak / say / talk",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 7
+  },
+  {
+    "character": "廣東話",
+    "jyutping": "gwong2dung1waa2",
+    "translation": "Cantonese language",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 4
   },
   {
     "character": "吓",
@@ -42,6 +84,41 @@
     "occurrences": 3
   },
   {
+    "character": "係",
+    "jyutping": "hai6",
+    "translation": "to be / to be (am/is/are) / yes",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 17
+  },
+  {
+    "character": "係唔係",
+    "jyutping": "hai6 m4 hai6",
+    "translation": "is it or not / is it or not? / is that right? (A-not-A question form)",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 6
+  },
+  {
+    "character": "香港",
+    "jyutping": "hoeng1gong2",
+    "translation": "Hong Kong",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 1
+  },
+  {
+    "character": "好",
+    "jyutping": "hou2",
+    "translation": "good / fine / very / quite",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 2
+  },
+  {
+    "character": "人",
+    "jyutping": "jan4",
+    "translation": "person / people / human",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 10
+  },
+  {
     "character": "日",
     "jyutping": "jat6",
     "translation": "day / sun",
@@ -49,31 +126,129 @@
     "occurrences": 1
   },
   {
+    "character": "英國",
+    "jyutping": "jing1gwok3",
+    "translation": "United Kingdom / Britain",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 3
+  },
+  {
+    "character": "英文",
+    "jyutping": "jing1man2",
+    "translation": "English language",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 2
+  },
+  {
+    "character": "佢",
+    "jyutping": "keoi5",
+    "translation": "he / she / it",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 3
+  },
+  {
+    "character": "佢哋",
+    "jyutping": "keoi5dei6",
+    "translation": "they / them",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 2
+  },
+  {
     "character": "啦",
     "jyutping": "laa1",
-    "translation": "particle",
+    "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 2
+  },
+  {
+    "character": "靚仔",
+    "jyutping": "leng3zai2",
+    "translation": "handsome boy / handsome man / handsome",
+    "firstIntroducedIn": "01-greetings.md",
     "occurrences": 1
   },
   {
     "character": "唔",
     "jyutping": "m4",
-    "translation": "not",
+    "translation": "not / not / no (negative prefix)",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 16
+  },
+  {
+    "character": "唔緊要",
+    "jyutping": "m4 gan2jiu3",
+    "translation": "it doesn't matter / never mind / it's okay",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 1
+  },
+  {
+    "character": "咩嘢",
+    "jyutping": "me1je5",
+    "translation": "what / what kind of thing",
+    "firstIntroducedIn": "01-greetings.md",
     "occurrences": 3
+  },
+  {
+    "character": "美國",
+    "jyutping": "mei5gwok3",
+    "translation": "United States / America",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 4
+  },
+  {
+    "character": "名",
+    "jyutping": "meng2",
+    "translation": "name",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 3
+  },
+  {
+    "character": "呢",
+    "jyutping": "ne1",
+    "translation": "sentence-final particle for queries (how about / what about)",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 2
   },
   {
     "character": "你",
     "jyutping": "nei5",
     "translation": "you",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 12
+  },
+  {
+    "character": "你哋",
+    "jyutping": "nei5dei6",
+    "translation": "you (plural)",
+    "firstIntroducedIn": "01-greetings.md",
     "occurrences": 1
+  },
+  {
+    "character": "你好",
+    "jyutping": "nei5hou2",
+    "translation": "hello / hi",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 9
   },
   {
     "character": "我",
     "jyutping": "ngo5",
-    "translation": "I",
+    "translation": "I / I / me",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 16
+  },
+  {
+    "character": "我哋",
+    "jyutping": "ngo5dei6",
+    "translation": "we / us",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 5
+  },
+  {
+    "character": "朋友",
+    "jyutping": "pang4jau5",
+    "translation": "friend",
+    "firstIntroducedIn": "01-greetings.md",
     "occurrences": 2
   },
   {
@@ -140,6 +315,13 @@
     "occurrences": 3
   },
   {
+    "character": "識",
+    "jyutping": "sik1",
+    "translation": "to know / to know / speak (a language) / have a skill",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 13
+  },
+  {
     "character": "食",
     "jyutping": "sik6",
     "translation": "to eat",
@@ -165,6 +347,20 @@
     "jyutping": "zek3",
     "translation": "classifier for animals",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  },
+  {
+    "character": "早晨",
+    "jyutping": "zou2san4",
+    "translation": "good morning",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 4
+  },
+  {
+    "character": "早頭",
+    "jyutping": "zou2tau2",
+    "translation": "good night",
+    "firstIntroducedIn": "01-greetings.md",
     "occurrences": 1
   }
 ]

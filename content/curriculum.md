@@ -12,6 +12,9 @@ chapters:
   - chapter: 3
     title: "Dining Out & Ordering"
     file: "03-dining-out.md"
+  - chapter: 4
+    title: "Where Things Are: Presence & Places"
+    file: "04-existentials-places.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -155,3 +158,8 @@ lessons.
   - _Focus_: Café culture (`茶餐廳`). Integrates classifiers (`個`, `杯`),
     making choices (`定`/`同埋`), asking for the bill (`埋單`), the softener
     particle `啦`, and our first aspect marker `咗`.
+- **Chapter 4: Where Things Are: Presence & Places
+  (`04-existentials-places.md`)**
+  - _Focus_: Finding things, asking for locations. Integrates existentials
+    `有`/`冇`, the locative `喺`, directional markers (`上面`, `入面`), and the
+    obviousness particle `囉`.

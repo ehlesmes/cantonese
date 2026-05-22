@@ -68,6 +68,12 @@
     "type": "adjective"
   },
   {
+    "char": "哋",
+    "jyutping": "dei6",
+    "definition": "plural suffix for pronouns (group marker)",
+    "type": "particle"
+  },
+  {
     "char": "地鐵",
     "jyutping": "dei6tit3",
     "definition": "MTR / subway / metro",
@@ -149,6 +155,12 @@
     "type": "expression"
   },
   {
+    "char": "加拿大",
+    "jyutping": "gaa1naa4daai6",
+    "definition": "Canada",
+    "type": "noun"
+  },
+  {
     "char": "家姐",
     "jyutping": "gaa1ze1",
     "definition": "older sister",
@@ -212,6 +224,12 @@
     "type": "pronoun"
   },
   {
+    "char": "叫",
+    "jyutping": "giu3",
+    "definition": "to be called / to call",
+    "type": "verb"
+  },
+  {
     "char": "嗰個",
     "jyutping": "go2go3",
     "definition": "that one",
@@ -241,6 +259,12 @@
     "definition": "verbal aspect suffix indicating past experience / 'have done before'",
     "type": "particle",
     "notes": "Attaches directly to verbs to denote experiential aspect (equivalent to Mandarin 过 guo)."
+  },
+  {
+    "char": "廣東話",
+    "jyutping": "gwong2dung1waa2",
+    "definition": "Cantonese language",
+    "type": "noun"
   },
   {
     "char": "吓",
@@ -293,6 +317,12 @@
     "type": "verb"
   },
   {
+    "char": "香港",
+    "jyutping": "hoeng1gong2",
+    "definition": "Hong Kong",
+    "type": "noun"
+  },
+  {
     "char": "行",
     "jyutping": "hong4",
     "definition": "profession / line of business / firm / row / line",
@@ -338,6 +368,18 @@
     "char": "而家",
     "jyutping": "ji4gaa1",
     "definition": "now / currently",
+    "type": "noun"
+  },
+  {
+    "char": "英國",
+    "jyutping": "jing1gwok3",
+    "definition": "United Kingdom / Britain",
+    "type": "noun"
+  },
+  {
+    "char": "英文",
+    "jyutping": "jing1man2",
+    "definition": "English language",
     "type": "noun"
   },
   {
@@ -492,6 +534,18 @@
     "type": "pronoun"
   },
   {
+    "char": "美國",
+    "jyutping": "mei5gwok3",
+    "definition": "United States / America",
+    "type": "noun"
+  },
+  {
+    "char": "名",
+    "jyutping": "meng2",
+    "definition": "name",
+    "type": "noun"
+  },
+  {
     "char": "冇",
     "jyutping": "mou5",
     "definition": "not to have / without / there is not",
@@ -510,6 +564,12 @@
     "type": "noun"
   },
   {
+    "char": "呢",
+    "jyutping": "ne1",
+    "definition": "sentence-final particle for queries (how about / what about)",
+    "type": "particle"
+  },
+  {
     "char": "你",
     "jyutping": "nei5",
     "definition": "you",
@@ -520,6 +580,12 @@
     "jyutping": "nei5dei6",
     "definition": "you (plural)",
     "type": "pronoun"
+  },
+  {
+    "char": "你好",
+    "jyutping": "nei5hou2",
+    "definition": "hello / hi",
+    "type": "expression"
   },
   {
     "char": "我",
@@ -616,6 +682,12 @@
     "jyutping": "si6",
     "definition": "matter / business / affair",
     "type": "noun"
+  },
+  {
+    "char": "識",
+    "jyutping": "sik1",
+    "definition": "to know / speak (a language) / have a skill",
+    "type": "verb"
   },
   {
     "char": "食",

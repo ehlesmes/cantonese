@@ -49,7 +49,7 @@ title: Test Vocab One
 description: Test.
 ---
 
-This is a \`你好[nei5hou2|hello]\` test.
+This is a \`爸爸[baa1baa1|father]\` test.
 We also test \`行[hang4|to walk]\`.
 `;
 
@@ -59,7 +59,7 @@ title: Test Vocab Two
 description: Test.
 ---
 
-We repeat \`你好[nei5hou2|hi / hello]\`.
+We repeat \`爸爸[baa1baa1|dad / father]\`.
 And test homograph \`行[hong4|firm/industry]\`.
 `;
 
@@ -112,13 +112,13 @@ And test homograph \`行[hong4|firm/industry]\`.
       expect(hong4.firstIntroducedIn).toBe("99-test-vocab-two.md");
       expect(hong4.occurrences).toBe(1);
 
-      // 4. "你好" check (should merge translation nuances and register first introduced file)
-      const hello = testEntries.find((item) => item.character === "你好");
+      // 4. "爸爸" check (should merge translation nuances and register first introduced file)
+      const hello = testEntries.find((item) => item.character === "爸爸");
       expect(hello).toBeDefined();
       expect(hello.firstIntroducedIn).toBe("98-test-vocab-one.md");
       expect(hello.occurrences).toBe(2);
-      expect(hello.translation).toContain("hello");
-      expect(hello.translation).toContain("hi");
+      expect(hello.translation).toContain("father");
+      expect(hello.translation).toContain("dad");
     } finally {
       // Always Clean up temporary files
       if (fs.existsSync(testFile1)) fs.unlinkSync(testFile1);
