@@ -22,8 +22,8 @@ describe("Cantonese Lexicon Lookup CLI E2E Spec", () => {
   test("Display usage instructions when no arguments are provided", () => {
     const output = runLookup("");
     expect(output).toContain("Cantonese Lexicon Lookup Utility");
-    expect(output).toContain("Usage:");
-    expect(output).toContain("node scripts/lookup.js <query>");
+    expect(output).toContain("Usage (Single or Space-Separated Batch):");
+    expect(output).toContain("npm run vocab:lookup -- <query1>");
   });
 
   test("Lookup by exact Traditional Chinese characters", () => {
@@ -77,7 +77,26 @@ describe("Cantonese Lexicon Lookup CLI E2E Spec", () => {
   test("Lookup with zero results displays custom suggestions", () => {
     const output = runLookup("nonexistentword");
     expect(output).toContain('Query: "nonexistentword"');
-    expect(output).toContain("No matching entries found.");
-    expect(output).toContain("Tip: Try searching for characters like");
+    expect(output).toContain("No matching entries found in the dictionary.");
+  });
+
+  test("Lookup multiple space-separated query strings (batch mode)", () => {
+    const output = runLookup("唔該 八達通 檸茶");
+    expect(output).toContain("Querying database for 3 terms...");
+    expect(output).toContain('Query: "唔該"');
+    expect(output).toContain('Query: "八達通"');
+    expect(output).toContain('Query: "檸茶"');
+    expect(output).toContain("唔該 (m4goi1)");
+    expect(output).toContain("八達通 (baat3daat6tung1)");
+    expect(output).toContain("檸茶 (leng4caa4)");
+  });
+
+  test("Lookup batch queries via JSON array parameter", () => {
+    const output = runLookup(`--json '["唔該", "八達通"]'`);
+    expect(output).toContain("Querying database for 2 terms...");
+    expect(output).toContain('Query: "唔該"');
+    expect(output).toContain('Query: "八達通"');
+    expect(output).toContain("唔該 (m4goi1)");
+    expect(output).toContain("八達通 (baat3daat6tung1)");
   });
 });

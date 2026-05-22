@@ -10,7 +10,8 @@
     "track": "node scripts/track-vocabulary.js",
     "lint": "eslint .",
     "vocab:register": "node scripts/register-word.js",
-    "vocab:verify": "node scripts/verify-chapter-vocab.js"
+    "vocab:verify": "node scripts/verify-chapter-vocab.js",
+    "vocab:lookup": "node scripts/lookup.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.3.0",

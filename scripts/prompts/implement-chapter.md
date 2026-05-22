@@ -69,9 +69,18 @@ Before writing any chapter content, you must perform a cognitive load audit:
 1. Outline the list of new vocabulary words you plan to introduce in this
    lesson.
 2. **Cross-reference efficiently**: DO NOT run consecutive `grep_search`
-   commands for individual terms. Instead, **read `content/dictionary.json` in
-   full once** using `view_file` (it is very compact) and perform the
-   cross-reference checks programmatically in your thoughts.
+   commands for individual terms or read the dictionary file directly. Instead,
+   query the dictionary **all at once** using our deterministic batch lookup
+   utility:
+   ```bash
+   npm run vocab:lookup -- <word1> <word2> <word3>...
+   ```
+   Or pass them as a JSON array:
+   ```bash
+   npm run vocab:lookup -- --json '["word1", "word2", "word3"]'
+   ```
+   This ensures programmatically accurate, hallucination-free lexicon queries.
+   Identify any missing terms to be registered in Step 3.
 3. For any missing terms, register them **all at once** using the registrar
    CLI's batch mode:
    ```bash
