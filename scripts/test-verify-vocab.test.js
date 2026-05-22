@@ -1,0 +1,122 @@
+import { describe, test, expect, beforeAll, afterAll } from "vitest";
+import fs from "fs";
+import path from "path";
+import { execSync } from "child_process";
+
+const stripAnsi = (str) => {
+  // eslint-disable-next-line no-control-regex
+  return str.replace(/\x1b\[[0-9;]*m/g, "");
+};
+
+describe("Cantonese Chapter Vocabulary Checker E2E Spec", () => {
+  const projectRoot = path.resolve(__dirname, "..");
+  const tempChapterPath = path.join(
+    projectRoot,
+    "content/99-test-checker-chapter.md",
+  );
+
+  // Keep a dictionary backup just in case of any accidental changes
+  const dictPath = path.join(projectRoot, "content/dictionary.json");
+  let hasBackup = false;
+  let backupContent = null;
+
+  beforeAll(() => {
+    hasBackup = fs.existsSync(dictPath);
+    if (hasBackup) {
+      backupContent = fs.readFileSync(dictPath, "utf8");
+    }
+  });
+
+  afterAll(() => {
+    if (fs.existsSync(tempChapterPath)) {
+      fs.unlinkSync(tempChapterPath);
+    }
+    if (hasBackup) {
+      fs.writeFileSync(dictPath, backupContent, "utf8");
+    }
+  });
+
+  const runChecker = (chapterFile) => {
+    try {
+      const rawOutput = execSync(
+        `node scripts/verify-chapter-vocab.js ${chapterFile} 2>&1`,
+        {
+          cwd: projectRoot,
+          encoding: "utf8",
+          stdio: "pipe",
+        },
+      );
+      return { success: true, output: stripAnsi(rawOutput) };
+    } catch (err) {
+      const stdout = err.stdout ? err.stdout.toString() : "";
+      const stderr = err.stderr ? err.stderr.toString() : "";
+      return {
+        success: false,
+        output: stripAnsi(stdout + "\n" + stderr),
+      };
+    }
+  };
+
+  test("Verify a perfectly consistent chapter file (100% dictionary match)", () => {
+    // "唔該" (m4goi1), "我" (ngo5), "想" (soeng2), "食" (sik6), "點心" (dim2sam1) are standard dictionary entries
+    const content = `---
+chapter: 99
+title: Consistent Test
+description: Testing consistency checker.
+---
+
+Let's test \`唔該[m4goi1|excuse me]\` in prose.
+
+\`\`\`cantonese
+我[ngo5|I]想[soeng2|want to]食[sik6|to eat]點心[dim2sam1|dim sum]。
+===
+I want to eat dim sum.
+\`\`\`
+`;
+    fs.writeFileSync(tempChapterPath, content, "utf8");
+
+    const res = runChecker("content/99-test-checker-chapter.md");
+    expect(res.success).toBe(true);
+    expect(res.output).toContain("Checking vocabulary consistency in chapter");
+    expect(res.output).toContain("perfectly match the master local dictionary");
+  });
+
+  test("Catch an unregistered vocabulary term (exit code 1)", () => {
+    // "腸粉" (coeng2fan2) is not in the dictionary backup
+    const content = `---
+chapter: 99
+title: Unregistered Test
+description: Testing consistency checker.
+---
+
+Let's test unregistered word \`腸粉[coeng2fan2|steamed rice rolls]\` in prose.
+`;
+    fs.writeFileSync(tempChapterPath, content, "utf8");
+
+    const res = runChecker("content/99-test-checker-chapter.md");
+    expect(res.success).toBe(false);
+    expect(res.output).toContain("Found 1 unregistered vocabulary error(s)");
+    expect(res.output).toContain("腸粉 (coeng2fan2)");
+    expect(res.output).toContain("not registered in the dictionary");
+  });
+
+  test("Catch a translation divergence warning (exit code 0 but warning output)", () => {
+    // "唔該" (m4goi1) exists but translation is "plain white rice" which is completely unrelated
+    const content = `---
+chapter: 99
+title: Mismatch Test
+description: Testing consistency checker.
+---
+
+Let's test translation mismatch \`唔該[m4goi1|plain white rice]\` in prose.
+`;
+    fs.writeFileSync(tempChapterPath, content, "utf8");
+
+    const res = runChecker("content/99-test-checker-chapter.md");
+    // Should pass the check (exit 0) because translation divergence is only a warning
+    expect(res.success).toBe(true);
+    expect(res.output).toContain("Found 1 translation divergence warning(s)");
+    expect(res.output).toContain("唔該 (m4goi1)");
+    expect(res.output).toContain("Translation divergence");
+  });
+});
