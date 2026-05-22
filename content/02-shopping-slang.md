@@ -179,12 +179,11 @@ Hong Kong is famous for its contactless smart card, the
 Alternatively, you can use `現金[jin6gam1|cash]`.
 
 To ask if a store accepts a payment method, use the verb
-`收[sau1|to receive / accept / collect]` in an A-not-A question pattern
-(`收[sau1|to receive / accept / collect]` `唔[m4|not / no (negative prefix)]`
-`收[sau1|to receive / accept / collect]`):
+`收[sau1|to receive / accept / collect]` in the A-not-A question form
+`收唔收[sau1 m4 sau1|do you accept / accept or not (A-not-A question form)]`:
 
 ```cantonese
-呢度[ni1dou6|here] 收[sau1|to receive / accept / collect] 唔[m4|not / no (negative prefix)] 收[sau1|to receive / accept / collect] 八達通[baat3daat6tung1|Octopus card (Hong Kong contact-less smart card)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+呢度[ni1dou6|here] 收唔收[sau1 m4 sau1|do you accept / accept or not (A-not-A question form)] 八達通[baat3daat6tung1|Octopus card (Hong Kong contact-less smart card)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 ===
 Do you accept Octopus card here?
 ```
@@ -201,7 +200,7 @@ At the register, the clerk will often ask if you need a
 `膠袋[gaau1doi2|plastic bag]`:
 
 ```cantonese
-要[jiu3|to want / need / must / demand] 唔[m4|not / no (negative prefix)] 要[jiu3|to want / need / must / demand] 膠袋[gaau1doi2|plastic bag] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+要唔要[jiu3 m4 jiu3|do you want / want or not (A-not-A question form)] 膠袋[gaau1doi2|plastic bag] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 ===
 Do you want a plastic bag?
 ```
@@ -268,9 +267,9 @@ B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softenin
    === Sure. This one is Coke, that one is potato chips.
 A: 幾多[gei2do1|how many / how much] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === How much is it?
-B: 三十[saam1sap6|thirty] 蚊[man1|dollar (spoken Cantonese colloquial unit of currency)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 要[jiu3|to want / need / must / demand] 唔[m4|not / no (negative prefix)] 要[jiu3|to want / need / must / demand] 膠袋[gaau1doi2|plastic bag] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+B: 三十[saam1sap6|thirty] 蚊[man1|dollar (spoken Cantonese colloquial unit of currency)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 要唔要[jiu3 m4 jiu3|do you want / want or not (A-not-A question form)] 膠袋[gaau1doi2|plastic bag] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === It is thirty dollars. Do you want a plastic bag?
-A: 唔[m4|not / no (negative prefix)] 要[jiu3|to want / need / must / demand] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]，唔該[m4goi1|excuse me]。 呢度[ni1dou6|here] 收[sau1|to receive / accept / collect] 唔[m4|not / no (negative prefix)] 收[sau1|to receive / accept / collect] 八達通[baat3daat6tung1|Octopus card (Hong Kong contact-less smart card)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 唔[m4|not / no (negative prefix)] 要[jiu3|to want / need / must / demand] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]，唔該[m4goi1|excuse me]。 呢度[ni1dou6|here] 收唔收[sau1 m4 sau1|do you accept / accept or not (A-not-A question form)] 八達通[baat3daat6tung1|Octopus card (Hong Kong contact-less smart card)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === No, thank you. Do you accept Octopus card here?
 B: 收[sau1|to receive / accept / collect] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 唔該[m4goi1|excuse me]。
    === Yes, we do! Thank you.
@@ -305,8 +304,8 @@ explanation: When counting currency or items with a classifier like 蚊[man1|dol
 question: |
   Fill in the blank to say "Do you accept Octopus card here?":
   呢度[ni1dou6|here] ________ 八達通[baat3daat6tung1|Octopus card (Hong Kong contact-less smart card)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
-answer: 收[sau1|to receive / accept / collect] 唔[m4|not / no (negative prefix)] 收[sau1|to receive / accept / collect]
-explanation: The A-not-A question form 收[sau1|to receive / accept / collect] 唔[m4|not / no (negative prefix)] 收[sau1|to receive / accept / collect] (from the verb 收[sau1|to receive / accept / collect], meaning 'to accept/receive') is the most natural way to ask if a shop accepts a particular payment method.
+answer: 收唔收[sau1 m4 sau1|do you accept / accept or not (A-not-A question form)]
+explanation: The A-not-A question form 收唔收[sau1 m4 sau1|do you accept / accept or not (A-not-A question form)] (from the verb 收[sau1|to receive / accept / collect], meaning 'to accept/receive') is the most natural way to ask if a shop accepts a particular payment method.
 ```
 
 ```exercise

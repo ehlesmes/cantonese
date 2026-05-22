@@ -170,12 +170,10 @@ I know how to speak Cantonese!
 
 To ask someone if they speak a language, apply the A-not-A pattern to the verb
 `識[sik1|to know / speak (a language) / have a skill]`, creating
-`識[sik1|to know / speak (a language) / have a skill]`
-`唔[m4|not / no (negative prefix)]`
-`識[sik1|to know / speak (a language) / have a skill]`:
+`識唔識[sik1 m4 sik1|know how to / know or not (A-not-A question form)]`:
 
 ```cantonese
-你[nei5|you] 識[sik1|to know / speak (a language) / have a skill] 唔[m4|not / no (negative prefix)] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 英文[jing1man2|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+你[nei5|you] 識唔識[sik1 m4 sik1|know how to / know or not (A-not-A question form)] 講[gong2|to speak / say / talk] 英文[jing1man2|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 ===
 Do you know how to speak English?
 ```
@@ -196,7 +194,7 @@ A: Mary，你[nei5|you] 係唔係[hai6 m4 hai6|is it or not? / is that right? (A
    === Mary, are you an American?
 B: 我[ngo5|I] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 美國[mei5gwok3|United States / America] 人[jan4|person / people / human] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I] 係[hai6|to be (am/is/are) / yes] 加拿大[gaa1naa4daai6|Canada] 人[jan4|person / people / human]。 你[nei5|you] 呢[ne1|sentence-final particle for queries (how about / what about)]？
    === I am not American, I am Canadian. How about you?
-A: 我[ngo5|I] 係[hai6|to be (am/is/are) / yes] 美國[mei5gwok3|United States / America] 人[jan4|person / people / human]。 你[nei5|you] 識[sik1|to know / speak (a language) / have a skill] 唔[m4|not / no (negative prefix)] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 我[ngo5|I] 係[hai6|to be (am/is/are) / yes] 美國[mei5gwok3|United States / America] 人[jan4|person / people / human]。 你[nei5|you] 識唔識[sik1 m4 sik1|know how to / know or not (A-not-A question form)] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === I am American. Do you know how to speak Cantonese?
 B: 我[ngo5|I] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 你[nei5|you] 呢[ne1|sentence-final particle for queries (how about / what about)]？
    === I know how to speak Cantonese! How about you?

@@ -119,4 +119,41 @@ Let's test translation mismatch \`唔該[m4goi1|plain white rice]\` in prose.
     expect(res.output).toContain("唔該 (m4goi1)");
     expect(res.output).toContain("Translation divergence");
   });
+
+  test("Verify a dynamic A-not-A question form (e.g. 食唔食) where base verb is in dictionary", () => {
+    // "食" (sik6) is in the dictionary, so "食唔食" (sik6 m4 sik6) should pass automatically
+    const content = `---
+chapter: 99
+title: Dynamic A-not-A Test
+description: Testing dynamic A-not-A question form validation.
+---
+
+Let's test \`食唔食[sik6 m4 sik6|eat or not?]\` in prose.
+`;
+    fs.writeFileSync(tempChapterPath, content, "utf8");
+
+    const res = runChecker("content/99-test-checker-chapter.md");
+    expect(res.success).toBe(true);
+    expect(res.output).toContain("Checking vocabulary consistency in chapter");
+    expect(res.output).toContain("perfectly match the master local dictionary");
+  });
+
+  test("Fail a dynamic A-not-A question form where the base verb is not in the dictionary", () => {
+    // "貓" (maau1) is not in the dictionary, so "貓唔貓" should fail
+    const content = `---
+chapter: 99
+title: Invalid A-not-A Test
+description: Testing dynamic A-not-A failure.
+---
+
+Let's test invalid \`貓唔貓[maau1 m4 maau1|cat or not]\` in prose.
+`;
+    fs.writeFileSync(tempChapterPath, content, "utf8");
+
+    const res = runChecker("content/99-test-checker-chapter.md");
+    expect(res.success).toBe(false);
+    expect(res.output).toContain("Found 1 unregistered vocabulary error(s)");
+    expect(res.output).toContain("貓唔貓 (maau1 m4 maau1)");
+    expect(res.output).toContain("not registered in the dictionary");
+  });
 });

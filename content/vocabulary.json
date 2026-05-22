@@ -284,7 +284,14 @@
     "jyutping": "jiu3",
     "translation": "to want / need / must / demand",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 11
+    "occurrences": 7
+  },
+  {
+    "character": "要唔要",
+    "jyutping": "jiu3 m4 jiu3",
+    "translation": "do you want / want or not (A-not-A question form)",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
   },
   {
     "character": "佢",
@@ -333,7 +340,7 @@
     "jyutping": "m4",
     "translation": "not / not / no (negative prefix)",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 24
+    "occurrences": 14
   },
   {
     "character": "唔緊要",
@@ -501,7 +508,14 @@
     "jyutping": "sau1",
     "translation": "to receive / accept / collect",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 13
+    "occurrences": 3
+  },
+  {
+    "character": "收唔收",
+    "jyutping": "sau1 m4 sau1",
+    "translation": "do you accept / accept or not (A-not-A question form)",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 5
   },
   {
     "character": "四",
@@ -557,7 +571,14 @@
     "jyutping": "sik1",
     "translation": "to know / to know / speak (a language) / have a skill",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 13
+    "occurrences": 7
+  },
+  {
+    "character": "識唔識",
+    "jyutping": "sik1 m4 sik1",
+    "translation": "know how to / know or not (A-not-A question form)",
+    "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 3
   },
   {
     "character": "食",

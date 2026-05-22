@@ -44,14 +44,15 @@ This is an automatically generated vocabulary database compiled from all course 
 | **現金** | `jin6gam1` | cash | `02-shopping-slang.md` | 2 |
 | **英國** | `jing1gwok3` | United Kingdom / Britain | `01-greetings.md` | 3 |
 | **英文** | `jing1man2` | English language | `01-greetings.md` | 2 |
-| **要** | `jiu3` | to want / need / must / demand | `02-shopping-slang.md` | 11 |
+| **要** | `jiu3` | to want / need / must / demand | `02-shopping-slang.md` | 7 |
+| **要唔要** | `jiu3 m4 jiu3` | do you want / want or not (A-not-A question form) | `02-shopping-slang.md` | 2 |
 | **佢** | `keoi5` | he / she / it | `01-greetings.md` | 3 |
 | **佢哋** | `keoi5dei6` | they / them | `01-greetings.md` | 2 |
 | **啦** | `laa1` | particle / sentence-final particle suggesting, requesting, or encouraging action | `00-pronunciation-jyutping.md` | 6 |
 | **靚仔** | `leng3zai2` | handsome boy / handsome man / handsome | `01-greetings.md` | 1 |
 | **兩** | `loeng5` | two / pair (used with classifiers) | `02-shopping-slang.md` | 6 |
 | **六** | `luk6` | six | `02-shopping-slang.md` | 1 |
-| **唔** | `m4` | not / not / no (negative prefix) | `00-pronunciation-jyutping.md` | 24 |
+| **唔** | `m4` | not / not / no (negative prefix) | `00-pronunciation-jyutping.md` | 14 |
 | **唔緊要** | `m4 gan2jiu3` | it doesn't matter / never mind / it's okay | `01-greetings.md` | 1 |
 | **唔該** | `m4goi1` | excuse me | `02-shopping-slang.md` | 6 |
 | **買** | `maai5` | to buy | `02-shopping-slang.md` | 6 |
@@ -75,7 +76,8 @@ This is an automatically generated vocabulary database compiled from all course 
 | **三十** | `saam1sap6` | thirty | `02-shopping-slang.md` | 2 |
 | **新** | `san1` | new | `00-pronunciation-jyutping.md` | 1 |
 | **十** | `sap6` | ten | `00-pronunciation-jyutping.md` | 5 |
-| **收** | `sau1` | to receive / accept / collect | `02-shopping-slang.md` | 13 |
+| **收** | `sau1` | to receive / accept / collect | `02-shopping-slang.md` | 3 |
+| **收唔收** | `sau1 m4 sau1` | do you accept / accept or not (A-not-A question form) | `02-shopping-slang.md` | 5 |
 | **四** | `sei3` | four | `02-shopping-slang.md` | 2 |
 | **詩** | `si1` | poem / poetry | `00-pronunciation-jyutping.md` | 2 |
 | **史** | `si2` | history | `00-pronunciation-jyutping.md` | 2 |
@@ -83,7 +85,8 @@ This is an automatically generated vocabulary database compiled from all course 
 | **時** | `si4` | time / hour | `00-pronunciation-jyutping.md` | 3 |
 | **市** | `si5` | market / city | `00-pronunciation-jyutping.md` | 2 |
 | **事** | `si6` | matter / business / affair | `00-pronunciation-jyutping.md` | 3 |
-| **識** | `sik1` | to know / to know / speak (a language) / have a skill | `01-greetings.md` | 13 |
+| **識** | `sik1` | to know / to know / speak (a language) / have a skill | `01-greetings.md` | 7 |
+| **識唔識** | `sik1 m4 sik1` | know how to / know or not (A-not-A question form) | `01-greetings.md` | 3 |
 | **食** | `sik6` | to eat | `00-pronunciation-jyutping.md` | 6 |
 | **想** | `soeng2` | want to / to want to / would like to / think | `00-pronunciation-jyutping.md` | 10 |
 | **薯片** | `syu4pin2` | potato chips / crisps | `02-shopping-slang.md` | 2 |

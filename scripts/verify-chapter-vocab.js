@@ -149,10 +149,38 @@ function main() {
     const translation = unit.translation.trim();
 
     // Look up in dictionary by exact character and jyutping
-    const dictMatch = dictionary.find(
+    let dictMatch = dictionary.find(
       (entry) =>
         entry.char === char && entry.jyutping.toLowerCase() === jyutping,
     );
+
+    // Dynamic A-not-A question pattern resolution
+    if (!dictMatch) {
+      if (char.length === 3 && char[1] === "唔" && char[0] === char[2]) {
+        const syllables = jyutping.split(/\s+/);
+        if (
+          syllables.length === 3 &&
+          syllables[1] === "m4" &&
+          syllables[0] === syllables[2]
+        ) {
+          // Verify the base verb exists in dictionary
+          const baseMatch = dictionary.find(
+            (entry) =>
+              entry.char === char[0] &&
+              entry.jyutping.toLowerCase() === syllables[0],
+          );
+          if (baseMatch) {
+            // Mock a dictionary match for validation and semantic check
+            dictMatch = {
+              char,
+              jyutping,
+              definition: `${baseMatch.definition} or not?`,
+              type: "expression",
+            };
+          }
+        }
+      }
+    }
 
     const locations = `[Block starting line(s): ${unit.lines.join(", ")}]`;
 
