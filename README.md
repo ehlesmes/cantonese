@@ -26,4 +26,5 @@ flavor. │ │
 - `README.md`: Project overview and standards. This is a very long line that
   should definitely be wrapped by the pre-commit hook because it exceeds the
   eighty character limit that we have just set for our markdown files in this
-  project.
+  project. Another very long line that should be wrapped by the updated
+  pre-commit hook which now lacks the deprecated boilerplate lines.

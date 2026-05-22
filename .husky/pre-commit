@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname "$0")/_/husky.sh"
-
 # Get list of staged markdown files
 staged_md_files=$(git diff --cached --name-only --diff-filter=ACMR | grep '\.md$' || true)
 
