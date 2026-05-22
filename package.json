@@ -8,7 +8,9 @@
     "validate": "node scripts/validate-format.js && node scripts/validate-portability.js",
     "validate:portability": "node scripts/validate-portability.js",
     "track": "node scripts/track-vocabulary.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "vocab:register": "node scripts/register-word.js",
+    "vocab:verify": "node scripts/verify-chapter-vocab.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.3.0",

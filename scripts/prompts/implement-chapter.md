@@ -22,6 +22,11 @@ window in `content/curriculum.md` is updated.
   [content/README.md](../../content/README.md) formatting rules (frontmatter,
   `` `Char[Jyutping|Translation]` `` annotations, `cantonese` example blocks,
   `dialog` speakers, and `exercise` YAML blocks).
+- **Forbid Markdown Tables**: DO NOT use Markdown tables for vocabulary, pronoun
+  grids, or grammar notes. Prettier auto-formatting pads empty spaces inside
+  table cells to align columns, which corrupts compact parser annotations (e.g.,
+  introducing illegal spaces inside `` `Char[Jyutping|Translation]` ``). Always
+  use bulleted lists or clean description blocks instead.
 
 ---
 
@@ -57,7 +62,7 @@ Before writing any chapter content, you must perform a cognitive load audit:
 3. For any missing terms, register them **all at once** using the registrar
    CLI's batch mode:
    ```bash
-   node scripts/register-word.js --json '[
+   npm run vocab:register -- --json '[
      {"char": "我", "jyutping": "ngo5", "definition": "I / me", "type": "pronoun"},
      {"char": "你", "jyutping": "nei5", "definition": "you", "type": "pronoun"}
    ]'
@@ -78,7 +83,7 @@ Before writing any chapter content, you must perform a cognitive load audit:
 Run the full verification suite to ensure zero regressions:
 
 1. Validate vocabulary alignment in the drafted chapter:
-   `node scripts/verify-chapter-vocab.js content/<chapter-filename>.md`
+   `npm run vocab:verify -- content/<chapter-filename>.md`
 2. Run the overall formatting validator: `npm run validate`
 3. Compile the global vocabulary database and index files: `npm run track`
 4. Verify linting and E2E test suites pass successfully:
