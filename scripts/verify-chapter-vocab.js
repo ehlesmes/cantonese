@@ -19,10 +19,10 @@ ${colors.bold}${colors.cyan}Cantonese Chapter Vocabulary Consistency Checker${co
 ${colors.dim}Cross-references annotated chapter vocabulary against the master local dictionary.${colors.reset}
 
 ${colors.bold}Usage:${colors.reset}
-  node scripts/verify-chapter-vocab.js <chapter_file_path>
+  npm run vocab:verify -- <chapter_file_path>
 
 ${colors.bold}Example:${colors.reset}
-  node scripts/verify-chapter-vocab.js content/01-greetings.md
+  npm run vocab:verify -- content/01-greetings.md
 `);
 }
 

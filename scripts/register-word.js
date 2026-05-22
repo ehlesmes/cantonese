@@ -34,17 +34,17 @@ ${colors.bold}${colors.cyan}Cantonese Lexicon Dictionary Registrar${colors.reset
 ${colors.dim}Programmatically register new vocabulary words into the local dictionary database.${colors.reset}
 
 ${colors.bold}Usage (Single Entry):${colors.reset}
-  node scripts/register-word.js <character> <jyutping> "<definition>" <type> "[notes]"
+  npm run vocab:register -- <character> <jyutping> "<definition>" <type> "[notes]"
 
 ${colors.bold}Usage (Batch JSON String):${colors.reset}
-  node scripts/register-word.js --json '<JSON-array-string>'
+  npm run vocab:register -- --json '<JSON-array-string>'
 
 ${colors.bold}Usage (Batch File):${colors.reset}
-  node scripts/register-word.js --file <path-to-json-file>
+  npm run vocab:register -- --file <path-to-json-file>
 
 ${colors.bold}Examples:${colors.reset}
-  node scripts/register-word.js 叉燒 caa1siu1 "barbecued pork" noun "Popular meat dish"
-  node scripts/register-word.js --json '[{"char":"我","jyutping":"ngo5","definition":"I / me","type":"pronoun"}]'
+  npm run vocab:register -- 叉燒 caa1siu1 "barbecued pork" noun "Popular meat dish"
+  npm run vocab:register -- --json '[{"char":"我","jyutping":"ngo5","definition":"I / me","type":"pronoun"}]'
 `);
 }
 

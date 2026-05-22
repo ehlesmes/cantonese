@@ -27,6 +27,16 @@ window in `content/curriculum.md` is updated.
   table cells to align columns, which corrupts compact parser annotations (e.g.,
   introducing illegal spaces inside `` `Char[Jyutping|Translation]` ``). Always
   use bulleted lists or clean description blocks instead.
+- **Strictly Use NPM Scripts (No Raw Node)**: You are strictly prohibited from
+  running raw `node` commands (e.g., `node scripts/...`). All script runs must
+  be wrapped in standard `npm run` aliases defined in `package.json`. Pass
+  arguments to the underlying script using the double-dash (`--`) separator.
+  Examples:
+  - Register Vocabulary: `npm run vocab:register -- --json '...'` or
+    `npm run vocab:register -- --file <path>`
+  - Verify Chapter Vocabulary: `npm run vocab:verify -- content/XX-filename.md`
+  - Compile Vocabulary Database: `npm run track`
+  - Validate Formatting & Portability: `npm run validate`
 
 ---
 
