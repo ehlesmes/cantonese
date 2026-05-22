@@ -68,7 +68,10 @@ Before writing any chapter content, you must perform a cognitive load audit:
 
 1. Outline the list of new vocabulary words you plan to introduce in this
    lesson.
-2. Cross-reference them against `content/dictionary.json`.
+2. **Cross-reference efficiently**: DO NOT run consecutive `grep_search`
+   commands for individual terms. Instead, **read `content/dictionary.json` in
+   full once** using `view_file` (it is very compact) and perform the
+   cross-reference checks programmatically in your thoughts.
 3. For any missing terms, register them **all at once** using the registrar
    CLI's batch mode:
    ```bash
@@ -79,6 +82,12 @@ Before writing any chapter content, you must perform a cognitive load audit:
    ```
    _Ensure all entries have standard LSHK Jyutping tone digits (1-6) and map to
    authorized grammatical types._
+   - **Forbid Shell Cleanups (`rm` / `rmdir`)**: You are strictly prohibited
+     from running shell deletion commands (like `rm` or `rmdir`) to clean up
+     temporary files in `tmp/`. The `tmp/` folder is ignored by Git, so leaving
+     files there is completely safe and avoids triggering user permission
+     prompts. If you must delete a temporary file, do so programmatically inside
+     a JS execution script, never via shell commands.
 
 ### Phase C: Chapter Drafting
 
