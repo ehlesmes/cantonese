@@ -4,14 +4,49 @@
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 22
+    "occurrences": 40
+  },
+  {
+    "character": "巴士",
+    "jyutping": "baa1si2",
+    "translation": "bus (loanword)",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
   },
   {
     "character": "拜拜",
     "jyutping": "baai1baai3",
     "translation": "bye-bye / goodbye (loanword)",
     "firstIntroducedIn": "01-greetings.md",
+    "occurrences": 6
+  },
+  {
+    "character": "八",
+    "jyutping": "baat3",
+    "translation": "eight",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 1
+  },
+  {
+    "character": "八達通",
+    "jyutping": "baat3daat6tung1",
+    "translation": "Octopus card (Hong Kong contact-less smart card)",
+    "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 4
+  },
+  {
+    "character": "七",
+    "jyutping": "cat1",
+    "translation": "seven",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 1
+  },
+  {
+    "character": "錢",
+    "jyutping": "cin2",
+    "translation": "money",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 5
   },
   {
     "character": "哋",
@@ -19,6 +54,27 @@
     "translation": "plural suffix",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 1
+  },
+  {
+    "character": "的士",
+    "jyutping": "dik1si2",
+    "translation": "taxi (loanword)",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
+  },
+  {
+    "character": "多謝",
+    "jyutping": "do1ze6",
+    "translation": "thank you (for a gift, compliment, or hospitality)",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 1
+  },
+  {
+    "character": "飛",
+    "jyutping": "fei1",
+    "translation": "ticket (loanword, e.g., movie ticket, bus ticket)",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
   },
   {
     "character": "加拿大",
@@ -35,6 +91,20 @@
     "occurrences": 8
   },
   {
+    "character": "膠袋",
+    "jyutping": "gaau1doi2",
+    "translation": "plastic bag",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 3
+  },
+  {
+    "character": "搞掂",
+    "jyutping": "gaau2dim6",
+    "translation": "done / finished / settled / resolved",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 6
+  },
+  {
     "character": "雞",
     "jyutping": "gai1",
     "translation": "chicken",
@@ -49,6 +119,13 @@
     "occurrences": 1
   },
   {
+    "character": "九",
+    "jyutping": "gau2",
+    "translation": "nine",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 1
+  },
+  {
     "character": "嘅",
     "jyutping": "ge3",
     "translation": "particle / possessive particle / nominalizing particle / final assertive particle",
@@ -56,11 +133,32 @@
     "occurrences": 2
   },
   {
+    "character": "幾多",
+    "jyutping": "gei2do1",
+    "translation": "how many / how much",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 5
+  },
+  {
     "character": "叫",
     "jyutping": "giu3",
     "translation": "to be called / to call",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 7
+  },
+  {
+    "character": "嗰個",
+    "jyutping": "go2go3",
+    "translation": "that one",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 7
+  },
+  {
+    "character": "個",
+    "jyutping": "go3",
+    "translation": "general measure word / individual / unit",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 1
   },
   {
     "character": "講",
@@ -88,7 +186,7 @@
     "jyutping": "hai6",
     "translation": "to be / to be (am/is/are) / yes",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 17
+    "occurrences": 19
   },
   {
     "character": "係唔係",
@@ -96,6 +194,13 @@
     "translation": "is it or not / is it or not? / is that right? (A-not-A question form)",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 6
+  },
+  {
+    "character": "可樂",
+    "jyutping": "ho2lok6",
+    "translation": "cola / Coke",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
   },
   {
     "character": "香港",
@@ -109,7 +214,7 @@
     "jyutping": "hou2",
     "translation": "good / fine / very / quite",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 2
+    "occurrences": 4
   },
   {
     "character": "人",
@@ -119,11 +224,46 @@
     "occurrences": 10
   },
   {
+    "character": "一",
+    "jyutping": "jat1",
+    "translation": "one",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 1
+  },
+  {
     "character": "日",
     "jyutping": "jat6",
     "translation": "day / sun",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
     "occurrences": 1
+  },
+  {
+    "character": "嘢飲",
+    "jyutping": "je5jam2",
+    "translation": "drinks / beverages",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 1
+  },
+  {
+    "character": "二",
+    "jyutping": "ji6",
+    "translation": "two",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 7
+  },
+  {
+    "character": "二十",
+    "jyutping": "ji6sap6",
+    "translation": "twenty",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 3
+  },
+  {
+    "character": "現金",
+    "jyutping": "jin6gam1",
+    "translation": "cash",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
   },
   {
     "character": "英國",
@@ -138,6 +278,13 @@
     "translation": "English language",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 2
+  },
+  {
+    "character": "要",
+    "jyutping": "jiu3",
+    "translation": "to want / need / must / demand",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 11
   },
   {
     "character": "佢",
@@ -158,7 +305,7 @@
     "jyutping": "laa1",
     "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 2
+    "occurrences": 6
   },
   {
     "character": "靚仔",
@@ -168,11 +315,25 @@
     "occurrences": 1
   },
   {
+    "character": "兩",
+    "jyutping": "loeng5",
+    "translation": "two / pair (used with classifiers)",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 6
+  },
+  {
+    "character": "六",
+    "jyutping": "luk6",
+    "translation": "six",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 1
+  },
+  {
     "character": "唔",
     "jyutping": "m4",
     "translation": "not / not / no (negative prefix)",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 16
+    "occurrences": 24
   },
   {
     "character": "唔緊要",
@@ -180,6 +341,27 @@
     "translation": "it doesn't matter / never mind / it's okay",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 1
+  },
+  {
+    "character": "唔該",
+    "jyutping": "m4goi1",
+    "translation": "excuse me",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 6
+  },
+  {
+    "character": "買",
+    "jyutping": "maai5",
+    "translation": "to buy",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 6
+  },
+  {
+    "character": "蚊",
+    "jyutping": "man1",
+    "translation": "dollar (spoken Cantonese colloquial unit of currency)",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 17
   },
   {
     "character": "咩嘢",
@@ -201,6 +383,13 @@
     "translation": "name",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 3
+  },
+  {
+    "character": "冇",
+    "jyutping": "mou5",
+    "translation": "not to have / without / there is not",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
   },
   {
     "character": "呢",
@@ -228,14 +417,21 @@
     "jyutping": "nei5hou2",
     "translation": "hello / hi",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 9
+    "occurrences": 10
+  },
+  {
+    "character": "五",
+    "jyutping": "ng5",
+    "translation": "five",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
   },
   {
     "character": "我",
     "jyutping": "ngo5",
     "translation": "I / I / me",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 16
+    "occurrences": 25
   },
   {
     "character": "我哋",
@@ -243,6 +439,20 @@
     "translation": "we / us",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 5
+  },
+  {
+    "character": "呢度",
+    "jyutping": "ni1dou6",
+    "translation": "here",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 4
+  },
+  {
+    "character": "呢個",
+    "jyutping": "ni1go3",
+    "translation": "this one",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 8
   },
   {
     "character": "朋友",
@@ -259,6 +469,20 @@
     "occurrences": 1
   },
   {
+    "character": "三",
+    "jyutping": "saam1",
+    "translation": "three",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
+  },
+  {
+    "character": "三十",
+    "jyutping": "saam1sap6",
+    "translation": "thirty",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
+  },
+  {
     "character": "新",
     "jyutping": "san1",
     "translation": "new",
@@ -270,6 +494,20 @@
     "jyutping": "sap6",
     "translation": "ten",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 5
+  },
+  {
+    "character": "收",
+    "jyutping": "sau1",
+    "translation": "to receive / accept / collect",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 13
+  },
+  {
+    "character": "四",
+    "jyutping": "sei3",
+    "translation": "four",
+    "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 2
   },
   {
@@ -331,9 +569,23 @@
   {
     "character": "想",
     "jyutping": "soeng2",
-    "translation": "want to",
+    "translation": "want to / to want to / would like to / think",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 1
+    "occurrences": 10
+  },
+  {
+    "character": "薯片",
+    "jyutping": "syu4pin2",
+    "translation": "potato chips / crisps",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
+  },
+  {
+    "character": "同埋",
+    "jyutping": "tung4maai4",
+    "translation": "and / with / together with",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 3
   },
   {
     "character": "喂",
@@ -341,6 +593,13 @@
     "translation": "hey",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
     "occurrences": 5
+  },
+  {
+    "character": "找",
+    "jyutping": "zaau2",
+    "translation": "to give change / look for / seek",
+    "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 2
   },
   {
     "character": "隻",

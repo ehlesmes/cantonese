@@ -19,10 +19,34 @@
     "type": "noun"
   },
   {
+    "char": "百",
+    "jyutping": "baak3",
+    "definition": "hundred",
+    "type": "numeral"
+  },
+  {
     "char": "拜拜",
     "jyutping": "baai1baai3",
     "definition": "bye-bye / goodbye (loanword)",
     "type": "expression"
+  },
+  {
+    "char": "八",
+    "jyutping": "baat3",
+    "definition": "eight",
+    "type": "numeral"
+  },
+  {
+    "char": "八達通",
+    "jyutping": "baat3daat6tung1",
+    "definition": "Octopus card (Hong Kong contact-less smart card)",
+    "type": "noun"
+  },
+  {
+    "char": "啤酒",
+    "jyutping": "be1zau2",
+    "definition": "beer (loanword)",
+    "type": "noun"
   },
   {
     "char": "邊度",
@@ -52,6 +76,18 @@
     "char": "茶餐廳",
     "jyutping": "caa4caan1teng1",
     "definition": "Hong Kong style café / diner",
+    "type": "noun"
+  },
+  {
+    "char": "七",
+    "jyutping": "cat1",
+    "definition": "seven",
+    "type": "numeral"
+  },
+  {
+    "char": "錢",
+    "jyutping": "cin2",
+    "definition": "money",
     "type": "noun"
   },
   {
@@ -179,6 +215,12 @@
     "type": "noun"
   },
   {
+    "char": "膠袋",
+    "jyutping": "gaau1doi2",
+    "definition": "plastic bag",
+    "type": "noun"
+  },
+  {
     "char": "搞掂",
     "jyutping": "gaau2dim6",
     "definition": "done / finished / settled / resolved",
@@ -211,17 +253,29 @@
     "notes": "Attaches directly to verbs to show ongoing action (equivalent to Mandarin 正在 zhèngzài)."
   },
   {
-    "char": "嘅",
-    "jyutping": "ge3",
-    "definition": "possessive particle / nominalizing particle / final assertive particle",
-    "type": "particle",
-    "notes": "Indicates possession (like 's, equivalent to Mandarin 的 de) or asserts a state."
+    "char": "幾多",
+    "jyutping": "gei2do1",
+    "definition": "how many / how much",
+    "type": "pronoun"
   },
   {
     "char": "幾時",
     "jyutping": "gei2si4",
     "definition": "when / what time",
     "type": "pronoun"
+  },
+  {
+    "char": "九",
+    "jyutping": "gau2",
+    "definition": "nine",
+    "type": "numeral"
+  },
+  {
+    "char": "嘅",
+    "jyutping": "ge3",
+    "definition": "possessive particle / nominalizing particle / final assertive particle",
+    "type": "particle",
+    "notes": "Indicates possession (like 's, equivalent to Mandarin 的 de) or asserts a state."
   },
   {
     "char": "叫",
@@ -236,6 +290,12 @@
     "type": "pronoun"
   },
   {
+    "char": "嗰度",
+    "jyutping": "go2dou6",
+    "definition": "there",
+    "type": "pronoun"
+  },
+  {
     "char": "個",
     "jyutping": "go3",
     "definition": "general measure word / individual / unit",
@@ -246,6 +306,12 @@
     "jyutping": "gong2",
     "definition": "to speak / say / talk",
     "type": "verb"
+  },
+  {
+    "char": "貴",
+    "jyutping": "gwai3",
+    "definition": "expensive",
+    "type": "adjective"
   },
   {
     "char": "攰",
@@ -317,6 +383,12 @@
     "type": "verb"
   },
   {
+    "char": "可樂",
+    "jyutping": "ho2lok6",
+    "definition": "cola / Coke",
+    "type": "noun"
+  },
+  {
     "char": "香港",
     "jyutping": "hoeng1gong2",
     "definition": "Hong Kong",
@@ -335,6 +407,12 @@
     "type": "adjective"
   },
   {
+    "char": "飲",
+    "jyutping": "jam2",
+    "definition": "to drink",
+    "type": "verb"
+  },
+  {
     "char": "飲茶",
     "jyutping": "jam2caa4",
     "definition": "to drink tea / go for dim sum / yum cha",
@@ -345,6 +423,12 @@
     "jyutping": "jan4",
     "definition": "person / people / human",
     "type": "noun"
+  },
+  {
+    "char": "一",
+    "jyutping": "jat1",
+    "definition": "one",
+    "type": "numeral"
   },
   {
     "char": "日",
@@ -365,10 +449,40 @@
     "type": "verb"
   },
   {
+    "char": "嘢",
+    "jyutping": "je5",
+    "definition": "thing / stuff / matter",
+    "type": "noun"
+  },
+  {
+    "char": "嘢飲",
+    "jyutping": "je5jam2",
+    "definition": "drinks / beverages",
+    "type": "noun"
+  },
+  {
+    "char": "嘢食",
+    "jyutping": "je5sik6",
+    "definition": "snacks / food / things to eat",
+    "type": "noun"
+  },
+  {
     "char": "而家",
     "jyutping": "ji4gaa1",
     "definition": "now / currently",
     "type": "noun"
+  },
+  {
+    "char": "二",
+    "jyutping": "ji6",
+    "definition": "two",
+    "type": "numeral"
+  },
+  {
+    "char": "二十",
+    "jyutping": "ji6sap6",
+    "definition": "twenty",
+    "type": "numeral"
   },
   {
     "char": "英國",
@@ -380,6 +494,12 @@
     "char": "英文",
     "jyutping": "jing1man2",
     "definition": "English language",
+    "type": "noun"
+  },
+  {
+    "char": "現金",
+    "jyutping": "jin6gam1",
+    "definition": "cash",
     "type": "noun"
   },
   {
@@ -446,6 +566,12 @@
     "notes": "Implies that something is completely obvious, or shows a resigned state."
   },
   {
+    "char": "兩",
+    "jyutping": "loeng5",
+    "definition": "two / pair (used with classifiers)",
+    "type": "numeral"
+  },
+  {
     "char": "老公",
     "jyutping": "lou5gung1",
     "definition": "husband (colloquial)",
@@ -462,6 +588,12 @@
     "jyutping": "lou5sai3",
     "definition": "boss / employer (colloquial)",
     "type": "noun"
+  },
+  {
+    "char": "六",
+    "jyutping": "luk6",
+    "definition": "six",
+    "type": "numeral"
   },
   {
     "char": "唔",
@@ -588,6 +720,12 @@
     "type": "expression"
   },
   {
+    "char": "五",
+    "jyutping": "ng5",
+    "definition": "five",
+    "type": "numeral"
+  },
+  {
     "char": "我",
     "jyutping": "ngo5",
     "definition": "I / me",
@@ -597,6 +735,12 @@
     "char": "我哋",
     "jyutping": "ngo5dei6",
     "definition": "we / us",
+    "type": "pronoun"
+  },
+  {
+    "char": "呢度",
+    "jyutping": "ni1dou6",
+    "definition": "here",
     "type": "pronoun"
   },
   {
@@ -616,6 +760,12 @@
     "jyutping": "saa1",
     "definition": "sand",
     "type": "noun"
+  },
+  {
+    "char": "三",
+    "jyutping": "saam1",
+    "definition": "three",
+    "type": "numeral"
   },
   {
     "char": "三十",
@@ -642,9 +792,27 @@
     "type": "numeral"
   },
   {
+    "char": "收",
+    "jyutping": "sau1",
+    "definition": "to receive / accept / collect",
+    "type": "verb"
+  },
+  {
+    "char": "四",
+    "jyutping": "sei3",
+    "definition": "four",
+    "type": "numeral"
+  },
+  {
     "char": "水",
     "jyutping": "seoi2",
     "definition": "water",
+    "type": "noun"
+  },
+  {
+    "char": "薯片",
+    "jyutping": "syu4pin2",
+    "definition": "potato chips / crisps",
     "type": "noun"
   },
   {
@@ -763,6 +931,12 @@
     "notes": "Used to convey that information is hearsay, or to point out something unexpected."
   },
   {
+    "char": "找",
+    "jyutping": "zaau2",
+    "definition": "to give change / look for / seek",
+    "type": "verb"
+  },
+  {
     "char": "啫",
     "jyutping": "ze1",
     "definition": "sentence-final particle meaning 'only', 'just', or downplaying something",
@@ -799,5 +973,11 @@
     "jyutping": "zou2tau2",
     "definition": "good night",
     "type": "expression"
+  },
+  {
+    "char": "朱古力",
+    "jyutping": "zyu1gu1lik1",
+    "definition": "chocolate (loanword)",
+    "type": "noun"
   }
 ]
