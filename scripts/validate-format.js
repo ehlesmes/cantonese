@@ -360,21 +360,7 @@ function main() {
     const files = fs.readdirSync(contentDir);
     const chapterFiles = files.filter(f => /^\d{2}-.*\.md$/.test(f));
     
-    // 1. Check curriculum chapter list alignment (non-existent chapters are logged as warnings to support sequential authoring)
-    const missingChapters = [];
-    for (const c of curriculumChapters) {
-      const expectedPath = path.join(contentDir, c.file);
-      if (!fs.existsSync(expectedPath)) {
-        missingChapters.push(c.file);
-      }
-    }
-    if (missingChapters.length > 0) {
-      console.log(`${colors.yellow}${colors.bold}⚠️  Curriculum Warning: The following planned chapters are registered in curriculum.md but have not been created yet:${colors.reset}`);
-      for (const f of missingChapters) {
-        console.log(`  - ${f}`);
-      }
-      console.log('');
-    }
+
     
     // 2. Validate each chapter file
     for (const file of chapterFiles) {
