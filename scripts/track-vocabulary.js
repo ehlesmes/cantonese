@@ -1,12 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const parser = require('./lib/parser');
+const fs = require("fs");
+const path = require("path");
+const parser = require("./lib/parser");
 
 function main() {
-  const projectRoot = path.resolve(__dirname, '..');
-  const contentDir = path.join(projectRoot, 'content');
-  const jsonPath = path.join(contentDir, 'vocabulary.json');
-  const mdPath = path.join(contentDir, 'vocabulary.md');
+  const projectRoot = path.resolve(__dirname, "..");
+  const contentDir = path.join(projectRoot, "content");
+  const jsonPath = path.join(contentDir, "vocabulary.json");
+  const mdPath = path.join(contentDir, "vocabulary.md");
 
   if (!fs.existsSync(contentDir)) {
     console.error(`ERROR: Content directory not found at "${contentDir}"`);
@@ -15,9 +15,7 @@ function main() {
 
   // 1. Scan and sort all chapter markdown files
   const files = fs.readdirSync(contentDir);
-  const chapterFiles = files
-    .filter(f => /^\d{2}-.*\.md$/.test(f))
-    .sort(); // Sorts sequentially, e.g. 00-*, 01-*, 02-*
+  const chapterFiles = files.filter((f) => /^\d{2}-.*\.md$/.test(f)).sort(); // Sorts sequentially, e.g. 00-*, 01-*, 02-*
 
   const vocabMap = {};
 
@@ -35,21 +33,23 @@ function main() {
     for (const block of chapterData.blocks) {
       let units = [];
 
-      if (block.type === 'prose') {
+      if (block.type === "prose") {
         units = parser.extractInlineUnits(block.content);
-      } else if (block.type === 'cantonese' || block.type === 'dialog') {
+      } else if (block.type === "cantonese" || block.type === "dialog") {
         units = parser.extractBlockUnits(block.content);
-      } else if (block.type === 'exercise') {
+      } else if (block.type === "exercise") {
         let exerciseData;
         try {
           exerciseData = parser.parseYAML(block.content);
-        } catch (err) {
+        } catch {
           continue; // Bad exercise block, validation script catches this
         }
-        const fields = ['question', 'answer', 'explanation'];
+        const fields = ["question", "answer", "explanation"];
         for (const field of fields) {
           if (exerciseData[field]) {
-            units.push(...parser.extractBlockUnits(String(exerciseData[field])));
+            units.push(
+              ...parser.extractBlockUnits(String(exerciseData[field])),
+            );
           }
         }
       }
@@ -69,7 +69,7 @@ function main() {
             jyutping: jyutping,
             translation: translation,
             firstIntroducedIn: file,
-            occurrences: 1
+            occurrences: 1,
           };
         } else {
           vocabMap[key].occurrences++;
@@ -97,8 +97,10 @@ function main() {
 
   // 4. Output vocabulary.json
   try {
-    fs.writeFileSync(jsonPath, JSON.stringify(sortedVocab, null, 2), 'utf8');
-    console.log(`✓ Generated structured database: content/vocabulary.json (${sortedVocab.length} entries)`);
+    fs.writeFileSync(jsonPath, JSON.stringify(sortedVocab, null, 2), "utf8");
+    console.log(
+      `✓ Generated structured database: content/vocabulary.json (${sortedVocab.length} entries)`,
+    );
   } catch (err) {
     console.error(`ERROR: Failed to write vocabulary.json: ${err.message}`);
     process.exit(1);
@@ -118,7 +120,7 @@ This is an automatically generated vocabulary database compiled from all course 
   }
 
   try {
-    fs.writeFileSync(mdPath, mdContent, 'utf8');
+    fs.writeFileSync(mdPath, mdContent, "utf8");
     console.log(`✓ Generated human glossary: content/vocabulary.md`);
   } catch (err) {
     console.error(`ERROR: Failed to write vocabulary.md: ${err.message}`);

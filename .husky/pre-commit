@@ -8,6 +8,18 @@ if [ -n "$staged_md_files" ]; then
   git add $staged_md_files
 fi
 
+# Get list of staged JavaScript files
+staged_js_files=$(git diff --cached --name-only --diff-filter=ACMR | grep '\.js$' || true)
+
+if [ -n "$staged_js_files" ]; then
+  echo "Formatting staged JavaScript files..."
+  prettier --write $staged_js_files
+  git add $staged_js_files
+
+  echo "Linting staged JavaScript files with ESLint..."
+  npx eslint $staged_js_files
+fi
+
 # Run Cantonese chapter format validator if curriculum or any chapter file is staged
 staged_chapters_or_curriculum=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^content/[0-9]{2}-.*\.md$|^content/curriculum\.md$' || true)
 
