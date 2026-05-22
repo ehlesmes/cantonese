@@ -1,125 +1,15 @@
 [
   {
-    "char": "我",
-    "jyutping": "ngo5",
-    "definition": "I / me",
-    "type": "pronoun"
+    "char": "呀",
+    "jyutping": "aa3",
+    "definition": "sentence-final particle softening statements, making questions friendly",
+    "type": "particle",
+    "notes": "Softens the tone. Very common in greetings like 你好呀 (nei5 hou2 aa3)."
   },
   {
-    "char": "你",
-    "jyutping": "nei5",
-    "definition": "you",
-    "type": "pronoun"
-  },
-  {
-    "char": "佢",
-    "jyutping": "keoi5",
-    "definition": "he / she / it",
-    "type": "pronoun"
-  },
-  {
-    "char": "我哋",
-    "jyutping": "ngo5dei6",
-    "definition": "we / us",
-    "type": "pronoun"
-  },
-  {
-    "char": "你哋",
-    "jyutping": "nei5dei6",
-    "definition": "you (plural)",
-    "type": "pronoun"
-  },
-  {
-    "char": "佢哋",
-    "jyutping": "keoi5dei6",
-    "definition": "they / them",
-    "type": "pronoun"
-  },
-  {
-    "char": "係",
-    "jyutping": "hai6",
-    "definition": "to be (am/is/are) / yes",
-    "type": "verb"
-  },
-  {
-    "char": "唔",
-    "jyutping": "m4",
-    "definition": "not / no (negative prefix)",
-    "type": "adverb"
-  },
-  {
-    "char": "有",
-    "jyutping": "jau5",
-    "definition": "to have / possess / there is / there are",
-    "type": "verb"
-  },
-  {
-    "char": "冇",
-    "jyutping": "mou5",
-    "definition": "not to have / without / there is not",
-    "type": "verb"
-  },
-  {
-    "char": "想",
-    "jyutping": "soeng2",
-    "definition": "to want to / would like to / think",
-    "type": "auxiliary verb"
-  },
-  {
-    "char": "要",
-    "jyutping": "jiu3",
-    "definition": "to want / need / must / demand",
-    "type": "auxiliary verb"
-  },
-  {
-    "char": "呢個",
-    "jyutping": "ni1go3",
-    "definition": "this one",
-    "type": "pronoun"
-  },
-  {
-    "char": "嗰個",
-    "jyutping": "go2go3",
-    "definition": "that one",
-    "type": "pronoun"
-  },
-  {
-    "char": "唔該",
-    "jyutping": "m4goi1",
-    "definition": "excuse me / please / thank you (for service or help)",
-    "type": "expression",
-    "notes": "Used for services, requests, or showing gratitude for helpful actions."
-  },
-  {
-    "char": "多謝",
-    "jyutping": "do1ze6",
-    "definition": "thank you (for a gift, compliment, or hospitality)",
-    "type": "expression",
-    "notes": "Used when receiving tangible items, gifts, money, or compliments."
-  },
-  {
-    "char": "食",
-    "jyutping": "sik6",
-    "definition": "to eat",
-    "type": "verb"
-  },
-  {
-    "char": "買",
-    "jyutping": "maai5",
-    "definition": "to buy",
-    "type": "verb"
-  },
-  {
-    "char": "搞掂",
-    "jyutping": "gaau2dim6",
-    "definition": "done / finished / settled / resolved",
-    "type": "adjective",
-    "notes": "Extremely common colloquial Cantonese slang for completing a task."
-  },
-  {
-    "char": "的士",
-    "jyutping": "dik1si2",
-    "definition": "taxi (loanword)",
+    "char": "爸爸",
+    "jyutping": "baa1baa1",
+    "definition": "father / dad",
     "type": "noun"
   },
   {
@@ -129,9 +19,33 @@
     "type": "noun"
   },
   {
-    "char": "飛",
-    "jyutping": "fei1",
-    "definition": "ticket (loanword, e.g., movie ticket, bus ticket)",
+    "char": "拜拜",
+    "jyutping": "baai1baai3",
+    "definition": "bye-bye / goodbye (loanword)",
+    "type": "expression"
+  },
+  {
+    "char": "邊度",
+    "jyutping": "bin1dou6",
+    "definition": "where",
+    "type": "pronoun"
+  },
+  {
+    "char": "菠蘿包",
+    "jyutping": "bo1lo1baau1",
+    "definition": "pineapple bun (sweet crusted bun, usually containing no pineapple)",
+    "type": "noun"
+  },
+  {
+    "char": "杯",
+    "jyutping": "bui1",
+    "definition": "cup / glass / mug (classifier for drinks)",
+    "type": "classifier"
+  },
+  {
+    "char": "叉燒",
+    "jyutping": "caa1siu1",
+    "definition": "barbecued pork / char siu",
     "type": "noun"
   },
   {
@@ -141,277 +55,6 @@
     "type": "noun"
   },
   {
-    "char": "埋單",
-    "jyutping": "maai5daan1",
-    "definition": "to pay the bill / get the check",
-    "type": "verb",
-    "notes": "Standard term used in Cantonese restaurants to request the bill."
-  },
-  {
-    "char": "Hea",
-    "jyutping": "hea1",
-    "definition": "to chill / hang out / slack off / procrastinate",
-    "type": "verb",
-    "notes": "A very popular modern Cantonese slang word with no direct Chinese character."
-  },
-  {
-    "char": "游水",
-    "jyutping": "jau4seoi2",
-    "definition": "to swim",
-    "type": "verb"
-  },
-  {
-    "char": "睇書",
-    "jyutping": "tai2syu1",
-    "definition": "to read books",
-    "type": "verb"
-  },
-  {
-    "char": "返工",
-    "jyutping": "faan1gung1",
-    "definition": "to go to work / be at work",
-    "type": "verb"
-  },
-  {
-    "char": "放工",
-    "jyutping": "fong3gung1",
-    "definition": "to finish work / get off work",
-    "type": "verb"
-  },
-  {
-    "char": "飲茶",
-    "jyutping": "jam2caa4",
-    "definition": "to drink tea / go for dim sum / yum cha",
-    "type": "verb"
-  },
-  {
-    "char": "點心",
-    "jyutping": "dim2sam1",
-    "definition": "dim sum",
-    "type": "noun"
-  },
-  {
-    "char": "叉燒",
-    "jyutping": "caa1siu1",
-    "definition": "barbecued pork / char siu",
-    "type": "noun"
-  },
-  {
-    "char": "奶茶",
-    "jyutping": "naai5caa4",
-    "definition": "milk tea (typically Hong Kong-style)",
-    "type": "noun"
-  },
-  {
-    "char": "菠蘿包",
-    "jyutping": "bo1lo1baau1",
-    "definition": "pineapple bun (sweet crusted bun, usually containing no pineapple)",
-    "type": "noun"
-  },
-  {
-    "char": "鴛鴦",
-    "jyutping": "jyun1joeng1",
-    "definition": "yuanyang (drink mixing coffee and milk tea)",
-    "type": "noun"
-  },
-  {
-    "char": "即係",
-    "jyutping": "zik1hai6",
-    "definition": "that is / namely / in other words / meaning",
-    "type": "conjunction"
-  },
-  {
-    "char": "噉樣",
-    "jyutping": "gam2joeng6",
-    "definition": "in this way / like this / this pattern",
-    "type": "adverb"
-  },
-  {
-    "char": "點解",
-    "jyutping": "dim2gaai2",
-    "definition": "why / how come",
-    "type": "pronoun"
-  },
-  {
-    "char": "幾時",
-    "jyutping": "gei2si4",
-    "definition": "when / what time",
-    "type": "pronoun"
-  },
-  {
-    "char": "邊度",
-    "jyutping": "bin1dou6",
-    "definition": "where",
-    "type": "pronoun"
-  },
-  {
-    "char": "咩嘢",
-    "jyutping": "me1je5",
-    "definition": "what / what kind of thing",
-    "type": "pronoun"
-  },
-  {
-    "char": "喺",
-    "jyutping": "hai2",
-    "definition": "at / in / on (locative preposition)",
-    "type": "preposition"
-  },
-  {
-    "char": "去",
-    "jyutping": "heoi3",
-    "definition": "to go",
-    "type": "verb"
-  },
-  {
-    "char": "好",
-    "jyutping": "hou2",
-    "definition": "good / fine / very / quite",
-    "type": "adjective"
-  },
-  {
-    "char": "靚",
-    "jyutping": "leng3",
-    "definition": "pretty / beautiful / handsome / high quality",
-    "type": "adjective"
-  },
-  {
-    "char": "靚仔",
-    "jyutping": "leng3zai2",
-    "definition": "handsome boy / handsome man / handsome",
-    "type": "noun"
-  },
-  {
-    "char": "靚女",
-    "jyutping": "leng3neoi5",
-    "definition": "pretty girl / beautiful woman / beauty",
-    "type": "noun"
-  },
-  {
-    "char": "唔使客氣",
-    "jyutping": "m4sai2 haak3hei3",
-    "definition": "you are welcome / no need to be polite",
-    "type": "expression"
-  },
-  {
-    "char": "係唔係",
-    "jyutping": "hai6 m4 hai6",
-    "definition": "is it or not? / is that right? (A-not-A question form)",
-    "type": "expression"
-  },
-  {
-    "char": "喂",
-    "jyutping": "wai2",
-    "definition": "hey / hello (typically answering phone or calling for attention)",
-    "type": "expression"
-  },
-  {
-    "char": "三十",
-    "jyutping": "saam1sap6",
-    "definition": "thirty",
-    "type": "numeral"
-  },
-  {
-    "char": "蚊",
-    "jyutping": "man1",
-    "definition": "dollar (spoken Cantonese colloquial unit of currency)",
-    "type": "classifier"
-  },
-  {
-    "char": "杯",
-    "jyutping": "bui1",
-    "definition": "cup / glass / mug (classifier for drinks)",
-    "type": "classifier"
-  },
-  {
-    "char": "個",
-    "jyutping": "go3",
-    "definition": "general measure word / individual / unit",
-    "type": "classifier"
-  },
-  {
-    "char": "定",
-    "jyutping": "ding6",
-    "definition": "or (used exclusively in alternative questions)",
-    "type": "conjunction",
-    "notes": "Example: A定B? (A or B?)"
-  },
-  {
-    "char": "同埋",
-    "jyutping": "tung4maai4",
-    "definition": "and / with / together with",
-    "type": "conjunction"
-  },
-  {
-    "char": "呀",
-    "jyutping": "aa3",
-    "definition": "sentence-final particle softening statements, making questions friendly",
-    "type": "particle",
-    "notes": "Softens the tone. Very common in greetings like 你好呀 (nei5 hou2 aa3)."
-  },
-  {
-    "char": "啦",
-    "jyutping": "laa1",
-    "definition": "sentence-final particle suggesting, requesting, or encouraging action",
-    "type": "particle",
-    "notes": "Often used for polite requests, suggestions, or imperative command softening."
-  },
-  {
-    "char": "囉",
-    "jyutping": "lo1",
-    "definition": "sentence-final particle showing obviousness, resignation, or 'of course'",
-    "type": "particle",
-    "notes": "Implies that something is completely obvious, or shows a resigned state."
-  },
-  {
-    "char": "啫",
-    "jyutping": "ze1",
-    "definition": "sentence-final particle meaning 'only', 'just', or downplaying something",
-    "type": "particle",
-    "notes": "Equivalent to 'only' or 'just' to reassure or downplay significance."
-  },
-  {
-    "char": "嘛",
-    "jyutping": "maa3",
-    "definition": "sentence-final particle indicating a statement is an obvious truth or reminder",
-    "type": "particle",
-    "notes": "Used when stating facts that the listener should already know or accept."
-  },
-  {
-    "char": "吓",
-    "jyutping": "haa2",
-    "definition": "sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
-    "type": "particle",
-    "notes": "Can also be used as an independent exclamation ('What?!')."
-  },
-  {
-    "char": "喎",
-    "jyutping": "wo3",
-    "definition": "sentence-final particle indicating reported speech, surprise, or warning",
-    "type": "particle",
-    "notes": "Used to convey that information is hearsay, or to point out something unexpected."
-  },
-  {
-    "char": "咗",
-    "jyutping": "zo2",
-    "definition": "verbal aspect suffix indicating completed action (perfective aspect)",
-    "type": "particle",
-    "notes": "Attaches directly to verbs to show completion (equivalent to Mandarin 了 le)."
-  },
-  {
-    "char": "緊",
-    "jyutping": "gan2",
-    "definition": "verbal aspect suffix indicating an action in progress (continuous aspect)",
-    "type": "particle",
-    "notes": "Attaches directly to verbs to show ongoing action (equivalent to Mandarin 正在 zhèngzài)."
-  },
-  {
-    "char": "過",
-    "jyutping": "gwo3",
-    "definition": "verbal aspect suffix indicating past experience / 'have done before'",
-    "type": "particle",
-    "notes": "Attaches directly to verbs to denote experiential aspect (equivalent to Mandarin 过 guo)."
-  },
-  {
     "char": "得",
     "jyutping": "dak1",
     "definition": "particle expressing permission, possibility, capability, or adverbial degree",
@@ -419,36 +62,16 @@
     "notes": "Used in potential structures (verb + 得 + adjective/complement) meaning 'can'."
   },
   {
-    "char": "嘅",
-    "jyutping": "ge3",
-    "definition": "possessive particle / nominalizing particle / final assertive particle",
-    "type": "particle",
-    "notes": "Indicates possession (like 's, equivalent to Mandarin 的 de) or asserts a state."
+    "char": "得閒",
+    "jyutping": "dak1haan4",
+    "definition": "free / having spare time",
+    "type": "adjective"
   },
   {
-    "char": "咩",
-    "jyutping": "me1",
-    "definition": "sentence-final particle expressing rhetorical doubt, surprise, or sarcasm",
-    "type": "particle",
-    "notes": "Used to ask a rhetorical question expressing skepticism ('Is it really?')."
-  },
-  {
-    "char": "早晨",
-    "jyutping": "zou2san4",
-    "definition": "good morning",
-    "type": "expression"
-  },
-  {
-    "char": "早頭",
-    "jyutping": "zou2tau2",
-    "definition": "good night",
-    "type": "expression"
-  },
-  {
-    "char": "拜拜",
-    "jyutping": "baai1baai3",
-    "definition": "bye-bye / goodbye (loanword)",
-    "type": "expression"
+    "char": "地鐵",
+    "jyutping": "dei6tit3",
+    "definition": "MTR / subway / metro",
+    "type": "noun"
   },
   {
     "char": "對唔住",
@@ -458,16 +81,66 @@
     "notes": "Used for serious apologies (compare with 唔該 which is for light assistance/excuses)."
   },
   {
-    "char": "唔緊要",
-    "jyutping": "m4 gan2jiu3",
-    "definition": "it doesn't matter / never mind / it's okay",
-    "type": "expression"
+    "char": "的士",
+    "jyutping": "dik1si2",
+    "definition": "taxi (loanword)",
+    "type": "noun"
   },
   {
-    "char": "冇問題",
-    "jyutping": "mou5 man6tai4",
-    "definition": "no problem / without issue",
-    "type": "expression"
+    "char": "點解",
+    "jyutping": "dim2gaai2",
+    "definition": "why / how come",
+    "type": "pronoun"
+  },
+  {
+    "char": "點樣",
+    "jyutping": "dim2joeng6",
+    "definition": "how / in what way",
+    "type": "pronoun"
+  },
+  {
+    "char": "點心",
+    "jyutping": "dim2sam1",
+    "definition": "dim sum",
+    "type": "noun"
+  },
+  {
+    "char": "定",
+    "jyutping": "ding6",
+    "definition": "or (used exclusively in alternative questions)",
+    "type": "conjunction",
+    "notes": "Example: A定B? (A or B?)"
+  },
+  {
+    "char": "多謝",
+    "jyutping": "do1ze6",
+    "definition": "thank you (for a gift, compliment, or hospitality)",
+    "type": "expression",
+    "notes": "Used when receiving tangible items, gifts, money, or compliments."
+  },
+  {
+    "char": "返工",
+    "jyutping": "faan1gung1",
+    "definition": "to go to work / be at work",
+    "type": "verb"
+  },
+  {
+    "char": "飯",
+    "jyutping": "faan6",
+    "definition": "cooked rice / meal",
+    "type": "noun"
+  },
+  {
+    "char": "飛",
+    "jyutping": "fei1",
+    "definition": "ticket (loanword, e.g., movie ticket, bus ticket)",
+    "type": "noun"
+  },
+  {
+    "char": "放工",
+    "jyutping": "fong3gung1",
+    "definition": "to finish work / get off work",
+    "type": "verb"
   },
   {
     "char": "加油",
@@ -476,21 +149,165 @@
     "type": "expression"
   },
   {
-    "char": "睇",
-    "jyutping": "tai2",
-    "definition": "to look / see / watch / read",
-    "type": "verb"
+    "char": "家姐",
+    "jyutping": "gaa1ze1",
+    "definition": "older sister",
+    "type": "noun"
   },
   {
-    "char": "聽",
-    "jyutping": "teng1",
-    "definition": "to listen / hear / obey",
-    "type": "verb"
+    "char": "咖啡",
+    "jyutping": "gaa3fe1",
+    "definition": "coffee (loanword)",
+    "type": "noun"
+  },
+  {
+    "char": "街",
+    "jyutping": "gaai1",
+    "definition": "street",
+    "type": "noun"
+  },
+  {
+    "char": "搞掂",
+    "jyutping": "gaau2dim6",
+    "definition": "done / finished / settled / resolved",
+    "type": "adjective",
+    "notes": "Extremely common colloquial Cantonese slang for completing a task."
+  },
+  {
+    "char": "雞",
+    "jyutping": "gai1",
+    "definition": "chicken",
+    "type": "noun"
+  },
+  {
+    "char": "今日",
+    "jyutping": "gam1jat6",
+    "definition": "today",
+    "type": "noun"
+  },
+  {
+    "char": "噉樣",
+    "jyutping": "gam2joeng6",
+    "definition": "in this way / like this / this pattern",
+    "type": "adverb"
+  },
+  {
+    "char": "緊",
+    "jyutping": "gan2",
+    "definition": "verbal aspect suffix indicating an action in progress (continuous aspect)",
+    "type": "particle",
+    "notes": "Attaches directly to verbs to show ongoing action (equivalent to Mandarin 正在 zhèngzài)."
+  },
+  {
+    "char": "嘅",
+    "jyutping": "ge3",
+    "definition": "possessive particle / nominalizing particle / final assertive particle",
+    "type": "particle",
+    "notes": "Indicates possession (like 's, equivalent to Mandarin 的 de) or asserts a state."
+  },
+  {
+    "char": "幾時",
+    "jyutping": "gei2si4",
+    "definition": "when / what time",
+    "type": "pronoun"
+  },
+  {
+    "char": "嗰個",
+    "jyutping": "go2go3",
+    "definition": "that one",
+    "type": "pronoun"
+  },
+  {
+    "char": "個",
+    "jyutping": "go3",
+    "definition": "general measure word / individual / unit",
+    "type": "classifier"
   },
   {
     "char": "講",
     "jyutping": "gong2",
     "definition": "to speak / say / talk",
+    "type": "verb"
+  },
+  {
+    "char": "攰",
+    "jyutping": "gui6",
+    "definition": "tired / exhausted",
+    "type": "adjective"
+  },
+  {
+    "char": "過",
+    "jyutping": "gwo3",
+    "definition": "verbal aspect suffix indicating past experience / 'have done before'",
+    "type": "particle",
+    "notes": "Attaches directly to verbs to denote experiential aspect (equivalent to Mandarin 过 guo)."
+  },
+  {
+    "char": "吓",
+    "jyutping": "haa2",
+    "definition": "sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
+    "type": "particle",
+    "notes": "Can also be used as an independent exclamation ('What?!')."
+  },
+  {
+    "char": "喺",
+    "jyutping": "hai2",
+    "definition": "at / in / on (locative preposition)",
+    "type": "preposition"
+  },
+  {
+    "char": "係",
+    "jyutping": "hai6",
+    "definition": "to be (am/is/are) / yes",
+    "type": "verb"
+  },
+  {
+    "char": "係唔係",
+    "jyutping": "hai6 m4 hai6",
+    "definition": "is it or not? / is that right? (A-not-A question form)",
+    "type": "expression"
+  },
+  {
+    "char": "行",
+    "jyutping": "hang4",
+    "definition": "to walk / go / run (a machine)",
+    "type": "verb"
+  },
+  {
+    "char": "行街",
+    "jyutping": "hang4gaai1",
+    "definition": "to window shop / walk around the streets",
+    "type": "verb"
+  },
+  {
+    "char": "Hea",
+    "jyutping": "hea1",
+    "definition": "to chill / hang out / slack off / procrastinate",
+    "type": "verb",
+    "notes": "A very popular modern Cantonese slang word with no direct Chinese character."
+  },
+  {
+    "char": "去",
+    "jyutping": "heoi3",
+    "definition": "to go",
+    "type": "verb"
+  },
+  {
+    "char": "行",
+    "jyutping": "hong4",
+    "definition": "profession / line of business / firm / row / line",
+    "type": "noun"
+  },
+  {
+    "char": "好",
+    "jyutping": "hou2",
+    "definition": "good / fine / very / quite",
+    "type": "adjective"
+  },
+  {
+    "char": "飲茶",
+    "jyutping": "jam2caa4",
+    "definition": "to drink tea / go for dim sum / yum cha",
     "type": "verb"
   },
   {
@@ -500,46 +317,91 @@
     "type": "noun"
   },
   {
-    "char": "朋友",
-    "jyutping": "pang4jau5",
-    "definition": "friend",
+    "char": "日",
+    "jyutping": "jat6",
+    "definition": "day / sun",
     "type": "noun"
   },
   {
-    "char": "屋企",
-    "jyutping": "uk1kei2",
-    "definition": "home / house",
+    "char": "游水",
+    "jyutping": "jau4seoi2",
+    "definition": "to swim",
+    "type": "verb"
+  },
+  {
+    "char": "有",
+    "jyutping": "jau5",
+    "definition": "to have / possess / there is / there are",
+    "type": "verb"
+  },
+  {
+    "char": "而家",
+    "jyutping": "ji4gaa1",
+    "definition": "now / currently",
     "type": "noun"
   },
   {
-    "char": "屋企人",
-    "jyutping": "uk1kei2jan4",
-    "definition": "family members / family",
+    "char": "要",
+    "jyutping": "jiu3",
+    "definition": "to want / need / must / demand",
+    "type": "auxiliary verb"
+  },
+  {
+    "char": "鴛鴦",
+    "jyutping": "jyun1joeng1",
+    "definition": "yuanyang (drink mixing coffee and milk tea)",
     "type": "noun"
   },
   {
-    "char": "爸爸",
-    "jyutping": "baa1baa1",
-    "definition": "father / dad",
+    "char": "佢",
+    "jyutping": "keoi5",
+    "definition": "he / she / it",
+    "type": "pronoun"
+  },
+  {
+    "char": "佢哋",
+    "jyutping": "keoi5dei6",
+    "definition": "they / them",
+    "type": "pronoun"
+  },
+  {
+    "char": "啦",
+    "jyutping": "laa1",
+    "definition": "sentence-final particle suggesting, requesting, or encouraging action",
+    "type": "particle",
+    "notes": "Often used for polite requests, suggestions, or imperative command softening."
+  },
+  {
+    "char": "靚",
+    "jyutping": "leng3",
+    "definition": "pretty / beautiful / handsome / high quality",
+    "type": "adjective"
+  },
+  {
+    "char": "靚女",
+    "jyutping": "leng3neoi5",
+    "definition": "pretty girl / beautiful woman / beauty",
     "type": "noun"
   },
   {
-    "char": "媽媽",
-    "jyutping": "maa1maa1",
-    "definition": "mother / mom",
+    "char": "靚仔",
+    "jyutping": "leng3zai2",
+    "definition": "handsome boy / handsome man / handsome",
     "type": "noun"
   },
   {
-    "char": "細佬",
-    "jyutping": "sai3lou2",
-    "definition": "younger brother",
-    "type": "noun"
+    "char": "靚仔",
+    "jyutping": "leng3zai2",
+    "definition": "handsome boy / plain white rice (restaurant slang)",
+    "type": "noun",
+    "notes": "Double meaning: standard colloquial term for handsome guy, but in茶餐廳 it means plain steamed white rice."
   },
   {
-    "char": "家姐",
-    "jyutping": "gaa1ze1",
-    "definition": "older sister",
-    "type": "noun"
+    "char": "囉",
+    "jyutping": "lo1",
+    "definition": "sentence-final particle showing obviousness, resignation, or 'of course'",
+    "type": "particle",
+    "notes": "Implies that something is completely obvious, or shows a resigned state."
   },
   {
     "char": "老公",
@@ -560,10 +422,158 @@
     "type": "noun"
   },
   {
-    "char": "地鐵",
-    "jyutping": "dei6tit3",
-    "definition": "MTR / subway / metro",
+    "char": "唔",
+    "jyutping": "m4",
+    "definition": "not / no (negative prefix)",
+    "type": "adverb"
+  },
+  {
+    "char": "唔緊要",
+    "jyutping": "m4 gan2jiu3",
+    "definition": "it doesn't matter / never mind / it's okay",
+    "type": "expression"
+  },
+  {
+    "char": "唔該",
+    "jyutping": "m4goi1",
+    "definition": "excuse me / please / thank you (for service or help)",
+    "type": "expression",
+    "notes": "Used for services, requests, or showing gratitude for helpful actions."
+  },
+  {
+    "char": "唔使客氣",
+    "jyutping": "m4sai2 haak3hei3",
+    "definition": "you are welcome / no need to be polite",
+    "type": "expression"
+  },
+  {
+    "char": "媽媽",
+    "jyutping": "maa1maa1",
+    "definition": "mother / mom",
     "type": "noun"
+  },
+  {
+    "char": "嘛",
+    "jyutping": "maa3",
+    "definition": "sentence-final particle indicating a statement is an obvious truth or reminder",
+    "type": "particle",
+    "notes": "Used when stating facts that the listener should already know or accept."
+  },
+  {
+    "char": "買",
+    "jyutping": "maai5",
+    "definition": "to buy",
+    "type": "verb"
+  },
+  {
+    "char": "埋單",
+    "jyutping": "maai5daan1",
+    "definition": "to pay the bill / get the check",
+    "type": "verb",
+    "notes": "Standard term used in Cantonese restaurants to request the bill."
+  },
+  {
+    "char": "蚊",
+    "jyutping": "man1",
+    "definition": "dollar (spoken Cantonese colloquial unit of currency)",
+    "type": "classifier"
+  },
+  {
+    "char": "咩",
+    "jyutping": "me1",
+    "definition": "sentence-final particle expressing rhetorical doubt, surprise, or sarcasm",
+    "type": "particle",
+    "notes": "Used to ask a rhetorical question expressing skepticism ('Is it really?')."
+  },
+  {
+    "char": "咩嘢",
+    "jyutping": "me1je5",
+    "definition": "what / what kind of thing",
+    "type": "pronoun"
+  },
+  {
+    "char": "冇",
+    "jyutping": "mou5",
+    "definition": "not to have / without / there is not",
+    "type": "verb"
+  },
+  {
+    "char": "冇問題",
+    "jyutping": "mou5 man6tai4",
+    "definition": "no problem / without issue",
+    "type": "expression"
+  },
+  {
+    "char": "奶茶",
+    "jyutping": "naai5caa4",
+    "definition": "milk tea (typically Hong Kong-style)",
+    "type": "noun"
+  },
+  {
+    "char": "你",
+    "jyutping": "nei5",
+    "definition": "you",
+    "type": "pronoun"
+  },
+  {
+    "char": "你哋",
+    "jyutping": "nei5dei6",
+    "definition": "you (plural)",
+    "type": "pronoun"
+  },
+  {
+    "char": "我",
+    "jyutping": "ngo5",
+    "definition": "I / me",
+    "type": "pronoun"
+  },
+  {
+    "char": "我哋",
+    "jyutping": "ngo5dei6",
+    "definition": "we / us",
+    "type": "pronoun"
+  },
+  {
+    "char": "呢個",
+    "jyutping": "ni1go3",
+    "definition": "this one",
+    "type": "pronoun"
+  },
+  {
+    "char": "朋友",
+    "jyutping": "pang4jau5",
+    "definition": "friend",
+    "type": "noun"
+  },
+  {
+    "char": "沙",
+    "jyutping": "saa1",
+    "definition": "sand",
+    "type": "noun"
+  },
+  {
+    "char": "三十",
+    "jyutping": "saam1sap6",
+    "definition": "thirty",
+    "type": "numeral"
+  },
+  {
+    "char": "細佬",
+    "jyutping": "sai3lou2",
+    "definition": "younger brother",
+    "type": "noun"
+  },
+  {
+    "char": "新",
+    "jyutping": "san1",
+    "definition": "new",
+    "type": "adjective"
+  },
+  {
+    "char": "十",
+    "jyutping": "sap6",
+    "definition": "ten",
+    "type": "numeral"
   },
   {
     "char": "水",
@@ -572,53 +582,70 @@
     "type": "noun"
   },
   {
-    "char": "咖啡",
-    "jyutping": "gaa3fe1",
-    "definition": "coffee (loanword)",
+    "char": "詩",
+    "jyutping": "si1",
+    "definition": "poem / poetry",
     "type": "noun"
   },
   {
-    "char": "飯",
-    "jyutping": "faan6",
-    "definition": "cooked rice / meal",
+    "char": "史",
+    "jyutping": "si2",
+    "definition": "history",
     "type": "noun"
   },
   {
-    "char": "靚仔",
-    "jyutping": "leng3zai2",
-    "definition": "handsome boy / plain white rice (restaurant slang)",
-    "type": "noun",
-    "notes": "Double meaning: standard colloquial term for handsome guy, but in茶餐廳 it means plain steamed white rice."
-  },
-  {
-    "char": "行街",
-    "jyutping": "hang4gaai1",
-    "definition": "to window shop / walk around the streets",
+    "char": "試",
+    "jyutping": "si3",
+    "definition": "to try / test",
     "type": "verb"
   },
   {
-    "char": "攰",
-    "jyutping": "gui6",
-    "definition": "tired / exhausted",
-    "type": "adjective"
-  },
-  {
-    "char": "肚餓",
-    "jyutping": "tou5ngo6",
-    "definition": "hungry (literally: belly hungry)",
-    "type": "adjective"
-  },
-  {
-    "char": "得閒",
-    "jyutping": "dak1haan4",
-    "definition": "free / having spare time",
-    "type": "adjective"
-  },
-  {
-    "char": "今日",
-    "jyutping": "gam1jat6",
-    "definition": "today",
+    "char": "時",
+    "jyutping": "si4",
+    "definition": "time / hour",
     "type": "noun"
+  },
+  {
+    "char": "市",
+    "jyutping": "si5",
+    "definition": "market / city",
+    "type": "noun"
+  },
+  {
+    "char": "事",
+    "jyutping": "si6",
+    "definition": "matter / business / affair",
+    "type": "noun"
+  },
+  {
+    "char": "食",
+    "jyutping": "sik6",
+    "definition": "to eat",
+    "type": "verb"
+  },
+  {
+    "char": "想",
+    "jyutping": "soeng2",
+    "definition": "to want to / would like to / think",
+    "type": "auxiliary verb"
+  },
+  {
+    "char": "睇",
+    "jyutping": "tai2",
+    "definition": "to look / see / watch / read",
+    "type": "verb"
+  },
+  {
+    "char": "睇書",
+    "jyutping": "tai2syu1",
+    "definition": "to read books",
+    "type": "verb"
+  },
+  {
+    "char": "聽",
+    "jyutping": "teng1",
+    "definition": "to listen / hear / obey",
+    "type": "verb"
   },
   {
     "char": "聽日",
@@ -627,27 +654,78 @@
     "type": "noun"
   },
   {
-    "char": "而家",
-    "jyutping": "ji4gaa1",
-    "definition": "now / currently",
+    "char": "肚餓",
+    "jyutping": "tou5ngo6",
+    "definition": "hungry (literally: belly hungry)",
+    "type": "adjective"
+  },
+  {
+    "char": "同埋",
+    "jyutping": "tung4maai4",
+    "definition": "and / with / together with",
+    "type": "conjunction"
+  },
+  {
+    "char": "屋企",
+    "jyutping": "uk1kei2",
+    "definition": "home / house",
     "type": "noun"
   },
   {
-    "char": "點樣",
-    "jyutping": "dim2joeng6",
-    "definition": "how / in what way",
-    "type": "pronoun"
-  },
-  {
-    "char": "行",
-    "jyutping": "hang4",
-    "definition": "to walk / go / run (a machine)",
-    "type": "verb"
-  },
-  {
-    "char": "行",
-    "jyutping": "hong4",
-    "definition": "profession / line of business / firm / row / line",
+    "char": "屋企人",
+    "jyutping": "uk1kei2jan4",
+    "definition": "family members / family",
     "type": "noun"
+  },
+  {
+    "char": "喂",
+    "jyutping": "wai2",
+    "definition": "hey / hello (typically answering phone or calling for attention)",
+    "type": "expression"
+  },
+  {
+    "char": "喎",
+    "jyutping": "wo3",
+    "definition": "sentence-final particle indicating reported speech, surprise, or warning",
+    "type": "particle",
+    "notes": "Used to convey that information is hearsay, or to point out something unexpected."
+  },
+  {
+    "char": "啫",
+    "jyutping": "ze1",
+    "definition": "sentence-final particle meaning 'only', 'just', or downplaying something",
+    "type": "particle",
+    "notes": "Equivalent to 'only' or 'just' to reassure or downplay significance."
+  },
+  {
+    "char": "隻",
+    "jyutping": "zek3",
+    "definition": "measure word for animals or objects in pairs",
+    "type": "classifier"
+  },
+  {
+    "char": "即係",
+    "jyutping": "zik1hai6",
+    "definition": "that is / namely / in other words / meaning",
+    "type": "conjunction"
+  },
+  {
+    "char": "咗",
+    "jyutping": "zo2",
+    "definition": "verbal aspect suffix indicating completed action (perfective aspect)",
+    "type": "particle",
+    "notes": "Attaches directly to verbs to show completion (equivalent to Mandarin 了 le)."
+  },
+  {
+    "char": "早晨",
+    "jyutping": "zou2san4",
+    "definition": "good morning",
+    "type": "expression"
+  },
+  {
+    "char": "早頭",
+    "jyutping": "zou2tau2",
+    "definition": "good night",
+    "type": "expression"
   }
 ]

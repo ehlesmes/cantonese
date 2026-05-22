@@ -1,1 +1,170 @@
-[]
+[
+  {
+    "character": "呀",
+    "jyutping": "aa3",
+    "translation": "particle",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  },
+  {
+    "character": "街",
+    "jyutping": "gaai1",
+    "translation": "street",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 8
+  },
+  {
+    "character": "雞",
+    "jyutping": "gai1",
+    "translation": "chicken",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 10
+  },
+  {
+    "character": "今日",
+    "jyutping": "gam1jat6",
+    "translation": "today",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  },
+  {
+    "character": "嘅",
+    "jyutping": "ge3",
+    "translation": "particle",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  },
+  {
+    "character": "吓",
+    "jyutping": "haa2",
+    "translation": "what",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 3
+  },
+  {
+    "character": "日",
+    "jyutping": "jat6",
+    "translation": "day / sun",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  },
+  {
+    "character": "啦",
+    "jyutping": "laa1",
+    "translation": "particle",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  },
+  {
+    "character": "唔",
+    "jyutping": "m4",
+    "translation": "not",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 3
+  },
+  {
+    "character": "你",
+    "jyutping": "nei5",
+    "translation": "you",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  },
+  {
+    "character": "我",
+    "jyutping": "ngo5",
+    "translation": "I",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 2
+  },
+  {
+    "character": "沙",
+    "jyutping": "saa1",
+    "translation": "sand",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  },
+  {
+    "character": "新",
+    "jyutping": "san1",
+    "translation": "new",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  },
+  {
+    "character": "十",
+    "jyutping": "sap6",
+    "translation": "ten",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 2
+  },
+  {
+    "character": "詩",
+    "jyutping": "si1",
+    "translation": "poem / poetry",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 2
+  },
+  {
+    "character": "史",
+    "jyutping": "si2",
+    "translation": "history",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 2
+  },
+  {
+    "character": "試",
+    "jyutping": "si3",
+    "translation": "to try / test",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 2
+  },
+  {
+    "character": "時",
+    "jyutping": "si4",
+    "translation": "time / hour",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 3
+  },
+  {
+    "character": "市",
+    "jyutping": "si5",
+    "translation": "market / city",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 2
+  },
+  {
+    "character": "事",
+    "jyutping": "si6",
+    "translation": "matter / business / affair",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 3
+  },
+  {
+    "character": "食",
+    "jyutping": "sik6",
+    "translation": "to eat",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 6
+  },
+  {
+    "character": "想",
+    "jyutping": "soeng2",
+    "translation": "want to",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  },
+  {
+    "character": "喂",
+    "jyutping": "wai2",
+    "translation": "hey",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 5
+  },
+  {
+    "character": "隻",
+    "jyutping": "zek3",
+    "translation": "classifier for animals",
+    "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 1
+  }
+]
