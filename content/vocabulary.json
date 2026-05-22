@@ -4,7 +4,7 @@
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 61
+    "occurrences": 86
   },
   {
     "character": "巴士",
@@ -18,7 +18,7 @@
     "jyutping": "baai1baai3",
     "translation": "bye-bye / goodbye (loanword)",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 8
+    "occurrences": 10
   },
   {
     "character": "八",
@@ -33,6 +33,13 @@
     "translation": "Octopus card (Hong Kong contact-less smart card)",
     "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 4
+  },
+  {
+    "character": "邊度",
+    "jyutping": "bin1dou6",
+    "translation": "where",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 8
   },
   {
     "character": "菠蘿包",
@@ -70,11 +77,39 @@
     "occurrences": 1
   },
   {
+    "character": "廁所",
+    "jyutping": "ci3so2",
+    "translation": "toilet / restroom",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 1
+  },
+  {
     "character": "錢",
     "jyutping": "cin2",
     "translation": "money",
     "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 6
+  },
+  {
+    "character": "前面",
+    "jyutping": "cin4min6",
+    "translation": "in front / front side",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 1
+  },
+  {
+    "character": "超市",
+    "jyutping": "ciu1si5",
+    "translation": "supermarket",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 1
+  },
+  {
+    "character": "廚房",
+    "jyutping": "cyu4fong2",
+    "translation": "kitchen",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 2
   },
   {
     "character": "蛋撻",
@@ -91,11 +126,32 @@
     "occurrences": 1
   },
   {
+    "character": "地鐵站",
+    "jyutping": "dei6tit3zaam6",
+    "translation": "MTR station / subway station",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 1
+  },
+  {
     "character": "的士",
     "jyutping": "dik1si2",
     "translation": "taxi (loanword)",
     "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 2
+  },
+  {
+    "character": "電腦",
+    "jyutping": "din6nou5",
+    "translation": "computer",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 9
+  },
+  {
+    "character": "電話",
+    "jyutping": "din6waa2",
+    "translation": "telephone / phone",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 3
   },
   {
     "character": "定",
@@ -116,7 +172,7 @@
     "jyutping": "do1ze6",
     "translation": "thank you (for a gift, compliment, or hospitality)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "凍",
@@ -133,6 +189,13 @@
     "occurrences": 2
   },
   {
+    "character": "房",
+    "jyutping": "fong2",
+    "translation": "room / bedroom",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 10
+  },
+  {
     "character": "加拿大",
     "jyutping": "gaa1naa4daai6",
     "translation": "Canada",
@@ -144,13 +207,20 @@
     "jyutping": "gaa3fe1",
     "translation": "coffee (loanword)",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 8
+    "occurrences": 9
   },
   {
     "character": "街",
     "jyutping": "gaai1",
     "translation": "street",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 8
+  },
+  {
+    "character": "隔籬",
+    "jyutping": "gaak3lei4",
+    "translation": "next to / beside / neighbor",
+    "firstIntroducedIn": "04-existentials-places.md",
     "occurrences": 8
   },
   {
@@ -165,7 +235,7 @@
     "jyutping": "gaau2dim6",
     "translation": "done / finished / settled / resolved",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 9
+    "occurrences": 10
   },
   {
     "character": "雞",
@@ -186,6 +256,13 @@
     "jyutping": "gau2",
     "translation": "nine",
     "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 1
+  },
+  {
+    "character": "狗",
+    "jyutping": "gau2",
+    "translation": "dog",
+    "firstIntroducedIn": "04-existentials-places.md",
     "occurrences": 1
   },
   {
@@ -210,6 +287,13 @@
     "occurrences": 7
   },
   {
+    "character": "嗰度",
+    "jyutping": "go2dou6",
+    "translation": "there",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 1
+  },
+  {
     "character": "嗰個",
     "jyutping": "go2go3",
     "translation": "that one",
@@ -221,7 +305,7 @@
     "jyutping": "go3",
     "translation": "general measure word / individual / unit",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 7
+    "occurrences": 13
   },
   {
     "character": "講",
@@ -229,6 +313,13 @@
     "translation": "to speak / say / talk",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 7
+  },
+  {
+    "character": "公司",
+    "jyutping": "gung1si1",
+    "translation": "company / office",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 2
   },
   {
     "character": "廣東話",
@@ -242,7 +333,21 @@
     "jyutping": "haa2",
     "translation": "what",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 3
+    "occurrences": 4
+  },
+  {
+    "character": "下面",
+    "jyutping": "haa6min6",
+    "translation": "below / under / lower side",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 1
+  },
+  {
+    "character": "喺",
+    "jyutping": "hai2",
+    "translation": "at / in / on / at / in / on (locative preposition)",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 30
   },
   {
     "character": "係",
@@ -259,6 +364,20 @@
     "occurrences": 6
   },
   {
+    "character": "後面",
+    "jyutping": "hau6min6",
+    "translation": "behind / back side",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 3
+  },
+  {
+    "character": "去",
+    "jyutping": "heoi3",
+    "translation": "to go",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 1
+  },
+  {
     "character": "可樂",
     "jyutping": "ho2lok6",
     "translation": "cola / Coke",
@@ -271,6 +390,13 @@
     "translation": "Hong Kong",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 1
+  },
+  {
+    "character": "學校",
+    "jyutping": "hok6haau6",
+    "translation": "school",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 2
   },
   {
     "character": "好",
@@ -294,11 +420,18 @@
     "occurrences": 10
   },
   {
+    "character": "入面",
+    "jyutping": "jap6min6",
+    "translation": "inside",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 9
+  },
+  {
     "character": "一",
     "jyutping": "jat1",
     "translation": "one",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 9
+    "occurrences": 10
   },
   {
     "character": "日",
@@ -306,6 +439,20 @@
     "translation": "day / sun",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
     "occurrences": 1
+  },
+  {
+    "character": "有",
+    "jyutping": "jau5",
+    "translation": "to have / there is / to have / there is / there are",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 10
+  },
+  {
+    "character": "有冇",
+    "jyutping": "jau5mou5",
+    "translation": "is there / do you have",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 3
   },
   {
     "character": "嘢飲",
@@ -389,7 +536,7 @@
     "jyutping": "keoi5",
     "translation": "he / she / it",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "佢哋",
@@ -403,7 +550,7 @@
     "jyutping": "laa1",
     "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 18
+    "occurrences": 22
   },
   {
     "character": "靚",
@@ -425,6 +572,13 @@
     "translation": "lemon tea",
     "firstIntroducedIn": "03-dining-out.md",
     "occurrences": 3
+  },
+  {
+    "character": "囉",
+    "jyutping": "lo1",
+    "translation": "sentence-final particle showing obviousness, resignation, or 'of course' / obviousness particle",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 13
   },
   {
     "character": "兩",
@@ -459,14 +613,14 @@
     "jyutping": "m4goi1",
     "translation": "excuse me / excuse me / please / thank you (for service or help)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 15
+    "occurrences": 16
   },
   {
     "character": "買",
     "jyutping": "maai5",
     "translation": "to buy",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 6
+    "occurrences": 7
   },
   {
     "character": "埋單",
@@ -474,6 +628,13 @@
     "translation": "to pay the bill / get the check",
     "firstIntroducedIn": "03-dining-out.md",
     "occurrences": 2
+  },
+  {
+    "character": "貓",
+    "jyutping": "maau1",
+    "translation": "cat",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 6
   },
   {
     "character": "蚊",
@@ -501,7 +662,7 @@
     "jyutping": "mei6",
     "translation": "not yet / have not",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "名",
@@ -513,9 +674,9 @@
   {
     "character": "冇",
     "jyutping": "mou5",
-    "translation": "not to have / without / there is not",
+    "translation": "not to have / without / there is not / not to have / there is not / not have",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 2
+    "occurrences": 11
   },
   {
     "character": "奶茶",
@@ -529,14 +690,14 @@
     "jyutping": "ne1",
     "translation": "sentence-final particle for queries (how about / what about)",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "你",
     "jyutping": "nei5",
     "translation": "you",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 16
+    "occurrences": 20
   },
   {
     "character": "你哋",
@@ -560,11 +721,18 @@
     "occurrences": 2
   },
   {
+    "character": "銀包",
+    "jyutping": "ngan4baau1",
+    "translation": "wallet / purse",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 4
+  },
+  {
     "character": "我",
     "jyutping": "ngo5",
     "translation": "I / I / me",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 38
+    "occurrences": 44
   },
   {
     "character": "我哋",
@@ -574,18 +742,25 @@
     "occurrences": 5
   },
   {
+    "character": "外面",
+    "jyutping": "ngoi6min6",
+    "translation": "outside",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 1
+  },
+  {
     "character": "呢度",
     "jyutping": "ni1dou6",
     "translation": "here",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 5
+    "occurrences": 9
   },
   {
     "character": "呢個",
     "jyutping": "ni1go3",
     "translation": "this one",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 9
+    "occurrences": 10
   },
   {
     "character": "朋友",
@@ -721,11 +896,25 @@
     "occurrences": 12
   },
   {
+    "character": "鎖匙",
+    "jyutping": "so2si4",
+    "translation": "key",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 1
+  },
+  {
     "character": "想",
     "jyutping": "soeng2",
     "translation": "want to / to want to / would like to / think",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
     "occurrences": 18
+  },
+  {
+    "character": "上面",
+    "jyutping": "soeng6min6",
+    "translation": "above / on top of / upper side",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 7
   },
   {
     "character": "薯片",
@@ -735,11 +924,18 @@
     "occurrences": 2
   },
   {
+    "character": "睇",
+    "jyutping": "tai2",
+    "translation": "to look / see",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 2
+  },
+  {
     "character": "同埋",
     "jyutping": "tung4maai4",
     "translation": "and / with / together with",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 6
+    "occurrences": 7
   },
   {
     "character": "喂",
@@ -751,23 +947,23 @@
   {
     "character": "找",
     "jyutping": "zaau2",
-    "translation": "to give change / look for / seek",
+    "translation": "to give change / look for / seek / to look for",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 3
+    "occurrences": 5
   },
   {
     "character": "隻",
     "jyutping": "zek3",
-    "translation": "classifier for animals",
+    "translation": "classifier for animals / measure word for animals",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 1
+    "occurrences": 8
   },
   {
     "character": "咗",
     "jyutping": "zo2",
     "translation": "verbal aspect suffix indicating completed action (perfective aspect)",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 14
+    "occurrences": 17
   },
   {
     "character": "早晨",

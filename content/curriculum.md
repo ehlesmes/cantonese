@@ -18,6 +18,9 @@ chapters:
   - chapter: 5
     title: "Time-Telling & Continuous Action"
     file: "05-time-continuous.md"
+  - chapter: 6
+    title: "Ability, Permission & Experience"
+    file: "06-ability-experience.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -157,13 +160,12 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Convenience store buys, prices, and dollars. Integrates auxiliary
     verbs `想`/`要`, demonstratives `呢個`/`嗰個`, loanwords (`的士`, `巴士`),
     and the critical slang `搞掂`.
-- **Chapter 3: Dining Out & Ordering (`03-dining-out.md`)** [IN PROGRESS /
-  CURRENT]
+- **Chapter 3: Dining Out & Ordering (`03-dining-out.md`)** [COMPLETED]
   - _Focus_: Café culture (`茶餐廳`). Integrates classifiers (`個`, `杯`),
     making choices (`定`/`同埋`), asking for the bill (`埋單`), the softener
     particle `啦`, and our first aspect marker `咗`.
 - **Chapter 4: Where Things Are: Presence & Places
-  (`04-existentials-places.md`)** [ACTIVE LOOK-AHEAD]
+  (`04-existentials-places.md`)** [COMPLETED]
   - _Focus_: Finding things, asking for locations. Integrates existentials
     `有`/`冇`, the locative `喺`, directional markers (`上面`, `入面`), and the
     obviousness particle `囉`.
@@ -171,3 +173,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   [ACTIVE LOOK-AHEAD]
   - _Focus_: Expressing time, hours, minutes, and schedules. Integrates the
     continuous aspect particle `緊` and slacking slang `Hea`.
+- **Chapter 6: Ability, Permission & Experience (`06-ability-experience.md`)**
+  [ACTIVE LOOK-AHEAD]
+  - _Focus_: Distinguishing modal abilities `可以`, `識`, and `會`. Integrates
+    experiential aspect `過`, potential suffixes `得` vs `唔到`.

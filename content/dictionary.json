@@ -85,9 +85,33 @@
     "type": "numeral"
   },
   {
+    "char": "廁所",
+    "jyutping": "ci3so2",
+    "definition": "toilet / restroom",
+    "type": "noun"
+  },
+  {
     "char": "錢",
     "jyutping": "cin2",
     "definition": "money",
+    "type": "noun"
+  },
+  {
+    "char": "前面",
+    "jyutping": "cin4min6",
+    "definition": "in front / front side",
+    "type": "noun"
+  },
+  {
+    "char": "超市",
+    "jyutping": "ciu1si5",
+    "definition": "supermarket",
+    "type": "noun"
+  },
+  {
+    "char": "廚房",
+    "jyutping": "cyu4fong2",
+    "definition": "kitchen",
     "type": "noun"
   },
   {
@@ -122,6 +146,12 @@
     "type": "noun"
   },
   {
+    "char": "地鐵站",
+    "jyutping": "dei6tit3zaam6",
+    "definition": "MTR station / subway station",
+    "type": "noun"
+  },
+  {
     "char": "對唔住",
     "jyutping": "deoi3m4zyu6",
     "definition": "sorry / excuse me / apologize",
@@ -150,6 +180,18 @@
     "char": "點心",
     "jyutping": "dim2sam1",
     "definition": "dim sum",
+    "type": "noun"
+  },
+  {
+    "char": "電腦",
+    "jyutping": "din6nou5",
+    "definition": "computer",
+    "type": "noun"
+  },
+  {
+    "char": "電話",
+    "jyutping": "din6waa2",
+    "definition": "telephone / phone",
     "type": "noun"
   },
   {
@@ -197,6 +239,12 @@
     "type": "noun"
   },
   {
+    "char": "房",
+    "jyutping": "fong2",
+    "definition": "room / bedroom",
+    "type": "noun"
+  },
+  {
     "char": "放工",
     "jyutping": "fong3gung1",
     "definition": "to finish work / get off work",
@@ -230,6 +278,12 @@
     "char": "街",
     "jyutping": "gaai1",
     "definition": "street",
+    "type": "noun"
+  },
+  {
+    "char": "隔籬",
+    "jyutping": "gaak3lei4",
+    "definition": "next to / beside / neighbor",
     "type": "noun"
   },
   {
@@ -275,6 +329,12 @@
     "jyutping": "gau2",
     "definition": "nine",
     "type": "numeral"
+  },
+  {
+    "char": "狗",
+    "jyutping": "gau2",
+    "definition": "dog",
+    "type": "noun"
   },
   {
     "char": "嘅",
@@ -332,6 +392,12 @@
     "type": "adjective"
   },
   {
+    "char": "公司",
+    "jyutping": "gung1si1",
+    "definition": "company / office",
+    "type": "noun"
+  },
+  {
     "char": "貴",
     "jyutping": "gwai3",
     "definition": "expensive",
@@ -356,6 +422,12 @@
     "definition": "sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
     "type": "particle",
     "notes": "Can also be used as an independent exclamation ('What?!')."
+  },
+  {
+    "char": "下面",
+    "jyutping": "haa6min6",
+    "definition": "below / under / lower side",
+    "type": "noun"
   },
   {
     "char": "喺",
@@ -388,6 +460,12 @@
     "type": "verb"
   },
   {
+    "char": "後面",
+    "jyutping": "hau6min6",
+    "definition": "behind / back side",
+    "type": "noun"
+  },
+  {
     "char": "Hea",
     "jyutping": "hea1",
     "definition": "to chill / hang out / slack off / procrastinate",
@@ -410,6 +488,12 @@
     "char": "香港",
     "jyutping": "hoeng1gong2",
     "definition": "Hong Kong",
+    "type": "noun"
+  },
+  {
+    "char": "學校",
+    "jyutping": "hok6haau6",
+    "definition": "school",
     "type": "noun"
   },
   {
@@ -443,6 +527,12 @@
     "type": "noun"
   },
   {
+    "char": "入面",
+    "jyutping": "jap6min6",
+    "definition": "inside",
+    "type": "noun"
+  },
+  {
     "char": "一",
     "jyutping": "jat1",
     "definition": "one",
@@ -465,6 +555,12 @@
     "jyutping": "jau5",
     "definition": "to have / possess / there is / there are",
     "type": "verb"
+  },
+  {
+    "char": "有冇",
+    "jyutping": "jau5mou5",
+    "definition": "is there / do you have (A-not-A question form)",
+    "type": "expression"
   },
   {
     "char": "嘢",
@@ -677,6 +773,12 @@
     "notes": "Standard term used in Cantonese restaurants to request the bill."
   },
   {
+    "char": "貓",
+    "jyutping": "maau1",
+    "definition": "cat",
+    "type": "noun"
+  },
+  {
     "char": "蚊",
     "jyutping": "man1",
     "definition": "dollar (spoken Cantonese colloquial unit of currency)",
@@ -762,6 +864,12 @@
     "type": "numeral"
   },
   {
+    "char": "銀包",
+    "jyutping": "ngan4baau1",
+    "definition": "wallet / purse",
+    "type": "noun"
+  },
+  {
     "char": "我",
     "jyutping": "ngo5",
     "definition": "I / me",
@@ -772,6 +880,12 @@
     "jyutping": "ngo5dei6",
     "definition": "we / us",
     "type": "pronoun"
+  },
+  {
+    "char": "外面",
+    "jyutping": "ngoi6min6",
+    "definition": "outside",
+    "type": "noun"
   },
   {
     "char": "呢度",
@@ -900,10 +1014,28 @@
     "type": "verb"
   },
   {
+    "char": "鎖匙",
+    "jyutping": "so2si4",
+    "definition": "key / keys",
+    "type": "noun"
+  },
+  {
     "char": "想",
     "jyutping": "soeng2",
     "definition": "to want to / would like to / think",
     "type": "auxiliary verb"
+  },
+  {
+    "char": "上面",
+    "jyutping": "soeng6min6",
+    "definition": "above / on top of / upper side",
+    "type": "noun"
+  },
+  {
+    "char": "書",
+    "jyutping": "syu1",
+    "definition": "book",
+    "type": "noun"
   },
   {
     "char": "薯片",

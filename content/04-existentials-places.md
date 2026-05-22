@@ -1,0 +1,291 @@
+---
+chapter: 4
+title: "Where Things Are: Presence & Places"
+description: >
+  Master the essential structures for describing where objects and places are in
+  Cantonese. Learn to express presence and absence using existential verbs,
+  locate items using the locative preposition, combine spatial directional
+  markers, and convey natural obviousness using the particle lo.
+---
+
+Welcome to Chapter 4! In this lesson, we will transition from café dining to
+navigating spaces and describing the location of everyday objects. Whether you
+are searching for your keys, locating the nearest restroom, or explaining where
+the cat is slacking off, mastering spatial relationships is a key step toward
+conversational fluency.
+
+In Cantonese, spatial grammar is highly logical and consistent. We will learn
+how to state whether something exists in a space using
+`有[jau5|to have / there is]` and `冇[mou5|not to have / there is not]`, how to
+pinpoint locations using the locative preposition `喺[hai2|at / in / on]`, how
+to use spatial directional markers like
+`上面[soeng6min6|above / on top of / upper side]` and `入面[jap6min6|inside]`,
+and how to use the versatile sentence-final particle
+`囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']`
+to point out the obvious in daily life.
+
+---
+
+## 1. Stating Presence: Existential `有[jau5|to have / there is]` and `冇[mou5|not to have / there is not]`
+
+In Cantonese, the verbs `有[jau5|to have / there is / there are]` and
+`冇[mou5|not to have / without / there is not]` serve a dual purpose. They
+express personal possession (e.g., "I have a phone") and existential presence
+(e.g., "There is a phone here").
+
+### Existential Sentence Pattern
+
+To state that something exists in a specific place, Cantonese uses the following
+structure:
+
+```
+[Location] + 有 / 冇 + [Noun]
+```
+
+This is equivalent to the English "There is/are..." or "There is/are no...".
+Unlike English, which uses "there is" as a dummy subject, Cantonese anchors the
+sentence directly to the physical location:
+
+```cantonese
+呢度[ni1dou6|here] 有[jau5|to have / there is] 一[jat1|one] 隻[zek3|measure word for animals] 貓[maau1|cat] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+There is a cat here.
+```
+
+```cantonese
+嗰度[go2dou6|there] 冇[mou5|not to have / there is not] 廁所[ci3so2|toilet / restroom] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+There is no restroom there.
+```
+
+### Asking Existential Questions (A-not-A Form)
+
+To ask whether something exists in a place, we combine
+`有[jau5|to have / there is]` and `冇[mou5|not to have / there is not]` into the
+A-not-A question form. In colloquial Cantonese, we use the spoken expression
+`有冇[jau5mou5|is there / do you have]`:
+
+```cantonese
+呢度[ni1dou6|here] 有冇[jau5mou5|is there / do you have] 電腦[din6nou5|computer] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+===
+Is there a computer here?
+```
+
+You can answer simply with `有[jau5|to have / there is]` (yes, there is) or
+`冇[mou5|not to have / there is not]` (no, there isn't).
+
+---
+
+## 2. Pinpointing Locations: Preposition `喺[hai2|at / in / on]`
+
+While `有[jau5|to have / there is]` focuses on the _presence_ of an object in a
+space, the preposition `喺[hai2|at / in / on (locative preposition)]` focuses on
+the _location_ of a specific subject.
+
+In Mandarin, the equivalent word is _zài_, but in colloquial Cantonese, you must
+always use `喺[hai2|at / in / on (locative preposition)]`.
+
+### Location Sentence Pattern
+
+To state where a specific subject is located, use this structure:
+
+```
+[Subject] + 喺 + [Location]
+```
+
+```cantonese
+我[ngo5|I / me] 喺[hai2|at / in / on] 公司[gung1si1|company / office] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+I am at the office.
+```
+
+```cantonese
+佢[keoi5|he / she / it] 喺[hai2|at / in / on] 學校[hok6haau6|school] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+===
+She is at school.
+```
+
+### Asking "Where?" using `邊度[bin1dou6|where]`
+
+To ask where someone or something is, replace the location with the question
+pronoun `邊度[bin1dou6|where]`:
+
+```cantonese
+你[nei5|you] 喺[hai2|at / in / on] 邊度[bin1dou6|where] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+===
+Where are you?
+```
+
+```cantonese
+銀包[ngan4baau1|wallet / purse] 喺[hai2|at / in / on] 邊度[bin1dou6|where] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+===
+Where is the wallet?
+```
+
+---
+
+## 3. Spatial Directions & Relative Position
+
+To specify exactly _where_ inside a location an object is (e.g., "on the
+computer", "inside the kitchen", "next to the school"), Cantonese combines a
+noun with a **spatial directional marker**.
+
+### Key Spatial Directional Markers
+
+- `上面[soeng6min6|above / on top of / upper side]`: On, on top of, above.
+- `下面[haa6min6|below / under / lower side]`: Under, underneath, below.
+- `入面[jap6min6|inside]`: In, inside.
+- `外面[ngoi6min6|outside]`: Out, outside.
+- `前面[cin4min6|in front / front side]`: In front of, ahead.
+- `後面[hau6min6|behind / back side]`: Behind, at the back of.
+- `隔籬[gaak3lei4|next to / beside / neighbor]`: Next to, beside.
+
+### The Spatial Marker Pattern
+
+In English, we place prepositions _before_ the noun (e.g., "in the room"). In
+Cantonese, the spatial marker is placed **directly after** the noun:
+
+```
+喺 + [Noun] + [Spatial Marker]
+```
+
+Let's look at how this functions:
+
+- "Inside the room": `喺[hai2|at / in / on]` `房[fong2|room / bedroom]`
+  `入面[jap6min6|inside]`
+- "On top of the computer": `喺[hai2|at / in / on]` `電腦[din6nou5|computer]`
+  `上面[soeng6min6|above / on top of / upper side]`
+- "Next to the MTR station": `喺[hai2|at / in / on]`
+  `地鐵站[dei6tit3zaam6|MTR station / subway station]`
+  `隔籬[gaak3lei4|next to / beside / neighbor]`
+
+Let's study these within full sentences:
+
+```cantonese
+個[go3|general measure word] 電話[din6waa2|telephone / phone] 喺[hai2|at / in / on] 電腦[din6nou5|computer] 上面[soeng6min6|above / on top of / upper side] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+The phone is on top of the computer.
+```
+
+```cantonese
+隻[zek3|measure word for animals] 貓[maau1|cat] 喺[hai2|at / in / on] 房[fong2|room / bedroom] 入面[jap6min6|inside] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+The cat is inside the bedroom.
+```
+
+```cantonese
+超市[ciu1si5|supermarket] 喺[hai2|at / in / on] 學校[hok6haau6|school] 隔籬[gaak3lei4|next to / beside / neighbor] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+The supermarket is next to the school.
+```
+
+---
+
+## 4. The Obviousness Particle: `囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']`
+
+One of the most expressive and high-frequency particles in spoken Cantonese is
+`囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']`.
+
+### Pragmatic Use
+
+`囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']`
+is appended to the end of a sentence to show that the information being stated
+is completely obvious, self-evident, or that the answer should be clear to the
+listener. It is the colloquial equivalent of saying "obviously," "of course," or
+"duh!" in English.
+
+Depending on the speaker's tone, it can range from a friendly, helpful nudge to
+mild, playful sarcasm or resignation:
+
+- Stating an obvious location: `喺[hai2|at / in / on]` `呢度[ni1dou6|here]`
+  `囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']`
+  (It's here, obviously!)
+- Stating an obvious choice: `買[maai5|to buy]` `呢個[ni1go3|this one]`
+  `囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']`
+  (Buy this one, obviously!)
+
+Let's compare the difference in tone:
+
+- `喺[hai2|at / in / on]` `房[fong2|room / bedroom]`
+  `隔籬[gaak3lei4|next to / beside / neighbor]`
+  `呀[aa3|sentence-final particle softening statements, making questions friendly]`
+  (It is next to the room. — _Neutral, informative_)
+- `喺[hai2|at / in / on]` `房[fong2|room / bedroom]`
+  `隔籬[gaak3lei4|next to / beside / neighbor]`
+  `囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']`
+  (It is next to the room, obviously! — _Assertive of a self-evident fact_)
+
+Let's look at a spatial example:
+
+```cantonese
+你[nei5|you] 隻[zek3|measure word for animals] 狗[gau2|dog] 喺[hai2|at / in / on] 房[fong2|room / bedroom] 後面[hau6min6|behind / back side] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+===
+Your dog is behind the bedroom, obviously!
+```
+
+---
+
+## 5. Situational Dialogue: Where Are My Car Keys?
+
+Here is a realistic dialogue between two flatmates, A and B. A is rushing out to
+go to the office and cannot find their wallet or keys. B patiently points out
+the obvious locations using `喺[hai2|at / in / on]`, directional markers, and
+the particle
+`囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']`.
+
+```dialog
+A: 唔該[m4goi1|excuse me]，你[nei5|you] 有冇[jau5mou5|is there / do you have] 睇[tai2|to look / see] 我[ngo5|I / me] 個[go3|unit] 銀包[ngan4baau1|wallet] 呀[aa3|particle]？
+   === Excuse me, have you seen my wallet?
+B: 你[nei5|you] 個[go3|unit] 銀包[ngan4baau1|wallet] 喺[hai2|at / in / on] 電腦[din6nou5|computer] 上面[soeng6min6|on top of] 呀[aa3|particle]。
+   === Your wallet is on top of the computer.
+A: 吓[haa2|what]？ 冇[mou5|not have] 呀[aa3|particle]！ 電腦[din6nou5|computer] 上面[soeng6min6|on top of] 冇[mou5|not have] 銀包[ngan4baau1|wallet] 呀[aa3|particle]。
+   === What? It's not there! There is no wallet on top of the computer.
+B: 喺[hai2|at / in / on] 電腦[din6nou5|computer] 後面[hau6min6|behind] 囉[lo1|obviousness particle]！ 睇[tai2|to look / see] 咗[zo2|completed] 未[mei6|not yet] 呀[aa3|particle]？
+   === It is behind the computer, obviously! Have you looked yet?
+A: 找[zaau2|to look for] 咗[zo2|completed] 啦[laa1|particle]，有[jau5|to have] 呀[aa3|particle]！ 多謝[do1ze6|thank you]！
+   === I looked and found it! Thank you!
+A: 同埋[tung4maai4|and] 我[ngo5|I] 個[go3|unit] 鎖匙[so2si4|key] 呢[ne1|particle]？ 喺[hai2|at / in / on] 邊度[bin1dou6|where] 呀[aa3|particle]？
+   === And what about my keys? Where are they?
+B: 喺[hai2|at / in / on] 廚房[cyu4fong2|kitchen] 入面[jap6min6|inside] 呀[aa3|particle]。
+   === They are inside the kitchen.
+A: 廚房[cyu4fong2|kitchen] 邊度[bin1dou6|where] 呀[aa3|particle]？
+   === Where in the kitchen?
+B: 喺[hai2|at / in / on] 咖啡[gaa3fe1|coffee] 隔籬[gaak3lei4|next to] 囉[lo1|obviousness particle]！
+   === Next to the coffee, obviously!
+A: 搞掂[gaau2dim6|done]！ 找[zaau2|to look for] 咗[zo2|completed] 啦[laa1|particle]。 我[ngo5|I] 去[heoi3|to go] 公司[gung1si1|company] 啦[laa1|particle]，拜拜[baai1baai3|bye-bye]！
+   === Got it! Found them. I'm going to the office now, bye-bye!
+B: 拜拜[baai1baai3|bye-bye]！
+   === Bye-bye!
+```
+
+---
+
+## 6. Exercises
+
+Review the spatial prepositions, existentials, and directional markers
+introduced in this chapter:
+
+```exercise
+question: |
+  Which of the following sentences correctly translates "The cat is inside the room"?
+  A) 隻[zek3|classifier] 貓[maau1|cat] 喺[hai2|at] 房[fong2|room] 上面[soeng6min6|above] 呀[aa3|particle]。
+  B) 隻[zek3|classifier] 貓[maau1|cat] 喺[hai2|at] 房[fong2|room] 入面[jap6min6|inside] 呀[aa3|particle]。
+  C) 隻[zek3|classifier] 貓[maau1|cat] 有[jau5|there is] 房[fong2|room] 入面[jap6min6|inside] 呀[aa3|particle]。
+  D) 房[fong2|room] 入面[jap6min6|inside] 冇[mou5|there is not] 隻[zek3|classifier] 貓[maau1|cat] 呀[aa3|particle]。
+answer: B
+explanation: To locate a specific subject, we use the pattern [Subject] + 喺[hai2|at / in / on (locative preposition)] + [Location]. "Inside the room" is represented as 房[fong2|room / bedroom] followed by the spatial marker 入面[jap6min6|inside]. Option B is the correct translation.
+```
+
+```exercise
+question: |
+  Fill in the blank to say "There is a computer here, obviously!":
+  呢度[ni1dou6|here] 有[jau5|there is] 電腦[din6nou5|computer] ________！
+answer: 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']
+explanation: The sentence-final particle 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course'] is used to emphasize that a fact is completely obvious or self-evident to the listener.
+```
+
+```exercise
+question: Translate "Where is my phone? Is it next to the computer?" into Cantonese with correct annotations.
+answer: 我[ngo5|I] 個[go3|unit] 電話[din6waa2|phone] 喺[hai2|at] 邊度[bin1dou6|where] 呀[aa3|particle]？ 喺[hai2|at] 電腦[din6nou5|computer] 隔籬[gaak3lei4|next to] 呀[aa3|particle]？
+explanation: 我[ngo5|I / me] 個[go3|general measure word / individual / unit] 電話[din6waa2|telephone / phone] means "my phone"; 喺[hai2|at / in / on (locative preposition)] anchors the location; 邊度[bin1dou6|where] is used for "where"; and 隔籬[gaak3lei4|next to / beside / neighbor] indicates next to the 電腦[din6nou5|computer].
+```
