@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Get list of staged markdown files
+staged_md_files=$(git diff --cached --name-only --diff-filter=ACMR | grep '\.md$' || true)
+
+if [ -n "$staged_md_files" ]; then
+  echo "Formatting staged markdown files to 80 characters..."
+  # We use --prose-wrap always to ensure lines are wrapped at the print-width
+  prettier --prose-wrap always --print-width 80 --write $staged_md_files
+  git add $staged_md_files
+fi
