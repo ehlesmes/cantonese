@@ -2,3 +2,4 @@ node_modules/
 .antigravitycli/
 .DS_Store
 tmp/
+tmp_vocab_batch.json

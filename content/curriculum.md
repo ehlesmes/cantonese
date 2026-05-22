@@ -21,6 +21,9 @@ chapters:
   - chapter: 6
     title: "Ability, Permission & Experience"
     file: "06-ability-experience.md"
+  - chapter: 7
+    title: "Comparatives & Complex Descriptors"
+    file: "07-comparatives-descriptors.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -170,10 +173,14 @@ chapters, translating our spiraled progression into progressive text lessons.
     `有`/`冇`, the locative `喺`, directional markers (`上面`, `入面`), and the
     obviousness particle `囉`.
 - **Chapter 5: Time-Telling & Continuous Action (`05-time-continuous.md`)**
-  [ACTIVE LOOK-AHEAD]
+  [COMPLETED]
   - _Focus_: Expressing time, hours, minutes, and schedules. Integrates the
     continuous aspect particle `緊` and slacking slang `Hea`.
 - **Chapter 6: Ability, Permission & Experience (`06-ability-experience.md`)**
   [ACTIVE LOOK-AHEAD]
   - _Focus_: Distinguishing modal abilities `可以`, `識`, and `會`. Integrates
     experiential aspect `過`, potential suffixes `得` vs `唔到`.
+- **Chapter 7: Comparatives & Complex Descriptors
+  (`07-comparatives-descriptors.md`)** [ACTIVE LOOK-AHEAD]
+  - _Focus_: Relative clauses and noun modifiers using `嘅`, and comparative
+    structures using `過` (e.g. A 過 B).

@@ -67,6 +67,13 @@
     "type": "classifier"
   },
   {
+    "char": "半",
+    "jyutping": "bun3",
+    "definition": "half",
+    "type": "numeral",
+    "notes": "Used for half-past the hour (e.g. 三點半)."
+  },
+  {
     "char": "叉燒",
     "jyutping": "caa1siu1",
     "definition": "barbecued pork / char siu",
@@ -76,6 +83,12 @@
     "char": "茶餐廳",
     "jyutping": "caa4caan1teng1",
     "definition": "Hong Kong style café / diner",
+    "type": "noun"
+  },
+  {
+    "char": "尋日",
+    "jyutping": "cam4jat6",
+    "definition": "yesterday",
     "type": "noun"
   },
   {
@@ -165,6 +178,13 @@
     "type": "noun"
   },
   {
+    "char": "點",
+    "jyutping": "dim2",
+    "definition": "o'clock / hour",
+    "type": "classifier",
+    "notes": "Used after numerals to indicate hours (e.g. 兩點)."
+  },
+  {
     "char": "點解",
     "jyutping": "dim2gaai2",
     "definition": "why / how come",
@@ -181,6 +201,13 @@
     "jyutping": "dim2sam1",
     "definition": "dim sum",
     "type": "noun"
+  },
+  {
+    "char": "點鐘",
+    "jyutping": "dim2zung1",
+    "definition": "o'clock",
+    "type": "noun",
+    "notes": "Used to indicate the hour of the clock (e.g. 三點鐘)."
   },
   {
     "char": "電腦",
@@ -221,6 +248,12 @@
     "type": "adjective"
   },
   {
+    "char": "返",
+    "jyutping": "faan1",
+    "definition": "to return / go back / reverse",
+    "type": "verb"
+  },
+  {
     "char": "返工",
     "jyutping": "faan1gung1",
     "definition": "to go to work / be at work",
@@ -233,6 +266,20 @@
     "type": "noun"
   },
   {
+    "char": "分",
+    "jyutping": "fan1",
+    "definition": "minute",
+    "type": "classifier",
+    "notes": "Used after numerals to indicate minutes (e.g. 兩點十分)."
+  },
+  {
+    "char": "分鐘",
+    "jyutping": "fan1zung1",
+    "definition": "minute",
+    "type": "noun",
+    "notes": "Used to indicate duration or point in minutes."
+  },
+  {
     "char": "飛",
     "jyutping": "fei1",
     "definition": "ticket (loanword, e.g., movie ticket, bus ticket)",
@@ -243,6 +290,12 @@
     "jyutping": "fong2",
     "definition": "room / bedroom",
     "type": "noun"
+  },
+  {
+    "char": "放假",
+    "jyutping": "fong3gaa3",
+    "definition": "to have a holiday / day off",
+    "type": "verb"
   },
   {
     "char": "放工",
@@ -312,6 +365,12 @@
     "type": "noun"
   },
   {
+    "char": "噉",
+    "jyutping": "gam2",
+    "definition": "then / in that case / so",
+    "type": "conjunction"
+  },
+  {
     "char": "噉樣",
     "jyutping": "gam2joeng6",
     "definition": "in this way / like this / this pattern",
@@ -344,6 +403,13 @@
     "notes": "Indicates possession (like 's, equivalent to Mandarin 的 de) or asserts a state."
   },
   {
+    "char": "幾點",
+    "jyutping": "gei2dim2",
+    "definition": "what time / when",
+    "type": "pronoun",
+    "notes": "Question word asking for the time."
+  },
+  {
     "char": "幾多",
     "jyutping": "gei2do1",
     "definition": "how many / how much",
@@ -354,6 +420,12 @@
     "jyutping": "gei2si4",
     "definition": "when / what time",
     "type": "pronoun"
+  },
+  {
+    "char": "見",
+    "jyutping": "gin3",
+    "definition": "to see / meet",
+    "type": "verb"
   },
   {
     "char": "叫",
@@ -392,6 +464,12 @@
     "type": "adjective"
   },
   {
+    "char": "工",
+    "jyutping": "gung1",
+    "definition": "work / job",
+    "type": "noun"
+  },
+  {
     "char": "公司",
     "jyutping": "gung1si1",
     "definition": "company / office",
@@ -427,6 +505,12 @@
     "char": "下面",
     "jyutping": "haa6min6",
     "definition": "below / under / lower side",
+    "type": "noun"
+  },
+  {
+    "char": "下晝",
+    "jyutping": "haa6zau3",
+    "definition": "afternoon / in the afternoon",
     "type": "noun"
   },
   {
@@ -581,6 +665,19 @@
     "type": "noun"
   },
   {
+    "char": "夜晚",
+    "jyutping": "je6maan5",
+    "definition": "night / evening / at night",
+    "type": "noun"
+  },
+  {
+    "char": "依家",
+    "jyutping": "ji1gaa1",
+    "definition": "now / currently",
+    "type": "noun",
+    "notes": "Colloquial variant of 而家."
+  },
+  {
     "char": "而家",
     "jyutping": "ji4gaa1",
     "definition": "now / currently",
@@ -635,6 +732,12 @@
     "type": "noun"
   },
   {
+    "char": "琴日",
+    "jyutping": "kam4jat6",
+    "definition": "yesterday (variant)",
+    "type": "noun"
+  },
+  {
     "char": "佢",
     "jyutping": "keoi5",
     "definition": "he / she / it",
@@ -683,6 +786,12 @@
     "jyutping": "leng4caa4",
     "definition": "lemon tea",
     "type": "noun"
+  },
+  {
+    "char": "零",
+    "jyutping": "ling4",
+    "definition": "zero",
+    "type": "numeral"
   },
   {
     "char": "囉",
@@ -948,6 +1057,18 @@
     "type": "numeral"
   },
   {
+    "char": "十一",
+    "jyutping": "sap6jat1",
+    "definition": "eleven",
+    "type": "numeral"
+  },
+  {
+    "char": "十二",
+    "jyutping": "sap6ji6",
+    "definition": "twelve",
+    "type": "numeral"
+  },
+  {
     "char": "收",
     "jyutping": "sau1",
     "definition": "to receive / accept / collect",
@@ -990,6 +1111,12 @@
     "type": "noun"
   },
   {
+    "char": "時間",
+    "jyutping": "si4gaan1",
+    "definition": "time",
+    "type": "noun"
+  },
+  {
     "char": "市",
     "jyutping": "si5",
     "definition": "market / city",
@@ -1011,6 +1138,12 @@
     "char": "食",
     "jyutping": "sik6",
     "definition": "to eat",
+    "type": "verb"
+  },
+  {
+    "char": "食飯",
+    "jyutping": "sik6faan6",
+    "definition": "to eat a meal / have dinner",
     "type": "verb"
   },
   {
@@ -1124,10 +1257,23 @@
     "type": "classifier"
   },
   {
+    "char": "字",
+    "jyutping": "zi6",
+    "definition": "five-minute interval",
+    "type": "noun",
+    "notes": "Used in telling time, e.g. 三個字 means 15 minutes."
+  },
+  {
     "char": "即係",
     "jyutping": "zik1hai6",
     "definition": "that is / namely / in other words / meaning",
     "type": "conjunction"
+  },
+  {
+    "char": "朝早",
+    "jyutping": "ziu1zou2",
+    "definition": "morning / in the morning",
+    "type": "noun"
   },
   {
     "char": "咗",
@@ -1147,6 +1293,18 @@
     "jyutping": "zou2tau2",
     "definition": "good night",
     "type": "expression"
+  },
+  {
+    "char": "做",
+    "jyutping": "zou6",
+    "definition": "to do / make / perform",
+    "type": "verb"
+  },
+  {
+    "char": "鐘",
+    "jyutping": "zung1",
+    "definition": "clock / bell / hour",
+    "type": "noun"
   },
   {
     "char": "朱古力",
