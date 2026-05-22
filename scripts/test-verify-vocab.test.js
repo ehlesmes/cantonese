@@ -139,21 +139,21 @@ Let's test \`食唔食[sik6 m4 sik6|eat or not?]\` in prose.
   });
 
   test("Fail a dynamic A-not-A question form where the base verb is not in the dictionary", () => {
-    // "貓" (maau1) is not in the dictionary, so "貓唔貓" should fail
+    // "豬" (zyu1) is not in the dictionary, so "豬唔豬" should fail
     const content = `---
 chapter: 99
 title: Invalid A-not-A Test
 description: Testing dynamic A-not-A failure.
 ---
 
-Let's test invalid \`貓唔貓[maau1 m4 maau1|cat or not]\` in prose.
+Let's test invalid \`豬唔豬[zyu1 m4 zyu1|pig or not]\` in prose.
 `;
     fs.writeFileSync(tempChapterPath, content, "utf8");
 
     const res = runChecker("content/99-test-checker-chapter.md");
     expect(res.success).toBe(false);
     expect(res.output).toContain("Found 1 unregistered vocabulary error(s)");
-    expect(res.output).toContain("貓唔貓 (maau1 m4 maau1)");
+    expect(res.output).toContain("豬唔豬 (zyu1 m4 zyu1)");
     expect(res.output).toContain("not registered in the dictionary");
   });
 });
