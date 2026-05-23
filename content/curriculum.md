@@ -39,6 +39,9 @@ chapters:
   - chapter: 12
     title: "Regrets, Wishes & Empathy"
     file: "12-regrets-wishes-empathy.md"
+  - chapter: 13
+    title: "Passives, Focus & Indirect Speech"
+    file: "13-passives-focus-indirect.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -168,6 +171,10 @@ particle layering, and mastering native-speed idiomatic expressions._
   - _Core Grammar_: Expressing past regrets using
     `早知[zou2zi1|had I known earlier]` or `後悔[hau6fui3|to regret]`, and
     formulating hopes and empathetic responses.
+- **Topic 14: Passive Voice, Focus Markers & Indirect Speech**
+  - _Core Grammar_: Structuring passive statements using `俾[bei2|by]`, focusing
+    phrases using `即係[zik1hai6|namely / that is to say]`, and indirect speech
+    utilizing `話[waa6|to say / that]`.
 
 ---
 
@@ -223,10 +230,14 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Express conditional logic using `如果` ... `就`, handle
     hypotheticals, and formulate plans and hopes.
 - **Chapter 11: Narrative Cohesion & Complex Connectives
-  (`11-narrative-cohesion.md`)** [ACTIVE LOOK-AHEAD]
+  (`11-narrative-cohesion.md`)** [COMPLETED]
   - _Focus_: Form complex connected paragraphs in speech, utilizing advanced
     conjunctions and transitional phrases for fluid native storytelling.
 - **Chapter 12: Regrets, Wishes & Empathy (`12-regrets-wishes-empathy.md`)**
   [ACTIVE LOOK-AHEAD]
   - _Focus_: Express regrets about the past using `早知`, make wishes using
     `希望`, and express deep empathy with spoken structures.
+- **Chapter 13: Passives, Focus & Indirect Speech
+  (`13-passives-focus-indirect.md`)** [ACTIVE LOOK-AHEAD]
+  - _Focus_: Structure passive voice using `俾`, emphasize statements using
+    `即係`, and report indirect speech using `話`.

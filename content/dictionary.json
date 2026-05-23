@@ -374,6 +374,12 @@
     "notes": "Used when receiving tangible items, gifts, money, or compliments."
   },
   {
+    "char": "都",
+    "jyutping": "dou1",
+    "definition": "also / both / all",
+    "type": "adverb"
+  },
+  {
     "char": "凍",
     "jyutping": "dung3",
     "definition": "cold / iced",
@@ -402,6 +408,12 @@
     "jyutping": "faan1gung1",
     "definition": "to go to work / be at work",
     "type": "verb"
+  },
+  {
+    "char": "反而",
+    "jyutping": "faan2ji4",
+    "definition": "on the contrary / instead",
+    "type": "conjunction"
   },
   {
     "char": "飯",
@@ -626,6 +638,12 @@
     "type": "verb"
   },
   {
+    "char": "既然",
+    "jyutping": "gei3jin4",
+    "definition": "since / given that",
+    "type": "conjunction"
+  },
+  {
     "char": "見",
     "jyutping": "gin3",
     "definition": "to see / meet",
@@ -754,6 +772,12 @@
     "type": "noun"
   },
   {
+    "char": "喊",
+    "jyutping": "haam3",
+    "definition": "to cry / weep",
+    "type": "verb"
+  },
+  {
     "char": "喺",
     "jyutping": "hai2",
     "definition": "at / in / on (locative preposition)",
@@ -828,6 +852,12 @@
     "type": "noun"
   },
   {
+    "char": "開心",
+    "jyutping": "hoi1sam1",
+    "definition": "happy / glad / cheerful",
+    "type": "adjective"
+  },
+  {
     "char": "學校",
     "jyutping": "hok6haau6",
     "definition": "school",
@@ -850,6 +880,12 @@
     "jyutping": "hou2",
     "definition": "good / fine / very / quite",
     "type": "adjective"
+  },
+  {
+    "char": "好似",
+    "jyutping": "hou2ci5",
+    "definition": "seem / seem like / as if",
+    "type": "verb"
   },
   {
     "char": "飲",
@@ -1069,6 +1105,18 @@
     "type": "noun"
   },
   {
+    "char": "原本",
+    "jyutping": "jyun4bun2",
+    "definition": "originally / original",
+    "type": "adverb"
+  },
+  {
+    "char": "月",
+    "jyutping": "jyut6",
+    "definition": "month",
+    "type": "noun"
+  },
+  {
     "char": "琴日",
     "jyutping": "kam4jat6",
     "definition": "yesterday (variant)",
@@ -1228,6 +1276,12 @@
     "type": "expression"
   },
   {
+    "char": "唔單止",
+    "jyutping": "m4daan1zi2",
+    "definition": "not only",
+    "type": "conjunction"
+  },
+  {
     "char": "唔到",
     "jyutping": "m4dou2",
     "definition": "cannot / unable to manage to / fail to",
@@ -1240,6 +1294,12 @@
     "definition": "excuse me / please / thank you (for service or help)",
     "type": "expression",
     "notes": "Used for services, requests, or showing gratitude for helpful actions."
+  },
+  {
+    "char": "唔開心",
+    "jyutping": "m4hoi1sam1",
+    "definition": "sad / unhappy",
+    "type": "adjective"
   },
   {
     "char": "唔使客氣",
@@ -1387,6 +1447,18 @@
     "jyutping": "naan4",
     "definition": "difficult / hard",
     "type": "adjective"
+  },
+  {
+    "char": "諗",
+    "jyutping": "nam2",
+    "definition": "to think / consider / believe",
+    "type": "verb"
+  },
+  {
+    "char": "諗住",
+    "jyutping": "nam2zyu6",
+    "definition": "to intend / plan / think of",
+    "type": "verb"
   },
   {
     "char": "嬲",
@@ -1557,6 +1629,12 @@
     "type": "noun"
   },
   {
+    "char": "甚至",
+    "jyutping": "sam6zi3",
+    "definition": "even / so much so that",
+    "type": "conjunction"
+  },
+  {
     "char": "新",
     "jyutping": "san1",
     "definition": "new",
@@ -1615,6 +1693,12 @@
     "jyutping": "seoi1",
     "definition": "bad / mean / wicked",
     "type": "adjective"
+  },
+  {
+    "char": "雖然",
+    "jyutping": "seoi1jin4",
+    "definition": "although / even though",
+    "type": "conjunction"
   },
   {
     "char": "水",
@@ -1696,6 +1780,12 @@
     "notes": "Placed after verbs to mean first, or indicating only then in sequential actions."
   },
   {
+    "char": "星期",
+    "jyutping": "sing1kei4",
+    "definition": "week",
+    "type": "noun"
+  },
+  {
     "char": "星期六",
     "jyutping": "sing1kei4luk6",
     "definition": "Saturday",
@@ -1706,6 +1796,12 @@
     "jyutping": "siu2",
     "definition": "few / little / less",
     "type": "adjective"
+  },
+  {
+    "char": "所以",
+    "jyutping": "so2ji5",
+    "definition": "therefore / so",
+    "type": "conjunction"
   },
   {
     "char": "鎖匙",
@@ -1754,6 +1850,12 @@
     "jyutping": "teng1",
     "definition": "to listen / hear / obey",
     "type": "verb"
+  },
+  {
+    "char": "添",
+    "jyutping": "tim1",
+    "definition": "particle indicating in addition / as well / furthermore",
+    "type": "particle"
   },
   {
     "char": "聽日",
@@ -1826,6 +1928,18 @@
     "jyutping": "wai2",
     "definition": "hey / hello (typically answering phone or calling for attention)",
     "type": "expression"
+  },
+  {
+    "char": "搵",
+    "jyutping": "wan2",
+    "definition": "to find / look for / seek",
+    "type": "verb"
+  },
+  {
+    "char": "搵錢",
+    "jyutping": "wan2cin2",
+    "definition": "to earn money / make money",
+    "type": "verb"
   },
   {
     "char": "喎",

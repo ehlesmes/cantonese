@@ -4,7 +4,7 @@ This is an automatically generated vocabulary database compiled from all course 
 
 | Character | Jyutping | Translation | First Introduced In | Occurrences |
 | :--- | :--- | :--- | :--- | :--- |
-| **呀** | `aa3` | particle / sentence-final particle softening statements, making questions friendly | `00-pronunciation-jyutping.md` | 161 |
+| **呀** | `aa3` | particle / sentence-final particle softening statements, making questions friendly | `00-pronunciation-jyutping.md` | 167 |
 | **巴士** | `baa1si2` | bus (loanword) | `02-shopping-slang.md` | 2 |
 | **拜拜** | `baai1baai3` | bye-bye / goodbye (loanword) | `01-greetings.md` | 12 |
 | **扮** | `baan6` | to dress up / act / pretend | `09-split-verbs-idioms.md` | 1 |
@@ -20,8 +20,8 @@ This is an automatically generated vocabulary database compiled from all course 
 | **半** | `bun3` | half | `05-time-continuous.md` | 7 |
 | **叉燒** | `caa1siu1` | barbecued pork / char siu | `03-dining-out.md` | 3 |
 | **茶餐廳** | `caa4caan1teng1` | Hong Kong style café / diner | `03-dining-out.md` | 7 |
-| **炒** | `caau2` | to stir-fry / speculate / fire | `09-split-verbs-idioms.md` | 6 |
-| **炒魷魚** | `caau2jau4jyu2` | to get fired / lay off / fire someone | `09-split-verbs-idioms.md` | 4 |
+| **炒** | `caau2` | to stir-fry / speculate / fire | `09-split-verbs-idioms.md` | 9 |
+| **炒魷魚** | `caau2jau4jyu2` | to get fired / lay off / fire someone | `09-split-verbs-idioms.md` | 5 |
 | **尋日** | `cam4jat6` | yesterday | `08-particles-nuance.md` | 5 |
 | **七** | `cat1` | seven | `02-shopping-slang.md` | 4 |
 | **吹** | `ceoi1` | to blow / boast | `09-split-verbs-idioms.md` | 3 |
@@ -36,19 +36,19 @@ This is an automatically generated vocabulary database compiled from all course 
 | **唱** | `coeng3` | to sing | `09-split-verbs-idioms.md` | 4 |
 | **唱歌** | `coeng3go1` | to sing | `09-split-verbs-idioms.md` | 3 |
 | **廚房** | `cyu4fong2` | kitchen | `04-existentials-places.md` | 2 |
-| **打算** | `daa2syun3` | to plan / intend / plan | `10-hypotheticals-conditionals.md` | 7 |
+| **打算** | `daa2syun3` | to plan / intend / plan | `10-hypotheticals-conditionals.md` | 8 |
 | **大** | `daai6` | big / large / great | `07-comparatives-descriptors.md` | 4 |
-| **但係** | `daan6hai6` | but / however | `07-comparatives-descriptors.md` | 3 |
+| **但係** | `daan6hai6` | but / however | `07-comparatives-descriptors.md` | 13 |
 | **蛋撻** | `daan6taat1` | egg tart | `03-dining-out.md` | 5 |
 | **第日** | `dai6jat6` | another day / some day in the future | `10-hypotheticals-conditionals.md` | 3 |
 | **得** | `dak1` | particle expressing permission, possibility, capability, or adverbial degree | `06-ability-experience.md` | 10 |
 | **哋** | `dei6` | plural suffix | `01-greetings.md` | 1 |
 | **地鐵站** | `dei6tit3zaam6` | MTR station / subway station | `04-existentials-places.md` | 2 |
 | **對** | `deoi3` | pair / couple (classifier for paired objects like shoes) | `07-comparatives-descriptors.md` | 11 |
-| **啲** | `di1` | a bit / some / comparative suffix | `07-comparatives-descriptors.md` | 18 |
+| **啲** | `di1` | a bit / some / comparative suffix / some / a little / plural or possessive particle | `07-comparatives-descriptors.md` | 20 |
 | **的士** | `dik1si2` | taxi (loanword) | `02-shopping-slang.md` | 2 |
 | **點** | `dim2` | o'clock / hour | `05-time-continuous.md` | 36 |
-| **點解** | `dim2gaai2` | why / how come | `06-ability-experience.md` | 1 |
+| **點解** | `dim2gaai2` | why / how come | `06-ability-experience.md` | 3 |
 | **點樣** | `dim2joeng6` | how / in what way | `07-comparatives-descriptors.md` | 1 |
 | **點心** | `dim2sam1` | dim sum | `07-comparatives-descriptors.md` | 2 |
 | **點鐘** | `dim2zung1` | o'clock | `05-time-continuous.md` | 4 |
@@ -58,11 +58,13 @@ This is an automatically generated vocabulary database compiled from all course 
 | **碟** | `dip6` | plate / dish (classifier for food dishes) | `03-dining-out.md` | 4 |
 | **多** | `do1` | many / much / more | `07-comparatives-descriptors.md` | 3 |
 | **多謝** | `do1ze6` | thank you (for a gift, compliment, or hospitality) | `02-shopping-slang.md` | 3 |
+| **都** | `dou1` | also / both / all | `11-narrative-cohesion.md` | 4 |
 | **凍** | `dung3` | cold / iced | `03-dining-out.md` | 12 |
 | **花生** | `faa1sang1` | peanut | `09-split-verbs-idioms.md` | 2 |
 | **快** | `faai3` | fast / quick / rapid | `07-comparatives-descriptors.md` | 3 |
 | **返** | `faan1` | to return / go back / reverse | `05-time-continuous.md` | 4 |
-| **返工** | `faan1gung1` | to go to work / be at work | `05-time-continuous.md` | 7 |
+| **返工** | `faan1gung1` | to go to work / be at work | `05-time-continuous.md` | 12 |
+| **反而** | `faan2ji4` | on the contrary / instead | `11-narrative-cohesion.md` | 8 |
 | **飯** | `faan6` | cooked rice / meal | `05-time-continuous.md` | 1 |
 | **發** | `faat3` | to emit / generate / dream / develop | `10-hypotheticals-conditionals.md` | 7 |
 | **發夢** | `faat3mung6` | to dream / daydream / dream | `10-hypotheticals-conditionals.md` | 3 |
@@ -73,7 +75,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **房** | `fong2` | room / bedroom | `04-existentials-places.md` | 11 |
 | **放** | `fong3` | to release / let go / put | `09-split-verbs-idioms.md` | 2 |
 | **放飛機** | `fong3fei1gei1` | to stand someone up / break a promise | `09-split-verbs-idioms.md` | 1 |
-| **放假** | `fong3gaa3` | to have a holiday / day off | `05-time-continuous.md` | 5 |
+| **放假** | `fong3gaa3` | to have a holiday / day off | `05-time-continuous.md` | 7 |
 | **放工** | `fong3gung1` | to finish work / get off work | `05-time-continuous.md` | 1 |
 | **加拿大** | `gaa1naa4daai6` | Canada | `01-greetings.md` | 2 |
 | **假使** | `gaa2si2` | if / in case / supposing | `10-hypotheticals-conditionals.md` | 7 |
@@ -84,53 +86,57 @@ This is an automatically generated vocabulary database compiled from all course 
 | **膠袋** | `gaau1doi2` | plastic bag | `02-shopping-slang.md` | 3 |
 | **搞掂** | `gaau2dim6` | done / finished / settled / resolved | `02-shopping-slang.md` | 13 |
 | **雞** | `gai1` | chicken | `00-pronunciation-jyutping.md` | 10 |
-| **今日** | `gam1jat6` | today | `00-pronunciation-jyutping.md` | 12 |
-| **噉** | `gam2` | then / in that case / so | `05-time-continuous.md` | 9 |
+| **今日** | `gam1jat6` | today | `00-pronunciation-jyutping.md` | 13 |
+| **噉** | `gam2` | then / in that case / so | `05-time-continuous.md` | 10 |
 | **咁** | `gam3` | so / such / to this degree | `07-comparatives-descriptors.md` | 8 |
 | **緊** | `gan2` | verbal aspect suffix indicating an action in progress (continuous aspect) | `05-time-continuous.md` | 32 |
 | **九** | `gau2` | nine | `02-shopping-slang.md` | 5 |
 | **狗** | `gau2` | dog | `04-existentials-places.md` | 1 |
 | **夠** | `gau3` | enough / sufficient | `08-particles-nuance.md` | 1 |
-| **嘅** | `ge3` | particle / possessive particle / nominalizing particle / final assertive particle | `00-pronunciation-jyutping.md` | 23 |
+| **嘅** | `ge3` | particle / possessive particle / nominalizing particle / final assertive particle | `00-pronunciation-jyutping.md` | 25 |
 | **幾點** | `gei2dim2` | what time / when | `05-time-continuous.md` | 5 |
 | **幾多** | `gei2do1` | how many / how much | `02-shopping-slang.md` | 6 |
 | **記錯** | `gei3co3` | remembered incorrectly | `08-particles-nuance.md` | 1 |
+| **既然** | `gei3jin4` | since / given that | `11-narrative-cohesion.md` | 8 |
 | **見** | `gin3` | to see / meet | `05-time-continuous.md` | 1 |
 | **件** | `gin6` | measure word for clothes, matters, and items | `07-comparatives-descriptors.md` | 17 |
-| **叫** | `giu3` | to be called / to call | `01-greetings.md` | 7 |
+| **叫** | `giu3` | to be called / to call | `01-greetings.md` | 8 |
 | **歌** | `go1` | song | `09-split-verbs-idioms.md` | 4 |
 | **嗰** | `go2` | that | `07-comparatives-descriptors.md` | 11 |
 | **嗰度** | `go2dou6` | there | `04-existentials-places.md` | 3 |
 | **嗰個** | `go2go3` | that one | `02-shopping-slang.md` | 8 |
-| **個** | `go3` | general measure word / individual / unit | `02-shopping-slang.md` | 39 |
+| **個** | `go3` | general measure word / individual / unit | `02-shopping-slang.md` | 40 |
 | **覺得** | `gok3dak1` | to feel / think | `07-comparatives-descriptors.md` | 3 |
 | **講** | `gong2` | to speak / say / talk | `01-greetings.md` | 19 |
 | **高** | `gou1` | tall / high | `07-comparatives-descriptors.md` | 5 |
 | **工** | `gung1` | work / job | `05-time-continuous.md` | 2 |
-| **公司** | `gung1si1` | company / office | `04-existentials-places.md` | 5 |
-| **貴** | `gwai3` | expensive | `07-comparatives-descriptors.md` | 5 |
+| **公司** | `gung1si1` | company / office | `04-existentials-places.md` | 6 |
+| **貴** | `gwai3` | expensive | `07-comparatives-descriptors.md` | 6 |
 | **過** | `gwo3` | verbal aspect suffix indicating past experience / 'have done before' | `06-ability-experience.md` | 26 |
 | **廣東話** | `gwong2dung1waa2` | Cantonese language | `01-greetings.md` | 8 |
-| **吓** | `haa2` | what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation | `00-pronunciation-jyutping.md` | 9 |
+| **吓** | `haa2` | what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation | `00-pronunciation-jyutping.md` | 10 |
 | **下面** | `haa6min6` | below / under / lower side | `04-existentials-places.md` | 1 |
 | **下晝** | `haa6zau3` | afternoon / in the afternoon | `05-time-continuous.md` | 4 |
 | **鞋** | `haai4` | shoes | `07-comparatives-descriptors.md` | 6 |
-| **喺** | `hai2` | at / in / on / at / in / on (locative preposition) | `04-existentials-places.md` | 41 |
-| **係** | `hai6` | to be / to be (am/is/are) / yes | `01-greetings.md` | 30 |
+| **喊** | `haam3` | to cry / weep | `11-narrative-cohesion.md` | 3 |
+| **喺** | `hai2` | at / in / on / at / in / on (locative preposition) | `04-existentials-places.md` | 42 |
+| **係** | `hai6` | to be / to be (am/is/are) / yes | `01-greetings.md` | 32 |
 | **係唔係** | `hai6 m4 hai6` | is it or not / is it or not? / is that right? (A-not-A question form) | `01-greetings.md` | 6 |
 | **行** | `hang4` | to walk / go / run (a machine) | `06-ability-experience.md` | 2 |
 | **後面** | `hau6min6` | behind / back side | `04-existentials-places.md` | 3 |
 | **希望** | `hei1mong6` | to hope / wish / hope | `10-hypotheticals-conditionals.md` | 6 |
-| **去** | `heoi3` | to go | `04-existentials-places.md` | 26 |
-| **可以** | `ho2ji5` | can / may / possible | `06-ability-experience.md` | 13 |
+| **去** | `heoi3` | to go | `04-existentials-places.md` | 34 |
+| **可以** | `ho2ji5` | can / may / possible | `06-ability-experience.md` | 14 |
 | **可樂** | `ho2lok6` | cola / Coke | `02-shopping-slang.md` | 2 |
-| **香港** | `hoeng1gong2` | Hong Kong | `01-greetings.md` | 6 |
+| **香港** | `hoeng1gong2` | Hong Kong | `01-greetings.md` | 7 |
+| **開心** | `hoi1sam1` | happy / glad / cheerful | `11-narrative-cohesion.md` | 2 |
 | **學校** | `hok6haau6` | school | `04-existentials-places.md` | 2 |
 | **學生** | `hok6saang1` | student | `08-particles-nuance.md` | 3 |
-| **好** | `hou2` | good / fine / very / quite | `01-greetings.md` | 22 |
+| **好** | `hou2` | good / fine / very / quite | `01-greetings.md` | 30 |
 | **好唔好** | `hou2 m4 hou2` | is that good | `05-time-continuous.md` | 1 |
+| **好似** | `hou2ci5` | seem / seem like / as if | `11-narrative-cohesion.md` | 1 |
 | **飲** | `jam2` | to drink | `03-dining-out.md` | 13 |
-| **因為** | `jan1wai6` | because | `06-ability-experience.md` | 1 |
+| **因為** | `jan1wai6` | because | `06-ability-experience.md` | 8 |
 | **人** | `jan4` | person / people / human | `01-greetings.md` | 10 |
 | **入面** | `jap6min6` | inside | `04-existentials-places.md` | 10 |
 | **一** | `jat1` | one | `02-shopping-slang.md` | 13 |
@@ -140,15 +146,15 @@ This is an automatically generated vocabulary database compiled from all course 
 | **日本** | `jat6bun2` | Japan | `06-ability-experience.md` | 6 |
 | **日文** | `jat6man2` | Japanese language | `06-ability-experience.md` | 1 |
 | **游** | `jau4` | to swim / to swim / drift / wander | `09-split-verbs-idioms.md` | 9 |
-| **魷魚** | `jau4jyu2` | squid | `09-split-verbs-idioms.md` | 5 |
-| **游水** | `jau4seoi2` | to swim | `09-split-verbs-idioms.md` | 5 |
-| **有** | `jau5` | to have / there is / to have / there is / there are | `04-existentials-places.md` | 11 |
-| **有錢** | `jau5cin2` | rich / wealthy / have money | `10-hypotheticals-conditionals.md` | 1 |
+| **魷魚** | `jau4jyu2` | squid | `09-split-verbs-idioms.md` | 8 |
+| **游水** | `jau4seoi2` | to swim | `09-split-verbs-idioms.md` | 7 |
+| **有** | `jau5` | to have / there is / to have / there is / there are | `04-existentials-places.md` | 12 |
+| **有錢** | `jau5cin2` | rich / wealthy / have money | `10-hypotheticals-conditionals.md` | 4 |
 | **有冇** | `jau5mou5` | is there / do you have | `04-existentials-places.md` | 3 |
 | **又** | `jau6` | again | `09-split-verbs-idioms.md` | 1 |
 | **嘢** | `je5` | thing / stuff / matter | `06-ability-experience.md` | 2 |
 | **嘢飲** | `je5jam2` | drinks / beverages | `02-shopping-slang.md` | 1 |
-| **嘢食** | `je5sik6` | snacks / food / things to eat | `03-dining-out.md` | 3 |
+| **嘢食** | `je5sik6` | snacks / food / things to eat | `03-dining-out.md` | 4 |
 | **夜晚** | `je6maan5` | night / evening / at night | `05-time-continuous.md` | 2 |
 | **依家** | `ji1gaa1` | now / now / currently | `05-time-continuous.md` | 9 |
 | **而家** | `ji4gaa1` | now / currently | `05-time-continuous.md` | 2 |
@@ -164,31 +170,35 @@ This is an automatically generated vocabulary database compiled from all course 
 | **要唔要** | `jiu3 m4 jiu3` | do you want / want or not (A-not-A question form) | `02-shopping-slang.md` | 2 |
 | **如果** | `jyu4gwo2` | if | `10-hypotheticals-conditionals.md` | 10 |
 | **鴛鴦** | `jyun1joeng1` | yuanyang (drink mixing coffee and milk tea) | `03-dining-out.md` | 3 |
-| **佢** | `keoi5` | he / she / it | `01-greetings.md` | 28 |
+| **原本** | `jyun4bun2` | originally / original | `11-narrative-cohesion.md` | 3 |
+| **琴日** | `kam4jat6` | yesterday (variant) | `11-narrative-cohesion.md` | 1 |
+| **佢** | `keoi5` | he / she / it | `01-greetings.md` | 35 |
 | **佢哋** | `keoi5dei6` | they / them | `01-greetings.md` | 10 |
 | **傾** | `king1` | to talk / chat | `09-split-verbs-idioms.md` | 1 |
-| **啦** | `laa1` | particle / sentence-final particle suggesting, requesting, or encouraging action | `00-pronunciation-jyutping.md` | 46 |
+| **啦** | `laa1` | particle / sentence-final particle suggesting, requesting, or encouraging action | `00-pronunciation-jyutping.md` | 47 |
 | **喇** | `laa3` | sentence-final particle indicating a change of state or already | `08-particles-nuance.md` | 21 |
 | **喇喎** | `laa3wo3` | sentence-final particle combination indicating warning, sudden realization, or change of state | `08-particles-nuance.md` | 13 |
 | **嚟** | `lai4` | to come | `06-ability-experience.md` | 1 |
-| **靚** | `leng3` | high quality / pretty / beautiful / handsome / high quality | `03-dining-out.md` | 10 |
+| **靚** | `leng3` | high quality / pretty / beautiful / handsome / high quality / pretty / beautiful / good-looking | `03-dining-out.md` | 11 |
 | **靚仔** | `leng3zai2` | handsome boy / handsome man / handsome / handsome boy / plain white rice (restaurant slang) | `01-greetings.md` | 7 |
 | **檸茶** | `leng4caa4` | lemon tea | `03-dining-out.md` | 3 |
-| **旅行** | `leoi5hang4` | to travel | `06-ability-experience.md` | 1 |
+| **旅行** | `leoi5hang4` | to travel | `06-ability-experience.md` | 3 |
 | **零** | `ling4` | zero | `05-time-continuous.md` | 3 |
-| **囉** | `lo1` | sentence-final particle showing obviousness, resignation, or 'of course' / obviousness particle | `04-existentials-places.md` | 34 |
-| **兩** | `loeng5` | two / pair (used with classifiers) | `02-shopping-slang.md` | 30 |
-| **落雨** | `lok6jyu5` | to rain | `10-hypotheticals-conditionals.md` | 3 |
+| **囉** | `lo1` | sentence-final particle showing obviousness, resignation, or 'of course' / obviousness particle | `04-existentials-places.md` | 37 |
+| **兩** | `loeng5` | two / pair (used with classifiers) | `02-shopping-slang.md` | 31 |
+| **落雨** | `lok6jyu5` | to rain | `10-hypotheticals-conditionals.md` | 5 |
 | **老闆** | `lou5baan2` | boss / proprietor | `08-particles-nuance.md` | 8 |
 | **六** | `luk6` | six | `02-shopping-slang.md` | 3 |
 | **六合彩** | `luk6hap6coi2` | Mark Six (Hong Kong lottery) | `10-hypotheticals-conditionals.md` | 3 |
-| **唔** | `m4` | not / not / no (negative prefix) | `00-pronunciation-jyutping.md` | 35 |
+| **唔** | `m4` | not / not / no (negative prefix) | `00-pronunciation-jyutping.md` | 40 |
 | **唔緊要** | `m4 gan2jiu3` | it doesn't matter / never mind / it's okay | `01-greetings.md` | 1 |
+| **唔單止** | `m4daan1zi2` | not only | `11-narrative-cohesion.md` | 10 |
 | **唔到** | `m4dou2` | cannot / unable to manage to / fail to | `06-ability-experience.md` | 13 |
 | **唔該** | `m4goi1` | excuse me / excuse me / please / thank you (for service or help) | `02-shopping-slang.md` | 19 |
+| **唔開心** | `m4hoi1sam1` | sad / unhappy | `11-narrative-cohesion.md` | 4 |
 | **唔舒服** | `m4syu1fuk6` | uncomfortable / unwell / sick | `06-ability-experience.md` | 1 |
 | **嘛** | `maa3` | sentence-final particle indicating a statement is an obvious truth or reminder | `08-particles-nuance.md` | 10 |
-| **買** | `maai5` | to buy | `02-shopping-slang.md` | 14 |
+| **買** | `maai5` | to buy | `02-shopping-slang.md` | 15 |
 | **埋單** | `maai5daan1` | to pay the bill / get the check | `03-dining-out.md` | 2 |
 | **慢** | `maan6` | slow | `07-comparatives-descriptors.md` | 1 |
 | **貓** | `maau1` | cat | `04-existentials-places.md` | 6 |
@@ -199,24 +209,25 @@ This is an automatically generated vocabulary database compiled from all course 
 | **美國** | `mei5gwok3` | United States / America | `01-greetings.md` | 4 |
 | **未** | `mei6` | not yet / have not | `03-dining-out.md` | 7 |
 | **名** | `meng2` | name | `01-greetings.md` | 3 |
-| **冇** | `mou5` | not to have / without / there is not / not to have / there is not / not have / to not have / there is not | `02-shopping-slang.md` | 23 |
+| **冇** | `mou5` | not to have / without / there is not / not to have / there is not / not have / to not have / there is not | `02-shopping-slang.md` | 24 |
 | **舞** | `mou5` | dance | `09-split-verbs-idioms.md` | 1 |
 | **夢** | `mung6` | dream | `10-hypotheticals-conditionals.md` | 7 |
 | **奶茶** | `naai5caa4` | milk tea (typically Hong Kong-style) | `03-dining-out.md` | 9 |
 | **難** | `naan4` | difficult / hard | `07-comparatives-descriptors.md` | 1 |
+| **諗住** | `nam2zyu6` | to intend / plan / think of | `11-narrative-cohesion.md` | 3 |
 | **嬲** | `nau1` | angry / mad | `08-particles-nuance.md` | 2 |
 | **呢** | `ne1` | sentence-final particle for queries (how about / what about) / how about / sentence-final particle for queries or friendly follow-ups | `01-greetings.md` | 5 |
-| **你** | `nei5` | you | `00-pronunciation-jyutping.md` | 62 |
+| **你** | `nei5` | you | `00-pronunciation-jyutping.md` | 67 |
 | **你哋** | `nei5dei6` | you (plural) | `01-greetings.md` | 1 |
 | **你好** | `nei5hou2` | hello / hi | `01-greetings.md` | 10 |
 | **五** | `ng5` | five | `02-shopping-slang.md` | 6 |
 | **啱** | `ngaam1` | correct / right / suitable / fit | `07-comparatives-descriptors.md` | 1 |
 | **銀包** | `ngan4baau1` | wallet / purse | `04-existentials-places.md` | 4 |
-| **我** | `ngo5` | I / I / me | `00-pronunciation-jyutping.md` | 114 |
+| **我** | `ngo5` | I / I / me | `00-pronunciation-jyutping.md` | 126 |
 | **我哋** | `ngo5dei6` | we / us | `01-greetings.md` | 14 |
 | **外面** | `ngoi6min6` | outside | `04-existentials-places.md` | 1 |
 | **呢** | `ni1` | this | `07-comparatives-descriptors.md` | 16 |
-| **呢度** | `ni1dou6` | here | `02-shopping-slang.md` | 15 |
+| **呢度** | `ni1dou6` | here | `02-shopping-slang.md` | 17 |
 | **呢個** | `ni1go3` | this one | `02-shopping-slang.md` | 11 |
 | **暖水** | `nyun5seoi2` | warm water | `06-ability-experience.md` | 1 |
 | **跑** | `paau2` | to run | `09-split-verbs-idioms.md` | 2 |
@@ -228,8 +239,9 @@ This is an automatically generated vocabulary database compiled from all course 
 | **衫** | `saam1` | clothes / clothing / shirt | `07-comparatives-descriptors.md` | 15 |
 | **三十** | `saam1sap6` | thirty | `02-shopping-slang.md` | 3 |
 | **西多士** | `sai1do1si2` | French toast (loanword) | `03-dining-out.md` | 1 |
-| **使** | `sai2` | to need / use | `08-particles-nuance.md` | 1 |
+| **使** | `sai2` | to need / use | `08-particles-nuance.md` | 2 |
 | **細** | `sai3` | small / little / tiny | `07-comparatives-descriptors.md` | 1 |
+| **甚至** | `sam6zi3` | even / so much so that | `11-narrative-cohesion.md` | 6 |
 | **新** | `san1` | new | `00-pronunciation-jyutping.md` | 1 |
 | **十** | `sap6` | ten | `00-pronunciation-jyutping.md` | 13 |
 | **十一** | `sap6jat1` | eleven | `05-time-continuous.md` | 2 |
@@ -241,6 +253,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **寫** | `se2` | to write | `06-ability-experience.md` | 1 |
 | **四** | `sei3` | four | `02-shopping-slang.md` | 9 |
 | **衰** | `seoi1` | bad / mean / wicked | `09-split-verbs-idioms.md` | 1 |
+| **雖然** | `seoi1jin4` | although / even though | `11-narrative-cohesion.md` | 11 |
 | **水** | `seoi2` | water | `09-split-verbs-idioms.md` | 12 |
 | **詩** | `si1` | poem / poetry | `00-pronunciation-jyutping.md` | 2 |
 | **史** | `si2` | history | `00-pronunciation-jyutping.md` | 2 |
@@ -248,37 +261,41 @@ This is an automatically generated vocabulary database compiled from all course 
 | **時** | `si4` | time / hour | `00-pronunciation-jyutping.md` | 3 |
 | **市** | `si5` | market / city | `00-pronunciation-jyutping.md` | 2 |
 | **事** | `si6` | matter / business / affair | `00-pronunciation-jyutping.md` | 3 |
-| **識** | `sik1` | to know / to know / speak (a language) / have a skill / to know / be familiar with / speak (a language) | `01-greetings.md` | 20 |
+| **識** | `sik1` | to know / to know / speak (a language) / have a skill / to know / be familiar with / speak (a language) / to know / know how to / be familiar with | `01-greetings.md` | 23 |
 | **識唔識** | `sik1 m4 sik1` | know how to / know or not (A-not-A question form) / do you know how to (A-not-A question form) | `01-greetings.md` | 5 |
 | **食** | `sik6` | to eat | `00-pronunciation-jyutping.md` | 28 |
 | **食花生** | `sik6faa1sang1` | to sit back and watch drama / spectate | `09-split-verbs-idioms.md` | 1 |
 | **食飯** | `sik6faan6` | to eat a meal / have dinner | `05-time-continuous.md` | 1 |
 | **先** | `sin1` | first / beforehand / only then / first / only then | `06-ability-experience.md` | 3 |
+| **星期** | `sing1kei4` | week | `11-narrative-cohesion.md` | 1 |
+| **星期六** | `sing1kei4luk6` | Saturday | `11-narrative-cohesion.md` | 1 |
+| **所以** | `so2ji5` | therefore / so | `11-narrative-cohesion.md` | 7 |
 | **鎖匙** | `so2si4` | key | `04-existentials-places.md` | 1 |
-| **想** | `soeng2` | want to / to want to / would like to / think | `00-pronunciation-jyutping.md` | 22 |
+| **想** | `soeng2` | want to / to want to / would like to / think | `00-pronunciation-jyutping.md` | 28 |
 | **想唔想** | `soeng2 m4 soeng2` | do you want to (A-not-A question form) | `06-ability-experience.md` | 1 |
 | **上面** | `soeng6min6` | above / on top of / upper side | `04-existentials-places.md` | 7 |
-| **書** | `syu1` | book | `10-hypotheticals-conditionals.md` | 2 |
+| **書** | `syu1` | book | `10-hypotheticals-conditionals.md` | 3 |
 | **薯片** | `syu4pin2` | potato chips / crisps | `02-shopping-slang.md` | 2 |
 | **睇** | `tai2` | to look / see / to look / see / watch / read | `04-existentials-places.md` | 5 |
 | **睇書** | `tai2syu1` | to read books | `09-split-verbs-idioms.md` | 2 |
 | **聽** | `teng1` | to listen / hear / obey | `06-ability-experience.md` | 5 |
+| **添** | `tim1` | particle indicating in addition / as well / furthermore | `11-narrative-cohesion.md` | 7 |
 | **聽日** | `ting1jat6` | tomorrow | `05-time-continuous.md` | 9 |
 | **跳** | `tiu3` | to jump / leap / dance | `09-split-verbs-idioms.md` | 1 |
 | **跳舞** | `tiu3mou5` | to dance | `09-split-verbs-idioms.md` | 2 |
 | **同** | `tung4` | with / same as / and | `07-comparatives-descriptors.md` | 7 |
 | **同埋** | `tung4maai4` | and / with / together with | `02-shopping-slang.md` | 8 |
-| **哇** | `waa1` | wow / whoa | `09-split-verbs-idioms.md` | 2 |
+| **哇** | `waa1` | wow / whoa | `09-split-verbs-idioms.md` | 3 |
 | **話** | `waa6` | to say / tell / words / speech | `08-particles-nuance.md` | 1 |
-| **玩** | `waan2` | to play / have fun / enjoy | `10-hypotheticals-conditionals.md` | 2 |
+| **玩** | `waan2` | to play / have fun / enjoy | `10-hypotheticals-conditionals.md` | 7 |
 | **喂** | `wai2` | hey / hey! / hey / hello (typically answering phone or calling for attention) | `00-pronunciation-jyutping.md` | 7 |
 | **喎** | `wo3` | sentence-final particle indicating reported speech, surprise, or warning | `07-comparatives-descriptors.md` | 17 |
 | **會** | `wui5` | will / would / can / be able to | `06-ability-experience.md` | 7 |
 | **揸車** | `zaa1ce1` | to drive a car / drive | `06-ability-experience.md` | 5 |
 | **找** | `zaau2` | to give change / look for / seek / to look for | `02-shopping-slang.md` | 5 |
-| **真係** | `zan1hai6` | really / truly | `08-particles-nuance.md` | 6 |
+| **真係** | `zan1hai6` | really / truly | `08-particles-nuance.md` | 7 |
 | **走** | `zau2` | to leave / go / run | `08-particles-nuance.md` | 3 |
-| **就** | `zau6` | then / right away / immediately | `10-hypotheticals-conditionals.md` | 9 |
+| **就** | `zau6` | then / right away / immediately | `10-hypotheticals-conditionals.md` | 10 |
 | **啫** | `ze1` | sentence-final particle meaning 'only', 'just', or downplaying something | `06-ability-experience.md` | 15 |
 | **隻** | `zek3` | classifier for animals / measure word for animals | `00-pronunciation-jyutping.md` | 8 |
 | **最** | `zeoi3` | most / superlative prefix | `07-comparatives-descriptors.md` | 9 |
@@ -287,7 +304,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **只係** | `zi2hai6` | only / just | `06-ability-experience.md` | 1 |
 | **字** | `zi6` | five-minute interval | `05-time-continuous.md` | 27 |
 | **朝早** | `ziu1zou2` | morning / in the morning | `05-time-continuous.md` | 2 |
-| **咗** | `zo2` | verbal aspect suffix indicating completed action (perfective aspect) | `03-dining-out.md` | 46 |
+| **咗** | `zo2` | verbal aspect suffix indicating completed action (perfective aspect) | `03-dining-out.md` | 52 |
 | **早晨** | `zou2san4` | good morning | `01-greetings.md` | 4 |
 | **早頭** | `zou2tau2` | good night | `01-greetings.md` | 1 |
 | **做** | `zou6` | to do / make / perform | `05-time-continuous.md` | 2 |
@@ -296,5 +313,5 @@ This is an automatically generated vocabulary database compiled from all course 
 | **鍾意** | `zung1ji3` | to like / prefer | `06-ability-experience.md` | 2 |
 | **鐘頭** | `zung1tau4` | hour | `08-particles-nuance.md` | 3 |
 | **中** | `zung3` | to win | `10-hypotheticals-conditionals.md` | 3 |
-| **仲** | `zung6` | still / yet | `08-particles-nuance.md` | 1 |
+| **仲** | `zung6` | still / yet | `08-particles-nuance.md` | 10 |
 | **煮** | `zyu2` | to cook / boil | `06-ability-experience.md` | 2 |

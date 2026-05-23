@@ -4,7 +4,7 @@
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 161
+    "occurrences": 167
   },
   {
     "character": "巴士",
@@ -116,14 +116,14 @@
     "jyutping": "caau2",
     "translation": "to stir-fry / speculate / fire",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 6
+    "occurrences": 9
   },
   {
     "character": "炒魷魚",
     "jyutping": "caau2jau4jyu2",
     "translation": "to get fired / lay off / fire someone",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "尋日",
@@ -228,7 +228,7 @@
     "jyutping": "daa2syun3",
     "translation": "to plan / intend / plan",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 7
+    "occurrences": 8
   },
   {
     "character": "大",
@@ -242,7 +242,7 @@
     "jyutping": "daan6hai6",
     "translation": "but / however",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 3
+    "occurrences": 13
   },
   {
     "character": "蛋撻",
@@ -289,9 +289,9 @@
   {
     "character": "啲",
     "jyutping": "di1",
-    "translation": "a bit / some / comparative suffix",
+    "translation": "a bit / some / comparative suffix / some / a little / plural or possessive particle",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 18
+    "occurrences": 20
   },
   {
     "character": "的士",
@@ -312,7 +312,7 @@
     "jyutping": "dim2gaai2",
     "translation": "why / how come",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 1
+    "occurrences": 3
   },
   {
     "character": "點樣",
@@ -378,6 +378,13 @@
     "occurrences": 3
   },
   {
+    "character": "都",
+    "jyutping": "dou1",
+    "translation": "also / both / all",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 4
+  },
+  {
     "character": "凍",
     "jyutping": "dung3",
     "translation": "cold / iced",
@@ -410,7 +417,14 @@
     "jyutping": "faan1gung1",
     "translation": "to go to work / be at work",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 7
+    "occurrences": 12
+  },
+  {
+    "character": "反而",
+    "jyutping": "faan2ji4",
+    "translation": "on the contrary / instead",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 8
   },
   {
     "character": "飯",
@@ -487,7 +501,7 @@
     "jyutping": "fong3gaa3",
     "translation": "to have a holiday / day off",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 5
+    "occurrences": 7
   },
   {
     "character": "放工",
@@ -564,14 +578,14 @@
     "jyutping": "gam1jat6",
     "translation": "today",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 12
+    "occurrences": 13
   },
   {
     "character": "噉",
     "jyutping": "gam2",
     "translation": "then / in that case / so",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 9
+    "occurrences": 10
   },
   {
     "character": "咁",
@@ -613,7 +627,7 @@
     "jyutping": "ge3",
     "translation": "particle / possessive particle / nominalizing particle / final assertive particle",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 23
+    "occurrences": 25
   },
   {
     "character": "幾點",
@@ -637,6 +651,13 @@
     "occurrences": 1
   },
   {
+    "character": "既然",
+    "jyutping": "gei3jin4",
+    "translation": "since / given that",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 8
+  },
+  {
     "character": "見",
     "jyutping": "gin3",
     "translation": "to see / meet",
@@ -655,7 +676,7 @@
     "jyutping": "giu3",
     "translation": "to be called / to call",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 7
+    "occurrences": 8
   },
   {
     "character": "歌",
@@ -690,7 +711,7 @@
     "jyutping": "go3",
     "translation": "general measure word / individual / unit",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 39
+    "occurrences": 40
   },
   {
     "character": "覺得",
@@ -725,14 +746,14 @@
     "jyutping": "gung1si1",
     "translation": "company / office",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "貴",
     "jyutping": "gwai3",
     "translation": "expensive",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "過",
@@ -753,7 +774,7 @@
     "jyutping": "haa2",
     "translation": "what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 9
+    "occurrences": 10
   },
   {
     "character": "下面",
@@ -777,18 +798,25 @@
     "occurrences": 6
   },
   {
+    "character": "喊",
+    "jyutping": "haam3",
+    "translation": "to cry / weep",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 3
+  },
+  {
     "character": "喺",
     "jyutping": "hai2",
     "translation": "at / in / on / at / in / on (locative preposition)",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 41
+    "occurrences": 42
   },
   {
     "character": "係",
     "jyutping": "hai6",
     "translation": "to be / to be (am/is/are) / yes",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 30
+    "occurrences": 32
   },
   {
     "character": "係唔係",
@@ -823,14 +851,14 @@
     "jyutping": "heoi3",
     "translation": "to go",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 26
+    "occurrences": 34
   },
   {
     "character": "可以",
     "jyutping": "ho2ji5",
     "translation": "can / may / possible",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 13
+    "occurrences": 14
   },
   {
     "character": "可樂",
@@ -844,7 +872,14 @@
     "jyutping": "hoeng1gong2",
     "translation": "Hong Kong",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 6
+    "occurrences": 7
+  },
+  {
+    "character": "開心",
+    "jyutping": "hoi1sam1",
+    "translation": "happy / glad / cheerful",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 2
   },
   {
     "character": "學校",
@@ -865,13 +900,20 @@
     "jyutping": "hou2",
     "translation": "good / fine / very / quite",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 22
+    "occurrences": 30
   },
   {
     "character": "好唔好",
     "jyutping": "hou2 m4 hou2",
     "translation": "is that good",
     "firstIntroducedIn": "05-time-continuous.md",
+    "occurrences": 1
+  },
+  {
+    "character": "好似",
+    "jyutping": "hou2ci5",
+    "translation": "seem / seem like / as if",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
     "occurrences": 1
   },
   {
@@ -886,7 +928,7 @@
     "jyutping": "jan1wai6",
     "translation": "because",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 1
+    "occurrences": 8
   },
   {
     "character": "人",
@@ -956,28 +998,28 @@
     "jyutping": "jau4jyu2",
     "translation": "squid",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 5
+    "occurrences": 8
   },
   {
     "character": "游水",
     "jyutping": "jau4seoi2",
     "translation": "to swim",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 5
+    "occurrences": 7
   },
   {
     "character": "有",
     "jyutping": "jau5",
     "translation": "to have / there is / to have / there is / there are",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 11
+    "occurrences": 12
   },
   {
     "character": "有錢",
     "jyutping": "jau5cin2",
     "translation": "rich / wealthy / have money",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 1
+    "occurrences": 4
   },
   {
     "character": "有冇",
@@ -1012,7 +1054,7 @@
     "jyutping": "je5sik6",
     "translation": "snacks / food / things to eat",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "夜晚",
@@ -1120,11 +1162,25 @@
     "occurrences": 3
   },
   {
+    "character": "原本",
+    "jyutping": "jyun4bun2",
+    "translation": "originally / original",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 3
+  },
+  {
+    "character": "琴日",
+    "jyutping": "kam4jat6",
+    "translation": "yesterday (variant)",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 1
+  },
+  {
     "character": "佢",
     "jyutping": "keoi5",
     "translation": "he / she / it",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 28
+    "occurrences": 35
   },
   {
     "character": "佢哋",
@@ -1145,7 +1201,7 @@
     "jyutping": "laa1",
     "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 46
+    "occurrences": 47
   },
   {
     "character": "喇",
@@ -1171,9 +1227,9 @@
   {
     "character": "靚",
     "jyutping": "leng3",
-    "translation": "high quality / pretty / beautiful / handsome / high quality",
+    "translation": "high quality / pretty / beautiful / handsome / high quality / pretty / beautiful / good-looking",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 10
+    "occurrences": 11
   },
   {
     "character": "靚仔",
@@ -1194,7 +1250,7 @@
     "jyutping": "leoi5hang4",
     "translation": "to travel",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 1
+    "occurrences": 3
   },
   {
     "character": "零",
@@ -1208,21 +1264,21 @@
     "jyutping": "lo1",
     "translation": "sentence-final particle showing obviousness, resignation, or 'of course' / obviousness particle",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 34
+    "occurrences": 37
   },
   {
     "character": "兩",
     "jyutping": "loeng5",
     "translation": "two / pair (used with classifiers)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 30
+    "occurrences": 31
   },
   {
     "character": "落雨",
     "jyutping": "lok6jyu5",
     "translation": "to rain",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 3
+    "occurrences": 5
   },
   {
     "character": "老闆",
@@ -1250,7 +1306,7 @@
     "jyutping": "m4",
     "translation": "not / not / no (negative prefix)",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 35
+    "occurrences": 40
   },
   {
     "character": "唔緊要",
@@ -1258,6 +1314,13 @@
     "translation": "it doesn't matter / never mind / it's okay",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 1
+  },
+  {
+    "character": "唔單止",
+    "jyutping": "m4daan1zi2",
+    "translation": "not only",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 10
   },
   {
     "character": "唔到",
@@ -1272,6 +1335,13 @@
     "translation": "excuse me / excuse me / please / thank you (for service or help)",
     "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 19
+  },
+  {
+    "character": "唔開心",
+    "jyutping": "m4hoi1sam1",
+    "translation": "sad / unhappy",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 4
   },
   {
     "character": "唔舒服",
@@ -1292,7 +1362,7 @@
     "jyutping": "maai5",
     "translation": "to buy",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 14
+    "occurrences": 15
   },
   {
     "character": "埋單",
@@ -1369,7 +1439,7 @@
     "jyutping": "mou5",
     "translation": "not to have / without / there is not / not to have / there is not / not have / to not have / there is not",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 23
+    "occurrences": 24
   },
   {
     "character": "舞",
@@ -1400,6 +1470,13 @@
     "occurrences": 1
   },
   {
+    "character": "諗住",
+    "jyutping": "nam2zyu6",
+    "translation": "to intend / plan / think of",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 3
+  },
+  {
     "character": "嬲",
     "jyutping": "nau1",
     "translation": "angry / mad",
@@ -1418,7 +1495,7 @@
     "jyutping": "nei5",
     "translation": "you",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 62
+    "occurrences": 67
   },
   {
     "character": "你哋",
@@ -1460,7 +1537,7 @@
     "jyutping": "ngo5",
     "translation": "I / I / me",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 114
+    "occurrences": 126
   },
   {
     "character": "我哋",
@@ -1488,7 +1565,7 @@
     "jyutping": "ni1dou6",
     "translation": "here",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 15
+    "occurrences": 17
   },
   {
     "character": "呢個",
@@ -1572,7 +1649,7 @@
     "jyutping": "sai2",
     "translation": "to need / use",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "細",
@@ -1580,6 +1657,13 @@
     "translation": "small / little / tiny",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
     "occurrences": 1
+  },
+  {
+    "character": "甚至",
+    "jyutping": "sam6zi3",
+    "translation": "even / so much so that",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 6
   },
   {
     "character": "新",
@@ -1659,6 +1743,13 @@
     "occurrences": 1
   },
   {
+    "character": "雖然",
+    "jyutping": "seoi1jin4",
+    "translation": "although / even though",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 11
+  },
+  {
     "character": "水",
     "jyutping": "seoi2",
     "translation": "water",
@@ -1710,9 +1801,9 @@
   {
     "character": "識",
     "jyutping": "sik1",
-    "translation": "to know / to know / speak (a language) / have a skill / to know / be familiar with / speak (a language)",
+    "translation": "to know / to know / speak (a language) / have a skill / to know / be familiar with / speak (a language) / to know / know how to / be familiar with",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 20
+    "occurrences": 23
   },
   {
     "character": "識唔識",
@@ -1750,6 +1841,27 @@
     "occurrences": 3
   },
   {
+    "character": "星期",
+    "jyutping": "sing1kei4",
+    "translation": "week",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 1
+  },
+  {
+    "character": "星期六",
+    "jyutping": "sing1kei4luk6",
+    "translation": "Saturday",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 1
+  },
+  {
+    "character": "所以",
+    "jyutping": "so2ji5",
+    "translation": "therefore / so",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 7
+  },
+  {
     "character": "鎖匙",
     "jyutping": "so2si4",
     "translation": "key",
@@ -1761,7 +1873,7 @@
     "jyutping": "soeng2",
     "translation": "want to / to want to / would like to / think",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 22
+    "occurrences": 28
   },
   {
     "character": "想唔想",
@@ -1782,7 +1894,7 @@
     "jyutping": "syu1",
     "translation": "book",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "薯片",
@@ -1811,6 +1923,13 @@
     "translation": "to listen / hear / obey",
     "firstIntroducedIn": "06-ability-experience.md",
     "occurrences": 5
+  },
+  {
+    "character": "添",
+    "jyutping": "tim1",
+    "translation": "particle indicating in addition / as well / furthermore",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 7
   },
   {
     "character": "聽日",
@@ -1852,7 +1971,7 @@
     "jyutping": "waa1",
     "translation": "wow / whoa",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "話",
@@ -1866,7 +1985,7 @@
     "jyutping": "waan2",
     "translation": "to play / have fun / enjoy",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 2
+    "occurrences": 7
   },
   {
     "character": "喂",
@@ -1908,7 +2027,7 @@
     "jyutping": "zan1hai6",
     "translation": "really / truly",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 6
+    "occurrences": 7
   },
   {
     "character": "走",
@@ -1922,7 +2041,7 @@
     "jyutping": "zau6",
     "translation": "then / right away / immediately",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 9
+    "occurrences": 10
   },
   {
     "character": "啫",
@@ -1985,7 +2104,7 @@
     "jyutping": "zo2",
     "translation": "verbal aspect suffix indicating completed action (perfective aspect)",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 46
+    "occurrences": 52
   },
   {
     "character": "早晨",
@@ -2048,7 +2167,7 @@
     "jyutping": "zung6",
     "translation": "still / yet",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 1
+    "occurrences": 10
   },
   {
     "character": "煮",
