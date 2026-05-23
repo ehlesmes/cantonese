@@ -36,6 +36,9 @@ chapters:
   - chapter: 11
     title: "Narrative Cohesion & Complex Connectives"
     file: "11-narrative-cohesion.md"
+  - chapter: 12
+    title: "Regrets, Wishes & Empathy"
+    file: "12-regrets-wishes-empathy.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -161,6 +164,10 @@ particle layering, and mastering native-speed idiomatic expressions._
   - _Core Grammar_: Mastering cohesive storytelling using advanced conjunctions
     such as `甚至[sam6zi3|even]`, `既然[gei3jin4|since / given that]`, and
     `反而[faan2ji4|on the contrary]`.
+- **Topic 13: Regrets, Wishes & Empathy**
+  - _Core Grammar_: Expressing past regrets using
+    `早知[zou2zi1|had I known earlier]` or `後悔[hau6fui3|to regret]`, and
+    formulating hopes and empathetic responses.
 
 ---
 
@@ -212,10 +219,14 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Master the structural parsing of splitting verbs (e.g. `游水` ->
     `游咗水`), four-character local idioms (`俗語`), and cultural humor.
 - **Chapter 10: Hypotheticals, Conditionals & Future Planning
-  (`10-hypotheticals-conditionals.md`)** [ACTIVE LOOK-AHEAD]
+  (`10-hypotheticals-conditionals.md`)** [COMPLETED]
   - _Focus_: Express conditional logic using `如果` ... `就`, handle
     hypotheticals, and formulate plans and hopes.
 - **Chapter 11: Narrative Cohesion & Complex Connectives
   (`11-narrative-cohesion.md`)** [ACTIVE LOOK-AHEAD]
   - _Focus_: Form complex connected paragraphs in speech, utilizing advanced
     conjunctions and transitional phrases for fluid native storytelling.
+- **Chapter 12: Regrets, Wishes & Empathy (`12-regrets-wishes-empathy.md`)**
+  [ACTIVE LOOK-AHEAD]
+  - _Focus_: Express regrets about the past using `早知`, make wishes using
+    `希望`, and express deep empathy with spoken structures.
