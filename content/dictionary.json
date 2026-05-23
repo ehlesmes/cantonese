@@ -7,6 +7,12 @@
     "notes": "Softens the tone. Very common in greetings like 你好呀 (nei5 hou2 aa3)."
   },
   {
+    "char": "啱啱",
+    "jyutping": "aam1aam1",
+    "definition": "just now / just / exactly",
+    "type": "adverb"
+  },
+  {
     "char": "矮",
     "jyutping": "ai2",
     "definition": "short (of height)",
@@ -95,6 +101,12 @@
     "jyutping": "bou6",
     "definition": "step / pace",
     "type": "noun"
+  },
+  {
+    "char": "部",
+    "jyutping": "bou6",
+    "definition": "measure word for machines, vehicles, phones, and books",
+    "type": "classifier"
   },
   {
     "char": "杯",
@@ -222,6 +234,12 @@
     "jyutping": "cyu4fong2",
     "definition": "kitchen",
     "type": "noun"
+  },
+  {
+    "char": "打爛",
+    "jyutping": "da2laan6",
+    "definition": "to break / smash / shatter",
+    "type": "verb"
   },
   {
     "char": "打算",
@@ -942,6 +960,12 @@
     "type": "noun"
   },
   {
+    "char": "人哋",
+    "jyutping": "jan4dei6",
+    "definition": "others / other people",
+    "type": "pronoun"
+  },
+  {
     "char": "入面",
     "jyutping": "jap6min6",
     "definition": "inside",
@@ -1067,6 +1091,12 @@
     "jyutping": "ji5ging1",
     "definition": "already",
     "type": "adverb"
+  },
+  {
+    "char": "以為",
+    "jyutping": "ji5wai4",
+    "definition": "to mistakenly think / assume / believe",
+    "type": "verb"
   },
   {
     "char": "二",
@@ -1888,6 +1918,12 @@
     "type": "verb"
   },
   {
+    "char": "偷",
+    "jyutping": "tau1",
+    "definition": "to steal",
+    "type": "verb"
+  },
+  {
     "char": "聽",
     "jyutping": "teng1",
     "definition": "to listen / hear / obey",
@@ -2065,6 +2101,12 @@
     "type": "verb"
   },
   {
+    "char": "之後",
+    "jyutping": "zi1hau6",
+    "definition": "afterwards / after / later",
+    "type": "conjunction"
+  },
+  {
     "char": "只係",
     "jyutping": "zi2hai6",
     "definition": "only / just",
@@ -2101,6 +2143,12 @@
     "definition": "verbal aspect suffix indicating completed action (perfective aspect)",
     "type": "particle",
     "notes": "Attaches directly to verbs to show completion (equivalent to Mandarin 了 le)."
+  },
+  {
+    "char": "撞",
+    "jyutping": "zong6",
+    "definition": "to hit / bump / collide",
+    "type": "verb"
   },
   {
     "char": "早晨",

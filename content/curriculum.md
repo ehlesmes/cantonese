@@ -245,7 +245,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Express regrets about the past using `早知`, make wishes using
     `希望`, and express deep empathy with spoken structures.
 - **Chapter 13: Passives, Focus & Indirect Speech
-  (`13-passives-focus-indirect.md`)** [ACTIVE LOOK-AHEAD]
+  (`13-passives-focus-indirect.md`)** [COMPLETED]
   - _Focus_: Structure passive voice using `俾`, emphasize statements using
     `即係`, and report indirect speech using `話`.
 - **Chapter 14: Intensifiers, Exaggeration & Spoken Superlatives
