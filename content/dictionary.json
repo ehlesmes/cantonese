@@ -7,6 +7,12 @@
     "notes": "Softens the tone. Very common in greetings like 你好呀 (nei5 hou2 aa3)."
   },
   {
+    "char": "矮",
+    "jyutping": "ai2",
+    "definition": "short (of height)",
+    "type": "adjective"
+  },
+  {
     "char": "爸爸",
     "jyutping": "baa1baa1",
     "definition": "father / dad",
@@ -47,6 +53,12 @@
     "jyutping": "be1zau2",
     "definition": "beer (loanword)",
     "type": "noun"
+  },
+  {
+    "char": "邊",
+    "jyutping": "bin1",
+    "definition": "which / where / side",
+    "type": "pronoun"
   },
   {
     "char": "邊度",
@@ -134,6 +146,18 @@
     "type": "noun"
   },
   {
+    "char": "大",
+    "jyutping": "daai6",
+    "definition": "big / large / great",
+    "type": "adjective"
+  },
+  {
+    "char": "但係",
+    "jyutping": "daan6hai6",
+    "definition": "but / however",
+    "type": "conjunction"
+  },
+  {
     "char": "蛋撻",
     "jyutping": "daan6taat1",
     "definition": "egg tart",
@@ -171,11 +195,23 @@
     "type": "noun"
   },
   {
+    "char": "對",
+    "jyutping": "deoi3",
+    "definition": "pair / couple (classifier for paired objects like shoes)",
+    "type": "classifier"
+  },
+  {
     "char": "對唔住",
     "jyutping": "deoi3m4zyu6",
     "definition": "sorry / excuse me / apologize",
     "type": "expression",
     "notes": "Used for serious apologies (compare with 唔該 which is for light assistance/excuses)."
+  },
+  {
+    "char": "啲",
+    "jyutping": "di1",
+    "definition": "a bit / some / comparative suffix",
+    "type": "particle"
   },
   {
     "char": "的士",
@@ -241,6 +277,12 @@
     "type": "classifier"
   },
   {
+    "char": "多",
+    "jyutping": "do1",
+    "definition": "many / much / more",
+    "type": "adjective"
+  },
+  {
     "char": "多謝",
     "jyutping": "do1ze6",
     "definition": "thank you (for a gift, compliment, or hospitality)",
@@ -251,6 +293,12 @@
     "char": "凍",
     "jyutping": "dung3",
     "definition": "cold / iced",
+    "type": "adjective"
+  },
+  {
+    "char": "快",
+    "jyutping": "faai3",
+    "definition": "fast / quick / rapid",
     "type": "adjective"
   },
   {
@@ -383,6 +431,12 @@
     "type": "adverb"
   },
   {
+    "char": "咁",
+    "jyutping": "gam3",
+    "definition": "so / such / to this degree",
+    "type": "adverb"
+  },
+  {
     "char": "緊",
     "jyutping": "gan2",
     "definition": "verbal aspect suffix indicating an action in progress (continuous aspect)",
@@ -434,10 +488,22 @@
     "type": "verb"
   },
   {
+    "char": "件",
+    "jyutping": "gin6",
+    "definition": "measure word for clothes, matters, and items",
+    "type": "classifier"
+  },
+  {
     "char": "叫",
     "jyutping": "giu3",
     "definition": "to be called / to call",
     "type": "verb"
+  },
+  {
+    "char": "嗰",
+    "jyutping": "go2",
+    "definition": "that",
+    "type": "pronoun"
   },
   {
     "char": "嗰度",
@@ -458,10 +524,22 @@
     "type": "classifier"
   },
   {
+    "char": "覺得",
+    "jyutping": "gok3dak1",
+    "definition": "to feel / think",
+    "type": "verb"
+  },
+  {
     "char": "講",
     "jyutping": "gong2",
     "definition": "to speak / say / talk",
     "type": "verb"
+  },
+  {
+    "char": "高",
+    "jyutping": "gou1",
+    "definition": "tall / high",
+    "type": "adjective"
   },
   {
     "char": "攰",
@@ -517,6 +595,12 @@
     "char": "下晝",
     "jyutping": "haa6zau3",
     "definition": "afternoon / in the afternoon",
+    "type": "noun"
+  },
+  {
+    "char": "鞋",
+    "jyutping": "haai4",
+    "definition": "shoes",
     "type": "noun"
   },
   {
@@ -642,6 +726,12 @@
     "type": "numeral"
   },
   {
+    "char": "一樣",
+    "jyutping": "jat1joeng6",
+    "definition": "same / alike / identical",
+    "type": "adjective"
+  },
+  {
     "char": "日",
     "jyutping": "jat6",
     "definition": "day / sun",
@@ -755,6 +845,12 @@
     "jyutping": "jiu3",
     "definition": "to want / need / must / demand",
     "type": "auxiliary verb"
+  },
+  {
+    "char": "容易",
+    "jyutping": "jung4ji6",
+    "definition": "easy / simple",
+    "type": "adjective"
   },
   {
     "char": "鴛鴦",
@@ -938,6 +1034,18 @@
     "notes": "Standard term used in Cantonese restaurants to request the bill."
   },
   {
+    "char": "賣",
+    "jyutping": "maai6",
+    "definition": "to sell",
+    "type": "verb"
+  },
+  {
+    "char": "慢",
+    "jyutping": "maan6",
+    "definition": "slow",
+    "type": "adjective"
+  },
+  {
     "char": "貓",
     "jyutping": "maau1",
     "definition": "cat",
@@ -1011,6 +1119,12 @@
     "type": "noun"
   },
   {
+    "char": "難",
+    "jyutping": "naan4",
+    "definition": "difficult / hard",
+    "type": "adjective"
+  },
+  {
     "char": "呢",
     "jyutping": "ne1",
     "definition": "sentence-final particle for queries (how about / what about)",
@@ -1041,6 +1155,12 @@
     "type": "numeral"
   },
   {
+    "char": "啱",
+    "jyutping": "ngaam1",
+    "definition": "correct / right / suitable / fit",
+    "type": "adjective"
+  },
+  {
     "char": "銀包",
     "jyutping": "ngan4baau1",
     "definition": "wallet / purse",
@@ -1063,6 +1183,12 @@
     "jyutping": "ngoi6min6",
     "definition": "outside",
     "type": "noun"
+  },
+  {
+    "char": "呢",
+    "jyutping": "ni1",
+    "definition": "this",
+    "type": "pronoun"
   },
   {
     "char": "呢度",
@@ -1089,6 +1215,18 @@
     "type": "noun"
   },
   {
+    "char": "平",
+    "jyutping": "peng4",
+    "definition": "cheap / inexpensive",
+    "type": "adjective"
+  },
+  {
+    "char": "鋪頭",
+    "jyutping": "pou3tau2",
+    "definition": "shop / store",
+    "type": "noun"
+  },
+  {
     "char": "沙",
     "jyutping": "saa1",
     "definition": "sand",
@@ -1101,6 +1239,12 @@
     "type": "numeral"
   },
   {
+    "char": "衫",
+    "jyutping": "saam1",
+    "definition": "clothes / clothing / shirt",
+    "type": "noun"
+  },
+  {
     "char": "三十",
     "jyutping": "saam1sap6",
     "definition": "thirty",
@@ -1111,6 +1255,12 @@
     "jyutping": "sai1do1si2",
     "definition": "French toast (loanword)",
     "type": "noun"
+  },
+  {
+    "char": "細",
+    "jyutping": "sai3",
+    "definition": "small / little / tiny",
+    "type": "adjective"
   },
   {
     "char": "細佬",
@@ -1240,6 +1390,12 @@
     "notes": "Placed after verbs to mean first, or indicating only then in sequential actions."
   },
   {
+    "char": "少",
+    "jyutping": "siu2",
+    "definition": "few / little / less",
+    "type": "adjective"
+  },
+  {
     "char": "鎖匙",
     "jyutping": "so2si4",
     "definition": "key / keys",
@@ -1298,6 +1454,12 @@
     "jyutping": "tou5ngo6",
     "definition": "hungry (literally: belly hungry)",
     "type": "adjective"
+  },
+  {
+    "char": "同",
+    "jyutping": "tung4",
+    "definition": "with / same as / and",
+    "type": "preposition"
   },
   {
     "char": "同埋",
@@ -1367,6 +1529,12 @@
     "jyutping": "zek3",
     "definition": "measure word for animals or objects in pairs",
     "type": "classifier"
+  },
+  {
+    "char": "最",
+    "jyutping": "zeoi3",
+    "definition": "most / superlative prefix",
+    "type": "adverb"
   },
   {
     "char": "只係",

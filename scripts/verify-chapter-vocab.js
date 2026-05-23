@@ -42,7 +42,8 @@ function main() {
     process.exit(1);
   }
 
-  const dictPath = path.join(__dirname, "../content/dictionary.json");
+  const dictPath =
+    process.env.DICT_PATH || path.join(__dirname, "../content/dictionary.json");
   if (!fs.existsSync(dictPath)) {
     console.error(
       `${colors.red}${colors.bold}ERROR: Master dictionary database not found at "${dictPath}"${colors.reset}`,

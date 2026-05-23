@@ -15,24 +15,57 @@ describe("Cantonese Chapter Vocabulary Checker E2E Spec", () => {
     "content/99-test-checker-chapter.md",
   );
 
-  // Keep a dictionary backup just in case of any accidental changes
-  const dictPath = path.join(projectRoot, "content/dictionary.json");
-  let hasBackup = false;
-  let backupContent = null;
+  const tempDictPath = path.join(projectRoot, "tmp/test-dictionary.json");
 
   beforeAll(() => {
-    hasBackup = fs.existsSync(dictPath);
-    if (hasBackup) {
-      backupContent = fs.readFileSync(dictPath, "utf8");
+    // Ensure tmp directory exists
+    const tmpDir = path.join(projectRoot, "tmp");
+    if (!fs.existsSync(tmpDir)) {
+      fs.mkdirSync(tmpDir, { recursive: true });
     }
+
+    // Write a fully sandboxed mock dictionary
+    const mockDict = [
+      {
+        char: "唔該",
+        jyutping: "m4goi1",
+        definition: "excuse me / please / thank you",
+        type: "expression",
+      },
+      {
+        char: "我",
+        jyutping: "ngo5",
+        definition: "I / me",
+        type: "pronoun",
+      },
+      {
+        char: "想",
+        jyutping: "soeng2",
+        definition: "want to / would like to",
+        type: "auxiliary verb",
+      },
+      {
+        char: "食",
+        jyutping: "sik6",
+        definition: "to eat",
+        type: "verb",
+      },
+      {
+        char: "點心",
+        jyutping: "dim2sam1",
+        definition: "dim sum",
+        type: "noun",
+      },
+    ];
+    fs.writeFileSync(tempDictPath, JSON.stringify(mockDict, null, 2), "utf8");
   });
 
   afterAll(() => {
     if (fs.existsSync(tempChapterPath)) {
       fs.unlinkSync(tempChapterPath);
     }
-    if (hasBackup) {
-      fs.writeFileSync(dictPath, backupContent, "utf8");
+    if (fs.existsSync(tempDictPath)) {
+      fs.unlinkSync(tempDictPath);
     }
   });
 
@@ -44,6 +77,10 @@ describe("Cantonese Chapter Vocabulary Checker E2E Spec", () => {
           cwd: projectRoot,
           encoding: "utf8",
           stdio: "pipe",
+          env: {
+            ...process.env,
+            DICT_PATH: tempDictPath,
+          },
         },
       );
       return { success: true, output: stripAnsi(rawOutput) };

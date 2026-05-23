@@ -27,6 +27,9 @@ chapters:
   - chapter: 8
     title: "Advanced Particle Layering & Emotive Nuance"
     file: "08-particles-nuance.md"
+  - chapter: 9
+    title: "Split-Verbs & Native Idioms"
+    file: "09-split-verbs-idioms.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -184,10 +187,14 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Distinguishing modal abilities `可以`, `識`, and `會`. Integrates
     experiential aspect `過`, potential suffixes `得` vs `唔到`.
 - **Chapter 7: Comparatives & Complex Descriptors
-  (`07-comparatives-descriptors.md`)** [ACTIVE LOOK-AHEAD]
+  (`07-comparatives-descriptors.md`)** [COMPLETED]
   - _Focus_: Relative clauses and noun modifiers using `嘅`, and comparative
     structures using `過` (e.g. A 過 B).
 - **Chapter 8: Advanced Particle Layering & Emotive Nuance
   (`08-particles-nuance.md`)** [ACTIVE LOOK-AHEAD]
   - _Focus_: How to layer particles at the end of sentences to convey subtle
     moods (e.g., `啫[ze1|only/just]`, `嘛[maa3]`, `吓[haa2]`, `喇喎[laa3wo3]`).
+- **Chapter 9: Split-Verbs & Native Idioms (`09-split-verbs-idioms.md`)**
+  [ACTIVE LOOK-AHEAD]
+  - _Focus_: Master the structural parsing of splitting verbs (e.g. `游水` ->
+    `游咗水`), four-character local idioms (`俗語`), and cultural humor.
