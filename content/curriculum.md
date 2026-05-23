@@ -42,6 +42,9 @@ chapters:
   - chapter: 13
     title: "Passives, Focus & Indirect Speech"
     file: "13-passives-focus-indirect.md"
+  - chapter: 14
+    title: "Intensifiers, Exaggeration & Spoken Superlatives"
+    file: "14-intensifiers-exaggeration.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -175,6 +178,10 @@ particle layering, and mastering native-speed idiomatic expressions._
   - _Core Grammar_: Structuring passive statements using `俾[bei2|by]`, focusing
     phrases using `即係[zik1hai6|namely / that is to say]`, and indirect speech
     utilizing `話[waa6|to say / that]`.
+- **Topic 15: Intensifiers, Exaggeration & Spoken Superlatives**
+  - _Core Grammar_: Advanced intensifiers utilizing `死[sei2|extremely]`,
+    `極[gik6|extremely]`, and `爆[baau3|explosively]`, and quantitative
+    structures using `所有[so2jau5|all]`.
 
 ---
 
@@ -234,10 +241,14 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Form complex connected paragraphs in speech, utilizing advanced
     conjunctions and transitional phrases for fluid native storytelling.
 - **Chapter 12: Regrets, Wishes & Empathy (`12-regrets-wishes-empathy.md`)**
-  [ACTIVE LOOK-AHEAD]
+  [COMPLETED]
   - _Focus_: Express regrets about the past using `早知`, make wishes using
     `希望`, and express deep empathy with spoken structures.
 - **Chapter 13: Passives, Focus & Indirect Speech
   (`13-passives-focus-indirect.md`)** [ACTIVE LOOK-AHEAD]
   - _Focus_: Structure passive voice using `俾`, emphasize statements using
     `即係`, and report indirect speech using `話`.
+- **Chapter 14: Intensifiers, Exaggeration & Spoken Superlatives
+  (`14-intensifiers-exaggeration.md`)** [ACTIVE LOOK-AHEAD]
+  - _Focus_: Express extreme emotions using colloquial intensifiers `死`, `極`,
+    and `爆`, and master spoken superlative structures.

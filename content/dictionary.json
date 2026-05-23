@@ -122,6 +122,12 @@
     "type": "noun"
   },
   {
+    "char": "慘",
+    "jyutping": "caam2",
+    "definition": "miserable / pitiful / tragic",
+    "type": "adjective"
+  },
+  {
     "char": "炒",
     "jyutping": "caau2",
     "definition": "to stir-fry / speculate / fire",
@@ -448,6 +454,12 @@
     "notes": "Used to indicate duration or point in minutes."
   },
   {
+    "char": "份",
+    "jyutping": "fan6",
+    "definition": "measure word for jobs, publications, portions",
+    "type": "classifier"
+  },
+  {
     "char": "飛",
     "jyutping": "fei1",
     "definition": "ticket (loanword, e.g., movie ticket, bus ticket)",
@@ -487,6 +499,12 @@
     "char": "放工",
     "jyutping": "fong3gung1",
     "definition": "to finish work / get off work",
+    "type": "verb"
+  },
+  {
+    "char": "放心",
+    "jyutping": "fong3sam1",
+    "definition": "to feel relieved / set one's mind at ease",
     "type": "verb"
   },
   {
@@ -808,6 +826,12 @@
     "type": "verb"
   },
   {
+    "char": "後悔",
+    "jyutping": "hau6fui3",
+    "definition": "to regret",
+    "type": "verb"
+  },
+  {
     "char": "後面",
     "jyutping": "hau6min6",
     "definition": "behind / back side",
@@ -886,6 +910,12 @@
     "jyutping": "hou2ci5",
     "definition": "seem / seem like / as if",
     "type": "verb"
+  },
+  {
+    "char": "好彩",
+    "jyutping": "hou2coi2",
+    "definition": "luckily / fortunately",
+    "type": "adverb"
   },
   {
     "char": "飲",
@@ -1551,6 +1581,12 @@
     "type": "noun"
   },
   {
+    "char": "安慰",
+    "jyutping": "on1wai3",
+    "definition": "to comfort / console",
+    "type": "verb"
+  },
+  {
     "char": "跑",
     "jyutping": "paau2",
     "definition": "to run",
@@ -1627,6 +1663,12 @@
     "jyutping": "sai3lou2",
     "definition": "younger brother",
     "type": "noun"
+  },
+  {
+    "char": "心痛",
+    "jyutping": "sam1tung3",
+    "definition": "to feel distressed / feel for someone",
+    "type": "verb"
   },
   {
     "char": "甚至",
@@ -2011,6 +2053,12 @@
     "type": "verb"
   },
   {
+    "char": "支持",
+    "jyutping": "zi1ci4",
+    "definition": "to support",
+    "type": "verb"
+  },
+  {
     "char": "知道",
     "jyutping": "zi1dou3",
     "definition": "to know / be aware of",
@@ -2034,6 +2082,12 @@
     "jyutping": "zik1hai6",
     "definition": "that is / namely / in other words / meaning",
     "type": "conjunction"
+  },
+  {
+    "char": "折墮",
+    "jyutping": "zit6do6",
+    "definition": "miserable / wretched / in a pitiful state",
+    "type": "adjective"
   },
   {
     "char": "朝早",
@@ -2061,9 +2115,21 @@
     "type": "expression"
   },
   {
+    "char": "早知",
+    "jyutping": "zou2zi1",
+    "definition": "had I known earlier / if only I knew",
+    "type": "adverb"
+  },
+  {
     "char": "做",
     "jyutping": "zou6",
     "definition": "to do / make / perform",
+    "type": "verb"
+  },
+  {
+    "char": "祝",
+    "jyutping": "zuk1",
+    "definition": "to wish / congratulate",
     "type": "verb"
   },
   {
