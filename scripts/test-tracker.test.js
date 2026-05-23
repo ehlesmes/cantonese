@@ -50,7 +50,7 @@ description: Test.
 ---
 
 This is a \`爸爸[baa1baa1|father]\` test.
-We also test \`行[hang4|to walk]\`.
+We also test \`調[tiu4|to adjust]\`.
 `;
 
     const content2 = `---
@@ -60,7 +60,7 @@ description: Test.
 ---
 
 We repeat \`爸爸[baa1baa1|dad / father]\`.
-And test homograph \`行[hong4|firm/industry]\`.
+And test homograph \`調[diu6|melody]\`.
 `;
 
     fs.writeFileSync(testFile1, content1, "utf8");
@@ -91,26 +91,26 @@ And test homograph \`行[hong4|firm/industry]\`.
           item.firstIntroducedIn === "99-test-vocab-two.md",
       );
 
-      // 1. We should have 3 entries (homographs of "行" must be separate)
+      // 1. We should have 3 entries (homographs of "調" must be separate)
       expect(testEntries).toHaveLength(3);
 
-      // 2. Homograph hang4 check
-      const hang4 = testEntries.find(
-        (item) => item.character === "行" && item.jyutping === "hang4",
+      // 2. Homograph tiu4 check
+      const tiu4 = testEntries.find(
+        (item) => item.character === "調" && item.jyutping === "tiu4",
       );
-      expect(hang4).toBeDefined();
-      expect(hang4.translation).toBe("to walk");
-      expect(hang4.firstIntroducedIn).toBe("98-test-vocab-one.md");
-      expect(hang4.occurrences).toBe(1);
+      expect(tiu4).toBeDefined();
+      expect(tiu4.translation).toBe("to adjust");
+      expect(tiu4.firstIntroducedIn).toBe("98-test-vocab-one.md");
+      expect(tiu4.occurrences).toBe(1);
 
-      // 3. Homograph hong4 check
-      const hong4 = testEntries.find(
-        (item) => item.character === "行" && item.jyutping === "hong4",
+      // 3. Homograph diu6 check
+      const diu6 = testEntries.find(
+        (item) => item.character === "調" && item.jyutping === "diu6",
       );
-      expect(hong4).toBeDefined();
-      expect(hong4.translation).toBe("firm/industry");
-      expect(hong4.firstIntroducedIn).toBe("99-test-vocab-two.md");
-      expect(hong4.occurrences).toBe(1);
+      expect(diu6).toBeDefined();
+      expect(diu6.translation).toBe("melody");
+      expect(diu6.firstIntroducedIn).toBe("99-test-vocab-two.md");
+      expect(diu6.occurrences).toBe(1);
 
       // 4. "爸爸" check (should merge translation nuances and register first introduced file)
       const hello = testEntries.find((item) => item.character === "爸爸");
