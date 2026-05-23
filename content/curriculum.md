@@ -277,10 +277,15 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Express extreme emotions using colloquial intensifiers `死`, `極`,
     and `爆`, and master spoken superlative structures.
 - **Chapter 15: Rhetorical Questions & Spoken Doubts
-  (`15-rhetorical-questions.md`)** [ACTIVE LOOK-A-HEAD]
+  (`15-rhetorical-questions.md`)** [COMPLETED]
   - _Focus_: Formulate rhetorical questions using `唔通` ... `咩` and express
     disbelief or counter-expectations using `乜` ... `咩`.
 - **Chapter 16: Workplace Slang & Office Dynamics (`16-workplace-slang.md`)**
   [ACTIVE LOOK-A-HEAD]
   - _Focus_: Navigate professional environments, discuss working overtime
     (`OT`), slacking off at work (`摸魚` or `蛇王`), and professional life.
+- **Chapter 17: Foodie Culture & Tea Restaurant Slang (`17-foodie-slang.md`)**
+  [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Learn colloquial shortcuts for ordering at diners, customizable
+    beverage options (e.g. less sweet, iced), and essential dim sum cultural
+    terminology.

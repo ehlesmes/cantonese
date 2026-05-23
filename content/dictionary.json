@@ -103,6 +103,12 @@
     "type": "pronoun"
   },
   {
+    "char": "邊個",
+    "jyutping": "bin1go3",
+    "definition": "who / which one",
+    "type": "pronoun"
+  },
+  {
     "char": "菠蘿包",
     "jyutping": "bo1lo1baau1",
     "definition": "pineapple bun (sweet crusted bun, usually containing no pineapple)",
@@ -182,6 +188,12 @@
     "type": "numeral"
   },
   {
+    "char": "請",
+    "jyutping": "ceng2",
+    "definition": "to invite / treat / please / request",
+    "type": "verb"
+  },
+  {
     "char": "吹",
     "jyutping": "ceoi1",
     "definition": "to blow / boast",
@@ -234,6 +246,12 @@
     "jyutping": "ciu1si5",
     "definition": "supermarket",
     "type": "noun"
+  },
+  {
+    "char": "錯",
+    "jyutping": "co3",
+    "definition": "wrong / incorrect / mistake",
+    "type": "adjective"
   },
   {
     "char": "唱",
@@ -381,6 +399,12 @@
     "jyutping": "dim2sam1",
     "definition": "dim sum",
     "type": "noun"
+  },
+  {
+    "char": "點會",
+    "jyutping": "dim2wui5",
+    "definition": "how could / how can",
+    "type": "pronoun"
   },
   {
     "char": "點鐘",
@@ -580,10 +604,22 @@
     "type": "noun"
   },
   {
+    "char": "假",
+    "jyutping": "gaa2",
+    "definition": "fake / false / artificial",
+    "type": "adjective"
+  },
+  {
     "char": "假使",
     "jyutping": "gaa2si2",
     "definition": "if / in case / supposing",
     "type": "conjunction"
+  },
+  {
+    "char": "㗎",
+    "jyutping": "gaa3",
+    "definition": "sentence-final particle conveying assertion or questioning past events",
+    "type": "particle"
   },
   {
     "char": "咖啡",
@@ -946,6 +982,12 @@
     "jyutping": "ho2lok6",
     "definition": "cola / Coke",
     "type": "noun"
+  },
+  {
+    "char": "可能",
+    "jyutping": "ho2nang4",
+    "definition": "possible / maybe / probably",
+    "type": "adverb"
   },
   {
     "char": "香港",
@@ -1440,6 +1482,12 @@
     "type": "adjective"
   },
   {
+    "char": "唔通",
+    "jyutping": "m4tung1",
+    "definition": "could it be that / don't tell me that",
+    "type": "conjunction"
+  },
+  {
     "char": "媽媽",
     "jyutping": "maa1maa1",
     "definition": "mother / mom",
@@ -1494,6 +1542,18 @@
     "jyutping": "man6",
     "definition": "to ask / inquire",
     "type": "verb"
+  },
+  {
+    "char": "問題",
+    "jyutping": "man6tai4",
+    "definition": "problem / question / issue",
+    "type": "noun"
+  },
+  {
+    "char": "乜",
+    "jyutping": "mat1",
+    "definition": "what / how / why / rhetorical prefix",
+    "type": "pronoun"
   },
   {
     "char": "咩",
@@ -1863,6 +1923,12 @@
     "type": "noun"
   },
   {
+    "char": "信",
+    "jyutping": "seon3",
+    "definition": "to believe / trust",
+    "type": "verb"
+  },
+  {
     "char": "詩",
     "jyutping": "si1",
     "definition": "poem / poetry",
@@ -1954,6 +2020,12 @@
     "type": "adjective"
   },
   {
+    "char": "笑",
+    "jyutping": "siu3",
+    "definition": "to laugh / smile / mock",
+    "type": "verb"
+  },
+  {
     "char": "所有",
     "jyutping": "so2jau5",
     "definition": "all / every",
@@ -2024,6 +2096,12 @@
     "jyutping": "tim1",
     "definition": "particle indicating in addition / as well / furthermore",
     "type": "particle"
+  },
+  {
+    "char": "聽講",
+    "jyutping": "ting1gong2",
+    "definition": "to hear of / be told",
+    "type": "verb"
   },
   {
     "char": "聽日",
@@ -2134,6 +2212,12 @@
     "jyutping": "zaau2",
     "definition": "to give change / look for / seek",
     "type": "verb"
+  },
+  {
+    "char": "真",
+    "jyutping": "zan1",
+    "definition": "real / true / genuine",
+    "type": "adjective"
   },
   {
     "char": "真係",
