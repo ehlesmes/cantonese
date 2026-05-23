@@ -98,6 +98,12 @@
     "type": "numeral"
   },
   {
+    "char": "次",
+    "jyutping": "ci3",
+    "definition": "time / occurrence (classifier)",
+    "type": "classifier"
+  },
+  {
     "char": "廁所",
     "jyutping": "ci3so2",
     "definition": "toilet / restroom",
@@ -563,6 +569,13 @@
     "type": "verb"
   },
   {
+    "char": "可以",
+    "jyutping": "ho2ji5",
+    "definition": "can / may / possible",
+    "type": "auxiliary verb",
+    "notes": "Indicates permission or situational capability."
+  },
+  {
     "char": "可樂",
     "jyutping": "ho2lok6",
     "definition": "cola / Coke",
@@ -605,6 +618,12 @@
     "type": "verb"
   },
   {
+    "char": "因為",
+    "jyutping": "jan1wai6",
+    "definition": "because",
+    "type": "conjunction"
+  },
+  {
     "char": "人",
     "jyutping": "jan4",
     "definition": "person / people / human",
@@ -626,6 +645,18 @@
     "char": "日",
     "jyutping": "jat6",
     "definition": "day / sun",
+    "type": "noun"
+  },
+  {
+    "char": "日本",
+    "jyutping": "jat6bun2",
+    "definition": "Japan",
+    "type": "noun"
+  },
+  {
+    "char": "日文",
+    "jyutping": "jat6man2",
+    "definition": "Japanese language",
     "type": "noun"
   },
   {
@@ -757,6 +788,12 @@
     "notes": "Often used for polite requests, suggestions, or imperative command softening."
   },
   {
+    "char": "嚟",
+    "jyutping": "lai4",
+    "definition": "to come",
+    "type": "verb"
+  },
+  {
     "char": "靚",
     "jyutping": "leng3",
     "definition": "pretty / beautiful / handsome / high quality",
@@ -786,6 +823,12 @@
     "jyutping": "leng4caa4",
     "definition": "lemon tea",
     "type": "noun"
+  },
+  {
+    "char": "旅行",
+    "jyutping": "leoi5hang4",
+    "definition": "to travel",
+    "type": "verb"
   },
   {
     "char": "零",
@@ -843,6 +886,13 @@
     "type": "expression"
   },
   {
+    "char": "唔到",
+    "jyutping": "m4dou2",
+    "definition": "cannot / unable to manage to / fail to",
+    "type": "particle",
+    "notes": "Potential suffix indicating inability to achieve or complete an action."
+  },
+  {
     "char": "唔該",
     "jyutping": "m4goi1",
     "definition": "excuse me / please / thank you (for service or help)",
@@ -854,6 +904,12 @@
     "jyutping": "m4sai2 haak3hei3",
     "definition": "you are welcome / no need to be polite",
     "type": "expression"
+  },
+  {
+    "char": "唔舒服",
+    "jyutping": "m4syu1fuk6",
+    "definition": "uncomfortable / unwell / sick",
+    "type": "adjective"
   },
   {
     "char": "媽媽",
@@ -923,6 +979,18 @@
     "jyutping": "meng2",
     "definition": "name",
     "type": "noun"
+  },
+  {
+    "char": "明",
+    "jyutping": "ming4",
+    "definition": "to understand / clear",
+    "type": "verb"
+  },
+  {
+    "char": "明白",
+    "jyutping": "ming4baak6",
+    "definition": "to understand / comprehend",
+    "type": "verb"
   },
   {
     "char": "冇",
@@ -1009,6 +1077,12 @@
     "type": "pronoun"
   },
   {
+    "char": "暖水",
+    "jyutping": "nyun5seoi2",
+    "definition": "warm water",
+    "type": "noun"
+  },
+  {
     "char": "朋友",
     "jyutping": "pang4jau5",
     "definition": "friend",
@@ -1072,6 +1146,18 @@
     "char": "收",
     "jyutping": "sau1",
     "definition": "to receive / accept / collect",
+    "type": "verb"
+  },
+  {
+    "char": "壽司",
+    "jyutping": "sau6si1",
+    "definition": "sushi",
+    "type": "noun"
+  },
+  {
+    "char": "寫",
+    "jyutping": "se2",
+    "definition": "to write",
     "type": "verb"
   },
   {
@@ -1145,6 +1231,13 @@
     "jyutping": "sik6faan6",
     "definition": "to eat a meal / have dinner",
     "type": "verb"
+  },
+  {
+    "char": "先",
+    "jyutping": "sin1",
+    "definition": "first / beforehand / only then",
+    "type": "adverb",
+    "notes": "Placed after verbs to mean first, or indicating only then in sequential actions."
   },
   {
     "char": "鎖匙",
@@ -1225,6 +1318,12 @@
     "type": "noun"
   },
   {
+    "char": "話",
+    "jyutping": "waa6",
+    "definition": "to say / tell / words / speech",
+    "type": "verb"
+  },
+  {
     "char": "喂",
     "jyutping": "wai2",
     "definition": "hey / hello (typically answering phone or calling for attention)",
@@ -1236,6 +1335,19 @@
     "definition": "sentence-final particle indicating reported speech, surprise, or warning",
     "type": "particle",
     "notes": "Used to convey that information is hearsay, or to point out something unexpected."
+  },
+  {
+    "char": "會",
+    "jyutping": "wui5",
+    "definition": "will / would / can / be able to",
+    "type": "auxiliary verb",
+    "notes": "Commonly used for future probability, likelihood, or capability."
+  },
+  {
+    "char": "揸車",
+    "jyutping": "zaa1ce1",
+    "definition": "to drive a car / drive",
+    "type": "verb"
   },
   {
     "char": "找",
@@ -1255,6 +1367,12 @@
     "jyutping": "zek3",
     "definition": "measure word for animals or objects in pairs",
     "type": "classifier"
+  },
+  {
+    "char": "只係",
+    "jyutping": "zi2hai6",
+    "definition": "only / just",
+    "type": "adverb"
   },
   {
     "char": "字",
@@ -1307,9 +1425,27 @@
     "type": "noun"
   },
   {
+    "char": "鍾意",
+    "jyutping": "zung1ji3",
+    "definition": "to like / prefer",
+    "type": "verb"
+  },
+  {
     "char": "朱古力",
     "jyutping": "zyu1gu1lik1",
     "definition": "chocolate (loanword)",
     "type": "noun"
+  },
+  {
+    "char": "煮",
+    "jyutping": "zyu2",
+    "definition": "to cook / boil",
+    "type": "verb"
+  },
+  {
+    "char": "煮嘢食",
+    "jyutping": "zyu2je5sik6",
+    "definition": "to cook / cook food",
+    "type": "verb"
   }
 ]

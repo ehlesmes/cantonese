@@ -24,6 +24,9 @@ chapters:
   - chapter: 7
     title: "Comparatives & Complex Descriptors"
     file: "07-comparatives-descriptors.md"
+  - chapter: 8
+    title: "Advanced Particle Layering & Emotive Nuance"
+    file: "08-particles-nuance.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -177,10 +180,14 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Expressing time, hours, minutes, and schedules. Integrates the
     continuous aspect particle `緊` and slacking slang `Hea`.
 - **Chapter 6: Ability, Permission & Experience (`06-ability-experience.md`)**
-  [ACTIVE LOOK-AHEAD]
+  [COMPLETED]
   - _Focus_: Distinguishing modal abilities `可以`, `識`, and `會`. Integrates
     experiential aspect `過`, potential suffixes `得` vs `唔到`.
 - **Chapter 7: Comparatives & Complex Descriptors
   (`07-comparatives-descriptors.md`)** [ACTIVE LOOK-AHEAD]
   - _Focus_: Relative clauses and noun modifiers using `嘅`, and comparative
     structures using `過` (e.g. A 過 B).
+- **Chapter 8: Advanced Particle Layering & Emotive Nuance
+  (`08-particles-nuance.md`)** [ACTIVE LOOK-AHEAD]
+  - _Focus_: How to layer particles at the end of sentences to convey subtle
+    moods (e.g., `啫[ze1|only/just]`, `嘛[maa3]`, `吓[haa2]`, `喇喎[laa3wo3]`).
