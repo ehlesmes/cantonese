@@ -33,6 +33,9 @@ chapters:
   - chapter: 10
     title: "Hypotheticals, Conditionals & Future Planning"
     file: "10-hypotheticals-conditionals.md"
+  - chapter: 11
+    title: "Narrative Cohesion & Complex Connectives"
+    file: "11-narrative-cohesion.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -154,6 +157,10 @@ particle layering, and mastering native-speed idiomatic expressions._
 - **Topic 11: Hypotheticals, Conditionals & Future Planning**
   - _Core Grammar_: Conditional clauses using `如果[jyu4gwo2|if]` ...
     `就[zau6|then]`, and expressing hypothetical assumptions or plans.
+- **Topic 12: Narrative Cohesion & Complex Connectives**
+  - _Core Grammar_: Mastering cohesive storytelling using advanced conjunctions
+    such as `甚至[sam6zi3|even]`, `既然[gei3jin4|since / given that]`, and
+    `反而[faan2ji4|on the contrary]`.
 
 ---
 
@@ -201,10 +208,14 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: How to layer particles at the end of sentences to convey subtle
     moods (e.g., `啫[ze1|only/just]`, `嘛[maa3]`, `吓[haa2]`, `喇喎[laa3wo3]`).
 - **Chapter 9: Split-Verbs & Native Idioms (`09-split-verbs-idioms.md`)**
-  [ACTIVE LOOK-AHEAD]
+  [COMPLETED]
   - _Focus_: Master the structural parsing of splitting verbs (e.g. `游水` ->
     `游咗水`), four-character local idioms (`俗語`), and cultural humor.
 - **Chapter 10: Hypotheticals, Conditionals & Future Planning
   (`10-hypotheticals-conditionals.md`)** [ACTIVE LOOK-AHEAD]
   - _Focus_: Express conditional logic using `如果` ... `就`, handle
     hypotheticals, and formulate plans and hopes.
+- **Chapter 11: Narrative Cohesion & Complex Connectives
+  (`11-narrative-cohesion.md`)** [ACTIVE LOOK-AHEAD]
+  - _Focus_: Form complex connected paragraphs in speech, utilizing advanced
+    conjunctions and transitional phrases for fluid native storytelling.

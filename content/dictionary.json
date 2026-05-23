@@ -37,6 +37,18 @@
     "type": "numeral"
   },
   {
+    "char": "扮",
+    "jyutping": "baan6",
+    "definition": "to dress up / act / pretend",
+    "type": "verb"
+  },
+  {
+    "char": "扮嘢",
+    "jyutping": "baan6je5",
+    "definition": "to pretend / show off / act",
+    "type": "verb"
+  },
+  {
     "char": "八",
     "jyutping": "baat3",
     "definition": "eight",
@@ -73,6 +85,12 @@
     "type": "noun"
   },
   {
+    "char": "步",
+    "jyutping": "bou6",
+    "definition": "step / pace",
+    "type": "noun"
+  },
+  {
     "char": "杯",
     "jyutping": "bui1",
     "definition": "cup / glass / mug (classifier for drinks)",
@@ -98,6 +116,18 @@
     "type": "noun"
   },
   {
+    "char": "炒",
+    "jyutping": "caau2",
+    "definition": "to stir-fry / speculate / fire",
+    "type": "verb"
+  },
+  {
+    "char": "炒魷魚",
+    "jyutping": "caau2jau4jyu2",
+    "definition": "to get fired / lay off / fire someone",
+    "type": "verb"
+  },
+  {
     "char": "尋日",
     "jyutping": "cam4jat6",
     "definition": "yesterday",
@@ -108,6 +138,18 @@
     "jyutping": "cat1",
     "definition": "seven",
     "type": "numeral"
+  },
+  {
+    "char": "吹",
+    "jyutping": "ceoi1",
+    "definition": "to blow / boast",
+    "type": "verb"
+  },
+  {
+    "char": "吹水",
+    "jyutping": "ceoi1seoi2",
+    "definition": "to chat / shoot the breeze / gossip",
+    "type": "verb"
   },
   {
     "char": "次",
@@ -144,6 +186,18 @@
     "jyutping": "ciu1si5",
     "definition": "supermarket",
     "type": "noun"
+  },
+  {
+    "char": "唱",
+    "jyutping": "coeng3",
+    "definition": "to sing",
+    "type": "verb"
+  },
+  {
+    "char": "唱歌",
+    "jyutping": "coeng3go1",
+    "definition": "to sing",
+    "type": "verb"
   },
   {
     "char": "廚房",
@@ -302,6 +356,12 @@
     "type": "adjective"
   },
   {
+    "char": "花生",
+    "jyutping": "faa1sang1",
+    "definition": "peanut",
+    "type": "noun"
+  },
+  {
     "char": "快",
     "jyutping": "faai3",
     "definition": "fast / quick / rapid",
@@ -346,10 +406,28 @@
     "type": "noun"
   },
   {
+    "char": "飛機",
+    "jyutping": "fei1gei1",
+    "definition": "airplane",
+    "type": "noun"
+  },
+  {
     "char": "房",
     "jyutping": "fong2",
     "definition": "room / bedroom",
     "type": "noun"
+  },
+  {
+    "char": "放",
+    "jyutping": "fong3",
+    "definition": "to release / let go / put",
+    "type": "verb"
+  },
+  {
+    "char": "放飛機",
+    "jyutping": "fong3fei1gei1",
+    "definition": "to stand someone up / break a promise",
+    "type": "verb"
   },
   {
     "char": "放假",
@@ -395,6 +473,12 @@
   },
   {
     "char": "隔籬",
+    "jyutping": "gaak3lei4",
+    "definition": "next to / beside / neighbor",
+    "type": "noun"
+  },
+  {
+    "char": "隔離",
     "jyutping": "gaak3lei4",
     "definition": "next to / beside / neighbor",
     "type": "noun"
@@ -516,6 +600,12 @@
     "jyutping": "giu3",
     "definition": "to be called / to call",
     "type": "verb"
+  },
+  {
+    "char": "歌",
+    "jyutping": "go1",
+    "definition": "song",
+    "type": "noun"
   },
   {
     "char": "嗰",
@@ -750,6 +840,12 @@
     "type": "numeral"
   },
   {
+    "char": "一齊",
+    "jyutping": "jat1cai4",
+    "definition": "together",
+    "type": "adverb"
+  },
+  {
     "char": "一樣",
     "jyutping": "jat1joeng6",
     "definition": "same / alike / identical",
@@ -774,6 +870,18 @@
     "type": "noun"
   },
   {
+    "char": "游",
+    "jyutping": "jau4",
+    "definition": "to swim / drift / wander",
+    "type": "verb"
+  },
+  {
+    "char": "魷魚",
+    "jyutping": "jau4jyu2",
+    "definition": "squid",
+    "type": "noun"
+  },
+  {
     "char": "游水",
     "jyutping": "jau4seoi2",
     "definition": "to swim",
@@ -790,6 +898,12 @@
     "jyutping": "jau5mou5",
     "definition": "is there / do you have (A-not-A question form)",
     "type": "expression"
+  },
+  {
+    "char": "又",
+    "jyutping": "jau6",
+    "definition": "again / also",
+    "type": "adverb"
   },
   {
     "char": "嘢",
@@ -911,6 +1025,12 @@
     "jyutping": "keoi5dei6",
     "definition": "they / them",
     "type": "pronoun"
+  },
+  {
+    "char": "傾",
+    "jyutping": "king1",
+    "definition": "to talk / chat / lean",
+    "type": "verb"
   },
   {
     "char": "啦",
@@ -1167,6 +1287,12 @@
     "type": "verb"
   },
   {
+    "char": "舞",
+    "jyutping": "mou5",
+    "definition": "dance",
+    "type": "noun"
+  },
+  {
     "char": "冇問題",
     "jyutping": "mou5 man6tai4",
     "definition": "no problem / without issue",
@@ -1273,6 +1399,18 @@
     "jyutping": "nyun5seoi2",
     "definition": "warm water",
     "type": "noun"
+  },
+  {
+    "char": "跑",
+    "jyutping": "paau2",
+    "definition": "to run",
+    "type": "verb"
+  },
+  {
+    "char": "跑步",
+    "jyutping": "paau2bou6",
+    "definition": "to run / jog",
+    "type": "verb"
   },
   {
     "char": "朋友",
@@ -1395,6 +1533,12 @@
     "type": "numeral"
   },
   {
+    "char": "衰",
+    "jyutping": "seoi1",
+    "definition": "bad / mean / wicked",
+    "type": "adjective"
+  },
+  {
     "char": "水",
     "jyutping": "seoi2",
     "definition": "water",
@@ -1455,6 +1599,12 @@
     "type": "verb"
   },
   {
+    "char": "食花生",
+    "jyutping": "sik6faa1sang1",
+    "definition": "to sit back and watch drama / spectate",
+    "type": "verb"
+  },
+  {
     "char": "食飯",
     "jyutping": "sik6faan6",
     "definition": "to eat a meal / have dinner",
@@ -1466,6 +1616,12 @@
     "definition": "first / beforehand / only then",
     "type": "adverb",
     "notes": "Placed after verbs to mean first, or indicating only then in sequential actions."
+  },
+  {
+    "char": "星期六",
+    "jyutping": "sing1kei4luk6",
+    "definition": "Saturday",
+    "type": "noun"
   },
   {
     "char": "少",
@@ -1528,6 +1684,18 @@
     "type": "noun"
   },
   {
+    "char": "跳",
+    "jyutping": "tiu3",
+    "definition": "to jump / leap / dance",
+    "type": "verb"
+  },
+  {
+    "char": "跳舞",
+    "jyutping": "tiu3mou5",
+    "definition": "to dance",
+    "type": "verb"
+  },
+  {
     "char": "肚餓",
     "jyutping": "tou5ngo6",
     "definition": "hungry (literally: belly hungry)",
@@ -1556,6 +1724,12 @@
     "jyutping": "uk1kei2jan4",
     "definition": "family members / family",
     "type": "noun"
+  },
+  {
+    "char": "哇",
+    "jyutping": "waa1",
+    "definition": "wow / whoa",
+    "type": "expression"
   },
   {
     "char": "話",
@@ -1687,6 +1861,12 @@
     "jyutping": "zou6",
     "definition": "to do / make / perform",
     "type": "verb"
+  },
+  {
+    "char": "俗語",
+    "jyutping": "zuk1jyu5",
+    "definition": "colloquial expression / slang / idiom",
+    "type": "noun"
   },
   {
     "char": "鐘",
