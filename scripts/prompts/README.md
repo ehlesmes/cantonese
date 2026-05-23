@@ -79,8 +79,24 @@ Guards the core phased curriculum generation loop:
 
 ## 4. How to Execute
 
-To invoke the sub-agent, issue the following simple reference command:
+To implement the next chapter in our curriculum roadmap, you can use either of
+the following execution methods:
+
+### Method A: The `/next` Slash Command (Recommended)
+
+Simply type the `/next` command or say "go ahead" in the Antigravity chat
+window:
+
+- **How it works**: The main agent dynamically reads `content/curriculum.md` to
+  identify the first uncompleted chapter, automatically invokes the
+  `curriculum_author` sub-agent with the correct double-digit prefix and spatial
+  parameters, and handles all background executions, testing suites, and git
+  staging checks programmatically.
+
+### Method B: Manual Sub-Agent Reference
+
+Issue the following manual reference command to the main agent:
 
 > _"Read `scripts/prompts/implement-chapter.md` relative to the repository root
-> and execute its workflow to implement the next chapter in our curriculum
-> roadmap."_
+> and execute its phased workflow to evaluate the curriculum map in
+> `content/curriculum.md` and implement the next chapter."_
