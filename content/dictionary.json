@@ -67,6 +67,18 @@
     "type": "noun"
   },
   {
+    "char": "爆",
+    "jyutping": "baau3",
+    "definition": "explosively / extremely (post-adjective intensifier)",
+    "type": "adverb"
+  },
+  {
+    "char": "不如",
+    "jyutping": "bat1jyu4",
+    "definition": "how about / why not / it would be better to",
+    "type": "conjunction"
+  },
+  {
     "char": "啤酒",
     "jyutping": "be1zau2",
     "definition": "beer (loanword)",
@@ -125,6 +137,12 @@
     "char": "叉燒",
     "jyutping": "caa1siu1",
     "definition": "barbecued pork / char siu",
+    "type": "noun"
+  },
+  {
+    "char": "茶",
+    "jyutping": "caa4",
+    "definition": "tea",
     "type": "noun"
   },
   {
@@ -236,6 +254,12 @@
     "type": "noun"
   },
   {
+    "char": "全部",
+    "jyutping": "cyun4bou6",
+    "definition": "all / entirely",
+    "type": "adverb"
+  },
+  {
     "char": "打爛",
     "jyutping": "da2laan6",
     "definition": "to break / smash / shatter",
@@ -283,6 +307,12 @@
     "jyutping": "dak1haan4",
     "definition": "free / having spare time",
     "type": "adjective"
+  },
+  {
+    "char": "得滯",
+    "jyutping": "dak1zai6",
+    "definition": "too / excessively (post-adjective intensifier)",
+    "type": "adverb"
   },
   {
     "char": "哋",
@@ -370,6 +400,12 @@
     "jyutping": "din6waa2",
     "definition": "telephone / phone",
     "type": "noun"
+  },
+  {
+    "char": "頂呱呱",
+    "jyutping": "ding2gwaa1gwaa1",
+    "definition": "excellent / top-notch",
+    "type": "adjective"
   },
   {
     "char": "定",
@@ -680,6 +716,12 @@
     "type": "conjunction"
   },
   {
+    "char": "極",
+    "jyutping": "gik6",
+    "definition": "extremely / to the limit",
+    "type": "adverb"
+  },
+  {
     "char": "見",
     "jyutping": "gin3",
     "definition": "to see / meet",
@@ -764,6 +806,18 @@
     "type": "noun"
   },
   {
+    "char": "工作",
+    "jyutping": "gung1zok3",
+    "definition": "work / job",
+    "type": "noun"
+  },
+  {
+    "char": "鬼死咁",
+    "jyutping": "gwai2sei2gam3",
+    "definition": "extremely / awfully (pre-adjective intensifier)",
+    "type": "adverb"
+  },
+  {
     "char": "貴",
     "jyutping": "gwai3",
     "definition": "expensive",
@@ -781,6 +835,12 @@
     "jyutping": "gwong2dung1waa2",
     "definition": "Cantonese language",
     "type": "noun"
+  },
+  {
+    "char": "哈",
+    "jyutping": "haa1",
+    "definition": "ha / sound of laughter",
+    "type": "expression"
   },
   {
     "char": "吓",
@@ -1220,6 +1280,12 @@
     "type": "particle"
   },
   {
+    "char": "辣",
+    "jyutping": "laat6",
+    "definition": "spicy / hot",
+    "type": "adjective"
+  },
+  {
     "char": "嚟",
     "jyutping": "lai4",
     "definition": "to come",
@@ -1473,6 +1539,12 @@
     "type": "verb"
   },
   {
+    "char": "忙",
+    "jyutping": "mong4",
+    "definition": "busy",
+    "type": "adjective"
+  },
+  {
     "char": "冇",
     "jyutping": "mou5",
     "definition": "not to have / without / there is not",
@@ -1713,6 +1785,12 @@
     "type": "adjective"
   },
   {
+    "char": "辛苦",
+    "jyutping": "san1fu2",
+    "definition": "hard / toilsome / painstaking / exhausting",
+    "type": "adjective"
+  },
+  {
     "char": "十",
     "jyutping": "sap6",
     "definition": "ten",
@@ -1753,6 +1831,12 @@
     "jyutping": "se2",
     "definition": "to write",
     "type": "verb"
+  },
+  {
+    "char": "死",
+    "jyutping": "sei2",
+    "definition": "extremely / awfully (intensifier)",
+    "type": "adverb"
   },
   {
     "char": "四",
@@ -1867,6 +1951,12 @@
     "char": "少",
     "jyutping": "siu2",
     "definition": "few / little / less",
+    "type": "adjective"
+  },
+  {
+    "char": "所有",
+    "jyutping": "so2jau5",
+    "definition": "all / every",
     "type": "adjective"
   },
   {
@@ -2075,6 +2165,12 @@
     "jyutping": "zek3",
     "definition": "measure word for animals or objects in pairs",
     "type": "classifier"
+  },
+  {
+    "char": "正",
+    "jyutping": "zeng3",
+    "definition": "excellent / awesome / great",
+    "type": "adjective"
   },
   {
     "char": "最",

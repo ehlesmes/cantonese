@@ -45,6 +45,12 @@ chapters:
   - chapter: 14
     title: "Intensifiers, Exaggeration & Spoken Superlatives"
     file: "14-intensifiers-exaggeration.md"
+  - chapter: 15
+    title: "Rhetorical Questions & Spoken Doubts"
+    file: "15-rhetorical-questions.md"
+  - chapter: 16
+    title: "Workplace Slang & Office Dynamics"
+    file: "16-workplace-slang.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -185,6 +191,24 @@ particle layering, and mastering native-speed idiomatic expressions._
 
 ---
 
+### Phase 4: Advanced Native Nuance & Professional Contexts (Mastery)
+
+_The learner masters subtle emotional expressions, rhetorical devices, and
+professional vocabulary needed to live, work, and fully integrate into a
+Cantonese-speaking community._
+
+- **Topic 16: Rhetorical Questions & Spoken Doubts**
+  - _Core Grammar_: Formulating rhetorical questions using
+    `唔通[m4tung1|could it be that...]` paired with sentence-final particle
+    `咩[me1]`, and expressing disbelief or counter-expectations using
+    `乜[mat1|what/how come]`.
+- **Topic 17: Workplace Slang & Office Dynamics**
+  - _Core Grammar_: Navigating professional environments, working overtime
+    (colloquially `OT`), slacking off at work (`摸魚` or `蛇王[se4wong4]`), and
+    handling office gossip or job changes.
+
+---
+
 ## 2. Dynamic Chapter Pipeline
 
 Below is our immediate **active look-ahead window** and progress status of the
@@ -249,6 +273,14 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Structure passive voice using `俾`, emphasize statements using
     `即係`, and report indirect speech using `話`.
 - **Chapter 14: Intensifiers, Exaggeration & Spoken Superlatives
-  (`14-intensifiers-exaggeration.md`)** [ACTIVE LOOK-AHEAD]
+  (`14-intensifiers-exaggeration.md`)** [COMPLETED]
   - _Focus_: Express extreme emotions using colloquial intensifiers `死`, `極`,
     and `爆`, and master spoken superlative structures.
+- **Chapter 15: Rhetorical Questions & Spoken Doubts
+  (`15-rhetorical-questions.md`)** [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Formulate rhetorical questions using `唔通` ... `咩` and express
+    disbelief or counter-expectations using `乜` ... `咩`.
+- **Chapter 16: Workplace Slang & Office Dynamics (`16-workplace-slang.md`)**
+  [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Navigate professional environments, discuss working overtime
+    (`OT`), slacking off at work (`摸魚` or `蛇王`), and professional life.
