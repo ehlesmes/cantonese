@@ -122,6 +122,12 @@
     "type": "noun"
   },
   {
+    "char": "遲到",
+    "jyutping": "ci4dou3",
+    "definition": "to be late / arrive late",
+    "type": "verb"
+  },
+  {
     "char": "錢",
     "jyutping": "cin2",
     "definition": "money",
@@ -456,6 +462,12 @@
     "type": "noun"
   },
   {
+    "char": "夠",
+    "jyutping": "gau3",
+    "definition": "enough / sufficient",
+    "type": "adjective"
+  },
+  {
     "char": "嘅",
     "jyutping": "ge3",
     "definition": "possessive particle / nominalizing particle / final assertive particle",
@@ -480,6 +492,12 @@
     "jyutping": "gei2si4",
     "definition": "when / what time",
     "type": "pronoun"
+  },
+  {
+    "char": "記錯",
+    "jyutping": "gei3co3",
+    "definition": "to remember incorrectly / misremember",
+    "type": "verb"
   },
   {
     "char": "見",
@@ -678,6 +696,12 @@
     "type": "noun"
   },
   {
+    "char": "學生",
+    "jyutping": "hok6saang1",
+    "definition": "student",
+    "type": "noun"
+  },
+  {
     "char": "行",
     "jyutping": "hong4",
     "definition": "profession / line of business / firm / row / line",
@@ -805,6 +829,12 @@
     "type": "noun"
   },
   {
+    "char": "已經",
+    "jyutping": "ji5ging1",
+    "definition": "already",
+    "type": "adverb"
+  },
+  {
     "char": "二",
     "jyutping": "ji6",
     "definition": "two",
@@ -821,6 +851,12 @@
     "jyutping": "jin6gam1",
     "definition": "cash",
     "type": "noun"
+  },
+  {
+    "char": "應該",
+    "jyutping": "jing1goi1",
+    "definition": "should / ought to",
+    "type": "auxiliary verb"
   },
   {
     "char": "英國",
@@ -884,6 +920,18 @@
     "notes": "Often used for polite requests, suggestions, or imperative command softening."
   },
   {
+    "char": "喇",
+    "jyutping": "laa3",
+    "definition": "sentence-final particle indicating a change of state or already",
+    "type": "particle"
+  },
+  {
+    "char": "喇喎",
+    "jyutping": "laa3wo3",
+    "definition": "sentence-final particle combination indicating warning, sudden realization, or change of state",
+    "type": "particle"
+  },
+  {
     "char": "嚟",
     "jyutping": "lai4",
     "definition": "to come",
@@ -944,6 +992,12 @@
     "jyutping": "loeng5",
     "definition": "two / pair (used with classifiers)",
     "type": "numeral"
+  },
+  {
+    "char": "老闆",
+    "jyutping": "lou5baan2",
+    "definition": "boss / proprietor",
+    "type": "noun"
   },
   {
     "char": "老公",
@@ -1058,6 +1112,12 @@
     "type": "classifier"
   },
   {
+    "char": "問",
+    "jyutping": "man6",
+    "definition": "to ask / inquire",
+    "type": "verb"
+  },
+  {
     "char": "咩",
     "jyutping": "me1",
     "definition": "sentence-final particle expressing rhetorical doubt, surprise, or sarcasm",
@@ -1122,6 +1182,12 @@
     "char": "難",
     "jyutping": "naan4",
     "definition": "difficult / hard",
+    "type": "adjective"
+  },
+  {
+    "char": "嬲",
+    "jyutping": "nau1",
+    "definition": "angry / mad",
     "type": "adjective"
   },
   {
@@ -1257,6 +1323,12 @@
     "type": "noun"
   },
   {
+    "char": "使",
+    "jyutping": "sai2",
+    "definition": "to need / use",
+    "type": "verb"
+  },
+  {
     "char": "細",
     "jyutping": "sai3",
     "definition": "small / little / tiny",
@@ -1296,6 +1368,12 @@
     "char": "收",
     "jyutping": "sau1",
     "definition": "to receive / accept / collect",
+    "type": "verb"
+  },
+  {
+    "char": "收工",
+    "jyutping": "sau1gung1",
+    "definition": "to finish work for the day / get off work",
     "type": "verb"
   },
   {
@@ -1518,6 +1596,18 @@
     "type": "verb"
   },
   {
+    "char": "真係",
+    "jyutping": "zan1hai6",
+    "definition": "really / truly",
+    "type": "adverb"
+  },
+  {
+    "char": "走",
+    "jyutping": "zau2",
+    "definition": "to leave / go / run",
+    "type": "verb"
+  },
+  {
     "char": "啫",
     "jyutping": "ze1",
     "definition": "sentence-final particle meaning 'only', 'just', or downplaying something",
@@ -1535,6 +1625,18 @@
     "jyutping": "zeoi3",
     "definition": "most / superlative prefix",
     "type": "adverb"
+  },
+  {
+    "char": "知",
+    "jyutping": "zi1",
+    "definition": "to know / be aware of",
+    "type": "verb"
+  },
+  {
+    "char": "知道",
+    "jyutping": "zi1dou3",
+    "definition": "to know / be aware of",
+    "type": "verb"
   },
   {
     "char": "只係",
@@ -1597,6 +1699,18 @@
     "jyutping": "zung1ji3",
     "definition": "to like / prefer",
     "type": "verb"
+  },
+  {
+    "char": "鐘頭",
+    "jyutping": "zung1tau4",
+    "definition": "hour",
+    "type": "noun"
+  },
+  {
+    "char": "仲",
+    "jyutping": "zung6",
+    "definition": "still / yet",
+    "type": "adverb"
   },
   {
     "char": "朱古力",

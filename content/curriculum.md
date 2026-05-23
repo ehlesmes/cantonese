@@ -30,6 +30,9 @@ chapters:
   - chapter: 9
     title: "Split-Verbs & Native Idioms"
     file: "09-split-verbs-idioms.md"
+  - chapter: 10
+    title: "Hypotheticals, Conditionals & Future Planning"
+    file: "10-hypotheticals-conditionals.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -148,6 +151,9 @@ particle layering, and mastering native-speed idiomatic expressions._
     `游水` -> `游咗水`).
   - _Slang/Proverbs_: Four-character local idioms (`俗語`), color terms, and
     expressions of local humor.
+- **Topic 11: Hypotheticals, Conditionals & Future Planning**
+  - _Core Grammar_: Conditional clauses using `如果[jyu4gwo2|if]` ...
+    `就[zau6|then]`, and expressing hypothetical assumptions or plans.
 
 ---
 
@@ -191,10 +197,14 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Relative clauses and noun modifiers using `嘅`, and comparative
     structures using `過` (e.g. A 過 B).
 - **Chapter 8: Advanced Particle Layering & Emotive Nuance
-  (`08-particles-nuance.md`)** [ACTIVE LOOK-AHEAD]
+  (`08-particles-nuance.md`)** [COMPLETED]
   - _Focus_: How to layer particles at the end of sentences to convey subtle
     moods (e.g., `啫[ze1|only/just]`, `嘛[maa3]`, `吓[haa2]`, `喇喎[laa3wo3]`).
 - **Chapter 9: Split-Verbs & Native Idioms (`09-split-verbs-idioms.md`)**
   [ACTIVE LOOK-AHEAD]
   - _Focus_: Master the structural parsing of splitting verbs (e.g. `游水` ->
     `游咗水`), four-character local idioms (`俗語`), and cultural humor.
+- **Chapter 10: Hypotheticals, Conditionals & Future Planning
+  (`10-hypotheticals-conditionals.md`)** [ACTIVE LOOK-AHEAD]
+  - _Focus_: Express conditional logic using `如果` ... `就`, handle
+    hypotheticals, and formulate plans and hopes.
