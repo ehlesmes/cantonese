@@ -7,6 +7,12 @@
     "notes": "Softens the tone. Very common in greetings like 你好呀 (nei5 hou2 aa3)."
   },
   {
+    "char": "阿",
+    "jyutping": "aa3",
+    "definition": "prefix used before personal names for familiarity",
+    "type": "particle"
+  },
+  {
     "char": "啱啱",
     "jyutping": "aam1aam1",
     "definition": "just now / just / exactly",
@@ -113,6 +119,12 @@
     "jyutping": "bo1lo1baau1",
     "definition": "pineapple bun (sweet crusted bun, usually containing no pineapple)",
     "type": "noun"
+  },
+  {
+    "char": "幫",
+    "jyutping": "bong1",
+    "definition": "to help / for / on behalf of",
+    "type": "verb"
   },
   {
     "char": "步",
@@ -586,6 +598,18 @@
     "type": "verb"
   },
   {
+    "char": "加",
+    "jyutping": "gaa1",
+    "definition": "to add / increase",
+    "type": "verb"
+  },
+  {
+    "char": "加人工",
+    "jyutping": "gaa1jan4gung1",
+    "definition": "to get a raise / increase salary",
+    "type": "verb"
+  },
+  {
     "char": "加油",
     "jyutping": "gaa1jau2",
     "definition": "go for it! / keep it up! / cheer on (literally: add oil)",
@@ -916,6 +940,12 @@
     "type": "preposition"
   },
   {
+    "char": "喺度",
+    "jyutping": "hai2dou6",
+    "definition": "here / present / in the middle of doing something",
+    "type": "expression"
+  },
+  {
     "char": "係",
     "jyutping": "hai6",
     "definition": "to be (am/is/are) / yes",
@@ -1068,6 +1098,12 @@
     "type": "pronoun"
   },
   {
+    "char": "人工",
+    "jyutping": "jan4gung1",
+    "definition": "salary / pay / wages",
+    "type": "noun"
+  },
+  {
     "char": "入面",
     "jyutping": "jap6min6",
     "definition": "inside",
@@ -1101,6 +1137,12 @@
     "char": "日本",
     "jyutping": "jat6bun2",
     "definition": "Japan",
+    "type": "noun"
+  },
+  {
+    "char": "日日",
+    "jyutping": "jat6jat6",
+    "definition": "every day / day after day",
     "type": "noun"
   },
   {
@@ -1270,6 +1312,12 @@
     "char": "原本",
     "jyutping": "jyun4bun2",
     "definition": "originally / original",
+    "type": "adverb"
+  },
+  {
+    "char": "原來",
+    "jyutping": "jyun4loi4",
+    "definition": "originally / as it turns out / actually",
     "type": "adverb"
   },
   {
@@ -1470,6 +1518,12 @@
     "type": "adjective"
   },
   {
+    "char": "唔好",
+    "jyutping": "m4hou2",
+    "definition": "don't / should not",
+    "type": "auxiliary verb"
+  },
+  {
     "char": "唔使客氣",
     "jyutping": "m4sai2 haak3hei3",
     "definition": "you are welcome / no need to be polite",
@@ -1599,6 +1653,12 @@
     "type": "verb"
   },
   {
+    "char": "摸魚",
+    "jyutping": "mo2jyu2",
+    "definition": "to slack off / loaf on the job / literally 'feel for fish'",
+    "type": "verb"
+  },
+  {
     "char": "忙",
     "jyutping": "mong4",
     "definition": "busy",
@@ -1621,6 +1681,12 @@
     "jyutping": "mou5 man6tai4",
     "definition": "no problem / without issue",
     "type": "expression"
+  },
+  {
+    "char": "每日",
+    "jyutping": "mui5jat6",
+    "definition": "every day / daily",
+    "type": "noun"
   },
   {
     "char": "夢",
@@ -1741,6 +1807,12 @@
     "jyutping": "nyun5seoi2",
     "definition": "warm water",
     "type": "noun"
+  },
+  {
+    "char": "OT",
+    "jyutping": "o1ti1",
+    "definition": "to work overtime / overtime",
+    "type": "verb"
   },
   {
     "char": "安慰",
@@ -1893,6 +1965,12 @@
     "type": "verb"
   },
   {
+    "char": "蛇王",
+    "jyutping": "se4wong4",
+    "definition": "to slack off / avoid work / literally 'snake king'",
+    "type": "verb"
+  },
+  {
     "char": "死",
     "jyutping": "sei2",
     "definition": "extremely / awfully (intensifier)",
@@ -1903,6 +1981,12 @@
     "jyutping": "sei3",
     "definition": "four",
     "type": "numeral"
+  },
+  {
+    "char": "成日",
+    "jyutping": "seng4jat6",
+    "definition": "always / all the time / constantly",
+    "type": "adverb"
   },
   {
     "char": "衰",
@@ -2140,6 +2224,12 @@
     "type": "conjunction"
   },
   {
+    "char": "同事",
+    "jyutping": "tung4si6",
+    "definition": "colleague / coworker",
+    "type": "noun"
+  },
+  {
     "char": "屋企",
     "jyutping": "uk1kei2",
     "definition": "home / house",
@@ -2176,6 +2266,12 @@
     "type": "expression"
   },
   {
+    "char": "為咗",
+    "jyutping": "wai6zo2",
+    "definition": "for / for the sake of / in order to",
+    "type": "preposition"
+  },
+  {
     "char": "搵",
     "jyutping": "wan2",
     "definition": "to find / look for / seek",
@@ -2185,6 +2281,12 @@
     "char": "搵錢",
     "jyutping": "wan2cin2",
     "definition": "to earn money / make money",
+    "type": "verb"
+  },
+  {
+    "char": "搵食",
+    "jyutping": "wan2sik6",
+    "definition": "to make a living / earn a livelihood / literally 'seek food'",
     "type": "verb"
   },
   {
@@ -2352,6 +2454,12 @@
     "char": "做",
     "jyutping": "zou6",
     "definition": "to do / make / perform",
+    "type": "verb"
+  },
+  {
+    "char": "做嘢",
+    "jyutping": "zou6je5",
+    "definition": "to work / do things / do stuff",
     "type": "verb"
   },
   {

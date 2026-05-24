@@ -281,7 +281,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Formulate rhetorical questions using `唔通` ... `咩` and express
     disbelief or counter-expectations using `乜` ... `咩`.
 - **Chapter 16: Workplace Slang & Office Dynamics (`16-workplace-slang.md`)**
-  [ACTIVE LOOK-A-HEAD]
+  [COMPLETED]
   - _Focus_: Navigate professional environments, discuss working overtime
     (`OT`), slacking off at work (`摸魚` or `蛇王`), and professional life.
 - **Chapter 17: Foodie Culture & Tea Restaurant Slang (`17-foodie-slang.md`)**
@@ -289,3 +289,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Learn colloquial shortcuts for ordering at diners, customizable
     beverage options (e.g. less sweet, iced), and essential dim sum cultural
     terminology.
+- **Chapter 18: Shopping, Bargaining & Spoken Quantifiers
+  (`18-shopping-bargaining.md`)** [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Master spoken currency structures, bargaining expressions (e.g.
+    `平啲啦` [cheaper please]), and advanced classifiers.
