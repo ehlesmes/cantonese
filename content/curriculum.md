@@ -51,6 +51,15 @@ chapters:
   - chapter: 16
     title: "Workplace Slang & Office Dynamics"
     file: "16-workplace-slang.md"
+  - chapter: 17
+    title: "Foodie Culture & Tea Restaurant Slang"
+    file: "17-foodie-slang.md"
+  - chapter: 18
+    title: "Shopping, Bargaining & Spoken Quantifiers"
+    file: "18-shopping-bargaining.md"
+  - chapter: 19
+    title: "Dating, Relationships & Social Media Slang"
+    file: "19-social-media-slang.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -285,7 +294,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Navigate professional environments, discuss working overtime
     (`OT`), slacking off at work (`摸魚` or `蛇王`), and professional life.
 - **Chapter 17: Foodie Culture & Tea Restaurant Slang (`17-foodie-slang.md`)**
-  [ACTIVE LOOK-A-HEAD]
+  [COMPLETED]
   - _Focus_: Learn colloquial shortcuts for ordering at diners, customizable
     beverage options (e.g. less sweet, iced), and essential dim sum cultural
     terminology.
@@ -293,3 +302,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   (`18-shopping-bargaining.md`)** [ACTIVE LOOK-A-HEAD]
   - _Focus_: Master spoken currency structures, bargaining expressions (e.g.
     `平啲啦` [cheaper please]), and advanced classifiers.
+- **Chapter 19: Dating, Relationships & Social Media Slang
+  (`19-social-media-slang.md`)** [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Learn colloquial terms for modern romance, texting abbreviations,
+    and social media slang.

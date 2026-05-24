@@ -121,6 +121,12 @@
     "type": "noun"
   },
   {
+    "char": "菠蘿油",
+    "jyutping": "bo1lo1jau4",
+    "definition": "pineapple bun with a cold butter slice",
+    "type": "noun"
+  },
+  {
     "char": "幫",
     "jyutping": "bong1",
     "definition": "to help / for / on behalf of",
@@ -167,6 +173,12 @@
     "char": "茶餐廳",
     "jyutping": "caa4caan1teng1",
     "definition": "Hong Kong style café / diner",
+    "type": "noun"
+  },
+  {
+    "char": "茶走",
+    "jyutping": "caa4zau2",
+    "definition": "milk tea with condensed milk instead of evaporated milk and sugar",
     "type": "noun"
   },
   {
@@ -266,6 +278,12 @@
     "type": "adjective"
   },
   {
+    "char": "坐",
+    "jyutping": "co5",
+    "definition": "to sit / sit down",
+    "type": "verb"
+  },
+  {
     "char": "唱",
     "jyutping": "coeng3",
     "definition": "to sing",
@@ -296,6 +314,12 @@
     "type": "verb"
   },
   {
+    "char": "打卡",
+    "jyutping": "daa2kaa1",
+    "definition": "to check-in / take photos at trendy spots",
+    "type": "verb"
+  },
+  {
     "char": "打算",
     "jyutping": "daa2syun3",
     "definition": "to plan / intend / plan",
@@ -318,6 +342,12 @@
     "jyutping": "daan6taat1",
     "definition": "egg tart",
     "type": "noun"
+  },
+  {
+    "char": "搭枱",
+    "jyutping": "daap3toi2",
+    "definition": "to share a table with strangers",
+    "type": "verb"
   },
   {
     "char": "第日",
@@ -343,6 +373,12 @@
     "jyutping": "dak1zai6",
     "definition": "too / excessively (post-adjective intensifier)",
     "type": "adverb"
+  },
+  {
+    "char": "等",
+    "jyutping": "dang2",
+    "definition": "to wait / wait for",
+    "type": "verb"
   },
   {
     "char": "哋",
@@ -480,6 +516,12 @@
     "jyutping": "dung3",
     "definition": "cold / iced",
     "type": "adjective"
+  },
+  {
+    "char": "凍檸茶",
+    "jyutping": "dung3leng4caa4",
+    "definition": "iced lemon tea",
+    "type": "noun"
   },
   {
     "char": "花生",
@@ -1068,6 +1110,12 @@
     "type": "adverb"
   },
   {
+    "char": "烘底",
+    "jyutping": "hung3dai2",
+    "definition": "toasted bread (restaurant slang)",
+    "type": "verb"
+  },
+  {
     "char": "飲",
     "jyutping": "jam2",
     "definition": "to drink",
@@ -1307,6 +1355,12 @@
     "jyutping": "jyun1joeng1",
     "definition": "yuanyang (drink mixing coffee and milk tea)",
     "type": "noun"
+  },
+  {
+    "char": "完",
+    "jyutping": "jyun4",
+    "definition": "to finish / complete / after",
+    "type": "verb"
   },
   {
     "char": "原本",
@@ -2019,6 +2073,12 @@
     "type": "noun"
   },
   {
+    "char": "絲襪奶茶",
+    "jyutping": "si1mat6naai5caa4",
+    "definition": "silk stocking milk tea (very smooth milk tea)",
+    "type": "noun"
+  },
+  {
     "char": "史",
     "jyutping": "si2",
     "definition": "history",
@@ -2098,9 +2158,27 @@
     "type": "noun"
   },
   {
+    "char": "宵夜",
+    "jyutping": "siu1je2",
+    "definition": "late night snack",
+    "type": "noun"
+  },
+  {
     "char": "少",
     "jyutping": "siu2",
     "definition": "few / little / less",
+    "type": "adjective"
+  },
+  {
+    "char": "少冰",
+    "jyutping": "siu2bing1",
+    "definition": "less ice",
+    "type": "adjective"
+  },
+  {
+    "char": "少甜",
+    "jyutping": "siu2tim4",
+    "definition": "less sweet",
     "type": "adjective"
   },
   {
@@ -2134,10 +2212,22 @@
     "type": "auxiliary verb"
   },
   {
+    "char": "相機食先",
+    "jyutping": "soeng2gei1sik6sin1",
+    "definition": "camera eats first (taking pictures of food before eating)",
+    "type": "expression"
+  },
+  {
     "char": "上面",
     "jyutping": "soeng6min6",
     "definition": "above / on top of / upper side",
     "type": "noun"
+  },
+  {
+    "char": "掃街",
+    "jyutping": "sou3gaai1",
+    "definition": "to go street food hunting / street-snacking",
+    "type": "verb"
   },
   {
     "char": "書",
@@ -2260,6 +2350,12 @@
     "type": "verb"
   },
   {
+    "char": "位",
+    "jyutping": "wai2",
+    "definition": "seat / place / position",
+    "type": "noun"
+  },
+  {
     "char": "喂",
     "jyutping": "wai2",
     "definition": "hey / hello (typically answering phone or calling for attention)",
@@ -2332,6 +2428,18 @@
     "jyutping": "zau2",
     "definition": "to leave / go / run",
     "type": "verb"
+  },
+  {
+    "char": "走冰",
+    "jyutping": "zau2bing1",
+    "definition": "no ice",
+    "type": "adjective"
+  },
+  {
+    "char": "走甜",
+    "jyutping": "zau2tim4",
+    "definition": "no sugar / unsweetened",
+    "type": "adjective"
   },
   {
     "char": "就",
