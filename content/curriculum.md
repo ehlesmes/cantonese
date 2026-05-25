@@ -77,13 +77,16 @@ chapters:
     file: "24-tech-apps-slang.md"
   - chapter: 25
     title: "Finance, Investing & Money Slang"
-    file: "25-finance-money.md"
+    file: "25-finance-investing-slang.md"
   - chapter: 26
     title: "Traditional Festivals, Superstitions & Cultural Slang"
     file: "26-festivals-superstitions.md"
   - chapter: 27
     title: "Remote Work, Productivity & Digital Nomad Slang"
     file: "27-remote-productivity.md"
+  - chapter: 28
+    title: "Pets, Animal Care & Vet Slang"
+    file: "28-pets-vet-slang.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -276,6 +279,10 @@ Cantonese-speaking community._
   - _Core Grammar_: Remote work colloquialisms, video calling (`開Zoom`),
     internet connection slangs (`斷線`), online productivity tools, and modern
     nomad slang.
+- **Topic 29: Pets, Animal Care & Vet Slang**
+  - _Core Grammar_: Spoken terms for pet ownership (`寵物[cung2mat6]`), caring
+    for animals, veterinary visits (`睇獸醫[tai2 sau3ji1]`), and animal-related
+    idioms.
 
 ---
 
@@ -389,8 +396,8 @@ chapters, translating our spiraled progression into progressive text lessons.
   (`24-tech-apps-slang.md`)** [COMPLETED]
   - _Focus_: Spoken tech terms, messaging platform verbs (e.g. `whatsapp我`),
     social media interactions, and digital payment slang.
-- **Chapter 25: Finance, Investing & Money Slang (`25-finance-money.md`)**
-  [ACTIVE LOOK-A-HEAD]
+- **Chapter 25: Finance, Investing & Money Slang
+  (`25-finance-investing-slang.md`)** [COMPLETED]
   - _Focus_: Stock market slang (`炒股`), investment colloquialisms, banking,
     and everyday financial conversations.
 - **Chapter 26: Traditional Festivals, Superstitions & Cultural Slang
@@ -401,3 +408,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   (`27-remote-productivity.md`)** [ACTIVE LOOK-A-HEAD]
   - _Focus_: Remote work colloquialisms, video calling, internet connection
     issues, online collaboration tools, and tech-nomad life.
+- **Chapter 28: Pets, Animal Care & Vet Slang (`28-pets-vet-slang.md`)** [ACTIVE
+  LOOK-A-HEAD]
+  - _Focus_: Colloquial terms for pet ownership, caring for animals, veterinary
+    visits, and animal-related idioms.

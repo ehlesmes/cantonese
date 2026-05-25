@@ -139,6 +139,12 @@
     "type": "verb"
   },
   {
+    "char": "爆升",
+    "jyutping": "baau3sing1",
+    "definition": "to skyrocket / experience explosive growth",
+    "type": "verb"
+  },
+  {
     "char": "不過",
     "jyutping": "bat1gwo3",
     "definition": "but / however",
@@ -323,6 +329,12 @@
     "char": "炒",
     "jyutping": "caau2",
     "definition": "to stir-fry / speculate / fire",
+    "type": "verb"
+  },
+  {
+    "char": "炒股",
+    "jyutping": "caau2gu2",
+    "definition": "to speculate in stocks / trade stocks",
     "type": "verb"
   },
   {
@@ -518,6 +530,12 @@
     "type": "noun"
   },
   {
+    "char": "長線",
+    "jyutping": "coeng4sin3",
+    "definition": "long term",
+    "type": "noun"
+  },
+  {
     "char": "腸胃炎",
     "jyutping": "coeng4wai6jim4",
     "definition": "gastroenteritis / stomach flu",
@@ -618,6 +636,12 @@
     "jyutping": "daai6joek3",
     "definition": "approximately / about",
     "type": "adverb"
+  },
+  {
+    "char": "大鱷",
+    "jyutping": "daai6ngok6",
+    "definition": "market shark / big player",
+    "type": "noun"
   },
   {
     "char": "大聲",
@@ -877,10 +901,22 @@
     "notes": "Example: A定B? (A or B?)"
   },
   {
+    "char": "定期",
+    "jyutping": "ding6kei4",
+    "definition": "fixed deposit / term deposit",
+    "type": "noun"
+  },
+  {
     "char": "碟",
     "jyutping": "dip6",
     "definition": "plate / dish (classifier for food dishes)",
     "type": "classifier"
+  },
+  {
+    "char": "跌",
+    "jyutping": "dit3",
+    "definition": "to fall / drop / decline",
+    "type": "verb"
   },
   {
     "char": "多",
@@ -923,6 +959,12 @@
     "char": "短訊",
     "jyutping": "dyun2seon3",
     "definition": "text message / SMS",
+    "type": "noun"
+  },
+  {
+    "char": "短線",
+    "jyutping": "dyun2sin3",
+    "definition": "short term",
     "type": "noun"
   },
   {
@@ -1333,6 +1375,12 @@
     "notes": "Indicates possession (like 's, equivalent to Mandarin 的 de) or asserts a state."
   },
   {
+    "char": "基金",
+    "jyutping": "gei1gam1",
+    "definition": "fund / mutual fund",
+    "type": "noun"
+  },
+  {
     "char": "幾",
     "jyutping": "gei2",
     "definition": "quite / pretty / fairly",
@@ -1484,10 +1532,22 @@
     "type": "verb"
   },
   {
+    "char": "港股",
+    "jyutping": "gong2gu2",
+    "definition": "Hong Kong stocks / HK shares",
+    "type": "noun"
+  },
+  {
     "char": "高",
     "jyutping": "gou1",
     "definition": "tall / high",
     "type": "adjective"
+  },
+  {
+    "char": "股票",
+    "jyutping": "gu2piu3",
+    "definition": "stock / share",
+    "type": "noun"
   },
   {
     "char": "攰",
@@ -1612,6 +1672,12 @@
     "type": "noun"
   },
   {
+    "char": "蟹",
+    "jyutping": "haai5",
+    "definition": "stuck / trapped in a losing stock (slang)",
+    "type": "adjective"
+  },
+  {
     "char": "客廳",
     "jyutping": "haak3ting1",
     "definition": "living room / parlor",
@@ -1621,6 +1687,12 @@
     "char": "喊",
     "jyutping": "haam3",
     "definition": "to cry / weep",
+    "type": "verb"
+  },
+  {
+    "char": "慳",
+    "jyutping": "haan1",
+    "definition": "to save (money/time) / cut down / economize",
     "type": "verb"
   },
   {
@@ -1806,6 +1878,12 @@
     "type": "adjective"
   },
   {
+    "char": "開市",
+    "jyutping": "hoi1si5",
+    "definition": "market opens / market opening",
+    "type": "verb"
+  },
+  {
     "char": "學校",
     "jyutping": "hok6haau6",
     "definition": "school",
@@ -1900,6 +1978,12 @@
     "jyutping": "hung4",
     "definition": "red",
     "type": "adjective"
+  },
+  {
+    "char": "熊市",
+    "jyutping": "hung4si5",
+    "definition": "bear market",
+    "type": "noun"
   },
   {
     "char": "飲",
@@ -2420,6 +2504,12 @@
     "type": "particle"
   },
   {
+    "char": "利息",
+    "jyutping": "lei6sik1",
+    "definition": "interest (on loan/deposit)",
+    "type": "noun"
+  },
+  {
     "char": "叻",
     "jyutping": "lek1",
     "definition": "smart / clever / capable",
@@ -2690,9 +2780,21 @@
     "notes": "Standard term used in Cantonese restaurants to request the bill."
   },
   {
+    "char": "買入",
+    "jyutping": "maai5jap6",
+    "definition": "to buy in / purchase shares",
+    "type": "verb"
+  },
+  {
     "char": "賣",
     "jyutping": "maai6",
     "definition": "to sell",
+    "type": "verb"
+  },
+  {
+    "char": "賣出",
+    "jyutping": "maai6ceot1",
+    "definition": "to sell out / sell shares",
     "type": "verb"
   },
   {
@@ -2767,6 +2869,12 @@
     "jyutping": "me1je5",
     "definition": "what / what kind of thing",
     "type": "pronoun"
+  },
+  {
+    "char": "美股",
+    "jyutping": "mei5gu2",
+    "definition": "US stocks / US shares",
+    "type": "noun"
   },
   {
     "char": "美國",
@@ -2973,6 +3081,12 @@
     "type": "noun"
   },
   {
+    "char": "牛市",
+    "jyutping": "ngau4si5",
+    "definition": "bull market",
+    "type": "noun"
+  },
+  {
     "char": "我",
     "jyutping": "ngo5",
     "definition": "I / me",
@@ -3081,6 +3195,12 @@
     "type": "verb"
   },
   {
+    "char": "跑數",
+    "jyutping": "paau2sou3",
+    "definition": "to hit a sales target / chase sales numbers",
+    "type": "verb"
+  },
+  {
     "char": "朋友",
     "jyutping": "pang4jau5",
     "definition": "friend",
@@ -3177,6 +3297,12 @@
     "type": "numeral"
   },
   {
+    "char": "散戶",
+    "jyutping": "saan2wu6",
+    "definition": "retail investor / small investor",
+    "type": "noun"
+  },
+  {
     "char": "西多士",
     "jyutping": "sai1do1si2",
     "definition": "French toast (loanword)",
@@ -3243,6 +3369,12 @@
     "type": "adjective"
   },
   {
+    "char": "身家",
+    "jyutping": "san1gaa1",
+    "definition": "net worth / personal fortune",
+    "type": "noun"
+  },
+  {
     "char": "十",
     "jyutping": "sap6",
     "definition": "ten",
@@ -3300,6 +3432,12 @@
     "char": "收工",
     "jyutping": "sau1gung1",
     "definition": "to finish work for the day / get off work",
+    "type": "verb"
+  },
+  {
+    "char": "收市",
+    "jyutping": "sau1si5",
+    "definition": "market closes / market closing",
     "type": "verb"
   },
   {
@@ -3460,6 +3598,12 @@
     "type": "noun"
   },
   {
+    "char": "息",
+    "jyutping": "sik1",
+    "definition": "interest / dividend",
+    "type": "noun"
+  },
+  {
     "char": "熄",
     "jyutping": "sik1",
     "definition": "to turn off / extinguish (a light, device, etc.)",
@@ -3515,6 +3659,12 @@
     "notes": "Placed after verbs to mean first, or indicating only then in sequential actions."
   },
   {
+    "char": "升",
+    "jyutping": "sing1",
+    "definition": "to rise / go up",
+    "type": "verb"
+  },
+  {
     "char": "升降機",
     "jyutping": "sing1gong3gei1",
     "definition": "elevator / lift",
@@ -3549,6 +3699,12 @@
     "jyutping": "sing1kei4luk6",
     "definition": "Saturday",
     "type": "noun"
+  },
+  {
+    "char": "蝕",
+    "jyutping": "sit6",
+    "definition": "to lose money / suffer a loss / deficit",
+    "type": "verb"
   },
   {
     "char": "宵夜",
@@ -3767,6 +3923,12 @@
     "type": "adjective"
   },
   {
+    "char": "投資",
+    "jyutping": "tau4zi1",
+    "definition": "to invest / investment",
+    "type": "verb"
+  },
+  {
     "char": "聽",
     "jyutping": "teng1",
     "definition": "to listen / hear / obey",
@@ -3929,6 +4091,12 @@
     "type": "verb"
   },
   {
+    "char": "還",
+    "jyutping": "waan4",
+    "definition": "to return / repay",
+    "type": "verb"
+  },
+  {
     "char": "環境",
     "jyutping": "waan4ging2",
     "definition": "environment / surroundings",
@@ -4027,6 +4195,12 @@
     "type": "noun"
   },
   {
+    "char": "賺",
+    "jyutping": "zaan6",
+    "definition": "to earn / profit / make money",
+    "type": "verb"
+  },
+  {
     "char": "找",
     "jyutping": "zaau2",
     "definition": "to give change / look for / seek",
@@ -4100,6 +4274,12 @@
     "notes": "Equivalent to 'only' or 'just' to reassure or downplay significance."
   },
   {
+    "char": "借",
+    "jyutping": "ze3",
+    "definition": "to borrow / lend",
+    "type": "verb"
+  },
+  {
     "char": "隻",
     "jyutping": "zek3",
     "definition": "measure word for animals or objects in pairs",
@@ -4122,6 +4302,12 @@
     "jyutping": "zeoi3",
     "definition": "drunk",
     "type": "adjective"
+  },
+  {
+    "char": "最近",
+    "jyutping": "zeoi3gan6",
+    "definition": "recently / lately",
+    "type": "adverb"
   },
   {
     "char": "最後",

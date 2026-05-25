@@ -4,7 +4,7 @@
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 299
+    "occurrences": 308
   },
   {
     "character": "阿",
@@ -133,11 +133,18 @@
     "occurrences": 2
   },
   {
+    "character": "爆升",
+    "jyutping": "baau3sing1",
+    "translation": "to skyrocket / experience explosive growth",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 3
+  },
+  {
     "character": "不過",
     "jyutping": "bat1gwo3",
     "translation": "but / however",
     "firstIntroducedIn": "21-housing-neighborhood.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "不如",
@@ -151,7 +158,7 @@
     "jyutping": "bei2",
     "translation": "to give / for / by / to give / to give / for / let / allow",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 30
+    "occurrences": 31
   },
   {
     "character": "病",
@@ -312,7 +319,7 @@
     "jyutping": "caam2",
     "translation": "miserable / pitiful / tragic",
     "firstIntroducedIn": "12-regrets-wishes-empathy.md",
-    "occurrences": 10
+    "occurrences": 11
   },
   {
     "character": "插頭",
@@ -327,6 +334,13 @@
     "translation": "to stir-fry / speculate / fire",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
     "occurrences": 15
+  },
+  {
+    "character": "炒股",
+    "jyutping": "caau2gu2",
+    "translation": "to speculate in stocks / trade stocks",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 3
   },
   {
     "character": "炒魷魚",
@@ -459,7 +473,7 @@
     "jyutping": "cin2",
     "translation": "money",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 11
+    "occurrences": 18
   },
   {
     "character": "前邊",
@@ -539,6 +553,13 @@
     "occurrences": 1
   },
   {
+    "character": "長線",
+    "jyutping": "coeng4sin3",
+    "translation": "long term",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 2
+  },
+  {
     "character": "腸胃炎",
     "jyutping": "coeng4wai6jim4",
     "translation": "gastroenteritis / stomach flu",
@@ -585,7 +606,7 @@
     "jyutping": "cyun4bou6",
     "translation": "all / entirely",
     "firstIntroducedIn": "14-intensifiers-exaggeration.md",
-    "occurrences": 13
+    "occurrences": 14
   },
   {
     "character": "傳染",
@@ -651,6 +672,13 @@
     "occurrences": 1
   },
   {
+    "character": "大鱷",
+    "jyutping": "daai6ngok6",
+    "translation": "market shark / big player",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 3
+  },
+  {
     "character": "大聲",
     "jyutping": "daai6sing1",
     "translation": "loud voice / loudly",
@@ -683,7 +711,7 @@
     "jyutping": "daan6hai6",
     "translation": "but / however",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 16
+    "occurrences": 17
   },
   {
     "character": "蛋撻",
@@ -718,7 +746,7 @@
     "jyutping": "dak1",
     "translation": "particle expressing permission, possibility, capability, or adverbial degree",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 21
+    "occurrences": 22
   },
   {
     "character": "得唔得",
@@ -837,7 +865,7 @@
     "jyutping": "di1",
     "translation": "a bit / some / comparative suffix / some / a little / plural or possessive particle",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 28
+    "occurrences": 29
   },
   {
     "character": "的士",
@@ -872,7 +900,7 @@
     "jyutping": "dim2joeng6",
     "translation": "how / in what way",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 7
+    "occurrences": 8
   },
   {
     "character": "點心",
@@ -886,7 +914,7 @@
     "jyutping": "dim2wui5",
     "translation": "how could / how can",
     "firstIntroducedIn": "15-rhetorical-questions.md",
-    "occurrences": 15
+    "occurrences": 16
   },
   {
     "character": "點鐘",
@@ -938,6 +966,13 @@
     "occurrences": 19
   },
   {
+    "character": "定期",
+    "jyutping": "ding6kei4",
+    "translation": "fixed deposit / term deposit",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 6
+  },
+  {
     "character": "碟",
     "jyutping": "dip6",
     "translation": "plate / dish (classifier for food dishes)",
@@ -945,11 +980,18 @@
     "occurrences": 5
   },
   {
+    "character": "跌",
+    "jyutping": "dit3",
+    "translation": "to fall / drop / decline",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 3
+  },
+  {
     "character": "多",
     "jyutping": "do1",
     "translation": "many / much / more",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 6
+    "occurrences": 8
   },
   {
     "character": "多謝",
@@ -963,7 +1005,7 @@
     "jyutping": "dou1",
     "translation": "also / both / all / also / even",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 18
+    "occurrences": 20
   },
   {
     "character": "凍",
@@ -984,6 +1026,13 @@
     "jyutping": "dyun2seon3",
     "translation": "text message / SMS",
     "firstIntroducedIn": "24-tech-apps-slang.md",
+    "occurrences": 1
+  },
+  {
+    "character": "短線",
+    "jyutping": "dyun2sin3",
+    "translation": "short term",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
     "occurrences": 1
   },
   {
@@ -1157,9 +1206,9 @@
   {
     "character": "放",
     "jyutping": "fong3",
-    "translation": "to release / let go / put",
+    "translation": "to release / let go / put / to put / place",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 2
+    "occurrences": 5
   },
   {
     "character": "放飛機",
@@ -1355,13 +1404,20 @@
     "jyutping": "gam2",
     "translation": "then / in that case / so",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 21
+    "occurrences": 25
   },
   {
     "character": "敢",
     "jyutping": "gam2",
     "translation": "to dare",
     "firstIntroducedIn": "24-tech-apps-slang.md",
+    "occurrences": 1
+  },
+  {
+    "character": "噉樣",
+    "jyutping": "gam2joeng6",
+    "translation": "in this way / like this / this pattern",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
     "occurrences": 1
   },
   {
@@ -1376,7 +1432,7 @@
     "jyutping": "gam3",
     "translation": "so / such / to this degree / then",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 16
+    "occurrences": 17
   },
   {
     "character": "緊",
@@ -1409,16 +1465,23 @@
   {
     "character": "嘅",
     "jyutping": "ge3",
-    "translation": "particle / possessive particle / nominalizing particle / final assertive particle / associative particle / possessive or linking particle",
+    "translation": "particle / possessive particle / nominalizing particle / final assertive particle / associative particle / possessive or linking particle / possessive / associative / focus particle",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 60
+    "occurrences": 61
+  },
+  {
+    "character": "基金",
+    "jyutping": "gei1gam1",
+    "translation": "fund / mutual fund",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 3
   },
   {
     "character": "幾",
     "jyutping": "gei2",
     "translation": "quite / pretty / fairly",
     "firstIntroducedIn": "21-housing-neighborhood.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "幾錢",
@@ -1579,7 +1642,7 @@
     "jyutping": "gong2",
     "translation": "to speak / say / talk",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 27
+    "occurrences": 28
   },
   {
     "character": "講價",
@@ -1589,11 +1652,25 @@
     "occurrences": 3
   },
   {
+    "character": "港股",
+    "jyutping": "gong2gu2",
+    "translation": "Hong Kong stocks / HK shares",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 3
+  },
+  {
     "character": "高",
     "jyutping": "gou1",
     "translation": "tall / high",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
     "occurrences": 5
+  },
+  {
+    "character": "股票",
+    "jyutping": "gu2piu3",
+    "translation": "stock / share",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 1
   },
   {
     "character": "攰",
@@ -1647,9 +1724,9 @@
   {
     "character": "過",
     "jyutping": "gwo3",
-    "translation": "verbal aspect suffix indicating past experience / 'have done before' / to pass / cross",
+    "translation": "verbal aspect suffix indicating past experience / 'have done before' / to pass / cross / experiential action suffix",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 27
+    "occurrences": 28
   },
   {
     "character": "過去",
@@ -1736,6 +1813,13 @@
     "occurrences": 8
   },
   {
+    "character": "蟹",
+    "jyutping": "haai5",
+    "translation": "stuck / trapped in a losing stock (slang)",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 4
+  },
+  {
     "character": "客廳",
     "jyutping": "haak3ting1",
     "translation": "living room / parlor",
@@ -1748,6 +1832,13 @@
     "translation": "to cry / weep",
     "firstIntroducedIn": "11-narrative-cohesion.md",
     "occurrences": 3
+  },
+  {
+    "character": "慳",
+    "jyutping": "haan1",
+    "translation": "to save (money/time) / cut down / economize",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 4
   },
   {
     "character": "行到",
@@ -1775,7 +1866,7 @@
     "jyutping": "hai2",
     "translation": "at / in / on / at / in / on (locative preposition)",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 64
+    "occurrences": 67
   },
   {
     "character": "喺度",
@@ -1789,7 +1880,7 @@
     "jyutping": "hai6",
     "translation": "to be / to be (am/is/are) / yes",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 57
+    "occurrences": 61
   },
   {
     "character": "係唔係",
@@ -1801,9 +1892,9 @@
   {
     "character": "係呀",
     "jyutping": "hai6aa3",
-    "translation": "yes",
+    "translation": "yes / yes / indeed",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "係咁",
@@ -1866,7 +1957,7 @@
     "jyutping": "hei1mong6",
     "translation": "to hope / wish / hope",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 13
+    "occurrences": 14
   },
   {
     "character": "去",
@@ -1887,7 +1978,7 @@
     "jyutping": "ho2ji5",
     "translation": "can / may / possible / can / may / able to",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 22
+    "occurrences": 23
   },
   {
     "character": "可樂",
@@ -1953,6 +2044,13 @@
     "occurrences": 9
   },
   {
+    "character": "開市",
+    "jyutping": "hoi1si5",
+    "translation": "market opens / market opening",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 1
+  },
+  {
     "character": "學校",
     "jyutping": "hok6haau6",
     "translation": "school",
@@ -1969,9 +2067,9 @@
   {
     "character": "好",
     "jyutping": "hou2",
-    "translation": "good / fine / very / quite / okay",
+    "translation": "good / fine / very / quite / okay / good / very / quite",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 66
+    "occurrences": 69
   },
   {
     "character": "好啦",
@@ -2063,6 +2161,13 @@
     "translation": "red",
     "firstIntroducedIn": "20-travel-transport.md",
     "occurrences": 2
+  },
+  {
+    "character": "熊市",
+    "jyutping": "hung4si5",
+    "translation": "bear market",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 1
   },
   {
     "character": "飲",
@@ -2237,7 +2342,7 @@
     "jyutping": "jau5mou5",
     "translation": "is there / do you have / is there / have or not / is there / do you have (A-not-A question form)",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 8
+    "occurrences": 9
   },
   {
     "character": "又",
@@ -2431,9 +2536,9 @@
   {
     "character": "要",
     "jyutping": "jiu3",
-    "translation": "to want / need / must / demand / need / have to / to want / need / require",
+    "translation": "to want / need / must / demand / need / have to / to want / need / require / need / want / must",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 36
+    "occurrences": 38
   },
   {
     "character": "要唔要",
@@ -2552,7 +2657,7 @@
     "jyutping": "keoi5",
     "translation": "he / she / it / him",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 69
+    "occurrences": 71
   },
   {
     "character": "佢哋",
@@ -2571,9 +2676,9 @@
   {
     "character": "啦",
     "jyutping": "laa1",
-    "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action",
+    "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action / softening particle",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 122
+    "occurrences": 127
   },
   {
     "character": "喇",
@@ -2639,6 +2744,13 @@
     "occurrences": 1
   },
   {
+    "character": "利息",
+    "jyutping": "lei6sik1",
+    "translation": "interest (on loan/deposit)",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 4
+  },
+  {
     "character": "叻",
     "jyutping": "lek1",
     "translation": "smart",
@@ -2685,7 +2797,7 @@
     "jyutping": "lo1",
     "translation": "sentence-final particle showing obviousness, resignation, or 'of course' / obviousness particle / sentence-final particle expressing obviousness or mild resignation / sentence-final particle showing obviousness or exclamation",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 45
+    "occurrences": 51
   },
   {
     "character": "攞",
@@ -2790,7 +2902,7 @@
     "jyutping": "m4",
     "translation": "not / not / no (negative prefix)",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 70
+    "occurrences": 75
   },
   {
     "character": "唔緊要",
@@ -2879,9 +2991,9 @@
   {
     "character": "嘛",
     "jyutping": "maa3",
-    "translation": "sentence-final particle indicating a statement is an obvious truth or reminder",
+    "translation": "sentence-final particle indicating a statement is an obvious truth or reminder / asserting a known truth",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 10
+    "occurrences": 11
   },
   {
     "character": "埋",
@@ -2895,7 +3007,7 @@
     "jyutping": "maai5",
     "translation": "to buy",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 16
+    "occurrences": 18
   },
   {
     "character": "埋單",
@@ -2905,11 +3017,25 @@
     "occurrences": 3
   },
   {
+    "character": "買入",
+    "jyutping": "maai5jap6",
+    "translation": "to buy in / purchase shares",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 2
+  },
+  {
     "character": "賣",
     "jyutping": "maai6",
-    "translation": "sell",
+    "translation": "sell / to sell",
     "firstIntroducedIn": "18-shopping-bargaining.md",
-    "occurrences": 1
+    "occurrences": 2
+  },
+  {
+    "character": "賣出",
+    "jyutping": "maai6ceot1",
+    "translation": "to sell out / sell shares",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 4
   },
   {
     "character": "慢",
@@ -2977,9 +3103,9 @@
   {
     "character": "咩",
     "jyutping": "me1",
-    "translation": "sentence-final particle expressing rhetorical doubt, surprise, or sarcasm / what / sentence-final particle expressing rhetorical doubt, surprise, or sarcasm / rhetorical final particle indicating doubt / rhetorical question particle expressing surprise or doubt",
+    "translation": "sentence-final particle expressing rhetorical doubt, surprise, or sarcasm / what / sentence-final particle expressing rhetorical doubt, surprise, or sarcasm / rhetorical final particle indicating doubt / rhetorical question particle expressing surprise or doubt / rhetorical doubt particle",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 34
+    "occurrences": 36
   },
   {
     "character": "咩嘢",
@@ -2987,6 +3113,13 @@
     "translation": "what / what kind of thing",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 9
+  },
+  {
+    "character": "美股",
+    "jyutping": "mei5gu2",
+    "translation": "US stocks / US shares",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 3
   },
   {
     "character": "美國",
@@ -3154,7 +3287,7 @@
     "jyutping": "nei5",
     "translation": "you / your",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 144
+    "occurrences": 150
   },
   {
     "character": "你哋",
@@ -3199,11 +3332,18 @@
     "occurrences": 6
   },
   {
+    "character": "牛市",
+    "jyutping": "ngau4si5",
+    "translation": "bull market",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 4
+  },
+  {
     "character": "我",
     "jyutping": "ngo5",
     "translation": "I / I / me",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 225
+    "occurrences": 234
   },
   {
     "character": "我哋",
@@ -3311,6 +3451,13 @@
     "occurrences": 3
   },
   {
+    "character": "跑數",
+    "jyutping": "paau2sou3",
+    "translation": "to hit a sales target / chase sales numbers",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 1
+  },
+  {
     "character": "朋友",
     "jyutping": "pang4jau5",
     "translation": "friend",
@@ -3395,6 +3542,13 @@
     "occurrences": 3
   },
   {
+    "character": "散戶",
+    "jyutping": "saan2wu6",
+    "translation": "retail investor / small investor",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 1
+  },
+  {
     "character": "西多士",
     "jyutping": "sai1do1si2",
     "translation": "French toast (loanword)",
@@ -3472,6 +3626,13 @@
     "occurrences": 5
   },
   {
+    "character": "身家",
+    "jyutping": "san1gaa1",
+    "translation": "net worth / personal fortune",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 1
+  },
+  {
     "character": "十",
     "jyutping": "sap6",
     "translation": "ten",
@@ -3540,6 +3701,13 @@
     "translation": "to finish work for the day / get off work",
     "firstIntroducedIn": "08-particles-nuance.md",
     "occurrences": 2
+  },
+  {
+    "character": "收市",
+    "jyutping": "sau1si5",
+    "translation": "market closes / market closing",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 1
   },
   {
     "character": "壽司",
@@ -3696,6 +3864,13 @@
     "occurrences": 3
   },
   {
+    "character": "息",
+    "jyutping": "sik1",
+    "translation": "interest / dividend",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 2
+  },
+  {
     "character": "熄",
     "jyutping": "sik1",
     "translation": "to turn off / extinguish (a light, device, etc.)",
@@ -3766,6 +3941,13 @@
     "occurrences": 6
   },
   {
+    "character": "升",
+    "jyutping": "sing1",
+    "translation": "to rise / go up",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 1
+  },
+  {
     "character": "升降機",
     "jyutping": "sing1gong3gei1",
     "translation": "elevator / lift",
@@ -3799,6 +3981,13 @@
     "translation": "Saturday",
     "firstIntroducedIn": "11-narrative-cohesion.md",
     "occurrences": 2
+  },
+  {
+    "character": "蝕",
+    "jyutping": "sit6",
+    "translation": "to lose money / suffer a loss / deficit",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 3
   },
   {
     "character": "宵夜",
@@ -3861,7 +4050,7 @@
     "jyutping": "soeng2",
     "translation": "want to / to want to / would like to / think / to want / would like to",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 51
+    "occurrences": 53
   },
   {
     "character": "相",
@@ -4039,6 +4228,13 @@
     "occurrences": 2
   },
   {
+    "character": "投資",
+    "jyutping": "tau4zi1",
+    "translation": "to invest / investment",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 3
+  },
+  {
     "character": "聽",
     "jyutping": "teng1",
     "translation": "to listen / hear / obey",
@@ -4214,6 +4410,13 @@
     "occurrences": 13
   },
   {
+    "character": "還",
+    "jyutping": "waan4",
+    "translation": "to return / repay",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 1
+  },
+  {
     "character": "環境",
     "jyutping": "waan4ging2",
     "translation": "environment / surroundings",
@@ -4274,14 +4477,14 @@
     "jyutping": "wu6hau2",
     "translation": "account (bank/online)",
     "firstIntroducedIn": "24-tech-apps-slang.md",
-    "occurrences": 1
+    "occurrences": 4
   },
   {
     "character": "會",
     "jyutping": "wui5",
     "translation": "will / would / can / be able to / will / would / can / know how to / meet / will / can / able to",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 18
+    "occurrences": 20
   },
   {
     "character": "揸車",
@@ -4310,6 +4513,13 @@
     "translation": "station / stop",
     "firstIntroducedIn": "20-travel-transport.md",
     "occurrences": 1
+  },
+  {
+    "character": "賺",
+    "jyutping": "zaan6",
+    "translation": "to earn / profit / make money",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 7
   },
   {
     "character": "找",
@@ -4372,7 +4582,7 @@
     "jyutping": "zau6",
     "translation": "then / right away / immediately",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 20
+    "occurrences": 21
   },
   {
     "character": "就快",
@@ -4394,6 +4604,13 @@
     "translation": "sentence-final particle meaning 'only', 'just', or downplaying something / only / just",
     "firstIntroducedIn": "06-ability-experience.md",
     "occurrences": 18
+  },
+  {
+    "character": "借",
+    "jyutping": "ze3",
+    "translation": "to borrow / lend",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 1
   },
   {
     "character": "隻",
@@ -4422,6 +4639,13 @@
     "translation": "drunk",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
     "occurrences": 2
+  },
+  {
+    "character": "最近",
+    "jyutping": "zeoi3gan6",
+    "translation": "recently / lately",
+    "firstIntroducedIn": "25-finance-investing-slang.md",
+    "occurrences": 3
   },
   {
     "character": "最後",
@@ -4559,9 +4783,9 @@
   {
     "character": "咗",
     "jyutping": "zo2",
-    "translation": "verbal aspect suffix indicating completed action (perfective aspect) / completed aspect",
+    "translation": "verbal aspect suffix indicating completed action (perfective aspect) / completed aspect / completed action suffix",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 84
+    "occurrences": 90
   },
   {
     "character": "張",
@@ -4631,7 +4855,7 @@
     "jyutping": "zou6",
     "translation": "to do / make / perform",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 5
+    "occurrences": 10
   },
   {
     "character": "做嘢",
