@@ -4,7 +4,7 @@
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 269
+    "occurrences": 286
   },
   {
     "character": "阿",
@@ -18,7 +18,7 @@
     "jyutping": "aa3 ming4",
     "translation": "Ah Ming",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "呃",
@@ -39,7 +39,14 @@
     "jyutping": "aan3",
     "translation": "late",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
-    "occurrences": 1
+    "occurrences": 2
+  },
+  {
+    "character": "嘔",
+    "jyutping": "au2",
+    "translation": "to vomit / throw up",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "巴士",
@@ -130,7 +137,21 @@
     "jyutping": "bei2",
     "translation": "to give / for / by / to give / to give / for / let / allow",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 23
+    "occurrences": 26
+  },
+  {
+    "character": "病",
+    "jyutping": "beng6",
+    "translation": "to be sick / illness / disease",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
+  },
+  {
+    "character": "病假",
+    "jyutping": "beng6gaa3",
+    "translation": "sick leave",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 4
   },
   {
     "character": "邊",
@@ -144,7 +165,7 @@
     "jyutping": "bin1dou6",
     "translation": "where",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 11
+    "occurrences": 12
   },
   {
     "character": "邊個",
@@ -186,7 +207,7 @@
     "jyutping": "bong1",
     "translation": "for / to help / for / on behalf of",
     "firstIntroducedIn": "16-workplace-slang.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "幫手",
@@ -324,9 +345,9 @@
   {
     "character": "請",
     "jyutping": "ceng2",
-    "translation": "treat",
+    "translation": "treat / to invite / treat / please / request",
     "firstIntroducedIn": "15-rhetorical-questions.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "吹",
@@ -368,7 +389,7 @@
     "jyutping": "ci3",
     "translation": "time / occurrence (classifier)",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 4
+    "occurrences": 6
   },
   {
     "character": "廁所",
@@ -434,6 +455,20 @@
     "occurrences": 1
   },
   {
+    "character": "請",
+    "jyutping": "cing2",
+    "translation": "to invite / treat / please / request",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
+  },
+  {
+    "character": "請假",
+    "jyutping": "cing2gaa3",
+    "translation": "to apply for leave / request time off",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
+  },
+  {
     "character": "請問",
     "jyutping": "cing2man6",
     "translation": "may I ask",
@@ -450,9 +485,9 @@
   {
     "character": "錯",
     "jyutping": "co3",
-    "translation": "wrong",
+    "translation": "wrong / wrong / incorrect / mistake",
     "firstIntroducedIn": "15-rhetorical-questions.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "坐",
@@ -476,6 +511,13 @@
     "occurrences": 3
   },
   {
+    "character": "腸胃炎",
+    "jyutping": "coeng4wai6jim4",
+    "translation": "gastroenteritis / stomach flu",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
+  },
+  {
     "character": "嘈",
     "jyutping": "cou4",
     "translation": "noisy",
@@ -495,6 +537,13 @@
     "translation": "all / entirely",
     "firstIntroducedIn": "14-intensifiers-exaggeration.md",
     "occurrences": 13
+  },
+  {
+    "character": "傳染",
+    "jyutping": "cyun4jim5",
+    "translation": "to infect / infectious / contagious",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
   },
   {
     "character": "打爛",
@@ -606,7 +655,7 @@
     "jyutping": "dak1",
     "translation": "particle expressing permission, possibility, capability, or adverbial degree",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 18
+    "occurrences": 19
   },
   {
     "character": "得唔得",
@@ -639,9 +688,9 @@
   {
     "character": "等",
     "jyutping": "dang2",
-    "translation": "wait / to wait",
+    "translation": "wait / to wait / to wait / wait for",
     "firstIntroducedIn": "17-foodie-slang.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "戥",
@@ -656,6 +705,20 @@
     "translation": "special price / bargain price",
     "firstIntroducedIn": "18-shopping-bargaining.md",
     "occurrences": 1
+  },
+  {
+    "character": "抖",
+    "jyutping": "dau2",
+    "translation": "to rest / take a break",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
+  },
+  {
+    "character": "抖吓",
+    "jyutping": "dau2haa5",
+    "translation": "to rest a bit / take a brief break",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "哋",
@@ -704,7 +767,7 @@
     "jyutping": "di1",
     "translation": "a bit / some / comparative suffix / some / a little / plural or possessive particle",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 23
+    "occurrences": 28
   },
   {
     "character": "的士",
@@ -732,14 +795,14 @@
     "jyutping": "dim2gaai2",
     "translation": "why / how come",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 7
+    "occurrences": 8
   },
   {
     "character": "點樣",
     "jyutping": "dim2joeng6",
     "translation": "how / in what way",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "點心",
@@ -784,6 +847,13 @@
     "occurrences": 1
   },
   {
+    "character": "頂住",
+    "jyutping": "ding2zyu6",
+    "translation": "to hold on / hang in there / endure",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
+  },
+  {
     "character": "定",
     "jyutping": "ding6",
     "translation": "or (used exclusively in alternative questions)",
@@ -802,14 +872,14 @@
     "jyutping": "do1",
     "translation": "many / much / more",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 3
+    "occurrences": 6
   },
   {
     "character": "多謝",
     "jyutping": "do1ze6",
     "translation": "thank you (for a gift, compliment, or hospitality) / thank you (for a gift)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "都",
@@ -858,7 +928,14 @@
     "jyutping": "faan1",
     "translation": "to return / go back / reverse",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 4
+    "occurrences": 7
+  },
+  {
+    "character": "返唔返",
+    "jyutping": "faan1 m4 faan1",
+    "translation": "to return or not (A-not-A question form)",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
   },
   {
     "character": "返工",
@@ -894,6 +971,13 @@
     "translation": "to dream / daydream / dream",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
     "occurrences": 3
+  },
+  {
+    "character": "發燒",
+    "jyutping": "faat3siu1",
+    "translation": "to have a fever",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "分",
@@ -1152,7 +1236,7 @@
     "jyutping": "gam1jat6",
     "translation": "today",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 33
+    "occurrences": 35
   },
   {
     "character": "今晚",
@@ -1166,7 +1250,14 @@
     "jyutping": "gam2",
     "translation": "then / in that case / so",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 16
+    "occurrences": 18
+  },
+  {
+    "character": "感冒",
+    "jyutping": "gam2mou6",
+    "translation": "common cold / to catch a cold",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "咁",
@@ -1215,7 +1306,7 @@
     "jyutping": "gei2",
     "translation": "quite / pretty / fairly",
     "firstIntroducedIn": "21-housing-neighborhood.md",
-    "occurrences": 2
+    "occurrences": 4
   },
   {
     "character": "幾錢",
@@ -1267,6 +1358,13 @@
     "occurrences": 1
   },
   {
+    "character": "記得",
+    "jyutping": "gei3dak1",
+    "translation": "to remember",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 3
+  },
+  {
     "character": "既然",
     "jyutping": "gei3jin4",
     "translation": "since / given that",
@@ -1279,6 +1377,13 @@
     "translation": "extremely / to the limit",
     "firstIntroducedIn": "14-intensifiers-exaggeration.md",
     "occurrences": 7
+  },
+  {
+    "character": "檢查",
+    "jyutping": "gim2caa4",
+    "translation": "to examine / check / inspect",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
   },
   {
     "character": "見",
@@ -1397,14 +1502,14 @@
     "jyutping": "gung1",
     "translation": "work / job",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "公司",
     "jyutping": "gung1si1",
     "translation": "company / office",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 13
+    "occurrences": 15
   },
   {
     "character": "工作",
@@ -1474,7 +1579,14 @@
     "jyutping": "haa2",
     "translation": "what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 11
+    "occurrences": 12
+  },
+  {
+    "character": "吓",
+    "jyutping": "haa5",
+    "translation": "verbal suffix indicating a brief action or attempt",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "下場",
@@ -1495,7 +1607,7 @@
     "jyutping": "haa6zau3",
     "translation": "afternoon / in the afternoon",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "鞋",
@@ -1558,20 +1670,27 @@
     "jyutping": "hai6",
     "translation": "to be / to be (am/is/are) / yes",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 55
+    "occurrences": 56
   },
   {
     "character": "係唔係",
     "jyutping": "hai6 m4 hai6",
     "translation": "is it or not / is it or not? / is that right? (A-not-A question form)",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 7
+    "occurrences": 8
   },
   {
     "character": "係呀",
     "jyutping": "hai6aa3",
     "translation": "yes",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 2
+  },
+  {
+    "character": "係咁",
+    "jyutping": "hai6gam2",
+    "translation": "continuously / constantly",
+    "firstIntroducedIn": "23-health-sickness.md",
     "occurrences": 1
   },
   {
@@ -1594,6 +1713,13 @@
     "translation": "contract / agreement",
     "firstIntroducedIn": "21-housing-neighborhood.md",
     "occurrences": 1
+  },
+  {
+    "character": "喉嚨痛",
+    "jyutping": "hau4lung4tung3",
+    "translation": "sore throat",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "後悔",
@@ -1621,7 +1747,7 @@
     "jyutping": "heoi3",
     "translation": "to go",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 61
+    "occurrences": 64
   },
   {
     "character": "去唔去",
@@ -1645,6 +1771,13 @@
     "occurrences": 2
   },
   {
+    "character": "可唔可以",
+    "jyutping": "ho2m4ho2ji5",
+    "translation": "can or cannot / may or may not (A-not-A question form)",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
+  },
+  {
     "character": "可能",
     "jyutping": "ho2nang4",
     "translation": "maybe",
@@ -1657,6 +1790,27 @@
     "translation": "Hong Kong",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 8
+  },
+  {
+    "character": "向",
+    "jyutping": "hoeng3",
+    "translation": "towards / to",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
+  },
+  {
+    "character": "開",
+    "jyutping": "hoi1",
+    "translation": "to write (a prescription) / prescribe / open / start",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 3
+  },
+  {
+    "character": "開始",
+    "jyutping": "hoi1ci2",
+    "translation": "to start / begin",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "開心",
@@ -1684,7 +1838,7 @@
     "jyutping": "hou2",
     "translation": "good / fine / very / quite / okay",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 61
+    "occurrences": 63
   },
   {
     "character": "好啦",
@@ -1712,7 +1866,7 @@
     "jyutping": "hou2ci5",
     "translation": "seem / seem like / as if",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "好彩",
@@ -1720,6 +1874,20 @@
     "translation": "luckily / fortunately",
     "firstIntroducedIn": "12-regrets-wishes-empathy.md",
     "occurrences": 7
+  },
+  {
+    "character": "好返",
+    "jyutping": "hou2faan1",
+    "translation": "to recover / get well",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
+  },
+  {
+    "character": "好好",
+    "jyutping": "hou2hou2",
+    "translation": "well / properly",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
   },
   {
     "character": "好玩",
@@ -1817,7 +1985,7 @@
     "jyutping": "jat1",
     "translation": "one",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 24
+    "occurrences": 25
   },
   {
     "character": "一齊",
@@ -1836,9 +2004,9 @@
   {
     "character": "日",
     "jyutping": "jat6",
-    "translation": "day / sun",
+    "translation": "day / sun / day / date",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 1
+    "occurrences": 3
   },
   {
     "character": "日本",
@@ -1869,6 +2037,13 @@
     "occurrences": 1
   },
   {
+    "character": "休息",
+    "jyutping": "jau1sik1",
+    "translation": "to rest / take a break",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 5
+  },
+  {
     "character": "游",
     "jyutping": "jau4",
     "translation": "to swim / to swim / drift / wander",
@@ -1892,9 +2067,9 @@
   {
     "character": "有",
     "jyutping": "jau5",
-    "translation": "to have / there is / to have / there is / there are",
+    "translation": "to have / there is / to have / there is / there are / to have / possess / there is / there are",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 21
+    "occurrences": 22
   },
   {
     "character": "有折",
@@ -1929,7 +2104,7 @@
     "jyutping": "jau5mou5",
     "translation": "is there / do you have / is there / have or not / is there / do you have (A-not-A question form)",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "又",
@@ -1943,7 +2118,7 @@
     "jyutping": "je5",
     "translation": "thing / stuff / matter",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "野餐",
@@ -1988,6 +2163,20 @@
     "occurrences": 9
   },
   {
+    "character": "醫生",
+    "jyutping": "ji1sang1",
+    "translation": "doctor / medical practitioner",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 5
+  },
+  {
+    "character": "醫生紙",
+    "jyutping": "ji1sang1zi2",
+    "translation": "doctor's sick leave certificate / medical note",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 6
+  },
+  {
     "character": "而家",
     "jyutping": "ji4gaa1",
     "translation": "now / currently",
@@ -2030,6 +2219,13 @@
     "occurrences": 4
   },
   {
+    "character": "嚴重",
+    "jyutping": "jim4zung6",
+    "translation": "serious / severe / grave",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 3
+  },
+  {
     "character": "現金",
     "jyutping": "jin6gam1",
     "translation": "cash",
@@ -2041,7 +2237,7 @@
     "jyutping": "jing1goi1",
     "translation": "should / ought to",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 2
+    "occurrences": 5
   },
   {
     "character": "英國",
@@ -2095,9 +2291,9 @@
   {
     "character": "要",
     "jyutping": "jiu3",
-    "translation": "to want / need / must / demand / need / have to",
+    "translation": "to want / need / must / demand / need / have to / to want / need / require",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 33
+    "occurrences": 35
   },
   {
     "character": "要唔要",
@@ -2112,6 +2308,13 @@
     "translation": "to make an appointment / invite",
     "firstIntroducedIn": "21-housing-neighborhood.md",
     "occurrences": 1
+  },
+  {
+    "character": "藥",
+    "jyutping": "joek6",
+    "translation": "medicine / drug",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "洋樓",
@@ -2153,7 +2356,7 @@
     "jyutping": "jyun4",
     "translation": "finish / finished / complete",
     "firstIntroducedIn": "17-foodie-slang.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "原本",
@@ -2193,9 +2396,16 @@
   {
     "character": "琴晚",
     "jyutping": "kam4maan5",
-    "translation": "last night",
+    "translation": "last night / last night (variant)",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
-    "occurrences": 3
+    "occurrences": 5
+  },
+  {
+    "character": "咳",
+    "jyutping": "kat1",
+    "translation": "to cough / cough",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "佢",
@@ -2223,7 +2433,7 @@
     "jyutping": "laa1",
     "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 112
+    "occurrences": 116
   },
   {
     "character": "喇",
@@ -2258,6 +2468,13 @@
     "jyutping": "lau2",
     "translation": "building / flat / apartment / floor",
     "firstIntroducedIn": "21-housing-neighborhood.md",
+    "occurrences": 1
+  },
+  {
+    "character": "流鼻水",
+    "jyutping": "lau4bei6seoi2",
+    "translation": "to have a runny nose",
+    "firstIntroducedIn": "23-health-sickness.md",
     "occurrences": 1
   },
   {
@@ -2324,11 +2541,18 @@
     "occurrences": 44
   },
   {
+    "character": "攞",
+    "jyutping": "lo2",
+    "translation": "to get / take / fetch",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
+  },
+  {
     "character": "兩",
     "jyutping": "loeng5",
     "translation": "two / pair (used with classifiers)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 36
+    "occurrences": 37
   },
   {
     "character": "兩按一上",
@@ -2412,7 +2636,7 @@
     "jyutping": "m4",
     "translation": "not / not / no (negative prefix)",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 66
+    "occurrences": 68
   },
   {
     "character": "唔緊要",
@@ -2457,6 +2681,13 @@
     "occurrences": 1
   },
   {
+    "character": "唔係",
+    "jyutping": "m4hai6",
+    "translation": "no / not so / that's not the case",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
+  },
+  {
     "character": "唔開心",
     "jyutping": "m4hoi1sam1",
     "translation": "sad / unhappy",
@@ -2471,11 +2702,18 @@
     "occurrences": 2
   },
   {
+    "character": "唔使",
+    "jyutping": "m4sai2",
+    "translation": "no need / not necessary",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
+  },
+  {
     "character": "唔舒服",
     "jyutping": "m4syu1fuk6",
     "translation": "uncomfortable / unwell / sick",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 1
+    "occurrences": 4
   },
   {
     "character": "唔通",
@@ -2650,7 +2888,7 @@
     "jyutping": "mou5 man6tai4",
     "translation": "no problem / without issue",
     "firstIntroducedIn": "21-housing-neighborhood.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "悶",
@@ -2692,7 +2930,7 @@
     "jyutping": "nam2zyu6",
     "translation": "to intend / plan / think of",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 3
+    "occurrences": 5
   },
   {
     "character": "嬲",
@@ -2713,7 +2951,7 @@
     "jyutping": "nei5",
     "translation": "you / your",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 118
+    "occurrences": 131
   },
   {
     "character": "你哋",
@@ -2762,7 +3000,7 @@
     "jyutping": "ngo5",
     "translation": "I / I / me",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 198
+    "occurrences": 209
   },
   {
     "character": "我哋",
@@ -2805,6 +3043,13 @@
     "translation": "warm water",
     "firstIntroducedIn": "06-ability-experience.md",
     "occurrences": 1
+  },
+  {
+    "character": "痾",
+    "jyutping": "o1",
+    "translation": "to have diarrhea / excrete",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "安慰",
@@ -2909,7 +3154,7 @@
     "jyutping": "saam1",
     "translation": "three",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 18
+    "occurrences": 19
   },
   {
     "character": "衫",
@@ -2945,6 +3190,13 @@
     "translation": "need or not",
     "firstIntroducedIn": "16-workplace-slang.md",
     "occurrences": 1
+  },
+  {
+    "character": "使唔使",
+    "jyutping": "sai2m4sai2",
+    "translation": "need or not / do you need (A-not-A question form)",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "細",
@@ -3084,7 +3336,7 @@
     "jyutping": "se2",
     "translation": "to write",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "蛇王",
@@ -3092,6 +3344,13 @@
     "translation": "to slack off / avoid work",
     "firstIntroducedIn": "16-workplace-slang.md",
     "occurrences": 10
+  },
+  {
+    "character": "射波",
+    "jyutping": "se6bo1",
+    "translation": "to fake sick / call in sick falsely / play truant",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 5
   },
   {
     "character": "死",
@@ -3229,9 +3488,9 @@
   {
     "character": "食",
     "jyutping": "sik6",
-    "translation": "to eat",
+    "translation": "to eat / to eat / to take",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 38
+    "occurrences": 40
   },
   {
     "character": "食花生",
@@ -3246,6 +3505,13 @@
     "translation": "to eat a meal / have dinner",
     "firstIntroducedIn": "05-time-continuous.md",
     "occurrences": 2
+  },
+  {
+    "character": "食藥",
+    "jyutping": "sik6joek6",
+    "translation": "to take medicine",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 6
   },
   {
     "character": "閃",
@@ -3336,7 +3602,7 @@
     "jyutping": "so2ji5",
     "translation": "therefore / so",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 7
+    "occurrences": 8
   },
   {
     "character": "鎖匙",
@@ -3350,7 +3616,7 @@
     "jyutping": "soeng2",
     "translation": "want to / to want to / would like to / think / to want / would like to",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 46
+    "occurrences": 49
   },
   {
     "character": "相",
@@ -3439,9 +3705,9 @@
   {
     "character": "太",
     "jyutping": "taai3",
-    "translation": "too",
+    "translation": "too / too / extremely",
     "firstIntroducedIn": "18-shopping-bargaining.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "太多",
@@ -3455,7 +3721,7 @@
     "jyutping": "tai2",
     "translation": "to look / see / to look / see / watch / read / to watch / look / see / read",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 6
+    "occurrences": 8
   },
   {
     "character": "睇波",
@@ -3470,6 +3736,13 @@
     "translation": "to watch a movie",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
     "occurrences": 1
+  },
+  {
+    "character": "睇醫生",
+    "jyutping": "tai2ji1sang1",
+    "translation": "to see a doctor",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 4
   },
   {
     "character": "睇樓",
@@ -3493,6 +3766,20 @@
     "occurrences": 3
   },
   {
+    "character": "頭痛",
+    "jyutping": "tau4tung3",
+    "translation": "headache",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
+  },
+  {
+    "character": "頭暈",
+    "jyutping": "tau4wan4",
+    "translation": "dizzy / lightheaded",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
+  },
+  {
     "character": "聽",
     "jyutping": "teng1",
     "translation": "to listen / hear / obey",
@@ -3511,7 +3798,7 @@
     "jyutping": "tim1",
     "translation": "particle indicating in addition / as well / furthermore / as well / also / particle",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 10
+    "occurrences": 12
   },
   {
     "character": "甜",
@@ -3539,7 +3826,14 @@
     "jyutping": "ting1jat6",
     "translation": "tomorrow",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 15
+    "occurrences": 17
+  },
+  {
+    "character": "聽落",
+    "jyutping": "ting1lok6",
+    "translation": "sounds like",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 1
   },
   {
     "character": "跳",
@@ -3584,6 +3878,13 @@
     "occurrences": 2
   },
   {
+    "character": "肚痛",
+    "jyutping": "tou5tung3",
+    "translation": "stomach ache / abdominal pain",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
+  },
+  {
     "character": "同",
     "jyutping": "tung4",
     "translation": "with / same as / and / with / and",
@@ -3602,7 +3903,7 @@
     "jyutping": "tung4maai4",
     "translation": "and / with / together with",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 13
+    "occurrences": 20
   },
   {
     "character": "同事",
@@ -3621,16 +3922,16 @@
   {
     "character": "屋企",
     "jyutping": "uk1kei2",
-    "translation": "home",
+    "translation": "home / home / house",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "哇",
     "jyutping": "waa1",
     "translation": "wow / whoa",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "話",
@@ -3651,7 +3952,7 @@
     "jyutping": "waan2",
     "translation": "to play / have fun / enjoy",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 12
+    "occurrences": 13
   },
   {
     "character": "環境",
@@ -3672,7 +3973,7 @@
     "jyutping": "wai2",
     "translation": "hey / hey! / hey / hello (typically answering phone or calling for attention)",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 8
+    "occurrences": 9
   },
   {
     "character": "為咗",
@@ -3707,14 +4008,14 @@
     "jyutping": "wo3",
     "translation": "sentence-final particle indicating reported speech, surprise, or warning",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 19
+    "occurrences": 20
   },
   {
     "character": "會",
     "jyutping": "wui5",
     "translation": "will / would / can / be able to / will / would / can / know how to / meet / will / can / able to",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 17
+    "occurrences": 18
   },
   {
     "character": "揸車",
@@ -3756,7 +4057,7 @@
     "jyutping": "zan1hai6",
     "translation": "really / truly",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 23
+    "occurrences": 24
   },
   {
     "character": "周圍",
@@ -3798,7 +4099,7 @@
     "jyutping": "zau6",
     "translation": "then / right away / immediately",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 19
+    "occurrences": 20
   },
   {
     "character": "啫",
@@ -3938,14 +4239,21 @@
     "jyutping": "ziu1zou2",
     "translation": "morning / in the morning",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "咗",
     "jyutping": "zo2",
     "translation": "verbal aspect suffix indicating completed action (perfective aspect) / completed aspect",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 77
+    "occurrences": 82
+  },
+  {
+    "character": "張",
+    "jyutping": "zoeng1",
+    "translation": "measure word for flat objects, sheets, papers",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 2
   },
   {
     "character": "租",
@@ -3967,6 +4275,13 @@
     "translation": "tenant / renter",
     "firstIntroducedIn": "21-housing-neighborhood.md",
     "occurrences": 1
+  },
+  {
+    "character": "早日康復",
+    "jyutping": "zou2jat6hong1fuk6",
+    "translation": "recover soon / speedy recovery",
+    "firstIntroducedIn": "23-health-sickness.md",
+    "occurrences": 3
   },
   {
     "character": "早晨",
@@ -4015,7 +4330,7 @@
     "jyutping": "zuk1",
     "translation": "to wish / congratulate",
     "firstIntroducedIn": "12-regrets-wishes-empathy.md",
-    "occurrences": 7
+    "occurrences": 8
   },
   {
     "character": "俗語",
@@ -4048,16 +4363,16 @@
   {
     "character": "中",
     "jyutping": "zung3",
-    "translation": "to win",
+    "translation": "to win / to hit / win (a lottery)",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 3
+    "occurrences": 7
   },
   {
     "character": "仲",
     "jyutping": "zung6",
     "translation": "still / yet / still / also / even more",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 13
+    "occurrences": 15
   },
   {
     "character": "煮",

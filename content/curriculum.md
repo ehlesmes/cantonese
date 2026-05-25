@@ -78,6 +78,9 @@ chapters:
   - chapter: 25
     title: "Finance, Investing & Money Slang"
     file: "25-finance-money.md"
+  - chapter: 26
+    title: "Traditional Festivals, Superstitions & Cultural Slang"
+    file: "26-festivals-superstitions.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -263,6 +266,9 @@ Cantonese-speaking community._
 - **Topic 26: Finance, Investing & Money Slang**
   - _Core Grammar_: Stock market slang, investment terms (`炒股[caau2gu2]`),
     banking, and financial colloquialisms.
+- **Topic 27: Traditional Festivals, Superstitions & Cultural Slang**
+  - _Core Grammar_: Lunar New Year and Mid-Autumn slang, local superstitions
+    (`迷信`), taboo words, and cultural colloquialisms.
 
 ---
 
@@ -369,7 +375,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Colloquialisms for socializing, night-out habits, bars, clubs, and
     weekend activities.
 - **Chapter 23: Health, Sickness & Medical Slang (`23-health-sickness.md`)**
-  [ACTIVE LOOK-A-HEAD]
+  [COMPLETED]
   - _Focus_: Describing symptoms, going to the doctor (`睇醫生`), and sick leave
     colloquialisms.
 - **Chapter 24: Modern Tech, Smart Living & App Slang
@@ -380,3 +386,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   [ACTIVE LOOK-A-HEAD]
   - _Focus_: Stock market slang (`炒股`), investment colloquialisms, banking,
     and everyday financial conversations.
+- **Chapter 26: Traditional Festivals, Superstitions & Cultural Slang
+  (`26-festivals-superstitions.md`)** [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Colloquial holiday greetings, ghost festival slang, superstition
+    terminology, and cultural taboos in Cantonese speaking communities.

@@ -43,6 +43,12 @@
     "type": "adjective"
   },
   {
+    "char": "嘔",
+    "jyutping": "au2",
+    "definition": "to vomit / throw up",
+    "type": "verb"
+  },
+  {
     "char": "爸爸",
     "jyutping": "baa1baa1",
     "definition": "father / dad",
@@ -131,6 +137,18 @@
     "jyutping": "bei2",
     "definition": "to give / for / let / allow",
     "type": "verb"
+  },
+  {
+    "char": "病",
+    "jyutping": "beng6",
+    "definition": "to be sick / illness / disease",
+    "type": "noun"
+  },
+  {
+    "char": "病假",
+    "jyutping": "beng6gaa3",
+    "definition": "sick leave",
+    "type": "noun"
   },
   {
     "char": "邊",
@@ -404,6 +422,18 @@
     "type": "noun"
   },
   {
+    "char": "請",
+    "jyutping": "cing2",
+    "definition": "to apply for / request / invite / treat / please",
+    "type": "verb"
+  },
+  {
+    "char": "請假",
+    "jyutping": "cing2gaa3",
+    "definition": "to apply for leave / request time off",
+    "type": "verb"
+  },
+  {
     "char": "請問",
     "jyutping": "cing2man6",
     "definition": "may I ask / excuse me",
@@ -446,6 +476,12 @@
     "type": "verb"
   },
   {
+    "char": "腸胃炎",
+    "jyutping": "coeng4wai6jim4",
+    "definition": "gastroenteritis / stomach flu",
+    "type": "noun"
+  },
+  {
     "char": "嘈",
     "jyutping": "cou4",
     "definition": "noisy",
@@ -462,6 +498,12 @@
     "jyutping": "cyun4bou6",
     "definition": "all / entirely",
     "type": "adverb"
+  },
+  {
+    "char": "傳染",
+    "jyutping": "cyun4jim5",
+    "definition": "to infect / infectious / contagious",
+    "type": "verb"
   },
   {
     "char": "打爛",
@@ -603,6 +645,18 @@
     "type": "noun"
   },
   {
+    "char": "抖",
+    "jyutping": "dau2",
+    "definition": "to rest / take a break",
+    "type": "verb"
+  },
+  {
+    "char": "抖吓",
+    "jyutping": "dau2haa5",
+    "definition": "to rest a bit / take a brief break",
+    "type": "verb"
+  },
+  {
     "char": "哋",
     "jyutping": "dei6",
     "definition": "plural suffix for pronouns (group marker)",
@@ -726,6 +780,12 @@
     "type": "adjective"
   },
   {
+    "char": "頂住",
+    "jyutping": "ding2zyu6",
+    "definition": "to hold on / hang in there / endure",
+    "type": "verb"
+  },
+  {
     "char": "定",
     "jyutping": "ding6",
     "definition": "or (used exclusively in alternative questions)",
@@ -833,6 +893,12 @@
     "char": "發夢",
     "jyutping": "faat3mung6",
     "definition": "to dream / daydream / dream",
+    "type": "verb"
+  },
+  {
+    "char": "發燒",
+    "jyutping": "faat3siu1",
+    "definition": "to have a fever",
     "type": "verb"
   },
   {
@@ -1091,6 +1157,12 @@
     "type": "adverb"
   },
   {
+    "char": "感冒",
+    "jyutping": "gam2mou6",
+    "definition": "common cold / to catch a cold",
+    "type": "noun"
+  },
+  {
     "char": "咁",
     "jyutping": "gam3",
     "definition": "so / such / to this degree",
@@ -1178,6 +1250,12 @@
     "type": "verb"
   },
   {
+    "char": "記得",
+    "jyutping": "gei3dak1",
+    "definition": "to remember",
+    "type": "verb"
+  },
+  {
     "char": "既然",
     "jyutping": "gei3jin4",
     "definition": "since / given that",
@@ -1188,6 +1266,12 @@
     "jyutping": "gik6",
     "definition": "extremely / to the limit",
     "type": "adverb"
+  },
+  {
+    "char": "檢查",
+    "jyutping": "gim2caa4",
+    "definition": "to examine / check / inspect",
+    "type": "verb"
   },
   {
     "char": "見",
@@ -1360,6 +1444,12 @@
     "notes": "Can also be used as an independent exclamation ('What?!')."
   },
   {
+    "char": "吓",
+    "jyutping": "haa5",
+    "definition": "verbal suffix indicating a brief action or attempt",
+    "type": "particle"
+  },
+  {
     "char": "下場",
     "jyutping": "haa6coeng4",
     "definition": "next venue / afterparty / next round",
@@ -1444,6 +1534,12 @@
     "type": "expression"
   },
   {
+    "char": "係咁",
+    "jyutping": "hai6gam2",
+    "definition": "continuously / constantly",
+    "type": "adverb"
+  },
+  {
     "char": "係咩",
     "jyutping": "hai6me1",
     "definition": "really? / is that so?",
@@ -1465,6 +1561,12 @@
     "char": "合約",
     "jyutping": "hap6joek3",
     "definition": "contract / agreement",
+    "type": "noun"
+  },
+  {
+    "char": "喉嚨痛",
+    "jyutping": "hau4lung4tung3",
+    "definition": "sore throat",
     "type": "noun"
   },
   {
@@ -1512,6 +1614,12 @@
     "type": "noun"
   },
   {
+    "char": "可唔可以",
+    "jyutping": "ho2m4ho2ji5",
+    "definition": "can or cannot / may or may not (A-not-A question form)",
+    "type": "expression"
+  },
+  {
     "char": "可能",
     "jyutping": "ho2nang4",
     "definition": "possible / maybe / probably",
@@ -1522,6 +1630,24 @@
     "jyutping": "hoeng1gong2",
     "definition": "Hong Kong",
     "type": "noun"
+  },
+  {
+    "char": "向",
+    "jyutping": "hoeng3",
+    "definition": "towards / to",
+    "type": "preposition"
+  },
+  {
+    "char": "開",
+    "jyutping": "hoi1",
+    "definition": "to write (a prescription) / prescribe / open / start",
+    "type": "verb"
+  },
+  {
+    "char": "開始",
+    "jyutping": "hoi1ci2",
+    "definition": "to start / begin",
+    "type": "verb"
   },
   {
     "char": "開心",
@@ -1575,6 +1701,18 @@
     "char": "好彩",
     "jyutping": "hou2coi2",
     "definition": "luckily / fortunately",
+    "type": "adverb"
+  },
+  {
+    "char": "好返",
+    "jyutping": "hou2faan1",
+    "definition": "to recover / get well",
+    "type": "verb"
+  },
+  {
+    "char": "好好",
+    "jyutping": "hou2hou2",
+    "definition": "well / properly",
     "type": "adverb"
   },
   {
@@ -1710,6 +1848,12 @@
     "type": "noun"
   },
   {
+    "char": "休息",
+    "jyutping": "jau1sik1",
+    "definition": "to rest / take a break",
+    "type": "verb"
+  },
+  {
     "char": "游",
     "jyutping": "jau4",
     "definition": "to swim / drift / wander",
@@ -1813,6 +1957,18 @@
     "notes": "Colloquial variant of 而家."
   },
   {
+    "char": "醫生",
+    "jyutping": "ji1sang1",
+    "definition": "doctor / medical practitioner",
+    "type": "noun"
+  },
+  {
+    "char": "醫生紙",
+    "jyutping": "ji1sang1zi2",
+    "definition": "doctor's sick leave certificate / medical note",
+    "type": "noun"
+  },
+  {
     "char": "而家",
     "jyutping": "ji4gaa1",
     "definition": "now / currently",
@@ -1847,6 +2003,12 @@
     "jyutping": "ji6sap6",
     "definition": "twenty",
     "type": "numeral"
+  },
+  {
+    "char": "嚴重",
+    "jyutping": "jim4zung6",
+    "definition": "serious / severe / grave",
+    "type": "adjective"
   },
   {
     "char": "現金",
@@ -1913,6 +2075,12 @@
     "jyutping": "joek3",
     "definition": "to make an appointment / invite",
     "type": "verb"
+  },
+  {
+    "char": "藥",
+    "jyutping": "joek6",
+    "definition": "medicine / drug",
+    "type": "noun"
   },
   {
     "char": "洋樓",
@@ -1999,6 +2167,12 @@
     "type": "noun"
   },
   {
+    "char": "咳",
+    "jyutping": "kat1",
+    "definition": "to cough / cough",
+    "type": "verb"
+  },
+  {
     "char": "佢",
     "jyutping": "keoi5",
     "definition": "he / she / it",
@@ -2058,6 +2232,12 @@
     "jyutping": "lau2",
     "definition": "building / flat / apartment / floor",
     "type": "noun"
+  },
+  {
+    "char": "流鼻水",
+    "jyutping": "lau4bei6seoi2",
+    "definition": "to have a runny nose",
+    "type": "verb"
   },
   {
     "char": "樓梯",
@@ -2126,6 +2306,12 @@
     "definition": "sentence-final particle showing obviousness, resignation, or 'of course'",
     "type": "particle",
     "notes": "Implies that something is completely obvious, or shows a resigned state."
+  },
+  {
+    "char": "攞",
+    "jyutping": "lo2",
+    "definition": "to get / take / fetch",
+    "type": "verb"
   },
   {
     "char": "兩",
@@ -2256,6 +2442,12 @@
     "type": "expression"
   },
   {
+    "char": "唔係",
+    "jyutping": "m4hai6",
+    "definition": "no / not so / that's not the case",
+    "type": "expression"
+  },
+  {
     "char": "唔開心",
     "jyutping": "m4hoi1sam1",
     "definition": "sad / unhappy",
@@ -2266,6 +2458,12 @@
     "jyutping": "m4hou2",
     "definition": "don't / should not",
     "type": "auxiliary verb"
+  },
+  {
+    "char": "唔使",
+    "jyutping": "m4sai2",
+    "definition": "no need / not necessary",
+    "type": "adverb"
   },
   {
     "char": "唔使客氣",
@@ -2601,6 +2799,12 @@
     "type": "noun"
   },
   {
+    "char": "痾",
+    "jyutping": "o1",
+    "definition": "to have diarrhea / excrete",
+    "type": "verb"
+  },
+  {
     "char": "OT",
     "jyutping": "o1ti1",
     "definition": "to work overtime / overtime",
@@ -2751,6 +2955,12 @@
     "type": "verb"
   },
   {
+    "char": "使唔使",
+    "jyutping": "sai2m4sai2",
+    "definition": "need or not / do you need (A-not-A question form)",
+    "type": "expression"
+  },
+  {
     "char": "細",
     "jyutping": "sai3",
     "definition": "small / little / tiny",
@@ -2881,6 +3091,13 @@
     "jyutping": "se4wong4",
     "definition": "to slack off / avoid work / literally 'snake king'",
     "type": "verb"
+  },
+  {
+    "char": "射波",
+    "jyutping": "se6bo1",
+    "definition": "to fake sick / call in sick falsely / play truant",
+    "type": "verb",
+    "notes": "Literally 'to shoot a ball', a popular Hong Kong slang term."
   },
   {
     "char": "死",
@@ -3030,6 +3247,12 @@
     "char": "食飯",
     "jyutping": "sik6faan6",
     "definition": "to eat a meal / have dinner",
+    "type": "verb"
+  },
+  {
+    "char": "食藥",
+    "jyutping": "sik6joek6",
+    "definition": "to take medicine",
     "type": "verb"
   },
   {
@@ -3244,6 +3467,12 @@
     "type": "verb"
   },
   {
+    "char": "睇醫生",
+    "jyutping": "tai2ji1sang1",
+    "definition": "to see a doctor",
+    "type": "verb"
+  },
+  {
     "char": "睇樓",
     "jyutping": "tai2lau2",
     "definition": "to view apartments / flats",
@@ -3260,6 +3489,18 @@
     "jyutping": "tau1",
     "definition": "to steal",
     "type": "verb"
+  },
+  {
+    "char": "頭痛",
+    "jyutping": "tau4tung3",
+    "definition": "headache",
+    "type": "noun"
+  },
+  {
+    "char": "頭暈",
+    "jyutping": "tau4wan4",
+    "definition": "dizzy / lightheaded",
+    "type": "adjective"
   },
   {
     "char": "聽",
@@ -3304,6 +3545,12 @@
     "type": "noun"
   },
   {
+    "char": "聽落",
+    "jyutping": "ting1lok6",
+    "definition": "sounds like",
+    "type": "verb"
+  },
+  {
     "char": "跳",
     "jyutping": "tiu3",
     "definition": "to jump / leap / dance",
@@ -3344,6 +3591,12 @@
     "jyutping": "tou5ngo6",
     "definition": "hungry (literally: belly hungry)",
     "type": "adjective"
+  },
+  {
+    "char": "肚痛",
+    "jyutping": "tou5tung3",
+    "definition": "stomach ache / abdominal pain",
+    "type": "noun"
   },
   {
     "char": "同",
@@ -3675,6 +3928,12 @@
     "notes": "Attaches directly to verbs to show completion (equivalent to Mandarin 了 le)."
   },
   {
+    "char": "張",
+    "jyutping": "zoeng1",
+    "definition": "measure word for flat objects, sheets, papers",
+    "type": "classifier"
+  },
+  {
     "char": "撞",
     "jyutping": "zong6",
     "definition": "to hit / bump / collide",
@@ -3697,6 +3956,12 @@
     "jyutping": "zou1haak3",
     "definition": "tenant / renter",
     "type": "noun"
+  },
+  {
+    "char": "早日康復",
+    "jyutping": "zou2jat6hong1fuk6",
+    "definition": "recover soon / speedy recovery",
+    "type": "expression"
   },
   {
     "char": "早晨",
