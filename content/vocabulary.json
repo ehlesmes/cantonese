@@ -4,7 +4,7 @@
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 225
+    "occurrences": 234
   },
   {
     "character": "阿",
@@ -35,6 +35,13 @@
     "occurrences": 12
   },
   {
+    "character": "百",
+    "jyutping": "baak3",
+    "translation": "hundred",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 4
+  },
+  {
     "character": "扮",
     "jyutping": "baan6",
     "translation": "to dress up / act / pretend",
@@ -53,14 +60,14 @@
     "jyutping": "baat3",
     "translation": "eight",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 4
+    "occurrences": 6
   },
   {
     "character": "八達通",
     "jyutping": "baat3daat6tung1",
     "translation": "Octopus card (Hong Kong contact-less smart card)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "爆",
@@ -74,14 +81,14 @@
     "jyutping": "bat1jyu4",
     "translation": "how about",
     "firstIntroducedIn": "14-intensifiers-exaggeration.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "俾",
     "jyutping": "bei2",
     "translation": "to give / for / by / to give",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 19
+    "occurrences": 21
   },
   {
     "character": "邊",
@@ -95,7 +102,7 @@
     "jyutping": "bin1dou6",
     "translation": "where",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 9
+    "occurrences": 10
   },
   {
     "character": "邊個",
@@ -144,7 +151,7 @@
     "jyutping": "bun3",
     "translation": "half",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 7
+    "occurrences": 9
   },
   {
     "character": "叉燒",
@@ -263,7 +270,7 @@
     "jyutping": "cin2",
     "translation": "money",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 10
+    "occurrences": 11
   },
   {
     "character": "前面",
@@ -329,6 +336,13 @@
     "occurrences": 1
   },
   {
+    "character": "打折",
+    "jyutping": "daa2 zit3",
+    "translation": "to give a discount",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
     "character": "打卡",
     "jyutping": "daa2kaa1",
     "translation": "to check-in / take photos at trendy spots",
@@ -348,6 +362,13 @@
     "translation": "big / large / great",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
     "occurrences": 5
+  },
+  {
+    "character": "單",
+    "jyutping": "daan1",
+    "translation": "bill / receipt / sheet",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
   },
   {
     "character": "但係",
@@ -382,7 +403,14 @@
     "jyutping": "dak1",
     "translation": "particle expressing permission, possibility, capability, or adverbial degree",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 13
+    "occurrences": 14
+  },
+  {
+    "character": "得唔得",
+    "jyutping": "dak1 m4 dak1",
+    "translation": "can or not",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 4
   },
   {
     "character": "得滯",
@@ -399,6 +427,13 @@
     "occurrences": 2
   },
   {
+    "character": "特價",
+    "jyutping": "dat6 gaa3",
+    "translation": "special price / bargain price",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
     "character": "哋",
     "jyutping": "dei6",
     "translation": "plural suffix",
@@ -413,18 +448,25 @@
     "occurrences": 2
   },
   {
+    "character": "頂",
+    "jyutping": "deng2",
+    "translation": "measure word for hats",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 5
+  },
+  {
     "character": "對",
     "jyutping": "deoi3",
     "translation": "pair / couple (classifier for paired objects like shoes)",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 11
+    "occurrences": 15
   },
   {
     "character": "啲",
     "jyutping": "di1",
     "translation": "a bit / some / comparative suffix / some / a little / plural or possessive particle",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 22
+    "occurrences": 23
   },
   {
     "character": "的士",
@@ -452,7 +494,7 @@
     "jyutping": "dim2joeng6",
     "translation": "how / in what way",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "點心",
@@ -522,14 +564,14 @@
     "jyutping": "do1ze6",
     "translation": "thank you (for a gift, compliment, or hospitality) / thank you (for a gift)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "都",
     "jyutping": "dou1",
     "translation": "also / both / all",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 15
+    "occurrences": 16
   },
   {
     "character": "凍",
@@ -604,9 +646,9 @@
   {
     "character": "分",
     "jyutping": "fan1",
-    "translation": "minute",
+    "translation": "minute / cent / minute",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 7
+    "occurrences": 8
   },
   {
     "character": "分鐘",
@@ -679,6 +721,13 @@
     "occurrences": 11
   },
   {
+    "character": "褲",
+    "jyutping": "fu3",
+    "translation": "pants / trousers",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 5
+  },
+  {
     "character": "加",
     "jyutping": "gaa1",
     "translation": "to add / increase",
@@ -749,6 +798,13 @@
     "occurrences": 1
   },
   {
+    "character": "減價",
+    "jyutping": "gaam2 gaa3",
+    "translation": "to reduce price / go on sale",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
     "character": "膠袋",
     "jyutping": "gaau1doi2",
     "translation": "plastic bag",
@@ -781,14 +837,14 @@
     "jyutping": "gam2",
     "translation": "then / in that case / so",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 10
+    "occurrences": 11
   },
   {
     "character": "咁",
     "jyutping": "gam3",
     "translation": "so / such / to this degree / then",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 15
+    "occurrences": 16
   },
   {
     "character": "緊",
@@ -823,7 +879,21 @@
     "jyutping": "ge3",
     "translation": "particle / possessive particle / nominalizing particle / final assertive particle",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 43
+    "occurrences": 46
+  },
+  {
+    "character": "幾錢",
+    "jyutping": "gei2 cin2",
+    "translation": "how much money",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 3
+  },
+  {
+    "character": "幾多錢",
+    "jyutping": "gei2 do1 cin2",
+    "translation": "how much money",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 2
   },
   {
     "character": "幾點",
@@ -872,7 +942,7 @@
     "jyutping": "gin6",
     "translation": "measure word for clothes, matters, and items",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 19
+    "occurrences": 25
   },
   {
     "character": "叫",
@@ -914,7 +984,7 @@
     "jyutping": "go3",
     "translation": "general measure word / individual / unit / measure word for general items",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 44
+    "occurrences": 48
   },
   {
     "character": "覺得",
@@ -929,6 +999,13 @@
     "translation": "to speak / say / talk",
     "firstIntroducedIn": "01-greetings.md",
     "occurrences": 25
+  },
+  {
+    "character": "講價",
+    "jyutping": "gong2 gaa3",
+    "translation": "to bargain",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 3
   },
   {
     "character": "高",
@@ -970,14 +1047,14 @@
     "jyutping": "gwai2sei2gam3",
     "translation": "extremely / awfully",
     "firstIntroducedIn": "14-intensifiers-exaggeration.md",
-    "occurrences": 8
+    "occurrences": 9
   },
   {
     "character": "貴",
     "jyutping": "gwai3",
     "translation": "expensive",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 11
+    "occurrences": 13
   },
   {
     "character": "過",
@@ -1026,7 +1103,7 @@
     "jyutping": "haai4",
     "translation": "shoes",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 6
+    "occurrences": 8
   },
   {
     "character": "喊",
@@ -1040,7 +1117,7 @@
     "jyutping": "hai2",
     "translation": "at / in / on / at / in / on (locative preposition)",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 52
+    "occurrences": 54
   },
   {
     "character": "喺度",
@@ -1054,7 +1131,7 @@
     "jyutping": "hai6",
     "translation": "to be / to be (am/is/are) / yes",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 47
+    "occurrences": 48
   },
   {
     "character": "係唔係",
@@ -1103,7 +1180,7 @@
     "jyutping": "ho2ji5",
     "translation": "can / may / possible",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 16
+    "occurrences": 17
   },
   {
     "character": "可樂",
@@ -1150,9 +1227,16 @@
   {
     "character": "好",
     "jyutping": "hou2",
-    "translation": "good / fine / very / quite",
+    "translation": "good / fine / very / quite / okay",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 50
+    "occurrences": 54
+  },
+  {
+    "character": "好啦",
+    "jyutping": "hou2 laa1",
+    "translation": "okay",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
   },
   {
     "character": "好唔好",
@@ -1174,6 +1258,20 @@
     "translation": "luckily / fortunately",
     "firstIntroducedIn": "12-regrets-wishes-empathy.md",
     "occurrences": 6
+  },
+  {
+    "character": "毫",
+    "jyutping": "hou4",
+    "translation": "ten cents / dime",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
+    "character": "毫子",
+    "jyutping": "hou4 zi2",
+    "translation": "ten-cent coin / dime",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
   },
   {
     "character": "烘底",
@@ -1302,6 +1400,13 @@
     "occurrences": 14
   },
   {
+    "character": "有折",
+    "jyutping": "jau5 zit3",
+    "translation": "to have a discount",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
     "character": "有錢",
     "jyutping": "jau5cin2",
     "translation": "rich / wealthy / have money",
@@ -1383,7 +1488,7 @@
     "jyutping": "ji6",
     "translation": "two",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 15
+    "occurrences": 17
   },
   {
     "character": "二十",
@@ -1440,6 +1545,13 @@
     "translation": "do you want / want or not (A-not-A question form)",
     "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 2
+  },
+  {
+    "character": "用",
+    "jyutping": "jung6",
+    "translation": "to use",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
   },
   {
     "character": "如果",
@@ -1509,7 +1621,7 @@
     "jyutping": "laa1",
     "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 95
+    "occurrences": 100
   },
   {
     "character": "喇",
@@ -1540,11 +1652,18 @@
     "occurrences": 2
   },
   {
+    "character": "叻",
+    "jyutping": "lek1",
+    "translation": "smart",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
     "character": "靚",
     "jyutping": "leng3",
     "translation": "high quality / pretty / beautiful / handsome / high quality / pretty / beautiful / good-looking",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 13
+    "occurrences": 14
   },
   {
     "character": "靚仔",
@@ -1586,7 +1705,7 @@
     "jyutping": "loeng5",
     "translation": "two / pair (used with classifiers)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 32
+    "occurrences": 36
   },
   {
     "character": "落雨",
@@ -1600,7 +1719,7 @@
     "jyutping": "lou5baan2",
     "translation": "boss / proprietor",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 8
+    "occurrences": 10
   },
   {
     "character": "老細",
@@ -1608,6 +1727,13 @@
     "translation": "boss / employer (colloquial)",
     "firstIntroducedIn": "13-passives-focus-indirect.md",
     "occurrences": 15
+  },
+  {
+    "character": "碌卡",
+    "jyutping": "luk1 ka1",
+    "translation": "swipe credit card",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 2
   },
   {
     "character": "六",
@@ -1649,14 +1775,14 @@
     "jyutping": "m4dou2",
     "translation": "cannot / unable to manage to / fail to",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 13
+    "occurrences": 14
   },
   {
     "character": "唔該",
     "jyutping": "m4goi1",
     "translation": "excuse me / excuse me / please / thank you (for service or help)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 28
+    "occurrences": 32
   },
   {
     "character": "唔開心",
@@ -1694,11 +1820,18 @@
     "occurrences": 10
   },
   {
+    "character": "埋",
+    "jyutping": "maai4",
+    "translation": "also",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
     "character": "買",
     "jyutping": "maai5",
     "translation": "to buy",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 15
+    "occurrences": 16
   },
   {
     "character": "埋單",
@@ -1706,6 +1839,13 @@
     "translation": "to pay the bill / get the check / pay bill",
     "firstIntroducedIn": "03-dining-out.md",
     "occurrences": 3
+  },
+  {
+    "character": "賣",
+    "jyutping": "maai6",
+    "translation": "sell",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
   },
   {
     "character": "慢",
@@ -1726,7 +1866,7 @@
     "jyutping": "man1",
     "translation": "dollar (spoken Cantonese colloquial unit of currency)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 19
+    "occurrences": 25
   },
   {
     "character": "問",
@@ -1799,6 +1939,13 @@
     "occurrences": 5
   },
   {
+    "character": "帽",
+    "jyutping": "mou2",
+    "translation": "hat / cap",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 2
+  },
+  {
     "character": "冇",
     "jyutping": "mou5",
     "translation": "not to have / without / there is not / not to have / there is not / not have / to not have / there is not / have not",
@@ -1857,9 +2004,9 @@
   {
     "character": "你",
     "jyutping": "nei5",
-    "translation": "you",
+    "translation": "you / your",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 101
+    "occurrences": 106
   },
   {
     "character": "你哋",
@@ -1901,7 +2048,7 @@
     "jyutping": "ngo5",
     "translation": "I / I / me",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 180
+    "occurrences": 182
   },
   {
     "character": "我哋",
@@ -1922,21 +2069,21 @@
     "jyutping": "ni1",
     "translation": "this",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 23
+    "occurrences": 34
   },
   {
     "character": "呢度",
     "jyutping": "ni1dou6",
     "translation": "here",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 27
+    "occurrences": 28
   },
   {
     "character": "呢個",
     "jyutping": "ni1go3",
     "translation": "this one",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 15
+    "occurrences": 16
   },
   {
     "character": "暖水",
@@ -1978,7 +2125,21 @@
     "jyutping": "peng4",
     "translation": "cheap / inexpensive",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 11
+    "occurrences": 13
+  },
+  {
+    "character": "平啲",
+    "jyutping": "peng4 di1",
+    "translation": "cheaper / cheaper / a bit cheaper",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 3
+  },
+  {
+    "character": "平啲啦",
+    "jyutping": "peng4 di1 laa1",
+    "translation": "cheaper please",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
   },
   {
     "character": "沙",
@@ -1988,18 +2149,25 @@
     "occurrences": 1
   },
   {
+    "character": "晒",
+    "jyutping": "saai3",
+    "translation": "entirely",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
     "character": "三",
     "jyutping": "saam1",
     "translation": "three",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 15
+    "occurrences": 18
   },
   {
     "character": "衫",
     "jyutping": "saam1",
     "translation": "clothes / clothing / shirt",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 17
+    "occurrences": 19
   },
   {
     "character": "三十",
@@ -2069,7 +2237,7 @@
     "jyutping": "sap6",
     "translation": "ten",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 13
+    "occurrences": 16
   },
   {
     "character": "十一",
@@ -2098,6 +2266,13 @@
     "translation": "do you accept / accept or not (A-not-A question form)",
     "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 5
+  },
+  {
+    "character": "收銀",
+    "jyutping": "sau1 ngan2",
+    "translation": "cashier",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 2
   },
   {
     "character": "收工",
@@ -2321,7 +2496,7 @@
     "jyutping": "soeng2",
     "translation": "want to / to want to / would like to / think / to want / would like to",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 40
+    "occurrences": 41
   },
   {
     "character": "想唔想",
@@ -2352,6 +2527,13 @@
     "occurrences": 8
   },
   {
+    "character": "送",
+    "jyutping": "sung3",
+    "translation": "to give as a gift / include for free",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
     "character": "書",
     "jyutping": "syu1",
     "translation": "book",
@@ -2364,6 +2546,20 @@
     "translation": "potato chips / crisps",
     "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 2
+  },
+  {
+    "character": "算啦",
+    "jyutping": "syun3 laa1",
+    "translation": "forget it / let it be",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 2
+  },
+  {
+    "character": "太",
+    "jyutping": "taai3",
+    "translation": "too",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
   },
   {
     "character": "睇",
@@ -2427,6 +2623,13 @@
     "translation": "to dance",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
     "occurrences": 2
+  },
+  {
+    "character": "條",
+    "jyutping": "tiu4",
+    "translation": "measure word for long, thin objects",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 8
   },
   {
     "character": "同",
@@ -2545,7 +2748,7 @@
     "jyutping": "zan1hai6",
     "translation": "really / truly",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 16
+    "occurrences": 17
   },
   {
     "character": "走",
@@ -2585,9 +2788,9 @@
   {
     "character": "隻",
     "jyutping": "zek3",
-    "translation": "classifier for animals / measure word for animals",
+    "translation": "classifier for animals / measure word for animals / measure word for animals or objects in pairs",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 8
+    "occurrences": 10
   },
   {
     "character": "正",
@@ -2651,6 +2854,13 @@
     "translation": "that is / namely / in other words / meaning",
     "firstIntroducedIn": "13-passives-focus-indirect.md",
     "occurrences": 11
+  },
+  {
+    "character": "折",
+    "jyutping": "zit3",
+    "translation": "discount",
+    "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 2
   },
   {
     "character": "折墮",

@@ -254,6 +254,12 @@
     "type": "verb"
   },
   {
+    "char": "千",
+    "jyutping": "cin1",
+    "definition": "thousand",
+    "type": "numeral"
+  },
+  {
     "char": "錢",
     "jyutping": "cin2",
     "definition": "money",
@@ -314,6 +320,12 @@
     "type": "verb"
   },
   {
+    "char": "打折",
+    "jyutping": "daa2 zit3",
+    "definition": "to give a discount",
+    "type": "verb"
+  },
+  {
     "char": "打卡",
     "jyutping": "daa2kaa1",
     "definition": "to check-in / take photos at trendy spots",
@@ -330,6 +342,12 @@
     "jyutping": "daai6",
     "definition": "big / large / great",
     "type": "adjective"
+  },
+  {
+    "char": "單",
+    "jyutping": "daan1",
+    "definition": "bill / receipt / sheet",
+    "type": "noun"
   },
   {
     "char": "但係",
@@ -381,6 +399,12 @@
     "type": "verb"
   },
   {
+    "char": "特價",
+    "jyutping": "dat6 gaa3",
+    "definition": "special price / bargain price",
+    "type": "noun"
+  },
+  {
     "char": "哋",
     "jyutping": "dei6",
     "definition": "plural suffix for pronouns (group marker)",
@@ -397,6 +421,12 @@
     "jyutping": "dei6tit3zaam6",
     "definition": "MTR station / subway station",
     "type": "noun"
+  },
+  {
+    "char": "頂",
+    "jyutping": "deng2",
+    "definition": "measure word for hats",
+    "type": "classifier"
   },
   {
     "char": "對",
@@ -640,6 +670,12 @@
     "type": "verb"
   },
   {
+    "char": "褲",
+    "jyutping": "fu3",
+    "definition": "pants / trousers",
+    "type": "noun"
+  },
+  {
     "char": "加",
     "jyutping": "gaa1",
     "definition": "to add / increase",
@@ -710,6 +746,12 @@
     "jyutping": "gaak3lei4",
     "definition": "next to / beside / neighbor",
     "type": "noun"
+  },
+  {
+    "char": "減價",
+    "jyutping": "gaam2 gaa3",
+    "definition": "to reduce price / go on sale",
+    "type": "verb"
   },
   {
     "char": "膠袋",
@@ -785,6 +827,18 @@
     "definition": "possessive particle / nominalizing particle / final assertive particle",
     "type": "particle",
     "notes": "Indicates possession (like 's, equivalent to Mandarin 的 de) or asserts a state."
+  },
+  {
+    "char": "幾錢",
+    "jyutping": "gei2 cin2",
+    "definition": "how much money",
+    "type": "expression"
+  },
+  {
+    "char": "幾多錢",
+    "jyutping": "gei2 do1 cin2",
+    "definition": "how much money",
+    "type": "expression"
   },
   {
     "char": "幾點",
@@ -881,6 +935,12 @@
     "char": "講",
     "jyutping": "gong2",
     "definition": "to speak / say / talk",
+    "type": "verb"
+  },
+  {
+    "char": "講價",
+    "jyutping": "gong2 gaa3",
+    "definition": "to bargain / negotiate price",
     "type": "verb"
   },
   {
@@ -1098,6 +1158,12 @@
     "type": "adjective"
   },
   {
+    "char": "好啦",
+    "jyutping": "hou2 laa1",
+    "definition": "okay / alright",
+    "type": "expression"
+  },
+  {
     "char": "好似",
     "jyutping": "hou2ci5",
     "definition": "seem / seem like / as if",
@@ -1108,6 +1174,18 @@
     "jyutping": "hou2coi2",
     "definition": "luckily / fortunately",
     "type": "adverb"
+  },
+  {
+    "char": "毫",
+    "jyutping": "hou4",
+    "definition": "ten cents / dime",
+    "type": "classifier"
+  },
+  {
+    "char": "毫子",
+    "jyutping": "hou4 zi2",
+    "definition": "ten-cent coin / dime",
+    "type": "noun"
   },
   {
     "char": "烘底",
@@ -1222,6 +1300,12 @@
     "jyutping": "jau5",
     "definition": "to have / possess / there is / there are",
     "type": "verb"
+  },
+  {
+    "char": "有折",
+    "jyutping": "jau5 zit3",
+    "definition": "to have a discount",
+    "type": "expression"
   },
   {
     "char": "有錢",
@@ -1345,6 +1429,12 @@
     "type": "adjective"
   },
   {
+    "char": "用",
+    "jyutping": "jung6",
+    "definition": "to use",
+    "type": "verb"
+  },
+  {
     "char": "如果",
     "jyutping": "jyu4gwo2",
     "definition": "if / in case",
@@ -1436,6 +1526,12 @@
     "type": "verb"
   },
   {
+    "char": "叻",
+    "jyutping": "lek1",
+    "definition": "smart / clever / capable",
+    "type": "adjective"
+  },
+  {
     "char": "靚",
     "jyutping": "leng3",
     "definition": "pretty / beautiful / handsome / high quality",
@@ -1520,6 +1616,12 @@
     "jyutping": "lou5sai3",
     "definition": "boss / employer (colloquial)",
     "type": "noun"
+  },
+  {
+    "char": "碌卡",
+    "jyutping": "luk1 ka1",
+    "definition": "to swipe a credit card",
+    "type": "verb"
   },
   {
     "char": "六",
@@ -1609,6 +1711,12 @@
     "notes": "Used when stating facts that the listener should already know or accept."
   },
   {
+    "char": "埋",
+    "jyutping": "maai4",
+    "definition": "also / as well / including",
+    "type": "particle"
+  },
+  {
     "char": "買",
     "jyutping": "maai5",
     "definition": "to buy",
@@ -1632,6 +1740,12 @@
     "jyutping": "maan6",
     "definition": "slow",
     "type": "adjective"
+  },
+  {
+    "char": "萬",
+    "jyutping": "maan6",
+    "definition": "ten thousand",
+    "type": "numeral"
   },
   {
     "char": "貓",
@@ -1717,6 +1831,12 @@
     "jyutping": "mong4",
     "definition": "busy",
     "type": "adjective"
+  },
+  {
+    "char": "帽",
+    "jyutping": "mou2",
+    "definition": "hat / cap",
+    "type": "noun"
   },
   {
     "char": "冇",
@@ -1899,6 +2019,18 @@
     "type": "adjective"
   },
   {
+    "char": "平啲",
+    "jyutping": "peng4 di1",
+    "definition": "cheaper / a bit cheaper",
+    "type": "adjective"
+  },
+  {
+    "char": "平啲啦",
+    "jyutping": "peng4 di1 laa1",
+    "definition": "cheaper please",
+    "type": "expression"
+  },
+  {
     "char": "鋪頭",
     "jyutping": "pou3tau2",
     "definition": "shop / store",
@@ -1909,6 +2041,12 @@
     "jyutping": "saa1",
     "definition": "sand",
     "type": "noun"
+  },
+  {
+    "char": "晒",
+    "jyutping": "saai3",
+    "definition": "entirely / completely / all",
+    "type": "particle"
   },
   {
     "char": "三",
@@ -2001,6 +2139,12 @@
     "type": "verb"
   },
   {
+    "char": "收銀",
+    "jyutping": "sau1 ngan2",
+    "definition": "cashier / cash desk",
+    "type": "noun"
+  },
+  {
     "char": "收工",
     "jyutping": "sau1gung1",
     "definition": "to finish work for the day / get off work",
@@ -2067,6 +2211,12 @@
     "type": "verb"
   },
   {
+    "char": "信用卡",
+    "jyutping": "seon3 jung6 ka1",
+    "definition": "credit card",
+    "type": "noun"
+  },
+  {
     "char": "詩",
     "jyutping": "si1",
     "definition": "poem / poetry",
@@ -2088,6 +2238,12 @@
     "char": "試",
     "jyutping": "si3",
     "definition": "to try / test",
+    "type": "verb"
+  },
+  {
+    "char": "試衫",
+    "jyutping": "si3 saam1",
+    "definition": "to try on clothes",
     "type": "verb"
   },
   {
@@ -2170,6 +2326,12 @@
     "type": "adjective"
   },
   {
+    "char": "少少",
+    "jyutping": "siu2 siu2",
+    "definition": "a little bit / slightly",
+    "type": "adverb"
+  },
+  {
     "char": "少冰",
     "jyutping": "siu2bing1",
     "definition": "less ice",
@@ -2230,6 +2392,12 @@
     "type": "verb"
   },
   {
+    "char": "送",
+    "jyutping": "sung3",
+    "definition": "to give as a gift / include for free",
+    "type": "verb"
+  },
+  {
     "char": "書",
     "jyutping": "syu1",
     "definition": "book",
@@ -2242,9 +2410,27 @@
     "type": "noun"
   },
   {
+    "char": "算啦",
+    "jyutping": "syun3 laa1",
+    "definition": "forget it / let it be",
+    "type": "expression"
+  },
+  {
+    "char": "太",
+    "jyutping": "taai3",
+    "definition": "too / extremely",
+    "type": "adverb"
+  },
+  {
     "char": "睇",
     "jyutping": "tai2",
     "definition": "to look / see / watch / read",
+    "type": "verb"
+  },
+  {
+    "char": "睇中",
+    "jyutping": "tai2 zung3",
+    "definition": "to take a fancy to / set one's eyes on",
     "type": "verb"
   },
   {
@@ -2294,6 +2480,12 @@
     "jyutping": "tiu3mou5",
     "definition": "to dance",
     "type": "verb"
+  },
+  {
+    "char": "條",
+    "jyutping": "tiu4",
+    "definition": "measure word for long, thin objects",
+    "type": "classifier"
   },
   {
     "char": "肚餓",
@@ -2514,6 +2706,12 @@
     "jyutping": "zik1hai6",
     "definition": "that is / namely / in other words / meaning",
     "type": "conjunction"
+  },
+  {
+    "char": "折",
+    "jyutping": "zit3",
+    "definition": "discount",
+    "type": "noun"
   },
   {
     "char": "折墮",

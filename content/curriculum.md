@@ -60,6 +60,9 @@ chapters:
   - chapter: 19
     title: "Dating, Relationships & Social Media Slang"
     file: "19-social-media-slang.md"
+  - chapter: 20
+    title: "Travel, Directions & Transport Slang"
+    file: "20-travel-transport.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -299,10 +302,14 @@ chapters, translating our spiraled progression into progressive text lessons.
     beverage options (e.g. less sweet, iced), and essential dim sum cultural
     terminology.
 - **Chapter 18: Shopping, Bargaining & Spoken Quantifiers
-  (`18-shopping-bargaining.md`)** [ACTIVE LOOK-A-HEAD]
+  (`18-shopping-bargaining.md`)** [COMPLETED]
   - _Focus_: Master spoken currency structures, bargaining expressions (e.g.
     `平啲啦` [cheaper please]), and advanced classifiers.
 - **Chapter 19: Dating, Relationships & Social Media Slang
   (`19-social-media-slang.md`)** [ACTIVE LOOK-A-HEAD]
   - _Focus_: Learn colloquial terms for modern romance, texting abbreviations,
     and social media slang.
+- **Chapter 20: Travel, Directions & Transport Slang
+  (`20-travel-transport.md`)** [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Navigate local transport (minibuses, MTR), ask for and give
+    directions, and master essential travel slangs and colloquialisms.
