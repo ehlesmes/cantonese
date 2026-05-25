@@ -19,6 +19,12 @@
     "type": "noun"
   },
   {
+    "char": "阿華",
+    "jyutping": "aa3 waa4",
+    "definition": "Ah Wa",
+    "type": "noun"
+  },
+  {
     "char": "呃",
     "jyutping": "aak1",
     "definition": "to cheat / trick / fish",
@@ -35,6 +41,12 @@
     "jyutping": "aan3",
     "definition": "late",
     "type": "adjective"
+  },
+  {
+    "char": "IG",
+    "jyutping": "ai1zi1",
+    "definition": "Instagram (slang)",
+    "type": "noun"
   },
   {
     "char": "矮",
@@ -79,6 +91,12 @@
     "type": "numeral"
   },
   {
+    "char": "百分之十",
+    "jyutping": "baak3fan6zi1sap6",
+    "definition": "ten percent",
+    "type": "numeral"
+  },
+  {
     "char": "白",
     "jyutping": "baak6",
     "definition": "love / clearly / white",
@@ -113,6 +131,12 @@
     "jyutping": "baau3",
     "definition": "explosively / extremely (post-adjective intensifier)",
     "type": "adverb"
+  },
+  {
+    "char": "爆數據",
+    "jyutping": "baau3 sou3geoi3",
+    "definition": "to exceed mobile data limit (slang)",
+    "type": "verb"
   },
   {
     "char": "不過",
@@ -282,6 +306,18 @@
     "jyutping": "caam2",
     "definition": "miserable / pitiful / tragic",
     "type": "adjective"
+  },
+  {
+    "char": "插",
+    "jyutping": "caap3",
+    "definition": "to insert / plug in",
+    "type": "verb"
+  },
+  {
+    "char": "插頭",
+    "jyutping": "caap3tau4",
+    "definition": "electrical socket / plug",
+    "type": "noun"
   },
   {
     "char": "炒",
@@ -476,6 +512,12 @@
     "type": "verb"
   },
   {
+    "char": "牆",
+    "jyutping": "coeng4",
+    "definition": "wall",
+    "type": "noun"
+  },
+  {
     "char": "腸胃炎",
     "jyutping": "coeng4wai6jim4",
     "definition": "gastroenteritis / stomach flu",
@@ -488,10 +530,28 @@
     "type": "adjective"
   },
   {
+    "char": "充",
+    "jyutping": "cung1",
+    "definition": "to charge / fill",
+    "type": "verb"
+  },
+  {
+    "char": "充電",
+    "jyutping": "cung1din6",
+    "definition": "to charge a battery",
+    "type": "verb"
+  },
+  {
     "char": "廚房",
     "jyutping": "cyu4fong2",
     "definition": "kitchen",
     "type": "noun"
+  },
+  {
+    "char": "傳",
+    "jyutping": "cyun4",
+    "definition": "to send / transmit / pass on",
+    "type": "verb"
   },
   {
     "char": "全部",
@@ -536,6 +596,12 @@
     "type": "verb"
   },
   {
+    "char": "帶",
+    "jyutping": "daai3",
+    "definition": "to bring / carry",
+    "type": "verb"
+  },
+  {
     "char": "大",
     "jyutping": "daai6",
     "definition": "big / large / great",
@@ -551,6 +617,12 @@
     "char": "大約",
     "jyutping": "daai6joek3",
     "definition": "approximately / about",
+    "type": "adverb"
+  },
+  {
+    "char": "大聲",
+    "jyutping": "daai6sing1",
+    "definition": "loud voice / loudly",
     "type": "adverb"
   },
   {
@@ -619,6 +691,12 @@
     "jyutping": "dak1zai6",
     "definition": "too / excessively (post-adjective intensifier)",
     "type": "adverb"
+  },
+  {
+    "char": "燈",
+    "jyutping": "dang1",
+    "definition": "light / lamp",
+    "type": "noun"
   },
   {
     "char": "燈位",
@@ -762,6 +840,12 @@
     "notes": "Used to indicate the hour of the clock (e.g. 三點鐘)."
   },
   {
+    "char": "電",
+    "jyutping": "din6",
+    "definition": "electricity / battery power",
+    "type": "noun"
+  },
+  {
     "char": "電腦",
     "jyutping": "din6nou5",
     "definition": "computer",
@@ -836,16 +920,40 @@
     "type": "noun"
   },
   {
+    "char": "短訊",
+    "jyutping": "dyun2seon3",
+    "definition": "text message / SMS",
+    "type": "noun"
+  },
+  {
     "char": "斷片",
     "jyutping": "dyun6pin2",
     "definition": "to blackout / memory lapse from drinking",
     "type": "verb"
   },
   {
+    "char": "FB",
+    "jyutping": "ef1bi1",
+    "definition": "Facebook (slang)",
+    "type": "noun"
+  },
+  {
     "char": "A0",
     "jyutping": "ei1ling4",
     "definition": "single and never dated",
     "type": "adjective"
+  },
+  {
+    "char": "App",
+    "jyutping": "ep1",
+    "definition": "mobile application / app",
+    "type": "noun"
+  },
+  {
+    "char": "WhatsApp",
+    "jyutping": "ep1si1ep1",
+    "definition": "WhatsApp / to WhatsApp someone",
+    "type": "verb"
   },
   {
     "char": "花生",
@@ -902,6 +1010,12 @@
     "type": "verb"
   },
   {
+    "char": "發送",
+    "jyutping": "faat3sung3",
+    "definition": "to send / transmit",
+    "type": "verb"
+  },
+  {
     "char": "分",
     "jyutping": "fan1",
     "definition": "minute",
@@ -946,10 +1060,22 @@
     "type": "noun"
   },
   {
+    "char": "非常",
+    "jyutping": "fei1soeng4",
+    "definition": "very / extremely",
+    "type": "adverb"
+  },
+  {
     "char": "科勞",
     "jyutping": "fo1lou4",
     "definition": "to follow (loanword)",
     "type": "verb"
+  },
+  {
+    "char": "火牛",
+    "jyutping": "fo2ngau4",
+    "definition": "power adapter / charger (slang)",
+    "type": "noun"
   },
   {
     "char": "方便",
@@ -1149,6 +1275,12 @@
     "jyutping": "gam2",
     "definition": "then / in that case / so",
     "type": "conjunction"
+  },
+  {
+    "char": "敢",
+    "jyutping": "gam2",
+    "definition": "to dare",
+    "type": "verb"
   },
   {
     "char": "噉樣",
@@ -1468,6 +1600,12 @@
     "type": "noun"
   },
   {
+    "char": "下載",
+    "jyutping": "haa6zoi3",
+    "definition": "to download",
+    "type": "verb"
+  },
+  {
     "char": "鞋",
     "jyutping": "haai4",
     "definition": "shoes",
@@ -1544,6 +1682,12 @@
     "jyutping": "hai6me1",
     "definition": "really? / is that so?",
     "type": "expression"
+  },
+  {
+    "char": "系統",
+    "jyutping": "hai6tung2",
+    "definition": "system",
+    "type": "noun"
   },
   {
     "char": "行",
@@ -1648,6 +1792,12 @@
     "jyutping": "hoi1ci2",
     "definition": "to start / begin",
     "type": "verb"
+  },
+  {
+    "char": "開關",
+    "jyutping": "hoi1gwaan1",
+    "definition": "switch / to turn on or off",
+    "type": "noun"
   },
   {
     "char": "開心",
@@ -1969,6 +2119,12 @@
     "type": "noun"
   },
   {
+    "char": "咦",
+    "jyutping": "ji2",
+    "definition": "exclamation of surprise or sudden realization",
+    "type": "particle"
+  },
+  {
     "char": "而家",
     "jyutping": "ji4gaa1",
     "definition": "now / currently",
@@ -2216,6 +2372,12 @@
     "type": "noun"
   },
   {
+    "char": "藍牙",
+    "jyutping": "laam4ngaa4",
+    "definition": "Bluetooth",
+    "type": "noun"
+  },
+  {
     "char": "辣",
     "jyutping": "laat6",
     "definition": "spicy / hot",
@@ -2237,6 +2399,12 @@
     "char": "流鼻水",
     "jyutping": "lau4bei6seoi2",
     "definition": "to have a runny nose",
+    "type": "verb"
+  },
+  {
+    "char": "留言",
+    "jyutping": "lau4jin4",
+    "definition": "to leave a message / comment",
     "type": "verb"
   },
   {
@@ -2398,6 +2566,12 @@
     "type": "noun"
   },
   {
+    "char": "錄音",
+    "jyutping": "luk6jam1",
+    "definition": "voice recording / to record audio",
+    "type": "noun"
+  },
+  {
     "char": "唔",
     "jyutping": "m4",
     "definition": "not / no (negative prefix)",
@@ -2540,6 +2714,12 @@
     "type": "noun"
   },
   {
+    "char": "咪",
+    "jyutping": "mai6",
+    "definition": "then / indeed (contraction of 唔係)",
+    "type": "particle"
+  },
+  {
     "char": "VAN",
     "jyutping": "man1",
     "definition": "minibus / van (loanword)",
@@ -2568,6 +2748,12 @@
     "jyutping": "mat1",
     "definition": "what / how / why / rhetorical prefix",
     "type": "pronoun"
+  },
+  {
+    "char": "密碼",
+    "jyutping": "mat6maa5",
+    "definition": "password",
+    "type": "noun"
   },
   {
     "char": "咩",
@@ -2631,6 +2817,24 @@
     "type": "adjective"
   },
   {
+    "char": "網",
+    "jyutping": "mong5",
+    "definition": "internet / net / network",
+    "type": "noun"
+  },
+  {
+    "char": "網絡",
+    "jyutping": "mong5lok6",
+    "definition": "internet / network",
+    "type": "noun"
+  },
+  {
+    "char": "網上",
+    "jyutping": "mong5soeng6",
+    "definition": "online",
+    "type": "adjective"
+  },
+  {
     "char": "帽",
     "jyutping": "mou2",
     "definition": "hat / cap",
@@ -2658,6 +2862,18 @@
     "char": "每日",
     "jyutping": "mui5jat6",
     "definition": "every day / daily",
+    "type": "noun"
+  },
+  {
+    "char": "門",
+    "jyutping": "mun4",
+    "definition": "door",
+    "type": "noun"
+  },
+  {
+    "char": "門口",
+    "jyutping": "mun4hau2",
+    "definition": "doorway / entrance",
     "type": "noun"
   },
   {
@@ -2793,6 +3009,12 @@
     "type": "pronoun"
   },
   {
+    "char": "尿袋",
+    "jyutping": "niu6doi2",
+    "definition": "portable power bank (slang)",
+    "type": "noun"
+  },
+  {
     "char": "暖水",
     "jyutping": "nyun5seoi2",
     "definition": "warm water",
@@ -2814,6 +3036,12 @@
     "char": "安慰",
     "jyutping": "on1wai3",
     "definition": "to comfort / console",
+    "type": "verb"
+  },
+  {
+    "char": "按",
+    "jyutping": "on3",
+    "definition": "to press / push / according to",
     "type": "verb"
   },
   {
@@ -2886,6 +3114,12 @@
     "char": "P",
     "jyutping": "pi1",
     "definition": "party (loanword)",
+    "type": "noun"
+  },
+  {
+    "char": "片",
+    "jyutping": "pin2",
+    "definition": "video / movie / short clip",
     "type": "noun"
   },
   {
@@ -3226,6 +3460,12 @@
     "type": "noun"
   },
   {
+    "char": "熄",
+    "jyutping": "sik1",
+    "definition": "to turn off / extinguish (a light, device, etc.)",
+    "type": "verb"
+  },
+  {
     "char": "識",
     "jyutping": "sik1",
     "definition": "to know / speak (a language) / have a skill",
@@ -3287,6 +3527,12 @@
     "type": "adverb"
   },
   {
+    "char": "聲控",
+    "jyutping": "sing1hung3",
+    "definition": "voice-controlled / voice control",
+    "type": "adjective"
+  },
+  {
     "char": "星期",
     "jyutping": "sing1kei4",
     "definition": "week",
@@ -3341,6 +3587,12 @@
     "type": "verb"
   },
   {
+    "char": "鎖",
+    "jyutping": "so2",
+    "definition": "to lock / lock",
+    "type": "verb"
+  },
+  {
     "char": "所有",
     "jyutping": "so2jau5",
     "definition": "all / every",
@@ -3389,6 +3641,12 @@
     "type": "noun"
   },
   {
+    "char": "上網",
+    "jyutping": "soeng5mong5",
+    "definition": "to go online / surf the internet",
+    "type": "verb"
+  },
+  {
     "char": "上面",
     "jyutping": "soeng6min6",
     "definition": "above / on top of / upper side",
@@ -3399,6 +3657,12 @@
     "jyutping": "sou3gaai1",
     "definition": "to go street food hunting / street-snacking",
     "type": "verb"
+  },
+  {
+    "char": "數據",
+    "jyutping": "sou3geoi3",
+    "definition": "data",
+    "type": "noun"
   },
   {
     "char": "送",
@@ -3671,6 +3935,12 @@
     "type": "noun"
   },
   {
+    "char": "WiFi",
+    "jyutping": "wai1faai1",
+    "definition": "Wi-Fi / wireless internet",
+    "type": "noun"
+  },
+  {
     "char": "位",
     "jyutping": "wai2",
     "definition": "seat / place / position",
@@ -3720,6 +3990,12 @@
     "notes": "Used to convey that information is hearsay, or to point out something unexpected."
   },
   {
+    "char": "戶口",
+    "jyutping": "wu6hau2",
+    "definition": "account (bank/online)",
+    "type": "noun"
+  },
+  {
     "char": "會",
     "jyutping": "wui5",
     "definition": "will / would / can / be able to",
@@ -3731,6 +4007,12 @@
     "jyutping": "zaa1ce1",
     "definition": "to drive a car / drive",
     "type": "verb"
+  },
+  {
+    "char": "咋",
+    "jyutping": "zaa3",
+    "definition": "only / that's all (particle limiting scope)",
+    "type": "particle"
   },
   {
     "char": "炸",
@@ -3797,6 +4079,18 @@
     "jyutping": "zau6",
     "definition": "then / right away / immediately",
     "type": "adverb"
+  },
+  {
+    "char": "就快",
+    "jyutping": "zau6faai3",
+    "definition": "soon / quickly / about to",
+    "type": "adverb"
+  },
+  {
+    "char": "就可以",
+    "jyutping": "zau6ho2ji5",
+    "definition": "then can / can easily",
+    "type": "expression"
   },
   {
     "char": "啫",
@@ -3872,6 +4166,30 @@
     "type": "adverb"
   },
   {
+    "char": "智能",
+    "jyutping": "zi3nang4",
+    "definition": "smart / intelligent (tech)",
+    "type": "adjective"
+  },
+  {
+    "char": "智能電話",
+    "jyutping": "zi3nang4 din6waa2",
+    "definition": "smartphone",
+    "type": "noun"
+  },
+  {
+    "char": "智能家居",
+    "jyutping": "zi3nang4 gaa1geoi1",
+    "definition": "smart home",
+    "type": "noun"
+  },
+  {
+    "char": "智能鎖",
+    "jyutping": "zi3nang4 so2",
+    "definition": "smart lock",
+    "type": "noun"
+  },
+  {
     "char": "字",
     "jyutping": "zi6",
     "definition": "five-minute interval",
@@ -3932,6 +4250,12 @@
     "jyutping": "zoeng1",
     "definition": "measure word for flat objects, sheets, papers",
     "type": "classifier"
+  },
+  {
+    "char": "再",
+    "jyutping": "zoi3",
+    "definition": "again / furthermore / then",
+    "type": "adverb"
   },
   {
     "char": "撞",

@@ -81,6 +81,9 @@ chapters:
   - chapter: 26
     title: "Traditional Festivals, Superstitions & Cultural Slang"
     file: "26-festivals-superstitions.md"
+  - chapter: 27
+    title: "Remote Work, Productivity & Digital Nomad Slang"
+    file: "27-remote-productivity.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -269,6 +272,10 @@ Cantonese-speaking community._
 - **Topic 27: Traditional Festivals, Superstitions & Cultural Slang**
   - _Core Grammar_: Lunar New Year and Mid-Autumn slang, local superstitions
     (`迷信`), taboo words, and cultural colloquialisms.
+- **Topic 28: Remote Work, Productivity & Digital Nomad Slang**
+  - _Core Grammar_: Remote work colloquialisms, video calling (`開Zoom`),
+    internet connection slangs (`斷線`), online productivity tools, and modern
+    nomad slang.
 
 ---
 
@@ -379,7 +386,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Describing symptoms, going to the doctor (`睇醫生`), and sick leave
     colloquialisms.
 - **Chapter 24: Modern Tech, Smart Living & App Slang
-  (`24-tech-apps-slang.md`)** [ACTIVE LOOK-A-HEAD]
+  (`24-tech-apps-slang.md`)** [COMPLETED]
   - _Focus_: Spoken tech terms, messaging platform verbs (e.g. `whatsapp我`),
     social media interactions, and digital payment slang.
 - **Chapter 25: Finance, Investing & Money Slang (`25-finance-money.md`)**
@@ -390,3 +397,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   (`26-festivals-superstitions.md`)** [ACTIVE LOOK-A-HEAD]
   - _Focus_: Colloquial holiday greetings, ghost festival slang, superstition
     terminology, and cultural taboos in Cantonese speaking communities.
+- **Chapter 27: Remote Work, Productivity & Digital Nomad Slang
+  (`27-remote-productivity.md`)** [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Remote work colloquialisms, video calling, internet connection
+    issues, online collaboration tools, and tech-nomad life.
