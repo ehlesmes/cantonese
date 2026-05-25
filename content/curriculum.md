@@ -69,6 +69,12 @@ chapters:
   - chapter: 22
     title: "Entertainment, Nightlife & Leisure Slang"
     file: "22-entertainment-nightlife.md"
+  - chapter: 23
+    title: "Health, Sickness & Medical Slang"
+    file: "23-health-sickness.md"
+  - chapter: 24
+    title: "Modern Tech, Smart Living & App Slang"
+    file: "24-tech-apps-slang.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -244,6 +250,13 @@ Cantonese-speaking community._
 - **Topic 23: Entertainment, Nightlife & Leisure Slang**
   - _Core Grammar_: Discussing hobbies, movies, going to clubs or bars, and
     night-out colloquialisms.
+- **Topic 24: Health, Sickness & Medical Slang**
+  - _Core Grammar_: Describing symptoms, local doctor consultation slang
+    (`睇醫生[tai2ji1sang1]`), and sick leave vocabulary.
+- **Topic 25: Modern Tech, Smart Living & App Slang**
+  - _Core Grammar_: Internet terminology, smartphone application slangs (e.g.
+    `App[ep1]`, `IG`, `WhatsApp`), smart home devices, and virtual
+    communications.
 
 ---
 
@@ -342,10 +355,18 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Navigate local transport (minibuses, MTR), ask for and give
     directions, and master essential travel slangs and colloquialisms.
 - **Chapter 21: Housing, Flat-Hunting & Neighborhood Slang
-  (`21-housing-neighborhood.md`)** [ACTIVE LOOK-A-HEAD]
+  (`21-housing-neighborhood.md`)** [COMPLETED]
   - _Focus_: Renting apartments, flat-hunting terminology, layout descriptions,
     and neighborhood slang.
 - **Chapter 22: Entertainment, Nightlife & Leisure Slang
   (`22-entertainment-nightlife.md`)** [ACTIVE LOOK-A-HEAD]
   - _Focus_: Colloquialisms for socializing, night-out habits, bars, clubs, and
     weekend activities.
+- **Chapter 23: Health, Sickness & Medical Slang (`23-health-sickness.md`)**
+  [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Describing symptoms, going to the doctor (`睇醫生`), and sick leave
+    colloquialisms.
+- **Chapter 24: Modern Tech, Smart Living & App Slang
+  (`24-tech-apps-slang.md`)** [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Spoken tech terms, messaging platform verbs (e.g. `whatsapp我`),
+    social media interactions, and digital payment slang.

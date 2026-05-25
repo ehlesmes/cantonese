@@ -97,6 +97,12 @@
     "type": "adverb"
   },
   {
+    "char": "不過",
+    "jyutping": "bat1gwo3",
+    "definition": "but / however",
+    "type": "conjunction"
+  },
+  {
     "char": "不如",
     "jyutping": "bat1jyu4",
     "definition": "how about / why not / it would be better to",
@@ -169,6 +175,12 @@
     "type": "verb"
   },
   {
+    "char": "幫手",
+    "jyutping": "bong1sau2",
+    "definition": "to help / lend a hand",
+    "type": "verb"
+  },
+  {
     "char": "補數",
     "jyutping": "bou2sou3",
     "definition": "to make up for something",
@@ -193,11 +205,23 @@
     "type": "classifier"
   },
   {
+    "char": "搬屋",
+    "jyutping": "bun1uk1",
+    "definition": "to move house",
+    "type": "verb"
+  },
+  {
     "char": "半",
     "jyutping": "bun3",
     "definition": "half",
     "type": "numeral",
     "notes": "Used for half-past the hour (e.g. 三點半)."
+  },
+  {
+    "char": "差唔多",
+    "jyutping": "caa1m4do1",
+    "definition": "almost / about / more or less",
+    "type": "adverb"
   },
   {
     "char": "叉燒",
@@ -260,6 +284,12 @@
     "type": "noun"
   },
   {
+    "char": "呎",
+    "jyutping": "cek3",
+    "definition": "square foot / feet",
+    "type": "noun"
+  },
+  {
     "char": "請",
     "jyutping": "ceng2",
     "definition": "to invite / treat / please / request",
@@ -317,6 +347,12 @@
     "char": "遲到",
     "jyutping": "ci4dou3",
     "definition": "to be late / arrive late",
+    "type": "verb"
+  },
+  {
+    "char": "簽約",
+    "jyutping": "cim1joek3",
+    "definition": "to sign a contract",
     "type": "verb"
   },
   {
@@ -386,6 +422,12 @@
     "type": "verb"
   },
   {
+    "char": "嘈",
+    "jyutping": "cou4",
+    "definition": "noisy",
+    "type": "adjective"
+  },
+  {
     "char": "廚房",
     "jyutping": "cyu4fong2",
     "definition": "kitchen",
@@ -450,6 +492,12 @@
     "jyutping": "daan1san1",
     "definition": "single",
     "type": "adjective"
+  },
+  {
+    "char": "單位",
+    "jyutping": "daan1wai2",
+    "definition": "unit / flat / apartment",
+    "type": "noun"
   },
   {
     "char": "但係",
@@ -529,6 +577,18 @@
     "jyutping": "dei6",
     "definition": "plural suffix for pronouns (group marker)",
     "type": "particle"
+  },
+  {
+    "char": "地產經紀",
+    "jyutping": "dei6caan2 ging1gei2",
+    "definition": "real estate agent",
+    "type": "noun"
+  },
+  {
+    "char": "地段",
+    "jyutping": "dei6dyun6",
+    "definition": "location / sector",
+    "type": "noun"
   },
   {
     "char": "地鐵",
@@ -784,6 +844,12 @@
     "type": "verb"
   },
   {
+    "char": "方便",
+    "jyutping": "fong1bin6",
+    "definition": "convenient",
+    "type": "adjective"
+  },
+  {
     "char": "房",
     "jyutping": "fong2",
     "definition": "room / bedroom",
@@ -829,6 +895,12 @@
     "char": "褲",
     "jyutping": "fu3",
     "definition": "pants / trousers",
+    "type": "noun"
+  },
+  {
+    "char": "附近",
+    "jyutping": "fu6gan6",
+    "definition": "nearby / neighborhood",
     "type": "noun"
   },
   {
@@ -922,6 +994,12 @@
     "type": "verb"
   },
   {
+    "char": "間",
+    "jyutping": "gaan1",
+    "definition": "classifier for buildings / shops / rooms",
+    "type": "classifier"
+  },
+  {
     "char": "膠袋",
     "jyutping": "gaau1doi2",
     "definition": "plastic bag",
@@ -995,6 +1073,12 @@
     "definition": "possessive particle / nominalizing particle / final assertive particle",
     "type": "particle",
     "notes": "Indicates possession (like 's, equivalent to Mandarin 的 de) or asserts a state."
+  },
+  {
+    "char": "幾",
+    "jyutping": "gei2",
+    "definition": "quite / pretty / fairly",
+    "type": "adverb"
   },
   {
     "char": "幾錢",
@@ -1222,6 +1306,12 @@
     "type": "noun"
   },
   {
+    "char": "客廳",
+    "jyutping": "haak3ting1",
+    "definition": "living room / parlor",
+    "type": "noun"
+  },
+  {
     "char": "喊",
     "jyutping": "haam3",
     "definition": "to cry / weep",
@@ -1274,6 +1364,12 @@
     "jyutping": "hang4gaai1",
     "definition": "to window shop / walk around the streets",
     "type": "verb"
+  },
+  {
+    "char": "合約",
+    "jyutping": "hap6joek3",
+    "definition": "contract / agreement",
+    "type": "noun"
   },
   {
     "char": "後悔",
@@ -1378,6 +1474,12 @@
     "jyutping": "hou2coi2",
     "definition": "luckily / fortunately",
     "type": "adverb"
+  },
+  {
+    "char": "好住",
+    "jyutping": "hou2zyu6",
+    "definition": "nice to live in / comfortable to reside",
+    "type": "adjective"
   },
   {
     "char": "毫",
@@ -1485,6 +1587,12 @@
     "char": "日文",
     "jyutping": "jat6man2",
     "definition": "Japanese language",
+    "type": "noun"
+  },
+  {
+    "char": "日頭",
+    "jyutping": "jat6tau2",
+    "definition": "daytime / day",
     "type": "noun"
   },
   {
@@ -1639,16 +1747,46 @@
     "type": "verb"
   },
   {
+    "char": "業主",
+    "jyutping": "jip6zyu2",
+    "definition": "landlord / property owner",
+    "type": "noun"
+  },
+  {
     "char": "熱",
     "jyutping": "jit6",
     "definition": "hot",
     "type": "adjective"
   },
   {
+    "char": "要求",
+    "jyutping": "jiu1kau4",
+    "definition": "to require / requirement",
+    "type": "verb"
+  },
+  {
     "char": "要",
     "jyutping": "jiu3",
     "definition": "to want / need / must / demand",
     "type": "auxiliary verb"
+  },
+  {
+    "char": "約",
+    "jyutping": "joek3",
+    "definition": "to make an appointment / invite",
+    "type": "verb"
+  },
+  {
+    "char": "洋樓",
+    "jyutping": "joeng4lau2",
+    "definition": "modern high-rise building with elevator",
+    "type": "noun"
+  },
+  {
+    "char": "佣金",
+    "jyutping": "jung2gam1",
+    "definition": "commission fee",
+    "type": "noun"
   },
   {
     "char": "容易",
@@ -1760,6 +1898,18 @@
     "type": "verb"
   },
   {
+    "char": "樓",
+    "jyutping": "lau2",
+    "definition": "building / flat / apartment / floor",
+    "type": "noun"
+  },
+  {
+    "char": "樓梯",
+    "jyutping": "lau4tai1",
+    "definition": "stairs / staircase",
+    "type": "noun"
+  },
+  {
     "char": "叻",
     "jyutping": "lek1",
     "definition": "smart / clever / capable",
@@ -1820,6 +1970,12 @@
     "jyutping": "loeng5",
     "definition": "two / pair (used with classifiers)",
     "type": "numeral"
+  },
+  {
+    "char": "兩按一上",
+    "jyutping": "loeng5on3jat1soeng5",
+    "definition": "two months deposit and one month rent in advance",
+    "type": "noun"
   },
   {
     "char": "落",
@@ -2085,6 +2241,12 @@
     "type": "noun"
   },
   {
+    "char": "面積",
+    "jyutping": "min6zik1",
+    "definition": "area / size",
+    "type": "noun"
+  },
+  {
     "char": "明",
     "jyutping": "ming4",
     "definition": "to understand / clear",
@@ -2283,6 +2445,12 @@
     "type": "verb"
   },
   {
+    "char": "按金",
+    "jyutping": "on3gam1",
+    "definition": "deposit",
+    "type": "noun"
+  },
+  {
     "char": "O1",
     "jyutping": "ou1jat1",
     "definition": "in a relationship for the first time",
@@ -2463,6 +2631,18 @@
     "type": "numeral"
   },
   {
+    "char": "實用",
+    "jyutping": "sat6jung6",
+    "definition": "practical / useful / efficient",
+    "type": "adjective"
+  },
+  {
+    "char": "實用面積",
+    "jyutping": "sat6jung6 min6zik1",
+    "definition": "saleable area / net floor area",
+    "type": "noun"
+  },
+  {
     "char": "收",
     "jyutping": "sau1",
     "definition": "to receive / accept / collect",
@@ -2559,6 +2739,12 @@
     "type": "noun"
   },
   {
+    "char": "睡房",
+    "jyutping": "seoi6fong2",
+    "definition": "bedroom",
+    "type": "noun"
+  },
+  {
     "char": "信",
     "jyutping": "seon3",
     "definition": "to believe / trust",
@@ -2619,6 +2805,12 @@
     "type": "noun"
   },
   {
+    "char": "時候",
+    "jyutping": "si4hau6",
+    "definition": "time / when",
+    "type": "noun"
+  },
+  {
     "char": "市",
     "jyutping": "si5",
     "definition": "market / city",
@@ -2672,6 +2864,12 @@
     "definition": "first / beforehand / only then",
     "type": "adverb",
     "notes": "Placed after verbs to mean first, or indicating only then in sequential actions."
+  },
+  {
+    "char": "升降機",
+    "jyutping": "sing1gong3gei1",
+    "definition": "elevator / lift",
+    "type": "noun"
   },
   {
     "char": "成功",
@@ -2770,6 +2968,12 @@
     "type": "verb"
   },
   {
+    "char": "上期",
+    "jyutping": "soeng5kei4",
+    "definition": "rent paid in advance (first month rent)",
+    "type": "noun"
+  },
+  {
     "char": "上面",
     "jyutping": "soeng6min6",
     "definition": "above / on top of / upper side",
@@ -2827,6 +3031,12 @@
     "char": "睇中",
     "jyutping": "tai2 zung3",
     "definition": "to take a fancy to / set one's eyes on",
+    "type": "verb"
+  },
+  {
+    "char": "睇樓",
+    "jyutping": "tai2lau2",
+    "definition": "to view apartments / flats",
     "type": "verb"
   },
   {
@@ -2896,6 +3106,24 @@
     "type": "classifier"
   },
   {
+    "char": "劏房",
+    "jyutping": "tong1fong2",
+    "definition": "subdivided flat / partitioned room",
+    "type": "noun"
+  },
+  {
+    "char": "唐樓",
+    "jyutping": "tong4lau2",
+    "definition": "traditional low-rise walk-up building",
+    "type": "noun"
+  },
+  {
+    "char": "套房",
+    "jyutping": "tou3fong2",
+    "definition": "studio flat / ensuite bedroom",
+    "type": "noun"
+  },
+  {
     "char": "肚餓",
     "jyutping": "tou5ngo6",
     "definition": "hungry (literally: belly hungry)",
@@ -2923,6 +3151,12 @@
     "char": "同事",
     "jyutping": "tung4si6",
     "definition": "colleague / coworker",
+    "type": "noun"
+  },
+  {
+    "char": "屋",
+    "jyutping": "uk1",
+    "definition": "house / room",
     "type": "noun"
   },
   {
@@ -2956,6 +3190,12 @@
     "type": "verb"
   },
   {
+    "char": "環境",
+    "jyutping": "waan4ging2",
+    "definition": "environment / surroundings",
+    "type": "noun"
+  },
+  {
     "char": "位",
     "jyutping": "wai2",
     "definition": "seat / place / position",
@@ -2986,6 +3226,12 @@
     "type": "verb"
   },
   {
+    "char": "搵樓",
+    "jyutping": "wan2lau2",
+    "definition": "to look for apartments / flat-hunting",
+    "type": "verb"
+  },
+  {
     "char": "搵食",
     "jyutping": "wan2sik6",
     "definition": "to make a living / earn a livelihood / literally 'seek food'",
@@ -3012,6 +3258,12 @@
     "type": "verb"
   },
   {
+    "char": "炸",
+    "jyutping": "zaa3",
+    "definition": "only (sentence-final particle)",
+    "type": "particle"
+  },
+  {
     "char": "站",
     "jyutping": "zaam6",
     "definition": "station / stop",
@@ -3034,6 +3286,12 @@
     "jyutping": "zan1hai6",
     "definition": "really / truly",
     "type": "adverb"
+  },
+  {
+    "char": "周圍",
+    "jyutping": "zau1wai4",
+    "definition": "around / surroundings",
+    "type": "noun"
   },
   {
     "char": "走",
@@ -3082,6 +3340,12 @@
     "char": "最",
     "jyutping": "zeoi3",
     "definition": "most / superlative prefix",
+    "type": "adverb"
+  },
+  {
+    "char": "最好",
+    "jyutping": "zeoi3hou2",
+    "definition": "best / preferably",
     "type": "adverb"
   },
   {
@@ -3134,6 +3398,12 @@
     "type": "verb"
   },
   {
+    "char": "靜",
+    "jyutping": "zing6",
+    "definition": "quiet / peaceful",
+    "type": "adjective"
+  },
+  {
     "char": "折",
     "jyutping": "zit3",
     "definition": "discount",
@@ -3163,6 +3433,24 @@
     "jyutping": "zong6",
     "definition": "to hit / bump / collide",
     "type": "verb"
+  },
+  {
+    "char": "租",
+    "jyutping": "zou1",
+    "definition": "to rent / lease",
+    "type": "verb"
+  },
+  {
+    "char": "租金",
+    "jyutping": "zou1gam1",
+    "definition": "rent payment / rental price",
+    "type": "noun"
+  },
+  {
+    "char": "租客",
+    "jyutping": "zou1haak3",
+    "definition": "tenant / renter",
+    "type": "noun"
   },
   {
     "char": "早晨",
