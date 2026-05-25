@@ -13,6 +13,12 @@
     "type": "particle"
   },
   {
+    "char": "阿明",
+    "jyutping": "aa3 ming4",
+    "definition": "Ah Ming",
+    "type": "noun"
+  },
+  {
     "char": "呃",
     "jyutping": "aak1",
     "definition": "to cheat / trick / fish",
@@ -23,6 +29,12 @@
     "jyutping": "aam1aam1",
     "definition": "just now / just / exactly",
     "type": "adverb"
+  },
+  {
+    "char": "晏",
+    "jyutping": "aan3",
+    "definition": "late",
+    "type": "adjective"
   },
   {
     "char": "矮",
@@ -272,6 +284,12 @@
     "type": "noun"
   },
   {
+    "char": "尋晚",
+    "jyutping": "cam4maan5",
+    "definition": "last night",
+    "type": "noun"
+  },
+  {
     "char": "七",
     "jyutping": "cat1",
     "definition": "seven",
@@ -422,6 +440,12 @@
     "type": "verb"
   },
   {
+    "char": "唱K",
+    "jyutping": "coeng3kei1",
+    "definition": "to sing karaoke",
+    "type": "verb"
+  },
+  {
     "char": "嘈",
     "jyutping": "cou4",
     "definition": "noisy",
@@ -449,6 +473,12 @@
     "char": "打折",
     "jyutping": "daa2 zit3",
     "definition": "to give a discount",
+    "type": "verb"
+  },
+  {
+    "char": "打機",
+    "jyutping": "daa2gei1",
+    "definition": "to play video or computer games",
     "type": "verb"
   },
   {
@@ -746,6 +776,12 @@
     "type": "noun"
   },
   {
+    "char": "斷片",
+    "jyutping": "dyun6pin2",
+    "definition": "to blackout / memory lapse from drinking",
+    "type": "verb"
+  },
+  {
     "char": "A0",
     "jyutping": "ei1ling4",
     "definition": "single and never dated",
@@ -835,6 +871,12 @@
     "char": "飛機",
     "jyutping": "fei1gei1",
     "definition": "airplane",
+    "type": "noun"
+  },
+  {
+    "char": "飛機王",
+    "jyutping": "fei1gei1wong4",
+    "definition": "chronic flake / person who always stands others up",
     "type": "noun"
   },
   {
@@ -976,6 +1018,12 @@
     "type": "noun"
   },
   {
+    "char": "介紹",
+    "jyutping": "gaai3siu6",
+    "definition": "to introduce / recommend",
+    "type": "verb"
+  },
+  {
     "char": "隔籬",
     "jyutping": "gaak3lei4",
     "definition": "next to / beside / neighbor",
@@ -1022,6 +1070,12 @@
     "char": "今日",
     "jyutping": "gam1jat6",
     "definition": "today",
+    "type": "noun"
+  },
+  {
+    "char": "今晚",
+    "jyutping": "gam1maan5",
+    "definition": "tonight",
     "type": "noun"
   },
   {
@@ -1148,6 +1202,12 @@
     "type": "classifier"
   },
   {
+    "char": "經常",
+    "jyutping": "ging1soeng4",
+    "definition": "often / frequently",
+    "type": "adverb"
+  },
+  {
     "char": "叫",
     "jyutping": "giu3",
     "definition": "to be called / to call",
@@ -1220,6 +1280,12 @@
     "type": "adjective"
   },
   {
+    "char": "局",
+    "jyutping": "guk6",
+    "definition": "gathering / social event / plan",
+    "type": "noun"
+  },
+  {
     "char": "工",
     "jyutping": "gung1",
     "definition": "work / job",
@@ -1281,11 +1347,23 @@
     "type": "expression"
   },
   {
+    "char": "哈哈",
+    "jyutping": "haa1 haa1",
+    "definition": "haha",
+    "type": "expression"
+  },
+  {
     "char": "吓",
     "jyutping": "haa2",
     "definition": "sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
     "type": "particle",
     "notes": "Can also be used as an independent exclamation ('What?!')."
+  },
+  {
+    "char": "下場",
+    "jyutping": "haa6coeng4",
+    "definition": "next venue / afterparty / next round",
+    "type": "noun"
   },
   {
     "char": "下面",
@@ -1330,6 +1408,12 @@
     "type": "verb"
   },
   {
+    "char": "行山",
+    "jyutping": "haang4saan1",
+    "definition": "to go hiking / climb mountains",
+    "type": "verb"
+  },
+  {
     "char": "喺",
     "jyutping": "hai2",
     "definition": "at / in / on (locative preposition)",
@@ -1351,6 +1435,18 @@
     "char": "係唔係",
     "jyutping": "hai6 m4 hai6",
     "definition": "is it or not? / is that right? (A-not-A question form)",
+    "type": "expression"
+  },
+  {
+    "char": "係呀",
+    "jyutping": "hai6aa3",
+    "definition": "yes / that is correct",
+    "type": "expression"
+  },
+  {
+    "char": "係咩",
+    "jyutping": "hai6me1",
+    "definition": "really? / is that so?",
     "type": "expression"
   },
   {
@@ -1464,6 +1560,12 @@
     "type": "expression"
   },
   {
+    "char": "好呀",
+    "jyutping": "hou2aa3",
+    "definition": "sure / okay",
+    "type": "expression"
+  },
+  {
     "char": "好似",
     "jyutping": "hou2ci5",
     "definition": "seem / seem like / as if",
@@ -1474,6 +1576,12 @@
     "jyutping": "hou2coi2",
     "definition": "luckily / fortunately",
     "type": "adverb"
+  },
+  {
+    "char": "好玩",
+    "jyutping": "hou2waan2",
+    "definition": "fun / enjoyable",
+    "type": "adjective"
   },
   {
     "char": "好住",
@@ -1515,6 +1623,12 @@
     "char": "飲茶",
     "jyutping": "jam2caa4",
     "definition": "to drink tea / go for dim sum / yum cha",
+    "type": "verb"
+  },
+  {
+    "char": "飲酒",
+    "jyutping": "jam2zau2",
+    "definition": "to drink alcohol / have a drink",
     "type": "verb"
   },
   {
@@ -1626,6 +1740,12 @@
     "type": "expression"
   },
   {
+    "char": "有呀",
+    "jyutping": "jau5aa3",
+    "definition": "yes / there is",
+    "type": "expression"
+  },
+  {
     "char": "有錢",
     "jyutping": "jau5cin2",
     "definition": "rich / wealthy / have money",
@@ -1656,6 +1776,12 @@
     "type": "noun"
   },
   {
+    "char": "野餐",
+    "jyutping": "je5caan1",
+    "definition": "to go on a picnic / picnic",
+    "type": "verb"
+  },
+  {
     "char": "嘢飲",
     "jyutping": "je5jam2",
     "definition": "drinks / beverages",
@@ -1672,6 +1798,12 @@
     "jyutping": "je6maan5",
     "definition": "night / evening / at night",
     "type": "noun"
+  },
+  {
+    "char": "夜蒲",
+    "jyutping": "je6pou4",
+    "definition": "night clubbing / nightlife / to club at night",
+    "type": "verb"
   },
   {
     "char": "依家",
@@ -1744,6 +1876,12 @@
     "char": "影",
     "jyutping": "jing2",
     "definition": "to photograph / take pictures",
+    "type": "verb"
+  },
+  {
+    "char": "影相",
+    "jyutping": "jing2soeng2",
+    "definition": "to take photos",
     "type": "verb"
   },
   {
@@ -1837,9 +1975,27 @@
     "type": "noun"
   },
   {
+    "char": "卡拉",
+    "jyutping": "kaa1laa1",
+    "definition": "karaoke",
+    "type": "noun"
+  },
+  {
+    "char": "卡拉OK",
+    "jyutping": "kaa1laa1ou1kei1",
+    "definition": "karaoke",
+    "type": "noun"
+  },
+  {
     "char": "琴日",
     "jyutping": "kam4jat6",
     "definition": "yesterday (variant)",
+    "type": "noun"
+  },
+  {
+    "char": "琴晚",
+    "jyutping": "kam4maan5",
+    "definition": "last night (variant)",
     "type": "noun"
   },
   {
@@ -1908,6 +2064,12 @@
     "jyutping": "lau4tai1",
     "definition": "stairs / staircase",
     "type": "noun"
+  },
+  {
+    "char": "嚟",
+    "jyutping": "lei4",
+    "definition": "sentence-final particle indicating that something is in a certain state",
+    "type": "particle"
   },
   {
     "char": "叻",
@@ -2301,6 +2463,12 @@
     "type": "noun"
   },
   {
+    "char": "悶",
+    "jyutping": "mun6",
+    "definition": "boring / bored",
+    "type": "adjective"
+  },
+  {
     "char": "夢",
     "jyutping": "mung6",
     "definition": "dream",
@@ -2457,6 +2625,12 @@
     "type": "adjective"
   },
   {
+    "char": "派對",
+    "jyutping": "paai3deoi3",
+    "definition": "party",
+    "type": "noun"
+  },
+  {
     "char": "拍拖",
     "jyutping": "paak3to1",
     "definition": "to date / go steady",
@@ -2479,6 +2653,12 @@
     "jyutping": "pang4jau5",
     "definition": "friend",
     "type": "noun"
+  },
+  {
+    "char": "劈酒",
+    "jyutping": "pek3zau2",
+    "definition": "to drink heavily / drink competitively",
+    "type": "verb"
   },
   {
     "char": "平",
@@ -2515,6 +2695,12 @@
     "jyutping": "pou3tau2",
     "definition": "shop / store",
     "type": "noun"
+  },
+  {
+    "char": "蒲",
+    "jyutping": "pou4",
+    "definition": "to hang out / go clubbing",
+    "type": "verb"
   },
   {
     "char": "Pool",
@@ -2884,6 +3070,12 @@
     "type": "noun"
   },
   {
+    "char": "星期日",
+    "jyutping": "sing1kei4jat6",
+    "definition": "Sunday",
+    "type": "noun"
+  },
+  {
     "char": "星期六",
     "jyutping": "sing1kei4luk6",
     "definition": "Saturday",
@@ -3022,6 +3214,12 @@
     "type": "adverb"
   },
   {
+    "char": "太多",
+    "jyutping": "taai3do1",
+    "definition": "too much / too many",
+    "type": "adverb"
+  },
+  {
     "char": "睇",
     "jyutping": "tai2",
     "definition": "to look / see / watch / read",
@@ -3031,6 +3229,18 @@
     "char": "睇中",
     "jyutping": "tai2 zung3",
     "definition": "to take a fancy to / set one's eyes on",
+    "type": "verb"
+  },
+  {
+    "char": "睇波",
+    "jyutping": "tai2bo1",
+    "definition": "to watch ball games (e.g. soccer)",
+    "type": "verb"
+  },
+  {
+    "char": "睇戲",
+    "jyutping": "tai2hei3",
+    "definition": "to watch a movie",
     "type": "verb"
   },
   {
@@ -3055,6 +3265,12 @@
     "char": "聽",
     "jyutping": "teng1",
     "definition": "to listen / hear / obey",
+    "type": "verb"
+  },
+  {
+    "char": "聽歌",
+    "jyutping": "teng1go1",
+    "definition": "to listen to music",
     "type": "verb"
   },
   {
@@ -3184,6 +3400,12 @@
     "type": "verb"
   },
   {
+    "char": "或者",
+    "jyutping": "waak6ze2",
+    "definition": "perhaps / or",
+    "type": "conjunction"
+  },
+  {
     "char": "玩",
     "jyutping": "waan2",
     "definition": "to play / have fun / enjoy",
@@ -3300,6 +3522,12 @@
     "type": "verb"
   },
   {
+    "char": "酒吧",
+    "jyutping": "zau2baa1",
+    "definition": "bar / pub",
+    "type": "noun"
+  },
+  {
     "char": "走冰",
     "jyutping": "zau2bing1",
     "definition": "no ice",
@@ -3340,6 +3568,18 @@
     "char": "最",
     "jyutping": "zeoi3",
     "definition": "most / superlative prefix",
+    "type": "adverb"
+  },
+  {
+    "char": "醉",
+    "jyutping": "zeoi3",
+    "definition": "drunk",
+    "type": "adjective"
+  },
+  {
+    "char": "最後",
+    "jyutping": "zeoi3hau6",
+    "definition": "finally / at last / in the end",
     "type": "adverb"
   },
   {
@@ -3395,6 +3635,12 @@
     "char": "直行",
     "jyutping": "zik6haang4",
     "definition": "to go straight",
+    "type": "verb"
+  },
+  {
+    "char": "直落",
+    "jyutping": "zik6lok6",
+    "definition": "to continue onto another venue / next round without stopping",
     "type": "verb"
   },
   {
@@ -3480,6 +3726,12 @@
     "char": "做嘢",
     "jyutping": "zou6je5",
     "definition": "to work / do things / do stuff",
+    "type": "verb"
+  },
+  {
+    "char": "做運動",
+    "jyutping": "zou6wan6dung6",
+    "definition": "to exercise / do sports",
     "type": "verb"
   },
   {

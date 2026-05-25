@@ -75,6 +75,9 @@ chapters:
   - chapter: 24
     title: "Modern Tech, Smart Living & App Slang"
     file: "24-tech-apps-slang.md"
+  - chapter: 25
+    title: "Finance, Investing & Money Slang"
+    file: "25-finance-money.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -257,6 +260,9 @@ Cantonese-speaking community._
   - _Core Grammar_: Internet terminology, smartphone application slangs (e.g.
     `App[ep1]`, `IG`, `WhatsApp`), smart home devices, and virtual
     communications.
+- **Topic 26: Finance, Investing & Money Slang**
+  - _Core Grammar_: Stock market slang, investment terms (`炒股[caau2gu2]`),
+    banking, and financial colloquialisms.
 
 ---
 
@@ -359,7 +365,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Renting apartments, flat-hunting terminology, layout descriptions,
     and neighborhood slang.
 - **Chapter 22: Entertainment, Nightlife & Leisure Slang
-  (`22-entertainment-nightlife.md`)** [ACTIVE LOOK-A-HEAD]
+  (`22-entertainment-nightlife.md`)** [COMPLETED]
   - _Focus_: Colloquialisms for socializing, night-out habits, bars, clubs, and
     weekend activities.
 - **Chapter 23: Health, Sickness & Medical Slang (`23-health-sickness.md`)**
@@ -370,3 +376,7 @@ chapters, translating our spiraled progression into progressive text lessons.
   (`24-tech-apps-slang.md`)** [ACTIVE LOOK-A-HEAD]
   - _Focus_: Spoken tech terms, messaging platform verbs (e.g. `whatsapp我`),
     social media interactions, and digital payment slang.
+- **Chapter 25: Finance, Investing & Money Slang (`25-finance-money.md`)**
+  [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Stock market slang (`炒股`), investment colloquialisms, banking,
+    and everyday financial conversations.

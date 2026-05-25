@@ -4,7 +4,7 @@
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 257
+    "occurrences": 269
   },
   {
     "character": "阿",
@@ -12,6 +12,13 @@
     "translation": "prefix",
     "firstIntroducedIn": "16-workplace-slang.md",
     "occurrences": 1
+  },
+  {
+    "character": "阿明",
+    "jyutping": "aa3 ming4",
+    "translation": "Ah Ming",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 2
   },
   {
     "character": "呃",
@@ -26,6 +33,13 @@
     "translation": "just now / exactly / just now / just / exactly",
     "firstIntroducedIn": "13-passives-focus-indirect.md",
     "occurrences": 2
+  },
+  {
+    "character": "晏",
+    "jyutping": "aan3",
+    "translation": "late",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
   },
   {
     "character": "巴士",
@@ -102,7 +116,7 @@
     "jyutping": "bat1gwo3",
     "translation": "but / however",
     "firstIntroducedIn": "21-housing-neighborhood.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "不如",
@@ -130,14 +144,14 @@
     "jyutping": "bin1dou6",
     "translation": "where",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 10
+    "occurrences": 11
   },
   {
     "character": "邊個",
     "jyutping": "bin1go3",
-    "translation": "who",
+    "translation": "who / who / which one",
     "firstIntroducedIn": "15-rhetorical-questions.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "兵",
@@ -228,7 +242,7 @@
     "jyutping": "caa1m4do1",
     "translation": "almost / about / more or less",
     "firstIntroducedIn": "21-housing-neighborhood.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "叉燒",
@@ -326,7 +340,7 @@
     "jyutping": "ceoi1seoi2",
     "translation": "to chat / shoot the breeze / gossip",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 3
+    "occurrences": 5
   },
   {
     "character": "出",
@@ -387,9 +401,9 @@
   {
     "character": "潛水",
     "jyutping": "cim4seoi2",
-    "translation": "to lurk / go offline / go silent",
+    "translation": "to lurk / go offline / go silent / to go offline / go silent",
     "firstIntroducedIn": "19-social-media-slang.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "千",
@@ -452,7 +466,7 @@
     "jyutping": "coeng3",
     "translation": "to sing",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 4
+    "occurrences": 11
   },
   {
     "character": "唱歌",
@@ -497,11 +511,18 @@
     "occurrences": 1
   },
   {
+    "character": "打機",
+    "jyutping": "daa2gei1",
+    "translation": "to play video or computer games",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "打卡",
     "jyutping": "daa2kaa1",
     "translation": "to check-in / take photos at trendy spots",
     "firstIntroducedIn": "17-foodie-slang.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "打算",
@@ -585,7 +606,7 @@
     "jyutping": "dak1",
     "translation": "particle expressing permission, possibility, capability, or adverbial degree",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 14
+    "occurrences": 18
   },
   {
     "character": "得唔得",
@@ -593,6 +614,13 @@
     "translation": "can or not",
     "firstIntroducedIn": "18-shopping-bargaining.md",
     "occurrences": 4
+  },
+  {
+    "character": "得閒",
+    "jyutping": "dak1haan4",
+    "translation": "free / having spare time",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 2
   },
   {
     "character": "得滯",
@@ -786,9 +814,9 @@
   {
     "character": "都",
     "jyutping": "dou1",
-    "translation": "also / both / all",
+    "translation": "also / both / all / also / even",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 16
+    "occurrences": 18
   },
   {
     "character": "凍",
@@ -803,6 +831,13 @@
     "translation": "iced lemon tea",
     "firstIntroducedIn": "17-foodie-slang.md",
     "occurrences": 3
+  },
+  {
+    "character": "斷片",
+    "jyutping": "dyun6pin2",
+    "translation": "to blackout / memory lapse from drinking",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 4
   },
   {
     "character": "花生",
@@ -903,6 +938,13 @@
     "occurrences": 2
   },
   {
+    "character": "飛機王",
+    "jyutping": "fei1gei1wong4",
+    "translation": "chronic flake / person who always stands others up",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 4
+  },
+  {
     "character": "科勞",
     "jyutping": "fo1lou4",
     "translation": "to follow (loanword)",
@@ -935,7 +977,7 @@
     "jyutping": "fong3fei1gei1",
     "translation": "to stand someone up / break a promise",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 1
+    "occurrences": 4
   },
   {
     "character": "放假",
@@ -1050,6 +1092,13 @@
     "occurrences": 8
   },
   {
+    "character": "介紹",
+    "jyutping": "gaai3siu6",
+    "translation": "to introduce / recommend",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "隔籬",
     "jyutping": "gaak3lei4",
     "translation": "next to / beside / neighbor",
@@ -1103,14 +1152,21 @@
     "jyutping": "gam1jat6",
     "translation": "today",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 31
+    "occurrences": 33
+  },
+  {
+    "character": "今晚",
+    "jyutping": "gam1maan5",
+    "translation": "tonight",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
   },
   {
     "character": "噉",
     "jyutping": "gam2",
     "translation": "then / in that case / so",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 14
+    "occurrences": 16
   },
   {
     "character": "咁",
@@ -1152,14 +1208,14 @@
     "jyutping": "ge3",
     "translation": "particle / possessive particle / nominalizing particle / final assertive particle / associative particle",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 52
+    "occurrences": 54
   },
   {
     "character": "幾",
     "jyutping": "gei2",
     "translation": "quite / pretty / fairly",
     "firstIntroducedIn": "21-housing-neighborhood.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "幾錢",
@@ -1239,6 +1295,13 @@
     "occurrences": 25
   },
   {
+    "character": "經常",
+    "jyutping": "ging1soeng4",
+    "translation": "often / frequently",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "叫",
     "jyutping": "giu3",
     "translation": "to be called / to call",
@@ -1278,14 +1341,14 @@
     "jyutping": "go3",
     "translation": "general measure word / individual / unit / measure word for general items",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 52
+    "occurrences": 54
   },
   {
     "character": "覺得",
     "jyutping": "gok3dak1",
     "translation": "to feel / think",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "趕時間",
@@ -1320,7 +1383,14 @@
     "jyutping": "gui6",
     "translation": "tired / exhausted",
     "firstIntroducedIn": "13-passives-focus-indirect.md",
-    "occurrences": 5
+    "occurrences": 6
+  },
+  {
+    "character": "局",
+    "jyutping": "guk6",
+    "translation": "gathering / social event / plan",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 2
   },
   {
     "character": "工",
@@ -1346,9 +1416,9 @@
   {
     "character": "鬼死咁",
     "jyutping": "gwai2sei2gam3",
-    "translation": "extremely / awfully",
+    "translation": "extremely / awfully / extremely / awfully (pre-adjective intensifier)",
     "firstIntroducedIn": "14-intensifiers-exaggeration.md",
-    "occurrences": 9
+    "occurrences": 10
   },
   {
     "character": "貴",
@@ -1393,11 +1463,25 @@
     "occurrences": 2
   },
   {
+    "character": "哈哈",
+    "jyutping": "haa1 haa1",
+    "translation": "haha",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "吓",
     "jyutping": "haa2",
     "translation": "what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
     "occurrences": 11
+  },
+  {
+    "character": "下場",
+    "jyutping": "haa6coeng4",
+    "translation": "next venue / afterparty / next round",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 2
   },
   {
     "character": "下面",
@@ -1449,11 +1533,18 @@
     "occurrences": 2
   },
   {
+    "character": "行山",
+    "jyutping": "haang4saan1",
+    "translation": "to go hiking / climb mountains",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "喺",
     "jyutping": "hai2",
     "translation": "at / in / on / at / in / on (locative preposition)",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 61
+    "occurrences": 62
   },
   {
     "character": "喺度",
@@ -1474,7 +1565,21 @@
     "jyutping": "hai6 m4 hai6",
     "translation": "is it or not / is it or not? / is that right? (A-not-A question form)",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 6
+    "occurrences": 7
+  },
+  {
+    "character": "係呀",
+    "jyutping": "hai6aa3",
+    "translation": "yes",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
+    "character": "係咩",
+    "jyutping": "hai6me1",
+    "translation": "really? / is that so?",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
   },
   {
     "character": "行",
@@ -1516,7 +1621,7 @@
     "jyutping": "heoi3",
     "translation": "to go",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 54
+    "occurrences": 61
   },
   {
     "character": "去唔去",
@@ -1558,7 +1663,7 @@
     "jyutping": "hoi1sam1",
     "translation": "happy / glad / cheerful",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 8
+    "occurrences": 9
   },
   {
     "character": "學校",
@@ -1579,7 +1684,7 @@
     "jyutping": "hou2",
     "translation": "good / fine / very / quite / okay",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 60
+    "occurrences": 61
   },
   {
     "character": "好啦",
@@ -1596,6 +1701,13 @@
     "occurrences": 1
   },
   {
+    "character": "好呀",
+    "jyutping": "hou2aa3",
+    "translation": "sure",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "好似",
     "jyutping": "hou2ci5",
     "translation": "seem / seem like / as if",
@@ -1608,6 +1720,13 @@
     "translation": "luckily / fortunately",
     "firstIntroducedIn": "12-regrets-wishes-empathy.md",
     "occurrences": 7
+  },
+  {
+    "character": "好玩",
+    "jyutping": "hou2waan2",
+    "translation": "fun / enjoyable",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
   },
   {
     "character": "好住",
@@ -1649,7 +1768,14 @@
     "jyutping": "jam2",
     "translation": "to drink",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 20
+    "occurrences": 23
+  },
+  {
+    "character": "飲酒",
+    "jyutping": "jam2zau2",
+    "translation": "to drink alcohol / have a drink",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 2
   },
   {
     "character": "因為",
@@ -1663,7 +1789,7 @@
     "jyutping": "jan4",
     "translation": "person / people / human / people / others",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 18
+    "occurrences": 19
   },
   {
     "character": "人哋",
@@ -1698,7 +1824,7 @@
     "jyutping": "jat1cai4",
     "translation": "together",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "一樣",
@@ -1768,13 +1894,20 @@
     "jyutping": "jau5",
     "translation": "to have / there is / to have / there is / there are",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 19
+    "occurrences": 21
   },
   {
     "character": "有折",
     "jyutping": "jau5 zit3",
     "translation": "to have a discount",
     "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
+    "character": "有呀",
+    "jyutping": "jau5aa3",
+    "translation": "yes",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
     "occurrences": 1
   },
   {
@@ -1794,9 +1927,9 @@
   {
     "character": "有冇",
     "jyutping": "jau5mou5",
-    "translation": "is there / do you have / is there / have or not",
+    "translation": "is there / do you have / is there / have or not / is there / do you have (A-not-A question form)",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "又",
@@ -1811,6 +1944,13 @@
     "translation": "thing / stuff / matter",
     "firstIntroducedIn": "06-ability-experience.md",
     "occurrences": 5
+  },
+  {
+    "character": "野餐",
+    "jyutping": "je5caan1",
+    "translation": "to go on a picnic / picnic",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
   },
   {
     "character": "嘢飲",
@@ -1832,6 +1972,13 @@
     "translation": "night / evening / at night",
     "firstIntroducedIn": "05-time-continuous.md",
     "occurrences": 2
+  },
+  {
+    "character": "夜蒲",
+    "jyutping": "je6pou4",
+    "translation": "night clubbing / nightlife / to club at night",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 3
   },
   {
     "character": "依家",
@@ -1918,6 +2065,13 @@
     "occurrences": 1
   },
   {
+    "character": "影相",
+    "jyutping": "jing2soeng2",
+    "translation": "to take photos",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "業主",
     "jyutping": "jip6zyu2",
     "translation": "landlord / property owner",
@@ -1997,9 +2151,9 @@
   {
     "character": "完",
     "jyutping": "jyun4",
-    "translation": "finish",
+    "translation": "finish / finished / complete",
     "firstIntroducedIn": "17-foodie-slang.md",
-    "occurrences": 1
+    "occurrences": 3
   },
   {
     "character": "原本",
@@ -2023,6 +2177,13 @@
     "occurrences": 1
   },
   {
+    "character": "卡拉",
+    "jyutping": "kaa1laa1",
+    "translation": "karaoke",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "琴日",
     "jyutping": "kam4jat6",
     "translation": "yesterday (variant)",
@@ -2030,11 +2191,18 @@
     "occurrences": 4
   },
   {
+    "character": "琴晚",
+    "jyutping": "kam4maan5",
+    "translation": "last night",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 3
+  },
+  {
     "character": "佢",
     "jyutping": "keoi5",
     "translation": "he / she / it / him",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 65
+    "occurrences": 69
   },
   {
     "character": "佢哋",
@@ -2100,6 +2268,13 @@
     "occurrences": 1
   },
   {
+    "character": "嚟",
+    "jyutping": "lei4",
+    "translation": "particle",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "叻",
     "jyutping": "lek1",
     "translation": "smart",
@@ -2144,9 +2319,9 @@
   {
     "character": "囉",
     "jyutping": "lo1",
-    "translation": "sentence-final particle showing obviousness, resignation, or 'of course' / obviousness particle",
+    "translation": "sentence-final particle showing obviousness, resignation, or 'of course' / obviousness particle / sentence-final particle expressing obviousness or mild resignation",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 42
+    "occurrences": 44
   },
   {
     "character": "兩",
@@ -2237,7 +2412,7 @@
     "jyutping": "m4",
     "translation": "not / not / no (negative prefix)",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 63
+    "occurrences": 66
   },
   {
     "character": "唔緊要",
@@ -2478,6 +2653,13 @@
     "occurrences": 1
   },
   {
+    "character": "悶",
+    "jyutping": "mun6",
+    "translation": "boring / bored",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "夢",
     "jyutping": "mung6",
     "translation": "dream",
@@ -2531,14 +2713,14 @@
     "jyutping": "nei5",
     "translation": "you / your",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 117
+    "occurrences": 118
   },
   {
     "character": "你哋",
     "jyutping": "nei5dei6",
     "translation": "you (plural)",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "你好",
@@ -2587,7 +2769,7 @@
     "jyutping": "ngo5dei6",
     "translation": "we / us",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 31
+    "occurrences": 37
   },
   {
     "character": "外面",
@@ -2639,6 +2821,13 @@
     "occurrences": 1
   },
   {
+    "character": "派對",
+    "jyutping": "paai3deoi3",
+    "translation": "party",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "拍拖",
     "jyutping": "paak3to1",
     "translation": "to date / go steady",
@@ -2667,6 +2856,13 @@
     "occurrences": 4
   },
   {
+    "character": "劈酒",
+    "jyutping": "pek3zau2",
+    "translation": "to drink heavily / drink competitively",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 3
+  },
+  {
     "character": "平",
     "jyutping": "peng4",
     "translation": "cheap / inexpensive",
@@ -2685,6 +2881,13 @@
     "jyutping": "peng4 di1 laa1",
     "translation": "cheaper please",
     "firstIntroducedIn": "18-shopping-bargaining.md",
+    "occurrences": 1
+  },
+  {
+    "character": "蒲",
+    "jyutping": "pou4",
+    "translation": "to hang out / go clubbing",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
     "occurrences": 1
   },
   {
@@ -2797,7 +3000,7 @@
     "jyutping": "sap6",
     "translation": "ten",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 18
+    "occurrences": 19
   },
   {
     "character": "十一",
@@ -3028,7 +3231,7 @@
     "jyutping": "sik6",
     "translation": "to eat",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 37
+    "occurrences": 38
   },
   {
     "character": "食花生",
@@ -3091,14 +3294,14 @@
     "jyutping": "sing1kei4luk6",
     "translation": "Saturday",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "宵夜",
     "jyutping": "siu1je2",
     "translation": "late night snack",
     "firstIntroducedIn": "17-foodie-slang.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "少少",
@@ -3147,7 +3350,7 @@
     "jyutping": "soeng2",
     "translation": "want to / to want to / would like to / think / to want / would like to",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 44
+    "occurrences": 46
   },
   {
     "character": "相",
@@ -3241,11 +3444,32 @@
     "occurrences": 1
   },
   {
+    "character": "太多",
+    "jyutping": "taai3do1",
+    "translation": "too much",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 3
+  },
+  {
     "character": "睇",
     "jyutping": "tai2",
     "translation": "to look / see / to look / see / watch / read / to watch / look / see / read",
     "firstIntroducedIn": "04-existentials-places.md",
     "occurrences": 6
+  },
+  {
+    "character": "睇波",
+    "jyutping": "tai2bo1",
+    "translation": "to watch ball games (e.g. soccer)",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
+    "character": "睇戲",
+    "jyutping": "tai2hei3",
+    "translation": "to watch a movie",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
   },
   {
     "character": "睇樓",
@@ -3259,7 +3483,7 @@
     "jyutping": "tai2syu1",
     "translation": "to read books",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 2
+    "occurrences": 4
   },
   {
     "character": "偷",
@@ -3276,11 +3500,18 @@
     "occurrences": 7
   },
   {
+    "character": "聽歌",
+    "jyutping": "teng1go1",
+    "translation": "to listen to music",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 2
+  },
+  {
     "character": "添",
     "jyutping": "tim1",
-    "translation": "particle indicating in addition / as well / furthermore",
+    "translation": "particle indicating in addition / as well / furthermore / as well / also / particle",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 8
+    "occurrences": 10
   },
   {
     "character": "甜",
@@ -3371,7 +3602,7 @@
     "jyutping": "tung4maai4",
     "translation": "and / with / together with",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 12
+    "occurrences": 13
   },
   {
     "character": "同事",
@@ -3388,11 +3619,18 @@
     "occurrences": 1
   },
   {
+    "character": "屋企",
+    "jyutping": "uk1kei2",
+    "translation": "home",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "哇",
     "jyutping": "waa1",
     "translation": "wow / whoa",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "話",
@@ -3402,11 +3640,18 @@
     "occurrences": 21
   },
   {
+    "character": "或者",
+    "jyutping": "waak6ze2",
+    "translation": "perhaps / or",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "玩",
     "jyutping": "waan2",
     "translation": "to play / have fun / enjoy",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 11
+    "occurrences": 12
   },
   {
     "character": "環境",
@@ -3467,9 +3712,9 @@
   {
     "character": "會",
     "jyutping": "wui5",
-    "translation": "will / would / can / be able to / will / would / can / know how to / meet",
+    "translation": "will / would / can / be able to / will / would / can / know how to / meet / will / can / able to",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 15
+    "occurrences": 17
   },
   {
     "character": "揸車",
@@ -3511,7 +3756,7 @@
     "jyutping": "zan1hai6",
     "translation": "really / truly",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 21
+    "occurrences": 23
   },
   {
     "character": "周圍",
@@ -3526,6 +3771,13 @@
     "translation": "to leave / go / run / to leave/remove",
     "firstIntroducedIn": "08-particles-nuance.md",
     "occurrences": 4
+  },
+  {
+    "character": "酒吧",
+    "jyutping": "zau2baa1",
+    "translation": "bar / pub",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 2
   },
   {
     "character": "走冰",
@@ -3577,6 +3829,20 @@
     "occurrences": 17
   },
   {
+    "character": "醉",
+    "jyutping": "zeoi3",
+    "translation": "drunk",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 2
+  },
+  {
+    "character": "最後",
+    "jyutping": "zeoi3hau6",
+    "translation": "finally / at last / in the end",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "最好",
     "jyutping": "zeoi3hou2",
     "translation": "best / preferably",
@@ -3607,16 +3873,16 @@
   {
     "character": "之後",
     "jyutping": "zi1hau6",
-    "translation": "afterwards / after",
+    "translation": "afterwards / after / after / afterwards",
     "firstIntroducedIn": "13-passives-focus-indirect.md",
-    "occurrences": 4
+    "occurrences": 5
   },
   {
     "character": "只係",
     "jyutping": "zi2hai6",
     "translation": "only / just",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "字",
@@ -3637,6 +3903,13 @@
     "jyutping": "zik6haang4",
     "translation": "to go straight",
     "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 2
+  },
+  {
+    "character": "直落",
+    "jyutping": "zik6lok6",
+    "translation": "to continue onto another venue / next round without stopping",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
     "occurrences": 2
   },
   {
@@ -3672,7 +3945,7 @@
     "jyutping": "zo2",
     "translation": "verbal aspect suffix indicating completed action (perfective aspect) / completed aspect",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 74
+    "occurrences": 77
   },
   {
     "character": "租",
@@ -3731,6 +4004,13 @@
     "occurrences": 3
   },
   {
+    "character": "做運動",
+    "jyutping": "zou6wan6dung6",
+    "translation": "to exercise / do sports",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
+  },
+  {
     "character": "祝",
     "jyutping": "zuk1",
     "translation": "to wish / congratulate",
@@ -3775,9 +4055,9 @@
   {
     "character": "仲",
     "jyutping": "zung6",
-    "translation": "still / yet",
+    "translation": "still / yet / still / also / even more",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 11
+    "occurrences": 13
   },
   {
     "character": "煮",
