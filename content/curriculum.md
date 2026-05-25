@@ -63,6 +63,9 @@ chapters:
   - chapter: 20
     title: "Travel, Directions & Transport Slang"
     file: "20-travel-transport.md"
+  - chapter: 21
+    title: "Housing, Flat-Hunting & Neighborhood Slang"
+    file: "21-housing-neighborhood.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -218,6 +221,20 @@ Cantonese-speaking community._
   - _Core Grammar_: Navigating professional environments, working overtime
     (colloquially `OT`), slacking off at work (`摸魚` or `蛇王[se4wong4]`), and
     handling office gossip or job changes.
+- **Topic 18: Foodie Culture & Tea Restaurant Slang**
+  - _Core Grammar_: Dim sum ordering terms, customized drink requests (e.g. less
+    sweet, iced), and specialized restaurant shorthand.
+- **Topic 19: Shopping, Bargaining & Spoken Quantifiers**
+  - _Core Grammar_: Currency structures, bargaining expressions
+    (`平啲啦[peng4di1laa1|cheaper please]`), and advanced classifiers
+    (`條[tiu4]`, `頂[deng2]`, `對[deoi3]`).
+- **Topic 20: Dating, Relationships & Social Media Slang**
+  - _Core Grammar_: Terms for romance (`拍拖[paak3to1|to date]`), texting
+    shorthand, internet slang (`呃[aak1|to fish]like[laaik1|likes]`), and
+    split-verb relationship structures.
+- **Topic 21: Travel, Directions & Transport Slang**
+  - _Core Grammar_: Directions and locations, minibuses and local transit
+    slangs, and giving instructions to drivers.
 
 ---
 
@@ -306,10 +323,16 @@ chapters, translating our spiraled progression into progressive text lessons.
   - _Focus_: Master spoken currency structures, bargaining expressions (e.g.
     `平啲啦` [cheaper please]), and advanced classifiers.
 - **Chapter 19: Dating, Relationships & Social Media Slang
-  (`19-social-media-slang.md`)** [ACTIVE LOOK-A-HEAD]
-  - _Focus_: Learn colloquial terms for modern romance, texting abbreviations,
-    and social media slang.
+  (`19-social-media-slang.md`)** [COMPLETED]
+  - _Focus_: Colloquial romance terminology (`拍拖`,
+    `出[ceot1|to leave]Pool[pu1|singles pool]`), text messaging habits
+    (`已讀不回`), and social media slang (`呃[aak1|to fish]like[laaik1|likes]`,
+    `放閃`).
 - **Chapter 20: Travel, Directions & Transport Slang
   (`20-travel-transport.md`)** [ACTIVE LOOK-A-HEAD]
   - _Focus_: Navigate local transport (minibuses, MTR), ask for and give
     directions, and master essential travel slangs and colloquialisms.
+- **Chapter 21: Housing, Flat-Hunting & Neighborhood Slang
+  (`21-housing-neighborhood.md`)** [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Renting apartments, flat-hunting terminology, layout descriptions,
+    and neighborhood slang.

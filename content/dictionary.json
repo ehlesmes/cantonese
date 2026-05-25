@@ -13,6 +13,12 @@
     "type": "particle"
   },
   {
+    "char": "呃",
+    "jyutping": "aak1",
+    "definition": "to cheat / trick / fish",
+    "type": "verb"
+  },
+  {
     "char": "啱啱",
     "jyutping": "aam1aam1",
     "definition": "just now / just / exactly",
@@ -47,6 +53,12 @@
     "jyutping": "baak3",
     "definition": "hundred",
     "type": "numeral"
+  },
+  {
+    "char": "白",
+    "jyutping": "baak6",
+    "definition": "love / clearly / white",
+    "type": "noun"
   },
   {
     "char": "扮",
@@ -115,6 +127,24 @@
     "type": "pronoun"
   },
   {
+    "char": "兵",
+    "jyutping": "bing1",
+    "definition": "platonic admirer who is led on (literally 'soldier')",
+    "type": "noun"
+  },
+  {
+    "char": "表",
+    "jyutping": "biu2",
+    "definition": "to confess / express",
+    "type": "verb"
+  },
+  {
+    "char": "表白",
+    "jyutping": "biu2baak6",
+    "definition": "to confess one's love",
+    "type": "verb"
+  },
+  {
     "char": "菠蘿包",
     "jyutping": "bo1lo1baau1",
     "definition": "pineapple bun (sweet crusted bun, usually containing no pineapple)",
@@ -130,6 +160,12 @@
     "char": "幫",
     "jyutping": "bong1",
     "definition": "to help / for / on behalf of",
+    "type": "verb"
+  },
+  {
+    "char": "補數",
+    "jyutping": "bou2sou3",
+    "definition": "to make up for something",
     "type": "verb"
   },
   {
@@ -230,6 +266,24 @@
     "type": "verb"
   },
   {
+    "char": "出",
+    "jyutping": "ceot1",
+    "definition": "to exit / go out / leave",
+    "type": "verb"
+  },
+  {
+    "char": "出街",
+    "jyutping": "ceot1gaai1",
+    "definition": "to go out / go on a date",
+    "type": "verb"
+  },
+  {
+    "char": "出軌",
+    "jyutping": "ceot1gwai2",
+    "definition": "to cheat / have an affair / infidelity",
+    "type": "verb"
+  },
+  {
     "char": "次",
     "jyutping": "ci3",
     "definition": "time / occurrence (classifier)",
@@ -251,6 +305,12 @@
     "char": "遲到",
     "jyutping": "ci4dou3",
     "definition": "to be late / arrive late",
+    "type": "verb"
+  },
+  {
+    "char": "潛水",
+    "jyutping": "cim4seoi2",
+    "definition": "to lurk / go offline / go silent",
     "type": "verb"
   },
   {
@@ -344,10 +404,22 @@
     "type": "adjective"
   },
   {
+    "char": "大學",
+    "jyutping": "daai6hok6",
+    "definition": "university / college",
+    "type": "noun"
+  },
+  {
     "char": "單",
     "jyutping": "daan1",
     "definition": "bill / receipt / sheet",
     "type": "noun"
+  },
+  {
+    "char": "單身",
+    "jyutping": "daan1san1",
+    "definition": "single",
+    "type": "adjective"
   },
   {
     "char": "但係",
@@ -397,6 +469,12 @@
     "jyutping": "dang2",
     "definition": "to wait / wait for",
     "type": "verb"
+  },
+  {
+    "char": "戥",
+    "jyutping": "dang6",
+    "definition": "for / on behalf of",
+    "type": "preposition"
   },
   {
     "char": "特價",
@@ -554,6 +632,12 @@
     "type": "noun"
   },
   {
+    "char": "A0",
+    "jyutping": "ei1ling4",
+    "definition": "single and never dated",
+    "type": "adjective"
+  },
+  {
     "char": "花生",
     "jyutping": "faa1sang1",
     "definition": "peanut",
@@ -609,6 +693,12 @@
     "notes": "Used after numerals to indicate minutes (e.g. 兩點十分)."
   },
   {
+    "char": "分手",
+    "jyutping": "fan1sau2",
+    "definition": "to break up",
+    "type": "verb"
+  },
+  {
     "char": "分鐘",
     "jyutping": "fan1zung1",
     "definition": "minute",
@@ -632,6 +722,12 @@
     "jyutping": "fei1gei1",
     "definition": "airplane",
     "type": "noun"
+  },
+  {
+    "char": "科勞",
+    "jyutping": "fo1lou4",
+    "definition": "to follow (loanword)",
+    "type": "verb"
   },
   {
     "char": "房",
@@ -670,10 +766,22 @@
     "type": "verb"
   },
   {
+    "char": "放閃",
+    "jyutping": "fong3sim2",
+    "definition": "to show public displays of affection / show PDA",
+    "type": "verb"
+  },
+  {
     "char": "褲",
     "jyutping": "fu3",
     "definition": "pants / trousers",
     "type": "noun"
+  },
+  {
+    "char": "覆",
+    "jyutping": "fuk1",
+    "definition": "to reply / write back",
+    "type": "verb"
   },
   {
     "char": "加",
@@ -1363,6 +1471,12 @@
     "type": "noun"
   },
   {
+    "char": "已讀不回",
+    "jyutping": "ji5duk6bat1wui4",
+    "definition": "read but not reply / ghost",
+    "type": "verb"
+  },
+  {
     "char": "已經",
     "jyutping": "ji5ging1",
     "definition": "already",
@@ -1409,6 +1523,12 @@
     "jyutping": "jing1man2",
     "definition": "English language",
     "type": "noun"
+  },
+  {
+    "char": "影",
+    "jyutping": "jing2",
+    "definition": "to photograph / take pictures",
+    "type": "verb"
   },
   {
     "char": "熱",
@@ -1512,6 +1632,12 @@
     "jyutping": "laa3wo3",
     "definition": "sentence-final particle combination indicating warning, sudden realization, or change of state",
     "type": "particle"
+  },
+  {
+    "char": "like",
+    "jyutping": "laaik1",
+    "definition": "likes (social media)",
+    "type": "noun"
   },
   {
     "char": "辣",
@@ -1645,6 +1771,12 @@
     "char": "唔緊要",
     "jyutping": "m4 gan2jiu3",
     "definition": "it doesn't matter / never mind / it's okay",
+    "type": "expression"
+  },
+  {
+    "char": "唔好意思",
+    "jyutping": "m4 hou2 ji3si1",
+    "definition": "sorry / excuse me",
     "type": "expression"
   },
   {
@@ -1875,6 +2007,12 @@
     "type": "noun"
   },
   {
+    "char": "男神",
+    "jyutping": "naam4san4",
+    "definition": "male god / ideal man",
+    "type": "noun"
+  },
+  {
     "char": "難",
     "jyutping": "naan4",
     "definition": "difficult / hard",
@@ -1921,6 +2059,12 @@
     "jyutping": "nei5hou2",
     "definition": "hello / hi",
     "type": "expression"
+  },
+  {
+    "char": "女神",
+    "jyutping": "neoi5san4",
+    "definition": "goddess / ideal woman",
+    "type": "noun"
   },
   {
     "char": "五",
@@ -1995,6 +2139,18 @@
     "type": "verb"
   },
   {
+    "char": "O1",
+    "jyutping": "ou1jat1",
+    "definition": "in a relationship for the first time",
+    "type": "adjective"
+  },
+  {
+    "char": "拍拖",
+    "jyutping": "paak3to1",
+    "definition": "to date / go steady",
+    "type": "verb"
+  },
+  {
     "char": "跑",
     "jyutping": "paau2",
     "definition": "to run",
@@ -2031,9 +2187,27 @@
     "type": "expression"
   },
   {
+    "char": "P",
+    "jyutping": "pi1",
+    "definition": "party (loanword)",
+    "type": "noun"
+  },
+  {
+    "char": "Po",
+    "jyutping": "pou1",
+    "definition": "to post (social media loanword)",
+    "type": "verb"
+  },
+  {
     "char": "鋪頭",
     "jyutping": "pou3tau2",
     "definition": "shop / store",
+    "type": "noun"
+  },
+  {
+    "char": "Pool",
+    "jyutping": "pu1",
+    "definition": "singles pool (student slang)",
     "type": "noun"
   },
   {
@@ -2091,6 +2265,12 @@
     "type": "noun"
   },
   {
+    "char": "心碎",
+    "jyutping": "sam1seoi3",
+    "definition": "heartbroken",
+    "type": "adjective"
+  },
+  {
     "char": "心痛",
     "jyutping": "sam1tung3",
     "definition": "to feel distressed / feel for someone",
@@ -2145,6 +2325,12 @@
     "type": "noun"
   },
   {
+    "char": "收兵",
+    "jyutping": "sau1bing1",
+    "definition": "to collect platonic admirers (literally 'collect soldiers')",
+    "type": "verb"
+  },
+  {
     "char": "收工",
     "jyutping": "sau1gung1",
     "definition": "to finish work for the day / get off work",
@@ -2155,6 +2341,12 @@
     "jyutping": "sau6si1",
     "definition": "sushi",
     "type": "noun"
+  },
+  {
+    "char": "些牙",
+    "jyutping": "se1aa4",
+    "definition": "to share (loanword)",
+    "type": "verb"
   },
   {
     "char": "寫",
@@ -2295,11 +2487,29 @@
     "type": "verb"
   },
   {
+    "char": "閃",
+    "jyutping": "sim2",
+    "definition": "flashy / showing PDA",
+    "type": "adjective"
+  },
+  {
+    "char": "閃盲",
+    "jyutping": "sim2maang4",
+    "definition": "to be blinded by PDA",
+    "type": "adjective"
+  },
+  {
     "char": "先",
     "jyutping": "sin1",
     "definition": "first / beforehand / only then",
     "type": "adverb",
     "notes": "Placed after verbs to mean first, or indicating only then in sequential actions."
+  },
+  {
+    "char": "成功",
+    "jyutping": "sing1gung1",
+    "definition": "successfully / success",
+    "type": "adverb"
   },
   {
     "char": "星期",
@@ -2374,6 +2584,12 @@
     "type": "auxiliary verb"
   },
   {
+    "char": "相",
+    "jyutping": "soeng2",
+    "definition": "photo / picture",
+    "type": "noun"
+  },
+  {
     "char": "相機食先",
     "jyutping": "soeng2gei1sik6sin1",
     "definition": "camera eats first (taking pictures of food before eating)",
@@ -2414,6 +2630,12 @@
     "jyutping": "syun3 laa1",
     "definition": "forget it / let it be",
     "type": "expression"
+  },
+  {
+    "char": "船",
+    "jyutping": "syun4",
+    "definition": "boat / ship",
+    "type": "noun"
   },
   {
     "char": "太",
@@ -2458,6 +2680,12 @@
     "type": "particle"
   },
   {
+    "char": "甜",
+    "jyutping": "tim4",
+    "definition": "sweet / romantic",
+    "type": "adjective"
+  },
+  {
     "char": "聽講",
     "jyutping": "ting1gong2",
     "definition": "to hear of / be told",
@@ -2498,6 +2726,12 @@
     "jyutping": "tung4",
     "definition": "with / same as / and",
     "type": "preposition"
+  },
+  {
+    "char": "同學",
+    "jyutping": "tung4hok6",
+    "definition": "classmate / student",
+    "type": "noun"
   },
   {
     "char": "同埋",
