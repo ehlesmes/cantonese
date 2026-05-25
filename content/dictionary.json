@@ -43,6 +43,12 @@
     "type": "noun"
   },
   {
+    "char": "巴士站",
+    "jyutping": "baa1si2zaam6",
+    "definition": "bus stop",
+    "type": "noun"
+  },
+  {
     "char": "拜拜",
     "jyutping": "baai1baai3",
     "definition": "bye-bye / goodbye (loanword)",
@@ -105,7 +111,7 @@
   {
     "char": "俾",
     "jyutping": "bei2",
-    "definition": "to give / for",
+    "definition": "to give / for / let / allow",
     "type": "verb"
   },
   {
@@ -248,6 +254,12 @@
     "type": "numeral"
   },
   {
+    "char": "車",
+    "jyutping": "ce1",
+    "definition": "car / vehicle",
+    "type": "noun"
+  },
+  {
     "char": "請",
     "jyutping": "ceng2",
     "definition": "to invite / treat / please / request",
@@ -326,10 +338,22 @@
     "type": "noun"
   },
   {
+    "char": "前邊",
+    "jyutping": "cin4bin1",
+    "definition": "ahead / in front / up ahead",
+    "type": "noun"
+  },
+  {
     "char": "前面",
     "jyutping": "cin4min6",
     "definition": "in front / front side",
     "type": "noun"
+  },
+  {
+    "char": "請問",
+    "jyutping": "cing2man6",
+    "definition": "may I ask / excuse me",
+    "type": "verb"
   },
   {
     "char": "超市",
@@ -410,6 +434,12 @@
     "type": "noun"
   },
   {
+    "char": "大約",
+    "jyutping": "daai6joek3",
+    "definition": "approximately / about",
+    "type": "adverb"
+  },
+  {
     "char": "單",
     "jyutping": "daan1",
     "definition": "bill / receipt / sheet",
@@ -432,6 +462,12 @@
     "jyutping": "daan6taat1",
     "definition": "egg tart",
     "type": "noun"
+  },
+  {
+    "char": "搭車",
+    "jyutping": "daap3ce1",
+    "definition": "to take transit / ride a vehicle",
+    "type": "verb"
   },
   {
     "char": "搭枱",
@@ -463,6 +499,12 @@
     "jyutping": "dak1zai6",
     "definition": "too / excessively (post-adjective intensifier)",
     "type": "adverb"
+  },
+  {
+    "char": "燈位",
+    "jyutping": "dang1wai2",
+    "definition": "traffic light / intersection with lights",
+    "type": "noun"
   },
   {
     "char": "等",
@@ -529,6 +571,12 @@
     "char": "的士",
     "jyutping": "dik1si2",
     "definition": "taxi (loanword)",
+    "type": "noun"
+  },
+  {
+    "char": "的士站",
+    "jyutping": "dik1si2zaam6",
+    "definition": "taxi stand",
     "type": "noun"
   },
   {
@@ -618,6 +666,12 @@
     "jyutping": "dou1",
     "definition": "also / both / all",
     "type": "adverb"
+  },
+  {
+    "char": "到",
+    "jyutping": "dou3",
+    "definition": "to arrive at / reach / to",
+    "type": "verb"
   },
   {
     "char": "凍",
@@ -832,6 +886,12 @@
     "type": "particle"
   },
   {
+    "char": "架",
+    "jyutping": "gaa3",
+    "definition": "classifier for vehicles",
+    "type": "classifier"
+  },
+  {
     "char": "咖啡",
     "jyutping": "gaa3fe1",
     "definition": "coffee (loanword)",
@@ -962,6 +1022,12 @@
     "type": "pronoun"
   },
   {
+    "char": "幾耐",
+    "jyutping": "gei2noi6",
+    "definition": "how long (time)",
+    "type": "adverb"
+  },
+  {
     "char": "幾時",
     "jyutping": "gei2si4",
     "definition": "when / what time",
@@ -1040,6 +1106,12 @@
     "type": "verb"
   },
   {
+    "char": "趕時間",
+    "jyutping": "gon2si4gaan3",
+    "definition": "in a hurry / rushing for time",
+    "type": "expression"
+  },
+  {
     "char": "講",
     "jyutping": "gong2",
     "definition": "to speak / say / talk",
@@ -1096,9 +1168,21 @@
   {
     "char": "過",
     "jyutping": "gwo3",
-    "definition": "verbal aspect suffix indicating past experience / 'have done before'",
+    "definition": "verbal aspect suffix indicating past experience / 'have done before' / to pass or cross",
     "type": "particle",
     "notes": "Attaches directly to verbs to denote experiential aspect (equivalent to Mandarin 过 guo)."
+  },
+  {
+    "char": "過去",
+    "jyutping": "gwo3heoi3",
+    "definition": "to go over / pass over",
+    "type": "verb"
+  },
+  {
+    "char": "過馬路",
+    "jyutping": "gwo3maa5lou6",
+    "definition": "to cross the road",
+    "type": "verb"
   },
   {
     "char": "廣東話",
@@ -1141,6 +1225,18 @@
     "char": "喊",
     "jyutping": "haam3",
     "definition": "to cry / weep",
+    "type": "verb"
+  },
+  {
+    "char": "行到",
+    "jyutping": "haang4dou3",
+    "definition": "to walk to",
+    "type": "verb"
+  },
+  {
+    "char": "行路",
+    "jyutping": "haang4lou6",
+    "definition": "to walk",
     "type": "verb"
   },
   {
@@ -1302,6 +1398,12 @@
     "type": "verb"
   },
   {
+    "char": "紅",
+    "jyutping": "hung4",
+    "definition": "red",
+    "type": "adjective"
+  },
+  {
     "char": "飲",
     "jyutping": "jam2",
     "definition": "to drink",
@@ -1420,6 +1522,12 @@
     "jyutping": "jau5cin2",
     "definition": "rich / wealthy / have money",
     "type": "adjective"
+  },
+  {
+    "char": "有落",
+    "jyutping": "jau5lok6",
+    "definition": "stop here please (minibus slang)",
+    "type": "expression"
   },
   {
     "char": "有冇",
@@ -1714,6 +1822,18 @@
     "type": "numeral"
   },
   {
+    "char": "落",
+    "jyutping": "lok6",
+    "definition": "to get off / descend / go down",
+    "type": "verb"
+  },
+  {
+    "char": "落車",
+    "jyutping": "lok6ce1",
+    "definition": "to get off (a vehicle)",
+    "type": "verb"
+  },
+  {
     "char": "落雨",
     "jyutping": "lok6jyu5",
     "definition": "to rain",
@@ -1744,6 +1864,12 @@
     "type": "noun"
   },
   {
+    "char": "路口",
+    "jyutping": "lou6hau2",
+    "definition": "intersection / junction",
+    "type": "noun"
+  },
+  {
     "char": "碌卡",
     "jyutping": "luk1 ka1",
     "definition": "to swipe a credit card",
@@ -1754,6 +1880,12 @@
     "jyutping": "luk6",
     "definition": "six",
     "type": "numeral"
+  },
+  {
+    "char": "綠",
+    "jyutping": "luk6",
+    "definition": "green",
+    "type": "adjective"
   },
   {
     "char": "六合彩",
@@ -1798,6 +1930,12 @@
     "definition": "excuse me / please / thank you (for service or help)",
     "type": "expression",
     "notes": "Used for services, requests, or showing gratitude for helpful actions."
+  },
+  {
+    "char": "唔該晒",
+    "jyutping": "m4goi1saai3",
+    "definition": "thank you very much",
+    "type": "expression"
   },
   {
     "char": "唔開心",
@@ -1883,6 +2021,12 @@
     "char": "貓",
     "jyutping": "maau1",
     "definition": "cat",
+    "type": "noun"
+  },
+  {
+    "char": "VAN",
+    "jyutping": "man1",
+    "definition": "minibus / van (loanword)",
     "type": "noun"
   },
   {
@@ -2265,6 +2409,12 @@
     "type": "noun"
   },
   {
+    "char": "塞車",
+    "jyutping": "sak1ce1",
+    "definition": "traffic jam / heavy traffic",
+    "type": "verb"
+  },
+  {
     "char": "心碎",
     "jyutping": "sam1seoi3",
     "definition": "heartbroken",
@@ -2329,6 +2479,12 @@
     "jyutping": "sau1bing1",
     "definition": "to collect platonic admirers (literally 'collect soldiers')",
     "type": "verb"
+  },
+  {
+    "char": "收到",
+    "jyutping": "sau1dou2",
+    "definition": "got it / received",
+    "type": "expression"
   },
   {
     "char": "收工",
@@ -2397,6 +2553,12 @@
     "type": "noun"
   },
   {
+    "char": "隧道",
+    "jyutping": "seoi6dou6",
+    "definition": "tunnel",
+    "type": "noun"
+  },
+  {
     "char": "信",
     "jyutping": "seon3",
     "definition": "to believe / trust",
@@ -2412,6 +2574,12 @@
     "char": "詩",
     "jyutping": "si1",
     "definition": "poem / poetry",
+    "type": "noun"
+  },
+  {
+    "char": "司機",
+    "jyutping": "si1gei1",
+    "definition": "driver",
     "type": "noun"
   },
   {
@@ -2596,6 +2764,12 @@
     "type": "expression"
   },
   {
+    "char": "上車",
+    "jyutping": "soeng5ce1",
+    "definition": "to get on (a vehicle)",
+    "type": "verb"
+  },
+  {
     "char": "上面",
     "jyutping": "soeng6min6",
     "definition": "above / on top of / upper side",
@@ -2684,6 +2858,12 @@
     "jyutping": "tim4",
     "definition": "sweet / romantic",
     "type": "adjective"
+  },
+  {
+    "char": "天橋",
+    "jyutping": "tin1kiu4",
+    "definition": "pedestrian flyover / footbridge",
+    "type": "noun"
   },
   {
     "char": "聽講",
@@ -2832,6 +3012,12 @@
     "type": "verb"
   },
   {
+    "char": "站",
+    "jyutping": "zaam6",
+    "definition": "station / stop",
+    "type": "noun"
+  },
+  {
     "char": "找",
     "jyutping": "zaau2",
     "definition": "to give change / look for / seek",
@@ -2940,6 +3126,12 @@
     "jyutping": "zik1hai6",
     "definition": "that is / namely / in other words / meaning",
     "type": "conjunction"
+  },
+  {
+    "char": "直行",
+    "jyutping": "zik6haang4",
+    "definition": "to go straight",
+    "type": "verb"
   },
   {
     "char": "折",
@@ -3060,6 +3252,24 @@
     "char": "煮嘢食",
     "jyutping": "zyu2je5sik6",
     "definition": "to cook / cook food",
+    "type": "verb"
+  },
+  {
+    "char": "轉車",
+    "jyutping": "zyun2ce1",
+    "definition": "to transfer (vehicles)",
+    "type": "verb"
+  },
+  {
+    "char": "轉右",
+    "jyutping": "zyun2jau6",
+    "definition": "to turn right",
+    "type": "verb"
+  },
+  {
+    "char": "轉左",
+    "jyutping": "zyun2zo2",
+    "definition": "to turn left",
     "type": "verb"
   }
 ]

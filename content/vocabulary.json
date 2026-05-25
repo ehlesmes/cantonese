@@ -4,7 +4,7 @@
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 244
+    "occurrences": 250
   },
   {
     "character": "阿",
@@ -32,6 +32,13 @@
     "jyutping": "baa1si2",
     "translation": "bus (loanword)",
     "firstIntroducedIn": "02-shopping-slang.md",
+    "occurrences": 3
+  },
+  {
+    "character": "巴士站",
+    "jyutping": "baa1si2zaam6",
+    "translation": "bus stop",
+    "firstIntroducedIn": "20-travel-transport.md",
     "occurrences": 2
   },
   {
@@ -81,7 +88,7 @@
     "jyutping": "baat3daat6tung1",
     "translation": "Octopus card (Hong Kong contact-less smart card)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "爆",
@@ -100,9 +107,9 @@
   {
     "character": "俾",
     "jyutping": "bei2",
-    "translation": "to give / for / by / to give",
+    "translation": "to give / for / by / to give / to give / for / let / allow",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 21
+    "occurrences": 22
   },
   {
     "character": "邊",
@@ -259,6 +266,13 @@
     "occurrences": 4
   },
   {
+    "character": "車",
+    "jyutping": "ce1",
+    "translation": "car / vehicle",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
+  },
+  {
     "character": "請",
     "jyutping": "ceng2",
     "translation": "treat",
@@ -324,9 +338,9 @@
   {
     "character": "遲到",
     "jyutping": "ci4dou3",
-    "translation": "to be late / arrive late",
+    "translation": "to be late / arrive late / to arrive late",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 4
+    "occurrences": 6
   },
   {
     "character": "潛水",
@@ -343,11 +357,25 @@
     "occurrences": 11
   },
   {
+    "character": "前邊",
+    "jyutping": "cin4bin1",
+    "translation": "ahead / ahead / in front / up ahead",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 6
+  },
+  {
     "character": "前面",
     "jyutping": "cin4min6",
     "translation": "in front / front side",
     "firstIntroducedIn": "04-existentials-places.md",
     "occurrences": 1
+  },
+  {
+    "character": "請問",
+    "jyutping": "cing2man6",
+    "translation": "may I ask",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 4
   },
   {
     "character": "超市",
@@ -434,6 +462,13 @@
     "occurrences": 5
   },
   {
+    "character": "大約",
+    "jyutping": "daai6joek3",
+    "translation": "approximately",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
+  },
+  {
     "character": "單",
     "jyutping": "daan1",
     "translation": "bill / receipt / sheet",
@@ -460,6 +495,13 @@
     "translation": "egg tart",
     "firstIntroducedIn": "03-dining-out.md",
     "occurrences": 11
+  },
+  {
+    "character": "搭車",
+    "jyutping": "daap3ce1",
+    "translation": "to take transit / ride a vehicle",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
   },
   {
     "character": "搭枱",
@@ -497,11 +539,18 @@
     "occurrences": 12
   },
   {
+    "character": "燈位",
+    "jyutping": "dang1wai2",
+    "translation": "traffic light / traffic light / intersection with lights",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 3
+  },
+  {
     "character": "等",
     "jyutping": "dang2",
-    "translation": "wait",
+    "translation": "wait / to wait",
     "firstIntroducedIn": "17-foodie-slang.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "戥",
@@ -525,11 +574,18 @@
     "occurrences": 1
   },
   {
+    "character": "地鐵",
+    "jyutping": "dei6tit3",
+    "translation": "MTR / subway",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
+  },
+  {
     "character": "地鐵站",
     "jyutping": "dei6tit3zaam6",
     "translation": "MTR station / subway station",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 2
+    "occurrences": 9
   },
   {
     "character": "頂",
@@ -557,7 +613,14 @@
     "jyutping": "dik1si2",
     "translation": "taxi (loanword)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 2
+    "occurrences": 3
+  },
+  {
+    "character": "的士站",
+    "jyutping": "dik1si2zaam6",
+    "translation": "taxi stand",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
   },
   {
     "character": "點",
@@ -578,7 +641,7 @@
     "jyutping": "dim2joeng6",
     "translation": "how / in what way",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
-    "occurrences": 2
+    "occurrences": 5
   },
   {
     "character": "點心",
@@ -744,9 +807,9 @@
   {
     "character": "分鐘",
     "jyutping": "fan1zung1",
-    "translation": "minute",
+    "translation": "minute / minutes",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "份",
@@ -882,6 +945,13 @@
     "occurrences": 6
   },
   {
+    "character": "架",
+    "jyutping": "gaa3",
+    "translation": "classifier for vehicles",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
+  },
+  {
     "character": "咖啡",
     "jyutping": "gaa3fe1",
     "translation": "coffee (loanword)",
@@ -907,7 +977,7 @@
     "jyutping": "gaak3lei4",
     "translation": "next to / beside / neighbor",
     "firstIntroducedIn": "09-split-verbs-idioms.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "減價",
@@ -949,7 +1019,7 @@
     "jyutping": "gam2",
     "translation": "then / in that case / so",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 11
+    "occurrences": 12
   },
   {
     "character": "咁",
@@ -1020,6 +1090,13 @@
     "translation": "how many / how much",
     "firstIntroducedIn": "02-shopping-slang.md",
     "occurrences": 6
+  },
+  {
+    "character": "幾耐",
+    "jyutping": "gei2noi6",
+    "translation": "how long (time)",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 3
   },
   {
     "character": "記錯",
@@ -1106,6 +1183,13 @@
     "occurrences": 3
   },
   {
+    "character": "趕時間",
+    "jyutping": "gon2si4gaan3",
+    "translation": "in a hurry / rushing for time",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 2
+  },
+  {
     "character": "講",
     "jyutping": "gong2",
     "translation": "to speak / say / talk",
@@ -1171,9 +1255,23 @@
   {
     "character": "過",
     "jyutping": "gwo3",
-    "translation": "verbal aspect suffix indicating past experience / 'have done before'",
+    "translation": "verbal aspect suffix indicating past experience / 'have done before' / to pass / cross",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 26
+    "occurrences": 27
+  },
+  {
+    "character": "過去",
+    "jyutping": "gwo3heoi3",
+    "translation": "go over",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
+  },
+  {
+    "character": "過馬路",
+    "jyutping": "gwo3maa5lou6",
+    "translation": "to cross the road",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 2
   },
   {
     "character": "廣東話",
@@ -1225,11 +1323,25 @@
     "occurrences": 3
   },
   {
+    "character": "行到",
+    "jyutping": "haang4dou3",
+    "translation": "walk to",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
+  },
+  {
+    "character": "行路",
+    "jyutping": "haang4lou6",
+    "translation": "to walk",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 2
+  },
+  {
     "character": "喺",
     "jyutping": "hai2",
     "translation": "at / in / on / at / in / on (locative preposition)",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 57
+    "occurrences": 61
   },
   {
     "character": "喺度",
@@ -1243,7 +1355,7 @@
     "jyutping": "hai6",
     "translation": "to be / to be (am/is/are) / yes",
     "firstIntroducedIn": "01-greetings.md",
-    "occurrences": 51
+    "occurrences": 52
   },
   {
     "character": "係唔係",
@@ -1257,7 +1369,7 @@
     "jyutping": "hang4",
     "translation": "to walk / go / run (a machine)",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "後悔",
@@ -1285,7 +1397,7 @@
     "jyutping": "heoi3",
     "translation": "to go",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 48
+    "occurrences": 52
   },
   {
     "character": "去唔去",
@@ -1299,7 +1411,7 @@
     "jyutping": "ho2ji5",
     "translation": "can / may / possible",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 17
+    "occurrences": 18
   },
   {
     "character": "可樂",
@@ -1398,6 +1510,13 @@
     "translation": "toasted bread (restaurant slang)",
     "firstIntroducedIn": "17-foodie-slang.md",
     "occurrences": 3
+  },
+  {
+    "character": "紅",
+    "jyutping": "hung4",
+    "translation": "red",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 2
   },
   {
     "character": "飲",
@@ -1531,6 +1650,13 @@
     "translation": "rich / wealthy / have money",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
     "occurrences": 4
+  },
+  {
+    "character": "有落",
+    "jyutping": "jau5lok6",
+    "translation": "stop here please",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 8
   },
   {
     "character": "有冇",
@@ -1670,7 +1796,7 @@
     "jyutping": "jiu3",
     "translation": "to want / need / must / demand / need / have to",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 28
+    "occurrences": 30
   },
   {
     "character": "要唔要",
@@ -1754,14 +1880,14 @@
     "jyutping": "laa1",
     "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 102
+    "occurrences": 106
   },
   {
     "character": "喇",
     "jyutping": "laa3",
     "translation": "sentence-final particle indicating a change of state or already",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 22
+    "occurrences": 23
   },
   {
     "character": "喇喎",
@@ -1841,6 +1967,20 @@
     "occurrences": 36
   },
   {
+    "character": "落",
+    "jyutping": "lok6",
+    "translation": "get off",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
+  },
+  {
+    "character": "落車",
+    "jyutping": "lok6ce1",
+    "translation": "to get off a vehicle",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 5
+  },
+  {
     "character": "落雨",
     "jyutping": "lok6jyu5",
     "translation": "to rain",
@@ -1862,6 +2002,13 @@
     "occurrences": 15
   },
   {
+    "character": "路口",
+    "jyutping": "lou6hau2",
+    "translation": "intersection / intersection / junction",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 3
+  },
+  {
     "character": "碌卡",
     "jyutping": "luk1 ka1",
     "translation": "swipe credit card",
@@ -1876,6 +2023,13 @@
     "occurrences": 3
   },
   {
+    "character": "綠",
+    "jyutping": "luk6",
+    "translation": "green",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 2
+  },
+  {
     "character": "六合彩",
     "jyutping": "luk6hap6coi2",
     "translation": "Mark Six (Hong Kong lottery)",
@@ -1887,7 +2041,7 @@
     "jyutping": "m4",
     "translation": "not / not / no (negative prefix)",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 59
+    "occurrences": 60
   },
   {
     "character": "唔緊要",
@@ -1922,7 +2076,14 @@
     "jyutping": "m4goi1",
     "translation": "excuse me / excuse me / please / thank you (for service or help)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 32
+    "occurrences": 47
+  },
+  {
+    "character": "唔該晒",
+    "jyutping": "m4goi1saai3",
+    "translation": "thank you very much",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
   },
   {
     "character": "唔開心",
@@ -2153,7 +2314,7 @@
     "jyutping": "nei5",
     "translation": "you / your",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 112
+    "occurrences": 114
   },
   {
     "character": "你哋",
@@ -2202,7 +2363,7 @@
     "jyutping": "ngo5",
     "translation": "I / I / me",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 188
+    "occurrences": 191
   },
   {
     "character": "我哋",
@@ -2230,7 +2391,7 @@
     "jyutping": "ni1dou6",
     "translation": "here",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 28
+    "occurrences": 30
   },
   {
     "character": "呢個",
@@ -2366,6 +2527,13 @@
     "occurrences": 1
   },
   {
+    "character": "塞車",
+    "jyutping": "sak1ce1",
+    "translation": "traffic jam / heavy traffic",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 3
+  },
+  {
     "character": "心碎",
     "jyutping": "sam1seoi3",
     "translation": "heartbroken",
@@ -2405,7 +2573,7 @@
     "jyutping": "sap6",
     "translation": "ten",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 16
+    "occurrences": 17
   },
   {
     "character": "十一",
@@ -2448,6 +2616,13 @@
     "translation": "to collect platonic admirers / to collect platonic admirers (literally 'collect soldiers')",
     "firstIntroducedIn": "19-social-media-slang.md",
     "occurrences": 2
+  },
+  {
+    "character": "收到",
+    "jyutping": "sau1dou2",
+    "translation": "got it",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
   },
   {
     "character": "收工",
@@ -2527,6 +2702,13 @@
     "occurrences": 12
   },
   {
+    "character": "隧道",
+    "jyutping": "seoi6dou6",
+    "translation": "tunnel",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
+  },
+  {
     "character": "信",
     "jyutping": "seon3",
     "translation": "believe",
@@ -2538,6 +2720,13 @@
     "jyutping": "si1",
     "translation": "poem / poetry",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
+    "occurrences": 2
+  },
+  {
+    "character": "司機",
+    "jyutping": "si1gei1",
+    "translation": "driver",
+    "firstIntroducedIn": "20-travel-transport.md",
     "occurrences": 2
   },
   {
@@ -2629,7 +2818,7 @@
     "jyutping": "sin1",
     "translation": "first / beforehand / only then / first / only then",
     "firstIntroducedIn": "06-ability-experience.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "成功",
@@ -2721,6 +2910,13 @@
     "translation": "camera eats first (taking pictures of food before eating)",
     "firstIntroducedIn": "17-foodie-slang.md",
     "occurrences": 4
+  },
+  {
+    "character": "上車",
+    "jyutping": "soeng5ce1",
+    "translation": "to get on a vehicle",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
   },
   {
     "character": "上面",
@@ -2819,6 +3015,13 @@
     "translation": "sweet / romantic",
     "firstIntroducedIn": "19-social-media-slang.md",
     "occurrences": 2
+  },
+  {
+    "character": "天橋",
+    "jyutping": "tin1kiu4",
+    "translation": "pedestrian flyover / footbridge",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 3
   },
   {
     "character": "聽講",
@@ -2961,6 +3164,13 @@
     "occurrences": 5
   },
   {
+    "character": "站",
+    "jyutping": "zaam6",
+    "translation": "station / stop",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
+  },
+  {
     "character": "找",
     "jyutping": "zaau2",
     "translation": "to give change / look for / seek / to look for",
@@ -3007,7 +3217,7 @@
     "jyutping": "zau6",
     "translation": "then / right away / immediately",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 18
+    "occurrences": 19
   },
   {
     "character": "啫",
@@ -3063,7 +3273,7 @@
     "jyutping": "zi1hau6",
     "translation": "afterwards / after",
     "firstIntroducedIn": "13-passives-focus-indirect.md",
-    "occurrences": 2
+    "occurrences": 4
   },
   {
     "character": "只係",
@@ -3085,6 +3295,13 @@
     "translation": "that is / namely / in other words / meaning",
     "firstIntroducedIn": "13-passives-focus-indirect.md",
     "occurrences": 11
+  },
+  {
+    "character": "直行",
+    "jyutping": "zik6haang4",
+    "translation": "to go straight",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 2
   },
   {
     "character": "折",
@@ -3112,7 +3329,7 @@
     "jyutping": "zo2",
     "translation": "verbal aspect suffix indicating completed action (perfective aspect) / completed aspect",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 71
+    "occurrences": 72
   },
   {
     "character": "早晨",
@@ -3196,7 +3413,7 @@
     "jyutping": "zung6",
     "translation": "still / yet",
     "firstIntroducedIn": "08-particles-nuance.md",
-    "occurrences": 10
+    "occurrences": 11
   },
   {
     "character": "煮",
@@ -3204,5 +3421,26 @@
     "translation": "to cook / boil",
     "firstIntroducedIn": "06-ability-experience.md",
     "occurrences": 2
+  },
+  {
+    "character": "轉車",
+    "jyutping": "zyun2ce1",
+    "translation": "to transfer (vehicles)",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 2
+  },
+  {
+    "character": "轉右",
+    "jyutping": "zyun2jau6",
+    "translation": "to turn right",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 4
+  },
+  {
+    "character": "轉左",
+    "jyutping": "zyun2zo2",
+    "translation": "to turn left",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 1
   }
 ]

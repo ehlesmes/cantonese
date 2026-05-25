@@ -66,6 +66,9 @@ chapters:
   - chapter: 21
     title: "Housing, Flat-Hunting & Neighborhood Slang"
     file: "21-housing-neighborhood.md"
+  - chapter: 22
+    title: "Entertainment, Nightlife & Leisure Slang"
+    file: "22-entertainment-nightlife.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap
@@ -235,6 +238,12 @@ Cantonese-speaking community._
 - **Topic 21: Travel, Directions & Transport Slang**
   - _Core Grammar_: Directions and locations, minibuses and local transit
     slangs, and giving instructions to drivers.
+- **Topic 22: Housing, Flat-Hunting & Neighborhood Slang**
+  - _Core Grammar_: Renting apartments, flat-hunting terminology, layout
+    descriptions, and neighborhood slang.
+- **Topic 23: Entertainment, Nightlife & Leisure Slang**
+  - _Core Grammar_: Discussing hobbies, movies, going to clubs or bars, and
+    night-out colloquialisms.
 
 ---
 
@@ -329,10 +338,14 @@ chapters, translating our spiraled progression into progressive text lessons.
     (`已讀不回`), and social media slang (`呃[aak1|to fish]like[laaik1|likes]`,
     `放閃`).
 - **Chapter 20: Travel, Directions & Transport Slang
-  (`20-travel-transport.md`)** [ACTIVE LOOK-A-HEAD]
+  (`20-travel-transport.md`)** [COMPLETED]
   - _Focus_: Navigate local transport (minibuses, MTR), ask for and give
     directions, and master essential travel slangs and colloquialisms.
 - **Chapter 21: Housing, Flat-Hunting & Neighborhood Slang
   (`21-housing-neighborhood.md`)** [ACTIVE LOOK-A-HEAD]
   - _Focus_: Renting apartments, flat-hunting terminology, layout descriptions,
     and neighborhood slang.
+- **Chapter 22: Entertainment, Nightlife & Leisure Slang
+  (`22-entertainment-nightlife.md`)** [ACTIVE LOOK-A-HEAD]
+  - _Focus_: Colloquialisms for socializing, night-out habits, bars, clubs, and
+    weekend activities.
