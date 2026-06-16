@@ -55,7 +55,7 @@ const processedBlocks = blocks.map((block) => {
       return {
         type: "exercise",
         questionHtml: compileMarkdown(displayQuestion),
-        answerHtml: compileMarkdown(exercise.answer),
+        answerHtml: compileMarkdown(exercise.answer, { inline: true }),
         explanationHtml: compileMarkdown(exercise.explanation),
       };
     } catch (e) {

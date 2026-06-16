@@ -11,25 +11,40 @@ marked.setOptions({
  * Converts inline `Char[Jyutping|Translation]` (with backticks) to tooltips.
  *
  * @param {string} text
+ * @param {object} [options={}] Options object (e.g. { inline: true })
  * @returns {string} Compiled HTML
  */
-export function compileMarkdown(text) {
+export function compileMarkdown(text, options = {}) {
   if (!text) return "";
 
   // Regex to match: `Char[Jyutping|Translation]` (with backticks)
   const inlineRegex =
     /`([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+)\[([^\]\n|]+)\|([^\]\n]+)\]`/g;
 
-  // Replace annotations with HTML spans for tooltips
-  const processedText = text.replace(
+  // Regex to match: Char[Jyutping|Translation] (without backticks)
+  const blockRegex =
+    /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
+
+  // Replace backtick-wrapped annotations
+  let processedText = text.replace(
     inlineRegex,
     (match, char, jyutping, translation) => {
       return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
     },
   );
 
+  // Replace plain annotations (without backticks)
+  processedText = processedText.replace(
+    blockRegex,
+    (match, char, jyutping, translation) => {
+      return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
+    },
+  );
+
   // Compile markdown to HTML
-  const rawHtml = marked.parse(processedText);
+  const rawHtml = options.inline
+    ? marked.parseInline(processedText)
+    : marked.parse(processedText);
 
   // Regex to match blockquote alerts: <blockquote><p>[!NOTE] ...</p></blockquote>
   const alertRegex =

@@ -42,7 +42,7 @@ describe("Cantonese Lexicon Registrar CLI E2E Spec", () => {
     if (fs.existsSync(dictPath)) {
       try {
         fs.unlinkSync(dictPath);
-      } catch (err) {
+      } catch {
         // ignore
       }
     }

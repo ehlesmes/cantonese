@@ -28,6 +28,8 @@ module.exports = [
       "src/**/*.js",
       "src/**/*.jsx",
       "playwright.config.js",
+      "astro.config.mjs",
+      "vitest.config.js",
     ],
     languageOptions: {
       sourceType: "module",

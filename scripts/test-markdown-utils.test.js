@@ -18,6 +18,16 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     expect(html).not.toContain("`你好");
   });
 
+  test("compileMarkdown should support inline compilation without wrapping in paragraph tags", () => {
+    const raw = "The greeting is `你好[nei5hou2|hello]` in Cantonese.";
+    const html = compileMarkdown(raw, { inline: true });
+    expect(html).toContain(
+      '<span class="vocab-term">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span>',
+    );
+    expect(html).not.toContain("<p>");
+    expect(html).not.toContain("</p>");
+  });
+
   test("compileAnnotations should convert block annotations without backticks", () => {
     const raw = "唔該[m4goi1|excuse me]，我[ngo5|I]想買呢個。";
     const html = compileAnnotations(raw);
