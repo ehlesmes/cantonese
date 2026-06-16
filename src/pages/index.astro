@@ -3,11 +3,8 @@ import fs from "fs";
 import path from "path";
 import { createRequire } from "module";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import CantoneseExample from "../components/CantoneseExample.astro";
-import DialogueBlock from "../components/DialogueBlock.astro";
-import { compileMarkdown } from "../utils/markdown.js";
 
-// Load and execute scripts/lib/parser.js in a CJS context at build time
+// Load and execute scripts/lib/parser.js to get curriculum chapters
 const cjsRequire = createRequire(import.meta.url);
 const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
 const parserCode = fs.readFileSync(parserPath, "utf8");
@@ -22,90 +19,62 @@ runParser(
   path.dirname(parserPath)
 );
 
-const { parseChapter, parseYAML } = parserModule.exports;
+const { parseCurriculum } = parserModule.exports;
+const curriculumPath = path.resolve("content/curriculum.md");
+const chapters = parseCurriculum(curriculumPath);
 
-// Load Chapter 1 data
-const filePath = path.resolve("content/01-greetings.md");
-const { frontmatter, blocks } = parseChapter(filePath);
-
-// Pre-process all blocks in the frontmatter script to avoid JSX parser edge cases
-const processedBlocks = blocks.map((block) => {
-  if (block.type === "prose") {
-    return {
-      type: "prose",
-      html: compileMarkdown(block.content),
-    };
-  }
-  if (block.type === "cantonese") {
-    return {
-      type: "cantonese",
-      content: block.content,
-    };
-  }
-  if (block.type === "dialog") {
-    return {
-      type: "dialog",
-      content: block.content,
-    };
-  }
-  if (block.type === "exercise") {
-    try {
-      const exercise = parseYAML(block.content);
-      const displayQuestion = exercise.question.replace(new RegExp("_{2,}", "g"), "____");
-      return {
-        type: "exercise",
-        questionHtml: compileMarkdown(displayQuestion, { breaks: true }),
-        answerHtml: compileMarkdown(exercise.answer, { inline: true }),
-        explanationHtml: compileMarkdown(exercise.explanation),
-      };
-    } catch (e) {
-      console.error("Failed to parse exercise block:", e);
-      return null;
-    }
-  }
-  return null;
-}).filter(Boolean);
+// Prepare chapter entries with exist status
+const chapterEntries = chapters.map(c => {
+  const fileExists = fs.existsSync(path.resolve("content", c.file));
+  return {
+    ...c,
+    id: String(c.chapter).padStart(2, "0"),
+    exists: fileExists
+  };
+});
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title="Curriculum Index" description="Colloquial Cantonese course reader and living curriculum roadmap.">
   <div style="margin-bottom: 2rem;">
     <span style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color);">
-      Chapter {frontmatter.chapter}
+      廣東話 Course Reader
     </span>
-    <h1 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">{frontmatter.title}</h1>
+    <h1 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">Curriculum Index</h1>
     <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4; font-style: italic; margin-bottom: 0;">
-      {frontmatter.description}
+      A spiraled and integrated Cantonese learning curriculum. Select a chapter below to start reading.
     </p>
   </div>
 
-  <article>
-    {processedBlocks.map((block) => 
-      block.type === "prose" ? (
-        <div class="prose-block chapter-block" set:html={block.html} />
-      ) : block.type === "cantonese" ? (
-        <CantoneseExample content={block.content} />
-      ) : block.type === "dialog" ? (
-        <DialogueBlock content={block.content} />
-      ) : block.type === "exercise" ? (
-        <div class="cantonese-example-card chapter-block" style="border-left-color: var(--secondary-color); background-color: #f7f5ef; padding: 0.8rem 1rem;">
-          <div style="font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: var(--secondary-color); margin-bottom: 0.4rem; letter-spacing: 0.05em;">
-            Practice Exercise
-          </div>
-          <div class="prose-block" style="margin-bottom: 0.6rem;" set:html={block.questionHtml} />
-          
-          <div style="border-top: 1px dashed var(--border-color); padding-top: 0.5rem; margin-top: 0.5rem;">
-            <details style="cursor: pointer;">
-              <summary style="font-size: 0.9rem; font-weight: 600; color: var(--accent-color); outline: none;">
-                Reveal Answer & Explanation
-              </summary>
-              <div style="margin-top: 0.4rem; padding-left: 0.5rem; border-left: 2px solid var(--border-color); cursor: default;">
-                <div style="font-weight: 600; margin-bottom: 0.2rem;">Answer: <span set:html={block.answerHtml} style="font-weight: normal; display: inline;" /></div>
-                <div class="prose-block" style="font-size: 0.9rem; color: var(--text-muted);" set:html={block.explanationHtml} />
-              </div>
-            </details>
-          </div>
+  <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+    {chapterEntries.map((chapter) => (
+      <div class="cantonese-example-card" style={`border-left-color: ${chapter.exists ? "var(--accent-color)" : "var(--border-color)"}; opacity: ${chapter.exists ? 1 : 0.6}; padding: 0.8rem 1rem; margin-bottom: 0;`}>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.2rem;">
+          <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
+            Chapter {chapter.chapter}
+          </span>
+          {!chapter.exists && (
+            <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); background: var(--border-color); padding: 0.1rem 0.4rem; border-radius: 3px;">
+              Coming Soon
+            </span>
+          )}
         </div>
-      ) : null
-    )}
-  </article>
+        
+        {chapter.exists ? (
+          <h3 style="margin: 0 0 0.4rem 0;">
+            <a href={`/cantonese/chapter/${chapter.id}/`} style="color: var(--text-color); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s ease;" onmouseover="this.style.borderColor='var(--text-color)'" onmouseout="this.style.borderColor='transparent'">
+              {chapter.title}
+            </a>
+          </h3>
+        ) : (
+          <h3 style="margin: 0 0 0.4rem 0; color: var(--text-muted);">
+            {chapter.title}
+          </h3>
+        )}
+        
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0; line-height: 1.45;">
+          {chapter.description || "No description available."}
+        </p>
+      </div>
+    ))}
+  </div>
 </BaseLayout>

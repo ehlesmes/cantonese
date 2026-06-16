@@ -2,9 +2,23 @@ import { test, expect } from "@playwright/test";
 import path from "path";
 import os from "os";
 
-test("Chapter 1 Visual Render Test", async ({ page }) => {
-  // Navigate to the course reader dev URL
+test("Curriculum Index Visual Render Test", async ({ page }) => {
+  // Navigate to the course reader index URL
   await page.goto("/cantonese");
+
+  // Ensure content is loaded
+  await page.waitForSelector("h1");
+
+  // Playwright visual assertion against baseline image
+  await expect(page).toHaveScreenshot("curriculum-index.png", {
+    fullPage: true,
+    maxDiffPixelRatio: 0.01,
+  });
+});
+
+test("Chapter 1 Visual Render Test", async ({ page }) => {
+  // Navigate to Chapter 1 URL
+  await page.goto("/cantonese/chapter/01");
 
   // Ensure content is loaded
   await page.waitForSelector("h1");

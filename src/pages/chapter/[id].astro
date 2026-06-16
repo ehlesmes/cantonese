@@ -1,0 +1,185 @@
+---
+import fs from "fs";
+import path from "path";
+import { createRequire } from "module";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CantoneseExample from "../../components/CantoneseExample.astro";
+import DialogueBlock from "../../components/DialogueBlock.astro";
+import { compileMarkdown } from "../../utils/markdown.js";
+
+export async function getStaticPaths() {
+  const cjsRequire = createRequire(import.meta.url);
+  const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
+  const parserCode = fs.readFileSync(parserPath, "utf8");
+
+  const parserModule = { exports: {} };
+  const runParser = new Function("exports", "require", "module", "__filename", "__dirname", parserCode);
+  runParser(
+    parserModule.exports,
+    cjsRequire,
+    parserModule,
+    parserPath,
+    path.dirname(parserPath)
+  );
+
+  const { parseCurriculum } = parserModule.exports;
+  const curriculumPath = path.resolve("content/curriculum.md");
+  const chapters = parseCurriculum(curriculumPath);
+
+  const paths = [];
+  for (let i = 0; i < chapters.length; i++) {
+    const chapter = chapters[i];
+    const file = chapter.file;
+    const filePath = path.resolve("content", file);
+    if (fs.existsSync(filePath)) {
+      const id = String(chapter.chapter).padStart(2, "0");
+      paths.push({
+        params: { id },
+        props: {
+          filePath,
+          chapterNumber: chapter.chapter,
+          allChapters: chapters.map(c => ({
+            chapter: c.chapter,
+            title: c.title,
+            id: String(c.chapter).padStart(2, "0"),
+            exists: fs.existsSync(path.resolve("content", c.file))
+          }))
+        }
+      });
+    }
+  }
+  return paths;
+}
+
+const { id } = Astro.params;
+const { filePath, chapterNumber, allChapters } = Astro.props;
+
+// Load Chapter data
+const cjsRequire = createRequire(import.meta.url);
+const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
+const parserCode = fs.readFileSync(parserPath, "utf8");
+
+const parserModule = { exports: {} };
+const runParser = new Function("exports", "require", "module", "__filename", "__dirname", parserCode);
+runParser(
+  parserModule.exports,
+  cjsRequire,
+  parserModule,
+  parserPath,
+  path.dirname(parserPath)
+);
+
+const { parseChapter, parseYAML } = parserModule.exports;
+const { frontmatter, blocks } = parseChapter(filePath);
+
+// Pre-process all blocks
+const processedBlocks = blocks.map((block) => {
+  if (block.type === "prose") {
+    return {
+      type: "prose",
+      html: compileMarkdown(block.content),
+    };
+  }
+  if (block.type === "cantonese") {
+    return {
+      type: "cantonese",
+      content: block.content,
+    };
+  }
+  if (block.type === "dialog") {
+    return {
+      type: "dialog",
+      content: block.content,
+    };
+  }
+  if (block.type === "exercise") {
+    try {
+      const exercise = parseYAML(block.content);
+      const displayQuestion = exercise.question.replace(new RegExp("_{2,}", "g"), "____");
+      return {
+        type: "exercise",
+        questionHtml: compileMarkdown(displayQuestion, { breaks: true }),
+        answerHtml: compileMarkdown(exercise.answer, { inline: true }),
+        explanationHtml: compileMarkdown(exercise.explanation),
+      };
+    } catch (e) {
+      console.error("Failed to parse exercise block:", e);
+      return null;
+    }
+  }
+  return null;
+}).filter(Boolean);
+
+// Find navigation links
+const existingChapters = allChapters.filter(c => c.exists);
+const currentIndex = existingChapters.findIndex(c => c.id === id);
+
+const prevChapter = currentIndex > 0 ? existingChapters[currentIndex - 1] : null;
+const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapters[currentIndex + 1] : null;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <div style="margin-bottom: 2rem;">
+    <span style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color);">
+      Chapter {frontmatter.chapter}
+    </span>
+    <h1 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">{frontmatter.title}</h1>
+    <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4; font-style: italic; margin-bottom: 0;">
+      {frontmatter.description}
+    </p>
+  </div>
+
+  <article>
+    {processedBlocks.map((block) => 
+      block.type === "prose" ? (
+        <div class="prose-block chapter-block" set:html={block.html} />
+      ) : block.type === "cantonese" ? (
+        <CantoneseExample content={block.content} />
+      ) : block.type === "dialog" ? (
+        <DialogueBlock content={block.content} />
+      ) : block.type === "exercise" ? (
+        <div class="cantonese-example-card chapter-block" style="border-left-color: var(--secondary-color); background-color: #f7f5ef; padding: 0.8rem 1rem;">
+          <div style="font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: var(--secondary-color); margin-bottom: 0.4rem; letter-spacing: 0.05em;">
+            Practice Exercise
+          </div>
+          <div class="prose-block" style="margin-bottom: 0.6rem;" set:html={block.questionHtml} />
+          
+          <div style="border-top: 1px dashed var(--border-color); padding-top: 0.5rem; margin-top: 0.5rem;">
+            <details style="cursor: pointer;">
+              <summary style="font-size: 0.9rem; font-weight: 600; color: var(--accent-color); outline: none;">
+                Reveal Answer & Explanation
+              </summary>
+              <div style="margin-top: 0.4rem; padding-left: 0.5rem; border-left: 2px solid var(--border-color); cursor: default;">
+                <div style="font-weight: 600; margin-bottom: 0.2rem;">Answer: <span set:html={block.answerHtml} style="font-weight: normal; display: inline;" /></div>
+                <div class="prose-block" style="font-size: 0.9rem; color: var(--text-muted);" set:html={block.explanationHtml} />
+              </div>
+            </details>
+          </div>
+        </div>
+      ) : null
+    )}
+  </article>
+
+  {/* Pagination Navigation */}
+  <nav style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding-top: 1rem; border-top: 2px solid var(--border-color);">
+    <div>
+      {prevChapter && (
+        <a href={`/cantonese/chapter/${prevChapter.id}/`} style="font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--accent-color); text-decoration: none;">
+          &larr; Chapter {prevChapter.chapter}: {prevChapter.title}
+        </a>
+      )}
+    </div>
+    <div>
+      <a href="/cantonese/" style="font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; color: var(--text-muted); text-decoration: none; border: 1px solid var(--border-color); padding: 0.4rem 0.8rem; border-radius: 4px; background-color: var(--card-bg);">
+        Curriculum Index
+      </a>
+    </div>
+    <div>
+      {nextChapter && (
+        <a href={`/cantonese/chapter/${nextChapter.id}/`} style="font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--accent-color); text-decoration: none;">
+          Chapter {nextChapter.chapter}: {nextChapter.title} &rarr;
+        </a>
+      )}
+    </div>
+  </nav>
+</BaseLayout>
