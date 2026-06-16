@@ -1,5 +1,12 @@
 [
   {
+    "character": "IG",
+    "jyutping": "aa1zi1",
+    "translation": "Instagram",
+    "firstIntroducedIn": "19-social-media-slang.md",
+    "occurrences": 2
+  },
+  {
     "character": "呀",
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
@@ -39,6 +46,13 @@
     "jyutping": "aan3",
     "translation": "late",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 2
+  },
+  {
+    "character": "IG",
+    "jyutping": "ai1zi1",
+    "translation": "Instagram (slang)",
+    "firstIntroducedIn": "24-tech-apps-slang.md",
     "occurrences": 2
   },
   {
@@ -1043,6 +1057,41 @@
     "occurrences": 4
   },
   {
+    "character": "FB",
+    "jyutping": "ef1bi1",
+    "translation": "Facebook (slang)",
+    "firstIntroducedIn": "24-tech-apps-slang.md",
+    "occurrences": 1
+  },
+  {
+    "character": "A2",
+    "jyutping": "ei1ji6",
+    "translation": "single after two relationships",
+    "firstIntroducedIn": "19-social-media-slang.md",
+    "occurrences": 1
+  },
+  {
+    "character": "A0",
+    "jyutping": "ei1ling4",
+    "translation": "single and never dated",
+    "firstIntroducedIn": "19-social-media-slang.md",
+    "occurrences": 4
+  },
+  {
+    "character": "App",
+    "jyutping": "ep1",
+    "translation": "mobile application / app",
+    "firstIntroducedIn": "24-tech-apps-slang.md",
+    "occurrences": 4
+  },
+  {
+    "character": "WhatsApp",
+    "jyutping": "ep1si1ep1",
+    "translation": "WhatsApp / to WhatsApp someone",
+    "firstIntroducedIn": "24-tech-apps-slang.md",
+    "occurrences": 2
+  },
+  {
     "character": "花生",
     "jyutping": "faa1sang1",
     "translation": "peanut",
@@ -1953,6 +2002,20 @@
     "occurrences": 3
   },
   {
+    "character": "hea",
+    "jyutping": "hea1",
+    "translation": "to chill / hang out / slack off / procrastinate",
+    "firstIntroducedIn": "11-narrative-cohesion.md",
+    "occurrences": 3
+  },
+  {
+    "character": "Hea",
+    "jyutping": "hea1",
+    "translation": "to chill / hang out / slack off / procrastinate / to chill / slack off",
+    "firstIntroducedIn": "05-time-continuous.md",
+    "occurrences": 13
+  },
+  {
     "character": "希望",
     "jyutping": "hei1mong6",
     "translation": "to hope / wish / hope",
@@ -2695,6 +2758,13 @@
     "occurrences": 13
   },
   {
+    "character": "like",
+    "jyutping": "laaik1",
+    "translation": "likes (social media)",
+    "firstIntroducedIn": "19-social-media-slang.md",
+    "occurrences": 3
+  },
+  {
     "character": "辣",
     "jyutping": "laat6",
     "translation": "spicy",
@@ -3066,6 +3136,13 @@
     "occurrences": 1
   },
   {
+    "character": "VAN",
+    "jyutping": "man1",
+    "translation": "minibus (loanword)",
+    "firstIntroducedIn": "20-travel-transport.md",
+    "occurrences": 4
+  },
+  {
     "character": "蚊",
     "jyutping": "man1",
     "translation": "dollar (spoken Cantonese colloquial unit of currency)",
@@ -3402,6 +3479,13 @@
     "occurrences": 2
   },
   {
+    "character": "OT",
+    "jyutping": "o1ti1",
+    "translation": "to work overtime",
+    "firstIntroducedIn": "16-workplace-slang.md",
+    "occurrences": 7
+  },
+  {
     "character": "安慰",
     "jyutping": "on1wai3",
     "translation": "to comfort / console",
@@ -3421,6 +3505,13 @@
     "translation": "deposit",
     "firstIntroducedIn": "21-housing-neighborhood.md",
     "occurrences": 1
+  },
+  {
+    "character": "O1",
+    "jyutping": "ou1jat1",
+    "translation": "in a relationship for the first time",
+    "firstIntroducedIn": "19-social-media-slang.md",
+    "occurrences": 3
   },
   {
     "character": "派對",
@@ -3493,10 +3584,24 @@
     "occurrences": 1
   },
   {
+    "character": "P",
+    "jyutping": "pi1",
+    "translation": "party (loanword)",
+    "firstIntroducedIn": "19-social-media-slang.md",
+    "occurrences": 2
+  },
+  {
     "character": "片",
     "jyutping": "pin2",
     "translation": "video / movie / short clip",
     "firstIntroducedIn": "24-tech-apps-slang.md",
+    "occurrences": 4
+  },
+  {
+    "character": "Po",
+    "jyutping": "pou1",
+    "translation": "to post (social media loanword)",
+    "firstIntroducedIn": "19-social-media-slang.md",
     "occurrences": 4
   },
   {
@@ -3505,6 +3610,13 @@
     "translation": "to hang out / go clubbing",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
     "occurrences": 1
+  },
+  {
+    "character": "Pool",
+    "jyutping": "pu1",
+    "translation": "singles pool (student slang)",
+    "firstIntroducedIn": "19-social-media-slang.md",
+    "occurrences": 2
   },
   {
     "character": "沙",
@@ -3820,6 +3932,13 @@
     "translation": "driver",
     "firstIntroducedIn": "20-travel-transport.md",
     "occurrences": 2
+  },
+  {
+    "character": "C1",
+    "jyutping": "si1jat1",
+    "translation": "complicated first relationship",
+    "firstIntroducedIn": "19-social-media-slang.md",
+    "occurrences": 1
   },
   {
     "character": "史",
@@ -4422,6 +4541,13 @@
     "translation": "environment / surroundings",
     "firstIntroducedIn": "21-housing-neighborhood.md",
     "occurrences": 4
+  },
+  {
+    "character": "WiFi",
+    "jyutping": "wai1faai1",
+    "translation": "Wi-Fi / wireless internet",
+    "firstIntroducedIn": "24-tech-apps-slang.md",
+    "occurrences": 3
   },
   {
     "character": "位",

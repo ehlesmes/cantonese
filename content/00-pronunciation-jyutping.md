@@ -155,7 +155,7 @@ question: |
   Which tone number represents the Low Falling pitch contour (e.g. `時[si4|time]`)?
   A) Tone 1
   B) Tone 3
-  | C) Tone 4
+  C) Tone 4
   D) Tone 6
 answer: C
 explanation: Tone 4 is the Low Falling tone (pitch contour 21), which sounds like a disappointed grunt "oh...".

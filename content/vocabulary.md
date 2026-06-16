@@ -4,12 +4,14 @@ This is an automatically generated vocabulary database compiled from all course 
 
 | Character | Jyutping | Translation | First Introduced In | Occurrences |
 | :--- | :--- | :--- | :--- | :--- |
+| **IG** | `aa1zi1` | Instagram | `19-social-media-slang.md` | 2 |
 | **呀** | `aa3` | particle / sentence-final particle softening statements, making questions friendly | `00-pronunciation-jyutping.md` | 308 |
 | **阿** | `aa3` | prefix | `16-workplace-slang.md` | 1 |
 | **阿明** | `aa3 ming4` | Ah Ming | `22-entertainment-nightlife.md` | 5 |
 | **呃** | `aak1` | to cheat / trick / fish / to fish | `19-social-media-slang.md` | 3 |
 | **啱啱** | `aam1aam1` | just now / exactly / just now / just / exactly | `13-passives-focus-indirect.md` | 2 |
 | **晏** | `aan3` | late | `22-entertainment-nightlife.md` | 2 |
+| **IG** | `ai1zi1` | Instagram (slang) | `24-tech-apps-slang.md` | 2 |
 | **嘔** | `au2` | to vomit / throw up | `23-health-sickness.md` | 2 |
 | **巴士** | `baa1si2` | bus (loanword) | `02-shopping-slang.md` | 3 |
 | **巴士站** | `baa1si2zaam6` | bus stop | `20-travel-transport.md` | 2 |
@@ -153,6 +155,11 @@ This is an automatically generated vocabulary database compiled from all course 
 | **短訊** | `dyun2seon3` | text message / SMS | `24-tech-apps-slang.md` | 1 |
 | **短線** | `dyun2sin3` | short term | `25-finance-investing-slang.md` | 1 |
 | **斷片** | `dyun6pin2` | to blackout / memory lapse from drinking | `22-entertainment-nightlife.md` | 4 |
+| **FB** | `ef1bi1` | Facebook (slang) | `24-tech-apps-slang.md` | 1 |
+| **A2** | `ei1ji6` | single after two relationships | `19-social-media-slang.md` | 1 |
+| **A0** | `ei1ling4` | single and never dated | `19-social-media-slang.md` | 4 |
+| **App** | `ep1` | mobile application / app | `24-tech-apps-slang.md` | 4 |
+| **WhatsApp** | `ep1si1ep1` | WhatsApp / to WhatsApp someone | `24-tech-apps-slang.md` | 2 |
 | **花生** | `faa1sang1` | peanut | `09-split-verbs-idioms.md` | 2 |
 | **快** | `faai3` | fast / quick / rapid | `07-comparatives-descriptors.md` | 3 |
 | **返** | `faan1` | to return / go back / reverse | `05-time-continuous.md` | 9 |
@@ -283,6 +290,8 @@ This is an automatically generated vocabulary database compiled from all course 
 | **喉嚨痛** | `hau4lung4tung3` | sore throat | `23-health-sickness.md` | 2 |
 | **後悔** | `hau6fui3` | to regret | `12-regrets-wishes-empathy.md` | 6 |
 | **後面** | `hau6min6` | behind / back side | `04-existentials-places.md` | 3 |
+| **hea** | `hea1` | to chill / hang out / slack off / procrastinate | `11-narrative-cohesion.md` | 3 |
+| **Hea** | `hea1` | to chill / hang out / slack off / procrastinate / to chill / slack off | `05-time-continuous.md` | 13 |
 | **希望** | `hei1mong6` | to hope / wish / hope | `10-hypotheticals-conditionals.md` | 14 |
 | **去** | `heoi3` | to go | `04-existentials-places.md` | 64 |
 | **去唔去** | `heoi3 m4 heoi3` | go or not | `19-social-media-slang.md` | 1 |
@@ -389,6 +398,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **啦** | `laa1` | particle / sentence-final particle suggesting, requesting, or encouraging action / softening particle | `00-pronunciation-jyutping.md` | 127 |
 | **喇** | `laa3` | sentence-final particle indicating a change of state or already | `08-particles-nuance.md` | 23 |
 | **喇喎** | `laa3wo3` | sentence-final particle combination indicating warning, sudden realization, or change of state | `08-particles-nuance.md` | 13 |
+| **like** | `laaik1` | likes (social media) | `19-social-media-slang.md` | 3 |
 | **辣** | `laat6` | spicy | `14-intensifiers-exaggeration.md` | 1 |
 | **嚟** | `lai4` | to come | `06-ability-experience.md` | 2 |
 | **樓** | `lau2` | building / flat / apartment / floor | `21-housing-neighborhood.md` | 1 |
@@ -442,6 +452,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **萬** | `maan6` | ten thousand | `21-housing-neighborhood.md` | 1 |
 | **貓** | `maau1` | cat | `04-existentials-places.md` | 6 |
 | **咪** | `mai6` | then / indeed (contraction of 唔係) | `24-tech-apps-slang.md` | 1 |
+| **VAN** | `man1` | minibus (loanword) | `20-travel-transport.md` | 4 |
 | **蚊** | `man1` | dollar (spoken Cantonese colloquial unit of currency) | `02-shopping-slang.md` | 27 |
 | **問** | `man6` | to ask / inquire | `08-particles-nuance.md` | 2 |
 | **問題** | `man6tai4` | problem | `15-rhetorical-questions.md` | 1 |
@@ -490,9 +501,11 @@ This is an automatically generated vocabulary database compiled from all course 
 | **尿袋** | `niu6doi2` | portable power bank (slang) | `24-tech-apps-slang.md` | 5 |
 | **暖水** | `nyun5seoi2` | warm water | `06-ability-experience.md` | 1 |
 | **痾** | `o1` | to have diarrhea / excrete | `23-health-sickness.md` | 2 |
+| **OT** | `o1ti1` | to work overtime | `16-workplace-slang.md` | 7 |
 | **安慰** | `on1wai3` | to comfort / console | `12-regrets-wishes-empathy.md` | 6 |
 | **按** | `on3` | to press / push / according to | `24-tech-apps-slang.md` | 1 |
 | **按金** | `on3gam1` | deposit | `21-housing-neighborhood.md` | 1 |
+| **O1** | `ou1jat1` | in a relationship for the first time | `19-social-media-slang.md` | 3 |
 | **派對** | `paai3deoi3` | party | `22-entertainment-nightlife.md` | 1 |
 | **拍拖** | `paak3to1` | to date / go steady | `19-social-media-slang.md` | 1 |
 | **跑** | `paau2` | to run | `09-split-verbs-idioms.md` | 2 |
@@ -503,8 +516,11 @@ This is an automatically generated vocabulary database compiled from all course 
 | **平** | `peng4` | cheap / inexpensive | `07-comparatives-descriptors.md` | 14 |
 | **平啲** | `peng4 di1` | cheaper / cheaper / a bit cheaper | `18-shopping-bargaining.md` | 3 |
 | **平啲啦** | `peng4 di1 laa1` | cheaper please | `18-shopping-bargaining.md` | 1 |
+| **P** | `pi1` | party (loanword) | `19-social-media-slang.md` | 2 |
 | **片** | `pin2` | video / movie / short clip | `24-tech-apps-slang.md` | 4 |
+| **Po** | `pou1` | to post (social media loanword) | `19-social-media-slang.md` | 4 |
 | **蒲** | `pou4` | to hang out / go clubbing | `22-entertainment-nightlife.md` | 1 |
+| **Pool** | `pu1` | singles pool (student slang) | `19-social-media-slang.md` | 2 |
 | **沙** | `saa1` | sand | `00-pronunciation-jyutping.md` | 1 |
 | **晒** | `saai3` | entirely | `18-shopping-bargaining.md` | 1 |
 | **三** | `saam1` | three | `02-shopping-slang.md` | 19 |
@@ -550,6 +566,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **信** | `seon3` | believe | `15-rhetorical-questions.md` | 4 |
 | **詩** | `si1` | poem / poetry | `00-pronunciation-jyutping.md` | 2 |
 | **司機** | `si1gei1` | driver | `20-travel-transport.md` | 2 |
+| **C1** | `si1jat1` | complicated first relationship | `19-social-media-slang.md` | 1 |
 | **史** | `si2` | history | `00-pronunciation-jyutping.md` | 2 |
 | **試** | `si3` | to try / test | `00-pronunciation-jyutping.md` | 3 |
 | **時** | `si4` | time / hour | `00-pronunciation-jyutping.md` | 3 |
@@ -636,6 +653,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **玩** | `waan2` | to play / have fun / enjoy | `10-hypotheticals-conditionals.md` | 13 |
 | **還** | `waan4` | to return / repay | `25-finance-investing-slang.md` | 1 |
 | **環境** | `waan4ging2` | environment / surroundings | `21-housing-neighborhood.md` | 4 |
+| **WiFi** | `wai1faai1` | Wi-Fi / wireless internet | `24-tech-apps-slang.md` | 3 |
 | **位** | `wai2` | seat | `17-foodie-slang.md` | 1 |
 | **喂** | `wai2` | hey / hey! / hey / hello (typically answering phone or calling for attention) | `00-pronunciation-jyutping.md` | 9 |
 | **為咗** | `wai6zo2` | for | `16-workplace-slang.md` | 1 |
