@@ -11,12 +11,21 @@
     "lint": "eslint .",
     "vocab:register": "node scripts/register-word.js",
     "vocab:verify": "node scripts/verify-chapter-vocab.js",
-    "vocab:lookup": "node scripts/lookup.js"
+    "vocab:lookup": "node scripts/lookup.js",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@eslint/js": "^9.3.0",
     "eslint": "^9.3.0",
+    "gh-pages": "^6.3.0",
     "vitest": "^4.1.7"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "astro": "^6.4.7",
+    "marked": "^18.0.5"
+  }
 }

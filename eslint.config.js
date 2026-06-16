@@ -22,7 +22,7 @@ module.exports = [
     },
   },
   {
-    files: ["**/*.test.js", "**/*.spec.js"],
+    files: ["**/*.test.js", "**/*.spec.js", "src/**/*.js", "src/**/*.jsx"],
     languageOptions: {
       sourceType: "module",
     },

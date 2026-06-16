@@ -1,0 +1,48 @@
+---
+import { compileAnnotations } from "../utils/markdown.js";
+
+const { content } = Astro.props;
+
+const lines = content.split(/\r?\n/);
+const turns = [];
+let currentTurn = null;
+
+for (let i = 0; i < lines.length; i++) {
+  const line = lines[i];
+  const trimmed = line.trim();
+  if (!trimmed) continue;
+
+  const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
+  if (speakerMatch) {
+    if (currentTurn) {
+      turns.push(currentTurn);
+    }
+    currentTurn = {
+      speaker: speakerMatch[1],
+      cantonese: speakerMatch[2],
+      english: "",
+    };
+  } else if (trimmed.startsWith("===")) {
+    if (currentTurn) {
+      currentTurn.english = trimmed.slice(3).trim();
+    }
+  } else {
+    if (currentTurn) {
+      currentTurn.cantonese += " " + trimmed;
+    }
+  }
+}
+
+if (currentTurn) {
+  turns.push(currentTurn);
+}
+---
+<div class="dialogue-card chapter-block">
+  {turns.map(turn => (
+    <div class="dialogue-turn">
+      <span class="dialogue-speaker">{turn.speaker}:</span>
+      <div class="dialogue-cantonese" set:html={compileAnnotations(turn.cantonese)} />
+      {turn.english && <div class="dialogue-english">{turn.english}</div>}
+    </div>
+  ))}
+</div>

@@ -1,0 +1,15 @@
+---
+import { compileAnnotations } from "../utils/markdown.js";
+
+const { content } = Astro.props;
+
+const parts = content.split("===");
+const cantoneseRaw = parts[0] ? parts[0].trim() : "";
+const translationRaw = parts[1] ? parts[1].trim() : "";
+
+const cantoneseHtml = compileAnnotations(cantoneseRaw);
+---
+<div class="cantonese-example-card chapter-block">
+  <div class="cantonese-sentence" set:html={cantoneseHtml} />
+  {translationRaw && <div class="translation-sentence">{translationRaw}</div>}
+</div>
