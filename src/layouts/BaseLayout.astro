@@ -26,5 +26,116 @@ const { title, description = "Colloquial Cantonese course" } = Astro.props;
     <footer class="container" style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 0.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
       <p>Colloquial Cantonese Course Reader &copy; {new Date().getFullYear()}</p>
     </footer>
+
+    <script>
+      // Native Cantonese TTS Engine
+      let cantoVoice = null;
+      let activeUtterance = null;
+      let activeBtn = null;
+
+      function loadVoices() {
+        if (!window.speechSynthesis) return;
+        const voices = window.speechSynthesis.getVoices();
+        cantoVoice = voices.find(v => 
+          v.lang.toLowerCase() === 'zh-hk' || 
+          v.lang.toLowerCase() === 'zh-yue' ||
+          v.lang.toLowerCase().replace('_', '-') === 'zh-hk'
+        );
+      }
+
+      if (window.speechSynthesis) {
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+        loadVoices();
+      }
+
+      function getCleanCantoneseText(element) {
+        const clone = element.cloneNode(true);
+        clone.querySelectorAll('.tooltip-popover').forEach(el => el.remove());
+        return clone.textContent.trim();
+      }
+
+      function speakText(text, onEndCallback) {
+        if (!window.speechSynthesis) return;
+
+        // Cancel active speech and clean up active button style
+        window.speechSynthesis.cancel();
+        if (activeBtn) {
+          activeBtn.classList.remove('tts-playing');
+          activeBtn = null;
+        }
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        if (cantoVoice) {
+          utterance.voice = cantoVoice;
+        } else {
+          utterance.lang = 'zh-HK';
+        }
+
+        utterance.onend = () => {
+          if (onEndCallback) onEndCallback();
+        };
+        utterance.onerror = () => {
+          if (onEndCallback) onEndCallback();
+        };
+
+        activeUtterance = utterance;
+        window.speechSynthesis.speak(utterance);
+      }
+
+      // Event delegation for TTS clicks
+      document.addEventListener('DOMContentLoaded', () => {
+        // Handle Vocab Term Clicks
+        document.body.addEventListener('click', (e) => {
+          const vocabTerm = e.target.closest('.vocab-term');
+          if (vocabTerm) {
+            e.stopPropagation();
+            
+            const text = getCleanCantoneseText(vocabTerm);
+            
+            // Highlight vocab term
+            vocabTerm.classList.add('tts-playing');
+            speakText(text, () => {
+              vocabTerm.classList.remove('tts-playing');
+            });
+            
+            // Backup removal in case onend doesn't trigger
+            setTimeout(() => {
+              vocabTerm.classList.remove('tts-playing');
+            }, 1200);
+          }
+        });
+
+        // Handle Play Button Clicks
+        document.body.addEventListener('click', (e) => {
+          const ttsBtn = e.target.closest('.tts-btn');
+          if (ttsBtn) {
+            e.stopPropagation();
+            
+            // Find target text container (either Cantonese sentence or dialogue line)
+            const exampleCard = ttsBtn.closest('.cantonese-example-card');
+            const dialogueTurn = ttsBtn.closest('.dialogue-turn');
+            
+            let targetEl = null;
+            if (exampleCard) {
+              targetEl = exampleCard.querySelector('.cantonese-sentence');
+            } else if (dialogueTurn) {
+              targetEl = dialogueTurn.querySelector('.dialogue-cantonese');
+            }
+            
+            if (targetEl) {
+              const text = getCleanCantoneseText(targetEl);
+              
+              ttsBtn.classList.add('tts-playing');
+              activeBtn = ttsBtn;
+              
+              speakText(text, () => {
+                ttsBtn.classList.remove('tts-playing');
+                if (activeBtn === ttsBtn) activeBtn = null;
+              });
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

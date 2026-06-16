@@ -281,3 +281,51 @@ p {
 .alert-important .alert-title, .alert-warning .alert-title, .alert-caution .alert-title {
   color: #b3501a;
 }
+
+/* TTS Button Styling */
+.tts-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--accent-color);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tts-btn:hover {
+  opacity: 1;
+  color: var(--accent-hover);
+  background-color: rgba(179, 80, 26, 0.08);
+  transform: scale(1.05);
+}
+
+.tts-btn:active {
+  transform: scale(0.95);
+}
+
+/* Visual feedback for speaking */
+.tts-btn.tts-playing {
+  color: var(--secondary-color);
+  opacity: 1;
+  animation: tts-pulse 1s infinite alternate;
+}
+
+@keyframes tts-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Highlight character playing */
+.vocab-term.tts-playing {
+  background-color: rgba(91, 122, 92, 0.25); /* secondary color highlight */
+  border-bottom-color: var(--secondary-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
