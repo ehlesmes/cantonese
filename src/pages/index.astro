@@ -19,17 +19,27 @@ runParser(
   path.dirname(parserPath)
 );
 
-const { parseCurriculum } = parserModule.exports;
+const { parseCurriculum, parseChapter } = parserModule.exports;
 const curriculumPath = path.resolve("content/curriculum.md");
 const chapters = parseCurriculum(curriculumPath);
 
-// Prepare chapter entries with exist status
+// Prepare chapter entries with exist status and description
 const chapterEntries = chapters.map(c => {
   const fileExists = fs.existsSync(path.resolve("content", c.file));
+  let description = "";
+  if (fileExists) {
+    try {
+      const chapterData = parseChapter(path.resolve("content", c.file));
+      description = chapterData.frontmatter?.description || "";
+    } catch (e) {
+      console.error(`Failed to parse chapter description for ${c.file}:`, e);
+    }
+  }
   return {
     ...c,
     id: String(c.chapter).padStart(2, "0"),
-    exists: fileExists
+    exists: fileExists,
+    description: description.trim() || "Topic outline and learning materials coming soon."
   };
 });
 ---
