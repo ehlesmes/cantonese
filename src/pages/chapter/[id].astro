@@ -164,19 +164,19 @@ const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapter
   <nav style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding-top: 1rem; border-top: 2px solid var(--border-color);">
     <div>
       {prevChapter && (
-        <a href={`/cantonese/chapter/${prevChapter.id}/`} style="font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--accent-color); text-decoration: none;">
+        <a href={`/cantonese/chapter/${prevChapter.id}/`} style="font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--accent-color); text-decoration: none; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-hover)'" onmouseout="this.style.color='var(--accent-color)'">
           &larr; Chapter {prevChapter.chapter}: {prevChapter.title}
         </a>
       )}
     </div>
     <div>
-      <a href="/cantonese/" style="font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; color: var(--text-muted); text-decoration: none; border: 1px solid var(--border-color); padding: 0.4rem 0.8rem; border-radius: 4px; background-color: var(--card-bg);">
-        Curriculum Index
+      <a href="/cantonese/" style="font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--accent-color); text-decoration: none; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-hover)'" onmouseout="this.style.color='var(--accent-color)'">
+        Home
       </a>
     </div>
     <div>
       {nextChapter && (
-        <a href={`/cantonese/chapter/${nextChapter.id}/`} style="font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--accent-color); text-decoration: none;">
+        <a href={`/cantonese/chapter/${nextChapter.id}/`} style="font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--accent-color); text-decoration: none; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-hover)'" onmouseout="this.style.color='var(--accent-color)'">
           Chapter {nextChapter.chapter}: {nextChapter.title} &rarr;
         </a>
       )}
