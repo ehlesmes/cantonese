@@ -22,7 +22,13 @@ module.exports = [
     },
   },
   {
-    files: ["**/*.test.js", "**/*.spec.js", "src/**/*.js", "src/**/*.jsx"],
+    files: [
+      "**/*.test.js",
+      "**/*.spec.js",
+      "src/**/*.js",
+      "src/**/*.jsx",
+      "playwright.config.js",
+    ],
     languageOptions: {
       sourceType: "module",
     },

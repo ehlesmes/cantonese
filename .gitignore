@@ -5,3 +5,4 @@ tmp/
 tmp_vocab_batch.json
 dist/
 .astro/
+test-results/
