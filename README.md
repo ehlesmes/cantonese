@@ -31,11 +31,7 @@ cantonese/
 
 ---
 
-## 3. Development & CLI Scripts
-
-All operations must be run using `npm run`. Do not run raw Node commands.
-
-### Course Reader App
+### Development & Operations
 
 - **Start local server**: `npm run dev` (Runs Astro development server at
   `http://localhost:4321`)
@@ -43,6 +39,9 @@ All operations must be run using `npm run`. Do not run raw Node commands.
   `dist/`)
 - **Preview build locally**: `npm run preview` (Serves the production build
   locally)
+- **Deploy to GitHub Pages**: `npm run deploy` (Compiles the static website and
+  publishes the `dist/` folder, including `.nojekyll`, to the remote `gh-pages`
+  branch)
 
 ### Content & Database Management
 
@@ -53,5 +52,12 @@ All operations must be run using `npm run`. Do not run raw Node commands.
 - **Verify Vocab**: `npm run vocab:verify -- content/XX-chapter.md` (Checks if
   chapter words are in the database)
 - **Track Vocab**: `npm run track` (Compiles vocabulary database changes)
-- **Run Tests**: `npm run test` (Executes unit and integration test suite via
-  Vitest)
+
+### Testing Suite
+
+- **Unit & Integration Tests**: `npm run test` (Executes the Vitest unit test
+  suite)
+- **E2E Visual Regression Tests**: `npx playwright test` (Runs Playwright visual
+  assertion tests against baseline snapshots)
+- **Update Visual Baseline**: `npx playwright test --update-snapshots` (Updates
+  reference screenshots when layout changes are verified and intended)

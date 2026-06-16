@@ -11,18 +11,15 @@ reader and renderer, built using Astro and Preact.
 src/
 ├── components/          # UI Components
 │   ├── CantoneseExample.astro  # Standard example sentence component
-│   ├── DialogueBlock.astro     # Toggleable speaker dialog turns
-│   └── ExerciseBlock.jsx       # Stateful interactive exercise component (Preact)
+│   └── DialogueBlock.astro     # Toggleable speaker dialog turns
 ├── layouts/
-│   └── BaseLayout.astro # Shared layout shell (sidebar, navigation, theme)
+│   └── BaseLayout.astro        # Shared layout shell (header, footer, and container)
 ├── pages/
-│   ├── index.astro      # Course home page (curriculum index)
-│   └── chapter/
-│       └── [id].astro   # Dynamic route rendering individual course chapters
+│   └── index.astro             # Chapter 1 prototype reader page
 ├── styles/
-│   └── global.css       # Core typography, reset, and warm sepia theme variables
+│   └── global.css              # Core typography, reset, and warm sepia theme variables
 └── utils/
-    └── markdown.js      # Custom markdown compiling and annotation tooltip parser
+    └── markdown.js             # Custom markdown compiling and annotation tooltip parser
 ```
 
 ---
@@ -38,18 +35,17 @@ a hybrid compilation pipeline:
 2. **Standard Markdown**: Prose blocks are compiled using `marked` to support
    standard formatting (lists, headers, bold, italics).
 3. **Custom Annotation Formatting**: Raw text is scanned for custom inline
-   vocabulary units of the form:
-   ```markdown
-   `Characters[Jyutping|Translation]`
-   ```
-   These annotations are dynamically compiled into hoverable/tappable elements:
+   vocabulary units of the form `Characters[Jyutping|Translation]` (both with or
+   without backticks).
+4. **Interactive Tooltips**: These annotations are dynamically compiled into
+   nested markup:
    ```html
-   <span
-     class="vocab-tooltip"
-     data-jyutping="Jyutping"
-     data-translation="Translation"
-     >Characters</span
-   >
+   <span class="vocab-term"
+     >Characters
+     <span class="tooltip-popover"
+       ><strong>Jyutping</strong><br />Translation</span
+     >
+   </span>
    ```
 
 ---
@@ -71,11 +67,11 @@ margins or padding utility classes to keep page margins compact.
 
 ## 4. Interactive Components
 
-- **Vocabulary Tooltips**: Handled by a global event listener in
-  `BaseLayout.astro` targeting `.vocab-tooltip` elements. This avoids loading
-  duplicate JS listeners for every vocabulary term.
+- **Vocabulary Tooltips**: Driven purely by CSS hover selectors
+  (`.vocab-term:hover .tooltip-popover`) to avoid heavy Javascript overhead and
+  keep page loads instantaneous.
 - **Dialogue Blocks**: Structured as Astro components. Toggle controls hide/show
   translations by altering CSS visibility classes.
-- **Stateful Exercises**: Built using **Preact** to handle user answers and
-  input verification for fill-in-the-blank and multiple-choice questions without
-  heavy framework overhead.
+- **Revealable Exercises**: Implemented using standard HTML `<details>` and
+  `<summary>` elements to create lightweight static reveal panels for answers
+  and explanations.

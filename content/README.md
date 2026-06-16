@@ -42,10 +42,15 @@ description:
 ## 3. Inline Semantic Vocabulary Units
 
 When discussing vocabulary words or expressions inline within regular
-explanations, use the custom semantic annotation bracket format:
+explanations or structured blocks, use the custom semantic annotation bracket
+format. Annotations can be written either with backticks (recommended for inline
+prose to render cleanly in standard markdown viewers) or without backticks
+(commonly used inside examples, dialogues, and exercises):
 
 ```markdown
-`Characters[Jyutping|Translation]`
+`Characters[Jyutping|Translation]` <- Backtick-wrapped (recommended for prose)
+Characters[Jyutping|Translation] <- Plain / Backtick-less (used in
+examples/exercises)
 ```
 
 ### Examples
@@ -53,6 +58,7 @@ explanations, use the custom semantic annotation bracket format:
 - The basic greeting in Cantonese is `你好[nei5hou2|hello]`.
 - To ask for service or say thank you for help, use
   `唔該[m4goi1|excuse me / please / thank you]`.
+- Multiple choice options can use plain format: `A) 你好[nei5hou2|hello / hi]`
 
 ### Formatting Rules
 
@@ -62,9 +68,10 @@ explanations, use the custom semantic annotation bracket format:
    (no spaces inside a single multi-character word unless it's a natural
    division).
 3. **Translation**: A concise English translation of the semantic unit.
-4. **Markdown backticks**: The entire unit must be wrapped in backticks
-   (`` ` ``) to distinguish it from plain text and render nicely in default
-   markdown viewers.
+4. **Markdown backticks**: Optional. Wrapping in backticks (`` ` ``) is
+   recommended in prose sections for visual consistency in default markdown
+   viewers, but plain annotations (without backticks) are fully supported and
+   compiled into the same interactive tooltips.
 
 ---
 
