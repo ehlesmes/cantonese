@@ -1,0 +1,35 @@
+#!/bin/sh
+set -e
+
+# 1. Clean and format staged files first
+echo "Cleaning and formatting staged files..."
+npx lint-staged
+
+# 2. Identify change sets
+STAGED_FILES=$(git diff --cached --name-only)
+CURRICULUM_CHANGED=$(echo "$STAGED_FILES" | grep -q "^curriculum/" && echo "true" || echo "false")
+DATA_CHANGED=$(echo "$STAGED_FILES" | grep -q "^data/" && echo "true" || echo "false")
+
+# Heavy verification includes anything that isn't curriculum, data, or documentation.
+# We exclude data/, curriculum/, and all .md files.
+HEAVY_REQUIRED=$(echo "$STAGED_FILES" | grep -vE "^(data/|curriculum/)" | grep -vE "\.md$" | grep -q . && echo "true" || echo "false")
+
+# 3. Handle Curriculum and Data
+if [ "$CURRICULUM_CHANGED" = "true" ] || [ "$DATA_CHANGED" = "true" ]; then
+  echo "Curriculum or Data changes detected. Running unified check..."
+  npm run curriculum:check
+  # Re-stage generated files if curriculum changed
+  if [ "$CURRICULUM_CHANGED" = "true" ]; then
+    git add data/lessons/ data/exercises/ data/lessons.json data/lexicon.json data/taught_characters.json
+  fi
+fi
+
+# 4. Handle Code, Tools, and Structural changes
+if [ "$HEAVY_REQUIRED" = "true" ]; then
+  echo "Code or tool changes detected. Running full verification suite..."
+  npm run compliance:structural
+  npm run lint
+  npm run test:run
+else
+  echo "No critical code or tool changes detected. Skipping heavy tests."
+fi
