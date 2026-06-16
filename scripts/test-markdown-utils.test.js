@@ -65,4 +65,27 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     const html = compileAnnotations(raw);
     expect(html).toBe(raw);
   });
+
+  test("compileMarkdown should support simple single-paragraph blockquote alerts", () => {
+    const raw = "> [!NOTE]\n> This is a note.";
+    const html = compileMarkdown(raw);
+    expect(html).toContain('<div class="alert-box alert-note">');
+    expect(html).toContain('<div class="alert-title">NOTE</div>');
+    expect(html).toContain(
+      '<div class="alert-content"><p>This is a note.</p></div>',
+    );
+  });
+
+  test("compileMarkdown should support multi-paragraph and list elements nested inside blockquote alerts", () => {
+    const raw =
+      "> [!IMPORTANT] **Alert Header**\n> Rest of sentence.\n>\n> - List Item 1\n> - List Item 2";
+    const html = compileMarkdown(raw);
+    expect(html).toContain('<div class="alert-box alert-important">');
+    expect(html).toContain('<div class="alert-title">IMPORTANT</div>');
+    expect(html).toContain(
+      "<p><strong>Alert Header</strong>\nRest of sentence.</p>",
+    );
+    expect(html).toContain("<ul>");
+    expect(html).toContain("<li>List Item 1</li>");
+  });
 });

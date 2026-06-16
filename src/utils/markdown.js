@@ -51,15 +51,15 @@ export function compileMarkdown(text, options = {}) {
     ? marked.parseInline(processedText, parseOptions)
     : marked.parse(processedText, parseOptions);
 
-  // Regex to match blockquote alerts: <blockquote><p>[!NOTE] ...</p></blockquote>
+  // Regex to match blockquote alerts: <blockquote><p>[!NOTE] ... </blockquote>
   const alertRegex =
-    /<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]([\s\S]*?)<\/p>\s*<\/blockquote>/gi;
+    /<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]([\s\S]*?)<\/blockquote>/gi;
 
   // Replace blockquotes with div alert cards
   return rawHtml.replace(alertRegex, (match, type, content) => {
     return `<div class="alert-box alert-${type.toLowerCase()}">
       <div class="alert-title">${type}</div>
-      <div class="alert-content">${content.trim()}</div>
+      <div class="alert-content"><p>${content.trim()}</div>
     </div>`;
   });
 }
