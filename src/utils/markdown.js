@@ -3,7 +3,7 @@ import { marked } from "marked";
 // Configure marked options
 marked.setOptions({
   gfm: true,
-  breaks: true,
+  breaks: false,
 });
 
 /**
@@ -28,8 +28,20 @@ export function compileMarkdown(text) {
     },
   );
 
-  // Compile markdown to HTML (marked.parse returns a string synchronously unless async option is set)
-  return marked.parse(processedText);
+  // Compile markdown to HTML
+  const rawHtml = marked.parse(processedText);
+
+  // Regex to match blockquote alerts: <blockquote><p>[!NOTE] ...</p></blockquote>
+  const alertRegex =
+    /<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]([\s\S]*?)<\/p>\s*<\/blockquote>/gi;
+
+  // Replace blockquotes with div alert cards
+  return rawHtml.replace(alertRegex, (match, type, content) => {
+    return `<div class="alert-box alert-${type.toLowerCase()}">
+      <div class="alert-title">${type}</div>
+      <div class="alert-content">${content.trim()}</div>
+    </div>`;
+  });
 }
 
 /**
