@@ -1,7 +1,7 @@
 # Astro Web App Source (`src/`)
 
 This directory contains the source code for the interactive Cantonese course
-reader and renderer, built using Astro and Preact.
+reader and renderer, built using Astro.
 
 ---
 

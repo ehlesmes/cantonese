@@ -13,7 +13,8 @@ confident conversational fluency in everyday Cantonese.
   and modern workplace/tech terms.
 - **Interactive Course Reader**: A static Astro-powered web application that
   turns plain content files into an interactive learning portal (complete with
-  hover vocabulary definitions, translation toggles, and stateful exercises).
+  hover vocabulary definitions, translation toggles, and revealable exercises
+  that expand to show the correct answer and explanation).
 
 ---
 
