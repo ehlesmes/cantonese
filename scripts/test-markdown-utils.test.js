@@ -28,6 +28,12 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     expect(html).not.toContain("</p>");
   });
 
+  test("compileMarkdown should support breaks option to preserve line breaks", () => {
+    const raw = "Line 1\nLine 2";
+    const html = compileMarkdown(raw, { breaks: true });
+    expect(html).toContain("<br>");
+  });
+
   test("compileAnnotations should convert block annotations without backticks", () => {
     const raw = "唔該[m4goi1|excuse me]，我[ngo5|I]想買呢個。";
     const html = compileAnnotations(raw);

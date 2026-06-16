@@ -54,7 +54,7 @@ const processedBlocks = blocks.map((block) => {
       const displayQuestion = exercise.question.replace(new RegExp("_{2,}", "g"), "____");
       return {
         type: "exercise",
-        questionHtml: compileMarkdown(displayQuestion),
+        questionHtml: compileMarkdown(displayQuestion, { breaks: true }),
         answerHtml: compileMarkdown(exercise.answer, { inline: true }),
         explanationHtml: compileMarkdown(exercise.explanation),
       };

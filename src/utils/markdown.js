@@ -41,10 +41,15 @@ export function compileMarkdown(text, options = {}) {
     },
   );
 
+  const parseOptions = {};
+  if (options.breaks !== undefined) {
+    parseOptions.breaks = options.breaks;
+  }
+
   // Compile markdown to HTML
   const rawHtml = options.inline
-    ? marked.parseInline(processedText)
-    : marked.parse(processedText);
+    ? marked.parseInline(processedText, parseOptions)
+    : marked.parse(processedText, parseOptions);
 
   // Regex to match blockquote alerts: <blockquote><p>[!NOTE] ...</p></blockquote>
   const alertRegex =
