@@ -257,26 +257,26 @@ p {
   line-height: 1.4;
 }
 
-/* Specific Alerts */
+/* Specific Alerts (Sepia Cohesive) */
 .alert-note {
-  border-left-color: #517c96;
-  background-color: #edf2f5;
+  border-left-color: #9e8e7f;
+  background-color: #ece5d3;
 }
 .alert-note .alert-title {
-  color: #517c96;
+  color: #614e41;
 }
 
 .alert-tip {
-  border-left-color: #5b7a5c;
-  background-color: #f0f4f0;
+  border-left-color: #6b7f5c;
+  background-color: #ecf0e5;
 }
 .alert-tip .alert-title {
-  color: #5b7a5c;
+  color: #4b5a3e;
 }
 
 .alert-important, .alert-warning, .alert-caution {
   border-left-color: #b3501a;
-  background-color: #f7ede8;
+  background-color: #f8efe6;
 }
 .alert-important .alert-title, .alert-warning .alert-title, .alert-caution .alert-title {
   color: #b3501a;
