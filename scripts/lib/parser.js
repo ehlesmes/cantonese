@@ -271,7 +271,7 @@ const CHINESE_CHAR_REGEX = /[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]/;
  */
 function extractInlineUnits(text) {
   const regex =
-    /`([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+)\[([^\]\n|]+)\|([^\]\n]+)\]`/g;
+    /`([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`/g;
   const matches = [];
   let match;
   while ((match = regex.exec(text)) !== null) {
@@ -294,7 +294,7 @@ function extractInlineUnits(text) {
  */
 function extractBlockUnits(text) {
   const regex =
-    /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
+    /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
   const matches = [];
   let match;
   while ((match = regex.exec(text)) !== null) {

@@ -34,6 +34,21 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     expect(html).toContain("<br>");
   });
 
+  test("compileMarkdown should support English alphanumeric and punctuated words as Cantonese terms", () => {
+    const raw =
+      "I check my `IG[ai1zi1|Instagram]` and connect to `Wi-Fi[wai1faai1|Wi-Fi]`. Let's `OT[ou1ti1|overtime]`.";
+    const html = compileMarkdown(raw);
+    expect(html).toContain(
+      '<span class="vocab-term">IG<span class="tooltip-popover"><strong>ai1zi1</strong><br/>Instagram</span></span>',
+    );
+    expect(html).toContain(
+      '<span class="vocab-term">Wi-Fi<span class="tooltip-popover"><strong>wai1faai1</strong><br/>Wi-Fi</span></span>',
+    );
+    expect(html).toContain(
+      '<span class="vocab-term">OT<span class="tooltip-popover"><strong>ou1ti1</strong><br/>overtime</span></span>',
+    );
+  });
+
   test("compileAnnotations should convert block annotations without backticks", () => {
     const raw = "唔該[m4goi1|excuse me]，我[ngo5|I]想買呢個。";
     const html = compileAnnotations(raw);

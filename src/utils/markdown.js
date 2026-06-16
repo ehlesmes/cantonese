@@ -19,11 +19,11 @@ export function compileMarkdown(text, options = {}) {
 
   // Regex to match: `Char[Jyutping|Translation]` (with backticks)
   const inlineRegex =
-    /`([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+)\[([^\]\n|]+)\|([^\]\n]+)\]`/g;
+    /`([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`/g;
 
   // Regex to match: Char[Jyutping|Translation] (without backticks)
   const blockRegex =
-    /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
+    /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
 
   // Replace backtick-wrapped annotations
   let processedText = text.replace(
@@ -76,7 +76,7 @@ export function compileAnnotations(text) {
 
   // Regex to match: Char[Jyutping|Translation] (without backticks)
   const blockRegex =
-    /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
+    /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
 
   return text.replace(blockRegex, (match, char, jyutping, translation) => {
     return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
