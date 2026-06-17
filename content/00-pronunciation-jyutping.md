@@ -24,7 +24,15 @@ pronounced with a different pitch or contour, will have a completely different
 meaning.
 
 There are six standard tones, which can be categorized by their pitch heights
-(High, Mid, Low) and their movements (Flat/Level vs. Rising vs. Falling):
+(High, Mid, Low) and their movements (Flat/Level vs. Rising vs. Falling).
+
+To describe these pitch contours, linguists use two-digit **Chao tone numerals**
+on a scale from **1 (lowest)** to **5 (highest)**. The first digit represents
+the starting pitch and the second represents the ending pitch (e.g., **35**
+starts at mid-level 3 and rises to high-level 5, while **55** remains high and
+flat).
+
+The six standard tones are:
 
 - **Tone 1 (High Flat / 55)**: High level pitch. Sounds like saying "Aha!" in
   realization.
@@ -44,12 +52,6 @@ There are six standard tones, which can be categorized by their pitch heights
 - **Tone 6 (Low Flat / 22)**: Deep, flat level pitch. Sounds like a low,
   assertive monotone: "Yep."
   - Example: `事[si6|matter / business / affair]`
-
-> **Understanding Tone Numerals**: The two-digit numbers (like **55** or **35**)
-> are Chao tone numerals representing pitch contour. They use a scale of **1
-> (lowest)** to **5 (highest)**. The first digit is the starting pitch and the
-> second is the ending pitch. For example, **35** starts at mid-level (3) and
-> rises to high-level (5).
 
 ### The "si" Tone Series
 
