@@ -45,6 +45,12 @@ There are six standard tones, which can be categorized by their pitch heights
   assertive monotone: "Yep."
   - Example: `事[si6|matter / business / affair]`
 
+> **Understanding Tone Numerals**: The two-digit numbers (like **55** or **35**)
+> are Chao tone numerals representing pitch contour. They use a scale of **1
+> (lowest)** to **5 (highest)**. The first digit is the starting pitch and the
+> second is the ending pitch. For example, **35** starts at mid-level (3) and
+> rises to high-level (5).
+
 ### The "si" Tone Series
 
 To practice hearing the six tones sequentially, native speakers often recite the
