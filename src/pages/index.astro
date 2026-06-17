@@ -57,11 +57,13 @@ const chapterEntries = chapters.map(c => {
 
   <div style="display: flex; flex-direction: column; gap: 0.75rem;">
     {chapterEntries.map((chapter) => (
-      <div class="cantonese-example-card" style={`border-left-color: ${chapter.exists ? "var(--accent-color)" : "var(--border-color)"}; opacity: ${chapter.exists ? 1 : 0.6}; padding: 0.8rem 1rem; margin-bottom: 0;`}>
+      <div class="cantonese-example-card" data-chapter-card={chapter.chapter} style={`border-left-color: ${chapter.exists ? "var(--accent-color)" : "var(--border-color)"}; opacity: ${chapter.exists ? 1 : 0.6}; padding: 0.8rem 1rem; margin-bottom: 0;`}>
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.2rem;">
-          <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
-            Chapter {chapter.chapter}
-          </span>
+          <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
+              Chapter {chapter.chapter}
+            </span>
+          </div>
           {!chapter.exists && (
             <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); background: var(--border-color); padding: 0.1rem 0.4rem; border-radius: 3px;">
               Coming Soon
@@ -87,4 +89,26 @@ const chapterEntries = chapters.map(c => {
       </div>
     ))}
   </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      let unlocked = [0]; // default is Chapter 0
+      try {
+        const stored = localStorage.getItem('cantonese_unlocked_chapters');
+        if (stored) {
+          unlocked = JSON.parse(stored).map(Number);
+        }
+      } catch (e) {
+        console.error('Failed to parse unlocked chapters:', e);
+      }
+      
+      const cards = document.querySelectorAll('[data-chapter-card]');
+      cards.forEach(card => {
+        const chNum = parseInt(card.getAttribute('data-chapter-card'), 10);
+        if (unlocked.includes(chNum)) {
+          card.style.borderLeftColor = 'var(--secondary-color)';
+        }
+      });
+    });
+  </script>
 </BaseLayout>

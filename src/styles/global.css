@@ -329,3 +329,208 @@ p {
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
+/* Review Page Classes */
+.review-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.srs-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.srs-stat-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.srs-stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.2rem;
+}
+
+.srs-stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* Tokens and gameplay slots */
+.tokens-pool, .answer-slots {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1.2rem;
+  min-height: 5.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.answer-slots {
+  border-style: dashed;
+  border-color: var(--accent-color);
+  background-color: rgba(179, 80, 26, 0.01);
+}
+
+/* Token chip style (includes native tooltips) */
+.token-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--border-color);
+  background-color: #faf7ef;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+  overflow: visible;
+  white-space: nowrap;
+  height: 2.6rem;
+}
+
+/* Override standard vocab-term hover within token chips */
+.token-chip .vocab-term {
+  border-bottom: none;
+  background-color: transparent;
+  padding: 0 0.8rem;
+  font-size: 1.15rem;
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  line-height: 1.2;
+  height: 100%;
+}
+
+.token-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-color);
+  background-color: #ffffff;
+}
+
+.token-chip:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--accent-color);
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+/* Grouping tabs */
+.group-tabs {
+  display: inline-flex;
+  gap: 0.5rem;
+  background-color: var(--border-color);
+  padding: 0.25rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.group-tab-btn {
+  background: none;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.group-tab-btn.active {
+  background-color: #faf7ef;
+  color: var(--text-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Directory listing items */
+.review-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.review-item-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.review-item-text {
+  flex: 1;
+}
+
+.review-item-canto {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.review-item-english {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.srs-level-badge {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.srs-level-1 { background-color: rgba(209, 79, 23, 0.12); color: #d14f17; border: 1px solid rgba(209, 79, 23, 0.25); }
+.srs-level-2 { background-color: rgba(222, 123, 51, 0.12); color: #de7b33; border: 1px solid rgba(222, 123, 51, 0.25); }
+.srs-level-3 { background-color: rgba(227, 170, 63, 0.12); color: #b58124; border: 1px solid rgba(227, 170, 63, 0.25); }
+.srs-level-4 { background-color: rgba(143, 168, 122, 0.15); color: #627850; border: 1px solid rgba(143, 168, 122, 0.25); }
+.srs-level-5 { background-color: rgba(91, 122, 92, 0.15); color: var(--secondary-color); border: 1px solid rgba(91, 122, 92, 0.25); }
+
+

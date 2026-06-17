@@ -13,9 +13,13 @@ const { title, description = "Colloquial Cantonese course" } = Astro.props;
   </head>
   <body>
     <header class="container" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
         <span style="font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: var(--accent-color);">廣東話 Colloquial Cantonese</span>
-        <span style="font-size: 0.9rem; color: var(--text-muted); font-style: italic;">Phase 1 Reader</span>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="/cantonese/" style="font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; color: var(--text-muted); text-decoration: none; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Home</a>
+          <span style="color: var(--border-color); font-size: 0.8rem;">|</span>
+          <a href="/cantonese/review/" style="font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; color: var(--accent-color); text-decoration: none; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-hover)'" onmouseout="this.style.color='var(--accent-color)'">Review Board</a>
+        </div>
       </div>
     </header>
 

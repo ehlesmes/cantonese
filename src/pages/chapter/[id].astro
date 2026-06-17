@@ -160,6 +160,70 @@ const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapter
     )}
   </article>
 
+  {/* Review Pool Toggle Card */}
+  <div class="cantonese-example-card chapter-block" style="margin-top: 2.5rem; background-color: var(--card-bg); border-left-color: var(--secondary-color); padding: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin: 0 0 0.2rem 0; font-size: 1.05rem; font-family: var(--font-heading); color: var(--text-color);">Practice this Chapter</h3>
+      <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.4;">
+        Add the examples and dialogues of this chapter to your Spaced Repetition (SRS) Review Board.
+      </p>
+    </div>
+    <label style="display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--secondary-color); cursor: pointer; user-select: none;">
+      <input type="checkbox" id="review-pool-checkbox" data-chapter={frontmatter.chapter} style="width: 1.15rem; height: 1.15rem; accent-color: var(--secondary-color); cursor: pointer;" />
+      Mark as completed
+    </label>
+  </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkbox = document.getElementById('review-pool-checkbox');
+      if (!checkbox) return;
+      
+      const chapterNum = parseInt(checkbox.getAttribute('data-chapter'), 10);
+      
+      // Load current unlocked chapters
+      let unlocked = [0]; // default is Chapter 0
+      try {
+        const stored = localStorage.getItem('cantonese_unlocked_chapters');
+        if (stored) {
+          unlocked = JSON.parse(stored).map(Number);
+          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlocked));
+        } else {
+          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlocked));
+        }
+      } catch (e) {
+        console.error('Failed to parse unlocked chapters:', e);
+      }
+      
+      // Set initial checkbox state
+      checkbox.checked = unlocked.includes(chapterNum);
+      
+      // Listen for changes
+      checkbox.addEventListener('change', () => {
+        try {
+          const stored = localStorage.getItem('cantonese_unlocked_chapters');
+          let currentUnlocked = stored ? JSON.parse(stored).map(Number) : [0];
+          
+          if (checkbox.checked) {
+            if (!currentUnlocked.includes(chapterNum)) {
+              currentUnlocked.push(chapterNum);
+            }
+          } else {
+            currentUnlocked = currentUnlocked.filter(num => num !== chapterNum);
+            // Always keep Chapter 0 as a baseline if they want
+            if (currentUnlocked.length === 0) {
+              currentUnlocked.push(0);
+            }
+          }
+          
+          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(currentUnlocked));
+        } catch (e) {
+          console.error('Failed to update review pool:', e);
+        }
+      });
+    });
+  </script>
+
   {/* Pagination Navigation */}
   <nav style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding-top: 1rem; border-top: 2px solid var(--border-color);">
     <div>

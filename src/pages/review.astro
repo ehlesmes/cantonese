@@ -1,0 +1,810 @@
+---
+import fs from "fs";
+import path from "path";
+import { createRequire } from "module";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Load and execute scripts/lib/parser.js to parse curriculum and content
+const cjsRequire = createRequire(import.meta.url);
+const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
+const parserCode = fs.readFileSync(parserPath, "utf8");
+
+const parserModule = { exports: {} };
+const runParser = new Function("exports", "require", "module", "__filename", "__dirname", parserCode);
+runParser(
+  parserModule.exports,
+  cjsRequire,
+  parserModule,
+  parserPath,
+  path.dirname(parserPath)
+);
+
+const { parseCurriculum, parseChapter } = parserModule.exports;
+const curriculumPath = path.resolve("content/curriculum.md");
+const chapters = parseCurriculum(curriculumPath);
+
+function splitCantoneseTokens(cantoneseRaw) {
+  if (!cantoneseRaw) return [];
+  const regex = /([^\s\[]+\[[^\]]+\]|[^\s\[]+)/g;
+  return cantoneseRaw.match(regex) || [];
+}
+
+const allExamples = [];
+const chaptersMeta = [];
+
+for (const chapter of chapters) {
+  const file = chapter.file;
+  const filePath = path.resolve("content", file);
+  const fileExists = fs.existsSync(filePath);
+  
+  chaptersMeta.push({
+    chapter: chapter.chapter,
+    title: chapter.title,
+    exists: fileExists
+  });
+  
+  if (fileExists) {
+    const { blocks } = parseChapter(filePath);
+    let exampleIndex = 0;
+    
+    for (const block of blocks) {
+      if (block.type === "cantonese") {
+        const parts = block.content.split("===");
+        const cantoneseRaw = parts[0] ? parts[0].trim() : "";
+        const english = parts[1] ? parts[1].trim() : "";
+        
+        if (cantoneseRaw && english) {
+          const tokens = splitCantoneseTokens(cantoneseRaw);
+          allExamples.push({
+            id: `ch${chapter.chapter}-ex${exampleIndex++}`,
+            chapter: chapter.chapter,
+            chapterTitle: chapter.title,
+            cantoneseRaw,
+            english,
+            tokens,
+            type: "example"
+          });
+        }
+      } else if (block.type === "dialog") {
+        const lines = block.content.split(/\r?\n/);
+        let currentTurn = null;
+        let turnIndex = 0;
+        
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed) continue;
+          
+          const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
+          if (speakerMatch) {
+            if (currentTurn && currentTurn.cantoneseRaw && currentTurn.english) {
+              allExamples.push(currentTurn);
+            }
+            currentTurn = {
+              id: `ch${chapter.chapter}-dg${turnIndex++}`,
+              chapter: chapter.chapter,
+              chapterTitle: chapter.title,
+              cantoneseRaw: speakerMatch[2],
+              english: "",
+              tokens: splitCantoneseTokens(speakerMatch[2]),
+              type: "dialog"
+            };
+          } else if (trimmed.startsWith("===")) {
+            if (currentTurn) {
+              currentTurn.english = trimmed.slice(3).trim();
+            }
+          } else {
+            if (currentTurn) {
+              currentTurn.cantoneseRaw += " " + trimmed;
+              currentTurn.tokens = splitCantoneseTokens(currentTurn.cantoneseRaw);
+            }
+          }
+        }
+        if (currentTurn && currentTurn.cantoneseRaw && currentTurn.english) {
+          allExamples.push(currentTurn);
+        }
+      }
+    }
+  }
+}
+---
+
+<BaseLayout title="Review Board" description="Practice and master Cantonese sentences using Spaced Repetition (SRS) unscramble sessions.">
+  <div style="margin-bottom: 2rem;">
+    <span style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color);">
+      廣東話 Review Board
+    </span>
+    <h1 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">Spaced Repetition Review</h1>
+    <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4; font-style: italic; margin-bottom: 0;">
+      Test your recall. Unscramble Cantonese characters and master sentence structures.
+    </p>
+  </div>
+
+  {/* MAIN CONTROLLER CONTAINER */}
+  <div id="review-root">
+    
+    {/* DASHBOARD VIEW */}
+    <div id="dashboard-view" class="review-dashboard">
+      
+      {/* Top Play Action (Easy Access) */}
+      <div class="cantonese-example-card" style="border-left-color: var(--accent-color); padding: 1.5rem; text-align: center; background-color: #faf7ef;">
+        <h2 style="margin-top: 0; margin-bottom: 0.5rem; border-bottom: none; padding-bottom: 0;">Ready to Practice?</h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+          We will select 10 cards using Spaced Repetition weights. Lower-level cards appear more frequently.
+        </p>
+        <button id="start-session-btn" style="font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: #ffffff; background-color: var(--accent-color); border: none; border-radius: 6px; padding: 0.75rem 2rem; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 6px rgba(179, 80, 26, 0.15);" onmouseover="this.style.backgroundColor='var(--accent-hover)'" onmouseout="this.style.backgroundColor='var(--accent-color)'">
+          Start Practice Session (10 Cards)
+        </button>
+      </div>
+
+      {/* Stats Section */}
+      <div class="srs-stats-grid">
+        <div class="srs-stat-card">
+          <div class="srs-stat-number" id="stats-chapters-count">0</div>
+          <div class="srs-stat-label">Chapters Unlocked</div>
+        </div>
+        <div class="srs-stat-card">
+          <div class="srs-stat-number" id="stats-cards-count">0</div>
+          <div class="srs-stat-label">Total Cards in Pool</div>
+        </div>
+        <div class="srs-stat-card">
+          <div class="srs-stat-number" id="stats-mastered-count">0</div>
+          <div class="srs-stat-label">Mastered (Lvl 5)</div>
+        </div>
+      </div>
+
+      {/* Chapter Selection Config */}
+      <div class="cantonese-example-card" style="border-left-color: var(--secondary-color); padding: 1.2rem 1.5rem;">
+        <h3 style="margin-top: 0; margin-bottom: 0.6rem; font-family: var(--font-heading); color: var(--secondary-color);">Review Pool Configuration</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.45;">
+          Toggle chapters below to add or remove their vocabulary, example sentences, and dialogues from your active review pool.
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 250px; overflow-y: auto; border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 6px; background-color: rgba(0,0,0,0.01);">
+          {chaptersMeta.map(ch => (
+            <label style={`display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: ${ch.exists ? "pointer" : "default"}; opacity: ${ch.exists ? 1 : 0.5}; user-select: none; padding: 0.15rem 0;`}>
+              <input type="checkbox" class="chapter-toggle-cb" data-chapter={ch.chapter} disabled={!ch.exists} style="width: 1rem; height: 1rem; cursor: pointer;" />
+              <span style="font-weight: 600; min-width: 2.5rem;">Ch {ch.chapter}:</span> {ch.title}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Review Pool Items Directory (With Grouping Controls) */}
+      <div style="margin-top: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <h2 style="margin: 0; border: none; padding: 0; font-size: 1.3rem;">Active Review Pool Directory</h2>
+          <div class="group-tabs">
+            <button id="group-by-chapter-btn" class="group-tab-btn active">By Chapter</button>
+            <button id="group-by-level-btn" class="group-tab-btn">By SRS Level</button>
+          </div>
+        </div>
+        
+        <div id="review-items-list-container">
+          {/* Dynamic lists rendered via JavaScript */}
+        </div>
+      </div>
+
+    </div>
+
+    {/* SESSION VIEW */}
+    <div id="session-view" style="display: none; flex-direction: column; gap: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: var(--text-muted);">
+        <span id="session-progress-text" style="font-weight: 600;">Card 1 of 10</span>
+        <button id="session-quit-btn" style="background: none; border: none; color: var(--accent-color); font-weight: 600; cursor: pointer; font-size: 0.88rem;">Quit Session</button>
+      </div>
+
+      <div class="progress-bar-container">
+        <div id="session-progress-fill" class="progress-bar-fill"></div>
+      </div>
+
+      {/* Card Card */}
+      <div class="cantonese-example-card" style="border-left-color: var(--accent-color); padding: 1.5rem; background-color: #faf7ef;">
+        <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem;" id="session-chapter-label">Chapter 1 Example</span>
+        
+        {/* English Prompt */}
+        <div style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-color); line-height: 1.35; margin-bottom: 1.5rem;" id="session-english-prompt">
+          English Translation Prompt
+        </div>
+
+        {/* Answer Slots Area */}
+        <div style="margin-bottom: 1.2rem;">
+          <div style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; color: var(--accent-color); margin-bottom: 0.4rem; letter-spacing: 0.05em;">Assembled Translation:</div>
+          <div id="game-answer-slots" class="answer-slots">
+            {/* Clicked tokens will appear here */}
+          </div>
+        </div>
+
+        {/* Scrambled Chips Area */}
+        <div style="margin-bottom: 1.5rem;">
+          <div style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem; letter-spacing: 0.05em;">Scrambled Tokens Pool:</div>
+          <div id="game-tokens-pool" class="tokens-pool">
+            {/* Scrambled chips go here */}
+          </div>
+        </div>
+
+        {/* Buttons Panel */}
+        <div style="display: flex; gap: 0.75rem; align-items: center; justify-content: flex-end;">
+          <button id="game-reset-btn" style="font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; border: 1px solid var(--border-color); background-color: transparent; border-radius: 4px; padding: 0.5rem 1rem; cursor: pointer; color: var(--text-muted); transition: all 0.2s ease;">
+            Reset
+          </button>
+          <button id="game-check-btn" style="font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; border: none; background-color: var(--accent-color); color: #ffffff; border-radius: 4px; padding: 0.55rem 1.5rem; cursor: pointer; transition: all 0.2s ease;">
+            Check Answer
+          </button>
+        </div>
+      </div>
+
+      {/* FEEDBACK OVERLAY (SUCCESS / ERROR) */}
+      <div id="feedback-panel" style="display: none;">
+        {/* Dynamic block matching either alert-note or alert-tip */}
+      </div>
+
+    </div>
+
+    {/* SUMMARY VIEW */}
+    <div id="summary-view" style="display: none; flex-direction: column; gap: 1.5rem; text-align: center;">
+      <div class="cantonese-example-card" style="border-left-color: var(--secondary-color); padding: 2.5rem 2rem; background-color: #faf7ef;">
+        <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🎉</span>
+        <h2 style="margin-top: 0; border: none; padding-bottom: 0;">Session Completed!</h2>
+        <div style="font-size: 2.5rem; font-family: var(--font-heading); font-weight: 700; color: var(--secondary-color); margin: 1rem 0;" id="summary-score">
+          8 / 10
+        </div>
+        <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 1.5rem;" id="summary-message">
+          Great job! Keep practicing to lock these sentence structures into long-term memory.
+        </p>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+          <button id="summary-dashboard-btn" style="font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; border: 1px solid var(--border-color); background-color: transparent; border-radius: 4px; padding: 0.6rem 1.5rem; cursor: pointer; color: var(--text-color);">
+            Review Dashboard
+          </button>
+          <button id="summary-retry-btn" style="font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; border: none; background-color: var(--accent-color); color: #ffffff; border-radius: 4px; padding: 0.6rem 1.5rem; cursor: pointer; transition: all 0.2s ease;">
+            Practice Again
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {/* CLIENT CONTROLLER SCRIPT WITH EMBEDDED VARIABLES */}
+  <script is:inline define:vars={{ allExamples }}>
+    if (typeof window !== 'undefined') {
+      window.__allExamples = allExamples;
+    }
+
+    // 1. Client-Side Helper to Compile Annotations inline without imports
+    function compileAnnotationsClient(text) {
+      if (!text) return "";
+      const blockRegex = /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
+      return text.replace(blockRegex, (match, char, jyutping, translation) => {
+        return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
+      });
+    }
+
+    // 2. Global state and references
+    let unlockedChapters = [0];
+    let srsState = {};
+    let sessionCards = [];
+    let currentCardIndex = 0;
+    let assembledTokenIndices = [];
+    let activeCardScore = 0;
+    let sessionCorrectCount = 0;
+    let currentGroupMode = "chapter"; // "chapter" or "level"
+
+    // Initializer
+    document.addEventListener('DOMContentLoaded', () => {
+      loadLocalStorage();
+      setupChapterToggles();
+      renderDashboard();
+      
+      // Bind Start Game Button
+      const startBtn = document.getElementById('start-session-btn');
+      if (startBtn) startBtn.addEventListener('click', startPracticeSession);
+
+      // Bind Quit Button
+      const quitBtn = document.getElementById('session-quit-btn');
+      if (quitBtn) quitBtn.addEventListener('click', quitSession);
+
+      // Bind Summary Buttons
+      const summaryDashBtn = document.getElementById('summary-dashboard-btn');
+      if (summaryDashBtn) summaryDashBtn.addEventListener('click', exitSession);
+      const summaryRetryBtn = document.getElementById('summary-retry-btn');
+      if (summaryRetryBtn) summaryRetryBtn.addEventListener('click', () => {
+        exitSession();
+        startPracticeSession();
+      });
+
+      // Bind Reset/Check Gameplay Buttons
+      const resetBtn = document.getElementById('game-reset-btn');
+      if (resetBtn) resetBtn.addEventListener('click', resetCurrentCard);
+      const checkBtn = document.getElementById('game-check-btn');
+      if (checkBtn) checkBtn.addEventListener('click', checkCurrentAnswer);
+
+      // Bind Directory Grouping Tabs
+      const groupChapterBtn = document.getElementById('group-by-chapter-btn');
+      const groupLevelBtn = document.getElementById('group-by-level-btn');
+      
+      if (groupChapterBtn && groupLevelBtn) {
+        groupChapterBtn.addEventListener('click', () => {
+          groupChapterBtn.classList.add('active');
+          groupLevelBtn.classList.remove('active');
+          currentGroupMode = "chapter";
+          renderPoolDirectory();
+        });
+        groupLevelBtn.addEventListener('click', () => {
+          groupLevelBtn.classList.add('active');
+          groupChapterBtn.classList.remove('active');
+          currentGroupMode = "level";
+          renderPoolDirectory();
+        });
+      }
+    });
+
+    // LocalStorage Operations
+    function loadLocalStorage() {
+      try {
+        const storedChapters = localStorage.getItem('cantonese_unlocked_chapters');
+        if (storedChapters) {
+          unlockedChapters = JSON.parse(storedChapters).map(Number);
+          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
+        } else {
+          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
+        }
+
+        const storedSRS = localStorage.getItem('cantonese_srs_state');
+        if (storedSRS) {
+          srsState = JSON.parse(storedSRS);
+        }
+      } catch (e) {
+        console.error('LocalStorage load failed:', e);
+      }
+    }
+
+    // Save state
+    function saveSRSState() {
+      try {
+        localStorage.setItem('cantonese_srs_state', JSON.stringify(srsState));
+      } catch (e) {
+        console.error('LocalStorage save failed:', e);
+      }
+    }
+
+    // Set up Configuration Checkboxes
+    function setupChapterToggles() {
+      const checkboxes = document.querySelectorAll('.chapter-toggle-cb');
+      checkboxes.forEach(cb => {
+        const chNum = parseInt(cb.getAttribute('data-chapter'), 10);
+        cb.checked = unlockedChapters.includes(chNum);
+        
+        cb.addEventListener('change', () => {
+          if (cb.checked) {
+            if (!unlockedChapters.includes(chNum)) unlockedChapters.push(chNum);
+          } else {
+            unlockedChapters = unlockedChapters.filter(n => n !== chNum);
+            // Default safeguard: keep at least Chapter 0
+            if (unlockedChapters.length === 0) {
+              unlockedChapters.push(0);
+              const ch0Cb = document.querySelector('.chapter-toggle-cb[data-chapter="0"]');
+              if (ch0Cb) ch0Cb.checked = true;
+            }
+          }
+          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
+          renderDashboard();
+        });
+      });
+    }
+
+    // Renders stats and list
+    function renderDashboard() {
+      const statsChaptersEl = document.getElementById('stats-chapters-count');
+      const statsCardsEl = document.getElementById('stats-cards-count');
+      const statsMasteredEl = document.getElementById('stats-mastered-count');
+
+      const poolItems = allExamples.filter(item => unlockedChapters.includes(item.chapter));
+
+      let masteredCount = 0;
+      poolItems.forEach(item => {
+        const itemState = srsState[item.id];
+        if (itemState && itemState.level === 5) masteredCount++;
+      });
+
+      if (statsChaptersEl) statsChaptersEl.textContent = unlockedChapters.length;
+      if (statsCardsEl) statsCardsEl.textContent = poolItems.length;
+      if (statsMasteredEl) statsMasteredEl.textContent = masteredCount;
+
+      renderPoolDirectory();
+    }
+
+    // Renders list
+    function renderPoolDirectory() {
+      const container = document.getElementById('review-items-list-container');
+      if (!container) return;
+
+      const poolItems = allExamples.filter(item => unlockedChapters.includes(item.chapter));
+      
+      if (poolItems.length === 0) {
+        container.innerHTML = `<p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem;">No items available. Toggle chapters above to populate your review pool.</p>`;
+        return;
+      }
+
+      container.innerHTML = '';
+
+      if (currentGroupMode === "chapter") {
+        const grouped = {};
+        poolItems.forEach(item => {
+          if (!grouped[item.chapter]) grouped[item.chapter] = { title: item.chapterTitle, items: [] };
+          grouped[item.chapter].items.push(item);
+        });
+
+        const sortedChapters = Object.keys(grouped).map(Number).sort((a,b) => a - b);
+        sortedChapters.forEach(chNum => {
+          const group = grouped[chNum];
+          const section = document.createElement('div');
+          section.style.marginBottom = '1.5rem';
+          section.innerHTML = `<h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; color: var(--text-color); font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 0.6rem;">Chapter ${chNum}: ${group.title}</h3>`;
+          
+          const itemsWrapper = document.createElement('div');
+          itemsWrapper.className = 'review-items-container';
+          
+          group.items.forEach(item => {
+            itemsWrapper.appendChild(createItemCardElement(item));
+          });
+          
+          section.appendChild(itemsWrapper);
+          container.appendChild(section);
+        });
+      } else {
+        const grouped = { 1: [], 2: [], 3: [], 4: [], 5: [] };
+        poolItems.forEach(item => {
+          const state = srsState[item.id];
+          const lvl = state ? state.level : 1;
+          grouped[lvl].push(item);
+        });
+
+        for (let lvl = 1; lvl <= 5; lvl++) {
+          const items = grouped[lvl];
+          if (items.length === 0) continue;
+
+          const section = document.createElement('div');
+          section.style.marginBottom = '1.5rem';
+          section.innerHTML = `<h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; color: var(--text-color); font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 0.6rem;">SRS Level ${lvl}</h3>`;
+          
+          const itemsWrapper = document.createElement('div');
+          itemsWrapper.className = 'review-items-container';
+          
+          items.forEach(item => {
+            itemsWrapper.appendChild(createItemCardElement(item));
+          });
+          
+          section.appendChild(itemsWrapper);
+          container.appendChild(section);
+        }
+      }
+    }
+
+    // Helper to generate a single directory item card
+    function createItemCardElement(item) {
+      const state = srsState[item.id];
+      const lvl = state ? state.level : 1;
+
+      const card = document.createElement('div');
+      card.className = 'review-item-card';
+      
+      const textContainer = document.createElement('div');
+      textContainer.className = 'review-item-text';
+      
+      const cantoDiv = document.createElement('div');
+      cantoDiv.className = 'review-item-canto';
+      cantoDiv.innerHTML = compileAnnotationsClient(item.cantoneseRaw);
+      
+      const engDiv = document.createElement('div');
+      engDiv.className = 'review-item-english';
+      engDiv.textContent = item.english;
+      
+      textContainer.appendChild(cantoDiv);
+      textContainer.appendChild(engDiv);
+      
+      const badge = document.createElement('span');
+      badge.className = `srs-level-badge srs-level-${lvl}`;
+      badge.textContent = `Lvl ${lvl}`;
+      
+      card.appendChild(textContainer);
+      card.appendChild(badge);
+      return card;
+    }
+
+    // --- GAMEPLAY SESSION CONTROLS ---
+
+    function startPracticeSession() {
+      const poolItems = allExamples.filter(item => unlockedChapters.includes(item.chapter));
+      if (poolItems.length === 0) {
+        alert("Your review pool is empty. Please enable chapters above to start practice.");
+        return;
+      }
+
+      const weightedPool = poolItems.map(item => {
+        const state = srsState[item.id];
+        const lvl = state ? state.level : 1;
+        const weight = 1 / Math.pow(lvl, 1.5);
+        return { item, weight };
+      });
+
+      sessionCards = [];
+      const count = Math.min(10, poolItems.length);
+      const tempPool = [...weightedPool];
+
+      for (let i = 0; i < count; i++) {
+        const totalWeight = tempPool.reduce((sum, el) => sum + el.weight, 0);
+        let r = Math.random() * totalWeight;
+        let cumulative = 0;
+        let selectedIndex = -1;
+
+        for (let j = 0; j < tempPool.length; j++) {
+          cumulative += tempPool[j].weight;
+          if (r <= cumulative) {
+            selectedIndex = j;
+            break;
+          }
+        }
+
+        if (selectedIndex !== -1) {
+          sessionCards.push(tempPool[selectedIndex].item);
+          tempPool.splice(selectedIndex, 1);
+        }
+      }
+
+      currentCardIndex = 0;
+      sessionCorrectCount = 0;
+      
+      document.getElementById('dashboard-view').style.display = 'none';
+      document.getElementById('session-view').style.display = 'flex';
+      document.getElementById('summary-view').style.display = 'none';
+      
+      loadCard(currentCardIndex);
+    }
+
+    function loadCard(index) {
+      if (index >= sessionCards.length) {
+        showSummary();
+        return;
+      }
+
+      const card = sessionCards[index];
+      assembledTokenIndices = [];
+      activeCardScore = 0;
+
+      document.getElementById('session-progress-text').textContent = `Card ${index + 1} of ${sessionCards.length}`;
+      const fillPercentage = (index / sessionCards.length) * 100;
+      document.getElementById('session-progress-fill').style.width = `${fillPercentage}%`;
+
+      document.getElementById('session-chapter-label').textContent = `Chapter ${card.chapter}: ${card.chapterTitle}`;
+      document.getElementById('session-english-prompt').textContent = card.english;
+
+      const feedbackPanel = document.getElementById('feedback-panel');
+      feedbackPanel.style.display = 'none';
+      feedbackPanel.innerHTML = '';
+
+      document.getElementById('game-check-btn').style.display = 'inline-flex';
+      document.getElementById('game-reset-btn').style.display = 'inline-flex';
+
+      const originalTokens = card.tokens;
+      const indices = originalTokens.map((_, i) => i);
+      
+      for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [indices[i], indices[j]] = [indices[j], indices[i]];
+      }
+
+      renderGameplayBoards(indices);
+    }
+
+    function renderGameplayBoards(poolIndices) {
+      const answerSlotsEl = document.getElementById('game-answer-slots');
+      const tokensPoolEl = document.getElementById('game-tokens-pool');
+
+      answerSlotsEl.innerHTML = '';
+      tokensPoolEl.innerHTML = '';
+
+      const card = sessionCards[currentCardIndex];
+
+      if (assembledTokenIndices.length === 0) {
+        answerSlotsEl.innerHTML = `<span style="font-size: 0.9rem; color: var(--text-muted); font-style: italic; pointer-events: none;">Click tokens below to arrange sentence...</span>`;
+      } else {
+        assembledTokenIndices.forEach((origIdx, assembledIdx) => {
+          const rawToken = card.tokens[origIdx];
+          const chip = createTokenChip(rawToken, () => {
+            assembledTokenIndices.splice(assembledIdx, 1);
+            const currentPool = [];
+            card.tokens.forEach((_, idx) => {
+              if (!assembledTokenIndices.includes(idx)) currentPool.push(idx);
+            });
+            renderGameplayBoards(currentPool);
+          });
+          answerSlotsEl.appendChild(chip);
+        });
+      }
+
+      if (poolIndices.length === 0) {
+        tokensPoolEl.innerHTML = `<span style="font-size: 0.9rem; color: var(--text-muted); font-style: italic; pointer-events: none;">Sentence fully assembled. Click check below.</span>`;
+      } else {
+        poolIndices.forEach(origIdx => {
+          const rawToken = card.tokens[origIdx];
+          const chip = createTokenChip(rawToken, () => {
+            assembledTokenIndices.push(origIdx);
+            const newPool = poolIndices.filter(idx => idx !== origIdx);
+            renderGameplayBoards(newPool);
+          });
+          tokensPoolEl.appendChild(chip);
+        });
+      }
+    }
+
+    function createTokenChip(rawToken, clickCallback) {
+      const chip = document.createElement('div');
+      chip.className = 'token-chip';
+      
+      const inner = document.createElement('div');
+      inner.className = 'vocab-term';
+      inner.innerHTML = compileAnnotationsClient(rawToken);
+      
+      chip.appendChild(inner);
+      
+      chip.addEventListener('click', (e) => {
+        e.preventDefault();
+        clickCallback();
+      });
+
+      return chip;
+    }
+
+    function resetCurrentCard() {
+      const card = sessionCards[currentCardIndex];
+      assembledTokenIndices = [];
+      const allIndices = card.tokens.map((_, i) => i);
+      
+      for (let i = allIndices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [allIndices[i], allIndices[j]] = [allIndices[j], allIndices[i]];
+      }
+      
+      renderGameplayBoards(allIndices);
+    }
+
+    function checkCurrentAnswer() {
+      const card = sessionCards[currentCardIndex];
+      const correctIndicesCount = card.tokens.length;
+
+      if (assembledTokenIndices.length !== correctIndicesCount) {
+        alert("Please use all tokens to assemble the sentence before checking.");
+        return;
+      }
+
+      let isCorrect = true;
+      for (let i = 0; i < correctIndicesCount; i++) {
+        if (card.tokens[assembledTokenIndices[i]] !== card.tokens[i]) {
+          isCorrect = false;
+          break;
+        }
+      }
+
+      document.getElementById('game-check-btn').style.display = 'none';
+      document.getElementById('game-reset-btn').style.display = 'none';
+
+      if (!srsState[card.id]) {
+        srsState[card.id] = { level: 1, lastReviewed: Date.now() };
+      }
+      const state = srsState[card.id];
+
+      if (isCorrect) {
+        sessionCorrectCount++;
+        state.level = Math.min(state.level + 1, 5);
+      } else {
+        state.level = Math.max(state.level - 2, 1);
+      }
+      state.lastReviewed = Date.now();
+      saveSRSState();
+
+      const feedbackPanel = document.getElementById('feedback-panel');
+      feedbackPanel.style.display = 'block';
+
+      const compiledCantoHtml = compileAnnotationsClient(card.cantoneseRaw);
+
+      if (isCorrect) {
+        feedbackPanel.innerHTML = `
+          <div class="alert-box alert-tip" style="margin-top: 1rem; border-left-color: var(--secondary-color); background-color: #ecf0e5;">
+            <div class="alert-title" style="color: var(--secondary-color);">Correct! (SRS Level Up to ${state.level})</div>
+            <div class="alert-content">
+              <div class="cantonese-example-card" style="border: none; background: transparent; padding: 0; margin: 0; box-shadow: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+                <div class="cantonese-sentence" style="font-size: 1.25rem;">${compiledCantoHtml}</div>
+                <button class="tts-btn" title="Listen" aria-label="Listen">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                  </svg>
+                </button>
+              </div>
+              <div style="font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-top: 0.3rem;">
+                ${card.english}
+              </div>
+              <button id="next-card-btn" style="margin-top: 1rem; font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; border: none; background-color: var(--secondary-color); color: #ffffff; border-radius: 4px; padding: 0.5rem 1.5rem; cursor: pointer; float: right;">
+                Next Card &rarr;
+              </button>
+              <div style="clear: both;"></div>
+            </div>
+          </div>
+        `;
+      } else {
+        const userAssembly = assembledTokenIndices.map(idx => {
+          const raw = card.tokens[idx];
+          const m = raw.match(/^([^\[]+)/);
+          return m ? m[1] : raw;
+        }).join(' ');
+
+        feedbackPanel.innerHTML = `
+          <div class="alert-box alert-important" style="margin-top: 1rem; border-left-color: var(--accent-color); background-color: #f8efe6;">
+            <div class="alert-title" style="color: var(--accent-color);">Incorrect (SRS Level Down to ${state.level})</div>
+            <div class="alert-content">
+              <div style="font-size: 0.95rem; margin-bottom: 0.6rem;">
+                <strong>Your Order</strong>: <span style="color: var(--accent-color);">${userAssembly}</span>
+              </div>
+              <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem;">Correct Structure:</div>
+              <div class="cantonese-example-card" style="border: none; background: transparent; padding: 0; margin: 0; box-shadow: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+                <div class="cantonese-sentence" style="font-size: 1.25rem;">${compiledCantoHtml}</div>
+                <button class="tts-btn" title="Listen" aria-label="Listen">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                  </svg>
+                </button>
+              </div>
+              <div style="font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-top: 0.3rem;">
+                ${card.english}
+              </div>
+              <button id="next-card-btn" style="margin-top: 1rem; font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; border: none; background-color: var(--accent-color); color: #ffffff; border-radius: 4px; padding: 0.5rem 1.5rem; cursor: pointer; float: right;">
+                Next Card &rarr;
+              </button>
+              <div style="clear: both;"></div>
+            </div>
+          </div>
+        `;
+      }
+
+      document.getElementById('next-card-btn').addEventListener('click', () => {
+        currentCardIndex++;
+        loadCard(currentCardIndex);
+      });
+    }
+
+    function showSummary() {
+      document.getElementById('session-view').style.display = 'none';
+      document.getElementById('summary-view').style.display = 'flex';
+      
+      document.getElementById('summary-score').textContent = `${sessionCorrectCount} / ${sessionCards.length}`;
+      
+      const scorePercentage = (sessionCorrectCount / sessionCards.length) * 100;
+      let msg = "Great practice! Spaced Repetition reinforces memory paths. Continue practicing regularly!";
+      if (scorePercentage === 100) {
+        msg = "Perfect score! You have fully mastered these sentences. Keep adding new chapters!";
+      } else if (scorePercentage >= 80) {
+        msg = "Excellent job! Most structures are secure. A little more practice will lock in the rest.";
+      } else if (scorePercentage < 50) {
+        msg = "Spaced repetition works best on cards we struggle with! Keep trying, they will get easier.";
+      }
+      document.getElementById('summary-message').textContent = msg;
+    }
+
+    function quitSession() {
+      if (confirm("Are you sure you want to quit this practice session? Your progress on finished cards is already saved.")) {
+        exitSession();
+      }
+    }
+
+    function exitSession() {
+      document.getElementById('dashboard-view').style.display = 'flex';
+      document.getElementById('session-view').style.display = 'none';
+      document.getElementById('summary-view').style.display = 'none';
+      renderDashboard();
+    }
+  </script>
+</BaseLayout>
