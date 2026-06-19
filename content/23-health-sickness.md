@@ -36,6 +36,8 @@ physical ailments:
   condition.
 - `傳染[cyun4jim5|to infect / infectious / contagious]`: To infect, or to be
   contagious/infectious.
+- `係咁[hai6gam2|continuously / constantly]`: Continuously, constantly, keep
+  doing something (e.g., `係咁[hai6gam2|continuously]` `咳[kat1|to cough]`).
 
 ---
 
@@ -60,6 +62,8 @@ medication is the next step:
 - `抖[dau2|to rest / take a break]`: To rest or take a break.
 - `抖吓[dau2haa5|to rest a bit / take a brief break]`: To rest a bit or take a
   quick break.
+- `檢查[gim2caa4|to examine / check / inspect]`: To examine, check, or inspect.
+- `聽落[ting1lok6|sounds like]`: Sounds like, hearing it.
 
 ---
 
@@ -85,6 +89,8 @@ terms and highly popular local slang:
 - `休息[jau1sik1|to rest / take a break]`: To rest or take a break.
 - `早日康復[zou2jat6hong1fuk6|recover soon / speedy recovery]`: Wish you a
   speedy recovery or get well soon.
+- `向[hoeng3|towards / to]`: Towards, to (e.g., `向[hoeng3|towards / to]`
+  `公司[gung1si1|company]` `請假[cing2gaa3|to apply for leave]`).
 
 ---
 

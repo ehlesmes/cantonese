@@ -67,7 +67,7 @@ I am only a student (nothing more).
 ```
 
 ```cantonese
-我[ngo5|I / me] 問[man6|to ask / inquire] 吓[haa2|what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
+我[ngo5|I / me] 問[man6|to ask / inquire] 吓[haa5|verbal suffix indicating a brief action or attempt] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
 ===
 I am just asking (don't take it seriously).
 ```
@@ -237,7 +237,7 @@ nearing the end of the work day, and they are gossiping about a late colleague
 and the boss's reaction.
 
 ```dialog
-A: Wing-kit，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa2|what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation]！已經[ji5ging1|already] 幾點[gei2dim2|what time / when] 呀[aa3|sentence-final particle softening statements, making questions friendly]？佢[keoi5|he / she / it] 仲[zung6|still / yet] 冇[mou5|to not have / there is not] 返[faan1|to return / go back / reverse] 公司[gung1si1|company / office] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！
+A: Wing-kit，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa5|verbal suffix indicating a brief action or attempt]！已經[ji5ging1|already] 幾點[gei2dim2|what time / when] 呀[aa3|sentence-final particle softening statements, making questions friendly]？佢[keoi5|he / she / it] 仲[zung6|still / yet] 冇[mou5|to not have / there is not] 返[faan1|to return / go back / reverse] 公司[gung1si1|company / office] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！
    === Wing-kit, take a look! What time is it already? Apparently, he still hasn't returned to the office!
 B: 佢[keoi5|he / she / it] 遲到[ci4dou3|to be late / arrive late] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 兩[loeng5|two / pair (used with classifiers)] 個[go3|general measure word / individual / unit] 鐘頭[zung1tau4|hour] 喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]！老闆[lou5baan2|boss / proprietor] 真係[zan1hai6|really / truly] 嬲[nau1|angry / mad] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 喇[laa3|sentence-final particle indicating a change of state or already]！
    === He is late by two hours already! The boss is really angry now!

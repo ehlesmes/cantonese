@@ -147,7 +147,7 @@ Observe how these are naturally integrated in a conversational exchange:
 ```dialog
 A: 喂[wai2|hey]，你[nei5|you] 食[sik6|to eat] 唔[m4|not] 食[sik6|to eat] 雞[gai1|chicken] 呀[aa3|particle]？
    === Hey, do you eat chicken?
-B: 吓[haa2|what]？ 唔[m4|not] 食[sik6|to eat] 啦[laa1|particle]，我[ngo5|I] 唔[m4|not] 食[sik6|to eat] 事[si6|matter] 嘅[ge3|particle]。
+B: 吓[haa2|what]？ 唔[m4|not] 食[sik6|to eat] 啦[laa1|particle]，我[ngo5|I] 唔[m4|not] 食[sik6|to eat] 嘅[ge3|particle]。
    === What? No, I don't eat it.
 ```
 

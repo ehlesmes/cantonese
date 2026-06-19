@@ -271,13 +271,13 @@ B: 三十[saam1sap6|thirty] 蚊[man1|dollar (spoken Cantonese colloquial unit of
    === It is thirty dollars. Do you want a plastic bag?
 A: 唔[m4|not / no (negative prefix)] 要[jiu3|to want / need / must / demand] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]，唔該[m4goi1|excuse me]。 呢度[ni1dou6|here] 收唔收[sau1 m4 sau1|do you accept / accept or not (A-not-A question form)] 八達通[baat3daat6tung1|Octopus card (Hong Kong contact-less smart card)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === No, thank you. Do you accept Octopus card here?
-B: 收[sau1|to receive / accept / collect] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 唔該[m4goi1|excuse me]。
+B: 收[sau1|to receive / accept / collect] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]。
    === Yes, we do! Thank you.
 A: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === Okay.
-B: 搞掂[gaau2dim6|done / finished / settled / resolved] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 唔該[m4goi1|excuse me]！
+B: 搞掂[gaau2dim6|done / finished / settled / resolved] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]！
    === All done! Thank you!
-A: 多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]！ 拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
+A: 唔該[m4goi1|excuse me / please / thank you (for service or help)]！ 拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
    === Thanks! Bye-bye!
 B: 拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
    === Bye-bye!

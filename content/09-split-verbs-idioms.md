@@ -234,10 +234,10 @@ A: 但係[daan6hai6|but / however] 佢哋[keoi5dei6|they / them] 放[fong3|to re
    === But they stood you up! Apparently, they are not here!
 B: 真係[zan1hai6|really / truly] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？ 佢哋[keoi5dei6|they / them] 好[hou2|good / fine / very / quite] 衰[seoi1|bad / mean / wicked] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 噉[gam2|then / in that case / so] 我[ngo5|I / me] 去[heoi3|to go] 睇書[tai2syu1|to read books] 喇[laa3|sentence-final particle indicating a change of state or already]。
    === Really? They are so mean! In that case, I am going to read books now.
-A: 你[nei5|you] 知[zi1|to know / be aware of] 唔[m4|not / no (negative prefix)] 知道[zi1dou3|to know / be aware of] 老闆[lou5baan2|boss / proprietor] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] Sau-han 魷魚[jau4jyu2|squid] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
-   === Do you know that the boss fired Sau-han already?
+A: 你[nei5|you] 知[zi1|to know / be aware of] 唔[m4|not / no (negative prefix)] 知道[zi1dou3|to know / be aware of] 老闆[lou5baan2|boss / proprietor] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] David 魷魚[jau4jyu2|squid] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+   === Do you know that the boss fired David already?
 B: 哇[waa1|wow / whoa]！ 真係[zan1hai6|really / truly] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？ 佢[keoi5|he / she / it] 遲到[ci4dou3|to be late / arrive late] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 好[hou2|good / fine / very / quite] 多[do1|many / much / more] 次[ci3|time / occurrence (classifier)] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！ 我哋[ngo5dei6|we / us] 食[sik6|to eat] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 花生[faa1sang1|peanut] 喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]！
-   === Whoa! Really? Well, she was late so many times, obviously! Looks like we are sitting back watching the drama unfold now!
+   === Whoa! Really? Well, he was late so many times, obviously! Looks like we are sitting back watching the drama unfold now!
 ```
 
 ---

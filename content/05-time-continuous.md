@@ -302,8 +302,8 @@ A: 係[hai6|to be / to be (am/is/are) / yes] 呀[aa3|sentence-final particle sof
    === Yes, at that café next to the MTR station, obviously.
 B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 噉[gam2|then / in that case / so] 我[ngo5|I / me] 四[sei3|four] 點[dim2|o'clock / hour] 兩[loeng5|two / pair (used with classifiers)] 個[go3|general measure word / individual / unit] 字[zi6|five-minute interval] 去[heoi3|to go] 嗰度[go2dou6|there] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
    === Sure! Then I will go there at 4:10 PM.
-A: 搞掂[gaau2dim6|done / finished / settled / resolved]！ 聽日[ting1jat6|tomorrow] 見[gin3|to see / meet] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]，拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
-   === Done! See you tomorrow then, bye-bye!
+A: 搞掂[gaau2dim6|done / finished / settled / resolved]！ 嗰度[go2dou6|there] 見[gin3|to see / meet] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]，拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
+   === Done! See you there then, bye-bye!
 B: 拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
    === Bye-bye!
 ```

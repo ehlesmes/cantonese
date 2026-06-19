@@ -4,20 +4,19 @@ This is an automatically generated vocabulary database compiled from all course 
 
 | Character | Jyutping | Translation | First Introduced In | Occurrences |
 | :--- | :--- | :--- | :--- | :--- |
-| **IG** | `aa1zi1` | Instagram | `19-social-media-slang.md` | 2 |
-| **呀** | `aa3` | particle / sentence-final particle softening statements, making questions friendly | `00-pronunciation-jyutping.md` | 308 |
+| **呀** | `aa3` | particle / sentence-final particle softening statements, making questions friendly | `00-pronunciation-jyutping.md` | 310 |
 | **阿** | `aa3` | prefix | `16-workplace-slang.md` | 1 |
 | **阿明** | `aa3 ming4` | Ah Ming | `22-entertainment-nightlife.md` | 5 |
 | **呃** | `aak1` | to cheat / trick / fish / to fish | `19-social-media-slang.md` | 3 |
 | **啱啱** | `aam1aam1` | just now / exactly / just now / just / exactly | `13-passives-focus-indirect.md` | 2 |
-| **晏** | `aan3` | late | `22-entertainment-nightlife.md` | 2 |
-| **IG** | `ai1zi1` | Instagram (slang) | `24-tech-apps-slang.md` | 2 |
+| **晏** | `aan3` | late | `22-entertainment-nightlife.md` | 3 |
+| **IG** | `ai1zi1` | Instagram / Instagram (slang) | `19-social-media-slang.md` | 4 |
 | **嘔** | `au2` | to vomit / throw up | `23-health-sickness.md` | 2 |
 | **巴士** | `baa1si2` | bus (loanword) | `02-shopping-slang.md` | 3 |
 | **巴士站** | `baa1si2zaam6` | bus stop | `20-travel-transport.md` | 2 |
 | **拜拜** | `baai1baai3` | bye-bye / goodbye (loanword) | `01-greetings.md` | 12 |
-| **百** | `baak3` | hundred | `18-shopping-bargaining.md` | 6 |
-| **百分之十** | `baak3fan6zi1sap6` | ten percent | `24-tech-apps-slang.md` | 1 |
+| **百** | `baak3` | hundred | `18-shopping-bargaining.md` | 7 |
+| **百分之十** | `baak3fan6zi1sap6` | ten percent | `24-tech-apps-slang.md` | 2 |
 | **白** | `baak6` | love | `19-social-media-slang.md` | 1 |
 | **扮** | `baan6` | to dress up / act / pretend | `09-split-verbs-idioms.md` | 1 |
 | **扮嘢** | `baan6je5` | to pretend / show off / act | `09-split-verbs-idioms.md` | 1 |
@@ -28,7 +27,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **爆升** | `baau3sing1` | to skyrocket / experience explosive growth | `25-finance-investing-slang.md` | 3 |
 | **不過** | `bat1gwo3` | but / however | `21-housing-neighborhood.md` | 4 |
 | **不如** | `bat1jyu4` | how about | `14-intensifiers-exaggeration.md` | 2 |
-| **俾** | `bei2` | to give / for / by / to give / to give / for / let / allow | `10-hypotheticals-conditionals.md` | 31 |
+| **俾** | `bei2` | to give / to give / for / by / to give / to give / for / let / allow | `03-dining-out.md` | 33 |
 | **病** | `beng6` | to be sick / illness / disease | `23-health-sickness.md` | 1 |
 | **病假** | `beng6gaa3` | sick leave | `23-health-sickness.md` | 4 |
 | **邊** | `bin1` | which | `07-comparatives-descriptors.md` | 1 |
@@ -38,12 +37,12 @@ This is an automatically generated vocabulary database compiled from all course 
 | **表** | `biu2` | to confess | `19-social-media-slang.md` | 1 |
 | **表白** | `biu2baak6` | to confess one's love | `19-social-media-slang.md` | 1 |
 | **菠蘿包** | `bo1lo1baau1` | pineapple bun (sweet crusted bun, usually containing no pineapple) | `03-dining-out.md` | 11 |
-| **幫** | `bong1` | for / to help / for / on behalf of | `16-workplace-slang.md` | 4 |
+| **幫** | `bong1` | for / to help / for / on behalf of | `16-workplace-slang.md` | 3 |
 | **幫手** | `bong1sau2` | to help / lend a hand | `21-housing-neighborhood.md` | 1 |
 | **補數** | `bou2sou3` | to make up for it | `19-social-media-slang.md` | 1 |
 | **步** | `bou6` | step / pace | `09-split-verbs-idioms.md` | 2 |
 | **部** | `bou6` | measure word for machines/phones / measure word for machines, phones, cars | `13-passives-focus-indirect.md` | 3 |
-| **杯** | `bui1` | cup / glass / mug (classifier for drinks) | `03-dining-out.md` | 17 |
+| **杯** | `bui1` | cup / glass / mug (classifier for drinks) | `03-dining-out.md` | 18 |
 | **搬屋** | `bun1uk1` | to move house | `21-housing-neighborhood.md` | 1 |
 | **半** | `bun3` | half | `05-time-continuous.md` | 10 |
 | **差唔多** | `caa1m4do1` | almost / about / more or less | `21-housing-neighborhood.md` | 2 |
@@ -52,7 +51,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **茶餐廳** | `caa4caan1teng1` | Hong Kong style café / diner | `03-dining-out.md` | 10 |
 | **茶走** | `caa4zau2` | milk tea with condensed milk instead of evaporated milk and sugar | `17-foodie-slang.md` | 10 |
 | **慘** | `caam2` | miserable / pitiful / tragic | `12-regrets-wishes-empathy.md` | 11 |
-| **插頭** | `caap3tau4` | electrical socket / plug | `24-tech-apps-slang.md` | 1 |
+| **插頭** | `caap3tau4` | electrical socket / plug | `24-tech-apps-slang.md` | 2 |
 | **炒** | `caau2` | to stir-fry / speculate / fire | `09-split-verbs-idioms.md` | 15 |
 | **炒股** | `caau2gu2` | to speculate in stocks / trade stocks | `25-finance-investing-slang.md` | 3 |
 | **炒魷魚** | `caau2jau4jyu2` | to get fired / lay off / fire someone | `09-split-verbs-idioms.md` | 14 |
@@ -77,14 +76,14 @@ This is an automatically generated vocabulary database compiled from all course 
 | **前邊** | `cin4bin1` | ahead / ahead / in front / up ahead | `20-travel-transport.md` | 6 |
 | **前面** | `cin4min6` | in front / front side | `04-existentials-places.md` | 1 |
 | **請** | `cing2` | to invite / treat / please / request | `23-health-sickness.md` | 1 |
-| **請假** | `cing2gaa3` | to apply for leave / request time off | `23-health-sickness.md` | 2 |
+| **請假** | `cing2gaa3` | to apply for leave / request time off | `23-health-sickness.md` | 3 |
 | **請問** | `cing2man6` | may I ask | `20-travel-transport.md` | 4 |
 | **超市** | `ciu1si5` | supermarket | `04-existentials-places.md` | 2 |
 | **錯** | `co3` | wrong / wrong / incorrect / mistake | `15-rhetorical-questions.md` | 4 |
 | **坐** | `co5` | sit | `17-foodie-slang.md` | 1 |
 | **唱** | `coeng3` | to sing | `09-split-verbs-idioms.md` | 11 |
 | **唱歌** | `coeng3go1` | to sing | `09-split-verbs-idioms.md` | 3 |
-| **牆** | `coeng4` | wall | `24-tech-apps-slang.md` | 1 |
+| **牆** | `coeng4` | wall | `24-tech-apps-slang.md` | 2 |
 | **長線** | `coeng4sin3` | long term | `25-finance-investing-slang.md` | 2 |
 | **腸胃炎** | `coeng4wai6jim4` | gastroenteritis / stomach flu | `23-health-sickness.md` | 2 |
 | **嘈** | `cou4` | noisy | `21-housing-neighborhood.md` | 2 |
@@ -103,18 +102,18 @@ This is an automatically generated vocabulary database compiled from all course 
 | **大** | `daai6` | big / large / great | `07-comparatives-descriptors.md` | 5 |
 | **大約** | `daai6joek3` | approximately | `20-travel-transport.md` | 1 |
 | **大鱷** | `daai6ngok6` | market shark / big player | `25-finance-investing-slang.md` | 3 |
-| **大聲** | `daai6sing1` | loud voice / loudly | `24-tech-apps-slang.md` | 1 |
+| **大聲** | `daai6sing1` | loudly / loud voice / loud voice / loudly | `24-tech-apps-slang.md` | 2 |
 | **單** | `daan1` | bill / receipt / sheet | `18-shopping-bargaining.md` | 1 |
 | **單身** | `daan1san1` | single | `19-social-media-slang.md` | 1 |
 | **單位** | `daan1wai2` | unit / flat / apartment | `21-housing-neighborhood.md` | 1 |
 | **但係** | `daan6hai6` | but / however | `07-comparatives-descriptors.md` | 17 |
-| **蛋撻** | `daan6taat1` | egg tart | `03-dining-out.md` | 11 |
+| **蛋撻** | `daan6taat1` | egg tart | `03-dining-out.md` | 12 |
 | **搭車** | `daap3ce1` | to take transit / ride a vehicle | `20-travel-transport.md` | 1 |
 | **搭枱** | `daap3toi2` | to share a table with strangers / share table | `17-foodie-slang.md` | 7 |
 | **第日** | `dai6jat6` | another day / some day in the future | `10-hypotheticals-conditionals.md` | 4 |
 | **得** | `dak1` | particle expressing permission, possibility, capability, or adverbial degree | `06-ability-experience.md` | 22 |
 | **得唔得** | `dak1 m4 dak1` | can or not | `18-shopping-bargaining.md` | 4 |
-| **得閒** | `dak1haan4` | free / having spare time | `22-entertainment-nightlife.md` | 2 |
+| **得閒** | `dak1haan4` | free / having spare time | `22-entertainment-nightlife.md` | 3 |
 | **得滯** | `dak1zai6` | too / excessively | `14-intensifiers-exaggeration.md` | 12 |
 | **燈** | `dang1` | light / lamp | `24-tech-apps-slang.md` | 4 |
 | **燈位** | `dang1wai2` | traffic light / traffic light / intersection with lights | `20-travel-transport.md` | 3 |
@@ -148,9 +147,9 @@ This is an automatically generated vocabulary database compiled from all course 
 | **碟** | `dip6` | plate / dish (classifier for food dishes) | `03-dining-out.md` | 5 |
 | **跌** | `dit3` | to fall / drop / decline | `25-finance-investing-slang.md` | 3 |
 | **多** | `do1` | many / much / more | `07-comparatives-descriptors.md` | 8 |
-| **多謝** | `do1ze6` | thank you (for a gift, compliment, or hospitality) / thank you (for a gift) | `02-shopping-slang.md` | 6 |
+| **多謝** | `do1ze6` | thank you (for a gift, compliment, or hospitality) / thank you (for a gift) | `02-shopping-slang.md` | 12 |
 | **都** | `dou1` | also / both / all / also / even | `11-narrative-cohesion.md` | 20 |
-| **凍** | `dung3` | cold / iced | `03-dining-out.md` | 23 |
+| **凍** | `dung3` | cold / iced | `03-dining-out.md` | 24 |
 | **凍檸茶** | `dung3leng4caa4` | iced lemon tea | `17-foodie-slang.md` | 3 |
 | **短訊** | `dyun2seon3` | text message / SMS | `24-tech-apps-slang.md` | 1 |
 | **短線** | `dyun2sin3` | short term | `25-finance-investing-slang.md` | 1 |
@@ -211,18 +210,19 @@ This is an automatically generated vocabulary database compiled from all course 
 | **雞** | `gai1` | chicken | `00-pronunciation-jyutping.md` | 11 |
 | **今日** | `gam1jat6` | today | `00-pronunciation-jyutping.md` | 36 |
 | **今晚** | `gam1maan5` | tonight | `22-entertainment-nightlife.md` | 1 |
-| **噉** | `gam2` | then / in that case / so | `05-time-continuous.md` | 25 |
+| **噉** | `gam2` | then / in that case / so | `05-time-continuous.md` | 26 |
 | **敢** | `gam2` | to dare | `24-tech-apps-slang.md` | 1 |
-| **噉樣** | `gam2joeng6` | in this way / like this / this pattern | `25-finance-investing-slang.md` | 1 |
+| **噉樣** | `gam2joeng6` | in this way / like this / this pattern | `25-finance-investing-slang.md` | 2 |
 | **感冒** | `gam2mou6` | common cold / to catch a cold | `23-health-sickness.md` | 2 |
 | **咁** | `gam3` | so / such / to this degree / then | `07-comparatives-descriptors.md` | 17 |
 | **緊** | `gan2` | verbal aspect suffix indicating an action in progress (continuous aspect) / continuous aspect particle indicating action in progress | `05-time-continuous.md` | 33 |
 | **九** | `gau2` | nine | `02-shopping-slang.md` | 5 |
 | **狗** | `gau2` | dog | `04-existentials-places.md` | 1 |
 | **夠** | `gau3` | enough / sufficient | `08-particles-nuance.md` | 1 |
-| **嘅** | `ge3` | particle / possessive particle / nominalizing particle / final assertive particle / associative particle / possessive or linking particle / possessive / associative / focus particle | `00-pronunciation-jyutping.md` | 61 |
+| **嘅** | `ge3` | particle / possessive particle / nominalizing particle / final assertive particle / associative particle / possessive or linking particle / possessive / associative / focus particle | `00-pronunciation-jyutping.md` | 62 |
 | **基金** | `gei1gam1` | fund / mutual fund | `25-finance-investing-slang.md` | 3 |
 | **幾** | `gei2` | quite / pretty / fairly | `21-housing-neighborhood.md` | 5 |
+| **幾晏** | `gei2 aan3` | quite late | `22-entertainment-nightlife.md` | 1 |
 | **幾錢** | `gei2 cin2` | how much money | `18-shopping-bargaining.md` | 3 |
 | **幾多錢** | `gei2 do1 cin2` | how much money | `18-shopping-bargaining.md` | 3 |
 | **幾點** | `gei2dim2` | what time / when | `05-time-continuous.md` | 5 |
@@ -233,14 +233,13 @@ This is an automatically generated vocabulary database compiled from all course 
 | **記得** | `gei3dak1` | to remember | `23-health-sickness.md` | 5 |
 | **既然** | `gei3jin4` | since / given that | `11-narrative-cohesion.md` | 9 |
 | **極** | `gik6` | extremely / to the limit | `14-intensifiers-exaggeration.md` | 7 |
-| **檢查** | `gim2caa4` | to examine / check / inspect | `23-health-sickness.md` | 1 |
+| **檢查** | `gim2caa4` | to examine / check / inspect | `23-health-sickness.md` | 2 |
 | **見** | `gin3` | to see / meet | `05-time-continuous.md` | 1 |
 | **件** | `gin6` | measure word for clothes, matters, and items | `07-comparatives-descriptors.md` | 25 |
-| **經常** | `ging1soeng4` | often / frequently | `22-entertainment-nightlife.md` | 1 |
 | **叫** | `giu3` | to be called / to call | `01-greetings.md` | 8 |
 | **歌** | `go1` | song | `09-split-verbs-idioms.md` | 4 |
 | **嗰** | `go2` | that | `07-comparatives-descriptors.md` | 13 |
-| **嗰度** | `go2dou6` | there | `04-existentials-places.md` | 5 |
+| **嗰度** | `go2dou6` | there | `04-existentials-places.md` | 6 |
 | **嗰個** | `go2go3` | that one | `02-shopping-slang.md` | 13 |
 | **個** | `go3` | general measure word / individual / unit / measure word for general items | `02-shopping-slang.md` | 55 |
 | **覺得** | `gok3dak1` | to feel / think | `07-comparatives-descriptors.md` | 5 |
@@ -253,7 +252,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **攰** | `gui6` | tired / exhausted | `13-passives-focus-indirect.md` | 6 |
 | **局** | `guk6` | gathering / social event / plan | `22-entertainment-nightlife.md` | 2 |
 | **工** | `gung1` | work / job | `05-time-continuous.md` | 5 |
-| **公司** | `gung1si1` | company / office | `04-existentials-places.md` | 15 |
+| **公司** | `gung1si1` | company / office | `04-existentials-places.md` | 16 |
 | **工作** | `gung1zok3` | work | `14-intensifiers-exaggeration.md` | 4 |
 | **鬼死咁** | `gwai2sei2gam3` | extremely / awfully / extremely / awfully (pre-adjective intensifier) | `14-intensifiers-exaggeration.md` | 10 |
 | **貴** | `gwai3` | expensive | `07-comparatives-descriptors.md` | 13 |
@@ -263,8 +262,8 @@ This is an automatically generated vocabulary database compiled from all course 
 | **廣東話** | `gwong2dung1waa2` | Cantonese language | `01-greetings.md` | 8 |
 | **哈** | `haa1` | ha | `14-intensifiers-exaggeration.md` | 2 |
 | **哈哈** | `haa1 haa1` | haha | `22-entertainment-nightlife.md` | 1 |
-| **吓** | `haa2` | what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation | `00-pronunciation-jyutping.md` | 12 |
-| **吓** | `haa5` | verbal suffix indicating a brief action or attempt | `23-health-sickness.md` | 3 |
+| **吓** | `haa2` | what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation | `00-pronunciation-jyutping.md` | 9 |
+| **吓** | `haa5` | verbal suffix indicating a brief action or attempt | `07-comparatives-descriptors.md` | 6 |
 | **下場** | `haa6coeng4` | next venue / afterparty / next round | `22-entertainment-nightlife.md` | 2 |
 | **下面** | `haa6min6` | below / under / lower side | `04-existentials-places.md` | 1 |
 | **下晝** | `haa6zau3` | afternoon / in the afternoon | `05-time-continuous.md` | 5 |
@@ -282,9 +281,9 @@ This is an automatically generated vocabulary database compiled from all course 
 | **係** | `hai6` | to be / to be (am/is/are) / yes | `01-greetings.md` | 61 |
 | **係唔係** | `hai6 m4 hai6` | is it or not / is it or not? / is that right? (A-not-A question form) | `01-greetings.md` | 8 |
 | **係呀** | `hai6aa3` | yes / yes / indeed | `22-entertainment-nightlife.md` | 4 |
-| **係咁** | `hai6gam2` | continuously / constantly | `23-health-sickness.md` | 1 |
+| **係咁** | `hai6gam2` | continuously / constantly | `23-health-sickness.md` | 3 |
 | **係咩** | `hai6me1` | really? / is that so? | `22-entertainment-nightlife.md` | 1 |
-| **系統** | `hai6tung2` | system | `24-tech-apps-slang.md` | 1 |
+| **系統** | `hai6tung2` | system | `24-tech-apps-slang.md` | 2 |
 | **行** | `hang4` | to walk / go / run (a machine) | `06-ability-experience.md` | 4 |
 | **合約** | `hap6joek3` | contract / agreement | `21-housing-neighborhood.md` | 1 |
 | **喉嚨痛** | `hau4lung4tung3` | sore throat | `23-health-sickness.md` | 2 |
@@ -300,7 +299,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **可唔可以** | `ho2m4ho2ji5` | can or cannot / may or may not (A-not-A question form) | `23-health-sickness.md` | 3 |
 | **可能** | `ho2nang4` | maybe | `15-rhetorical-questions.md` | 1 |
 | **香港** | `hoeng1gong2` | Hong Kong | `01-greetings.md` | 8 |
-| **向** | `hoeng3` | towards / to | `23-health-sickness.md` | 2 |
+| **向** | `hoeng3` | towards / to | `23-health-sickness.md` | 4 |
 | **開** | `hoi1` | to write (a prescription) / prescribe / open / start | `23-health-sickness.md` | 6 |
 | **開始** | `hoi1ci2` | to start / begin | `23-health-sickness.md` | 2 |
 | **開關** | `hoi1gwaan1` | switch / to turn on or off | `24-tech-apps-slang.md` | 2 |
@@ -330,7 +329,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **人哋** | `jan4dei6` | others / other people | `13-passives-focus-indirect.md` | 4 |
 | **人工** | `jan4gung1` | salary | `16-workplace-slang.md` | 5 |
 | **入面** | `jap6min6` | inside | `04-existentials-places.md` | 11 |
-| **一** | `jat1` | one | `02-shopping-slang.md` | 25 |
+| **一** | `jat1` | one | `02-shopping-slang.md` | 26 |
 | **一齊** | `jat1cai4` | together | `09-split-verbs-idioms.md` | 5 |
 | **一樣** | `jat1joeng6` | same / alike / identical | `07-comparatives-descriptors.md` | 5 |
 | **日** | `jat6` | day / sun / day / date | `00-pronunciation-jyutping.md` | 3 |
@@ -390,12 +389,12 @@ This is an automatically generated vocabulary database compiled from all course 
 | **月** | `jyut6` | month | `21-housing-neighborhood.md` | 1 |
 | **卡拉** | `kaa1laa1` | karaoke | `22-entertainment-nightlife.md` | 1 |
 | **琴日** | `kam4jat6` | yesterday (variant) | `11-narrative-cohesion.md` | 4 |
-| **琴晚** | `kam4maan5` | last night / last night (variant) | `22-entertainment-nightlife.md` | 5 |
-| **咳** | `kat1` | to cough / cough | `23-health-sickness.md` | 2 |
+| **琴晚** | `kam4maan5` | last night / last night (variant) | `22-entertainment-nightlife.md` | 6 |
+| **咳** | `kat1` | to cough / cough | `23-health-sickness.md` | 3 |
 | **佢** | `keoi5` | he / she / it / him | `01-greetings.md` | 71 |
 | **佢哋** | `keoi5dei6` | they / them | `01-greetings.md` | 12 |
 | **傾** | `king1` | to talk / chat | `09-split-verbs-idioms.md` | 1 |
-| **啦** | `laa1` | particle / sentence-final particle suggesting, requesting, or encouraging action / softening particle | `00-pronunciation-jyutping.md` | 127 |
+| **啦** | `laa1` | particle / sentence-final particle suggesting, requesting, or encouraging action / softening particle | `00-pronunciation-jyutping.md` | 132 |
 | **喇** | `laa3` | sentence-final particle indicating a change of state or already | `08-particles-nuance.md` | 23 |
 | **喇喎** | `laa3wo3` | sentence-final particle combination indicating warning, sudden realization, or change of state | `08-particles-nuance.md` | 13 |
 | **like** | `laaik1` | likes (social media) | `19-social-media-slang.md` | 3 |
@@ -415,7 +414,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **零** | `ling4` | zero | `05-time-continuous.md` | 3 |
 | **囉** | `lo1` | sentence-final particle showing obviousness, resignation, or 'of course' / obviousness particle / sentence-final particle expressing obviousness or mild resignation / sentence-final particle showing obviousness or exclamation | `04-existentials-places.md` | 51 |
 | **攞** | `lo2` | to get / take / fetch | `23-health-sickness.md` | 2 |
-| **兩** | `loeng5` | two / pair (used with classifiers) | `02-shopping-slang.md` | 37 |
+| **兩** | `loeng5` | two / pair (used with classifiers) | `02-shopping-slang.md` | 38 |
 | **兩按一上** | `loeng5on3jat1soeng5` | two months deposit and one month rent in advance | `21-housing-neighborhood.md` | 2 |
 | **落** | `lok6` | get off | `20-travel-transport.md` | 1 |
 | **落車** | `lok6ce1` | to get off a vehicle | `20-travel-transport.md` | 5 |
@@ -433,7 +432,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **唔好意思** | `m4 hou2 ji3si1` | sorry | `19-social-media-slang.md` | 1 |
 | **唔單止** | `m4daan1zi2` | not only | `11-narrative-cohesion.md` | 10 |
 | **唔到** | `m4dou2` | cannot / unable to manage to / fail to | `06-ability-experience.md` | 14 |
-| **唔該** | `m4goi1` | excuse me / excuse me / please / thank you (for service or help) | `02-shopping-slang.md` | 48 |
+| **唔該** | `m4goi1` | excuse me / excuse me / please / thank you (for service or help) | `02-shopping-slang.md` | 52 |
 | **唔該晒** | `m4goi1saai3` | thank you very much | `20-travel-transport.md` | 1 |
 | **唔係** | `m4hai6` | no / not so / that's not the case | `23-health-sickness.md` | 1 |
 | **唔開心** | `m4hoi1sam1` | sad / unhappy | `11-narrative-cohesion.md` | 4 |
@@ -444,7 +443,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **嘛** | `maa3` | sentence-final particle indicating a statement is an obvious truth or reminder / asserting a known truth | `08-particles-nuance.md` | 11 |
 | **埋** | `maai4` | also | `18-shopping-bargaining.md` | 1 |
 | **買** | `maai5` | to buy | `02-shopping-slang.md` | 18 |
-| **埋單** | `maai5daan1` | to pay the bill / get the check / pay bill | `03-dining-out.md` | 3 |
+| **埋單** | `maai5daan1` | to pay the bill / to pay the bill / get the check / pay bill | `03-dining-out.md` | 4 |
 | **買入** | `maai5jap6` | to buy in / purchase shares | `25-finance-investing-slang.md` | 2 |
 | **賣** | `maai6` | sell / to sell | `18-shopping-bargaining.md` | 2 |
 | **賣出** | `maai6ceot1` | to sell out / sell shares | `25-finance-investing-slang.md` | 4 |
@@ -453,7 +452,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **貓** | `maau1` | cat | `04-existentials-places.md` | 6 |
 | **咪** | `mai6` | then / indeed (contraction of 唔係) | `24-tech-apps-slang.md` | 1 |
 | **VAN** | `man1` | minibus (loanword) | `20-travel-transport.md` | 4 |
-| **蚊** | `man1` | dollar (spoken Cantonese colloquial unit of currency) | `02-shopping-slang.md` | 27 |
+| **蚊** | `man1` | dollar (spoken Cantonese colloquial unit of currency) | `02-shopping-slang.md` | 28 |
 | **問** | `man6` | to ask / inquire | `08-particles-nuance.md` | 2 |
 | **問題** | `man6tai4` | problem | `15-rhetorical-questions.md` | 1 |
 | **乜** | `mat1` | how / why / how / why / rhetorical prefix | `15-rhetorical-questions.md` | 11 |
@@ -478,13 +477,13 @@ This is an automatically generated vocabulary database compiled from all course 
 | **門口** | `mun4hau2` | doorway / entrance | `24-tech-apps-slang.md` | 1 |
 | **悶** | `mun6` | boring / bored | `22-entertainment-nightlife.md` | 1 |
 | **夢** | `mung6` | dream | `10-hypotheticals-conditionals.md` | 7 |
-| **奶茶** | `naai5caa4` | milk tea (typically Hong Kong-style) | `03-dining-out.md` | 11 |
+| **奶茶** | `naai5caa4` | milk tea (typically Hong Kong-style) | `03-dining-out.md` | 12 |
 | **男神** | `naam4san4` | male god / ideal man | `19-social-media-slang.md` | 1 |
 | **難** | `naan4` | difficult / hard | `07-comparatives-descriptors.md` | 1 |
 | **諗住** | `nam2zyu6` | to intend / plan / think of | `11-narrative-cohesion.md` | 5 |
 | **嬲** | `nau1` | angry / mad | `08-particles-nuance.md` | 2 |
 | **呢** | `ne1` | sentence-final particle for queries (how about / what about) / how about / sentence-final particle for queries or friendly follow-ups / particle for queries, gentle pause, or contrast | `01-greetings.md` | 6 |
-| **你** | `nei5` | you / your | `00-pronunciation-jyutping.md` | 150 |
+| **你** | `nei5` | you / your | `00-pronunciation-jyutping.md` | 151 |
 | **你哋** | `nei5dei6` | you (plural) | `01-greetings.md` | 2 |
 | **你好** | `nei5hou2` | hello / hi | `01-greetings.md` | 10 |
 | **女神** | `neoi5san4` | goddess / ideal woman | `19-social-media-slang.md` | 1 |
@@ -492,7 +491,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **啱** | `ngaam1` | correct / right / suitable / fit | `07-comparatives-descriptors.md` | 1 |
 | **銀包** | `ngan4baau1` | wallet / purse | `04-existentials-places.md` | 6 |
 | **牛市** | `ngau4si5` | bull market | `25-finance-investing-slang.md` | 4 |
-| **我** | `ngo5` | I / I / me | `00-pronunciation-jyutping.md` | 234 |
+| **我** | `ngo5` | I / I / me | `00-pronunciation-jyutping.md` | 235 |
 | **我哋** | `ngo5dei6` | we / us | `01-greetings.md` | 37 |
 | **外面** | `ngoi6min6` | outside | `04-existentials-places.md` | 1 |
 | **呢** | `ni1` | this | `07-comparatives-descriptors.md` | 35 |
@@ -514,7 +513,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **朋友** | `pang4jau5` | friend | `01-greetings.md` | 4 |
 | **劈酒** | `pek3zau2` | to drink heavily / drink competitively | `22-entertainment-nightlife.md` | 3 |
 | **平** | `peng4` | cheap / inexpensive | `07-comparatives-descriptors.md` | 14 |
-| **平啲** | `peng4 di1` | cheaper / cheaper / a bit cheaper | `18-shopping-bargaining.md` | 3 |
+| **平啲** | `peng4 di1` | cheaper / a bit cheaper | `18-shopping-bargaining.md` | 2 |
 | **平啲啦** | `peng4 di1 laa1` | cheaper please | `18-shopping-bargaining.md` | 1 |
 | **P** | `pi1` | party (loanword) | `19-social-media-slang.md` | 2 |
 | **片** | `pin2` | video / movie / short clip | `24-tech-apps-slang.md` | 4 |
@@ -557,7 +556,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **射波** | `se6bo1` | to fake sick / call in sick falsely / play truant | `23-health-sickness.md` | 5 |
 | **死** | `sei2` | extremely / to death | `14-intensifiers-exaggeration.md` | 10 |
 | **四** | `sei3` | four | `02-shopping-slang.md` | 10 |
-| **成日** | `seng4jat6` | always | `16-workplace-slang.md` | 3 |
+| **成日** | `seng4jat6` | always | `16-workplace-slang.md` | 4 |
 | **衰** | `seoi1` | bad / mean / wicked | `09-split-verbs-idioms.md` | 1 |
 | **雖然** | `seoi1jin4` | although / even though | `11-narrative-cohesion.md` | 12 |
 | **水** | `seoi2` | water | `09-split-verbs-idioms.md` | 12 |
@@ -572,7 +571,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **時** | `si4` | time / hour | `00-pronunciation-jyutping.md` | 3 |
 | **時候** | `si4hau6` | time / when | `21-housing-neighborhood.md` | 1 |
 | **市** | `si5` | market / city | `00-pronunciation-jyutping.md` | 2 |
-| **事** | `si6` | matter / business / affair | `00-pronunciation-jyutping.md` | 3 |
+| **事** | `si6` | matter / business / affair | `00-pronunciation-jyutping.md` | 2 |
 | **息** | `sik1` | interest / dividend | `25-finance-investing-slang.md` | 2 |
 | **熄** | `sik1` | to turn off / extinguish (a light, device, etc.) | `24-tech-apps-slang.md` | 4 |
 | **識** | `sik1` | to know / to know / speak (a language) / have a skill / to know / be familiar with / speak (a language) / to know / know how to / be familiar with | `01-greetings.md` | 24 |
@@ -597,9 +596,9 @@ This is an automatically generated vocabulary database compiled from all course 
 | **少甜** | `siu2tim4` | less sweet | `17-foodie-slang.md` | 4 |
 | **鎖** | `so2` | to lock / lock | `24-tech-apps-slang.md` | 2 |
 | **所有** | `so2jau5` | all / every | `14-intensifiers-exaggeration.md` | 13 |
-| **所以** | `so2ji5` | therefore / so | `11-narrative-cohesion.md` | 8 |
+| **所以** | `so2ji5` | therefore / so | `11-narrative-cohesion.md` | 7 |
 | **鎖匙** | `so2si4` | key / key / keys | `04-existentials-places.md` | 2 |
-| **想** | `soeng2` | want to / to want to / would like to / think / to want / would like to | `00-pronunciation-jyutping.md` | 53 |
+| **想** | `soeng2` | want to / to want to / would like to / think / to want / would like to | `00-pronunciation-jyutping.md` | 54 |
 | **相** | `soeng2` | photo / picture | `19-social-media-slang.md` | 5 |
 | **想唔想** | `soeng2 m4 soeng2` | do you want to (A-not-A question form) | `06-ability-experience.md` | 1 |
 | **相機食先** | `soeng2gei1sik6sin1` | camera eats first (taking pictures of food before eating) | `17-foodie-slang.md` | 4 |
@@ -632,8 +631,8 @@ This is an automatically generated vocabulary database compiled from all course 
 | **甜** | `tim4` | sweet / romantic | `19-social-media-slang.md` | 2 |
 | **天橋** | `tin1kiu4` | pedestrian flyover / footbridge | `20-travel-transport.md` | 3 |
 | **聽講** | `ting1gong2` | to hear of / be told / hear say | `15-rhetorical-questions.md` | 4 |
-| **聽日** | `ting1jat6` | tomorrow | `05-time-continuous.md` | 17 |
-| **聽落** | `ting1lok6` | sounds like | `23-health-sickness.md` | 1 |
+| **聽日** | `ting1jat6` | tomorrow | `06-ability-experience.md` | 16 |
+| **聽落** | `ting1lok6` | sounds like | `23-health-sickness.md` | 2 |
 | **跳** | `tiu3` | to jump / leap / dance | `09-split-verbs-idioms.md` | 1 |
 | **跳舞** | `tiu3mou5` | to dance | `09-split-verbs-idioms.md` | 2 |
 | **條** | `tiu4` | measure word for long, thin objects / measure word for long, thin things, also videos/messages | `18-shopping-bargaining.md` | 10 |
@@ -649,7 +648,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **屋企** | `uk1kei2` | home / home / house | `22-entertainment-nightlife.md` | 2 |
 | **哇** | `waa1` | wow / whoa | `09-split-verbs-idioms.md` | 8 |
 | **話** | `waa6` | to say / tell / words / speech / to scold | `08-particles-nuance.md` | 21 |
-| **或者** | `waak6ze2` | perhaps / or | `22-entertainment-nightlife.md` | 3 |
+| **或者** | `waak6ze2` | perhaps / or | `22-entertainment-nightlife.md` | 4 |
 | **玩** | `waan2` | to play / have fun / enjoy | `10-hypotheticals-conditionals.md` | 13 |
 | **還** | `waan4` | to return / repay | `25-finance-investing-slang.md` | 1 |
 | **環境** | `waan4ging2` | environment / surroundings | `21-housing-neighborhood.md` | 4 |
@@ -657,7 +656,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **位** | `wai2` | seat | `17-foodie-slang.md` | 1 |
 | **喂** | `wai2` | hey / hey! / hey / hello (typically answering phone or calling for attention) | `00-pronunciation-jyutping.md` | 9 |
 | **為咗** | `wai6zo2` | for | `16-workplace-slang.md` | 1 |
-| **搵** | `wan2` | to find / look for / seek | `12-regrets-wishes-empathy.md` | 1 |
+| **搵** | `wan2` | to find / look for / search / to find / look for / seek | `04-existentials-places.md` | 3 |
 | **搵樓** | `wan2lau2` | to look for apartments / flat-hunting | `21-housing-neighborhood.md` | 2 |
 | **搵食** | `wan2sik6` | to make a living | `16-workplace-slang.md` | 5 |
 | **喎** | `wo3` | sentence-final particle indicating reported speech, surprise, or warning | `07-comparatives-descriptors.md` | 22 |
@@ -668,7 +667,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **炸** | `zaa3` | only (sentence-final particle) | `21-housing-neighborhood.md` | 1 |
 | **站** | `zaam6` | station / stop | `20-travel-transport.md` | 1 |
 | **賺** | `zaan6` | to earn / profit / make money | `25-finance-investing-slang.md` | 7 |
-| **找** | `zaau2` | to give change / look for / seek / to look for | `02-shopping-slang.md` | 5 |
+| **找** | `zaau2` | to give change / look for / seek | `02-shopping-slang.md` | 2 |
 | **真** | `zan1` | real / true | `15-rhetorical-questions.md` | 7 |
 | **真係** | `zan1hai6` | really / truly | `08-particles-nuance.md` | 26 |
 | **周圍** | `zau1wai4` | around / surroundings | `21-housing-neighborhood.md` | 2 |
@@ -676,8 +675,9 @@ This is an automatically generated vocabulary database compiled from all course 
 | **酒吧** | `zau2baa1` | bar / pub | `22-entertainment-nightlife.md` | 2 |
 | **走冰** | `zau2bing1` | no ice | `17-foodie-slang.md` | 3 |
 | **走甜** | `zau2tim4` | no sugar / unsweetened | `17-foodie-slang.md` | 2 |
-| **就** | `zau6` | then / right away / immediately | `10-hypotheticals-conditionals.md` | 21 |
-| **就快** | `zau6faai3` | soon / quickly / about to | `24-tech-apps-slang.md` | 1 |
+| **就** | `zau6` | then / right away / immediately | `10-hypotheticals-conditionals.md` | 22 |
+| **就快爆數據** | `zau6 faai3 baau3 sou3 geoi3` | about to exceed data limit | `24-tech-apps-slang.md` | 1 |
+| **就快** | `zau6faai3` | soon / about to / soon / quickly / about to | `24-tech-apps-slang.md` | 2 |
 | **就可以** | `zau6ho2ji5` | then can / can easily | `24-tech-apps-slang.md` | 2 |
 | **啫** | `ze1` | sentence-final particle meaning 'only', 'just', or downplaying something / only / just | `06-ability-experience.md` | 18 |
 | **借** | `ze3` | to borrow / lend | `25-finance-investing-slang.md` | 1 |
@@ -685,7 +685,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **正** | `zeng3` | excellent / excellent / awesome / great | `14-intensifiers-exaggeration.md` | 2 |
 | **最** | `zeoi3` | most / superlative prefix | `07-comparatives-descriptors.md` | 17 |
 | **醉** | `zeoi3` | drunk | `22-entertainment-nightlife.md` | 2 |
-| **最近** | `zeoi3gan6` | recently / lately | `25-finance-investing-slang.md` | 3 |
+| **最近** | `zeoi3gan6` | recently / lately | `25-finance-investing-slang.md` | 4 |
 | **最後** | `zeoi3hau6` | finally / at last / in the end | `22-entertainment-nightlife.md` | 1 |
 | **最好** | `zeoi3hou2` | best / preferably | `21-housing-neighborhood.md` | 2 |
 | **知** | `zi1` | to know / be aware of | `08-particles-nuance.md` | 8 |

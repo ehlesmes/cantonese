@@ -70,6 +70,9 @@ involves standard and colloquial terms:
 - `短線[dyun2sin3|short term]`: A short-term time horizon for trading.
 - `身家[san1gaa1|net worth / personal fortune]`: A person's entire net worth,
   net fortune, or personal wealth.
+- `最近[zeoi3gan6|recently / lately]`: Recently, lately.
+- `噉樣[gam2joeng6|in this way / like this / this pattern]`: In this way, like
+  this.
 
 ---
 

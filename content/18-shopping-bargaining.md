@@ -106,10 +106,10 @@ A: 唔該[m4goi1|excuse me]，老闆[lou5baan2|boss / proprietor]，呢[ni1|this
    === Excuse me, boss, how much are these pants?
 B: 呢[ni1|this]條[tiu4|measure word for long, thin objects]褲[fu3|pants / trousers]好[hou2|very]靚[leng3|high quality]嘅[ge3|final assertive particle]，三[saam1|three]百[baak3|hundred]八[baat3|eight]十[sap6|ten]蚊[man1|dollar]。
    === These pants are of very high quality, three hundred and eighty dollars.
-A: 三[saam1|three]百[baak3|hundred]八[baat3|eight]十[sap6|ten]蚊[man1|dollar]？鬼死咁[gwai2sei2gam3|extremely]貴[gwai3|expensive]！平啲[peng4 di1|cheaper]得唔得[dak1 m4 dak1|can or not]呀[aa3|particle]？
-   === Three hundred and eighty dollars? Extremely expensive! Can it be a bit cheaper?
+A: 三[saam1|three]百[baak3|hundred]八[baat3|eight]十[sap6|ten]蚊[man1|dollar]？鬼死咁[gwai2sei2gam3|extremely]貴[gwai3|expensive]！兩[loeng5|two]百[baak3|hundred]蚊[man1|dollar]得唔得[dak1 m4 dak1|can or not]呀[aa3|particle]？
+   === Three hundred and eighty dollars? Extremely expensive! Is two hundred dollars okay?
 B: 兩[loeng5|two]百[baak3|hundred]蚊[man1|dollar]太[taai3|too]平[peng4|cheap]啦[laa1|particle]，賣[maai6|sell]唔到[m4dou2|cannot]！不如[bat1jyu4|how about]咁[gam3|so]啦[laa1|particle]，你[nei5|you]買[maai5|buy]埋[maai4|also]呢[ni1|this]件[gin6|measure word for clothes, matters, and items]衫[saam1|clothes / clothing / shirt]，我[ngo5|I]俾[bei2|give]個[go3|general measure word]折[zit3|discount]你[nei5|you]。兩[loeng5|two]件[gin6|measure word for clothes, matters, and items]三[saam1|three]百[baak3|hundred]二[ji6|two]十[sap6|ten]蚊[man1|dollar]啦[laa1|particle]！
-   === Two pieces for three hundred and twenty dollars then!
+   === Two hundred dollars is too cheap, I can't sell it! How about this: if you also buy this shirt, I'll give you a discount. Two pieces for three hundred and twenty dollars then!
 A: 好啦[hou2 laa1|okay]！你[nei5|you]真係[zan1hai6|really]好[hou2|very]叻[lek1|smart]講價[gong2 gaa3|to bargain]！
    === Okay! You are really smart at bargaining!
 ```

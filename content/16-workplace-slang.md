@@ -189,7 +189,7 @@ B: 原來[jyun4loi4|as it turns out] 係[hai6|to be] 咁[gam3|so]！ 佢[keoi5|h
    === So that's how it is! He really likes to chill. Then do we need to work overtime tomorrow?
 A: 要[jiu3|need] 呀[aa3|particle]！ 老細[lou5sai3|boss] 話[waa6|to say / tell / words / speech] 今日[gam1jat6|today] 嘅[ge3|possessive particle] 工作[gung1zok3|work] 全部[cyun4bou6|all] 都[dou1|also] 要[jiu3|need] 搞掂[gaau2dim6|done]。 我[ngo5|I] 攰[gui6|tired] 死[sei2|extremely] 啦[laa1|particle]！
    === Yes indeed! The boss said today's work all needs to be finished. I'm tired to death!
-B: 係[hai6|to be] 呀[aa3|particle]， 辛苦[san1fu2|painstaking] 啦[laa1|particle]！ 我[ngo5|I] 都[dou1|also] 想[soeng2|want to] 幫[bong1|for] 我[ngo5|me] 加人工[gaa1jan4gung1|to get a raise] 呀[aa3|particle]！
+B: 係[hai6|to be] 呀[aa3|particle]， 辛苦[san1fu2|painstaking] 啦[laa1|particle]！ 我[ngo5|I] 都[dou1|also] 想[soeng2|to want to / would like to / think] 加人工[gaa1jan4gung1|to get a raise] 呀[aa3|particle softening statements, making questions friendly]！
    === Yeah, exhausting indeed! I also want to get a raise for myself!
 A: 係[hai6|to be] 呀[aa3|particle]， 如果[jyu4gwo2|if] 有[jau5|have] 錢[cin2|money]， 我哋[ngo5dei6|we] 點會[dim2wui5|how could] 成日[seng4jat6|always] 辛苦[san1fu2|painstakingly] 返工[faan1gung1|go to work] 呀[aa3|particle]？
    === Indeed, if we had money, how could we always go to work so hard?

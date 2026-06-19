@@ -82,6 +82,13 @@ standard spoken slangs:
   "explode data," meaning to exceed your monthly mobile data plan limit.
 - `密碼[mat6maa5|password]`: Password.
 - `戶口[wu6hau2|account (bank/online)]`: A user account.
+- `就快[zau6faai3|soon / about to]`: Soon, about to (often used before a verb,
+  e.g., `就快爆數據[zau6 faai3 baau3 sou3 geoi3|about to exceed data limit]`).
+- `百分之十[baak3fan6zi1sap6|ten percent]`: Ten percent.
+- `插頭[caap3tau4|electrical socket / plug]`: Electrical socket, plug.
+- `牆[coeng4|wall]`: Wall.
+- `系統[hai6tung2|system]`: System.
+- `大聲[daai6sing1|loudly / loud voice]`: Loudly, loud voice.
 
 ---
 

@@ -1,17 +1,10 @@
 [
   {
-    "character": "IG",
-    "jyutping": "aa1zi1",
-    "translation": "Instagram",
-    "firstIntroducedIn": "19-social-media-slang.md",
-    "occurrences": 2
-  },
-  {
     "character": "呀",
     "jyutping": "aa3",
     "translation": "particle / sentence-final particle softening statements, making questions friendly",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 308
+    "occurrences": 310
   },
   {
     "character": "阿",
@@ -46,14 +39,14 @@
     "jyutping": "aan3",
     "translation": "late",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "IG",
     "jyutping": "ai1zi1",
-    "translation": "Instagram (slang)",
-    "firstIntroducedIn": "24-tech-apps-slang.md",
-    "occurrences": 2
+    "translation": "Instagram / Instagram (slang)",
+    "firstIntroducedIn": "19-social-media-slang.md",
+    "occurrences": 4
   },
   {
     "character": "嘔",
@@ -88,14 +81,14 @@
     "jyutping": "baak3",
     "translation": "hundred",
     "firstIntroducedIn": "18-shopping-bargaining.md",
-    "occurrences": 6
+    "occurrences": 7
   },
   {
     "character": "百分之十",
     "jyutping": "baak3fan6zi1sap6",
     "translation": "ten percent",
     "firstIntroducedIn": "24-tech-apps-slang.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "白",
@@ -170,9 +163,9 @@
   {
     "character": "俾",
     "jyutping": "bei2",
-    "translation": "to give / for / by / to give / to give / for / let / allow",
-    "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 31
+    "translation": "to give / to give / for / by / to give / to give / for / let / allow",
+    "firstIntroducedIn": "03-dining-out.md",
+    "occurrences": 33
   },
   {
     "character": "病",
@@ -242,7 +235,7 @@
     "jyutping": "bong1",
     "translation": "for / to help / for / on behalf of",
     "firstIntroducedIn": "16-workplace-slang.md",
-    "occurrences": 4
+    "occurrences": 3
   },
   {
     "character": "幫手",
@@ -277,7 +270,7 @@
     "jyutping": "bui1",
     "translation": "cup / glass / mug (classifier for drinks)",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 17
+    "occurrences": 18
   },
   {
     "character": "搬屋",
@@ -340,7 +333,7 @@
     "jyutping": "caap3tau4",
     "translation": "electrical socket / plug",
     "firstIntroducedIn": "24-tech-apps-slang.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "炒",
@@ -515,7 +508,7 @@
     "jyutping": "cing2gaa3",
     "translation": "to apply for leave / request time off",
     "firstIntroducedIn": "23-health-sickness.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "請問",
@@ -564,7 +557,7 @@
     "jyutping": "coeng4",
     "translation": "wall",
     "firstIntroducedIn": "24-tech-apps-slang.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "長線",
@@ -695,9 +688,9 @@
   {
     "character": "大聲",
     "jyutping": "daai6sing1",
-    "translation": "loud voice / loudly",
+    "translation": "loudly / loud voice / loud voice / loudly",
     "firstIntroducedIn": "24-tech-apps-slang.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "單",
@@ -732,7 +725,7 @@
     "jyutping": "daan6taat1",
     "translation": "egg tart",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 11
+    "occurrences": 12
   },
   {
     "character": "搭車",
@@ -774,7 +767,7 @@
     "jyutping": "dak1haan4",
     "translation": "free / having spare time",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "得滯",
@@ -1012,7 +1005,7 @@
     "jyutping": "do1ze6",
     "translation": "thank you (for a gift, compliment, or hospitality) / thank you (for a gift)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 6
+    "occurrences": 12
   },
   {
     "character": "都",
@@ -1026,7 +1019,7 @@
     "jyutping": "dung3",
     "translation": "cold / iced",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 23
+    "occurrences": 24
   },
   {
     "character": "凍檸茶",
@@ -1453,7 +1446,7 @@
     "jyutping": "gam2",
     "translation": "then / in that case / so",
     "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 25
+    "occurrences": 26
   },
   {
     "character": "敢",
@@ -1467,7 +1460,7 @@
     "jyutping": "gam2joeng6",
     "translation": "in this way / like this / this pattern",
     "firstIntroducedIn": "25-finance-investing-slang.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "感冒",
@@ -1516,7 +1509,7 @@
     "jyutping": "ge3",
     "translation": "particle / possessive particle / nominalizing particle / final assertive particle / associative particle / possessive or linking particle / possessive / associative / focus particle",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 61
+    "occurrences": 62
   },
   {
     "character": "基金",
@@ -1531,6 +1524,13 @@
     "translation": "quite / pretty / fairly",
     "firstIntroducedIn": "21-housing-neighborhood.md",
     "occurrences": 5
+  },
+  {
+    "character": "幾晏",
+    "jyutping": "gei2 aan3",
+    "translation": "quite late",
+    "firstIntroducedIn": "22-entertainment-nightlife.md",
+    "occurrences": 1
   },
   {
     "character": "幾錢",
@@ -1607,7 +1607,7 @@
     "jyutping": "gim2caa4",
     "translation": "to examine / check / inspect",
     "firstIntroducedIn": "23-health-sickness.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "見",
@@ -1622,13 +1622,6 @@
     "translation": "measure word for clothes, matters, and items",
     "firstIntroducedIn": "07-comparatives-descriptors.md",
     "occurrences": 25
-  },
-  {
-    "character": "經常",
-    "jyutping": "ging1soeng4",
-    "translation": "often / frequently",
-    "firstIntroducedIn": "22-entertainment-nightlife.md",
-    "occurrences": 1
   },
   {
     "character": "叫",
@@ -1656,7 +1649,7 @@
     "jyutping": "go2dou6",
     "translation": "there",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "嗰個",
@@ -1747,7 +1740,7 @@
     "jyutping": "gung1si1",
     "translation": "company / office",
     "firstIntroducedIn": "04-existentials-places.md",
-    "occurrences": 15
+    "occurrences": 16
   },
   {
     "character": "工作",
@@ -1817,14 +1810,14 @@
     "jyutping": "haa2",
     "translation": "what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 12
+    "occurrences": 9
   },
   {
     "character": "吓",
     "jyutping": "haa5",
     "translation": "verbal suffix indicating a brief action or attempt",
-    "firstIntroducedIn": "23-health-sickness.md",
-    "occurrences": 3
+    "firstIntroducedIn": "07-comparatives-descriptors.md",
+    "occurrences": 6
   },
   {
     "character": "下場",
@@ -1950,7 +1943,7 @@
     "jyutping": "hai6gam2",
     "translation": "continuously / constantly",
     "firstIntroducedIn": "23-health-sickness.md",
-    "occurrences": 1
+    "occurrences": 3
   },
   {
     "character": "係咩",
@@ -1964,7 +1957,7 @@
     "jyutping": "hai6tung2",
     "translation": "system",
     "firstIntroducedIn": "24-tech-apps-slang.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "行",
@@ -2076,7 +2069,7 @@
     "jyutping": "hoeng3",
     "translation": "towards / to",
     "firstIntroducedIn": "23-health-sickness.md",
-    "occurrences": 2
+    "occurrences": 4
   },
   {
     "character": "開",
@@ -2286,7 +2279,7 @@
     "jyutping": "jat1",
     "translation": "one",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 25
+    "occurrences": 26
   },
   {
     "character": "一齊",
@@ -2706,14 +2699,14 @@
     "jyutping": "kam4maan5",
     "translation": "last night / last night (variant)",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
-    "occurrences": 5
+    "occurrences": 6
   },
   {
     "character": "咳",
     "jyutping": "kat1",
     "translation": "to cough / cough",
     "firstIntroducedIn": "23-health-sickness.md",
-    "occurrences": 2
+    "occurrences": 3
   },
   {
     "character": "佢",
@@ -2741,7 +2734,7 @@
     "jyutping": "laa1",
     "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action / softening particle",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 127
+    "occurrences": 132
   },
   {
     "character": "喇",
@@ -2881,7 +2874,7 @@
     "jyutping": "loeng5",
     "translation": "two / pair (used with classifiers)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 37
+    "occurrences": 38
   },
   {
     "character": "兩按一上",
@@ -3007,7 +3000,7 @@
     "jyutping": "m4goi1",
     "translation": "excuse me / excuse me / please / thank you (for service or help)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 48
+    "occurrences": 52
   },
   {
     "character": "唔該晒",
@@ -3082,9 +3075,9 @@
   {
     "character": "埋單",
     "jyutping": "maai5daan1",
-    "translation": "to pay the bill / get the check / pay bill",
+    "translation": "to pay the bill / to pay the bill / get the check / pay bill",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "買入",
@@ -3147,7 +3140,7 @@
     "jyutping": "man1",
     "translation": "dollar (spoken Cantonese colloquial unit of currency)",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 27
+    "occurrences": 28
   },
   {
     "character": "問",
@@ -3322,7 +3315,7 @@
     "jyutping": "naai5caa4",
     "translation": "milk tea (typically Hong Kong-style)",
     "firstIntroducedIn": "03-dining-out.md",
-    "occurrences": 11
+    "occurrences": 12
   },
   {
     "character": "男神",
@@ -3364,7 +3357,7 @@
     "jyutping": "nei5",
     "translation": "you / your",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 150
+    "occurrences": 151
   },
   {
     "character": "你哋",
@@ -3420,7 +3413,7 @@
     "jyutping": "ngo5",
     "translation": "I / I / me",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 234
+    "occurrences": 235
   },
   {
     "character": "我哋",
@@ -3572,9 +3565,9 @@
   {
     "character": "平啲",
     "jyutping": "peng4 di1",
-    "translation": "cheaper / cheaper / a bit cheaper",
+    "translation": "cheaper / a bit cheaper",
     "firstIntroducedIn": "18-shopping-bargaining.md",
-    "occurrences": 3
+    "occurrences": 2
   },
   {
     "character": "平啲啦",
@@ -3875,7 +3868,7 @@
     "jyutping": "seng4jat6",
     "translation": "always",
     "firstIntroducedIn": "16-workplace-slang.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "衰",
@@ -3980,7 +3973,7 @@
     "jyutping": "si6",
     "translation": "matter / business / affair",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 3
+    "occurrences": 2
   },
   {
     "character": "息",
@@ -4155,7 +4148,7 @@
     "jyutping": "so2ji5",
     "translation": "therefore / so",
     "firstIntroducedIn": "11-narrative-cohesion.md",
-    "occurrences": 8
+    "occurrences": 7
   },
   {
     "character": "鎖匙",
@@ -4169,7 +4162,7 @@
     "jyutping": "soeng2",
     "translation": "want to / to want to / would like to / think / to want / would like to",
     "firstIntroducedIn": "00-pronunciation-jyutping.md",
-    "occurrences": 53
+    "occurrences": 54
   },
   {
     "character": "相",
@@ -4399,15 +4392,15 @@
     "character": "聽日",
     "jyutping": "ting1jat6",
     "translation": "tomorrow",
-    "firstIntroducedIn": "05-time-continuous.md",
-    "occurrences": 17
+    "firstIntroducedIn": "06-ability-experience.md",
+    "occurrences": 16
   },
   {
     "character": "聽落",
     "jyutping": "ting1lok6",
     "translation": "sounds like",
     "firstIntroducedIn": "23-health-sickness.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "跳",
@@ -4519,7 +4512,7 @@
     "jyutping": "waak6ze2",
     "translation": "perhaps / or",
     "firstIntroducedIn": "22-entertainment-nightlife.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "玩",
@@ -4573,9 +4566,9 @@
   {
     "character": "搵",
     "jyutping": "wan2",
-    "translation": "to find / look for / seek",
-    "firstIntroducedIn": "12-regrets-wishes-empathy.md",
-    "occurrences": 1
+    "translation": "to find / look for / search / to find / look for / seek",
+    "firstIntroducedIn": "04-existentials-places.md",
+    "occurrences": 3
   },
   {
     "character": "搵樓",
@@ -4650,9 +4643,9 @@
   {
     "character": "找",
     "jyutping": "zaau2",
-    "translation": "to give change / look for / seek / to look for",
+    "translation": "to give change / look for / seek",
     "firstIntroducedIn": "02-shopping-slang.md",
-    "occurrences": 5
+    "occurrences": 2
   },
   {
     "character": "真",
@@ -4708,14 +4701,21 @@
     "jyutping": "zau6",
     "translation": "then / right away / immediately",
     "firstIntroducedIn": "10-hypotheticals-conditionals.md",
-    "occurrences": 21
+    "occurrences": 22
+  },
+  {
+    "character": "就快爆數據",
+    "jyutping": "zau6 faai3 baau3 sou3 geoi3",
+    "translation": "about to exceed data limit",
+    "firstIntroducedIn": "24-tech-apps-slang.md",
+    "occurrences": 1
   },
   {
     "character": "就快",
     "jyutping": "zau6faai3",
-    "translation": "soon / quickly / about to",
+    "translation": "soon / about to / soon / quickly / about to",
     "firstIntroducedIn": "24-tech-apps-slang.md",
-    "occurrences": 1
+    "occurrences": 2
   },
   {
     "character": "就可以",
@@ -4771,7 +4771,7 @@
     "jyutping": "zeoi3gan6",
     "translation": "recently / lately",
     "firstIntroducedIn": "25-finance-investing-slang.md",
-    "occurrences": 3
+    "occurrences": 4
   },
   {
     "character": "最後",

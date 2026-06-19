@@ -242,7 +242,7 @@ A: 吓[haa2|what]？ 冇[mou5|not have] 呀[aa3|particle]！ 電腦[din6nou5|com
    === What? It's not there! There is no wallet on top of the computer.
 B: 喺[hai2|at / in / on] 電腦[din6nou5|computer] 後面[hau6min6|behind] 囉[lo1|obviousness particle]！ 睇[tai2|to look / see] 咗[zo2|completed] 未[mei6|not yet] 呀[aa3|particle]？
    === It is behind the computer, obviously! Have you looked yet?
-A: 找[zaau2|to look for] 咗[zo2|completed] 啦[laa1|particle]，有[jau5|to have] 呀[aa3|particle]！ 多謝[do1ze6|thank you]！
+A: 搵[wan2|to find / look for / search] 咗[zo2|completed] 啦[laa1|particle]，有[jau5|to have] 呀[aa3|particle]！ 多謝[do1ze6|thank you]！
    === I looked and found it! Thank you!
 A: 同埋[tung4maai4|and] 我[ngo5|I] 個[go3|unit] 鎖匙[so2si4|key] 呢[ne1|particle]？ 喺[hai2|at / in / on] 邊度[bin1dou6|where] 呀[aa3|particle]？
    === And what about my keys? Where are they?
@@ -252,7 +252,7 @@ A: 廚房[cyu4fong2|kitchen] 邊度[bin1dou6|where] 呀[aa3|particle]？
    === Where in the kitchen?
 B: 喺[hai2|at / in / on] 咖啡[gaa3fe1|coffee] 隔籬[gaak3lei4|next to] 囉[lo1|obviousness particle]！
    === Next to the coffee, obviously!
-A: 搞掂[gaau2dim6|done]！ 找[zaau2|to look for] 咗[zo2|completed] 啦[laa1|particle]。 我[ngo5|I] 去[heoi3|to go] 公司[gung1si1|company] 啦[laa1|particle]，拜拜[baai1baai3|bye-bye]！
+A: 搞掂[gaau2dim6|done]！ 搵[wan2|to find / look for / search] 咗[zo2|completed] 啦[laa1|particle]。 我[ngo5|I] 去[heoi3|to go] 公司[gung1si1|company] 啦[laa1|particle]，拜拜[baai1baai3|bye-bye]！
    === Got it! Found them. I'm going to the office now, bye-bye!
 B: 拜拜[baai1baai3|bye-bye]！
    === Bye-bye!

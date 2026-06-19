@@ -26,6 +26,10 @@ Cantonese speakers use these highly colloquial terms:
 - `醉[zeoi3|drunk]`: Intoxicated or drunk.
 - `斷片[dyun6pin2|to blackout / memory lapse from drinking]`: To blackout or
   suffer a memory lapse from excessive drinking.
+- `琴晚[kam4maan5|last night]`: Last night.
+- `晏[aan3|late]`: Late (referring to the time of day, e.g.,
+  `幾晏[gei2 aan3|quite late]`).
+- `或者[waak6ze2|perhaps / or]`: Or, perhaps.
 
 ---
 
@@ -50,6 +54,7 @@ arranging get-togethers to handling friends who cancel last minute:
   breeze, or gossip with friends.
 - `潛水[cim4seoi2|to go offline / go silent]`: To go offline, disappear from
   chat groups, or go silent (literally "to dive/snorkel").
+- `得閒[dak1haan4|free / having spare time]`: Free, having spare time.
 
 ---
 
@@ -92,8 +97,8 @@ A: 星期六[sing1kei4luk6|Saturday] 你[nei5|you] 得閒[dak1haan4|free / havin
    === Are you free this Saturday? We have a karaoke gathering plan.
 B: 唱[coeng3|to sing]K 呀[aa3|particle softening statements, making questions friendly]？好呀[hou2aa3|sure]！有[jau5|to have] 邊個[bin1go3|who / which one] 去[heoi3|to go] 呀[aa3|particle softening statements, making questions friendly]？
    === Karaoke? Sure! Who is going?
-A: 我哋[ngo5dei6|we / us] 差唔多[caa1m4do1|almost / about / more or less] 十[sap6|ten] 個[go3|general measure word / individual / unit] 人[jan4|person / people] 去[heoi3|to go] 呀[aa3|particle softening statements, making questions friendly]。不過[bat1gwo3|but / however] 阿明[aa3 ming4|Ah Ming] 經常[ging1soeng4|often / frequently] 放飛機[fong3fei1gei1|to stand someone up / break a promise]，真係[zan1hai6|really / truly] 飛機王[fei1gei1wong4|chronic flake / person who always stands others up] 嚟[lei4|particle] 嘅[ge3|particle]！
-   === Almost ten of us are going. But Ah Ming often stands people up, he is really a chronic flake!
+A: 我哋[ngo5dei6|we / us] 差唔多[caa1m4do1|almost / about / more or less] 十[sap6|ten] 個[go3|general measure word / individual / unit] 人[jan4|person / people] 去[heoi3|to go] 呀[aa3|particle softening statements, making questions friendly]。不過[bat1gwo3|but / however] 阿明[aa3 ming4|Ah Ming] 成日[seng4jat6|always] 放飛機[fong3fei1gei1|to stand someone up / break a promise]，真係[zan1hai6|really / truly] 飛機王[fei1gei1wong4|chronic flake / person who always stands others up] 嚟[lei4|particle] 嘅[ge3|particle]！
+   === Almost ten of us are going. But Ah Ming always stands people up, he is really a chronic flake!
 B: 哈哈[haa1 haa1|haha]！噉[gam2|then] 我哋[ngo5dei6|we / us] 唱[coeng3|to sing] 完[jyun4|finished / complete] 之後[zi1hau6|after / afterwards] 會[wui5|will / can / able to] 唔[m4|not / no (negative prefix)] 會[wui5|will / can / able to] 直落[zik6lok6|to continue onto another venue / next round without stopping] 去[heoi3|to go] 下場[haa6coeng4|next venue / afterparty / next round] 呀[aa3|particle softening statements, making questions friendly]？
    === Haha! Then after we finish singing, will we keep going straight to the next venue?
 A: 唱[coeng3|to sing] 完[jyun4|finished / complete] 都[dou1|also / even] 幾[gei2|quite / pretty / fairly] 晏[aan3|late]，或者[waak6ze2|perhaps / or] 去[heoi3|to go] 食[sik6|to eat] 宵夜[siu1je2|late night snack] 囉[lo1|sentence-final particle expressing obviousness or mild resignation]。

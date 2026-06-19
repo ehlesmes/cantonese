@@ -273,7 +273,7 @@ Wing-kit (A) and Sau-han (B) are browsing clothes in a boutique in Mong Kok.
 They are discussing the styles, sizes, and prices of shirts and shoes.
 
 ```dialog
-A: Sau-han，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa2|sentence-final particle expressing surprise, disbelief, or seeking quick confirmation]！呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 好[hou2|good / fine / very / quite] 靚[leng3|pretty / beautiful / handsome / high quality] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+A: Sau-han，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa5|verbal suffix indicating a brief action or attempt]！呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 好[hou2|good / fine / very / quite] 靚[leng3|pretty / beautiful / handsome / high quality] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
    === Sau-han, take a look! This shirt is very pretty!
 B: 邊[bin1|which] 件[gin6|measure word for clothes, matters, and items] 呀[aa3|sentence-final particle softening statements, making questions friendly]？你[nei5|you] 講[gong2|to speak / say / talk] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 係[hai6|to be (am/is/are) / yes] 呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 定[ding6|or (used exclusively in alternative questions)] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Which one? Is the one you are talking about this one or that one?

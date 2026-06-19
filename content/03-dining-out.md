@@ -154,7 +154,56 @@ Please, I need a plate of barbecued pork.
 
 ---
 
-## 4. Local Café Slang: Ordering a `靚仔[leng3zai2|handsome boy / plain white rice (restaurant slang)]`
+## 4. Polite Expressions & Request Softeners: `唔該[m4goi1|excuse me / please / thank you (for service or help)]` vs `多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]` and the particle `啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]`
+
+Being polite is essential when dining out. Cantonese has two distinct ways to
+say "thank you," and their usage depends entirely on the situation.
+
+### 1. The Gratitude Divide: `唔該[m4goi1|excuse me / please / thank you (for service or help)]` vs `多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]`
+
+- **`唔該[m4goi1|excuse me / please / thank you (for service or help)]`**: Used
+  to thank someone for a **service, assistance, or favor** (e.g., when a waiter
+  brings you water, clears your table, or gives you the bill). It also means
+  "please" or "excuse me" when starting a request.
+- **`多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]`**: Used to
+  thank someone for a **gift, compliment, money, or hospitality** (e.g., when a
+  friend buys you lunch, gives you a present, or compliments your Cantonese). In
+  retail, clerks will say
+  `多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]` to thank you
+  for your payment or business.
+
+Observe how they are used at the table:
+
+```cantonese
+唔該[m4goi1|excuse me / please / thank you (for service or help)]，我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 埋單[maai5daan1|to pay the bill] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+Excuse me, I would like to pay the bill.
+```
+
+```cantonese
+多謝[do1ze6|thank you (for a gift, compliment, or hospitality)] 你[nei5|you] 嘅[ge3|possessive particle] 蛋撻[daan6taat1|egg tart] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+===
+Thank you for your egg tart!
+```
+
+### 2. Softening Suggestions and Requests: Particle `啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]`
+
+The sentence-final particle
+`啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]`
+is used to soften commands, make suggestions, or encourage action. Without it, a
+request can sound blunt or demanding. Adding
+`啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]`
+turns it into a polite request:
+
+```cantonese
+唔該[m4goi1|excuse me / please / thank you (for service or help)] 俾[bei2|to give] 一[jat1|one] 杯[bui1|cup / glass / mug (classifier for drinks)] 凍[dung3|cold / iced] 奶茶[naai5caa4|milk tea] 我[ngo5|I / me] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+===
+Please give me a glass of iced milk tea.
+```
+
+---
+
+## 5. Local Café Slang: Ordering a `靚仔[leng3zai2|handsome boy / plain white rice (restaurant slang)]`
 
 If you listen closely to a busy café waiter shouting orders to the kitchen, you
 might hear them call out
@@ -179,7 +228,7 @@ I want a plate of barbecued pork and a bowl of plain white rice.
 
 ---
 
-## 5. Completed Actions: Perfective Suffix `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]`
+## 6. Completed Actions: Perfective Suffix `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]`
 
 In Cantonese, verbs do not change their form to express past tense. Instead, we
 attach suffixes directly to the verb to express the **aspect** of the action
@@ -234,7 +283,7 @@ I haven't eaten yet.
 
 ---
 
-## 6. Situational Dialogue: A Lively Café Lunch
+## 7. Situational Dialogue: A Lively Café Lunch
 
 Here is a realistic dialogue between a customer (A) and a busy diner waiter (B)
 in a bustling Hong Kong `茶餐廳[caa4caan1teng1|Hong Kong style café / diner]`.
@@ -264,7 +313,7 @@ A: 唔該[m4goi1|excuse me]，我[ngo5|I] 想[soeng2|to want to] 埋單[maai5daa
    === Excuse me, I want to pay the bill. How much is it?
 B: 三十[saam1sap6|thirty] 蚊[man1|dollar] 啦[laa1|particle]，唔該[m4goi1|excuse me]。
    === It is thirty dollars, thank you.
-A: 好[hou2|good] 呀[aa3|particle]，我[ngo5|I] 找[zaau2|to give change] 現金[jin6gam1|cash] 啦[laa1|particle]。
+A: 好[hou2|good] 呀[aa3|particle]，我[ngo5|I] 俾[bei2|to give] 現金[jin6gam1|cash] 啦[laa1|particle]。
    === Great, I will pay with cash.
 B: 搞掂[gaau2dim6|done] 啦[laa1|particle]！ 拜拜[baai1baai3|bye-bye]！
    === All done! Bye-bye!
@@ -274,7 +323,7 @@ A: 拜拜[baai1baai3|bye-bye]！
 
 ---
 
-## 7. Exercises
+## 8. Exercises
 
 Review the food culture, classifiers, and aspect rules introduced in this
 chapter:

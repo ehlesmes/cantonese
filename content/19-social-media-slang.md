@@ -142,7 +142,7 @@ A: 點解[dim2gaai2|why] 你[nei5|you] 今日[gam1jat6|today] 已讀不回[ji5du
    === Why did you read and not reply to me today?
 B: 唔好意思[m4 hou2 ji3si1|sorry] 呀[aa3|particle]， 我[ngo5|I] 今日[gam1jat6|today] 好[hou2|very] 忙[mong4|busy] 呀[aa3|particle]。
    === I am so sorry, I was very busy today.
-A: 但係[daan6hai6|but] 你[nei5|you] 又[jau6|again] 喺[hai2|at] IG[aa1zi1|Instagram] Po[pou1|post] 相[soeng2|photo] 呃[aak1|to fish] like[laaik1|likes]？
+A: 但係[daan6hai6|but] 你[nei5|you] 又[jau6|again] 喺[hai2|at] IG[ai1zi1|Instagram] Po[pou1|post] 相[soeng2|photo] 呃[aak1|to fish] like[laaik1|likes]？
    === But then you posted a photo on Instagram to fish for likes?
 B: 嗰個[go2go3|that one] 係[hai6|is] 尋日[cam4jat6|yesterday] 影[jing2|photograph] 嘅[ge3|possessive particle] 靚[leng3|pretty] 相[soeng2|photo] 啫[ze1|particle]。
    === That was just a nice photo taken yesterday.
@@ -171,7 +171,7 @@ explanation: A0[ei1ling4|single and never dated] represents a student who is Ava
 ```exercise
 question: |
   Fill in the blank with the correct social media term meaning "to post photos":
-  佢[keoi5|she] 鍾意[zung1ji3|to like] 喺[hai2|at] IG[aa1zi1|Instagram] ______ 呃[aak1|to fish] like[laaik1|likes]。
+  佢[keoi5|she] 鍾意[zung1ji3|to like] 喺[hai2|at] IG[ai1zi1|Instagram] ______ 呃[aak1|to fish] like[laaik1|likes]。
 answer: Po[pou1|to post] 相[soeng2|photo]
 explanation: Po[pou1|to post (social media loanword)] followed by 相[soeng2|photo / picture] represents the common colloquial verb phrase "to post photos".
 ```
