@@ -24,6 +24,10 @@ English loanwords to describe transport options:
   which have flexible routes and schedules.
 - `綠[luk6|green]` `VAN[man1|minibus (loanword)]`: The green minibuses, which
   run on fixed schedules and routes.
+- `船[syun4|ferry / boat]` / `天星小輪[tin1sing1siu2leon4|Star Ferry]`: Ferries,
+  including the iconic Star Ferry.
+- `電車[din6ce1|tram]` / `叮叮[ding1ding1|tram (colloquial)]`: The historic
+  double-decker trams on Hong Kong Island.
 
 ### Transit Locations & Payments
 
@@ -34,7 +38,7 @@ To locate stops or pay for your fare, use these terms:
 - `巴士站[baa1si2zaam6|bus stop]`: Bus stop.
 - `的士站[dik1si2zaam6|taxi stand]`: Taxi stand.
 - `八達通[baat3daat6tung1|Octopus card]`: The ubiquitous local contactless smart
-  card.
+  card. To use it, you `嘟[dut1|to tap a card / scan]`.
 
 ---
 

@@ -58,6 +58,15 @@ If it rains tomorrow, then I won't go swimming.
 If you want to drink coffee, then I'll buy it for you.
 ```
 
+> [!NOTE] In colloquial Cantonese, the word `如果[jyu4gwo2|if]` is frequently
+> dropped entirely from the beginning of the sentence. The conditional meaning
+> is implied simply by having the condition clause followed by
+> `就[zau6|then / right away / immediately]` in the second clause (e.g.,
+> `聽日[ting1jat6|tomorrow]` `落雨[lok6jyu5|to rain]`，`我[ngo5|I / me]`
+> `就[zau6|then / right away / immediately]` `唔[m4|not / no (negative prefix)]`
+> `去[heoi3|to go]`
+> `喇[laa3|sentence-final particle indicating a change of state or already]`).
+
 ---
 
 ## 2. Hypothetical Possibilities: Supposing...
@@ -73,6 +82,14 @@ like `如果[jyu4gwo2|if]`, but it carries a more imaginative or dramatic nuance
 假使[gaa2si2|if / in case / supposing] 我哋[ngo5dei6|we / us] 有錢[jau5cin2|rich / wealthy / have money]， 我哋[ngo5dei6|we / us] 就[zau6|then / right away / immediately] 去[heoi3|to go] 香港[hoeng1gong2|Hong Kong] 玩[waan2|to play / have fun / enjoy] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
 ===
 Supposing we were rich, we would go to Hong Kong to have fun, obviously!
+```
+
+### 2. Imagining an Alien Invasion:
+
+```cantonese
+假使[gaa2si2|if / in case / supposing] 有[jau5|to have / there is] 外星人[ngoi6sing1jan4|alien / extraterrestrial]， 我哋[ngo5dei6|we / us] 就[zau6|then / right away / immediately] 走[zau2|to leave / run / go] 喇[laa3|sentence-final particle indicating a change of state or already]！
+===
+Supposing there were aliens, we would run away!
 ```
 
 ---

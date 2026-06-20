@@ -225,6 +225,19 @@ Your dog is behind the bedroom, obviously!
 
 ---
 
+### Searching for Items: The Verb `搵[wan2|to find / look for / search]`
+
+When you've lost something and are looking for it, you will use the verb
+`搵[wan2|to find / look for / search]`.
+
+```cantonese
+我[ngo5|I / me] 搵[wan2|to find / look for / search] 緊[gan2|progressive aspect marker (action in progress)] 鎖匙[so2si4|key] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+I am looking for my keys.
+```
+
+---
+
 ## 5. Situational Dialogue: Where Are My Car Keys?
 
 Here is a realistic dialogue between two flatmates, A and B. A is rushing out to
@@ -234,7 +247,7 @@ the particle
 `囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']`.
 
 ```dialog
-A: 唔該[m4goi1|excuse me]，你[nei5|you] 有冇[jau5mou5|is there / do you have] 睇[tai2|to look / see] 我[ngo5|I / me] 個[go3|unit] 銀包[ngan4baau1|wallet] 呀[aa3|particle]？
+A: 唔該[m4goi1|excuse me]，你[nei5|you] 有冇[jau5mou5|is there / do you have] 見過[gin3gwo3|have seen] 我[ngo5|I / me] 個[go3|unit] 銀包[ngan4baau1|wallet] 呀[aa3|particle]？
    === Excuse me, have you seen my wallet?
 B: 你[nei5|you] 個[go3|unit] 銀包[ngan4baau1|wallet] 喺[hai2|at / in / on] 電腦[din6nou5|computer] 上面[soeng6min6|on top of] 呀[aa3|particle]。
    === Your wallet is on top of the computer.
@@ -244,7 +257,7 @@ B: 喺[hai2|at / in / on] 電腦[din6nou5|computer] 後面[hau6min6|behind] 囉[
    === It is behind the computer, obviously! Have you looked yet?
 A: 搵[wan2|to find / look for / search] 咗[zo2|completed] 啦[laa1|particle]，有[jau5|to have] 呀[aa3|particle]！ 多謝[do1ze6|thank you]！
    === I looked and found it! Thank you!
-A: 同埋[tung4maai4|and] 我[ngo5|I] 個[go3|unit] 鎖匙[so2si4|key] 呢[ne1|particle]？ 喺[hai2|at / in / on] 邊度[bin1dou6|where] 呀[aa3|particle]？
+A: 同埋[tung4maai4|and] 我[ngo5|I] 條[tiu4|classifier for long, thin objects] 鎖匙[so2si4|key] 呢[ne1|particle]？ 喺[hai2|at / in / on] 邊度[bin1dou6|where] 呀[aa3|particle]？
    === And what about my keys? Where are they?
 B: 喺[hai2|at / in / on] 廚房[cyu4fong2|kitchen] 入面[jap6min6|inside] 呀[aa3|particle]。
    === They are inside the kitchen.

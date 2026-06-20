@@ -25,6 +25,8 @@ between traditional buildings and modern developments:
 - `劏房[tong1fong2|subdivided flat / partitioned room]`: A flat that has been
   partitioned or split into multiple tiny individual units. These are highly
   compact and common in older urban areas.
+- `公屋[gung1uk1|public housing]`: Public housing, which houses a massive
+  portion of the population.
 - `屋[uk1|house / room]`: A general term for a house or room.
 - `樓[lau2|building / flat / apartment / floor]`: A generic term that can mean a
   building, a flat, an apartment, or a floor.
@@ -56,6 +58,9 @@ terminology:
   agreement.
 - `佣金[jung2gam1|commission fee]`: The agency commission fee, usually split
   between the tenant and landlord.
+- `屋苑[uk1jyun2|housing estate / complex]`: A housing estate or residential
+  complex.
+- `管理費[gun2lei5fai3|management fee]`: The building management fee.
 
 ---
 

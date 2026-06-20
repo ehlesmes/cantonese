@@ -87,6 +87,11 @@ Wait, is he not going? / What, he is not going?
 > `唔通[m4tung1|could it be that]` highlights disbelief/sarcasm, whereas
 > `乜[mat1|how / why / rhetorical prefix]` highlights surprise and a correction
 > of assumptions.
+>
+> Also note that in fast, colloquial speech, the sentence-final particle
+> `咩[me1|particle]` is occasionally dropped since `唔通[m4tung1|could it be]`
+> and `乜[mat1|what]` already set the rhetorical tone. However, it is highly
+> recommended to keep `咩[me1|interrogative particle]` as a beginner.
 
 ---
 

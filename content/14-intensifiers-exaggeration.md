@@ -133,7 +133,8 @@ pre-adjective intensifiers that completely change the rhythm of the sentence.
 `鬼死咁[gwai2sei2gam3|extremely / awfully]` is a highly colloquial, expressive
 pre-adjective intensifier. It translates literally to something like
 "ghost-dead-so", and is used to emphasize that a condition is striking or
-overwhelming.
+overwhelming. It is frequently shortened to `鬼咁[gwai2gam3|extremely]` or
+`死咁[sei2gam3|extremely]`.
 
 - **Structure**: `鬼死咁[gwai2sei2gam3|extremely / awfully]` + `[Adjective]`
 
@@ -191,11 +192,12 @@ noun.
 All things have been finished!
 ```
 
-### 2. `全部[cyun4bou6|all / entirely]` (Adverb/Pronoun)
+### 2. `全部[cyun4bou6|all / entirely]` (Adverb/Pronoun or Pre-noun)
 
-`全部[cyun4bou6|all / entirely]` acts as an adverb or pronoun. It is placed
-**after the subject and before the verb** to state that the entire set of things
-is acted upon.
+`全部[cyun4bou6|all / entirely]` can act as an adverb/pronoun placed **after the
+subject and before the verb** to state that the entire set of things is acted
+upon. It can also be used directly before a noun (e.g., `全部[cyun4bou6|all]`
+`蛋撻[daan6taat1|egg tart]`) acting similarly to `所有[so2jau5|all]`.
 
 - **Structure**: `[Subject]` + `全部[cyun4bou6|all / entirely]` +
   `都[dou1|also / both / all]` + `[Verb]`
@@ -226,7 +228,7 @@ B: 好[hou2|good] 呀[aa3|particle]！ 呢度[ni1dou6|here] 嘅[ge3|possessive p
    === Sure! The egg tarts here are the best, they are top-notch!
 A: 係[hai6|to be] 呀[aa3|particle]， 但係[daan6hai6|but] 呢度[ni1dou6|here] 嘅[ge3|possessive particle] 咖啡[gaa3fe1|coffee] 鬼死咁[gwai2sei2gam3|extremely] 貴[gwai3|expensive] 呀[aa3|particle]！
    === Yes indeed, but the coffee here is extremely expensive!
-B: 唔緊要[m4 gan2jiu3|never mind] 啦[laa1|particle]！ 我[ngo5|I] 今日[gam1jat6|today] 想[soeng2|want to] 飲[jam2|to drink] 凍[dung3|cold] 嘅[ge3|possessive particle] 嘢飲[je5jam2|drinks]。 呢[ni1|this] 杯[bui1|cup] 茶[caa4|tea] 凍[dung3|cold] 得滯[dak1zai6|too] 呀[aa3|particle]！
+B: 唔緊要[m4gan2jiu3|never mind] 啦[laa1|particle]！ 我[ngo5|I] 今日[gam1jat6|today] 想[soeng2|want to] 飲[jam2|to drink] 凍[dung3|cold] 嘅[ge3|possessive particle] 嘢飲[je5jam2|drinks]。 呢[ni1|this] 杯[bui1|cup] 茶[caa4|tea] 凍[dung3|cold] 得滯[dak1zai6|too] 呀[aa3|particle]！
    === Never mind! Today I want to drink cold drinks. This cup of tea is too cold!
 A: 哈[haa1|ha] 哈[haa1|ha]， 我[ngo5|I] 全部[cyun4bou6|all] 蛋撻[daan6taat1|egg tart] 都[dou1|also] 想[soeng2|want to] 食[sik6|to eat] 咗[zo2|completed aspect] 佢[keoi5|it]！
    === Haha, I want to eat all of these egg tarts!

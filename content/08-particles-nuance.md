@@ -117,17 +117,18 @@ Cantonese:
 
 When you are reporting what someone else said, or relaying information you heard
 second-hand, adding
-`喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]`
-clarifies that this is not your own personal assertion:
+`喎[wo5|sentence-final particle indicating reported speech or hearsay]`
+clarifies that this is not your own personal assertion. Note that for hearsay,
+this particle is usually pronounced with a low-rising tone (`wo5`):
 
 ```cantonese
-佢[keoi5|he / she / it] 唔[m4|not / no (negative prefix)] 去[heoi3|to go] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]。
+佢[keoi5|he / she / it] 唔[m4|not / no (negative prefix)] 去[heoi3|to go] 喎[wo5|sentence-final particle indicating reported speech or hearsay]。
 ===
 Apparently, he is not going (he said he won't go).
 ```
 
 ```cantonese
-聽日[ting1jat6|tomorrow] 放假[fong3gaa3|to have a holiday / day off] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！
+聽日[ting1jat6|tomorrow] 放假[fong3gaa3|to have a holiday / day off] 喎[wo5|sentence-final particle indicating reported speech or hearsay]！
 ===
 They say tomorrow is a holiday!
 ```
@@ -135,7 +136,8 @@ They say tomorrow is a holiday!
 ### 2. Unexpected Realizations (Immediate Surprise)
 
 You can also use it to point out a sudden realization that goes against your
-previous expectations, or to warn someone about an immediate fact:
+previous expectations, or to warn someone about an immediate fact. For this
+usage, the particle is pronounced with a mid-flat tone (`wo3`):
 
 ```cantonese
 今日[gam1jat6|today] 真係[zan1hai6|really / truly] 好[hou2|good / fine / very / quite] 凍[dung3|cold / iced] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！
@@ -227,6 +229,19 @@ Uh oh, the boss is angry now! (Realization of a change of state + warning!)
 ===
 It is time to get off work already! (Friendly reminder / warning to stop working!)
 ```
+
+### Other Common Layered Particles
+
+Here are a few other common combinations you will hear daily:
+
+- `㗎啦[gaa3laa1|sentence-final particle combination indicating strong assertion or finality]`
+  (`嘅[ge3|possessive particle]` +
+  `啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]`):
+  Adds strong assertion and finality to a statement.
+- `㗎嘛[gaa3maa3|sentence-final particle combination indicating obvious reasoning or explanation]`
+  (`嘅[ge3|possessive particle]` +
+  `嘛[maa3|sentence-final particle for obviousness]`): Explains the reasoning
+  behind an obvious fact or truth.
 
 ---
 

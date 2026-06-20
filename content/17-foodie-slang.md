@@ -44,7 +44,8 @@ the beverage name.
 - `走冰[zau2bing1|no ice]`: Serves the drink chilled but with all ice removed.
 
 Let's see how these descriptors are placed directly after the drink name. There
-is no need for extra conjunctions:
+is no need for extra conjunctions, and you can even stack these modifiers
+sequentially (e.g., `少甜少冰[siu2tim4 siu2bing1|less sweet less ice]`):
 
 ```cantonese
 我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 一[jat1|one] 杯[bui1|cup / glass / mug (classifier for drinks)] 凍檸茶[dung3leng4caa4|iced lemon tea] 少甜[siu2tim4|less sweet] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
@@ -148,7 +149,7 @@ take aesthetic photos and check-in online.
 Let's see how these lifestyle terms are used in daily conversation:
 
 ```cantonese
-我哋[ngo5dei6|we / us] 今日[gam1jat6|today] 去[heoi3|to go] Mong Kok 掃街[sou3gaai1|to go street food hunting / street-snacking] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+我哋[ngo5dei6|we / us] 今日[gam1jat6|today] 去[heoi3|to go] 旺角[wong6gok3|Mong Kok] 掃街[sou3gaai1|to go street food hunting / street-snacking] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
 ===
 Let's go street food hunting in Mong Kok today!
 ```
@@ -176,7 +177,7 @@ A: 好[hou2|good] 呀[aa3|particle]，我哋[ngo5dei6|we] 喺[hai2|at] 呢度[ni
    === Sure, let's sit here. What do you want to drink?
 C: 我[ngo5|I] 想[soeng2|want to] 飲[jam2|drink] 凍檸茶[dung3leng4caa4|iced lemon tea] 少甜[siu2tim4|less sweet] 呀[aa3|particle]。
    === I want to drink iced lemon tea, less sweet.
-A: 我[ngo5|I] 要[jiu3|want] 凍[dung3|iced] 茶走[caa4zau2|tea with condensed milk] 呀[aa3|particle]，唔該[m4goi1|excuse me]。 Waiter！ 我哋[ngo5dei6|we] 要[jiu3|want] 一[jat1|one] 杯[bui1|cup] 凍檸茶[dung3leng4caa4|iced lemon tea] 少甜[siu2tim4|less sweet] 同埋[tung4maai4|and] 一[jat1|one] 杯[bui1|cup] 凍[dung3|iced] 茶走[caa4zau2|tea with condensed milk]。
+A: 我[ngo5|I] 要[jiu3|want] 凍[dung3|iced] 茶走[caa4zau2|tea with condensed milk] 呀[aa3|particle]，唔該[m4goi1|excuse me]。 伙記[fo2gei3|waiter]！ 我哋[ngo5dei6|we] 要[jiu3|want] 一[jat1|one] 杯[bui1|cup] 凍檸茶[dung3leng4caa4|iced lemon tea] 少甜[siu2tim4|less sweet] 同埋[tung4maai4|and] 一[jat1|one] 杯[bui1|cup] 凍[dung3|iced] 茶走[caa4zau2|tea with condensed milk]。
    === I want iced milk tea with condensed milk, thank you. Waiter! We want a glass of iced lemon tea less sweet and a glass of iced milk tea with condensed milk.
 B: 搞掂[gaau2dim6|done] 咗[zo2|completed] 啦[laa1|particle]！ 呢度[ni1dou6|here] 呀[aa3|particle]，唔該[m4goi1|excuse me]。
    === Ready! Here they are, thank you.
@@ -212,7 +213,7 @@ explanation: 茶走[caa4zau2|milk tea with condensed milk instead of evaporated 
 ```exercise
 question: |
   Fill in the blank with the correct foodie slang word for "street food hunting":
-  我哋[ngo5dei6|we] 今日[gam1jat6|today] 去[heoi3|go] Mong Kok ________ 啦[laa1|particle]！
+  我哋[ngo5dei6|we] 今日[gam1jat6|today] 去[heoi3|go] 旺角[wong6gok3|Mong Kok] ________ 啦[laa1|particle]！
 answer: 掃街[sou3gaai1|to go street food hunting / street-snacking]
 explanation: 掃街[sou3gaai1|to go street food hunting / street-snacking] (literally "sweeping the street") is the colloquial Cantonese term for going street-snacking and hunting street foods.
 ```

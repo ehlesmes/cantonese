@@ -84,10 +84,44 @@ For example:
 I am a Hong Konger.
 ```
 
+### The Possessive Particle `嘅[ge3|possessive particle]`
+
+To show possession or relationship (like "'s" or "of" in English), attach the
+possessive particle
+`嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`
+after a pronoun or noun:
+
 ```cantonese
 佢哋[keoi5dei6|they / them] 係[hai6|to be (am/is/are) / yes] 我哋[ngo5dei6|we / us] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend]。
 ===
 They are our friends.
+```
+
+### Family & Kinship Vocabulary
+
+Here are some common family members you can use to describe relationships:
+
+- `父母[fu6mou5|parents / father and mother]`: parents
+- `阿哥[aa3go1|older brother]`: older brother
+- `家姐[gaa1ze1|older sister]`: older sister
+- `細佬[sai3lou2|younger brother]`: younger brother
+- `阿妹[aa3mui2|younger sister]`: younger sister
+
+Using the possessive particle
+`嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`,
+you can introduce your family members. You can also use
+`呢個[ni1go3|this one / this]` to mean "this" or "this person":
+
+```cantonese
+呢個[ni1go3|this one / this] 係[hai6|to be (am/is/are) / yes] 我[ngo5|I / me] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 阿哥[aa3go1|older brother]。
+===
+This is my older brother.
+```
+
+```cantonese
+佢[keoi5|he / she / it] 係[hai6|to be (am/is/are) / yes] 我[ngo5|I / me] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 家姐[gaa1ze1|older sister]。
+===
+She is my older sister.
 ```
 
 ---
@@ -178,6 +212,14 @@ To ask someone if they speak a language, apply the A-not-A pattern to the verb
 Do you know how to speak English?
 ```
 
+> [!TIP] **Bounce-back Questions with `呢[ne1|question particle]`** To casually
+> bounce a question back to someone (like saying "How about you?"), attach the
+> query particle
+> `呢[ne1|sentence-final particle for queries (how about / what about)]` to a
+> pronoun. For example: `你[nei5|you]`
+> `呢[ne1|sentence-final particle for queries (how about / what about)]`？means
+> "How about you?".
+
 ---
 
 ## 5. Conversational Dialogue
@@ -188,16 +230,16 @@ the first time.
 ```dialog
 A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I] 叫[giu3|to be called / to call] David。 你[nei5|you] 叫[giu3|to be called / to call] 咩嘢[me1je5|what / what kind of thing] 名[meng2|name] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Hello there! My name is David. What is your name?
-B: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I] 叫[giu3|to be called / to call] Mary。
-   === Hello there! My name is Mary.
-A: Mary，你[nei5|you] 係唔係[hai6 m4 hai6|is it or not? / is that right? (A-not-A question form)] 美國[mei5gwok3|United States / America] 人[jan4|person / people / human] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
-   === Mary, are you an American?
-B: 我[ngo5|I] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 美國[mei5gwok3|United States / America] 人[jan4|person / people / human] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I] 係[hai6|to be (am/is/are) / yes] 加拿大[gaa1naa4daai6|Canada] 人[jan4|person / people / human]。 你[nei5|you] 呢[ne1|sentence-final particle for queries (how about / what about)]？
-   === I am not American, I am Canadian. How about you?
-A: 我[ngo5|I] 係[hai6|to be (am/is/are) / yes] 美國[mei5gwok3|United States / America] 人[jan4|person / people / human]。 你[nei5|you] 識唔識[sik1 m4 sik1|know how to / know or not (A-not-A question form)] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
-   === I am American. Do you know how to speak Cantonese?
-B: 我[ngo5|I] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 你[nei5|you] 呢[ne1|sentence-final particle for queries (how about / what about)]？
-   === I know how to speak Cantonese! How about you?
+B: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I] 叫[giu3|to be called / to call] Mary。 呢個[ni1go3|this one / this] 係[hai6|to be (am/is/are) / yes] 我[ngo5|I] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 細佬[sai3lou2|younger brother]，Tom。
+   === Hello there! My name is Mary. This is my younger brother, Tom.
+A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly] Tom！ Mary，你哋[nei5dei6|you (plural)] 係唔係[hai6 m4 hai6|is it or not? / is that right? (A-not-A question form)] 美國[mei5gwok3|United States / America] 人[jan4|person / people / human] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+   === Hello there Tom! Mary, are you all American?
+B: 我哋[ngo5dei6|we / us] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 美國[mei5gwok3|United States / America] 人[jan4|person / people / human] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我哋[ngo5dei6|we / us] 係[hai6|to be (am/is/are) / yes] 加拿大[gaa1naa4daai6|Canada] 人[jan4|person / people / human]。 你[nei5|you] 呢[ne1|sentence-final particle for queries (how about / what about)]？
+   === We are not American, we are Canadian. How about you?
+A: 我[ngo5|I] 係[hai6|to be (am/is/are) / yes] 美國[mei5gwok3|United States / America] 人[jan4|person / people / human]。 你哋[nei5dei6|you (plural)] 識唔識[sik1 m4 sik1|know how to / know or not (A-not-A question form)] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+   === I am American. Do you all know how to speak Cantonese?
+B: 我[ngo5|I] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 細佬[sai3lou2|younger brother] 唔[m4|not / no (negative prefix)] 識[sik1|to know / speak (a language) / have a skill]。你[nei5|you] 呢[ne1|sentence-final particle for queries (how about / what about)]？
+   === I know how to speak Cantonese! My younger brother does not know. How about you?
 A: 我[ngo5|I] 唔[m4|not / no (negative prefix)] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 英文[jing1man2|English language]。
    === I don't know how to speak Cantonese, I know how to speak English.
 B: 唔緊要[m4 gan2jiu3|it doesn't matter / never mind / it's okay]！ 我哋[ngo5dei6|we / us] 係[hai6|to be (am/is/are) / yes] 朋友[pang4jau5|friend] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！

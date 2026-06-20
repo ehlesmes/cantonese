@@ -53,6 +53,8 @@ for crushes and unrequited admiration.
 
 ### Crushes & Ideals
 
+- `暗戀[am3 lyun2|to crush on / love secretly]`: To have a secret crush on
+  someone.
 - `女神[neoi5san4|goddess / ideal woman]`: An ideal woman or female crush.
 - `男神[naam4san4|male god / ideal man]`: An ideal man or male crush.
 

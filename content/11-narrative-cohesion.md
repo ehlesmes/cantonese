@@ -101,6 +101,7 @@ engaging and expressive.
 Structure:
 
 - `唔單止[m4daan1zi2|not only]` [Fact A], `仲[zung6|still / yet]` [Fact B]
+  `添[tim1|particle indicating in addition / as well / furthermore]`
 
 Let's look at an example:
 
@@ -130,7 +131,9 @@ consequences, and unexpected outcomes:
   introduce an extreme case or build up to a surprising point.
 - **Logical Consequence**: `既然[gei3jin4|since / given that]` establishes a
   premise that justifies a subsequent action ("since it is already the case
-  that...").
+  that..."). It is almost always paired with
+  `就[zau6|then / right away / immediately]` or
+  `噉就[gam2zau6|in that case then]` in the resulting clause.
 - **Unexpected Contrast**: `反而[faan2ji4|on the contrary / instead]` highlights
   a result that is the opposite of what was expected.
 

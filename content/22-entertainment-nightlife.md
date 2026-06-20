@@ -55,6 +55,8 @@ arranging get-togethers to handling friends who cancel last minute:
 - `潛水[cim4seoi2|to go offline / go silent]`: To go offline, disappear from
   chat groups, or go silent (literally "to dive/snorkel").
 - `得閒[dak1haan4|free / having spare time]`: Free, having spare time.
+- `AA制[ei1ei1zai3|going Dutch / splitting the bill]`: Going Dutch or splitting
+  the bill evenly among the group.
 
 ---
 
@@ -77,6 +79,8 @@ entertainment, these terms cover everyday hobbies:
   picnic.
 - `做運動[zou6wan6dung6|to exercise / do sports]`: To exercise, work out, or do
   sports.
+- `打麻雀[daa2 maa4zoek3|to play Mahjong]`: To play Mahjong, a classic leisure
+  activity.
 - `睇波[tai2bo1|to watch ball games (e.g. soccer)]`: To watch a sports match,
   particularly a soccer or basketball game (literally "to watch ball").
 - `好玩[hou2waan2|fun / enjoyable]`: Entertaining, fun, or highly enjoyable.

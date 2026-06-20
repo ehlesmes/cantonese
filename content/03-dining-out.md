@@ -246,6 +246,14 @@ perfective aspect suffix
   `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]`
   (drunk / drank)
 
+> [!IMPORTANT] **Word Order with `咗[zo2|completed action marker]`** When a verb
+> takes an object, the perfective suffix `咗[zo2|completed action marker]` must
+> stay firmly attached to the verb, coming _before_ the object. The structure is
+> **Verb + `咗[zo2|completed action marker]` + Object**. For example, say
+> ``食[sik6|eat]` `咗[zo2|completed action marker]` `嘢食[je5sik6|food]`` (ate
+> food), never
+> ``食[sik6|eat]` `嘢食[je5sik6|food]` `咗[zo2|completed action marker]``.
+
 ### Stating Completed Events
 
 ```cantonese
@@ -283,7 +291,63 @@ I haven't eaten yet.
 
 ---
 
-## 7. Situational Dialogue: A Lively Café Lunch
+## 7. Basic Emotions & States
+
+How do you feel during or after a long day? Here are some core adjectives to
+describe your basic emotions and physical states:
+
+- `開心[hoi1sam1|happy / joyous]`: Happy.
+- `嬲[nau1|angry / mad]`: Angry.
+- `攰[gui6|tired / exhausted]`: Tired.
+- `悶[mun6|bored / boring / stuffy]`: Bored.
+
+### The Intensifier `好[hou2|very]` + Adjective
+
+In Chapter 1, you learned `好[hou2|very]` as the adjective for "good". However,
+when `好[hou2|very]` is placed directly before another adjective, it acts as an
+intensifier meaning "very". This is especially common when expressing states or
+emotions.
+
+```cantonese
+我[ngo5|I / me] 好[hou2|very] 攰[gui6|tired / exhausted] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+I am very tired.
+```
+
+```cantonese
+佢[keoi5|he / she / it] 好[hou2|very] 開心[hoi1sam1|happy / joyous] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+===
+He is very happy!
+```
+
+```cantonese
+好[hou2|very] 靚[leng3|beautiful / high quality] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+===
+It is very beautiful!
+```
+
+### Mini-Dialogue: Expressing Feelings
+
+Here is a short exchange illustrating these new words.
+
+```dialog
+A: 你[nei5|you] 好[hou2|very] 嬲[nau1|angry / mad] 呀[aa3|particle]？
+   === Are you very angry?
+B: 係[hai6|yes] 呀[aa3|particle]，我[ngo5|I] 好[hou2|very] 攰[gui6|tired / exhausted] 同埋[tung4maai4|and / with / together with] 好[hou2|very] 悶[mun6|bored / boring / stuffy] 呀[aa3|particle]。 我[ngo5|I] 想[soeng2|to want to] 食[sik6|to eat] 嘢食[je5sik6|food]。
+   === Yes, I am very tired and very bored. I want to eat food.
+A: 你[nei5|you] 想[soeng2|to want to] 食[sik6|to eat] 蛋撻[daan6taat1|egg tart] 定[ding6|or] 菠蘿包[bo1lo1baau1|pineapple bun] 呀[aa3|particle]？
+   === Do you want to eat an egg tart or a pineapple bun?
+B: 我[ngo5|I] 要[jiu3|to want] 兩[loeng5|two] 個[go3|unit] 蛋撻[daan6taat1|egg tart] 啦[laa1|particle]！
+   === I want two egg tarts!
+A: 搞掂[gaau2dim6|done] 啦[laa1|particle]！ 呢度[ni1dou6|here] 呀[aa3|particle]。
+   === Done! Here it is.
+B: 多謝[do1ze6|thank you]！ 我[ngo5|I] 而家[ji4gaa1|now] 好[hou2|very] 開心[hoi1sam1|happy / joyous] 呀[aa3|particle]！
+   === Thank you! I am very happy now!
+```
+
+---
+
+## 8. Situational Dialogue: A Lively Café Lunch
 
 Here is a realistic dialogue between a customer (A) and a busy diner waiter (B)
 in a bustling Hong Kong `茶餐廳[caa4caan1teng1|Hong Kong style café / diner]`.
@@ -303,11 +367,11 @@ A: 唔該[m4goi1|excuse me]，我[ngo5|I] 嘅[ge3|particle] 菠蘿包[bo1lo1baau
    === Excuse me, is my pineapple bun ready yet?
 B: 搞掂[gaau2dim6|done] 咗[zo2|completed] 啦[laa1|particle]！ 呢度[ni1dou6|here] 呀[aa3|particle]，唔該[m4goi1|excuse me]！
    === It is ready! Here it is, thank you!
-A: 好[hou2|good] 靚[leng3|high quality] 呀[aa3|particle]！ 多謝[do1ze6|thank you]！
-   === It looks beautiful! Thank you!
+A: 好[hou2|very] 靚[leng3|beautiful / high quality] 呀[aa3|particle]！ 多謝[do1ze6|thank you]！
+   === It looks very beautiful! Thank you!
 B: 你[nei5|you] 飲[jam2|to drink] 咗[zo2|completed] 凍[dung3|cold] 奶茶[naai5caa4|milk tea] 未[mei6|not yet] 呀[aa3|particle]？
    === Have you drunk the cold milk tea yet?
-A: 飲[jam2|to drink] 咗[zo2|completed] 啦[laa1|particle]，好[hou2|very] 飲[jam2|to drink] 呀[aa3|particle]！
+A: 飲[jam2|to drink] 咗[zo2|completed] 啦[laa1|particle]，好飲[hou2jam2|delicious (for drinks)] 呀[aa3|particle]！
    === Yes, I drank it, it is delicious!
 A: 唔該[m4goi1|excuse me]，我[ngo5|I] 想[soeng2|to want to] 埋單[maai5daan1|to pay the bill] 啦[laa1|particle]。 幾多[gei2do1|how much] 錢[cin2|money] 呀[aa3|particle]？
    === Excuse me, I want to pay the bill. How much is it?
@@ -323,7 +387,7 @@ A: 拜拜[baai1baai3|bye-bye]！
 
 ---
 
-## 8. Exercises
+## 9. Exercises
 
 Review the food culture, classifiers, and aspect rules introduced in this
 chapter:

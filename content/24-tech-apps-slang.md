@@ -53,6 +53,12 @@ creative internet slang:
 - `錄音[luk6jam1|voice recording / to record audio]`: A voice note/message, or
   the act of recording audio.
 - `片[pin2|video / movie / short clip]`: A video or short clip.
+- `Cap圖[kep1tou4|to take a screenshot / screenshot (slang)]`: To take a
+  screenshot (loanword from "capture").
+- `已讀不回[ji5duk6bat1wui4|read without replying]`: Read without replying
+  (leaving someone on read).
+- `死機[sei2gei1|device freeze / crash]`: When a device freezes or crashes
+  (literally "dead machine").
 
 ---
 
@@ -64,6 +70,7 @@ standard spoken slangs:
 
 - `智能家居[zi3nang4 gaa1geoi1|smart home]`: A smart home system.
 - `智能鎖[zi3nang4 so2|smart lock]`: A smart lock.
+- `冷氣[laang5hei3|air conditioning / AC]`: Air conditioning or AC.
 - `開關[hoi1gwaan1|switch / to turn on or off]`: A switch, or to turn a device
   on or off.
 - `聲控[sing1hung3|voice-controlled / voice control]`: Voice-controlled or using

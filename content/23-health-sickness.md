@@ -32,6 +32,8 @@ physical ailments:
   meaning "infected").
 - `腸胃炎[coeng4wai6jim4|gastroenteritis / stomach flu]`: Gastroenteritis or
   stomach flu.
+- `熱氣[jit6hei3|internal heat / inflammation]`: "Yeet hay," a culturally
+  essential traditional concept of internal heat or inflammation.
 - `嚴重[jim4zung6|serious / severe / grave]`: Serious, severe, or grave
   condition.
 - `傳染[cyun4jim5|to infect / infectious / contagious]`: To infect, or to be
@@ -48,6 +50,10 @@ medication is the next step:
 
 - `睇醫生[tai2ji1sang1|to see a doctor]`: Literally "to look at the doctor,"
   meaning to go see a doctor or seek medical advice.
+- `睇西醫[tai2 sai1ji1|to see a Western doctor]`: To see a Western medicine
+  doctor.
+- `睇中醫[tai2 zung1ji1|to see a Chinese doctor]`: To see a traditional Chinese
+  medicine doctor.
 - `醫生[ji1sang1|doctor / medical practitioner]`: A doctor or medical
   practitioner.
 - `藥[joek6|medicine / drug]`: Medicine or drug.

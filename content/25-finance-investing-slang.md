@@ -56,6 +56,12 @@ involves standard and colloquial terms:
   investments.
 - `定期[ding6kei4|fixed deposit / term deposit]`: A bank fixed-term deposit
   account, which is popular for secure savings.
+- `出糧[ceot1loeng4|getting paid / salary]`: Getting paid your salary (literally
+  "producing grain").
+- `強積金[koeng5zik1gam1|MPF / mandatory provident fund]`: The mandatory
+  retirement fund in Hong Kong.
+- `供樓[gung1lau2|to pay a mortgage]`: To pay a mortgage or make housing
+  installments.
 - `利息[lei6sik1|interest (on loan/deposit)]`: The interest earned on bank
   deposits or paid on loans.
 - `息[sik1|interest / dividend]`: A short form for interest or dividend

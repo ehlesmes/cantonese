@@ -2,26 +2,28 @@
 chapter: 5
 title: "Time-Telling & Continuous Action"
 description: >
-  Master the structures for telling time, expressing schedules, and describing
-  ongoing activities in Cantonese. Learn to ask and tell hours and minutes, use
-  the unique five-minute interval system, apply the continuous aspect particle
-  gan2, and integrate the popular slang hea.
+  Master the structures for telling time, expressing schedules, describing
+  ongoing activities, and discussing the weather in Cantonese. Learn to ask and
+  tell hours and minutes, use the unique five-minute interval system, apply the
+  continuous aspect particle gan2, learn weather vocabulary, and integrate the
+  popular slang hea.
 ---
 
 Welcome to Chapter 5! Now that you have learned how to locate objects and find
-your way around town, it is time to talk about _when_ things happen and _what_
-is happening right now. In this chapter, we will master the art of telling time
-in Cantonese, express daily schedules using times of day, and learn how to
-describe ongoing actions.
+your way around town, it is time to talk about _when_ things happen, _what_ is
+happening right now, and _how_ the weather is outside. In this chapter, we will
+master the art of telling time in Cantonese, express daily schedules using times
+of day, learn how to describe ongoing actions, and pick up essential weather
+vocabulary.
 
 Cantonese time-telling has a couple of highly logical rules, including a unique
 and colorful system of five-minute intervals that you will hear on the streets
 of Hong Kong every day. We will also introduce the highly versatile verbal
 aspect suffix
 `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]`
-(similar to the English "-ing") and the iconic Cantonese slang verb
-`Hea[hea1|to chill / hang out / slack off / procrastinate]` to describe the
-ultimate state of chilling out.
+(similar to the English "-ing"), weather expressions, and the iconic Cantonese
+slang verb `Hea[hea1|to chill / hang out / slack off / procrastinate]` to
+describe the ultimate state of chilling out.
 
 ---
 
@@ -149,6 +151,11 @@ number on the clock face represents one `字[zi6|five-minute interval]`:
 - `十一[sap6jat1|eleven]` `個[go3|general measure word / individual / unit]`
   `字[zi6|five-minute interval]` — 55 minutes (the "11" on the clock)
 
+> [!NOTE] **No "Quarter" Word**: Unlike English or Mandarin, Cantonese does not
+> have a specific word for "a quarter past" or "a quarter to." Instead, you must
+> use `三個字[saam1 go3 zi6|15 minutes / a quarter]` and
+> `九個字[gau2 go3 zi6|45 minutes / three quarters]`.
+
 To use this in a sentence, use the pattern: **[Hour] + [Number of intervals] +
 `個[go3|general measure word / individual / unit]` +
 `字[zi6|five-minute interval]`**
@@ -189,10 +196,15 @@ the hour:
 
 - `朝早[ziu1zou2|morning / in the morning]` — Morning (typically 6:00 AM – 12:00
   PM)
+- `晏晝[ngaan3zau3|noon / afternoon]` — Noon / Afternoon (typically 12:00 PM –
+  6:00 PM) (Interchangeable with `下晝[haa6zau3|afternoon / in the afternoon]`)
 - `下晝[haa6zau3|afternoon / in the afternoon]` — Afternoon (typically 12:00 PM
   – 6:00 PM)
 - `夜晚[je6maan5|night / evening / at night]` — Evening / Night (typically 6:00
   PM – 12:00 AM)
+- `半夜[bun3je6|midnight / middle of the night]` /
+  `凌晨[ling4san4|early morning / before dawn]` — Midnight / Early morning
+  (typically 12:00 AM – 6:00 AM)
 
 Let's look at how these are integrated into schedules:
 
@@ -248,6 +260,22 @@ I am eating a meal.
 They are drinking iced milk tea, obviously!
 ```
 
+We can also use
+`緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]`
+with weather verbs to describe what it's doing outside right now:
+
+```cantonese
+而家[ji4gaa1|now / currently] 落[lok6|to fall / drop / descend / rain] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 雨[jyu5|rain] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+It is raining right now.
+```
+
+```cantonese
+出面[ceot1min6|outside] 打[daa2|to beat / hit / strike] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 風[fung1|wind / typhoon] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+===
+There is a typhoon going on outside!
+```
+
 ### The Ultimate Slang: `Hea[hea1|to chill / hang out / slack off / procrastinate]`
 
 One of the most famous and beloved colloquial words in modern Cantonese is the
@@ -278,12 +306,39 @@ I am chilling out, obviously!
 
 ---
 
-## 5. Situational Dialogue: Slacking Off on the Weekend
+## 5. Weather & Seasons: Discussing the Elements
+
+Being able to talk about the weather is crucial in Hong Kong, where the climate
+ranges from hot and humid to typhoon-level storms.
+
+Here is some essential weather and seasonal vocabulary:
+
+- `落雨[lok6jyu5|to rain / raining]` — To rain / raining
+- `打風[daa2fung1|typhoon / to have a typhoon]` — Typhoon
+- `好[hou2|very / quite / extremely]` `熱[jit6|hot]` — Very hot
+- `好[hou2|very / quite / extremely]` `凍[dung3|cold / freezing]` — Very cold
+- `潮濕[ciu4sap1|humid / damp / moist]` — Humid
+- `出太陽[ceot1taai3joeng4|the sun comes out / sunny]` — Sunny / The sun comes
+  out
+- `天晴[tin1cing4|sunny / clear sky]` — Clear sky / Sunny
+
+When describing how it feels outside, you can use these adjectives directly with
+`好[hou2|very / quite / extremely]`:
+
+```cantonese
+今日[gam1jat6|today] 天氣[tin1hei3|weather] 好[hou2|very / quite / extremely] 潮濕[ciu4sap1|humid / damp / moist] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+===
+The weather is very humid today!
+```
+
+---
+
+## 6. Situational Dialogue: Slacking Off on the Weekend
 
 Here is a typical weekend phone conversation between two friends, Ka-ho (A) and
 Wing-yan (B). A is bored and wants to hang out, while B is enjoying a lazy
-afternoon. Pay close attention to how they tell the time and describe their
-current activities.
+afternoon but doesn't want to go out because of the weather. Pay close attention
+to how they tell the time and describe their current activities.
 
 ```dialog
 A: 喂[wai2|hey!]，Wing-yan！ 你[nei5|you] 依家[ji1gaa1|now] 做[zou6|to do] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what / what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
@@ -292,14 +347,14 @@ B: 我[ngo5|I / me] 喺[hai2|at / in / on] 房[fong2|room / bedroom] 入面[jap6
    === I'm chilling out inside my room, obviously!
 A: 吓[haa2|sentence-final particle expressing surprise, disbelief, or seeking quick confirmation]？ 依家[ji1gaa1|now] 下晝[haa6zau3|afternoon / in the afternoon] 三[saam1|three] 點[dim2|o'clock / hour] 半[bun3|half] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 你[nei5|you] 今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 返工[faan1gung1|to go to work / be at work] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？
    === What? It's 3:30 in the afternoon already! Aren't you going to work today?
-B: 我[ngo5|I / me] 今日[gam1jat6|today] 放假[fong3gaa3|to have a holiday / day off] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 唔[m4|not / no (negative prefix)] 返工[faan1gung1|to go to work / be at work] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
-   === I have a day off today! I'm not working.
-A: 噉[gam2|then / in that case / so] 我哋[ngo5dei6|we / us] 下晝[haa6zau3|afternoon / in the afternoon] 四[sei3|four] 點[dim2|o'clock / hour] 三[saam1|three] 個[go3|general measure word / individual / unit] 字[zi6|five-minute interval] 去[heoi3|to go] 飲[jam2|to drink] 咖啡[gaa3fe1|coffee]，好唔好[hou2 m4 hou2|is that good] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
-   === Then let's go drink coffee at 4:15 PM, is that good?
-B: 四[sei3|four] 點[dim2|o'clock / hour] 三[saam1|three] 個[go3|general measure word / individual / unit] 字[zi6|five-minute interval] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
-   === 4:15 PM?
-A: 係[hai6|to be / to be (am/is/are) / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]，喺[hai2|at / in / on] 地鐵站[dei6tit3zaam6|MTR station / subway station] 隔籬[gaak3lei4|next to / beside / neighbor] 嗰個[go2go3|that one] 茶餐廳[caa4caan1teng1|Hong Kong style café / diner] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']。
-   === Yes, at that café next to the MTR station, obviously.
+B: 我[ngo5|I / me] 今日[gam1jat6|today] 放假[fong3gaa3|to have a holiday / day off] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 加上[gaa1soeng5|moreover / plus] 出面[ceot1min6|outside] 落[lok6|to fall / drop / descend / rain] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 雨[jyu5|rain]，我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 想[soeng2|to want to / would like to] 出街[ceot1gaai1|to go out]。
+   === I have a day off today! Plus it is raining outside, I don't want to go out.
+A: 哎呀[aai1jaa3|interjection of surprise or annoyance]！ 落[lok6|to fall / drop / descend / rain] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 雨[jyu5|rain] 都[dou1|also / even / already] 可以[ho2ji5|can / may / possible] 出街[ceot1gaai1|to go out] 㗎[gaa3|sentence-final particle asserting a point, combination of ge3 and aa3]！ 我哋[ngo5dei6|we / us] 下晝[haa6zau3|afternoon / in the afternoon] 四[sei3|four] 點[dim2|o'clock / hour] 三[saam1|three] 個[go3|general measure word / individual / unit] 字[zi6|five-minute interval] 去[heoi3|to go] 飲[jam2|to drink] 咖啡[gaa3fe1|coffee]，好唔好[hou2 m4 hou2|is that good] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+   === Oh come on! Even if it is raining you can still go out! Let's go drink coffee at 4:15 PM, is that good?
+B: 咁[gam3|so / such / like this] 潮濕[ciu4sap1|humid / damp / moist]... 好[hou2|good / fine / very / quite] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。喺[hai2|at / in / on] 邊度[bin1dou6|where] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+   === It's so humid... Fine. Where at?
+A: 喺[hai2|at / in / on] 地鐵站[dei6tit3zaam6|MTR station / subway station] 隔籬[gaak3lei4|next to / beside / neighbor] 嗰個[go2go3|that one] 茶餐廳[caa4caan1teng1|Hong Kong style café / diner] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']，好[hou2|very / quite / extremely] 近[gan6|near / close] 㗎[gaa3|sentence-final particle asserting a point, combination of ge3 and aa3]。
+   === At that café next to the MTR station, obviously, it's very close.
 B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 噉[gam2|then / in that case / so] 我[ngo5|I / me] 四[sei3|four] 點[dim2|o'clock / hour] 兩[loeng5|two / pair (used with classifiers)] 個[go3|general measure word / individual / unit] 字[zi6|five-minute interval] 去[heoi3|to go] 嗰度[go2dou6|there] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
    === Sure! Then I will go there at 4:10 PM.
 A: 搞掂[gaau2dim6|done / finished / settled / resolved]！ 嗰度[go2dou6|there] 見[gin3|to see / meet] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]，拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
@@ -310,7 +365,7 @@ B: 拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
 
 ---
 
-## 6. Exercises
+## 7. Exercises
 
 Test your understanding of Cantonese time-telling and continuous aspect
 structures:

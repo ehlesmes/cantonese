@@ -56,13 +56,16 @@ I need this one.
 
 ---
 
-## 2. Pointing Things Out: `呢個[ni1go3|this one]` and `嗰個[go2go3|that one]`
+## 2. Pointing Things Out & Connecting Items: `呢個[ni1go3|this one]`, `嗰個[go2go3|that one]`, and `同埋[tung4maai4|and / with]`
 
 If you do not know the name of an object in a shop, you can simply point and use
 these high-frequency demonstrative pronouns:
 
 - `呢個[ni1go3|this one]`: Used for items close to you.
 - `嗰個[go2go3|that one]`: Used for items further away.
+
+To connect two nouns together, like saying "and" in English, use the conjunction
+`同埋[tung4maai4|and / with / together with]`.
 
 Observe how these are used to make simple requests:
 
@@ -73,9 +76,9 @@ I want to buy this one.
 ```
 
 ```cantonese
-我[ngo5|I / me] 要[jiu3|to want / need / must / demand] 嗰個[go2go3|that one] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+我[ngo5|I / me] 要[jiu3|to want / need / must / demand] 呢個[ni1go3|this one] 同埋[tung4maai4|and / with / together with] 嗰個[go2go3|that one] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
 ===
-I will take that one!
+I will take this one and that one!
 ```
 
 ---
@@ -256,6 +259,14 @@ There are no taxis here.
 ---
 
 ## 6. Conversational Dialogue
+
+> [!NOTE] **`唔該[m4goi1|thank you]` vs `多謝[do1ze6|thank you]`** Cantonese has
+> two distinct ways to say "thank you." Use
+> `唔該[m4goi1|excuse me / please / thank you (for service)]` to thank someone
+> for a service or help (like a clerk handing you an item). Use
+> `多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]` when
+> receiving a gift, paying, or in a retail context where the cashier thanks you
+> for your business.
 
 Below is a realistic interaction between a customer (A) and a convenience store
 clerk (B) in Hong Kong.

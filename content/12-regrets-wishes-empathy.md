@@ -73,6 +73,15 @@ describing the regretted action or omission (often paired with negation
 I really regret not traveling with you.
 ```
 
+You can also use `後悔[hau6fui3|to regret]` as a standalone feeling without a
+following action clause:
+
+```cantonese
+我[ngo5|I / me] 真係[zan1hai6|really / truly] 好[hou2|good / fine / very / quite] 後悔[hau6fui3|to regret]。
+===
+I truly regret it.
+```
+
 ---
 
 ## 2. Formulating Wishes & Hopes: `希望[hei1mong6|to hope / wish / hope]` & `祝[zuk1|to wish / congratulate]`
@@ -116,6 +125,10 @@ descriptors and emotional markers:
 - `折墮[zit6do6|miserable / wretched / in a pitiful state]`: A highly colloquial
   and dramatic term for a wretched, miserable, or highly unfortunate state
   (sometimes used humorously or to emphasize extreme hardship).
+  > [!WARNING] `折墮[zit6do6|miserable / wretched / in a pitiful state]` is
+  > highly dramatic and often self-deprecating. Use it cautiously: while you can
+  > use it to complain about your own situation, using it casually to describe
+  > someone else's misfortune can sound offensive or deeply insensitive.
 - `心痛[sam1tung3|to feel distressed / feel for someone]`: Literally "heart
   ache", expressing deep emotional distress or feeling bad on behalf of a
   friend.

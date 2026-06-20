@@ -75,6 +75,13 @@ My wallet was stolen by someone! (Literally: "My wallet by someone stolen!")
 My phone was smashed by others.
 ```
 
+> [!NOTE] If the receiver (the object being acted upon) is already obvious from
+> the context of the conversation, it can be omitted. For example, you can
+> simply exclaim `俾[bei2|by / to give]` `人[jan4|person / people / human]`
+> `偷[tau1|to steal]`
+> `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]`！(It
+> got stolen by someone!) without explicitly stating "my wallet".
+
 ---
 
 ## 2. Focus, Defining & Emphasizing: `即係[zik1hai6|that is / namely / in other words / meaning]`
@@ -123,6 +130,17 @@ let them know"):
 
 ```cantonese
 佢[keoi5|he / she / it] 話[waa6|to say / tell / words / speech] 我[ngo5|I / me] 知[zi1|to know] 佢[keoi5|he / she / it] 好[hou2|good / fine / very / quite] 攰[gui6|tired / exhausted] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+He told me that he is very tired.
+```
+
+Alternatively, you can use `話俾[waa6bei2|to tell / say to]` + [Person] +
+`知[zi1|to know]` or `話俾[waa6bei2|to tell / say to]` + [Person] +
+`聽[teng1|to listen / hear]`, which are extremely common variations with the
+exact same meaning:
+
+```cantonese
+佢[keoi5|he / she / it] 話俾[waa6bei2|to tell / say to] 我[ngo5|I / me] 聽[teng1|to listen / hear] 佢[keoi5|he / she / it] 好[hou2|good / fine / very / quite] 攰[gui6|tired / exhausted] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 He told me that he is very tired.
 ```

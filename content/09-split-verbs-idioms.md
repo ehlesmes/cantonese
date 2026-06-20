@@ -106,6 +106,32 @@ I went jogging. (Note: Here, "jogging" is a noun phrase following "went," so no 
 I am jogging right now! Let's chat tomorrow instead!
 ```
 
+### 4. Asking A-not-A Questions with Split-Verbs
+
+When forming **A-not-A questions** (Verb-not-Verb) with split-verbs, you must
+only duplicate the **verb part**, not the entire compound. It is a very common
+learner mistake to say `游水唔游水[jau4seoi2 m4 jau4seoi2|swim or not swim]`
+(swim-water-not-swim-water)—this is incorrect!
+
+The correct structure is to repeat the verb part, and leave the object part at
+the end:
+
+```
+[Verb Part] + 唔 + [Verb Part] + [Object Part]
+```
+
+```cantonese
+你[nei5|you] 今日[gam1jat6|today] 游唔游[jau4 m4 jau4|do you swim (A-not-A question form)] 水[seoi2|water] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+===
+Are you swimming today?
+```
+
+```cantonese
+你[nei5|you] 今晚[gam1maan5|tonight] 唱唔唱[coeng3 m4 coeng3|do you sing (A-not-A question form)] 歌[go1|song] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+===
+Are you singing tonight?
+```
+
 ---
 
 ## 2. Modifying Split-Verbs: Time, Duration & Frequency

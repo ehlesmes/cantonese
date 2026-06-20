@@ -28,7 +28,24 @@ Let's dive in!
 
 ---
 
-## 1. Noun Modification & Complex Descriptions: `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`
+## 1. Vocabulary: Physical Appearance & Clothing
+
+Before we dive into descriptions and comparisons, let's learn some useful
+vocabulary for describing people and what they wear:
+
+- `靚仔[leng3zai2|handsome boy / handsome]` — handsome
+- `靚女[leng3neoi5|pretty girl / beautiful]` — pretty / beautiful
+- `高[gou1|tall / high]` — tall
+- `矮[ngai2|short (in height)]` — short (in height)
+- `戴[daai3|to wear (accessories like glasses, hats, watches)]`
+  `眼鏡[ngaan5geng2|glasses]` — wearing glasses
+- `衫[saam1|clothes / clothing / shirt]` — clothes / shirt
+- `裙[kwan4|skirt / dress]` — skirt / dress
+- `鞋[haai4|shoes]` — shoes
+
+---
+
+## 2. Noun Modification & Complex Descriptions: `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`
 
 The particle
 `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`
@@ -99,7 +116,7 @@ The dim sum they ate was expensive, obviously!
 
 ---
 
-## 2. The Comparative Suffix: `啲[di1|a bit / some / comparative suffix]`
+## 3. The Comparative Suffix: `啲[di1|a bit / some / comparative suffix]`
 
 To express that something is "more" [adjective], or has the suffix "-er" (e.g.,
 "cheaper", "taller", "bigger"), spoken Cantonese attaches
@@ -113,6 +130,8 @@ To express that something is "more" [adjective], or has the suffix "-er" (e.g.,
   cheaper / a bit cheaper
 - `高[gou1|tall / high]` `啲[di1|a bit / some / comparative suffix]` — taller /
   a bit taller
+- `矮[ngai2|short (in height)]` `啲[di1|a bit / some / comparative suffix]` —
+  shorter / a bit shorter
 - `大[daai6|big / large / great]` `啲[di1|a bit / some / comparative suffix]` —
   bigger / a bit bigger
 - `快[faai3|fast / quick / rapid]` `啲[di1|a bit / some / comparative suffix]` —
@@ -137,7 +156,7 @@ Walk a bit faster!
 
 ---
 
-## 3. Direct Comparisons: `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']`
+## 4. Direct Comparisons: `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']`
 
 When you want to compare two objects directly (e.g., "A is more [adjective] than
 B"), Cantonese uses
@@ -180,9 +199,31 @@ This shirt is more expensive than that one, obviously!
 Speaking Cantonese is more difficult than speaking English.
 ```
 
+### Specifying the Amount of Difference
+
+To specify _how much_ one thing is more than another in a direct comparison,
+place the exact amount or a phrase like `好多[hou2do1|a lot / many / much]`
+**after the object of comparison**:
+
+```
+[Subject A] + [Adjective] + 過 + [Subject B] + [Amount]
+```
+
+```cantonese
+佢[keoi5|he / she / it] 高[gou1|tall / high] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 我[ngo5|I / me] 好多[hou2do1|a lot / many / much] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+He is a lot taller than me.
+```
+
+```cantonese
+呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 貴[gwai3|expensive] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 一百[jat1baak3|one hundred] 蚊[man1|dollar (spoken Cantonese colloquial unit of currency)] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+===
+This shirt is one hundred dollars more expensive than that one, obviously!
+```
+
 ---
 
-## 4. Equality & Negated Comparisons: `同[tung4|with / same as / and]` and `冇[mou5|to not have / there is not]`
+## 5. Equality & Negated Comparisons: `同[tung4|with / same as / and]` and `冇[mou5|to not have / there is not]`
 
 To say two things are identical, or to say one thing is _not_ as [adjective] as
 another, we use specific sentence patterns.
@@ -234,7 +275,7 @@ Cheap clothes are not as pretty as expensive clothes, obviously!
 
 ---
 
-## 5. Superlatives: `最[zeoi3|most / superlative prefix]`
+## 6. Superlatives: `最[zeoi3|most / superlative prefix]`
 
 To express the absolute "most" of a quality (the superlative), place
 `最[zeoi3|most / superlative prefix]` directly before the adjective.
@@ -246,6 +287,8 @@ To express the absolute "most" of a quality (the superlative), place
 - `最[zeoi3|most / superlative prefix]`
   `靚[leng3|pretty / beautiful / handsome / high quality]` — prettiest / most
   beautiful
+- `最[zeoi3|most / superlative prefix]`
+  `靚仔[leng3zai2|handsome boy / handsome]` — most handsome
 - `最[zeoi3|most / superlative prefix]` `平[peng4|cheap / inexpensive]` —
   cheapest
 - `最[zeoi3|most / superlative prefix]` `大[daai6|big / large / great]` —
@@ -267,35 +310,26 @@ I like eating dim sum the most!
 
 ---
 
-## 6. Situational Dialogue: At the Clothing Store
+## 7. Situational Dialogue: People Watching
 
-Wing-kit (A) and Sau-han (B) are browsing clothes in a boutique in Mong Kok.
-They are discussing the styles, sizes, and prices of shirts and shoes.
+Wing-kit (A) and Sau-han (B) are people-watching from a cafe in Mong Kok.
 
 ```dialog
-A: Sau-han，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa5|verbal suffix indicating a brief action or attempt]！呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 好[hou2|good / fine / very / quite] 靚[leng3|pretty / beautiful / handsome / high quality] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
-   === Sau-han, take a look! This shirt is very pretty!
-B: 邊[bin1|which] 件[gin6|measure word for clothes, matters, and items] 呀[aa3|sentence-final particle softening statements, making questions friendly]？你[nei5|you] 講[gong2|to speak / say / talk] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 係[hai6|to be (am/is/are) / yes] 呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 定[ding6|or (used exclusively in alternative questions)] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
-   === Which one? Is the one you are talking about this one or that one?
-A: 呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 呀[aa3|sentence-final particle softening statements, making questions friendly]。我[ngo5|I / me] 覺得[gok3dak1|to feel / think] 呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 靚[leng3|pretty / beautiful / handsome / high quality] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
-   === This one. I think this one is prettier than that one, obviously!
-B: 係[hai6|to be (am/is/are) / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]，但係[daan6hai6|but / however] 呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 貴[gwai3|expensive] 好[hou2|good / fine / very / quite] 多[do1|many / much / more] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 平[peng4|cheap / inexpensive] 啲[di1|a bit / some / comparative suffix] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
-   === Yes, but this one is a lot more expensive! That one is cheaper.
-A: 噉[gam2|then / in that case / so] 呢[ni1|this] 對[deoi3|pair / couple (classifier for paired objects like shoes)] 鞋[haai4|shoes] 呢[ne1|sentence-final particle for queries (how about / what about)]？你[nei5|you] 覺得[gok3dak1|to feel / think] 點樣[dim2joeng6|how / in what way] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
-   === Then how about this pair of shoes? What do you think?
-B: 呢[ni1|this] 對[deoi3|pair / couple (classifier for paired objects like shoes)] 冇[mou5|to not have / there is not] 嗰[go2|that] 對[deoi3|pair / couple (classifier for paired objects like shoes)] 咁[gam3|so / such / to this degree] 靚[leng3|pretty / beautiful / handsome / high quality] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']。嗰[go2|that] 對[deoi3|pair / couple (classifier for paired objects like shoes)] 靚[leng3|pretty / beautiful / handsome / high quality] 啲[di1|a bit / some / comparative suffix] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
-   === This pair is not as pretty as that pair, obviously. That pair is prettier.
-A: 但係[daan6hai6|but / however] 嗰[go2|that] 對[deoi3|pair / couple (classifier for paired objects like shoes)] 鞋[haai4|shoes] 好[hou2|good / fine / very / quite] 大[daai6|big / large / great] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！我[ngo5|I / me] 覺得[gok3dak1|to feel / think] 呢[ni1|this] 對[deoi3|pair / couple (classifier for paired objects like shoes)] 細[sai3|small / little / tiny] 啲[di1|a bit / some / comparative suffix] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 鞋[haai4|shoes] 啱[ngaam1|correct / right / suitable / fit] 我[ngo5|I / me] 啲[di1|a bit / some / comparative suffix] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
-   === But that pair of shoes is very big! I feel this smaller pair of shoes fits me a bit better, obviously!
-B: 噉[gam2|then / in that case / so] 你[nei5|you] 買[maai5|to buy] 呢[ni1|this] 對[deoi3|pair / couple (classifier for paired objects like shoes)] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！呢[ni1|this] 對[deoi3|pair / couple (classifier for paired objects like shoes)] 最[zeoi3|most / superlative prefix] 平[peng4|cheap / inexpensive] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
-   === Then you should buy this pair! This pair is the cheapest!
-A: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 搞掂[gaau2dim6|done / finished / settled / resolved]！ 唔該[m4goi1|excuse me / please / thank you (for service or help)] 你[nei5|you] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
-   === Great! Done! Thank you!
+A: Sau-han，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa5|verbal suffix indicating a brief action or attempt]！嗰[go2|that] 個[go3|general measure word] 男仔[naam4zai2|boy / young man] 好[hou2|good / fine / very / quite] 靚仔[leng3zai2|handsome boy / handsome] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+   === Sau-han, take a look! That guy is very handsome!
+B: 邊[bin1|which] 個[go3|general measure word] 呀[aa3|sentence-final particle softening statements, making questions friendly]？戴[daai3|to wear (accessories like glasses, hats, watches)] 眼鏡[ngaan5geng2|glasses] 嗰[go2|that] 個[go3|general measure word] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+   === Which one? The one wearing glasses?
+A: 係[hai6|to be (am/is/are) / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]。佢[keoi5|he / she / it] 高[gou1|tall / high] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 你[nei5|you] 好多[hou2do1|a lot / many / much] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+   === Yes. He is a lot taller than you, obviously!
+B: 喂[wai3|hey / hello]！我[ngo5|I / me] 冇[mou5|to not have / there is not] 佢[keoi5|he / she / it] 咁[gam3|so / such / to this degree] 高[gou1|tall / high]，但係[daan6hai6|but / however] 我[ngo5|I / me] 唔[m4|not (negation particle)] 矮[ngai2|short (in height)] 呀[aa3|sentence-final particle softening statements, making questions friendly]！同埋[tung4maai4|and / with / together with / also] 佢[keoi5|he / she / it] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 冇[mou5|to not have / there is not] 我[ngo5|I / me] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 咁[gam3|so / such / to this degree] 靚[leng3|pretty / beautiful / handsome / high quality] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+   === Hey! I am not as tall as him, but I am not short! And his shirt is not as nice as my shirt, obviously!
+A: 係[hai6|to be (am/is/are) / yes] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action] 係[hai6|to be (am/is/are) / yes] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。你[nei5|you] 最[zeoi3|most / superlative prefix] 靚仔[leng3zai2|handsome boy / handsome] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+   === Yeah, yeah. You are the most handsome!
 ```
 
 ---
 
-## 7. Exercises
+## 8. Exercises
 
 Test your understanding of Cantonese relative clauses, comparatives, and
 superlatives.
