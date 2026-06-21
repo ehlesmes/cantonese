@@ -550,12 +550,30 @@
 
     function tickScanner() {
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
-        const width = video.videoWidth;
-        const height = video.videoHeight;
+        const videoWidth = video.videoWidth;
+        const videoHeight = video.videoHeight;
         
-        hiddenCanvas.width = width;
-        hiddenCanvas.height = height;
-        const ctx = hiddenCanvas.getContext('2d');
+        // Scale down video frame to a max dimension of 480px to optimize scan performance
+        const maxDim = 480;
+        let width = videoWidth;
+        let height = videoHeight;
+        if (videoWidth > maxDim || videoHeight > maxDim) {
+          if (videoWidth > videoHeight) {
+            width = maxDim;
+            height = Math.round((videoHeight * maxDim) / videoWidth);
+          } else {
+            height = maxDim;
+            width = Math.round((videoWidth * maxDim) / videoHeight);
+          }
+        }
+
+        // Avoid resizing canvas on every frame if dimensions are already correct
+        if (hiddenCanvas.width !== width || hiddenCanvas.height !== height) {
+          hiddenCanvas.width = width;
+          hiddenCanvas.height = height;
+        }
+
+        const ctx = hiddenCanvas.getContext('2d', { willReadFrequently: true });
         ctx.drawImage(video, 0, 0, width, height);
         
         const imageData = ctx.getImageData(0, 0, width, height);
