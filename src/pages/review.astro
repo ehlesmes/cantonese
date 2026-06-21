@@ -46,6 +46,7 @@ for (const chapter of chapters) {
   if (fileExists) {
     const { blocks } = parseChapter(filePath);
     let exampleIndex = 0;
+    let turnIndex = 0;
     
     for (const block of blocks) {
       if (block.type === "cantonese") {
@@ -68,7 +69,6 @@ for (const chapter of chapters) {
       } else if (block.type === "dialog") {
         const lines = block.content.split(/\r?\n/);
         let currentTurn = null;
-        let turnIndex = 0;
         
         for (const line of lines) {
           const trimmed = line.trim();

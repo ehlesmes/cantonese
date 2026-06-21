@@ -34,9 +34,9 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     console.log("Legacy test - Stats chapters count:", statsChapters);
     console.log("Legacy test - Stats cards count:", statsCards);
 
-    // Assert that the chapters count is 2 (Chapter 1 and 2), and cards count is 46 (22 + 24)
+    // Assert that the chapters count is 2 (Chapter 1 and 2), and cards count is 48 (22 + 26)
     expect(statsChapters).toBe("2");
-    expect(statsCards).toBe("46");
+    expect(statsCards).toBe("48");
 
     // Check if the checkboxes for 1 and 2 are checked
     const ch1Checked = await page
@@ -69,6 +69,14 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
   test("should accept swapped order of identical duplicate tokens", async ({
     page,
   }) => {
+    page.on("console", (msg) => {
+      console.log("DUPLICATE TEST BROWSER LOG:", msg.type(), msg.text());
+    });
+
+    page.on("pageerror", (err) => {
+      console.error("DUPLICATE TEST BROWSER PAGE ERROR:", err.message);
+    });
+
     // 1. Seed localStorage and intercept __allExamples before page load
     await page.addInitScript(() => {
       localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([3]));
@@ -81,7 +89,7 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
         set(newVal) {
           val = newVal;
           // Find the specific card with duplicate tokens
-          const targetCard = val.find((c) => c.id === "ch3-dg3");
+          const targetCard = val.find((c) => c.id === "ch3-dg9");
           if (targetCard) {
             val.length = 0;
             val.push(targetCard);
@@ -102,6 +110,11 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     // 3. Start the session
     await page.click("#start-session-btn");
     await page.waitForSelector("#game-tokens-pool");
+
+    const chipsText = await page
+      .locator("#game-tokens-pool .token-chip")
+      .allTextContents();
+    console.log("Chips in pool:", chipsText);
 
     // Scrambled pool locator helper
     const getChip = (text) =>
