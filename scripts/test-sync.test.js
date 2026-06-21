@@ -8,13 +8,14 @@ import {
 describe("Progress Sync Utility Spec", () => {
   test("serialization and deserialization roundtrip preserves progress state", () => {
     const originalState = {
-      chapters: [0, 1, 3],
+      chapters: [0, 1, 3, 8, 13],
       srs: {
         "ch1-ex0": { level: 2, lastReviewed: 1718985600000 },
         "ch2-dg3": { level: 5, lastReviewed: 1718985900000 },
       },
       vocab: {
         "vocab-你好_neihhou": { level: 1, lastReviewed: 1718985700000 },
+        "vocab-smart-quote-’": { level: 4, lastReviewed: 1718985800000 },
       },
     };
 
@@ -24,12 +25,11 @@ describe("Progress Sync Utility Spec", () => {
 
     const deserialized = deserializeState(serialized);
     expect(deserialized).not.toBeNull();
-    expect(deserialized.chapters).toEqual([0, 1, 3]);
+    expect(deserialized.chapters).toEqual([0, 1, 3, 8, 13]);
 
     // Check phrasebook srs
     expect(deserialized.srs["ch1-ex0"]).toBeDefined();
     expect(deserialized.srs["ch1-ex0"].level).toBe(2);
-    // Since timestamp is compacted (divided by 1000 and rounded), check within second level precision
     expect(deserialized.srs["ch1-ex0"].lastReviewed).toBe(1718985600000);
     expect(deserialized.srs["ch2-dg3"].level).toBe(5);
     expect(deserialized.srs["ch2-dg3"].lastReviewed).toBe(1718985900000);
@@ -40,9 +40,47 @@ describe("Progress Sync Utility Spec", () => {
     expect(deserialized.vocab["vocab-你好_neihhou"].lastReviewed).toBe(
       1718985700000,
     );
+    expect(deserialized.vocab["vocab-smart-quote-’"]).toBeDefined();
+    expect(deserialized.vocab["vocab-smart-quote-’"].level).toBe(4);
+    expect(deserialized.vocab["vocab-smart-quote-’"].lastReviewed).toBe(
+      1718985800000,
+    );
 
-    // Check serialization generates a valid timestamp
     expect(deserialized.timestamp).toBeGreaterThan(0);
+  });
+
+  test("fallback serialization and deserialization roundtrip (pure JS) preserves progress state", () => {
+    // Temporarily delete native methods to force fallback code execution
+    const origToBase64 = Uint8Array.prototype.toBase64;
+    const origFromBase64 = Uint8Array.fromBase64;
+    delete Uint8Array.prototype.toBase64;
+    delete Uint8Array.fromBase64;
+
+    try {
+      const originalState = {
+        chapters: [0, 1, 3, 8, 13],
+        srs: {
+          "ch1-ex0": { level: 2, lastReviewed: 1718985600000 },
+        },
+        vocab: {
+          "vocab-你好_neihhou": { level: 1, lastReviewed: 1718985700000 },
+          "vocab-smart-quote-’": { level: 4, lastReviewed: 1718985800000 },
+        },
+      };
+
+      const serialized = serializeState(originalState);
+      expect(typeof serialized).toBe("string");
+      expect(serialized.length).toBeGreaterThan(0);
+
+      const deserialized = deserializeState(serialized);
+      expect(deserialized).not.toBeNull();
+      expect(deserialized.chapters).toEqual([0, 1, 3, 8, 13]);
+      expect(deserialized.vocab["vocab-smart-quote-’"].level).toBe(4);
+    } finally {
+      // Restore native methods
+      Uint8Array.prototype.toBase64 = origToBase64;
+      Uint8Array.fromBase64 = origFromBase64;
+    }
   });
 
   test("deserialization handles Base64 strings with spaces (plus signs replaced by URL decoding)", () => {

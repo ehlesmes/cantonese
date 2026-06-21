@@ -1,4 +1,4 @@
-/* global window, localStorage, btoa, atob */
+/* global window, localStorage, TextEncoder, TextDecoder */
 /**
  * Sync Utility functions for Colloquial Cantonese course progress.
  * Serializes, validates, and merges localStorage progress data.
@@ -11,6 +11,87 @@ const SHORT_KEYS = {
   vocab: "v",
   timestamp: "t",
 };
+
+// URL-safe Base64 character set
+const BASE64URL_CHARS =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+
+/**
+ * Pure JS fallback to encode a Uint8Array to a URL-safe Base64 string (no padding).
+ */
+export function bytesToBase64Url(bytes) {
+  let result = "";
+  const l = bytes.length;
+  for (let i = 0; i < l; i += 3) {
+    const b1 = bytes[i];
+    const b2 = i + 1 < l ? bytes[i + 1] : NaN;
+    const b3 = i + 2 < l ? bytes[i + 2] : NaN;
+
+    const enc1 = b1 >> 2;
+    const enc2 = ((b1 & 3) << 4) | (isNaN(b2) ? 0 : b2 >> 4);
+    const enc3 = isNaN(b2) ? NaN : ((b2 & 15) << 2) | (isNaN(b3) ? 0 : b3 >> 6);
+    const enc4 = isNaN(b3) ? NaN : b3 & 63;
+
+    result += BASE64URL_CHARS[enc1] + BASE64URL_CHARS[enc2];
+    if (!isNaN(enc3)) result += BASE64URL_CHARS[enc3];
+    if (!isNaN(enc4)) result += BASE64URL_CHARS[enc4];
+  }
+  return result;
+}
+
+/**
+ * Pure JS fallback to decode a URL-safe Base64 string (without or with padding) into a Uint8Array.
+ */
+export function base64UrlToBytes(str) {
+  const cleanStr = str
+    .replace(/=/g, "")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_");
+  const lookup = {};
+  for (let i = 0; i < BASE64URL_CHARS.length; i++) {
+    lookup[BASE64URL_CHARS[i]] = i;
+  }
+
+  const bytes = [];
+  const l = cleanStr.length;
+  for (let i = 0; i < l; i += 4) {
+    const enc1 = lookup[cleanStr[i]];
+    const enc2 = i + 1 < l ? lookup[cleanStr[i + 1]] : 0;
+    const enc3 = i + 2 < l ? lookup[cleanStr[i + 2]] : NaN;
+    const enc4 = i + 3 < l ? lookup[cleanStr[i + 3]] : NaN;
+
+    if (
+      enc1 === undefined ||
+      enc2 === undefined ||
+      (cleanStr[i + 2] !== undefined && enc3 === undefined) ||
+      (cleanStr[i + 3] !== undefined && enc4 === undefined)
+    ) {
+      throw new Error("Invalid Base64 character");
+    }
+
+    const b1 = (enc1 << 2) | (enc2 >> 4);
+    bytes.push(b1);
+
+    if (!isNaN(enc3)) {
+      const b2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+      bytes.push(b2);
+      if (!isNaN(enc4)) {
+        const b3 = ((enc3 & 3) << 6) | enc4;
+        bytes.push(b3);
+      }
+    }
+  }
+  return new Uint8Array(bytes);
+}
+
+// Detect browser support for standard native Base64 on Uint8Array
+function hasNativeBase64() {
+  return (
+    typeof Uint8Array !== "undefined" &&
+    typeof Uint8Array.prototype.toBase64 === "function" &&
+    typeof Uint8Array.fromBase64 === "function"
+  );
+}
 
 /**
  * Reads local storage progress states
@@ -82,17 +163,17 @@ export function serializeState(state) {
   }
 
   const jsonStr = JSON.stringify(compacted);
+  const bytes = new TextEncoder().encode(jsonStr);
 
-  // Encode string safely for URL query params using btoa and encodeURIComponent
-  // This supports Unicode characters (such as Cantonese characters in vocabulary IDs)
-  const base64 = btoa(
-    encodeURIComponent(jsonStr).replace(/%([0-9A-F]{2})/g, (match, p1) => {
-      return String.fromCharCode(parseInt(p1, 16));
-    }),
-  );
+  if (hasNativeBase64()) {
+    try {
+      return bytes.toBase64({ alphabet: "base64url", omitPadding: true });
+    } catch {
+      // Fallback
+    }
+  }
 
-  // Make Base64 URL-safe (replace + with -, / with _, and strip trailing =)
-  return base64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  return bytesToBase64Url(bytes);
 }
 
 /**
@@ -104,27 +185,31 @@ export function deserializeState(serializedStr) {
   }
 
   try {
-    // Restore standard Base64 characters from URL-safe ones
-    // Convert ' ' back to '+' (in case URL search param decoding replaced '+' with space)
-    let base64 = serializedStr
-      .replace(/-/g, "+")
-      .replace(/_/g, "/")
-      .replace(/ /g, "+");
+    // Normalize string: convert space (which URLSearchParams decodes '+' as) to '+'
+    // and standardize to URL-safe characters
+    let cleanStr = serializedStr
+      .trim()
+      .replace(/ /g, "+") // Handle spaces decoded from URLSearchParams
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_");
 
-    // Restore padding if length is not a multiple of 4
-    const pad = base64.length % 4;
-    if (pad) {
-      base64 += "=".repeat(4 - pad);
+    let rawStr;
+    if (hasNativeBase64()) {
+      try {
+        const decodedBytes = Uint8Array.fromBase64(cleanStr, {
+          alphabet: "base64url",
+          lastChunkHandling: "loose",
+        });
+        rawStr = new TextDecoder().decode(decodedBytes);
+      } catch {
+        // Fallback
+      }
     }
 
-    const rawStr = decodeURIComponent(
-      atob(base64)
-        .split("")
-        .map((c) => {
-          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join(""),
-    );
+    if (!rawStr) {
+      const decodedBytes = base64UrlToBytes(cleanStr);
+      rawStr = new TextDecoder().decode(decodedBytes);
+    }
 
     const compacted = JSON.parse(rawStr);
 
