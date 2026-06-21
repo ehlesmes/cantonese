@@ -537,4 +537,145 @@ p {
 .srs-level-4 { background-color: rgba(143, 168, 122, 0.15); color: #627850; border: 1px solid rgba(143, 168, 122, 0.25); }
 .srs-level-5 { background-color: rgba(91, 122, 92, 0.15); color: var(--secondary-color); border: 1px solid rgba(91, 122, 92, 0.25); }
 
+/* Flashcard Specific Styling */
+.flashcard-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 2.5rem 1.5rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flashcard-character {
+  font-size: 3.5rem;
+  font-family: var(--font-heading);
+  color: var(--text-color);
+  text-align: center;
+  margin: 1.5rem 0;
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flashcard-character .vocab-term {
+  border-bottom: 2px dashed var(--accent-color);
+  padding: 0 0.6rem;
+  font-weight: 700;
+  background-color: rgba(179, 80, 26, 0.03);
+}
+
+.flashcard-character .vocab-term:hover {
+  background-color: rgba(179, 80, 26, 0.08);
+  border-bottom-style: solid;
+}
+
+.flashcard-character .tooltip-popover {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-shadow: none;
+  letter-spacing: normal;
+  text-transform: none;
+  transform: translateX(-50%);
+  bottom: 125%;
+}
+
+.flashcard-answer-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border-color);
+  width: 100%;
+  text-align: center;
+}
+
+.flashcard-translation {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.flashcard-reveal-btn {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  box-shadow: 0 4px 6px rgba(179, 80, 26, 0.15);
+}
+
+.flashcard-reveal-btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px rgba(179, 80, 26, 0.2);
+}
+
+.flashcard-reveal-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(179, 80, 26, 0.15);
+}
+
+.flashcard-grade-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+  max-width: 400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-grade {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-grade-forgot {
+  background-color: rgba(179, 80, 26, 0.12);
+  color: var(--accent-color);
+  border: 1px solid rgba(179, 80, 26, 0.25);
+}
+
+.btn-grade-forgot:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+.btn-grade-remembered {
+  background-color: rgba(91, 122, 92, 0.12);
+  color: var(--secondary-color);
+  border: 1px solid rgba(91, 122, 92, 0.25);
+}
+
+.btn-grade-remembered:hover {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+
 

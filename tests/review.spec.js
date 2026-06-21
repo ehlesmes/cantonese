@@ -25,7 +25,7 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     });
 
     // 3. Go to review board
-    await page.goto("/cantonese/review");
+    await page.goto("/cantonese/phrasebook");
     await page.waitForSelector("#stats-cards-count");
 
     // Check stats count
@@ -100,7 +100,7 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     });
 
     // 2. Go to review board
-    await page.goto("/cantonese/review");
+    await page.goto("/cantonese/phrasebook");
     await page.waitForSelector("#stats-cards-count");
 
     // Verify stats cards count is 1

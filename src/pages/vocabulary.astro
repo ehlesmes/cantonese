@@ -1,0 +1,581 @@
+---
+import fs from "fs";
+import path from "path";
+import { createRequire } from "module";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Load and execute scripts/lib/parser.js to parse curriculum and content
+const cjsRequire = createRequire(import.meta.url);
+const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
+const parserCode = fs.readFileSync(parserPath, "utf8");
+
+const parserModule = { exports: {} };
+const runParser = new Function("exports", "require", "module", "__filename", "__dirname", parserCode);
+runParser(
+  parserModule.exports,
+  cjsRequire,
+  parserModule,
+  parserPath,
+  path.dirname(parserPath)
+);
+
+const { parseCurriculum } = parserModule.exports;
+const curriculumPath = path.resolve("content/curriculum.md");
+const chapters = parseCurriculum(curriculumPath);
+
+// Prepare chapter entries with exist status
+const chaptersMeta = chapters.map(c => {
+  const fileExists = fs.existsSync(path.resolve("content", c.file));
+  return {
+    chapter: c.chapter,
+    title: c.title,
+    exists: fileExists
+  };
+});
+
+// Load vocabulary.json database
+const vocabPath = path.resolve("content/vocabulary.json");
+const allVocabRaw = JSON.parse(fs.readFileSync(vocabPath, "utf8"));
+
+// Enrich vocabulary items with structured fields
+const allVocab = allVocabRaw.map(item => {
+  const match = item.firstIntroducedIn.match(/^(\d{2})-/);
+  const chapterNum = match ? parseInt(match[1], 10) : 0;
+  const chMeta = chaptersMeta.find(c => c.chapter === chapterNum);
+  return {
+    id: `vocab-${item.character}_${item.jyutping.replace(/\s+/g, "")}`,
+    character: item.character,
+    jyutping: item.jyutping,
+    translation: item.translation,
+    chapter: chapterNum,
+    chapterTitle: chMeta ? chMeta.title : "Introduction",
+    occurrences: item.occurrences
+  };
+});
+---
+
+<BaseLayout title="Vocabulary" description="Practice and master Cantonese vocabulary terms using Spaced Repetition (SRS) flashcards.">
+  <div style="margin-bottom: 2rem;">
+    <span style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color);">
+      廣東話 Vocabulary
+    </span>
+    <h1 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">Spaced Repetition Vocabulary</h1>
+    <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4; font-style: italic; margin-bottom: 0;">
+      Test your word recall. Review vocabulary terms using flashcards.
+    </p>
+  </div>
+
+  {/* MAIN CONTROLLER CONTAINER */}
+  <div id="review-root">
+    
+    {/* DASHBOARD VIEW */}
+    <div id="dashboard-view" class="review-dashboard">
+      
+      {/* Top Play Action (Easy Access) */}
+      <div class="cantonese-example-card" style="border-left-color: var(--accent-color); padding: 1.5rem; text-align: center; background-color: #faf7ef;">
+        <h2 style="margin-top: 0; margin-bottom: 0.5rem; border-bottom: none; padding-bottom: 0;">Ready to Practice?</h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+          We will select 10 vocabulary words using Spaced Repetition weights. Lower-level words appear more frequently.
+        </p>
+        <button id="start-session-btn" style="font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: #ffffff; background-color: var(--accent-color); border: none; border-radius: 6px; padding: 0.75rem 2rem; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 6px rgba(179, 80, 26, 0.15);" onmouseover="this.style.backgroundColor='var(--accent-hover)'" onmouseout="this.style.backgroundColor='var(--accent-color)'">
+          Start Practice Session (10 Cards)
+        </button>
+      </div>
+
+      {/* Stats Section */}
+      <div class="srs-stats-grid">
+        <div class="srs-stat-card">
+          <div class="srs-stat-number" id="stats-chapters-count">0</div>
+          <div class="srs-stat-label">Chapters Unlocked</div>
+        </div>
+        <div class="srs-stat-card">
+          <div class="srs-stat-number" id="stats-cards-count">0</div>
+          <div class="srs-stat-label">Total Words in Pool</div>
+        </div>
+        <div class="srs-stat-card">
+          <div class="srs-stat-number" id="stats-mastered-count">0</div>
+          <div class="srs-stat-label">Mastered (Lvl 5)</div>
+        </div>
+      </div>
+
+      {/* Chapter Selection Config */}
+      <div class="cantonese-example-card" style="border-left-color: var(--secondary-color); padding: 1.2rem 1.5rem;">
+        <h3 style="margin-top: 0; margin-bottom: 0.6rem; font-family: var(--font-heading); color: var(--secondary-color);">Vocabulary Pool Configuration</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.45;">
+          Toggle chapters below to add or remove their vocabulary terms from your active review pool.
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 250px; overflow-y: auto; border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 6px; background-color: rgba(0,0,0,0.01);">
+          {chaptersMeta.map(ch => (
+            <label style={`display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: ${ch.exists ? "pointer" : "default"}; opacity: ${ch.exists ? 1 : 0.5}; user-select: none; padding: 0.15rem 0;`}>
+              <input type="checkbox" class="chapter-toggle-cb" data-chapter={ch.chapter} disabled={!ch.exists} style="width: 1rem; height: 1rem; cursor: pointer;" />
+              <span style="font-weight: 600; min-width: 2.5rem;">Ch {ch.chapter}:</span> {ch.title}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Review Pool Items Directory (With Grouping Controls) */}
+      <div style="margin-top: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <h2 style="margin: 0; border: none; padding: 0; font-size: 1.3rem;">Active Vocabulary Directory</h2>
+          <div class="group-tabs">
+            <button id="group-by-chapter-btn" class="group-tab-btn active">By Chapter</button>
+            <button id="group-by-level-btn" class="group-tab-btn">By SRS Level</button>
+          </div>
+        </div>
+        
+        <div id="review-items-list-container">
+          {/* Dynamic lists rendered via JavaScript */}
+        </div>
+      </div>
+
+    </div>
+
+    {/* SESSION VIEW */}
+    <div id="session-view" style="display: none; flex-direction: column; gap: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: var(--text-muted);">
+        <span id="session-progress-text" style="font-weight: 600;">Card 1 of 10</span>
+        <button id="session-quit-btn" style="background: none; border: none; color: var(--accent-color); font-weight: 600; cursor: pointer; font-size: 0.88rem;">Quit Session</button>
+      </div>
+
+      <div class="progress-bar-container">
+        <div id="session-progress-fill" class="progress-bar-fill"></div>
+      </div>
+
+      {/* Flashcard Card */}
+      <div class="flashcard-card">
+        <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem; text-align: center; width: 100%;" id="session-chapter-label">Chapter 1 Vocabulary</span>
+        
+        {/* Cantonese Character Prompt (with hover romanization & click TTS) */}
+        <div id="flashcard-character-container" class="flashcard-character">
+          {/* Populated dynamically */}
+        </div>
+
+        {/* Action Button: Reveal Answer */}
+        <button id="flashcard-reveal-btn" class="flashcard-reveal-btn">
+          Reveal Translation
+        </button>
+
+        {/* Revealed Section (Translation & Self Grading) */}
+        <div id="flashcard-answer-section" class="flashcard-answer-section" style="display: none;">
+          <div id="flashcard-translation-text" class="flashcard-translation">
+            English Translation
+          </div>
+
+          <div style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.6rem; letter-spacing: 0.05em; text-align: center;">
+            Did you remember it?
+          </div>
+          
+          <div class="flashcard-grade-grid">
+            <button id="grade-forgot-btn" class="btn-grade btn-grade-forgot">
+              Forgot
+            </button>
+            <button id="grade-remembered-btn" class="btn-grade btn-grade-remembered">
+              Remembered
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* SUMMARY VIEW */}
+    <div id="summary-view" style="display: none; flex-direction: column; gap: 1.5rem; text-align: center;">
+      <div class="cantonese-example-card" style="border-left-color: var(--secondary-color); padding: 2.5rem 2rem; background-color: #faf7ef;">
+        <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🎉</span>
+        <h2 style="margin-top: 0; border: none; padding-bottom: 0;">Session Completed!</h2>
+        <div style="font-size: 2.5rem; font-family: var(--font-heading); font-weight: 700; color: var(--secondary-color); margin: 1rem 0;" id="summary-score">
+          8 / 10
+        </div>
+        <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 1.5rem;" id="summary-message">
+          Great job! Keep practicing to lock these vocabulary terms into long-term memory.
+        </p>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+          <button id="summary-dashboard-btn" style="font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; border: 1px solid var(--border-color); background-color: transparent; border-radius: 4px; padding: 0.6rem 1.5rem; cursor: pointer; color: var(--text-color);">
+            Vocabulary Dashboard
+          </button>
+          <button id="summary-retry-btn" style="font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; border: none; background-color: var(--accent-color); color: #ffffff; border-radius: 4px; padding: 0.6rem 1.5rem; cursor: pointer; transition: all 0.2s ease;">
+            Practice Again
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {/* CLIENT CONTROLLER SCRIPT */}
+  <script is:inline define:vars={{ allVocab }}>
+    if (typeof window !== 'undefined') {
+      window.__allVocab = allVocab;
+    }
+
+    // Global state and references
+    let unlockedChapters = [0];
+    let vocabSRSState = {};
+    let sessionCards = [];
+    let currentCardIndex = 0;
+    let sessionCorrectCount = 0;
+    let currentGroupMode = "chapter"; // "chapter" or "level"
+
+    // Initializer
+    document.addEventListener('DOMContentLoaded', () => {
+      loadLocalStorage();
+      setupChapterToggles();
+      renderDashboard();
+      
+      // Bind Start Game Button
+      const startBtn = document.getElementById('start-session-btn');
+      if (startBtn) startBtn.addEventListener('click', startPracticeSession);
+
+      // Bind Quit Button
+      const quitBtn = document.getElementById('session-quit-btn');
+      if (quitBtn) quitBtn.addEventListener('click', quitSession);
+
+      // Bind Summary Buttons
+      const summaryDashBtn = document.getElementById('summary-dashboard-btn');
+      if (summaryDashBtn) summaryDashBtn.addEventListener('click', exitSession);
+      const summaryRetryBtn = document.getElementById('summary-retry-btn');
+      if (summaryRetryBtn) summaryRetryBtn.addEventListener('click', () => {
+        exitSession();
+        startPracticeSession();
+      });
+
+      // Bind Gameplay Actions
+      const revealBtn = document.getElementById('flashcard-reveal-btn');
+      if (revealBtn) revealBtn.addEventListener('click', revealAnswer);
+
+      const forgotBtn = document.getElementById('grade-forgot-btn');
+      if (forgotBtn) forgotBtn.addEventListener('click', () => gradeCard(false));
+
+      const rememberedBtn = document.getElementById('grade-remembered-btn');
+      if (rememberedBtn) rememberedBtn.addEventListener('click', () => gradeCard(true));
+
+      // Bind Directory Grouping Tabs
+      const groupChapterBtn = document.getElementById('group-by-chapter-btn');
+      const groupLevelBtn = document.getElementById('group-by-level-btn');
+      
+      if (groupChapterBtn && groupLevelBtn) {
+        groupChapterBtn.addEventListener('click', () => {
+          groupChapterBtn.classList.add('active');
+          groupLevelBtn.classList.remove('active');
+          currentGroupMode = "chapter";
+          renderPoolDirectory();
+        });
+        groupLevelBtn.addEventListener('click', () => {
+          groupLevelBtn.classList.add('active');
+          groupChapterBtn.classList.remove('active');
+          currentGroupMode = "level";
+          renderPoolDirectory();
+        });
+      }
+    });
+
+    // LocalStorage Operations
+    function loadLocalStorage() {
+      try {
+        const storedChapters = localStorage.getItem('cantonese_unlocked_chapters');
+        if (storedChapters) {
+          unlockedChapters = JSON.parse(storedChapters).map(Number);
+          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
+        } else {
+          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
+        }
+
+        const storedSRS = localStorage.getItem('cantonese_vocab_srs_state');
+        if (storedSRS) {
+          vocabSRSState = JSON.parse(storedSRS);
+        }
+      } catch (e) {
+        console.error('LocalStorage load failed:', e);
+      }
+    }
+
+    // Save state
+    function saveSRSState() {
+      try {
+        localStorage.setItem('cantonese_vocab_srs_state', JSON.stringify(vocabSRSState));
+      } catch (e) {
+        console.error('LocalStorage save failed:', e);
+      }
+    }
+
+    // Set up Configuration Checkboxes
+    function setupChapterToggles() {
+      const checkboxes = document.querySelectorAll('.chapter-toggle-cb');
+      checkboxes.forEach(cb => {
+        const chNum = parseInt(cb.getAttribute('data-chapter'), 10);
+        cb.checked = unlockedChapters.includes(chNum);
+        
+        cb.addEventListener('change', () => {
+          if (cb.checked) {
+            if (!unlockedChapters.includes(chNum)) unlockedChapters.push(chNum);
+          } else {
+            unlockedChapters = unlockedChapters.filter(n => n !== chNum);
+            // Default safeguard: keep at least Chapter 0
+            if (unlockedChapters.length === 0) {
+              unlockedChapters.push(0);
+              const ch0Cb = document.querySelector('.chapter-toggle-cb[data-chapter="0"]');
+              if (ch0Cb) ch0Cb.checked = true;
+            }
+          }
+          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
+          renderDashboard();
+        });
+      });
+    }
+
+    // Renders stats and list
+    function renderDashboard() {
+      const statsChaptersEl = document.getElementById('stats-chapters-count');
+      const statsCardsEl = document.getElementById('stats-cards-count');
+      const statsMasteredEl = document.getElementById('stats-mastered-count');
+
+      const poolItems = allVocab.filter(item => unlockedChapters.includes(item.chapter));
+
+      let masteredCount = 0;
+      poolItems.forEach(item => {
+        const itemState = vocabSRSState[item.id];
+        if (itemState && itemState.level === 5) masteredCount++;
+      });
+
+      if (statsChaptersEl) statsChaptersEl.textContent = unlockedChapters.length;
+      if (statsCardsEl) statsCardsEl.textContent = poolItems.length;
+      if (statsMasteredEl) statsMasteredEl.textContent = masteredCount;
+
+      renderPoolDirectory();
+    }
+
+    // Renders list
+    function renderPoolDirectory() {
+      const container = document.getElementById('review-items-list-container');
+      if (!container) return;
+
+      const poolItems = allVocab.filter(item => unlockedChapters.includes(item.chapter));
+      
+      if (poolItems.length === 0) {
+        container.innerHTML = `<p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem;">No items available. Toggle chapters above to populate your review pool.</p>`;
+        return;
+      }
+
+      container.innerHTML = '';
+
+      if (currentGroupMode === "chapter") {
+        const grouped = {};
+        poolItems.forEach(item => {
+          if (!grouped[item.chapter]) grouped[item.chapter] = { title: item.chapterTitle, items: [] };
+          grouped[item.chapter].items.push(item);
+        });
+
+        const sortedChapters = Object.keys(grouped).map(Number).sort((a,b) => a - b);
+        sortedChapters.forEach(chNum => {
+          const group = grouped[chNum];
+          const section = document.createElement('div');
+          section.style.marginBottom = '1.5rem';
+          section.innerHTML = `<h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; color: var(--text-color); font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 0.6rem;">Chapter ${chNum}: ${group.title}</h3>`;
+          
+          const itemsWrapper = document.createElement('div');
+          itemsWrapper.className = 'review-items-container';
+          
+          group.items.forEach(item => {
+            itemsWrapper.appendChild(createItemCardElement(item));
+          });
+          
+          section.appendChild(itemsWrapper);
+          container.appendChild(section);
+        });
+      } else {
+        const grouped = { 1: [], 2: [], 3: [], 4: [], 5: [] };
+        poolItems.forEach(item => {
+          const state = vocabSRSState[item.id];
+          const lvl = state ? state.level : 1;
+          grouped[lvl].push(item);
+        });
+
+        for (let lvl = 1; lvl <= 5; lvl++) {
+          const items = grouped[lvl];
+          if (items.length === 0) continue;
+
+          const section = document.createElement('div');
+          section.style.marginBottom = '1.5rem';
+          section.innerHTML = `<h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; color: var(--text-color); font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 0.6rem;">SRS Level ${lvl}</h3>`;
+          
+          const itemsWrapper = document.createElement('div');
+          itemsWrapper.className = 'review-items-container';
+          
+          items.forEach(item => {
+            itemsWrapper.appendChild(createItemCardElement(item));
+          });
+          
+          section.appendChild(itemsWrapper);
+          container.appendChild(section);
+        }
+      }
+    }
+
+    // Helper to generate a single directory item card
+    function createItemCardElement(item) {
+      const state = vocabSRSState[item.id];
+      const lvl = state ? state.level : 1;
+
+      const card = document.createElement('div');
+      card.className = 'review-item-card';
+      
+      const textContainer = document.createElement('div');
+      textContainer.className = 'review-item-text';
+      
+      const cantoDiv = document.createElement('div');
+      cantoDiv.className = 'review-item-canto';
+      cantoDiv.innerHTML = `<span class="vocab-term">${item.character}<span class="tooltip-popover"><strong>${item.jyutping}</strong><br/>${item.translation}</span></span>`;
+      
+      const engDiv = document.createElement('div');
+      engDiv.className = 'review-item-english';
+      engDiv.textContent = `${item.jyutping} — ${item.translation}`;
+      
+      textContainer.appendChild(cantoDiv);
+      textContainer.appendChild(engDiv);
+      
+      const badge = document.createElement('span');
+      badge.className = `srs-level-badge srs-level-${lvl}`;
+      badge.textContent = `Lvl ${lvl}`;
+      
+      card.appendChild(textContainer);
+      card.appendChild(badge);
+      return card;
+    }
+
+    // --- GAMEPLAY SESSION CONTROLS ---
+
+    function startPracticeSession() {
+      const poolItems = allVocab.filter(item => unlockedChapters.includes(item.chapter));
+      if (poolItems.length === 0) {
+        alert("Your vocabulary review pool is empty. Please enable chapters above to start practice.");
+        return;
+      }
+
+      const weightedPool = poolItems.map(item => {
+        const state = vocabSRSState[item.id];
+        const lvl = state ? state.level : 1;
+        const weight = 1 / Math.pow(lvl, 1.5);
+        return { item, weight };
+      });
+
+      sessionCards = [];
+      const count = Math.min(10, poolItems.length);
+      const tempPool = [...weightedPool];
+
+      for (let i = 0; i < count; i++) {
+        const totalWeight = tempPool.reduce((sum, el) => sum + el.weight, 0);
+        let r = Math.random() * totalWeight;
+        let cumulative = 0;
+        let selectedIndex = -1;
+
+        for (let j = 0; j < tempPool.length; j++) {
+          cumulative += tempPool[j].weight;
+          if (r <= cumulative) {
+            selectedIndex = j;
+            break;
+          }
+        }
+
+        if (selectedIndex !== -1) {
+          sessionCards.push(tempPool[selectedIndex].item);
+          tempPool.splice(selectedIndex, 1);
+        }
+      }
+
+      currentCardIndex = 0;
+      sessionCorrectCount = 0;
+      
+      document.getElementById('dashboard-view').style.display = 'none';
+      document.getElementById('session-view').style.display = 'flex';
+      document.getElementById('summary-view').style.display = 'none';
+      
+      loadCard(currentCardIndex);
+    }
+
+    function loadCard(index) {
+      if (index >= sessionCards.length) {
+        showSummary();
+        return;
+      }
+
+      const card = sessionCards[index];
+
+      document.getElementById('session-progress-text').textContent = `Card ${index + 1} of ${sessionCards.length}`;
+      const fillPercentage = (index / sessionCards.length) * 100;
+      document.getElementById('session-progress-fill').style.width = `${fillPercentage}%`;
+
+      document.getElementById('session-chapter-label').textContent = `Chapter ${card.chapter}: ${card.chapterTitle}`;
+
+      // Reset card visual state
+      document.getElementById('flashcard-answer-section').style.display = 'none';
+      document.getElementById('flashcard-reveal-btn').style.display = 'block';
+
+      // Load character with hover tooltip showing only Jyutping
+      const charContainer = document.getElementById('flashcard-character-container');
+      charContainer.innerHTML = `<span class="vocab-term">${card.character}<span class="tooltip-popover"><strong>${card.jyutping}</strong></span></span>`;
+
+      // Set translation
+      document.getElementById('flashcard-translation-text').textContent = card.translation;
+    }
+
+    function revealAnswer() {
+      document.getElementById('flashcard-answer-section').style.display = 'block';
+      document.getElementById('flashcard-reveal-btn').style.display = 'none';
+    }
+
+    function gradeCard(remembered) {
+      const card = sessionCards[currentCardIndex];
+      
+      if (!vocabSRSState[card.id]) {
+        vocabSRSState[card.id] = { level: 1, lastReviewed: Date.now() };
+      }
+      const state = vocabSRSState[card.id];
+
+      if (remembered) {
+        sessionCorrectCount++;
+        state.level = Math.min(state.level + 1, 5);
+      } else {
+        state.level = Math.max(state.level - 2, 1);
+      }
+      state.lastReviewed = Date.now();
+      saveSRSState();
+
+      // Proceed immediately to the next card
+      currentCardIndex++;
+      loadCard(currentCardIndex);
+    }
+
+    function showSummary() {
+      document.getElementById('session-view').style.display = 'none';
+      document.getElementById('summary-view').style.display = 'flex';
+      
+      document.getElementById('summary-score').textContent = `${sessionCorrectCount} / ${sessionCards.length}`;
+      
+      const scorePercentage = (sessionCorrectCount / sessionCards.length) * 100;
+      let msg = "Great practice! Spaced Repetition reinforces memory paths. Continue practicing regularly!";
+      if (scorePercentage === 100) {
+        msg = "Perfect score! You have fully mastered these vocabulary terms. Keep adding new chapters!";
+      } else if (scorePercentage >= 80) {
+        msg = "Excellent job! Most words are secure. A little more practice will lock in the rest.";
+      } else if (scorePercentage < 50) {
+        msg = "Spaced repetition works best on words we struggle with! Keep trying, they will get easier.";
+      }
+      document.getElementById('summary-message').textContent = msg;
+    }
+
+    function quitSession() {
+      if (confirm("Are you sure you want to quit this practice session? Your progress on finished cards is already saved.")) {
+        exitSession();
+      }
+    }
+
+    function exitSession() {
+      document.getElementById('dashboard-view').style.display = 'flex';
+      document.getElementById('session-view').style.display = 'none';
+      document.getElementById('summary-view').style.display = 'none';
+      renderDashboard();
+    }
+  </script>
+</BaseLayout>

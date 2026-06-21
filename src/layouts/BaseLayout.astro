@@ -2,6 +2,15 @@
 import "../styles/global.css";
 
 const { title, description = "Colloquial Cantonese course" } = Astro.props;
+
+const pathname = Astro.url.pathname;
+const isHome = pathname === "/cantonese" || pathname === "/cantonese/";
+const isPhrasebook = pathname.startsWith("/cantonese/phrasebook");
+const isVocabulary = pathname.startsWith("/cantonese/vocabulary");
+
+const getLinkStyle = (isActive) => {
+  return `font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; color: ${isActive ? "var(--accent-color)" : "var(--text-muted)"}; text-decoration: none; transition: color 0.15s ease;`;
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -16,9 +25,11 @@ const { title, description = "Colloquial Cantonese course" } = Astro.props;
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
         <span style="font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: var(--accent-color);">廣東話 Colloquial Cantonese</span>
         <div style="display: flex; gap: 1rem; align-items: center;">
-          <a href="/cantonese/" style="font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; color: var(--text-muted); text-decoration: none; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Home</a>
+          <a href="/cantonese/" style={getLinkStyle(isHome)} onmouseover="this.style.color='var(--accent-hover)'" onmouseout={`this.style.color='${isHome ? "var(--accent-color)" : "var(--text-muted)"}'`}>Home</a>
           <span style="color: var(--border-color); font-size: 0.8rem;">|</span>
-          <a href="/cantonese/review/" style="font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; color: var(--accent-color); text-decoration: none; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-hover)'" onmouseout="this.style.color='var(--accent-color)'">Review Board</a>
+          <a href="/cantonese/phrasebook/" style={getLinkStyle(isPhrasebook)} onmouseover="this.style.color='var(--accent-hover)'" onmouseout={`this.style.color='${isPhrasebook ? "var(--accent-color)" : "var(--text-muted)"}'`}>Phrasebook</a>
+          <span style="color: var(--border-color); font-size: 0.8rem;">|</span>
+          <a href="/cantonese/vocabulary/" style={getLinkStyle(isVocabulary)} onmouseover="this.style.color='var(--accent-hover)'" onmouseout={`this.style.color='${isVocabulary ? "var(--accent-color)" : "var(--text-muted)"}'`}>Vocabulary</a>
         </div>
       </div>
     </header>
@@ -40,11 +51,24 @@ const { title, description = "Colloquial Cantonese course" } = Astro.props;
       function loadVoices() {
         if (!window.speechSynthesis) return;
         const voices = window.speechSynthesis.getVoices();
-        cantoVoice = voices.find(v => 
-          v.lang.toLowerCase() === 'zh-hk' || 
-          v.lang.toLowerCase() === 'zh-yue' ||
-          v.lang.toLowerCase().replace('_', '-') === 'zh-hk'
-        );
+        
+        // Find all Cantonese voices
+        const hkVoices = voices.filter(v => {
+          const lang = v.lang.toLowerCase();
+          return lang === 'zh-hk' || lang === 'zh-yue' || lang.replace('_', '-') === 'zh-hk';
+        });
+
+        if (hkVoices.length > 0) {
+          // Prioritize Siri (best prosody), Premium (high quality), and Enhanced (high quality accessibility)
+          cantoVoice = hkVoices.find(v => v.name.toLowerCase().includes('siri')) ||
+                       hkVoices.find(v => v.name.toLowerCase().includes('premium')) ||
+                       hkVoices.find(v => v.name.toLowerCase().includes('enhanced')) ||
+                       hkVoices[0];
+          
+          console.log('Selected Cantonese Voice:', cantoVoice.name, '(', cantoVoice.lang, ')');
+        } else {
+          cantoVoice = null;
+        }
       }
 
       if (window.speechSynthesis) {
