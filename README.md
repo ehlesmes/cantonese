@@ -44,6 +44,23 @@ cantonese/
   publishes the `dist/` folder, including `.nojekyll`, to the remote `gh-pages`
   branch)
 
+### TTS Generation & Audio Assets
+
+We pre-generate high-quality neural Cantonese audio using Microsoft Azure's
+premium voice `zh-HK-HiuMaanNeural` at build time.
+
+- **Generate all missing TTS audio**: `npm run tts:generate` (Requires local
+  `.env` with `AZURE_SPEECH_KEY` and `AZURE_SPEECH_REGION` set)
+- **Generate with limits**:
+  - Limit total API synthesis calls: `node scripts/generate-tts.js --limit 50`
+  - Limit to the first $N$ chapters: `node scripts/generate-tts.js --chapters 5`
+- **Skip TTS generation during build/deploy**: Set `SKIP_TTS=true` environment
+  variable, e.g.:
+  ```bash
+  SKIP_TTS=true npm run build
+  SKIP_TTS=true npm run deploy
+  ```
+
 ### Content & Database Management
 
 - **Validate Chapters**: `npm run validate` (Verifies chapter formatting,
