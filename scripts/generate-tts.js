@@ -42,6 +42,14 @@ function loadEnv() {
 
 loadEnv();
 
+// Check if TTS generation is explicitly requested to be skipped
+if (process.env.SKIP_TTS === "true") {
+  console.log(
+    `${colors.yellow}TTS generation skipped via SKIP_TTS flag.${colors.reset}\n`,
+  );
+  process.exit(0);
+}
+
 // 2. Validate Credentials & Fallback Gracefully
 const key = process.env.AZURE_SPEECH_KEY;
 const region = process.env.AZURE_SPEECH_REGION;
