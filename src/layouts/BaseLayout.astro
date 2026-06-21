@@ -88,6 +88,45 @@ const { title, description = "Colloquial Cantonese course" } = Astro.props;
 
       // Event delegation for TTS clicks
       document.addEventListener('DOMContentLoaded', () => {
+        // Keep tooltips within viewport boundaries
+        function adjustTooltipPosition(vocabTerm) {
+          const popover = vocabTerm.querySelector('.tooltip-popover');
+          if (!popover) return;
+
+          // Reset positioning to get natural layout dimensions
+          popover.style.left = '';
+          popover.style.removeProperty('--arrow-offset');
+
+          const rect = popover.getBoundingClientRect();
+          const viewportWidth = window.innerWidth;
+          const padding = 12; // safe boundary from screen edges
+
+          const overflowLeft = padding - rect.left;
+          const overflowRight = rect.right - (viewportWidth - padding);
+
+          if (overflowLeft > 0) {
+            // Shift right to avoid left edge clipping
+            popover.style.left = `calc(50% + ${overflowLeft}px)`;
+            popover.style.setProperty('--arrow-offset', `calc(50% - ${overflowLeft}px)`);
+          } else if (overflowRight > 0) {
+            // Shift left to avoid right edge clipping
+            popover.style.left = `calc(50% - ${overflowRight}px)`;
+            popover.style.setProperty('--arrow-offset', `calc(50% + ${overflowRight}px)`);
+          }
+        }
+
+        // Adjust position on hover (mouseover) or touchstart/click
+        const handleTooltipEvent = (e) => {
+          const vocabTerm = e.target.closest('.vocab-term');
+          if (vocabTerm) {
+            adjustTooltipPosition(vocabTerm);
+          }
+        };
+
+        document.body.addEventListener('mouseover', handleTooltipEvent, { passive: true });
+        document.body.addEventListener('touchstart', handleTooltipEvent, { passive: true });
+        document.body.addEventListener('click', handleTooltipEvent, { passive: true });
+
         // Handle Vocab Term Clicks
         document.body.addEventListener('click', (e) => {
           const vocabTerm = e.target.closest('.vocab-term');

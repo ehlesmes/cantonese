@@ -116,7 +116,10 @@ p {
   padding: 0.4rem 0.6rem;
   border-radius: 4px;
   font-size: 0.85rem;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: min(260px, 75vw);
+  width: max-content;
+  min-width: 100px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   pointer-events: none;
   opacity: 0;
@@ -124,13 +127,14 @@ p {
   transition: opacity 0.15s ease, visibility 0.15s ease;
   z-index: 100;
   font-family: var(--font-body);
+  word-wrap: break-word;
 }
 
 .tooltip-popover::after {
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-offset, 50%);
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
