@@ -134,6 +134,14 @@ let them know"):
 He told me that he is very tired.
 ```
 
+You can also use this structure to report more complex situations or news:
+
+```cantonese
+同事[tung4si6|colleague] 話[waa6|to say / tell / words / speech] 我[ngo5|I / me] 知[zi1|to know] 老細[lou5sai3|boss] 聽日[ting1jat6|tomorrow] 唔[m4|not] 返工[faan1gung1|go to work]。
+===
+My colleague told me that the boss is not going to work tomorrow.
+```
+
 Alternatively, you can use `話俾[waa6bei2|to tell / say to]` + [Person] +
 `知[zi1|to know]` or `話俾[waa6bei2|to tell / say to]` + [Person] +
 `聽[teng1|to listen / hear]`, which are extremely common variations with the
@@ -143,6 +151,14 @@ exact same meaning:
 佢[keoi5|he / she / it] 話俾[waa6bei2|to tell / say to] 我[ngo5|I / me] 聽[teng1|to listen / hear] 佢[keoi5|he / she / it] 好[hou2|good / fine / very / quite] 攰[gui6|tired / exhausted] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 He told me that he is very tired.
+```
+
+And for a complex sentence:
+
+```cantonese
+阿媽[aa3maa1|mother] 話俾[waa6bei2|to tell / say to] 我哋[ngo5dei6|us] 聽[teng1|to listen / hear] 今晚[gam1maan5|tonight] 出去[ceot1heoi3|go out] 食飯[sik6faan6|eat a meal]。
+===
+Mom told us that tonight we are going out to eat a meal.
 ```
 
 ### 2. Mistaken Assumptions: `以為[ji5wai4|to mistakenly think / assume / believe]`

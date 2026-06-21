@@ -254,6 +254,14 @@ progress):
 I am eating a meal.
 ```
 
+> [!TIP] **Verb-Object Pairs** Many common Cantonese verbs like
+> `食飯[sik6faan6|to eat a meal]`, `返工[faan1gung1|to go to work]`, and
+> `落雨[lok6jyu5|to rain]` are actually Verb-Object pairs. When using aspect
+> markers like `緊[gan2|continuous aspect]`, the marker must be placed strictly
+> **between** the verb and the object. For example, `返[faan1|to go]`
+> `緊[gan2|continuous aspect]` `工[gung1|work]` (going to work), not
+> `返工緊[faan1gung1gan2|working]`.
+
 ```cantonese
 佢哋[keoi5dei6|they / them] 飲[jam2|to drink] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 凍[dung3|cold / iced] 奶茶[naai5caa4|milk tea] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
 ===
@@ -339,6 +347,12 @@ Here is a typical weekend phone conversation between two friends, Ka-ho (A) and
 Wing-yan (B). A is bored and wants to hang out, while B is enjoying a lazy
 afternoon but doesn't want to go out because of the weather. Pay close attention
 to how they tell the time and describe their current activities.
+
+> [!NOTE] The particle
+> `咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]`
+> is frequently used at the end of questions to express surprise, skepticism, or
+> rhetorical doubt (e.g. "Wait, really?"). You will see this used in the
+> dialogue below.
 
 ```dialog
 A: 喂[wai2|hey!]，Wing-yan！ 你[nei5|you] 依家[ji1gaa1|now] 做[zou6|to do] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what / what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]？

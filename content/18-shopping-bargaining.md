@@ -31,6 +31,10 @@ Cantonese speakers love efficiency, which shows in pricing shortcuts:
   values. The most common is `半[bun3|half]` ($1.5 is
   `個半[go3bun3|one and a half]`), but it applies to others like
   `個二[go3ji6|one point two]` ($1.2) or `個六[go3luk6|one point six]` ($1.6).
+  Note that for values of $2 and above, the number must precede
+  `個[go3|measure word]` (e.g., $2.5 is
+  `兩個半[loeng5 go3 bun3|two and a half]`, $3.5 is
+  `三個半[saam1 go3 bun3|three and a half]`).
 - When counting two of a currency unit, always use `兩[loeng5|two]` instead of
   `二[ji6|two]`. E.g., `` `兩[loeng5|two]` `` `` `蚊[man1|dollar]` `` ($2).
 - When prices are in the hundreds or thousands, the final unit is often dropped

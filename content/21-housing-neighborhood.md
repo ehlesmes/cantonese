@@ -75,6 +75,16 @@ To describe your living space and neighborhood, use these vocabulary words:
   saleable area of the apartment (excluding common areas and thick walls).
 - `呎[cek3|square foot / feet]`: The local standard unit of area measurement,
   shorthand for square feet.
+
+_Example Layout Description:_
+
+- `間[gaan1|measure word for rooms]` `屋[uk1|house/flat]` `有[jau5|has]`
+  `兩[loeng5|two]` `間[gaan1|measure word]` `睡房[seoi6fong2|bedroom]`
+  `同[tung4|and]` `一[jat1|one]` `個[go3|measure word]`
+  `客廳[haak3ting1|living room]`，`實用面積[sat6jung6min6zik1|saleable area]`
+  `五百[ng5baak3|five hundred]` `呎[cek3|square feet]`: The flat has two
+  bedrooms and one living room, with a saleable area of five hundred square
+  feet.
 - `環境[waan4ging2|environment / surroundings]`: The local surroundings or
   environmental quality of a neighborhood.
 - `方便[fong1bin6|convenient]`: Describing high ease of access to transit,
@@ -84,7 +94,12 @@ To describe your living space and neighborhood, use these vocabulary words:
 - `嘈[cou4|noisy]`: Noisy or loud surroundings.
 - `靜[zing6|quiet / peaceful]`: Quiet, calm, or peaceful surroundings.
 - `好住[hou2zyu6|nice to live in / comfortable to reside]`: Comfortable, cozy,
-  and highly pleasant to reside in.
+  and highly pleasant to reside in. This uses the grammatical structure of
+  `好[hou2|good]` + Verb (`住[zyu6|to live]`) to create an adjective meaning
+  "good to [verb]" or "easy to [verb]".
+  - _Example_: `呢個[ni1go3|this]` `屋苑[uk1jyun2|housing estate]`
+    `真係[zan1hai6|really]` `好住[hou2zyu6|nice to live in]`！: This housing
+    estate is really nice to live in!
 - `附近[fu6gan6|nearby / neighborhood]`: Nearby or adjacent to a location.
 - `最好[zeoi3hou2|best / preferably]`: Best or preferably.
 

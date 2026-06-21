@@ -40,8 +40,12 @@ creative internet slang:
   Instagram.
 - `FB[ef1bi1|Facebook (slang)]`: Colloquial term for Facebook.
 - `WhatsApp[ep1si1ep1|WhatsApp / to WhatsApp someone]`: Refers to the WhatsApp
-  messaging app, and is extremely common as a verb meaning "to WhatsApp
-  someone."
+  messaging app, but is extremely common as a verb meaning "to WhatsApp
+  someone." This verbalization applies to many app names in colloquial
+  Cantonese.
+  - _Example_: `你[nei5|you]` `陣間[zan6gaan1|later]`
+    `WhatsApp[ep1si1ep1|WhatsApp]` `我[ngo5|me]` `啦[laa1|particle]`: WhatsApp
+    me later.
 - `傳[cyun4|to send / transmit / pass on]`: To send or transmit messages,
   photos, or files.
 - `發送[faat3sung3|to send / transmit]`: To send or transmit.
@@ -59,6 +63,19 @@ creative internet slang:
   (leaving someone on read).
 - `死機[sei2gei1|device freeze / crash]`: When a device freezes or crashes
   (literally "dead machine").
+
+### Digital Payments
+
+Hong Kong has rapidly adopted cashless payments, bringing new colloquial terms:
+
+- `PayMe[pei1mi1|PayMe / to transfer money via PayMe]`: A ubiquitous local
+  payment app. Like WhatsApp, it is frequently used as a verb.
+  - _Example_: `我[ngo5|I]` `轉頭[zyun2tau4|later]` `PayMe[pei1mi1|PayMe]`
+    `俾[bei2|to]` `你[nei5|you]`: I will PayMe you (transfer you money via
+    PayMe) later.
+- `轉數快[zyun3sou3faai3|FPS (Faster Payment System)]`: The government's instant
+  inter-bank transfer system.
+- `支付寶[zi1fu6bou2|Alipay]`: Alipay, another widely used digital wallet.
 
 ---
 

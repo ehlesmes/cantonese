@@ -86,6 +86,12 @@ directional commands and road features.
 - `轉右[zyun2jau6|to turn right]`: Turn right.
 - `過馬路[gwo3maa5lou6|to cross the road]`: Cross the street.
 
+To link these directions together sequentially, use
+`然後[jin4hau6|then / afterwards]`:
+
+- `直行[zik6haang4|go straight]`，`然後[jin4hau6|then]`
+  `轉左[zyun2zo2|turn left]`: Go straight, then turn left.
+
 ### Street Landmarks & Infrastructure
 
 - `前邊[cin4bin1|ahead / in front / up ahead]`: Ahead or in front.
@@ -94,6 +100,15 @@ directional commands and road features.
 - `天橋[tin1kiu4|pedestrian flyover / footbridge]`: A pedestrian bridge over the
   street.
 - `隧道[seoi6dou6|tunnel]`: An underpass or tunnel.
+
+### The Directional Complement `到[dou3|to arrive / until]`
+
+The particle `到[dou3|to arrive / until]` is frequently used as a verbal
+complement to indicate the destination or endpoint of an action. When paired
+with movement verbs, it links the action directly to the landmark:
+
+- `行到[haang4dou3|walk until / walk to]` `前邊[cin4bin1|ahead]`
+  `路口[lou6hau2|intersection]`: Walk until the intersection ahead.
 
 ### Time & Delay States
 

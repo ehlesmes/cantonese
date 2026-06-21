@@ -120,6 +120,13 @@ the end:
 [Verb Part] + 唔 + [Verb Part] + [Object Part]
 ```
 
+However, if you are asking about past completion or past experience involving an
+aspect marker (like `咗[zo2|completed]` or `過[gwo3|past experience]`), you
+generally cannot use the A-not-A verb duplication. Instead, use
+`有冇[jau5 mou5|have or have not]`. For example, `游過水[jau4gwo3seoi2|swum]`
+becomes `有冇游過水[jau5mou5jau4gwo3seoi2|have you swum]`, not
+`游唔游過水[jau4m4jau4gwo3seoi2|have you swum]`.
+
 ```cantonese
 你[nei5|you] 今日[gam1jat6|today] 游唔游[jau4 m4 jau4|do you swim (A-not-A question form)] 水[seoi2|water] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 ===
@@ -242,6 +249,28 @@ I am just sitting back eating peanuts (watching the drama unfold next to me).
 老闆[lou5baan2|boss / proprietor] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 佢[keoi5|he / she / it] 魷魚[jau4jyu2|squid] 喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]！
 ===
 Whoa, the boss fired him already!
+```
+
+### 6. Four-Character Idioms & Color Terms
+
+Cantonese also uses `四字俗語[sei3zi6zuk1jyu5|four-character idioms]` and
+color-based idioms to express vivid imagery:
+
+- `人山人海[jan4saan1jan4hoi2|crowded / huge crowds of people]` (Mountains of
+  people, seas of people): Used to describe a very crowded place.
+- `黑面[hak1min6|to have a dark expression / angry face]` (Black face): To look
+  visibly angry or annoyed.
+
+```cantonese
+旺角[wong6gok3|Mong Kok (place in Hong Kong)] 真係[zan1hai6|really / truly] 人山人海[jan4saan1jan4hoi2|crowded / huge crowds of people] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+===
+Mong Kok is truly packed with people!
+```
+
+```cantonese
+老闆[lou5baan2|boss / proprietor] 今日[gam1jat6|today] 黑[hak1|black / dark / bad luck] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 面[min6|face / surface] 喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]！
+===
+The boss is showing a dark/angry face right now! (Note how "black face" can split like a verb!)
 ```
 
 ---

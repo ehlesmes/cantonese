@@ -77,9 +77,13 @@ _Note_: For simple, single-character adjectives, native speakers often omit
 `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`
 in fast speech if it forms a common compound (e.g., linking
 `大[daai6|big / large / great]` and `衫[saam1|clothes / clothing / shirt]`
-directly as a compound). However, including
+directly as a compound). If you use
 `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`
-is standard for deliberate description.
+with a single-character adjective, you usually need an intensifier like
+`好[hou2|good / fine / very / quite]` or a measure word. For example,
+`大嘅衫[daai6ge3saam1|big shirt]` sounds unnatural, whereas
+`好大嘅衫[hou2daai6ge3saam1|very big shirt]` or just
+`大衫[daai6saam1|big shirt]` sounds natural.
 
 ### 2. Linking Phrases & Relative Clauses
 
@@ -100,6 +104,12 @@ Let's look at how this changes the word order:
 我[ngo5|I / me] 買[maai5|to buy] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 衫[saam1|clothes / clothing / shirt] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 The clothes that I bought.
+```
+
+```cantonese
+我[ngo5|I / me] 尋日[cam4jat6|yesterday] 喺[hai2|at / in / on (location)] 香港[hoeng1gong2|Hong Kong] 買[maai5|to buy] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 衫[saam1|clothes / clothing / shirt] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+The clothes that I bought in Hong Kong yesterday.
 ```
 
 ```cantonese

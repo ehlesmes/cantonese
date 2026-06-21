@@ -203,26 +203,30 @@ bad/unsuitable to do**, use the negative potential suffix
 - `去[heoi3|to go]` `唔得[m4dak1|cannot / not allowed / physically bad to do]` —
   not allowed to go.
 
-### 3. Inability to Succeed or Manage: `唔到[m4dou2|cannot / unable to manage to / fail to]`
+### 3. Ability and Inability to Succeed: `到[dou2|can manage to / successfully do]` and `唔到[m4dou2|cannot / unable to manage to / fail to]`
 
-If you want to say that you **cannot manage to** do something (due to physical
-obstacles, lack of opportunity, or failure to achieve the result), attach
-`唔到[m4dou2|cannot / unable to manage to / fail to]` directly to the verb:
+When you want to describe whether you **successfully manage to** do something
+(overcoming physical obstacles or reaching a result), you attach the potential
+suffix `到[dou2|resultative complement indicating success / can manage to]`
+directly to the verb. Conversely, if you **fail to manage** or **cannot**
+complete the action, you attach
+`唔到[m4dou2|cannot / unable to manage to / fail to]`:
 
-```
-[Verb] + 唔到
-```
-
-- `食[sik6|to eat]` `唔到[m4dou2|cannot / unable to manage to / fail to]` —
-  unable to eat (e.g., because you are full, allergic, or the restaurant is
-  closed).
-- `去[heoi3|to go]` `唔到[m4dou2|cannot / unable to manage to / fail to]` —
-  unable to go (e.g., because you are too busy or have no ticket).
+- `睇[tai2|to look / see / watch / read]`
+  `到[dou2|resultative complement indicating success / can manage to]` — able to
+  see / successfully saw.
 - `睇[tai2|to look / see / watch / read]`
   `唔到[m4dou2|cannot / unable to manage to / fail to]` — unable to see (e.g.,
-  because someone is blocking you).
+  someone is blocking you).
+- `聽[teng1|to listen / hear / obey]`
+  `到[dou2|resultative complement indicating success / can manage to]` — able to
+  hear / successfully heard.
 - `聽[teng1|to listen / hear / obey]`
   `唔到[m4dou2|cannot / unable to manage to / fail to]` — unable to hear.
+- `食[sik6|to eat]` `唔到[m4dou2|cannot / unable to manage to / fail to]` —
+  unable to eat (e.g., because you are too full or the restaurant is closed).
+- `去[heoi3|to go]` `唔到[m4dou2|cannot / unable to manage to / fail to]` —
+  unable to go (e.g., because you have no ticket).
 
 > [!TIP] **`唔得[m4dak1|cannot]` vs `唔到[m4dou2|cannot]`**
 >
@@ -269,6 +273,11 @@ Here is some essential vocabulary related to schooling and exams:
 In this conversation, Wing-kit (A) and Sau-han (B) are talking in a café about
 their university experiences and exams. Pay close attention to how they use
 modal verbs, past experience markers, and potential suffixes.
+
+> [!NOTE] In the dialogue below, you will see the verbal suffix
+> `吓[haa5|verbal suffix indicating a brief or casual action]`. When attached to
+> a verb, it means doing the action "a bit" or "casually" (e.g.
+> `休息[jau1sik1|to rest]` `吓[haa5|briefly]` means "rest a bit").
 
 ```dialog
 A: 喂[wai2|hey / hello (typically answering phone or calling for attention)]，Sau-han！你[nei5|you] 讀[duk6|to study / read (aloud)] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 大學[daai6hok6|university] 未[mei6|not yet / have not] 呀[aa3|sentence-final particle softening statements, making questions friendly]？

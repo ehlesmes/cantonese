@@ -416,3 +416,14 @@ question: Translate "Excuse me, do you want hot or cold yuanyang?" into Cantones
 answer: 唔該[m4goi1|excuse me]，你[nei5|you] 想[soeng2|to want to] 要[jiu3|to want] 熱[jit6|hot] 定[ding6|or] 凍[dung3|cold] 鴛鴦[jyun1joeng1|yuanyang] 呀[aa3|particle]？
 explanation: 唔該[m4goi1|excuse me / please / thank you (for service or help)] begins the request; 想[soeng2|to want to / would like to / think] and 要[jiu3|to want / need / must / demand] are auxiliary verbs; 定[ding6|or (used exclusively in alternative questions)] handles alternative question choices; 鴛鴦[jyun1joeng1|yuanyang (drink mixing coffee and milk tea)] is the drink name, and the question ends with the particle 呀[aa3|sentence-final particle softening statements, making questions friendly].
 ```
+
+```exercise
+question: |
+  What does ordering a `靚仔[leng3zai2|handsome boy / plain white rice (restaurant slang)]` in a local café mean?
+  A) Ordering a handsome waiter.
+  B) Ordering a bowl of plain white rice.
+  C) Ordering an extra large egg tart.
+  D) Asking for the bill.
+answer: B
+explanation: In a Hong Kong style café (茶餐廳[caa4caan1teng1|Hong Kong style cafe]), the slang `靚仔[leng3zai2|handsome boy / plain white rice (restaurant slang)]` is widely used by staff and customers to refer to a bowl of plain white rice.
+```

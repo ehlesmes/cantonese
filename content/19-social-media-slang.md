@@ -20,6 +20,23 @@ To talk about relationships, spoken Cantonese uses several high-frequency verbs:
 - `表白[biu2baak6|to confess one's love]`: To make a romantic confession to
   someone.
 
+### Split-Verb Relationship Structures
+
+Many romance verbs like `拍拖[paak3to1|to date]` and
+`分手[fan1sau2|to break up]` are separable verbs (Verb-Object pairs). When
+adding an aspect marker like `咗[zo2|completed aspect]`, it must go between the
+two characters, not at the end:
+
+- `拍拖[paak3to1|to date]` -> `拍咗拖[paak3 zo2 to1|dated / have been dating]`
+- `分手[fan1sau2|to break up]` ->
+  `分咗手[fan1 zo2 sau2|broke up / have broken up]`
+
+```cantonese
+我哋[ngo5dei6|we] 已經[ji5ging1|already] 分咗手[fan1 zo2 sau2|broke up] 啦[laa1|particle]。
+===
+We have already broken up.
+```
+
 ### The University Relationship Status Codes
 
 In Hong Kong university culture, students have developed a famous alphanumeric

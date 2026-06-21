@@ -236,7 +236,21 @@ When you've lost something and are looking for it, you will use the verb
 I am looking for my keys.
 ```
 
+> [!NOTE] The particle `緊[gan2|progressive aspect marker (action in progress)]`
+> is the continuous aspect marker, acting like "-ing" in English to show the
+> action is currently in progress. We will cover this in detail in Chapter 5.
+
 ---
+
+> [!TIP] **`搵咗[wan2zo2|searched]` vs `搵到[wan2dou2|found]`** The verb
+> `搵[wan2|to find / look for / search]` literally means "to look for" or "to
+> search". Adding `咗[zo2|completed]` means you completed the action of
+> searching (`搵咗[wan2zo2|searched]` = "searched"), but it doesn't guarantee
+> you found the item! To say you successfully found it, you must use the
+> resultative complement `到[dou2|resultative complement indicating success]`,
+> making it `搵到[wan2dou2|to successfully find]`. In the dialogue below, person
+> A says `搵咗[wan2zo2|completed]` `啦[laa1|particle]`，`有[jau5|to have]`
+> `呀[aa3|particle]`！("I searched, and here it is!").
 
 ## 5. Situational Dialogue: Where Are My Car Keys?
 

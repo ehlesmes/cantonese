@@ -116,6 +116,15 @@ How could he be wrong?
 How could you not believe me?
 ```
 
+A very common standalone phrase is combining `點會[dim2wui5|how could]` with
+`咁[gam3|so / like this]`:
+
+```cantonese
+點會[dim2wui5|how could] 咁[gam3|so / like this] 㗎[gaa3|particle]？
+===
+How could it be like this?
+```
+
 ---
 
 ## 4. Alternative Doubt: `真[zan1|real / true]` vs `假[gaa2|fake / false]` with `定[ding6|or]`

@@ -37,7 +37,13 @@ stock market uses highly expressive local slang:
   position.
 - `蟹[haai5|stuck / trapped in a losing stock (slang)]`: Being trapped in a
   losing stock position because the price fell after you bought it, making you
-  unable to sell without a loss (literally "crab").
+  unable to sell without a loss (literally "crab"). This functions as a verb and
+  is frequently paired with the completed action aspect marker
+  `咗[zo2|completed]`.
+  - _Example_: `我[ngo5|I]` `買[maai5|buy]` `嗰[go2|that]`
+    `隻[zek3|measure word]` `股票[gu2piu3|stock]` `蟹[haai5|crab/stuck]`
+    `咗[zo2|completed action]` `呀[aa3|particle]`: That stock I bought is stuck
+    at a loss.
 - `賺[zaan6|to earn / profit / make money]`: To make a profit or earn money from
   investments.
 - `蝕[sit6|to lose money / suffer a loss / deficit]`: To lose money or suffer a
@@ -62,13 +68,21 @@ involves standard and colloquial terms:
   retirement fund in Hong Kong.
 - `供樓[gung1lau2|to pay a mortgage]`: To pay a mortgage or make housing
   installments.
+  - _Example_: `佢[keoi5|he/she]` `個月[go3jyut6|every month]` `要[jiu3|need]`
+    `俾[bei2|give/pay]` `兩[loeng5|two]` `萬[maan6|ten thousand]`
+    `蚊[man1|dollar]` `供樓[gung1lau2|pay mortgage]`: He needs to pay twenty
+    thousand dollars every month for the mortgage.
 - `利息[lei6sik1|interest (on loan/deposit)]`: The interest earned on bank
   deposits or paid on loans.
 - `息[sik1|interest / dividend]`: A short form for interest or dividend
   payments.
 - `基金[gei1gam1|fund / mutual fund]`: Mutual funds or investment funds.
 - `借[ze3|to borrow / lend]`: To borrow money from a bank/friend, or to lend to
-  someone.
+  someone. The direction of the transaction depends on the structure:
+  - `問[man6|ask]` `人[jan4|person]` `借錢[ze3cin2|borrow money]`: To borrow
+    money _from_ someone.
+  - `借錢[ze3cin2|lend money]` `俾[bei2|to/give]` `人[jan4|person]`: To lend
+    money _to_ someone.
 - `還[waan4|to return / repay]`: To return borrowed money or repay a loan.
 - `跑數[paau2sou3|to hit a sales target / chase sales numbers]`: To chase sales
   targets or hit a financial quota (literally "running numbers").

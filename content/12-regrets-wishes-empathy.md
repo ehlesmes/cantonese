@@ -60,6 +60,12 @@ Let's look at an example:
 Had I known yesterday it would rain, I wouldn't have gone swimming!
 ```
 
+```cantonese
+早知[zou2zi1|had I known earlier / if only I knew] 係[hai6|to be] 噉[gam2|then / in that case / so / like this]， 我[ngo5|I / me] 就[zau6|then / right away / immediately] 唔[m4|not / no (negative prefix)] 買[maai5|to buy] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+===
+Had I known it was like this, I wouldn't have bought it!
+```
+
 ### 2. General Regrets: `後悔[hau6fui3|to regret]`
 
 When expressing a feeling of regret about an action that you did or failed to
@@ -101,6 +107,12 @@ goals, expectations, or positive outlooks.
 I hope that later on I can find a job in Hong Kong.
 ```
 
+```cantonese
+希望[hei1mong6|to hope / wish / hope] 你[nei5|you] 快[faai3|fast / quick / rapid] 啲[di1|a bit / some / comparative suffix] 好番[hou2faan1|to recover / get well] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+===
+I hope you recover a bit faster.
+```
+
 ### 2. Wishing Well to Others: `祝[zuk1|to wish / congratulate]`
 
 To express positive wishes directly to friends, use
@@ -110,6 +122,12 @@ To express positive wishes directly to friends, use
 祝[zuk1|to wish / congratulate] 你[nei5|you] 玩[waan2|to play / have fun / enjoy] 得[dak1|particle expressing permission, possibility, capability, or adverbial degree] 開心[hoi1sam1|happy / glad / cheerful] 啲[di1|a bit / some / comparative suffix] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
 ===
 I wish you a happier time playing! (Or "Enjoy yourself a bit more!")
+```
+
+```cantonese
+祝[zuk1|to wish / congratulate] 你[nei5|you] 生日[saang1jat6|birthday] 快樂[faai3lok6|happy / joyful]！
+===
+I wish you a happy birthday!
 ```
 
 ---
@@ -145,6 +163,12 @@ Let's see some emotional examples:
 Her company fired her, she is really so pitiful!
 ```
 
+```cantonese
+佢[keoi5|he / she / it] 病[beng6|sick / illness] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]， 真係[zan1hai6|really / truly] 慘[caam2|miserable / pitiful / tragic] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+He got sick, it's really pitiful.
+```
+
 ### 2. Wretched Circumstances: `折墮[zit6do6|miserable / wretched / in a pitiful state]`
 
 ```cantonese
@@ -167,6 +191,12 @@ Hearing you talk, I also feel really distressed for you.
 好彩[hou2coi2|luckily / fortunately] 我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 使[sai2|to need / use] 返工[faan1gung1|to go to work / be at work] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
 ===
 Luckily I don't have to go to work, obviously!
+```
+
+```cantonese
+好彩[hou2coi2|luckily / fortunately] 有[jau5|to have / there is] 你[nei5|you] 幫手[bong1sau2|to help out / assist] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]！
+===
+Luckily I have you to help out!
 ```
 
 ---
@@ -198,6 +228,17 @@ Please set your mind at ease, I will support you.
 我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 識[sik1|to know / know how to / be familiar with] 安慰[on1wai3|to comfort / console] 佢[keoi5|he / she / it] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I don't know how to comfort her.
+```
+
+### 3. Emphasizing "We Are Here For You"
+
+To offer direct emotional support and tell someone not to be sad, you can use
+these comforting phrases:
+
+```cantonese
+唔好[m4hou2|don't / do not] 唔開心[m4hoi1sam1|sad / unhappy] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。 我哋[ngo5dei6|we / us] 喺[hai2|at / in / on (locative preposition)] 度[dou6|degree / place (short for ni1dou6/go2dou6)] 陪[pui4|to accompany / keep someone company] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+Don't be sad. We are here for you (accompanying you).
 ```
 
 ---

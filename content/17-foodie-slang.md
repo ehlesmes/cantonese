@@ -109,6 +109,25 @@ Excuse me, please, I want a glass of iced milk tea with condensed milk.
 Let's share a table here.
 ```
 
+### Dim Sum Culture: `飲茶[jam2caa4|to drink tea / eat dim sum]` and `點心[dim2sam1|dim sum]`
+
+While cafés are for fast-paced meals, traditional Cantonese restaurants are for
+`飲茶[jam2caa4|to drink tea / eat dim sum]`. This literally means "drinking
+tea", but it is the standard term for eating `點心[dim2sam1|dim sum]`.
+
+### The Teapot Shorthand: `加水[gaa1seoi2|add water]`
+
+When your teapot is empty, you don't need to shout for a waiter. The universal
+silent request for a refill is to take the lid off the teapot and leave it
+resting half-open or on the table. If you must ask, you say
+`加水[gaa1seoi2|add water]` to the waiter.
+
+### Tapping Fingers
+
+When someone pours tea for you, it is customary to tap your index and middle
+fingers lightly on the table a few times. This is a silent way to say "thank
+you" without interrupting the ongoing conversation.
+
 ---
 
 ## 3. Spoken Foodie Culture: Street-Snacking, Late-Night Feasts & Social Media

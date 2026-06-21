@@ -11,7 +11,11 @@ activities like going to bars, singing karaoke, or hanging out late at night,
 Cantonese speakers use these highly colloquial terms:
 
 - `唱[coeng3|to sing]`K: An extremely popular pastime. The letter "K" is a
-  shorthand loanword for karaoke (pronounced `coeng3 kei1`).
+  shorthand loanword for karaoke (pronounced `coeng3 kei1`). Because it is a
+  verb-object pair, aspect markers can be inserted in the middle.
+  - _Example_: `我[ngo5|I]` `想[soeng2|want]` `去[heoi3|to go]`
+    `唱[coeng3|to sing]` `吓[haa5|a bit]` `K[kei1|karaoke]`
+    `呀[aa3|particle]`！: I want to go sing a bit of karaoke!
 - `卡拉[kaa1laa1|karaoke]`OK: The full standard term for karaoke (pronounced
   `kaa1 laa1 ou1 kei1`).
 - `蒲[pou4|to hang out / go clubbing]`: A classic slang term meaning to hang out
@@ -43,6 +47,9 @@ arranging get-togethers to handling friends who cancel last minute:
 - `直落[zik6lok6|to continue onto another venue / next round without stopping]`:
   To continue to another venue or the next round of a night out without
   stopping.
+  - _Example_: `食飯[sik6faan6|eat a meal]`
+    `直落[zik6lok6|continue straight to]` `唱[coeng3|to sing]`K: Eat dinner and
+    then go straight to karaoke without stopping.
 - `下場[haa6coeng4|next venue / afterparty / next round]`: The next venue,
   round, or afterparty of the night (literally "next scene").
 - `放飛機[fong3fei1gei1|to stand someone up / break a promise]`: To stand
@@ -57,6 +64,9 @@ arranging get-togethers to handling friends who cancel last minute:
 - `得閒[dak1haan4|free / having spare time]`: Free, having spare time.
 - `AA制[ei1ei1zai3|going Dutch / splitting the bill]`: Going Dutch or splitting
   the bill evenly among the group.
+  - _Example_: `不如[bat1jyu4|how about]` `我哋[ngo5dei6|we / us]`
+    `AA制[ei1ei1zai3|go Dutch]` `啦[laa1|particle]`！: How about we split the
+    bill?
 
 ---
 

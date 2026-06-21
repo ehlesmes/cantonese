@@ -147,6 +147,14 @@ I am not American.
 He is not handsome.
 ```
 
+> [!TIP] The particle
+> `呀[aa3|sentence-final particle softening statements, making questions friendly]`
+> is frequently added to negative statements and declarations to soften the
+> tone. For example, stating `我[ngo5|I]` `唔[m4|not]` `識[sik1|to know]`
+> `講[gong2|to speak]` `廣東話[gwong2dung1waa2|Cantonese language]`
+> `呀[aa3|particle]` sounds much friendlier and less abrupt than stating it
+> without the particle.
+
 ### Asking Questions with `係唔係[hai6 m4 hai6|is it or not]`
 
 In Cantonese, the most natural way to ask yes-no questions is the **A-not-A

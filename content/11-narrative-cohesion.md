@@ -137,6 +137,14 @@ consequences, and unexpected outcomes:
 - **Unexpected Contrast**: `反而[faan2ji4|on the contrary / instead]` highlights
   a result that is the opposite of what was expected.
 
+**Note on Placement**:
+
+- `甚至[sam6zi3|even / so much so that]` and
+  `反而[faan2ji4|on the contrary / instead]` usually come **after** the subject
+  of the clause (e.g., `佢反而[keoi5faan2ji4|instead he/she]`...).
+- `既然[gei3jin4|since / given that]` is placed at the beginning of the premise
+  clause, either before or immediately after the subject.
+
 Let's see how each is used:
 
 ### 1. Extreme Emphasizer: `甚至[sam6zi3|even / so much so that]`
@@ -147,6 +155,12 @@ Let's see how each is used:
 She was very sad, she even cried!
 ```
 
+```cantonese
+天氣[tin1hei3|weather] 好[hou2|good / fine / very / quite] 熱[jit6|hot]， 甚至[sam6zi3|even / so much so that] 有[jau5|to have / there is] 三十[saam1sap6|thirty] 度[dou6|degree (temperature/angle)] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+===
+The weather is very hot, it is even 30 degrees!
+```
+
 ### 2. Logical Consequence: `既然[gei3jin4|since / given that]`
 
 ```cantonese
@@ -155,12 +169,24 @@ She was very sad, she even cried!
 Since you don't want to go to work, then in that case just take a holiday!
 ```
 
+```cantonese
+既然[gei3jin4|since / given that] 大家[daai6gaa1|everyone / all of us] 都[dou1|also / both / all] 喺[hai2|at / in / on (locative preposition)] 呢度[ni1dou6|here]， 我哋[ngo5dei6|we / us] 就[zau6|then / right away / immediately] 食飯[sik6faan6|to eat a meal / dine] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+===
+Since everyone is here, then let's eat!
+```
+
 ### 3. Unexpected Contrast: `反而[faan2ji4|on the contrary / instead]`
 
 ```cantonese
 我[ngo5|I / me] 原本[jyun4bun2|originally / original] 諗住[nam2zyu6|to intend / plan / think of] 去[heoi3|to go] 返工[faan1gung1|to go to work / be at work]， 佢[keoi5|he / she / it] 反而[faan2ji4|on the contrary / instead] 叫[giu3|to be called / to call] 我[ngo5|I / me] 去[heoi3|to go] 玩[waan2|to play / have fun / enjoy]。
 ===
 I originally intended to go to work, but he instead told me to go have fun.
+```
+
+```cantonese
+我[ngo5|I / me] 以為[ji5wai4|to think (mistakenly) / assume] 佢[keoi5|he / she / it] 會[wui5|will / can / able to] 嬲[nau1|angry / mad]， 佢[keoi5|he / she / it] 反而[faan2ji4|on the contrary / instead] 幫[bong1|to help / assist] 我[ngo5|I / me]。
+===
+I assumed he would be angry, but instead he helped me.
 ```
 
 ---

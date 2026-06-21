@@ -39,7 +39,10 @@ physical ailments:
 - `傳染[cyun4jim5|to infect / infectious / contagious]`: To infect, or to be
   contagious/infectious.
 - `係咁[hai6gam2|continuously / constantly]`: Continuously, constantly, keep
-  doing something (e.g., `係咁[hai6gam2|continuously]` `咳[kat1|to cough]`).
+  doing something. It is placed before the verb it modifies.
+  - _Example_: `我[ngo5|I]` `今日[gam1jat6|today]` `係咁[hai6gam2|continuously]`
+    `咳[kat1|to cough]` `呀[aa3|particle]`！: I keep coughing continuously
+    today!
 
 ---
 
@@ -88,10 +91,18 @@ terms and highly popular local slang:
   "to shoot a ball," a very famous Hong Kong slang term meaning to fake sick or
   call in sick falsely to skip work or responsibilities.
 - `唔使[m4sai2|no need / not necessary]`: No need, not necessary.
-- `使唔使[sai2m4sai2|need or not / do you need (A-not-A question form)]`:
-  Whether one needs to or not.
+- `使唔使[sai2m4sai2|need or not / do you need (A-not-A question form)]`: The
+  A-not-A question form for "do you need to". Used frequently when offering help
+  or asking for medical advice.
+  - _Example_: `醫生[ji1sang1|doctor]`，`我[ngo5|I]`
+    `使唔使[sai2m4sai2|need or not]` `食藥[sik6joek6|take medicine]`
+    `呀[aa3|particle]`？: Doctor, do I need to take medicine?
 - `可唔可以[ho2m4ho2ji5|can or cannot / may or may not (A-not-A question form)]`:
-  Can or cannot, may or may not.
+  The A-not-A question form for "can / may". Commonly used for making requests,
+  like asking for a sick leave certificate.
+  - _Example_: `可唔可以[ho2m4ho2ji5|can or not]` `開[hoi1|write]`
+    `張[zoeng1|measure word]` `醫生紙[ji1sang1zi2|doctor's note]` `俾[bei2|to]`
+    `我[ngo5|me]` `呀[aa3|particle]`？: Can you write a doctor's note for me?
 - `休息[jau1sik1|to rest / take a break]`: To rest or take a break.
 - `早日康復[zou2jat6hong1fuk6|recover soon / speedy recovery]`: Wish you a
   speedy recovery or get well soon.

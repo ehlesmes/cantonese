@@ -284,10 +284,10 @@ A: 唔[m4|not / no (negative prefix)] 要[jiu3|to want / need / must / demand] �
    === No, thank you. Do you accept Octopus card here?
 B: 收[sau1|to receive / accept / collect] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]。
    === Yes, we do! Thank you.
-A: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
-   === Okay.
-B: 搞掂[gaau2dim6|done / finished / settled / resolved] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]！
-   === All done! Thank you!
+A: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 仲有[zung6jau5|furthermore / additionally / also]，我[ngo5|I] 想[soeng2|to want to / would like to / think] 買[maai5|to buy] 巴士[baa1si2|bus (loanword)] 飛[fei1|ticket (loanword, e.g., movie ticket, bus ticket)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+   === Okay. Also, I want to buy a bus ticket.
+B: 冇[mou5|not to have / without / there is not] 問題[man6tai4|problem / question / issue]！ 搞掂[gaau2dim6|done / finished / settled / resolved] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]！
+   === No problem! All done! Thank you!
 A: 唔該[m4goi1|excuse me / please / thank you (for service or help)]！ 拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
    === Thanks! Bye-bye!
 B: 拜拜[baai1baai3|bye-bye / goodbye (loanword)]！

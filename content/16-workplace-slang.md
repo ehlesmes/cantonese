@@ -170,6 +170,24 @@ squid, and the term stuck as a metaphor for getting dismissed.
 Because he slacked off at the company, he was fired by the boss!
 ```
 
+### 4. Resigning and Job Hopping: `辭職[ci4zik1|to resign]` and `跳槽[tiu3cou4|to job hop]`
+
+When an employee decides to leave on their own terms, they
+`辭職[ci4zik1|to resign]`. If they leave to join another company (often for
+better pay), they `跳槽[tiu3cou4|to job hop]` (literally "jumping troughs").
+
+```cantonese
+我[ngo5|I] 聽日[ting1jat6|tomorrow] 會[wui5|will] 辭職[ci4zik1|to resign] 呀[aa3|particle]。
+===
+I will resign tomorrow.
+```
+
+```cantonese
+佢[keoi5|he] 跳槽[tiu3cou4|to job hop] 去[heoi3|to go to] 咗[zo2|completed aspect] 第間[dai6gaan1|another] 公司[gung1si1|company]。
+===
+He job hopped to another company.
+```
+
 ---
 
 ## 4. Situational Dialogue: Office Gossip & A Raise Wish

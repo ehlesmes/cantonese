@@ -77,20 +77,28 @@ I am extremely busy today!
 This plate of chicken is explosively spicy!
 ```
 
-### 3. `極[gik6|extremely / to the limit]` (Extremely Good)
+### 3. `極[gik6|extremely / to the limit]` and `到極[dou3gik6|extremely / to the absolute limit]`
 
 `極[gik6|extremely / to the limit]` is used to express that something has
 reached its absolute limit. It is slightly more formal than
 `爆[baau3|explosively]` or `死[sei2|extremely]`, but still highly common in
-spoken Cantonese, particularly in the expression `好[hou2|good]`
-`極[gik6|extremely]`.
+spoken Cantonese. You will frequently hear it used directly after an adjective
+(e.g. `好[hou2|good]` `極[gik6|extremely]`) or paired with the structural
+particle `到[dou3|to the point of]` as `到極[dou3gik6|to the limit]`.
 
-- **Structure**: `[Adjective]` + `極[gik6|extremely / to the limit]`
+- **Structure**: `[Adjective]` + `極[gik6|extremely / to the limit]` OR
+  `[Adjective]` + `到極[dou3gik6|to the limit]`
 
 ```cantonese
 呢個[ni1go3|this one] 蛋撻[daan6taat1|egg tart] 好[hou2|good] 極[gik6|extremely] 呀[aa3|particle]！
 ===
 This egg tart is extremely good!
+```
+
+```cantonese
+佢[keoi5|he / she / it] 嬲[nau1|angry] 到極[dou3gik6|extremely / to the absolute limit] 呀[aa3|particle]！
+===
+He is extremely angry (to the absolute limit)!
 ```
 
 ---

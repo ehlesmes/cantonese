@@ -64,9 +64,28 @@ classic "si" sequence. Practice repeating these six words in order:
 Poem, history, to try, time, market, matter
 ```
 
+> [!TIP] Tones can be difficult to master from text alone. We strongly encourage
+> learners to listen to native audio recordings of the "si" tone series to train
+> their ears to hear the exact pitch contours.
+
 ---
 
-## 2. Vowel Length Distinction: `aa` vs `a`
+## 2. Initial Consonants
+
+Cantonese uses many familiar initial consonants, though their pronunciation
+might slightly differ from English. Here are a few common ones to start with:
+
+- **b**: Like the 'b' in English "boy" but unaspirated (softer, closer to a
+  'p').
+- **p**: Like the 'p' in English "pie" (aspirated, with a strong puff of air).
+- **m**: Like the 'm' in English "man".
+- **f**: Like the 'f' in English "fun".
+
+You will naturally pick up more initials as we progress through the vocabulary!
+
+---
+
+## 3. Vowel Length Distinction: `aa` vs `a`
 
 In Cantonese, the length of a vowel is semantically significant. This is
 especially true for the letter **A**:
@@ -101,7 +120,7 @@ Street chicken
 
 ---
 
-## 3. Silent Stop Consonant Endings (`-p`, `-t`, `-k`)
+## 4. Silent Stop Consonant Endings (`-p`, `-t`, `-k`)
 
 In English, when a word ends in `p`, `t`, or `k` (e.g., "cup", "cat", "back"),
 speakers naturally release a small puff of air at the end of the consonant.
@@ -131,7 +150,7 @@ I want to eat ten chickens.
 
 ---
 
-## 4. Spoken Exclamations: `喂[wai2|hey]` and `吓[haa2|what]`
+## 5. Spoken Exclamations: `喂[wai2|hey]` and `吓[haa2|what]`
 
 Cantonese conversations are incredibly dynamic and expressive, filled with
 emotional particles and exclamations that immediately convey the speaker's tone.
@@ -153,7 +172,7 @@ B: 吓[haa2|what]？ 唔[m4|not] 食[sik6|to eat] 啦[laa1|particle]，我[ngo5|
 
 ---
 
-## 5. Exercises
+## 6. Exercises
 
 Test your understanding of the tones, vowel lengths, and stop endings introduced
 in this chapter:

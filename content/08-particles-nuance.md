@@ -145,6 +145,12 @@ usage, the particle is pronounced with a mid-flat tone (`wo3`):
 Oh, it is actually really cold today! (Contrary to what I expected!)
 ```
 
+```cantonese
+小心[siu2sam1|careful / to be careful / take care] 啲[di1|a bit / some / comparative suffix] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！
+===
+Be careful! (Warning someone of a potential hazard)
+```
+
 ---
 
 ## 4. Change of State: `喇[laa3|sentence-final particle indicating a change of state or already]`
@@ -190,7 +196,36 @@ I know now!
 
 ---
 
-## 5. Particle Layering: `喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]`
+## 5. Asking for Confirmation: `吓[haa2|sentence-final particle or interjection expressing doubt, surprise, or asking for confirmation]`
+
+The particle
+`吓[haa2|sentence-final particle or interjection expressing doubt, surprise, or asking for confirmation]`
+is used to express doubt, surprise, or to ask for confirmation of what you just
+heard. It can be used as a standalone interjection (like "Huh?") or added to the
+end of a sentence.
+
+### 1. Expressing Surprise or Doubt
+
+```cantonese
+吓[haa2|sentence-final particle or interjection expressing doubt, surprise, or asking for confirmation]？真[zan1|real / true] 㗎[gaa3|sentence-final particle indicating assertion or emphasis]？
+===
+Huh? Is that true?
+```
+
+### 2. Asking for Confirmation
+
+When added to the end of a statement, it turns it into a rhetorical question or
+asks for confirmation of an unexpected fact:
+
+```cantonese
+你[nei5|you] 唔[m4|not / no (negative prefix)] 去[heoi3|to go] 吓[haa2|sentence-final particle or interjection expressing doubt, surprise, or asking for confirmation]？
+===
+You are not going, really? (I thought you were!)
+```
+
+---
+
+## 6. Particle Layering: `喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]`
 
 Cantonese is famous for **particle layering**, where two or three particles are
 stacked at the very end of a sentence. When they merge, they create a single
@@ -245,7 +280,7 @@ Here are a few other common combinations you will hear daily:
 
 ---
 
-## 6. Situational Dialogue: Gossip in the Office
+## 7. Situational Dialogue: Gossip in the Office
 
 Sau-han (A) and Wing-kit (B) are colleagues working in a Hong Kong office. It is
 nearing the end of the work day, and they are gossiping about a late colleague
@@ -270,7 +305,7 @@ A: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softenin
 
 ---
 
-## 7. Exercises
+## 8. Exercises
 
 Test your understanding of Cantonese sentence-final particles and layering.
 

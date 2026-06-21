@@ -115,6 +115,12 @@ on or are actively arranging.
 I plan to go to Hong Kong to work later on.
 ```
 
+```cantonese
+我哋[ngo5dei6|we / us] 打算[daa2syun3|to plan / intend / plan] 聽日[ting1jat6|tomorrow] 去[heoi3|to go] 睇戲[tai2hei3|to watch movies / see a play]。
+===
+We plan to go watch a movie tomorrow.
+```
+
 ### 2. Expressing Hopes & Wishes: `希望[hei1mong6|to hope / wish / hope]`
 
 Use `希望[hei1mong6|to hope / wish / hope]` for future scenarios that you want
@@ -124,6 +130,12 @@ to happen but do not have full control over.
 我[ngo5|I / me] 希望[hei1mong6|to hope / wish / hope] 第日[dai6jat6|another day / some day in the future] 可以[ho2ji5|can / may / possible] 喺[hai2|at / in / on (locative preposition)] 香港[hoeng1gong2|Hong Kong] 買[maai5|to buy] 書[syu1|book] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I hope that in the future I can buy books in Hong Kong.
+```
+
+```cantonese
+佢[keoi5|he / she / it] 希望[hei1mong6|to hope / wish / hope] 搵[wan2|to find / search / look for] 到[dou3|verbal complement indicating success or arrival] 新[san1|new] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+He hopes to find a new job.
 ```
 
 ---
@@ -149,6 +161,12 @@ dreams!"
 你[nei5|you] 喺[hai2|at / in / on (locative preposition)] 呢度[ni1dou6|here] 發[faat3|to emit / generate / dream / develop] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 夢[mung6|dream] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 ===
 Are you standing here daydreaming? (Or "Are you dreaming?")
+```
+
+```cantonese
+你[nei5|you] 估[gu2|to guess / estimate / think] 佢[keoi5|he / she / it] 會[wui5|will / can / able to] 幫[bong1|to help / assist] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]？ 發夢[faat3mung6|to dream / daydream / dream] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+===
+You think he will help you? In your dreams!
 ```
 
 ---
