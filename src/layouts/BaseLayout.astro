@@ -43,10 +43,11 @@ const getLinkStyle = (isActive) => {
     </footer>
 
     <script>
-      // Native Cantonese TTS Engine
+      // Native Cantonese TTS Engine & Offline Audio Player
       let cantoVoice = null;
       let activeUtterance = null;
       let activeBtn = null;
+      let activeAudio = null;
 
       function loadVoices() {
         if (!window.speechSynthesis) return;
@@ -82,14 +83,26 @@ const getLinkStyle = (isActive) => {
         return clone.textContent.trim();
       }
 
-      function speakText(text, onEndCallback) {
-        if (!window.speechSynthesis) return;
+      // Browser SHA-256 Hashing helper
+      async function getHash(text) {
+        if (window.crypto && window.crypto.subtle) {
+          try {
+            const msgUint8 = new TextEncoder().encode(text);
+            const hashBuffer = await window.crypto.subtle.digest('SHA-256', msgUint8);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 16);
+          } catch (err) {
+            console.warn("Hashing failed, falling back:", err);
+          }
+        }
+        return null;
+      }
 
-        // Cancel active speech and clean up active button style
-        window.speechSynthesis.cancel();
-        if (activeBtn) {
-          activeBtn.classList.remove('tts-playing');
-          activeBtn = null;
+      // Browser SpeechSynthesis fallback
+      function speakNativeFallback(text, onEndCallback) {
+        if (!window.speechSynthesis) {
+          if (onEndCallback) onEndCallback();
+          return;
         }
 
         const utterance = new SpeechSynthesisUtterance(text);
@@ -99,8 +112,7 @@ const getLinkStyle = (isActive) => {
           utterance.lang = 'zh-HK';
         }
 
-        // Set rate slightly slower (0.85) to make pronunciation and tones clearer for learners
-        utterance.rate = 0.85;
+        utterance.rate = 0.85; // Slow down native playback speed too
 
         utterance.onend = () => {
           if (onEndCallback) onEndCallback();
@@ -111,6 +123,54 @@ const getLinkStyle = (isActive) => {
 
         activeUtterance = utterance;
         window.speechSynthesis.speak(utterance);
+      }
+
+      async function speakText(text, onEndCallback) {
+        // Cancel active native speech
+        if (window.speechSynthesis) {
+          window.speechSynthesis.cancel();
+        }
+
+        // Cancel any currently playing offline audio
+        if (activeAudio) {
+          activeAudio.pause();
+          activeAudio.onended = null;
+          activeAudio.onerror = null;
+          activeAudio = null;
+        }
+
+        // Clean up styling on previous active elements
+        if (activeBtn) {
+          activeBtn.classList.remove('tts-playing');
+          activeBtn = null;
+        }
+
+        const hash = await getHash(text);
+        if (hash) {
+          const audio = new Audio(`/audio/tts/${hash}.mp3`);
+          activeAudio = audio;
+          
+          // Programmatically slow down playback rate
+          audio.playbackRate = 0.85;
+
+          audio.onended = () => {
+            activeAudio = null;
+            if (onEndCallback) onEndCallback();
+          };
+
+          audio.onerror = () => {
+            activeAudio = null;
+            speakNativeFallback(text, onEndCallback);
+          };
+
+          audio.play().catch(err => {
+            console.warn("Audio play failed, using native fallback:", err);
+            activeAudio = null;
+            speakNativeFallback(text, onEndCallback);
+          });
+        } else {
+          speakNativeFallback(text, onEndCallback);
+        }
       }
 
       // Event delegation for TTS clicks
@@ -164,8 +224,10 @@ const getLinkStyle = (isActive) => {
             
             // Highlight vocab term
             vocabTerm.classList.add('tts-playing');
+            activeBtn = vocabTerm;
             speakText(text, () => {
               vocabTerm.classList.remove('tts-playing');
+              if (activeBtn === vocabTerm) activeBtn = null;
             });
             
             // Backup removal in case onend doesn't trigger

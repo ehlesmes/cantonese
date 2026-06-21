@@ -13,7 +13,8 @@
     "vocab:verify": "node scripts/verify-chapter-vocab.js",
     "vocab:lookup": "node scripts/lookup.js",
     "dev": "astro dev",
-    "build": "astro build",
+    "tts:generate": "node scripts/generate-tts.js",
+    "build": "node scripts/generate-tts.js && astro build",
     "preview": "astro preview",
     "deploy": "npm run build && gh-pages -d dist --dotfiles"
   },
