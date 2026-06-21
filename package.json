@@ -28,6 +28,8 @@
   "private": true,
   "dependencies": {
     "astro": "^6.4.7",
-    "marked": "^18.0.5"
+    "jsqr": "^1.4.0",
+    "marked": "^18.0.5",
+    "qrcode": "^1.5.4"
   }
 }

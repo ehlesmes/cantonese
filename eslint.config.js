@@ -1,6 +1,9 @@
 const js = require("@eslint/js");
 
 module.exports = [
+  {
+    ignores: ["dist/**", ".astro/**", "tmp/**", "test-results/**"],
+  },
   js.configs.recommended,
   {
     rules: {

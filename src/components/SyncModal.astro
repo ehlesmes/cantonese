@@ -1,0 +1,678 @@
+---
+// SyncModal.astro - Progress Synchronization Modal
+---
+<div id="sync-modal-overlay" class="sync-modal-overlay" aria-hidden="true">
+  <div class="sync-modal-card">
+    <button id="sync-modal-close" class="sync-modal-close-btn" aria-label="Close sync modal">&times;</button>
+    
+    <h2 id="sync-modal-title" style="margin-top: 0.2rem; margin-bottom: 1rem; border-bottom: none; font-size: 1.5rem;">Sync Progress</h2>
+    
+    {/* TAB NAVIGATION */}
+    <div id="sync-tabs-nav" class="sync-tabs">
+      <button id="tab-export-btn" class="sync-tab-btn active">Export Progress</button>
+      <button id="tab-import-btn" class="sync-tab-btn">Import Progress</button>
+    </div>
+
+    {/* EXPORT TAB CONTENT */}
+    <div id="sync-tab-export" class="sync-tab-content active">
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.45;">
+        Scan this QR code with your phone's camera, or copy the string below to import your progress on another device.
+      </p>
+      
+      <div class="qr-container">
+        <canvas id="sync-qr-canvas"></canvas>
+        <div id="qr-loading-text" class="qr-placeholder">Generating QR Code...</div>
+      </div>
+
+      <div class="sync-field-group" style="margin-top: 1rem;">
+        <label for="sync-export-string" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Sync Text Code</label>
+        <div style="display: flex; gap: 0.5rem;">
+          <input type="text" id="sync-export-string" readonly style="flex: 1; border: 1px solid var(--border-color); border-radius: 6px; padding: 0.5rem; font-family: monospace; font-size: 0.8rem; background: var(--bg-color); color: var(--text-color);" />
+          <button id="sync-copy-btn" class="sync-action-btn accent">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    {/* IMPORT TAB CONTENT */}
+    <div id="sync-tab-import" class="sync-tab-content">
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.45;">
+        Scan a progress QR code from your phone's screen using your webcam, or paste a copied text code below.
+      </p>
+
+      {/* WEBCAM SCANNER SECTION */}
+      <div id="scanner-section" class="scanner-container">
+        <div id="scanner-preview-wrapper" class="scanner-preview-wrapper" style="display: none;">
+          <video id="sync-video" playsinline></video>
+          <div class="scanner-overlay-laser"></div>
+          <canvas id="sync-hidden-canvas" style="display: none;"></canvas>
+        </div>
+        <div id="scanner-status" class="scanner-status-text" style="display: none;">Accessing camera...</div>
+        <button id="sync-scan-btn" class="sync-action-btn secondary" style="width: 100%; margin-bottom: 1rem;">Scan QR with Webcam</button>
+      </div>
+
+      {/* MANUAL PASTE SECTION */}
+      <div class="sync-field-group">
+        <label for="sync-import-string" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Paste Sync Code</label>
+        <textarea id="sync-import-string" placeholder="Paste your sync text code here..." style="width: 100%; height: 80px; border: 1px solid var(--border-color); border-radius: 6px; padding: 0.5rem; font-family: monospace; font-size: 0.8rem; background: var(--bg-color); color: var(--text-color); resize: none; margin-bottom: 0.5rem;"></textarea>
+        <button id="sync-import-submit-btn" class="sync-action-btn accent" style="width: 100%;">Import & Merge Progress</button>
+      </div>
+    </div>
+
+    {/* CONFIRMATION SECTION (DYNAMICALY SHOWS ON MERGE IMPORT) */}
+    <div id="sync-confirm-view" class="sync-confirm-view" style="display: none;">
+      <h3 style="margin-top: 0; color: var(--accent-color); font-size: 1.3rem;">Import Progress?</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+        We found progress from another device. Here is what will change if you merge it:
+      </p>
+
+      <div class="compare-stats-box">
+        <div class="compare-row header">
+          <span>Metric</span>
+          <span>Current</span>
+          <span>&rarr; After Merge</span>
+        </div>
+        <div class="compare-row">
+          <span>Unlocked Chapters</span>
+          <span id="confirm-chapters-local">0</span>
+          <span id="confirm-chapters-merged" class="stat-highlight">0</span>
+        </div>
+        <div class="compare-row">
+          <span>Phrasebook Reviews</span>
+          <span id="confirm-srs-local">0</span>
+          <span id="confirm-srs-merged" class="stat-highlight">0</span>
+        </div>
+        <div class="compare-row">
+          <span>Vocabulary Reviews</span>
+          <span id="confirm-vocab-local">0</span>
+          <span id="confirm-vocab-merged" class="stat-highlight">0</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+        <button id="sync-confirm-no" class="sync-action-btn secondary" style="flex: 1;">Cancel</button>
+        <button id="sync-confirm-yes" class="sync-action-btn accent" style="flex: 1;">Merge and Reload</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Base overlay styles */
+  .sync-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(54, 42, 34, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  
+  .sync-modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Main modal card */
+  .sync-modal-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    max-width: 480px;
+    width: 90%;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(54, 42, 34, 0.15);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  /* Close button */
+  .sync-modal-close-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+  
+  .sync-modal-close-btn:hover {
+    color: var(--accent-color);
+  }
+
+  /* Tab styling */
+  .sync-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+  }
+
+  .sync-tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.15s ease;
+  }
+
+  .sync-tab-btn.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+  }
+
+  /* Tab content toggling */
+  .sync-tab-content {
+    display: none;
+  }
+  
+  .sync-tab-content.active {
+    display: block;
+  }
+
+  /* QR Area */
+  .qr-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    position: relative;
+  }
+
+  #sync-qr-canvas {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    border: 6px solid #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    display: none;
+  }
+
+  .qr-placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  /* Action Buttons */
+  .sync-action-btn {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+  }
+
+  .sync-action-btn.accent {
+    background-color: var(--accent-color);
+    color: #ffffff;
+  }
+
+  .sync-action-btn.accent:hover {
+    background-color: var(--accent-hover);
+  }
+
+  .sync-action-btn.secondary {
+    background-color: var(--border-color);
+    color: var(--text-color);
+  }
+
+  .sync-action-btn.secondary:hover {
+    background-color: #d0c4a8;
+  }
+
+  .sync-action-btn:active {
+    transform: scale(0.98);
+  }
+
+  /* Scanner container */
+  .scanner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .scanner-preview-wrapper {
+    width: 100%;
+    max-height: 220px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 2px solid var(--accent-color);
+    background: #000;
+  }
+
+  #sync-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Laser scanner line effect */
+  .scanner-overlay-laser {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: #ff3b30;
+    box-shadow: 0 0 8px #ff3b30;
+    animation: laserScan 2s infinite ease-in-out;
+  }
+
+  @keyframes laserScan {
+    0% { top: 15%; }
+    50% { top: 85%; }
+    100% { top: 15%; }
+  }
+
+  .scanner-status-text {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  /* Sync confirmation view overlays everything else when open */
+  .sync-confirm-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    z-index: 10;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .compare-stats-box {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(0,0,0,0.01);
+  }
+
+  .compare-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.88rem;
+  }
+
+  .compare-row:last-child {
+    border-bottom: none;
+  }
+
+  .compare-row.header {
+    font-weight: 600;
+    background: rgba(0,0,0,0.03);
+    color: var(--text-color);
+  }
+
+  .stat-highlight {
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+</style>
+
+<script>
+  import { getLocalState, serializeState, deserializeState, mergeStates, saveLocalState } from "../utils/sync.js";
+  import QRCode from "qrcode";
+  import jsQR from "jsqr";
+
+  // State
+  let videoStream = null;
+  let scanAnimationId = null;
+  let currentImportState = null;
+
+  function init() {
+    // DOM Elements
+    const overlay = document.getElementById('sync-modal-overlay');
+    const closeBtn = document.getElementById('sync-modal-close');
+    const tabExportBtn = document.getElementById('tab-export-btn');
+    const tabImportBtn = document.getElementById('tab-import-btn');
+    const tabExportContent = document.getElementById('sync-tab-export');
+    const tabImportContent = document.getElementById('sync-tab-import');
+    
+    // Export UI Elements
+    const qrCanvas = document.getElementById('sync-qr-canvas');
+    const qrLoadingText = document.getElementById('qr-loading-text');
+    const exportStringInput = document.getElementById('sync-export-string');
+    const copyBtn = document.getElementById('sync-copy-btn');
+    
+    // Import UI Elements
+    const scanBtn = document.getElementById('sync-scan-btn');
+    const videoWrapper = document.getElementById('scanner-preview-wrapper');
+    const video = document.getElementById('sync-video');
+    const hiddenCanvas = document.getElementById('sync-hidden-canvas');
+    const scannerStatus = document.getElementById('scanner-status');
+    const importStringTextarea = document.getElementById('sync-import-string');
+    const importSubmitBtn = document.getElementById('sync-import-submit-btn');
+
+    // Confirm UI Elements
+    const confirmView = document.getElementById('sync-confirm-view');
+    const confirmChaptersLocal = document.getElementById('confirm-chapters-local');
+    const confirmChaptersMerged = document.getElementById('confirm-chapters-merged');
+    const confirmSrsLocal = document.getElementById('confirm-srs-local');
+    const confirmSrsMerged = document.getElementById('confirm-srs-merged');
+    const confirmVocabLocal = document.getElementById('confirm-vocab-local');
+    const confirmVocabMerged = document.getElementById('confirm-vocab-merged');
+    const confirmYesBtn = document.getElementById('sync-confirm-yes');
+    const confirmNoBtn = document.getElementById('sync-confirm-no');
+
+    // Modal Control
+    window.addEventListener('click', (e) => {
+      // Allow triggering sync modal via custom element with ID sync-trigger-btn
+      const triggerBtn = e.target.closest('#sync-trigger-btn');
+      if (triggerBtn) {
+        e.preventDefault();
+        openModal();
+      }
+    });
+
+    function openModal() {
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      // Default to export tab
+      switchTab('export');
+      generateExportData();
+    }
+
+    function closeModal() {
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+      stopScanner();
+      hideConfirmView();
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+
+    // Tab Switching
+    function switchTab(tab) {
+      if (tab === 'export') {
+        tabExportBtn.classList.add('active');
+        tabImportBtn.classList.remove('active');
+        tabExportContent.classList.add('active');
+        tabImportContent.classList.remove('active');
+        stopScanner();
+      } else {
+        tabExportBtn.classList.remove('active');
+        tabImportBtn.classList.add('active');
+        tabExportContent.classList.remove('active');
+        tabImportContent.classList.add('active');
+      }
+    }
+
+    tabExportBtn.addEventListener('click', () => switchTab('export'));
+    tabImportBtn.addEventListener('click', () => switchTab('import'));
+
+    // Export Generation
+    function generateExportData() {
+      const localState = getLocalState();
+      const serialized = serializeState(localState);
+      
+      // Update string input
+      exportStringInput.value = serialized;
+      
+      // Generate QR Code URL
+      const importUrl = new URL(window.location.href);
+      importUrl.searchParams.set('import', serialized);
+      const urlToEncode = importUrl.toString();
+
+      qrCanvas.style.display = 'none';
+      qrLoadingText.style.display = 'block';
+
+      QRCode.toCanvas(qrCanvas, urlToEncode, {
+        width: 200,
+        margin: 1,
+        errorCorrectionLevel: 'L' // Lower error correction = less dense QR
+      }, (err) => {
+        if (err) {
+          console.error('Failed to render QR Code:', err);
+          qrLoadingText.textContent = 'Failed to generate QR Code';
+        } else {
+          qrLoadingText.style.display = 'none';
+          qrCanvas.style.display = 'block';
+        }
+      });
+    }
+
+    // Copy to Clipboard
+    copyBtn.addEventListener('click', () => {
+      exportStringInput.select();
+      exportStringInput.setSelectionRange(0, 99999); // For mobile devices
+      
+      navigator.clipboard.writeText(exportStringInput.value)
+        .then(() => {
+          const originalText = copyBtn.textContent;
+          copyBtn.textContent = 'Copied!';
+          copyBtn.style.backgroundColor = 'var(--secondary-color)';
+          setTimeout(() => {
+            copyBtn.textContent = originalText;
+            copyBtn.style.backgroundColor = '';
+          }, 2000);
+        })
+        .catch(err => {
+          console.error('Failed to copy text:', err);
+        });
+    });
+
+    // Scanner Controls
+    scanBtn.addEventListener('click', () => {
+      if (videoStream) {
+        stopScanner();
+      } else {
+        startScanner();
+      }
+    });
+
+    function startScanner() {
+      scanBtn.textContent = 'Stop Scanner';
+      scanBtn.className = 'sync-action-btn accent';
+      scannerStatus.textContent = 'Accessing camera...';
+      scannerStatus.style.display = 'block';
+      videoWrapper.style.display = 'none';
+
+      navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+        .then((stream) => {
+          videoStream = stream;
+          video.srcObject = stream;
+          video.setAttribute('playsinline', 'true');
+          video.play();
+          
+          video.onloadedmetadata = () => {
+            videoWrapper.style.display = 'block';
+            scannerStatus.textContent = 'Point camera at the QR code...';
+            scanAnimationId = requestAnimationFrame(tickScanner);
+          };
+        })
+        .catch((err) => {
+          console.error('Webcam access error:', err);
+          scannerStatus.textContent = 'Camera access denied or unavailable.';
+          stopScanner();
+        });
+    }
+
+    function stopScanner() {
+      if (scanAnimationId) {
+        cancelAnimationFrame(scanAnimationId);
+        scanAnimationId = null;
+      }
+      if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+        videoStream = null;
+      }
+      video.srcObject = null;
+      videoWrapper.style.display = 'none';
+      scannerStatus.style.display = 'none';
+      
+      scanBtn.textContent = 'Scan QR with Webcam';
+      scanBtn.className = 'sync-action-btn secondary';
+    }
+
+    function tickScanner() {
+      if (video.readyState === video.HAVE_ENOUGH_DATA) {
+        const width = video.videoWidth;
+        const height = video.videoHeight;
+        
+        hiddenCanvas.width = width;
+        hiddenCanvas.height = height;
+        const ctx = hiddenCanvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, width, height);
+        
+        const imageData = ctx.getImageData(0, 0, width, height);
+        const code = jsQR(imageData.data, imageData.width, imageData.height, {
+          inversionAttempts: 'dontInvert',
+        });
+
+        if (code) {
+          console.log('QR Code detected:', code.data);
+          
+          let payload = code.data;
+          try {
+            const url = new URL(code.data);
+            const importParam = url.searchParams.get('import');
+            if (importParam) payload = importParam;
+          } catch(e) {
+            // Not a URL, use direct value
+          }
+
+          const state = deserializeState(payload);
+          if (state) {
+            stopScanner();
+            showConfirmView(state);
+            return;
+          } else {
+            scannerStatus.textContent = 'Invalid QR code. Keep scanning...';
+          }
+        }
+      }
+      
+      if (videoStream) {
+        scanAnimationId = requestAnimationFrame(tickScanner);
+      }
+    }
+
+    // Manual Paste Import
+    importSubmitBtn.addEventListener('click', () => {
+      const val = importStringTextarea.value.trim();
+      if (!val) return;
+
+      const state = deserializeState(val);
+      if (state) {
+        showConfirmView(state);
+      } else {
+        alert('Invalid sync code. Please check that you copied the complete code string.');
+      }
+    });
+
+    // Confirmation Screen Control
+    function showConfirmView(importedState) {
+      currentImportState = importedState;
+      const localState = getLocalState();
+      const merged = mergeStates(localState, importedState);
+
+      const countKeys = (obj) => Object.keys(obj || {}).length;
+
+      confirmChaptersLocal.textContent = String(localState.chapters.length);
+      confirmChaptersMerged.textContent = String(merged.chapters.length);
+
+      confirmSrsLocal.textContent = String(countKeys(localState.srs));
+      confirmSrsMerged.textContent = String(countKeys(merged.srs));
+
+      confirmVocabLocal.textContent = String(countKeys(localState.vocab));
+      confirmVocabMerged.textContent = String(countKeys(merged.vocab));
+
+      confirmView.style.display = 'flex';
+      overlay.classList.add('open');
+    }
+
+    function hideConfirmView() {
+      confirmView.style.display = 'none';
+      currentImportState = null;
+      importStringTextarea.value = '';
+    }
+
+    confirmNoBtn.addEventListener('click', hideConfirmView);
+
+    confirmYesBtn.addEventListener('click', () => {
+      if (currentImportState) {
+        const localState = getLocalState();
+        const merged = mergeStates(localState, currentImportState);
+        
+        const success = saveLocalState(merged);
+        if (success) {
+          const cleanUrl = new URL(window.location.href);
+          cleanUrl.searchParams.delete('import');
+          window.history.replaceState({}, document.title, cleanUrl.toString());
+          
+          alert('Progress successfully merged!');
+          window.location.reload();
+        } else {
+          alert('Failed to write progress to local storage.');
+          hideConfirmView();
+        }
+      }
+    });
+
+    // Handle incoming URL parameters on initial load
+    const params = new URLSearchParams(window.location.search);
+    const importParam = params.get('import');
+    if (importParam) {
+      const state = deserializeState(importParam);
+      if (state) {
+        setTimeout(() => {
+          showConfirmView(state);
+        }, 300);
+      } else {
+        const cleanUrl = new URL(window.location.href);
+        cleanUrl.searchParams.delete('import');
+        window.history.replaceState({}, document.title, cleanUrl.toString());
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+</script>
