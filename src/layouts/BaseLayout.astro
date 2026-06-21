@@ -99,6 +99,9 @@ const getLinkStyle = (isActive) => {
           utterance.lang = 'zh-HK';
         }
 
+        // Set rate slightly slower (0.85) to make pronunciation and tones clearer for learners
+        utterance.rate = 0.85;
+
         utterance.onend = () => {
           if (onEndCallback) onEndCallback();
         };
