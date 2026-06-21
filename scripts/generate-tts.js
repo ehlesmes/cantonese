@@ -207,6 +207,15 @@ async function main() {
     }
   }
 
+  // Parse command-line arguments for limit
+  const args = process.argv.slice(2);
+  let limit = Infinity;
+  const limitIdx = args.findIndex((arg) => arg === "--limit" || arg === "-l");
+  if (limitIdx !== -1 && args[limitIdx + 1]) {
+    limit = parseInt(args[limitIdx + 1], 10);
+    if (isNaN(limit)) limit = Infinity;
+  }
+
   const uniqueList = Array.from(spokenTexts);
   console.log(
     `Found ${colors.bold}${uniqueList.length}${colors.reset} unique Cantonese strings to verify.\n`,
@@ -225,6 +234,13 @@ async function main() {
     if (fs.existsSync(filePath)) {
       skippedCount++;
       continue;
+    }
+
+    if (generatedCount >= limit) {
+      console.log(
+        `${colors.yellow}Reached limit of ${limit} generations. Stopping...${colors.reset}`,
+      );
+      break;
     }
 
     try {
