@@ -1,4 +1,4 @@
-/* global window, localStorage, TextEncoder, TextDecoder, CompressionStream, DecompressionStream, Blob, Response */
+/* global window, localStorage, TextEncoder, CompressionStream, DecompressionStream, Blob, Response */
 /**
  * Sync Utility functions for Colloquial Cantonese course progress.
  * Serializes, validates, and merges localStorage progress data.
@@ -128,34 +128,24 @@ export function getLocalState() {
 }
 
 /**
- * Compresses raw text using CompressionStream (gzip) if available.
+ * Compresses raw text using CompressionStream (gzip).
  */
 async function compressData(jsonStr) {
   const bytes = new TextEncoder().encode(jsonStr);
   if (typeof CompressionStream !== "undefined") {
-    try {
-      const stream = new Blob([bytes]).stream();
-      const compressedStream = stream.pipeThrough(
-        new CompressionStream("gzip"),
-      );
-      const blob = await new Response(compressedStream).blob();
-      const buffer = await blob.arrayBuffer();
-      return new Uint8Array(buffer);
-    } catch {
-      // Fallback to uncompressed bytes
-    }
+    const stream = new Blob([bytes]).stream();
+    const compressedStream = stream.pipeThrough(new CompressionStream("gzip"));
+    const blob = await new Response(compressedStream).blob();
+    const buffer = await blob.arrayBuffer();
+    return new Uint8Array(buffer);
   }
-  return bytes;
+  throw new Error("CompressionStream is not supported by this browser");
 }
 
 /**
- * Decompresses bytes using DecompressionStream (gzip) if gzipped.
+ * Decompresses bytes using DecompressionStream (gzip).
  */
 async function decompressData(bytes) {
-  const isGzip = bytes.length >= 2 && bytes[0] === 0x1f && bytes[1] === 0x8b;
-  if (!isGzip) {
-    return new TextDecoder().decode(bytes);
-  }
   if (typeof DecompressionStream !== "undefined") {
     const stream = new Blob([bytes]).stream();
     const decompressedStream = stream.pipeThrough(
@@ -164,9 +154,7 @@ async function decompressData(bytes) {
     const blob = await new Response(decompressedStream).blob();
     return await blob.text();
   }
-  throw new Error(
-    "Gzipped payload received but DecompressionStream is not supported by this browser",
-  );
+  throw new Error("DecompressionStream is not supported by this browser");
 }
 
 /**
