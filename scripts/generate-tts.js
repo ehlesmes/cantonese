@@ -156,30 +156,61 @@ async function main() {
     `${colors.cyan}${colors.bold}=== Starting TTS Generation Pipeline ===${colors.reset}`,
   );
 
+  // Parse command-line arguments
+  const args = process.argv.slice(2);
+  let limit = Infinity;
+  const limitIdx = args.findIndex((arg) => arg === "--limit" || arg === "-l");
+  if (limitIdx !== -1 && args[limitIdx + 1]) {
+    limit = parseInt(args[limitIdx + 1], 10);
+    if (isNaN(limit)) limit = Infinity;
+  }
+
+  let maxChapters = Infinity;
+  const chaptersIdx = args.findIndex(
+    (arg) => arg === "--chapters" || arg === "-c",
+  );
+  if (chaptersIdx !== -1 && args[chaptersIdx + 1]) {
+    maxChapters = parseInt(args[chaptersIdx + 1], 10);
+    if (isNaN(maxChapters)) maxChapters = Infinity;
+  }
+
   const spokenTexts = new Set();
 
-  // 4a. Load vocabulary list
+  // Load the full vocabulary list to match by chapter
   const vocabPath = path.resolve(projectRoot, "content/vocabulary.json");
+  let vocabList = [];
   if (fs.existsSync(vocabPath)) {
-    const vocabList = JSON.parse(fs.readFileSync(vocabPath, "utf8"));
-    for (const item of vocabList) {
+    vocabList = JSON.parse(fs.readFileSync(vocabPath, "utf8"));
+  }
+
+  // Load curriculum chapters
+  const curriculumPath = path.resolve(projectRoot, "content/curriculum.md");
+  const chapters = parseCurriculum(curriculumPath);
+
+  let chaptersProcessed = 0;
+  // Extract texts chapter-by-chapter in curriculum order
+  for (const chapter of chapters) {
+    if (chaptersProcessed >= maxChapters) {
+      break;
+    }
+    const filePath = path.resolve(projectRoot, "content", chapter.file);
+    if (!fs.existsSync(filePath)) continue;
+
+    chaptersProcessed++;
+
+    // A. Add vocabulary terms first introduced in this chapter
+    const chapterVocab = vocabList.filter(
+      (item) => item.firstIntroducedIn === chapter.file,
+    );
+    for (const item of chapterVocab) {
       if (item.character) {
         const cleanVocab = getCleanSpokenText(item.character);
         if (cleanVocab) spokenTexts.add(cleanVocab);
       }
     }
-  }
 
-  // 4b. Load chapters
-  const curriculumPath = path.resolve(projectRoot, "content/curriculum.md");
-  const chapters = parseCurriculum(curriculumPath);
-
-  for (const chapter of chapters) {
-    const filePath = path.resolve(projectRoot, "content", chapter.file);
-    if (!fs.existsSync(filePath)) continue;
-
+    // B. Add dialogue lines, examples, and prose annotations in the chapter
     const { blocks } = parseChapter(filePath);
-
     for (const block of blocks) {
       if (block.type === "cantonese") {
         const parts = block.content.split("===");
@@ -198,7 +229,6 @@ async function main() {
           }
         }
       } else if (block.type === "prose") {
-        // Prose terms highlighted
         const inlineRegex =
           /`([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`/g;
         const blockRegex =
@@ -215,14 +245,19 @@ async function main() {
     }
   }
 
-  // Parse command-line arguments for limit
-  const args = process.argv.slice(2);
-  let limit = Infinity;
-  const limitIdx = args.findIndex((arg) => arg === "--limit" || arg === "-l");
-  if (limitIdx !== -1 && args[limitIdx + 1]) {
-    limit = parseInt(args[limitIdx + 1], 10);
-    if (isNaN(limit)) limit = Infinity;
+  // C. Fallback for any vocabulary terms that didn't match a chapter file
+  if (maxChapters === Infinity) {
+    for (const item of vocabList) {
+      if (item.character) {
+        const cleanVocab = getCleanSpokenText(item.character);
+        if (cleanVocab && !spokenTexts.has(cleanVocab)) {
+          spokenTexts.add(cleanVocab);
+        }
+      }
+    }
   }
+
+  // Arguments parsed at start of main()
 
   const uniqueList = Array.from(spokenTexts);
   console.log(
