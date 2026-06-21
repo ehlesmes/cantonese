@@ -153,20 +153,30 @@ const getLinkStyle = (isActive) => {
           // Programmatically slow down playback rate
           audio.playbackRate = 0.85;
 
+          let fallbackTriggered = false;
+          const triggerFallback = () => {
+            if (fallbackTriggered) return;
+            fallbackTriggered = true;
+            
+            audio.onended = null;
+            audio.onerror = null;
+            if (activeAudio === audio) activeAudio = null;
+            
+            speakNativeFallback(text, onEndCallback);
+          };
+
           audio.onended = () => {
             activeAudio = null;
             if (onEndCallback) onEndCallback();
           };
 
           audio.onerror = () => {
-            activeAudio = null;
-            speakNativeFallback(text, onEndCallback);
+            triggerFallback();
           };
 
           audio.play().catch(err => {
             console.warn("Audio play failed, using native fallback:", err);
-            activeAudio = null;
-            speakNativeFallback(text, onEndCallback);
+            triggerFallback();
           });
         } else {
           speakNativeFallback(text, onEndCallback);
