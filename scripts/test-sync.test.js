@@ -6,7 +6,7 @@ import {
 } from "../src/utils/sync.js";
 
 describe("Progress Sync Utility Spec", () => {
-  test("serialization and deserialization roundtrip preserves progress state", () => {
+  test("serialization and deserialization roundtrip preserves progress state", async () => {
     const originalState = {
       chapters: [0, 1, 3, 8, 13],
       srs: {
@@ -19,11 +19,11 @@ describe("Progress Sync Utility Spec", () => {
       },
     };
 
-    const serialized = serializeState(originalState);
+    const serialized = await serializeState(originalState);
     expect(typeof serialized).toBe("string");
     expect(serialized.length).toBeGreaterThan(0);
 
-    const deserialized = deserializeState(serialized);
+    const deserialized = await deserializeState(serialized);
     expect(deserialized).not.toBeNull();
     expect(deserialized.chapters).toEqual([0, 1, 3, 8, 13]);
 
@@ -49,7 +49,7 @@ describe("Progress Sync Utility Spec", () => {
     expect(deserialized.timestamp).toBeGreaterThan(0);
   });
 
-  test("fallback serialization and deserialization roundtrip (pure JS) preserves progress state", () => {
+  test("fallback serialization and deserialization roundtrip (pure JS) preserves progress state", async () => {
     // Temporarily delete native methods to force fallback code execution
     const origToBase64 = Uint8Array.prototype.toBase64;
     const origFromBase64 = Uint8Array.fromBase64;
@@ -68,11 +68,11 @@ describe("Progress Sync Utility Spec", () => {
         },
       };
 
-      const serialized = serializeState(originalState);
+      const serialized = await serializeState(originalState);
       expect(typeof serialized).toBe("string");
       expect(serialized.length).toBeGreaterThan(0);
 
-      const deserialized = deserializeState(serialized);
+      const deserialized = await deserializeState(serialized);
       expect(deserialized).not.toBeNull();
       expect(deserialized.chapters).toEqual([0, 1, 3, 8, 13]);
       expect(deserialized.vocab["vocab-smart-quote-’"].level).toBe(4);
@@ -83,7 +83,7 @@ describe("Progress Sync Utility Spec", () => {
     }
   });
 
-  test("deserialization handles Base64 strings with spaces (plus signs replaced by URL decoding)", () => {
+  test("deserialization handles Base64 strings with spaces (plus signs replaced by URL decoding)", async () => {
     const originalState = {
       chapters: [0, 1],
       srs: {
@@ -92,21 +92,21 @@ describe("Progress Sync Utility Spec", () => {
       vocab: {},
     };
 
-    const serialized = serializeState(originalState);
+    const serialized = await serializeState(originalState);
 
     // Convert any URL-safe '-' back to '+' (or standard base64 '+') and replace with spaces
     // to simulate standard browser URLSearchParams parsing.
     const base64WithPlus = serialized.replace(/-/g, "+");
     const base64WithSpace = base64WithPlus.replace(/\+/g, " ");
 
-    const deserialized = deserializeState(base64WithSpace);
+    const deserialized = await deserializeState(base64WithSpace);
     expect(deserialized).not.toBeNull();
     expect(deserialized.chapters).toEqual([0, 1]);
     expect(deserialized.srs["ch1-ex0"].level).toBe(2);
   });
 
-  test("deserialization returns null for corrupted/invalid strings", () => {
-    const badState = deserializeState("invalid-base64-string!");
+  test("deserialization returns null for corrupted/invalid strings", async () => {
+    const badState = await deserializeState("invalid-base64-string!");
     expect(badState).toBeNull();
   });
 

@@ -445,9 +445,9 @@
     tabImportBtn.addEventListener('click', () => switchTab('import'));
 
     // Export Generation
-    function generateExportData() {
+    async function generateExportData() {
       const localState = getLocalState();
-      const serialized = serializeState(localState);
+      const serialized = await serializeState(localState);
       
       // Update string input
       exportStringInput.value = serialized;
@@ -548,7 +548,7 @@
       scanBtn.className = 'sync-action-btn secondary';
     }
 
-    function tickScanner() {
+    async function tickScanner() {
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
         const videoWidth = video.videoWidth;
         const videoHeight = video.videoHeight;
@@ -593,7 +593,7 @@
             // Not a URL, use direct value
           }
 
-          const state = deserializeState(payload);
+          const state = await deserializeState(payload);
           if (state) {
             stopScanner();
             showConfirmView(state);
@@ -610,11 +610,11 @@
     }
 
     // Manual Paste Import
-    importSubmitBtn.addEventListener('click', () => {
+    importSubmitBtn.addEventListener('click', async () => {
       const val = importStringTextarea.value.trim();
       if (!val) return;
 
-      const state = deserializeState(val);
+      const state = await deserializeState(val);
       if (state) {
         showConfirmView(state);
       } else {
@@ -675,16 +675,18 @@
     const params = new URLSearchParams(window.location.search);
     const importParam = params.get('import');
     if (importParam) {
-      const state = deserializeState(importParam);
-      if (state) {
-        setTimeout(() => {
-          showConfirmView(state);
-        }, 300);
-      } else {
-        const cleanUrl = new URL(window.location.href);
-        cleanUrl.searchParams.delete('import');
-        window.history.replaceState({}, document.title, cleanUrl.toString());
-      }
+      (async () => {
+        const state = await deserializeState(importParam);
+        if (state) {
+          setTimeout(() => {
+            showConfirmView(state);
+          }, 300);
+        } else {
+          const cleanUrl = new URL(window.location.href);
+          cleanUrl.searchParams.delete('import');
+          window.history.replaceState({}, document.title, cleanUrl.toString());
+        }
+      })();
     }
   }
 

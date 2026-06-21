@@ -1,4 +1,4 @@
-/* global window, localStorage, TextEncoder, TextDecoder */
+/* global window, localStorage, TextEncoder, TextDecoder, CompressionStream, DecompressionStream, Blob, Response */
 /**
  * Sync Utility functions for Colloquial Cantonese course progress.
  * Serializes, validates, and merges localStorage progress data.
@@ -128,9 +128,51 @@ export function getLocalState() {
 }
 
 /**
- * Compacts and serializes progress state into a URL-safe Base64 string
+ * Compresses raw text using CompressionStream (gzip) if available.
  */
-export function serializeState(state) {
+async function compressData(jsonStr) {
+  const bytes = new TextEncoder().encode(jsonStr);
+  if (typeof CompressionStream !== "undefined") {
+    try {
+      const stream = new Blob([bytes]).stream();
+      const compressedStream = stream.pipeThrough(
+        new CompressionStream("gzip"),
+      );
+      const blob = await new Response(compressedStream).blob();
+      const buffer = await blob.arrayBuffer();
+      return new Uint8Array(buffer);
+    } catch {
+      // Fallback to uncompressed bytes
+    }
+  }
+  return bytes;
+}
+
+/**
+ * Decompresses bytes using DecompressionStream (gzip) if gzipped.
+ */
+async function decompressData(bytes) {
+  const isGzip = bytes.length >= 2 && bytes[0] === 0x1f && bytes[1] === 0x8b;
+  if (!isGzip) {
+    return new TextDecoder().decode(bytes);
+  }
+  if (typeof DecompressionStream !== "undefined") {
+    const stream = new Blob([bytes]).stream();
+    const decompressedStream = stream.pipeThrough(
+      new DecompressionStream("gzip"),
+    );
+    const blob = await new Response(decompressedStream).blob();
+    return await blob.text();
+  }
+  throw new Error(
+    "Gzipped payload received but DecompressionStream is not supported by this browser",
+  );
+}
+
+/**
+ * Compacts and serializes progress state into a URL-safe Base64 string (Gzipped)
+ */
+export async function serializeState(state) {
   const compacted = {
     [SHORT_KEYS.chapters]: state.chapters || [0],
     [SHORT_KEYS.srs]: {},
@@ -163,7 +205,7 @@ export function serializeState(state) {
   }
 
   const jsonStr = JSON.stringify(compacted);
-  const bytes = new TextEncoder().encode(jsonStr);
+  const bytes = await compressData(jsonStr);
 
   if (hasNativeBase64()) {
     try {
@@ -177,9 +219,9 @@ export function serializeState(state) {
 }
 
 /**
- * Deserializes and validates a progress string back into a standard state object
+ * Deserializes and validates a progress string back into a standard state object (handles Gzipped/raw formats)
  */
-export function deserializeState(serializedStr) {
+export async function deserializeState(serializedStr) {
   if (typeof serializedStr !== "string" || !serializedStr.trim()) {
     return null;
   }
@@ -193,24 +235,23 @@ export function deserializeState(serializedStr) {
       .replace(/\+/g, "-")
       .replace(/\//g, "_");
 
-    let rawStr;
+    let decodedBytes;
     if (hasNativeBase64()) {
       try {
-        const decodedBytes = Uint8Array.fromBase64(cleanStr, {
+        decodedBytes = Uint8Array.fromBase64(cleanStr, {
           alphabet: "base64url",
           lastChunkHandling: "loose",
         });
-        rawStr = new TextDecoder().decode(decodedBytes);
       } catch {
         // Fallback
       }
     }
 
-    if (!rawStr) {
-      const decodedBytes = base64UrlToBytes(cleanStr);
-      rawStr = new TextDecoder().decode(decodedBytes);
+    if (!decodedBytes) {
+      decodedBytes = base64UrlToBytes(cleanStr);
     }
 
+    const rawStr = await decompressData(decodedBytes);
     const compacted = JSON.parse(rawStr);
 
     // Validate overall structure
