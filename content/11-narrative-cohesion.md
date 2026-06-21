@@ -27,8 +27,10 @@ and groups of colloquial Cantonese connectives:
    - `反而[faan2ji4|on the contrary / instead]`
 
 We will also see how Sau-han handles getting
-`炒[caau2|to stir-fry / speculate / fire]``咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]``魷魚[jau4jyu2|squid]`,
-and how she uses these connectives to tell a cohesive, engaging story.
+`炒[caau2|to stir-fry / speculate / fire]`
+`咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]`
+`魷魚[jau4jyu2|squid]`, and how she uses these connectives to tell a cohesive,
+engaging story.
 
 ---
 

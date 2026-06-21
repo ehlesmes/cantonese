@@ -150,8 +150,11 @@ split-verb:
 
 While it literally means "to dream" while sleeping, in daily colloquial
 Cantonese, it is heavily used to tease someone who has unrealistic expectations
-or is making wild assumptions. Telling someone
-`你[nei5|you]``發[faat3|to emit / generate / dream / develop]``緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]``夢[mung6|dream]``呀[aa3|sentence-final particle softening statements, making questions friendly]`
+or is making wild assumptions. Telling someone `你[nei5|you]`
+`發[faat3|to emit / generate / dream / develop]`
+`緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]`
+`夢[mung6|dream]`
+`呀[aa3|sentence-final particle softening statements, making questions friendly]`
 is a friendly, humorous way of saying "You are daydreaming!" or "In your
 dreams!"
 
@@ -210,7 +213,7 @@ question: |
   你[nei5|you] 喺[hai2|at / in / on (locative preposition)] 呢度[ni1dou6|here] 發[faat3|to emit / generate / dream / develop] ________ 夢[mung6|dream] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 answer: 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]
 explanation: |
-  The verb `發夢[faat3mung6|to dream / daydream / dream]` is a split-verb. To express continuous action, the progressive aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` must be inserted between `發[faat3|to emit / generate / dream / develop]` and `夢[mung6|dream]`, yielding `發[faat3|to emit / generate / dream / develop]``緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]``夢[mung6|dream]`.
+  The verb `發夢[faat3mung6|to dream / daydream / dream]` is a split-verb. To express continuous action, the progressive aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` must be inserted between `發[faat3|to emit / generate / dream / develop]` and `夢[mung6|dream]`, yielding `發[faat3|to emit / generate / dream / develop]` `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` `夢[mung6|dream]`.
 ```
 
 ```exercise

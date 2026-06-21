@@ -117,6 +117,14 @@ function validateChapterFile(filePath, curriculumEntry) {
         const line = lines[i];
         const currentLineNum = block.startLine + i;
 
+        // Check for invalid double/adjacent backticks in prose
+        if (line.includes("``")) {
+          addError(
+            currentLineNum,
+            `Found invalid double/adjacent backticks ("\x60\x60"). Ensure all inline terms are wrapped in single backticks and separated by spaces.`,
+          );
+        }
+
         // Find inline semantic units
         const units = parser.extractInlineUnits(line);
         let cleanLine = line;

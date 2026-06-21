@@ -308,7 +308,7 @@ question: |
   (Hint: Split the verb jau4seoi2 and use the completed aspect marker zo2 and particle laa3)
 answer: 我[ngo5|I / me] 尋日[cam4jat6|yesterday] 游[jau4|to swim] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 水[seoi2|water] 喇[laa3|sentence-final particle indicating a change of state or already]。
 explanation: |
-  The verb `游水[jau4seoi2|to swim]` is a split-verb. The completed aspect marker `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` must be inserted between `游[jau4|to swim / drift / wander]` and `水[seoi2|water]`, resulting in `游[jau4|to swim / drift / wander]``咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]``水[seoi2|water]`. `我[ngo5|I / me]` is "I", `尋日[cam4jat6|yesterday]` is "yesterday", and `喇[laa3|sentence-final particle indicating a change of state or already]` is "already".
+  The verb `游水[jau4seoi2|to swim]` is a split-verb. The completed aspect marker `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` must be inserted between `游[jau4|to swim / drift / wander]` and `水[seoi2|water]`, resulting in `游[jau4|to swim / drift / wander]` `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` `水[seoi2|water]`. `我[ngo5|I / me]` is "I", `尋日[cam4jat6|yesterday]` is "yesterday", and `喇[laa3|sentence-final particle indicating a change of state or already]` is "already".
 ```
 
 ```exercise
@@ -320,7 +320,7 @@ question: |
   C) 佢[keoi5|he / she / it] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 老闆[lou5baan2|boss / proprietor] 魷魚[jau4jyu2|squid]。
 answer: B
 explanation: |
-  `炒魷魚[caau2jau4jyu2|to get fired / lay off / fire someone]` is an idiomatic split-verb. To say "the boss fired him," you split the verb and insert the pronoun object `佢[keoi5|he / she / it]` immediately after the verb part `炒[caau2|to stir-fry / speculate / fire]` along with the completed aspect marker, giving `老闆[lou5baan2|boss / proprietor]``炒[caau2|to stir-fry / speculate / fire]``咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]``佢[keoi5|he / she / it]``魷魚[jau4jyu2|squid]`. Option C means "He fired the boss".
+  `炒魷魚[caau2jau4jyu2|to get fired / lay off / fire someone]` is an idiomatic split-verb. To say "the boss fired him," you split the verb and insert the pronoun object `佢[keoi5|he / she / it]` immediately after the verb part `炒[caau2|to stir-fry / speculate / fire]` along with the completed aspect marker, giving `老闆[lou5baan2|boss / proprietor]` `炒[caau2|to stir-fry / speculate / fire]` `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` `佢[keoi5|he / she / it]` `魷魚[jau4jyu2|squid]`. Option C means "He fired the boss".
 ```
 
 ```exercise
@@ -329,5 +329,5 @@ question: |
   我哋[ngo5dei6|we / us] ________ 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] ________ 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 answer: 吹[ceoi1|to blow / boast] / 水[seoi2|water]
 explanation: |
-  The idiom `吹水[ceoi1seoi2|to chat / shoot the breeze / gossip]` (literally "blowing water") is structurally a split-verb. To express continuous action, the marker `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` splits the compound, yielding `吹[ceoi1|to blow / boast]``緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]``水[seoi2|water]`.
+  The idiom `吹水[ceoi1seoi2|to chat / shoot the breeze / gossip]` (literally "blowing water") is structurally a split-verb. To express continuous action, the marker `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` splits the compound, yielding `吹[ceoi1|to blow / boast]` `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` `水[seoi2|water]`.
 ```

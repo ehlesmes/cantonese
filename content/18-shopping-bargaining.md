@@ -36,7 +36,7 @@ Cantonese speakers love efficiency, which shows in pricing shortcuts:
   `兩個半[loeng5 go3 bun3|two and a half]`, $3.5 is
   `三個半[saam1 go3 bun3|three and a half]`).
 - When counting two of a currency unit, always use `兩[loeng5|two]` instead of
-  `二[ji6|two]`. E.g., `` `兩[loeng5|two]` `` `` `蚊[man1|dollar]` `` ($2).
+  `二[ji6|two]`. E.g., `兩[loeng5|two]` `蚊[man1|dollar]` ($2).
 - When prices are in the hundreds or thousands, the final unit is often dropped
   if there are no smaller trailing digits. E.g., `$380` is commonly said as
   `三百八[saam1 baak3 baat3|three hundred and eight (tens)]` instead of the full
@@ -53,26 +53,25 @@ shopping:
 
 - `件[gin6|measure word for clothes, matters, and items]`: Used for upper-body
   clothing (shirts, jackets, coats).
-  - Example: `` `呢[ni1|this]` ``
-    `` `件[gin6|measure word for clothes, matters, and items]` ``
-    `` `衫[saam1|clothes / clothing / shirt]` `` (this shirt)
+  - Example: `呢[ni1|this]`
+    `件[gin6|measure word for clothes, matters, and items]`
+    `衫[saam1|clothes / clothing / shirt]` (this shirt)
 - `條[tiu4|measure word for long, thin objects]`: Used for long, thin items,
   including pants, skirts, ties, and necklaces.
-  - Example: `` `呢[ni1|this]` ``
-    `` `條[tiu4|measure word for long, thin objects]` ``
-    `` `褲[fu3|pants / trousers]` `` (this pants)
+  - Example: `呢[ni1|this]` `條[tiu4|measure word for long, thin objects]`
+    `褲[fu3|pants / trousers]` (this pants)
 - `頂[deng2|measure word for hats]`: Exclusively used for hats and caps.
-  - Example: `` `呢[ni1|this]` `` `` `頂[deng2|measure word for hats]` ``
-    `` `帽[mou2|hat / cap]` `` (this hat)
+  - Example: `呢[ni1|this]` `頂[deng2|measure word for hats]`
+    `帽[mou2|hat / cap]` (this hat)
 - `對[deoi3|pair / couple]`: Used for paired items like shoes, socks, or
   earrings.
-  - Example: `` `呢[ni1|this]` `` `` `對[deoi3|pair / couple]` ``
-    `` `鞋[haai4|shoes]` `` (these shoes)
+  - Example: `呢[ni1|this]` `對[deoi3|pair / couple]` `鞋[haai4|shoes]` (these
+    shoes)
 - `隻[zek3|measure word for animals or objects in pairs]`: Used to refer to just
   one item of a pair.
-  - Example: `` `呢[ni1|this]` ``
-    `` `隻[zek3|measure word for animals or objects in pairs]` ``
-    `` `鞋[haai4|shoes]` `` (this single shoe)
+  - Example: `呢[ni1|this]`
+    `隻[zek3|measure word for animals or objects in pairs]` `鞋[haai4|shoes]`
+    (this single shoe)
 
 ---
 

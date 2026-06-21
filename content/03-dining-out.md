@@ -250,9 +250,9 @@ perfective aspect suffix
 > takes an object, the perfective suffix `咗[zo2|completed action marker]` must
 > stay firmly attached to the verb, coming _before_ the object. The structure is
 > **Verb + `咗[zo2|completed action marker]` + Object**. For example, say
-> ``食[sik6|eat]` `咗[zo2|completed action marker]` `嘢食[je5sik6|food]`` (ate
-> food), never
-> ``食[sik6|eat]` `嘢食[je5sik6|food]` `咗[zo2|completed action marker]``.
+> `食[sik6|eat]` `咗[zo2|completed action marker]` `嘢食[je5sik6|food]` (ate
+> food), never `食[sik6|eat]` `嘢食[je5sik6|food]`
+> `咗[zo2|completed action marker]`.
 
 ### Stating Completed Events
 

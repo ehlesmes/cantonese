@@ -173,9 +173,9 @@ I get off work at 8:45.
 ```
 
 This system is extremely high-frequency. When a local tells you to meet them at
-"seven points four characters" (`seven points four characters`
-(`` `七[cat1|seven]` `點[dim2|o'clock / hour]` `四[sei3|four]` `個[go3|general measure word / individual / unit]` `字[zi6|five-minute interval]` ``)),
-they mean **7:20**!
+"seven points four characters" (`七[cat1|seven]` `點[dim2|o'clock / hour]`
+`四[sei3|four]` `個[go3|general measure word / individual / unit]`
+`字[zi6|five-minute interval]`), they mean **7:20**!
 
 ---
 

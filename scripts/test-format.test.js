@@ -169,6 +169,7 @@ description: This description is okay.
 
 We have raw Chinese text here: 你好.
 And a malformed inline unit \`你好[nei5hou|missing tone digit]\`.
+Here we have double backticks: \`\`食[sik6|eat]\` \`咗[zo2|completed]\` \`嘢食[je5sik6|food]\`\`.
 
 \`\`\`cantonese
 唔該[m4goi1|excuse me] 我想[soeng2|want to]買呢個[ni1go3|this one].
@@ -226,6 +227,14 @@ explanation: Missing block formatting.
         e.message.includes('Invalid Jyutping format "nei5hou"'),
     );
     expect(malformedJpProse).toBeDefined();
+
+    // 3.5. Double/adjacent backticks in prose (Line 11)
+    const doubleBacktickErr = errors.find(
+      (e) =>
+        e.line === 11 &&
+        e.message.includes("Found invalid double/adjacent backticks"),
+    );
+    expect(doubleBacktickErr).toBeDefined();
 
     // 4. Duplicate/invalid separator count in cantonese block
     const cantoneseSepErr = errors.find((e) =>
