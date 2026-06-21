@@ -1,4 +1,4 @@
-/* global window, localStorage, TextEncoder, CompressionStream, DecompressionStream, Blob, Response */
+/* global window, localStorage, TextEncoder, TextDecoder, CompressionStream, DecompressionStream, ReadableStream, Response */
 /**
  * Sync Utility functions for Colloquial Cantonese course progress.
  * Serializes, validates, and merges localStorage progress data.
@@ -128,31 +128,42 @@ export function getLocalState() {
 }
 
 /**
- * Compresses raw text using CompressionStream (gzip).
+ * Compresses raw text using CompressionStream (deflate).
  */
 async function compressData(jsonStr) {
   const bytes = new TextEncoder().encode(jsonStr);
   if (typeof CompressionStream !== "undefined") {
-    const stream = new Blob([bytes]).stream();
-    const compressedStream = stream.pipeThrough(new CompressionStream("gzip"));
-    const blob = await new Response(compressedStream).blob();
-    const buffer = await blob.arrayBuffer();
+    const stream = new ReadableStream({
+      start(controller) {
+        controller.enqueue(bytes);
+        controller.close();
+      },
+    });
+    const compressedStream = stream.pipeThrough(
+      new CompressionStream("deflate"),
+    );
+    const buffer = await new Response(compressedStream).arrayBuffer();
     return new Uint8Array(buffer);
   }
   throw new Error("CompressionStream is not supported by this browser");
 }
 
 /**
- * Decompresses bytes using DecompressionStream (gzip).
+ * Decompresses bytes using DecompressionStream (deflate).
  */
 async function decompressData(bytes) {
   if (typeof DecompressionStream !== "undefined") {
-    const stream = new Blob([bytes]).stream();
+    const stream = new ReadableStream({
+      start(controller) {
+        controller.enqueue(bytes);
+        controller.close();
+      },
+    });
     const decompressedStream = stream.pipeThrough(
-      new DecompressionStream("gzip"),
+      new DecompressionStream("deflate"),
     );
-    const blob = await new Response(decompressedStream).blob();
-    return await blob.text();
+    const buffer = await new Response(decompressedStream).arrayBuffer();
+    return new TextDecoder().decode(buffer);
   }
   throw new Error("DecompressionStream is not supported by this browser");
 }

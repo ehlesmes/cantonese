@@ -359,6 +359,7 @@
   let videoStream = null;
   let scanAnimationId = null;
   let currentImportState = null;
+  let isProcessing = false;
 
   function init() {
     // DOM Elements
@@ -549,6 +550,13 @@
     }
 
     async function tickScanner() {
+      if (isProcessing) {
+        if (videoStream) {
+          scanAnimationId = requestAnimationFrame(tickScanner);
+        }
+        return;
+      }
+
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
         const videoWidth = video.videoWidth;
         const videoHeight = video.videoHeight;
@@ -593,13 +601,21 @@
             // Not a URL, use direct value
           }
 
-          const state = await deserializeState(payload);
-          if (state) {
-            stopScanner();
-            showConfirmView(state);
-            return;
-          } else {
-            scannerStatus.textContent = 'Invalid QR code. Keep scanning...';
+          isProcessing = true;
+          try {
+            const state = await deserializeState(payload);
+            if (state) {
+              stopScanner();
+              showConfirmView(state);
+              isProcessing = false;
+              return;
+            } else {
+              scannerStatus.textContent = 'Invalid QR code. Keep scanning...';
+            }
+          } catch (err) {
+            console.error('Scan decoding error:', err);
+          } finally {
+            isProcessing = false;
           }
         }
       }
