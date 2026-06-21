@@ -7,3 +7,5 @@ dist/
 .astro/
 test-results/
 .env
+public/version.json
+

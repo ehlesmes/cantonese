@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 import SyncModal from "../components/SyncModal.astro";
+import fs from "node:fs";
+import path from "node:path";
 
 const { title, description = "Colloquial Cantonese course" } = Astro.props;
 
@@ -12,6 +14,18 @@ const isVocabulary = pathname.startsWith("/cantonese/vocabulary");
 const getLinkStyle = (isActive) => {
   return `font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; color: ${isActive ? "var(--accent-color)" : "var(--text-muted)"}; text-decoration: none; transition: color 0.15s ease;`;
 };
+
+// Read version at build time
+let buildVersion = "development";
+try {
+  const versionFile = path.resolve("public/version.json");
+  if (fs.existsSync(versionFile)) {
+    const data = JSON.parse(fs.readFileSync(versionFile, "utf-8"));
+    buildVersion = data.version;
+  }
+} catch (e) {
+  // Graceful fallback during dev or build errors
+}
 ---
 <!doctype html>
 <html lang="en">
@@ -20,6 +34,7 @@ const getLinkStyle = (isActive) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} | Colloquial Cantonese</title>
     <meta name="description" content={description} />
+    <meta name="app-version" content={buildVersion} />
   </head>
   <body>
     <header class="container" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
@@ -37,6 +52,10 @@ const getLinkStyle = (isActive) => {
               <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
             </svg>
             Sync
+          </a>
+          <a href="#" id="update-indicator" style="font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem; color: var(--accent-color); text-decoration: none; display: none; align-items: center; gap: 0.35rem; background: rgba(179, 80, 26, 0.1); padding: 0.2rem 0.5rem; border-radius: 4px; transition: background-color 0.15s ease;" onmouseover="this.style.backgroundColor='rgba(179, 80, 26, 0.15)'" onmouseout="this.style.backgroundColor='rgba(179, 80, 26, 0.1)'">
+            <span style="display: inline-block; width: 6px; height: 6px; background-color: var(--accent-color); border-radius: 50%;"></span>
+            Update Available
           </a>
         </div>
       </div>
@@ -290,6 +309,66 @@ const getLinkStyle = (isActive) => {
             }
           }
         });
+
+        // --- Version Check and Update Logic ---
+        const updateIndicator = document.getElementById('update-indicator');
+        const metaTag = document.querySelector('meta[name="app-version"]');
+        const currentVersion = metaTag ? metaTag.getAttribute('content') : 'development';
+        let updateChecking = false;
+
+        if (updateIndicator) {
+          updateIndicator.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.reload();
+          });
+        }
+
+        async function checkVersion() {
+          // Skip check on local dev
+          if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            return;
+          }
+          if (currentVersion === 'development' || updateChecking) {
+            return;
+          }
+
+          updateChecking = true;
+          try {
+            const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+              ? import.meta.env.BASE_URL.slice(0, -1) 
+              : import.meta.env.BASE_URL;
+            
+            const response = await fetch(`${baseUrl}/version.json?t=${Date.now()}`);
+            if (!response.ok) {
+              throw new Error(`HTTP error ${response.status}`);
+            }
+            const data = await response.json();
+            
+            if (data && data.version && data.version !== currentVersion) {
+              if (updateIndicator) {
+                updateIndicator.style.display = 'inline-flex';
+              }
+            }
+          } catch (err) {
+            console.warn("Failed to check version:", err);
+          } finally {
+            updateChecking = false;
+          }
+        }
+
+        // Run checks
+        // 1. On page load (delay to prioritize core load)
+        setTimeout(checkVersion, 5000);
+
+        // 2. On tab visibility change
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') {
+            checkVersion();
+          }
+        });
+
+        // 3. Periodic check (every 5 minutes)
+        setInterval(checkVersion, 5 * 60 * 1000);
       });
     </script>
   </body>

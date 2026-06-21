@@ -14,7 +14,7 @@
     "vocab:lookup": "node scripts/lookup.js",
     "dev": "astro dev",
     "tts:generate": "node scripts/generate-tts.js",
-    "build": "node scripts/generate-tts.js && astro build",
+    "build": "node scripts/generate-version.js && node scripts/generate-tts.js && astro build",
     "preview": "astro preview",
     "deploy": "npm run build && gh-pages -d dist --dotfiles"
   },
