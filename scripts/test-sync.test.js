@@ -45,6 +45,28 @@ describe("Progress Sync Utility Spec", () => {
     expect(deserialized.timestamp).toBeGreaterThan(0);
   });
 
+  test("deserialization handles Base64 strings with spaces (plus signs replaced by URL decoding)", () => {
+    const originalState = {
+      chapters: [0, 1],
+      srs: {
+        "ch1-ex0": { level: 2, lastReviewed: 1718985600000 },
+      },
+      vocab: {},
+    };
+
+    const serialized = serializeState(originalState);
+
+    // Convert any URL-safe '-' back to '+' (or standard base64 '+') and replace with spaces
+    // to simulate standard browser URLSearchParams parsing.
+    const base64WithPlus = serialized.replace(/-/g, "+");
+    const base64WithSpace = base64WithPlus.replace(/\+/g, " ");
+
+    const deserialized = deserializeState(base64WithSpace);
+    expect(deserialized).not.toBeNull();
+    expect(deserialized.chapters).toEqual([0, 1]);
+    expect(deserialized.srs["ch1-ex0"].level).toBe(2);
+  });
+
   test("deserialization returns null for corrupted/invalid strings", () => {
     const badState = deserializeState("invalid-base64-string!");
     expect(badState).toBeNull();

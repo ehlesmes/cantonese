@@ -85,20 +85,40 @@ export function serializeState(state) {
 
   // Encode string safely for URL query params using btoa and encodeURIComponent
   // This supports Unicode characters (such as Cantonese characters in vocabulary IDs)
-  return btoa(
+  const base64 = btoa(
     encodeURIComponent(jsonStr).replace(/%([0-9A-F]{2})/g, (match, p1) => {
       return String.fromCharCode(parseInt(p1, 16));
     }),
   );
+
+  // Make Base64 URL-safe (replace + with -, / with _, and strip trailing =)
+  return base64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 }
 
 /**
  * Deserializes and validates a progress string back into a standard state object
  */
 export function deserializeState(serializedStr) {
+  if (typeof serializedStr !== "string" || !serializedStr.trim()) {
+    return null;
+  }
+
   try {
+    // Restore standard Base64 characters from URL-safe ones
+    // Convert ' ' back to '+' (in case URL search param decoding replaced '+' with space)
+    let base64 = serializedStr
+      .replace(/-/g, "+")
+      .replace(/_/g, "/")
+      .replace(/ /g, "+");
+
+    // Restore padding if length is not a multiple of 4
+    const pad = base64.length % 4;
+    if (pad) {
+      base64 += "=".repeat(4 - pad);
+    }
+
     const rawStr = decodeURIComponent(
-      atob(serializedStr)
+      atob(base64)
         .split("")
         .map((c) => {
           return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);

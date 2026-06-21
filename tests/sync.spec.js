@@ -44,8 +44,8 @@ test.describe("Progress Sync E2E Tests", () => {
       localStorage.setItem("cantonese_vocab_srs_state", JSON.stringify({}));
     });
 
-    // Load page with valid import parameter
-    const cleanPayload = Buffer.from(
+    // Load page with valid import parameter (using URL-safe base64)
+    const base64 = Buffer.from(
       JSON.stringify({
         c: [0, 1, 2],
         s: { "ch1-ex0": [3, 1718985600] },
@@ -53,6 +53,10 @@ test.describe("Progress Sync E2E Tests", () => {
         t: 1718985600,
       }),
     ).toString("base64");
+    const cleanPayload = base64
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=+$/, "");
 
     await page.goto(`/cantonese?import=${cleanPayload}`);
 
@@ -79,6 +83,35 @@ test.describe("Progress Sync E2E Tests", () => {
     await syncConfirmNo.click();
 
     // Modal should now be closed/hidden
+    await expect(confirmView).not.toBeVisible();
+  });
+
+  test("should handle import parameter with space characters (plus signs converted by URL search parameters)", async ({
+    page,
+  }) => {
+    await page.goto("/cantonese");
+    await page.evaluate(() => {
+      localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([0]));
+      localStorage.setItem("cantonese_srs_state", JSON.stringify({}));
+      localStorage.setItem("cantonese_vocab_srs_state", JSON.stringify({}));
+    });
+
+    // A valid progress state Base64 containing a "+" character:
+    // JSON: {"c":[0,1],"s":{},"v":{"vocab-test¾":[2,1718985600]},"t":1718985600000}
+    const base64WithPlus =
+      "eyJjIjpbMCwxXSwicyI6e30sInYiOnsidm9jYWItdGVzdMK+IjpbMiwxNzE4OTg1NjAwXX0sInQiOjE3MTg5ODU2MDAwMDB9";
+
+    // Replace "+" with " " (space) to simulate standard browser search parameter parsing
+    const spacePayload = base64WithPlus.replace(/\+/g, " ");
+
+    await page.goto(`/cantonese?import=${spacePayload}`);
+
+    // Confirmation view should open successfully (meaning decoding succeeded without SyntaxError)
+    const confirmView = page.locator("#sync-confirm-view");
+    await expect(confirmView).toBeVisible();
+
+    const syncConfirmNo = page.locator("#sync-confirm-no");
+    await syncConfirmNo.click();
     await expect(confirmView).not.toBeVisible();
   });
 });
