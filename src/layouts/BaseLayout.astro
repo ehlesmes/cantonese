@@ -323,6 +323,11 @@ try {
             
             const text = getCleanCantoneseText(vocabTerm);
             
+            // Skip playing sound or highlighting if the text consists only of punctuation marks
+            if (/^[，。！？、；：,?!;:\s]+$/.test(text)) {
+              return;
+            }
+            
             speakText(text, () => {
               vocabTerm.classList.remove('tts-playing');
               if (activeBtn === vocabTerm) activeBtn = null;

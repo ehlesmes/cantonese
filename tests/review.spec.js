@@ -120,24 +120,28 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     const getChip = (text) =>
       page.locator("#game-tokens-pool .token-chip", { hasText: text });
 
-    // Click chips in order, swapping the two identical duplicate "，一" tokens (normally at index 1 and 4)
+    // Click chips in order, swapping the two identical duplicate "，" and "一" tokens
     // 1. "好"
     await getChip("好").click();
-    // 2. "，一" (click the second one first to swap order!)
-    await getChip("，一").nth(1).click();
-    // 3. "個"
+    // 2. "，" (click the second one first to swap order!)
+    await getChip("，").nth(1).click();
+    // 3. "一" (click the second one first to swap order!)
+    await getChip("一").nth(1).click();
+    // 4. "個"
     await getChip("個").click();
-    // 4. "菠蘿包"
+    // 5. "菠蘿包"
     await getChip("菠蘿包").click();
-    // 5. "，一" (click the remaining first one)
-    await getChip("，一").first().click();
-    // 6. "杯"
+    // 6. "，" (click the remaining first one)
+    await getChip("，").first().click();
+    // 7. "一" (click the remaining first one)
+    await getChip("一").first().click();
+    // 8. "杯"
     await getChip("杯").click();
-    // 7. "凍"
+    // 9. "凍"
     await getChip("凍").click();
-    // 8. "奶茶"
+    // 10. "奶茶"
     await getChip("奶茶").click();
-    // 9. "。"
+    // 11. "。"
     await getChip("。").click();
 
     // 4. Click check answer
@@ -239,12 +243,14 @@ test.describe("Autoplay Audio Tests", () => {
     const getChip = (text) =>
       page.locator("#game-tokens-pool .token-chip", { hasText: text });
 
-    // Assemble correct answer: "好", "，一", "個", "菠蘿包", "，一", "杯", "凍", "奶茶", "。"
+    // Assemble correct answer: "好", "，", "一", "個", "菠蘿包", "，", "一", "杯", "凍", "奶茶", "。"
     await getChip("好").click();
-    await getChip("，一").first().click();
+    await getChip("，").first().click();
+    await getChip("一").first().click();
     await getChip("個").click();
     await getChip("菠蘿包").click();
-    await getChip("，一").first().click(); // click remaining
+    await getChip("，").first().click(); // click remaining
+    await getChip("一").first().click(); // click remaining
     await getChip("杯").click();
     await getChip("凍").click();
     await getChip("奶茶").click();
