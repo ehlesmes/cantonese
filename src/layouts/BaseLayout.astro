@@ -280,12 +280,40 @@ try {
           const vocabTerm = e.target.closest('.vocab-term');
           if (vocabTerm) {
             adjustTooltipPosition(vocabTerm);
+            
+            // Preload audio on hover/touch to minimize latency
+            const text = getCleanCantoneseText(vocabTerm);
+            preloadAudio(text);
+          }
+        };
+
+        // Preload play button audio on hover/touch
+        const handleTtsButtonHover = (e) => {
+          const ttsBtn = e.target.closest('.tts-btn');
+          if (ttsBtn) {
+            const exampleCard = ttsBtn.closest('.cantonese-example-card');
+            const dialogueTurn = ttsBtn.closest('.dialogue-turn');
+            
+            let targetEl = null;
+            if (exampleCard) {
+              targetEl = exampleCard.querySelector('.cantonese-sentence');
+            } else if (dialogueTurn) {
+              targetEl = dialogueTurn.querySelector('.dialogue-cantonese');
+            }
+            
+            if (targetEl) {
+              const text = getCleanCantoneseText(targetEl);
+              preloadAudio(text);
+            }
           }
         };
 
         document.body.addEventListener('mouseover', handleTooltipEvent, { passive: true });
         document.body.addEventListener('touchstart', handleTooltipEvent, { passive: true });
         document.body.addEventListener('click', handleTooltipEvent, { passive: true });
+
+        document.body.addEventListener('mouseover', handleTtsButtonHover, { passive: true });
+        document.body.addEventListener('touchstart', handleTtsButtonHover, { passive: true });
 
         // Handle Vocab Term Clicks
         document.body.addEventListener('click', (e) => {
