@@ -45,6 +45,15 @@ test("Chapter 1 Visual Render Test", async ({ page }) => {
 });
 
 test("Phrasebook Visual Render Test", async ({ page }) => {
+  // Mock Math.random to make card selections and token shuffling deterministic
+  await page.addInitScript(() => {
+    let seed = 42;
+    Math.random = () => {
+      let x = Math.sin(seed++) * 10000;
+      return x - Math.floor(x);
+    };
+  });
+
   // Navigate to curriculum index first to set context
   await page.goto("/cantonese");
 
@@ -88,6 +97,15 @@ test("Phrasebook Visual Render Test", async ({ page }) => {
 });
 
 test("Vocabulary Visual Render Test", async ({ page }) => {
+  // Mock Math.random to make card selections deterministic
+  await page.addInitScript(() => {
+    let seed = 42;
+    Math.random = () => {
+      let x = Math.sin(seed++) * 10000;
+      return x - Math.floor(x);
+    };
+  });
+
   // Navigate to curriculum index first to set context
   await page.goto("/cantonese");
 

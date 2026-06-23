@@ -1,4 +1,4 @@
-/* global localStorage, window */
+/* global localStorage, window, setTimeout */
 import { test, expect } from "@playwright/test";
 
 test.describe("Review Board Legacy / String State Compatibility Tests", () => {
@@ -148,5 +148,114 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     console.log("Feedback content text:", feedbackText);
     expect(feedbackText).toContain("Correct!");
     expect(feedbackText).toContain("SRS Level Up");
+  });
+});
+
+test.describe("Autoplay Audio Tests", () => {
+  test("should automatically play audio when revealing the answer in Vocabulary", async ({
+    page,
+  }) => {
+    // 1. Seed localStorage and mock Audio/SpeechSynthesis
+    await page.addInitScript(() => {
+      localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([1]));
+
+      // Mock audio play to return a long-running/pending promise so tts-playing class persists
+      window.HTMLAudioElement.prototype.play = function () {
+        return new Promise((resolve) => {
+          setTimeout(resolve, 5000);
+        });
+      };
+      window.HTMLAudioElement.prototype.pause = function () {};
+
+      // Mock speechSynthesis
+      if (window.speechSynthesis) {
+        window.speechSynthesis.speak = () => {};
+      }
+    });
+
+    // 2. Go to Vocabulary
+    await page.goto("/cantonese/vocabulary");
+    await page.waitForSelector("#stats-cards-count");
+
+    // 3. Start the session
+    await page.click("#start-session-btn");
+    await page.waitForSelector("#flashcard-character-container");
+
+    // 4. Reveal answer
+    await page.click("#flashcard-reveal-btn");
+    await page.waitForSelector("#flashcard-answer-section");
+
+    // 5. Assert that the vocab term has the 'tts-playing' class indicating autoplay was triggered
+    const term = page.locator("#flashcard-character-container .vocab-term");
+    await expect(term).toHaveClass(/tts-playing/);
+  });
+
+  test("should automatically play audio when checking the answer in Phrasebook", async ({
+    page,
+  }) => {
+    // 1. Seed localStorage and intercept __allExamples before page load to have a known short list
+    await page.addInitScript(() => {
+      localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([3]));
+
+      // Mock audio play to return a long-running/pending promise so tts-playing class persists
+      window.HTMLAudioElement.prototype.play = function () {
+        return new Promise((resolve) => {
+          setTimeout(resolve, 5000);
+        });
+      };
+      window.HTMLAudioElement.prototype.pause = function () {};
+
+      // Mock speechSynthesis
+      if (window.speechSynthesis) {
+        window.speechSynthesis.speak = () => {};
+      }
+
+      let val;
+      Object.defineProperty(window, "__allExamples", {
+        get() {
+          return val;
+        },
+        set(newVal) {
+          val = newVal;
+          // Find the specific card with duplicate tokens
+          const targetCard = val.find((c) => c.id === "ch3-dg9");
+          if (targetCard) {
+            val.length = 0;
+            val.push(targetCard);
+          }
+        },
+        configurable: true,
+      });
+    });
+
+    // 2. Go to phrasebook
+    await page.goto("/cantonese/phrasebook");
+    await page.waitForSelector("#stats-cards-count");
+
+    // 3. Start the session
+    await page.click("#start-session-btn");
+    await page.waitForSelector("#game-tokens-pool");
+
+    const getChip = (text) =>
+      page.locator("#game-tokens-pool .token-chip", { hasText: text });
+
+    // Assemble correct answer: "好", "，一", "個", "菠蘿包", "，一", "杯", "凍", "奶茶", "。"
+    await getChip("好").click();
+    await getChip("，一").first().click();
+    await getChip("個").click();
+    await getChip("菠蘿包").click();
+    await getChip("，一").first().click(); // click remaining
+    await getChip("杯").click();
+    await getChip("凍").click();
+    await getChip("奶茶").click();
+    await getChip("。").click();
+
+    // 4. Click check answer
+    await page.click("#game-check-btn");
+    await page.waitForSelector("#feedback-panel");
+
+    // 5. Assert that the tts-btn in the feedback panel has 'tts-playing' class indicating autoplay was triggered
+    const ttsBtn = page.locator("#feedback-panel .tts-btn");
+    await expect(ttsBtn).toHaveClass(/tts-playing/);
   });
 });

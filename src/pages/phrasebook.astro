@@ -773,6 +773,12 @@ for (const chapter of chapters) {
         `;
       }
 
+      // Automatically play the correct sentence pronunciation audio
+      const ttsBtn = feedbackPanel.querySelector('.tts-btn');
+      if (ttsBtn) {
+        ttsBtn.click();
+      }
+
       document.getElementById('next-card-btn').addEventListener('click', () => {
         currentCardIndex++;
         loadCard(currentCardIndex);

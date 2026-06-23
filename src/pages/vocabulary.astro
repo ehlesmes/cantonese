@@ -523,6 +523,12 @@ const allVocab = allVocabRaw.map(item => {
     function revealAnswer() {
       document.getElementById('flashcard-answer-section').style.display = 'block';
       document.getElementById('flashcard-reveal-btn').style.display = 'none';
+
+      // Automatically play TTS audio when answer is revealed by clicking the term
+      const termEl = document.querySelector('#flashcard-character-container .vocab-term');
+      if (termEl) {
+        termEl.click();
+      }
     }
 
     function gradeCard(remembered) {

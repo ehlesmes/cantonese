@@ -264,13 +264,14 @@ try {
             
             const text = getCleanCantoneseText(vocabTerm);
             
-            // Highlight vocab term
-            vocabTerm.classList.add('tts-playing');
-            activeBtn = vocabTerm;
             speakText(text, () => {
               vocabTerm.classList.remove('tts-playing');
               if (activeBtn === vocabTerm) activeBtn = null;
             });
+            
+            // Highlight vocab term
+            vocabTerm.classList.add('tts-playing');
+            activeBtn = vocabTerm;
             
             // Backup removal in case onend doesn't trigger
             setTimeout(() => {
@@ -299,13 +300,14 @@ try {
             if (targetEl) {
               const text = getCleanCantoneseText(targetEl);
               
-              ttsBtn.classList.add('tts-playing');
-              activeBtn = ttsBtn;
-              
               speakText(text, () => {
                 ttsBtn.classList.remove('tts-playing');
                 if (activeBtn === ttsBtn) activeBtn = null;
               });
+
+              // Highlight play button
+              ttsBtn.classList.add('tts-playing');
+              activeBtn = ttsBtn;
             }
           }
         });
