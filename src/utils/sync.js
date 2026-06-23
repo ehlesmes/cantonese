@@ -250,7 +250,16 @@ export async function deserializeState(serializedStr) {
       decodedBytes = base64UrlToBytes(cleanStr);
     }
 
-    const rawStr = await decompressData(decodedBytes);
+    let rawStr;
+    try {
+      rawStr = await decompressData(decodedBytes);
+    } catch (e) {
+      try {
+        rawStr = new TextDecoder().decode(decodedBytes);
+      } catch (decodeErr) {
+        throw new Error("Decompression and decoding failed");
+      }
+    }
     const compacted = JSON.parse(rawStr);
 
     // Validate overall structure

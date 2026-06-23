@@ -272,11 +272,14 @@ for (const chapter of chapters) {
     }
 
     // 1. Client-Side Helper to Compile Annotations inline without imports
-    function compileAnnotationsClient(text) {
+    function compileAnnotationsClient(text, hideTranslation = true) {
       if (!text) return "";
       const blockRegex = /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
       return text.replace(blockRegex, (match, char, jyutping, translation) => {
-        return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong></span></span>`;
+        if (hideTranslation) {
+          return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong></span></span>`;
+        }
+        return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
       });
     }
 
@@ -494,7 +497,7 @@ for (const chapter of chapters) {
       
       const cantoDiv = document.createElement('div');
       cantoDiv.className = 'review-item-canto';
-      cantoDiv.innerHTML = compileAnnotationsClient(item.cantoneseRaw);
+      cantoDiv.innerHTML = compileAnnotationsClient(item.cantoneseRaw, false);
       
       const engDiv = document.createElement('div');
       engDiv.className = 'review-item-english';
@@ -644,7 +647,7 @@ for (const chapter of chapters) {
       
       const inner = document.createElement('div');
       inner.className = 'vocab-term';
-      inner.innerHTML = compileAnnotationsClient(rawToken);
+      inner.innerHTML = compileAnnotationsClient(rawToken, true);
       
       chip.appendChild(inner);
       
@@ -706,7 +709,7 @@ for (const chapter of chapters) {
       const feedbackPanel = document.getElementById('feedback-panel');
       feedbackPanel.style.display = 'block';
 
-      const compiledCantoHtml = compileAnnotationsClient(card.cantoneseRaw);
+      const compiledCantoHtml = compileAnnotationsClient(card.cantoneseRaw, false);
 
       if (isCorrect) {
         feedbackPanel.innerHTML = `
