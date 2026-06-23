@@ -371,6 +371,40 @@ try {
           }
         });
 
+        // Background preloading for all audio elements currently on the page
+        function preloadPageAudio() {
+          const terms = Array.from(document.querySelectorAll('.vocab-term'));
+          const playBtnsText = Array.from(document.querySelectorAll('.tts-btn')).map(btn => {
+            const exampleCard = btn.closest('.cantonese-example-card');
+            const dialogueTurn = btn.closest('.dialogue-turn');
+            let targetEl = null;
+            if (exampleCard) {
+              targetEl = exampleCard.querySelector('.cantonese-sentence');
+            } else if (dialogueTurn) {
+              targetEl = dialogueTurn.querySelector('.dialogue-cantonese');
+            }
+            return targetEl ? getCleanCantoneseText(targetEl) : null;
+          }).filter(Boolean);
+
+          const allTexts = new Set([
+            ...terms.map(el => getCleanCantoneseText(el)),
+            ...playBtnsText
+          ]);
+
+          if (window.preloadTexts) {
+            window.preloadTexts(Array.from(allTexts));
+          }
+        }
+
+        // Schedule background preloading after page is fully loaded and interactive (delay 1.5s)
+        if (document.readyState === 'complete') {
+          setTimeout(preloadPageAudio, 1500);
+        } else {
+          window.addEventListener('load', () => {
+            setTimeout(preloadPageAudio, 1500);
+          });
+        }
+
         // --- Version Check and Update Logic ---
         const updateIndicator = document.getElementById('update-indicator');
         const metaTag = document.querySelector('meta[name="app-version"]');
