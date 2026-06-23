@@ -562,6 +562,11 @@ for (const chapter of chapters) {
       document.getElementById('session-view').style.display = 'flex';
       document.getElementById('summary-view').style.display = 'none';
       
+      // Preload audio files for all cards in this session to eliminate playback latency
+      if (window.preloadTexts) {
+        window.preloadTexts(sessionCards.map(c => c.cantoneseRaw));
+      }
+
       loadCard(currentCardIndex);
     }
 
