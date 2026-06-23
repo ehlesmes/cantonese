@@ -371,35 +371,42 @@ try {
           }
         });
 
-        // Background preloading for all audio elements currently on the page (examples & dialogues only)
-        function preloadPageAudio() {
-          const playBtnsText = Array.from(document.querySelectorAll('.tts-btn')).map(btn => {
-            const exampleCard = btn.closest('.cantonese-example-card');
-            const dialogueTurn = btn.closest('.dialogue-turn');
-            let targetEl = null;
-            if (exampleCard) {
-              targetEl = exampleCard.querySelector('.cantonese-sentence');
-            } else if (dialogueTurn) {
-              targetEl = dialogueTurn.querySelector('.dialogue-cantonese');
-            }
-            return targetEl ? getCleanCantoneseText(targetEl) : null;
-          }).filter(Boolean);
+        // Observe tts-btn visibility and preload audio when they enter viewport (within 200px margin)
+        function setupVisibilityPreloader() {
+          if (!('IntersectionObserver' in window)) return;
 
-          const allTexts = new Set(playBtnsText);
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const ttsBtn = entry.target;
+                observer.unobserve(ttsBtn);
 
-          if (window.preloadTexts) {
-            window.preloadTexts(Array.from(allTexts));
-          }
-        }
-
-        // Schedule background preloading after page is fully loaded and interactive (delay 1.5s)
-        if (document.readyState === 'complete') {
-          setTimeout(preloadPageAudio, 1500);
-        } else {
-          window.addEventListener('load', () => {
-            setTimeout(preloadPageAudio, 1500);
+                const exampleCard = ttsBtn.closest('.cantonese-example-card');
+                const dialogueTurn = ttsBtn.closest('.dialogue-turn');
+                
+                let targetEl = null;
+                if (exampleCard) {
+                  targetEl = exampleCard.querySelector('.cantonese-sentence');
+                } else if (dialogueTurn) {
+                  targetEl = dialogueTurn.querySelector('.dialogue-cantonese');
+                }
+                
+                if (targetEl) {
+                  const text = getCleanCantoneseText(targetEl);
+                  preloadAudio(text);
+                }
+              }
+            });
+          }, {
+            rootMargin: '200px 0px',
+            threshold: 0.0
           });
+
+          document.querySelectorAll('.tts-btn').forEach(btn => observer.observe(btn));
         }
+
+        // Initialize visibility observer
+        setupVisibilityPreloader();
 
         // --- Version Check and Update Logic ---
         const updateIndicator = document.getElementById('update-indicator');
