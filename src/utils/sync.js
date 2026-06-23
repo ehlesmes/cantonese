@@ -253,10 +253,10 @@ export async function deserializeState(serializedStr) {
     let rawStr;
     try {
       rawStr = await decompressData(decodedBytes);
-    } catch (e) {
+    } catch {
       try {
         rawStr = new TextDecoder().decode(decodedBytes);
-      } catch (decodeErr) {
+      } catch {
         throw new Error("Decompression and decoding failed");
       }
     }
