@@ -371,9 +371,8 @@ try {
           }
         });
 
-        // Background preloading for all audio elements currently on the page
+        // Background preloading for all audio elements currently on the page (examples & dialogues only)
         function preloadPageAudio() {
-          const terms = Array.from(document.querySelectorAll('.vocab-term'));
           const playBtnsText = Array.from(document.querySelectorAll('.tts-btn')).map(btn => {
             const exampleCard = btn.closest('.cantonese-example-card');
             const dialogueTurn = btn.closest('.dialogue-turn');
@@ -386,10 +385,7 @@ try {
             return targetEl ? getCleanCantoneseText(targetEl) : null;
           }).filter(Boolean);
 
-          const allTexts = new Set([
-            ...terms.map(el => getCleanCantoneseText(el)),
-            ...playBtnsText
-          ]);
+          const allTexts = new Set(playBtnsText);
 
           if (window.preloadTexts) {
             window.preloadTexts(Array.from(allTexts));
