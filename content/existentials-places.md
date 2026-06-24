@@ -139,6 +139,9 @@ noun with a **spatial directional marker**.
 - `前面[cin4min6|in front / front side]`: In front of, ahead.
 - `後面[hau6min6|behind / back side]`: Behind, at the back of.
 - `隔籬[gaak3lei4|next to / beside / neighbor]`: Next to, beside.
+- `左邊[zo2bin1|left side]`: Left side.
+- `右邊[jau6bin1|right side]`: Right side.
+- `中間[zung1gaan1|middle]`: Middle, in between.
 
 ### The Spatial Marker Pattern
 
@@ -177,6 +180,18 @@ The cat is inside the bedroom.
 超市[ciu1si5|supermarket] 喺[hai2|at / in / on] 學校[hok6haau6|school] 隔籬[gaak3lei4|next to / beside / neighbor] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 The supermarket is next to the school.
+```
+
+```cantonese
+鎖匙[so2si4|key] 喺[hai2|at / in / on] 電腦[din6nou5|computer] 左邊[zo2bin1|left side] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+The keys are to the left of the computer.
+```
+
+```cantonese
+隻[zek3|measure word for animals] 狗[gau2|dog] 喺[hai2|at / in / on] 房[fong2|room / bedroom] 中間[zung1gaan1|middle] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+The dog is in the middle of the room.
 ```
 
 ---
