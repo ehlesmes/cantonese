@@ -1,0 +1,4643 @@
+[
+  {
+    "rank": 27,
+    "char": "即",
+    "jyutping": "zik1",
+    "translation": "namely/that is/i.e./prompt/at once/at present/even if/prompted (by the occasion)/to approach/to come into contact/to assume (office)/to draw near",
+    "status": "pending"
+  },
+  {
+    "rank": 30,
+    "char": "跟住",
+    "jyutping": "gan1zyu6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 39,
+    "char": "喀",
+    "jyutping": "kak1",
+    "translation": "(onomat.)",
+    "status": "pending"
+  },
+  {
+    "rank": 48,
+    "char": "其實",
+    "jyutping": "kei4sat6",
+    "translation": "actually/that is not the case/in fact/really",
+    "status": "pending"
+  },
+  {
+    "rank": 52,
+    "char": "中間",
+    "jyutping": "zung1gaan1",
+    "translation": "between/intermediate/mid/middle",
+    "status": "pending"
+  },
+  {
+    "rank": 55,
+    "char": "上",
+    "jyutping": "soeng6|soeng5",
+    "translation": "above/upper/first/best/better/superior/previous/before/above/top/emperor/superior|go up/upward/up/go to/ascend/go to court/rising tone (phonetics)",
+    "status": "pending"
+  },
+  {
+    "rank": 57,
+    "char": "嘞",
+    "jyutping": "laak3|lak3",
+    "translation": "particle",
+    "status": "pending"
+  },
+  {
+    "rank": 58,
+    "char": "誒",
+    "jyutping": "aai2|ei6|oi1",
+    "translation": "hey",
+    "status": "pending"
+  },
+  {
+    "rank": 61,
+    "char": "下",
+    "jyutping": "haa6",
+    "translation": "down/downwards/below/lower/later/next (week etc)/second (of two parts)/to decline/to go down",
+    "status": "pending"
+  },
+  {
+    "rank": 69,
+    "char": "哦",
+    "jyutping": "ngo4|o4|o6",
+    "translation": "oh (叹词, interjection)/to chant",
+    "status": "pending"
+  },
+  {
+    "rank": 70,
+    "char": "係咪",
+    "jyutping": "*hai6mai1|mi4|mai5",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 71,
+    "char": "自己",
+    "jyutping": "zi6gei2",
+    "translation": "oneself/one's own",
+    "status": "pending"
+  },
+  {
+    "rank": 72,
+    "char": "咁樣",
+    "jyutping": "gam2joeng2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 78,
+    "char": "兜",
+    "jyutping": "dau1",
+    "translation": "container for rice, pet food or coins/to move in a circle/to canvas or solicit/to go for a (leisurely) stroll, drive, jaunt",
+    "status": "pending"
+  },
+  {
+    "rank": 79,
+    "char": "嗎",
+    "jyutping": "maa3",
+    "translation": "(question tag)/see 嗎啡|吗啡, morphine",
+    "status": "pending"
+  },
+  {
+    "rank": 84,
+    "char": "吖",
+    "jyutping": "aa4",
+    "translation": "particle",
+    "status": "pending"
+  },
+  {
+    "rank": 89,
+    "char": "諗",
+    "jyutping": "nam2",
+    "translation": "to think/to consider",
+    "status": "pending"
+  },
+  {
+    "rank": 90,
+    "char": "來",
+    "jyutping": "loi4",
+    "translation": "to come/to arrive/to come round/ever since/next",
+    "status": "pending"
+  },
+  {
+    "rank": 91,
+    "char": "然",
+    "jyutping": "jin4",
+    "translation": "correct/right/so/thus/like this/-ly",
+    "status": "pending"
+  },
+  {
+    "rank": 92,
+    "char": "右",
+    "jyutping": "jau6",
+    "translation": "right (-hand)",
+    "status": "pending"
+  },
+  {
+    "rank": 93,
+    "char": "經過",
+    "jyutping": "ging1gwo3",
+    "translation": "to pass/to go through/process/course",
+    "status": "pending"
+  },
+  {
+    "rank": 112,
+    "char": "譬如",
+    "jyutping": "pei3jyu4",
+    "translation": "for example/for instance/such as",
+    "status": "pending"
+  },
+  {
+    "rank": 116,
+    "char": "嗯",
+    "jyutping": "ng2",
+    "translation": "(a groaning sound)/(nonverbal grunt as interjection)/OK, yeah/what?/interjection indicating approval, appreciation or agreement",
+    "status": "pending"
+  },
+  {
+    "rank": 120,
+    "char": "哩",
+    "jyutping": "lei5|le1|lei1|li1",
+    "translation": "(modal final particle sim. to 呢 or 啦)/(onomat.)/see 哩哩羅羅|哩哩罗罗 lililuoluo endless mumbling noise/see 哩哩啦啦 lililala, scattered or intermittent/mile/old form of modern 英里",
+    "status": "pending"
+  },
+  {
+    "rank": 125,
+    "char": "方",
+    "jyutping": "fong1",
+    "translation": "square/quadrilateral/power (such as cube 立方)/classifier for square things/upright/honest/fair and square/surname Fang/direction/party (to a dispute)/one side/place/method/prescription/just/then/only then",
+    "status": "pending"
+  },
+  {
+    "rank": 126,
+    "char": "陣",
+    "jyutping": "zan6",
+    "translation": "disposition of troops/wave/spate/burst/spell/short period of time/classifier for events or states of short duration",
+    "status": "pending"
+  },
+  {
+    "rank": 128,
+    "char": "沙漠",
+    "jyutping": "saa1mok6",
+    "translation": "desert",
+    "status": "pending"
+  },
+  {
+    "rank": 135,
+    "char": "樣",
+    "jyutping": "joeng6",
+    "translation": "manner/pattern/way/appearance/shape",
+    "status": "pending"
+  },
+  {
+    "rank": 136,
+    "char": "嘩",
+    "jyutping": "waa1|waa4",
+    "translation": "cat-calling sound/clamor/noise/crashing sound",
+    "status": "pending"
+  },
+  {
+    "rank": 138,
+    "char": "穿過",
+    "jyutping": "cyun1gwo3",
+    "translation": "to pass through",
+    "status": "pending"
+  },
+  {
+    "rank": 140,
+    "char": "個人",
+    "jyutping": "go3jan4",
+    "translation": "individual/personal/oneself",
+    "status": "pending"
+  },
+  {
+    "rank": 141,
+    "char": "終點",
+    "jyutping": "zung1dim2",
+    "translation": "the end/end point/finishing line (in a race)/destination/terminus",
+    "status": "pending"
+  },
+  {
+    "rank": 142,
+    "char": "洞",
+    "jyutping": "dung6",
+    "translation": "cave/hole/the female sexual organ, \"hole\", \"cunt\"/CL:個[go]",
+    "status": "pending"
+  },
+  {
+    "rank": 143,
+    "char": "山",
+    "jyutping": "saan1",
+    "translation": "mountain/hill/CL:座[joh]",
+    "status": "pending"
+  },
+  {
+    "rank": 146,
+    "char": "園",
+    "jyutping": "jyun4",
+    "translation": "garden",
+    "status": "pending"
+  },
+  {
+    "rank": 147,
+    "char": "角",
+    "jyutping": "gok3",
+    "translation": "angle/horn/horn-shaped/unit of money equal to 0.1 yuan/role (theater)/to compete/ancient three legged wine vessel/third note of pentatonic scale/surname Jue",
+    "status": "pending"
+  },
+  {
+    "rank": 149,
+    "char": "揾",
+    "jyutping": "*?",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 150,
+    "char": "手",
+    "jyutping": "sau2",
+    "translation": "hand/hand of cards/a turn (gambling)",
+    "status": "pending"
+  },
+  {
+    "rank": 152,
+    "char": "哩個",
+    "jyutping": "*lei5|le1|lei1|li1go3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 153,
+    "char": "亦",
+    "jyutping": "jik6",
+    "translation": "also",
+    "status": "pending"
+  },
+  {
+    "rank": 155,
+    "char": "啱",
+    "jyutping": "ngaam1",
+    "translation": "correct/suitable/just now/to suit sb",
+    "status": "pending"
+  },
+  {
+    "rank": 156,
+    "char": "有個",
+    "jyutping": "*jau5go3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 164,
+    "char": "線",
+    "jyutping": "sin3",
+    "translation": "thread/string/wire/line",
+    "status": "pending"
+  },
+  {
+    "rank": 165,
+    "char": "但",
+    "jyutping": "daan6",
+    "translation": "but/yet/however/only/merely/still",
+    "status": "pending"
+  },
+  {
+    "rank": 166,
+    "char": "一定",
+    "jyutping": "jat1ding6",
+    "translation": "surely/certainly/necessarily/fixed/a certain (extent etc)/given/particular/must",
+    "status": "pending"
+  },
+  {
+    "rank": 168,
+    "char": "樹",
+    "jyutping": "syu6",
+    "translation": "tree",
+    "status": "pending"
+  },
+  {
+    "rank": 169,
+    "char": "一路",
+    "jyutping": "jat1lou6",
+    "translation": "continually",
+    "status": "pending"
+  },
+  {
+    "rank": 171,
+    "char": "政府",
+    "jyutping": "zing3fu2",
+    "translation": "government",
+    "status": "pending"
+  },
+  {
+    "rank": 173,
+    "char": "裏",
+    "jyutping": "leoi5",
+    "translation": "inside/internal/interior/lining/village/basic unit of city administration",
+    "status": "pending"
+  },
+  {
+    "rank": 174,
+    "char": "塔",
+    "jyutping": "taap3",
+    "translation": "to lock/to lock up/to handcuff/a lock/pagoda/tower/minaret",
+    "status": "pending"
+  },
+  {
+    "rank": 179,
+    "char": "池",
+    "jyutping": "ci4",
+    "translation": "pond/reservoir/surname Chi",
+    "status": "pending"
+  },
+  {
+    "rank": 180,
+    "char": "茅屋",
+    "jyutping": "maau4uk1",
+    "translation": "cottage",
+    "status": "pending"
+  },
+  {
+    "rank": 187,
+    "char": "頭先",
+    "jyutping": "tau4sin1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 188,
+    "char": "叫做",
+    "jyutping": "giu3zou6",
+    "translation": "be called/be known as",
+    "status": "pending"
+  },
+  {
+    "rank": 190,
+    "char": "而",
+    "jyutping": "ji4",
+    "translation": "and/as well as/and so/but (not)/yet (not)/(indicates causal relation)/(indicates change of state)/(indicates contrast)",
+    "status": "pending"
+  },
+  {
+    "rank": 191,
+    "char": "一直",
+    "jyutping": "jat1zik6",
+    "translation": "straight (in a straight line)/continuously/always/from the beginning of ... up to .../all along",
+    "status": "pending"
+  },
+  {
+    "rank": 194,
+    "char": "香",
+    "jyutping": "hoeng1",
+    "translation": "fragrant/sweet smelling/aromatic/savory or appetizing/(to eat) with relish/(of sleep) sound/perfume or spice/joss or incense stick/CL:枝[jī]/to die (euphemistic, a reference to the custom of burning joss sticks in honour of the departed).",
+    "status": "pending"
+  },
+  {
+    "rank": 197,
+    "char": "由",
+    "jyutping": "jau4",
+    "translation": "to follow/from/it is for...to/reason/cause/because of/due to/to/to leave it (to sb)/by (introduces passive verb)",
+    "status": "pending"
+  },
+  {
+    "rank": 199,
+    "char": "方向",
+    "jyutping": "fong1hoeng3",
+    "translation": "direction/orientation/path to follow",
+    "status": "pending"
+  },
+  {
+    "rank": 200,
+    "char": "第一",
+    "jyutping": "dai6jat1",
+    "translation": "first/number one",
+    "status": "pending"
+  },
+  {
+    "rank": 201,
+    "char": "畫",
+    "jyutping": "waak6|waa2",
+    "translation": "draw/picture/painting",
+    "status": "pending"
+  },
+  {
+    "rank": 204,
+    "char": "港",
+    "jyutping": "gong2",
+    "translation": "harbor/port/CL:個[go]/Hong Kong, abbr. for 香港[hēung góng]",
+    "status": "pending"
+  },
+  {
+    "rank": 205,
+    "char": "善",
+    "jyutping": "sin6",
+    "translation": "good (virtuous)/benevolent/well-disposed/good at sth/to improve or perfect/to kill/to injure",
+    "status": "pending"
+  },
+  {
+    "rank": 206,
+    "char": "繼續",
+    "jyutping": "gai3zuk6",
+    "translation": "to continue/to proceed with/to go on with",
+    "status": "pending"
+  },
+  {
+    "rank": 207,
+    "char": "地方",
+    "jyutping": "dei6fong1",
+    "translation": "region/regional (away from the central administration)",
+    "status": "pending"
+  },
+  {
+    "rank": 209,
+    "char": "時間",
+    "jyutping": "si4gaan3",
+    "translation": "time/period",
+    "status": "pending"
+  },
+  {
+    "rank": 210,
+    "char": "地圖",
+    "jyutping": "dei6tou4",
+    "translation": "map",
+    "status": "pending"
+  },
+  {
+    "rank": 211,
+    "char": "場",
+    "jyutping": "coeng4",
+    "translation": "large place used for a specific purpose/stage/scene (of a play)/classifier for sporting or recreational activities/classifier for number of exams/classifier for events and happenings: spell, episode, bout",
+    "status": "pending"
+  },
+  {
+    "rank": 212,
+    "char": "台",
+    "jyutping": "toi4",
+    "translation": "(classical) you (in letters)/platform/Taiwan (abbr.)/a surname",
+    "status": "pending"
+  },
+  {
+    "rank": 213,
+    "char": "湖",
+    "jyutping": "wu4",
+    "translation": "lake",
+    "status": "pending"
+  },
+  {
+    "rank": 214,
+    "char": "番",
+    "jyutping": "faan1",
+    "translation": "foreign/ethnic groups from outside China/(when used after a verb) times or fold/classifier for the number of iterations of an action or deed etc",
+    "status": "pending"
+  },
+  {
+    "rank": 217,
+    "char": "唔見",
+    "jyutping": "*m4gin3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 218,
+    "char": "馬戲",
+    "jyutping": "maa5hei3",
+    "translation": "circus",
+    "status": "pending"
+  },
+  {
+    "rank": 219,
+    "char": "兜過",
+    "jyutping": "*dau1gwo3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 221,
+    "char": "個位",
+    "jyutping": "go3wai6",
+    "translation": "the units place (or column) in the decimal system",
+    "status": "pending"
+  },
+  {
+    "rank": 222,
+    "char": "比較",
+    "jyutping": "bei2gaau3",
+    "translation": "compare/contrast/fairly/comparatively/relatively/quite/rather",
+    "status": "pending"
+  },
+  {
+    "rank": 224,
+    "char": "冇乜",
+    "jyutping": "*mou5mat1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 225,
+    "char": "紙",
+    "jyutping": "zi2",
+    "translation": "paper/CL:張[jēung],沓[daahp]/classifier for documents, letter etc",
+    "status": "pending"
+  },
+  {
+    "rank": 227,
+    "char": "恨",
+    "jyutping": "han6",
+    "translation": "to hate/to regret/to desire/to long for",
+    "status": "pending"
+  },
+  {
+    "rank": 229,
+    "char": "交叉",
+    "jyutping": "gaau1caa1",
+    "translation": "cross/intersect",
+    "status": "pending"
+  },
+  {
+    "rank": 230,
+    "char": "驚",
+    "jyutping": "ging1|geng1",
+    "translation": "to start/to be frightened/to be scared/alarm",
+    "status": "pending"
+  },
+  {
+    "rank": 231,
+    "char": "年",
+    "jyutping": "nin4",
+    "translation": "year",
+    "status": "pending"
+  },
+  {
+    "rank": 232,
+    "char": "韻",
+    "jyutping": "wan6",
+    "translation": "beautiful sound/appeal/charm/vowel/rhyme/in Chinese phonetics, the medial and final sound of a syllable (i.e. excluding the initial consonant)",
+    "status": "pending"
+  },
+  {
+    "rank": 238,
+    "char": "戀",
+    "jyutping": "lyun2|lyun5",
+    "translation": "to feel attached to/long for/love",
+    "status": "pending"
+  },
+  {
+    "rank": 239,
+    "char": "廟",
+    "jyutping": "miu6",
+    "translation": "temple/monastery",
+    "status": "pending"
+  },
+  {
+    "rank": 241,
+    "char": "都會",
+    "jyutping": "dou1wui5",
+    "translation": "society/community/city/metropolis",
+    "status": "pending"
+  },
+  {
+    "rank": 242,
+    "char": "需要",
+    "jyutping": "seoi1jiu3",
+    "translation": "to need/to want/to demand/needs/to require",
+    "status": "pending"
+  },
+  {
+    "rank": 243,
+    "char": "泳池",
+    "jyutping": "wing6ci4",
+    "translation": "swimming pond",
+    "status": "pending"
+  },
+  {
+    "rank": 245,
+    "char": "變",
+    "jyutping": "bin3",
+    "translation": "to change/to become different/to transform/to vary/rebellion",
+    "status": "pending"
+  },
+  {
+    "rank": 247,
+    "char": "成",
+    "jyutping": "sing4",
+    "translation": "to succeed/to finish/to complete/to accomplish/to become/to turn into/one tenth|whole/complete/to be all right/OK!",
+    "status": "pending"
+  },
+  {
+    "rank": 249,
+    "char": "位置",
+    "jyutping": "wai6zi3",
+    "translation": "position/place/seat",
+    "status": "pending"
+  },
+  {
+    "rank": 251,
+    "char": "路",
+    "jyutping": "lou6",
+    "translation": "road/CL:條[tìuh]/a trend/a tendency/a way forward (good or bad)/a sexual relationship",
+    "status": "pending"
+  },
+  {
+    "rank": 252,
+    "char": "機場",
+    "jyutping": "gei1coeng4",
+    "translation": "airport/airfield",
+    "status": "pending"
+  },
+  {
+    "rank": 253,
+    "char": "團",
+    "jyutping": "tyun4",
+    "translation": "regiment/round/circular/group/society",
+    "status": "pending"
+  },
+  {
+    "rank": 256,
+    "char": "之間",
+    "jyutping": "zi1gaan1",
+    "translation": "between/among/inter-",
+    "status": "pending"
+  },
+  {
+    "rank": 257,
+    "char": "唉",
+    "jyutping": "aai1|oi1",
+    "translation": "alas/oh dear/interjection or grunt of agreement or recognition (e.g. yes, it's me!)/to sigh",
+    "status": "pending"
+  },
+  {
+    "rank": 258,
+    "char": "梗係",
+    "jyutping": "gang2hai6",
+    "translation": "of course",
+    "status": "pending"
+  },
+  {
+    "rank": 259,
+    "char": "哎",
+    "jyutping": "aai1",
+    "translation": "hey!/interjection used to attract attention or to express surprise or disapprobation",
+    "status": "pending"
+  },
+  {
+    "rank": 260,
+    "char": "蛇",
+    "jyutping": "se4",
+    "translation": "snake/serpent/CL:條[tìuh]/to shirk one's duty, to be lazy on the job",
+    "status": "pending"
+  },
+  {
+    "rank": 261,
+    "char": "枉",
+    "jyutping": "wong2",
+    "translation": "in the wrong/in vain",
+    "status": "pending"
+  },
+  {
+    "rank": 263,
+    "char": "擰",
+    "jyutping": "ning4|ning6",
+    "translation": "mistake/to twist/stubborn/to pinch/wring",
+    "status": "pending"
+  },
+  {
+    "rank": 266,
+    "char": "公園",
+    "jyutping": "gung1jyun2",
+    "translation": "public park",
+    "status": "pending"
+  },
+  {
+    "rank": 267,
+    "char": "丸",
+    "jyutping": "jyun2|jyun4",
+    "translation": "pill",
+    "status": "pending"
+  },
+  {
+    "rank": 272,
+    "char": "搞",
+    "jyutping": "gaau2",
+    "translation": "to do/to make/to go in for/to set up/to get hold of/to take care of",
+    "status": "pending"
+  },
+  {
+    "rank": 273,
+    "char": "葡萄",
+    "jyutping": "pou4tou4",
+    "translation": "grape",
+    "status": "pending"
+  },
+  {
+    "rank": 274,
+    "char": "往",
+    "jyutping": "wong5",
+    "translation": "to go (in a direction)/to/towards/(of a train) bound for/past/previous",
+    "status": "pending"
+  },
+  {
+    "rank": 275,
+    "char": "淨係",
+    "jyutping": "zing6hai6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 276,
+    "char": "迷宮",
+    "jyutping": "mai4gung1",
+    "translation": "maze/labyrinth",
+    "status": "pending"
+  },
+  {
+    "rank": 278,
+    "char": "底",
+    "jyutping": "dai2",
+    "translation": "background/bottom/base/plan, strategy or secret/the end of a period of time/towards the end of (last month)",
+    "status": "pending"
+  },
+  {
+    "rank": 279,
+    "char": "宅",
+    "jyutping": "zaak6",
+    "translation": "residence",
+    "status": "pending"
+  },
+  {
+    "rank": 280,
+    "char": "為",
+    "jyutping": "wai6|wai4",
+    "translation": "as (in the capacity of)/to take sth as/to act as/to serve as/to behave as/to become/to be/to do/because of/for/to",
+    "status": "pending"
+  },
+  {
+    "rank": 282,
+    "char": "腰",
+    "jyutping": "jiu1",
+    "translation": "waist/lower back/pocket/middle",
+    "status": "pending"
+  },
+  {
+    "rank": 283,
+    "char": "車站",
+    "jyutping": "ce1zaam6",
+    "translation": "rail station/bus stop",
+    "status": "pending"
+  },
+  {
+    "rank": 285,
+    "char": "以前",
+    "jyutping": "ji5cin4",
+    "translation": "before/formerly/previous/ago",
+    "status": "pending"
+  },
+  {
+    "rank": 287,
+    "char": "係噉",
+    "jyutping": "*hai6gam2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 289,
+    "char": "魚排",
+    "jyutping": "jyu4paai4",
+    "translation": "fish steak",
+    "status": "pending"
+  },
+  {
+    "rank": 290,
+    "char": "另外",
+    "jyutping": "ling6ngoi6",
+    "translation": "additional/in addition/besides/separate/other/moreover/furthermore",
+    "status": "pending"
+  },
+  {
+    "rank": 291,
+    "char": "科技",
+    "jyutping": "fo1gei6",
+    "translation": "science and technology",
+    "status": "pending"
+  },
+  {
+    "rank": 295,
+    "char": "萍",
+    "jyutping": "ping4",
+    "translation": "duckweed",
+    "status": "pending"
+  },
+  {
+    "rank": 296,
+    "char": "唔同",
+    "jyutping": "m4tung4",
+    "translation": "different",
+    "status": "pending"
+  },
+  {
+    "rank": 297,
+    "char": "會見",
+    "jyutping": "wui6gin3",
+    "translation": "to meet with (sb who is paying a visit)",
+    "status": "pending"
+  },
+  {
+    "rank": 298,
+    "char": "條線",
+    "jyutping": "*tiu4sin3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 299,
+    "char": "瞓",
+    "jyutping": "fan3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 301,
+    "char": "起點",
+    "jyutping": "hei2dim2",
+    "translation": "starting point",
+    "status": "pending"
+  },
+  {
+    "rank": 302,
+    "char": "其他",
+    "jyutping": "kei4taa1",
+    "translation": "other/the others/else/other than (that person)/in addition to the person mentioned above",
+    "status": "pending"
+  },
+  {
+    "rank": 305,
+    "char": "南",
+    "jyutping": "naam4",
+    "translation": "south",
+    "status": "pending"
+  },
+  {
+    "rank": 307,
+    "char": "吔",
+    "jyutping": "jaa3",
+    "translation": "particle",
+    "status": "pending"
+  },
+  {
+    "rank": 308,
+    "char": "滑雪",
+    "jyutping": "waat6syut3",
+    "translation": "to ski/skiing",
+    "status": "pending"
+  },
+  {
+    "rank": 310,
+    "char": "明白",
+    "jyutping": "ming4baak6",
+    "translation": "clear/obvious/unequivocal/to understand/to realize",
+    "status": "pending"
+  },
+  {
+    "rank": 314,
+    "char": "定係",
+    "jyutping": "ding6hai6",
+    "translation": "or",
+    "status": "pending"
+  },
+  {
+    "rank": 316,
+    "char": "根本",
+    "jyutping": "gan1bun2",
+    "translation": "fundamental/basic/root/simply/absolutely (not)/(not) at all",
+    "status": "pending"
+  },
+  {
+    "rank": 317,
+    "char": "冇錯",
+    "jyutping": "mou5co3",
+    "translation": "that's correct",
+    "status": "pending"
+  },
+  {
+    "rank": 318,
+    "char": "盛",
+    "jyutping": "sing6|sing4",
+    "translation": "flourishing/vigorous/magnificent/extensively/to hold/contain/to ladle/pick up with a utensil/used to indicate a further series of events not specified, \"and so on\", \"etcetera\"/a surname",
+    "status": "pending"
+  },
+  {
+    "rank": 319,
+    "char": "燕",
+    "jyutping": "jin3|jin1",
+    "translation": "Yan, a vassal state of Zhou in modern Hebei and Liaoning/north Hebei/the four Yan kingdoms of the Sixteen Kingdoms, namely: Former Yan 前燕 (337-370), Later Yan 後燕|后燕 (384-409), Southern Yan 南燕 (398-410), Northern Yan 北燕 (409-436)/surname Yan/swallow (a type of bird)",
+    "status": "pending"
+  },
+  {
+    "rank": 320,
+    "char": "大概",
+    "jyutping": "daai6koi3",
+    "translation": "roughly/probably/rough/approximate/about",
+    "status": "pending"
+  },
+  {
+    "rank": 322,
+    "char": "算",
+    "jyutping": "syun3",
+    "translation": "to regard as/to figure/to calculate/to compute",
+    "status": "pending"
+  },
+  {
+    "rank": 324,
+    "char": "傻",
+    "jyutping": "so4",
+    "translation": "foolish",
+    "status": "pending"
+  },
+  {
+    "rank": 325,
+    "char": "工廠",
+    "jyutping": "gung1cong2",
+    "translation": "factory",
+    "status": "pending"
+  },
+  {
+    "rank": 327,
+    "char": "只",
+    "jyutping": "zi2|zek3",
+    "translation": "only/merely/just/but",
+    "status": "pending"
+  },
+  {
+    "rank": 328,
+    "char": "之前",
+    "jyutping": "zi1cin4",
+    "translation": "before/prior to/ago",
+    "status": "pending"
+  },
+  {
+    "rank": 329,
+    "char": "可",
+    "jyutping": "ho2",
+    "translation": "can/may/able to/to approve/to permit/certain(ly)/to suit/(particle used for emphasis)",
+    "status": "pending"
+  },
+  {
+    "rank": 330,
+    "char": "有時",
+    "jyutping": "jau5si4",
+    "translation": "sometimes/now and then",
+    "status": "pending"
+  },
+  {
+    "rank": 331,
+    "char": "意思",
+    "jyutping": "ji3si1",
+    "translation": "idea/opinion/meaning/wish/desire",
+    "status": "pending"
+  },
+  {
+    "rank": 334,
+    "char": "唧",
+    "jyutping": "zik1",
+    "translation": "1. to squeeze/2. to tickle",
+    "status": "pending"
+  },
+  {
+    "rank": 336,
+    "char": "感覺",
+    "jyutping": "gam2gok3",
+    "translation": "to feel/to become aware of/feeling/sense/perception",
+    "status": "pending"
+  },
+  {
+    "rank": 337,
+    "char": "老",
+    "jyutping": "lou5",
+    "translation": "prefix used before the surname of a person or a numeral indicating the order of birth of the children in a family or to indicate affection or familiarity/old (of people)/venerable (person)/experienced/of long standing/always/all the time/of the past/very/outdated/(of meat etc) tough",
+    "status": "pending"
+  },
+  {
+    "rank": 338,
+    "char": "依",
+    "jyutping": "ji1",
+    "translation": "according to/depend on/near to",
+    "status": "pending"
+  },
+  {
+    "rank": 340,
+    "char": "停",
+    "jyutping": "ting4",
+    "translation": "to stop/to halt/to park (a car)",
+    "status": "pending"
+  },
+  {
+    "rank": 341,
+    "char": "大樹",
+    "jyutping": "daai6syu6",
+    "translation": "tree",
+    "status": "pending"
+  },
+  {
+    "rank": 342,
+    "char": "洗",
+    "jyutping": "sai2",
+    "translation": "to wash/to bathe",
+    "status": "pending"
+  },
+  {
+    "rank": 343,
+    "char": "耐",
+    "jyutping": "noi6",
+    "translation": "capable of enduring/able to tolerate/patient/durable/hardy/resistant",
+    "status": "pending"
+  },
+  {
+    "rank": 346,
+    "char": "擁",
+    "jyutping": "jung2",
+    "translation": "to hold/to embrace/to wrap around/to gather around (sb)/to throng/to swarm/to support",
+    "status": "pending"
+  },
+  {
+    "rank": 347,
+    "char": "本身",
+    "jyutping": "bun2san1",
+    "translation": "itself/in itself/per se",
+    "status": "pending"
+  },
+  {
+    "rank": 348,
+    "char": "另",
+    "jyutping": "ling6",
+    "translation": "other/another/separate/separately",
+    "status": "pending"
+  },
+  {
+    "rank": 349,
+    "char": "方面",
+    "jyutping": "fong1min6",
+    "translation": "respect/aspect/field/side",
+    "status": "pending"
+  },
+  {
+    "rank": 350,
+    "char": "格",
+    "jyutping": "gaak3",
+    "translation": "square/frame/rule/(legal) case/style/character/standard/pattern/(classical) to obstruct; to hinder/(classical) to arrive; to come/(classical) to investigate; to study exhaustively",
+    "status": "pending"
+  },
+  {
+    "rank": 351,
+    "char": "扮汗",
+    "jyutping": "*baan6|baan3hon6|hon4|hong6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 352,
+    "char": "今次",
+    "jyutping": "*gam1ci3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 354,
+    "char": "城",
+    "jyutping": "sing4",
+    "translation": "city walls/city/town",
+    "status": "pending"
+  },
+  {
+    "rank": 355,
+    "char": "球場",
+    "jyutping": "kau4coeng4",
+    "translation": "stadium/sports ground/court/pitch/field/golf course",
+    "status": "pending"
+  },
+  {
+    "rank": 357,
+    "char": "遠",
+    "jyutping": "jyun5",
+    "translation": "far/distant/remote",
+    "status": "pending"
+  },
+  {
+    "rank": 358,
+    "char": "幾好",
+    "jyutping": "*gei2|gei1hou2|hou3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 359,
+    "char": "社會",
+    "jyutping": "se5wui2",
+    "translation": "society",
+    "status": "pending"
+  },
+  {
+    "rank": 360,
+    "char": "煙",
+    "jyutping": "jin1",
+    "translation": "cigarette/tobacco/smoke",
+    "status": "pending"
+  },
+  {
+    "rank": 361,
+    "char": "汗",
+    "jyutping": "hon6|hon4|hong6",
+    "translation": "perspiration/sweat/Khan (Persian or Mongol king or emperor)/Khan (name)",
+    "status": "pending"
+  },
+  {
+    "rank": 362,
+    "char": "莊",
+    "jyutping": "zong1",
+    "translation": "farmstead/village/manor/place of business/banker (in a gambling game)/grave or solemn/the committee of a student society (university jargon)",
+    "status": "pending"
+  },
+  {
+    "rank": 363,
+    "char": "彭",
+    "jyutping": "pang4",
+    "translation": "surname Peng",
+    "status": "pending"
+  },
+  {
+    "rank": 364,
+    "char": "貧大宅",
+    "jyutping": "*pan4daai6zaak2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 365,
+    "char": "即刻",
+    "jyutping": "zik1hak1",
+    "translation": "immediately/instant/instantly",
+    "status": "pending"
+  },
+  {
+    "rank": 366,
+    "char": "將",
+    "jyutping": "zoeng1|zoeng3",
+    "translation": "will/shall/to use/to take/to checkmate/just a short while ago|general/commander-in-chief (military)/king (chess piece)/to command/to lead",
+    "status": "pending"
+  },
+  {
+    "rank": 368,
+    "char": "勁",
+    "jyutping": "ging6|ging3",
+    "translation": "strong/powerful/excellent/great|strength/energy/enthusiasm/CL:把[bá]",
+    "status": "pending"
+  },
+  {
+    "rank": 369,
+    "char": "像",
+    "jyutping": "zoeng6",
+    "translation": "(look) like/similar (to)/appearance/to appear/to seem/image/portrait/resemble/seem",
+    "status": "pending"
+  },
+  {
+    "rank": 371,
+    "char": "北方",
+    "jyutping": "bak1fong1",
+    "translation": "north/the northern part a country/China north of the Yellow River",
+    "status": "pending"
+  },
+  {
+    "rank": 372,
+    "char": "仔",
+    "jyutping": "zai2|zi2",
+    "translation": "a son/a suffix used to describe something small/a boy/a kid/a boyfriend/(of domestic animals or fowls) young",
+    "status": "pending"
+  },
+  {
+    "rank": 374,
+    "char": "越",
+    "jyutping": "jyut6",
+    "translation": "generic word for peoples or states of south China or south Asia at different historical periods/abbr. for Vietnam 越南/to exceed/to climb over/to surpass/the more... the more",
+    "status": "pending"
+  },
+  {
+    "rank": 375,
+    "char": "金字塔",
+    "jyutping": "gam1zi6taap3",
+    "translation": "pyramid",
+    "status": "pending"
+  },
+  {
+    "rank": 376,
+    "char": "東",
+    "jyutping": "dung1",
+    "translation": "east/host (i.e. sitting on east side of guest)/landlord/surname Dong",
+    "status": "pending"
+  },
+  {
+    "rank": 377,
+    "char": "風車",
+    "jyutping": "fung1ce1",
+    "translation": "pinwheel/windmill",
+    "status": "pending"
+  },
+  {
+    "rank": 378,
+    "char": "當然",
+    "jyutping": "dong1jin4",
+    "translation": "only natural/as it should be/certainly/of course/without doubt",
+    "status": "pending"
+  },
+  {
+    "rank": 379,
+    "char": "考",
+    "jyutping": "haau2",
+    "translation": "to check/to verify/to test/to examine/to take an exam",
+    "status": "pending"
+  },
+  {
+    "rank": 381,
+    "char": "碼頭",
+    "jyutping": "maa5tau4",
+    "translation": "dock/pier/wharf/CL: 個[go]/the idea of a \"pier\" symbolises the leaving of the triad life, one's retirement from the life of a triad or prostitute",
+    "status": "pending"
+  },
+  {
+    "rank": 382,
+    "char": "農",
+    "jyutping": "nung4",
+    "translation": "agriculture",
+    "status": "pending"
+  },
+  {
+    "rank": 383,
+    "char": "礦場",
+    "jyutping": "kwong3coeng4",
+    "translation": "a mine/pit",
+    "status": "pending"
+  },
+  {
+    "rank": 384,
+    "char": "女仔",
+    "jyutping": "neoi5zai2",
+    "translation": "girl",
+    "status": "pending"
+  },
+  {
+    "rank": 385,
+    "char": "入",
+    "jyutping": "jap6",
+    "translation": "to enter/to charge (with a crime)/entering tone (classical Chinese)",
+    "status": "pending"
+  },
+  {
+    "rank": 386,
+    "char": "前",
+    "jyutping": "cin4",
+    "translation": "front/forward/ahead/ago/before/first/former/formerly/future/BC (e.g. 前293年)",
+    "status": "pending"
+  },
+  {
+    "rank": 387,
+    "char": "頭",
+    "jyutping": "tau4",
+    "translation": "head/hair style/the top/end/beginning or end/an area/a location/a stub/remnant/chief/boss/side/aspect/first/leading/classifier for pigs or livestock (Mandarin)",
+    "status": "pending"
+  },
+  {
+    "rank": 388,
+    "char": "究竟",
+    "jyutping": "gau3ging2",
+    "translation": "after all (when all is said and done)/actually/outcome/result",
+    "status": "pending"
+  },
+  {
+    "rank": 389,
+    "char": "先至",
+    "jyutping": "*sin1zi3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 390,
+    "char": "引",
+    "jyutping": "jan5",
+    "translation": "to draw (a bow)/to pull/to stretch sth/to extend/to lengthen/to involve in/to attract/to lead/to guide/to divert (water)/unit of distance equal to 10 丈[zhang1], now one-thirtieth km or 33.33 meters",
+    "status": "pending"
+  },
+  {
+    "rank": 392,
+    "char": "總之",
+    "jyutping": "zung2zi1",
+    "translation": "in a word/in short/in brief",
+    "status": "pending"
+  },
+  {
+    "rank": 393,
+    "char": "暖",
+    "jyutping": "nyun5",
+    "translation": "warm",
+    "status": "pending"
+  },
+  {
+    "rank": 394,
+    "char": "完全",
+    "jyutping": "jyun4cyun4",
+    "translation": "complete/whole/totally/entirely",
+    "status": "pending"
+  },
+  {
+    "rank": 395,
+    "char": "情況",
+    "jyutping": "cing4fong3",
+    "translation": "circumstances/state of affairs/situation",
+    "status": "pending"
+  },
+  {
+    "rank": 397,
+    "char": "低",
+    "jyutping": "dai1",
+    "translation": "low/beneath/to lower (one's head)/to let droop/to hang down/to incline",
+    "status": "pending"
+  },
+  {
+    "rank": 398,
+    "char": "瀑布",
+    "jyutping": "buk6bou3",
+    "translation": "waterfall",
+    "status": "pending"
+  },
+  {
+    "rank": 399,
+    "char": "農莊",
+    "jyutping": "nung4zong1",
+    "translation": "farm/ranch",
+    "status": "pending"
+  },
+  {
+    "rank": 402,
+    "char": "股",
+    "jyutping": "gu2",
+    "translation": "share/portion/section/part/thigh/(classifier for smells, electric currents, spirals etc)/whiff",
+    "status": "pending"
+  },
+  {
+    "rank": 403,
+    "char": "墳場",
+    "jyutping": "fan4coeng4",
+    "translation": "grave",
+    "status": "pending"
+  },
+  {
+    "rank": 405,
+    "char": "出來",
+    "jyutping": "ceot1loi4",
+    "translation": "to come out/to emerge",
+    "status": "pending"
+  },
+  {
+    "rank": 407,
+    "char": "你講",
+    "jyutping": "*nei5gong2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 408,
+    "char": "樹林",
+    "jyutping": "syu6lam4",
+    "translation": "woods/grove/forest",
+    "status": "pending"
+  },
+  {
+    "rank": 409,
+    "char": "禮堂",
+    "jyutping": "lai5tong4",
+    "translation": "assembly hall/auditorium",
+    "status": "pending"
+  },
+  {
+    "rank": 411,
+    "char": "所",
+    "jyutping": "so2",
+    "translation": "actually/place/classifier for houses, small buildings, institutions etc/that which/particle introducing a relative clause or passive",
+    "status": "pending"
+  },
+  {
+    "rank": 412,
+    "char": "所謂",
+    "jyutping": "so2wai6",
+    "translation": "so-called",
+    "status": "pending"
+  },
+  {
+    "rank": 413,
+    "char": "首先",
+    "jyutping": "sau2sin1",
+    "translation": "first (of all)/in the first place",
+    "status": "pending"
+  },
+  {
+    "rank": 414,
+    "char": "講呢",
+    "jyutping": "*gong2ne1|ni1|nei1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 415,
+    "char": "纜車",
+    "jyutping": "laam6ce1",
+    "translation": "cable car",
+    "status": "pending"
+  },
+  {
+    "rank": 416,
+    "char": "畫到",
+    "jyutping": "*waak6|waa2dou3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 417,
+    "char": "國旗",
+    "jyutping": "gwok3kei4",
+    "translation": "flag (of a country)",
+    "status": "pending"
+  },
+  {
+    "rank": 418,
+    "char": "燈塔",
+    "jyutping": "dang1taap3",
+    "translation": "lighthouse",
+    "status": "pending"
+  },
+  {
+    "rank": 421,
+    "char": "重有",
+    "jyutping": "zung6jau5",
+    "translation": "furthermore",
+    "status": "pending"
+  },
+  {
+    "rank": 424,
+    "char": "覺",
+    "jyutping": "gaau3|gok3",
+    "translation": "a nap/a sleep/CL:場[chèuhng](Mandarin)/CL:個[go]|feel/find that/thinking/awake/aware",
+    "status": "pending"
+  },
+  {
+    "rank": 425,
+    "char": "服務",
+    "jyutping": "fuk6mou6",
+    "translation": "to serve/service",
+    "status": "pending"
+  },
+  {
+    "rank": 426,
+    "char": "清楚",
+    "jyutping": "cing1co2",
+    "translation": "clear/clearly understood/distinct",
+    "status": "pending"
+  },
+  {
+    "rank": 427,
+    "char": "特別",
+    "jyutping": "dak6bit6",
+    "translation": "especially/special/particular/unusual",
+    "status": "pending"
+  },
+  {
+    "rank": 428,
+    "char": "理",
+    "jyutping": "lei5",
+    "translation": "texture/grain (of wood)/inner essence/intrinsic order/reason/logic/truth/science/natural science (esp. physics)/to manage/to pay attention to/to run (affairs)/to handle/to put in order/to tidy up",
+    "status": "pending"
+  },
+  {
+    "rank": 429,
+    "char": "得到",
+    "jyutping": "dak1dou2",
+    "translation": "to get/to obtain/to receive",
+    "status": "pending"
+  },
+  {
+    "rank": 430,
+    "char": "種",
+    "jyutping": "zung2|zung3",
+    "translation": "abbr. for 物種|物种, genus/race/seed/breed/species/strain/kind/type/has guts (i.e. courage)/nerve/classifier for types: kind, sort/classifier for languages/to plant/to grow/to cultivate",
+    "status": "pending"
+  },
+  {
+    "rank": 431,
+    "char": "本",
+    "jyutping": "bun2",
+    "translation": "roots or stems of plants/origin/source/this/the current/root/foundation/basis/(classifier for books, periodicals, files etc)",
+    "status": "pending"
+  },
+  {
+    "rank": 433,
+    "char": "就算",
+    "jyutping": "zau6syun3",
+    "translation": "granted that/even if",
+    "status": "pending"
+  },
+  {
+    "rank": 435,
+    "char": "后",
+    "jyutping": "hau6",
+    "translation": "empress/queen/surname Hou",
+    "status": "pending"
+  },
+  {
+    "rank": 436,
+    "char": "虛線",
+    "jyutping": "heoi1sin3",
+    "translation": "dotted line",
+    "status": "pending"
+  },
+  {
+    "rank": 437,
+    "char": "起",
+    "jyutping": "hei2",
+    "translation": "to rise/to raise/to get up/to set out/to start/to appear/to launch/to initiate (action)/to draft/to establish/to get (from a depot or counter)/verb suffix, to start/(before place or time) starting from/classifier for occurrences or unpredictable events: case, instance/classifier for groups: batch, group",
+    "status": "pending"
+  },
+  {
+    "rank": 440,
+    "char": "唔記得",
+    "jyutping": "m4gei3dak1",
+    "translation": "to forget",
+    "status": "pending"
+  },
+  {
+    "rank": 441,
+    "char": "少",
+    "jyutping": "siu2|siu3",
+    "translation": "few/little/lack/young",
+    "status": "pending"
+  },
+  {
+    "rank": 442,
+    "char": "效果",
+    "jyutping": "haau6gwo2",
+    "translation": "result/effect/quality",
+    "status": "pending"
+  },
+  {
+    "rank": 443,
+    "char": "怨",
+    "jyutping": "jyun3",
+    "translation": "to blame/to complain",
+    "status": "pending"
+  },
+  {
+    "rank": 445,
+    "char": "陳",
+    "jyutping": "can4",
+    "translation": "surname Chen/Chen of the Southern dynasties (557-589)/to lay out/to exhibit/to display/to narrate/to state/to explain/to tell/old/stale",
+    "status": "pending"
+  },
+  {
+    "rank": 446,
+    "char": "通常",
+    "jyutping": "tung1soeng4",
+    "translation": "regular/usual/ordinary/normal",
+    "status": "pending"
+  },
+  {
+    "rank": 447,
+    "char": "文字",
+    "jyutping": "man4zi6",
+    "translation": "character/script/writing/written language/writing style/phraseology",
+    "status": "pending"
+  },
+  {
+    "rank": 448,
+    "char": "打橫",
+    "jyutping": "daa2waang4",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 449,
+    "char": "相信",
+    "jyutping": "soeng1seon3",
+    "translation": "be convinced (that something is true)/believe/to accept sth as true",
+    "status": "pending"
+  },
+  {
+    "rank": 450,
+    "char": "揀",
+    "jyutping": "gaan2",
+    "translation": "to choose/to pick/to sort out/to pick up",
+    "status": "pending"
+  },
+  {
+    "rank": 452,
+    "char": "禮拜",
+    "jyutping": "lai5baai3",
+    "translation": "week/religious service/worship",
+    "status": "pending"
+  },
+  {
+    "rank": 453,
+    "char": "地盤",
+    "jyutping": "dei6pun4",
+    "translation": "a construction site/domain/territory under one's control/foundation of a building/base of operations/crust of earth",
+    "status": "pending"
+  },
+  {
+    "rank": 454,
+    "char": "項",
+    "jyutping": "hong6",
+    "translation": "back of neck/item/thing/term (in a mathematical formula)/sum (of money)/classifier for principles, items, clauses, tasks, research projects etc/surname Xiang",
+    "status": "pending"
+  },
+  {
+    "rank": 455,
+    "char": "杏堂",
+    "jyutping": "*hang6tong4",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 456,
+    "char": "我講",
+    "jyutping": "*ngo5gong2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 458,
+    "char": "市場",
+    "jyutping": "si5coeng4",
+    "translation": "market place/market (also in abstract)/abbr. for 超級市場|超级市场 supermarket",
+    "status": "pending"
+  },
+  {
+    "rank": 459,
+    "char": "尚健",
+    "jyutping": "*soeng6gin6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 460,
+    "char": "直",
+    "jyutping": "zik6",
+    "translation": "straight/not gay, heterosexual, \"straight\"/to straighten/fair and reasonable/frank/straightforward/(indicates continuing motion or action)/vertical/vertical downward stroke in Chinese characters",
+    "status": "pending"
+  },
+  {
+    "rank": 461,
+    "char": "印",
+    "jyutping": "jan3",
+    "translation": "stamp/seal/mark/print/abbr. for India/surname Yan",
+    "status": "pending"
+  },
+  {
+    "rank": 462,
+    "char": "嶺",
+    "jyutping": "leng5|ling5",
+    "translation": "mountain range",
+    "status": "pending"
+  },
+  {
+    "rank": 463,
+    "char": "出現",
+    "jyutping": "ceot1jin6",
+    "translation": "to appear/to arise/to emerge",
+    "status": "pending"
+  },
+  {
+    "rank": 465,
+    "char": "之",
+    "jyutping": "zi1",
+    "translation": "(possessive particle, literary equivalent of 的)/him/her/it",
+    "status": "pending"
+  },
+  {
+    "rank": 467,
+    "char": "圖",
+    "jyutping": "tou4",
+    "translation": "diagram/to plan/picture/drawing/chart",
+    "status": "pending"
+  },
+  {
+    "rank": 468,
+    "char": "國",
+    "jyutping": "gwok3",
+    "translation": "country/nation/state/CL:個[go]/national/a surname",
+    "status": "pending"
+  },
+  {
+    "rank": 469,
+    "char": "直情",
+    "jyutping": "zik6cing4",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 471,
+    "char": "掂",
+    "jyutping": "dim1|dim6",
+    "translation": "to weigh in the hand/to estimate|satisfactory/okay",
+    "status": "pending"
+  },
+  {
+    "rank": 472,
+    "char": "西",
+    "jyutping": "sai1",
+    "translation": "west/often used as a euphemism for the obscene term for \"vagina\", 閪 [hāi]/the West/Spain (abbr.)",
+    "status": "pending"
+  },
+  {
+    "rank": 473,
+    "char": "銅",
+    "jyutping": "tung4",
+    "translation": "copper Cu, transition metal, atomic number 29/see 紅銅|红铜 copper, and the alloys brass 黃銅|黄铜 and bronze 青銅|青铜",
+    "status": "pending"
+  },
+  {
+    "rank": 474,
+    "char": "濫",
+    "jyutping": "laam6",
+    "translation": "excessive/indiscriminate",
+    "status": "pending"
+  },
+  {
+    "rank": 475,
+    "char": "裏邊",
+    "jyutping": "*leoi5bin1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 476,
+    "char": "條路線",
+    "jyutping": "*tiu4lou6sin3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 477,
+    "char": "小",
+    "jyutping": "siu2",
+    "translation": "small/tiny/few/young/a euphemism for 屌 díu, \"fuck\"",
+    "status": "pending"
+  },
+  {
+    "rank": 480,
+    "char": "右行",
+    "jyutping": "*jau6hang4|haang4|hang6|hong4|hong2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 481,
+    "char": "不",
+    "jyutping": "bat1",
+    "translation": "not/no",
+    "status": "pending"
+  },
+  {
+    "rank": 482,
+    "char": "更加",
+    "jyutping": "gang3gaa1",
+    "translation": "more (than sth else)/even more",
+    "status": "pending"
+  },
+  {
+    "rank": 484,
+    "char": "男朋友",
+    "jyutping": "naam4pang4jau5",
+    "translation": "male friend/boyfriend",
+    "status": "pending"
+  },
+  {
+    "rank": 487,
+    "char": "愁",
+    "jyutping": "sau4",
+    "translation": "worry about",
+    "status": "pending"
+  },
+  {
+    "rank": 488,
+    "char": "地標",
+    "jyutping": "dei6biu1",
+    "translation": "landmark",
+    "status": "pending"
+  },
+  {
+    "rank": 489,
+    "char": "水塘",
+    "jyutping": "seoi2tong4",
+    "translation": "pool",
+    "status": "pending"
+  },
+  {
+    "rank": 490,
+    "char": "望",
+    "jyutping": "mong6",
+    "translation": "to look at/to view/to hope/to expect/to visit/to gaze (into the distance)/to look towards/towards/full moon",
+    "status": "pending"
+  },
+  {
+    "rank": 491,
+    "char": "忍",
+    "jyutping": "jan2",
+    "translation": "to endure/to tolerate",
+    "status": "pending"
+  },
+  {
+    "rank": 494,
+    "char": "將來",
+    "jyutping": "zoeng1loi4",
+    "translation": "the future/future",
+    "status": "pending"
+  },
+  {
+    "rank": 496,
+    "char": "斜",
+    "jyutping": "ce4|ce3",
+    "translation": "slanting",
+    "status": "pending"
+  },
+  {
+    "rank": 497,
+    "char": "提碑",
+    "jyutping": "*tai4bei1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 500,
+    "char": "鬼",
+    "jyutping": "gwai2",
+    "translation": "ghost/CL:隻[jek]/a westerner/a traitor; an informer within an organisation, a \"mole\".",
+    "status": "pending"
+  },
+  {
+    "rank": 501,
+    "char": "明",
+    "jyutping": "ming4",
+    "translation": "bright/clear/to understand/next/public or open/wise/Ming Dynasty (1368-1644)/surname Ming",
+    "status": "pending"
+  },
+  {
+    "rank": 503,
+    "char": "皮",
+    "jyutping": "pei4",
+    "translation": "leather/skin/fur/ten thousand dollars/level, standard/pico- (one trillionth)/a surname/CL:塊[faai]",
+    "status": "pending"
+  },
+  {
+    "rank": 504,
+    "char": "共",
+    "jyutping": "gung6",
+    "translation": "common/general/to share/together/total/altogether/abbr. for 共產黨|共产党[gong4 chan3 dang3], Communist party",
+    "status": "pending"
+  },
+  {
+    "rank": 505,
+    "char": "憂",
+    "jyutping": "jau1",
+    "translation": "to worry/to concern oneself with/worried/anxiety/sorrow/a parent's funeral/inconvenienced by being orphaned",
+    "status": "pending"
+  },
+  {
+    "rank": 506,
+    "char": "一次",
+    "jyutping": "jat1ci3",
+    "translation": "first/first time/once/(math.) linear (of degree one)",
+    "status": "pending"
+  },
+  {
+    "rank": 507,
+    "char": "肯定",
+    "jyutping": "hang2ding6",
+    "translation": "to be sure/to be certain/sure/certain/definite/to confirm/to affirm/affirmative",
+    "status": "pending"
+  },
+  {
+    "rank": 508,
+    "char": "能夠",
+    "jyutping": "nang4gau3",
+    "translation": "be capable of/can/is able",
+    "status": "pending"
+  },
+  {
+    "rank": 509,
+    "char": "受",
+    "jyutping": "sau6",
+    "translation": "to receive/to accept/to suffer/subjected to/to bear/to stand/pleasant/(passive marker)",
+    "status": "pending"
+  },
+  {
+    "rank": 512,
+    "char": "領",
+    "jyutping": "ling5|leng5",
+    "translation": "neck/collar/to lead/to receive",
+    "status": "pending"
+  },
+  {
+    "rank": 513,
+    "char": "瑞",
+    "jyutping": "seoi6",
+    "translation": "lucky/auspicious/propitious/rayl (acoustical unit)",
+    "status": "pending"
+  },
+  {
+    "rank": 514,
+    "char": "長",
+    "jyutping": "coeng4|zoeng2",
+    "translation": "length/long/forever/always/constantly|chief/head/elder/to grow/to develop/to increase/to enhance",
+    "status": "pending"
+  },
+  {
+    "rank": 515,
+    "char": "當",
+    "jyutping": "dong1|dong3",
+    "translation": "when/during/just at (a time or place)/on the spot/ought/should/equal/same/manage|to regard as/suitable/adequate/fitting/proper/to pawn/obstruct",
+    "status": "pending"
+  },
+  {
+    "rank": 516,
+    "char": "重要",
+    "jyutping": "zung6jiu3",
+    "translation": "important/significant/major",
+    "status": "pending"
+  },
+  {
+    "rank": 517,
+    "char": "意",
+    "jyutping": "ji3",
+    "translation": "idea/meaning/thought/to think/wish/desire/intention/to expect/to anticipate/abbr. for Italy 意大利",
+    "status": "pending"
+  },
+  {
+    "rank": 518,
+    "char": "信心",
+    "jyutping": "seon3sam1",
+    "translation": "confidence/faith (in sb or sth)",
+    "status": "pending"
+  },
+  {
+    "rank": 519,
+    "char": "後尾",
+    "jyutping": "*hau6mei5",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 520,
+    "char": "繞",
+    "jyutping": "jiu5",
+    "translation": "to wind/to coil (thread)/to rotate around/to spiral/to move around/to go round (an obstacle)/to by-pass/to make a detour/to confuse/to perplex",
+    "status": "pending"
+  },
+  {
+    "rank": 521,
+    "char": "是",
+    "jyutping": "si6",
+    "translation": "is/are/am/yes/to be",
+    "status": "pending"
+  },
+  {
+    "rank": 525,
+    "char": "我話",
+    "jyutping": "*ngo5waa6|waa2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 526,
+    "char": "擺",
+    "jyutping": "baai2",
+    "translation": "to arrange/to exhibit/to move to and fro/a pendulum",
+    "status": "pending"
+  },
+  {
+    "rank": 528,
+    "char": "彎",
+    "jyutping": "waan1",
+    "translation": "bend/bent",
+    "status": "pending"
+  },
+  {
+    "rank": 529,
+    "char": "貧",
+    "jyutping": "pan4",
+    "translation": "poor/inadequate/deficient/garrulous",
+    "status": "pending"
+  },
+  {
+    "rank": 530,
+    "char": "成病",
+    "jyutping": "*sing4beng6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 532,
+    "char": "跟",
+    "jyutping": "gan1",
+    "translation": "to follow closely/to go with/to marry sb (of woman)/with/towards/as (compared to)/from (different from)/and (in addition to)/heel(Mandarin)",
+    "status": "pending"
+  },
+  {
+    "rank": 533,
+    "char": "今年",
+    "jyutping": "gam1nin4",
+    "translation": "this year",
+    "status": "pending"
+  },
+  {
+    "rank": 534,
+    "char": "完成",
+    "jyutping": "jyun4sing4",
+    "translation": "complete/accomplish/perfect tense (grammar)",
+    "status": "pending"
+  },
+  {
+    "rank": 535,
+    "char": "排",
+    "jyutping": "paai4",
+    "translation": "a row/a line/to set in order/to arrange/to line up/to eliminate/to drain/to push open/platoon/raft/classifier for lines, rows etc",
+    "status": "pending"
+  },
+  {
+    "rank": 536,
+    "char": "灣",
+    "jyutping": "waan1",
+    "translation": "bay/gulf",
+    "status": "pending"
+  },
+  {
+    "rank": 538,
+    "char": "任何",
+    "jyutping": "jam6ho4",
+    "translation": "any/whatever/whichever/whatsoever",
+    "status": "pending"
+  },
+  {
+    "rank": 539,
+    "char": "室",
+    "jyutping": "sat1",
+    "translation": "room",
+    "status": "pending"
+  },
+  {
+    "rank": 540,
+    "char": "緊要",
+    "jyutping": "gan2jiu3",
+    "translation": "important",
+    "status": "pending"
+  },
+  {
+    "rank": 541,
+    "char": "樂",
+    "jyutping": "lok6|ngok6",
+    "translation": "happy/laugh/cheerful/surname Le/surname Yue/music",
+    "status": "pending"
+  },
+  {
+    "rank": 542,
+    "char": "犀利",
+    "jyutping": "sai1lei6",
+    "translation": "terrific, great, amazing/sharp",
+    "status": "pending"
+  },
+  {
+    "rank": 543,
+    "char": "樂園",
+    "jyutping": "lok6jyun4",
+    "translation": "paradise",
+    "status": "pending"
+  },
+  {
+    "rank": 544,
+    "char": "返來",
+    "jyutping": "*faan1|faan2loi4",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 545,
+    "char": "憂店",
+    "jyutping": "*jau1dim3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 546,
+    "char": "班",
+    "jyutping": "baan1",
+    "translation": "team/class/squad/work shift/classifier for groups/ranking/to gather together/to gather support (\"back-up\")/to deploy one's gang member/a surname",
+    "status": "pending"
+  },
+  {
+    "rank": 547,
+    "char": "直接",
+    "jyutping": "zik6zip3",
+    "translation": "direct/opposite: indirect 間接|间接/immediate/directly/straightforward",
+    "status": "pending"
+  },
+  {
+    "rank": 550,
+    "char": "先生",
+    "jyutping": "sin1saang1",
+    "translation": "sir/mister/teacher/(title of respect)",
+    "status": "pending"
+  },
+  {
+    "rank": 551,
+    "char": "細個",
+    "jyutping": "*sai3go3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 552,
+    "char": "第二個",
+    "jyutping": "*dai6ji6go3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 553,
+    "char": "國家",
+    "jyutping": "gwok3gaa1",
+    "translation": "country/nation/state",
+    "status": "pending"
+  },
+  {
+    "rank": 554,
+    "char": "形",
+    "jyutping": "jing4",
+    "translation": "to appear/to look/form/shape",
+    "status": "pending"
+  },
+  {
+    "rank": 555,
+    "char": "點啊",
+    "jyutping": "*dim2aa3|aa1|aa2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 556,
+    "char": "左上",
+    "jyutping": "zo2soeng6",
+    "translation": "upper left",
+    "status": "pending"
+  },
+  {
+    "rank": 557,
+    "char": "經濟",
+    "jyutping": "ging1zai3",
+    "translation": "economy/economic",
+    "status": "pending"
+  },
+  {
+    "rank": 558,
+    "char": "突然",
+    "jyutping": "dat6jin4",
+    "translation": "sudden/abrupt/unexpected",
+    "status": "pending"
+  },
+  {
+    "rank": 559,
+    "char": "我會",
+    "jyutping": "*ngo5wui5|wui6|wui2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 562,
+    "char": "一係",
+    "jyutping": "jat1hai6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 563,
+    "char": "提",
+    "jyutping": "tai4",
+    "translation": "carry (suspended)/to carry (hanging down from the hand)/to lift/to put forward/to mention/to raise (an issue)/upwards character stroke/lifting brush stroke (in painting)/scoop for measuring liquid",
+    "status": "pending"
+  },
+  {
+    "rank": 564,
+    "char": "海",
+    "jyutping": "hoi2",
+    "translation": "ocean/sea/CL:個[go]/CL:片[pin](Mandarin)",
+    "status": "pending"
+  },
+  {
+    "rank": 565,
+    "char": "養",
+    "jyutping": "joeng5",
+    "translation": "to raise (animals)/to bring up (children)/to keep (pets)/to support/to give birth",
+    "status": "pending"
+  },
+  {
+    "rank": 566,
+    "char": "叢林",
+    "jyutping": "cung4lam4",
+    "translation": "jungle/thicket/forest/Buddhist monastery",
+    "status": "pending"
+  },
+  {
+    "rank": 568,
+    "char": "說話",
+    "jyutping": "syut3waa6",
+    "translation": "to speak/to say/to talk/to gossip/to tell stories/talk/word",
+    "status": "pending"
+  },
+  {
+    "rank": 569,
+    "char": "成個",
+    "jyutping": "*sing4go3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 570,
+    "char": "基本上",
+    "jyutping": "gei1bun2soeng6",
+    "translation": "basically/on the whole",
+    "status": "pending"
+  },
+  {
+    "rank": 571,
+    "char": "大陸",
+    "jyutping": "daai6luk6",
+    "translation": "mainland China (reference to the PRC)/continent/mainland/CL:個[go]",
+    "status": "pending"
+  },
+  {
+    "rank": 572,
+    "char": "打電話",
+    "jyutping": "daa2din6waa2",
+    "translation": "to make a telephone call",
+    "status": "pending"
+  },
+  {
+    "rank": 576,
+    "char": "心",
+    "jyutping": "sam1",
+    "translation": "heart/mind/intention/centre/core/CL:個[go]",
+    "status": "pending"
+  },
+  {
+    "rank": 577,
+    "char": "從",
+    "jyutping": "cung4",
+    "translation": "from/via/passing through/through (a gap)/past/ever (followed by negative, meaning never)/(formerly pr. zong4 and related to 縱|纵) to follow/to comply with/to obey/to join/to engage in/adopting some mode of action or attitude/follower/retainer/accessory/accomplice/related by common paternal grandfather or earlier ancestor/surname Cong/lax/yielding/unhurried/second cousin",
+    "status": "pending"
+  },
+  {
+    "rank": 578,
+    "char": "每",
+    "jyutping": "mui5",
+    "translation": "each/every",
+    "status": "pending"
+  },
+  {
+    "rank": 579,
+    "char": "差",
+    "jyutping": "caa1|caai1|cī",
+    "translation": "difference/discrepancy/to differ/error/to err/to make a mistake/to differ from/to fall short of/lacking/wrong/inferior|the police/to send/to commission/messenger/mission|uneven",
+    "status": "pending"
+  },
+  {
+    "rank": 580,
+    "char": "穿",
+    "jyutping": "cyun1",
+    "translation": "to bore through/to pierce/to perforate/to penetrate/to pass through/to dress/to wear/to put on/to thread/damaged with a hole or holes (e.g. pots, socks)",
+    "status": "pending"
+  },
+  {
+    "rank": 581,
+    "char": "舊",
+    "jyutping": "gau6",
+    "translation": "old/opposite: new 新/former/worn (with age)",
+    "status": "pending"
+  },
+  {
+    "rank": 582,
+    "char": "自由",
+    "jyutping": "zi6jau4",
+    "translation": "freedom/free/liberty",
+    "status": "pending"
+  },
+  {
+    "rank": 583,
+    "char": "直線",
+    "jyutping": "zik6sin3",
+    "translation": "straight line",
+    "status": "pending"
+  },
+  {
+    "rank": 584,
+    "char": "哩樣",
+    "jyutping": "*lei5|le1|lei1|li1joeng6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 585,
+    "char": "上行",
+    "jyutping": "soeng6hang4",
+    "translation": "up train (i.e. towards the capital)",
+    "status": "pending"
+  },
+  {
+    "rank": 586,
+    "char": "揸",
+    "jyutping": "zaa1",
+    "translation": "to hold/to drive/to pilot/to make a decision",
+    "status": "pending"
+  },
+  {
+    "rank": 587,
+    "char": "性",
+    "jyutping": "sing3",
+    "translation": "nature/character/property/quality/attribute/sexuality/sex/gender/surname/suffix forming adjective from verb/suffix forming noun from adjective, corresponding to -ness or -ity/essence",
+    "status": "pending"
+  },
+  {
+    "rank": 588,
+    "char": "呵",
+    "jyutping": "ho1",
+    "translation": "expel breath/my goodness/variantof 啊/phonetic \"a\"",
+    "status": "pending"
+  },
+  {
+    "rank": 589,
+    "char": "機",
+    "jyutping": "gei1",
+    "translation": "machine/engine/CL:臺|台[tòih](Mandarin)/CL:部[bouh]/opportunity/intention/aircraft/pivot/crucial point/flexible(quick-witted)/organic/a surname",
+    "status": "pending"
+  },
+  {
+    "rank": 590,
+    "char": "林",
+    "jyutping": "lam4",
+    "translation": "woods/forest/surname Lin",
+    "status": "pending"
+  },
+  {
+    "rank": 591,
+    "char": "世界",
+    "jyutping": "sai3gaai3",
+    "translation": "world/a situation, a position, a state of affairs/CL:個[go]",
+    "status": "pending"
+  },
+  {
+    "rank": 592,
+    "char": "似",
+    "jyutping": "ci5",
+    "translation": "to seem/to appear/to resemble/similar/-like/pseudo-",
+    "status": "pending"
+  },
+  {
+    "rank": 593,
+    "char": "着",
+    "jyutping": "*?",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 594,
+    "char": "理由",
+    "jyutping": "lei5jau4",
+    "translation": "reason/grounds/justification",
+    "status": "pending"
+  },
+  {
+    "rank": 596,
+    "char": "發覺",
+    "jyutping": "faat3gok3",
+    "translation": "to find/to detect/to discover",
+    "status": "pending"
+  },
+  {
+    "rank": 597,
+    "char": "落到",
+    "jyutping": "lok6dou2",
+    "translation": "befallen",
+    "status": "pending"
+  },
+  {
+    "rank": 598,
+    "char": "繞過",
+    "jyutping": "*jiu5gwo3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 599,
+    "char": "東方",
+    "jyutping": "dung1fong1",
+    "translation": "the East/Eastern countries",
+    "status": "pending"
+  },
+  {
+    "rank": 600,
+    "char": "右上",
+    "jyutping": "jau6soeng6",
+    "translation": "upper right",
+    "status": "pending"
+  },
+  {
+    "rank": 601,
+    "char": "貨倉",
+    "jyutping": "fo3cong1",
+    "translation": "a warehouse",
+    "status": "pending"
+  },
+  {
+    "rank": 602,
+    "char": "翻版",
+    "jyutping": "faan1baan2",
+    "translation": "to reprint/a duplicate/a clone",
+    "status": "pending"
+  },
+  {
+    "rank": 603,
+    "char": "拍",
+    "jyutping": "paak3",
+    "translation": "to pat/to clap/to slap/to swat/to take (a photo)/to shoot (a film)/racket (sports)/beat (music)",
+    "status": "pending"
+  },
+  {
+    "rank": 604,
+    "char": "以",
+    "jyutping": "ji5",
+    "translation": "abbr. for Israel 以色列[yíh sīk liht]/to use/according to/so as to/in order to/by/with/because",
+    "status": "pending"
+  },
+  {
+    "rank": 606,
+    "char": "關係",
+    "jyutping": "gwaan1hai6",
+    "translation": "relation/relationship/to concern/to affect/to have to do with/guanxi",
+    "status": "pending"
+  },
+  {
+    "rank": 607,
+    "char": "一種",
+    "jyutping": "jat1zung2",
+    "translation": "one kind of/one type of",
+    "status": "pending"
+  },
+  {
+    "rank": 608,
+    "char": "講到",
+    "jyutping": "gong2dou3",
+    "translation": "to talk about sth",
+    "status": "pending"
+  },
+  {
+    "rank": 610,
+    "char": "影響",
+    "jyutping": "jing2hoeng2",
+    "translation": "an influence/an effect/to influence/to affect (usually adversely)/to disturb",
+    "status": "pending"
+  },
+  {
+    "rank": 611,
+    "char": "包",
+    "jyutping": "baau1",
+    "translation": "to cover/to wrap/to promise/to guarantee/to include/to keep a mistress or second wife/package/wrapper/container/bag/bundle/packet",
+    "status": "pending"
+  },
+  {
+    "rank": 613,
+    "char": "未必",
+    "jyutping": "mei6bit1",
+    "translation": "not necessarily/maybe not",
+    "status": "pending"
+  },
+  {
+    "rank": 614,
+    "char": "法律",
+    "jyutping": "faat3leot6",
+    "translation": "law",
+    "status": "pending"
+  },
+  {
+    "rank": 615,
+    "char": "灘",
+    "jyutping": "taan1|taan5",
+    "translation": "beach/shoal",
+    "status": "pending"
+  },
+  {
+    "rank": 616,
+    "char": "女",
+    "jyutping": "neoi5",
+    "translation": "female/woman/daughter",
+    "status": "pending"
+  },
+  {
+    "rank": 617,
+    "char": "男人",
+    "jyutping": "naam4jan2",
+    "translation": "a man/a male/men/CL:個[go]",
+    "status": "pending"
+  },
+  {
+    "rank": 619,
+    "char": "攬",
+    "jyutping": "laam5",
+    "translation": "to embrace/to monopolize/to seize",
+    "status": "pending"
+  },
+  {
+    "rank": 620,
+    "char": "唔夠",
+    "jyutping": "m4gau3",
+    "translation": "not enough",
+    "status": "pending"
+  },
+  {
+    "rank": 621,
+    "char": "射",
+    "jyutping": "se6",
+    "translation": "to shoot/to look after, to protect, to watch over/to ejaculate, to \"come\"/radio- (chemistry)",
+    "status": "pending"
+  },
+  {
+    "rank": 622,
+    "char": "電視",
+    "jyutping": "din6si6",
+    "translation": "television/TV",
+    "status": "pending"
+  },
+  {
+    "rank": 623,
+    "char": "某",
+    "jyutping": "mau5",
+    "translation": "some/a certain/sb or sth indefinite/such-and-such",
+    "status": "pending"
+  },
+  {
+    "rank": 624,
+    "char": "考慮",
+    "jyutping": "haau2leoi6",
+    "translation": "to think over/to consider/consideration",
+    "status": "pending"
+  },
+  {
+    "rank": 625,
+    "char": "會話",
+    "jyutping": "wui6waa6",
+    "translation": "conversation",
+    "status": "pending"
+  },
+  {
+    "rank": 626,
+    "char": "轉彎",
+    "jyutping": "zyun3waan1",
+    "translation": "turn (around)",
+    "status": "pending"
+  },
+  {
+    "rank": 628,
+    "char": "生活",
+    "jyutping": "sang1wut6",
+    "translation": "life/activity/to live/livelihood",
+    "status": "pending"
+  },
+  {
+    "rank": 629,
+    "char": "其中",
+    "jyutping": "kei4zung1",
+    "translation": "among/in/included among these",
+    "status": "pending"
+  },
+  {
+    "rank": 630,
+    "char": "教",
+    "jyutping": "gaau3",
+    "translation": "religion/teaching/to teach/to make (Mandarin)/to cause (Mandarin)/to tell (Mandarin)",
+    "status": "pending"
+  },
+  {
+    "rank": 632,
+    "char": "法",
+    "jyutping": "faat3",
+    "translation": "law/method/way/Buddhist teaching/Legalist/abbr. for France",
+    "status": "pending"
+  },
+  {
+    "rank": 635,
+    "char": "水平",
+    "jyutping": "seoi2ping4",
+    "translation": "level (of achievement etc)/standard/horizontal",
+    "status": "pending"
+  },
+  {
+    "rank": 636,
+    "char": "磅",
+    "jyutping": "bong6|bong2",
+    "translation": "to weigh/to give/to accompany/to escort/to protect/pound (unit of weight, about 454 grams)|scale/platform balance",
+    "status": "pending"
+  },
+  {
+    "rank": 637,
+    "char": "方法",
+    "jyutping": "fong1faat3",
+    "translation": "method/way/means",
+    "status": "pending"
+  },
+  {
+    "rank": 638,
+    "char": "者",
+    "jyutping": "ze2",
+    "translation": "-ist, -er (person)/person (who does sth)",
+    "status": "pending"
+  },
+  {
+    "rank": 640,
+    "char": "段",
+    "jyutping": "dyun6",
+    "translation": "surname Duan/paragraph/section/segment/stage (of a process)/classifier for stories",
+    "status": "pending"
+  },
+  {
+    "rank": 641,
+    "char": "代表",
+    "jyutping": "doi6biu2",
+    "translation": "representative/delegate/to represent/to stand for",
+    "status": "pending"
+  },
+  {
+    "rank": 642,
+    "char": "好過",
+    "jyutping": "*hou2|hou3gwo3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 643,
+    "char": "西方",
+    "jyutping": "sai1fong1",
+    "translation": "the West/the Occident/Western countries",
+    "status": "pending"
+  },
+  {
+    "rank": 644,
+    "char": "公共",
+    "jyutping": "gung1gung6",
+    "translation": "public/common (use)",
+    "status": "pending"
+  },
+  {
+    "rank": 645,
+    "char": "山路",
+    "jyutping": "saan1lou6",
+    "translation": "mountain road",
+    "status": "pending"
+  },
+  {
+    "rank": 646,
+    "char": "早",
+    "jyutping": "zou2",
+    "translation": "early/morning",
+    "status": "pending"
+  },
+  {
+    "rank": 647,
+    "char": "簡單",
+    "jyutping": "gaan2daan1",
+    "translation": "simple/not complicated",
+    "status": "pending"
+  },
+  {
+    "rank": 648,
+    "char": "學",
+    "jyutping": "hok6",
+    "translation": "learn/study/science/-ology",
+    "status": "pending"
+  },
+  {
+    "rank": 649,
+    "char": "第",
+    "jyutping": "dai6",
+    "translation": "(prefix indicating ordinal number, e.g. first, number two etc)",
+    "status": "pending"
+  },
+  {
+    "rank": 650,
+    "char": "好睇",
+    "jyutping": "*hou2|hou3tai2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 651,
+    "char": "店",
+    "jyutping": "dim3",
+    "translation": "inn/shop/store",
+    "status": "pending"
+  },
+  {
+    "rank": 652,
+    "char": "發展",
+    "jyutping": "faat3zin2",
+    "translation": "development/growth/to develop/to grow/to expand",
+    "status": "pending"
+  },
+  {
+    "rank": 654,
+    "char": "圖案",
+    "jyutping": "tou4on3",
+    "translation": "design/pattern",
+    "status": "pending"
+  },
+  {
+    "rank": 655,
+    "char": "我見",
+    "jyutping": "*ngo5gin3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 656,
+    "char": "辦法",
+    "jyutping": "baan6faat3",
+    "translation": "means/method/way (of doing sth)",
+    "status": "pending"
+  },
+  {
+    "rank": 657,
+    "char": "同一",
+    "jyutping": "tung4jat1",
+    "translation": "identical/the same",
+    "status": "pending"
+  },
+  {
+    "rank": 658,
+    "char": "接受",
+    "jyutping": "zip3sau6",
+    "translation": "to accept/to receive",
+    "status": "pending"
+  },
+  {
+    "rank": 660,
+    "char": "尾",
+    "jyutping": "mei5",
+    "translation": "tail/a reprisal/bad consequences/loose ends",
+    "status": "pending"
+  },
+  {
+    "rank": 662,
+    "char": "第二",
+    "jyutping": "dai6ji6",
+    "translation": "second/number two/next",
+    "status": "pending"
+  },
+  {
+    "rank": 664,
+    "char": "意見",
+    "jyutping": "ji3gin3",
+    "translation": "idea/opinion/suggestion/objection/complaint",
+    "status": "pending"
+  },
+  {
+    "rank": 665,
+    "char": "圖片",
+    "jyutping": "tou4pin3",
+    "translation": "image/picture/photograph",
+    "status": "pending"
+  },
+  {
+    "rank": 666,
+    "char": "貧大",
+    "jyutping": "*pan4daai6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 668,
+    "char": "把",
+    "jyutping": "baa2",
+    "translation": "to hold/to grasp/to take hold of/handle/classifier for objects with handle/used before a direct object and a verb often carrying the sense of disposal (Mandarin)",
+    "status": "pending"
+  },
+  {
+    "rank": 669,
+    "char": "平時",
+    "jyutping": "ping4si4",
+    "translation": "in normal times/in peacetime",
+    "status": "pending"
+  },
+  {
+    "rank": 670,
+    "char": "打開",
+    "jyutping": "daa2hoi1",
+    "translation": "to open/to show (a ticket)/to turn on/to switch on",
+    "status": "pending"
+  },
+  {
+    "rank": 673,
+    "char": "起碼",
+    "jyutping": "hei2maa5",
+    "translation": "at the minimum/at the very least",
+    "status": "pending"
+  },
+  {
+    "rank": 674,
+    "char": "容易",
+    "jyutping": "jung4ji6",
+    "translation": "easy/likely/liable (to)",
+    "status": "pending"
+  },
+  {
+    "rank": 677,
+    "char": "座",
+    "jyutping": "zo6",
+    "translation": "seat/base/stand/(classifier for buildings, mountains, large solid things etc)",
+    "status": "pending"
+  },
+  {
+    "rank": 679,
+    "char": "外國",
+    "jyutping": "ngoi6gwok3",
+    "translation": "foreign (country)",
+    "status": "pending"
+  },
+  {
+    "rank": 680,
+    "char": "報紙",
+    "jyutping": "bou3zi2",
+    "translation": "newspaper/newsprint",
+    "status": "pending"
+  },
+  {
+    "rank": 681,
+    "char": "偏",
+    "jyutping": "pin1",
+    "translation": "to lean/to slant/oblique/prejudiced/to deviate from average/to stray from the intended line/stubbornly/contrary to expectations/left-hand side of a split Chinese character, often the key or radical",
+    "status": "pending"
+  },
+  {
+    "rank": 682,
+    "char": "北",
+    "jyutping": "bak1",
+    "translation": "north/to be defeated (classical)",
+    "status": "pending"
+  },
+  {
+    "rank": 685,
+    "char": "除",
+    "jyutping": "ceoi4",
+    "translation": "to get rid of/to remove/to exclude/to eliminate/to wipe out/to divide/except/not including",
+    "status": "pending"
+  },
+  {
+    "rank": 686,
+    "char": "怪",
+    "jyutping": "gwaai3",
+    "translation": "bewildering/odd/strange/uncanny/devil/monster/to wonder at/to blame",
+    "status": "pending"
+  },
+  {
+    "rank": 689,
+    "char": "袋",
+    "jyutping": "doi6|doi2",
+    "translation": "to bag|a pouch/bag/sack/pocket/a condom/scrotum",
+    "status": "pending"
+  },
+  {
+    "rank": 692,
+    "char": "等陣",
+    "jyutping": "dang2zan6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 693,
+    "char": "主要",
+    "jyutping": "zyu2jiu3",
+    "translation": "main/principal/major/primary",
+    "status": "pending"
+  },
+  {
+    "rank": 694,
+    "char": "剪",
+    "jyutping": "zin2",
+    "translation": "scissors/shears/clippers/CL:把[bá]/to cut with scissors/to trim",
+    "status": "pending"
+  },
+  {
+    "rank": 696,
+    "char": "有陣",
+    "jyutping": "*jau5zan6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 697,
+    "char": "閒",
+    "jyutping": "haan4",
+    "translation": "variant of 閑, idle/unoccupied/leisure/free time",
+    "status": "pending"
+  },
+  {
+    "rank": 698,
+    "char": "後",
+    "jyutping": "hau6",
+    "translation": "back/behind/rear/afterwards/after/later",
+    "status": "pending"
+  },
+  {
+    "rank": 700,
+    "char": "點知",
+    "jyutping": "*dim2zi1|zi3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 701,
+    "char": "女人",
+    "jyutping": "neoi5jan2",
+    "translation": "woman",
+    "status": "pending"
+  },
+  {
+    "rank": 702,
+    "char": "家",
+    "jyutping": "gaa1",
+    "translation": "home/family/classifier for families or businesses/refers to the philosophical schools of pre-Han China/noun suffix for specialists in some activity such as musician or revolutionary, corresponds to English -ist, -er, -ary or -ian/CL:個[go]",
+    "status": "pending"
+  },
+  {
+    "rank": 705,
+    "char": "點呀",
+    "jyutping": "*dim2aa3|aa1|aa6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 706,
+    "char": "行過",
+    "jyutping": "*hang4|haang4|hang6|hong4|hong2gwo3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 707,
+    "char": "同意",
+    "jyutping": "tung4ji3",
+    "translation": "to agree/to consent/to approve",
+    "status": "pending"
+  },
+  {
+    "rank": 708,
+    "char": "節目",
+    "jyutping": "zit3muk6",
+    "translation": "program/item (on a program)",
+    "status": "pending"
+  },
+  {
+    "rank": 709,
+    "char": "幼",
+    "jyutping": "jau3",
+    "translation": "young",
+    "status": "pending"
+  },
+  {
+    "rank": 710,
+    "char": "財政",
+    "jyutping": "coi4zing3",
+    "translation": "finances (public)/financial",
+    "status": "pending"
+  },
+  {
+    "rank": 712,
+    "char": "爸爸",
+    "jyutping": "baa4baa1",
+    "translation": "(informal) father",
+    "status": "pending"
+  },
+  {
+    "rank": 713,
+    "char": "普通",
+    "jyutping": "pou2tung1",
+    "translation": "common/ordinary/general/average",
+    "status": "pending"
+  },
+  {
+    "rank": 715,
+    "char": "例如",
+    "jyutping": "lai6jyu4",
+    "translation": "for example/for instance/such as",
+    "status": "pending"
+  },
+  {
+    "rank": 716,
+    "char": "幅",
+    "jyutping": "fuk1",
+    "translation": "width/roll/classifier for textiles or pictures",
+    "status": "pending"
+  },
+  {
+    "rank": 717,
+    "char": "碑",
+    "jyutping": "bei1",
+    "translation": "a monument/an upright stone tablet/stele",
+    "status": "pending"
+  },
+  {
+    "rank": 718,
+    "char": "直上",
+    "jyutping": "zik6soeng5",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 719,
+    "char": "直程",
+    "jyutping": "*zik6cing4",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 720,
+    "char": "水平線",
+    "jyutping": "seoi2ping4sin3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 721,
+    "char": "畫個",
+    "jyutping": "*waak6|waa2go3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 723,
+    "char": "距離",
+    "jyutping": "keoi5lei4",
+    "translation": "distance/to be apart",
+    "status": "pending"
+  },
+  {
+    "rank": 724,
+    "char": "左右",
+    "jyutping": "zo2jau2|zo2jau6",
+    "translation": "about/approximately/around|left and right/to control/to influence",
+    "status": "pending"
+  },
+  {
+    "rank": 726,
+    "char": "一半",
+    "jyutping": "jat1bun3",
+    "translation": "half",
+    "status": "pending"
+  },
+  {
+    "rank": 727,
+    "char": "概念",
+    "jyutping": "koi3nim6",
+    "translation": "concept/idea",
+    "status": "pending"
+  },
+  {
+    "rank": 728,
+    "char": "左行",
+    "jyutping": "*zo2hang4|haang4|hang6|hong4|hong2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 729,
+    "char": "連",
+    "jyutping": "lin4",
+    "translation": "surname Lian/even/as/join/to link/successively",
+    "status": "pending"
+  },
+  {
+    "rank": 730,
+    "char": "生",
+    "jyutping": "saang1|sang1",
+    "translation": "to be born/to give birth/life/to grow/raw, uncooked",
+    "status": "pending"
+  },
+  {
+    "rank": 732,
+    "char": "始終",
+    "jyutping": "ci2zung1",
+    "translation": "from beginning to end/all along",
+    "status": "pending"
+  },
+  {
+    "rank": 733,
+    "char": "小姐",
+    "jyutping": "siu2ze2",
+    "translation": "young lady/miss/a nightclub hostess/a call girl/a prostitute",
+    "status": "pending"
+  },
+  {
+    "rank": 735,
+    "char": "對於",
+    "jyutping": "deoi3jyu1",
+    "translation": "regarding/as far as sth is concerned/with regards to",
+    "status": "pending"
+  },
+  {
+    "rank": 736,
+    "char": "試過",
+    "jyutping": "*si3gwo3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 737,
+    "char": "轉",
+    "jyutping": "zyun2|zyun3",
+    "translation": "to convey/to forward (mail)/to transfer/to turn/to shift|to revolve/to turn/to circle about/to walk about/classifier for turns: revs/classifier for repeated actions",
+    "status": "pending"
+  },
+  {
+    "rank": 739,
+    "char": "計",
+    "jyutping": "gai3",
+    "translation": "to calculate/to compute/to count/to regard as important/to plan/ruse/meter/gauge",
+    "status": "pending"
+  },
+  {
+    "rank": 740,
+    "char": "包括",
+    "jyutping": "baau1kut3",
+    "translation": "to comprise/to include/to involve/to incorporate/to consist of",
+    "status": "pending"
+  },
+  {
+    "rank": 741,
+    "char": "因",
+    "jyutping": "jan1",
+    "translation": "cause/reason/because",
+    "status": "pending"
+  },
+  {
+    "rank": 742,
+    "char": "港人",
+    "jyutping": "gong2jan4",
+    "translation": "Hong Kong person or people",
+    "status": "pending"
+  },
+  {
+    "rank": 743,
+    "char": "下行",
+    "jyutping": "haa6hang4",
+    "translation": "down train (i.e. away from the capital)",
+    "status": "pending"
+  },
+  {
+    "rank": 744,
+    "char": "人權",
+    "jyutping": "jan4kyun4",
+    "translation": "human rights",
+    "status": "pending"
+  },
+  {
+    "rank": 745,
+    "char": "個韻",
+    "jyutping": "*go3wan6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 746,
+    "char": "杏",
+    "jyutping": "hang6",
+    "translation": "apricot",
+    "status": "pending"
+  },
+  {
+    "rank": 748,
+    "char": "我個",
+    "jyutping": "*ngo5go3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 751,
+    "char": "神",
+    "jyutping": "san4",
+    "translation": "God/unusual/mysterious/soul/spirit/divine essence/lively/spiritual being/an idol/a role model/a hero",
+    "status": "pending"
+  },
+  {
+    "rank": 753,
+    "char": "分別",
+    "jyutping": "fan1bit6",
+    "translation": "difference/distinction/apart/separate/separately/respectively",
+    "status": "pending"
+  },
+  {
+    "rank": 754,
+    "char": "放棄",
+    "jyutping": "fong3hei3",
+    "translation": "to renounce/to abandon/to give up",
+    "status": "pending"
+  },
+  {
+    "rank": 755,
+    "char": "大個",
+    "jyutping": "*daai6go3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 756,
+    "char": "化",
+    "jyutping": "faa3",
+    "translation": "to make into/to change into/-ization/to ... -ize/to transform/to be liberal, tolerant/abbr. for chemistry 化學",
+    "status": "pending"
+  },
+  {
+    "rank": 757,
+    "char": "我想",
+    "jyutping": "*ngo5soeng2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 758,
+    "char": "尊重",
+    "jyutping": "zyun1zung6",
+    "translation": "esteem/respect/to honor/to value sth",
+    "status": "pending"
+  },
+  {
+    "rank": 759,
+    "char": "講話",
+    "jyutping": "gong2waa6",
+    "translation": "a speech/to speak/to talk/to address",
+    "status": "pending"
+  },
+  {
+    "rank": 760,
+    "char": "笨",
+    "jyutping": "ban6",
+    "translation": "stupid/foolish/silly/slow-witted/clumsy",
+    "status": "pending"
+  },
+  {
+    "rank": 761,
+    "char": "勇",
+    "jyutping": "jung6",
+    "translation": "brave",
+    "status": "pending"
+  },
+  {
+    "rank": 762,
+    "char": "公務員",
+    "jyutping": "gung1mou6jyun4",
+    "translation": "functionary/office-bearer",
+    "status": "pending"
+  },
+  {
+    "rank": 763,
+    "char": "礦",
+    "jyutping": "kwong3|gwong3",
+    "translation": "ore/mine",
+    "status": "pending"
+  },
+  {
+    "rank": 764,
+    "char": "會堂",
+    "jyutping": "wui6tong4",
+    "translation": "meeting hall/assembly hall",
+    "status": "pending"
+  },
+  {
+    "rank": 765,
+    "char": "棚",
+    "jyutping": "paang4",
+    "translation": "shed/canopy/shack",
+    "status": "pending"
+  },
+  {
+    "rank": 767,
+    "char": "笑",
+    "jyutping": "siu3",
+    "translation": "laugh/smile",
+    "status": "pending"
+  },
+  {
+    "rank": 768,
+    "char": "當時",
+    "jyutping": "dong1si4",
+    "translation": "then/at that time/while",
+    "status": "pending"
+  },
+  {
+    "rank": 769,
+    "char": "之外",
+    "jyutping": "zi1ngoi6",
+    "translation": "outside/excluding",
+    "status": "pending"
+  },
+  {
+    "rank": 771,
+    "char": "興趣",
+    "jyutping": "hing3ceoi3",
+    "translation": "interest (directed towards, not inherent in something)",
+    "status": "pending"
+  },
+  {
+    "rank": 773,
+    "char": "行為",
+    "jyutping": "hang6wai4",
+    "translation": "action/conduct/behavior/activity",
+    "status": "pending"
+  },
+  {
+    "rank": 774,
+    "char": "一份",
+    "jyutping": "*jat1fan6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 775,
+    "char": "魚",
+    "jyutping": "jyu2",
+    "translation": "fish",
+    "status": "pending"
+  },
+  {
+    "rank": 776,
+    "char": "害",
+    "jyutping": "hoi6",
+    "translation": "to do harm to/to cause trouble to/harm/evil/calamity",
+    "status": "pending"
+  },
+  {
+    "rank": 777,
+    "char": "黐線",
+    "jyutping": "*ci1sin3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 779,
+    "char": "路線",
+    "jyutping": "lou6sin3",
+    "translation": "itinerary/route/political line (e.g. right revisionist road)",
+    "status": "pending"
+  },
+  {
+    "rank": 780,
+    "char": "堡",
+    "jyutping": "bou2",
+    "translation": "an earthwork/castle/position of defense/stronghold/used in place names, often as phonetic bao for \"burg\" or \"bad\"/variant of 铺|铺/used in place names",
+    "status": "pending"
+  },
+  {
+    "rank": 781,
+    "char": "餐室",
+    "jyutping": "caan1sat1",
+    "translation": "dining room",
+    "status": "pending"
+  },
+  {
+    "rank": 782,
+    "char": "忍依",
+    "jyutping": "*jan2ji1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 783,
+    "char": "令",
+    "jyutping": "ling6",
+    "translation": "make or cause to be/order/command/decree/honorable",
+    "status": "pending"
+  },
+  {
+    "rank": 784,
+    "char": "能力",
+    "jyutping": "nang4lik6",
+    "translation": "capability/capable/able/ability",
+    "status": "pending"
+  },
+  {
+    "rank": 785,
+    "char": "我知",
+    "jyutping": "*ngo5zi1|zi3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 788,
+    "char": "靠",
+    "jyutping": "kaau3",
+    "translation": "to lean against or on/to stand by the side of/to come near to/to depend or rely on/to trust/to fuck (vulgar) (Mandarin)",
+    "status": "pending"
+  },
+  {
+    "rank": 791,
+    "char": "至",
+    "jyutping": "zi3",
+    "translation": "arrive/most/to/until",
+    "status": "pending"
+  },
+  {
+    "rank": 792,
+    "char": "右手",
+    "jyutping": "jau6sau2",
+    "translation": "right-hand",
+    "status": "pending"
+  },
+  {
+    "rank": 793,
+    "char": "外",
+    "jyutping": "ngoi6|oi6",
+    "translation": "outside/in addition/foreign/external",
+    "status": "pending"
+  },
+  {
+    "rank": 794,
+    "char": "一年",
+    "jyutping": "*jat1nin4",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 795,
+    "char": "美",
+    "jyutping": "mei5",
+    "translation": "beautiful/abbr. for USA 美國[méih gwok]",
+    "status": "pending"
+  },
+  {
+    "rank": 796,
+    "char": "講下",
+    "jyutping": "*gong2haa6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 797,
+    "char": "棵",
+    "jyutping": "po1|fo2",
+    "translation": "classifier for trees, cabbages, plants etc",
+    "status": "pending"
+  },
+  {
+    "rank": 798,
+    "char": "表達",
+    "jyutping": "biu2daat6",
+    "translation": "to voice (an opinion)/to express/to convey",
+    "status": "pending"
+  },
+  {
+    "rank": 799,
+    "char": "廣告",
+    "jyutping": "gwong2gou3",
+    "translation": "to advertise/a commercial/advertisement/CL:項|项[xiang4]",
+    "status": "pending"
+  },
+  {
+    "rank": 800,
+    "char": "秩序",
+    "jyutping": "dit6zeoi6",
+    "translation": "order (orderly)/order (sequence)/social order/the state (of society)",
+    "status": "pending"
+  },
+  {
+    "rank": 801,
+    "char": "聲",
+    "jyutping": "seng1|sing1",
+    "translation": "sound/voice/tone/noise/classifier for sounds",
+    "status": "pending"
+  },
+  {
+    "rank": 802,
+    "char": "於",
+    "jyutping": "jyu1",
+    "translation": "in/at/to/from/by/than/out of",
+    "status": "pending"
+  },
+  {
+    "rank": 804,
+    "char": "機會",
+    "jyutping": "gei1wui6",
+    "translation": "opportunity/chance/occasion",
+    "status": "pending"
+  },
+  {
+    "rank": 805,
+    "char": "講過",
+    "jyutping": "*gong2gwo3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 806,
+    "char": "永遠",
+    "jyutping": "wing5jyun5",
+    "translation": "forever/eternal",
+    "status": "pending"
+  },
+  {
+    "rank": 807,
+    "char": "型",
+    "jyutping": "jing4",
+    "translation": "model/good-looking/cool/handsome/type (e.g. blood type)",
+    "status": "pending"
+  },
+  {
+    "rank": 809,
+    "char": "只不過",
+    "jyutping": "*zi2|zek3bat1gwo3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 810,
+    "char": "短",
+    "jyutping": "dyun2",
+    "translation": "short or brief/to lack/weak point/fault",
+    "status": "pending"
+  },
+  {
+    "rank": 811,
+    "char": "接近",
+    "jyutping": "zip3gan6",
+    "translation": "near/close to",
+    "status": "pending"
+  },
+  {
+    "rank": 812,
+    "char": "講得",
+    "jyutping": "*gong2dak1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 814,
+    "char": "生意",
+    "jyutping": "saang1ji3",
+    "translation": "business",
+    "status": "pending"
+  },
+  {
+    "rank": 815,
+    "char": "上方",
+    "jyutping": "soeng6fong1",
+    "translation": "place above",
+    "status": "pending"
+  },
+  {
+    "rank": 816,
+    "char": "陣時",
+    "jyutping": "*zan6si4",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 817,
+    "char": "字典",
+    "jyutping": "zi6din2",
+    "translation": "dictionary/character dictionary/CL:本[ben3]",
+    "status": "pending"
+  },
+  {
+    "rank": 818,
+    "char": "盆",
+    "jyutping": "pun4",
+    "translation": "basin/flower pot/unit of volume equal to 12 斗 and 8 升, approx 128 liters",
+    "status": "pending"
+  },
+  {
+    "rank": 819,
+    "char": "我要",
+    "jyutping": "*ngo5jiu3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 820,
+    "char": "無論",
+    "jyutping": "mou4leon6",
+    "translation": "no matter what or how/regardless of whether...",
+    "status": "pending"
+  },
+  {
+    "rank": 822,
+    "char": "感受",
+    "jyutping": "gam2sau6",
+    "translation": "to sense/perception/to feel (through the senses)/a feeling/an impression/an experience",
+    "status": "pending"
+  },
+  {
+    "rank": 823,
+    "char": "晚",
+    "jyutping": "maan5",
+    "translation": "evening/night/late",
+    "status": "pending"
+  },
+  {
+    "rank": 824,
+    "char": "面對",
+    "jyutping": "min6deoi3",
+    "translation": "to confront/to face",
+    "status": "pending"
+  },
+  {
+    "rank": 825,
+    "char": "套",
+    "jyutping": "tou3",
+    "translation": "cover/sheath/to encase/a case/to overlap/to interleave/bend (of a river or mountain range, in place names)/harness/classifier for sets, collections/tau (Greek letter Ττ)",
+    "status": "pending"
+  },
+  {
+    "rank": 827,
+    "char": "嘿",
+    "jyutping": "hei1",
+    "translation": "hey",
+    "status": "pending"
+  },
+  {
+    "rank": 828,
+    "char": "誰",
+    "jyutping": "seoi4",
+    "translation": "variant pronunciation of shei2, who/surname Shui/who/also pronounced shui2",
+    "status": "pending"
+  },
+  {
+    "rank": 829,
+    "char": "鼻",
+    "jyutping": "bei6",
+    "translation": "nose",
+    "status": "pending"
+  },
+  {
+    "rank": 830,
+    "char": "案",
+    "jyutping": "on3|ngon3",
+    "translation": "(legal) case/incident/record/file/table",
+    "status": "pending"
+  },
+  {
+    "rank": 832,
+    "char": "數碼",
+    "jyutping": "sou3maa5",
+    "translation": "number/numerals/figures/digital/amount/numerical code",
+    "status": "pending"
+  },
+  {
+    "rank": 833,
+    "char": "制度",
+    "jyutping": "zai3dou6",
+    "translation": "(political or administrative) system or institution",
+    "status": "pending"
+  },
+  {
+    "rank": 834,
+    "char": "圓形",
+    "jyutping": "jyun4jing4",
+    "translation": "round/circular",
+    "status": "pending"
+  },
+  {
+    "rank": 835,
+    "char": "來講",
+    "jyutping": "*loi4gong2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 836,
+    "char": "嬋",
+    "jyutping": "sim4|sin4",
+    "translation": "beautiful/graceful",
+    "status": "pending"
+  },
+  {
+    "rank": 837,
+    "char": "嘍",
+    "jyutping": "lau1|lau4",
+    "translation": "(final particle equivalent to 了)/subordinates in gang of bandits",
+    "status": "pending"
+  },
+  {
+    "rank": 838,
+    "char": "拎",
+    "jyutping": "ling1",
+    "translation": "to lift/to hold up/to carry (on bent fingers)",
+    "status": "pending"
+  },
+  {
+    "rank": 839,
+    "char": "一陣",
+    "jyutping": "jat1zan6",
+    "translation": "a burst/a fit/a peal",
+    "status": "pending"
+  },
+  {
+    "rank": 840,
+    "char": "發生",
+    "jyutping": "faat3sang1",
+    "translation": "to happen/to occur/to take place/to break out",
+    "status": "pending"
+  },
+  {
+    "rank": 841,
+    "char": "句",
+    "jyutping": "geoi3",
+    "translation": "sentence/clause/phrase/classifier for phrases or lines of verse",
+    "status": "pending"
+  },
+  {
+    "rank": 842,
+    "char": "眼",
+    "jyutping": "ngaan5",
+    "translation": "eye/CL:隻[jek],對[deui]",
+    "status": "pending"
+  },
+  {
+    "rank": 843,
+    "char": "女朋友",
+    "jyutping": "neoi5pang4jau5",
+    "translation": "female friend/girlfriend",
+    "status": "pending"
+  },
+  {
+    "rank": 844,
+    "char": "歲",
+    "jyutping": "seoi3",
+    "translation": "year/years old/classifier for years old",
+    "status": "pending"
+  },
+  {
+    "rank": 847,
+    "char": "原因",
+    "jyutping": "jyun4jan1",
+    "translation": "cause/origin/root cause/reason",
+    "status": "pending"
+  },
+  {
+    "rank": 848,
+    "char": "大佬",
+    "jyutping": "daai6lou2",
+    "translation": "big shot (leading some field or group)/godfather/an exclamation used to express impatience with someone (male or female)",
+    "status": "pending"
+  },
+  {
+    "rank": 849,
+    "char": "令到",
+    "jyutping": "*ling6dou3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 850,
+    "char": "一間",
+    "jyutping": "*jat1gaan1|gaan3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 851,
+    "char": "講真",
+    "jyutping": "*gong2zan1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 852,
+    "char": "去邊",
+    "jyutping": "*heoi3bin1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 853,
+    "char": "最多",
+    "jyutping": "zeoi3do1",
+    "translation": "at most/maximum/largest (number of sth)/the most",
+    "status": "pending"
+  },
+  {
+    "rank": 854,
+    "char": "小學",
+    "jyutping": "siu2hok6",
+    "translation": "primary school",
+    "status": "pending"
+  },
+  {
+    "rank": 856,
+    "char": "知點",
+    "jyutping": "*zi1|zi3dim2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 857,
+    "char": "中文",
+    "jyutping": "zung1man4",
+    "translation": "Chinese/Chinese written language/Chinese writing",
+    "status": "pending"
+  },
+  {
+    "rank": 858,
+    "char": "城市",
+    "jyutping": "sing4si5",
+    "translation": "city/town/CL:座[zuo4]",
+    "status": "pending"
+  },
+  {
+    "rank": 859,
+    "char": "純",
+    "jyutping": "seon4",
+    "translation": "pure/simple/unmixed/genuine",
+    "status": "pending"
+  },
+  {
+    "rank": 860,
+    "char": "開頭",
+    "jyutping": "hoi1tau4",
+    "translation": "beginning",
+    "status": "pending"
+  },
+  {
+    "rank": 861,
+    "char": "經",
+    "jyutping": "ging1",
+    "translation": "classics/sacred book/scripture/to pass through/to undergo/warp/longitude/abbr. for economics 經濟|经济/surname Jing",
+    "status": "pending"
+  },
+  {
+    "rank": 862,
+    "char": "喥",
+    "jyutping": "dou6",
+    "translation": "(Cantonese) a place",
+    "status": "pending"
+  },
+  {
+    "rank": 863,
+    "char": "塘",
+    "jyutping": "tong4",
+    "translation": "pond",
+    "status": "pending"
+  },
+  {
+    "rank": 864,
+    "char": "立法",
+    "jyutping": "lap6faat3",
+    "translation": "legislation",
+    "status": "pending"
+  },
+  {
+    "rank": 865,
+    "char": "井",
+    "jyutping": "zeng2|zing2",
+    "translation": "warn/well/surname Jing",
+    "status": "pending"
+  },
+  {
+    "rank": 866,
+    "char": "判決",
+    "jyutping": "pun3kyut3",
+    "translation": "judgment (by a court of law)",
+    "status": "pending"
+  },
+  {
+    "rank": 867,
+    "char": "法院",
+    "jyutping": "faat3jyun2",
+    "translation": "court of law/court",
+    "status": "pending"
+  },
+  {
+    "rank": 868,
+    "char": "身",
+    "jyutping": "san1",
+    "translation": "body/life/oneself/personally/one's morality and conduct/the main part of a structure or body",
+    "status": "pending"
+  },
+  {
+    "rank": 869,
+    "char": "撞",
+    "jyutping": "zong6",
+    "translation": "to hit/to strike/to meet by accident/to run into/to bump against/to bump into",
+    "status": "pending"
+  },
+  {
+    "rank": 870,
+    "char": "搭",
+    "jyutping": "daap3",
+    "translation": "to take (boat, train)/to put up/to build (scaffolding)/to hang (clothes on a pole)/to connect/to join/to arrange in pairs/to match/to add",
+    "status": "pending"
+  },
+  {
+    "rank": 871,
+    "char": "返學",
+    "jyutping": "faan1hok6",
+    "translation": "go to school",
+    "status": "pending"
+  },
+  {
+    "rank": 873,
+    "char": "實",
+    "jyutping": "sat6",
+    "translation": "real/true/honest/really/solid/fruit/seed/used as a euphemism for the obscene 柒 [chaht] \"prick\"",
+    "status": "pending"
+  },
+  {
+    "rank": 874,
+    "char": "形容",
+    "jyutping": "jing4jung4",
+    "translation": "to describe/appearance/look",
+    "status": "pending"
+  },
+  {
+    "rank": 875,
+    "char": "問下",
+    "jyutping": "*man6haa6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 876,
+    "char": "搞笑",
+    "jyutping": "gaau2siu3",
+    "translation": "funny/hilarious/to play around/to joke",
+    "status": "pending"
+  },
+  {
+    "rank": 878,
+    "char": "包住",
+    "jyutping": "baau1zyu6",
+    "translation": "encase",
+    "status": "pending"
+  },
+  {
+    "rank": 879,
+    "char": "下方",
+    "jyutping": "haa6fong1",
+    "translation": "under; the underside; below; underneath/world of mortals; (of Gods) to descend to the world of mortals",
+    "status": "pending"
+  },
+  {
+    "rank": 880,
+    "char": "厘米",
+    "jyutping": "lei4mai5",
+    "translation": "centimeter",
+    "status": "pending"
+  },
+  {
+    "rank": 881,
+    "char": "法官",
+    "jyutping": "faat3gun1",
+    "translation": "a judge/judge/to judge",
+    "status": "pending"
+  },
+  {
+    "rank": 882,
+    "char": "無",
+    "jyutping": "mou4",
+    "translation": "-less/not to have/no/none/not/to lack/un-",
+    "status": "pending"
+  },
+  {
+    "rank": 888,
+    "char": "一日",
+    "jyutping": "*jat1jat6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 889,
+    "char": "返到",
+    "jyutping": "*faan1|faan2dou3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 891,
+    "char": "成為",
+    "jyutping": "sing4wai4",
+    "translation": "to become/to turn into",
+    "status": "pending"
+  },
+  {
+    "rank": 892,
+    "char": "絕對",
+    "jyutping": "zyut6deoi3",
+    "translation": "absolute/unconditional",
+    "status": "pending"
+  },
+  {
+    "rank": 894,
+    "char": "上次",
+    "jyutping": "soeng6ci3",
+    "translation": "last time",
+    "status": "pending"
+  },
+  {
+    "rank": 895,
+    "char": "肥",
+    "jyutping": "fei4",
+    "translation": "fat/fertile/loose-fitting or large/to fertilize/to become rich by illegal means/fertilizer/manure",
+    "status": "pending"
+  },
+  {
+    "rank": 896,
+    "char": "左手",
+    "jyutping": "zo2sau2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 897,
+    "char": "經歷",
+    "jyutping": "ging1lik6",
+    "translation": "experience/go through",
+    "status": "pending"
+  },
+  {
+    "rank": 898,
+    "char": "整",
+    "jyutping": "zing2",
+    "translation": "exactly/in good order/whole/complete/entire/in order/orderly/to repair/to mend/to renovate/to make sb suffer/to punish/to fix/to give sb a hard time/to give/to fetch/to trick",
+    "status": "pending"
+  },
+  {
+    "rank": 899,
+    "char": "成績",
+    "jyutping": "sing4zik1",
+    "translation": "achievement/performance records/grades",
+    "status": "pending"
+  },
+  {
+    "rank": 900,
+    "char": "關於",
+    "jyutping": "gwaan1jyu1",
+    "translation": "pertaining to/concerning/regarding/with regards to/about/a matter of",
+    "status": "pending"
+  },
+  {
+    "rank": 901,
+    "char": "好難",
+    "jyutping": "*hou2|hou3naan6|naan4",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 902,
+    "char": "圈",
+    "jyutping": "hyun1|gyun6",
+    "translation": "circle/ring/loop/classifier for loops, orbits, laps of race etc/CL:個[go]/to surround/to circle|pen (pig)/a fold/to confine/to lock up/to pen in",
+    "status": "pending"
+  },
+  {
+    "rank": 903,
+    "char": "科",
+    "jyutping": "fo1",
+    "translation": "branch of study/administrative section/division/field/branch/stage directions/family (taxonomy)/rules/laws/to mete out (punishment)/to levy (taxes etc)/to fine sb",
+    "status": "pending"
+  },
+  {
+    "rank": 904,
+    "char": "平衡",
+    "jyutping": "ping4hang4",
+    "translation": "balance/equilibrium",
+    "status": "pending"
+  },
+  {
+    "rank": 905,
+    "char": "寄",
+    "jyutping": "gei3",
+    "translation": "to live (in a house)/to lodge/to mail/to send/to entrust/to depend",
+    "status": "pending"
+  },
+  {
+    "rank": 906,
+    "char": "點講",
+    "jyutping": "*dim2gong2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 907,
+    "char": "中國",
+    "jyutping": "zung1gwok3",
+    "translation": "China/Middle Kingdom",
+    "status": "pending"
+  },
+  {
+    "rank": 909,
+    "char": "國際",
+    "jyutping": "gwok3zai3",
+    "translation": "international",
+    "status": "pending"
+  },
+  {
+    "rank": 910,
+    "char": "郵票",
+    "jyutping": "jau4piu3",
+    "translation": "(postage) stamp",
+    "status": "pending"
+  },
+  {
+    "rank": 911,
+    "char": "右手面",
+    "jyutping": "jau6sau2min6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 912,
+    "char": "彭銅",
+    "jyutping": "*pang4tung4",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 913,
+    "char": "一下",
+    "jyutping": "jat1haa5",
+    "translation": "(used after a verb) give it a go/to do (sth for a bit to give it a try)",
+    "status": "pending"
+  },
+  {
+    "rank": 915,
+    "char": "結果",
+    "jyutping": "git3gwo2",
+    "translation": "to bear fruit",
+    "status": "pending"
+  },
+  {
+    "rank": 916,
+    "char": "個樣",
+    "jyutping": "*go3joeng6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 917,
+    "char": "之下",
+    "jyutping": "zi1haa6",
+    "translation": "under/beneath/less than",
+    "status": "pending"
+  },
+  {
+    "rank": 920,
+    "char": "未來",
+    "jyutping": "mei6loi4",
+    "translation": "future/tomorrow/approaching/coming/pending",
+    "status": "pending"
+  },
+  {
+    "rank": 922,
+    "char": "過程",
+    "jyutping": "gwo3cing4",
+    "translation": "course of events/process",
+    "status": "pending"
+  },
+  {
+    "rank": 923,
+    "char": "壓力",
+    "jyutping": "aat3lik6",
+    "translation": "pressure",
+    "status": "pending"
+  },
+  {
+    "rank": 924,
+    "char": "體",
+    "jyutping": "tai2",
+    "translation": "body/form/style/system",
+    "status": "pending"
+  },
+  {
+    "rank": 925,
+    "char": "透過",
+    "jyutping": "tau3gwo3",
+    "translation": "through/via",
+    "status": "pending"
+  },
+  {
+    "rank": 927,
+    "char": "景點",
+    "jyutping": "ging2dim2",
+    "translation": "scenery/scenic spot/place of interest (tourism)",
+    "status": "pending"
+  },
+  {
+    "rank": 928,
+    "char": "圓",
+    "jyutping": "jyun4",
+    "translation": "circle/round/circular/spherical/(of the moon) full/unit of Chinese currency (Yuan)/tactful/to justify",
+    "status": "pending"
+  },
+  {
+    "rank": 929,
+    "char": "教書",
+    "jyutping": "gaau3syu1",
+    "translation": "to teach (in a school)",
+    "status": "pending"
+  },
+  {
+    "rank": 930,
+    "char": "薯",
+    "jyutping": "syu4|syu5",
+    "translation": "potato/yam",
+    "status": "pending"
+  },
+  {
+    "rank": 931,
+    "char": "橢圓",
+    "jyutping": "to5jyun4",
+    "translation": "oval/ellipse/elliptic",
+    "status": "pending"
+  },
+  {
+    "rank": 932,
+    "char": "幣",
+    "jyutping": "bai6",
+    "translation": "money/coins/currency",
+    "status": "pending"
+  },
+  {
+    "rank": 933,
+    "char": "起身",
+    "jyutping": "hei2san1",
+    "translation": "to get up/to leave/to set forth",
+    "status": "pending"
+  },
+  {
+    "rank": 934,
+    "char": "企",
+    "jyutping": "kei5",
+    "translation": "to stand/to plan a project/abbr. for 企業, enterprise or company",
+    "status": "pending"
+  },
+  {
+    "rank": 935,
+    "char": "腳",
+    "jyutping": "goek3",
+    "translation": "foot/leg/base/CL:雙[sēung](Mandarin)/CL:對[deui]/CL:隻[jek]/kick/role/a player in mahjong/a player in a drinking game",
+    "status": "pending"
+  },
+  {
+    "rank": 936,
+    "char": "愛",
+    "jyutping": "oi3|ngoi3",
+    "translation": "to love/affection/to be fond of/to like",
+    "status": "pending"
+  },
+  {
+    "rank": 938,
+    "char": "正常",
+    "jyutping": "zing3soeng4",
+    "translation": "regular/normal/ordinary",
+    "status": "pending"
+  },
+  {
+    "rank": 939,
+    "char": "好奇",
+    "jyutping": "hou3kei4",
+    "translation": "inquisitive/curious",
+    "status": "pending"
+  },
+  {
+    "rank": 941,
+    "char": "舒服",
+    "jyutping": "syu1fuk6",
+    "translation": "comfortable/feeling well",
+    "status": "pending"
+  },
+  {
+    "rank": 942,
+    "char": "掛住",
+    "jyutping": "*gwaa3zyu6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 943,
+    "char": "亂",
+    "jyutping": "lyun6",
+    "translation": "in confusion/disorderly",
+    "status": "pending"
+  },
+  {
+    "rank": 944,
+    "char": "留意",
+    "jyutping": "lau4ji3",
+    "translation": "to take care/mindful",
+    "status": "pending"
+  },
+  {
+    "rank": 945,
+    "char": "努力",
+    "jyutping": "nou5lik6",
+    "translation": "great effort/to strive/to try hard",
+    "status": "pending"
+  },
+  {
+    "rank": 946,
+    "char": "作為",
+    "jyutping": "zok3wai4",
+    "translation": "one's conduct/deed/activity/accomplishment/achievement/to act as/as (in the capacity of)/qua/to view as/to look upon (sth as)/to take sth to be",
+    "status": "pending"
+  },
+  {
+    "rank": 947,
+    "char": "全",
+    "jyutping": "cyun4",
+    "translation": "all/whole/entire/every/complete/a surname",
+    "status": "pending"
+  },
+  {
+    "rank": 948,
+    "char": "公仔",
+    "jyutping": "gung1zai2",
+    "translation": "doll/cuddly toy",
+    "status": "pending"
+  },
+  {
+    "rank": 949,
+    "char": "認為",
+    "jyutping": "jing6wai4",
+    "translation": "to believe/to think/to consider/to feel",
+    "status": "pending"
+  },
+  {
+    "rank": 952,
+    "char": "旗",
+    "jyutping": "kei4",
+    "translation": "banner/flag/a hire, a trip with a customer (taxi driver jargon)/(in Qing times) refers to Manchurian ruling class, from 八旗[baat kèih] eight banners/administrative subdivision in inner Mongolia equivalent to 縣 county/CL:支[jī]/CL:面[mihn](Mandarin)",
+    "status": "pending"
+  },
+  {
+    "rank": 953,
+    "char": "手邊",
+    "jyutping": "*sau2bin1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 954,
+    "char": "利益",
+    "jyutping": "lei6jik1",
+    "translation": "benefit/(in sb's) interest",
+    "status": "pending"
+  },
+  {
+    "rank": 955,
+    "char": "等如",
+    "jyutping": "*dang2jyu4",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 956,
+    "char": "開支",
+    "jyutping": "hoi1zi1",
+    "translation": "expenditures/pay/expenses",
+    "status": "pending"
+  },
+  {
+    "rank": 957,
+    "char": "改革",
+    "jyutping": "goi2gaak3",
+    "translation": "to reform",
+    "status": "pending"
+  },
+  {
+    "rank": 958,
+    "char": "互聯網",
+    "jyutping": "wu6lyun4mong5",
+    "translation": "the Internet",
+    "status": "pending"
+  },
+  {
+    "rank": 959,
+    "char": "北行",
+    "jyutping": "*bak1hang4|haang4|hang6|hong4|hong2",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 960,
+    "char": "法庭",
+    "jyutping": "faat3ting4",
+    "translation": "court (of law)",
+    "status": "pending"
+  },
+  {
+    "rank": 961,
+    "char": "頹餐",
+    "jyutping": "*teoi4caan1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 962,
+    "char": "私營化",
+    "jyutping": "*si1jing4faa3",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 963,
+    "char": "決定",
+    "jyutping": "kyut3ding6",
+    "translation": "to decide (to do something)/to determine/to resolve",
+    "status": "pending"
+  },
+  {
+    "rank": 968,
+    "char": "選擇",
+    "jyutping": "syun2zaak6",
+    "translation": "to select/to pick/choice/option/alternative",
+    "status": "pending"
+  },
+  {
+    "rank": 969,
+    "char": "色",
+    "jyutping": "sik1",
+    "translation": "color/look/appearance/sex/dice",
+    "status": "pending"
+  },
+  {
+    "rank": 970,
+    "char": "日子",
+    "jyutping": "jat6zi2",
+    "translation": "day/a (calendar) date/days of one's life",
+    "status": "pending"
+  },
+  {
+    "rank": 971,
+    "char": "真正",
+    "jyutping": "zan1zing3",
+    "translation": "genuine/real/true/genuinely",
+    "status": "pending"
+  },
+  {
+    "rank": 972,
+    "char": "頭髮",
+    "jyutping": "tau4faat3",
+    "translation": "hair (on the head)",
+    "status": "pending"
+  },
+  {
+    "rank": 974,
+    "char": "無聊",
+    "jyutping": "mou4liu4",
+    "translation": "bored/boring/senseless",
+    "status": "pending"
+  },
+  {
+    "rank": 977,
+    "char": "幾年",
+    "jyutping": "gei2nin4",
+    "translation": "a few years/several years",
+    "status": "pending"
+  },
+  {
+    "rank": 978,
+    "char": "方式",
+    "jyutping": "fong1sik1",
+    "translation": "way (of life)/pattern/style/mode/manner",
+    "status": "pending"
+  },
+  {
+    "rank": 979,
+    "char": "兩年",
+    "jyutping": "loeng5nin4",
+    "translation": "two years",
+    "status": "pending"
+  },
+  {
+    "rank": 980,
+    "char": "類似",
+    "jyutping": "leoi6ci5",
+    "translation": "similar/analogous",
+    "status": "pending"
+  },
+  {
+    "rank": 981,
+    "char": "沿住",
+    "jyutping": "*jyun4zyu6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 982,
+    "char": "停低",
+    "jyutping": "ting4dai1",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 984,
+    "char": "英",
+    "jyutping": "jing1",
+    "translation": "handsome/admirable/smart/great/heroic/braveEnglish/surname Ying",
+    "status": "pending"
+  },
+  {
+    "rank": 986,
+    "char": "咸",
+    "jyutping": "haam4",
+    "translation": "all/everyone/each/widespread/harmonious/a surname",
+    "status": "pending"
+  },
+  {
+    "rank": 987,
+    "char": "正話",
+    "jyutping": "zing3waa6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 989,
+    "char": "受害",
+    "jyutping": "sau6hoi6",
+    "translation": "to suffer damage, injury etc/damaged/injured/killed/robbed",
+    "status": "pending"
+  },
+  {
+    "rank": 990,
+    "char": "上市",
+    "jyutping": "soeng5si5",
+    "translation": "on the market/to float (a company on the stock market)",
+    "status": "pending"
+  },
+  {
+    "rank": 991,
+    "char": "左手面",
+    "jyutping": "zo2sau2min6",
+    "translation": "NO DEF",
+    "status": "pending"
+  },
+  {
+    "rank": 992,
+    "char": "公約",
+    "jyutping": "gung1joek3",
+    "translation": "convention (i.e. international agreement)",
+    "status": "pending"
+  },
+  {
+    "rank": 993,
+    "char": "口",
+    "jyutping": "hau2",
+    "translation": "mouth/classifier for things with mouths (people, domestic animals, cannons, wells etc) (Mandarin)/classifier for bites or mouthfuls (Mandarin)",
+    "status": "pending"
+  },
+  {
+    "rank": 994,
+    "char": "答",
+    "jyutping": "daap3",
+    "translation": "reply/answer/return/respond/echo/to answer/agree",
+    "status": "pending"
+  },
+  {
+    "rank": 996,
+    "char": "拖",
+    "jyutping": "to1",
+    "translation": "to drag/to pull/to trail/to delay/to drag on/to lead",
+    "status": "pending"
+  },
+  {
+    "rank": 997,
+    "char": "緊張",
+    "jyutping": "gan2zoeng1",
+    "translation": "nervous/keyed up/intense/tense/strained/in short supply/scarce",
+    "status": "pending"
+  },
+  {
+    "rank": 998,
+    "char": "曾經",
+    "jyutping": "cang4ging1",
+    "translation": "once/already/former/previously/ever/(past tense marker used before verb or clause)",
+    "status": "pending"
+  },
+  {
+    "rank": 999,
+    "char": "手指",
+    "jyutping": "sau2zi2",
+    "translation": "finger",
+    "status": "pending"
+  }
+]

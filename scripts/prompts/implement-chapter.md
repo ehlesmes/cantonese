@@ -63,8 +63,9 @@ Before writing any chapter content, you must perform a cognitive load audit:
 
 ### Phase B: Lexicon Preparation & Batch Registry Management
 
-1. Outline the list of new vocabulary words you plan to introduce in this
-   lesson.
+1. **Select Backlog Vocabulary**: Open `content/vocabulary_backlog.json`, find
+   the highest-frequency `"pending"` words that fit the current chapter's theme,
+   and plan to introduce them.
 2. **Cross-reference efficiently**: DO NOT run consecutive `grep_search`
    commands for individual terms or read the dictionary file directly. Instead,
    query the dictionary **all at once** using our deterministic batch lookup
@@ -78,8 +79,8 @@ Before writing any chapter content, you must perform a cognitive load audit:
    ```
    This ensures programmatically accurate, hallucination-free lexicon queries.
    Identify any missing terms to be registered in Step 3.
-3. For any missing terms, register them **all at once** using the registrar
-   CLI's batch mode:
+3. **Batch Register & Update Backlog**: For any missing terms, register them
+   **all at once** using the registrar CLI's batch mode:
    ```bash
    npm run vocab:register -- --json '[
      {"char": "我", "jyutping": "ngo5", "definition": "I / me", "type": "pronoun"},
@@ -87,7 +88,9 @@ Before writing any chapter content, you must perform a cognitive load audit:
    ]'
    ```
    _Ensure all entries have standard LSHK Jyutping tone digits (1-6) and map to
-   authorized grammatical types._
+   authorized grammatical types._ After successfully registering them, update
+   their `"status"` to `"completed"` in `content/vocabulary_backlog.json` to
+   keep the backlog database synchronized.
    - **Forbid Shell Cleanups (`rm` / `rmdir`)**: You are strictly prohibited
      from running shell deletion commands (like `rm` or `rmdir`) to clean up
      temporary files in `tmp/`. The `tmp/` folder is ignored by Git, so leaving
