@@ -12,6 +12,8 @@
     "vocab:register": "node scripts/register-word.js",
     "vocab:verify": "node scripts/verify-chapter-vocab.js",
     "vocab:lookup": "node scripts/lookup.js",
+    "vocab:build-ref": "node scripts/build-reference-list.js",
+    "vocab:eval": "node scripts/evaluate-coverage.js",
     "dev": "astro dev",
     "tts:generate": "node scripts/generate-tts.js",
     "build": "node scripts/generate-version.js && node scripts/generate-tts.js && astro build",

@@ -1,0 +1,7002 @@
+[
+  {
+    "rank": 1,
+    "char": "你",
+    "jyutping": "nei5",
+    "frequency_pm": 44335.64,
+    "translation": "you (informal, as opposed to polite 您[néih])"
+  },
+  {
+    "rank": 2,
+    "char": "唔",
+    "jyutping": "m4",
+    "frequency_pm": 39108.86,
+    "translation": "not"
+  },
+  {
+    "rank": 3,
+    "char": "係",
+    "jyutping": "hai6",
+    "frequency_pm": 35687.94,
+    "translation": "to be/to connect/to relate to/to tie up/to bind"
+  },
+  {
+    "rank": 4,
+    "char": "呢",
+    "jyutping": "ne1|ni1|nei1",
+    "frequency_pm": 33292.62,
+    "translation": "(question particle for subjects already mentioned)/woolen material"
+  },
+  {
+    "rank": 5,
+    "char": "好",
+    "jyutping": "hou2|hou3",
+    "frequency_pm": 31887.11,
+    "translation": "good/well/proper/good to/easy to/very/so/(suffix indicating completion or readiness)|to be fond of/to have a tendency to/to be prone to"
+  },
+  {
+    "rank": 6,
+    "char": "架",
+    "jyutping": "gaa3|gaa2",
+    "frequency_pm": 25520.59,
+    "translation": "to set up/classifier for planes, large vehicles, radios etc|frame/shelf/rack/framework"
+  },
+  {
+    "rank": 7,
+    "char": "啦",
+    "jyutping": "laa1|laa3",
+    "frequency_pm": 22290.48,
+    "translation": "(an auxiliary word performing the grammatical functions of mood)/fusion of le + a/follows after 比如 listed examples/(onomat.)/(phonetic)"
+  },
+  {
+    "rank": 8,
+    "char": "個",
+    "jyutping": "go3",
+    "frequency_pm": 20808.31,
+    "translation": "individual/this/that/size/classifier for people or objects in general"
+  },
+  {
+    "rank": 9,
+    "char": "我",
+    "jyutping": "ngo5",
+    "frequency_pm": 18738.38,
+    "translation": "I/me/my"
+  },
+  {
+    "rank": 10,
+    "char": "有",
+    "jyutping": "jau5",
+    "frequency_pm": 16251.06,
+    "translation": "to have/there is/there are/to exist/to be/to have money/to be rich"
+  },
+  {
+    "rank": 11,
+    "char": "佢",
+    "jyutping": "keoi5",
+    "frequency_pm": 15417.98,
+    "translation": "he/she/it"
+  },
+  {
+    "rank": 12,
+    "char": "咩",
+    "jyutping": "me1",
+    "frequency_pm": 14847.26,
+    "translation": "what?/[final particle] transforms statements into questions that indicate doubt or surprise"
+  },
+  {
+    "rank": 13,
+    "char": "喎",
+    "jyutping": "wo3|wo4|wo5|wo6|wo1",
+    "frequency_pm": 14814.89,
+    "translation": "a wry mouth"
+  },
+  {
+    "rank": 14,
+    "char": "嘢",
+    "jyutping": "je5",
+    "frequency_pm": 13806.33,
+    "translation": "thing/a person, a body part or other object which is not named directly but is often indicated by the classifier used/a person (disrespectful)/heroin"
+  },
+  {
+    "rank": 15,
+    "char": "啲",
+    "jyutping": "di1",
+    "frequency_pm": 12540.53,
+    "translation": "plural prefix"
+  },
+  {
+    "rank": 16,
+    "char": "咁",
+    "jyutping": "gam3|gam2",
+    "frequency_pm": 12440.01,
+    "translation": "so"
+  },
+  {
+    "rank": 17,
+    "char": "冇",
+    "jyutping": "mou5",
+    "frequency_pm": 12303.72,
+    "translation": "don't have/haven't/not/do not/have no"
+  },
+  {
+    "rank": 18,
+    "char": "睇",
+    "jyutping": "tai2",
+    "frequency_pm": 11750.03,
+    "translation": "to look/to look after/to care for/to support"
+  },
+  {
+    "rank": 19,
+    "char": "喇",
+    "jyutping": "laa1",
+    "frequency_pm": 11698.93,
+    "translation": "(onomat.)/(phonetic)"
+  },
+  {
+    "rank": 20,
+    "char": "得",
+    "jyutping": "dak1",
+    "frequency_pm": 10717.63,
+    "translation": "can/to obtain/to get/to gain/to allow/to permit"
+  },
+  {
+    "rank": 21,
+    "char": "度",
+    "jyutping": "dou6|dok6",
+    "frequency_pm": 10416.08,
+    "translation": "to pass/to spend (time)/measure/limit/extent/degree of intensity/degree (angles, temperature etc)/kilowatt-hour|to consider/to calculate/to think/to estimate/to ask someone for a loan"
+  },
+  {
+    "rank": 22,
+    "char": "咗",
+    "jyutping": "zo2",
+    "frequency_pm": 9530.19,
+    "translation": "particle"
+  },
+  {
+    "rank": 23,
+    "char": "咪",
+    "jyutping": "mai1|mi4|mai5",
+    "frequency_pm": 9482.48,
+    "translation": "to swot/to cram for an exam/meow|don't/shouldn't/mustn't"
+  },
+  {
+    "rank": 24,
+    "char": "食",
+    "jyutping": "sik6",
+    "frequency_pm": 9330.86,
+    "translation": "1. to eat/2. to have sex with/3. to take over, to devour (territory)/4. to deal with, to defeat/5. to get, to receive something negative (e.g. parking ticket, formal complaint, rejection)"
+  },
+  {
+    "rank": 25,
+    "char": "乜",
+    "jyutping": "mat1",
+    "frequency_pm": 9293.38,
+    "translation": "what"
+  },
+  {
+    "rank": 26,
+    "char": "去",
+    "jyutping": "heoi3",
+    "frequency_pm": 8656.22,
+    "translation": "to go/to go to (a place)/to cause to go or send (sb)/to remove/to get rid of/(when used either before or after a verb) to go in order to do sth/to be apart from in space or time/(after a verb of motion indicates movement away from the speaker)/(used after certain verbs to indicate detachment or separation)/(of a time or an event etc) just passed or elapsed"
+  },
+  {
+    "rank": 27,
+    "char": "嚟",
+    "jyutping": "lai4",
+    "frequency_pm": 8542.07,
+    "translation": "come"
+  },
+  {
+    "rank": 28,
+    "char": "先",
+    "jyutping": "sin1",
+    "frequency_pm": 7790.77,
+    "translation": "early/prior/former/in advance/first"
+  },
+  {
+    "rank": 29,
+    "char": "喺",
+    "jyutping": "hai2",
+    "frequency_pm": 7283.08,
+    "translation": "located at"
+  },
+  {
+    "rank": 30,
+    "char": "囉",
+    "jyutping": "lo1|lo3|lo4",
+    "frequency_pm": 6439.78,
+    "translation": "repetitious/over-elaborate/[final particle] expressing a changed condition/[final particle] showing argumentative mood or making emphasis"
+  },
+  {
+    "rank": 31,
+    "char": "要",
+    "jyutping": "jiu3",
+    "frequency_pm": 6294.97,
+    "translation": "demand/ask/request/coerce/important/vital/to want/will/going to (as future auxiliary)/may/must"
+  },
+  {
+    "rank": 32,
+    "char": "隻",
+    "jyutping": "zek3",
+    "frequency_pm": 6001.94,
+    "translation": "classifier for birds and certain animals, one of a pair, some utensils, vessels etc"
+  },
+  {
+    "rank": 33,
+    "char": "做",
+    "jyutping": "zou6",
+    "frequency_pm": 5860.54,
+    "translation": "to do/to act/to have sex/to fight/to kill/to trick"
+  },
+  {
+    "rank": 34,
+    "char": "姐姐",
+    "jyutping": "ze4ze1",
+    "frequency_pm": 5840.09,
+    "translation": "older sister"
+  },
+  {
+    "rank": 35,
+    "char": "邊個",
+    "jyutping": "bin1go3",
+    "frequency_pm": 5724.24,
+    "translation": "which/who"
+  },
+  {
+    "rank": 36,
+    "char": "入",
+    "jyutping": "jap6",
+    "frequency_pm": 5506.18,
+    "translation": "to enter/to charge (with a crime)/entering tone (classical Chinese)"
+  },
+  {
+    "rank": 37,
+    "char": "哋",
+    "jyutping": "dei6",
+    "frequency_pm": 5426.11,
+    "translation": "plural suffix"
+  },
+  {
+    "rank": 38,
+    "char": "玩",
+    "jyutping": "wun6|waan2",
+    "frequency_pm": 5088.79,
+    "translation": "to play/to have fun/ to have a good time/to not be serious, to be only joking/to play at, to do (e.g. sexual position)/to play games with/to fool with/to treat someone as not important/to be disrespectful/curio or antique"
+  },
+  {
+    "rank": 39,
+    "char": "俾",
+    "jyutping": "bei2",
+    "frequency_pm": 5061.53,
+    "translation": "to cause/to enable/phonetic bi"
+  },
+  {
+    "rank": 40,
+    "char": "哦",
+    "jyutping": "ngo4|o4|o6",
+    "frequency_pm": 4928.64,
+    "translation": "oh (叹词, interjection)/to chant"
+  },
+  {
+    "rank": 41,
+    "char": "住",
+    "jyutping": "zyu6",
+    "frequency_pm": 4741.24,
+    "translation": "to live/to dwell/to stay/to reside/to stop"
+  },
+  {
+    "rank": 42,
+    "char": "一",
+    "jyutping": "jat1",
+    "frequency_pm": 4673.1,
+    "translation": "one/1/single/a (article)/as soon as/entire/whole/all/throughout/\"one\" radical in Chinese characters (Kangxi radical 1)"
+  },
+  {
+    "rank": 43,
+    "char": "倒",
+    "jyutping": "dou2|dou3",
+    "frequency_pm": 4664.58,
+    "translation": "to fall over/to topple/to overthrow/(business) fail, collapse/to change/to shift/to exchange/to pour out/to dump (garbage)|to turn upside down/to invert/to reverse/upside down/inverse/inverted/to move backwards/to turn back"
+  },
+  {
+    "rank": 44,
+    "char": "喂",
+    "jyutping": "wai3",
+    "frequency_pm": 4446.51,
+    "translation": "hello (interj., esp. on telephone)/hey/to feed (sb or some animal)"
+  },
+  {
+    "rank": 45,
+    "char": "又",
+    "jyutping": "jau6",
+    "frequency_pm": 4255.7,
+    "translation": "(once) again/also/both... and.../again"
+  },
+  {
+    "rank": 46,
+    "char": "邊度",
+    "jyutping": "bin1dou6",
+    "frequency_pm": 4219.93,
+    "translation": "where"
+  },
+  {
+    "rank": 47,
+    "char": "嘩",
+    "jyutping": "waa1|waa4",
+    "frequency_pm": 4196.08,
+    "translation": "cat-calling sound/clamor/noise/crashing sound"
+  },
+  {
+    "rank": 48,
+    "char": "比",
+    "jyutping": "bei2",
+    "frequency_pm": 4190.96,
+    "translation": "(particle used for comparison and \"-er than\")/to compare/to contrast/to gesture (with hands)/ratio/abbr. for Belgium 比利時|比利时/associate with/be near"
+  },
+  {
+    "rank": 49,
+    "char": "仲",
+    "jyutping": "zung6",
+    "frequency_pm": 4153.48,
+    "translation": "second month of the season/middle/intermediate/2nd in seniority/surname Zhong"
+  },
+  {
+    "rank": 50,
+    "char": "幫",
+    "jyutping": "bong1",
+    "frequency_pm": 4095.56,
+    "translation": "to help/to assist/to support/for sb (i.e. as a help)/hired (as worker)/side (of pail, boat etc)/outer layer/group/gang/clique/party/secret society"
+  },
+  {
+    "rank": 51,
+    "char": "嗰",
+    "jyutping": "go2",
+    "frequency_pm": 4081.93,
+    "translation": "that"
+  },
+  {
+    "rank": 52,
+    "char": "唔好",
+    "jyutping": "m4hou2",
+    "frequency_pm": 4027.42,
+    "translation": "no good/don't"
+  },
+  {
+    "rank": 53,
+    "char": "未",
+    "jyutping": "mei6",
+    "frequency_pm": 3775.28,
+    "translation": "not yet/did not/have not/not/8th earthly branch: 1-3 p.m., 6th solar month (7th July-6th August), year of the Sheep"
+  },
+  {
+    "rank": 54,
+    "char": "完",
+    "jyutping": "jyun4",
+    "frequency_pm": 3732.68,
+    "translation": "to finish/to be over/whole/complete/entire"
+  },
+  {
+    "rank": 55,
+    "char": "都",
+    "jyutping": "dou1",
+    "frequency_pm": 3656.02,
+    "translation": "all/both (if two things are involved)/entirely (due to) each/even/already/capital city/metropolis/surname Du"
+  },
+  {
+    "rank": 56,
+    "char": "嘅",
+    "jyutping": "ge3",
+    "frequency_pm": 3633.87,
+    "translation": "possessive marker"
+  },
+  {
+    "rank": 57,
+    "char": "落",
+    "jyutping": "lok6",
+    "frequency_pm": 3599.8,
+    "translation": "to go down/to fall or drop/to have an abortion/to abort/to put the blame on"
+  },
+  {
+    "rank": 58,
+    "char": "知",
+    "jyutping": "zi1|zi3",
+    "frequency_pm": 3533.36,
+    "translation": "to know/to be aware"
+  },
+  {
+    "rank": 59,
+    "char": "同",
+    "jyutping": "tung4",
+    "frequency_pm": 3495.88,
+    "translation": "and/as well as/for/on behalf of/like/same/similar/together/alike/with"
+  },
+  {
+    "rank": 60,
+    "char": "識",
+    "jyutping": "sik1",
+    "frequency_pm": 3436.25,
+    "translation": "to know/knowledge/to record/write a footnote"
+  },
+  {
+    "rank": 61,
+    "char": "衫",
+    "jyutping": "saam1|sam1",
+    "frequency_pm": 3352.77,
+    "translation": "clothes"
+  },
+  {
+    "rank": 62,
+    "char": "飲",
+    "jyutping": "jam2",
+    "frequency_pm": 3317,
+    "translation": "drink"
+  },
+  {
+    "rank": 63,
+    "char": "擺",
+    "jyutping": "baai2",
+    "frequency_pm": 3299.96,
+    "translation": "to arrange/to exhibit/to move to and fro/a pendulum"
+  },
+  {
+    "rank": 64,
+    "char": "咁樣",
+    "jyutping": "gam2joeng2",
+    "frequency_pm": 3133,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 65,
+    "char": "話",
+    "jyutping": "waa6|waa2",
+    "frequency_pm": 3003.52,
+    "translation": "to say/dialect/language/spoken words/speech/talk/words/conversation/what sb said"
+  },
+  {
+    "rank": 66,
+    "char": "聽",
+    "jyutping": "teng1|ting1|ting3",
+    "frequency_pm": 2986.49,
+    "translation": "to listen/to hear/to obey"
+  },
+  {
+    "rank": 67,
+    "char": "開",
+    "jyutping": "hoi1",
+    "frequency_pm": 2967.75,
+    "translation": "to open/to start/to turn on/to write out (a medical prescription)/to operate (vehicle)"
+  },
+  {
+    "rank": 68,
+    "char": "著",
+    "jyutping": "zyu3",
+    "frequency_pm": 2964.34,
+    "translation": "to make known/to show/to prove/to write/book/outstanding"
+  },
+  {
+    "rank": 69,
+    "char": "坐",
+    "jyutping": "co5|zo6",
+    "frequency_pm": 2923.45,
+    "translation": "to sit/to take a seat/to take (a bus, airplane etc)"
+  },
+  {
+    "rank": 70,
+    "char": "講",
+    "jyutping": "gong2",
+    "frequency_pm": 2867.23,
+    "translation": "to speak/to explain/a speech/a lecture"
+  },
+  {
+    "rank": 71,
+    "char": "整",
+    "jyutping": "zing2",
+    "frequency_pm": 2811.01,
+    "translation": "exactly/in good order/whole/complete/entire/in order/orderly/to repair/to mend/to renovate/to make sb suffer/to punish/to fix/to give sb a hard time/to give/to fetch/to trick"
+  },
+  {
+    "rank": 72,
+    "char": "就",
+    "jyutping": "zau6",
+    "frequency_pm": 2804.2,
+    "translation": "at once/right away/only/just (emphasis)/as early as/already/as soon as/then/in that case/as many as/even if/to compromise/to meet someone halfway/to give in to someone's demands/to approach/to move towards/to undertake/to engage in/to suffer/subjected to/to accomplish/to take advantage of/to go with (of foods)/with regard to/concerning"
+  },
+  {
+    "rank": 73,
+    "char": "嘛",
+    "jyutping": "maa4",
+    "frequency_pm": 2800.79,
+    "translation": "(a modal particle)"
+  },
+  {
+    "rank": 74,
+    "char": "埋",
+    "jyutping": "maai4",
+    "frequency_pm": 2678.13,
+    "translation": "bury/to blame"
+  },
+  {
+    "rank": 75,
+    "char": "出",
+    "jyutping": "ceot1",
+    "frequency_pm": 2640.65,
+    "translation": "to go out/to come out/to occur/to produce/to go beyond/to rise/to put forth/to happen/classifier for dramas, plays, operas etc"
+  },
+  {
+    "rank": 76,
+    "char": "瞓",
+    "jyutping": "fan3",
+    "frequency_pm": 2616.8,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 77,
+    "char": "快",
+    "jyutping": "faai3",
+    "frequency_pm": 2584.43,
+    "translation": "rapid/quick/speed/rate/soon/almost/to make haste/clever/sharp (of knives or wits)/forthright/plain-spoken/gratified/pleased/pleasant"
+  },
+  {
+    "rank": 78,
+    "char": "點",
+    "jyutping": "dim2",
+    "frequency_pm": 2565.69,
+    "translation": "point/dot/speck/o'clock/point (in space or time)/to draw a dot/to check on a list/to choose/to order (food in a restaurant)/to touch briefly/to light/to ignite/to instruct/to advise, especially to give misleading advice, to cheat/dot stroke in Chinese characters/how?"
+  },
+  {
+    "rank": 79,
+    "char": "鍾意",
+    "jyutping": "zung1ji3",
+    "frequency_pm": 2558.87,
+    "translation": "like"
+  },
+  {
+    "rank": 80,
+    "char": "邊",
+    "jyutping": "bin1",
+    "frequency_pm": 2528.21,
+    "translation": "side/edge/margin/border/boundary/suffix of a noun of locality"
+  },
+  {
+    "rank": 81,
+    "char": "過",
+    "jyutping": "gwo3",
+    "frequency_pm": 2523.1,
+    "translation": "(experienced action marker)/to cross/to go over/to pass (time)/to celebrate (a holiday)/to live/to get along/excessively/too-/a surname"
+  },
+  {
+    "rank": 82,
+    "char": "大",
+    "jyutping": "daai6",
+    "frequency_pm": 2473.69,
+    "translation": "big/huge/large/major/great/oldest/eldest/senior/to challenge"
+  },
+  {
+    "rank": 83,
+    "char": "多",
+    "jyutping": "do1",
+    "frequency_pm": 2407.25,
+    "translation": "many/much/a lot of/numerous/multi-"
+  },
+  {
+    "rank": 84,
+    "char": "洗",
+    "jyutping": "sai2",
+    "frequency_pm": 2407.25,
+    "translation": "to wash/to bathe"
+  },
+  {
+    "rank": 85,
+    "char": "車",
+    "jyutping": "ce1|geoi1",
+    "frequency_pm": 2376.58,
+    "translation": "car/vehicle/CL:輛[léung](Mandarin)/CL:架[ga]/machine/to shape with a lathe/surname Che|war chariot (archaic)/rook (in Chinese chess)/rook (in chess)"
+  },
+  {
+    "rank": 86,
+    "char": "沖",
+    "jyutping": "cung1",
+    "frequency_pm": 2369.77,
+    "translation": "(of water) to dash against/to mix with water/to infuse/to rinse/to flush/to develop (a film)/to rise in the air/to clash/to collide with"
+  },
+  {
+    "rank": 87,
+    "char": "駛",
+    "jyutping": "sai2",
+    "frequency_pm": 2330.59,
+    "translation": "hasten/proceed to/sail a vessel"
+  },
+  {
+    "rank": 88,
+    "char": "打",
+    "jyutping": "daa2|daa1",
+    "frequency_pm": 2185.78,
+    "translation": "to beat/to strike/to hit/to break/to type/to mix up/to build/to fight/to fetch/to make/to tie up/to issue/to shoot/to calculate/to play (a game)/since/from|dozen"
+  },
+  {
+    "rank": 89,
+    "char": "到",
+    "jyutping": "dou3",
+    "frequency_pm": 2168.74,
+    "translation": "to (a place)/until (a time)/up to/to go/to arrive"
+  },
+  {
+    "rank": 90,
+    "char": "俊俊",
+    "jyutping": "*zeon3zeon3",
+    "frequency_pm": 2035.85,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 91,
+    "char": "跌",
+    "jyutping": "dit3",
+    "frequency_pm": 2018.82,
+    "translation": "to drop/to fall/to tumble"
+  },
+  {
+    "rank": 92,
+    "char": "手",
+    "jyutping": "sau2",
+    "frequency_pm": 2008.6,
+    "translation": "hand/hand of cards/a turn (gambling)"
+  },
+  {
+    "rank": 93,
+    "char": "番",
+    "jyutping": "faan1",
+    "frequency_pm": 1902.97,
+    "translation": "foreign/ethnic groups from outside China/(when used after a verb) times or fold/classifier for the number of iterations of an action or deed etc"
+  },
+  {
+    "rank": 94,
+    "char": "點解",
+    "jyutping": "dim2gaai2",
+    "frequency_pm": 1889.34,
+    "translation": "why"
+  },
+  {
+    "rank": 95,
+    "char": "靚",
+    "jyutping": "leng3",
+    "frequency_pm": 1810.97,
+    "translation": "pretty"
+  },
+  {
+    "rank": 96,
+    "char": "媽咪",
+    "jyutping": "maa1mi4",
+    "frequency_pm": 1809.27,
+    "translation": "Mummy (mother)"
+  },
+  {
+    "rank": 97,
+    "char": "買",
+    "jyutping": "maai5",
+    "frequency_pm": 1787.12,
+    "translation": "to buy/to purchase/to bet/to place a bet on/to kill/to have killed"
+  },
+  {
+    "rank": 98,
+    "char": "會",
+    "jyutping": "wui5|wui6|wui2",
+    "frequency_pm": 1780.31,
+    "translation": "can/be possible/be able to/will/to assemble/to meet/to gather/to see/union/group/association/to balance an account/accounting"
+  },
+  {
+    "rank": 99,
+    "char": "涼",
+    "jyutping": "loeng4",
+    "frequency_pm": 1780.31,
+    "translation": "cool/cold/the five Liang of the Sixteen Kingdoms, namely: Former Liang 前涼|前凉 (314-376), Later Liang 後涼|後凉 (386-403), Northern Liang 北涼|北凉 (398-439), Southern Liang 南涼|南凉 (397-414), Western Liang 西涼|西凉 (400-421)"
+  },
+  {
+    "rank": 100,
+    "char": "啤啤",
+    "jyutping": "*be1|pe1be1|pe1",
+    "frequency_pm": 1724.09,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 101,
+    "char": "不如",
+    "jyutping": "bat1jyu4",
+    "frequency_pm": 1708.76,
+    "translation": "not equal to/not as good as/inferior to/it would be better to"
+  },
+  {
+    "rank": 102,
+    "char": "見",
+    "jyutping": "gin3",
+    "frequency_pm": 1705.35,
+    "translation": "appear/to see/to meet/to appear (to be sth)/to interview"
+  },
+  {
+    "rank": 103,
+    "char": "人",
+    "jyutping": "jan4",
+    "frequency_pm": 1611.65,
+    "translation": "man/person/people"
+  },
+  {
+    "rank": 104,
+    "char": "覺",
+    "jyutping": "gaau3|gok3",
+    "frequency_pm": 1580.98,
+    "translation": "a nap/a sleep/CL:場[chèuhng](Mandarin)/CL:個[go]|feel/find that/thinking/awake/aware"
+  },
+  {
+    "rank": 105,
+    "char": "可以",
+    "jyutping": "ho2ji5",
+    "frequency_pm": 1563.95,
+    "translation": "can/may/possible/able to"
+  },
+  {
+    "rank": 106,
+    "char": "爛",
+    "jyutping": "laan6",
+    "frequency_pm": 1558.83,
+    "translation": "soft/mushy/well-cooked and soft/to rot/to decompose/rotten/worn out/chaotic/messy/utterly/thoroughly"
+  },
+  {
+    "rank": 107,
+    "char": "公仔",
+    "jyutping": "gung1zai2",
+    "frequency_pm": 1555.43,
+    "translation": "doll/cuddly toy"
+  },
+  {
+    "rank": 108,
+    "char": "而家",
+    "jyutping": "ji4gaa1",
+    "frequency_pm": 1514.54,
+    "translation": "now"
+  },
+  {
+    "rank": 109,
+    "char": "頭",
+    "jyutping": "tau4",
+    "frequency_pm": 1482.17,
+    "translation": "head/hair style/the top/end/beginning or end/an area/a location/a stub/remnant/chief/boss/side/aspect/first/leading/classifier for pigs or livestock (Mandarin)"
+  },
+  {
+    "rank": 110,
+    "char": "砌",
+    "jyutping": "cai3",
+    "frequency_pm": 1480.47,
+    "translation": "to build by laying bricks or stones/to physically assault/to have sex with"
+  },
+  {
+    "rank": 111,
+    "char": "幾多",
+    "jyutping": "*gei2|gei1do1",
+    "frequency_pm": 1475.36,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 112,
+    "char": "想",
+    "jyutping": "soeng2",
+    "frequency_pm": 1471.95,
+    "translation": "to think/to believe/to suppose/to wish/to want/to miss"
+  },
+  {
+    "rank": 113,
+    "char": "上",
+    "jyutping": "soeng6|soeng5",
+    "frequency_pm": 1463.43,
+    "translation": "above/upper/first/best/better/superior/previous/before/above/top/emperor/superior|go up/upward/up/go to/ascend/go to court/rising tone (phonetics)"
+  },
+  {
+    "rank": 114,
+    "char": "水",
+    "jyutping": "seoi2",
+    "frequency_pm": 1458.32,
+    "translation": "1. water/2. money/3. low quality, poor (e.g. of performace)"
+  },
+  {
+    "rank": 115,
+    "char": "兩",
+    "jyutping": "loeng5",
+    "frequency_pm": 1436.17,
+    "translation": "both/two/ounce/some/a few/tael"
+  },
+  {
+    "rank": 116,
+    "char": "定",
+    "jyutping": "ding6",
+    "frequency_pm": 1415.73,
+    "translation": "to set/to fix/to determine/to decide/to order/stable/calm"
+  },
+  {
+    "rank": 117,
+    "char": "自己",
+    "jyutping": "zi6gei2",
+    "frequency_pm": 1388.47,
+    "translation": "oneself/one's own"
+  },
+  {
+    "rank": 118,
+    "char": "點樣",
+    "jyutping": "dim2joeng2",
+    "frequency_pm": 1381.66,
+    "translation": "how"
+  },
+  {
+    "rank": 119,
+    "char": "搵",
+    "jyutping": "wan2|wan3",
+    "frequency_pm": 1369.73,
+    "translation": "to find/to search/to look for/press with finger/wipe"
+  },
+  {
+    "rank": 120,
+    "char": "叫",
+    "jyutping": "giu3",
+    "frequency_pm": 1325.44,
+    "translation": "to call/to yell/to order/to ask/to be called"
+  },
+  {
+    "rank": 121,
+    "char": "驚",
+    "jyutping": "ging1|geng1",
+    "frequency_pm": 1325.44,
+    "translation": "to start/to be frightened/to be scared/alarm"
+  },
+  {
+    "rank": 122,
+    "char": "張",
+    "jyutping": "zoeng1",
+    "frequency_pm": 1322.03,
+    "translation": "to open up/to spread/sheet of paper/classifier for flat objects, sheet/classifier for votes/surname Cheung/ten years (used with numbers forty and over) ■七張幾 [chāt jēung géi] over seventy years of age"
+  },
+  {
+    "rank": 123,
+    "char": "除",
+    "jyutping": "ceoi4",
+    "frequency_pm": 1313.51,
+    "translation": "to get rid of/to remove/to exclude/to eliminate/to wipe out/to divide/except/not including"
+  },
+  {
+    "rank": 124,
+    "char": "抹",
+    "jyutping": "maat3|mut3",
+    "frequency_pm": 1306.7,
+    "translation": "to wipe/to forget/to wipe out a memory/classifier for wisps of cloud, light-beams etc (Mandarin)"
+  },
+  {
+    "rank": 125,
+    "char": "用",
+    "jyutping": "jung6",
+    "frequency_pm": 1296.47,
+    "translation": "to use"
+  },
+  {
+    "rank": 126,
+    "char": "屋企",
+    "jyutping": "uk1kei2",
+    "frequency_pm": 1286.25,
+    "translation": "house/home"
+  },
+  {
+    "rank": 127,
+    "char": "次",
+    "jyutping": "ci3",
+    "frequency_pm": 1276.03,
+    "translation": "next in sequence/second/the second (day, time etc)/secondary/vice-/sub-/infra-/inferior quality/substandard/order/sequence/hypo- (chem., meaning extra oxygen atom)/classifier for enumerated events: time"
+  },
+  {
+    "rank": 128,
+    "char": "學",
+    "jyutping": "hok6",
+    "frequency_pm": 1250.47,
+    "translation": "learn/study/science/-ology"
+  },
+  {
+    "rank": 129,
+    "char": "謙謙",
+    "jyutping": "*him1him1",
+    "frequency_pm": 1223.22,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 130,
+    "char": "新",
+    "jyutping": "san1",
+    "frequency_pm": 1201.07,
+    "translation": "new/newly"
+  },
+  {
+    "rank": 131,
+    "char": "條",
+    "jyutping": "tiu4",
+    "frequency_pm": 1189.14,
+    "translation": "strip/item/article/clause (of law or treaty)/classifier for long thin things (ribbon, river, road, trousers etc)/a classifier, used in slang for people"
+  },
+  {
+    "rank": 132,
+    "char": "緊",
+    "jyutping": "gan2",
+    "frequency_pm": 1172.11,
+    "translation": "tight/strict/close at hand/near/urgent/tense/hard up/short of money/to tighten"
+  },
+  {
+    "rank": 133,
+    "char": "三",
+    "jyutping": "saam1|saam3",
+    "frequency_pm": 1172.11,
+    "translation": "three/3"
+  },
+  {
+    "rank": 134,
+    "char": "搭",
+    "jyutping": "daap3",
+    "frequency_pm": 1153.37,
+    "translation": "to take (boat, train)/to put up/to build (scaffolding)/to hang (clothes on a pole)/to connect/to join/to arrange in pairs/to match/to add"
+  },
+  {
+    "rank": 135,
+    "char": "爸爸",
+    "jyutping": "baa4baa1",
+    "frequency_pm": 1117.59,
+    "translation": "(informal) father"
+  },
+  {
+    "rank": 136,
+    "char": "走",
+    "jyutping": "zau2",
+    "frequency_pm": 1103.96,
+    "translation": "to go/to run/to walk (Mandarin)/to move (of vehicle)/to visit/to leave/to go away/to die (euph.)/from/through/away (in compound verbs, such as 撤走)/to change (shape, form, meaning)"
+  },
+  {
+    "rank": 137,
+    "char": "叻",
+    "jyutping": "lek1",
+    "frequency_pm": 1100.55,
+    "translation": "smart, bright, sharp"
+  },
+  {
+    "rank": 138,
+    "char": "楂",
+    "jyutping": "zaa1",
+    "frequency_pm": 1088.63,
+    "translation": "Chinese quince/hawthorn/fell trees/raft/to hew"
+  },
+  {
+    "rank": 139,
+    "char": "戴",
+    "jyutping": "daai3",
+    "frequency_pm": 1057.96,
+    "translation": "to put on or wear (glasses, hat, gloves etc)/to respect/to bear/to support/surname Tai"
+  },
+  {
+    "rank": 140,
+    "char": "行",
+    "jyutping": "hang4|haang4|hang6|hong4|hong2",
+    "frequency_pm": 1056.26,
+    "translation": "to act/to do/be current/able/capable|to walk/to go/to go on foot|behavior/conduct|row/line/trade/profession|business firm/company"
+  },
+  {
+    "rank": 141,
+    "char": "痛",
+    "jyutping": "tung3",
+    "frequency_pm": 1052.85,
+    "translation": "ache/pain/sorrow"
+  },
+  {
+    "rank": 142,
+    "char": "拎",
+    "jyutping": "ling1",
+    "frequency_pm": 1037.52,
+    "translation": "to lift/to hold up/to carry (on bent fingers)"
+  },
+  {
+    "rank": 143,
+    "char": "放",
+    "jyutping": "fong3",
+    "frequency_pm": 1034.11,
+    "translation": "to release/to free/to let go/to put/to place/to let out/to set off (fireworks)/free, uninhibited"
+  },
+  {
+    "rank": 144,
+    "char": "搣",
+    "jyutping": "*?",
+    "frequency_pm": 1013.67,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 145,
+    "char": "小",
+    "jyutping": "siu2",
+    "frequency_pm": 1008.56,
+    "translation": "small/tiny/few/young/a euphemism for 屌 díu, \"fuck\""
+  },
+  {
+    "rank": 146,
+    "char": "帶",
+    "jyutping": "daai3|daai2",
+    "frequency_pm": 986.41,
+    "translation": "to carry/to lead/to bring/to look after/to raise/area/zone/region|band/belt/girdle/ribbon/CL:條[tìuh]"
+  },
+  {
+    "rank": 147,
+    "char": "搞",
+    "jyutping": "gaau2",
+    "frequency_pm": 976.19,
+    "translation": "to do/to make/to go in for/to set up/to get hold of/to take care of"
+  },
+  {
+    "rank": 148,
+    "char": "本",
+    "jyutping": "bun2",
+    "frequency_pm": 965.97,
+    "translation": "roots or stems of plants/origin/source/this/the current/root/foundation/basis/(classifier for books, periodicals, files etc)"
+  },
+  {
+    "rank": 149,
+    "char": "愛",
+    "jyutping": "oi3|ngoi3",
+    "frequency_pm": 952.34,
+    "translation": "to love/affection/to be fond of/to like"
+  },
+  {
+    "rank": 150,
+    "char": "畫",
+    "jyutping": "waak6|waa2",
+    "frequency_pm": 943.82,
+    "translation": "draw/picture/painting"
+  },
+  {
+    "rank": 151,
+    "char": "二",
+    "jyutping": "ji6",
+    "frequency_pm": 938.71,
+    "translation": "two/2"
+  },
+  {
+    "rank": 152,
+    "char": "再",
+    "jyutping": "zoi3",
+    "frequency_pm": 937,
+    "translation": "again/once more/re-/second/another/then (after sth, and not until then)"
+  },
+  {
+    "rank": 153,
+    "char": "起",
+    "jyutping": "hei2",
+    "frequency_pm": 937,
+    "translation": "to rise/to raise/to get up/to set out/to start/to appear/to launch/to initiate (action)/to draft/to establish/to get (from a depot or counter)/verb suffix, to start/(before place or time) starting from/classifier for occurrences or unpredictable events: case, instance/classifier for groups: batch, group"
+  },
+  {
+    "rank": 154,
+    "char": "唔該",
+    "jyutping": "m4goi1",
+    "frequency_pm": 933.6,
+    "translation": "please/thank you"
+  },
+  {
+    "rank": 155,
+    "char": "污糟",
+    "jyutping": "*wu1zou1",
+    "frequency_pm": 930.19,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 156,
+    "char": "車車",
+    "jyutping": "*ce1|geoi1ce1|geoi1",
+    "frequency_pm": 919.97,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 157,
+    "char": "轉",
+    "jyutping": "zyun2|zyun3",
+    "frequency_pm": 913.15,
+    "translation": "to convey/to forward (mail)/to transfer/to turn/to shift|to revolve/to turn/to circle about/to walk about/classifier for turns: revs/classifier for repeated actions"
+  },
+  {
+    "rank": 158,
+    "char": "離",
+    "jyutping": "lei4",
+    "frequency_pm": 911.45,
+    "translation": "to leave/to part from/to be away from/(in giving distances) from/without (sth)/independent of/one of the Eight Trigrams 八卦[baat gwa], symbolizing fire"
+  },
+  {
+    "rank": 159,
+    "char": "哥哥",
+    "jyutping": "go4go1",
+    "frequency_pm": 902.93,
+    "translation": "older brother/CL:個[go],位[wái]"
+  },
+  {
+    "rank": 160,
+    "char": "唱",
+    "jyutping": "coeng3",
+    "frequency_pm": 902.93,
+    "translation": "to sing/to gossip maliciously, to speak ill of"
+  },
+  {
+    "rank": 161,
+    "char": "書",
+    "jyutping": "syu1",
+    "frequency_pm": 897.82,
+    "translation": "book/letter/same as 書經|书经 Book of History"
+  },
+  {
+    "rank": 162,
+    "char": "色",
+    "jyutping": "sik1",
+    "frequency_pm": 884.19,
+    "translation": "color/look/appearance/sex/dice"
+  },
+  {
+    "rank": 163,
+    "char": "教",
+    "jyutping": "gaau3",
+    "frequency_pm": 877.38,
+    "translation": "religion/teaching/to teach/to make (Mandarin)/to cause (Mandarin)/to tell (Mandarin)"
+  },
+  {
+    "rank": 164,
+    "char": "記",
+    "jyutping": "gei3",
+    "frequency_pm": 875.67,
+    "translation": "to remember/to note/mark/sign/to record"
+  },
+  {
+    "rank": 165,
+    "char": "聲",
+    "jyutping": "seng1|sing1",
+    "frequency_pm": 846.71,
+    "translation": "sound/voice/tone/noise/classifier for sounds"
+  },
+  {
+    "rank": 166,
+    "char": "仔",
+    "jyutping": "zai2|zi2",
+    "frequency_pm": 845.01,
+    "translation": "a son/a suffix used to describe something small/a boy/a kid/a boyfriend/(of domestic animals or fowls) young"
+  },
+  {
+    "rank": 167,
+    "char": "咦",
+    "jyutping": "ji4",
+    "frequency_pm": 810.93,
+    "translation": "expression of surprise"
+  },
+  {
+    "rank": 168,
+    "char": "腳",
+    "jyutping": "goek3",
+    "frequency_pm": 795.6,
+    "translation": "foot/leg/base/CL:雙[sēung](Mandarin)/CL:對[deui]/CL:隻[jek]/kick/role/a player in mahjong/a player in a drinking game"
+  },
+  {
+    "rank": 169,
+    "char": "一齊",
+    "jyutping": "jat1cai4",
+    "frequency_pm": 792.19,
+    "translation": "at the same time/simultaneously"
+  },
+  {
+    "rank": 170,
+    "char": "夠",
+    "jyutping": "gau3",
+    "frequency_pm": 792.19,
+    "translation": "to reach/to be enough"
+  },
+  {
+    "rank": 171,
+    "char": "跟住",
+    "jyutping": "gan1zyu6",
+    "frequency_pm": 788.79,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 172,
+    "char": "間",
+    "jyutping": "gaan1|gaan3",
+    "frequency_pm": 787.08,
+    "translation": "between/among/within a definite time or space/room/section of a room or lateral space between two pairs of pillars/classifier for rooms|gap/to separate"
+  },
+  {
+    "rank": 173,
+    "char": "問",
+    "jyutping": "man6",
+    "frequency_pm": 775.16,
+    "translation": "to ask"
+  },
+  {
+    "rank": 174,
+    "char": "梳",
+    "jyutping": "so1",
+    "frequency_pm": 764.94,
+    "translation": "a comb/to comb"
+  },
+  {
+    "rank": 175,
+    "char": "收",
+    "jyutping": "sau1",
+    "frequency_pm": 761.53,
+    "translation": "to receive/to accept/to collect/in care of (used on address line after name)"
+  },
+  {
+    "rank": 176,
+    "char": "死",
+    "jyutping": "sei2",
+    "frequency_pm": 758.12,
+    "translation": "to die/impassable/uncrossable/inflexible/rigid/extremely/used to stress the meaning of a word or phrase/used to emphasise negative characteristics, \"shitty\", \"damned\", \"useless\""
+  },
+  {
+    "rank": 177,
+    "char": "皓臻",
+    "jyutping": "*hou6zeon1",
+    "frequency_pm": 754.71,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 178,
+    "char": "朋友",
+    "jyutping": "pang4jau5",
+    "frequency_pm": 753.01,
+    "translation": "friend"
+  },
+  {
+    "rank": 179,
+    "char": "粒",
+    "jyutping": "lap1|nap1",
+    "frequency_pm": 753.01,
+    "translation": "a grain/a granule/a unit of hours/a \"pip\" on a police uniform indicating rank/ten thousand dollars/classifier for small round things (peas, bullets, peanuts, pills, grains etc)"
+  },
+  {
+    "rank": 180,
+    "char": "擠",
+    "jyutping": "zai1",
+    "frequency_pm": 747.9,
+    "translation": "crowded/to squeeze"
+  },
+  {
+    "rank": 181,
+    "char": "細",
+    "jyutping": "sai3",
+    "frequency_pm": 746.2,
+    "translation": "small/fine/delicate/trifling/junior, subordinate members of an organisation"
+  },
+  {
+    "rank": 182,
+    "char": "妹妹",
+    "jyutping": "mui4mui2",
+    "frequency_pm": 741.09,
+    "translation": "younger sister/fig. younger woman (esp. girl friend or rival)/female sexual organ, vagina"
+  },
+  {
+    "rank": 183,
+    "char": "件",
+    "jyutping": "gin6",
+    "frequency_pm": 732.57,
+    "translation": "item/component/classifier for events, things, clothes etc"
+  },
+  {
+    "rank": 184,
+    "char": "幾",
+    "jyutping": "gei2|gei1",
+    "frequency_pm": 729.16,
+    "translation": "how much/how many/several/a few|almost"
+  },
+  {
+    "rank": 185,
+    "char": "剪",
+    "jyutping": "zin2",
+    "frequency_pm": 727.46,
+    "translation": "scissors/shears/clippers/CL:把[bá]/to cut with scissors/to trim"
+  },
+  {
+    "rank": 186,
+    "char": "乖",
+    "jyutping": "gwaai1",
+    "frequency_pm": 724.05,
+    "translation": "(of a child) obedient, well-behaved/clever/shrewd/alert/perverse/contrary to reason/irregular/abnormal"
+  },
+  {
+    "rank": 187,
+    "char": "錢",
+    "jyutping": "cin2|cin4",
+    "frequency_pm": 722.35,
+    "translation": "coin/money/CL:筆[bāt]/unit of weight, one tenth of a tael 両[léuhng]"
+  },
+  {
+    "rank": 188,
+    "char": "啱",
+    "jyutping": "ngaam1",
+    "frequency_pm": 722.35,
+    "translation": "correct/suitable/just now/to suit sb"
+  },
+  {
+    "rank": 189,
+    "char": "阿",
+    "jyutping": "aa3|o1",
+    "frequency_pm": 717.23,
+    "translation": "prefix used before monosyllabic names, kinship terms etc to indicate familiarity/used in transliteration|flatter"
+  },
+  {
+    "rank": 190,
+    "char": "高",
+    "jyutping": "gou1",
+    "frequency_pm": 717.23,
+    "translation": "high/tall/fig. above average/height/(honorific) your/surname Ko"
+  },
+  {
+    "rank": 191,
+    "char": "一陣",
+    "jyutping": "jat1zan6",
+    "frequency_pm": 710.42,
+    "translation": "a burst/a fit/a peal"
+  },
+  {
+    "rank": 192,
+    "char": "今日",
+    "jyutping": "gam1jat6",
+    "frequency_pm": 695.09,
+    "translation": "today"
+  },
+  {
+    "rank": 193,
+    "char": "頭先",
+    "jyutping": "tau4sin1",
+    "frequency_pm": 683.16,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 194,
+    "char": "鞋",
+    "jyutping": "haai4",
+    "frequency_pm": 674.64,
+    "translation": "shoe/CL:雙[sēung](Mandarin)/CL:對[deui]/CL:隻[jek]"
+  },
+  {
+    "rank": 195,
+    "char": "寫",
+    "jyutping": "se2",
+    "frequency_pm": 672.94,
+    "translation": "to write"
+  },
+  {
+    "rank": 196,
+    "char": "支",
+    "jyutping": "zi1",
+    "frequency_pm": 659.31,
+    "translation": "to support/to sustain/to erect/to raise/branch/division/to draw money/classifier for rods such as pens and guns, for army divisions and for songs or compositions"
+  },
+  {
+    "rank": 197,
+    "char": "媽媽",
+    "jyutping": "maa4maa1",
+    "frequency_pm": 654.2,
+    "translation": "mama/mommy/mother"
+  },
+  {
+    "rank": 198,
+    "char": "彈",
+    "jyutping": "daan2|daan6|taan4",
+    "frequency_pm": 654.2,
+    "translation": "pellet/bullet/bomb|to bounce/to spring or leap/to shoot (e.g. with a catapult)/(of cotton) to fluff or tease/to flick/to flip/elastic (of materials)|to pluck (a string)/to play (a string instrument)/to accuse/to impeach"
+  },
+  {
+    "rank": 199,
+    "char": "等",
+    "jyutping": "dang2",
+    "frequency_pm": 650.79,
+    "translation": "class/rank/grade/equal to/same as/to wait for/to await/et cetera/and so on/et al. (and other authors)/after/as soon as/once"
+  },
+  {
+    "rank": 200,
+    "char": "低",
+    "jyutping": "dai1",
+    "frequency_pm": 645.68,
+    "translation": "low/beneath/to lower (one's head)/to let droop/to hang down/to incline"
+  },
+  {
+    "rank": 201,
+    "char": "字",
+    "jyutping": "zi6",
+    "frequency_pm": 645.68,
+    "translation": "letter/symbol/character/word/CL:個[go]/courtesy or style name traditionally given to males aged 20 in dynastic China"
+  },
+  {
+    "rank": 202,
+    "char": "執",
+    "jyutping": "zap1",
+    "frequency_pm": 645.68,
+    "translation": "to pick up/to clean up/to go bankrupt/to execute (a plan)/to grasp/to have sex with"
+  },
+  {
+    "rank": 203,
+    "char": "刷",
+    "jyutping": "caat3",
+    "frequency_pm": 642.27,
+    "translation": "to brush/to paint/to daub/to paste up/to skip class (of students)/to fire from a job/to select"
+  },
+  {
+    "rank": 204,
+    "char": "咯",
+    "jyutping": "gaak3|lo1|lok3|gok3",
+    "frequency_pm": 632.05,
+    "translation": "(final particle similar to 了, indicating that sth is obvious)/(phonetic)/cough (blood)/to argue/debate"
+  },
+  {
+    "rank": 205,
+    "char": "抌",
+    "jyutping": "dam2",
+    "frequency_pm": 632.05,
+    "translation": "to beat (with fist)/to pound"
+  },
+  {
+    "rank": 206,
+    "char": "街",
+    "jyutping": "gaai1",
+    "frequency_pm": 626.94,
+    "translation": "street/CL:條[tìuh]"
+  },
+  {
+    "rank": 207,
+    "char": "乾淨",
+    "jyutping": "gon1zeng6",
+    "frequency_pm": 623.53,
+    "translation": "clean/neat"
+  },
+  {
+    "rank": 208,
+    "char": "地下",
+    "jyutping": "dei6haa6|dei5haa2",
+    "frequency_pm": 609.9,
+    "translation": "underground/subterranean/covert|floor/ground"
+  },
+  {
+    "rank": 209,
+    "char": "波波",
+    "jyutping": "*bo1bo1",
+    "frequency_pm": 589.46,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 210,
+    "char": "凍",
+    "jyutping": "dung3",
+    "frequency_pm": 587.76,
+    "translation": "cold/to freeze/aspic or jelly"
+  },
+  {
+    "rank": 211,
+    "char": "煮",
+    "jyutping": "zyu2",
+    "frequency_pm": 586.05,
+    "translation": "to cook/to boil"
+  },
+  {
+    "rank": 212,
+    "char": "得意",
+    "jyutping": "dak1ji3",
+    "frequency_pm": 582.65,
+    "translation": "cute/strange/proud of oneself/pleased with oneself/complacent"
+  },
+  {
+    "rank": 213,
+    "char": "頭髮",
+    "jyutping": "tau4faat3",
+    "frequency_pm": 575.83,
+    "translation": "hair (on the head)"
+  },
+  {
+    "rank": 214,
+    "char": "即係",
+    "jyutping": "zik1hai6",
+    "frequency_pm": 574.13,
+    "translation": "exactly"
+  },
+  {
+    "rank": 215,
+    "char": "十",
+    "jyutping": "sap6",
+    "frequency_pm": 567.31,
+    "translation": "ten/10"
+  },
+  {
+    "rank": 216,
+    "char": "試",
+    "jyutping": "si3",
+    "frequency_pm": 560.5,
+    "translation": "to test/to try/experiment/examination/test"
+  },
+  {
+    "rank": 217,
+    "char": "咬",
+    "jyutping": "ngaau5",
+    "frequency_pm": 545.17,
+    "translation": "to bite/to nip"
+  },
+  {
+    "rank": 218,
+    "char": "好食",
+    "jyutping": "*hou2|hou3sik6",
+    "frequency_pm": 545.17,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 219,
+    "char": "五",
+    "jyutping": "ng5",
+    "frequency_pm": 540.06,
+    "translation": "five/5"
+  },
+  {
+    "rank": 220,
+    "char": "巴士",
+    "jyutping": "baa1si2",
+    "frequency_pm": 536.65,
+    "translation": "bus/motor coach"
+  },
+  {
+    "rank": 221,
+    "char": "親",
+    "jyutping": "can1",
+    "frequency_pm": 536.65,
+    "translation": "parent/one's own (flesh and blood)/relative/related/marriage/bride/close/intimate/in person/first-hand/in favor of/pro-/to kiss"
+  },
+  {
+    "rank": 222,
+    "char": "閂",
+    "jyutping": "saan1",
+    "frequency_pm": 533.24,
+    "translation": "bolt/latch/to bolt/to latch"
+  },
+  {
+    "rank": 223,
+    "char": "第二",
+    "jyutping": "dai6ji6",
+    "frequency_pm": 531.54,
+    "translation": "second/number two/next"
+  },
+  {
+    "rank": 224,
+    "char": "黃",
+    "jyutping": "wong4",
+    "frequency_pm": 524.72,
+    "translation": "yellow/sulfur/surname Wong"
+  },
+  {
+    "rank": 225,
+    "char": "餵",
+    "jyutping": "wai3",
+    "frequency_pm": 524.72,
+    "translation": "to feed"
+  },
+  {
+    "rank": 226,
+    "char": "轆",
+    "jyutping": "luk1",
+    "frequency_pm": 521.32,
+    "translation": "windlass"
+  },
+  {
+    "rank": 227,
+    "char": "事",
+    "jyutping": "si6",
+    "frequency_pm": 519.61,
+    "translation": "matter/thing/item/work/affair"
+  },
+  {
+    "rank": 228,
+    "char": "熱",
+    "jyutping": "jit6",
+    "frequency_pm": 519.61,
+    "translation": "heat/to heat up/fervent/hot (of weather)/warm up"
+  },
+  {
+    "rank": 229,
+    "char": "姨姨",
+    "jyutping": "*ji4ji4",
+    "frequency_pm": 517.91,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 230,
+    "char": "番鹼",
+    "jyutping": "*faan1gaan2",
+    "frequency_pm": 517.91,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 231,
+    "char": "一樣",
+    "jyutping": "jat1joeng6",
+    "frequency_pm": 514.5,
+    "translation": "same/like/equal to/the same as/just like"
+  },
+  {
+    "rank": 232,
+    "char": "撞",
+    "jyutping": "zong6",
+    "frequency_pm": 514.5,
+    "translation": "to hit/to strike/to meet by accident/to run into/to bump against/to bump into"
+  },
+  {
+    "rank": 233,
+    "char": "成日",
+    "jyutping": "sing4jat6",
+    "frequency_pm": 507.69,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 234,
+    "char": "曳",
+    "jyutping": "jai6",
+    "frequency_pm": 507.69,
+    "translation": "bad/naughty/wicked/harmful/noxious/to drag"
+  },
+  {
+    "rank": 235,
+    "char": "舊",
+    "jyutping": "gau6",
+    "frequency_pm": 502.58,
+    "translation": "old/opposite: new 新/former/worn (with age)"
+  },
+  {
+    "rank": 236,
+    "char": "奶奶",
+    "jyutping": "naai4naai2",
+    "frequency_pm": 497.46,
+    "translation": "(informal) father's mother; paternal grandmother"
+  },
+  {
+    "rank": 237,
+    "char": "郁",
+    "jyutping": "juk1",
+    "frequency_pm": 495.76,
+    "translation": "to move/elegant/surname Yuk"
+  },
+  {
+    "rank": 238,
+    "char": "力",
+    "jyutping": "lik6",
+    "frequency_pm": 482.13,
+    "translation": "power/force/strength/ability/strenuously"
+  },
+  {
+    "rank": 239,
+    "char": "歌",
+    "jyutping": "go1",
+    "frequency_pm": 482.13,
+    "translation": "song"
+  },
+  {
+    "rank": 240,
+    "char": "准",
+    "jyutping": "zeon2",
+    "frequency_pm": 480.43,
+    "translation": "to allow/to grant/to permit/accurate/standard"
+  },
+  {
+    "rank": 241,
+    "char": "抱",
+    "jyutping": "pou5|bou6",
+    "frequency_pm": 478.72,
+    "translation": "to hold/to carry (in one's arms)/to hug or embrace/surround/cherish"
+  },
+  {
+    "rank": 242,
+    "char": "級",
+    "jyutping": "kap1",
+    "frequency_pm": 478.72,
+    "translation": "level/grade/rank/step"
+  },
+  {
+    "rank": 243,
+    "char": "跳",
+    "jyutping": "tiu3",
+    "frequency_pm": 477.02,
+    "translation": "to jump/to hop/to skip over/to bounce/to palpitate"
+  },
+  {
+    "rank": 244,
+    "char": "下",
+    "jyutping": "haa6",
+    "frequency_pm": 471.91,
+    "translation": "down/downwards/below/lower/later/next (week etc)/second (of two parts)/to decline/to go down"
+  },
+  {
+    "rank": 245,
+    "char": "但係",
+    "jyutping": "daan6hai6",
+    "frequency_pm": 471.91,
+    "translation": "but"
+  },
+  {
+    "rank": 246,
+    "char": "笑",
+    "jyutping": "siu3",
+    "frequency_pm": 471.91,
+    "translation": "laugh/smile"
+  },
+  {
+    "rank": 247,
+    "char": "杯",
+    "jyutping": "bui1",
+    "frequency_pm": 468.5,
+    "translation": "cup/classifier for drinks: glass, cup"
+  },
+  {
+    "rank": 248,
+    "char": "拜拜",
+    "jyutping": "baai1baai3",
+    "frequency_pm": 468.5,
+    "translation": "bye-bye"
+  },
+  {
+    "rank": 249,
+    "char": "最",
+    "jyutping": "zeoi3",
+    "frequency_pm": 463.39,
+    "translation": "most/the most/-est"
+  },
+  {
+    "rank": 250,
+    "char": "四",
+    "jyutping": "sei3",
+    "frequency_pm": 458.28,
+    "translation": "four/4"
+  },
+  {
+    "rank": 251,
+    "char": "眼",
+    "jyutping": "ngaan5",
+    "frequency_pm": 456.58,
+    "translation": "eye/CL:隻[jek],對[deui]"
+  },
+  {
+    "rank": 252,
+    "char": "貓",
+    "jyutping": "maau1",
+    "frequency_pm": 448.06,
+    "translation": "cat/to be drunk/to be high on drugs"
+  },
+  {
+    "rank": 253,
+    "char": "搽",
+    "jyutping": "caa4",
+    "frequency_pm": 448.06,
+    "translation": "apply (ointment, powder)/smear/paint on"
+  },
+  {
+    "rank": 254,
+    "char": "喊",
+    "jyutping": "haam3",
+    "frequency_pm": 444.65,
+    "translation": "to cry/to yell/to shout/to call out for (a person)"
+  },
+  {
+    "rank": 255,
+    "char": "幾時",
+    "jyutping": "gei2si4",
+    "frequency_pm": 441.24,
+    "translation": "what time?/when?"
+  },
+  {
+    "rank": 256,
+    "char": "擒",
+    "jyutping": "kam4",
+    "frequency_pm": 441.24,
+    "translation": "1. to grab/2. to have sex, to \"screw\"/3. to arrest, to catch (police)"
+  },
+  {
+    "rank": 257,
+    "char": "擰",
+    "jyutping": "ning4|ning6",
+    "frequency_pm": 439.54,
+    "translation": "mistake/to twist/stubborn/to pinch/wring"
+  },
+  {
+    "rank": 258,
+    "char": "游",
+    "jyutping": "jau4",
+    "frequency_pm": 439.54,
+    "translation": "to swim/surname Yau"
+  },
+  {
+    "rank": 259,
+    "char": "估",
+    "jyutping": "gu2|gu3",
+    "frequency_pm": 436.13,
+    "translation": "estimate/old/second-hand (clothes)"
+  },
+  {
+    "rank": 260,
+    "char": "對",
+    "jyutping": "deoi3",
+    "frequency_pm": 434.43,
+    "translation": "couple/pair/to be opposite/to oppose/to face/versus/for/to/correct (answer)/to answer/to reply/to direct (towards sth)/right"
+  },
+  {
+    "rank": 261,
+    "char": "狗",
+    "jyutping": "gau2",
+    "frequency_pm": 434.43,
+    "translation": "dog/CL:隻[jek]/CL:條[tìuh]"
+  },
+  {
+    "rank": 262,
+    "char": "至",
+    "jyutping": "zi3",
+    "frequency_pm": 432.73,
+    "translation": "arrive/most/to/until"
+  },
+  {
+    "rank": 263,
+    "char": "喲",
+    "jyutping": "jo1",
+    "frequency_pm": 429.32,
+    "translation": "(interj) Oh, sound made when expressing surprise/(idiom) used at end of sentence as an exclamation"
+  },
+  {
+    "rank": 264,
+    "char": "錫",
+    "jyutping": "sek3|sik1",
+    "frequency_pm": 427.61,
+    "translation": "tin"
+  },
+  {
+    "rank": 265,
+    "char": "味",
+    "jyutping": "mei6",
+    "frequency_pm": 427.61,
+    "translation": "taste/smell/a sexual service, a type of sex or sexual stimulation offered by a prostitute"
+  },
+  {
+    "rank": 266,
+    "char": "牙",
+    "jyutping": "ngaa4",
+    "frequency_pm": 427.61,
+    "translation": "tooth/ivory/CL:隻[jek]"
+  },
+  {
+    "rank": 267,
+    "char": "筆",
+    "jyutping": "bat1",
+    "frequency_pm": 427.61,
+    "translation": "pen/pencil/writing brush/to write or compose/the strokes of Chinese characters/classifier for sums of money, deals"
+  },
+  {
+    "rank": 268,
+    "char": "利利",
+    "jyutping": "lei6lei6",
+    "frequency_pm": 427.61,
+    "translation": "Lyly"
+  },
+  {
+    "rank": 269,
+    "char": "盒",
+    "jyutping": "hap6",
+    "frequency_pm": 425.91,
+    "translation": "small box/case"
+  },
+  {
+    "rank": 270,
+    "char": "吹",
+    "jyutping": "ceoi1",
+    "frequency_pm": 424.21,
+    "translation": "to blow/to play a wind instrument/to perform fellatio on/to give a \"blow job\" to/to blast/to puff/to boast/to brag/to end in failure/to fall through"
+  },
+  {
+    "rank": 271,
+    "char": "先生",
+    "jyutping": "sin1saang1",
+    "frequency_pm": 420.8,
+    "translation": "sir/mister/teacher/(title of respect)"
+  },
+  {
+    "rank": 272,
+    "char": "貓貓",
+    "jyutping": "*maau1maau1",
+    "frequency_pm": 415.69,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 273,
+    "char": "九",
+    "jyutping": "gau2",
+    "frequency_pm": 413.99,
+    "translation": "nine/9"
+  },
+  {
+    "rank": 274,
+    "char": "被",
+    "jyutping": "bei6",
+    "frequency_pm": 410.58,
+    "translation": "by (indicates passive-voice sentences or clauses)/to cover/to wear"
+  },
+  {
+    "rank": 275,
+    "char": "家姐",
+    "jyutping": "*gaa1ze2",
+    "frequency_pm": 410.58,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 276,
+    "char": "飯",
+    "jyutping": "faan6",
+    "frequency_pm": 410.58,
+    "translation": "food/cuisine/cooked rice/meal/CL:碗[wún]/CL:嚿[gauh]/CL:頓[deuhn](Mandarin)"
+  },
+  {
+    "rank": 277,
+    "char": "醫生",
+    "jyutping": "ji1sang1",
+    "frequency_pm": 408.87,
+    "translation": "doctor"
+  },
+  {
+    "rank": 278,
+    "char": "門",
+    "jyutping": "mun4",
+    "frequency_pm": 407.17,
+    "translation": "gate/door/CL:道[douh]/opening/valve/way to do something/knack/family/house/(religious) sect/school (of thought)/class/category/phylum or division (taxonomy)/classifier for large guns/classifier for lessons, subjects, branches of technology/CL:扇[shan4] (Mandarin)"
+  },
+  {
+    "rank": 279,
+    "char": "袋",
+    "jyutping": "doi6|doi2",
+    "frequency_pm": 405.47,
+    "translation": "to bag|a pouch/bag/sack/pocket/a condom/scrotum"
+  },
+  {
+    "rank": 280,
+    "char": "嘉琪",
+    "jyutping": "*gaa1kei4",
+    "frequency_pm": 405.47,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 281,
+    "char": "好似",
+    "jyutping": "hou2ci5",
+    "frequency_pm": 402.06,
+    "translation": "to seem/to be like"
+  },
+  {
+    "rank": 282,
+    "char": "電話",
+    "jyutping": "din6waa2",
+    "frequency_pm": 400.36,
+    "translation": "telephone/phone call"
+  },
+  {
+    "rank": 283,
+    "char": "開心",
+    "jyutping": "hoi1sam1",
+    "frequency_pm": 400.36,
+    "translation": "to feel happy/to rejoice/to have a great time"
+  },
+  {
+    "rank": 284,
+    "char": "叔叔",
+    "jyutping": "suk1suk1",
+    "frequency_pm": 396.95,
+    "translation": "(informal) father's younger brother; uncle"
+  },
+  {
+    "rank": 285,
+    "char": "廁所",
+    "jyutping": "ci3so2",
+    "frequency_pm": 395.25,
+    "translation": "toilet/lavatory"
+  },
+  {
+    "rank": 286,
+    "char": "蘋果",
+    "jyutping": "ping4gwo2",
+    "frequency_pm": 395.25,
+    "translation": "apple"
+  },
+  {
+    "rank": 287,
+    "char": "琴",
+    "jyutping": "kam4",
+    "frequency_pm": 395.25,
+    "translation": "guqin or zither, cf 古琴/musical instrument in general"
+  },
+  {
+    "rank": 288,
+    "char": "玩具",
+    "jyutping": "wun6geoi6",
+    "frequency_pm": 390.13,
+    "translation": "plaything/toy"
+  },
+  {
+    "rank": 289,
+    "char": "飽",
+    "jyutping": "baau2",
+    "frequency_pm": 388.43,
+    "translation": "to eat till full/satisfied/sexually satisfied"
+  },
+  {
+    "rank": 290,
+    "char": "波",
+    "jyutping": "bo1",
+    "frequency_pm": 386.73,
+    "translation": "ball/breasts/a typhoon/wave/ripple/storm/surge/abbr. for Poland"
+  },
+  {
+    "rank": 291,
+    "char": "今",
+    "jyutping": "gam1",
+    "frequency_pm": 386.73,
+    "translation": "today/modern/present/current/this/now"
+  },
+  {
+    "rank": 292,
+    "char": "紅色",
+    "jyutping": "hung4sik1",
+    "frequency_pm": 378.21,
+    "translation": "red (color)/revolutionary"
+  },
+  {
+    "rank": 293,
+    "char": "面",
+    "jyutping": "min6",
+    "frequency_pm": 373.1,
+    "translation": "face/respect, reputation, honour, \"face\"/side/surface/aspect/top/classifier for flat surfaces such as drums, mirrors, flags etc (Mandarin)"
+  },
+  {
+    "rank": 294,
+    "char": "噼",
+    "jyutping": "pet1",
+    "frequency_pm": 373.1,
+    "translation": "child's buttocks (esp. Cantonese)/see 噼啪|劈啪, onomat. for crack, slap, clap, clatter etc"
+  },
+  {
+    "rank": 295,
+    "char": "魚",
+    "jyutping": "jyu2",
+    "frequency_pm": 369.69,
+    "translation": "fish"
+  },
+  {
+    "rank": 296,
+    "char": "樣",
+    "jyutping": "joeng6",
+    "frequency_pm": 366.28,
+    "translation": "manner/pattern/way/appearance/shape"
+  },
+  {
+    "rank": 297,
+    "char": "臭",
+    "jyutping": "cau3",
+    "frequency_pm": 362.88,
+    "translation": "sense of smell/smell bad/stench/stink/smelly/to smell (bad)"
+  },
+  {
+    "rank": 298,
+    "char": "天凡",
+    "jyutping": "*tin1faan4",
+    "frequency_pm": 362.88,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 299,
+    "char": "馬",
+    "jyutping": "maa5",
+    "frequency_pm": 357.77,
+    "translation": "horse/CL:隻[jek],匹[pāt]/a junior employee/a subordinate"
+  },
+  {
+    "rank": 300,
+    "char": "送",
+    "jyutping": "sung3",
+    "frequency_pm": 356.06,
+    "translation": "to deliver/to carry/to give (as a present)/to present (with)/to see off/to send"
+  },
+  {
+    "rank": 301,
+    "char": "讀",
+    "jyutping": "duk6",
+    "frequency_pm": 356.06,
+    "translation": "comma/phrase marked by pause/to read/to study/reading of word (i.e. pronunciation), similar to 拼音[pin1 yin1]"
+  },
+  {
+    "rank": 302,
+    "char": "添",
+    "jyutping": "tim1",
+    "frequency_pm": 356.06,
+    "translation": "to add/to increase/to replenish"
+  },
+  {
+    "rank": 303,
+    "char": "熄",
+    "jyutping": "sik1",
+    "frequency_pm": 356.06,
+    "translation": "to extinguish/to put out (fire)/to quench/to stop burning/to go out (of fire, lamp etc)/to come to an end/to wither away/to die out"
+  },
+  {
+    "rank": 304,
+    "char": "錄",
+    "jyutping": "luk6",
+    "frequency_pm": 356.06,
+    "translation": "diary/record/to hit/to copy/surname Lu"
+  },
+  {
+    "rank": 305,
+    "char": "望",
+    "jyutping": "mong6",
+    "frequency_pm": 347.54,
+    "translation": "to look at/to view/to hope/to expect/to visit/to gaze (into the distance)/to look towards/towards/full moon"
+  },
+  {
+    "rank": 306,
+    "char": "救",
+    "jyutping": "gau3",
+    "frequency_pm": 345.84,
+    "translation": "to save/to assist/to rescue"
+  },
+  {
+    "rank": 307,
+    "char": "雪糕",
+    "jyutping": "syut3gou1",
+    "frequency_pm": 345.84,
+    "translation": "ice cream"
+  },
+  {
+    "rank": 308,
+    "char": "遮",
+    "jyutping": "ze1",
+    "frequency_pm": 345.84,
+    "translation": "umbrella/to cover up (a shortcoming)/to screen off/to hide/to conceal"
+  },
+  {
+    "rank": 309,
+    "char": "把",
+    "jyutping": "baa2",
+    "frequency_pm": 344.14,
+    "translation": "to hold/to grasp/to take hold of/handle/classifier for objects with handle/used before a direct object and a verb often carrying the sense of disposal (Mandarin)"
+  },
+  {
+    "rank": 310,
+    "char": "相",
+    "jyutping": "soeng1",
+    "frequency_pm": 342.43,
+    "translation": "appearance/portrait/picture/each other/one another/mutually"
+  },
+  {
+    "rank": 311,
+    "char": "婆婆",
+    "jyutping": "po4po2",
+    "frequency_pm": 342.43,
+    "translation": "husband's mother/mother-in-law"
+  },
+  {
+    "rank": 312,
+    "char": "切",
+    "jyutping": "cit3|cai3",
+    "frequency_pm": 342.43,
+    "translation": "to cut/to slice/to correspond to/definitely/absolutely (not)/close to/eager/tangent (math)/see also 反切[fáan chit]|all/whole"
+  },
+  {
+    "rank": 313,
+    "char": "火車",
+    "jyutping": "fo2ce1",
+    "frequency_pm": 340.73,
+    "translation": "train/CL:架[ga],列[liht],節[jit],班[bāan]"
+  },
+  {
+    "rank": 314,
+    "char": "糖",
+    "jyutping": "tong4|tong2",
+    "frequency_pm": 340.73,
+    "translation": "sugar/sweets/candy"
+  },
+  {
+    "rank": 315,
+    "char": "梗",
+    "jyutping": "gang2",
+    "frequency_pm": 340.73,
+    "translation": "stem"
+  },
+  {
+    "rank": 316,
+    "char": "名",
+    "jyutping": "ming4|meng4",
+    "frequency_pm": 339.03,
+    "translation": "name/noun (part of speech)/place (e.g. among winners)/famous/classifier for people"
+  },
+  {
+    "rank": 317,
+    "char": "熊仔",
+    "jyutping": "*hung4zai2|zi2",
+    "frequency_pm": 337.32,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 318,
+    "char": "可",
+    "jyutping": "ho2",
+    "frequency_pm": 332.21,
+    "translation": "can/may/able to/to approve/to permit/certain(ly)/to suit/(particle used for emphasis)"
+  },
+  {
+    "rank": 319,
+    "char": "平時",
+    "jyutping": "ping4si4",
+    "frequency_pm": 330.51,
+    "translation": "in normal times/in peacetime"
+  },
+  {
+    "rank": 320,
+    "char": "原來",
+    "jyutping": "jyun4loi4",
+    "frequency_pm": 327.1,
+    "translation": "original/former/originally/formerly/at first/so... actually"
+  },
+  {
+    "rank": 321,
+    "char": "學校",
+    "jyutping": "hok6haau6",
+    "frequency_pm": 327.1,
+    "translation": "school/CL:所[suo3]"
+  },
+  {
+    "rank": 322,
+    "char": "六",
+    "jyutping": "luk6",
+    "frequency_pm": 327.1,
+    "translation": "six/6"
+  },
+  {
+    "rank": 323,
+    "char": "雨",
+    "jyutping": "jyu5",
+    "frequency_pm": 327.1,
+    "translation": "rain"
+  },
+  {
+    "rank": 324,
+    "char": "指",
+    "jyutping": "zi2",
+    "frequency_pm": 325.4,
+    "translation": "finger/to point/to direct/to indicate/to refer to/to rely on/to count on/(hair) stands stiffly on end"
+  },
+  {
+    "rank": 325,
+    "char": "痕",
+    "jyutping": "han4",
+    "frequency_pm": 325.4,
+    "translation": "scar/traces"
+  },
+  {
+    "rank": 326,
+    "char": "咋",
+    "jyutping": "zaa1|zaa3|zaak3",
+    "frequency_pm": 321.99,
+    "translation": "gnaw/loud noise/shout/suddenly"
+  },
+  {
+    "rank": 327,
+    "char": "便",
+    "jyutping": "bin6|pin4",
+    "frequency_pm": 321.99,
+    "translation": "advantageous/cheap/ordinary/plain/convenient/as convenient/when the chance arises/handy/easy/informal/simple/so/thus/to relieve oneself/to urinate/to defecate/equivalent to 就: then/in that case/even if/soon afterwards"
+  },
+  {
+    "rank": 328,
+    "char": "肚餓",
+    "jyutping": "*tou5ngo6",
+    "frequency_pm": 321.99,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 329,
+    "char": "錯",
+    "jyutping": "co3",
+    "frequency_pm": 320.29,
+    "translation": "wrong; mistaken; erroneous/fault; demerit; blunder/intricate; complex/CL:個[go]"
+  },
+  {
+    "rank": 330,
+    "char": "窿",
+    "jyutping": "lung4",
+    "frequency_pm": 318.58,
+    "translation": "cavity/hole"
+  },
+  {
+    "rank": 331,
+    "char": "長",
+    "jyutping": "coeng4|zoeng2",
+    "frequency_pm": 316.88,
+    "translation": "length/long/forever/always/constantly|chief/head/elder/to grow/to develop/to increase/to enhance"
+  },
+  {
+    "rank": 332,
+    "char": "燈",
+    "jyutping": "dang1",
+    "frequency_pm": 311.77,
+    "translation": "lamp/light/lantern/CL:盞[jáan]"
+  },
+  {
+    "rank": 333,
+    "char": "掉",
+    "jyutping": "diu6",
+    "frequency_pm": 310.06,
+    "translation": "to fall/to drop/to lag behind/to lose/to go missing/to reduce/fall (in prices)/to lose (value, weight etc)/to wag/to swing/to turn/to change/to exchange/to swap/to show off/to shed (hair)"
+  },
+  {
+    "rank": 334,
+    "char": "襪",
+    "jyutping": "mat6",
+    "frequency_pm": 310.06,
+    "translation": "socks/stockings"
+  },
+  {
+    "rank": 335,
+    "char": "日",
+    "jyutping": "jat6",
+    "frequency_pm": 308.36,
+    "translation": "day/sun/date/day of the month/abbr. for Japan"
+  },
+  {
+    "rank": 336,
+    "char": "屙",
+    "jyutping": "o1",
+    "frequency_pm": 308.36,
+    "translation": "to defecate/to urinate"
+  },
+  {
+    "rank": 337,
+    "char": "啞",
+    "jyutping": "aa2",
+    "frequency_pm": 306.66,
+    "translation": "dumb/mute"
+  },
+  {
+    "rank": 338,
+    "char": "俊",
+    "jyutping": "zeon3",
+    "frequency_pm": 304.95,
+    "translation": "smart/eminent/handsome/talented"
+  },
+  {
+    "rank": 339,
+    "char": "太陽",
+    "jyutping": "taai3joeng4",
+    "frequency_pm": 304.95,
+    "translation": "sun"
+  },
+  {
+    "rank": 340,
+    "char": "裏便",
+    "jyutping": "*leoi5bin6|pin4",
+    "frequency_pm": 304.95,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 341,
+    "char": "企",
+    "jyutping": "kei5",
+    "frequency_pm": 303.25,
+    "translation": "to stand/to plan a project/abbr. for 企業, enterprise or company"
+  },
+  {
+    "rank": 342,
+    "char": "請",
+    "jyutping": "ceng2|cing2",
+    "frequency_pm": 303.25,
+    "translation": "to ask/to invite/please (do sth)/to treat (to a meal etc)/to request"
+  },
+  {
+    "rank": 343,
+    "char": "點算",
+    "jyutping": "*dim2syun3",
+    "frequency_pm": 303.25,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 344,
+    "char": "核突",
+    "jyutping": "wat6dat6",
+    "frequency_pm": 303.25,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 345,
+    "char": "褲",
+    "jyutping": "fu3",
+    "frequency_pm": 301.55,
+    "translation": "drawers/trousers/pants/CL:條[tìuh]"
+  },
+  {
+    "rank": 346,
+    "char": "飛",
+    "jyutping": "fei1",
+    "frequency_pm": 298.14,
+    "translation": "to fly/to get rid of a lover/to end a relationship/a hooligan/a hoodlum"
+  },
+  {
+    "rank": 347,
+    "char": "口",
+    "jyutping": "hau2",
+    "frequency_pm": 296.43,
+    "translation": "mouth/classifier for things with mouths (people, domestic animals, cannons, wells etc) (Mandarin)/classifier for bites or mouthfuls (Mandarin)"
+  },
+  {
+    "rank": 348,
+    "char": "奶",
+    "jyutping": "naai5",
+    "frequency_pm": 296.43,
+    "translation": "breast/lady/milk"
+  },
+  {
+    "rank": 349,
+    "char": "因為",
+    "jyutping": "jan1wai6",
+    "frequency_pm": 294.73,
+    "translation": "because/owing to/on account of"
+  },
+  {
+    "rank": 350,
+    "char": "夾",
+    "jyutping": "gaap3|gaap2",
+    "frequency_pm": 294.73,
+    "translation": "to place in between/to sandwich/to carry sth under armpit/wedged between/between/to intersperse/to mix/to mingle|clip/folder"
+  },
+  {
+    "rank": 351,
+    "char": "電視",
+    "jyutping": "din6si6",
+    "frequency_pm": 293.03,
+    "translation": "television/TV"
+  },
+  {
+    "rank": 352,
+    "char": "鴨",
+    "jyutping": "aap3|ngaap3",
+    "frequency_pm": 291.32,
+    "translation": "duck/gigolo/CL:隻[jek]"
+  },
+  {
+    "rank": 353,
+    "char": "啖",
+    "jyutping": "daam6",
+    "frequency_pm": 287.92,
+    "translation": "mouthful (drinks, rice, etc) [classifier]"
+  },
+  {
+    "rank": 354,
+    "char": "雲",
+    "jyutping": "wan4",
+    "frequency_pm": 287.92,
+    "translation": "abbr. for Yunnan 雲南 province in southwest China/surname Wan/cloud/CL:舊[gau6]"
+  },
+  {
+    "rank": 355,
+    "char": "書書",
+    "jyutping": "*syu1syu1",
+    "frequency_pm": 286.21,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 356,
+    "char": "床",
+    "jyutping": "cong4",
+    "frequency_pm": 284.51,
+    "translation": "bed/couch/CL:張[jēung]"
+  },
+  {
+    "rank": 357,
+    "char": "飛機",
+    "jyutping": "fei1gei1",
+    "frequency_pm": 282.8,
+    "translation": "airplane/CL: 架[jia4]"
+  },
+  {
+    "rank": 358,
+    "char": "凳",
+    "jyutping": "dang3",
+    "frequency_pm": 282.8,
+    "translation": "bench/stool"
+  },
+  {
+    "rank": 359,
+    "char": "裝",
+    "jyutping": "zong1",
+    "frequency_pm": 282.8,
+    "translation": "adornment/to adorn/dress/clothing/costume (of an actor in a play)/to play a role/to pretend/to install/to fix/to wrap (sth in a bag)/to load/to pack"
+  },
+  {
+    "rank": 360,
+    "char": "揭",
+    "jyutping": "kit3",
+    "frequency_pm": 282.8,
+    "translation": "to take the lid off/to expose/to unmask"
+  },
+  {
+    "rank": 361,
+    "char": "穿",
+    "jyutping": "cyun1",
+    "frequency_pm": 281.1,
+    "translation": "to bore through/to pierce/to perforate/to penetrate/to pass through/to dress/to wear/to put on/to thread/damaged with a hole or holes (e.g. pots, socks)"
+  },
+  {
+    "rank": 362,
+    "char": "手指",
+    "jyutping": "sau2zi2",
+    "frequency_pm": 279.4,
+    "translation": "finger"
+  },
+  {
+    "rank": 363,
+    "char": "地",
+    "jyutping": "dei6",
+    "frequency_pm": 277.69,
+    "translation": "earth/ground/field/place/land/CL:片[pin](Mandarin)/CL:塊[faai]/CL:笪[daat]/-ly/structural particle: used before a verb or adjective, linking it to preceding modifying adverbial adjunct"
+  },
+  {
+    "rank": 364,
+    "char": "濕",
+    "jyutping": "sap1",
+    "frequency_pm": 275.99,
+    "translation": "moist/wet/to beat up"
+  },
+  {
+    "rank": 365,
+    "char": "成",
+    "jyutping": "sing4",
+    "frequency_pm": 270.88,
+    "translation": "to succeed/to finish/to complete/to accomplish/to become/to turn into/one tenth|whole/complete/to be all right/OK!"
+  },
+  {
+    "rank": 366,
+    "char": "寶萱",
+    "jyutping": "*bou2hyun1",
+    "frequency_pm": 269.18,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 367,
+    "char": "壞",
+    "jyutping": "waai6",
+    "frequency_pm": 267.47,
+    "translation": "bad/spoiled/broken/to break down"
+  },
+  {
+    "rank": 368,
+    "char": "橙",
+    "jyutping": "caang2",
+    "frequency_pm": 267.47,
+    "translation": "orange tree/the color orange/orange"
+  },
+  {
+    "rank": 369,
+    "char": "故事",
+    "jyutping": "gu3si6",
+    "frequency_pm": 264.06,
+    "translation": "old practice"
+  },
+  {
+    "rank": 370,
+    "char": "紮",
+    "jyutping": "zaat3",
+    "frequency_pm": 264.06,
+    "translation": "to tie/to bind/to fasten/to be promoted/to have a vasectomy/classifier for flowers, banknotes etc/bundle"
+  },
+  {
+    "rank": 371,
+    "char": "似",
+    "jyutping": "ci5",
+    "frequency_pm": 262.36,
+    "translation": "to seem/to appear/to resemble/similar/-like/pseudo-"
+  },
+  {
+    "rank": 372,
+    "char": "電",
+    "jyutping": "din6",
+    "frequency_pm": 260.66,
+    "translation": "electric/electricity/electrical"
+  },
+  {
+    "rank": 373,
+    "char": "樽",
+    "jyutping": "zeon1",
+    "frequency_pm": 258.95,
+    "translation": "goblet/bottle/wine-jar"
+  },
+  {
+    "rank": 374,
+    "char": "馬騮",
+    "jyutping": "*maa5lau4",
+    "frequency_pm": 258.95,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 375,
+    "char": "蚊",
+    "jyutping": "man1",
+    "frequency_pm": 257.25,
+    "translation": "mosquito/a dollar"
+  },
+  {
+    "rank": 376,
+    "char": "樹",
+    "jyutping": "syu6",
+    "frequency_pm": 252.14,
+    "translation": "tree"
+  },
+  {
+    "rank": 377,
+    "char": "錶",
+    "jyutping": "biu1",
+    "frequency_pm": 248.73,
+    "translation": "wrist or pocket watch/CL:隻[jek]"
+  },
+  {
+    "rank": 378,
+    "char": "好玩",
+    "jyutping": "hou2waan2",
+    "frequency_pm": 247.03,
+    "translation": "fun (to do)"
+  },
+  {
+    "rank": 379,
+    "char": "數",
+    "jyutping": "sou3|sou2",
+    "frequency_pm": 247.03,
+    "translation": "frequently/repeatedly/number/figure/several/to count/to enumerate/to criticize (i.e. enumerate shortcomings)"
+  },
+  {
+    "rank": 380,
+    "char": "麵包",
+    "jyutping": "min6baau1",
+    "frequency_pm": 247.03,
+    "translation": "bread"
+  },
+  {
+    "rank": 381,
+    "char": "流",
+    "jyutping": "lau4",
+    "frequency_pm": 245.32,
+    "translation": "to flow/to disseminate/to circulate or spread/to move or drift/to degenerate/to banish or send into exile/stream of water or sth resembling one/class, rate or grade/unreal, false, \"fake\""
+  },
+  {
+    "rank": 382,
+    "char": "塊",
+    "jyutping": "faai3",
+    "frequency_pm": 243.62,
+    "translation": "lump (of earth)/piece/classifier for pieces of cloth"
+  },
+  {
+    "rank": 383,
+    "char": "多謝",
+    "jyutping": "do1ze6",
+    "frequency_pm": 241.92,
+    "translation": "many thanks/thanks a lot"
+  },
+  {
+    "rank": 384,
+    "char": "全部",
+    "jyutping": "cyun4bou6",
+    "frequency_pm": 241.92,
+    "translation": "whole/entire/complete"
+  },
+  {
+    "rank": 385,
+    "char": "月",
+    "jyutping": "jyut6",
+    "frequency_pm": 240.21,
+    "translation": "moon/month"
+  },
+  {
+    "rank": 386,
+    "char": "捉",
+    "jyutping": "zuk1|zuk3",
+    "frequency_pm": 240.21,
+    "translation": "to clutch/to grab/to capture"
+  },
+  {
+    "rank": 387,
+    "char": "火",
+    "jyutping": "fo2",
+    "frequency_pm": 240.21,
+    "translation": "fire/urgent/ammunition/fiery or flaming/internal heat (Chinese medicine)/hot (popular)/wild, bad-tempered, crazy"
+  },
+  {
+    "rank": 388,
+    "char": "慢慢",
+    "jyutping": "maan6maan6",
+    "frequency_pm": 238.51,
+    "translation": "slowly"
+  },
+  {
+    "rank": 389,
+    "char": "公園",
+    "jyutping": "gung1jyun2",
+    "frequency_pm": 238.51,
+    "translation": "public park"
+  },
+  {
+    "rank": 390,
+    "char": "拆",
+    "jyutping": "caak3",
+    "frequency_pm": 238.51,
+    "translation": "to demolish/to tear open/to tear down/to tear apart/to open/to discuss/to talk over a problem/to negotiate"
+  },
+  {
+    "rank": 391,
+    "char": "怕",
+    "jyutping": "paa3",
+    "frequency_pm": 233.4,
+    "translation": "to be afraid/to fear"
+  },
+  {
+    "rank": 392,
+    "char": "停",
+    "jyutping": "ting4",
+    "frequency_pm": 233.4,
+    "translation": "to stop/to halt/to park (a car)"
+  },
+  {
+    "rank": 393,
+    "char": "換",
+    "jyutping": "wun6",
+    "frequency_pm": 233.4,
+    "translation": "change/exchange"
+  },
+  {
+    "rank": 394,
+    "char": "影",
+    "jyutping": "jing2",
+    "frequency_pm": 231.7,
+    "translation": "picture/image/film/movie/photograph/reflection/shadow/trace"
+  },
+  {
+    "rank": 395,
+    "char": "眼鏡",
+    "jyutping": "ngaan5geng2",
+    "frequency_pm": 231.7,
+    "translation": "spectacles/eyeglasses/CL:副[fu]"
+  },
+  {
+    "rank": 396,
+    "char": "排",
+    "jyutping": "paai4",
+    "frequency_pm": 231.7,
+    "translation": "a row/a line/to set in order/to arrange/to line up/to eliminate/to drain/to push open/platoon/raft/classifier for lines, rows etc"
+  },
+  {
+    "rank": 397,
+    "char": "爹爹",
+    "jyutping": "*de1de1",
+    "frequency_pm": 231.7,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 398,
+    "char": "歲",
+    "jyutping": "seoi3",
+    "frequency_pm": 229.99,
+    "translation": "year/years old/classifier for years old"
+  },
+  {
+    "rank": 399,
+    "char": "重",
+    "jyutping": "zung6|cung4|cung5",
+    "frequency_pm": 228.29,
+    "translation": "to attach importance to/important/weighty/furthermore/further/more/still/to lay stress on/discreet|repeat/again/double|heavy (in weight)/deep/heavy/serious/weight"
+  },
+  {
+    "rank": 400,
+    "char": "靜",
+    "jyutping": "zing6",
+    "frequency_pm": 228.29,
+    "translation": "still/calm/quiet/not moving"
+  },
+  {
+    "rank": 401,
+    "char": "辮",
+    "jyutping": "bin1",
+    "frequency_pm": 228.29,
+    "translation": "a braid or queue/to plait"
+  },
+  {
+    "rank": 402,
+    "char": "所以",
+    "jyutping": "so2ji5",
+    "frequency_pm": 224.88,
+    "translation": "therefore/as a result/so"
+  },
+  {
+    "rank": 403,
+    "char": "同埋",
+    "jyutping": "tung4maai4",
+    "frequency_pm": 223.18,
+    "translation": "and, together with"
+  },
+  {
+    "rank": 404,
+    "char": "香",
+    "jyutping": "hoeng1",
+    "frequency_pm": 221.47,
+    "translation": "fragrant/sweet smelling/aromatic/savory or appetizing/(to eat) with relish/(of sleep) sound/perfume or spice/joss or incense stick/CL:枝[jī]/to die (euphemistic, a reference to the custom of burning joss sticks in honour of the departed)."
+  },
+  {
+    "rank": 405,
+    "char": "甩",
+    "jyutping": "lat1",
+    "frequency_pm": 221.47,
+    "translation": "to lose/to get rid of/to know the mahjong tiles by touch, without needing to look and see if the tile is wanted"
+  },
+  {
+    "rank": 406,
+    "char": "書包",
+    "jyutping": "syu1baau1",
+    "frequency_pm": 221.47,
+    "translation": "schoolbag/satchel"
+  },
+  {
+    "rank": 407,
+    "char": "口水",
+    "jyutping": "hau2seoi2",
+    "frequency_pm": 219.77,
+    "translation": "saliva/CL:啖[daahm]/very talkative"
+  },
+  {
+    "rank": 408,
+    "char": "龜",
+    "jyutping": "gwai1",
+    "frequency_pm": 219.77,
+    "translation": "tortoise/turtle/CL:隻[jek]/the police/cowardly"
+  },
+  {
+    "rank": 409,
+    "char": "諗",
+    "jyutping": "nam2",
+    "frequency_pm": 216.36,
+    "translation": "to think/to consider"
+  },
+  {
+    "rank": 410,
+    "char": "如果",
+    "jyutping": "jyu4gwo2",
+    "frequency_pm": 212.96,
+    "translation": "if/in case/in the event that"
+  },
+  {
+    "rank": 411,
+    "char": "檯",
+    "jyutping": "toi2",
+    "frequency_pm": 211.25,
+    "translation": "desk/platform"
+  },
+  {
+    "rank": 412,
+    "char": "肥",
+    "jyutping": "fei4",
+    "frequency_pm": 207.84,
+    "translation": "fat/fertile/loose-fitting or large/to fertilize/to become rich by illegal means/fertilizer/manure"
+  },
+  {
+    "rank": 413,
+    "char": "早餐",
+    "jyutping": "zou2caan1",
+    "frequency_pm": 207.84,
+    "translation": "breakfast"
+  },
+  {
+    "rank": 414,
+    "char": "莎莎",
+    "jyutping": "*saa1|so1saa1|so1",
+    "frequency_pm": 207.84,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 415,
+    "char": "刀",
+    "jyutping": "dou1",
+    "frequency_pm": 206.14,
+    "translation": "knife/CL:把[ba2]"
+  },
+  {
+    "rank": 416,
+    "char": "踢",
+    "jyutping": "tek3",
+    "frequency_pm": 206.14,
+    "translation": "to kick/to play (e.g. soccer)/to raid/to attack"
+  },
+  {
+    "rank": 417,
+    "char": "油",
+    "jyutping": "jau4",
+    "frequency_pm": 206.14,
+    "translation": "oil/sly"
+  },
+  {
+    "rank": 418,
+    "char": "將",
+    "jyutping": "zoeng1|zoeng3",
+    "frequency_pm": 204.44,
+    "translation": "will/shall/to use/to take/to checkmate/just a short while ago|general/commander-in-chief (military)/king (chess piece)/to command/to lead"
+  },
+  {
+    "rank": 419,
+    "char": "接",
+    "jyutping": "zip3",
+    "frequency_pm": 204.44,
+    "translation": "to receive/to answer (the phone)/to meet or welcome sb/to connect/to catch/to join/to extend/to take one's turn on duty/take over for sb"
+  },
+  {
+    "rank": 420,
+    "char": "碗",
+    "jyutping": "wun2",
+    "frequency_pm": 204.44,
+    "translation": "bowl/cup"
+  },
+  {
+    "rank": 421,
+    "char": "垃圾",
+    "jyutping": "laap6saap3",
+    "frequency_pm": 202.73,
+    "translation": "trash/refuse/garbage"
+  },
+  {
+    "rank": 422,
+    "char": "跟",
+    "jyutping": "gan1",
+    "frequency_pm": 201.03,
+    "translation": "to follow closely/to go with/to marry sb (of woman)/with/towards/as (compared to)/from (different from)/and (in addition to)/heel(Mandarin)"
+  },
+  {
+    "rank": 423,
+    "char": "耳仔",
+    "jyutping": "ji5zai2",
+    "frequency_pm": 201.03,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 424,
+    "char": "陣",
+    "jyutping": "zan6",
+    "frequency_pm": 199.33,
+    "translation": "disposition of troops/wave/spate/burst/spell/short period of time/classifier for events or states of short duration"
+  },
+  {
+    "rank": 425,
+    "char": "難",
+    "jyutping": "naan6|naan4",
+    "frequency_pm": 199.33,
+    "translation": "difficult (to...)/problem/difficulty/difficult/not good|disaster/distress/to scold"
+  },
+  {
+    "rank": 426,
+    "char": "八",
+    "jyutping": "baat3",
+    "frequency_pm": 199.33,
+    "translation": "eight/to gossip/nosy"
+  },
+  {
+    "rank": 427,
+    "char": "綠色",
+    "jyutping": "luk6sik1",
+    "frequency_pm": 199.33,
+    "translation": "green"
+  },
+  {
+    "rank": 428,
+    "char": "犀利",
+    "jyutping": "sai1lei6",
+    "frequency_pm": 197.62,
+    "translation": "terrific, great, amazing/sharp"
+  },
+  {
+    "rank": 429,
+    "char": "握",
+    "jyutping": "ak1",
+    "frequency_pm": 197.62,
+    "translation": "shake hands/to hold/to grasp"
+  },
+  {
+    "rank": 430,
+    "char": "揀",
+    "jyutping": "gaan2",
+    "frequency_pm": 195.92,
+    "translation": "to choose/to pick/to sort out/to pick up"
+  },
+  {
+    "rank": 431,
+    "char": "攰",
+    "jyutping": "gui6",
+    "frequency_pm": 195.92,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 432,
+    "char": "病",
+    "jyutping": "beng6",
+    "frequency_pm": 195.92,
+    "translation": "illness/CL:場[chèuhng]/disease/to fall ill/defect"
+  },
+  {
+    "rank": 433,
+    "char": "女仔",
+    "jyutping": "neoi5zai2",
+    "frequency_pm": 194.22,
+    "translation": "girl"
+  },
+  {
+    "rank": 434,
+    "char": "屋",
+    "jyutping": "uk1|nguk1",
+    "frequency_pm": 194.22,
+    "translation": "house/room"
+  },
+  {
+    "rank": 435,
+    "char": "麵",
+    "jyutping": "min6",
+    "frequency_pm": 194.22,
+    "translation": "flour/noodles"
+  },
+  {
+    "rank": 436,
+    "char": "版",
+    "jyutping": "baan2",
+    "frequency_pm": 194.22,
+    "translation": "a register/a block of printing/an edition/version/page"
+  },
+  {
+    "rank": 437,
+    "char": "聞",
+    "jyutping": "man4",
+    "frequency_pm": 192.51,
+    "translation": "to hear/news/well-known/famous/reputation/fame/to smell/to sniff at/surname Wen"
+  },
+  {
+    "rank": 438,
+    "char": "第",
+    "jyutping": "dai6",
+    "frequency_pm": 190.81,
+    "translation": "(prefix indicating ordinal number, e.g. first, number two etc)"
+  },
+  {
+    "rank": 439,
+    "char": "麥當奴",
+    "jyutping": "*mak6dong1|dong3nou4",
+    "frequency_pm": 190.81,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 440,
+    "char": "耐",
+    "jyutping": "noi6",
+    "frequency_pm": 189.1,
+    "translation": "capable of enduring/able to tolerate/patient/durable/hardy/resistant"
+  },
+  {
+    "rank": 441,
+    "char": "爬",
+    "jyutping": "paa4",
+    "frequency_pm": 189.1,
+    "translation": "to crawl/to climb"
+  },
+  {
+    "rank": 442,
+    "char": "亂",
+    "jyutping": "lyun6",
+    "frequency_pm": 189.1,
+    "translation": "in confusion/disorderly"
+  },
+  {
+    "rank": 443,
+    "char": "不過",
+    "jyutping": "bat1gwo3",
+    "frequency_pm": 187.4,
+    "translation": "only/merely/no more than/but/however/anyway (to get back to a previous topic)"
+  },
+  {
+    "rank": 444,
+    "char": "知道",
+    "jyutping": "zi1dou3",
+    "frequency_pm": 187.4,
+    "translation": "know/be aware of"
+  },
+  {
+    "rank": 445,
+    "char": "紙",
+    "jyutping": "zi2",
+    "frequency_pm": 185.7,
+    "translation": "paper/CL:張[jēung],沓[daahp]/classifier for documents, letter etc"
+  },
+  {
+    "rank": 446,
+    "char": "時",
+    "jyutping": "si4",
+    "frequency_pm": 183.99,
+    "translation": "o'clock/time/when/hour/season/period/surname Shi"
+  },
+  {
+    "rank": 447,
+    "char": "細佬",
+    "jyutping": "*sai3lou2",
+    "frequency_pm": 183.99,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 448,
+    "char": "醒",
+    "jyutping": "sing2",
+    "frequency_pm": 183.99,
+    "translation": "to wake up/to awaken/to be awake/to give, to present, to let (someone) have (guidance, money, a blow)"
+  },
+  {
+    "rank": 449,
+    "char": "音",
+    "jyutping": "jam1",
+    "frequency_pm": 183.99,
+    "translation": "sound/noise/note (of musical scale)/tone/news/syllable/reading (phonetic value of a character)"
+  },
+  {
+    "rank": 450,
+    "char": "之後",
+    "jyutping": "zi1hau6",
+    "frequency_pm": 182.29,
+    "translation": "afterwards/following/later/after"
+  },
+  {
+    "rank": 451,
+    "char": "機",
+    "jyutping": "gei1",
+    "frequency_pm": 182.29,
+    "translation": "machine/engine/CL:臺|台[tòih](Mandarin)/CL:部[bouh]/opportunity/intention/aircraft/pivot/crucial point/flexible(quick-witted)/organic/a surname"
+  },
+  {
+    "rank": 452,
+    "char": "小心",
+    "jyutping": "siu2sam1",
+    "frequency_pm": 180.59,
+    "translation": "to be careful/to take care"
+  },
+  {
+    "rank": 453,
+    "char": "嵐嵐",
+    "jyutping": "*laam4laam4",
+    "frequency_pm": 180.59,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 454,
+    "char": "拖",
+    "jyutping": "to1",
+    "frequency_pm": 178.88,
+    "translation": "to drag/to pull/to trail/to delay/to drag on/to lead"
+  },
+  {
+    "rank": 455,
+    "char": "堂",
+    "jyutping": "tong4",
+    "frequency_pm": 178.88,
+    "translation": "(main) hall/large room for a specific purpose/relationship between cousins etc on the paternal side of a family/of the same clan/classifier for sets (or suites) of furniture, classes etc"
+  },
+  {
+    "rank": 456,
+    "char": "綁",
+    "jyutping": "bong2",
+    "frequency_pm": 178.88,
+    "translation": "to tie/bind or fasten together/to kidnap"
+  },
+  {
+    "rank": 457,
+    "char": "香蕉",
+    "jyutping": "hoeng1ziu1",
+    "frequency_pm": 178.88,
+    "translation": "banana/CL:梭[sō]/a person who is said to be yellow (i.e. Chinese) on the outside, but white (Western) on the inside, a Chinese who is westernised in their thinking and behaviour (derogatory)."
+  },
+  {
+    "rank": 458,
+    "char": "曳曳",
+    "jyutping": "*jai6jai6",
+    "frequency_pm": 178.88,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 459,
+    "char": "上便",
+    "jyutping": "*soeng6|soeng5bin6|pin4",
+    "frequency_pm": 178.88,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 460,
+    "char": "生日",
+    "jyutping": "saang1jat6",
+    "frequency_pm": 177.18,
+    "translation": "birthday"
+  },
+  {
+    "rank": 461,
+    "char": "棵",
+    "jyutping": "po1|fo2",
+    "frequency_pm": 177.18,
+    "translation": "classifier for trees, cabbages, plants etc"
+  },
+  {
+    "rank": 462,
+    "char": "踹",
+    "jyutping": "caai2",
+    "frequency_pm": 177.18,
+    "translation": "kick/trample"
+  },
+  {
+    "rank": 463,
+    "char": "答",
+    "jyutping": "daap3",
+    "frequency_pm": 173.77,
+    "translation": "reply/answer/return/respond/echo/to answer/agree"
+  },
+  {
+    "rank": 464,
+    "char": "推",
+    "jyutping": "teoi1",
+    "frequency_pm": 173.77,
+    "translation": "to push/to cut/to refuse/to reject/to decline/to shirk (responsibility)/to put off/to delay/to push forward/to nominate/to elect"
+  },
+  {
+    "rank": 465,
+    "char": "陣間",
+    "jyutping": "zan6gaan1",
+    "frequency_pm": 173.77,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 466,
+    "char": "年",
+    "jyutping": "nin4",
+    "frequency_pm": 172.07,
+    "translation": "year"
+  },
+  {
+    "rank": 467,
+    "char": "咀",
+    "jyutping": "zeoi2",
+    "frequency_pm": 172.07,
+    "translation": "to kiss"
+  },
+  {
+    "rank": 468,
+    "char": "船",
+    "jyutping": "syun4",
+    "frequency_pm": 172.07,
+    "translation": "a boat/vessel/ship"
+  },
+  {
+    "rank": 469,
+    "char": "蓋",
+    "jyutping": "goi3|koi3",
+    "frequency_pm": 172.07,
+    "translation": "lid/top/cover/canopy/to build/surname Ge"
+  },
+  {
+    "rank": 470,
+    "char": "釣",
+    "jyutping": "diu3",
+    "frequency_pm": 172.07,
+    "translation": "to fish with a hook and bait"
+  },
+  {
+    "rank": 471,
+    "char": "眼訓",
+    "jyutping": "*ngaan5fan3",
+    "frequency_pm": 170.36,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 472,
+    "char": "姨",
+    "jyutping": "ji4",
+    "frequency_pm": 170.36,
+    "translation": "mother's sister/aunt"
+  },
+  {
+    "rank": 473,
+    "char": "手仔",
+    "jyutping": "*sau2zai2|zi2",
+    "frequency_pm": 170.36,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 474,
+    "char": "理",
+    "jyutping": "lei5",
+    "frequency_pm": 168.66,
+    "translation": "texture/grain (of wood)/inner essence/intrinsic order/reason/logic/truth/science/natural science (esp. physics)/to manage/to pay attention to/to run (affairs)/to handle/to put in order/to tidy up"
+  },
+  {
+    "rank": 475,
+    "char": "蛋糕",
+    "jyutping": "daan6gou1",
+    "frequency_pm": 168.66,
+    "translation": "cake"
+  },
+  {
+    "rank": 476,
+    "char": "桶",
+    "jyutping": "tung2",
+    "frequency_pm": 168.66,
+    "translation": "bucket/(trash) can/barrel (of oil etc)"
+  },
+  {
+    "rank": 477,
+    "char": "照",
+    "jyutping": "ziu3",
+    "frequency_pm": 166.96,
+    "translation": "according to/in accordance with/to shine/to illuminate/to reflect/to take (a photo)/photo/as requested/as before/to protect/to support/to back-up"
+  },
+  {
+    "rank": 478,
+    "char": "毛巾",
+    "jyutping": "mou4gan1",
+    "frequency_pm": 166.96,
+    "translation": "towel"
+  },
+  {
+    "rank": 479,
+    "char": "藥",
+    "jyutping": "joek6",
+    "frequency_pm": 166.96,
+    "translation": "medicine/drug/cure"
+  },
+  {
+    "rank": 480,
+    "char": "站",
+    "jyutping": "zaam6",
+    "frequency_pm": 165.25,
+    "translation": "station/to stand/to halt/to stop/branch of a company or organization/website"
+  },
+  {
+    "rank": 481,
+    "char": "乾",
+    "jyutping": "gon1|kin4",
+    "frequency_pm": 165.25,
+    "translation": "dry/clean/in vain/dried food/foster/adoptive/to ignore|one of the Eight Trigrams 八卦[baat gwa], symbolizing heaven"
+  },
+  {
+    "rank": 482,
+    "char": "老鼠",
+    "jyutping": "lou5syu2",
+    "frequency_pm": 165.25,
+    "translation": "rat/mouse/CL:隻[jek]"
+  },
+  {
+    "rank": 483,
+    "char": "拖鞋",
+    "jyutping": "to1haai2",
+    "frequency_pm": 165.25,
+    "translation": "slippers"
+  },
+  {
+    "rank": 484,
+    "char": "消防員",
+    "jyutping": "siu1fong4jyun4",
+    "frequency_pm": 165.25,
+    "translation": "fire-fighter/a fireman"
+  },
+  {
+    "rank": 485,
+    "char": "應該",
+    "jyutping": "jing1goi1",
+    "frequency_pm": 163.55,
+    "translation": "ought to/should/must"
+  },
+  {
+    "rank": 486,
+    "char": "好睇",
+    "jyutping": "*hou2|hou3tai2",
+    "frequency_pm": 163.55,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 487,
+    "char": "變",
+    "jyutping": "bin3",
+    "frequency_pm": 161.85,
+    "translation": "to change/to become different/to transform/to vary/rebellion"
+  },
+  {
+    "rank": 488,
+    "char": "黑",
+    "jyutping": "haak1|hak1",
+    "frequency_pm": 161.85,
+    "translation": "black/dark/unlucky, unfortunate, cursed/(loanword) to hack/abbr. for Heilongjiang 黑龍江 province in northeast China"
+  },
+  {
+    "rank": 489,
+    "char": "踩",
+    "jyutping": "caai2",
+    "frequency_pm": 161.85,
+    "translation": "to step on/to tread/to stamp/to press a pedal/to pedal (a bike)/to enter, to cross into (territory)"
+  },
+  {
+    "rank": 490,
+    "char": "裙",
+    "jyutping": "kwan4",
+    "frequency_pm": 161.85,
+    "translation": "skirt"
+  },
+  {
+    "rank": 491,
+    "char": "七",
+    "jyutping": "cat1",
+    "frequency_pm": 161.85,
+    "translation": "seven/euphemistic form of 柒 [chaht] \"prick\""
+  },
+  {
+    "rank": 492,
+    "char": "餅",
+    "jyutping": "beng2",
+    "frequency_pm": 161.85,
+    "translation": "round flat cake/cookie/cake/pastry/CL:嚿[gauh]/ten thousand dollars"
+  },
+  {
+    "rank": 493,
+    "char": "房",
+    "jyutping": "fong4|fong2",
+    "frequency_pm": 160.14,
+    "translation": "house/room/surname Fang"
+  },
+  {
+    "rank": 494,
+    "char": "掛",
+    "jyutping": "gwaa3",
+    "frequency_pm": 160.14,
+    "translation": "to hang or suspend (from a hook etc)/(of a telephone call) to hang up/to be worried or concerned"
+  },
+  {
+    "rank": 495,
+    "char": "鎖匙",
+    "jyutping": "*so2ci4|si4",
+    "frequency_pm": 160.14,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 496,
+    "char": "尿",
+    "jyutping": "niu6",
+    "frequency_pm": 160.14,
+    "translation": "(less common reading) to urinate/urine/to urinate/urine"
+  },
+  {
+    "rank": 497,
+    "char": "暗",
+    "jyutping": "am3|ngam3",
+    "frequency_pm": 160.14,
+    "translation": "dark/gloomy/hidden/secret/muddled/obscure/in the dark"
+  },
+  {
+    "rank": 498,
+    "char": "弊",
+    "jyutping": "bai6",
+    "frequency_pm": 160.14,
+    "translation": "detriment/fraud/harm/defeat"
+  },
+  {
+    "rank": 499,
+    "char": "橙汁",
+    "jyutping": "*caang2zap1",
+    "frequency_pm": 160.14,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 500,
+    "char": "蕹",
+    "jyutping": "jung1|ung3",
+    "frequency_pm": 160.14,
+    "translation": "water spinach or ong choy (Ipomoea aquatica), used as a vegetable in south China and southeast Asia"
+  },
+  {
+    "rank": 501,
+    "char": "拍",
+    "jyutping": "paak3",
+    "frequency_pm": 158.44,
+    "translation": "to pat/to clap/to slap/to swat/to take (a photo)/to shoot (a film)/racket (sports)/beat (music)"
+  },
+  {
+    "rank": 502,
+    "char": "今朝",
+    "jyutping": "gam1ziu1",
+    "frequency_pm": 158.44,
+    "translation": "at the present/now"
+  },
+  {
+    "rank": 503,
+    "char": "捐",
+    "jyutping": "gyun1",
+    "frequency_pm": 158.44,
+    "translation": "to contribute/to donate/contribution/tax/to abandon"
+  },
+  {
+    "rank": 504,
+    "char": "樓梯",
+    "jyutping": "lau4tai1",
+    "frequency_pm": 156.74,
+    "translation": "stair/staircase"
+  },
+  {
+    "rank": 505,
+    "char": "扣",
+    "jyutping": "kau3",
+    "frequency_pm": 156.74,
+    "translation": "to fasten/to button/button/buckle/knot/to arrest/to confiscate/to deduct (money)/discount/to knock/to smash or spike (a ball)/to cover (with a bowl etc)/fig. to tag a label on sb"
+  },
+  {
+    "rank": 506,
+    "char": "豬",
+    "jyutping": "zyu1",
+    "frequency_pm": 155.03,
+    "translation": "pig/swine/CL:隻[jek]/CL:口[háu],頭[tàuh](Mandarin)/a virgin"
+  },
+  {
+    "rank": 507,
+    "char": "汁",
+    "jyutping": "zap1",
+    "frequency_pm": 155.03,
+    "translation": "juice"
+  },
+  {
+    "rank": 508,
+    "char": "雀仔",
+    "jyutping": "*zoek3zai2|zi2",
+    "frequency_pm": 155.03,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 509,
+    "char": "鏡",
+    "jyutping": "geng3",
+    "frequency_pm": 153.33,
+    "translation": "mirror"
+  },
+  {
+    "rank": 510,
+    "char": "藍色",
+    "jyutping": "laam4sik1",
+    "frequency_pm": 153.33,
+    "translation": "blue"
+  },
+  {
+    "rank": 511,
+    "char": "故仔",
+    "jyutping": "*gu3zai2|zi2",
+    "frequency_pm": 153.33,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 512,
+    "char": "入面",
+    "jyutping": "jap6min6",
+    "frequency_pm": 151.62,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 513,
+    "char": "包",
+    "jyutping": "baau1",
+    "frequency_pm": 151.62,
+    "translation": "to cover/to wrap/to promise/to guarantee/to include/to keep a mistress or second wife/package/wrapper/container/bag/bundle/packet"
+  },
+  {
+    "rank": 514,
+    "char": "緊要",
+    "jyutping": "gan2jiu3",
+    "frequency_pm": 149.92,
+    "translation": "important"
+  },
+  {
+    "rank": 515,
+    "char": "貼",
+    "jyutping": "tip1",
+    "frequency_pm": 149.92,
+    "translation": "to stick/to paste/to keep close to/to fit snugly/to subsidize/to guess/allowance (e.g. money for food or housing)/sticker"
+  },
+  {
+    "rank": 516,
+    "char": "湯",
+    "jyutping": "tong1",
+    "frequency_pm": 149.92,
+    "translation": "soup/surname Tang"
+  },
+  {
+    "rank": 517,
+    "char": "後便",
+    "jyutping": "*hau6bin6|pin4",
+    "frequency_pm": 148.22,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 518,
+    "char": "提子",
+    "jyutping": "*tai4zi2",
+    "frequency_pm": 148.22,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 519,
+    "char": "几",
+    "jyutping": "*?",
+    "frequency_pm": 148.22,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 520,
+    "char": "牙膏",
+    "jyutping": "ngaa4gou1",
+    "frequency_pm": 146.51,
+    "translation": "toothpaste"
+  },
+  {
+    "rank": 521,
+    "char": "頂",
+    "jyutping": "ding2|deng2",
+    "frequency_pm": 144.81,
+    "translation": "apex/top/roof/to carry on the head/to push to the top/to go against/most/to replace/to substitute/to \"bump\" a forum thread to raise its profile (internet slang)/to bear, to endure, to put up with/an exclamation expressing disappointment, anger, amazement, etc. (\"shit!\", \"damn!\", etc.)|apex/top/roof/classifier for hats"
+  },
+  {
+    "rank": 522,
+    "char": "兔兔",
+    "jyutping": "*tou3tou3",
+    "frequency_pm": 144.81,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 523,
+    "char": "嘈",
+    "jyutping": "cou4",
+    "frequency_pm": 143.11,
+    "translation": "bustling/tumultuous/noisy"
+  },
+  {
+    "rank": 524,
+    "char": "伯伯",
+    "jyutping": "baak3baak3",
+    "frequency_pm": 143.11,
+    "translation": "father's elder brother/uncle"
+  },
+  {
+    "rank": 525,
+    "char": "枕頭",
+    "jyutping": "zam2tau4",
+    "frequency_pm": 143.11,
+    "translation": "pillow"
+  },
+  {
+    "rank": 526,
+    "char": "兔仔",
+    "jyutping": "*tou3zai2|zi2",
+    "frequency_pm": 143.11,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 527,
+    "char": "水喉",
+    "jyutping": "*seoi2hau4",
+    "frequency_pm": 143.11,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 528,
+    "char": "白色",
+    "jyutping": "baak6sik1",
+    "frequency_pm": 141.4,
+    "translation": "white/fig. reactionary"
+  },
+  {
+    "rank": 529,
+    "char": "青蛙",
+    "jyutping": "cing1waa1",
+    "frequency_pm": 141.4,
+    "translation": "frog"
+  },
+  {
+    "rank": 530,
+    "char": "睬",
+    "jyutping": "coi2",
+    "frequency_pm": 141.4,
+    "translation": "to pay attention/to take notice of/to care for"
+  },
+  {
+    "rank": 531,
+    "char": "小明",
+    "jyutping": "*siu2ming4",
+    "frequency_pm": 141.4,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 532,
+    "char": "實",
+    "jyutping": "sat6",
+    "frequency_pm": 139.7,
+    "translation": "real/true/honest/really/solid/fruit/seed/used as a euphemism for the obscene 柒 [chaht] \"prick\""
+  },
+  {
+    "rank": 533,
+    "char": "的士",
+    "jyutping": "dik1si2",
+    "frequency_pm": 139.7,
+    "translation": "taxi"
+  },
+  {
+    "rank": 534,
+    "char": "花",
+    "jyutping": "faa1",
+    "frequency_pm": 139.7,
+    "translation": "flower/blossom/CL:朵[dó/déu],枝[jī],紮[jaat],束[chūk],盆[pùhn],簇[chūk]/fancy pattern/florid/to spend (money, time)"
+  },
+  {
+    "rank": 535,
+    "char": "顏色",
+    "jyutping": "ngaan4sik1",
+    "frequency_pm": 139.7,
+    "translation": "color"
+  },
+  {
+    "rank": 536,
+    "char": "雪櫃",
+    "jyutping": "syut3gwai6",
+    "frequency_pm": 139.7,
+    "translation": "ice box/refrigerator (common in Hong Kong)"
+  },
+  {
+    "rank": 537,
+    "char": "腳仔",
+    "jyutping": "*goek3zai2|zi2",
+    "frequency_pm": 139.7,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 538,
+    "char": "鬼",
+    "jyutping": "gwai2",
+    "frequency_pm": 138,
+    "translation": "ghost/CL:隻[jek]/a westerner/a traitor; an informer within an organisation, a \"mole\"."
+  },
+  {
+    "rank": 539,
+    "char": "禮物",
+    "jyutping": "lai5mat6",
+    "frequency_pm": 138,
+    "translation": "gift/present"
+  },
+  {
+    "rank": 540,
+    "char": "工",
+    "jyutping": "gung1",
+    "frequency_pm": 138,
+    "translation": "work/worker/skill/profession/trade/craft/labor"
+  },
+  {
+    "rank": 541,
+    "char": "慢",
+    "jyutping": "maan6",
+    "frequency_pm": 136.29,
+    "translation": "slow"
+  },
+  {
+    "rank": 542,
+    "char": "少少",
+    "jyutping": "siu2siu2",
+    "frequency_pm": 134.59,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 543,
+    "char": "味道",
+    "jyutping": "mei6dou6",
+    "frequency_pm": 134.59,
+    "translation": "flavor"
+  },
+  {
+    "rank": 544,
+    "char": "狗仔",
+    "jyutping": "*gau2zai2|zi2",
+    "frequency_pm": 134.59,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 545,
+    "char": "掣",
+    "jyutping": "zai3|cit3",
+    "frequency_pm": 134.59,
+    "translation": "pull/obstruct/hinder/draw"
+  },
+  {
+    "rank": 546,
+    "char": "甲蟲",
+    "jyutping": "gaap3cung4",
+    "frequency_pm": 134.59,
+    "translation": "beetle"
+  },
+  {
+    "rank": 547,
+    "char": "盆",
+    "jyutping": "pun4",
+    "frequency_pm": 132.88,
+    "translation": "basin/flower pot/unit of volume equal to 12 斗 and 8 升, approx 128 liters"
+  },
+  {
+    "rank": 548,
+    "char": "一路",
+    "jyutping": "jat1lou6",
+    "frequency_pm": 131.18,
+    "translation": "continually"
+  },
+  {
+    "rank": 549,
+    "char": "男仔",
+    "jyutping": "*naam4zai2|zi2",
+    "frequency_pm": 131.18,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 550,
+    "char": "咭",
+    "jyutping": "*?",
+    "frequency_pm": 131.18,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 551,
+    "char": "黎明",
+    "jyutping": "lai4ming4",
+    "frequency_pm": 131.18,
+    "translation": "dawn/daybreak"
+  },
+  {
+    "rank": 552,
+    "char": "積木",
+    "jyutping": "zik1muk6",
+    "frequency_pm": 131.18,
+    "translation": "toy building blocks"
+  },
+  {
+    "rank": 553,
+    "char": "摸",
+    "jyutping": "mo2",
+    "frequency_pm": 129.48,
+    "translation": "to feel with the hand/to touch/to stroke/to grope/to feel (one's pulse)"
+  },
+  {
+    "rank": 554,
+    "char": "雞",
+    "jyutping": "gai1",
+    "frequency_pm": 129.48,
+    "translation": "fowl/chicken/CL:隻[jek]/a prostitute/ten thousand dollars/the trigger of a gun/a whistle"
+  },
+  {
+    "rank": 555,
+    "char": "一係",
+    "jyutping": "jat1hai6",
+    "frequency_pm": 129.48,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 556,
+    "char": "廚房",
+    "jyutping": "cyu4fong4",
+    "frequency_pm": 129.48,
+    "translation": "kitchen"
+  },
+  {
+    "rank": 557,
+    "char": "由",
+    "jyutping": "jau4",
+    "frequency_pm": 127.77,
+    "translation": "to follow/from/it is for...to/reason/cause/because of/due to/to/to leave it (to sb)/by (introduces passive verb)"
+  },
+  {
+    "rank": 558,
+    "char": "鬧",
+    "jyutping": "naau6",
+    "frequency_pm": 127.77,
+    "translation": "to scold/to quarrel/noisy/cacophonous/to make noise/to disturb/to vent (feelings)"
+  },
+  {
+    "rank": 559,
+    "char": "沙",
+    "jyutping": "saa1",
+    "frequency_pm": 127.77,
+    "translation": "granule/hoarse/raspy/sand/powder/CL:粒[lāp]"
+  },
+  {
+    "rank": 560,
+    "char": "噢",
+    "jyutping": "o1|jyu2|jyuk1",
+    "frequency_pm": 127.77,
+    "translation": "Oh!"
+  },
+  {
+    "rank": 561,
+    "char": "搖",
+    "jyutping": "jiu4",
+    "frequency_pm": 127.77,
+    "translation": "shake/to rock"
+  },
+  {
+    "rank": 562,
+    "char": "雞蛋",
+    "jyutping": "gai1daan2",
+    "frequency_pm": 127.77,
+    "translation": "(chicken) egg/hen's egg"
+  },
+  {
+    "rank": 563,
+    "char": "牙刷",
+    "jyutping": "ngaa4caat2",
+    "frequency_pm": 127.77,
+    "translation": "toothbrush"
+  },
+  {
+    "rank": 564,
+    "char": "忍者",
+    "jyutping": "jan2ze2",
+    "frequency_pm": 127.77,
+    "translation": "Japanese: ninja"
+  },
+  {
+    "rank": 565,
+    "char": "白兔",
+    "jyutping": "*baak6tou3",
+    "frequency_pm": 127.77,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 566,
+    "char": "片片",
+    "jyutping": "*pin3|pin2pin3|pin2",
+    "frequency_pm": 127.77,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 567,
+    "char": "校車",
+    "jyutping": "haau6ce1",
+    "frequency_pm": 127.77,
+    "translation": "school bus"
+  },
+  {
+    "rank": 568,
+    "char": "繼續",
+    "jyutping": "gai3zuk6",
+    "frequency_pm": 126.07,
+    "translation": "to continue/to proceed with/to go on with"
+  },
+  {
+    "rank": 569,
+    "char": "清楚",
+    "jyutping": "cing1co2",
+    "frequency_pm": 126.07,
+    "translation": "clear/clearly understood/distinct"
+  },
+  {
+    "rank": 570,
+    "char": "舒服",
+    "jyutping": "syu1fuk6",
+    "frequency_pm": 126.07,
+    "translation": "comfortable/feeling well"
+  },
+  {
+    "rank": 571,
+    "char": "琴日",
+    "jyutping": "kam4jat6",
+    "frequency_pm": 126.07,
+    "translation": "yesterday"
+  },
+  {
+    "rank": 572,
+    "char": "朱古力",
+    "jyutping": "*?gu2lik6",
+    "frequency_pm": 126.07,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 573,
+    "char": "騎",
+    "jyutping": "ke4|kei4",
+    "frequency_pm": 126.07,
+    "translation": "to ride (an animal or bike)/to sit astride"
+  },
+  {
+    "rank": 574,
+    "char": "傻",
+    "jyutping": "so4",
+    "frequency_pm": 124.37,
+    "translation": "foolish"
+  },
+  {
+    "rank": 575,
+    "char": "嚇",
+    "jyutping": "haak3",
+    "frequency_pm": 124.37,
+    "translation": "to frighten/to scare/to intimidate/to threaten"
+  },
+  {
+    "rank": 576,
+    "char": "生果",
+    "jyutping": "*saang1|sang1gwo2",
+    "frequency_pm": 124.37,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 577,
+    "char": "千秋",
+    "jyutping": "*cin1cau1",
+    "frequency_pm": 124.37,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 578,
+    "char": "鐘",
+    "jyutping": "zung1",
+    "frequency_pm": 122.66,
+    "translation": "clock/o'clock/time as measured in hours and minutes/bell/surname Zhong"
+  },
+  {
+    "rank": 579,
+    "char": "碟",
+    "jyutping": "dip6",
+    "frequency_pm": 122.66,
+    "translation": "dish/plate"
+  },
+  {
+    "rank": 580,
+    "char": "星星",
+    "jyutping": "sing1sing1",
+    "frequency_pm": 122.66,
+    "translation": "star in the sky"
+  },
+  {
+    "rank": 581,
+    "char": "插",
+    "jyutping": "caap3",
+    "frequency_pm": 120.96,
+    "translation": "to insert/stick in/pierce/to take part in/to interfere/to interpose/to scold"
+  },
+  {
+    "rank": 582,
+    "char": "隊",
+    "jyutping": "deoi6",
+    "frequency_pm": 120.96,
+    "translation": "squadron/team/group/to attack/to stab/to drink, especially to drink alcohol/to eat greedily"
+  },
+  {
+    "rank": 583,
+    "char": "對住",
+    "jyutping": "*deoi3zyu6",
+    "frequency_pm": 120.96,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 584,
+    "char": "蛋",
+    "jyutping": "daan2",
+    "frequency_pm": 120.96,
+    "translation": "egg/CL:隻[jek],打[dā]/oval shaped"
+  },
+  {
+    "rank": 585,
+    "char": "擘",
+    "jyutping": "maak3",
+    "frequency_pm": 120.96,
+    "translation": "to tear apart/to rip up/to break off/to open (one's eyes, mouth)/to spread"
+  },
+  {
+    "rank": 586,
+    "char": "聖誕老人",
+    "jyutping": "sing3daan3lou5jan4",
+    "frequency_pm": 120.96,
+    "translation": "Father Christmas/Santa Claus"
+  },
+  {
+    "rank": 587,
+    "char": "當",
+    "jyutping": "dong1|dong3",
+    "frequency_pm": 119.26,
+    "translation": "when/during/just at (a time or place)/on the spot/ought/should/equal/same/manage|to regard as/suitable/adequate/fitting/proper/to pawn/obstruct"
+  },
+  {
+    "rank": 588,
+    "char": "茶",
+    "jyutping": "caa4",
+    "frequency_pm": 119.26,
+    "translation": "tea/tea plant/CL:杯[būi]"
+  },
+  {
+    "rank": 589,
+    "char": "表哥",
+    "jyutping": "biu2go1",
+    "frequency_pm": 119.26,
+    "translation": "older male cousin via female line"
+  },
+  {
+    "rank": 590,
+    "char": "偈",
+    "jyutping": "gai2|gai6|git6",
+    "frequency_pm": 119.26,
+    "translation": "Buddhist hymn/gatha/Buddhist verse/forceful/martial"
+  },
+  {
+    "rank": 591,
+    "char": "梳化",
+    "jyutping": "*so1faa3",
+    "frequency_pm": 117.55,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 592,
+    "char": "鑽",
+    "jyutping": "zyun1",
+    "frequency_pm": 117.55,
+    "translation": "an auger/diamond/to drill/to bore/to get into/to make one's way into/to enter (a hole)/to thread one's way through/to study intensively/to dig into/to curry favor for personal gain"
+  },
+  {
+    "rank": 593,
+    "char": "鞋仔",
+    "jyutping": "*haai4zai2|zi2",
+    "frequency_pm": 117.55,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 594,
+    "char": "電芯",
+    "jyutping": "*din6sam1",
+    "frequency_pm": 117.55,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 595,
+    "char": "嬲",
+    "jyutping": "nau1",
+    "frequency_pm": 115.85,
+    "translation": "angry"
+  },
+  {
+    "rank": 596,
+    "char": "反",
+    "jyutping": "faan2",
+    "frequency_pm": 115.85,
+    "translation": "contrary/in reverse/inside-out or upside-down/to reverse/to return/to oppose/opposite/against/anti-/to rebel/to use analogy/instead/abbr. for 反切 phonetic system"
+  },
+  {
+    "rank": 597,
+    "char": "頁",
+    "jyutping": "jip6",
+    "frequency_pm": 115.85,
+    "translation": "page/leaf"
+  },
+  {
+    "rank": 598,
+    "char": "分",
+    "jyutping": "fan1|fan6",
+    "frequency_pm": 114.14,
+    "translation": "to divide/to separate/to allocate/to distinguish (good and bad)/one tenth (of certain units)/unit of length equivalent to 0.33 cm/minute/a point (in sports or games)/0.01 yuan (unit of money)|part or subdivision/fraction/share/ingredient/component"
+  },
+  {
+    "rank": 599,
+    "char": "扮",
+    "jyutping": "baan6|baan3",
+    "frequency_pm": 114.14,
+    "translation": "to disguise oneself/to dress up/adorn"
+  },
+  {
+    "rank": 600,
+    "char": "呵",
+    "jyutping": "ho1",
+    "frequency_pm": 114.14,
+    "translation": "expel breath/my goodness/variantof 啊/phonetic \"a\""
+  },
+  {
+    "rank": 601,
+    "char": "警察",
+    "jyutping": "ging2caat3",
+    "frequency_pm": 114.14,
+    "translation": "police/policeman/policewoman"
+  },
+  {
+    "rank": 602,
+    "char": "好聽",
+    "jyutping": "hou2teng1",
+    "frequency_pm": 114.14,
+    "translation": "pleasant to hear"
+  },
+  {
+    "rank": 603,
+    "char": "拗",
+    "jyutping": "aau2|aau3",
+    "frequency_pm": 114.14,
+    "translation": "to bend in two so as to break|stubborn/obstinate/to argue"
+  },
+  {
+    "rank": 604,
+    "char": "周景臻",
+    "jyutping": "*zau1ging2zeon1",
+    "frequency_pm": 114.14,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 605,
+    "char": "個個",
+    "jyutping": "go3go3",
+    "frequency_pm": 112.44,
+    "translation": "each one individually/each and every/same as 各個|各个"
+  },
+  {
+    "rank": 606,
+    "char": "單車",
+    "jyutping": "daan1ce1",
+    "frequency_pm": 112.44,
+    "translation": "bicycle/bike"
+  },
+  {
+    "rank": 607,
+    "char": "凡",
+    "jyutping": "faan4",
+    "frequency_pm": 112.44,
+    "translation": "ordinary/commonplace/mundane/temporal/of the material world (as opposed to supernatural or immortal levels)/every/all/whatever/altogether/gist/outline/note of Chinese musical scale"
+  },
+  {
+    "rank": 608,
+    "char": "惦",
+    "jyutping": "dim3",
+    "frequency_pm": 112.44,
+    "translation": "think of, remember, miss"
+  },
+  {
+    "rank": 609,
+    "char": "傾",
+    "jyutping": "king1",
+    "frequency_pm": 110.74,
+    "translation": "to chat/to overturn/to collapse/to lean/to tend/to incline/to pour out"
+  },
+  {
+    "rank": 610,
+    "char": "護士",
+    "jyutping": "wu6si6",
+    "frequency_pm": 110.74,
+    "translation": "nurse"
+  },
+  {
+    "rank": 611,
+    "char": "損",
+    "jyutping": "syun2",
+    "frequency_pm": 110.74,
+    "translation": "to damage/to injure/to lose/to harm"
+  },
+  {
+    "rank": 612,
+    "char": "太",
+    "jyutping": "taai3",
+    "frequency_pm": 109.03,
+    "translation": "highest/greatest/too (much)/very/extremely"
+  },
+  {
+    "rank": 613,
+    "char": "位",
+    "jyutping": "wai6|wai2",
+    "frequency_pm": 109.03,
+    "translation": "position/location/classifier for people/place/seat/classifier for binary bits (e.g. 十六位 16-bit or 2 bytes)"
+  },
+  {
+    "rank": 614,
+    "char": "遠",
+    "jyutping": "jyun5",
+    "frequency_pm": 109.03,
+    "translation": "far/distant/remote"
+  },
+  {
+    "rank": 615,
+    "char": "衰",
+    "jyutping": "seoi1|ceoi1",
+    "frequency_pm": 109.03,
+    "translation": "to decline/to wane/to become weak or feeble/bad, irritating, useless, annoying/to be arrested or convicted of an offence/losing face"
+  },
+  {
+    "rank": 616,
+    "char": "咳",
+    "jyutping": "kat1",
+    "frequency_pm": 109.03,
+    "translation": "cough"
+  },
+  {
+    "rank": 617,
+    "char": "蟲",
+    "jyutping": "cung4",
+    "frequency_pm": 109.03,
+    "translation": "an animal/an invertebrate/a worm/an insect"
+  },
+  {
+    "rank": 618,
+    "char": "匙羹",
+    "jyutping": "*ci4|si4gang1",
+    "frequency_pm": 109.03,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 619,
+    "char": "六姨",
+    "jyutping": "*luk6ji4",
+    "frequency_pm": 109.03,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 620,
+    "char": "賣",
+    "jyutping": "maai6",
+    "frequency_pm": 107.33,
+    "translation": "to sell"
+  },
+  {
+    "rank": 621,
+    "char": "阻",
+    "jyutping": "zo2",
+    "frequency_pm": 107.33,
+    "translation": "to hinder/to block/to obstruct"
+  },
+  {
+    "rank": 622,
+    "char": "鬚",
+    "jyutping": "sou1",
+    "frequency_pm": 107.33,
+    "translation": "beard/mustache"
+  },
+  {
+    "rank": 623,
+    "char": "帽帽",
+    "jyutping": "*mou6mou6",
+    "frequency_pm": 107.33,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 624,
+    "char": "然後",
+    "jyutping": "jin4hau6",
+    "frequency_pm": 105.63,
+    "translation": "after/then (afterwards)/after that/afterwards"
+  },
+  {
+    "rank": 625,
+    "char": "慘",
+    "jyutping": "caam2",
+    "frequency_pm": 105.63,
+    "translation": "miserable/wretched/cruel/inhuman/seriously/badly/tragic"
+  },
+  {
+    "rank": 626,
+    "char": "功課",
+    "jyutping": "gung1fo3",
+    "frequency_pm": 105.63,
+    "translation": "homework/assignment/task/classwork/lesson/study"
+  },
+  {
+    "rank": 627,
+    "char": "較",
+    "jyutping": "gaau3",
+    "frequency_pm": 105.63,
+    "translation": "comparatively/(preposition comparing difference in degree)/to contrast/to compare/rather/fairly/clearly (different)/markedly/to haggle over/to quibble"
+  },
+  {
+    "rank": 628,
+    "char": "弟弟",
+    "jyutping": "dai6dai2",
+    "frequency_pm": 105.63,
+    "translation": "younger brother"
+  },
+  {
+    "rank": 629,
+    "char": "紅",
+    "jyutping": "hung4",
+    "frequency_pm": 103.92,
+    "translation": "red/revolutionary/blood/very popular, e.g. a film star, a pop singer at the peak of their career, to be \"hot\"."
+  },
+  {
+    "rank": 630,
+    "char": "交",
+    "jyutping": "gaau1",
+    "frequency_pm": 103.92,
+    "translation": "to hand over/to deliver/to pay (money)/to turn over/to make friends/to intersect (lines)"
+  },
+  {
+    "rank": 631,
+    "char": "贏",
+    "jyutping": "jeng4|jing4",
+    "frequency_pm": 103.92,
+    "translation": "to beat/to win/to profit"
+  },
+  {
+    "rank": 632,
+    "char": "鼻涕",
+    "jyutping": "bei6tai3",
+    "frequency_pm": 103.92,
+    "translation": "nasal mucus/snivel"
+  },
+  {
+    "rank": 633,
+    "char": "羹",
+    "jyutping": "gang1",
+    "frequency_pm": 103.92,
+    "translation": "soup"
+  },
+  {
+    "rank": 634,
+    "char": "魚魚",
+    "jyutping": "*jyu2jyu2",
+    "frequency_pm": 103.92,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 635,
+    "char": "真",
+    "jyutping": "zan1",
+    "frequency_pm": 102.22,
+    "translation": "really/truly/indeed/real/true/genuine"
+  },
+  {
+    "rank": 636,
+    "char": "光",
+    "jyutping": "gwong1",
+    "frequency_pm": 102.22,
+    "translation": "light/ray/CL:道[douh]/bright/only/merely/to use up"
+  },
+  {
+    "rank": 637,
+    "char": "噹",
+    "jyutping": "dong1",
+    "frequency_pm": 100.52,
+    "translation": "onomat. dong/ding dong bell"
+  },
+  {
+    "rank": 638,
+    "char": "算",
+    "jyutping": "syun3",
+    "frequency_pm": 100.52,
+    "translation": "to regard as/to figure/to calculate/to compute"
+  },
+  {
+    "rank": 639,
+    "char": "啱啱",
+    "jyutping": "ngaam1ngaam1",
+    "frequency_pm": 100.52,
+    "translation": "just now"
+  },
+  {
+    "rank": 640,
+    "char": "先至",
+    "jyutping": "*sin1zi3",
+    "frequency_pm": 100.52,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 641,
+    "char": "短",
+    "jyutping": "dyun2",
+    "frequency_pm": 100.52,
+    "translation": "short or brief/to lack/weak point/fault"
+  },
+  {
+    "rank": 642,
+    "char": "叉",
+    "jyutping": "caa1",
+    "frequency_pm": 100.52,
+    "translation": "fork/pitchfork/prong/pick/CL:支[jī]/cross/intersect/\"X\"/CL:個[go]/to cross/be stuck/to diverge/to open (as legs)"
+  },
+  {
+    "rank": 643,
+    "char": "街街",
+    "jyutping": "*gaai1gaai1",
+    "frequency_pm": 100.52,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 644,
+    "char": "媽",
+    "jyutping": "maa1",
+    "frequency_pm": 98.81,
+    "translation": "ma/mamma"
+  },
+  {
+    "rank": 645,
+    "char": "冷氣",
+    "jyutping": "laang5hei3",
+    "frequency_pm": 98.81,
+    "translation": "air conditioning (used in Taiwan)"
+  },
+  {
+    "rank": 646,
+    "char": "白白",
+    "jyutping": "baak6baak6",
+    "frequency_pm": 98.81,
+    "translation": "in vain/to no purpose/for nothing"
+  },
+  {
+    "rank": 647,
+    "char": "西瓜",
+    "jyutping": "sai1gwaa1",
+    "frequency_pm": 98.81,
+    "translation": "watermelon"
+  },
+  {
+    "rank": 648,
+    "char": "洗頭水",
+    "jyutping": "*sai2tau4seoi2",
+    "frequency_pm": 98.81,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 649,
+    "char": "鴨仔",
+    "jyutping": "*aap3|ngaap3zai2|zi2",
+    "frequency_pm": 98.81,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 650,
+    "char": "女",
+    "jyutping": "neoi5",
+    "frequency_pm": 97.11,
+    "translation": "female/woman/daughter"
+  },
+  {
+    "rank": 651,
+    "char": "前",
+    "jyutping": "cin4",
+    "frequency_pm": 97.11,
+    "translation": "front/forward/ahead/ago/before/first/former/formerly/future/BC (e.g. 前293年)"
+  },
+  {
+    "rank": 652,
+    "char": "英文",
+    "jyutping": "jing1man4",
+    "frequency_pm": 97.11,
+    "translation": "English (language)"
+  },
+  {
+    "rank": 653,
+    "char": "牛",
+    "jyutping": "ngau4",
+    "frequency_pm": 97.11,
+    "translation": "ox/cow/bull/CL:隻[jek]/awesome (Mandarin slang)"
+  },
+  {
+    "rank": 654,
+    "char": "拉",
+    "jyutping": "laai1|laa1",
+    "frequency_pm": 95.4,
+    "translation": "to pull/to play (string instruments)/to drag/to draw"
+  },
+  {
+    "rank": 655,
+    "char": "嚮",
+    "jyutping": "hoeng3",
+    "frequency_pm": 95.4,
+    "translation": "variant of 向, direction/orientation/to face/to turn toward/to/towards/shortly before/formerly/to side with/to be partial to/all along (previously)/surname Xiang"
+  },
+  {
+    "rank": 656,
+    "char": "獅子",
+    "jyutping": "si1zi2",
+    "frequency_pm": 95.4,
+    "translation": "lion"
+  },
+  {
+    "rank": 657,
+    "char": "堅",
+    "jyutping": "gin1",
+    "frequency_pm": 95.4,
+    "translation": "strong/solid/firm/unyielding/resolute/real, true, genuine, not fake, powerful"
+  },
+  {
+    "rank": 658,
+    "char": "之前",
+    "jyutping": "zi1cin4",
+    "frequency_pm": 93.7,
+    "translation": "before/prior to/ago"
+  },
+  {
+    "rank": 659,
+    "char": "信",
+    "jyutping": "seon3",
+    "frequency_pm": 93.7,
+    "translation": "letter/CL:封[feng1]/true/to believe/sign/evidence"
+  },
+  {
+    "rank": 660,
+    "char": "後面",
+    "jyutping": "hau6min6",
+    "frequency_pm": 93.7,
+    "translation": "rear/back/behind/later/afterwards"
+  },
+  {
+    "rank": 661,
+    "char": "公主",
+    "jyutping": "gung1zyu2",
+    "frequency_pm": 93.7,
+    "translation": "princess"
+  },
+  {
+    "rank": 662,
+    "char": "腳趾",
+    "jyutping": "goek3zi2",
+    "frequency_pm": 93.7,
+    "translation": "toe"
+  },
+  {
+    "rank": 663,
+    "char": "凳凳",
+    "jyutping": "*dang3dang3",
+    "frequency_pm": 93.7,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 664,
+    "char": "開始",
+    "jyutping": "hoi1ci2",
+    "frequency_pm": 92,
+    "translation": "to begin/beginning/to start/initial"
+  },
+  {
+    "rank": 665,
+    "char": "幅",
+    "jyutping": "fuk1",
+    "frequency_pm": 92,
+    "translation": "width/roll/classifier for textiles or pictures"
+  },
+  {
+    "rank": 666,
+    "char": "剝",
+    "jyutping": "mok1",
+    "frequency_pm": 92,
+    "translation": "to remove/to peel/to skin/to shell/to shuck"
+  },
+  {
+    "rank": 667,
+    "char": "滑梯",
+    "jyutping": "waat6tai1",
+    "frequency_pm": 92,
+    "translation": "sliding board"
+  },
+  {
+    "rank": 668,
+    "char": "同學",
+    "jyutping": "tung4hok6",
+    "frequency_pm": 90.29,
+    "translation": "(fellow) classmate"
+  },
+  {
+    "rank": 669,
+    "char": "窗",
+    "jyutping": "coeng1",
+    "frequency_pm": 90.29,
+    "translation": "shutter/window"
+  },
+  {
+    "rank": 670,
+    "char": "掃",
+    "jyutping": "sou3|sou2",
+    "frequency_pm": 90.29,
+    "translation": "broom/to sweep/to raid/to disrupt/to attack/to do a series of raids, to \"do a sweep\"/to go on a shopping spree"
+  },
+  {
+    "rank": 671,
+    "char": "認",
+    "jyutping": "jing6",
+    "frequency_pm": 90.29,
+    "translation": "to recognize/to know/to admit"
+  },
+  {
+    "rank": 672,
+    "char": "超人",
+    "jyutping": "ciu1jan4",
+    "frequency_pm": 90.29,
+    "translation": "Superman/superhuman/exceptional/a nickname for Hong Kong property magnate 李嘉誠 Li Ka-shing."
+  },
+  {
+    "rank": 673,
+    "char": "動物",
+    "jyutping": "dung6mat6",
+    "frequency_pm": 88.59,
+    "translation": "animal"
+  },
+  {
+    "rank": 674,
+    "char": "眼睛",
+    "jyutping": "ngaan5zing1",
+    "frequency_pm": 88.59,
+    "translation": "eye"
+  },
+  {
+    "rank": 675,
+    "char": "肚",
+    "jyutping": "tou5",
+    "frequency_pm": 88.59,
+    "translation": "belly/tripe"
+  },
+  {
+    "rank": 676,
+    "char": "鼻",
+    "jyutping": "bei6",
+    "frequency_pm": 88.59,
+    "translation": "nose"
+  },
+  {
+    "rank": 677,
+    "char": "爭",
+    "jyutping": "zang1|zaang1",
+    "frequency_pm": 88.59,
+    "translation": "to strive for/to vie for/to argue or debate/deficient or lacking/how or what (literary)"
+  },
+  {
+    "rank": 678,
+    "char": "薯條",
+    "jyutping": "syu4tiu2",
+    "frequency_pm": 88.59,
+    "translation": "french fried potatoes/french fries"
+  },
+  {
+    "rank": 679,
+    "char": "漢堡包",
+    "jyutping": "hon3bou2baau1",
+    "frequency_pm": 88.59,
+    "translation": "hamburger"
+  },
+  {
+    "rank": 680,
+    "char": "借",
+    "jyutping": "ze3",
+    "frequency_pm": 86.89,
+    "translation": "to lend/to borrow/excuse/pretext/by means of/to seize (an opportunity)/to take (an opportunity)"
+  },
+  {
+    "rank": 681,
+    "char": "塞",
+    "jyutping": "sak1|coi3",
+    "frequency_pm": 86.89,
+    "translation": "to stop up/to squeeze in/to stuff/cork/stopper|frontier/strategic pass"
+  },
+  {
+    "rank": 682,
+    "char": "邋遢",
+    "jyutping": "*?taap3",
+    "frequency_pm": 86.89,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 683,
+    "char": "夜晚",
+    "jyutping": "je6maan5",
+    "frequency_pm": 85.18,
+    "translation": "night"
+  },
+  {
+    "rank": 684,
+    "char": "矮",
+    "jyutping": "ai2|ngai2",
+    "frequency_pm": 85.18,
+    "translation": "low/short (in length)"
+  },
+  {
+    "rank": 685,
+    "char": "曱",
+    "jyutping": "*?",
+    "frequency_pm": 85.18,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 686,
+    "char": "甴",
+    "jyutping": "*?",
+    "frequency_pm": 85.18,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 687,
+    "char": "藥水",
+    "jyutping": "joek6seoi2",
+    "frequency_pm": 85.18,
+    "translation": "Yaksu in North Korea, near the border with Liaoning and Jiling province"
+  },
+  {
+    "rank": 688,
+    "char": "貓仔",
+    "jyutping": "*maau1zai2|zi2",
+    "frequency_pm": 85.18,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 689,
+    "char": "蝴蝶",
+    "jyutping": "wu4dip6",
+    "frequency_pm": 85.18,
+    "translation": "butterfly"
+  },
+  {
+    "rank": 690,
+    "char": "翠詩",
+    "jyutping": "*ceoi3si1",
+    "frequency_pm": 85.18,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 691,
+    "char": "眯",
+    "jyutping": "mei1|mai5",
+    "frequency_pm": 83.48,
+    "translation": "blind (as with dust)"
+  },
+  {
+    "rank": 692,
+    "char": "針",
+    "jyutping": "zam1",
+    "frequency_pm": 83.48,
+    "translation": "needle/pin/injection/stitch/CL:支[jī]"
+  },
+  {
+    "rank": 693,
+    "char": "就黎",
+    "jyutping": "*zau6lai4",
+    "frequency_pm": 83.48,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 694,
+    "char": "淋",
+    "jyutping": "lam4",
+    "frequency_pm": 83.48,
+    "translation": "to drain/to drench/to drip/diseases of the bladder/to filter/to strain"
+  },
+  {
+    "rank": 695,
+    "char": "朝頭早",
+    "jyutping": "*ziu1|ciu4tau4zou2",
+    "frequency_pm": 83.48,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 696,
+    "char": "貼紙",
+    "jyutping": "tip3zi2",
+    "frequency_pm": 83.48,
+    "translation": "sticker"
+  },
+  {
+    "rank": 697,
+    "char": "山窿",
+    "jyutping": "*saan1lung4",
+    "frequency_pm": 83.48,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 698,
+    "char": "其他",
+    "jyutping": "kei4taa1",
+    "frequency_pm": 81.77,
+    "translation": "other/the others/else/other than (that person)/in addition to the person mentioned above"
+  },
+  {
+    "rank": 699,
+    "char": "聽日",
+    "jyutping": "ting1jat6",
+    "frequency_pm": 81.77,
+    "translation": "tomorrow"
+  },
+  {
+    "rank": 700,
+    "char": "甜",
+    "jyutping": "tim4",
+    "frequency_pm": 81.77,
+    "translation": "sweet"
+  },
+  {
+    "rank": 701,
+    "char": "粉紅",
+    "jyutping": "fan2hung4",
+    "frequency_pm": 81.77,
+    "translation": "pink"
+  },
+  {
+    "rank": 702,
+    "char": "嘉嘉",
+    "jyutping": "*gaa1gaa1",
+    "frequency_pm": 81.77,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 703,
+    "char": "茶點",
+    "jyutping": "caa4dim2",
+    "frequency_pm": 81.77,
+    "translation": "tea and cake/refreshments/tea and dimsun 點心|点心, traditional Hong Kong lunch"
+  },
+  {
+    "rank": 704,
+    "char": "已經",
+    "jyutping": "ji5ging1",
+    "frequency_pm": 80.07,
+    "translation": "already"
+  },
+  {
+    "rank": 705,
+    "char": "隔離",
+    "jyutping": "gaak3lei4",
+    "frequency_pm": 80.07,
+    "translation": "to separate/to isolate"
+  },
+  {
+    "rank": 706,
+    "char": "勁",
+    "jyutping": "ging6|ging3",
+    "frequency_pm": 80.07,
+    "translation": "strong/powerful/excellent/great|strength/energy/enthusiasm/CL:把[bá]"
+  },
+  {
+    "rank": 707,
+    "char": "號",
+    "jyutping": "hou6",
+    "frequency_pm": 80.07,
+    "translation": "day of a month/(suffix used after) name of a ship/(ordinal) number/roar/cry"
+  },
+  {
+    "rank": 708,
+    "char": "交換",
+    "jyutping": "gaau1wun6",
+    "frequency_pm": 80.07,
+    "translation": "to exchange/to swap/to switch (telecom)/commutative (math)/to commute"
+  },
+  {
+    "rank": 709,
+    "char": "焗",
+    "jyutping": "guk6",
+    "frequency_pm": 80.07,
+    "translation": "1. to bake/2. a trap/3. to force/4. to provoke"
+  },
+  {
+    "rank": 710,
+    "char": "賴",
+    "jyutping": "laai6",
+    "frequency_pm": 80.07,
+    "translation": "surname Lai/to depend on/to hang on in a place/bad/to renege (on promise)/to disclaim/to rat (on debts)/rascally/to blame/to put the blame on"
+  },
+  {
+    "rank": 711,
+    "char": "腳腳",
+    "jyutping": "*goek3goek3",
+    "frequency_pm": 80.07,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 712,
+    "char": "可能",
+    "jyutping": "ho2nang4",
+    "frequency_pm": 78.37,
+    "translation": "might (happen)/possible/probable/possibility/probability/maybe/perhaps"
+  },
+  {
+    "rank": 713,
+    "char": "舅父",
+    "jyutping": "kau5fu2",
+    "frequency_pm": 78.37,
+    "translation": "mother's brother; maternal uncle"
+  },
+  {
+    "rank": 714,
+    "char": "鼻哥",
+    "jyutping": "*bei6go1",
+    "frequency_pm": 78.37,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 715,
+    "char": "契媽",
+    "jyutping": "*kai3|kit3maa1",
+    "frequency_pm": 78.37,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 716,
+    "char": "周圍",
+    "jyutping": "zau1wai4",
+    "frequency_pm": 76.66,
+    "translation": "surroundings/environment/to encompass"
+  },
+  {
+    "rank": 717,
+    "char": "爽身粉",
+    "jyutping": "*song2san1fan2",
+    "frequency_pm": 76.66,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 718,
+    "char": "燈燈",
+    "jyutping": "*dang1dang1",
+    "frequency_pm": 76.66,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 719,
+    "char": "後",
+    "jyutping": "hau6",
+    "frequency_pm": 74.96,
+    "translation": "back/behind/rear/afterwards/after/later"
+  },
+  {
+    "rank": 720,
+    "char": "琴晚",
+    "jyutping": "kam4maan5",
+    "frequency_pm": 74.96,
+    "translation": "yesterday night"
+  },
+  {
+    "rank": 721,
+    "char": "黏",
+    "jyutping": "nim4|nim1|zim1",
+    "frequency_pm": 74.96,
+    "translation": "to stick/sticky/glutinous/glue"
+  },
+  {
+    "rank": 722,
+    "char": "橙色",
+    "jyutping": "caang2sik1",
+    "frequency_pm": 74.96,
+    "translation": "color orange"
+  },
+  {
+    "rank": 723,
+    "char": "白雪",
+    "jyutping": "baak6syut3",
+    "frequency_pm": 74.96,
+    "translation": "white snow"
+  },
+  {
+    "rank": 724,
+    "char": "李天",
+    "jyutping": "*lei5tin1",
+    "frequency_pm": 74.96,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 725,
+    "char": "辛苦",
+    "jyutping": "san1fu2",
+    "frequency_pm": 73.26,
+    "translation": "hard/exhausting/with much toil"
+  },
+  {
+    "rank": 726,
+    "char": "者",
+    "jyutping": "ze2",
+    "frequency_pm": 73.26,
+    "translation": "-ist, -er (person)/person (who does sth)"
+  },
+  {
+    "rank": 727,
+    "char": "天",
+    "jyutping": "tin1",
+    "frequency_pm": 73.26,
+    "translation": "day/sky/heaven"
+  },
+  {
+    "rank": 728,
+    "char": "沖涼",
+    "jyutping": "*cung1loeng4",
+    "frequency_pm": 73.26,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 729,
+    "char": "牛奶",
+    "jyutping": "ngau4naai5",
+    "frequency_pm": 73.26,
+    "translation": "cow's milk"
+  },
+  {
+    "rank": 730,
+    "char": "紙巾",
+    "jyutping": "zi2gan1",
+    "frequency_pm": 73.26,
+    "translation": "paper napkin"
+  },
+  {
+    "rank": 731,
+    "char": "老虎",
+    "jyutping": "lou5fu2",
+    "frequency_pm": 73.26,
+    "translation": "tiger"
+  },
+  {
+    "rank": 732,
+    "char": "圖畫",
+    "jyutping": "tou4waa2",
+    "frequency_pm": 73.26,
+    "translation": "drawing/picture"
+  },
+  {
+    "rank": 733,
+    "char": "尿片",
+    "jyutping": "*niu6pin3|pin2",
+    "frequency_pm": 73.26,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 734,
+    "char": "頌晴",
+    "jyutping": "*zung6cing4",
+    "frequency_pm": 73.26,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 735,
+    "char": "雍慧",
+    "jyutping": "*jung1wai6",
+    "frequency_pm": 73.26,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 736,
+    "char": "早",
+    "jyutping": "zou2",
+    "frequency_pm": 71.55,
+    "translation": "early/morning"
+  },
+  {
+    "rank": 737,
+    "char": "究竟",
+    "jyutping": "gau3ging2",
+    "frequency_pm": 71.55,
+    "translation": "after all (when all is said and done)/actually/outcome/result"
+  },
+  {
+    "rank": 738,
+    "char": "喱",
+    "jyutping": "lei1",
+    "frequency_pm": 71.55,
+    "translation": "grain weight"
+  },
+  {
+    "rank": 739,
+    "char": "熊",
+    "jyutping": "hung4",
+    "frequency_pm": 71.55,
+    "translation": "bear/to scold/to rebuke/brilliant light/to shine brightly/surname Hung"
+  },
+  {
+    "rank": 740,
+    "char": "電腦",
+    "jyutping": "din6nou5",
+    "frequency_pm": 71.55,
+    "translation": "computer"
+  },
+  {
+    "rank": 741,
+    "char": "風",
+    "jyutping": "fung1",
+    "frequency_pm": 71.55,
+    "translation": "wind/news/style/custom/manner/CL:陣[jahn]"
+  },
+  {
+    "rank": 742,
+    "char": "預備",
+    "jyutping": "jyu6bei6",
+    "frequency_pm": 71.55,
+    "translation": "to prepare/to make ready/preparation/preparatory"
+  },
+  {
+    "rank": 743,
+    "char": "粉",
+    "jyutping": "fan2",
+    "frequency_pm": 71.55,
+    "translation": "powder/cosmetic face powder/food prepared from starch/noodles or pasta made from any kind of flour/whitewash/white/pink/heroin"
+  },
+  {
+    "rank": 744,
+    "char": "袋袋",
+    "jyutping": "*doi6|doi2doi6|doi2",
+    "frequency_pm": 71.55,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 745,
+    "char": "張家琪",
+    "jyutping": "*zoeng1gaa1kei4",
+    "frequency_pm": 71.55,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 746,
+    "char": "泡泡",
+    "jyutping": "*pou5|paau3|paau1pou5|paau3|paau1",
+    "frequency_pm": 71.55,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 747,
+    "char": "陪",
+    "jyutping": "pui4",
+    "frequency_pm": 69.85,
+    "translation": "to accompany/to keep sb company"
+  },
+  {
+    "rank": 748,
+    "char": "生",
+    "jyutping": "saang1|sang1",
+    "frequency_pm": 69.85,
+    "translation": "to be born/to give birth/life/to grow/raw, uncooked"
+  },
+  {
+    "rank": 749,
+    "char": "前面",
+    "jyutping": "cin4min6",
+    "frequency_pm": 69.85,
+    "translation": "ahead/in front/preceding/above"
+  },
+  {
+    "rank": 750,
+    "char": "路",
+    "jyutping": "lou6",
+    "frequency_pm": 69.85,
+    "translation": "road/CL:條[tìuh]/a trend/a tendency/a way forward (good or bad)/a sexual relationship"
+  },
+  {
+    "rank": 751,
+    "char": "斬",
+    "jyutping": "zaam2",
+    "frequency_pm": 69.85,
+    "translation": "to behead (as form of capital punishment)/to chop"
+  },
+  {
+    "rank": 752,
+    "char": "司機",
+    "jyutping": "si1gei1",
+    "frequency_pm": 69.85,
+    "translation": "chauffeur/driver"
+  },
+  {
+    "rank": 753,
+    "char": "乖乖",
+    "jyutping": "gwaai1gwaai1",
+    "frequency_pm": 69.85,
+    "translation": "well-behaved"
+  },
+  {
+    "rank": 754,
+    "char": "菜",
+    "jyutping": "coi3",
+    "frequency_pm": 69.85,
+    "translation": "dish (type of food)/vegetables/vegetable/cuisine/CL:碟[dihp],道[dao4]/a girlfriend/a sexually attractive girl or young woman"
+  },
+  {
+    "rank": 755,
+    "char": "朗朗",
+    "jyutping": "*long5long5",
+    "frequency_pm": 69.85,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 756,
+    "char": "手手",
+    "jyutping": "*sau2sau2",
+    "frequency_pm": 69.85,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 757,
+    "char": "下低",
+    "jyutping": "haa6dai1",
+    "frequency_pm": 69.85,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 758,
+    "char": "攬",
+    "jyutping": "laam5",
+    "frequency_pm": 68.15,
+    "translation": "to embrace/to monopolize/to seize"
+  },
+  {
+    "rank": 759,
+    "char": "套",
+    "jyutping": "tou3",
+    "frequency_pm": 68.15,
+    "translation": "cover/sheath/to encase/a case/to overlap/to interleave/bend (of a river or mountain range, in place names)/harness/classifier for sets, collections/tau (Greek letter Ττ)"
+  },
+  {
+    "rank": 760,
+    "char": "扭",
+    "jyutping": "nau2",
+    "frequency_pm": 68.15,
+    "translation": "to turn/to twist/to wring/to sprain/to swing one's hips"
+  },
+  {
+    "rank": 761,
+    "char": "點鐘",
+    "jyutping": "dim2zung1",
+    "frequency_pm": 68.15,
+    "translation": "(indicating time of day) o'clock"
+  },
+  {
+    "rank": 762,
+    "char": "雪條",
+    "jyutping": "syut3tiu2",
+    "frequency_pm": 68.15,
+    "translation": "ice lolly/popsicle"
+  },
+  {
+    "rank": 763,
+    "char": "洗衣機",
+    "jyutping": "sai2ji1gei1",
+    "frequency_pm": 68.15,
+    "translation": "washer/washing machine"
+  },
+  {
+    "rank": 764,
+    "char": "醜怪",
+    "jyutping": "cau2gwaai3",
+    "frequency_pm": 68.15,
+    "translation": "ugly"
+  },
+  {
+    "rank": 765,
+    "char": "籃",
+    "jyutping": "laam4",
+    "frequency_pm": 68.15,
+    "translation": "basket/goal"
+  },
+  {
+    "rank": 766,
+    "char": "哈哈",
+    "jyutping": "haa1haa1",
+    "frequency_pm": 66.44,
+    "translation": "onomat. laughing sound"
+  },
+  {
+    "rank": 767,
+    "char": "右",
+    "jyutping": "jau6",
+    "frequency_pm": 66.44,
+    "translation": "right (-hand)"
+  },
+  {
+    "rank": 768,
+    "char": "裏",
+    "jyutping": "leoi5",
+    "frequency_pm": 66.44,
+    "translation": "inside/internal/interior/lining/village/basic unit of city administration"
+  },
+  {
+    "rank": 769,
+    "char": "叮",
+    "jyutping": "ding1",
+    "frequency_pm": 66.44,
+    "translation": "sting (of mosquito, bee etc)/to say repeatedly/to urge insistently/to ask repeatedly/to stick to a point/onomat. tinkling or jingling sound"
+  },
+  {
+    "rank": 770,
+    "char": "派",
+    "jyutping": "paai3|paai1",
+    "frequency_pm": 66.44,
+    "translation": "clique/school/group/faction/to dispatch/to send/to assign/to appoint"
+  },
+  {
+    "rank": 771,
+    "char": "小丑",
+    "jyutping": "siu2cau2",
+    "frequency_pm": 66.44,
+    "translation": "clown"
+  },
+  {
+    "rank": 772,
+    "char": "皮",
+    "jyutping": "pei4",
+    "frequency_pm": 66.44,
+    "translation": "leather/skin/fur/ten thousand dollars/level, standard/pico- (one trillionth)/a surname/CL:塊[faai]"
+  },
+  {
+    "rank": 773,
+    "char": "幾點",
+    "jyutping": "gei2dim2",
+    "frequency_pm": 66.44,
+    "translation": "what time?/when?"
+  },
+  {
+    "rank": 774,
+    "char": "塵",
+    "jyutping": "can4",
+    "frequency_pm": 66.44,
+    "translation": "dust/dirt/earth"
+  },
+  {
+    "rank": 775,
+    "char": "錄音機",
+    "jyutping": "luk6jam1gei1",
+    "frequency_pm": 66.44,
+    "translation": "(tape) recording machine/tape recorder"
+  },
+  {
+    "rank": 776,
+    "char": "張俊謙",
+    "jyutping": "*zoeng1zeon3him1",
+    "frequency_pm": 66.44,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 777,
+    "char": "敢",
+    "jyutping": "gam2",
+    "frequency_pm": 64.74,
+    "translation": "dare"
+  },
+  {
+    "rank": 778,
+    "char": "血",
+    "jyutping": "hyut3",
+    "frequency_pm": 64.74,
+    "translation": "blood/informal colloquial and Taiwan pr. xie3/also pr. xue3"
+  },
+  {
+    "rank": 779,
+    "char": "搶",
+    "jyutping": "coeng2",
+    "frequency_pm": 64.74,
+    "translation": "to fight over/to rush/to scramble/to grab/to rob/to snatch"
+  },
+  {
+    "rank": 780,
+    "char": "熟",
+    "jyutping": "suk6",
+    "frequency_pm": 64.74,
+    "translation": "cooked (of food)/ripe (of fruit)/mature (of seeds)/familiar/skilled/done"
+  },
+  {
+    "rank": 781,
+    "char": "扶",
+    "jyutping": "fu4",
+    "frequency_pm": 64.74,
+    "translation": "to support with hand/to help sb up/to help"
+  },
+  {
+    "rank": 782,
+    "char": "另外",
+    "jyutping": "ling6ngoi6",
+    "frequency_pm": 64.74,
+    "translation": "additional/in addition/besides/separate/other/moreover/furthermore"
+  },
+  {
+    "rank": 783,
+    "char": "惡",
+    "jyutping": "ngok3|ok3|wu3",
+    "frequency_pm": 64.74,
+    "translation": "evil/fierce/vicious/ugly/coarse/to harm|to hate/to loathe/ashamed/to fear/to slander"
+  },
+  {
+    "rank": 784,
+    "char": "早晨",
+    "jyutping": "zou2san4",
+    "frequency_pm": 64.74,
+    "translation": "early morning"
+  },
+  {
+    "rank": 785,
+    "char": "結",
+    "jyutping": "git3",
+    "frequency_pm": 64.74,
+    "translation": "knot/sturdy/bond/to tie/to bind/to check out (of a hotel)/to bear fruit/to produce/firm/solid"
+  },
+  {
+    "rank": 786,
+    "char": "湊",
+    "jyutping": "cau3",
+    "frequency_pm": 64.74,
+    "translation": "to gather together, pool or collect/to happen by chance/to move close to/to exploit an opportunity"
+  },
+  {
+    "rank": 787,
+    "char": "車仔",
+    "jyutping": "*ce1|geoi1zai2|zi2",
+    "frequency_pm": 64.74,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 788,
+    "char": "豬豬",
+    "jyutping": "*zyu1zyu1",
+    "frequency_pm": 64.74,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 789,
+    "char": "紅綠燈",
+    "jyutping": "hung4luk6dang1",
+    "frequency_pm": 64.74,
+    "translation": "(red and green) traffic light/traffic signal"
+  },
+  {
+    "rank": 790,
+    "char": "水水",
+    "jyutping": "*seoi2seoi2",
+    "frequency_pm": 64.74,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 791,
+    "char": "大笨象",
+    "jyutping": "*daai6ban6zoeng6",
+    "frequency_pm": 64.74,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 792,
+    "char": "凳仔",
+    "jyutping": "*dang3zai2|zi2",
+    "frequency_pm": 64.74,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 793,
+    "char": "班",
+    "jyutping": "baan1",
+    "frequency_pm": 63.03,
+    "translation": "team/class/squad/work shift/classifier for groups/ranking/to gather together/to gather support (\"back-up\")/to deploy one's gang member/a surname"
+  },
+  {
+    "rank": 794,
+    "char": "肉",
+    "jyutping": "juk6",
+    "frequency_pm": 63.03,
+    "translation": "meat/flesh/pulp (of a fruit)"
+  },
+  {
+    "rank": 795,
+    "char": "種",
+    "jyutping": "zung2|zung3",
+    "frequency_pm": 63.03,
+    "translation": "abbr. for 物種|物种, genus/race/seed/breed/species/strain/kind/type/has guts (i.e. courage)/nerve/classifier for types: kind, sort/classifier for languages/to plant/to grow/to cultivate"
+  },
+  {
+    "rank": 796,
+    "char": "半",
+    "jyutping": "bun3",
+    "frequency_pm": 63.03,
+    "translation": "half/semi-/incomplete/(after a number) and a half"
+  },
+  {
+    "rank": 797,
+    "char": "地鐵",
+    "jyutping": "dei6tit3",
+    "frequency_pm": 63.03,
+    "translation": "subway/metro"
+  },
+  {
+    "rank": 798,
+    "char": "圈",
+    "jyutping": "hyun1|gyun6",
+    "frequency_pm": 63.03,
+    "translation": "circle/ring/loop/classifier for loops, orbits, laps of race etc/CL:個[go]/to surround/to circle|pen (pig)/a fold/to confine/to lock up/to pen in"
+  },
+  {
+    "rank": 799,
+    "char": "吞",
+    "jyutping": "tan1",
+    "frequency_pm": 63.03,
+    "translation": "to swallow/to take"
+  },
+  {
+    "rank": 800,
+    "char": "合",
+    "jyutping": "hap6",
+    "frequency_pm": 63.03,
+    "translation": "100 ml/one-tenth of a peck/measure for dry grain equal to one-tenth of sheng 升 or liter, or one-hundredth dou 斗/Chinese musical note/fit/to join"
+  },
+  {
+    "rank": 801,
+    "char": "夠鐘",
+    "jyutping": "*gau3zung1",
+    "frequency_pm": 63.03,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 802,
+    "char": "磅",
+    "jyutping": "bong6|bong2",
+    "frequency_pm": 63.03,
+    "translation": "to weigh/to give/to accompany/to escort/to protect/pound (unit of weight, about 454 grams)|scale/platform balance"
+  },
+  {
+    "rank": 803,
+    "char": "因住",
+    "jyutping": "*jan1zyu6",
+    "frequency_pm": 63.03,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 804,
+    "char": "米奇",
+    "jyutping": "*mai5kei4",
+    "frequency_pm": 63.03,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 805,
+    "char": "機機",
+    "jyutping": "*gei1gei1",
+    "frequency_pm": 63.03,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 806,
+    "char": "褲褲",
+    "jyutping": "*fu3fu3",
+    "frequency_pm": 63.03,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 807,
+    "char": "前便",
+    "jyutping": "*cin4bin6|pin4",
+    "frequency_pm": 63.03,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 808,
+    "char": "越",
+    "jyutping": "jyut6",
+    "frequency_pm": 61.33,
+    "translation": "generic word for peoples or states of south China or south Asia at different historical periods/abbr. for Vietnam 越南/to exceed/to climb over/to surpass/the more... the more"
+  },
+  {
+    "rank": 809,
+    "char": "尾",
+    "jyutping": "mei5",
+    "frequency_pm": 61.33,
+    "translation": "tail/a reprisal/bad consequences/loose ends"
+  },
+  {
+    "rank": 810,
+    "char": "悶",
+    "jyutping": "mun6",
+    "frequency_pm": 61.33,
+    "translation": "bored/depressed/melancholy/stuffy"
+  },
+  {
+    "rank": 811,
+    "char": "可樂",
+    "jyutping": "ho2lok6",
+    "frequency_pm": 61.33,
+    "translation": "cola"
+  },
+  {
+    "rank": 812,
+    "char": "肚臍",
+    "jyutping": "tou5ci4",
+    "frequency_pm": 61.33,
+    "translation": "navel"
+  },
+  {
+    "rank": 813,
+    "char": "風扇",
+    "jyutping": "fung1sin3",
+    "frequency_pm": 61.33,
+    "translation": "fan"
+  },
+  {
+    "rank": 814,
+    "char": "消防車",
+    "jyutping": "siu1fong4ce1",
+    "frequency_pm": 61.33,
+    "translation": "fire engine"
+  },
+  {
+    "rank": 815,
+    "char": "左",
+    "jyutping": "zo2",
+    "frequency_pm": 59.63,
+    "translation": "left/the Left (politics)/a surname"
+  },
+  {
+    "rank": 816,
+    "char": "心",
+    "jyutping": "sam1",
+    "frequency_pm": 59.63,
+    "translation": "heart/mind/intention/centre/core/CL:個[go]"
+  },
+  {
+    "rank": 817,
+    "char": "正",
+    "jyutping": "zing1|zing3|zeng",
+    "frequency_pm": 59.63,
+    "translation": "first month of the lunar year|just (right)/main/upright/straight/correct/positive/greater than zero/principle|great/terrific"
+  },
+  {
+    "rank": 818,
+    "char": "老師",
+    "jyutping": "lou5si1",
+    "frequency_pm": 59.63,
+    "translation": "teacher"
+  },
+  {
+    "rank": 819,
+    "char": "咳咳",
+    "jyutping": "*kat1kat1",
+    "frequency_pm": 59.63,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 820,
+    "char": "巴",
+    "jyutping": "baa1",
+    "frequency_pm": 59.63,
+    "translation": "Ba state during Zhou dynasty (in east of modern Sichuan)/abbr. for east Sichuan or Chongqing/surname Ba/abbr. for Palestine or Palestinian/abbr. for Pakistan/to long for/to wish/to cling to/to stick to/sth that sticks/close to/next to/spread open/informal abbr. for bus 巴士/bar (unit of pressure)/nominalizing suffix on certain nouns, such as 尾巴, tail"
+  },
+  {
+    "rank": 821,
+    "char": "街市",
+    "jyutping": "*gaai1si5",
+    "frequency_pm": 59.63,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 822,
+    "char": "出便",
+    "jyutping": "*ceot1bin6|pin4",
+    "frequency_pm": 59.63,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 823,
+    "char": "毛蟲",
+    "jyutping": "mou4cung4",
+    "frequency_pm": 59.63,
+    "translation": "caterpillar"
+  },
+  {
+    "rank": 824,
+    "char": "車轆",
+    "jyutping": "*ce1|geoi1luk1",
+    "frequency_pm": 59.63,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 825,
+    "char": "文文",
+    "jyutping": "*man4man4",
+    "frequency_pm": 59.63,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 826,
+    "char": "糖糖",
+    "jyutping": "*tong4|tong2tong4|tong2",
+    "frequency_pm": 59.63,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 827,
+    "char": "子健",
+    "jyutping": "*zi2gin6",
+    "frequency_pm": 59.63,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 828,
+    "char": "小輪",
+    "jyutping": "*siu2leon4",
+    "frequency_pm": 59.63,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 829,
+    "char": "其實",
+    "jyutping": "kei4sat6",
+    "frequency_pm": 57.92,
+    "translation": "actually/that is not the case/in fact/really"
+  },
+  {
+    "rank": 830,
+    "char": "運動",
+    "jyutping": "wan6dung6",
+    "frequency_pm": 57.92,
+    "translation": "movement/CL: 場|场[chang3]/campaign/sports"
+  },
+  {
+    "rank": 831,
+    "char": "山",
+    "jyutping": "saan1",
+    "frequency_pm": 57.92,
+    "translation": "mountain/hill/CL:座[joh]"
+  },
+  {
+    "rank": 832,
+    "char": "月亮",
+    "jyutping": "jyut6loeng6",
+    "frequency_pm": 57.92,
+    "translation": "moon"
+  },
+  {
+    "rank": 833,
+    "char": "扁",
+    "jyutping": "bin1",
+    "frequency_pm": 57.92,
+    "translation": "flat/(old form of character 匾, horizontal tablet with inscription)"
+  },
+  {
+    "rank": 834,
+    "char": "探",
+    "jyutping": "taam3",
+    "frequency_pm": 57.92,
+    "translation": "to explore/to search out/to scout/to visit/to stretch forward"
+  },
+  {
+    "rank": 835,
+    "char": "檸檬",
+    "jyutping": "ning4mung1",
+    "frequency_pm": 57.92,
+    "translation": "lemon/to be rejected by a potential date, a dance-partner, etc."
+  },
+  {
+    "rank": 836,
+    "char": "缸",
+    "jyutping": "gong1",
+    "frequency_pm": 57.92,
+    "translation": "jar/vat/classifier for loads of laundry"
+  },
+  {
+    "rank": 837,
+    "char": "熊貓",
+    "jyutping": "hung4maau1",
+    "frequency_pm": 57.92,
+    "translation": "panda/CL:隻[jek]/a person with dark rings around the eyes (because of lack of sleep)."
+  },
+  {
+    "rank": 838,
+    "char": "裙裙",
+    "jyutping": "*kwan4kwan4",
+    "frequency_pm": 57.92,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 839,
+    "char": "向",
+    "jyutping": "hoeng3",
+    "frequency_pm": 56.22,
+    "translation": "direction/orientation/to face/to turn toward/to/towards/shortly before/formerly/to side with/to be partial to/all along (previously)/surname Xiang"
+  },
+  {
+    "rank": 840,
+    "char": "跑",
+    "jyutping": "paau2",
+    "frequency_pm": 56.22,
+    "translation": "to run/to escape/race"
+  },
+  {
+    "rank": 841,
+    "char": "有時",
+    "jyutping": "jau5si4",
+    "frequency_pm": 56.22,
+    "translation": "sometimes/now and then"
+  },
+  {
+    "rank": 842,
+    "char": "以後",
+    "jyutping": "ji5hau6",
+    "frequency_pm": 56.22,
+    "translation": "after/later/afterwards/following/later on/in the future"
+  },
+  {
+    "rank": 843,
+    "char": "搬",
+    "jyutping": "bun1",
+    "frequency_pm": 56.22,
+    "translation": "to move/to shift/to remove/to transport/fig. to apply indiscriminately/to copy mechanically"
+  },
+  {
+    "rank": 844,
+    "char": "炒",
+    "jyutping": "caau2",
+    "frequency_pm": 56.22,
+    "translation": "to sauté/to stir-fry/to speculate/to hype/to fire (sb)/to clash with"
+  },
+  {
+    "rank": 845,
+    "char": "煲",
+    "jyutping": "bou1",
+    "frequency_pm": 56.22,
+    "translation": "pot or saucepan/to boil/to cook/to smoke cigarettes"
+  },
+  {
+    "rank": 846,
+    "char": "砍",
+    "jyutping": "ham2",
+    "frequency_pm": 56.22,
+    "translation": "to chop"
+  },
+  {
+    "rank": 847,
+    "char": "沙田",
+    "jyutping": "*saa1tin4",
+    "frequency_pm": 56.22,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 848,
+    "char": "毫子",
+    "jyutping": "*hou4zi2",
+    "frequency_pm": 56.22,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 849,
+    "char": "跛",
+    "jyutping": "bai1|bo2",
+    "frequency_pm": 56.22,
+    "translation": "to limp/lame/crippled"
+  },
+  {
+    "rank": 850,
+    "char": "蕃",
+    "jyutping": "faan4",
+    "frequency_pm": 56.22,
+    "translation": "flourishing/to reproduce/see 吐蕃 Tubo, old name for Tibet/the Tibetan Tubo dynasty 7th-11th century AD"
+  },
+  {
+    "rank": 851,
+    "char": "茄",
+    "jyutping": "gaa1|ke4",
+    "frequency_pm": 56.22,
+    "translation": "an eggplant"
+  },
+  {
+    "rank": 852,
+    "char": "子情",
+    "jyutping": "*zi2cing4",
+    "frequency_pm": 56.22,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 853,
+    "char": "船船",
+    "jyutping": "*syun4syun4",
+    "frequency_pm": 56.22,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 854,
+    "char": "敏姨",
+    "jyutping": "*man5ji4",
+    "frequency_pm": 56.22,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 855,
+    "char": "盆盆",
+    "jyutping": "*pun4pun4",
+    "frequency_pm": 56.22,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 856,
+    "char": "危險",
+    "jyutping": "ngai4him2",
+    "frequency_pm": 54.52,
+    "translation": "danger/dangerous"
+  },
+  {
+    "rank": 857,
+    "char": "中間",
+    "jyutping": "zung1gaan1",
+    "frequency_pm": 54.52,
+    "translation": "between/intermediate/mid/middle"
+  },
+  {
+    "rank": 858,
+    "char": "假",
+    "jyutping": "gaa2|gaa3",
+    "frequency_pm": 54.52,
+    "translation": "fake/false/artificial/to borrow/if/suppose|vacation"
+  },
+  {
+    "rank": 859,
+    "char": "食物",
+    "jyutping": "sik6mat6",
+    "frequency_pm": 54.52,
+    "translation": "food"
+  },
+  {
+    "rank": 860,
+    "char": "燒",
+    "jyutping": "siu1",
+    "frequency_pm": 54.52,
+    "translation": "to burn/to cook/to stew/to bake/to roast/fever"
+  },
+  {
+    "rank": 861,
+    "char": "汽水",
+    "jyutping": "hei3seoi2",
+    "frequency_pm": 54.52,
+    "translation": "soda/pop"
+  },
+  {
+    "rank": 862,
+    "char": "翹",
+    "jyutping": "kiu4",
+    "frequency_pm": 54.52,
+    "translation": "outstanding/to raise/to stick up/to rise on one end/to tilt"
+  },
+  {
+    "rank": 863,
+    "char": "隧道",
+    "jyutping": "seoi6dou6",
+    "frequency_pm": 54.52,
+    "translation": "tunnel"
+  },
+  {
+    "rank": 864,
+    "char": "歡樂",
+    "jyutping": "fun1lok6",
+    "frequency_pm": 54.52,
+    "translation": "gaiety/gladness/glee/merriment/pleasure/happy/joyous/gay"
+  },
+  {
+    "rank": 865,
+    "char": "花花",
+    "jyutping": "*faa1faa1",
+    "frequency_pm": 54.52,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 866,
+    "char": "歌仔",
+    "jyutping": "*go1zai2|zi2",
+    "frequency_pm": 54.52,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 867,
+    "char": "吸塵機",
+    "jyutping": "*kap1can4gei1",
+    "frequency_pm": 54.52,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 868,
+    "char": "褲仔",
+    "jyutping": "*fu3zai2|zi2",
+    "frequency_pm": 54.52,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 869,
+    "char": "麥皓臻",
+    "jyutping": "*mak6hou6zeon1",
+    "frequency_pm": 54.52,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 870,
+    "char": "門口",
+    "jyutping": "mun4hau2",
+    "frequency_pm": 52.81,
+    "translation": "doorway/gate"
+  },
+  {
+    "rank": 871,
+    "char": "黑色",
+    "jyutping": "haak1sik1",
+    "frequency_pm": 52.81,
+    "translation": "black"
+  },
+  {
+    "rank": 872,
+    "char": "旅行",
+    "jyutping": "leoi5hang4",
+    "frequency_pm": 52.81,
+    "translation": "travel"
+  },
+  {
+    "rank": 873,
+    "char": "硬",
+    "jyutping": "ngaang6",
+    "frequency_pm": 52.81,
+    "translation": "hard/stiff/strong/firm"
+  },
+  {
+    "rank": 874,
+    "char": "聖誕",
+    "jyutping": "sing3daan3",
+    "frequency_pm": 52.81,
+    "translation": "Christmas/birthday of reigning Emperor/Confucius' birthday"
+  },
+  {
+    "rank": 875,
+    "char": "舉",
+    "jyutping": "geoi2",
+    "frequency_pm": 52.81,
+    "translation": "to lift/to hold up/to cite/to enumerate/to act/to raise/to choose/to elect"
+  },
+  {
+    "rank": 876,
+    "char": "蠟燭",
+    "jyutping": "laap6zuk1",
+    "frequency_pm": 52.81,
+    "translation": "candle"
+  },
+  {
+    "rank": 877,
+    "char": "斟",
+    "jyutping": "zam1",
+    "frequency_pm": 52.81,
+    "translation": "to pour/to discuss/to deliberate"
+  },
+  {
+    "rank": 878,
+    "char": "辣",
+    "jyutping": "laat6",
+    "frequency_pm": 52.81,
+    "translation": "hot (spicy)/pungent/to burn/to excite someone sexually/to make someone angry/to provoke someone"
+  },
+  {
+    "rank": 879,
+    "char": "鈕",
+    "jyutping": "nau2",
+    "frequency_pm": 52.81,
+    "translation": "button/surname Niu"
+  },
+  {
+    "rank": 880,
+    "char": "鞋帶",
+    "jyutping": "haai4daai2",
+    "frequency_pm": 52.81,
+    "translation": "shoelace"
+  },
+  {
+    "rank": 881,
+    "char": "靚靚",
+    "jyutping": "*leng3leng3",
+    "frequency_pm": 52.81,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 882,
+    "char": "八爪魚",
+    "jyutping": "baat3zaau2jyu4",
+    "frequency_pm": 52.81,
+    "translation": "octopus"
+  },
+  {
+    "rank": 883,
+    "char": "呀",
+    "jyutping": "aa3|aa1|aa6",
+    "frequency_pm": 51.11,
+    "translation": "(particle equivalent to 啊 after a vowel, expressing surprise or doubt)"
+  },
+  {
+    "rank": 884,
+    "char": "一定",
+    "jyutping": "jat1ding6",
+    "frequency_pm": 51.11,
+    "translation": "surely/certainly/necessarily/fixed/a certain (extent etc)/given/particular/must"
+  },
+  {
+    "rank": 885,
+    "char": "陳",
+    "jyutping": "can4",
+    "frequency_pm": 51.11,
+    "translation": "surname Chen/Chen of the Southern dynasties (557-589)/to lay out/to exhibit/to display/to narrate/to state/to explain/to tell/old/stale"
+  },
+  {
+    "rank": 886,
+    "char": "著著",
+    "jyutping": "*zyu3zyu3",
+    "frequency_pm": 51.11,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 887,
+    "char": "布布",
+    "jyutping": "*bou3bou3",
+    "frequency_pm": 51.11,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 888,
+    "char": "今晚",
+    "jyutping": "gam1maan5",
+    "frequency_pm": 49.41,
+    "translation": "tonight"
+  },
+  {
+    "rank": 889,
+    "char": "遊戲",
+    "jyutping": "jau4hei3",
+    "frequency_pm": 49.41,
+    "translation": "game/play"
+  },
+  {
+    "rank": 890,
+    "char": "零",
+    "jyutping": "ling4",
+    "frequency_pm": 49.41,
+    "translation": "remnant/zero"
+  },
+  {
+    "rank": 891,
+    "char": "音樂",
+    "jyutping": "jam1ngok6",
+    "frequency_pm": 49.41,
+    "translation": "music"
+  },
+  {
+    "rank": 892,
+    "char": "好笑",
+    "jyutping": "hou2siu3",
+    "frequency_pm": 49.41,
+    "translation": "laughable/funny/ridiculous"
+  },
+  {
+    "rank": 893,
+    "char": "綠",
+    "jyutping": "luk6",
+    "frequency_pm": 49.41,
+    "translation": "green"
+  },
+  {
+    "rank": 894,
+    "char": "好味",
+    "jyutping": "*hou2|hou3mei6",
+    "frequency_pm": 49.41,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 895,
+    "char": "公公",
+    "jyutping": "gung1gung1",
+    "frequency_pm": 49.41,
+    "translation": "husband's father/father-in-law"
+  },
+  {
+    "rank": 896,
+    "char": "士多啤梨",
+    "jyutping": "*si6do1be1lei2",
+    "frequency_pm": 49.41,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 897,
+    "char": "包包",
+    "jyutping": "baau1baau1",
+    "frequency_pm": 49.41,
+    "translation": "bag (俚语 slang)"
+  },
+  {
+    "rank": 898,
+    "char": "餅餅",
+    "jyutping": "*beng2beng2",
+    "frequency_pm": 49.41,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 899,
+    "char": "泥膠",
+    "jyutping": "*nai4gaau1",
+    "frequency_pm": 49.41,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 900,
+    "char": "問題",
+    "jyutping": "man6tai4",
+    "frequency_pm": 47.7,
+    "translation": "question/problem/issue/topic"
+  },
+  {
+    "rank": 901,
+    "char": "等等",
+    "jyutping": "dang2dang2",
+    "frequency_pm": 47.7,
+    "translation": "etcetera/and so on ../wait a minute!/hold on!"
+  },
+  {
+    "rank": 902,
+    "char": "遲",
+    "jyutping": "ci4",
+    "frequency_pm": 47.7,
+    "translation": "late/delayed/slow"
+  },
+  {
+    "rank": 903,
+    "char": "馬路",
+    "jyutping": "maa5lou6",
+    "frequency_pm": 47.7,
+    "translation": "street/road"
+  },
+  {
+    "rank": 904,
+    "char": "粥",
+    "jyutping": "zuk1",
+    "frequency_pm": 47.7,
+    "translation": "congee/gruel/porridge"
+  },
+  {
+    "rank": 905,
+    "char": "脾氣",
+    "jyutping": "pei4hei3",
+    "frequency_pm": 47.7,
+    "translation": "temperament/disposition/temper"
+  },
+  {
+    "rank": 906,
+    "char": "爸",
+    "jyutping": "baa1",
+    "frequency_pm": 47.7,
+    "translation": "father/dad/pa/papa"
+  },
+  {
+    "rank": 907,
+    "char": "天地",
+    "jyutping": "tin1dei6",
+    "frequency_pm": 47.7,
+    "translation": "heaven and earth/the world"
+  },
+  {
+    "rank": 908,
+    "char": "尾巴",
+    "jyutping": "mei5baa1",
+    "frequency_pm": 47.7,
+    "translation": "tail"
+  },
+  {
+    "rank": 909,
+    "char": "牛油",
+    "jyutping": "ngau4jau4",
+    "frequency_pm": 47.7,
+    "translation": "butter"
+  },
+  {
+    "rank": 910,
+    "char": "豆豆",
+    "jyutping": "*dau6|dau2dau6|dau2",
+    "frequency_pm": 47.7,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 911,
+    "char": "頭頭",
+    "jyutping": "tau4tau2",
+    "frequency_pm": 47.7,
+    "translation": "head/chief"
+  },
+  {
+    "rank": 912,
+    "char": "鼻鼻",
+    "jyutping": "*bei6bei6",
+    "frequency_pm": 47.7,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 913,
+    "char": "片",
+    "jyutping": "pin3|pin2",
+    "frequency_pm": 46,
+    "translation": "thin piece/flake/a slice/film/TV play/to slice/to carve thin/partial/incomplete/one-sided/classifier for slices, tablets, tract of land, area of water/classifier for CDs, movies, DVDs etc (Mandarin)/used with numeral 一[yāt]: classifier for scenario, scene, feeling, atmosphere, sound etc/a blade/to fight/to compete/to be rivals/a bribe, protection money, paid to an official"
+  },
+  {
+    "rank": 914,
+    "char": "底褲",
+    "jyutping": "*dai2fu3",
+    "frequency_pm": 46,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 915,
+    "char": "計",
+    "jyutping": "gai3",
+    "frequency_pm": 46,
+    "translation": "to calculate/to compute/to count/to regard as important/to plan/ruse/meter/gauge"
+  },
+  {
+    "rank": 916,
+    "char": "滑",
+    "jyutping": "waat6",
+    "frequency_pm": 46,
+    "translation": "comical/comical/cunning/slippery/smooth/a surname"
+  },
+  {
+    "rank": 917,
+    "char": "黐",
+    "jyutping": "ci1",
+    "frequency_pm": 46,
+    "translation": "sticky/crazy/to stick to/to go crazy"
+  },
+  {
+    "rank": 918,
+    "char": "紫色",
+    "jyutping": "zi2sik1",
+    "frequency_pm": 46,
+    "translation": "purple/violet"
+  },
+  {
+    "rank": 919,
+    "char": "脾",
+    "jyutping": "pei4",
+    "frequency_pm": 46,
+    "translation": "spleen"
+  },
+  {
+    "rank": 920,
+    "char": "移",
+    "jyutping": "ji4",
+    "frequency_pm": 46,
+    "translation": "to move/to shift/to change/to alter/to remove"
+  },
+  {
+    "rank": 921,
+    "char": "卡通片",
+    "jyutping": "*kaa1tung1pin3|pin2",
+    "frequency_pm": 46,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 922,
+    "char": "圓形",
+    "jyutping": "jyun4jing4",
+    "frequency_pm": 46,
+    "translation": "round/circular"
+  },
+  {
+    "rank": 923,
+    "char": "下便",
+    "jyutping": "*haa6bin6|pin4",
+    "frequency_pm": 46,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 924,
+    "char": "擔",
+    "jyutping": "daam1|daam3",
+    "frequency_pm": 46,
+    "translation": "to undertake/to carry/to shoulder/to take responsibility|picul (100 catties, 50 kg)/two buckets full/carrying pole and its load/classifier for loads carried on a shoulder pole"
+  },
+  {
+    "rank": 925,
+    "char": "蛋蛋",
+    "jyutping": "*daan2daan2",
+    "frequency_pm": 46,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 926,
+    "char": "長頸鹿",
+    "jyutping": "coeng4geng2luk2",
+    "frequency_pm": 46,
+    "translation": "giraffe"
+  },
+  {
+    "rank": 927,
+    "char": "搖搖板",
+    "jyutping": "*jiu4jiu4baan2",
+    "frequency_pm": 46,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 928,
+    "char": "杯杯",
+    "jyutping": "*bui1bui1",
+    "frequency_pm": 46,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 929,
+    "char": "時候",
+    "jyutping": "si4hau6",
+    "frequency_pm": 44.29,
+    "translation": "time/length of time/moment/period"
+  },
+  {
+    "rank": 930,
+    "char": "男",
+    "jyutping": "naam4",
+    "frequency_pm": 44.29,
+    "translation": "male/Baron, lowest of five orders of nobility 五等爵位[ńgh dáng jeuk waih]"
+  },
+  {
+    "rank": 931,
+    "char": "明白",
+    "jyutping": "ming4baak6",
+    "frequency_pm": 44.29,
+    "translation": "clear/obvious/unequivocal/to understand/to realize"
+  },
+  {
+    "rank": 932,
+    "char": "部",
+    "jyutping": "bou6",
+    "frequency_pm": 44.29,
+    "translation": "ministry/department/section/part/division/troops/board/(classifier for works of literature, films, machines etc)"
+  },
+  {
+    "rank": 933,
+    "char": "處",
+    "jyutping": "cyu2|cyu3|syu3",
+    "frequency_pm": 44.29,
+    "translation": "place/location/spot/point/office/department/bureau/respect/one's virginity/classifier for locations or items of damage: spot, point/to reside/to live/to dwell/to be in/to be situated at/to stay/to get along with/to be in a position of/to deal with/to discipline/to punish"
+  },
+  {
+    "rank": 934,
+    "char": "校服",
+    "jyutping": "haau6fuk6",
+    "frequency_pm": 44.29,
+    "translation": "school uniform/CL:件[gihn]"
+  },
+  {
+    "rank": 935,
+    "char": "發",
+    "jyutping": "faat3",
+    "frequency_pm": 44.29,
+    "translation": "to send out/to show (one's feeling)/to issue/to develop/(classifier for gunshots, \"rounds\")"
+  },
+  {
+    "rank": 936,
+    "char": "輸",
+    "jyutping": "syu1",
+    "frequency_pm": 44.29,
+    "translation": "to transport/to lose"
+  },
+  {
+    "rank": 937,
+    "char": "頸",
+    "jyutping": "geng2",
+    "frequency_pm": 44.29,
+    "translation": "neck/CL:條[tìuh]"
+  },
+  {
+    "rank": 938,
+    "char": "散",
+    "jyutping": "saan3|saan2",
+    "frequency_pm": 44.29,
+    "translation": "to distribute/to disperse/to fire or discharge (sb)|to scatter/to break up (of couples)/to come loose/loosen/scattered/medicinal powder"
+  },
+  {
+    "rank": 939,
+    "char": "咖啡",
+    "jyutping": "gaa3fe1",
+    "frequency_pm": 44.29,
+    "translation": "coffee"
+  },
+  {
+    "rank": 940,
+    "char": "啤",
+    "jyutping": "be1|pe1",
+    "frequency_pm": 44.29,
+    "translation": "beer/to stare/to stare aggressively|(<pair) pair"
+  },
+  {
+    "rank": 941,
+    "char": "印",
+    "jyutping": "jan3",
+    "frequency_pm": 44.29,
+    "translation": "stamp/seal/mark/print/abbr. for India/surname Yan"
+  },
+  {
+    "rank": 942,
+    "char": "鎖",
+    "jyutping": "so2",
+    "frequency_pm": 44.29,
+    "translation": "to lock up/to lock"
+  },
+  {
+    "rank": 943,
+    "char": "罐",
+    "jyutping": "gun3",
+    "frequency_pm": 44.29,
+    "translation": "can/jar/pot"
+  },
+  {
+    "rank": 944,
+    "char": "逐",
+    "jyutping": "zuk6",
+    "frequency_pm": 44.29,
+    "translation": "to pursue/to chase/individually/one by one"
+  },
+  {
+    "rank": 945,
+    "char": "衣架",
+    "jyutping": "ji1gaa2",
+    "frequency_pm": 44.29,
+    "translation": "clothes-hanger/clothes rack"
+  },
+  {
+    "rank": 946,
+    "char": "蟲蟲",
+    "jyutping": "*cung4cung4",
+    "frequency_pm": 44.29,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 947,
+    "char": "河馬",
+    "jyutping": "ho4maa5",
+    "frequency_pm": 44.29,
+    "translation": "hippopotamus"
+  },
+  {
+    "rank": 948,
+    "char": "恩恩",
+    "jyutping": "*jan1jan1",
+    "frequency_pm": 44.29,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 949,
+    "char": "嘴嘴",
+    "jyutping": "*zeoi2zeoi2",
+    "frequency_pm": 44.29,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 950,
+    "char": "津利",
+    "jyutping": "*zeon1lei6",
+    "frequency_pm": 44.29,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 951,
+    "char": "止",
+    "jyutping": "zi2",
+    "frequency_pm": 42.59,
+    "translation": "to stop/to prohibit/untill"
+  },
+  {
+    "rank": 952,
+    "char": "日日",
+    "jyutping": "jat6jat6",
+    "frequency_pm": 42.59,
+    "translation": "every day"
+  },
+  {
+    "rank": 953,
+    "char": "相機",
+    "jyutping": "soeng2gei1",
+    "frequency_pm": 42.59,
+    "translation": "a camera/variant of 照相机"
+  },
+  {
+    "rank": 954,
+    "char": "餅乾",
+    "jyutping": "beng2gon1",
+    "frequency_pm": 42.59,
+    "translation": "biscuit/cracker/cookie"
+  },
+  {
+    "rank": 955,
+    "char": "突",
+    "jyutping": "dat6",
+    "frequency_pm": 42.59,
+    "translation": "to dash/to move forward quickly/to bulge/to protrude/to break through/to rush out/sudden/Taiwan pr. tu2"
+  },
+  {
+    "rank": 956,
+    "char": "浸",
+    "jyutping": "zam3",
+    "frequency_pm": 42.59,
+    "translation": "to immerse/to soak/to steep/gradually"
+  },
+  {
+    "rank": 957,
+    "char": "耳朵",
+    "jyutping": "ji5do2",
+    "frequency_pm": 42.59,
+    "translation": "ear"
+  },
+  {
+    "rank": 958,
+    "char": "香腸",
+    "jyutping": "hoeng1coeng2",
+    "frequency_pm": 42.59,
+    "translation": "sausage"
+  },
+  {
+    "rank": 959,
+    "char": "頸鍊",
+    "jyutping": "*geng2lin6|lin2",
+    "frequency_pm": 42.59,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 960,
+    "char": "跑車",
+    "jyutping": "paau2ce1",
+    "frequency_pm": 42.59,
+    "translation": "racing bicycle/sporting bicycle/sports car/logging truck/on the job (of a train conductor)"
+  },
+  {
+    "rank": 961,
+    "char": "臻",
+    "jyutping": "zeon1",
+    "frequency_pm": 42.59,
+    "translation": "to reach/utmost"
+  },
+  {
+    "rank": 962,
+    "char": "病病",
+    "jyutping": "*beng6beng6",
+    "frequency_pm": 42.59,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 963,
+    "char": "蛀",
+    "jyutping": "zyu3",
+    "frequency_pm": 42.59,
+    "translation": "termite/to bore (of insects)"
+  },
+  {
+    "rank": 964,
+    "char": "雞雞",
+    "jyutping": "*gai1gai1",
+    "frequency_pm": 42.59,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 965,
+    "char": "笪",
+    "jyutping": "daat3",
+    "frequency_pm": 42.59,
+    "translation": "surname Da/rough bamboo mat"
+  },
+  {
+    "rank": 966,
+    "char": "筆筆",
+    "jyutping": "*bat1bat1",
+    "frequency_pm": 42.59,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 967,
+    "char": "香港",
+    "jyutping": "hoeng1gong2",
+    "frequency_pm": 40.89,
+    "translation": "Hong Kong"
+  },
+  {
+    "rank": 968,
+    "char": "線",
+    "jyutping": "sin3",
+    "frequency_pm": 40.89,
+    "translation": "thread/string/wire/line"
+  },
+  {
+    "rank": 969,
+    "char": "懶",
+    "jyutping": "laan5",
+    "frequency_pm": 40.89,
+    "translation": "lazy"
+  },
+  {
+    "rank": 970,
+    "char": "銀包",
+    "jyutping": "*ngan4|ngan2baau1",
+    "frequency_pm": 40.89,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 971,
+    "char": "平",
+    "jyutping": "ping4",
+    "frequency_pm": 40.89,
+    "translation": "flat/level/equal/to tie (make the same score)/to draw (score)/calm/peaceful/level or even tone (i.e. first and second tones in classical Chinese)/surname Ping"
+  },
+  {
+    "rank": 972,
+    "char": "形",
+    "jyutping": "jing4",
+    "frequency_pm": 40.89,
+    "translation": "to appear/to look/form/shape"
+  },
+  {
+    "rank": 973,
+    "char": "舐",
+    "jyutping": "laai2|lem2|saai5",
+    "frequency_pm": 40.89,
+    "translation": "to lick/to lap (up)"
+  },
+  {
+    "rank": 974,
+    "char": "角",
+    "jyutping": "gok3",
+    "frequency_pm": 40.89,
+    "translation": "angle/horn/horn-shaped/unit of money equal to 0.1 yuan/role (theater)/to compete/ancient three legged wine vessel/third note of pentatonic scale/surname Jue"
+  },
+  {
+    "rank": 975,
+    "char": "泡",
+    "jyutping": "pou5|paau3|paau1",
+    "frequency_pm": 40.89,
+    "translation": "bubble/foam/blister (i.e. skin bubble)/to soak/to steep/to infuse/to dawdle/to shilly-shally/to hang about/to pick up (a girl)/to get off with (a sexual partner)/puffed/swollen/spongy/small lake (esp. in place names)/classifier for urine or feces"
+  },
+  {
+    "rank": 976,
+    "char": "蛇",
+    "jyutping": "se4",
+    "frequency_pm": 40.89,
+    "translation": "snake/serpent/CL:條[tìuh]/to shirk one's duty, to be lazy on the job"
+  },
+  {
+    "rank": 977,
+    "char": "繩",
+    "jyutping": "sing4",
+    "frequency_pm": 40.89,
+    "translation": "rope"
+  },
+  {
+    "rank": 978,
+    "char": "月光",
+    "jyutping": "jyut6gwong1",
+    "frequency_pm": 40.89,
+    "translation": "moonlight"
+  },
+  {
+    "rank": 979,
+    "char": "車頭",
+    "jyutping": "ce1tau4",
+    "frequency_pm": 40.89,
+    "translation": "hood"
+  },
+  {
+    "rank": 980,
+    "char": "蟹",
+    "jyutping": "haai5",
+    "frequency_pm": 40.89,
+    "translation": "crab/the vagina"
+  },
+  {
+    "rank": 981,
+    "char": "菠蘿",
+    "jyutping": "bo1lo4",
+    "frequency_pm": 40.89,
+    "translation": "pineapple"
+  },
+  {
+    "rank": 982,
+    "char": "烏龜",
+    "jyutping": "wu1gwai1",
+    "frequency_pm": 40.89,
+    "translation": "tortoise/a cuckold/a pimp/a police officer"
+  },
+  {
+    "rank": 983,
+    "char": "德華",
+    "jyutping": "*dak1waa4",
+    "frequency_pm": 40.89,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 984,
+    "char": "姚津莉",
+    "jyutping": "*jiu4zeon1lei6",
+    "frequency_pm": 40.89,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 985,
+    "char": "頭箍",
+    "jyutping": "*tau4ku1",
+    "frequency_pm": 40.89,
+    "translation": "NO DEF"
+  },
+  {
+    "rank": 986,
+    "char": "覺得",
+    "jyutping": "gok3dak1",
+    "frequency_pm": 39.18,
+    "translation": "to think/to feel"
+  },
+  {
+    "rank": 987,
+    "char": "上面",
+    "jyutping": "soeng6min6",
+    "frequency_pm": 39.18,
+    "translation": "on top of/above-mentioned/mainland China, as viewed from Hong Kong/the Beijing authorities"
+  },
+  {
+    "rank": 988,
+    "char": "以前",
+    "jyutping": "ji5cin4",
+    "frequency_pm": 39.18,
+    "translation": "before/formerly/previous/ago"
+  },
+  {
+    "rank": 989,
+    "char": "句",
+    "jyutping": "geoi3",
+    "frequency_pm": 39.18,
+    "translation": "sentence/clause/phrase/classifier for phrases or lines of verse"
+  },
+  {
+    "rank": 990,
+    "char": "每",
+    "jyutping": "mui5",
+    "frequency_pm": 39.18,
+    "translation": "each/every"
+  },
+  {
+    "rank": 991,
+    "char": "妹",
+    "jyutping": "mui6",
+    "frequency_pm": 39.18,
+    "translation": "younger sister"
+  },
+  {
+    "rank": 992,
+    "char": "追",
+    "jyutping": "zeoi1",
+    "frequency_pm": 39.18,
+    "translation": "to chase after/to seek/to do one's utmost to seek or procure sth/to recall"
+  },
+  {
+    "rank": 993,
+    "char": "肯",
+    "jyutping": "hang2",
+    "frequency_pm": 39.18,
+    "translation": "to agree/to consent/to be ready (to do sth)/willing"
+  },
+  {
+    "rank": 994,
+    "char": "齊",
+    "jyutping": "cai4",
+    "frequency_pm": 39.18,
+    "translation": "(name of states and dynasties at several different periods)/surname Qi/neat/even/level with/identical/simultaneous/all together/to even sth out"
+  },
+  {
+    "rank": 995,
+    "char": "布",
+    "jyutping": "bou3",
+    "frequency_pm": 39.18,
+    "translation": "cloth/CL:塊[faai]/to declare/to announce/to spread/to make known"
+  },
+  {
+    "rank": 996,
+    "char": "電視機",
+    "jyutping": "din6si6gei1",
+    "frequency_pm": 39.18,
+    "translation": "television set/CL: 臺|台[tai2]"
+  },
+  {
+    "rank": 997,
+    "char": "漏",
+    "jyutping": "lau6",
+    "frequency_pm": 39.18,
+    "translation": "to leak/to divulge/to leave out by mistake/waterclock or hourglass (old)"
+  },
+  {
+    "rank": 998,
+    "char": "爪",
+    "jyutping": "zaau2",
+    "frequency_pm": 39.18,
+    "translation": "claw"
+  },
+  {
+    "rank": 999,
+    "char": "苦",
+    "jyutping": "fu2",
+    "frequency_pm": 39.18,
+    "translation": "bitter/hardship/pain/to suffer/to bring suffering to/painstakingly"
+  },
+  {
+    "rank": 1000,
+    "char": "晏晝",
+    "jyutping": "*aan3zau3",
+    "frequency_pm": 39.18,
+    "translation": "NO DEF"
+  }
+]
