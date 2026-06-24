@@ -67,8 +67,8 @@ with movement verbs, it links the action directly to the landmark:
 
 ## 4. Situational Dialogue: Asking a Pedestrian for Directions
 
-A pedestrian (A) is trying to locate the MTR station and asks a passerby (B)
-for help.
+A pedestrian (A) is trying to locate the MTR station and asks a passerby (B) for
+help.
 
 ```dialog
 A: 唔該[m4goi1|please]，請問[cing2man6|may I ask] 地鐵站[dei6tit3zaam6|MTR station / subway station] 點樣[dim2joeng6|how] 去[heoi3|to go] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
@@ -100,7 +100,7 @@ explanation: |
 
 ```exercise
 question: |
-  What is the function of the complement 到[dou3|to arrive / until] in "行到前邊路口"?
+  What is the function of the complement 到[dou3|to arrive / until] in "行到[haang4dou3|walk to] 前邊[cin4bin1|ahead / in front / up ahead] 路口[lou6hau2|intersection / junction]"?
   A) It indicates continuous action in progress.
   B) It shows that the action has been completed.
   C) It links the action of walking to its destination/endpoint.

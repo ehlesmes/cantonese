@@ -8,8 +8,8 @@ description: >
 ---
 
 Welcome to Chapter 9! In this chapter, we will explore one of the most
-structurally unique areas of Colloquial Cantonese: **Split-Verbs** (linguistically
-known as _separable verbs_ or _lei-hap-ci_ in Cantonese).
+structurally unique areas of Colloquial Cantonese: **Split-Verbs**
+(linguistically known as _separable verbs_ or _lei-hap-ci_ in Cantonese).
 
 These words translate as simple single verbs in English (e.g. "to swim" or "to
 sing"), but structurally they are compound verb-object pairs. To express ongoing
@@ -192,7 +192,8 @@ B: 係呀[hai6aa3|yes]，我[ngo5|I / me] 跑[paau2|to run] 咗[zo2|verbal aspec
 
 ## 4. Exercises
 
-Test your understanding of Cantonese split-verbs, durations, and sentence structures.
+Test your understanding of Cantonese split-verbs, durations, and sentence
+structures.
 
 ```exercise
 question: |
@@ -219,5 +220,5 @@ question: |
   "Are you singing tonight?" (Use the A-not-A question form for the verb part of the split-verb)
 answer: 你[nei5|you] 今晚[gam1maan5|tonight] 唱唔唱[coeng3 m4 coeng3|do you sing (A-not-A question form)] 歌[go1|song] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 explanation: |
-  For the split-verb `唱歌[coeng3go1|to sing]`, the A-not-A question form is created by duplicating the verb part `唱[coeng3|to sing]`, resulting in `唱唔唱[coeng3 m4 coeng3]`, followed by the object part `歌[go1|song]` at the end.
+  For the split-verb `唱歌[coeng3go1|to sing]`, the A-not-A question form is created by duplicating the verb part `唱[coeng3|to sing]`, resulting in `唱唔唱[coeng3 m4 coeng3|do you sing (A-not-A question form)]`, followed by the object part `歌[go1|song]` at the end.
 ```

@@ -2,15 +2,16 @@
 id: leisure-hobbies
 title: "Hobbies & Weekend Leisure"
 description: >
-  Master colloquial Cantonese vocabulary for weekend activities, sports, hobbies,
-  and relaxation.
+  Master colloquial Cantonese vocabulary for weekend activities, sports,
+  hobbies, and relaxation.
 ---
 
 Welcome to Chapter 27! In this chapter, we will learn about **Hobbies & Weekend
 Leisure**.
 
-For those who prefer a relaxed weekend, outdoor hikes, or quiet indoor activities,
-colloquial Cantonese has rich vocabulary to describe everyday pastimes.
+For those who prefer a relaxed weekend, outdoor hikes, or quiet indoor
+activities, colloquial Cantonese has rich vocabulary to describe everyday
+pastimes.
 
 Let's dive in!
 
@@ -85,10 +86,10 @@ explanation: |
 ```exercise
 question: |
   Fill in the blank to say "Playing video games is fun, but sometimes boring":
-  打機[daa2gei1|to play video or computer games] 好玩[hou2waan2|fun / enjoyable]，不過[bat1gwo3|but / however] 有時[jau5si4|sometimes] 幾________ 㗎[gaa3|sentence-final particle asserting a point, combination of ge3 and aa3]。
+  打機[daa2gei1|to play video or computer games] 好玩[hou2waan2|fun / enjoyable]，不過[bat1gwo3|but / however] 有時[jau5si4|sometimes] 幾[gei2|quite / pretty / fairly]________ 㗎[gaa3|sentence-final particle asserting a point, combination of ge3 and aa3]。
 answer: 悶[mun6|boring / bored]
 explanation: |
-  `打機[daa2gei1|to play video or computer games]` is video games, `好玩[hou2waan2|fun / enjoyable]` is fun, `不過[bat1gwo3|but / however]` is but, `有時[jau5si4|sometimes]` is sometimes, `幾[gei2|quite]` is quite, and `悶[mun6|boring / bored]` is boring.
+  `打機[daa2gei1|to play video or computer games]` is video games, `好玩[hou2waan2|fun / enjoyable]` is fun, `不過[bat1gwo3|but / however]` is but, `有時[jau5si4|sometimes]` is sometimes, `幾[gei2|quite / pretty / fairly]` is quite, and `悶[mun6|boring / bored]` is boring.
 ```
 
 ```exercise
