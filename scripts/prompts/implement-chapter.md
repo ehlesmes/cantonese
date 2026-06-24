@@ -52,14 +52,11 @@ Before writing any chapter content, you must perform a cognitive load audit:
    grammatical patterns or particles at once?
 3. **Handle Splits & Reorganizations**:
    - If a topic is too dense, split it into two standard consecutive chapters.
-   - **Do NOT create fractional chapters** (e.g., do not use "Chapter 1.5" or
-     filenames like `01.5-particle-focus.md`).
-   - If a split or reordering occurs, **sequentially renumber all subsequent
-     chapters** (e.g., if inserting a new chapter, rename subsequent files using
-     `git mv` so they maintain clean double-digit sequence increments:
-     `01-greetings.md`, `02-new-topic.md`, `03-shopping-slang.md`...).
-   - Ensure you update the `chapter` number in the YAML frontmatter of all
-     renamed files to match their new prefixes.
+   - **Do NOT create fractional chapters** (e.g., do not use "Chapter 1.5").
+   - If a split or reordering occurs, update the sequential list of chapters in
+     `content/curriculum.md`. File names on disk do not use numeric prefixes
+     (e.g., it is `greetings.md`, not `01-greetings.md`). Use clean, descriptive
+     slugs for file names.
 4. **Update the Curriculum Map**: Modify the YAML index list and chapter
    descriptions in `content/curriculum.md` to reflect the updated 3-4 chapter
    active window and roadmap. Document your rationale clearly in your response.
@@ -100,8 +97,8 @@ Before writing any chapter content, you must perform a cognitive load audit:
 
 ### Phase C: Chapter Drafting
 
-1. Draft the target chapter file in `content/` with the correct two-digit prefix
-   matching your updated curriculum (e.g., `content/01-greetings.md`).
+1. Draft the target chapter file in `content/` with a descriptive filename slug
+   matching your updated curriculum definition (e.g., `content/greetings.md`).
 2. Prioritize natural, spoken, and authentic Cantonese (no formal 书面语).
 3. Ensure every single Chinese character discussed, used in dialogues, or found
    in exercises has correct inline annotations matching the dictionary.

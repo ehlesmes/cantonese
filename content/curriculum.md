@@ -292,123 +292,123 @@ Below is our immediate **active look-ahead window** and progress status of the
 chapters, translating our spiraled progression into progressive text lessons.
 
 - **Chapter 0: Pronunciation & Jyutping Fundamentals
-  (`00-pronunciation-jyutping.md`)** [COMPLETED]
+  (`pronunciation-jyutping.md`)** [COMPLETED]
   - _Focus_: Ear-training, the 6 tones, consonants, and vowel lengths.
     Exclamation slang (`喂[wai2]`, `吓[haa2]`) included.
-- **Chapter 1: Greetings & Who You Are (`01-greetings.md`)** [COMPLETED]
+- **Chapter 1: Greetings & Who You Are (`greetings.md`)** [COMPLETED]
   - _Focus_: Meeting people, personal identity. Integrates pronouns, the
     equative `係`, A-not-A question form, and the friendly softener particle
     `呀`.
-- **Chapter 2: Essential Purchases & Daily Slang (`02-shopping-slang.md`)**
+- **Chapter 2: Essential Purchases & Daily Slang (`shopping-slang.md`)**
   [COMPLETED]
   - _Focus_: Convenience store buys, prices, and dollars. Integrates auxiliary
     verbs `想`/`要`, demonstratives `呢個`/`嗰個`, loanwords (`的士`, `巴士`),
     and the critical slang `搞掂`.
-- **Chapter 3: Dining Out & Ordering (`03-dining-out.md`)** [COMPLETED]
+- **Chapter 3: Dining Out & Ordering (`dining-out.md`)** [COMPLETED]
   - _Focus_: Café culture (`茶餐廳`). Integrates classifiers (`個`, `杯`),
     making choices (`定`/`同埋`), asking for the bill (`埋單`), the softener
     particle `啦`, and our first aspect marker `咗`.
-- **Chapter 4: Where Things Are: Presence & Places
-  (`04-existentials-places.md`)** [COMPLETED]
+- **Chapter 4: Where Things Are: Presence & Places (`existentials-places.md`)**
+  [COMPLETED]
   - _Focus_: Finding things, asking for locations. Integrates existentials
     `有`/`冇`, the locative `喺`, directional markers (`上面`, `入面`), and the
     obviousness particle `囉`.
-- **Chapter 5: Time-Telling & Continuous Action (`05-time-continuous.md`)**
+- **Chapter 5: Time-Telling & Continuous Action (`time-continuous.md`)**
   [COMPLETED]
   - _Focus_: Expressing time, hours, minutes, and schedules. Integrates the
     continuous aspect particle `緊` and slacking slang `Hea`.
-- **Chapter 6: Ability, Permission & Experience (`06-ability-experience.md`)**
+- **Chapter 6: Ability, Permission & Experience (`ability-experience.md`)**
   [COMPLETED]
   - _Focus_: Distinguishing modal abilities `可以`, `識`, and `會`. Integrates
     experiential aspect `過`, potential suffixes `得` vs `唔到`.
 - **Chapter 7: Comparatives & Complex Descriptors
-  (`07-comparatives-descriptors.md`)** [COMPLETED]
+  (`comparatives-descriptors.md`)** [COMPLETED]
   - _Focus_: Relative clauses and noun modifiers using `嘅`, and comparative
     structures using `過` (e.g. A 過 B).
 - **Chapter 8: Advanced Particle Layering & Emotive Nuance
-  (`08-particles-nuance.md`)** [COMPLETED]
+  (`particles-nuance.md`)** [COMPLETED]
   - _Focus_: How to layer particles at the end of sentences to convey subtle
     moods (e.g., `啫[ze1|only/just]`, `嘛[maa3]`, `吓[haa2]`, `喇喎[laa3wo3]`).
-- **Chapter 9: Split-Verbs & Native Idioms (`09-split-verbs-idioms.md`)**
+- **Chapter 9: Split-Verbs & Native Idioms (`split-verbs-idioms.md`)**
   [COMPLETED]
   - _Focus_: Master the structural parsing of splitting verbs (e.g. `游水` ->
     `游咗水`), four-character local idioms (`俗語`), and cultural humor.
 - **Chapter 10: Hypotheticals, Conditionals & Future Planning
-  (`10-hypotheticals-conditionals.md`)** [COMPLETED]
+  (`hypotheticals-conditionals.md`)** [COMPLETED]
   - _Focus_: Express conditional logic using `如果` ... `就`, handle
     hypotheticals, and formulate plans and hopes.
 - **Chapter 11: Narrative Cohesion & Complex Connectives
-  (`11-narrative-cohesion.md`)** [COMPLETED]
+  (`narrative-cohesion.md`)** [COMPLETED]
   - _Focus_: Form complex connected paragraphs in speech, utilizing advanced
     conjunctions and transitional phrases for fluid native storytelling.
-- **Chapter 12: Regrets, Wishes & Empathy (`12-regrets-wishes-empathy.md`)**
+- **Chapter 12: Regrets, Wishes & Empathy (`regrets-wishes-empathy.md`)**
   [COMPLETED]
   - _Focus_: Express regrets about the past using `早知`, make wishes using
     `希望`, and express deep empathy with spoken structures.
 - **Chapter 13: Passives, Focus & Indirect Speech
-  (`13-passives-focus-indirect.md`)** [COMPLETED]
+  (`passives-focus-indirect.md`)** [COMPLETED]
   - _Focus_: Structure passive voice using `俾`, emphasize statements using
     `即係`, and report indirect speech using `話`.
 - **Chapter 14: Intensifiers, Exaggeration & Spoken Superlatives
-  (`14-intensifiers-exaggeration.md`)** [COMPLETED]
+  (`intensifiers-exaggeration.md`)** [COMPLETED]
   - _Focus_: Express extreme emotions using colloquial intensifiers `死`, `極`,
     and `爆`, and master spoken superlative structures.
 - **Chapter 15: Rhetorical Questions & Spoken Doubts
-  (`15-rhetorical-questions.md`)** [COMPLETED]
+  (`rhetorical-questions.md`)** [COMPLETED]
   - _Focus_: Formulate rhetorical questions using `唔通` ... `咩` and express
     disbelief or counter-expectations using `乜` ... `咩`.
-- **Chapter 16: Workplace Slang & Office Dynamics (`16-workplace-slang.md`)**
+- **Chapter 16: Workplace Slang & Office Dynamics (`workplace-slang.md`)**
   [COMPLETED]
   - _Focus_: Navigate professional environments, discuss working overtime
     (`OT`), slacking off at work (`摸魚` or `蛇王`), and professional life.
-- **Chapter 17: Foodie Culture & Tea Restaurant Slang (`17-foodie-slang.md`)**
+- **Chapter 17: Foodie Culture & Tea Restaurant Slang (`foodie-slang.md`)**
   [COMPLETED]
   - _Focus_: Learn colloquial shortcuts for ordering at diners, customizable
     beverage options (e.g. less sweet, iced), and essential dim sum cultural
     terminology.
 - **Chapter 18: Shopping, Bargaining & Spoken Quantifiers
-  (`18-shopping-bargaining.md`)** [COMPLETED]
+  (`shopping-bargaining.md`)** [COMPLETED]
   - _Focus_: Master spoken currency structures, bargaining expressions (e.g.
     `平啲啦` [cheaper please]), and advanced classifiers.
 - **Chapter 19: Dating, Relationships & Social Media Slang
-  (`19-social-media-slang.md`)** [COMPLETED]
+  (`social-media-slang.md`)** [COMPLETED]
   - _Focus_: Colloquial romance terminology (`拍拖`,
     `出[ceot1|to leave]Pool[pu1|singles pool]`), text messaging habits
     (`已讀不回`), and social media slang (`呃[aak1|to fish]like[laaik1|likes]`,
     `放閃`).
-- **Chapter 20: Travel, Directions & Transport Slang
-  (`20-travel-transport.md`)** [COMPLETED]
+- **Chapter 20: Travel, Directions & Transport Slang (`travel-transport.md`)**
+  [COMPLETED]
   - _Focus_: Navigate local transport (minibuses, MTR), ask for and give
     directions, and master essential travel slangs and colloquialisms.
 - **Chapter 21: Housing, Flat-Hunting & Neighborhood Slang
-  (`21-housing-neighborhood.md`)** [COMPLETED]
+  (`housing-neighborhood.md`)** [COMPLETED]
   - _Focus_: Renting apartments, flat-hunting terminology, layout descriptions,
     and neighborhood slang.
 - **Chapter 22: Entertainment, Nightlife & Leisure Slang
-  (`22-entertainment-nightlife.md`)** [COMPLETED]
+  (`entertainment-nightlife.md`)** [COMPLETED]
   - _Focus_: Colloquialisms for socializing, night-out habits, bars, clubs, and
     weekend activities.
-- **Chapter 23: Health, Sickness & Medical Slang (`23-health-sickness.md`)**
+- **Chapter 23: Health, Sickness & Medical Slang (`health-sickness.md`)**
   [COMPLETED]
   - _Focus_: Describing symptoms, going to the doctor (`睇醫生`), and sick leave
     colloquialisms.
-- **Chapter 24: Modern Tech, Smart Living & App Slang
-  (`24-tech-apps-slang.md`)** [COMPLETED]
+- **Chapter 24: Modern Tech, Smart Living & App Slang (`tech-apps-slang.md`)**
+  [COMPLETED]
   - _Focus_: Spoken tech terms, messaging platform verbs (e.g. `whatsapp我`),
     social media interactions, and digital payment slang.
 - **Chapter 25: Finance, Investing & Money Slang
-  (`25-finance-investing-slang.md`)** [COMPLETED]
+  (`finance-investing-slang.md`)** [COMPLETED]
   - _Focus_: Stock market slang (`炒股`), investment colloquialisms, banking,
     and everyday financial conversations.
 - **Chapter 26: Traditional Festivals, Superstitions & Cultural Slang
-  (`26-festivals-superstitions.md`)** [ACTIVE LOOK-A-HEAD]
+  (`festivals-superstitions.md`)** [ACTIVE LOOK-A-HEAD]
   - _Focus_: Colloquial holiday greetings, ghost festival slang, superstition
     terminology, and cultural taboos in Cantonese speaking communities.
 - **Chapter 27: Remote Work, Productivity & Digital Nomad Slang
-  (`27-remote-productivity.md`)** [ACTIVE LOOK-A-HEAD]
+  (`remote-productivity.md`)** [ACTIVE LOOK-A-HEAD]
   - _Focus_: Remote work colloquialisms, video calling, internet connection
     issues, online collaboration tools, and tech-nomad life.
-- **Chapter 28: Pets, Animal Care & Vet Slang (`28-pets-vet-slang.md`)** [ACTIVE
+- **Chapter 28: Pets, Animal Care & Vet Slang (`pets-vet-slang.md`)** [ACTIVE
   LOOK-A-HEAD]
   - _Focus_: Colloquial terms for pet ownership, caring for animals, veterinary
     visits, and animal-related idioms.

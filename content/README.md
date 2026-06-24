@@ -16,7 +16,7 @@ with two-digit prefixes to maintain correct chapter sorting:
 ```
 content/
 ├── README.md                # This specification
-├── 01-greetings.md          # First chapter
+├── greetings.md          # First chapter
 ├── 02-shopping-money.md     # Second chapter
 └── ...
 ```
@@ -201,8 +201,8 @@ explanation: 唔該[m4goi1|excuse me] is used for "excuse me", 我[ngo5|I] is "I
 
 ## 8. Chapter Organization & Course Progression
 
-1. **Course Introduction (`00-pronunciation-jyutping.md`)**: The very first file
-   in the course acts as a dedicated introduction to the Jyutping system,
+1. **Course Introduction (`pronunciation-jyutping.md`)**: The very first file in
+   the course acts as a dedicated introduction to the Jyutping system,
    consonants, vowels, and the 6 tones. Subsequent chapters do not need to
    re-introduce these mechanical foundations and can focus entirely on language
    content.
