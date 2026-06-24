@@ -1,5 +1,5 @@
 ---
-chapter: 17
+id: foodie-slang
 title: Foodie Culture & Tea Restaurant Slang
 description: >
   Dive deep into the fast-paced foodie culture of Hong Kong. Learn how to

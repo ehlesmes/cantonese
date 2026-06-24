@@ -34,21 +34,31 @@ function splitCantoneseTokens(cantoneseRaw) {
 const allExamples = [];
 const chaptersMeta = [];
 
-for (const chapter of chapters) {
+function getStablePhraseId(text) {
+  const clean = text.replace(/`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g, "$1")
+                    .replace(/[^\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9]/g, '');
+  let hash = 5381;
+  for (let i = 0; i < clean.length; i++) {
+    hash = (hash * 33) ^ clean.charCodeAt(i);
+  }
+  const hashStr = (hash >>> 0).toString(36);
+  return `phr-${clean.length}-${hashStr}`;
+}
+
+chapters.forEach((chapter, idx) => {
   const file = chapter.file;
   const filePath = path.resolve("content", file);
   const fileExists = fs.existsSync(filePath);
   
   chaptersMeta.push({
-    chapter: chapter.chapter,
+    id: chapter.id,
+    chapterNumber: idx,
     title: chapter.title,
     exists: fileExists
   });
   
   if (fileExists) {
     const { blocks } = parseChapter(filePath);
-    let exampleIndex = 0;
-    let turnIndex = 0;
     
     for (const block of blocks) {
       if (block.type === "cantonese") {
@@ -59,8 +69,9 @@ for (const chapter of chapters) {
         if (cantoneseRaw && english) {
           const tokens = splitCantoneseTokens(cantoneseRaw);
           allExamples.push({
-            id: `ch${chapter.chapter}-ex${exampleIndex++}`,
-            chapter: chapter.chapter,
+            id: getStablePhraseId(cantoneseRaw),
+            chapter: chapter.id,
+            chapterNumber: idx,
             chapterTitle: chapter.title,
             cantoneseRaw,
             english,
@@ -82,8 +93,9 @@ for (const chapter of chapters) {
               allExamples.push(currentTurn);
             }
             currentTurn = {
-              id: `ch${chapter.chapter}-dg${turnIndex++}`,
-              chapter: chapter.chapter,
+              id: getStablePhraseId(speakerMatch[2]),
+              chapter: chapter.id,
+              chapterNumber: idx,
               chapterTitle: chapter.title,
               cantoneseRaw: speakerMatch[2],
               english: "",
@@ -98,6 +110,7 @@ for (const chapter of chapters) {
             if (currentTurn) {
               currentTurn.cantoneseRaw += " " + trimmed;
               currentTurn.tokens = splitCantoneseTokens(currentTurn.cantoneseRaw);
+              currentTurn.id = getStablePhraseId(currentTurn.cantoneseRaw);
             }
           }
         }
@@ -107,7 +120,7 @@ for (const chapter of chapters) {
       }
     }
   }
-}
+});
 ---
 
 <BaseLayout title="Phrasebook" description="Practice and master Cantonese sentences using Spaced Repetition (SRS) unscramble sessions.">
@@ -164,8 +177,8 @@ for (const chapter of chapters) {
         <div style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 250px; overflow-y: auto; border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 6px; background-color: rgba(0,0,0,0.01);">
           {chaptersMeta.map(ch => (
             <label style={`display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: ${ch.exists ? "pointer" : "default"}; opacity: ${ch.exists ? 1 : 0.5}; user-select: none; padding: 0.15rem 0;`}>
-              <input type="checkbox" class="chapter-toggle-cb" data-chapter={ch.chapter} disabled={!ch.exists} style="width: 1rem; height: 1rem; cursor: pointer;" />
-              <span style="font-weight: 600; min-width: 2.5rem;">Ch {ch.chapter}:</span> {ch.title}
+              <input type="checkbox" class="chapter-toggle-cb" data-chapter={ch.id} disabled={!ch.exists} style="width: 1rem; height: 1rem; cursor: pointer;" />
+              <span style="font-weight: 600; min-width: 2.5rem;">Ch {ch.chapterNumber}:</span> {ch.title}
             </label>
           ))}
         </div>
@@ -286,7 +299,7 @@ for (const chapter of chapters) {
     }
 
     // 2. Global state and references
-    let unlockedChapters = [0];
+    let unlockedChapters = ["pronunciation-jyutping"];
     let srsState = {};
     let sessionCards = [];
     let currentCardIndex = 0;
@@ -346,106 +359,120 @@ for (const chapter of chapters) {
 
     // LocalStorage Operations
     function loadLocalStorage() {
-      try {
-        const storedChapters = localStorage.getItem('cantonese_unlocked_chapters');
-        if (storedChapters) {
-          unlockedChapters = JSON.parse(storedChapters).map(Number);
-          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
-        } else {
-          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
-        }
+       try {
+         const storedChapters = localStorage.getItem('cantonese_unlocked_chapters');
+         if (storedChapters) {
+           const parsed = JSON.parse(storedChapters);
+           if (Array.isArray(parsed)) {
+             unlockedChapters = parsed.filter(c => typeof c === "string");
+             if (!unlockedChapters.includes("pronunciation-jyutping")) {
+               unlockedChapters.unshift("pronunciation-jyutping");
+             }
+           }
+         } else {
+           localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
+         }
 
-        const storedSRS = localStorage.getItem('cantonese_srs_state');
-        if (storedSRS) {
-          srsState = JSON.parse(storedSRS);
-        }
-      } catch (e) {
-        console.error('LocalStorage load failed:', e);
-      }
-    }
+         const storedSRS = localStorage.getItem('cantonese_srs_state');
+         if (storedSRS) {
+           srsState = JSON.parse(storedSRS);
+         }
+       } catch (e) {
+         console.error('LocalStorage load failed:', e);
+       }
+     }
 
-    // Save state
-    function saveSRSState() {
-      try {
-        localStorage.setItem('cantonese_srs_state', JSON.stringify(srsState));
-      } catch (e) {
-        console.error('LocalStorage save failed:', e);
-      }
-    }
+     // Save state
+     function saveSRSState() {
+       try {
+         localStorage.setItem('cantonese_srs_state', JSON.stringify(srsState));
+       } catch (e) {
+         console.error('LocalStorage save failed:', e);
+       }
+     }
 
-    // Set up Configuration Checkboxes
-    function setupChapterToggles() {
-      const checkboxes = document.querySelectorAll('.chapter-toggle-cb');
-      checkboxes.forEach(cb => {
-        const chNum = parseInt(cb.getAttribute('data-chapter'), 10);
-        cb.checked = unlockedChapters.includes(chNum);
-        
-        cb.addEventListener('change', () => {
-          if (cb.checked) {
-            if (!unlockedChapters.includes(chNum)) unlockedChapters.push(chNum);
-          } else {
-            unlockedChapters = unlockedChapters.filter(n => n !== chNum);
-            // Default safeguard: keep at least Chapter 0
-            if (unlockedChapters.length === 0) {
-              unlockedChapters.push(0);
-              const ch0Cb = document.querySelector('.chapter-toggle-cb[data-chapter="0"]');
-              if (ch0Cb) ch0Cb.checked = true;
-            }
-          }
-          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
-          renderDashboard();
-        });
-      });
-    }
+     // Set up Configuration Checkboxes
+     function setupChapterToggles() {
+       const checkboxes = document.querySelectorAll('.chapter-toggle-cb');
+       checkboxes.forEach(cb => {
+         const chId = cb.getAttribute('data-chapter');
+         cb.checked = unlockedChapters.includes(chId);
+         
+         cb.addEventListener('change', () => {
+           if (cb.checked) {
+             if (!unlockedChapters.includes(chId)) unlockedChapters.push(chId);
+           } else {
+             unlockedChapters = unlockedChapters.filter(id => id !== chId);
+             // Default safeguard: keep at least Chapter 0
+             if (unlockedChapters.length === 0) {
+               unlockedChapters.push("pronunciation-jyutping");
+               const ch0Cb = document.querySelector('.chapter-toggle-cb[data-chapter="pronunciation-jyutping"]');
+               if (ch0Cb) ch0Cb.checked = true;
+             }
+           }
+           localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
+           renderDashboard();
+         });
+       });
+     }
 
-    // Renders stats and list
-    function renderDashboard() {
-      const statsChaptersEl = document.getElementById('stats-chapters-count');
-      const statsCardsEl = document.getElementById('stats-cards-count');
-      const statsMasteredEl = document.getElementById('stats-mastered-count');
+     // Renders stats and list
+     function renderDashboard() {
+       const statsChaptersEl = document.getElementById('stats-chapters-count');
+       const statsCardsEl = document.getElementById('stats-cards-count');
+       const statsMasteredEl = document.getElementById('stats-mastered-count');
 
-      const poolItems = allExamples.filter(item => unlockedChapters.includes(item.chapter));
+       const poolItems = allExamples.filter(item => unlockedChapters.includes(item.chapter));
 
-      let masteredCount = 0;
-      poolItems.forEach(item => {
-        const itemState = srsState[item.id];
-        if (itemState && itemState.level === 5) masteredCount++;
-      });
+       let masteredCount = 0;
+       poolItems.forEach(item => {
+         const itemState = srsState[item.id];
+         if (itemState && itemState.level === 5) masteredCount++;
+       });
 
-      if (statsChaptersEl) statsChaptersEl.textContent = unlockedChapters.length;
-      if (statsCardsEl) statsCardsEl.textContent = poolItems.length;
-      if (statsMasteredEl) statsMasteredEl.textContent = masteredCount;
+       if (statsChaptersEl) statsChaptersEl.textContent = unlockedChapters.length;
+       if (statsCardsEl) statsCardsEl.textContent = poolItems.length;
+       if (statsMasteredEl) statsMasteredEl.textContent = masteredCount;
 
-      renderPoolDirectory();
-    }
+       renderPoolDirectory();
+     }
 
-    // Renders list
-    function renderPoolDirectory() {
-      const container = document.getElementById('review-items-list-container');
-      if (!container) return;
+     // Renders list
+     function renderPoolDirectory() {
+       const container = document.getElementById('review-items-list-container');
+       if (!container) return;
 
-      const poolItems = allExamples.filter(item => unlockedChapters.includes(item.chapter));
-      
-      if (poolItems.length === 0) {
-        container.innerHTML = `<p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem;">No items available. Toggle chapters above to populate your review pool.</p>`;
-        return;
-      }
+       const poolItems = allExamples.filter(item => unlockedChapters.includes(item.chapter));
+       
+       if (poolItems.length === 0) {
+         container.innerHTML = `<p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem;">No items available. Toggle chapters above to populate your review pool.</p>`;
+         return;
+       }
 
-      container.innerHTML = '';
+       container.innerHTML = '';
 
-      if (currentGroupMode === "chapter") {
-        const grouped = {};
-        poolItems.forEach(item => {
-          if (!grouped[item.chapter]) grouped[item.chapter] = { title: item.chapterTitle, items: [] };
-          grouped[item.chapter].items.push(item);
-        });
+       if (currentGroupMode === "chapter") {
+         const grouped = {};
+         poolItems.forEach(item => {
+           if (!grouped[item.chapter]) {
+             grouped[item.chapter] = {
+               title: item.chapterTitle,
+               chapterNumber: item.chapterNumber,
+               items: []
+             };
+           }
+           grouped[item.chapter].items.push(item);
+         });
 
-        const sortedChapters = Object.keys(grouped).map(Number).sort((a,b) => a - b);
-        sortedChapters.forEach(chNum => {
-          const group = grouped[chNum];
-          const section = document.createElement('div');
-          section.style.marginBottom = '1.5rem';
-          section.innerHTML = `<h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; color: var(--text-color); font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 0.6rem;">Chapter ${chNum}: ${group.title}</h3>`;
+         const sortedChapterIds = Object.keys(grouped).sort((a, b) => {
+           return grouped[a].chapterNumber - grouped[b].chapterNumber;
+         });
+
+         sortedChapterIds.forEach(chId => {
+           const group = grouped[chId];
+           const section = document.createElement('div');
+           section.style.marginBottom = '1.5rem';
+           section.innerHTML = `<h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; color: var(--text-color); font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 0.6rem;">Chapter ${group.chapterNumber}: ${group.title}</h3>`;
           
           const itemsWrapper = document.createElement('div');
           itemsWrapper.className = 'review-items-container';

@@ -24,7 +24,7 @@ const curriculumPath = path.resolve("content/curriculum.md");
 const chapters = parseCurriculum(curriculumPath);
 
 // Prepare chapter entries with exist status and description
-const chapterEntries = chapters.map(c => {
+const chapterEntries = chapters.map((c, index) => {
   const fileExists = fs.existsSync(path.resolve("content", c.file));
   let description = "";
   if (fileExists) {
@@ -37,7 +37,7 @@ const chapterEntries = chapters.map(c => {
   }
   return {
     ...c,
-    id: String(c.chapter).padStart(2, "0"),
+    chapter: index,
     exists: fileExists,
     description: description.trim() || "Topic outline and learning materials coming soon."
   };
@@ -57,11 +57,11 @@ const chapterEntries = chapters.map(c => {
 
   <div style="display: flex; flex-direction: column; gap: 0.75rem;">
     {chapterEntries.map((chapter) => (
-      <div class="cantonese-example-card" data-chapter-card={chapter.chapter} style={`border-left-color: ${chapter.exists ? "var(--accent-color)" : "var(--border-color)"}; opacity: ${chapter.exists ? 1 : 0.6}; padding: 0.8rem 1rem; margin-bottom: 0;`}>
+      <div class="cantonese-example-card" data-chapter-card={chapter.id} style={`border-left-color: ${chapter.exists ? "var(--accent-color)" : "var(--border-color)"}; opacity: ${chapter.exists ? 1 : 0.6}; padding: 0.8rem 1rem; margin-bottom: 0;`}>
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.2rem;">
           <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
             <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
-              Chapter {chapter.chapter}
+               Chapter {chapter.chapter}
             </span>
           </div>
           {!chapter.exists && (
@@ -92,11 +92,17 @@ const chapterEntries = chapters.map(c => {
 
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
-      let unlocked = [0]; // default is Chapter 0
+      let unlocked = ["pronunciation-jyutping"]; // default is Chapter 0
       try {
         const stored = localStorage.getItem('cantonese_unlocked_chapters');
         if (stored) {
-          unlocked = JSON.parse(stored).map(Number);
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed)) {
+            unlocked = parsed.filter(c => typeof c === "string");
+            if (!unlocked.includes("pronunciation-jyutping")) {
+              unlocked.unshift("pronunciation-jyutping");
+            }
+          }
         }
       } catch (e) {
         console.error('Failed to parse unlocked chapters:', e);
@@ -104,8 +110,8 @@ const chapterEntries = chapters.map(c => {
       
       const cards = document.querySelectorAll('[data-chapter-card]');
       cards.forEach(card => {
-        const chNum = parseInt(card.getAttribute('data-chapter-card'), 10);
-        if (unlocked.includes(chNum)) {
+        const chId = card.getAttribute('data-chapter-card');
+        if (unlocked.includes(chId)) {
           card.style.borderLeftColor = 'var(--secondary-color)';
         }
       });

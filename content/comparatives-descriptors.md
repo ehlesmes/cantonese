@@ -1,5 +1,5 @@
 ---
-chapter: 7
+id: comparatives-descriptors
 title: "Comparatives & Complex Descriptors"
 description: >
   Master relative clauses and noun modifiers in Cantonese using the linking

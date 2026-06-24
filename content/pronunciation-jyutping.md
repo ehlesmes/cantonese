@@ -1,5 +1,5 @@
 ---
-chapter: 0
+id: pronunciation-jyutping
 title: Pronunciation & Jyutping Fundamentals
 description: >
   Master the mechanical foundations of spoken Cantonese, including the six core

@@ -26,11 +26,11 @@ content/
 ## 2. Frontmatter Metadata
 
 Each chapter file must begin with a YAML frontmatter block containing metadata
-about the chapter:
+about the chapter, including a unique and stable `id` (slug):
 
 ```markdown
 ---
-chapter: 1
+id: greetings
 title: Greetings & Courtesy
 description:
   Learn how to say hello, thank people, and apologize in daily situations.

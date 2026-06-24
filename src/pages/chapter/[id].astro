@@ -32,16 +32,16 @@ export async function getStaticPaths() {
     const file = chapter.file;
     const filePath = path.resolve("content", file);
     if (fs.existsSync(filePath)) {
-      const id = String(chapter.chapter).padStart(2, "0");
+      const id = chapter.id;
       paths.push({
         params: { id },
         props: {
           filePath,
-          chapterNumber: chapter.chapter,
-          allChapters: chapters.map(c => ({
-            chapter: c.chapter,
+          chapterNumber: i,
+          allChapters: chapters.map((c, index) => ({
+            chapter: index,
             title: c.title,
-            id: String(c.chapter).padStart(2, "0"),
+            id: c.id,
             exists: fs.existsSync(path.resolve("content", c.file))
           }))
         }
@@ -121,7 +121,7 @@ const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapter
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
   <div style="margin-bottom: 2rem;">
     <span style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color);">
-      Chapter {frontmatter.chapter}
+      Chapter {chapterNumber}
     </span>
     <h1 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">{frontmatter.title}</h1>
     <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4; font-style: italic; margin-bottom: 0;">
@@ -169,7 +169,7 @@ const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapter
       </p>
     </div>
     <label style="display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--secondary-color); cursor: pointer; user-select: none;">
-      <input type="checkbox" id="review-pool-checkbox" data-chapter={frontmatter.chapter} style="width: 1.15rem; height: 1.15rem; accent-color: var(--secondary-color); cursor: pointer;" />
+      <input type="checkbox" id="review-pool-checkbox" data-chapter={id} style="width: 1.15rem; height: 1.15rem; accent-color: var(--secondary-color); cursor: pointer;" />
       Mark as completed
     </label>
   </div>
@@ -179,40 +179,52 @@ const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapter
       const checkbox = document.getElementById('review-pool-checkbox');
       if (!checkbox) return;
       
-      const chapterNum = parseInt(checkbox.getAttribute('data-chapter'), 10);
+      const chapterId = checkbox.getAttribute('data-chapter');
       
       // Load current unlocked chapters
-      let unlocked = [0]; // default is Chapter 0
+      let unlocked = ["pronunciation-jyutping"]; // default is Chapter 0
       try {
         const stored = localStorage.getItem('cantonese_unlocked_chapters');
         if (stored) {
-          unlocked = JSON.parse(stored).map(Number);
-          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlocked));
-        } else {
-          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlocked));
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed)) {
+            unlocked = parsed.filter(c => typeof c === "string");
+            if (!unlocked.includes("pronunciation-jyutping")) {
+              unlocked.unshift("pronunciation-jyutping");
+            }
+          }
         }
       } catch (e) {
         console.error('Failed to parse unlocked chapters:', e);
       }
       
       // Set initial checkbox state
-      checkbox.checked = unlocked.includes(chapterNum);
+      checkbox.checked = unlocked.includes(chapterId);
       
       // Listen for changes
       checkbox.addEventListener('change', () => {
         try {
           const stored = localStorage.getItem('cantonese_unlocked_chapters');
-          let currentUnlocked = stored ? JSON.parse(stored).map(Number) : [0];
+          let currentUnlocked = ["pronunciation-jyutping"];
+          if (stored) {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed)) {
+              currentUnlocked = parsed.filter(c => typeof c === "string");
+              if (!currentUnlocked.includes("pronunciation-jyutping")) {
+                currentUnlocked.unshift("pronunciation-jyutping");
+              }
+            }
+          }
           
           if (checkbox.checked) {
-            if (!currentUnlocked.includes(chapterNum)) {
-              currentUnlocked.push(chapterNum);
+            if (!currentUnlocked.includes(chapterId)) {
+              currentUnlocked.push(chapterId);
             }
           } else {
-            currentUnlocked = currentUnlocked.filter(num => num !== chapterNum);
+            currentUnlocked = currentUnlocked.filter(slug => slug !== chapterId);
             // Always keep Chapter 0 as a baseline if they want
             if (currentUnlocked.length === 0) {
-              currentUnlocked.push(0);
+              currentUnlocked.push("pronunciation-jyutping");
             }
           }
           

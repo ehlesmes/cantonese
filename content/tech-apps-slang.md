@@ -1,5 +1,5 @@
 ---
-chapter: 24
+id: tech-apps-slang
 title: Modern Tech, Smart Living & App Slang
 description: Spoken terms for internet, mobile apps, smart home, and app slang.
 ---

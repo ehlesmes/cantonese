@@ -45,7 +45,7 @@ function parseAndSave(rawText) {
 
     const char = parts[0].trim();
     const jyutping = parts[1].trim();
-    const spokenAdultPm = parseFloat(parts[3]);
+    const spokenAdultPm = parseFloat(parts[5]);
     const translation = parts[12] ? parts[12].trim() : "";
 
     // Skip empty entries or system codes

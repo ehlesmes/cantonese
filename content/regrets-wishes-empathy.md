@@ -1,5 +1,5 @@
 ---
-chapter: 12
+id: regrets-wishes-empathy
 title: "Regrets, Wishes & Empathy"
 description: >
   Master spoken structures to express past regrets using zou2zi1 and hau6fui3,

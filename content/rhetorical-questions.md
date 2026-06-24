@@ -1,5 +1,5 @@
 ---
-chapter: 15
+id: rhetorical-questions
 title: "Rhetorical Questions & Spoken Doubts"
 description: >
   Master the art of forming rhetorical questions, expressing surprise or

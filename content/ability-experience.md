@@ -1,5 +1,5 @@
 ---
-chapter: 6
+id: ability-experience
 title: "Ability, Permission & Experience"
 description: >
   Master the modal verbs for expressing capability and permission in Cantonese.

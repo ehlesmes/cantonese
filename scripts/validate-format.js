@@ -40,17 +40,7 @@ function validateChapterFile(filePath, curriculumEntry) {
     errors.push({ file: filePath, line, message: msg });
 
   const basename = path.basename(filePath);
-  const prefixMatch = /^(\d{2})-(.*)\.md$/.exec(basename);
-
-  if (!prefixMatch) {
-    addError(
-      0,
-      `Filename "${basename}" does not follow the required double-digit prefix sorting convention (e.g., "01-greetings.md")`,
-    );
-    return errors;
-  }
-
-  const fileChapterNum = parseInt(prefixMatch[1], 10);
+  const slug = basename.replace(".md", "");
 
   let chapterData;
   try {
@@ -65,17 +55,17 @@ function validateChapterFile(filePath, curriculumEntry) {
     addError(1, "Missing YAML frontmatter block at the top of the file");
   } else {
     // Validate Frontmatter keys
-    if (frontmatter.chapter === undefined) {
-      addError(2, 'Frontmatter is missing required key "chapter"');
-    } else if (typeof frontmatter.chapter !== "number") {
+    if (frontmatter.id === undefined) {
+      addError(2, 'Frontmatter is missing required key "id"');
+    } else if (typeof frontmatter.id !== "string") {
       addError(
         2,
-        `Frontmatter "chapter" value must be an integer (got "${frontmatter.chapter}")`,
+        `Frontmatter "id" value must be a string (got "${frontmatter.id}")`,
       );
-    } else if (frontmatter.chapter !== fileChapterNum) {
+    } else if (frontmatter.id !== slug) {
       addError(
         2,
-        `Frontmatter "chapter" (${frontmatter.chapter}) does not match the filename prefix chapter number (${fileChapterNum})`,
+        `Frontmatter "id" (${frontmatter.id}) does not match the filename slug (${slug})`,
       );
     }
 
@@ -93,10 +83,10 @@ function validateChapterFile(filePath, curriculumEntry) {
 
     // Validate Frontmatter alignment with curriculum
     if (curriculumEntry) {
-      if (frontmatter.chapter !== curriculumEntry.chapter) {
+      if (frontmatter.id !== curriculumEntry.id) {
         addError(
           2,
-          `Frontmatter chapter number (${frontmatter.chapter}) does not match the curriculum definition (${curriculumEntry.chapter})`,
+          `Frontmatter ID (${frontmatter.id}) does not match the curriculum definition (${curriculumEntry.id})`,
         );
       }
       if (frontmatter.title !== curriculumEntry.title) {
@@ -430,7 +420,13 @@ function main() {
 
     // Read all md files in content directory
     const files = fs.readdirSync(contentDir);
-    const chapterFiles = files.filter((f) => /^\d{2}-.*\.md$/.test(f));
+    const chapterFiles = files.filter(
+      (f) =>
+        f.endsWith(".md") &&
+        f !== "README.md" &&
+        f !== "curriculum.md" &&
+        f !== "vocabulary.md",
+    );
 
     // 2. Validate each chapter file
     for (const file of chapterFiles) {

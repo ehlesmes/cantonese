@@ -1,5 +1,5 @@
 ---
-chapter: 25
+id: finance-investing-slang
 title: Finance, Investing & Money Slang
 description: Spoken terms for stock trading, investment slang, and banking.
 ---

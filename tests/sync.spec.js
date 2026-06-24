@@ -39,7 +39,10 @@ test.describe("Progress Sync E2E Tests", () => {
     // Seed local state: Chapter 0 unlocked, phrasebook has 0 reviews
     await page.goto("/cantonese");
     await page.evaluate(() => {
-      localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([0]));
+      localStorage.setItem(
+        "cantonese_unlocked_chapters",
+        JSON.stringify(["pronunciation-jyutping"]),
+      );
       localStorage.setItem("cantonese_srs_state", JSON.stringify({}));
       localStorage.setItem("cantonese_vocab_srs_state", JSON.stringify({}));
     });
@@ -47,8 +50,8 @@ test.describe("Progress Sync E2E Tests", () => {
     // Load page with valid import parameter (using URL-safe base64)
     const base64 = Buffer.from(
       JSON.stringify({
-        c: [0, 1, 2],
-        s: { "ch1-ex0": [3, 1718985600] },
+        c: ["pronunciation-jyutping", "greetings", "shopping-slang"],
+        s: { "phr-11-abcd12": [3, 1718985600] },
         v: {},
         t: 1718985600,
       }),
@@ -91,7 +94,10 @@ test.describe("Progress Sync E2E Tests", () => {
   }) => {
     await page.goto("/cantonese");
     await page.evaluate(() => {
-      localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([0]));
+      localStorage.setItem(
+        "cantonese_unlocked_chapters",
+        JSON.stringify(["pronunciation-jyutping"]),
+      );
       localStorage.setItem("cantonese_srs_state", JSON.stringify({}));
       localStorage.setItem("cantonese_vocab_srs_state", JSON.stringify({}));
     });

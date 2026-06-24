@@ -1,5 +1,5 @@
 ---
-chapter: 1
+id: greetings
 title: Greetings & Who You Are
 description: >
   Learn how to say hello, introduce yourself and others, make polite

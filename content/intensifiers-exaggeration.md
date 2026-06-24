@@ -1,5 +1,5 @@
 ---
-chapter: 14
+id: intensifiers-exaggeration
 title: "Intensifiers, Exaggeration & Spoken Superlatives"
 description: >
   Learn how to use Cantonese colloquial intensifiers to express extreme states,

@@ -1,92 +1,92 @@
 ---
 chapters:
-  - chapter: 0
+  - id: "pronunciation-jyutping"
     title: "Pronunciation & Jyutping Fundamentals"
-    file: "00-pronunciation-jyutping.md"
-  - chapter: 1
+    file: "pronunciation-jyutping.md"
+  - id: "greetings"
     title: "Greetings & Who You Are"
-    file: "01-greetings.md"
-  - chapter: 2
+    file: "greetings.md"
+  - id: "shopping-slang"
     title: "Essential Purchases & Daily Slang"
-    file: "02-shopping-slang.md"
-  - chapter: 3
+    file: "shopping-slang.md"
+  - id: "dining-out"
     title: "Dining Out & Ordering"
-    file: "03-dining-out.md"
-  - chapter: 4
+    file: "dining-out.md"
+  - id: "existentials-places"
     title: "Where Things Are: Presence & Places"
-    file: "04-existentials-places.md"
-  - chapter: 5
+    file: "existentials-places.md"
+  - id: "time-continuous"
     title: "Time-Telling & Continuous Action"
-    file: "05-time-continuous.md"
-  - chapter: 6
+    file: "time-continuous.md"
+  - id: "ability-experience"
     title: "Ability, Permission & Experience"
-    file: "06-ability-experience.md"
-  - chapter: 7
+    file: "ability-experience.md"
+  - id: "comparatives-descriptors"
     title: "Comparatives & Complex Descriptors"
-    file: "07-comparatives-descriptors.md"
-  - chapter: 8
+    file: "comparatives-descriptors.md"
+  - id: "particles-nuance"
     title: "Advanced Particle Layering & Emotive Nuance"
-    file: "08-particles-nuance.md"
-  - chapter: 9
+    file: "particles-nuance.md"
+  - id: "split-verbs-idioms"
     title: "Split-Verbs & Native Idioms"
-    file: "09-split-verbs-idioms.md"
-  - chapter: 10
+    file: "split-verbs-idioms.md"
+  - id: "hypotheticals-conditionals"
     title: "Hypotheticals, Conditionals & Future Planning"
-    file: "10-hypotheticals-conditionals.md"
-  - chapter: 11
+    file: "hypotheticals-conditionals.md"
+  - id: "narrative-cohesion"
     title: "Narrative Cohesion & Complex Connectives"
-    file: "11-narrative-cohesion.md"
-  - chapter: 12
+    file: "narrative-cohesion.md"
+  - id: "regrets-wishes-empathy"
     title: "Regrets, Wishes & Empathy"
-    file: "12-regrets-wishes-empathy.md"
-  - chapter: 13
+    file: "regrets-wishes-empathy.md"
+  - id: "passives-focus-indirect"
     title: "Passives, Focus & Indirect Speech"
-    file: "13-passives-focus-indirect.md"
-  - chapter: 14
+    file: "passives-focus-indirect.md"
+  - id: "intensifiers-exaggeration"
     title: "Intensifiers, Exaggeration & Spoken Superlatives"
-    file: "14-intensifiers-exaggeration.md"
-  - chapter: 15
+    file: "intensifiers-exaggeration.md"
+  - id: "rhetorical-questions"
     title: "Rhetorical Questions & Spoken Doubts"
-    file: "15-rhetorical-questions.md"
-  - chapter: 16
+    file: "rhetorical-questions.md"
+  - id: "workplace-slang"
     title: "Workplace Slang & Office Dynamics"
-    file: "16-workplace-slang.md"
-  - chapter: 17
+    file: "workplace-slang.md"
+  - id: "foodie-slang"
     title: "Foodie Culture & Tea Restaurant Slang"
-    file: "17-foodie-slang.md"
-  - chapter: 18
+    file: "foodie-slang.md"
+  - id: "shopping-bargaining"
     title: "Shopping, Bargaining & Spoken Quantifiers"
-    file: "18-shopping-bargaining.md"
-  - chapter: 19
+    file: "shopping-bargaining.md"
+  - id: "social-media-slang"
     title: "Dating, Relationships & Social Media Slang"
-    file: "19-social-media-slang.md"
-  - chapter: 20
+    file: "social-media-slang.md"
+  - id: "travel-transport"
     title: "Travel, Directions & Transport Slang"
-    file: "20-travel-transport.md"
-  - chapter: 21
+    file: "travel-transport.md"
+  - id: "housing-neighborhood"
     title: "Housing, Flat-Hunting & Neighborhood Slang"
-    file: "21-housing-neighborhood.md"
-  - chapter: 22
+    file: "housing-neighborhood.md"
+  - id: "entertainment-nightlife"
     title: "Entertainment, Nightlife & Leisure Slang"
-    file: "22-entertainment-nightlife.md"
-  - chapter: 23
+    file: "entertainment-nightlife.md"
+  - id: "health-sickness"
     title: "Health, Sickness & Medical Slang"
-    file: "23-health-sickness.md"
-  - chapter: 24
+    file: "health-sickness.md"
+  - id: "tech-apps-slang"
     title: "Modern Tech, Smart Living & App Slang"
-    file: "24-tech-apps-slang.md"
-  - chapter: 25
+    file: "tech-apps-slang.md"
+  - id: "finance-investing-slang"
     title: "Finance, Investing & Money Slang"
-    file: "25-finance-investing-slang.md"
-  - chapter: 26
+    file: "finance-investing-slang.md"
+  - id: "festivals-superstitions"
     title: "Traditional Festivals, Superstitions & Cultural Slang"
-    file: "26-festivals-superstitions.md"
-  - chapter: 27
+    file: "festivals-superstitions.md"
+  - id: "remote-productivity"
     title: "Remote Work, Productivity & Digital Nomad Slang"
-    file: "27-remote-productivity.md"
-  - chapter: 28
+    file: "remote-productivity.md"
+  - id: "pets-vet-slang"
     title: "Pets, Animal Care & Vet Slang"
-    file: "28-pets-vet-slang.md"
+    file: "pets-vet-slang.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap

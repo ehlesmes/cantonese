@@ -2,7 +2,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Review Board Legacy / String State Compatibility Tests", () => {
-  test("should handle string-typed chapters in localStorage, convert them to numbers, and load cards", async ({
+  test("should handle string-typed chapters in localStorage and load cards", async ({
     page,
   }) => {
     // 1. Go to the page (to set context/origin)
@@ -12,7 +12,7 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     await page.evaluate(() => {
       localStorage.setItem(
         "cantonese_unlocked_chapters",
-        JSON.stringify(["1", "2"]),
+        JSON.stringify(["greetings", "shopping-slang"]),
       );
     });
 
@@ -34,19 +34,19 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     console.log("Legacy test - Stats chapters count:", statsChapters);
     console.log("Legacy test - Stats cards count:", statsCards);
 
-    // Assert that the chapters count is 2 (Chapter 1 and 2), and cards count is 48 (22 + 26)
-    expect(statsChapters).toBe("2");
-    expect(statsCards).toBe("48");
+    // Assert that the chapters count is 3 (Pronunciation, Greetings, Shopping), and cards count is 53
+    expect(statsChapters).toBe("3");
+    expect(statsCards).toBe("53");
 
-    // Check if the checkboxes for 1 and 2 are checked
+    // Check if the checkboxes are checked
     const ch1Checked = await page
-      .locator(".chapter-toggle-cb[data-chapter='1']")
+      .locator(".chapter-toggle-cb[data-chapter='greetings']")
       .isChecked();
     const ch2Checked = await page
-      .locator(".chapter-toggle-cb[data-chapter='2']")
+      .locator(".chapter-toggle-cb[data-chapter='shopping-slang']")
       .isChecked();
     const ch0Checked = await page
-      .locator(".chapter-toggle-cb[data-chapter='0']")
+      .locator(".chapter-toggle-cb[data-chapter='pronunciation-jyutping']")
       .isChecked();
 
     console.log("Checkboxes state in legacy test:");
@@ -54,16 +54,19 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     console.log("Ch 1 checked:", ch1Checked);
     console.log("Ch 2 checked:", ch2Checked);
 
-    expect(ch0Checked).toBe(false);
+    expect(ch0Checked).toBe(true);
     expect(ch1Checked).toBe(true);
     expect(ch2Checked).toBe(true);
 
-    // Verify localStorage has been updated/normalized to numbers
+    // Verify localStorage has been updated/normalized
     const storedAfterLoad = await page.evaluate(() =>
       localStorage.getItem("cantonese_unlocked_chapters"),
     );
     console.log("Normalized localStorage value:", storedAfterLoad);
-    expect(storedAfterLoad).toBe("[1,2]");
+    expect(JSON.parse(storedAfterLoad)).toEqual([
+      "greetings",
+      "shopping-slang",
+    ]);
   });
 
   test("should accept swapped order of identical duplicate tokens", async ({
@@ -79,7 +82,10 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
 
     // 1. Seed localStorage and intercept __allExamples before page load
     await page.addInitScript(() => {
-      localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([3]));
+      localStorage.setItem(
+        "cantonese_unlocked_chapters",
+        JSON.stringify(["dining-out"]),
+      );
 
       let val;
       Object.defineProperty(window, "__allExamples", {
@@ -89,7 +95,7 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
         set(newVal) {
           val = newVal;
           // Find the specific card with duplicate tokens
-          const targetCard = val.find((c) => c.id === "ch3-dg9");
+          const targetCard = val.find((c) => c.id === "phr-11-1v3vktn");
           if (targetCard) {
             val.length = 0;
             val.push(targetCard);
@@ -161,7 +167,10 @@ test.describe("Autoplay Audio Tests", () => {
   }) => {
     // 1. Seed localStorage and mock Audio/SpeechSynthesis
     await page.addInitScript(() => {
-      localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([1]));
+      localStorage.setItem(
+        "cantonese_unlocked_chapters",
+        JSON.stringify(["greetings"]),
+      );
 
       // Mock audio play to return a long-running/pending promise so tts-playing class persists
       window.HTMLAudioElement.prototype.play = function () {
@@ -199,7 +208,10 @@ test.describe("Autoplay Audio Tests", () => {
   }) => {
     // 1. Seed localStorage and intercept __allExamples before page load to have a known short list
     await page.addInitScript(() => {
-      localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([3]));
+      localStorage.setItem(
+        "cantonese_unlocked_chapters",
+        JSON.stringify(["dining-out"]),
+      );
 
       // Mock audio play to return a long-running/pending promise so tts-playing class persists
       window.HTMLAudioElement.prototype.play = function () {
@@ -222,7 +234,7 @@ test.describe("Autoplay Audio Tests", () => {
         set(newVal) {
           val = newVal;
           // Find the specific card with duplicate tokens
-          const targetCard = val.find((c) => c.id === "ch3-dg9");
+          const targetCard = val.find((c) => c.id === "phr-11-1v3vktn");
           if (targetCard) {
             val.length = 0;
             val.push(targetCard);

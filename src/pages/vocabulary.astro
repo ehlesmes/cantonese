@@ -24,10 +24,11 @@ const curriculumPath = path.resolve("content/curriculum.md");
 const chapters = parseCurriculum(curriculumPath);
 
 // Prepare chapter entries with exist status
-const chaptersMeta = chapters.map(c => {
+const chaptersMeta = chapters.map((c, index) => {
   const fileExists = fs.existsSync(path.resolve("content", c.file));
   return {
-    chapter: c.chapter,
+    id: c.id,
+    chapterNumber: index,
     title: c.title,
     exists: fileExists
   };
@@ -39,15 +40,14 @@ const allVocabRaw = JSON.parse(fs.readFileSync(vocabPath, "utf8"));
 
 // Enrich vocabulary items with structured fields
 const allVocab = allVocabRaw.map(item => {
-  const match = item.firstIntroducedIn.match(/^(\d{2})-/);
-  const chapterNum = match ? parseInt(match[1], 10) : 0;
-  const chMeta = chaptersMeta.find(c => c.chapter === chapterNum);
+  const chMeta = chaptersMeta.find(c => c.id === item.firstIntroducedIn);
   return {
     id: `vocab-${item.character}_${item.jyutping.replace(/\s+/g, "")}`,
     character: item.character,
     jyutping: item.jyutping,
     translation: item.translation,
-    chapter: chapterNum,
+    chapter: item.firstIntroducedIn,
+    chapterNumber: chMeta ? chMeta.chapterNumber : 0,
     chapterTitle: chMeta ? chMeta.title : "Introduction",
     occurrences: item.occurrences
   };
@@ -108,8 +108,8 @@ const allVocab = allVocabRaw.map(item => {
         <div style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 250px; overflow-y: auto; border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 6px; background-color: rgba(0,0,0,0.01);">
           {chaptersMeta.map(ch => (
             <label style={`display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: ${ch.exists ? "pointer" : "default"}; opacity: ${ch.exists ? 1 : 0.5}; user-select: none; padding: 0.15rem 0;`}>
-              <input type="checkbox" class="chapter-toggle-cb" data-chapter={ch.chapter} disabled={!ch.exists} style="width: 1rem; height: 1rem; cursor: pointer;" />
-              <span style="font-weight: 600; min-width: 2.5rem;">Ch {ch.chapter}:</span> {ch.title}
+              <input type="checkbox" class="chapter-toggle-cb" data-chapter={ch.id} disabled={!ch.exists} style="width: 1rem; height: 1rem; cursor: pointer;" />
+              <span style="font-weight: 600; min-width: 2.5rem;">Ch {ch.chapterNumber}:</span> {ch.title}
             </label>
           ))}
         </div>
@@ -211,7 +211,7 @@ const allVocab = allVocabRaw.map(item => {
     }
 
     // Global state and references
-    let unlockedChapters = [0];
+    let unlockedChapters = ["pronunciation-jyutping"];
     let vocabSRSState = {};
     let sessionCards = [];
     let currentCardIndex = 0;
@@ -276,8 +276,13 @@ const allVocab = allVocabRaw.map(item => {
       try {
         const storedChapters = localStorage.getItem('cantonese_unlocked_chapters');
         if (storedChapters) {
-          unlockedChapters = JSON.parse(storedChapters).map(Number);
-          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
+          const parsed = JSON.parse(storedChapters);
+          if (Array.isArray(parsed)) {
+            unlockedChapters = parsed.filter(c => typeof c === "string");
+            if (!unlockedChapters.includes("pronunciation-jyutping")) {
+              unlockedChapters.unshift("pronunciation-jyutping");
+            }
+          }
         } else {
           localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
         }
@@ -304,18 +309,18 @@ const allVocab = allVocabRaw.map(item => {
     function setupChapterToggles() {
       const checkboxes = document.querySelectorAll('.chapter-toggle-cb');
       checkboxes.forEach(cb => {
-        const chNum = parseInt(cb.getAttribute('data-chapter'), 10);
-        cb.checked = unlockedChapters.includes(chNum);
+        const chId = cb.getAttribute('data-chapter');
+        cb.checked = unlockedChapters.includes(chId);
         
         cb.addEventListener('change', () => {
           if (cb.checked) {
-            if (!unlockedChapters.includes(chNum)) unlockedChapters.push(chNum);
+            if (!unlockedChapters.includes(chId)) unlockedChapters.push(chId);
           } else {
-            unlockedChapters = unlockedChapters.filter(n => n !== chNum);
+            unlockedChapters = unlockedChapters.filter(id => id !== chId);
             // Default safeguard: keep at least Chapter 0
             if (unlockedChapters.length === 0) {
-              unlockedChapters.push(0);
-              const ch0Cb = document.querySelector('.chapter-toggle-cb[data-chapter="0"]');
+              unlockedChapters.push("pronunciation-jyutping");
+              const ch0Cb = document.querySelector('.chapter-toggle-cb[data-chapter="pronunciation-jyutping"]');
               if (ch0Cb) ch0Cb.checked = true;
             }
           }
@@ -363,16 +368,25 @@ const allVocab = allVocabRaw.map(item => {
       if (currentGroupMode === "chapter") {
         const grouped = {};
         poolItems.forEach(item => {
-          if (!grouped[item.chapter]) grouped[item.chapter] = { title: item.chapterTitle, items: [] };
+          if (!grouped[item.chapter]) {
+            grouped[item.chapter] = {
+              title: item.chapterTitle,
+              chapterNumber: item.chapterNumber,
+              items: []
+            };
+          }
           grouped[item.chapter].items.push(item);
         });
 
-        const sortedChapters = Object.keys(grouped).map(Number).sort((a,b) => a - b);
-        sortedChapters.forEach(chNum => {
-          const group = grouped[chNum];
+        const sortedChapterIds = Object.keys(grouped).sort((a, b) => {
+          return grouped[a].chapterNumber - grouped[b].chapterNumber;
+        });
+
+        sortedChapterIds.forEach(chId => {
+          const group = grouped[chId];
           const section = document.createElement('div');
           section.style.marginBottom = '1.5rem';
-          section.innerHTML = `<h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; color: var(--text-color); font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 0.6rem;">Chapter ${chNum}: ${group.title}</h3>`;
+          section.innerHTML = `<h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; color: var(--text-color); font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 0.6rem;">Chapter ${group.chapterNumber}: ${group.title}</h3>`;
           
           const itemsWrapper = document.createElement('div');
           itemsWrapper.className = 'review-items-container';

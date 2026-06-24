@@ -97,7 +97,7 @@ function hasNativeBase64() {
  * Reads local storage progress states
  */
 export function getLocalState() {
-  let chapters = [0];
+  let chapters = ["pronunciation-jyutping"];
   let srs = {};
   let vocab = {};
 
@@ -107,7 +107,13 @@ export function getLocalState() {
         "cantonese_unlocked_chapters",
       );
       if (storedChapters) {
-        chapters = JSON.parse(storedChapters).map(Number);
+        const parsed = JSON.parse(storedChapters);
+        if (Array.isArray(parsed)) {
+          chapters = parsed.filter((c) => typeof c === "string");
+          if (!chapters.includes("pronunciation-jyutping")) {
+            chapters.unshift("pronunciation-jyutping");
+          }
+        }
       }
 
       const storedSRS = localStorage.getItem("cantonese_srs_state");
@@ -267,8 +273,16 @@ export async function deserializeState(serializedStr) {
       throw new Error("Invalid payload structure");
     }
 
+    const rawChapters = compacted[SHORT_KEYS.chapters] || [];
+    const chapters = Array.isArray(rawChapters)
+      ? rawChapters.filter((c) => typeof c === "string")
+      : [];
+    if (!chapters.includes("pronunciation-jyutping")) {
+      chapters.unshift("pronunciation-jyutping");
+    }
+
     const state = {
-      chapters: compacted[SHORT_KEYS.chapters] || [0],
+      chapters,
       srs: {},
       vocab: {},
       timestamp: compacted[SHORT_KEYS.timestamp] || 0,
@@ -277,6 +291,10 @@ export async function deserializeState(serializedStr) {
     // Expand srs: Map [level, timestamp] to { level, lastReviewed }
     const srsData = compacted[SHORT_KEYS.srs] || {};
     for (const [id, arr] of Object.entries(srsData)) {
+      if (id.startsWith("ch")) {
+        // Discard legacy indexed phrasebook progress
+        continue;
+      }
       if (Array.isArray(arr) && arr.length >= 2) {
         state.srs[id] = {
           level: Number(arr[0]),
@@ -313,12 +331,16 @@ export function mergeStates(local, imported) {
     vocab: {},
   };
 
-  // Merge unlocked chapters (Union)
+  // Merge unlocked chapters (Union), filtering legacy numeric progress
   const allChapters = [
-    ...(local.chapters || [0]),
-    ...(imported.chapters || [0]),
-  ];
-  merged.chapters = [...new Set(allChapters)].map(Number).sort((a, b) => a - b);
+    ...(local.chapters || []),
+    ...(imported.chapters || []),
+  ].filter((c) => typeof c === "string");
+
+  if (!allChapters.includes("pronunciation-jyutping")) {
+    allChapters.unshift("pronunciation-jyutping");
+  }
+  merged.chapters = [...new Set(allChapters)].sort();
 
   // Merge helper for key-value stores (latest timestamp wins)
   const mergeStore = (localStore, importedStore) => {

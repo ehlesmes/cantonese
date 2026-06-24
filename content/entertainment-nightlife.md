@@ -1,5 +1,5 @@
 ---
-chapter: 22
+id: entertainment-nightlife
 title: Entertainment, Nightlife & Leisure Slang
 description: Spoken terms for socializing, nightlife, and weekend hobbies.
 ---

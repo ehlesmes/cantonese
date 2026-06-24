@@ -1,5 +1,5 @@
 ---
-chapter: 16
+id: workplace-slang
 title: "Workplace Slang & Office Dynamics"
 description: >
   Master the essential colloquial terms, slang, and expressions used in Hong

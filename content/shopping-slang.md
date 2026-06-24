@@ -1,5 +1,5 @@
 ---
-chapter: 2
+id: shopping-slang
 title: Essential Purchases & Daily Slang
 description: >
   Learn how to buy items in a convenience store, ask for prices, count money in

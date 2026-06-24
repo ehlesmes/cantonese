@@ -13,20 +13,28 @@ function main() {
     process.exit(1);
   }
 
-  // 1. Scan and sort all chapter markdown files
-  const files = fs.readdirSync(contentDir);
-  const chapterFiles = files.filter((f) => /^\d{2}-.*\.md$/.test(f)).sort(); // Sorts sequentially, e.g. 00-*, 01-*, 02-*
+  // 1. Load curriculum chapters
+  const curriculumPath = path.join(contentDir, "curriculum.md");
+  let chapters = [];
+  try {
+    chapters = parser.parseCurriculum(curriculumPath);
+  } catch (err) {
+    console.error(`ERROR: Failed to parse curriculum.md: ${err.message}`);
+    process.exit(1);
+  }
 
   const vocabMap = {};
 
   // 2. Parse every chapter in chronological order
-  for (const file of chapterFiles) {
-    const filePath = path.join(contentDir, file);
+  for (const chapter of chapters) {
+    const filePath = path.join(contentDir, chapter.file);
+    if (!fs.existsSync(filePath)) continue;
+
     let chapterData;
     try {
       chapterData = parser.parseChapter(filePath);
     } catch (err) {
-      console.error(`ERROR: Failed to parse "${file}": ${err.message}`);
+      console.error(`ERROR: Failed to parse "${chapter.file}": ${err.message}`);
       continue;
     }
 
@@ -68,7 +76,7 @@ function main() {
             character: char,
             jyutping: jyutping,
             translation: translation,
-            firstIntroducedIn: file,
+            firstIntroducedIn: chapterData.frontmatter.id || chapter.id,
             occurrences: 1,
           };
         } else {

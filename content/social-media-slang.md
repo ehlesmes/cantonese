@@ -1,5 +1,5 @@
 ---
-chapter: 19
+id: social-media-slang
 title: Dating, Relationships & Social Media Slang
 description: Colloquial romance, social media slang, and texting habits.
 ---

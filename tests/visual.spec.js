@@ -9,7 +9,10 @@ test("Curriculum Index Visual Render Test", async ({ page }) => {
 
   // Seed localStorage with Chapters 0 and 1 in review pool
   await page.evaluate(() => {
-    localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([0, 1]));
+    localStorage.setItem(
+      "cantonese_unlocked_chapters",
+      JSON.stringify(["pronunciation-jyutping", "greetings"]),
+    );
   });
 
   // Reload to apply local storage changes
@@ -25,7 +28,7 @@ test("Curriculum Index Visual Render Test", async ({ page }) => {
 
 test("Chapter 1 Visual Render Test", async ({ page }) => {
   // Navigate to Chapter 1 URL
-  await page.goto("/cantonese/chapter/01");
+  await page.goto("/cantonese/chapter/greetings");
 
   // Ensure content is loaded
   await page.waitForSelector("h1");
@@ -59,7 +62,10 @@ test("Phrasebook Visual Render Test", async ({ page }) => {
 
   // Seed localStorage with Chapter 1 checked
   await page.evaluate(() => {
-    localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([1]));
+    localStorage.setItem(
+      "cantonese_unlocked_chapters",
+      JSON.stringify(["greetings"]),
+    );
   });
 
   // Navigate to Phrasebook
@@ -111,7 +117,10 @@ test("Vocabulary Visual Render Test", async ({ page }) => {
 
   // Seed localStorage with Chapter 1 checked
   await page.evaluate(() => {
-    localStorage.setItem("cantonese_unlocked_chapters", JSON.stringify([1]));
+    localStorage.setItem(
+      "cantonese_unlocked_chapters",
+      JSON.stringify(["greetings"]),
+    );
   });
 
   // Navigate to Vocabulary

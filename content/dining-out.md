@@ -1,5 +1,5 @@
 ---
-chapter: 3
+id: dining-out
 title: Dining Out & Ordering
 description: >
   Step inside a local Hong Kong café (茶餐廳) to order authentic food and

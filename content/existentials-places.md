@@ -1,5 +1,5 @@
 ---
-chapter: 4
+id: existentials-places
 title: "Where Things Are: Presence & Places"
 description: >
   Master the essential structures for describing where objects and places are in

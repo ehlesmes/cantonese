@@ -1,5 +1,5 @@
 ---
-chapter: 10
+id: hypotheticals-conditionals
 title: "Hypotheticals, Conditionals & Future Planning"
 description: >
   Master conditional logic in spoken Cantonese using jyu4gwo2... zau6. Express

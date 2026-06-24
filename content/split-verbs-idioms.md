@@ -1,5 +1,5 @@
 ---
-chapter: 9
+id: split-verbs-idioms
 title: "Split-Verbs & Native Idioms"
 description: >
   Master the structural flexibility of Cantonese split-verbs like jau4seoi2 and

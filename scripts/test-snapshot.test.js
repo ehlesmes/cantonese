@@ -9,7 +9,7 @@ const { parseChapter } = parser;
 
 describe("HTML Render Snapshot Tests", () => {
   test("Chapter 1 HTML output matches snapshot", () => {
-    const filePath = path.resolve(__dirname, "../content/01-greetings.md");
+    const filePath = path.resolve(__dirname, "../content/greetings.md");
     const { blocks } = parseChapter(filePath);
 
     const renderedBlocks = blocks

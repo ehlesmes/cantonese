@@ -8,10 +8,10 @@ import {
 describe("Progress Sync Utility Spec", () => {
   test("serialization and deserialization roundtrip preserves progress state", async () => {
     const originalState = {
-      chapters: [0, 1, 3, 8, 13],
+      chapters: ["pronunciation-jyutping", "greetings", "dining-out"],
       srs: {
-        "ch1-ex0": { level: 2, lastReviewed: 1718985600000 },
-        "ch2-dg3": { level: 5, lastReviewed: 1718985900000 },
+        "phr-11-1v3vktn": { level: 2, lastReviewed: 1718985600000 },
+        "phr-5-abcde": { level: 5, lastReviewed: 1718985900000 },
       },
       vocab: {
         "vocab-你好_neihhou": { level: 1, lastReviewed: 1718985700000 },
@@ -25,14 +25,18 @@ describe("Progress Sync Utility Spec", () => {
 
     const deserialized = await deserializeState(serialized);
     expect(deserialized).not.toBeNull();
-    expect(deserialized.chapters).toEqual([0, 1, 3, 8, 13]);
+    expect(deserialized.chapters).toEqual([
+      "pronunciation-jyutping",
+      "greetings",
+      "dining-out",
+    ]);
 
     // Check phrasebook srs
-    expect(deserialized.srs["ch1-ex0"]).toBeDefined();
-    expect(deserialized.srs["ch1-ex0"].level).toBe(2);
-    expect(deserialized.srs["ch1-ex0"].lastReviewed).toBe(1718985600000);
-    expect(deserialized.srs["ch2-dg3"].level).toBe(5);
-    expect(deserialized.srs["ch2-dg3"].lastReviewed).toBe(1718985900000);
+    expect(deserialized.srs["phr-11-1v3vktn"]).toBeDefined();
+    expect(deserialized.srs["phr-11-1v3vktn"].level).toBe(2);
+    expect(deserialized.srs["phr-11-1v3vktn"].lastReviewed).toBe(1718985600000);
+    expect(deserialized.srs["phr-5-abcde"].level).toBe(5);
+    expect(deserialized.srs["phr-5-abcde"].lastReviewed).toBe(1718985900000);
 
     // Check vocabulary srs
     expect(deserialized.vocab["vocab-你好_neihhou"]).toBeDefined();
@@ -58,9 +62,9 @@ describe("Progress Sync Utility Spec", () => {
 
     try {
       const originalState = {
-        chapters: [0, 1, 3, 8, 13],
+        chapters: ["pronunciation-jyutping", "greetings", "dining-out"],
         srs: {
-          "ch1-ex0": { level: 2, lastReviewed: 1718985600000 },
+          "phr-11-1v3vktn": { level: 2, lastReviewed: 1718985600000 },
         },
         vocab: {
           "vocab-你好_neihhou": { level: 1, lastReviewed: 1718985700000 },
@@ -74,7 +78,11 @@ describe("Progress Sync Utility Spec", () => {
 
       const deserialized = await deserializeState(serialized);
       expect(deserialized).not.toBeNull();
-      expect(deserialized.chapters).toEqual([0, 1, 3, 8, 13]);
+      expect(deserialized.chapters).toEqual([
+        "pronunciation-jyutping",
+        "greetings",
+        "dining-out",
+      ]);
       expect(deserialized.vocab["vocab-smart-quote-’"].level).toBe(4);
     } finally {
       // Restore native methods
@@ -85,9 +93,9 @@ describe("Progress Sync Utility Spec", () => {
 
   test("deserialization handles Base64 strings with spaces (plus signs replaced by URL decoding)", async () => {
     const originalState = {
-      chapters: [0, 1],
+      chapters: ["pronunciation-jyutping", "greetings"],
       srs: {
-        "ch1-ex0": { level: 2, lastReviewed: 1718985600000 },
+        "phr-11-1v3vktn": { level: 2, lastReviewed: 1718985600000 },
       },
       vocab: {},
     };
@@ -101,8 +109,11 @@ describe("Progress Sync Utility Spec", () => {
 
     const deserialized = await deserializeState(base64WithSpace);
     expect(deserialized).not.toBeNull();
-    expect(deserialized.chapters).toEqual([0, 1]);
-    expect(deserialized.srs["ch1-ex0"].level).toBe(2);
+    expect(deserialized.chapters).toEqual([
+      "pronunciation-jyutping",
+      "greetings",
+    ]);
+    expect(deserialized.srs["phr-11-1v3vktn"].level).toBe(2);
   });
 
   test("deserialization returns null for corrupted/invalid strings", async () => {
@@ -112,23 +123,27 @@ describe("Progress Sync Utility Spec", () => {
 
   test("mergeStates successfully unions chapters", () => {
     const local = {
-      chapters: [0, 1],
+      chapters: ["pronunciation-jyutping", "greetings"],
       srs: {},
       vocab: {},
     };
     const imported = {
-      chapters: [0, 2],
+      chapters: ["pronunciation-jyutping", "dining-out"],
       srs: {},
       vocab: {},
     };
 
     const merged = mergeStates(local, imported);
-    expect(merged.chapters).toEqual([0, 1, 2]);
+    expect(merged.chapters).toEqual([
+      "dining-out",
+      "greetings",
+      "pronunciation-jyutping",
+    ]);
   });
 
   test("mergeStates applies latest-timestamp-wins logic for overlapping items", () => {
     const local = {
-      chapters: [0],
+      chapters: ["pronunciation-jyutping"],
       srs: {
         // Laptop reviewed this more recently (yesterday vs last week)
         "item-conflict-local-newer": { level: 2, lastReviewed: 1718985600000 },
@@ -151,7 +166,7 @@ describe("Progress Sync Utility Spec", () => {
     };
 
     const imported = {
-      chapters: [0],
+      chapters: ["pronunciation-jyutping"],
       srs: {
         "item-conflict-local-newer": { level: 5, lastReviewed: 1718900000000 }, // older
         "item-conflict-imported-newer": {

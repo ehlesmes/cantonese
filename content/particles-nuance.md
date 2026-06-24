@@ -1,5 +1,5 @@
 ---
-chapter: 8
+id: particles-nuance
 title: "Advanced Particle Layering & Emotive Nuance"
 description: >
   Master the soul of colloquial Cantonese by exploring how sentence-final

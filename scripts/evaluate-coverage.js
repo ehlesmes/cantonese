@@ -61,8 +61,20 @@ const brackets = [
 
 const missingWords = [];
 
+const variantMap = {
+  啊: "呀",
+  畀: "俾",
+  比: "俾",
+  左: "咗",
+  地: "哋",
+  重: "仲",
+};
+
 for (const ref of refWords) {
-  const isCovered = taughtChars.has(ref.char);
+  let isCovered = taughtChars.has(ref.char);
+  if (!isCovered && variantMap[ref.char]) {
+    isCovered = taughtChars.has(variantMap[ref.char]);
+  }
 
   if (isCovered) {
     totalCovered++;

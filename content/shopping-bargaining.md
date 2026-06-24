@@ -1,5 +1,5 @@
 ---
-chapter: 18
+id: shopping-bargaining
 title: Shopping, Bargaining & Spoken Quantifiers
 description: Master spoken currency, bargaining, and clothing classifiers.
 ---

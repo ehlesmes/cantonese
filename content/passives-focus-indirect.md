@@ -1,5 +1,5 @@
 ---
-chapter: 13
+id: passives-focus-indirect
 title: "Passives, Focus & Indirect Speech"
 description: >
   Master spoken passive structures using bei2, emphasize and clarify points

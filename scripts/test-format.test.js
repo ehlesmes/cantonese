@@ -107,7 +107,7 @@ chapters:
     const validFile = path.join(tempDir, "01-valid.md");
 
     const validContent = `---
-chapter: 1
+id: 01-valid
 title: Greetings & Courtesy
 description: Learn daily greetings.
 ---
@@ -141,7 +141,7 @@ explanation: 多謝[do1ze6|thank you for a gift] is used for gifts.
     fs.writeFileSync(validFile, validContent, "utf8");
 
     const curriculumEntry = {
-      chapter: 1,
+      id: "01-valid",
       title: "Greetings & Courtesy",
       file: "01-valid.md",
     };
@@ -160,7 +160,7 @@ explanation: 多謝[do1ze6|thank you for a gift] is used for gifts.
     const invalidFile = path.join(tempDir, "02-invalid.md");
 
     const invalidContent = `---
-chapter: 3
+id: mismatched-id
 title: Incorrect Chapter Num
 description: This description is okay.
 ---
@@ -193,7 +193,7 @@ explanation: Missing block formatting.
     fs.writeFileSync(invalidFile, invalidContent, "utf8");
 
     const curriculumEntry = {
-      chapter: 2,
+      id: "02-invalid",
       title: "Incorrect Chapter Num",
       file: "02-invalid.md",
     };
@@ -204,11 +204,9 @@ explanation: Missing block formatting.
     fs.rmdirSync(tempDir);
 
     // Assert exact violations:
-    // 1. Chapter number mismatch (frontmatter says 3, filename prefix says 02, curriculum says 2)
-    const chapNumError = errors.find(
-      (e) =>
-        e.message.includes("frontmatter chapter number") ||
-        e.message.includes("does not match the filename prefix"),
+    // 1. Chapter ID mismatch (frontmatter says mismatched-id, filename slug says 02-invalid)
+    const chapNumError = errors.find((e) =>
+      e.message.includes("does not match the filename slug"),
     );
     expect(chapNumError).toBeDefined();
 

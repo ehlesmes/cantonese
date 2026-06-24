@@ -1,5 +1,5 @@
 ---
-chapter: 11
+id: narrative-cohesion
 title: "Narrative Cohesion & Complex Connectives"
 description: >
   Master cohesive storytelling in colloquial Cantonese. Form complex connected
