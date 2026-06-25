@@ -7,7 +7,7 @@ description: >
   although... but, not only... but also, even, since, and instead.
 ---
 
-Welcome to Chapter 11! Storytelling and conversation are not just series of
+Welcome to Chapter 13! Storytelling and conversation are not just series of
 isolated sentences. To sound like a natural Cantonese speaker, you need to
 connect your thoughts smoothly, express logical relationships, highlight
 contrasts, and build arguments.

@@ -7,11 +7,12 @@ description: >
   separable verbs.
 ---
 
-Welcome to Chapter 10! In this chapter, we will explore some of the most widely
-used and colorful Cantonese **Native Idioms** (`俗語[zuk1jyu5|colloquial expression / slang / idiom]`).
+Welcome to Chapter 11! In this chapter, we will explore some of the most widely
+used and colorful Cantonese **Native Idioms**
+(`俗語[zuk1jyu5|colloquial expression / slang / idiom]`).
 
-Many of these idioms are structurally split-verbs, which means they follow the exact
-same grammatical rules of separation we learned in the previous chapter.
+Many of these idioms are structurally split-verbs, which means they follow the
+exact same grammatical rules of separation we learned in the previous chapter.
 
 Let's dive in!
 
@@ -20,7 +21,8 @@ Let's dive in!
 ## 1. Spoken Cantonese Native Idioms
 
 Many of the most popular colloquial expressions used by Hong Kongers in daily
-life are structurally split-verbs. Let's study five of the most expressive idioms:
+life are structurally split-verbs. Let's study five of the most expressive
+idioms:
 
 ### 1. Chatting & Gossiping: `吹水[ceoi1seoi2|to chat / shoot the breeze / gossip]`
 
@@ -115,7 +117,8 @@ The boss is showing a dark/angry face right now! (Note how "black face" can spli
 
 ## 2. Situational Dialogue: A Weekend Standup & Office Gossip
 
-Sau-han (A) and Wing-kit (B) are talking on Saturday, gossiping about their colleague David.
+Sau-han (A) and Wing-kit (B) are talking on Saturday, gossiping about their
+colleague David.
 
 ```dialog
 A: Wing-kit，你[nei5|you] 知[zi1|to know / be aware of] 唔[m4|not / no (negative prefix)] 知道[zi1dou3|to know / be aware of] 今日[gam1jat6|today] David 放[fong3|to release / let go / put] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 我哋[ngo5dei6|we / us] 飛機[fei1gei1|airplane] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
@@ -136,7 +139,8 @@ B: 噉[gam2|then / in that case / so] 我哋[ngo5dei6|we / us] 喺[hai2|at / in 
 
 ## 3. Exercises
 
-Test your understanding of Cantonese native idioms, color terms, and grammatical splits.
+Test your understanding of Cantonese native idioms, color terms, and grammatical
+splits.
 
 ```exercise
 question: |

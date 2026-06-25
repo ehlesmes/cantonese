@@ -7,7 +7,7 @@ description: >
   and hopes using hei1mong6, and explore local humor like faat3mung6.
 ---
 
-Welcome to Chapter 10! In this chapter, we will expand our grammatical toolkit
+Welcome to Chapter 12! In this chapter, we will expand our grammatical toolkit
 to express logical relationships, hypothetical situations, plans, and
 aspirations.
 

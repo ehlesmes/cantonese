@@ -6,7 +6,7 @@ description: >
   using zik1hai6, and report statements or news using the verb waa6.
 ---
 
-Welcome to Chapter 13! In this lesson, we will cover three advanced,
+Welcome to Chapter 15! In this lesson, we will cover three advanced,
 high-frequency grammatical pillars that will elevate your conversational flow to
 native speed and structure:
 

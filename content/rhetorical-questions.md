@@ -7,7 +7,7 @@ description: >
   markers.
 ---
 
-Welcome to Chapter 15! In this lesson, we will dive into a cornerstone of
+Welcome to Chapter 17! In this lesson, we will dive into a cornerstone of
 conversational fluency: **Rhetorical Questions & Spoken Doubts**. Native
 Cantonese speakers rely heavily on rhetorical patterns to express sarcasm,
 correct misunderstandings, show surprise, or declare firm disbelief.

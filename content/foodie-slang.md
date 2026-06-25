@@ -7,7 +7,7 @@ description: >
   use authentic slang for street-food hunting and late-night snacks.
 ---
 
-Welcome to Chapter 17! In Hong Kong, food is not just a necessity; it is a way
+Welcome to Chapter 19! In Hong Kong, food is not just a necessity; it is a way
 of life and a primary topic of conversation. Local diners, known as
 `茶餐廳[caa4caan1teng1|Hong Kong style café / diner]`, operate at lightning
 speed. To keep up, waiters and customers use a rapid-fire shorthand.

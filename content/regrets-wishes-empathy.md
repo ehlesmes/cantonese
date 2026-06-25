@@ -7,7 +7,7 @@ description: >
   comfort using caam2, zit6do6, sam1tung3, and fong3sam1.
 ---
 
-Welcome to Chapter 12! In this lesson, we will focus on the emotional heart of
+Welcome to Chapter 14! In this lesson, we will focus on the emotional heart of
 daily communication: expressing regrets about the past, formulating wishes for
 the future, and offering genuine empathy and comfort to our friends in their
 difficult moments.

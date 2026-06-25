@@ -8,7 +8,7 @@ description: >
   can or cannot manage to do using the potential suffixes dak1 and m4dou2.
 ---
 
-Welcome to Chapter 6! Now that you have learned how to tell the time and
+Welcome to Chapter 7! Now that you have learned how to tell the time and
 describe ongoing actions, let's explore how to express what you _can_, _may_, or
 _have experienced_ doing in Cantonese.
 

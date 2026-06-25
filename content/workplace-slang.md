@@ -6,7 +6,7 @@ description: >
   Kong professional settings, from slacking off to getting a raise.
 ---
 
-Welcome to Chapter 16! In this lesson, we will explore the lively and colorful
+Welcome to Chapter 18! In this lesson, we will explore the lively and colorful
 world of Cantonese workplace slang and office dynamics. The Hong Kong
 professional environment is famous for its fast pace, high efficiency, and
 intense work ethic. To cope with this pressure, local workers have developed a
