@@ -6,8 +6,7 @@ description: >
   hobbies, and relaxation.
 ---
 
-Welcome to Chapter 27! In this chapter, we will learn about **Hobbies & Weekend
-Leisure**.
+In this chapter, we will learn about **Hobbies & Weekend Leisure**.
 
 For those who prefer a relaxed weekend, outdoor hikes, or quiet indoor
 activities, colloquial Cantonese has rich vocabulary to describe everyday

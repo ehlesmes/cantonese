@@ -7,8 +7,8 @@ description: >
   separable verbs.
 ---
 
-Welcome to Chapter 11! In this chapter, we will explore some of the most widely
-used and colorful Cantonese **Native Idioms**
+In this chapter, we will explore some of the most widely used and colorful
+Cantonese **Native Idioms**
 (`俗語[zuk1jyu5|colloquial expression / slang / idiom]`).
 
 Many of these idioms are structurally split-verbs, which means they follow the

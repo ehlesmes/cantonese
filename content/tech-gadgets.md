@@ -6,11 +6,11 @@ description: >
   home voice controls, and device power chargers.
 ---
 
-Welcome to Chapter 32! In this chapter, we will learn about **Computers, Hardware
-& Smart Home Tech**.
+In this chapter, we will learn about **Computers, Hardware & Smart Home Tech**.
 
 We will explore basic online networking terms, how to navigate device freezes,
-and study local slangs for chargers and power adapters, alongside smart home voice command structures.
+and study local slangs for chargers and power adapters, alongside smart home
+voice command structures.
 
 Let's dive in!
 
@@ -20,35 +20,43 @@ Let's dive in!
 
 To describe daily web browsing and computer situations, spoken Cantonese uses:
 
-- `上網[soeng5mong5|to go online / surf the internet]`: To go online or surf the web.
-- `網上[mong5soeng6|online]`: Adjective/adverb describing online operations or sites.
+- `上網[soeng5mong5|to go online / surf the internet]`: To go online or surf the
+  web.
+- `網上[mong5soeng6|online]`: Adjective/adverb describing online operations or
+  sites.
 - `下載[haa6zoi3|to download]`: To download files or software.
 - `智能電話[zi3nang4 din6waa2|smartphone]`: A smartphone.
 - `智能[zi3nang4|smart / intelligent (tech)]`: Smart.
 - `WiFi[wai1faai1|Wi-Fi / wireless internet]`: Wi-Fi.
 - `網絡[mong5lok6|internet / network]`: Internet connection or network.
 - `網[mong5|internet / net / network]`: Internet.
-- `死機[sei2gei1|device freeze / crash]`: Device crash or freeze (literally "dead machine").
+- `死機[sei2gei1|device freeze / crash]`: Device crash or freeze (literally
+  "dead machine").
 
 ---
 
 ## 2. Smart Home & Tech Crises Slang
 
-Managing your home systems, electrical sockets, and device charges involves unique terminology:
+Managing your home systems, electrical sockets, and device charges involves
+unique terminology:
 
 - `智能家居[zi3nang4 gaa1geoi1|smart home]`: Smart home systems.
 - `智能鎖[zi3nang4 so2|smart lock]`: A smart lock.
 - `冷氣[laang5hei3|air conditioning / AC]`: Air conditioning or AC.
 - `開關[hoi1gwaan1|switch / to turn on or off]`: A switch, or to turn on/off.
 - `聲控[sing1hung3|voice-controlled / voice control]`: Voice-controlled.
-- `熄[sik1|to turn off / extinguish (a light, device, etc.)]`: To turn off a device/light.
+- `熄[sik1|to turn off / extinguish (a light, device, etc.)]`: To turn off a
+  device/light.
 - `燈[dang1|light / lamp]`: A light or lamp.
 - `鎖[so2|to lock / lock]`: To lock, or a lock itself.
-- `火牛[fo2ngau4|power adapter / charger (slang)]`: Literally "fire cow," the popular slang for a power adapter/wall charger.
-- `尿袋[niu6doi2|portable power bank (slang)]`: Literally "urine bag," the slang for a portable power bank.
+- `火牛[fo2ngau4|power adapter / charger (slang)]`: Literally "fire cow," the
+  popular slang for a power adapter/wall charger.
+- `尿袋[niu6doi2|portable power bank (slang)]`: Literally "urine bag," the slang
+  for a portable power bank.
 - `充電[cung1din6|to charge a battery]`: To charge a battery.
 - `數據[sou3geoi3|data]`: Mobile data.
-- `爆數據[baau3 sou3geoi3|to exceed mobile data limit (slang)]`: Exceeding mobile data plans.
+- `爆數據[baau3 sou3geoi3|to exceed mobile data limit (slang)]`: Exceeding
+  mobile data plans.
 - `密碼[mat6maa5|password]`: Password.
 - `戶口[wu6hau2|account (bank/online)]`: User account.
 - `就快[zau6faai3|soon / about to]`: Soon, about to.
@@ -62,7 +70,8 @@ Managing your home systems, electrical sockets, and device charges involves uniq
 
 ## 3. Situational Dialogue: Smart Home Tech
 
-Ah Wa (A) is visiting Ah Ming's (B) new apartment, which is equipped with modern smart home systems.
+Ah Wa (A) is visiting Ah Ming's (B) new apartment, which is equipped with modern
+smart home systems.
 
 ```dialog
 A: 哇[waa1|wow / whoa]！阿明[aa3 ming4|Ah Ming]，你[nei5|you] 間[gaan1|measure word for rooms, houses, buildings] 新[san1|new] 屋[uk1|house / home] 好[hou2|very / quite / extremely] 智能[zi3nang4|smart / intelligent (tech)] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！門口[mun4hau2|doorway / entrance] 用[jung6|to use] 智能鎖[zi3nang4 so2|smart lock] 嘅[ge3|possessive or linking particle] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？

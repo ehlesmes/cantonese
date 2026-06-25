@@ -6,8 +6,8 @@ description: >
   dou in Cantonese.
 ---
 
-Welcome to Chapter 23! In this chapter, we will learn how to ask for and give
-**Directions & Spatial Navigation**.
+In this chapter, we will learn how to ask for and give **Directions & Spatial
+Navigation**.
 
 When exploring the city or directing a driver, spoken Cantonese relies on simple
 directional commands and road features. Let's study how to describe movement.

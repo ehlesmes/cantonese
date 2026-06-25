@@ -8,8 +8,8 @@ description: >
   realizations.
 ---
 
-Welcome to Chapter 9! In this chapter, we will master the absolute "soul" of
-colloquial Cantonese: **Sentence-Final Particles (SFPs)**.
+In this chapter, we will master the absolute "soul" of colloquial Cantonese:
+**Sentence-Final Particles (SFPs)**.
 
 In Cantonese, sentence-final particles are not merely optional grammar markers.
 They are the musical notes of conversation. They express the speaker's emotional

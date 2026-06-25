@@ -6,8 +6,7 @@ description: >
   discussing market fluctuations.
 ---
 
-Welcome to Chapter 34! In this chapter, we will learn about **Stock Speculation &
-Investment Slang**.
+In this chapter, we will learn about **Stock Speculation & Investment Slang**.
 
 Hong Kong has one of the world's most active financial markets, and trading
 stocks is a popular national pastime. In daily conversation, talking about the
@@ -21,31 +20,46 @@ Let's dive in!
 
 Here are the key slang terms and words for stock trading in Cantonese:
 
-- `炒股[caau2gu2|to speculate in stocks / trade stocks]`: Speculating or actively trading in the stock market (literally "frying stocks").
+- `炒股[caau2gu2|to speculate in stocks / trade stocks]`: Speculating or
+  actively trading in the stock market (literally "frying stocks").
 - `股票[gu2piu3|stock / share]`: Stocks or shares.
-- `港股[gong2gu2|Hong Kong stocks / HK shares]`: Stocks traded on the Hong Kong Stock Exchange.
+- `港股[gong2gu2|Hong Kong stocks / HK shares]`: Stocks traded on the Hong Kong
+  Stock Exchange.
 - `美股[mei5gu2|US stocks / US shares]`: Stocks traded on US exchanges.
-- `散戶[saan2wu6|retail investor / small investor]`: Individual retail investors (literally "scattered households").
-- `大鱷[daai6ngok6|market shark / big player]`: Large institutional investors or hedge funds (literally "big crocodile").
+- `散戶[saan2wu6|retail investor / small investor]`: Individual retail investors
+  (literally "scattered households").
+- `大鱷[daai6ngok6|market shark / big player]`: Large institutional investors or
+  hedge funds (literally "big crocodile").
 - `開市[hoi1si5|market opens / market opening]`: Market opens.
 - `收市[sau1si5|market closes / market closing]`: Market closes.
 - `升[sing1|to rise / go up]`: Prices or indices go up.
 - `跌[dit3|to fall / drop / decline]`: Prices or indices go down.
-- `爆升[baau3sing1|to skyrocket / experience explosive growth]`: Skyrocketing stock prices (literally "explosive rising").
+- `爆升[baau3sing1|to skyrocket / experience explosive growth]`: Skyrocketing
+  stock prices (literally "explosive rising").
 - `牛市[ngau4si5|bull market]`: Bull market.
 - `熊市[hung4si5|bear market]`: Bear market.
 - `買入[maai5jap6|to buy in / purchase shares]`: Buying shares.
 - `賣出[maai6ceot1|to sell out / sell shares]`: Selling shares.
-- `蟹[haai5|stuck / trapped in a losing stock (slang)]`: Being trapped in a losing stock position because the price fell (literally "crab"). This is a verb and often paired with the completed aspect marker `咗[zo2|completed]`.
-  - _Example_: `我[ngo5|I / me]` `買[maai5|to buy]` `嗰[go2|that]` `隻[zek3|general measure word / individual / unit]` `股票[gu2piu3|stock / share]` `蟹[haai5|stuck / trapped in a losing stock (slang)]` `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` `呀[aa3|sentence-final particle softening statements, making questions friendly]`: That stock I bought is stuck at a loss.
+- `蟹[haai5|stuck / trapped in a losing stock (slang)]`: Being trapped in a
+  losing stock position because the price fell (literally "crab"). This is a
+  verb and often paired with the completed aspect marker `咗[zo2|completed]`.
+  - _Example_: `我[ngo5|I / me]` `買[maai5|to buy]` `嗰[go2|that]`
+    `隻[zek3|general measure word / individual / unit]`
+    `股票[gu2piu3|stock / share]`
+    `蟹[haai5|stuck / trapped in a losing stock (slang)]`
+    `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]`
+    `呀[aa3|sentence-final particle softening statements, making questions friendly]`:
+    That stock I bought is stuck at a loss.
 - `賺[zaan6|to earn / profit / make money]`: To make a profit or earn money.
-- `蝕[sit6|to lose money / suffer a loss / deficit]`: To lose money or suffer a financial loss.
+- `蝕[sit6|to lose money / suffer a loss / deficit]`: To lose money or suffer a
+  financial loss.
 
 ---
 
 ## 2. Situational Dialogue: A Stock Market Rollercoaster
 
-Two friends (A and B) discuss their recent stock market gains and losses over coffee.
+Two friends (A and B) discuss their recent stock market gains and losses over
+coffee.
 
 ```dialog
 A: 你[nei5|you] 最近[zeoi3gan6|recently / lately] 炒股[caau2gu2|to speculate in stocks / trade stocks] 賺[zaan6|to earn / profit / make money] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
@@ -68,7 +82,8 @@ A: 好[hou2|good / fine / very / quite] 啦[laa1|sentence-final particle suggest
 
 ## 3. Exercises
 
-Test your understanding of stock market slangs and investment terms in Cantonese.
+Test your understanding of stock market slangs and investment terms in
+Cantonese.
 
 ```exercise
 question: |

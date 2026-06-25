@@ -6,8 +6,8 @@ description: >
   and shout minibus stopping requests like a local.
 ---
 
-Welcome to Chapter 24! In this chapter, we will learn how to navigate **Local
-Transport Modes & Minibus Slang**.
+In this chapter, we will learn how to navigate **Local Transport Modes & Minibus
+Slang**.
 
 Getting around Hong Kong requires understanding the core vocabulary of daily
 transit. The standard spoken verb for taking any transit mode is
@@ -101,7 +101,8 @@ B: 收到[sau1dou2|got it]！呢度[ni1dou6|here] 唔[m4|not / no (negative pref
 
 ## 4. Exercises
 
-Test your understanding of public transit terms, ticket options, and minibus commands.
+Test your understanding of public transit terms, ticket options, and minibus
+commands.
 
 ```exercise
 question: |

@@ -6,8 +6,8 @@ description: >
   metaphors of flirting in Cantonese.
 ---
 
-Welcome to Chapter 21! In this chapter, we will explore the vocabulary and
-cultural structures of Cantonese dating and relationships.
+In this chapter, we will explore the vocabulary and cultural structures of
+Cantonese dating and relationships.
 
 Navigating the world of romance and dating in Hong Kong involves a unique blend
 of traditional colloquial Cantonese and highly specific modern student slang.
@@ -97,7 +97,8 @@ One of the most unique local slang metaphors is:
 
 ## 3. Situational Dialogue: A Classmate "Out of Pool"
 
-Two university friends, Sau-han (A) and Wing-kit (B), talk about their classmate.
+Two university friends, Sau-han (A) and Wing-kit (B), talk about their
+classmate.
 
 ```dialog
 A: 喂[wai2|hey!]，你[nei5|you] 聽日[ting1jat6|tomorrow] 去唔去[heoi3 m4 heoi3|go or not] 去街[heoi3gaai1|go out / go on a date] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
@@ -118,7 +119,8 @@ B: 噉[gam2|then / in that case / so] 我[ngo5|I / me] 都要[dou1jiu3|also need
 
 ## 4. Exercises
 
-Test your understanding of romance terminology, student slang, and relationships in Cantonese.
+Test your understanding of romance terminology, student slang, and relationships
+in Cantonese.
 
 ```exercise
 question: |

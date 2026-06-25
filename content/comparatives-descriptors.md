@@ -8,8 +8,8 @@ description: >
   superlatives with zeoi3.
 ---
 
-Welcome to Chapter 8! In this chapter, we will learn how to describe things in
-vivid detail and compare them like a native speaker.
+In this chapter, we will learn how to describe things in vivid detail and
+compare them like a native speaker.
 
 Describing and comparing things is a core part of daily conversation. In
 Cantonese, instead of using a rigid set of prefixes and suffixes like "more,"

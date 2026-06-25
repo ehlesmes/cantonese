@@ -6,11 +6,11 @@ description: >
   exaggerate emotions, and construct spoken superlative statements.
 ---
 
-Welcome to Chapter 16! In this lesson, we will cover the vibrant world of
-Cantonese intensifiers and exaggeration. Spoken Cantonese is a deeply expressive
-and emotional language; native speakers rarely stick to mild descriptors. To
-sound authentic and colloquial, you must master the art of intensifying
-adjectives, expressing excess, and making spoken superlative statements.
+In this lesson, we will cover the vibrant world of Cantonese intensifiers and
+exaggeration. Spoken Cantonese is a deeply expressive and emotional language;
+native speakers rarely stick to mild descriptors. To sound authentic and
+colloquial, you must master the art of intensifying adjectives, expressing
+excess, and making spoken superlative statements.
 
 We will focus on four main areas:
 

@@ -7,9 +7,9 @@ description: >
   durations, and frequencies.
 ---
 
-Welcome to Chapter 10! In this chapter, we will explore one of the most
-structurally unique areas of Colloquial Cantonese: **Split-Verbs**
-(linguistically known as _separable verbs_ or _lei-hap-ci_ in Cantonese).
+In this chapter, we will explore one of the most structurally unique areas of
+Colloquial Cantonese: **Split-Verbs** (linguistically known as _separable verbs_
+or _lei-hap-ci_ in Cantonese).
 
 These words translate as simple single verbs in English (e.g. "to swim" or "to
 sing"), but structurally they are compound verb-object pairs. To express ongoing

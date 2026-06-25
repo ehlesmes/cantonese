@@ -6,8 +6,8 @@ description: >
   social media platforms, using loanwords and unique colloquial expressions.
 ---
 
-Welcome to Chapter 22! In this chapter, we will explore **Social Media &
-Messaging Slang** in Cantonese.
+In this chapter, we will explore **Social Media & Messaging Slang** in
+Cantonese.
 
 When texting or browsing social media, Cantonese speakers seamlessly integrate
 English loanwords, phonetic transcriptions, and spoken contractions.
@@ -78,7 +78,8 @@ A: 算啦[syun3 laa1|forget it]，你[nei5|you] 聽日[ting1jat6|tomorrow] 同[t
 
 ## 4. Exercises
 
-Test your understanding of social media actions, texting habits, and modern slang in Cantonese.
+Test your understanding of social media actions, texting habits, and modern
+slang in Cantonese.
 
 ```exercise
 question: |

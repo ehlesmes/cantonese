@@ -7,9 +7,8 @@ description: >
   daily slang.
 ---
 
-Welcome to Chapter 2! Now that you know how to introduce yourself and strike up
-a basic conversation, it is time to venture out into the vibrant streets of Hong
-Kong.
+Now that you know how to introduce yourself and strike up a basic conversation,
+it is time to venture out into the vibrant streets of Hong Kong.
 
 In this lesson, we will focus on everyday transactions—specifically inside the
 ubiquitous local convenience stores (like 7-Eleven and Circle K). You will learn

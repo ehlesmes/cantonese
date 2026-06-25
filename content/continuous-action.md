@@ -6,13 +6,12 @@ description: >
   aspect suffix gan2, and learn how to use the iconic Cantonese slang hea.
 ---
 
-Welcome to Chapter 6! Now that you have learned how to tell the time and express
-schedules, it is time to talk about what is happening _right now_ in the present
-moment. In this chapter, we will learn how to describe ongoing actions using the
-continuous aspect suffix, navigate verb-object splitting rules, and pick up the
-iconic local slang verb
-`Hea[hea1|to chill / hang out / slack off / procrastinate]` to talk about
-slacking off.
+Now that you have learned how to tell the time and express schedules, it is time
+to talk about what is happening _right now_ in the present moment. In this
+chapter, we will learn how to describe ongoing actions using the continuous
+aspect suffix, navigate verb-object splitting rules, and pick up the iconic
+local slang verb `Hea[hea1|to chill / hang out / slack off / procrastinate]` to
+talk about slacking off.
 
 ---
 

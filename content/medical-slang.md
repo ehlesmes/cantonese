@@ -2,16 +2,15 @@
 id: medical-slang
 title: "Doctors, Hospitals & Medical Slang"
 description: >
-  Master colloquial administrative and slang terms for requesting sick leave, faking
-  illness, and getting medical notes in Hong Kong workplaces.
+  Master colloquial administrative and slang terms for requesting sick leave,
+  faking illness, and getting medical notes in Hong Kong workplaces.
 ---
 
-Welcome to Chapter 30! In this chapter, we will learn about **Doctors, Hospitals
-& Medical Slang**.
+In this chapter, we will learn about **Doctors, Hospitals & Medical Slang**.
 
 In Hong Kong workplace culture, calling in sick involves specific administrative
-terms and highly popular local slang. Let's study how to navigate these situations
-colloquially.
+terms and highly popular local slang. Let's study how to navigate these
+situations colloquially.
 
 Let's dive in!
 
@@ -19,9 +18,11 @@ Let's dive in!
 
 ## 1. Workplace Illness & Medical Leave Slang
 
-Here are the key terms used for requesting sick leave and describing office attendance:
+Here are the key terms used for requesting sick leave and describing office
+attendance:
 
-- `請假[cing2gaa3|to apply for leave / request time off]`: To request time off work.
+- `請假[cing2gaa3|to apply for leave / request time off]`: To request time off
+  work.
 - `病假[beng6gaa3|sick leave]`: Official sick leave.
 - `醫生紙[ji1sang1zi2|doctor's sick leave certificate / medical note]`:
   Literally "doctor paper," meaning the official sick leave certificate.
@@ -36,13 +37,15 @@ Here are the key terms used for requesting sick leave and describing office atte
 - `休息[jau1sik1|to rest / take a break]`: To rest.
 - `早日康復[zou2jat6hong1fuk6|recover soon / speedy recovery]`: Wish you a
   speedy recovery.
-- `向[hoeng3|towards / to]`: Towards, to (e.g. `向公司請假[hoeng3 gung1 si1 cing2 gaa3|apply for leave from the company]`).
+- `向[hoeng3|towards / to]`: Towards, to (e.g.
+  `向公司請假[hoeng3 gung1 si1 cing2 gaa3|apply for leave from the company]`).
 
 ---
 
 ## 2. Situational Dialogue: Calling in Sick & Faking It
 
-Two colleagues, Sau-han (A) and Wing-kit (B), chat about work attendance and B's health problems.
+Two colleagues, Sau-han (A) and Wing-kit (B), chat about work attendance and B's
+health problems.
 
 ```dialog
 A: 喂[wai2|hey!]，你[nei5|you] 聽日[ting1jat6|tomorrow] 返唔返[faan1 m4 faan1|to return or not (A-not-A question form)] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]？

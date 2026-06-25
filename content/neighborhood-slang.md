@@ -6,11 +6,10 @@ description: >
   neighborhood surroundings vocabulary in Cantonese.
 ---
 
-Welcome to Chapter 26! In this chapter, we will learn about **Neighborhood Slang
-& Local Life**.
+In this chapter, we will learn about **Neighborhood Slang & Local Life**.
 
-To describe your living space and neighborhood surroundings in detail, you need to
-master specialized layout measurements and descriptive adjectives.
+To describe your living space and neighborhood surroundings in detail, you need
+to master specialized layout measurements and descriptive adjectives.
 
 Let's dive in!
 
@@ -44,7 +43,8 @@ _Example Layout Description:_
 
 To describe how pleasant a neighborhood is, Cantonese speakers use these terms:
 
-- `環境[waan4ging2|environment / surroundings]`: Environmental quality of a neighborhood.
+- `環境[waan4ging2|environment / surroundings]`: Environmental quality of a
+  neighborhood.
 - `方便[fong1bin6|convenient]`: Convenient, easy transit or shopping access.
 - `周圍[zau1wai4|around / surroundings]`: The surrounding area.
 - `嘈[cou4|noisy]`: Noisy or loud.

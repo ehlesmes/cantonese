@@ -7,11 +7,10 @@ description: >
   unique five-minute interval system, and describe weather conditions.
 ---
 
-Welcome to Chapter 5! Now that you have learned how to locate objects and find
-your way around town, it is time to talk about _when_ things happen and _how_
-the weather is outside. In this chapter, we will master the art of telling time
-in Cantonese, express daily schedules using times of day, and pick up essential
-weather vocabulary.
+Now that you have learned how to locate objects and find your way around town,
+it is time to talk about _when_ things happen and _how_ the weather is outside.
+In this chapter, we will master the art of telling time in Cantonese, express
+daily schedules using times of day, and pick up essential weather vocabulary.
 
 Cantonese time-telling has a couple of highly logical rules, including a unique
 and colorful system of five-minute intervals that you will hear on the streets

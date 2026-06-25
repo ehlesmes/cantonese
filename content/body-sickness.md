@@ -6,8 +6,7 @@ description: >
   expressing illness, and seeing a doctor.
 ---
 
-Welcome to Chapter 29! In this chapter, we will learn about **Symptoms & Common
-Ailments**.
+In this chapter, we will learn about **Symptoms & Common Ailments**.
 
 In daily life, being able to accurately describe how you feel when you are sick
 is essential. Spoken Cantonese uses direct and highly descriptive terms for
@@ -28,8 +27,8 @@ Spoken Cantonese uses direct terms for physical ailments:
 - `感冒[gam2mou6|common cold / to catch a cold]`: A common cold.
 - `阻[zo2|verbal aspect suffix indicating completed action (perfective aspect)]`:
   Completed aspect marker.
-- `中[zung3|to hit / catch (an illness)]` `咗[zo2|completed]`: To catch an illness
-  or get infected (e.g. `中咗感冒[zung3 zo2 gam2 mou6|caught a cold]`).
+- `中[zung3|to hit / catch (an illness)]` `咗[zo2|completed]`: To catch an
+  illness or get infected (e.g. `中咗感冒[zung3 zo2 gam2 mou6|caught a cold]`).
 - `咳[kat1|to cough / cough]`: To cough, or a cough itself.
 - `流鼻水[lau4bei6seoi2|to have a runny nose]`: Literally "flowing nose water,"
   meaning to have a runny nose.
@@ -39,13 +38,19 @@ Spoken Cantonese uses direct terms for physical ailments:
 - `頭暈[tau4wan4|dizzy / lightheaded]`: Feeling dizzy or lightheaded.
 - `痾[o1|to have diarrhea / excrete]`: Colloquial term meaning to have diarrhea.
 - `嘔[au2|to vomit / throw up]`: To vomit or throw up.
-- `腸胃炎[coeng4wai6jim4|gastroenteritis / stomach flu]`: Gastroenteritis or stomach flu.
+- `腸胃炎[coeng4wai6jim4|gastroenteritis / stomach flu]`: Gastroenteritis or
+  stomach flu.
 - `熱氣[jit6hei3|internal heat / inflammation]`: "Yeet hay," a traditional
   concept of internal heat or inflammation.
 - `嚴重[jim4zung6|serious / severe / grave]`: Serious or severe.
-- `傳染[cyun4jim5|to infect / infectious / contagious]`: To infect, or to be contagious.
-- `係咁[hai6gam2|continuously / constantly]`: Continuously, constantly, keep doing something.
-  - _Example_: `我[ngo5|I / me]` `今日[gam1jat6|today]` `係咁[hai6gam2|continuously]` `咳[kat1|to cough]` `呀[aa3|sentence-final particle softening statements, making questions friendly]`！: I keep coughing continuously today!
+- `傳染[cyun4jim5|to infect / infectious / contagious]`: To infect, or to be
+  contagious.
+- `係咁[hai6gam2|continuously / constantly]`: Continuously, constantly, keep
+  doing something.
+  - _Example_: `我[ngo5|I / me]` `今日[gam1jat6|today]`
+    `係咁[hai6gam2|continuously]` `咳[kat1|to cough]`
+    `呀[aa3|sentence-final particle softening statements, making questions friendly]`！:
+    I keep coughing continuously today!
 
 ---
 
@@ -56,14 +61,19 @@ medication is the next step:
 
 - `睇醫生[tai2ji1sang1|to see a doctor]`: Literally "to look at the doctor,"
   meaning to go see a doctor.
-- `睇西醫[tai2 sai1ji1|to see a Western doctor]`: To see a Western medicine doctor.
-- `睇中醫[tai2 zung1ji1|to see a Chinese doctor]`: To see a traditional Chinese medicine doctor.
+- `睇西醫[tai2 sai1ji1|to see a Western doctor]`: To see a Western medicine
+  doctor.
+- `睇中醫[tai2 zung1ji1|to see a Chinese doctor]`: To see a traditional Chinese
+  medicine doctor.
 - `醫生[ji1sang1|doctor / medical practitioner]`: A doctor.
 - `藥[joek6|medicine / drug]`: Medicine.
-- `食藥[sik6joek6|to take medicine]`: Literally "to eat medicine," meaning to take medication.
-- `開[hoi1|to write (a prescription) / prescribe / open / start]`: In a medical context, to prescribe.
+- `食藥[sik6joek6|to take medicine]`: Literally "to eat medicine," meaning to
+  take medication.
+- `開[hoi1|to write (a prescription) / prescribe / open / start]`: In a medical
+  context, to prescribe.
 - `好返[hou2faan1|to recover / get well]`: To get well or recover.
-- `頂住[ding2zyu6|to hold on / hang in there / endure]`: To hold on or hang in there.
+- `頂住[ding2zyu6|to hold on / hang in there / endure]`: To hold on or hang in
+  there.
 - `抖[dau2|to rest / take a break]`: To rest or take a break.
 - `抖吓[dau2haa5|to rest a bit / take a brief break]`: To rest a bit.
 - `檢查[gim2caa4|to examine / check / inspect]`: To examine or check.

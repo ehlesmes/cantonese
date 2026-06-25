@@ -2,12 +2,11 @@
 id: nightlife-slang
 title: "Bars, Nightlife & Drinking Slang"
 description: >
-  Master colloquial terms for socializing in bars, clubbing, singing karaoke, and
-  organizing weekend afterparties in Cantonese.
+  Master colloquial terms for socializing in bars, clubbing, singing karaoke,
+  and organizing weekend afterparties in Cantonese.
 ---
 
-Welcome to Chapter 28! In this chapter, we will learn about **Bars, Nightlife &
-Drinking Slang**.
+In this chapter, we will learn about **Bars, Nightlife & Drinking Slang**.
 
 Hong Kong's nightlife and social scene is incredibly vibrant. To describe
 activities like going to bars, singing karaoke, or hanging out late at night,

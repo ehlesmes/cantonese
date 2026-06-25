@@ -6,8 +6,7 @@ description: >
   rental payments.
 ---
 
-Welcome to Chapter 25! In this chapter, we will learn about **Apartment Rentals
-& Layouts**.
+In this chapter, we will learn about **Apartment Rentals & Layouts**.
 
 Hong Kong’s high-density urban environment has led to unique residential
 structures. When navigating the housing market, it is essential to distinguish
@@ -44,15 +43,17 @@ When flat-hunting, you will encounter various housing options:
 
 The process of finding and renting a flat involves specific vocabulary:
 
-- `搵樓[wan2lau2|to look for apartments / flat-hunting]`: The action of searching
-  for an apartment.
-- `睇樓[tai2lau2|to view apartments / flats]`: Going to view apartments in person.
+- `搵樓[wan2lau2|to look for apartments / flat-hunting]`: The action of
+  searching for an apartment.
+- `睇樓[tai2lau2|to view apartments / flats]`: Going to view apartments in
+  person.
 - `租[zou1|to rent / lease]`: To rent or lease a property.
 - `租客[zou1haak3|tenant / renter]`: The tenant.
 - `業主[jip6zyu2|landlord / property owner]`: The landlord or property owner.
 - `租金[zou1gam1|rent payment / rental price]`: The monthly rent.
 - `按金[on3gam1|deposit]`: Security deposit.
-- `上期[soeng5kei4|rent paid in advance (first month rent)]`: First month of rent paid in advance.
+- `上期[soeng5kei4|rent paid in advance (first month rent)]`: First month of
+  rent paid in advance.
 - `兩按一上[loeng5on3jat1soeng5|two months deposit and one month rent in advance]`:
   The standard Hong Kong upfront payment scheme.
 - `合約[hap6joek3|contract / agreement]`: The formal lease contract.
@@ -64,7 +65,8 @@ The process of finding and renting a flat involves specific vocabulary:
 
 ## 3. Situational Dialogue: Finding an Apartment with an Agent
 
-A client (A) meets with a real estate agent (B) to discuss requirements and view apartments.
+A client (A) meets with a real estate agent (B) to discuss requirements and view
+apartments.
 
 ```dialog
 A: 唔該[m4goi1|please]，我[ngo5|I / me] 想[soeng2|to want to / would like to] 搵樓[wan2lau2|to look for apartments / flat-hunting]。我[ngo5|I / me] 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 要求[jiu1kau4|to require / requirement] 係[hai6|to be (am/is/are) / yes] 附近[fu6gan6|nearby / neighborhood] 要[jiu3|need] 方便[fong1bin6|convenient]，最好[zeoi3hou2|best / preferably] 有[jau5|to have] 升降機[sing1gong3gei1|elevator / lift] 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 洋樓[joeng4lau2|modern high-rise building with elevator]。

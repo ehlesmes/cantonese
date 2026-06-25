@@ -8,9 +8,9 @@ description: >
   can or cannot manage to do using the potential suffixes dak1 and m4dou2.
 ---
 
-Welcome to Chapter 7! Now that you have learned how to tell the time and
-describe ongoing actions, let's explore how to express what you _can_, _may_, or
-_have experienced_ doing in Cantonese.
+Now that you have learned how to tell the time and describe ongoing actions,
+let's explore how to express what you _can_, _may_, or _have experienced_ doing
+in Cantonese.
 
 In Cantonese, the word "can" or "able to" is divided into several highly
 specific verbs depending on whether you are talking about a **learned skill**,

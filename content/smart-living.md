@@ -2,12 +2,15 @@
 id: smart-living
 title: "Smartphones, Apps & Digital Payments"
 description: >
-  Master colloquial Cantonese for messaging, social media interactions, and digital payments like PayMe and FPS.
+  Master colloquial Cantonese for messaging, social media interactions, and
+  digital payments like PayMe and FPS.
 ---
 
-Welcome to Chapter 31! In this chapter, we will learn about **Smartphones, Apps & Digital Payments**.
+In this chapter, we will learn about **Smartphones, Apps & Digital Payments**.
 
-Hong Kong social media and app culture has created colorful spoken vocabulary. Many terms are direct Cantonese phonetics of English loanwords, and digital payment apps are often used directly as verbs.
+Hong Kong social media and app culture has created colorful spoken vocabulary.
+Many terms are direct Cantonese phonetics of English loanwords, and digital
+payment apps are often used directly as verbs.
 
 Let's dive in!
 
@@ -19,19 +22,26 @@ Hong Kongers use a variety of specialized terms for apps and messaging:
 
 - `App[ep1|mobile application / app]`: Pronounced like the English "app" but
   with a classic Cantonese short, clipped tone `ep1`.
-- `些牙[se1aa4|to share (loanword)]`: A popular loanword from English "share," meaning to share a link, photo, or post.
+- `些牙[se1aa4|to share (loanword)]`: A popular loanword from English "share,"
+  meaning to share a link, photo, or post.
 - `IG[ai1zi1|Instagram (slang)]`: Instagram.
 - `FB[ef1bi1|Facebook (slang)]`: Facebook.
-- `WhatsApp[ep1si1ep1|WhatsApp / to WhatsApp someone]`: WhatsApp, also used as a verb.
-  - _Example_: `你[nei5|you]` `陣間[zan6gaan1|later]` `WhatsApp[ep1si1ep1|WhatsApp]` `我[ngo5|I / me]` `啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]`: WhatsApp me later.
+- `WhatsApp[ep1si1ep1|WhatsApp / to WhatsApp someone]`: WhatsApp, also used as a
+  verb.
+  - _Example_: `你[nei5|you]` `陣間[zan6gaan1|later]`
+    `WhatsApp[ep1si1ep1|WhatsApp]` `我[ngo5|I / me]`
+    `啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]`:
+    WhatsApp me later.
 - `傳[cyun4|to send / transmit / pass on]`: To send or transmit.
 - `發送[faat3sung3|to send / transmit]`: To send.
 - `覆[fuk1|to reply / write back]`: To reply to a text or message.
 - `留言[lau4jin4|to leave a message / comment]`: To comment or leave a message.
 - `短訊[dyun2seon3|text message / SMS]`: A text message.
-- `錄音[luk6jam1|voice recording / to record audio]`: A voice note, or recording audio.
+- `錄音[luk6jam1|voice recording / to record audio]`: A voice note, or recording
+  audio.
 - `片[pin2|video / movie / short clip]`: A video or short clip.
-- `Cap圖[kep1tou4|to take a screenshot / screenshot (slang)]`: To take a screenshot.
+- `Cap圖[kep1tou4|to take a screenshot / screenshot (slang)]`: To take a
+  screenshot.
 - `已讀不回[ji5duk6bat1wui4|read without replying]`: Leaving someone on read.
 
 ---
@@ -40,16 +50,21 @@ Hong Kongers use a variety of specialized terms for apps and messaging:
 
 Hong Kong has rapidly adopted cashless payments, bringing new colloquial verbs:
 
-- `PayMe[pei1mi1|PayMe / to transfer money via PayMe]`: A ubiquitous local payment app, often used as a verb.
-  - _Example_: `我[ngo5|I / me]` `轉頭[zyun2tau4|later / in a moment]` `PayMe[pei1mi1|PayMe]` `俾[bei2|to give / for / let / allow]` `你[nei5|you]`: I will PayMe you later.
-- `轉數快[zyun3sou3faai3|FPS (Faster Payment System)]`: Faster Payment System for instant bank transfers.
+- `PayMe[pei1mi1|PayMe / to transfer money via PayMe]`: A ubiquitous local
+  payment app, often used as a verb.
+  - _Example_: `我[ngo5|I / me]` `轉頭[zyun2tau4|later / in a moment]`
+    `PayMe[pei1mi1|PayMe]` `俾[bei2|to give / for / let / allow]`
+    `你[nei5|you]`: I will PayMe you later.
+- `轉數快[zyun3sou3faai3|FPS (Faster Payment System)]`: Faster Payment System
+  for instant bank transfers.
 - `支付寶[zi1fu6bou2|Alipay]`: Alipay digital wallet.
 
 ---
 
 ## 3. Situational Dialogue: Texting & Paying Back
 
-Two friends, Sau-han (A) and Wing-kit (B), coordinate their plans and settle a bill.
+Two friends, Sau-han (A) and Wing-kit (B), coordinate their plans and settle a
+bill.
 
 ```dialog
 A: Wing-kit，你[nei5|you] 睇[tai2|to watch / look / see / read] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 我[ngo5|I / me] 喺[hai2|at / in / on] IG[ai1zi1|Instagram (slang)] 些牙[se1aa4|to share (loanword)] 俾[bei2|to give / by (passive marker) / let] 你[nei5|you] 嗰[go2|that] 條[tiu4|measure word for long, thin objects] 片[pin2|video / movie / short clip] 未[mei6|not yet] 呀[aa3|sentence-final particle softening statements, making questions friendly]？

@@ -7,9 +7,9 @@ description: >
   master the perfective completed aspect.
 ---
 
-Welcome to Chapter 3! Now that you can handle convenience store transactions and
-count currency, it is time to experience the culinary heart of Hong Kong: the
-iconic `茶餐廳[caa4caan1teng1|Hong Kong style café / diner]`.
+Now that you can handle convenience store transactions and count currency, it is
+time to experience the culinary heart of Hong Kong: the iconic
+`茶餐廳[caa4caan1teng1|Hong Kong style café / diner]`.
 
 A `茶餐廳[caa4caan1teng1|Hong Kong style café / diner]` is a fast-paced,
 high-efficiency neighborhood eatery serving local comfort foods, sweet pastries,

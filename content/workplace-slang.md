@@ -6,11 +6,11 @@ description: >
   Kong professional settings, from slacking off to getting a raise.
 ---
 
-Welcome to Chapter 18! In this lesson, we will explore the lively and colorful
-world of Cantonese workplace slang and office dynamics. The Hong Kong
-professional environment is famous for its fast pace, high efficiency, and
-intense work ethic. To cope with this pressure, local workers have developed a
-highly expressive vocabulary of slang, English loanwords, and vivid metaphors.
+In this lesson, we will explore the lively and colorful world of Cantonese
+workplace slang and office dynamics. The Hong Kong professional environment is
+famous for its fast pace, high efficiency, and intense work ethic. To cope with
+this pressure, local workers have developed a highly expressive vocabulary of
+slang, English loanwords, and vivid metaphors.
 
 Understanding these terms is not only essential for anyone working in or with a
 Hong Kong company, but it also provides a unique window into local culture,

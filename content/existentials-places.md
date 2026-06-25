@@ -8,11 +8,11 @@ description: >
   markers, and convey natural obviousness using the particle lo.
 ---
 
-Welcome to Chapter 4! In this lesson, we will transition from café dining to
-navigating spaces and describing the location of everyday objects. Whether you
-are searching for your keys, locating the nearest restroom, or explaining where
-the cat is slacking off, mastering spatial relationships is a key step toward
-conversational fluency.
+In this lesson, we will transition from café dining to navigating spaces and
+describing the location of everyday objects. Whether you are searching for your
+keys, locating the nearest restroom, or explaining where the cat is slacking
+off, mastering spatial relationships is a key step toward conversational
+fluency.
 
 In Cantonese, spatial grammar is highly logical and consistent. We will learn
 how to state whether something exists in a space using

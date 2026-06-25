@@ -6,8 +6,7 @@ description: >
   money, and paying mortgages.
 ---
 
-Welcome to Chapter 33! In this chapter, we will learn about **Banking, Payments &
-Saving Money**.
+In this chapter, we will learn about **Banking, Payments & Saving Money**.
 
 Beyond stock trading, managing daily finances, banking, and wealth accumulation
 involves standard and highly frequent colloquial terms.
@@ -20,32 +19,48 @@ Let's dive in!
 
 Here is the essential vocabulary for managing your money in Cantonese:
 
-- `慳[haan1|to save (money/time) / cut down / economize]`: To save money, reduce expenses, or economize.
+- `慳[haan1|to save (money/time) / cut down / economize]`: To save money, reduce
+  expenses, or economize.
 - `投資[tau4zi1|to invest / investment]`: To invest money, or investments.
-- `定期[ding6kei4|fixed deposit / term deposit]`: A bank fixed-term deposit account.
-- `出糧[ceot1loeng4|getting paid / salary]`: Getting paid your salary (literally "producing grain").
-- `強積金[koeng5zik1gam1|MPF / mandatory provident fund]`: Mandatory Provident Fund retirement scheme.
-- `供樓[gung1lau2|to pay a mortgage]`: To pay a mortgage or make housing installments.
-  - _Example_: `佢[keoi5|he / she / it]` `個月[go3jyut6|every month]` `要[jiu3|need]` `俾[bei2|to give / for / let / allow]` `兩[loeng5|two]` `萬[maan6|ten thousand]` `蚊[man1|dollar]` `供樓[gung1lau2|to pay a mortgage]`: He needs to pay twenty thousand dollars every month for the mortgage.
-- `利息[lei6sik1|interest (on loan/deposit)]`: Interest earned on bank deposits or paid on loans.
+- `定期[ding6kei4|fixed deposit / term deposit]`: A bank fixed-term deposit
+  account.
+- `出糧[ceot1loeng4|getting paid / salary]`: Getting paid your salary (literally
+  "producing grain").
+- `強積金[koeng5zik1gam1|MPF / mandatory provident fund]`: Mandatory Provident
+  Fund retirement scheme.
+- `供樓[gung1lau2|to pay a mortgage]`: To pay a mortgage or make housing
+  installments.
+  - _Example_: `佢[keoi5|he / she / it]` `個月[go3jyut6|every month]`
+    `要[jiu3|need]` `俾[bei2|to give / for / let / allow]` `兩[loeng5|two]`
+    `萬[maan6|ten thousand]` `蚊[man1|dollar]`
+    `供樓[gung1lau2|to pay a mortgage]`: He needs to pay twenty thousand dollars
+    every month for the mortgage.
+- `利息[lei6sik1|interest (on loan/deposit)]`: Interest earned on bank deposits
+  or paid on loans.
 - `息[sik1|interest / dividend]`: Interest or dividend.
 - `基金[gei1gam1|fund / mutual fund]`: Mutual funds.
-- `借[ze3|to borrow / lend]`: To borrow or lend. The direction depends on the structure:
-  - `問[man6|to ask]` `人[jan4|person / people]` `借錢[ze3cin2|to borrow/lend money]`: To borrow money *from* someone.
-  - `借錢[ze3cin2|to borrow/lend money]` `俾[bei2|to give / for / let / allow]` `人[jan4|person / people]`: To lend money *to* someone.
+- `借[ze3|to borrow / lend]`: To borrow or lend. The direction depends on the
+  structure:
+  - `問[man6|to ask]` `人[jan4|person / people]`
+    `借錢[ze3cin2|to borrow/lend money]`: To borrow money _from_ someone.
+  - `借錢[ze3cin2|to borrow/lend money]` `俾[bei2|to give / for / let / allow]`
+    `人[jan4|person / people]`: To lend money _to_ someone.
 - `還[waan4|to return / repay]`: To return borrowed money or repay a loan.
-- `跑數[paau2sou3|to hit a sales target / chase sales numbers]`: To chase sales targets or hit a financial quota (literally "running numbers").
+- `跑數[paau2sou3|to hit a sales target / chase sales numbers]`: To chase sales
+  targets or hit a financial quota (literally "running numbers").
 - `長線[coeng4sin3|long term]`: A long-term horizon.
 - `短線[dyun2sin3|short term]`: A short-term horizon.
 - `身家[san1gaa1|net worth / personal fortune]`: Net worth or personal fortune.
 - `最近[zeoi3gan6|recently / lately]`: Recently.
-- `噉樣[gam2joeng6|in this way / like this / this pattern]`: In this way, like this.
+- `噉樣[gam2joeng6|in this way / like this / this pattern]`: In this way, like
+  this.
 
 ---
 
 ## 2. Situational Dialogue: Colleagues Discussing Personal Finance
 
-Two colleagues (A and B) discuss saving money and managing bank accounts during their lunch break.
+Two colleagues (A and B) discuss saving money and managing bank accounts during
+their lunch break.
 
 ```dialog
 A: 你[nei5|you] 點樣[dim2joeng6|how / in what way] 慳[haan1|to save (money/time) / cut down / economize] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 慳[haan1|to save (money/time) / cut down / economize] 錢[cin2|money] 做[zou6|to do / make / perform] 投資[tau4zi1|to invest / investment] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
