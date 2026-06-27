@@ -107,7 +107,7 @@ I hope that later on I can find a job in Hong Kong.
 ```
 
 ```cantonese
-希望[hei1mong6|to hope / wish / hope] 你[nei5|you] 快[faai3|fast / quick / rapid] 啲[di1|a bit / some / comparative suffix] 好番[hou2faan1|to recover / get well] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+希望[hei1mong6|to hope / wish / hope] 你[nei5|you] 快[faai3|fast / quick / rapid] 啲[di1|a bit / some / comparative suffix] 好返[hou2faan1|to recover / get well] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
 ===
 I hope you recover a bit faster.
 ```

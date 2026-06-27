@@ -139,8 +139,9 @@ noun with a **spatial directional marker**.
 - `前面[cin4min6|in front / front side]`: In front of, ahead.
 - `後面[hau6min6|behind / back side]`: Behind, at the back of.
 - `隔籬[gaak3lei4|next to / beside / neighbor]`: Next to, beside.
-- `左邊[zo2bin1|left side]`: Left side.
-- `右邊[jau6bin1|right side]`: Right side.
+- `左[zo2|left / left side]` / `左邊[zo2bin1|left side]`: Left / left side.
+- `右[jau6|right / right side]` / `右邊[jau6bin1|right side]`: Right / right
+  side.
 - `中間[zung1gaan1|middle]`: Middle, in between.
 
 ### The Spatial Marker Pattern
@@ -257,15 +258,17 @@ I am looking for my keys.
 
 ---
 
-> [!TIP] **`搵咗[wan2zo2|searched]` vs `搵到[wan2dou2|found]`** The verb
-> `搵[wan2|to find / look for / search]` literally means "to look for" or "to
-> search". Adding `咗[zo2|completed]` means you completed the action of
-> searching (`搵咗[wan2zo2|searched]` = "searched"), but it doesn't guarantee
-> you found the item! To say you successfully found it, you must use the
-> resultative complement `到[dou2|resultative complement indicating success]`,
-> making it `搵到[wan2dou2|to successfully find]`. In the dialogue below, person
-> A says `搵咗[wan2zo2|completed]` `啦[laa1|particle]`，`有[jau5|to have]`
-> `呀[aa3|particle]`！("I searched, and here it is!").
+> [!TIP] **`搵[wan2|look for]` `咗[zo2|completed]` vs `搵[wan2|look for]`
+> `到[dou2|result]`** The verb `搵[wan2|to find / look for / search]` literally
+> means "to look for" or "to search". Adding `咗[zo2|completed]` means you
+> completed the action of searching (`搵[wan2|look for]` `咗[zo2|completed]` =
+> "searched"), but it doesn't guarantee you found the item! To say you
+> successfully found it, you must use the resultative complement
+> `到[dou2|resultative complement indicating success]`, making it
+> `搵[wan2|look for]` `到[dou2|result]`. In the dialogue below, person A says
+> `搵[wan2|look for]` `咗[zo2|completed]`
+> `啦[laa1|particle]`，`有[jau5|to have]` `呀[aa3|particle]`！("I searched, and
+> here it is!").
 
 ## 5. Situational Dialogue: Where Are My Car Keys?
 
@@ -276,7 +279,7 @@ the particle
 `囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']`.
 
 ```dialog
-A: 唔該[m4goi1|excuse me]，你[nei5|you] 有冇[jau5mou5|is there / do you have] 見過[gin3gwo3|have seen] 我[ngo5|I / me] 個[go3|unit] 銀包[ngan4baau1|wallet] 呀[aa3|particle]？
+A: 唔該[m4goi1|excuse me]，你[nei5|you] 有冇[jau5mou5|is there / do you have] 見[gin3|see] 過[gwo3|experience] 我[ngo5|I / me] 個[go3|unit] 銀包[ngan4baau1|wallet] 呀[aa3|particle]？
    === Excuse me, have you seen my wallet?
 B: 你[nei5|you] 個[go3|unit] 銀包[ngan4baau1|wallet] 喺[hai2|at / in / on] 電腦[din6nou5|computer] 上面[soeng6min6|on top of] 呀[aa3|particle]。
    === Your wallet is on top of the computer.

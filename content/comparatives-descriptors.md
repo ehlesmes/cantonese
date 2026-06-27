@@ -81,9 +81,9 @@ directly as a compound). If you use
 `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`
 with a single-character adjective, you usually need an intensifier like
 `好[hou2|good / fine / very / quite]` or a measure word. For example,
-`大嘅衫[daai6ge3saam1|big shirt]` sounds unnatural, whereas
-`好大嘅衫[hou2daai6ge3saam1|very big shirt]` or just
-`大衫[daai6saam1|big shirt]` sounds natural.
+`大[daai6|big]` `嘅[ge3|modifier]` `衫[saam1|shirt]` sounds unnatural, whereas
+`好[hou2|very]` `大[daai6|big]` `嘅[ge3|modifier]` `衫[saam1|shirt]` or just
+`大[daai6|big]` `衫[saam1|shirt]` sounds natural.
 
 ### 2. Linking Phrases & Relative Clauses
 

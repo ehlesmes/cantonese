@@ -115,5 +115,5 @@ question: |
   "He sold US stocks today and made money."
 answer: 佢[keoi5|he / she / it] 今日[gam1jat6|today] 賣出[maai6ceot1|to sell out / sell shares] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 美股[mei5gu2|US stocks / US shares] 賺[zaan6|to earn / profit / make money] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 explanation: |
-  `佢[keoi5|he / she / it]` is "he", `今日[gam1jat6|today]` is "today", `賣出咗[maai6 ceot1 zo2|sold out]`, `美股[mei5gu2|US stocks]`, `賺咗錢[zaan6 zo2 cin2|made money]`, and `呀[aa3|particle]` is the softening particle.
+  `佢[keoi5|he / she / it]` is "he", `今日[gam1jat6|today]` is "today", `賣出[maai6ceot1|to sell out / sell shares]` `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` is "sold", `美股[mei5gu2|US stocks]`, `賺[zaan6|to earn / profit / make money]` `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` `錢[cin2|money]` is "made money", and `呀[aa3|sentence-final particle softening statements, making questions friendly]` is the softening particle.
 ```

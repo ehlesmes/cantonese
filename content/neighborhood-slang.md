@@ -22,8 +22,8 @@ To describe your living space, Cantonese uses these terms:
 - `客廳[haak3ting1|living room / parlor]`: The main living or sitting room.
 - `睡房[seoi6fong2|bedroom]`: The bedroom.
 - `面積[min6zik1|area / size]`: The total size or area of a flat.
-- `實用面積[sat6jung6 min6zik1|saleable area / net floor area]`: The net
-  saleable area of the apartment (excluding common areas and thick walls).
+- `實用面積[sat6jung6min6zik1|saleable area / net floor area]`: The net saleable
+  area of the apartment (excluding common areas and thick walls).
 - `呎[cek3|square foot / feet]`: The local standard unit of area measurement,
   shorthand for square feet.
 
@@ -73,7 +73,7 @@ A: 雖然[seoi1jin4|although / even though] 行[hang4|to walk / go] 樓梯[lau4t
    === Although walking up the stairs is a bit exhausting, the rent is cheap—it's only five thousand dollars!
 B: 噉[gam2|then / in that case / so] 佢[keoi5|he / she / it] 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 面積[min6zik1|area / size] 係[hai6|to be (am/is/are) / yes] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 好[hou2|very / quite / extremely] 細[sai3|small / little / tiny] 呀[aa3|sentence-final particle softening statements, making questions friendly]？環境[waan4ging2|environment / surroundings] 靜[zing6|quiet / peaceful] 唔[m4|not / no (negative prefix)] 靜[zing6|quiet / peaceful] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Then is its size very small? Is the environment quiet?
-A: 實用面積[sat6jung6 min6zik1|saleable area / net floor area] 差唔多[caa1m4do1|almost / about / more or less] 一[jat1|one] 百[baak3|hundred] 五[ng5|five] 十[sap6|ten] 呎[cek3|square foot / feet] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。周圍[zau1wai4|around / surroundings] 好[hou2|very / quite / extremely] 方便[fong1bin6|convenient]，不過[bat1gwo3|but / however] 日頭[jat6tau2|daytime / day] 有[jau5|to have] 少少[siu2 siu2|a little bit / slightly] 嘈[cou4|noisy]。
+A: 實用面積[sat6jung6min6zik1|saleable area / net floor area] 差唔多[caa1m4do1|almost / about / more or less] 一[jat1|one] 百[baak3|hundred] 五[ng5|five] 十[sap6|ten] 呎[cek3|square foot / feet] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。周圍[zau1wai4|around / surroundings] 好[hou2|very / quite / extremely] 方便[fong1bin6|convenient]，不過[bat1gwo3|but / however] 日頭[jat6tau2|daytime / day] 有[jau5|to have] 少少[siu2 siu2|a little bit / slightly] 嘈[cou4|noisy]。
    === The saleable area is about one hundred and fifty square feet. The surroundings are very convenient, but it is a bit noisy during the day.
 B: 唔緊要[m4 gan2jiu3|it doesn't matter / never mind / it's okay] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！好彩[hou2coi2|luckily / fortunately] 附近[fu6gan6|nearby / neighborhood] 方便[fong1bin6|convenient]。如果[jyu4gwo2|if / in case] 你[nei5|you] 搬屋[bun1uk1|to move house] 要[jiu3|need] 幫手[bong1sau2|to help / lend a hand]，話[waa6|to say / tell] 我[ngo5|I / me] 知[zi1|to know / be aware of] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
    === That's alright! Luckily the neighborhood is convenient. If you need a hand moving house, let me know!
@@ -97,11 +97,11 @@ explanation: |
 ```exercise
 question: |
   Which square footage term is used locally in Hong Kong to refer to net floor area of a flat?
-  A) 實用面積[sat6jung6 min6zik1|saleable area]
+  A) 實用面積[sat6jung6min6zik1|saleable area]
   B) 面積[min6zik1|area]
   C) 租金[zou1gam1|rent]
   D) 房[fong2|room]
 answer: A
 explanation: |
-  `實用面積[sat6jung6 min6zik1|saleable area]` refers to the net floor space or net saleable area of the apartment on which rentals/prices are based in Hong Kong.
+  `實用面積[sat6jung6min6zik1|saleable area]` refers to the net floor space or net saleable area of the apartment on which rentals/prices are based in Hong Kong.
 ```

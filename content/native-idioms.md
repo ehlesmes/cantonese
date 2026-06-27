@@ -93,8 +93,9 @@ Whoa, the boss fired him already!
 
 ### 6. Four-Character Idioms & Color Terms
 
-Cantonese also uses `四字俗語[sei3zi6zuk1jyu5|four-character idioms]` and
-color-based idioms to express vivid imagery:
+Cantonese also uses `四[sei3|four]` `字[zi6|characters]`
+`俗語[zuk1jyu5|idiomatic expressions]` and color-based idioms to express vivid
+imagery:
 
 - `人山人海[jan4saan1jan4hoi2|crowded / huge crowds of people]` (Mountains of
   people, seas of people): Used to describe a very crowded place.
@@ -127,7 +128,7 @@ B: 係呀[hai6aa3|yes]！ 佢[keoi5|he / she / it] 尋日[cam4jat6|yesterday] �
    === Yes! Yesterday he said he would definitely come, and today he stood us up again, obviously!
 A: 我[ngo5|I / me] 話[waa6|to say / speak / talk] 俾[bei2|to give / by (passive marker) / let] 你[nei5|you] 聽[teng1|to listen / hear] 呀[aa3|sentence-final particle softening statements, making questions friendly]，老闆[lou5baan2|boss / proprietor] 啱啱[aam1aam1|just now / recently] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] David 魷魚[jau4jyu2|squid] 喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]！
    === Let me tell you: the boss just fired David!
-B: 哇[waa1|wow / whoa]！ 真係㗎[zan1hai6gaa4|really?]？ 佢[keoi5|he / she / it] 平時[ping4si4|normally / usually] 好[hou2|very / quite / extremely] 鍾意[zung1ji3|to like / love / prefer] 扮嘢[baan6je5|to pretend / show off / act] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
+B: 哇[waa1|wow / whoa]！ 真係[zan1hai6|really] 㗎[gaa4|particle]？ 佢[keoi5|he / she / it] 平時[ping4si4|normally / usually] 好[hou2|very / quite / extremely] 鍾意[zung1ji3|to like / love / prefer] 扮嘢[baan6je5|to pretend / show off / act] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
    === Wow! Really? He normally likes to pretend/show off so much, obviously!
 A: 係呀[hai6aa3|yes]，今日[gam1jat6|today] David 又[jau6|again / also] 遲到[ci4dou3|to be late / arrive late]，老闆[lou5baan2|boss / proprietor] 真係[zan1hai6|really / truly] 黑[hak1|black / dark / bad luck] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 面[min6|face / surface] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === Yes, David was late again today, the boss was showing a really dark/angry face!

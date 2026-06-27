@@ -42,7 +42,7 @@ Here are the key terms for navigating Hong Kong's nightlife hotspots:
   suffer a memory lapse from excessive drinking.
 - `琴晚[kam4maan5|last night]`: Last night.
 - `晏[aan3|late]`: Late (referring to the time of day, e.g.,
-  `幾晏[gei2 aan3|quite late]`).
+  `幾晏[gei2aan3|quite late]`).
 - `或者[waak6ze2|perhaps / or]`: Or, perhaps.
 
 ---

@@ -66,6 +66,12 @@ acts as a group marker:
   - `我哋[ngo5dei6|we / us]`: "we" or "us"
   - `你哋[nei5dei6|you (plural)]`: "you (plural)"
   - `佢哋[keoi5dei6|they / them]`: "they" or "them"
+- **General & Reference Pronouns**:
+  - `大家[daai6gaa1|everyone]`: "everyone" (e.g., `大家[daai6gaa1|everyone]`
+    `好[hou2|good / fine / very / quite]` - "Hello everyone!")
+  - `自己[zi6gei2|oneself / own / self]`: "oneself / own" (e.g.,
+    `我[ngo5|I / me]` `自己[zi6gei2|oneself / own / self]` - "myself" / "I
+    myself")
 
 > [!NOTE] Cantonese does not differentiate gender in its spoken pronouns. The
 > word `佢[keoi5|he / she / it]` is used for "he", "she", and "it" alike.

@@ -63,7 +63,7 @@ B: 打機[daa2gei1|to play video or computer games] 好玩[hou2waan2|fun / enjoy
    === Is playing video games fun?
 A: 好玩[hou2waan2|fun / enjoyable] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 不過[bat1gwo3|but / however] 有時[jau5si4|sometimes] 都[dou1|also / even / already] 幾[gei2|quite / pretty / fairly] 悶[mun6|boring / bored] 㗎[gaa3|sentence-final particle asserting a point, combination of ge3 and aa3]。 不如[bat1jyu4|how about] 我哋[ngo5dei6|we / us] 聽日[ting1jat6|tomorrow] 一齊[jat1cai4|together] 去[heoi3|to go] 野餐[je5caan1|to go on a picnic / picnic]，或者[waak6ze2|perhaps / or] 去[heoi3|to go] 影相[jing2soeng2|to take photos] 打卡[daa2kaa1|to check-in / take photos at trendy spots] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
    === It's fun! But sometimes it can also be quite boring. How about we go on a picnic together tomorrow, or go take photos at trendy spots!
-B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I / me] 介紹[gaai3siu6|to introduce / recommend] 一個[jat1go3|one (unit)] 好[hou2|good] 地方[dei6fong1|place] 俾[bei2|to give / by (passive marker) / let] 你[nei5|you] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I / me] 介紹[gaai3siu6|to introduce / recommend] 一[jat1|one] 個[go3|classifier] 好[hou2|good] 地方[dei6fong1|place] 俾[bei2|to give / by (passive marker) / let] 你[nei5|you] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
    === Sure! I'll recommend a good place to you.
 ```
 

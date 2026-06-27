@@ -34,9 +34,10 @@ Many romance verbs like `拍拖[paak3to1|to date]` and
 adding an aspect marker like `咗[zo2|completed aspect]`, it must go between the
 two characters, not at the end:
 
-- `拍拖[paak3to1|to date]` -> `拍咗拖[paak3 zo2 to1|dated / have been dating]`
-- `分手[fan1sau2|to break up]` ->
-  `分咗手[fan1 zo2 sau2|broke up / have broken up]`
+- `拍拖[paak3to1|to date]` -> `拍[paak3|to date]` `咗[zo2|completed]`
+  `拖[to1|date]`
+- `分手[fan1sau2|to break up]` -> `分[fan1|separate]` `咗[zo2|completed]`
+  `手[sau2|hand]`
 
 ```cantonese
 我哋[ngo5dei6|we / us] 已經[ji5ging1|already] 分[fan1|to divide / separate / split] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 手[sau2|hand] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
@@ -111,7 +112,7 @@ B: 哇[waa1|wow / whoa]！ 真係[zan1hai6|really / truly] 甜[tim4|sweet / roma
    === Wow! That's extremely sweet! He's finally dating someone!
 A: 係呀[hai6aa3|yes]！ 佢[keoi5|he / she / it] 唔使[m4sai2|need not / no need to] 再[zoi3|again / furthermore] 收兵[sau1bing1|to collect platonic admirers] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]，哈哈[haa1haa1|haha]！
    === Yes! There's no need for him to collect admirers anymore, haha!
-B: 噉[gam2|then / in that case / so] 我[ngo5|I / me] 都要[dou1jiu3|also need to] 努力[nou5lik6|to make an effort / try hard] 出[ceot1|to leave] Pool[pu1|singles pool (student slang)] 先[sin1|first / only then] 得[dak1|can / okay / permissible] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+B: 噉[gam2|then / in that case / so] 我[ngo5|I / me] 都[dou1|also] 要[jiu3|need] 努力[nou5lik6|to make an effort / try hard] 出[ceot1|to leave] Pool[pu1|singles pool (student slang)] 先[sin1|first / only then] 得[dak1|can / okay / permissible] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === In that case, I also need to work hard to leave the singles pool, obviously!
 ```
 

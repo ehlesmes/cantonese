@@ -32,6 +32,8 @@ window in `content/curriculum.md` is updated.
   be wrapped in standard `npm run` aliases defined in `package.json`. Pass
   arguments to the underlying script using the double-dash (`--`) separator.
   Examples:
+  - Find Missing Vocabulary:
+    `npm run vocab:register-missing -- content/XX-filename.md`
   - Register Vocabulary: `npm run vocab:register -- --json '...'` or
     `npm run vocab:register -- --file <path>`
   - Verify Chapter Vocabulary: `npm run vocab:verify -- content/XX-filename.md`
@@ -66,29 +68,36 @@ Before writing any chapter content, you must perform a cognitive load audit:
 1. **Select Backlog Vocabulary**: Open `content/vocabulary_backlog.json`, find
    the highest-frequency `"pending"` words that fit the current chapter's theme,
    and plan to introduce them.
-2. **Cross-reference efficiently**: DO NOT run consecutive `grep_search`
-   commands for individual terms or read the dictionary file directly. Instead,
-   query the dictionary **all at once** using our deterministic batch lookup
-   utility:
-   ```bash
-   npm run vocab:lookup -- <word1> <word2> <word3>...
-   ```
-   Or pass them as a JSON array:
-   ```bash
-   npm run vocab:lookup -- --json '["word1", "word2", "word3"]'
-   ```
-   This ensures programmatically accurate, hallucination-free lexicon queries.
-   Identify any missing terms to be registered in Step 3.
-3. **Batch Register & Update Backlog**: For any missing terms, register them
-   **all at once** using the registrar CLI's batch mode:
-   ```bash
-   npm run vocab:register -- --json '[
-     {"char": "我", "jyutping": "ngo5", "definition": "I / me", "type": "pronoun"},
-     {"char": "你", "jyutping": "nei5", "definition": "you", "type": "pronoun"}
-   ]'
-   ```
-   _Ensure all entries have standard LSHK Jyutping tone digits (1-6) and map to
-   authorized grammatical types._ After successfully registering them, update
+2. **Simplified One-Pass Post-Drafting Registration (Recommended)**:
+   - You can draft the chapter first.
+   - Once drafted, run the template generator to find all unregistered
+     vocabulary and write a registration draft JSON:
+     ```bash
+     npm run vocab:register-missing -- content/my-chapter.md
+     ```
+   - Open the generated `tmp/register-missing-draft.json`, replace any
+     `"TODO_TYPE"` placeholders with valid grammatical types (e.g., `noun`,
+     `verb`), and register them all at once:
+     ```bash
+     npm run vocab:register -- --file tmp/register-missing-draft.json
+     ```
+3. **Alternative Manual Batch Lookup & Registration**:
+   - Query the dictionary all at once using our deterministic batch lookup
+     utility:
+     ```bash
+     npm run vocab:lookup -- <word1> <word2> <word3>...
+     ```
+   - For any missing terms, register them all at once using the registrar CLI's
+     batch mode:
+     ```bash
+     npm run vocab:register -- --json '[
+       {"char": "我", "jyutping": "ngo5", "definition": "I / me", "type": "pronoun"},
+       {"char": "你", "jyutping": "nei5", "definition": "you", "type": "pronoun"}
+     ]'
+     ```
+     Ensure all entries have standard LSHK Jyutping tone digits (1-6) and map to
+     authorized grammatical types.
+4. **Update Backlog Database**: After successfully registering them, update
    their `"status"` to `"completed"` in `content/vocabulary_backlog.json` to
    keep the backlog database synchronized.
    - **Forbid Shell Cleanups (`rm` / `rmdir`)**: You are strictly prohibited

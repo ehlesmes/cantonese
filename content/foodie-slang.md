@@ -45,7 +45,8 @@ the beverage name.
 
 Let's see how these descriptors are placed directly after the drink name. There
 is no need for extra conjunctions, and you can even stack these modifiers
-sequentially (e.g., `少甜少冰[siu2tim4 siu2bing1|less sweet less ice]`):
+sequentially (e.g., `少[siu2|less]` `甜[tim4|sweet]` `少[siu2|less]`
+`冰[bing1|ice]`):
 
 ```cantonese
 我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 一[jat1|one] 杯[bui1|cup / glass / mug (classifier for drinks)] 凍檸茶[dung3leng4caa4|iced lemon tea] 少甜[siu2tim4|less sweet] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
@@ -115,12 +116,12 @@ While cafés are for fast-paced meals, traditional Cantonese restaurants are for
 `飲茶[jam2caa4|to drink tea / eat dim sum]`. This literally means "drinking
 tea", but it is the standard term for eating `點心[dim2sam1|dim sum]`.
 
-### The Teapot Shorthand: `加水[gaa1seoi2|add water]`
+### The Teapot Shorthand: `加[gaa1|add]` `水[seoi2|water]`
 
 When your teapot is empty, you don't need to shout for a waiter. The universal
 silent request for a refill is to take the lid off the teapot and leave it
-resting half-open or on the table. If you must ask, you say
-`加水[gaa1seoi2|add water]` to the waiter.
+resting half-open or on the table. If you must ask, you say `加[gaa1|add]`
+`水[seoi2|water]` to the waiter.
 
 ### Tapping Fingers
 

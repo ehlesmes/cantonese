@@ -102,7 +102,8 @@ I am jogging right now! Let's chat tomorrow instead!
 
 When forming **A-not-A questions** (Verb-not-Verb) with split-verbs, you must
 only duplicate the **verb part**, not the entire compound. It is a very common
-learner mistake to say `游水唔游水[jau4seoi2 m4 jau4seoi2|swim or not swim]`
+learner mistake to say `游水[jau4seoi2|to swim]`
+`唔[m4|not / no (negative prefix)]` `游水[jau4seoi2|to swim]`
 (swim-water-not-swim-water)—this is incorrect!
 
 The correct structure is to repeat the verb part, and leave the object part at
@@ -115,9 +116,17 @@ the end:
 However, if you are asking about past completion or past experience involving an
 aspect marker (like `咗[zo2|completed]` or `過[gwo3|past experience]`), you
 generally cannot use the A-not-A verb duplication. Instead, use
-`有冇[jau5 mou5|have or have not]`. For example, `游過水[jau4gwo3seoi2|swum]`
-becomes `有冇游過水[jau5mou5jau4gwo3seoi2|have you swum]`, not
-`游唔游過水[jau4m4jau4gwo3seoi2|have you swum]`.
+`有冇[jau5mou5|is there / do you have (A-not-A question form)]`. For example,
+`游[jau4|to swim]`
+`過[gwo3|verbal aspect suffix indicating past experience / 'have done before' / to pass or cross]`
+`水[seoi2|water]` becomes
+`有冇[jau5mou5|is there / do you have (A-not-A question form)]`
+`游[jau4|to swim]`
+`過[gwo3|verbal aspect suffix indicating past experience / 'have done before' / to pass or cross]`
+`水[seoi2|water]`, not `游[jau4|to swim]` `唔[m4|not / no (negative prefix)]`
+`游[jau4|to swim]`
+`過[gwo3|verbal aspect suffix indicating past experience / 'have done before' / to pass or cross]`
+`水[seoi2|water]`.
 
 ```cantonese
 你[nei5|you] 今日[gam1jat6|today] 游唔游[jau4 m4 jau4|do you swim (A-not-A question form)] 水[seoi2|water] 呀[aa3|sentence-final particle softening statements, making questions friendly]？

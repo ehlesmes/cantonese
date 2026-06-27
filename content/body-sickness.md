@@ -25,10 +25,11 @@ Spoken Cantonese uses direct terms for physical ailments:
   physically uncomfortable.
 - `發燒[faat3siu1|to have a fever]`: To run a fever.
 - `感冒[gam2mou6|common cold / to catch a cold]`: A common cold.
-- `阻[zo2|verbal aspect suffix indicating completed action (perfective aspect)]`:
+- `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]`:
   Completed aspect marker.
 - `中[zung3|to hit / catch (an illness)]` `咗[zo2|completed]`: To catch an
-  illness or get infected (e.g. `中咗感冒[zung3 zo2 gam2 mou6|caught a cold]`).
+  illness or get infected (e.g. `中[zung3|catch]` `咗[zo2|completed]`
+  `感冒[gam2mou6|cold]`).
 - `咳[kat1|to cough / cough]`: To cough, or a cough itself.
 - `流鼻水[lau4bei6seoi2|to have a runny nose]`: Literally "flowing nose water,"
   meaning to have a runny nose.

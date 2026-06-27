@@ -37,8 +37,8 @@ attendance:
 - `休息[jau1sik1|to rest / take a break]`: To rest.
 - `早日康復[zou2jat6hong1fuk6|recover soon / speedy recovery]`: Wish you a
   speedy recovery.
-- `向[hoeng3|towards / to]`: Towards, to (e.g.
-  `向公司請假[hoeng3 gung1 si1 cing2 gaa3|apply for leave from the company]`).
+- `向[hoeng3|towards / to]`: Towards, to (e.g. `向[hoeng3|to]`
+  `公司[gung1si1|company]` `請假[cing2gaa3|request leave]`).
 
 ---
 
@@ -85,7 +85,7 @@ explanation: |
 ```exercise
 question: |
   Fill in the blank with the correct noun for "doctor's note":
-  我[ngo5|I / me] 要[jiu3|need] 攞[lo2|get] ______ 先可以[sin1 ho2ji5|only then can] 請[cing2|apply] 病假[beng6gaa3|sick leave]。
+  我[ngo5|I / me] 要[jiu3|need] 攞[lo2|get] ______ 先[sin1|first] 可以[ho2ji5|can] 請[cing2|apply] 病假[beng6gaa3|sick leave]。
 answer: 醫生紙[ji1sang1zi2|doctor's sick leave certificate / medical note]
 explanation: |
   `醫生紙[ji1sang1zi2|doctor's sick leave certificate / medical note]` is the standard colloquial term for the official medical certificate required to apply for sick leave.
@@ -97,5 +97,5 @@ question: |
   "Can you write a doctor's note for me?" (Use A-not-A question form for can/cannot)
 answer: 可唔可以[ho2m4ho2ji5|can or cannot / may or may not (A-not-A question form)] 開[hoi1|to write (a prescription) / prescribe / open / start] 張[zoeng1|measure word for flat objects, sheets, papers] 醫生紙[ji1sang1zi2|doctor's sick leave certificate / medical note] 俾[bei2|to give / for / let / allow] 我[ngo5|I / me] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 explanation: |
-  `可唔可以[ho2m4ho2ji5|can or cannot / may or may not (A-not-A question form)]` is the A-not-A form of can/cannot, `開[hoi1|to write (a prescription) / prescribe / open / start]` is write (a doctor's note), `張[zoeng1|measure word]` is the classifier for paper, `醫生紙[ji1sang1zi2|doctor's sick leave certificate / medical note]` is the doctor's note, `俾我[bei2 ngo5|for me]` is for me, and `呀[aa3|sentence-final particle softening statements, making questions friendly]` is the softening particle.
+  `可唔可以[ho2m4ho2ji5|can or cannot / may or may not (A-not-A question form)]` is the A-not-A form of can/cannot, `開[hoi1|to write (a prescription) / prescribe / open / start]` is write (a doctor's note), `張[zoeng1|measure word]` is the classifier for paper, `醫生紙[ji1sang1zi2|doctor's sick leave certificate / medical note]` is the doctor's note, `俾[bei2|for]` `我[ngo5|me]` is for me, and `呀[aa3|sentence-final particle softening statements, making questions friendly]` is the softening particle.
 ```

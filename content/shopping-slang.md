@@ -55,13 +55,15 @@ I need this one.
 
 ---
 
-## 2. Pointing Things Out & Connecting Items: `呢個[ni1go3|this one]`, `嗰個[go2go3|that one]`, and `同埋[tung4maai4|and / with]`
+## 2. Pointing Things Out & Connecting Items: `呢個[ni1go3|this one]`, `嗰個[go2go3|that one]`, `咁樣[gam2joeng2|like this / in this way / this way]`, and `同埋[tung4maai4|and / with]`
 
 If you do not know the name of an object in a shop, you can simply point and use
 these high-frequency demonstrative pronouns:
 
 - `呢個[ni1go3|this one]`: Used for items close to you.
 - `嗰個[go2go3|that one]`: Used for items further away.
+- `咁樣[gam2joeng2|like this / in this way / this way]`: Used when describing
+  choices, indicating "like this" or "this way".
 
 To connect two nouns together, like saying "and" in English, use the conjunction
 `同埋[tung4maai4|and / with / together with]`.
@@ -78,6 +80,12 @@ I want to buy this one.
 我[ngo5|I / me] 要[jiu3|to want / need / must / demand] 呢個[ni1go3|this one] 同埋[tung4maai4|and / with / together with] 嗰個[go2go3|that one] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
 ===
 I will take this one and that one!
+```
+
+```cantonese
+我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 咁樣[gam2joeng2|like this / in this way / this way] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 嘢飲[je5jam2|drinks / beverages] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+===
+I would like to have a drink like this.
 ```
 
 ---

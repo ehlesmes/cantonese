@@ -30,9 +30,9 @@ Here is the essential vocabulary for managing your money in Cantonese:
   Fund retirement scheme.
 - `供樓[gung1lau2|to pay a mortgage]`: To pay a mortgage or make housing
   installments.
-  - _Example_: `佢[keoi5|he / she / it]` `個月[go3jyut6|every month]`
-    `要[jiu3|need]` `俾[bei2|to give / for / let / allow]` `兩[loeng5|two]`
-    `萬[maan6|ten thousand]` `蚊[man1|dollar]`
+  - _Example_: `佢[keoi5|he / she / it]` `每[mui5|every]` `個[go3|classifier]`
+    `月[jyut6|month]` `要[jiu3|need]` `俾[bei2|to give / for / let / allow]`
+    `兩[loeng5|two]` `萬[maan6|ten thousand]` `蚊[man1|dollar]`
     `供樓[gung1lau2|to pay a mortgage]`: He needs to pay twenty thousand dollars
     every month for the mortgage.
 - `利息[lei6sik1|interest (on loan/deposit)]`: Interest earned on bank deposits
@@ -98,14 +98,14 @@ question: |
   "I put money in the bank account to do a fixed deposit to earn interest."
 answer: 我[ngo5|I / me] 放[fong3|to put / place] 錢[cin2|money] 喺[hai2|at / in / on] 戶口[wu6hau2|account (bank/online)] 做[zou6|to do / make / perform] 定期[ding6kei4|fixed deposit / term deposit] 賺[zaan6|to earn / profit / make money] 利息[lei6sik1|interest (on loan/deposit)]。
 explanation: |
-  `我[ngo5|I / me]` is "I", `放錢[fong3 cin2|to put money]` is put money, `喺戶口[hai2 wu6hau2|in the account]`, `做定期[zou6 ding6kei4|do fixed deposit]`, and `賺利息[zaan6 lei6sik1|earn interest]`.
+  `我[ngo5|I / me]` is "I", `放[fong3|to put]` `錢[cin2|money]` is put money, `喺[hai2|at / in / on]` `戶口[wu6hau2|account]`, `做[zou6|to do]` `定期[ding6kei4|fixed deposit]`, and `賺[zaan6|to earn]` `利息[lei6sik1|interest]`.
 ```
 
 ```exercise
 question: |
   Translate the following sentence into colloquial Cantonese:
   "He has to pay a mortgage every month."
-answer: 佢[keoi5|he / she / it] 個月[go3jyut6|every month] 要[jiu3|need] 供樓[gung1lau2|to pay a mortgage] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+answer: 佢[keoi5|he / she / it] 每[mui5|every] 個[go3|classifier] 月[jyut6|month] 要[jiu3|need] 供樓[gung1lau2|to pay a mortgage] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 explanation: |
-  `佢[keoi5|he / she / it]` is "he", `個月[go3jyut6|every month]` is "every month", `要[jiu3|need]` is "need to", `供樓[gung1lau2|to pay a mortgage]` is "pay mortgage", and `呀[aa3|sentence-final particle softening statements, making questions friendly]` is the softening particle.
+  `佢[keoi5|he / she / it]` is "he", `每[mui5|every]` `個[go3|classifier]` `月[jyut6|month]` is "every month", `要[jiu3|need]` is "need to", `供樓[gung1lau2|to pay a mortgage]` is "pay mortgage", and `呀[aa3|sentence-final particle softening statements, making questions friendly]` is the softening particle.
 ```
