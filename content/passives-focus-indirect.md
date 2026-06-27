@@ -106,7 +106,7 @@ with `話[waa6|to say / tell / words / speech]` to form
 precisely to "which is to say that..." or "which means that...":
 
 ```cantonese
-即係[zik1hai6|that is / namely / in other words / meaning] 話[waa6|to say / tell / words / speech] 佢[keoi5|he / she / it] 唔[m4|not] 嚟[lai4|to come] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+即係[zik1hai6|that is / namely / in other words / meaning] 話[waa6|to say / tell / words / speech] 佢[keoi5|he / she / it] 唔[m4|not] 嚟[lei4|to come] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
 ===
 Which is to say he is not coming.
 ```

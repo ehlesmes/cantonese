@@ -527,8 +527,8 @@
   {
     "character": "遲到",
     "jyutping": "ci4dou3",
-    "translation": "to be late / arrive late / to arrive late",
-    "firstIntroducedIn": "particles-nuance",
+    "translation": "to arrive late / to be late / arrive late",
+    "firstIntroducedIn": "travel-directions",
     "occurrences": 6
   },
   {
@@ -891,9 +891,9 @@
   {
     "character": "得",
     "jyutping": "dak1",
-    "translation": "particle expressing permission, possibility, capability, or adverbial degree / can / okay / permissible / potential or descriptive complement marker",
+    "translation": "particle expressing permission, possibility, capability, or adverbial degree / particle expressing permission/possibility / can / okay / permissible / potential or descriptive complement marker",
     "firstIntroducedIn": "ability-experience",
-    "occurrences": 20
+    "occurrences": 26
   },
   {
     "character": "得唔得",
@@ -933,8 +933,8 @@
   {
     "character": "等",
     "jyutping": "dang2",
-    "translation": "wait / to wait",
-    "firstIntroducedIn": "foodie-slang",
+    "translation": "to wait",
+    "firstIntroducedIn": "travel-directions",
     "occurrences": 4
   },
   {
@@ -1046,7 +1046,7 @@
     "character": "點樣",
     "jyutping": "dim2joeng6",
     "translation": "how / how / in what way",
-    "firstIntroducedIn": "shopping-bargaining",
+    "firstIntroducedIn": "travel-directions",
     "occurrences": 7
   },
   {
@@ -1171,8 +1171,8 @@
   {
     "character": "到",
     "jyutping": "dou3",
-    "translation": "verbal complement indicating success or arrival / to the point of / to arrive / until",
-    "firstIntroducedIn": "hypotheticals-conditionals",
+    "translation": "to arrive / until / verbal complement indicating success or arrival / to the point of",
+    "firstIntroducedIn": "travel-directions",
     "occurrences": 6
   },
   {
@@ -2088,7 +2088,7 @@
   {
     "character": "過",
     "jyutping": "gwo3",
-    "translation": "experience / verbal aspect suffix indicating past experience / 'have done before' / verbal aspect suffix indicating past experience / 'have done before' / to pass or cross / to pass / cross",
+    "translation": "experience / to pass / cross / verbal aspect suffix indicating past experience / 'have done before' / verbal aspect suffix indicating past experience / 'have done before' / to pass or cross",
     "firstIntroducedIn": "existentials-places",
     "occurrences": 37
   },
@@ -2306,7 +2306,7 @@
     "character": "行",
     "jyutping": "hang4",
     "translation": "to walk / go / run (a machine)",
-    "firstIntroducedIn": "ability-experience",
+    "firstIntroducedIn": "travel-directions",
     "occurrences": 4
   },
   {
@@ -3209,7 +3209,7 @@
     "character": "喇",
     "jyutping": "laa3",
     "translation": "sentence-final particle indicating a change of state or already",
-    "firstIntroducedIn": "particles-nuance",
+    "firstIntroducedIn": "travel-directions",
     "occurrences": 25
   },
   {
@@ -3239,13 +3239,6 @@
     "translation": "spicy",
     "firstIntroducedIn": "intensifiers-exaggeration",
     "occurrences": 1
-  },
-  {
-    "character": "嚟",
-    "jyutping": "lai4",
-    "translation": "to come",
-    "firstIntroducedIn": "ability-experience",
-    "occurrences": 2
   },
   {
     "character": "樓",
@@ -3279,8 +3272,8 @@
     "character": "嚟",
     "jyutping": "lei4",
     "translation": "to come / sentence-final particle indicating that something has reached a certain state or is a certain way",
-    "firstIntroducedIn": "native-idioms",
-    "occurrences": 2
+    "firstIntroducedIn": "ability-experience",
+    "occurrences": 4
   },
   {
     "character": "利息",
@@ -3376,8 +3369,8 @@
   {
     "character": "落",
     "jyutping": "lok6",
-    "translation": "to fall / drop / descend / rain / to descend / fall / drop / get off",
-    "firstIntroducedIn": "continuous-action",
+    "translation": "to descend / fall / drop / get off / to fall / drop / descend / rain",
+    "firstIntroducedIn": "transport-slang",
     "occurrences": 2
   },
   {
@@ -3455,7 +3448,7 @@
     "jyutping": "m4",
     "translation": "not / not / no (negative prefix) / not (negation particle)",
     "firstIntroducedIn": "pronunciation-jyutping",
-    "occurrences": 81
+    "occurrences": 87
   },
   {
     "character": "唔緊要",
@@ -3483,7 +3476,7 @@
     "jyutping": "m4dak1",
     "translation": "cannot / not allowed / physically bad to do",
     "firstIntroducedIn": "ability-experience",
-    "occurrences": 8
+    "occurrences": 2
   },
   {
     "character": "唔到",
@@ -4678,8 +4671,8 @@
   {
     "character": "先",
     "jyutping": "sin1",
-    "translation": "first / beforehand / only then / first / only then",
-    "firstIntroducedIn": "ability-experience",
+    "translation": "first / only then / first / beforehand / only then",
+    "firstIntroducedIn": "transport-slang",
     "occurrences": 7
   },
   {
@@ -4895,8 +4888,8 @@
   {
     "character": "船",
     "jyutping": "syun4",
-    "translation": "boat / ship / ferry / boat",
-    "firstIntroducedIn": "social-media-slang",
+    "translation": "ferry / boat / boat / ship",
+    "firstIntroducedIn": "transport-slang",
     "occurrences": 2
   },
   {
@@ -5455,8 +5448,8 @@
   {
     "character": "就",
     "jyutping": "zau6",
-    "translation": "then / right away / immediately",
-    "firstIntroducedIn": "hypotheticals-conditionals",
+    "translation": "then / then / right away / immediately",
+    "firstIntroducedIn": "travel-directions",
     "occurrences": 29
   },
   {
@@ -5574,8 +5567,8 @@
   {
     "character": "之後",
     "jyutping": "zi1hau6",
-    "translation": "afterwards / after / after / afterwards",
-    "firstIntroducedIn": "passives-focus-indirect",
+    "translation": "after / afterwards / after",
+    "firstIntroducedIn": "travel-directions",
     "occurrences": 5
   },
   {
@@ -5747,7 +5740,7 @@
     "occurrences": 4
   },
   {
-    "character": "早頭",
+    "character": "早唞",
     "jyutping": "zou2tau2",
     "translation": "good night",
     "firstIntroducedIn": "greetings",
@@ -5840,8 +5833,8 @@
   {
     "character": "仲",
     "jyutping": "zung6",
-    "translation": "still / yet / still / also / even more",
-    "firstIntroducedIn": "continuous-action",
+    "translation": "still / still / yet / still / also / even more",
+    "firstIntroducedIn": "travel-directions",
     "occurrences": 17
   },
   {

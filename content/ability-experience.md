@@ -84,7 +84,7 @@ Use `會[wui5|will / would / can / be able to]` to express **future actions**
 ("will") or an **inherent likelihood/tendency** that something will happen.
 
 - `我[ngo5|I / me]` `聽日[ting1jat6|tomorrow]`
-  `會[wui5|will / would / can / be able to]` `嚟[lai4|to come]` — I will come
+  `會[wui5|will / would / can / be able to]` `嚟[lei4|to come]` — I will come
   tomorrow.
 
 ```cantonese
@@ -188,20 +188,22 @@ doable, allowed, or ready**:
 I can go now! / I am ready to go now!
 ```
 
-### 2. Lack of Permission or Suitability: `唔得[m4dak1|cannot / not allowed / physically bad to do]`
+### 2. Lack of Permission or Suitability: `唔[m4|not]`...`得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`
 
 To express that an action is **not allowed, forbidden, or physically
-bad/unsuitable to do**, use the negative potential suffix
-`唔得[m4dak1|cannot / not allowed / physically bad to do]`:
+bad/unsuitable to do**, place the negation particle `唔[m4|not]` before the
+verb, followed by `得[dak1|particle expressing permission/possibility]`:
 
 ```
-[Verb] + 唔得
+唔 + [Verb] + 得
 ```
 
-- `食[sik6|to eat]` `唔得[m4dak1|cannot / not allowed / physically bad to do]` —
-  not allowed to eat / shouldn't be eaten (e.g., expired or toxic).
-- `去[heoi3|to go]` `唔得[m4dak1|cannot / not allowed / physically bad to do]` —
-  not allowed to go.
+- `唔[m4|not]` `食[sik6|to eat]`
+  `得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`
+  — not allowed to eat / shouldn't be eaten (e.g., expired or toxic).
+- `唔[m4|not]` `去[heoi3|to go]`
+  `得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`
+  — not allowed to go.
 
 ### 3. Ability and Inability to Succeed: `到[dou2|can manage to / successfully do]` and `唔到[m4dou2|cannot / unable to manage to / fail to]`
 
@@ -230,10 +232,12 @@ complete the action, you attach
 
 > [!TIP] **`唔得[m4dak1|cannot]` vs `唔到[m4dou2|cannot]`**
 >
-> - Use `唔得[m4dak1|cannot / not allowed / physically bad to do]` when an
->   action is **not allowed** or **bad for you** (e.g., `食[sik6|to eat]`
->   `唔得[m4dak1|cannot / not allowed / physically bad to do]` means it's toxic,
->   expired, or forbidden to eat).
+> - Use the structure `唔[m4|not]` + [Verb] +
+>   `得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`
+>   when an action is **not allowed** or **bad for you** (e.g., `唔[m4|not]`
+>   `食[sik6|to eat]`
+>   `得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`
+>   means it's toxic, expired, or forbidden to eat).
 > - Use `唔到[m4dou2|cannot / unable to manage to / fail to]` when you **fail to
 >   manage** or **physically cannot** complete the action (e.g.,
 >   `食[sik6|to eat]` `唔到[m4dou2|cannot / unable to manage to / fail to]`

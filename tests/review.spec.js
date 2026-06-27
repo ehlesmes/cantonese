@@ -34,9 +34,9 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     console.log("Legacy test - Stats chapters count:", statsChapters);
     console.log("Legacy test - Stats cards count:", statsCards);
 
-    // Assert that the chapters count is 3 (Pronunciation, Greetings, Shopping), and cards count is 53
+    // Assert that the chapters count is 3 (Pronunciation, Greetings, Shopping), and cards count is 54
     expect(statsChapters).toBe("3");
-    expect(statsCards).toBe("53");
+    expect(statsCards).toBe("54");
 
     // Check if the checkboxes are checked
     const ch1Checked = await page

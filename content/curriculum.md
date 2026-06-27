@@ -18,6 +18,12 @@ chapters:
   - id: "time-telling"
     title: "Time-Telling & Schedules"
     file: "time-telling.md"
+  - id: "travel-directions"
+    title: "Directions & Spatial Navigation"
+    file: "travel-directions.md"
+  - id: "transport-slang"
+    title: "Local Transport Modes & Minibus Slang"
+    file: "transport-slang.md"
   - id: "continuous-action"
     title: "Continuous Action & Slacking"
     file: "continuous-action.md"
@@ -69,12 +75,6 @@ chapters:
   - id: "social-media-slang"
     title: "Social Media & Messaging Slang"
     file: "social-media-slang.md"
-  - id: "travel-directions"
-    title: "Directions & Spatial Navigation"
-    file: "travel-directions.md"
-  - id: "transport-slang"
-    title: "Local Transport Modes & Minibus Slang"
-    file: "transport-slang.md"
   - id: "flat-hunting"
     title: "Apartment Rentals & Layouts"
     file: "flat-hunting.md"
@@ -168,101 +168,101 @@ _Focus_: Finding things and asking for locations. Integrates existentials
 _Focus_: Expressing time, hours, minutes, and schedules. Introduces daily
 routines and timing adverbs.
 
-### Chapter 6: Continuous Action & Slacking (`continuous-action.md`)
+### Chapter 6: Directions & Spatial Navigation (`travel-directions.md`)
+
+_Focus_: Asking for and giving directions, spatial navigation, and giving
+instructions to drivers.
+
+### Chapter 7: Local Transport Modes & Minibus Slang (`transport-slang.md`)
+
+_Focus_: Navigate local transport (minibuses, MTR), MTR stations, and travel
+slangs.
+
+### Chapter 8: Continuous Action & Slacking (`continuous-action.md`)
 
 _Focus_: Describing actions happening right now using the continuous aspect
 particle `緊` and learning modern slacking slang (`Hea`).
 
-### Chapter 7: Ability, Permission & Experience (`ability-experience.md`)
+### Chapter 9: Ability, Permission & Experience (`ability-experience.md`)
 
 _Focus_: Distinguishing modal abilities `可以`, `識`, and `會`. Integrates
 experiential aspect `過`, potential suffixes `得` vs `唔到`.
 
-### Chapter 8: Comparatives & Complex Descriptors (`comparatives-descriptors.md`)
+### Chapter 10: Comparatives & Complex Descriptors (`comparatives-descriptors.md`)
 
 _Focus_: Relative clauses and noun modifiers using `嘅`, and comparative
 structures using `過` (e.g. A 過 B).
 
-### Chapter 9: Advanced Particle Layering & Emotive Nuance (`particles-nuance.md`)
+### Chapter 11: Advanced Particle Layering & Emotive Nuance (`particles-nuance.md`)
 
 _Focus_: How to layer particles at the end of sentences to convey subtle moods
 (e.g., `啫`, `嘛`, `吓`, `喇喎`).
 
-### Chapter 10: Split-Verbs Syntax (`split-verbs.md`)
+### Chapter 12: Split-Verbs Syntax (`split-verbs.md`)
 
 _Focus_: Master the syntax of split-verbs (e.g., `游水` -> `游咗水`) and how to
 separate them to insert aspect and duration markers.
 
-### Chapter 11: Native Idioms & Cultural Humor (`native-idioms.md`)
+### Chapter 13: Native Idioms & Cultural Humor (`native-idioms.md`)
 
 _Focus_: Native idioms, proverbs, local humor, and four-character
 colloquialisms.
 
-### Chapter 12: Hypotheticals, Conditionals & Future Planning (`hypotheticals-conditionals.md`)
+### Chapter 14: Hypotheticals, Conditionals & Future Planning (`hypotheticals-conditionals.md`)
 
 _Focus_: Express conditional logic using `如果` ... `就`, handle hypotheticals,
 and formulate plans and hopes.
 
-### Chapter 13: Narrative Cohesion & Complex Connectives (`narrative-cohesion.md`)
+### Chapter 15: Narrative Cohesion & Complex Connectives (`narrative-cohesion.md`)
 
 _Focus_: Form complex connected paragraphs in speech, utilizing advanced
 conjunctions and transitional phrases for fluid native storytelling.
 
-### Chapter 14: Regrets, Wishes & Empathy (`regrets-wishes-empathy.md`)
+### Chapter 16: Regrets, Wishes & Empathy (`regrets-wishes-empathy.md`)
 
 _Focus_: Express regrets about the past using `早知`, make wishes using `希望`,
 and express deep empathy with spoken structures.
 
-### Chapter 15: Passives, Focus & Indirect Speech (`passives-focus-indirect.md`)
+### Chapter 17: Passives, Focus & Indirect Speech (`passives-focus-indirect.md`)
 
 _Focus_: Structure passive voice using `俾`, emphasize statements using `即係`,
 and report indirect speech using `話`.
 
-### Chapter 16: Intensifiers, Exaggeration & Spoken Superlatives (`intensifiers-exaggeration.md`)
+### Chapter 18: Intensifiers, Exaggeration & Spoken Superlatives (`intensifiers-exaggeration.md`)
 
 _Focus_: Express extreme emotions using colloquial intensifiers `死`, `極`, and
 `爆`, and master spoken superlative structures.
 
-### Chapter 17: Rhetorical Questions & Spoken Doubts (`rhetorical-questions.md`)
+### Chapter 19: Rhetorical Questions & Spoken Doubts (`rhetorical-questions.md`)
 
 _Focus_: Formulate rhetorical questions using `唔通` ... `咩` and express
 disbelief or counter-expectations using `乜` ... `咩`.
 
-### Chapter 18: Workplace Slang & Office Dynamics (`workplace-slang.md`)
+### Chapter 20: Workplace Slang & Office Dynamics (`workplace-slang.md`)
 
 _Focus_: Navigate professional environments, discuss working overtime (`OT`),
 slacking off at work (`摸魚` or `蛇王`), and professional life.
 
-### Chapter 19: Foodie Culture & Tea Restaurant Slang (`foodie-slang.md`)
+### Chapter 21: Foodie Culture & Tea Restaurant Slang (`foodie-slang.md`)
 
 _Focus_: Learn colloquial shortcuts for ordering at diners, customizable
 beverage options (e.g. less sweet, iced), and essential dim sum cultural
 terminology.
 
-### Chapter 20: Shopping, Bargaining & Spoken Quantifiers (`shopping-bargaining.md`)
+### Chapter 22: Shopping, Bargaining & Spoken Quantifiers (`shopping-bargaining.md`)
 
 _Focus_: Master spoken currency structures, bargaining expressions (e.g.
 `平啲啦` [cheaper please]), and advanced classifiers.
 
-### Chapter 21: Dating & Relationships (`dating-relationships.md`)
+### Chapter 23: Dating & Relationships (`dating-relationships.md`)
 
 _Focus_: Colloquial romance terminology, dating culture, and relationship
 expressions.
 
-### Chapter 22: Social Media & Messaging Slang (`social-media-slang.md`)
+### Chapter 24: Social Media & Messaging Slang (`social-media-slang.md`)
 
 _Focus_: Text messaging habits, social media interactions, and digital payment
 slang.
-
-### Chapter 23: Directions & Spatial Navigation (`travel-directions.md`)
-
-_Focus_: Asking for and giving directions, spatial navigation, and giving
-instructions to drivers.
-
-### Chapter 24: Local Transport Modes & Minibus Slang (`transport-slang.md`)
-
-_Focus_: Navigate local transport (minibuses, MTR), MTR stations, and travel
-slangs.
 
 ### Chapter 25: Apartment Rentals & Layouts (`flat-hunting.md`)
 

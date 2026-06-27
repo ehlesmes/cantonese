@@ -35,7 +35,7 @@ Hello there!
 ### Other Everyday Greetings
 
 - `早晨[zou2san4|good morning]`: The standard way to say "good morning."
-- `早頭[zou2tau2|good night]`: Used when going to bed.
+- `早唞[zou2tau2|good night]`: Used when going to bed.
 - `拜拜[baai1baai3|bye-bye / goodbye (loanword)]`: The most common colloquial
   way to say goodbye.
 
