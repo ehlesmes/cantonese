@@ -16,16 +16,23 @@
     {/* EXPORT TAB CONTENT */}
     <div id="sync-tab-export" class="sync-tab-content active">
       <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.45;">
-        Scan this QR code with your phone's camera, or copy the string below to import your progress on another device.
+        Scan this QR code, or enter the 6-character Sync Code on your other device to sync progress.
       </p>
       
+      {/* 6-DIGIT SYNC CODE DISPLAY */}
+      <div id="sync-code-container" style="text-align: center; margin-bottom: 1rem; display: none;">
+        <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Temporary Sync Code</span>
+        <div id="sync-code-display" style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; letter-spacing: 0.25em; color: var(--accent-color); background: rgba(0,0,0,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.5rem; display: inline-block; padding-left: 0.75em;">------</div>
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; margin-bottom: 0;">Expires in 10 minutes</p>
+      </div>
+
       <div class="qr-container">
         <canvas id="sync-qr-canvas"></canvas>
         <div id="qr-loading-text" class="qr-placeholder">Generating QR Code...</div>
       </div>
 
       <div class="sync-field-group" style="margin-top: 1rem;">
-        <label for="sync-export-string" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Sync Text Code</label>
+        <label for="sync-export-string" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Raw Offline Text Code</label>
         <div style="display: flex; gap: 0.5rem;">
           <input type="text" id="sync-export-string" readonly style="flex: 1; border: 1px solid var(--border-color); border-radius: 6px; padding: 0.5rem; font-family: monospace; font-size: 0.8rem; background: var(--bg-color); color: var(--text-color);" />
           <button id="sync-copy-btn" class="sync-action-btn accent">Copy</button>
@@ -36,23 +43,33 @@
     {/* IMPORT TAB CONTENT */}
     <div id="sync-tab-import" class="sync-tab-content">
       <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.45;">
-        Scan a progress QR code from your phone's screen using your webcam, or paste a copied text code below.
+        Scan a sync QR code, enter a 6-character Sync Code, or paste a raw text code below.
       </p>
 
+      {/* 6-DIGIT CLOUD SYNC CODE INPUT */}
+      <div class="sync-field-group" style="margin-bottom: 1.25rem;">
+        <label for="sync-code-input" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Enter 6-Character Sync Code</label>
+        <div style="display: flex; gap: 0.5rem;">
+          <input type="text" id="sync-code-input" placeholder="e.g. X8J9K2" maxlength="6" style="flex: 1; border: 1px solid var(--border-color); border-radius: 6px; padding: 0.5rem; font-family: monospace; font-size: 1rem; text-transform: uppercase; text-align: center; background: var(--bg-color); color: var(--text-color); letter-spacing: 0.1em;" />
+          <button id="sync-code-submit-btn" class="sync-action-btn accent">Sync</button>
+        </div>
+      </div>
+
       {/* WEBCAM SCANNER SECTION */}
-      <div id="scanner-section" class="scanner-container">
+      <div id="scanner-section" class="scanner-container" style="margin-bottom: 1.25rem;">
+        <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem; align-self: flex-start;">Or Scan QR Code</span>
         <div id="scanner-preview-wrapper" class="scanner-preview-wrapper" style="display: none;">
           <video id="sync-video" playsinline></video>
           <div class="scanner-overlay-laser"></div>
           <canvas id="sync-hidden-canvas" style="display: none;"></canvas>
         </div>
         <div id="scanner-status" class="scanner-status-text" style="display: none;">Accessing camera...</div>
-        <button id="sync-scan-btn" class="sync-action-btn secondary" style="width: 100%; margin-bottom: 1rem;">Scan QR with Webcam</button>
+        <button id="sync-scan-btn" class="sync-action-btn secondary" style="width: 100%;">Scan QR with Webcam</button>
       </div>
 
       {/* MANUAL PASTE SECTION */}
       <div class="sync-field-group">
-        <label for="sync-import-string" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Paste Sync Code</label>
+        <label for="sync-import-string" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Or Paste Raw Text Code</label>
         <textarea id="sync-import-string" placeholder="Paste your sync text code here..." style="width: 100%; height: 80px; border: 1px solid var(--border-color); border-radius: 6px; padding: 0.5rem; font-family: monospace; font-size: 0.8rem; background: var(--bg-color); color: var(--text-color); resize: none; margin-bottom: 0.5rem;"></textarea>
         <button id="sync-import-submit-btn" class="sync-action-btn accent" style="width: 100%;">Import & Merge Progress</button>
       </div>
@@ -375,8 +392,12 @@
     const qrLoadingText = document.getElementById('qr-loading-text');
     const exportStringInput = document.getElementById('sync-export-string');
     const copyBtn = document.getElementById('sync-copy-btn');
+    const syncCodeContainer = document.getElementById('sync-code-container');
+    const syncCodeDisplay = document.getElementById('sync-code-display');
     
     // Import UI Elements
+    const syncCodeInput = document.getElementById('sync-code-input');
+    const syncCodeSubmitBtn = document.getElementById('sync-code-submit-btn');
     const scanBtn = document.getElementById('sync-scan-btn');
     const videoWrapper = document.getElementById('scanner-preview-wrapper');
     const video = document.getElementById('sync-video');
@@ -445,6 +466,15 @@
     tabExportBtn.addEventListener('click', () => switchTab('export'));
     tabImportBtn.addEventListener('click', () => switchTab('import'));
 
+    function generateSyncCode() {
+      const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Avoid confusing chars like O/0, I/1, L, etc.
+      let result = '';
+      for (let i = 0; i < 6; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return result;
+    }
+
     // Export Generation
     async function generateExportData() {
       const localState = getLocalState();
@@ -453,27 +483,48 @@
       // Update string input
       exportStringInput.value = serialized;
       
-      // Generate QR Code URL
-      const importUrl = new URL(window.location.href);
-      importUrl.searchParams.set('import', serialized);
-      const urlToEncode = importUrl.toString();
-
+      const code = generateSyncCode();
+      
       qrCanvas.style.display = 'none';
       qrLoadingText.style.display = 'block';
+      qrLoadingText.textContent = 'Generating Cloud Sync...';
+      
+      syncCodeDisplay.textContent = code;
+      syncCodeContainer.style.display = 'block';
 
-      QRCode.toCanvas(qrCanvas, urlToEncode, {
-        width: 200,
-        margin: 1,
-        errorCorrectionLevel: 'L' // Lower error correction = less dense QR
-      }, (err) => {
-        if (err) {
-          console.error('Failed to render QR Code:', err);
-          qrLoadingText.textContent = 'Failed to generate QR Code';
-        } else {
-          qrLoadingText.style.display = 'none';
-          qrCanvas.style.display = 'block';
+      try {
+        const syncUrl = new URL(window.location.href);
+        syncUrl.searchParams.delete('import');
+        syncUrl.searchParams.set('sync', code);
+        const urlToEncode = syncUrl.toString();
+
+        const response = await fetch(`https://kvdb.io/canto_sync_bucket_8c89bdf2/${code}?ttl=600`, {
+          method: 'POST',
+          body: serialized
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
-      });
+
+        QRCode.toCanvas(qrCanvas, urlToEncode, {
+          width: 200,
+          margin: 1,
+          errorCorrectionLevel: 'L'
+        }, (err) => {
+          if (err) {
+            console.error('Failed to render QR Code:', err);
+            qrLoadingText.textContent = 'Failed to generate QR Code';
+          } else {
+            qrLoadingText.style.display = 'none';
+            qrCanvas.style.display = 'block';
+          }
+        });
+      } catch (err) {
+        console.error('Cloud Sync failed:', err);
+        qrLoadingText.textContent = 'Failed to connect to sync server. Check your connection.';
+        syncCodeContainer.style.display = 'none';
+      }
     }
 
     // Copy to Clipboard
@@ -592,25 +643,45 @@
         if (code) {
           console.log('QR Code detected:', code.data);
           
-          let payload = code.data;
-          try {
-            const url = new URL(code.data);
-            const importParam = url.searchParams.get('import');
-            if (importParam) payload = importParam;
-          } catch(e) {
-            // Not a URL, use direct value
-          }
-
           isProcessing = true;
           try {
-            const state = await deserializeState(payload);
+            let state = null;
+            let isUrl = false;
+            let syncParam = null;
+            let importParam = null;
+
+            try {
+              const url = new URL(code.data);
+              isUrl = true;
+              syncParam = url.searchParams.get('sync');
+              importParam = url.searchParams.get('import');
+            } catch(e) {
+              // Not a URL
+            }
+
+            if (isUrl) {
+              if (syncParam) {
+                // Fetch from cloud
+                const res = await fetch(`https://kvdb.io/canto_sync_bucket_8c89bdf2/${syncParam.toUpperCase()}`);
+                if (res.ok) {
+                  const payload = await res.text();
+                  state = await deserializeState(payload);
+                }
+              } else if (importParam) {
+                state = await deserializeState(importParam);
+              }
+            } else {
+              // Direct payload value
+              state = await deserializeState(code.data);
+            }
+
             if (state) {
               stopScanner();
               showConfirmView(state);
               isProcessing = false;
               return;
             } else {
-              scannerStatus.textContent = 'Invalid QR code. Keep scanning...';
+              scannerStatus.textContent = 'Invalid QR code or expired link. Keep scanning...';
             }
           } catch (err) {
             console.error('Scan decoding error:', err);
@@ -624,6 +695,40 @@
         scanAnimationId = requestAnimationFrame(tickScanner);
       }
     }
+
+    // Manual 6-Character Sync Code Submit
+    syncCodeSubmitBtn.addEventListener('click', async () => {
+      const code = syncCodeInput.value.trim().toUpperCase();
+      if (code.length !== 6) {
+        alert('Please enter a valid 6-character sync code.');
+        return;
+      }
+
+      syncCodeSubmitBtn.disabled = true;
+      const originalText = syncCodeSubmitBtn.textContent;
+      syncCodeSubmitBtn.textContent = 'Syncing...';
+
+      try {
+        const response = await fetch(`https://kvdb.io/canto_sync_bucket_8c89bdf2/${code}`);
+        if (!response.ok) {
+          throw new Error('Code not found or expired.');
+        }
+        const payload = await response.text();
+        const state = await deserializeState(payload);
+        if (state) {
+          closeModal();
+          showConfirmView(state);
+        } else {
+          alert('Invalid sync payload.');
+        }
+      } catch (err) {
+        console.error('Sync code fetch failed:', err);
+        alert('Failed to retrieve progress from cloud. The code may be incorrect, expired, or you might be offline.');
+      } finally {
+        syncCodeSubmitBtn.disabled = false;
+        syncCodeSubmitBtn.textContent = originalText;
+      }
+    });
 
     // Manual Paste Import
     importSubmitBtn.addEventListener('click', async () => {
@@ -675,6 +780,7 @@
         const success = saveLocalState(merged);
         if (success) {
           const cleanUrl = new URL(window.location.href);
+          cleanUrl.searchParams.delete('sync');
           cleanUrl.searchParams.delete('import');
           window.history.replaceState({}, document.title, cleanUrl.toString());
           
@@ -689,6 +795,36 @@
 
     // Handle incoming URL parameters on initial load
     const params = new URLSearchParams(window.location.search);
+    
+    // Check for sync parameter
+    const syncParam = params.get('sync');
+    if (syncParam) {
+      const cleanUrl = new URL(window.location.href);
+      cleanUrl.searchParams.delete('sync');
+      window.history.replaceState({}, document.title, cleanUrl.toString());
+
+      (async () => {
+        try {
+          const res = await fetch(`https://kvdb.io/canto_sync_bucket_8c89bdf2/${syncParam.toUpperCase()}`);
+          if (res.ok) {
+            const payload = await res.text();
+            const state = await deserializeState(payload);
+            if (state) {
+              setTimeout(() => {
+                showConfirmView(state);
+              }, 300);
+              return;
+            }
+          }
+          alert('The sync code has expired or is invalid.');
+        } catch (e) {
+          console.error("Failed to fetch cloud sync progress:", e);
+          alert('Failed to connect to sync server.');
+        }
+      })();
+    }
+
+    // Check for import parameter (legacy)
     const importParam = params.get('import');
     if (importParam) {
       (async () => {
