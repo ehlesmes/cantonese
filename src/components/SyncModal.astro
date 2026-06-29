@@ -380,39 +380,71 @@
   let currentImportState = null;
   let isProcessing = false;
 
-  // Helper: compress JSON to base64url
-  async function compressJson(obj) {
-    const jsonStr = JSON.stringify(obj);
-    const bytes = new TextEncoder().encode(jsonStr);
-    if (typeof CompressionStream !== "undefined") {
-      const stream = new ReadableStream({
-        start(controller) {
-          controller.enqueue(bytes);
-          controller.close();
-        },
-      });
-      const compressedStream = stream.pipeThrough(
-        new CompressionStream("deflate"),
-      );
-      const buffer = await new Response(compressedStream).arrayBuffer();
-      const compressedBytes = new Uint8Array(buffer);
-      
-      // Convert to base64url using btoa
-      let binary = '';
-      const len = compressedBytes.byteLength;
-      for (let i = 0; i < len; i++) {
-        binary += String.fromCharCode(compressedBytes[i]);
-      }
-      return btoa(binary)
-        .replace(/\+/g, '-')
-        .replace(/\//g, '_')
-        .replace(/=/g, '');
+  // Helper: pack SDP coordinates to base64url binary
+  function packSDPData(data) {
+    const bytes = [];
+    
+    // Type (1 = Offer, 2 = Answer)
+    bytes.push(data.t === 'o' ? 1 : 2);
+    
+    // ufrag (8 bytes)
+    const uBytes = new TextEncoder().encode(data.u);
+    for (let i = 0; i < 8; i++) {
+      bytes.push(uBytes[i] || 0);
     }
-    throw new Error("Compression not supported");
+    
+    // pwd (24 bytes)
+    const pBytes = new TextEncoder().encode(data.p);
+    for (let i = 0; i < 24; i++) {
+      bytes.push(pBytes[i] || 0);
+    }
+    
+    // fingerprint (32 bytes)
+    for (let i = 0; i < 64; i += 2) {
+      bytes.push(parseInt(data.f.slice(i, i + 2), 16));
+    }
+    
+    // candidate count
+    bytes.push(data.c.length);
+    
+    for (const cand of data.c) {
+      const ip = cand[0];
+      const port = cand[1];
+      const isIPv6 = ip.includes(':');
+      const isIPv4 = !isIPv6 && /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(ip);
+      
+      if (isIPv4) {
+        bytes.push(4);
+        bytes.push(...ip.split('.').map(Number));
+      } else if (isIPv6) {
+        bytes.push(6);
+        const strBytes = new TextEncoder().encode(ip);
+        bytes.push(strBytes.length);
+        bytes.push(...strBytes);
+      } else {
+        bytes.push(0);
+        const strBytes = new TextEncoder().encode(ip);
+        bytes.push(strBytes.length);
+        bytes.push(...strBytes);
+      }
+      
+      bytes.push((port >> 8) & 0xff);
+      bytes.push(port & 0xff);
+    }
+    
+    const uint8 = new Uint8Array(bytes);
+    let binary = '';
+    for (let i = 0; i < uint8.length; i++) {
+      binary += String.fromCharCode(uint8[i]);
+    }
+    return btoa(binary)
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_')
+      .replace(/=/g, '');
   }
 
-  // Helper: decompress base64url to JSON
-  async function decompressJson(str) {
+  // Helper: unpack base64url binary to SDP coordinates object
+  function unpackSDPData(str) {
     let cleanStr = str.replace(/-/g, '+').replace(/_/g, '/');
     while (cleanStr.length % 4) {
       cleanStr += '=';
@@ -423,21 +455,42 @@
       bytes[i] = binary.charCodeAt(i);
     }
     
-    if (typeof DecompressionStream !== "undefined") {
-      const stream = new ReadableStream({
-        start(controller) {
-          controller.enqueue(bytes);
-          controller.close();
-        },
-      });
-      const decompressedStream = stream.pipeThrough(
-        new DecompressionStream("deflate"),
-      );
-      const buffer = await new Response(decompressedStream).arrayBuffer();
-      const jsonStr = new TextDecoder().decode(buffer);
-      return JSON.parse(jsonStr);
+    let offset = 0;
+    const typeByte = bytes[offset++];
+    const t = typeByte === 1 ? 'o' : 'a';
+    
+    const ufrag = new TextDecoder().decode(bytes.subarray(offset, offset + 8)).replace(/\0/g, '');
+    offset += 8;
+    
+    const pwd = new TextDecoder().decode(bytes.subarray(offset, offset + 24)).replace(/\0/g, '');
+    offset += 24;
+    
+    let fingerprint = '';
+    for (let i = 0; i < 32; i++) {
+      const hex = bytes[offset++].toString(16).padStart(2, '0');
+      fingerprint += hex;
     }
-    throw new Error("Decompression not supported");
+    
+    const candCount = bytes[offset++];
+    const c = [];
+    
+    for (let i = 0; i < candCount; i++) {
+      const ipType = bytes[offset++];
+      let ip = '';
+      
+      if (ipType === 4) {
+        ip = `${bytes[offset++]}.${bytes[offset++]}.${bytes[offset++]}.${bytes[offset++]}`;
+      } else {
+        const len = bytes[offset++];
+        ip = new TextDecoder().decode(bytes.subarray(offset, offset + len));
+        offset += len;
+      }
+      
+      const port = (bytes[offset++] << 8) | bytes[offset++];
+      c.push([ip, port]);
+    }
+    
+    return { t, u: ufrag, p: pwd, f: fingerprint, c };
   }
 
   // Helper: Extract essential coordinates from standard SDP
@@ -706,10 +759,10 @@
             };
           });
 
-          // Compress and encode Offer coordinates
+          // Pack and encode Offer coordinates
           const parsed = parseSDP(pc.localDescription.sdp);
           parsed.t = 'o'; // tag as offer
-          const token = await compressJson(parsed);
+          const token = packSDPData(parsed);
 
           // Render Offer QR code
           qrCanvas.style.display = 'none';
@@ -767,7 +820,7 @@
 
           const parsed = parseSDP(pc.localDescription.sdp);
           parsed.t = 'a'; // tag as answer
-          const token = await compressJson(parsed);
+          const token = packSDPData(parsed);
 
           // Show Answer QR code
           qrCanvas.style.display = 'none';
@@ -941,7 +994,7 @@
               // Not a URL
             }
 
-            const data = await decompressJson(token);
+            const data = unpackSDPData(token);
             if (data && data.u && data.p && data.f) {
               if (data.t === 'o' && !pc) {
                 // Scanned an Offer! Initialize Answer
@@ -1033,7 +1086,7 @@
 
       (async () => {
         try {
-          const data = await decompressJson(rtcParam);
+          const data = unpackSDPData(rtcParam);
           if (data && data.t === 'o') {
             overlay.classList.add('open');
             overlay.setAttribute('aria-hidden', 'false');

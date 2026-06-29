@@ -1,6 +1,45 @@
 /* global localStorage, Buffer */
 import { test, expect } from "@playwright/test";
-import zlib from "zlib";
+
+function packSDPDataForTest(data) {
+  const bytes = [];
+
+  // Type (1 = Offer, 2 = Answer)
+  bytes.push(data.t === "o" ? 1 : 2);
+
+  // ufrag (8 bytes)
+  const uBytes = Buffer.from(data.u, "ascii");
+  for (let i = 0; i < 8; i++) {
+    bytes.push(uBytes[i] || 0);
+  }
+
+  // pwd (24 bytes)
+  const pBytes = Buffer.from(data.p, "ascii");
+  for (let i = 0; i < 24; i++) {
+    bytes.push(pBytes[i] || 0);
+  }
+
+  // fingerprint (32 bytes)
+  for (let i = 0; i < 64; i += 2) {
+    bytes.push(parseInt(data.f.slice(i, i + 2), 16));
+  }
+
+  // Candidate count
+  bytes.push(data.c.length);
+
+  for (const cand of data.c) {
+    const ip = cand[0];
+    const port = cand[1];
+
+    bytes.push(4); // IPv4 type
+    bytes.push(...ip.split(".").map(Number));
+
+    bytes.push((port >> 8) & 0xff);
+    bytes.push(port & 0xff);
+  }
+
+  return Buffer.from(bytes).toString("base64url");
+}
 
 test.describe("Progress Sync E2E Tests", () => {
   test.beforeEach(async ({ page }) => {
@@ -48,8 +87,7 @@ test.describe("Progress Sync E2E Tests", () => {
       c: [["127.0.0.1", 5000]],
     };
 
-    const compressed = zlib.deflateSync(Buffer.from(JSON.stringify(mockOffer)));
-    const token = compressed.toString("base64url");
+    const token = packSDPDataForTest(mockOffer);
 
     // 2. Load page with rtc query parameter
     await page.goto(`/cantonese?rtc=${token}`);
