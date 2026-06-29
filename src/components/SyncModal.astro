@@ -89,6 +89,8 @@
         <button id="sync-import-submit-btn" class="sync-action-btn accent" style="width: 100%;">Import Progress</button>
       </div>
 
+      <div id="sync-offline-error" style="color: #ff3b30; font-size: 0.82rem; text-align: center; display: none; margin-top: -0.25rem;"></div>
+
       <div style="text-align: center;">
         <button id="sync-offline-close-btn" style="background: none; border: none; color: var(--accent-color); font-size: 0.8rem; cursor: pointer; text-decoration: underline;">Return to WebRTC Sync</button>
       </div>
@@ -123,6 +125,8 @@
           <span id="confirm-vocab-merged" class="stat-highlight">0</span>
         </div>
       </div>
+
+      <div id="confirm-status-text" style="text-align: center; font-size: 0.85rem; font-weight: 600; margin-top: 1rem; display: none;"></div>
 
       <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
         <button id="sync-confirm-no" class="sync-action-btn secondary" style="flex: 1;">Cancel</button>
@@ -620,6 +624,7 @@
     const copyBtn = document.getElementById('sync-copy-btn');
     const importStringTextarea = document.getElementById('sync-import-string');
     const importSubmitBtn = document.getElementById('sync-import-submit-btn');
+    const syncOfflineError = document.getElementById('sync-offline-error');
 
     // Confirm UI Elements
     const confirmView = document.getElementById('sync-confirm-view');
@@ -631,6 +636,7 @@
     const confirmVocabMerged = document.getElementById('confirm-vocab-merged');
     const confirmYesBtn = document.getElementById('sync-confirm-yes');
     const confirmNoBtn = document.getElementById('sync-confirm-no');
+    const confirmStatusText = document.getElementById('confirm-status-text');
 
     // Modal Control
     window.addEventListener('click', (e) => {
@@ -731,6 +737,7 @@
 
     // Offline Import Manual Paste Submit
     importSubmitBtn.addEventListener('click', async () => {
+      syncOfflineError.style.display = 'none';
       const val = importStringTextarea.value.trim();
       if (!val) return;
 
@@ -738,7 +745,8 @@
       if (state) {
         showConfirmView(state);
       } else {
-        alert('Invalid sync code. Please check that you copied the complete code string.');
+        syncOfflineError.textContent = 'Invalid sync code. Please check that you copied the complete code string.';
+        syncOfflineError.style.display = 'block';
       }
     });
 
@@ -753,6 +761,9 @@
       scannerSection.style.display = 'flex';
       answerQrSection.style.display = 'none';
       scanInstructions.style.display = 'block';
+      
+      // Hide offline error
+      syncOfflineError.style.display = 'none';
       
       stopScanner();
       switchTab('show');
@@ -1073,6 +1084,7 @@
     // Confirmation Screen Control
     function showConfirmView(importedState) {
       currentImportState = importedState;
+      confirmStatusText.style.display = 'none';
       const localState = getLocalState();
       const merged = mergeStates(localState, importedState);
 
@@ -1093,6 +1105,7 @@
 
     function hideConfirmView() {
       confirmView.style.display = 'none';
+      confirmStatusText.style.display = 'none';
       currentImportState = null;
       importStringTextarea.value = '';
     }
@@ -1101,6 +1114,7 @@
 
     confirmYesBtn.addEventListener('click', () => {
       if (currentImportState) {
+        confirmStatusText.style.display = 'none';
         const localState = getLocalState();
         const merged = mergeStates(localState, currentImportState);
         
@@ -1111,11 +1125,17 @@
           cleanUrl.searchParams.delete('import');
           window.history.replaceState({}, document.title, cleanUrl.toString());
           
-          alert('Progress successfully merged!');
-          window.location.reload();
+          confirmStatusText.textContent = 'Progress successfully merged! Reloading...';
+          confirmStatusText.style.color = '#34c759'; // Success green
+          confirmStatusText.style.display = 'block';
+          
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
         } else {
-          alert('Failed to write progress to local storage.');
-          hideConfirmView();
+          confirmStatusText.textContent = 'Failed to write progress to local storage.';
+          confirmStatusText.style.color = '#ff3b30'; // Error red
+          confirmStatusText.style.display = 'block';
         }
       }
     });
