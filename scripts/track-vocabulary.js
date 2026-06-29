@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 const parser = require("./lib/parser");
 
 function main() {
@@ -76,6 +77,11 @@ function main() {
             character: char,
             jyutping: jyutping,
             translation: translation,
+            hash: crypto
+              .createHash("sha256")
+              .update(char)
+              .digest("hex")
+              .slice(0, 16),
             firstIntroducedIn: chapterData.frontmatter.id || chapter.id,
             occurrences: 1,
           };

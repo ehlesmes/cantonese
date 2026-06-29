@@ -112,8 +112,8 @@ try {
         return clone.textContent.trim();
       }
 
-      // Browser SHA-256 Hashing helper
-      async function getHash(text) {
+      // Browser SHA-256 Hashing fallback (only used if data-audio-hash is missing)
+      async function getHashAsync(text) {
         if (window.crypto && window.crypto.subtle) {
           try {
             const msgUint8 = new TextEncoder().encode(text);
@@ -127,27 +127,43 @@ try {
         return null;
       }
 
-      // Audio cache and preloading utilities
-      const audioCache = new Map();
+      // Audio preloading utilities (uses native browser cache, discards elements to prevent leaks)
+      const preloadedHashes = new Set();
 
-      function preloadAudio(text) {
-        getHash(text).then(hash => {
-          if (!hash) return;
-          if (audioCache.has(hash)) return;
+      function preloadAudio(text, hash) {
+        if (hash) {
+          triggerPreload(hash);
+        } else {
+          getHashAsync(text).then(asyncHash => {
+            if (asyncHash) triggerPreload(asyncHash);
+          });
+        }
+      }
 
-          const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
-            ? import.meta.env.BASE_URL.slice(0, -1) 
-            : import.meta.env.BASE_URL;
-          const audio = new Audio(`${baseUrl}/audio/tts/${hash}.mp3`);
-          audio.preload = 'auto';
-          audioCache.set(hash, audio);
-        });
+      function triggerPreload(hash) {
+        if (!hash || preloadedHashes.has(hash)) return;
+        preloadedHashes.add(hash);
+
+        const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+          ? import.meta.env.BASE_URL.slice(0, -1) 
+          : import.meta.env.BASE_URL;
+        
+        // Creating and immediately discarding Audio element lets the browser's HTTP cache fetch it
+        // and keeps the memory footprint clean (no decoder references held in a map).
+        const tempAudio = new Audio(`${baseUrl}/audio/tts/${hash}.mp3`);
+        tempAudio.preload = 'auto';
       }
 
       if (typeof window !== 'undefined') {
-        window.preloadTexts = (texts) => {
-          if (Array.isArray(texts)) {
-            texts.forEach(preloadAudio);
+        window.preloadTexts = (items) => {
+          if (Array.isArray(items)) {
+            items.forEach(item => {
+              if (item && typeof item === 'object') {
+                preloadAudio(item.text, item.hash);
+              } else {
+                preloadAudio(item);
+              }
+            });
           }
         };
       }
@@ -180,18 +196,19 @@ try {
         window.speechSynthesis.speak(utterance);
       }
 
-      async function speakText(text, onEndCallback) {
+      let playbackAudio = null;
+
+      async function speakText(text, hash, onEndCallback) {
         // Cancel active native speech
         if (window.speechSynthesis) {
           window.speechSynthesis.cancel();
         }
 
         // Cancel any currently playing offline audio
-        if (activeAudio) {
-          activeAudio.pause();
-          activeAudio.onended = null;
-          activeAudio.onerror = null;
-          activeAudio = null;
+        if (playbackAudio) {
+          playbackAudio.pause();
+          playbackAudio.onended = null;
+          playbackAudio.onerror = null;
         }
 
         // Clean up styling on previous active elements
@@ -200,44 +217,44 @@ try {
           activeBtn = null;
         }
 
-        const hash = await getHash(text);
+        // Fallback to async hashing if hash is not provided synchronously
+        if (!hash) {
+          hash = await getHashAsync(text);
+        }
+
         if (hash) {
-          let audio = audioCache.get(hash);
-          if (!audio) {
-            const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
-              ? import.meta.env.BASE_URL.slice(0, -1) 
-              : import.meta.env.BASE_URL;
-            audio = new Audio(`${baseUrl}/audio/tts/${hash}.mp3`);
-            audioCache.set(hash, audio);
+          if (!playbackAudio) {
+            playbackAudio = new Audio();
           }
-          activeAudio = audio;
           
-          // Reset time and programmatically slow down playback rate
-          audio.currentTime = 0;
-          audio.playbackRate = 0.85;
+          const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+            ? import.meta.env.BASE_URL.slice(0, -1) 
+            : import.meta.env.BASE_URL;
+          
+          playbackAudio.src = `${baseUrl}/audio/tts/${hash}.mp3`;
+          playbackAudio.currentTime = 0;
+          playbackAudio.playbackRate = 0.85;
 
           let fallbackTriggered = false;
           const triggerFallback = () => {
             if (fallbackTriggered) return;
             fallbackTriggered = true;
             
-            audio.onended = null;
-            audio.onerror = null;
-            if (activeAudio === audio) activeAudio = null;
+            playbackAudio.onended = null;
+            playbackAudio.onerror = null;
             
             speakNativeFallback(text, onEndCallback);
           };
 
-          audio.onended = () => {
-            activeAudio = null;
+          playbackAudio.onended = () => {
             if (onEndCallback) onEndCallback();
           };
 
-          audio.onerror = () => {
+          playbackAudio.onerror = () => {
             triggerFallback();
           };
 
-          audio.play().catch(err => {
+          playbackAudio.play().catch(err => {
             console.warn("Audio play failed, using native fallback:", err);
             triggerFallback();
           });
@@ -283,7 +300,8 @@ try {
             
             // Preload audio on hover/touch to minimize latency
             const text = getCleanCantoneseText(vocabTerm);
-            preloadAudio(text);
+            const hash = vocabTerm.dataset.audioHash;
+            preloadAudio(text, hash);
           }
         };
 
@@ -303,7 +321,8 @@ try {
             
             if (targetEl) {
               const text = getCleanCantoneseText(targetEl);
-              preloadAudio(text);
+              const hash = ttsBtn.dataset.audioHash;
+              preloadAudio(text, hash);
             }
           }
         };
@@ -322,13 +341,14 @@ try {
             e.stopPropagation();
             
             const text = getCleanCantoneseText(vocabTerm);
+            const hash = vocabTerm.dataset.audioHash;
             
             // Skip playing sound or highlighting if the text consists only of punctuation marks
             if (/^[，。！？、；：,?!;:\s]+$/.test(text)) {
               return;
             }
             
-            speakText(text, () => {
+            speakText(text, hash, () => {
               vocabTerm.classList.remove('tts-playing');
               if (activeBtn === vocabTerm) activeBtn = null;
             });
@@ -363,8 +383,9 @@ try {
             
             if (targetEl) {
               const text = getCleanCantoneseText(targetEl);
+              const hash = ttsBtn.dataset.audioHash;
               
-              speakText(text, () => {
+              speakText(text, hash, () => {
                 ttsBtn.classList.remove('tts-playing');
                 if (activeBtn === ttsBtn) activeBtn = null;
               });
@@ -398,7 +419,8 @@ try {
                 
                 if (targetEl) {
                   const text = getCleanCantoneseText(targetEl);
-                  preloadAudio(text);
+                  const hash = ttsBtn.dataset.audioHash;
+                  preloadAudio(text, hash);
                 }
               }
             });

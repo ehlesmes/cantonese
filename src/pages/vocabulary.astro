@@ -440,7 +440,7 @@ const allVocab = allVocabRaw.map(item => {
       
       const cantoDiv = document.createElement('div');
       cantoDiv.className = 'review-item-canto';
-      cantoDiv.innerHTML = `<span class="vocab-term">${item.character}<span class="tooltip-popover"><strong>${item.jyutping}</strong><br/>${item.translation}</span></span>`;
+      cantoDiv.innerHTML = `<span class="vocab-term" data-audio-hash="${item.hash || ''}">${item.character}<span class="tooltip-popover"><strong>${item.jyutping}</strong><br/>${item.translation}</span></span>`;
       
       const engDiv = document.createElement('div');
       engDiv.className = 'review-item-english';
@@ -507,7 +507,7 @@ const allVocab = allVocabRaw.map(item => {
       
       // Preload audio files for all cards in this session to eliminate playback latency
       if (window.preloadTexts) {
-        window.preloadTexts(sessionCards.map(c => c.character));
+        window.preloadTexts(sessionCards.map(c => ({ text: c.character, hash: c.hash })));
       }
 
       loadCard(currentCardIndex);
@@ -533,7 +533,7 @@ const allVocab = allVocabRaw.map(item => {
 
       // Load character with hover tooltip showing only Jyutping
       const charContainer = document.getElementById('flashcard-character-container');
-      charContainer.innerHTML = `<span class="vocab-term">${card.character}<span class="tooltip-popover"><strong>${card.jyutping}</strong></span></span>`;
+      charContainer.innerHTML = `<span class="vocab-term" data-audio-hash="${card.hash || ''}">${card.character}<span class="tooltip-popover"><strong>${card.jyutping}</strong></span></span>`;
 
       // Set translation
       document.getElementById('flashcard-translation-text').textContent = card.translation;

@@ -1,7 +1,19 @@
 import { describe, test, expect } from "vitest";
 import { compileMarkdown, compileAnnotations } from "../src/utils/markdown.js";
+import crypto from "crypto";
 
 describe("Markdown & Tooltip Compiling Utility", () => {
+  test("compileMarkdown should output correct data-audio-hash matching SHA-256", () => {
+    const raw = "The greeting is `你好[nei5hou2|hello]` in Cantonese.";
+    const html = compileMarkdown(raw);
+    const expectedHash = crypto
+      .createHash("sha256")
+      .update("你好")
+      .digest("hex")
+      .slice(0, 16);
+    expect(html).toContain(`data-audio-hash="${expectedHash}"`);
+  });
+
   test("compileMarkdown should parse standard bold and headers", () => {
     const raw = "# Hello\nThis is **bold** text.";
     const html = compileMarkdown(raw);
@@ -9,12 +21,13 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     expect(html).toContain("<strong>bold</strong>");
   });
 
-  test("compileMarkdown should convert inline annotations inside backticks to HTML tooltips", () => {
+  test("compileMarkdown should convert inline annotations inside backticks to HTML tooltips with data-audio-hash", () => {
     const raw = "The greeting is `你好[nei5hou2|hello]` in Cantonese.";
     const html = compileMarkdown(raw);
     expect(html).toContain(
-      '<span class="vocab-term">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span>',
+      '你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span>',
     );
+    expect(html).toMatch(/data-audio-hash="[0-9a-f]{16}"/);
     expect(html).not.toContain("`你好");
   });
 
@@ -22,8 +35,9 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     const raw = "The greeting is `你好[nei5hou2|hello]` in Cantonese.";
     const html = compileMarkdown(raw, { inline: true });
     expect(html).toContain(
-      '<span class="vocab-term">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span>',
+      '你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span>',
     );
+    expect(html).toContain('data-audio-hash="');
     expect(html).not.toContain("<p>");
     expect(html).not.toContain("</p>");
   });
@@ -39,13 +53,13 @@ describe("Markdown & Tooltip Compiling Utility", () => {
       "I check my `IG[ai1zi1|Instagram]` and connect to `Wi-Fi[wai1faai1|Wi-Fi]`. Let's `OT[ou1ti1|overtime]`.";
     const html = compileMarkdown(raw);
     expect(html).toContain(
-      '<span class="vocab-term">IG<span class="tooltip-popover"><strong>ai1zi1</strong><br/>Instagram</span></span>',
+      'IG<span class="tooltip-popover"><strong>ai1zi1</strong><br/>Instagram</span></span>',
     );
     expect(html).toContain(
-      '<span class="vocab-term">Wi-Fi<span class="tooltip-popover"><strong>wai1faai1</strong><br/>Wi-Fi</span></span>',
+      'Wi-Fi<span class="tooltip-popover"><strong>wai1faai1</strong><br/>Wi-Fi</span></span>',
     );
     expect(html).toContain(
-      '<span class="vocab-term">OT<span class="tooltip-popover"><strong>ou1ti1</strong><br/>overtime</span></span>',
+      'OT<span class="tooltip-popover"><strong>ou1ti1</strong><br/>overtime</span></span>',
     );
   });
 
@@ -53,11 +67,12 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     const raw = "唔該[m4goi1|excuse me]，我[ngo5|I]想買呢個。";
     const html = compileAnnotations(raw);
     expect(html).toContain(
-      '<span class="vocab-term">唔該<span class="tooltip-popover"><strong>m4goi1</strong><br/>excuse me</span></span>',
+      '唔該<span class="tooltip-popover"><strong>m4goi1</strong><br/>excuse me</span></span>',
     );
     expect(html).toContain(
-      '<span class="vocab-term">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span>',
+      '我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span>',
     );
+    expect(html).toContain('data-audio-hash="');
   });
 
   test("compileAnnotations should not affect text without annotations", () => {

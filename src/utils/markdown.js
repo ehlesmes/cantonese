@@ -1,4 +1,5 @@
 import { marked } from "marked";
+import crypto from "node:crypto";
 
 // Configure marked options
 marked.setOptions({
@@ -29,7 +30,12 @@ export function compileMarkdown(text, options = {}) {
   let processedText = text.replace(
     inlineRegex,
     (match, char, jyutping, translation) => {
-      return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
+      const hash = crypto
+        .createHash("sha256")
+        .update(char)
+        .digest("hex")
+        .slice(0, 16);
+      return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
     },
   );
 
@@ -37,7 +43,12 @@ export function compileMarkdown(text, options = {}) {
   processedText = processedText.replace(
     blockRegex,
     (match, char, jyutping, translation) => {
-      return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
+      const hash = crypto
+        .createHash("sha256")
+        .update(char)
+        .digest("hex")
+        .slice(0, 16);
+      return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
     },
   );
 
@@ -79,6 +90,11 @@ export function compileAnnotations(text) {
     /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
 
   return text.replace(blockRegex, (match, char, jyutping, translation) => {
-    return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
+    const hash = crypto
+      .createHash("sha256")
+      .update(char)
+      .digest("hex")
+      .slice(0, 16);
+    return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
   });
 }

@@ -1,11 +1,21 @@
 ---
 import { compileAnnotations } from "../utils/markdown.js";
+import crypto from "node:crypto";
 
 const { content } = Astro.props;
 
 const lines = content.split(/\r?\n/);
 const turns = [];
 let currentTurn = null;
+
+function getDialogueHash(cantoneseRaw) {
+  if (!cantoneseRaw) return "";
+  const cleanText = cantoneseRaw
+    .replace(/`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g, (match, char) => char)
+    .replace(/\[[^\]]+\]/g, "")
+    .trim();
+  return crypto.createHash("sha256").update(cleanText).digest("hex").slice(0, 16);
+}
 
 for (let i = 0; i < lines.length; i++) {
   const line = lines[i];
@@ -15,6 +25,7 @@ for (let i = 0; i < lines.length; i++) {
   const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
   if (speakerMatch) {
     if (currentTurn) {
+      currentTurn.audioHash = getDialogueHash(currentTurn.cantonese);
       turns.push(currentTurn);
     }
     currentTurn = {
@@ -34,6 +45,7 @@ for (let i = 0; i < lines.length; i++) {
 }
 
 if (currentTurn) {
+  currentTurn.audioHash = getDialogueHash(currentTurn.cantonese);
   turns.push(currentTurn);
 }
 ---
@@ -45,7 +57,7 @@ if (currentTurn) {
           <span class="dialogue-speaker">{turn.speaker}:</span>
           <div class="dialogue-cantonese" set:html={compileAnnotations(turn.cantonese)} />
         </div>
-        <button class="tts-btn" title="Listen to line" aria-label="Listen to line">
+        <button class="tts-btn" data-audio-hash={turn.audioHash} title="Listen to line" aria-label="Listen to line">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
             <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>

@@ -1,6 +1,7 @@
 ---
 import fs from "fs";
 import path from "path";
+import crypto from "crypto";
 import { createRequire } from "module";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -22,6 +23,33 @@ runParser(
 const { parseCurriculum, parseChapter } = parserModule.exports;
 const curriculumPath = path.resolve("content/curriculum.md");
 const chapters = parseCurriculum(curriculumPath);
+
+function getCleanSpokenText(text) {
+  if (!text) return "";
+  let cleaned = text;
+  const annotationRegex =
+    /`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g;
+  cleaned = cleaned.replace(annotationRegex, (match, char) => char);
+  cleaned = cleaned.replace(/\[[^\]]+\]/g, "");
+  return cleaned.trim();
+}
+
+function getAudioHash(text) {
+  const clean = getCleanSpokenText(text);
+  return crypto.createHash("sha256").update(clean).digest("hex").slice(0, 16);
+}
+
+function getTokenHashes(text) {
+  const tokenHashes = {};
+  if (!text) return tokenHashes;
+  const blockRegex = /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
+  let match;
+  while ((match = blockRegex.exec(text)) !== null) {
+    const char = match[1];
+    tokenHashes[char] = crypto.createHash("sha256").update(char).digest("hex").slice(0, 16);
+  }
+  return tokenHashes;
+}
 
 function splitCantoneseTokens(cantoneseRaw) {
   if (!cantoneseRaw) return [];
@@ -76,7 +104,9 @@ chapters.forEach((chapter, idx) => {
             cantoneseRaw,
             english,
             tokens,
-            type: "example"
+            type: "example",
+            audioHash: getAudioHash(cantoneseRaw),
+            tokenHashes: getTokenHashes(cantoneseRaw)
           });
         }
       } else if (block.type === "dialog") {
@@ -90,6 +120,8 @@ chapters.forEach((chapter, idx) => {
           const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
           if (speakerMatch) {
             if (currentTurn && currentTurn.cantoneseRaw && currentTurn.english) {
+              currentTurn.audioHash = getAudioHash(currentTurn.cantoneseRaw);
+              currentTurn.tokenHashes = getTokenHashes(currentTurn.cantoneseRaw);
               allExamples.push(currentTurn);
             }
             currentTurn = {
@@ -100,7 +132,9 @@ chapters.forEach((chapter, idx) => {
               cantoneseRaw: speakerMatch[2],
               english: "",
               tokens: splitCantoneseTokens(speakerMatch[2]),
-              type: "dialog"
+              type: "dialog",
+              audioHash: "",
+              tokenHashes: {}
             };
           } else if (trimmed.startsWith("===")) {
             if (currentTurn) {
@@ -115,6 +149,8 @@ chapters.forEach((chapter, idx) => {
           }
         }
         if (currentTurn && currentTurn.cantoneseRaw && currentTurn.english) {
+          currentTurn.audioHash = getAudioHash(currentTurn.cantoneseRaw);
+          currentTurn.tokenHashes = getTokenHashes(currentTurn.cantoneseRaw);
           allExamples.push(currentTurn);
         }
       }
@@ -287,14 +323,15 @@ chapters.forEach((chapter, idx) => {
     }
 
     // 1. Client-Side Helper to Compile Annotations inline without imports
-    function compileAnnotationsClient(text, hideTranslation = true) {
+    function compileAnnotationsClient(text, hideTranslation = true, tokenHashes = {}) {
       if (!text) return "";
       const blockRegex = /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
       return text.replace(blockRegex, (match, char, jyutping, translation) => {
+        const hash = tokenHashes[char] || "";
         if (hideTranslation) {
-          return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong></span></span>`;
+          return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong></span></span>`;
         }
-        return `<span class="vocab-term">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
+        return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
       });
     }
 
@@ -526,7 +563,7 @@ chapters.forEach((chapter, idx) => {
       
       const cantoDiv = document.createElement('div');
       cantoDiv.className = 'review-item-canto';
-      cantoDiv.innerHTML = compileAnnotationsClient(item.cantoneseRaw, false);
+      cantoDiv.innerHTML = compileAnnotationsClient(item.cantoneseRaw, false, item.tokenHashes);
       
       const engDiv = document.createElement('div');
       engDiv.className = 'review-item-english';
@@ -593,7 +630,7 @@ chapters.forEach((chapter, idx) => {
       
       // Preload audio files for all cards in this session to eliminate playback latency
       if (window.preloadTexts) {
-        window.preloadTexts(sessionCards.map(c => c.cantoneseRaw));
+        window.preloadTexts(sessionCards.map(c => ({ text: c.cantoneseRaw, hash: c.audioHash })));
       }
 
       loadCard(currentCardIndex);
@@ -655,7 +692,7 @@ chapters.forEach((chapter, idx) => {
               if (!assembledTokenIndices.includes(idx)) currentPool.push(idx);
             });
             renderGameplayBoards(currentPool);
-          });
+          }, card.tokenHashes);
           answerSlotsEl.appendChild(chip);
         });
       }
@@ -669,19 +706,19 @@ chapters.forEach((chapter, idx) => {
             assembledTokenIndices.push(origIdx);
             const newPool = poolIndices.filter(idx => idx !== origIdx);
             renderGameplayBoards(newPool);
-          });
+          }, card.tokenHashes);
           tokensPoolEl.appendChild(chip);
         });
       }
     }
 
-    function createTokenChip(rawToken, clickCallback) {
+    function createTokenChip(rawToken, clickCallback, tokenHashes = {}) {
       const chip = document.createElement('div');
       chip.className = 'token-chip';
       
       const inner = document.createElement('div');
       inner.className = 'vocab-term';
-      inner.innerHTML = compileAnnotationsClient(rawToken, true);
+      inner.innerHTML = compileAnnotationsClient(rawToken, true, tokenHashes);
       
       chip.appendChild(inner);
       
@@ -743,7 +780,7 @@ chapters.forEach((chapter, idx) => {
       const feedbackPanel = document.getElementById('feedback-panel');
       feedbackPanel.style.display = 'block';
 
-      const compiledCantoHtml = compileAnnotationsClient(card.cantoneseRaw, false);
+      const compiledCantoHtml = compileAnnotationsClient(card.cantoneseRaw, false, card.tokenHashes);
 
       if (isCorrect) {
         feedbackPanel.innerHTML = `
@@ -752,7 +789,7 @@ chapters.forEach((chapter, idx) => {
             <div class="alert-content">
               <div class="cantonese-example-card" style="border: none; background: transparent; padding: 0; margin: 0; box-shadow: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
                 <div class="cantonese-sentence" style="font-size: 1.25rem;">${compiledCantoHtml}</div>
-                <button class="tts-btn" title="Listen" aria-label="Listen">
+                <button class="tts-btn" data-audio-hash="${card.audioHash}" title="Listen" aria-label="Listen">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                     <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
@@ -787,7 +824,7 @@ chapters.forEach((chapter, idx) => {
               <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem;">Correct Structure:</div>
               <div class="cantonese-example-card" style="border: none; background: transparent; padding: 0; margin: 0; box-shadow: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
                 <div class="cantonese-sentence" style="font-size: 1.25rem;">${compiledCantoHtml}</div>
-                <button class="tts-btn" title="Listen" aria-label="Listen">
+                <button class="tts-btn" data-audio-hash="${card.audioHash}" title="Listen" aria-label="Listen">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                     <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
