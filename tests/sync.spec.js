@@ -50,12 +50,12 @@ test.describe("Progress Sync E2E Tests", () => {
     });
   });
 
-  test("should open the sync modal and generate an Offer QR code canvas", async ({
+  test("should open the sync modal and generate an Offer QR code canvas in Show tab", async ({
     page,
   }) => {
     await page.goto("/cantonese");
 
-    // Check that the Sync button in the header is present and click it
+    // Click the sync trigger button
     const syncBtn = page.locator("#sync-trigger-btn");
     await expect(syncBtn).toBeVisible();
     await syncBtn.click();
@@ -64,25 +64,27 @@ test.describe("Progress Sync E2E Tests", () => {
     const modalOverlay = page.locator("#sync-modal-overlay");
     await expect(modalOverlay).toHaveClass(/open/);
 
-    // The QR canvas should eventually display (meaning Offer + candidates generated successfully)
-    const qrCanvas = page.locator("#sync-qr-canvas");
+    // Show tab button should be active
+    const tabShowBtn = page.locator("#tab-show-btn");
+    await expect(tabShowBtn).toHaveClass(/active/);
+
+    // The QR canvas should display inside the Show panel
+    const qrCanvas = page.locator("#sync-tab-show-content #sync-qr-canvas");
     await expect(qrCanvas).toBeVisible();
 
-    // Status should prompt Initiator
+    // Status text should show waiting status
     const statusText = page.locator("#sync-status-text");
-    await expect(statusText).toContainText(
-      "Device A: Point Device B at this QR code",
-    );
+    await expect(statusText).toContainText("Waiting for connection");
   });
 
-  test("should auto-open the modal and show Answer QR code when loaded with rtc offer parameter", async ({
+  test("should auto-open the Scan tab and show Answer QR code when loaded with rtc offer parameter", async ({
     page,
   }) => {
     // 1. Generate a mock WebRTC Offer signaling token
     const mockOffer = {
       t: "o",
-      u: "mockufra", // 8 chars minimum
-      p: "mockpwdmockpwdmockpwd123", // 24 chars minimum (ICE password constraint)
+      u: "mockufra",
+      p: "mockpwdmockpwdmockpwd123",
       f: "a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890",
       c: [["127.0.0.1", 5000]],
     };
@@ -96,15 +98,23 @@ test.describe("Progress Sync E2E Tests", () => {
     const modalOverlay = page.locator("#sync-modal-overlay");
     await expect(modalOverlay).toHaveClass(/open/);
 
-    // Status should transition to answer mode (indicating offer parsed and answer generated)
-    const statusText = page.locator("#sync-status-text");
-    await expect(statusText).toContainText(
-      "Device B: Point Device A at this Answer QR code",
-    );
+    // Scan tab button should be active automatically
+    const tabScanBtn = page.locator("#tab-scan-btn");
+    await expect(tabScanBtn).toHaveClass(/active/);
 
-    // QR canvas should display the Answer QR
-    const qrCanvas = page.locator("#sync-qr-canvas");
-    await expect(qrCanvas).toBeVisible();
+    // Answer QR section should be visible, and scanner section hidden
+    const answerQrSection = page.locator("#answer-qr-section");
+    await expect(answerQrSection).toBeVisible();
+    const scannerSection = page.locator("#scanner-section");
+    await expect(scannerSection).not.toBeVisible();
+
+    // Answer QR canvas should be visible
+    const answerQrCanvas = page.locator("#answer-qr-canvas");
+    await expect(answerQrCanvas).toBeVisible();
+
+    // Status text should show answer generated status
+    const statusText = page.locator("#sync-status-text");
+    await expect(statusText).toContainText("Answer generated");
   });
 
   test("should allow syncing progress via offline copy-paste fallback", async ({

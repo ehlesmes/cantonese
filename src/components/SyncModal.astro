@@ -7,41 +7,61 @@
     
     <h2 id="sync-modal-title" style="margin-top: 0.2rem; margin-bottom: 1rem; border-bottom: none; font-size: 1.5rem;">Sync Progress</h2>
     
+    {/* TAB NAVIGATION */}
+    <div id="sync-tabs-nav" class="sync-tabs" style="margin-bottom: 0.75rem;">
+      <button id="tab-show-btn" class="sync-tab-btn active">Show QR Code</button>
+      <button id="tab-scan-btn" class="sync-tab-btn">Scan QR Code</button>
+    </div>
+
     {/* SINGLE SYNC VIEW */}
-    <div id="sync-main-view" style="display: flex; flex-direction: column; gap: 1rem;">
-      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.45; margin: 0;">
-        To sync progress peer-to-peer over the local network:
-      </p>
-      <ol style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; margin: 0; padding-left: 1.2rem;">
-        <li>On Device B, click <strong>"Scan Other Device"</strong> and scan Device A's QR code.</li>
-        <li>Point Device A's camera at the new QR code shown on Device B.</li>
-      </ol>
-
-      {/* STEP DISPLAY / STATUS */}
-      <div id="sync-status-box" style="background: rgba(0,0,0,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.65rem; text-align: center;">
-        <span id="sync-status-title" style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.15rem;">Status</span>
-        <div id="sync-status-text" style="font-weight: 700; color: var(--accent-color); font-size: 0.95rem;">Preparing WebRTC connection...</div>
-      </div>
-
-      {/* QR CONTAINER */}
-      <div id="sync-qr-wrapper" class="qr-container" style="display: none; min-height: 200px;">
-        <canvas id="sync-qr-canvas"></canvas>
-        <div id="qr-loading-text" class="qr-placeholder">Generating connection QR...</div>
-      </div>
-
-      {/* SCANNER PREVIEW BOX */}
-      <div id="scanner-section" class="scanner-container" style="display: none;">
-        <div id="scanner-preview-wrapper" class="scanner-preview-wrapper" style="width: 100%; margin-bottom: 0;">
-          <video id="sync-video" playsinline></video>
-          <div class="scanner-overlay-laser"></div>
-          <canvas id="sync-hidden-canvas" style="display: none;"></canvas>
+    <div id="sync-main-view" style="display: flex; flex-direction: column; gap: 0.75rem;">
+      
+      {/* SHOW QR TAB CONTENT */}
+      <div id="sync-tab-show-content" class="sync-tab-content active" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; margin: 0; text-align: center;">
+          On your other device, select <strong>"Scan QR Code"</strong> and scan this code.
+        </p>
+        
+        {/* QR CONTAINER */}
+        <div id="sync-qr-wrapper" class="qr-container" style="display: none; min-height: 200px;">
+          <canvas id="sync-qr-canvas"></canvas>
+          <div id="qr-loading-text" class="qr-placeholder">Generating connection QR...</div>
         </div>
-        <div id="scanner-status" class="scanner-status-text" style="margin-top: 0.5rem; margin-bottom: 0;">Accessing camera...</div>
       </div>
+
+      {/* SCAN QR TAB CONTENT */}
+      <div id="sync-tab-scan-content" class="sync-tab-content" style="display: none; flex-direction: column; gap: 0.75rem;">
+        <p id="scan-instructions" style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; margin: 0; text-align: center;">
+          Scan the QR code displayed on your other device.
+        </p>
+        
+        {/* SCANNER PREVIEW BOX */}
+        <div id="scanner-section" class="scanner-container">
+          <div id="scanner-preview-wrapper" class="scanner-preview-wrapper" style="width: 100%; margin-bottom: 0;">
+            <video id="sync-video" playsinline></video>
+            <div class="scanner-overlay-laser"></div>
+            <canvas id="sync-hidden-canvas" style="display: none;"></canvas>
+          </div>
+          <div id="scanner-status" class="scanner-status-text" style="margin-top: 0.5rem; margin-bottom: 0;">Accessing camera...</div>
+        </div>
+
+        {/* ANSWER QR CODE CONTAINER (Shown on Device B once it scans offer) */}
+        <div id="answer-qr-section" style="display: none; flex-direction: column; gap: 0.75rem; align-items: center;">
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; margin: 0; text-align: center;">
+            On your other device, select <strong>"Scan QR Code"</strong> and scan this code.
+          </p>
+          <div class="qr-container" style="min-height: 200px; width: 100%;">
+            <canvas id="answer-qr-canvas"></canvas>
+            <div id="answer-qr-loading-text" class="qr-placeholder">Generating Answer QR...</div>
+          </div>
+        </div>
+      </div>
+
+      {/* CENTERED STATUS TEXT LABEL */}
+      <div id="sync-status-text" style="text-align: center; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-top: 0.25rem;">Preparing WebRTC connection...</div>
 
       {/* ACTION BUTTONS */}
       <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem;">
-        <button id="sync-scan-btn" class="sync-action-btn accent" style="width: 100%;">Scan Other Device</button>
         <button id="sync-reset-btn" class="sync-action-btn secondary" style="width: 100%; display: none;">Reset Connection</button>
       </div>
 
@@ -209,24 +229,24 @@
   /* QR Area */
   .qr-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 200px;
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px dashed var(--border-color);
-    border-radius: 8px;
     padding: 1rem;
     position: relative;
+    width: 100%;
   }
 
-  #sync-qr-canvas {
+  .qr-container canvas {
     max-width: 200px;
     width: 100%;
     height: auto;
     border: 6px solid #ffffff;
     border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     display: none;
+    margin: 0 auto;
   }
 
   .qr-placeholder {
@@ -566,6 +586,12 @@
     const overlay = document.getElementById('sync-modal-overlay');
     const closeBtn = document.getElementById('sync-modal-close');
     
+    // Tab Navigation Elements
+    const tabShowBtn = document.getElementById('tab-show-btn');
+    const tabScanBtn = document.getElementById('tab-scan-btn');
+    const tabShowContent = document.getElementById('sync-tab-show-content');
+    const tabScanContent = document.getElementById('sync-tab-scan-content');
+    
     // Main UI Elements
     const syncStatusText = document.getElementById('sync-status-text');
     const syncQrWrapper = document.getElementById('sync-qr-wrapper');
@@ -574,12 +600,17 @@
     const syncResetBtn = document.getElementById('sync-reset-btn');
     
     // Scanner Elements
-    const scanBtn = document.getElementById('sync-scan-btn');
+    const scannerSection = document.getElementById('scanner-section');
     const videoWrapper = document.getElementById('scanner-preview-wrapper');
     const video = document.getElementById('sync-video');
     const hiddenCanvas = document.getElementById('sync-hidden-canvas');
     const scannerStatus = document.getElementById('scanner-status');
-    const scannerSection = document.getElementById('scanner-section');
+    const scanInstructions = document.getElementById('scan-instructions');
+
+    // Answer QR Elements (inside Scan tab)
+    const answerQrSection = document.getElementById('answer-qr-section');
+    const answerQrCanvas = document.getElementById('answer-qr-canvas');
+    const answerQrLoadingText = document.getElementById('answer-qr-loading-text');
 
     // Offline accordion elements
     const syncOfflineToggleBtn = document.getElementById('sync-offline-toggle-btn');
@@ -635,6 +666,29 @@
       syncStatusText.textContent = text;
       syncStatusText.style.color = isError ? '#ff3b30' : 'var(--accent-color)';
     }
+
+    // Tab Switching
+    function switchTab(tab) {
+      if (tab === 'show') {
+        tabShowBtn.classList.add('active');
+        tabScanBtn.classList.remove('active');
+        tabShowContent.style.display = 'flex';
+        tabScanContent.style.display = 'none';
+        stopScanner();
+      } else {
+        tabShowBtn.classList.remove('active');
+        tabScanBtn.classList.add('active');
+        tabShowContent.style.display = 'none';
+        tabScanContent.style.display = 'flex';
+        // Auto-start scanner if not showing an answer QR
+        if (answerQrSection.style.display !== 'flex') {
+          startScanner();
+        }
+      }
+    }
+
+    tabShowBtn.addEventListener('click', () => switchTab('show'));
+    tabScanBtn.addEventListener('click', () => switchTab('scan'));
 
     // Toggle offline view
     syncOfflineToggleBtn.addEventListener('click', () => {
@@ -694,8 +748,14 @@
       updateStatus('Preparing WebRTC connection...');
       syncQrWrapper.style.display = 'none';
       syncResetBtn.style.display = 'none';
+      
+      // Reset Scan tab sub-elements to scanning mode
+      scannerSection.style.display = 'flex';
+      answerQrSection.style.display = 'none';
+      scanInstructions.style.display = 'block';
+      
       stopScanner();
-      scanBtn.style.display = 'block';
+      switchTab('show');
     }
 
     syncResetBtn.addEventListener('click', () => {
@@ -768,7 +828,7 @@
           qrCanvas.style.display = 'none';
           qrLoadingText.style.display = 'block';
           qrLoadingText.textContent = 'Generating QR code...';
-          syncQrWrapper.style.display = 'block';
+          syncQrWrapper.style.display = 'flex';
 
           const syncUrl = new URL(window.location.href);
           syncUrl.searchParams.delete('import');
@@ -785,13 +845,10 @@
             } else {
               qrLoadingText.style.display = 'none';
               qrCanvas.style.display = 'block';
-              updateStatus('Device A: Point Device B at this QR code.');
+              updateStatus('Waiting for connection...');
             }
           });
 
-          // Automatically open scanner to await Device B's Answer
-          startScanner();
-          scanBtn.style.display = 'none';
           syncResetBtn.style.display = 'block';
 
         } else {
@@ -822,26 +879,24 @@
           parsed.t = 'a'; // tag as answer
           const token = packSDPData(parsed);
 
-          // Show Answer QR code
-          qrCanvas.style.display = 'none';
-          qrLoadingText.style.display = 'block';
-          qrLoadingText.textContent = 'Generating Answer QR...';
-          syncQrWrapper.style.display = 'block';
-          scanBtn.style.display = 'none';
+          // Show Answer QR code inside Scan tab
+          answerQrCanvas.style.display = 'none';
+          answerQrLoadingText.style.display = 'block';
+          answerQrLoadingText.textContent = 'Generating Answer QR...';
           syncResetBtn.style.display = 'block';
 
-          QRCode.toCanvas(qrCanvas, token, {
+          QRCode.toCanvas(answerQrCanvas, token, {
             width: 200,
             margin: 1,
             errorCorrectionLevel: 'L'
           }, (err) => {
             if (err) {
               console.error('QR error:', err);
-              qrLoadingText.textContent = 'Failed to generate QR';
+              answerQrLoadingText.textContent = 'Failed to generate QR';
             } else {
-              qrLoadingText.style.display = 'none';
-              qrCanvas.style.display = 'block';
-              updateStatus('Device B: Point Device A at this Answer QR code.');
+              answerQrLoadingText.style.display = 'none';
+              answerQrCanvas.style.display = 'block';
+              updateStatus('Answer generated. Scan it on your other device.');
             }
           });
         }
@@ -886,19 +941,7 @@
       };
     }
 
-    // Scanner UI Control
-    scanBtn.addEventListener('click', () => {
-      if (videoStream) {
-        stopScanner();
-      } else {
-        syncQrWrapper.style.display = 'none';
-        startScanner();
-      }
-    });
-
     function startScanner() {
-      scanBtn.textContent = 'Cancel Scanning';
-      scanBtn.className = 'sync-action-btn secondary';
       scannerStatus.textContent = 'Accessing camera...';
       scannerStatus.style.display = 'block';
       videoWrapper.style.display = 'none';
@@ -937,9 +980,6 @@
       videoWrapper.style.display = 'none';
       scannerStatus.style.display = 'none';
       scannerSection.style.display = 'none';
-      
-      scanBtn.textContent = 'Scan Other Device';
-      scanBtn.className = 'sync-action-btn accent';
     }
 
     async function tickScanner() {
@@ -999,6 +1039,12 @@
               if (data.t === 'o' && !pc) {
                 // Scanned an Offer! Initialize Answer
                 stopScanner();
+                
+                // Hide scanner layout and show Answer QR layout inside Scan Tab
+                scannerSection.style.display = 'none';
+                answerQrSection.style.display = 'flex';
+                scanInstructions.style.display = 'none';
+                
                 await startWebRTC(false, data);
               } else if (data.t === 'a' && localRole === 'initiator' && pc) {
                 // Scanned the Answer! Set remote description
@@ -1091,6 +1137,14 @@
             overlay.classList.add('open');
             overlay.setAttribute('aria-hidden', 'false');
             resetSync();
+            
+            // Automatically switch to Scan tab since we scanned an Offer
+            switchTab('scan');
+            // Hide camera scan and show Answer QR code directly
+            scannerSection.style.display = 'none';
+            answerQrSection.style.display = 'flex';
+            scanInstructions.style.display = 'none';
+            
             updateStatus('Scanned Offer URL. Generating Answer...');
             await startWebRTC(false, data);
           }
