@@ -1036,7 +1036,7 @@
 
             const data = unpackSDPData(token);
             if (data && data.u && data.p && data.f) {
-              if (data.t === 'o' && !pc) {
+              if (data.t === 'o') {
                 // Scanned an Offer! Initialize Answer
                 stopScanner();
                 
