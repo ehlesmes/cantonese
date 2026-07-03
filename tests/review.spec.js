@@ -159,6 +159,81 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     expect(feedbackText).toContain("Correct!");
     expect(feedbackText).toContain("SRS Level Up");
   });
+
+  test("should preserve scrambled order of pool tokens when deselecting a token", async ({
+    page,
+  }) => {
+    // 1. Seed localStorage and intercept __allExamples before page load
+    await page.addInitScript(() => {
+      localStorage.setItem(
+        "cantonese_unlocked_chapters",
+        JSON.stringify(["dining-out"]),
+      );
+
+      let val;
+      Object.defineProperty(window, "__allExamples", {
+        get() {
+          return val;
+        },
+        set(newVal) {
+          val = newVal;
+          const targetCard = val.find((c) => c.id === "phr-11-1v3vktn");
+          if (targetCard) {
+            val.length = 0;
+            val.push(targetCard);
+          }
+        },
+        configurable: true,
+      });
+    });
+
+    // 2. Go to review board and start the session
+    await page.goto("/cantonese/phrasebook");
+    await page.waitForSelector("#stats-cards-count");
+    await page.click("#start-session-btn");
+    await page.waitForSelector("#game-tokens-pool");
+
+    // Read the initial scrambled chips list
+    const initialChips = await page
+      .locator("#game-tokens-pool .token-chip")
+      .allTextContents();
+    expect(initialChips.length).toBeGreaterThan(5);
+
+    // Click the first chip to move it to answerSlots
+    const firstChipText = initialChips[0];
+    await page.locator("#game-tokens-pool .token-chip").first().click();
+
+    // Verify chip is removed from pool
+    const poolChipsAfterClick = await page
+      .locator("#game-tokens-pool .token-chip")
+      .allTextContents();
+    expect(poolChipsAfterClick.length).toBe(initialChips.length - 1);
+    expect(poolChipsAfterClick).not.toContain(firstChipText);
+
+    // Verify chip is present in answer slots
+    const answerSlotsText = await page
+      .locator("#game-answer-slots .token-chip")
+      .allTextContents();
+    expect(answerSlotsText).toEqual([firstChipText]);
+
+    // Click to deselect it from answerSlots
+    await page.locator("#game-answer-slots .token-chip").first().click();
+
+    // Verify it returned to the pool (at the end)
+    const poolChipsAfterDeselect = await page
+      .locator("#game-tokens-pool .token-chip")
+      .allTextContents();
+    expect(poolChipsAfterDeselect.length).toBe(initialChips.length);
+    expect(poolChipsAfterDeselect[poolChipsAfterDeselect.length - 1]).toBe(
+      firstChipText,
+    );
+
+    // Critical assertion: The pool does not sort itself into grammatical order.
+    const correctPrefix = "好hou2good";
+    if (firstChipText !== correctPrefix) {
+      expect(poolChipsAfterDeselect[0]).not.toBe(correctPrefix);
+    }
+  });
 });
 
 test.describe("Autoplay Audio Tests", () => {

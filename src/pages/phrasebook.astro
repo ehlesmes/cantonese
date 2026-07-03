@@ -687,10 +687,13 @@ chapters.forEach((chapter, idx) => {
           const rawToken = card.tokens[origIdx];
           const chip = createTokenChip(rawToken, () => {
             assembledTokenIndices.splice(assembledIdx, 1);
-            const currentPool = [];
-            card.tokens.forEach((_, idx) => {
-              if (!assembledTokenIndices.includes(idx)) currentPool.push(idx);
-            });
+            
+            // Read current pool indices from DOM to preserve their exact order
+            const currentPool = Array.from(tokensPoolEl.children)
+              .map(child => parseInt(child.getAttribute('data-index'), 10))
+              .filter(idx => !isNaN(idx));
+            
+            currentPool.push(origIdx);
             renderGameplayBoards(currentPool);
           }, card.tokenHashes);
           answerSlotsEl.appendChild(chip);
@@ -707,6 +710,7 @@ chapters.forEach((chapter, idx) => {
             const newPool = poolIndices.filter(idx => idx !== origIdx);
             renderGameplayBoards(newPool);
           }, card.tokenHashes);
+          chip.setAttribute('data-index', origIdx);
           tokensPoolEl.appendChild(chip);
         });
       }
