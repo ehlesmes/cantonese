@@ -93,7 +93,7 @@ Whoa, the boss fired him already!
 
 ### 6. Four-Character Idioms & Color Terms
 
-Cantonese also uses `四[sei3|four]` `字[zi6|characters]`
+Cantonese also uses `四[sei3|four]` `字[zi6|character]`
 `俗語[zuk1jyu5|idiomatic expressions]` and color-based idioms to express vivid
 imagery:
 

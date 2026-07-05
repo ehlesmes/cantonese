@@ -124,7 +124,7 @@ test.describe("Progress Sync E2E Tests", () => {
     await page.evaluate(() => {
       localStorage.setItem(
         "cantonese_unlocked_chapters",
-        JSON.stringify(["pronunciation-jyutping"]),
+        JSON.stringify(["pronunciation-tones"]),
       );
       localStorage.setItem("cantonese_srs_state", JSON.stringify({}));
       localStorage.setItem("cantonese_vocab_srs_state", JSON.stringify({}));
@@ -146,7 +146,7 @@ test.describe("Progress Sync E2E Tests", () => {
     // Generate valid progress string
     const base64 = Buffer.from(
       JSON.stringify({
-        c: ["pronunciation-jyutping", "greetings", "dining-out"],
+        c: ["pronunciation-tones", "greetings", "dining-out"],
         s: {},
         v: { "vocab-你好_neihhou": [3, 1718985600] },
         t: 1718985600,

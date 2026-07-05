@@ -132,7 +132,7 @@ I hope that in the future I can buy books in Hong Kong.
 ```
 
 ```cantonese
-佢[keoi5|he / she / it] 希望[hei1mong6|to hope / wish / hope] 搵[wan2|to find / search / look for] 到[dou3|verbal complement indicating success or arrival] 新[san1|new] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+佢[keoi5|he / she / it] 希望[hei1mong6|to hope / wish / hope] 搵[wan2|to find / search / look for] 到[dou2|can manage to / successfully do] 新[san1|new] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 He hopes to find a new job.
 ```

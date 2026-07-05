@@ -53,7 +53,13 @@ Before writing any chapter content, you must perform a cognitive load audit:
 2. **Evaluate cognitive progression**: Are we introducing too many distinct
    grammatical patterns or particles at once?
 3. **Handle Splits & Reorganizations**:
-   - If a topic is too dense, split it into two standard consecutive chapters.
+   - A single chapter must introduce a maximum of **20 to 25 new vocabulary
+     words** to keep cognitive load low.
+   - If a topic is too dense or a dialogue introduces many new terms, split it
+     into two or more standard consecutive chapters. Do NOT simplify or dumb
+     down dialogues artificially to meet the word limit; instead, isolate the
+     dense dialogues/scenarios into their own dedicated chapters to preserve
+     natural, authentic spoken Cantonese.
    - **Do NOT create fractional chapters** (e.g., do not use "Chapter 1.5").
    - If a split or reordering occurs, update the sequential list of chapters in
      `content/curriculum.md`. File names on disk do not use numeric prefixes
@@ -114,6 +120,9 @@ Before writing any chapter content, you must perform a cognitive load audit:
 2. Prioritize natural, spoken, and authentic Cantonese (no formal 书面语).
 3. Ensure every single Chinese character discussed, used in dialogues, or found
    in exercises has correct inline annotations matching the dictionary.
+4. **Vocabulary Ceiling**: Keep new vocabulary words strictly bounded. A single
+   chapter must introduce a maximum of **20 to 25 new vocabulary words**. If
+   drafting exceeds this, split the content per the guidelines in Phase A.
 
 ### Phase D: Automated Hook Validation & Git Commit
 

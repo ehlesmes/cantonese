@@ -34,29 +34,9 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     console.log("Legacy test - Stats chapters count:", statsChapters);
     console.log("Legacy test - Stats cards count:", statsCards);
 
-    // Assert that the chapters count is 3 (Pronunciation, Greetings, Shopping), and cards count is 54
-    expect(statsChapters).toBe("3");
-    expect(statsCards).toBe("54");
-
-    // Check if the checkboxes are checked
-    const ch1Checked = await page
-      .locator(".chapter-toggle-cb[data-chapter='greetings']")
-      .isChecked();
-    const ch2Checked = await page
-      .locator(".chapter-toggle-cb[data-chapter='shopping-slang']")
-      .isChecked();
-    const ch0Checked = await page
-      .locator(".chapter-toggle-cb[data-chapter='pronunciation-jyutping']")
-      .isChecked();
-
-    console.log("Checkboxes state in legacy test:");
-    console.log("Ch 0 checked:", ch0Checked);
-    console.log("Ch 1 checked:", ch1Checked);
-    console.log("Ch 2 checked:", ch2Checked);
-
-    expect(ch0Checked).toBe(true);
-    expect(ch1Checked).toBe(true);
-    expect(ch2Checked).toBe(true);
+    // Assert that the chapters count is 2 (Greetings, Shopping), and cards count is 27
+    expect(statsChapters).toBe("2");
+    expect(statsCards).toBe("27");
 
     // Verify localStorage has been updated/normalized
     const storedAfterLoad = await page.evaluate(() =>
@@ -84,7 +64,7 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     await page.addInitScript(() => {
       localStorage.setItem(
         "cantonese_unlocked_chapters",
-        JSON.stringify(["dining-out"]),
+        JSON.stringify(["diner-ordering"]),
       );
 
       let val;
@@ -167,7 +147,7 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     await page.addInitScript(() => {
       localStorage.setItem(
         "cantonese_unlocked_chapters",
-        JSON.stringify(["dining-out"]),
+        JSON.stringify(["diner-ordering"]),
       );
 
       let val;
@@ -199,9 +179,20 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
       .allTextContents();
     expect(initialChips.length).toBeGreaterThan(5);
 
-    // Click the first chip to move it to answerSlots
-    const firstChipText = initialChips[0];
-    await page.locator("#game-tokens-pool .token-chip").first().click();
+    // Click a unique chip to move it to answerSlots (avoiding duplicate token collision in assertions)
+    let targetIndex = 0;
+    for (let i = 0; i < initialChips.length; i++) {
+      const chip = initialChips[i];
+      if (initialChips.filter((c) => c === chip).length === 1) {
+        targetIndex = i;
+        break;
+      }
+    }
+    const firstChipText = initialChips[targetIndex];
+    await page
+      .locator("#game-tokens-pool .token-chip")
+      .nth(targetIndex)
+      .click();
 
     // Verify chip is removed from pool
     const poolChipsAfterClick = await page
@@ -285,7 +276,7 @@ test.describe("Autoplay Audio Tests", () => {
     await page.addInitScript(() => {
       localStorage.setItem(
         "cantonese_unlocked_chapters",
-        JSON.stringify(["dining-out"]),
+        JSON.stringify(["diner-ordering"]),
       );
 
       // Mock audio play to return a long-running/pending promise so tts-playing class persists

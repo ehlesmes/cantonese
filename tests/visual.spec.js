@@ -11,7 +11,7 @@ test("Curriculum Index Visual Render Test", async ({ page }) => {
   await page.evaluate(() => {
     localStorage.setItem(
       "cantonese_unlocked_chapters",
-      JSON.stringify(["pronunciation-jyutping", "greetings"]),
+      JSON.stringify(["pronunciation-tones", "greetings"]),
     );
   });
 

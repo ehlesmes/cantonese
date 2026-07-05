@@ -1,0 +1,621 @@
+---
+import fs from "fs";
+import path from "path";
+import { createRequire } from "module";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Load and execute scripts/lib/parser.js to parse curriculum and content
+const cjsRequire = createRequire(import.meta.url);
+const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
+const parserCode = fs.readFileSync(parserPath, "utf8");
+
+const parserModule = { exports: {} };
+const runParser = new Function("exports", "require", "module", "__filename", "__dirname", parserCode);
+runParser(
+  parserModule.exports,
+  cjsRequire,
+  parserModule,
+  parserPath,
+  path.dirname(parserPath)
+);
+
+const { parseCurriculum, parseChapter } = parserModule.exports;
+const curriculumPath = path.resolve("content/curriculum.md");
+const chapters = parseCurriculum(curriculumPath);
+
+function getCleanSpokenText(text) {
+  if (!text) return "";
+  let cleaned = text;
+  const annotationRegex =
+    /`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g;
+  cleaned = cleaned.replace(annotationRegex, (match, char) => char);
+  cleaned = cleaned.replace(/\[[^\]]+\]/g, "");
+  return cleaned.trim();
+}
+
+function getStablePhraseId(text) {
+  const clean = text.replace(/`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g, "$1")
+                    .replace(/[^\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9]/g, '');
+  let hash = 5381;
+  for (let i = 0; i < clean.length; i++) {
+    hash = (hash * 33) ^ clean.charCodeAt(i);
+  }
+  const hashStr = (hash >>> 0).toString(36);
+  return `phr-${clean.length}-${hashStr}`;
+}
+
+// Load vocabulary.json database
+const vocabPath = path.resolve("content/vocabulary.json");
+const allVocabRaw = JSON.parse(fs.readFileSync(vocabPath, "utf8"));
+
+// Compile chapter items mapping
+const allChaptersData = [];
+chapters.forEach((chapter, idx) => {
+  const file = chapter.file;
+  const filePath = path.resolve("content", file);
+  const fileExists = fs.existsSync(filePath);
+  
+  const phraseIds = [];
+  if (fileExists) {
+    try {
+      const { blocks } = parseChapter(filePath);
+      for (const block of blocks) {
+        if (block.type === "cantonese") {
+          const parts = block.content.split("===");
+          const cantoneseRaw = parts[0] ? parts[0].trim() : "";
+          const english = parts[1] ? parts[1].trim() : "";
+          if (cantoneseRaw && english) {
+            phraseIds.push(getStablePhraseId(cantoneseRaw));
+          }
+        }
+      }
+    } catch (e) {
+      console.error(`Failed to parse chapter ${chapter.id} for advanced page:`, e);
+    }
+  }
+
+  // Filter vocabulary associated with this chapter
+  const vocabIds = allVocabRaw
+    .filter(item => item.firstIntroducedIn === chapter.id)
+    .map(item => `vocab-${item.character}_${item.jyutping.replace(/\s+/g, "")}`);
+
+  allChaptersData.push({
+    id: chapter.id,
+    title: chapter.title,
+    number: idx,
+    exists: fileExists,
+    phrases: phraseIds,
+    vocab: vocabIds
+  });
+});
+---
+
+<BaseLayout title="Advanced Settings" description="Developer settings to inspect and manually manage local storage course progress.">
+  <div class="advanced-page">
+    <div style="margin-bottom: 2rem;">
+      <span style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color);">
+        廣東話 Developer
+      </span>
+      <h1 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">Advanced Settings</h1>
+      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4; font-style: italic; margin-bottom: 0;">
+        Inspect and manually manage your client-side progress data and SRS learning state.
+      </p>
+    </div>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast-notification" aria-live="polite"></div>
+
+  <!-- Main Grid/Flex Container -->
+  <div style="display: flex; flex-direction: column; gap: 2rem;">
+    
+    <!-- SECTION 1: COMPLETED CHAPTERS -->
+    <div class="advanced-card">
+      <h2 class="section-title">Completed Chapters</h2>
+      <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+        Chapters you have marked as completed. Removing a chapter will mark it incomplete and delete all its phrasebook and vocabulary spaced repetition (SRS) records.
+      </p>
+      
+      <div id="completed-chapters-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <!-- Dynamically Rendered by Client Script -->
+        <div class="placeholder-msg">Loading completed chapters...</div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: DATA MAINTENANCE -->
+    <div class="advanced-card">
+      <h2 class="section-title">Data Maintenance</h2>
+      <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+        Perform utility checks and maintenance operations on your local progress storage.
+      </p>
+      
+      <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;">
+        <button id="clean-incomplete-btn" class="canto-btn secondary">
+          Clean Incomplete Chapters' Data
+        </button>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+          Removes phrasebook and vocabulary SRS learning records that belong to chapters you have not marked as completed.
+        </p>
+      </div>
+    </div>
+
+    <!-- SECTION 3: DANGER ZONE -->
+    <div class="advanced-card danger-card">
+      <h2 class="section-title" style="color: #c53030;">Danger Zone</h2>
+      <p style="font-size: 0.95rem; color: #742a2a; margin-bottom: 1.2rem;">
+        Once deleted, your progress is gone forever. This cannot be undone.
+      </p>
+      
+      <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;">
+        <button id="clear-all-btn" class="canto-btn danger">
+          Clear All Progress Data
+        </button>
+        <p style="font-size: 0.85rem; color: #742a2a; margin: 0;">
+          Clears completed chapters, phrasebook SRS state, and vocabulary SRS state. Resets all progress.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div id="confirm-modal" class="modal-overlay" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <h3 style="margin-top: 0; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Confirm Reset</h3>
+      <p id="confirm-message" style="font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5; color: var(--text-color);">
+        Are you sure you want to clear all progress? This will reset all completed chapters and SRS cards, and cannot be undone.
+      </p>
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+        <button id="modal-cancel-btn" class="canto-btn secondary">Cancel</button>
+        <button id="modal-confirm-btn" class="canto-btn danger">Confirm Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ allChaptersData }}>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Elements
+      const completedList = document.getElementById('completed-chapters-list');
+      const cleanIncompleteBtn = document.getElementById('clean-incomplete-btn');
+      const clearAllBtn = document.getElementById('clear-all-btn');
+      const confirmModal = document.getElementById('confirm-modal');
+      const confirmMsg = document.getElementById('confirm-message');
+      const modalCancelBtn = document.getElementById('modal-cancel-btn');
+      const modalConfirmBtn = document.getElementById('modal-confirm-btn');
+      const toast = document.getElementById('toast');
+
+      let currentUnlocked = [];
+      let phraseSRS = {};
+      let vocabSRS = {};
+      let pendingResetAction = null;
+
+      // Toast notification helper
+      function showToast(message, type = 'success') {
+        toast.textContent = message;
+        toast.className = `toast-notification show ${type}`;
+        setTimeout(() => {
+          toast.className = 'toast-notification';
+        }, 3000);
+      }
+
+      // Load state from LocalStorage
+      function loadLocalStorage() {
+        try {
+          const stored = localStorage.getItem('cantonese_unlocked_chapters');
+          if (stored) {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed)) {
+              currentUnlocked = parsed.filter(c => typeof c === 'string');
+            }
+          } else {
+            currentUnlocked = [];
+          }
+          
+          const storedPhrase = localStorage.getItem('cantonese_srs_state');
+          phraseSRS = storedPhrase ? JSON.parse(storedPhrase) : {};
+
+          const storedVocab = localStorage.getItem('cantonese_vocab_srs_state');
+          vocabSRS = storedVocab ? JSON.parse(storedVocab) : {};
+        } catch (e) {
+          console.error('LocalStorage load failed:', e);
+          showToast('Failed to load local storage state', 'error');
+        }
+      }
+
+      // Save state to LocalStorage
+      function saveLocalStorage() {
+        try {
+          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(currentUnlocked));
+          localStorage.setItem('cantonese_srs_state', JSON.stringify(phraseSRS));
+          localStorage.setItem('cantonese_vocab_srs_state', JSON.stringify(vocabSRS));
+        } catch (e) {
+          console.error('LocalStorage save failed:', e);
+          showToast('Failed to save to local storage', 'error');
+        }
+      }
+
+      // Count SRS records for a chapter
+      function getSRSCountForChapter(chapterData) {
+        let phraseCount = 0;
+        let vocabCount = 0;
+
+        chapterData.phrases.forEach(pid => {
+          if (phraseSRS[pid]) phraseCount++;
+        });
+
+        chapterData.vocab.forEach(vid => {
+          if (vocabSRS[vid]) vocabCount++;
+        });
+
+        return { phrases: phraseCount, vocab: vocabCount };
+      }
+
+      // Render completed chapters list
+      function renderCompletedChapters() {
+        loadLocalStorage();
+        
+        const completedChapters = allChaptersData.filter(ch => currentUnlocked.includes(ch.id));
+
+        if (completedChapters.length === 0) {
+          completedList.innerHTML = `
+            <div class="placeholder-msg">
+              No chapters are currently marked as completed.
+            </div>
+          `;
+          return;
+        }
+
+        completedList.innerHTML = '';
+        completedChapters.forEach(chapter => {
+          const srsCounts = getSRSCountForChapter(chapter);
+          
+          const card = document.createElement('div');
+          card.className = 'chapter-row';
+          card.innerHTML = `
+            <div class="chapter-info">
+              <div class="chapter-title-row">
+                <span class="chapter-num">Chapter ${chapter.number}</span>
+                <span class="chapter-title">${chapter.title}</span>
+              </div>
+              <div class="chapter-counts">
+                <span>SRS Progress:</span> 
+                <span class="count-tag">${srsCounts.phrases} Phrases</span>
+                <span class="count-tag">${srsCounts.vocab} Vocabulary</span>
+              </div>
+            </div>
+            <button class="remove-btn" data-chapter-id="${chapter.id}">
+              Remove Progress
+            </button>
+          `;
+          
+          // Wire up delete event
+          card.querySelector('.remove-btn').addEventListener('click', () => {
+            const chId = chapter.id;
+            confirmMsg.textContent = `Are you sure you want to remove all progress for Chapter ${chapter.number}: "${chapter.title}"? This will mark it incomplete and remove its SRS progress.`;
+            pendingResetAction = () => removeChapterProgress(chId, chapter.number, chapter.title);
+            openModal();
+          });
+
+          completedList.appendChild(card);
+        });
+      }
+
+      // Remove single chapter progress
+      function removeChapterProgress(chapterId, chNum, chTitle) {
+        // Remove from unlocked list
+        currentUnlocked = currentUnlocked.filter(id => id !== chapterId);
+        
+        // Remove associated phrase srs
+        const chapter = allChaptersData.find(ch => ch.id === chapterId);
+        if (chapter) {
+          chapter.phrases.forEach(pid => {
+            delete phraseSRS[pid];
+          });
+          chapter.vocab.forEach(vid => {
+            delete vocabSRS[vid];
+          });
+        }
+
+        saveLocalStorage();
+        renderCompletedChapters();
+        showToast(`Progress removed for Chapter ${chNum}: "${chTitle}"`);
+      }
+
+      // Clean incomplete chapters' data
+      function cleanIncompleteData() {
+        loadLocalStorage();
+        let cleanedPhrases = 0;
+        let cleanedVocab = 0;
+
+        allChaptersData.forEach(chapter => {
+          if (!currentUnlocked.includes(chapter.id)) {
+            // Delete srs records of incomplete chapters
+            chapter.phrases.forEach(pid => {
+              if (phraseSRS[pid]) {
+                delete phraseSRS[pid];
+                cleanedPhrases++;
+              }
+            });
+            chapter.vocab.forEach(vid => {
+              if (vocabSRS[vid]) {
+                delete vocabSRS[vid];
+                cleanedVocab++;
+              }
+            });
+          }
+        });
+
+        saveLocalStorage();
+        renderCompletedChapters();
+        showToast(`Cleaned up ${cleanedPhrases} phrase and ${cleanedVocab} vocab orphaned records.`);
+      }
+
+      // Clear all progress data
+      function clearAllProgress() {
+        localStorage.removeItem('cantonese_unlocked_chapters');
+        localStorage.removeItem('cantonese_srs_state');
+        localStorage.removeItem('cantonese_vocab_srs_state');
+        
+        currentUnlocked = [];
+        phraseSRS = {};
+        vocabSRS = {};
+
+        renderCompletedChapters();
+        showToast('All progress data cleared successfully.', 'success');
+        
+        // Brief delay and reload to reset the state across BaseLayout/Headers
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
+
+      // Modal helper functions
+      function openModal() {
+        confirmModal.setAttribute('aria-hidden', 'false');
+        confirmModal.classList.add('show');
+      }
+
+      function closeModal() {
+        confirmModal.setAttribute('aria-hidden', 'true');
+        confirmModal.classList.remove('show');
+        pendingResetAction = null;
+      }
+
+      // Event Listeners
+      modalCancelBtn.addEventListener('click', closeModal);
+      
+      modalConfirmBtn.addEventListener('click', () => {
+        if (pendingResetAction) {
+          pendingResetAction();
+        }
+        closeModal();
+      });
+
+      cleanIncompleteBtn.addEventListener('click', () => {
+        confirmMsg.textContent = "Are you sure you want to clean up all spaced repetition (SRS) records for chapters that are NOT marked as completed? This will discard your learning progress on those items.";
+        pendingResetAction = cleanIncompleteData;
+        openModal();
+      });
+
+      clearAllBtn.addEventListener('click', () => {
+        confirmMsg.textContent = "CRITICAL: Are you sure you want to delete all Cantonese progress and SRS learning history? This will reset all completed chapters, vocabulary cards, and phrasebook stats. This cannot be undone.";
+        pendingResetAction = clearAllProgress;
+        openModal();
+      });
+
+      // Initial Render
+      renderCompletedChapters();
+    });
+  </script>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  /* Card layouts */
+  .advanced-page .advanced-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  }
+
+  .advanced-page .danger-card {
+    border-color: #feb2b2;
+    background-color: #fffaf0; /* Sleek tint for warning zone */
+  }
+
+  .advanced-page .section-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.4rem;
+    font-size: 1.3rem;
+  }
+
+  .advanced-page .placeholder-msg {
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 1rem;
+    text-align: center;
+    border: 1px dashed var(--border-color);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.01);
+  }
+
+  /* List rows */
+  .advanced-page .chapter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .advanced-page .chapter-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .advanced-page .chapter-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .advanced-page .chapter-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    letter-spacing: 0.05em;
+  }
+
+  .advanced-page .chapter-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+
+  .advanced-page .chapter-counts {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .advanced-page .count-tag {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    padding: 0.05rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+
+  /* Buttons */
+  .advanced-page .canto-btn {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: none;
+  }
+
+  .advanced-page .canto-btn.secondary {
+    background-color: var(--border-color);
+    color: var(--text-color);
+  }
+
+  .advanced-page .canto-btn.secondary:hover {
+    background-color: var(--text-muted);
+    color: var(--bg-color);
+  }
+
+  .advanced-page .canto-btn.danger {
+    background-color: #e53e3e;
+    color: white;
+  }
+
+  .advanced-page .canto-btn.danger:hover {
+    background-color: #c53030;
+  }
+
+  .advanced-page .remove-btn {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: white;
+    background-color: #e53e3e;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .advanced-page .remove-btn:hover {
+    background-color: #c53030;
+  }
+
+  /* Modal Overlay */
+  .advanced-page .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(45, 33, 27, 0.45); /* HSL tinted backdrop */
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .advanced-page .modal-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .advanced-page .modal-content {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+  }
+
+  .advanced-page .modal-overlay.show .modal-content {
+    transform: scale(1);
+  }
+
+  /* Toast Notification */
+  .advanced-page .toast-notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 2000;
+    transform: translateY(1.5rem);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  }
+
+  .advanced-page .toast-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .advanced-page .toast-notification.error {
+    border-left: 4px solid #e53e3e;
+  }
+
+  .advanced-page .toast-notification.success {
+    border-left: 4px solid var(--secondary-color);
+  }
+</style>

@@ -444,6 +444,90 @@ function main() {
       const fileErrors = validateChapterFile(fullPath, curriculumEntry);
       allErrors.push(...fileErrors);
     }
+
+    // 3. Chronological Vocabulary Limit Verification
+    const seenWords = new Set();
+    const chapterWarnings = [];
+
+    for (const chapter of curriculumChapters) {
+      const filePath = path.join(contentDir, chapter.file);
+      if (!fs.existsSync(filePath)) continue;
+
+      let chapterData;
+      try {
+        chapterData = parser.parseChapter(filePath);
+      } catch (err) {
+        continue;
+      }
+
+      const introducedInThisChapter = new Set();
+
+      for (const block of chapterData.blocks) {
+        let units = [];
+        if (block.type === "prose") {
+          units = parser.extractInlineUnits(block.content);
+        } else if (block.type === "cantonese" || block.type === "dialog") {
+          units = parser.extractBlockUnits(block.content);
+        } else if (block.type === "exercise") {
+          let exerciseData;
+          try {
+            exerciseData = parser.parseYAML(block.content);
+          } catch {
+            continue;
+          }
+          const fields = ["question", "answer", "explanation"];
+          for (const field of fields) {
+            if (exerciseData[field]) {
+              units.push(
+                ...parser.extractBlockUnits(String(exerciseData[field])),
+              );
+            }
+          }
+        }
+
+        for (const unit of units) {
+          const char = unit.characters.trim();
+          const jyutping = unit.jyutping.trim().toLowerCase();
+          const key = `${char}_${jyutping}`;
+
+          if (!seenWords.has(key)) {
+            introducedInThisChapter.add(key);
+          }
+        }
+      }
+
+      // Add to seenWords after analyzing the chapter
+      for (const key of introducedInThisChapter) {
+        seenWords.add(key);
+      }
+
+      const newWordsCount = introducedInThisChapter.size;
+      if (newWordsCount > 25) {
+        allErrors.push({
+          file: path.relative(projectRoot, filePath),
+          line: 0,
+          message: `Chapter "${chapter.id}" introduces ${newWordsCount} new vocabulary words, exceeding the limit of 25. Please split this chapter.`,
+        });
+      } else if (newWordsCount > 20) {
+        chapterWarnings.push({
+          chapterId: chapter.id,
+          file: path.relative(projectRoot, filePath),
+          count: newWordsCount,
+        });
+      }
+    }
+
+    if (chapterWarnings.length > 0) {
+      console.warn(
+        `${colors.yellow}${colors.bold}⚠ Vocabulary Count Warning(s):${colors.reset}\n`,
+      );
+      for (const warn of chapterWarnings) {
+        console.warn(
+          `  ${colors.yellow}•${colors.reset} ${colors.bold}${warn.chapterId}${colors.reset} (${warn.file}) introduces ${warn.count} new words (warning threshold > 20, error threshold > 25).`,
+        );
+      }
+      console.warn("");
+    }
   }
 
   // Report results

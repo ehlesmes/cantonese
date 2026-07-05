@@ -98,30 +98,16 @@ const allVocab = allVocabRaw.map(item => {
         </div>
       </div>
 
-      {/* Chapter Selection Config */}
-      <div class="cantonese-example-card" style="border-left-color: var(--secondary-color); padding: 1.2rem 1.5rem;">
-        <h3 style="margin-top: 0; margin-bottom: 0.6rem; font-family: var(--font-heading); color: var(--secondary-color);">Vocabulary Pool Configuration</h3>
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.45;">
-          Toggle chapters below to add or remove their vocabulary terms from your active review pool.
-        </p>
-        
-        <div style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 250px; overflow-y: auto; border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 6px; background-color: rgba(0,0,0,0.01);">
-          {chaptersMeta.map(ch => (
-            <label style={`display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: ${ch.exists ? "pointer" : "default"}; opacity: ${ch.exists ? 1 : 0.5}; user-select: none; padding: 0.15rem 0;`}>
-              <input type="checkbox" class="chapter-toggle-cb" data-chapter={ch.id} disabled={!ch.exists} style="width: 1rem; height: 1rem; cursor: pointer;" />
-              <span style="font-weight: 600; min-width: 2.5rem;">Ch {ch.chapterNumber}:</span> {ch.title}
-            </label>
-          ))}
-        </div>
-      </div>
-
       {/* Review Pool Items Directory (With Grouping Controls) */}
-      <div style="margin-top: 1rem;">
+      <div class="directory-wrapper" style="margin-top: 1rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
           <h2 style="margin: 0; border: none; padding: 0; font-size: 1.3rem;">Active Vocabulary Directory</h2>
-          <div class="group-tabs">
-            <button id="group-by-chapter-btn" class="group-tab-btn active">By Chapter</button>
-            <button id="group-by-level-btn" class="group-tab-btn">By SRS Level</button>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <div class="group-tabs" style="margin-bottom: 0;">
+              <button id="group-by-chapter-btn" class="group-tab-btn active">By Chapter</button>
+              <button id="group-by-level-btn" class="group-tab-btn">By SRS Level</button>
+            </div>
+            <button id="expand-collapse-all-btn" class="canto-btn secondary" style="padding: 0.35rem 0.8rem; font-size: 0.8rem; margin-bottom: 0; border-radius: 4px; font-family: var(--font-heading); font-weight: 600;">Collapse All</button>
           </div>
         </div>
         
@@ -211,7 +197,7 @@ const allVocab = allVocabRaw.map(item => {
     }
 
     // Global state and references
-    let unlockedChapters = ["pronunciation-jyutping"];
+    let unlockedChapters = [];
     let vocabSRSState = {};
     let sessionCards = [];
     let currentCardIndex = 0;
@@ -221,7 +207,6 @@ const allVocab = allVocabRaw.map(item => {
     // Initializer
     document.addEventListener('DOMContentLoaded', () => {
       loadLocalStorage();
-      setupChapterToggles();
       renderDashboard();
       
       // Bind Start Game Button
@@ -269,7 +254,36 @@ const allVocab = allVocabRaw.map(item => {
           renderPoolDirectory();
         });
       }
+
+      // Bind Expand/Collapse All Button
+      const expandCollapseBtn = document.getElementById('expand-collapse-all-btn');
+      if (expandCollapseBtn) {
+        expandCollapseBtn.addEventListener('click', () => {
+          const total = document.querySelectorAll('.directory-section').length;
+          const collapsed = document.querySelectorAll('.directory-section.collapsed').length;
+          const sections = document.querySelectorAll('.directory-section');
+          
+          if (collapsed === total) {
+            sections.forEach(s => s.classList.remove('collapsed'));
+          } else {
+            sections.forEach(s => s.classList.add('collapsed'));
+          }
+          updateExpandCollapseAllButton();
+        });
+      }
     });
+
+    function updateExpandCollapseAllButton() {
+      const btn = document.getElementById('expand-collapse-all-btn');
+      if (!btn) return;
+      const total = document.querySelectorAll('.directory-section').length;
+      const collapsed = document.querySelectorAll('.directory-section.collapsed').length;
+      if (collapsed === total && total > 0) {
+        btn.textContent = 'Expand All';
+      } else {
+        btn.textContent = 'Collapse All';
+      }
+    }
 
     // LocalStorage Operations
     function loadLocalStorage() {
@@ -279,12 +293,7 @@ const allVocab = allVocabRaw.map(item => {
           const parsed = JSON.parse(storedChapters);
           if (Array.isArray(parsed)) {
             unlockedChapters = parsed.filter(c => typeof c === "string");
-            if (!unlockedChapters.includes("pronunciation-jyutping")) {
-              unlockedChapters.unshift("pronunciation-jyutping");
-            }
           }
-        } else {
-          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
         }
 
         const storedSRS = localStorage.getItem('cantonese_vocab_srs_state');
@@ -305,30 +314,7 @@ const allVocab = allVocabRaw.map(item => {
       }
     }
 
-    // Set up Configuration Checkboxes
-    function setupChapterToggles() {
-      const checkboxes = document.querySelectorAll('.chapter-toggle-cb');
-      checkboxes.forEach(cb => {
-        const chId = cb.getAttribute('data-chapter');
-        cb.checked = unlockedChapters.includes(chId);
-        
-        cb.addEventListener('change', () => {
-          if (cb.checked) {
-            if (!unlockedChapters.includes(chId)) unlockedChapters.push(chId);
-          } else {
-            unlockedChapters = unlockedChapters.filter(id => id !== chId);
-            // Default safeguard: keep at least Chapter 0
-            if (unlockedChapters.length === 0) {
-              unlockedChapters.push("pronunciation-jyutping");
-              const ch0Cb = document.querySelector('.chapter-toggle-cb[data-chapter="pronunciation-jyutping"]');
-              if (ch0Cb) ch0Cb.checked = true;
-            }
-          }
-          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(unlockedChapters));
-          renderDashboard();
-        });
-      });
-    }
+
 
     // Renders stats and list
     function renderDashboard() {
@@ -359,11 +345,18 @@ const allVocab = allVocabRaw.map(item => {
       const poolItems = allVocab.filter(item => unlockedChapters.includes(item.chapter));
       
       if (poolItems.length === 0) {
-        container.innerHTML = `<p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem;">No items available. Toggle chapters above to populate your review pool.</p>`;
+        container.innerHTML = `<p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem;">No items available. Mark chapters as completed to populate your review pool.</p>`;
+        updateExpandCollapseAllButton();
         return;
       }
 
       container.innerHTML = '';
+
+      const chevronSvg = `
+        <svg class="chevron-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      `;
 
       if (currentGroupMode === "chapter") {
         const grouped = {};
@@ -385,17 +378,41 @@ const allVocab = allVocabRaw.map(item => {
         sortedChapterIds.forEach(chId => {
           const group = grouped[chId];
           const section = document.createElement('div');
-          section.style.marginBottom = '1.5rem';
-          section.innerHTML = `<h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; color: var(--text-color); font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 0.6rem;">Chapter ${group.chapterNumber}: ${group.title}</h3>`;
-          
-          const itemsWrapper = document.createElement('div');
-          itemsWrapper.className = 'review-items-container';
+          section.className = 'directory-section';
+
+          const header = document.createElement('div');
+          header.className = 'directory-group-header';
+          header.innerHTML = `
+            <div class="header-left">
+              ${chevronSvg}
+              <span class="group-title">Chapter ${group.chapterNumber}: ${group.title}</span>
+              <span class="item-count-badge">${group.items.length}</span>
+            </div>
+            <button class="small-btn">Review</button>
+          `;
+
+          const content = document.createElement('div');
+          content.className = 'directory-group-content review-items-container';
           
           group.items.forEach(item => {
-            itemsWrapper.appendChild(createItemCardElement(item));
+            content.appendChild(createItemCardElement(item));
           });
-          
-          section.appendChild(itemsWrapper);
+
+          // Toggle collapse on header click
+          header.addEventListener('click', () => {
+            section.classList.toggle('collapsed');
+            updateExpandCollapseAllButton();
+          });
+
+          // Stop click propagation on review button and trigger session
+          const reviewBtn = header.querySelector('button');
+          reviewBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            startPracticeSession(chId, null);
+          });
+
+          section.appendChild(header);
+          section.appendChild(content);
           container.appendChild(section);
         });
       } else {
@@ -411,20 +428,46 @@ const allVocab = allVocabRaw.map(item => {
           if (items.length === 0) continue;
 
           const section = document.createElement('div');
-          section.style.marginBottom = '1.5rem';
-          section.innerHTML = `<h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; color: var(--text-color); font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 0.6rem;">SRS Level ${lvl}</h3>`;
-          
-          const itemsWrapper = document.createElement('div');
-          itemsWrapper.className = 'review-items-container';
+          section.className = 'directory-section';
+
+          const header = document.createElement('div');
+          header.className = 'directory-group-header';
+          header.innerHTML = `
+            <div class="header-left">
+              ${chevronSvg}
+              <span class="group-title">SRS Level ${lvl}</span>
+              <span class="item-count-badge">${items.length}</span>
+            </div>
+            <button class="small-btn">Review</button>
+          `;
+
+          const content = document.createElement('div');
+          content.className = 'directory-group-content review-items-container';
           
           items.forEach(item => {
-            itemsWrapper.appendChild(createItemCardElement(item));
+            content.appendChild(createItemCardElement(item));
           });
-          
-          section.appendChild(itemsWrapper);
+
+          // Toggle collapse on header click
+          header.addEventListener('click', () => {
+            section.classList.toggle('collapsed');
+            updateExpandCollapseAllButton();
+          });
+
+          // Stop click propagation on review button and trigger session
+          const reviewBtn = header.querySelector('button');
+          reviewBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            startPracticeSession(null, lvl);
+          });
+
+          section.appendChild(header);
+          section.appendChild(content);
           container.appendChild(section);
         }
       }
+
+      updateExpandCollapseAllButton();
     }
 
     // Helper to generate a single directory item card
@@ -460,10 +503,28 @@ const allVocab = allVocabRaw.map(item => {
 
     // --- GAMEPLAY SESSION CONTROLS ---
 
-    function startPracticeSession() {
-      const poolItems = allVocab.filter(item => unlockedChapters.includes(item.chapter));
+    function startPracticeSession(chapterId = null, srsLevel = null) {
+      let poolItems = [];
+      if (typeof chapterId === 'string' && chapterId) {
+        poolItems = allVocab.filter(item => item.chapter === chapterId);
+      } else if (srsLevel !== null && !isNaN(srsLevel)) {
+        poolItems = allVocab.filter(item => {
+          const state = vocabSRSState[item.id];
+          const lvl = state ? state.level : 1;
+          return lvl === Number(srsLevel);
+        });
+      } else {
+        poolItems = allVocab.filter(item => unlockedChapters.includes(item.chapter));
+      }
+      
       if (poolItems.length === 0) {
-        alert("Your vocabulary review pool is empty. Please enable chapters above to start practice.");
+        if (typeof chapterId === 'string') {
+          alert("This chapter has no vocabulary to review.");
+        } else if (srsLevel !== null) {
+          alert(`You have no vocabulary at SRS Level ${srsLevel} to review.`);
+        } else {
+          alert("Your vocabulary review pool is empty. Mark chapters as completed to start practice.");
+        }
         return;
       }
 
@@ -604,3 +665,94 @@ const allVocab = allVocabRaw.map(item => {
     }
   </script>
 </BaseLayout>
+
+<style is:global>
+  /* Collapsible Directory Accordions */
+  .directory-wrapper .directory-section {
+    margin-bottom: 0.75rem;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .directory-wrapper .directory-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.6rem 0.8rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    user-select: none;
+    transition: background-color 0.15s ease;
+    margin-bottom: 0.5rem;
+  }
+
+  .directory-wrapper .directory-group-header:hover {
+    background-color: var(--border-color);
+  }
+
+  .directory-wrapper .header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .directory-wrapper .chevron-icon {
+    transition: transform 0.2s ease;
+    transform: rotate(90deg);
+    color: var(--text-muted);
+  }
+
+  .directory-wrapper .group-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1.05rem;
+  }
+
+  .directory-wrapper .item-count-badge {
+    background-color: var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+
+  .directory-wrapper .small-btn {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 4px;
+    height: auto;
+    line-height: 1;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    transition: background-color 0.15s ease;
+  }
+
+  .directory-wrapper .small-btn:hover {
+    background-color: var(--accent-hover);
+  }
+
+  .directory-wrapper .directory-group-content {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    margin-bottom: 0.75rem;
+    background-color: var(--card-bg);
+  }
+
+  .directory-wrapper .directory-section.collapsed .chevron-icon {
+    transform: rotate(0deg);
+  }
+
+  .directory-wrapper .directory-section.collapsed .directory-group-content {
+    display: none;
+  }
+</style>

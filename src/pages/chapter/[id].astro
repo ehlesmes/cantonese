@@ -182,16 +182,13 @@ const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapter
       const chapterId = checkbox.getAttribute('data-chapter');
       
       // Load current unlocked chapters
-      let unlocked = ["pronunciation-jyutping"]; // default is Chapter 0
+      let unlocked = [];
       try {
         const stored = localStorage.getItem('cantonese_unlocked_chapters');
         if (stored) {
           const parsed = JSON.parse(stored);
           if (Array.isArray(parsed)) {
             unlocked = parsed.filter(c => typeof c === "string");
-            if (!unlocked.includes("pronunciation-jyutping")) {
-              unlocked.unshift("pronunciation-jyutping");
-            }
           }
         }
       } catch (e) {
@@ -205,14 +202,11 @@ const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapter
       checkbox.addEventListener('change', () => {
         try {
           const stored = localStorage.getItem('cantonese_unlocked_chapters');
-          let currentUnlocked = ["pronunciation-jyutping"];
+          let currentUnlocked = [];
           if (stored) {
             const parsed = JSON.parse(stored);
             if (Array.isArray(parsed)) {
               currentUnlocked = parsed.filter(c => typeof c === "string");
-              if (!currentUnlocked.includes("pronunciation-jyutping")) {
-                currentUnlocked.unshift("pronunciation-jyutping");
-              }
             }
           }
           
@@ -222,10 +216,6 @@ const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapter
             }
           } else {
             currentUnlocked = currentUnlocked.filter(slug => slug !== chapterId);
-            // Always keep Chapter 0 as a baseline if they want
-            if (currentUnlocked.length === 0) {
-              currentUnlocked.push("pronunciation-jyutping");
-            }
           }
           
           localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(currentUnlocked));

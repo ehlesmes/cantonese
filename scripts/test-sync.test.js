@@ -8,7 +8,7 @@ import {
 describe("Progress Sync Utility Spec", () => {
   test("serialization and deserialization roundtrip preserves progress state", async () => {
     const originalState = {
-      chapters: ["pronunciation-jyutping", "greetings", "dining-out"],
+      chapters: ["pronunciation-tones", "greetings", "dining-out"],
       srs: {
         "phr-11-1v3vktn": { level: 2, lastReviewed: 1718985600000 },
         "phr-5-abcde": { level: 5, lastReviewed: 1718985900000 },
@@ -26,7 +26,7 @@ describe("Progress Sync Utility Spec", () => {
     const deserialized = await deserializeState(serialized);
     expect(deserialized).not.toBeNull();
     expect(deserialized.chapters).toEqual([
-      "pronunciation-jyutping",
+      "pronunciation-tones",
       "greetings",
       "dining-out",
     ]);
@@ -62,7 +62,7 @@ describe("Progress Sync Utility Spec", () => {
 
     try {
       const originalState = {
-        chapters: ["pronunciation-jyutping", "greetings", "dining-out"],
+        chapters: ["pronunciation-tones", "greetings", "dining-out"],
         srs: {
           "phr-11-1v3vktn": { level: 2, lastReviewed: 1718985600000 },
         },
@@ -79,7 +79,7 @@ describe("Progress Sync Utility Spec", () => {
       const deserialized = await deserializeState(serialized);
       expect(deserialized).not.toBeNull();
       expect(deserialized.chapters).toEqual([
-        "pronunciation-jyutping",
+        "pronunciation-tones",
         "greetings",
         "dining-out",
       ]);
@@ -93,7 +93,7 @@ describe("Progress Sync Utility Spec", () => {
 
   test("deserialization handles Base64 strings with spaces (plus signs replaced by URL decoding)", async () => {
     const originalState = {
-      chapters: ["pronunciation-jyutping", "greetings"],
+      chapters: ["pronunciation-tones", "greetings"],
       srs: {
         "phr-11-1v3vktn": { level: 2, lastReviewed: 1718985600000 },
       },
@@ -109,10 +109,7 @@ describe("Progress Sync Utility Spec", () => {
 
     const deserialized = await deserializeState(base64WithSpace);
     expect(deserialized).not.toBeNull();
-    expect(deserialized.chapters).toEqual([
-      "pronunciation-jyutping",
-      "greetings",
-    ]);
+    expect(deserialized.chapters).toEqual(["pronunciation-tones", "greetings"]);
     expect(deserialized.srs["phr-11-1v3vktn"].level).toBe(2);
   });
 
@@ -123,12 +120,12 @@ describe("Progress Sync Utility Spec", () => {
 
   test("mergeStates successfully unions chapters", () => {
     const local = {
-      chapters: ["pronunciation-jyutping", "greetings"],
+      chapters: ["pronunciation-tones", "greetings"],
       srs: {},
       vocab: {},
     };
     const imported = {
-      chapters: ["pronunciation-jyutping", "dining-out"],
+      chapters: ["pronunciation-tones", "dining-out"],
       srs: {},
       vocab: {},
     };
@@ -137,13 +134,13 @@ describe("Progress Sync Utility Spec", () => {
     expect(merged.chapters).toEqual([
       "dining-out",
       "greetings",
-      "pronunciation-jyutping",
+      "pronunciation-tones",
     ]);
   });
 
   test("mergeStates applies latest-timestamp-wins logic for overlapping items", () => {
     const local = {
-      chapters: ["pronunciation-jyutping"],
+      chapters: ["pronunciation-tones"],
       srs: {
         // Laptop reviewed this more recently (yesterday vs last week)
         "item-conflict-local-newer": { level: 2, lastReviewed: 1718985600000 },
@@ -166,7 +163,7 @@ describe("Progress Sync Utility Spec", () => {
     };
 
     const imported = {
-      chapters: ["pronunciation-jyutping"],
+      chapters: ["pronunciation-tones"],
       srs: {
         "item-conflict-local-newer": { level: 5, lastReviewed: 1718900000000 }, // older
         "item-conflict-imported-newer": {

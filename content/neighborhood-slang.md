@@ -29,7 +29,7 @@ To describe your living space, Cantonese uses these terms:
 
 _Example Layout Description:_
 
-- `間[gaan1|measure word for rooms]` `屋[uk1|house/flat]` `有[jau5|has]`
+- `間[gaan1|measure word for rooms]` `屋[uk1|house/flat]` `有[jau5|to have]`
   `兩[loeng5|two]` `間[gaan1|measure word]` `睡房[seoi6fong2|bedroom]`
   `同[tung4|and]` `一[jat1|one]` `個[go3|measure word]`
   `客廳[haak3ting1|living room]`，`實用面積[sat6jung6min6zik1|saleable area]`

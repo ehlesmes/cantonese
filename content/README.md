@@ -201,11 +201,11 @@ explanation: 唔該[m4goi1|excuse me] is used for "excuse me", 我[ngo5|I] is "I
 
 ## 8. Chapter Organization & Course Progression
 
-1. **Course Introduction (`pronunciation-jyutping.md`)**: The very first file in
-   the course acts as a dedicated introduction to the Jyutping system,
-   consonants, vowels, and the 6 tones. Subsequent chapters do not need to
-   re-introduce these mechanical foundations and can focus entirely on language
-   content.
+1. **Course Introduction (`pronunciation-tones.md` &
+   `pronunciation-vowels.md`)**: The first chapters act as dedicated
+   introductions to the Jyutping system, consonants, vowels, and the 6 tones.
+   Subsequent chapters do not need to re-introduce these mechanical foundations
+   and can focus entirely on language content.
 2. **Flexible, Free-Form Chapter Layout**: Chapters do not have a rigid,
    identical layout structure. Authors/LLMs are encouraged to structure each
    chapter dynamically based on what best suits the topic. For example:
@@ -217,3 +217,12 @@ explanation: 唔該[m4goi1|excuse me] is used for "excuse me", 我[ngo5|I] is "I
 3. **Tone & Style**: Keep explanations highly encouraging, practical, and
    conversational. Break complex concepts into small, digestible units with
    clear headings.
+4. **Vocabulary Ceiling & Natural Chapter Splits**: To keep cognitive load
+   manageable for learners, a single chapter must not introduce more than **20
+   to 25 new vocabulary words**. If a planned topic is too dense or a dialogue
+   introduces many new terms, it must be split into multiple distinct chapters
+   with descriptive, non-suffixed IDs (e.g. use `convenience-store` and
+   `shopping-slang` rather than `shopping-slang-1` and `shopping-slang-2`).
+   Never simplify or dumb down dialogues artificially to meet the word limit;
+   instead, isolate dense dialogues/scenarios into their own dedicated chapters
+   to preserve natural, authentic spoken Cantonese.

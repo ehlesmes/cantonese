@@ -506,6 +506,12 @@
     "type": "verb"
   },
   {
+    "char": "簽",
+    "jyutping": "cim1",
+    "definition": "to sign",
+    "type": "verb"
+  },
+  {
     "char": "簽約",
     "jyutping": "cim1joek3",
     "definition": "to sign a contract",
@@ -788,6 +794,12 @@
     "type": "noun"
   },
   {
+    "char": "搭",
+    "jyutping": "daap3",
+    "definition": "to take / ride",
+    "type": "verb"
+  },
+  {
     "char": "搭車",
     "jyutping": "daap3ce1",
     "definition": "to take transit / ride a vehicle",
@@ -814,7 +826,7 @@
   {
     "char": "得",
     "jyutping": "dak1",
-    "definition": "particle expressing permission, possibility, capability, or adverbial degree",
+    "definition": "can / okay / permissible / particle expressing permission, possibility, capability, or adverbial degree",
     "type": "particle",
     "notes": "Used in potential structures (verb + 得 + adjective/complement) meaning 'can'."
   },
@@ -953,6 +965,12 @@
     "notes": "Used after numerals to indicate hours (e.g. 兩點)."
   },
   {
+    "char": "點呀",
+    "jyutping": "dim2aa3",
+    "definition": "how is it? / how are things? / what's up?",
+    "type": "expression"
+  },
+  {
     "char": "點解",
     "jyutping": "dim2gaai2",
     "definition": "why / how come",
@@ -1078,7 +1096,7 @@
   {
     "char": "到",
     "jyutping": "dou3",
-    "definition": "to arrive at / reach / to",
+    "definition": "to arrive at / reach / to / structural particle introducing degree, result, or point of",
     "type": "verb"
   },
   {
@@ -2002,6 +2020,12 @@
     "type": "verb"
   },
   {
+    "char": "行樓梯",
+    "jyutping": "haang4lau4tai1",
+    "definition": "to walk up stairs",
+    "type": "verb"
+  },
+  {
     "char": "行路",
     "jyutping": "haang4lou6",
     "definition": "to walk",
@@ -2022,7 +2046,7 @@
   {
     "char": "喺",
     "jyutping": "hai2",
-    "definition": "at / in / on (locative preposition)",
+    "definition": "at / in / on (location) / locative preposition",
     "type": "preposition"
   },
   {
@@ -2054,6 +2078,12 @@
     "jyutping": "hai6gam2",
     "definition": "continuously / constantly",
     "type": "adverb"
+  },
+  {
+    "char": "係咪",
+    "jyutping": "hai6mai6",
+    "definition": "is or not (A-not-A question form)",
+    "type": "expression"
   },
   {
     "char": "係咩",
@@ -2284,6 +2314,12 @@
     "jyutping": "hou2jam2",
     "definition": "tasty to drink / delicious",
     "type": "adjective"
+  },
+  {
+    "char": "好耐",
+    "jyutping": "hou2noi6",
+    "definition": "a long time",
+    "type": "adverb"
   },
   {
     "char": "好玩",
@@ -2809,6 +2845,12 @@
     "type": "verb"
   },
   {
+    "char": "扣除",
+    "jyutping": "kau3ceoi4",
+    "definition": "to deduct",
+    "type": "verb"
+  },
+  {
     "char": "K",
     "jyutping": "kei1",
     "definition": "karaoke",
@@ -2888,6 +2930,12 @@
     "type": "noun"
   },
   {
+    "char": "藍色",
+    "jyutping": "laam4sik1",
+    "definition": "blue color",
+    "type": "noun"
+  },
+  {
     "char": "冷氣",
     "jyutping": "laang5hei3",
     "definition": "air conditioning / AC",
@@ -2898,12 +2946,6 @@
     "jyutping": "laat6",
     "definition": "spicy / hot",
     "type": "adjective"
-  },
-  {
-    "char": "嚟",
-    "jyutping": "lei4",
-    "definition": "to come",
-    "type": "verb"
   },
   {
     "char": "樓",
@@ -2928,6 +2970,12 @@
     "jyutping": "lau4tai1",
     "definition": "stairs / staircase",
     "type": "noun"
+  },
+  {
+    "char": "嚟",
+    "jyutping": "lei4",
+    "definition": "to come",
+    "type": "verb"
   },
   {
     "char": "嚟",
@@ -2982,6 +3030,12 @@
     "char": "旅行",
     "jyutping": "leoi5hang4",
     "definition": "to travel",
+    "type": "verb"
+  },
+  {
+    "char": "連",
+    "jyutping": "lin5",
+    "definition": "to connect / link",
     "type": "verb"
   },
   {
@@ -3211,6 +3265,12 @@
     "notes": "Used when stating facts that the listener should already know or accept."
   },
   {
+    "char": "麻煩",
+    "jyutping": "maa4faan4",
+    "definition": "troublesome / bothersome",
+    "type": "adjective"
+  },
+  {
     "char": "麻雀",
     "jyutping": "maa4zoek3",
     "definition": "mahjong / sparrow",
@@ -3239,6 +3299,12 @@
     "char": "買入",
     "jyutping": "maai5jap6",
     "definition": "to buy in / purchase shares",
+    "type": "verb"
+  },
+  {
+    "char": "買嘢",
+    "jyutping": "maai5je5",
+    "definition": "to buy things / shop",
     "type": "verb"
   },
   {
@@ -4403,6 +4469,12 @@
     "type": "verb"
   },
   {
+    "char": "上次",
+    "jyutping": "soeng6ci3",
+    "definition": "last time",
+    "type": "noun"
+  },
+  {
     "char": "上面",
     "jyutping": "soeng6min6",
     "definition": "above / on top of / upper side",
@@ -4521,6 +4593,12 @@
     "jyutping": "tau1",
     "definition": "to steal",
     "type": "verb"
+  },
+  {
+    "char": "頭先",
+    "jyutping": "tau4sin1",
+    "definition": "just now / a moment ago",
+    "type": "adverb"
   },
   {
     "char": "頭痛",
@@ -5042,6 +5120,12 @@
     "type": "adverb"
   },
   {
+    "char": "準時",
+    "jyutping": "zeon2si4",
+    "definition": "punctual / on time",
+    "type": "adjective"
+  },
+  {
     "char": "知",
     "jyutping": "zi1",
     "definition": "to know / be aware of",
@@ -5104,7 +5188,7 @@
   {
     "char": "字",
     "jyutping": "zi6",
-    "definition": "five-minute interval",
+    "definition": "five-minute interval / character / word",
     "type": "noun",
     "notes": "Used in telling time, e.g. 三個字 means 15 minutes."
   },
@@ -5145,6 +5229,12 @@
     "type": "noun"
   },
   {
+    "char": "截",
+    "jyutping": "zit6",
+    "definition": "section / chunk / length",
+    "type": "classifier"
+  },
+  {
     "char": "折墮",
     "jyutping": "zit6do6",
     "definition": "miserable / wretched / in a pitiful state",
@@ -5174,6 +5264,12 @@
     "jyutping": "zo2bin1",
     "definition": "left side",
     "type": "noun"
+  },
+  {
+    "char": "著",
+    "jyutping": "zoek3",
+    "definition": "to wear (clothes)",
+    "type": "verb"
   },
   {
     "char": "張",

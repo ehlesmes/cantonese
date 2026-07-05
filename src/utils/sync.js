@@ -97,7 +97,7 @@ function hasNativeBase64() {
  * Reads local storage progress states
  */
 export function getLocalState() {
-  let chapters = ["pronunciation-jyutping"];
+  let chapters = [];
   let srs = {};
   let vocab = {};
 
@@ -110,9 +110,6 @@ export function getLocalState() {
         const parsed = JSON.parse(storedChapters);
         if (Array.isArray(parsed)) {
           chapters = parsed.filter((c) => typeof c === "string");
-          if (!chapters.includes("pronunciation-jyutping")) {
-            chapters.unshift("pronunciation-jyutping");
-          }
         }
       }
 
@@ -277,9 +274,6 @@ export async function deserializeState(serializedStr) {
     const chapters = Array.isArray(rawChapters)
       ? rawChapters.filter((c) => typeof c === "string")
       : [];
-    if (!chapters.includes("pronunciation-jyutping")) {
-      chapters.unshift("pronunciation-jyutping");
-    }
 
     const state = {
       chapters,
@@ -337,9 +331,6 @@ export function mergeStates(local, imported) {
     ...(imported.chapters || []),
   ].filter((c) => typeof c === "string");
 
-  if (!allChapters.includes("pronunciation-jyutping")) {
-    allChapters.unshift("pronunciation-jyutping");
-  }
   merged.chapters = [...new Set(allChapters)].sort();
 
   // Merge helper for key-value stores (latest timestamp wins)

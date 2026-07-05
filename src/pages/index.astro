@@ -92,16 +92,13 @@ const chapterEntries = chapters.map((c, index) => {
 
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
-      let unlocked = ["pronunciation-jyutping"]; // default is Chapter 0
+      let unlocked = [];
       try {
         const stored = localStorage.getItem('cantonese_unlocked_chapters');
         if (stored) {
           const parsed = JSON.parse(stored);
           if (Array.isArray(parsed)) {
             unlocked = parsed.filter(c => typeof c === "string");
-            if (!unlocked.includes("pronunciation-jyutping")) {
-              unlocked.unshift("pronunciation-jyutping");
-            }
           }
         }
       } catch (e) {
