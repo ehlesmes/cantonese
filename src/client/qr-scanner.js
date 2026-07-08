@@ -97,7 +97,7 @@ function tickScanner(video, hiddenCanvas, onStatus, onDecoded) {
     if (code) {
       console.log("QR Code detected:", code.data);
       isProcessing = true;
-      onDecoded(code.data).finally(() => {
+      Promise.resolve(onDecoded(code.data)).finally(() => {
         isProcessing = false;
       });
     }

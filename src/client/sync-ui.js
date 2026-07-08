@@ -116,13 +116,17 @@ function init() {
   function switchTab(tab) {
     if (tab === "show") {
       tabShowBtn.classList.add("active");
+      tabShowBtn.setAttribute("aria-selected", "true");
       tabScanBtn.classList.remove("active");
+      tabScanBtn.setAttribute("aria-selected", "false");
       tabShowContent.style.display = "flex";
       tabScanContent.style.display = "none";
       stopScanner(video, videoWrapper);
     } else {
       tabShowBtn.classList.remove("active");
+      tabShowBtn.setAttribute("aria-selected", "false");
       tabScanBtn.classList.add("active");
+      tabScanBtn.setAttribute("aria-selected", "true");
       tabShowContent.style.display = "none";
       tabScanContent.style.display = "flex";
       // Auto-start scanner if not showing an answer QR

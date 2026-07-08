@@ -9,16 +9,16 @@ import "../styles/sync-modal.css";
     <h2 id="sync-modal-title" style="margin-top: 0.2rem; margin-bottom: 1rem; border-bottom: none; font-size: 1.5rem;">Sync Progress</h2>
     
     {/* TAB NAVIGATION */}
-    <div id="sync-tabs-nav" class="sync-tabs" style="margin-bottom: 0.75rem;">
-      <button id="tab-show-btn" class="sync-tab-btn active">Show QR Code</button>
-      <button id="tab-scan-btn" class="sync-tab-btn">Scan QR Code</button>
+    <div id="sync-tabs-nav" class="sync-tabs" role="tablist" aria-label="Synchronization Options" style="margin-bottom: 0.75rem;">
+      <button id="tab-show-btn" class="sync-tab-btn active" role="tab" aria-selected="true" aria-controls="sync-tab-show-content">Show QR Code</button>
+      <button id="tab-scan-btn" class="sync-tab-btn" role="tab" aria-selected="false" aria-controls="sync-tab-scan-content">Scan QR Code</button>
     </div>
 
     {/* SINGLE SYNC VIEW */}
     <div id="sync-main-view" style="display: flex; flex-direction: column; gap: 0.75rem;">
       
       {/* SHOW QR TAB CONTENT */}
-      <div id="sync-tab-show-content" class="sync-tab-content active" style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <div id="sync-tab-show-content" class="sync-tab-content active" role="tabpanel" aria-labelledby="tab-show-btn" style="display: flex; flex-direction: column; gap: 0.75rem;">
         <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; margin: 0; text-align: center;">
           On your other device, select <strong>"Scan QR Code"</strong> and scan this code.
         </p>
@@ -31,7 +31,7 @@ import "../styles/sync-modal.css";
       </div>
 
       {/* SCAN QR TAB CONTENT */}
-      <div id="sync-tab-scan-content" class="sync-tab-content" style="display: none; flex-direction: column; gap: 0.75rem;">
+      <div id="sync-tab-scan-content" class="sync-tab-content" role="tabpanel" aria-labelledby="tab-scan-btn" style="display: none; flex-direction: column; gap: 0.75rem;">
         <p id="scan-instructions" style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; margin: 0; text-align: center;">
           Scan the QR code displayed on your other device.
         </p>

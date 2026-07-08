@@ -86,46 +86,51 @@ export function unpackSDPData(str) {
     bytes[i] = binary.charCodeAt(i);
   }
 
-  let offset = 0;
-  const typeByte = bytes[offset++];
-  const t = typeByte === 1 ? "o" : "a";
+  try {
+    let offset = 0;
+    const typeByte = bytes[offset++];
+    const t = typeByte === 1 ? "o" : "a";
 
-  const ufrag = new TextDecoder()
-    .decode(bytes.subarray(offset, offset + 8))
-    .replace(/\0/g, "");
-  offset += 8;
+    const ufrag = new TextDecoder()
+      .decode(bytes.subarray(offset, offset + 8))
+      .replace(/\0/g, "");
+    offset += 8;
 
-  const pwd = new TextDecoder()
-    .decode(bytes.subarray(offset, offset + 24))
-    .replace(/\0/g, "");
-  offset += 24;
+    const pwd = new TextDecoder()
+      .decode(bytes.subarray(offset, offset + 24))
+      .replace(/\0/g, "");
+    offset += 24;
 
-  let fingerprint = "";
-  for (let i = 0; i < 32; i++) {
-    const hex = bytes[offset++].toString(16).padStart(2, "0");
-    fingerprint += hex;
-  }
-
-  const candCount = bytes[offset++];
-  const c = [];
-
-  for (let i = 0; i < candCount; i++) {
-    const ipType = bytes[offset++];
-    let ip = "";
-
-    if (ipType === 4) {
-      ip = `${bytes[offset++]}.${bytes[offset++]}.${bytes[offset++]}.${bytes[offset++]}`;
-    } else {
-      const len = bytes[offset++];
-      ip = new TextDecoder().decode(bytes.subarray(offset, offset + len));
-      offset += len;
+    let fingerprint = "";
+    for (let i = 0; i < 32; i++) {
+      const hex = bytes[offset++].toString(16).padStart(2, "0");
+      fingerprint += hex;
     }
 
-    const port = (bytes[offset++] << 8) | bytes[offset++];
-    c.push([ip, port]);
-  }
+    const candCount = bytes[offset++];
+    const c = [];
 
-  return { t, u: ufrag, p: pwd, f: fingerprint, c };
+    for (let i = 0; i < candCount; i++) {
+      const ipType = bytes[offset++];
+      let ip = "";
+
+      if (ipType === 4) {
+        ip = `${bytes[offset++]}.${bytes[offset++]}.${bytes[offset++]}.${bytes[offset++]}`;
+      } else {
+        const len = bytes[offset++];
+        ip = new TextDecoder().decode(bytes.subarray(offset, offset + len));
+        offset += len;
+      }
+
+      const port = (bytes[offset++] << 8) | bytes[offset++];
+      c.push([ip, port]);
+    }
+
+    return { t, u: ufrag, p: pwd, f: fingerprint, c };
+  } catch (err) {
+    console.warn("Failed to parse unpacked SDP binary details:", err);
+    return null;
+  }
 }
 
 /**

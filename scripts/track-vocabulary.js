@@ -90,13 +90,17 @@ function main() {
 
           // Merge translations cleanly if they represent different nuances
           const existingTrans = vocabMap[key].translation;
-          const lowerExisting = existingTrans.toLowerCase();
-          const lowerNew = translation.toLowerCase();
+          const existingParts = existingTrans.split("/").map((s) => s.trim());
+          const newParts = translation.split("/").map((s) => s.trim());
 
-          // Append if it's a distinct translation nuance
-          if (!lowerExisting.includes(lowerNew)) {
-            vocabMap[key].translation = `${existingTrans} / ${translation}`;
+          const merged = [...existingParts];
+          for (const np of newParts) {
+            const lowerNp = np.toLowerCase();
+            if (!merged.some((ep) => ep.toLowerCase() === lowerNp)) {
+              merged.push(np);
+            }
           }
+          vocabMap[key].translation = merged.join(" / ");
         }
       }
     }
