@@ -48,10 +48,14 @@ describe("DOM Utilities Spec", () => {
       type: "checkbox",
       id: "my-id",
       checked: "true",
+      title: undefined,
+      placeholder: null,
     });
     expect(input.getAttribute("type")).toBe("checkbox");
     expect(input.getAttribute("id")).toBe("my-id");
     expect(input.getAttribute("checked")).toBe("true");
+    expect(input.hasAttribute("title")).toBe(false);
+    expect(input.hasAttribute("placeholder")).toBe(false);
   });
 
   test("el() should nest children correctly, ignoring nulls", () => {

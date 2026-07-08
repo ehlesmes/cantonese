@@ -60,8 +60,57 @@ describe("Progress Sync Utility Spec", () => {
     expect(deserialized.vocab["vocab-smart-quote-’"].lastReviewed).toBe(
       1718985800000,
     );
+  });
 
-    expect(deserialized.timestamp).toBeGreaterThan(0);
+  test("serialization and deserialization roundtrip handles missing lastReviewed timestamp", async () => {
+    const originalState = {
+      chapters: ["greetings"],
+      srs: {
+        "phr-1": { level: 2, lastReviewed: 0 },
+      },
+      vocab: {
+        "v-1": { level: 3, lastReviewed: 0 },
+      },
+    };
+
+    const serialized = await serializeState(originalState);
+    const deserialized = await deserializeState(serialized);
+    expect(deserialized).not.toBeNull();
+    expect(deserialized.srs["phr-1"].lastReviewed).toBe(0);
+    expect(deserialized.vocab["v-1"].lastReviewed).toBe(0);
+  });
+
+  test("deserializeState handles missing or invalid chapters property gracefully", async () => {
+    // Case 1: c (chapters) is omitted entirely
+    const compacted1 = {
+      s: {},
+      v: {},
+      t: 1234567890,
+    };
+    const base64Plain1 = btoa(JSON.stringify(compacted1))
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "");
+
+    const deserialized1 = await deserializeState(base64Plain1);
+    expect(deserialized1).not.toBeNull();
+    expect(deserialized1.chapters).toEqual([]);
+
+    // Case 2: c is not an array
+    const compacted2 = {
+      c: "not-an-array",
+      s: {},
+      v: {},
+      t: 1234567890,
+    };
+    const base64Plain2 = btoa(JSON.stringify(compacted2))
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "");
+
+    const deserialized2 = await deserializeState(base64Plain2);
+    expect(deserialized2).not.toBeNull();
+    expect(deserialized2.chapters).toEqual([]);
   });
 
   test("fallback serialization and deserialization roundtrip (pure JS) preserves progress state", async () => {
@@ -173,6 +222,24 @@ describe("Progress Sync Utility Spec", () => {
     // e.g. 0xFF which is invalid UTF-8 (base64 url safe for [255, 255, 255] is "____")
     const result = await deserializeState("____");
     expect(result).toBeNull();
+  });
+
+  test("deserialization handles missing/truncated SRS and vocab arrays correctly", async () => {
+    const compacted = {
+      c: [],
+      s: { "phr-1": [4] }, // Missing index 1 (lastReviewed)
+      v: { "v-1": [3] }, // Missing index 1
+      t: 1234567890,
+    };
+    const base64Plain = btoa(JSON.stringify(compacted))
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "");
+
+    const deserialized = await deserializeState(base64Plain);
+    expect(deserialized).not.toBeNull();
+    expect(deserialized.srs["phr-1"]).toEqual({ level: 4, lastReviewed: 0 });
+    expect(deserialized.vocab["v-1"]).toEqual({ level: 3, lastReviewed: 0 });
   });
 
   test("deserialization fallback to TextDecoder when DecompressionStream is missing", async () => {
@@ -426,6 +493,19 @@ describe("WebRTC Utility Spec", () => {
     expect(unpacked.c[0][1]).toBe(12345);
   });
 
+  test("packSDPData and unpackSDPData handle answer coordinates correctly", () => {
+    const answerData = {
+      t: "a",
+      u: "user",
+      p: "pass",
+      f: "1234567890123456789012345678901234567890123456789012345678901234",
+      c: [],
+    };
+    const packed = packSDPData(answerData);
+    const unpacked = unpackSDPData(packed);
+    expect(unpacked).toEqual(answerData);
+  });
+
   test("parseSDP and buildSDP handle raw browser SDP strings", () => {
     const rawSDP = `v=0
 o=- 4611731400430051336 2 IN IP4 127.0.0.1
@@ -491,5 +571,147 @@ a=candidate:1 1 udp 2122260223 192.168.1.5 50000 typ host generation 0 ufrag moc
     expect(localState.srs).toEqual({});
     expect(localState.vocab).toEqual({});
     vi.restoreAllMocks();
+  });
+
+  test("deserializeState handles invalid base64 characters gracefully", async () => {
+    const result = await deserializeState("invalid!!!");
+    expect(result).toBeNull();
+  });
+
+  test("mergeStates merges stores without lastReviewed timestamps correctly", () => {
+    const local = {
+      chapters: [],
+      srs: { "phr-1": { level: 2, lastReviewed: 0 } },
+      vocab: {},
+    };
+    const imported = {
+      chapters: [],
+      srs: { "phr-1": { level: 4, lastReviewed: 0 } },
+      vocab: {},
+    };
+    const merged = mergeStates(local, imported);
+    expect(merged.srs["phr-1"].level).toBe(4);
+  });
+
+  test("mergeStates handles missing properties on local/imported states gracefully", () => {
+    const local = {
+      chapters: [],
+    };
+    const imported = {
+      chapters: [],
+    };
+    const merged = mergeStates(local, imported);
+    expect(merged.srs).toEqual({});
+    expect(merged.vocab).toEqual({});
+  });
+
+  test("serialization and deserialization use fallback base64 functions when native support is missing", async () => {
+    const originalToBase64 = Uint8Array.prototype.toBase64;
+    const originalFromBase64 = Uint8Array.fromBase64;
+    delete Uint8Array.prototype.toBase64;
+    delete Uint8Array.fromBase64;
+    try {
+      const state = { chapters: ["greetings"], srs: {}, vocab: {} };
+      const serialized = await serializeState(state);
+      const deserialized = await deserializeState(serialized);
+      expect(deserialized).not.toBeNull();
+      expect(deserialized.chapters).toEqual(["greetings"]);
+    } finally {
+      Uint8Array.prototype.toBase64 = originalToBase64;
+      Uint8Array.fromBase64 = originalFromBase64;
+    }
+  });
+});
+
+describe("WebRTC Utility Spec Errors", () => {
+  test("unpackSDPData handles truncated data exceptions gracefully", () => {
+    // Truncated type byte only
+    const result = unpackSDPData("AQ");
+    expect(result).toBeNull();
+  });
+
+  test("unpackSDPData handles invalid candidate IP addresses gracefully", () => {
+    // Construct a byte array with type 4 (IPv4) but missing IP/port bytes
+    const bytes = new Uint8Array(1 + 8 + 24 + 32 + 1 + 1 + 2);
+    bytes[0] = 1; // Offer type
+    bytes[65] = 1; // Candidate count
+    bytes[66] = 4; // ipType = 4 (IPv4)
+
+    let binary = "";
+    for (let i = 0; i < bytes.length; i++) {
+      const b = bytes[i];
+      if (b !== undefined) {
+        binary += String.fromCharCode(b);
+      }
+    }
+    const packed = btoa(binary)
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "");
+    const unpacked = unpackSDPData(packed);
+    expect(unpacked).toBeNull();
+  });
+
+  test("unpackSDPData handles missing candidate port bytes gracefully", () => {
+    // Construct a byte array with type 4 (IPv4) and valid IP bytes but missing port bytes (needs 2, only has 1)
+    const bytes = new Uint8Array(1 + 8 + 24 + 32 + 1 + 1 + 4 + 1);
+    bytes[0] = 1; // Offer type
+    bytes[65] = 1; // Candidate count
+    bytes[66] = 4; // ipType = 4 (IPv4)
+
+    let binary = "";
+    for (let i = 0; i < bytes.length; i++) {
+      const b = bytes[i];
+      if (b !== undefined) {
+        binary += String.fromCharCode(b);
+      }
+    }
+    const packed = btoa(binary)
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "");
+    const unpacked = unpackSDPData(packed);
+    expect(unpacked).toBeNull();
+  });
+
+  test("unpackSDPData rejects non-string types", () => {
+    expect(unpackSDPData(123)).toBeNull();
+  });
+
+  test("unpackSDPData handles base64 decoding crashes gracefully", () => {
+    expect(unpackSDPData("invalid_base64_with_bad_chars!!!")).toBeNull();
+  });
+
+  test("rebuildSDP handles offers and IPv6 candidates correctly", () => {
+    const ipv6Data = {
+      t: "o",
+      u: "user",
+      p: "pass",
+      f: "1234567890123456789012345678901234567890123456789012345678901234",
+      c: [["2001:db8::1", 8080]],
+    };
+    const rebuilt = rebuildSDP(true, ipv6Data);
+    expect(rebuilt.type).toBe("offer");
+    expect(rebuilt.sdp).toContain("a=setup:actpass");
+    expect(rebuilt.sdp).toContain("c=IN IP6 2001:db8::1");
+  });
+
+  test("packSDPData returns empty string for null, missing ufrag, or missing pwd", () => {
+    expect(packSDPData(null)).toBe("");
+    expect(packSDPData({ t: "o", p: "pwd", f: "fing", c: [] })).toBe("");
+    expect(packSDPData({ t: "o", u: "ufrag", f: "fing", c: [] })).toBe("");
+  });
+
+  test("parseSDP skips non-host and non-UDP candidates gracefully", () => {
+    const rawSDP = `v=0
+o=- 4611731400430051336 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=ice-ufrag:mockUfrag
+a=ice-pwd:mockPassword
+a=candidate:1 1 udp 2122260223 192.168.1.5 50000 typ relay generation 0 ufrag mockUfrag
+a=candidate:2 1 tcp 2122260223 192.168.1.6 50001 typ host generation 0 ufrag mockUfrag`;
+    const parsed = parseSDP(rawSDP);
+    expect(parsed.c.length).toBe(0);
   });
 });

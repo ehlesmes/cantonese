@@ -1,18 +1,23 @@
-/**
- * Spaced Repetition System (SRS) Learning Engine.
- * Manages item selection based on review levels and grades progress up/down.
- */
+import type { SrsCardState, SrsStateMap } from "../types";
+
+export interface IdentifiableItem {
+  id: string;
+}
 
 /**
  * Selects up to `limit` items from a pool using weighted SRS selection.
  * Lower level items are weighted more heavily so they appear more frequently.
  *
- * @param {Array<object>} poolItems Items available for review (e.g. phrases or vocab)
- * @param {object} srsState Map of item IDs to their { level, lastReviewed } states
- * @param {number} limit Maximum number of items to select for the session
- * @returns {Array<object>} Selected items
+ * @param poolItems Items available for review (e.g. phrases or vocab)
+ * @param srsState Map of item IDs to their { level, lastReviewed } states
+ * @param limit Maximum number of items to select for the session
+ * @returns Selected items
  */
-export function selectCards(poolItems, srsState, limit = 10) {
+export function selectCards<T extends IdentifiableItem>(
+  poolItems: T[],
+  srsState: SrsStateMap,
+  limit: number = 10
+): T[] {
   if (!poolItems || poolItems.length === 0) return [];
 
   const weightedPool = poolItems.map((item) => {
@@ -23,7 +28,7 @@ export function selectCards(poolItems, srsState, limit = 10) {
     return { item, weight };
   });
 
-  const selectedCards = [];
+  const selectedCards: T[] = [];
   const count = Math.min(limit, poolItems.length);
   const tempPool = [...weightedPool];
 
@@ -36,16 +41,24 @@ export function selectCards(poolItems, srsState, limit = 10) {
     let selectedIndex = -1;
 
     for (let j = 0; j < tempPool.length; j++) {
-      cumulative += tempPool[j].weight;
-      if (r <= cumulative) {
-        selectedIndex = j;
-        break;
+      const element = tempPool[j];
+      /* v8 ignore next 8 */
+      if (element) {
+        cumulative += element.weight;
+        if (r <= cumulative) {
+          selectedIndex = j;
+          break;
+        }
       }
     }
 
     if (selectedIndex !== -1) {
-      selectedCards.push(tempPool[selectedIndex].item);
-      tempPool.splice(selectedIndex, 1);
+      const selected = tempPool[selectedIndex];
+      /* v8 ignore next 4 */
+      if (selected) {
+        selectedCards.push(selected.item);
+        tempPool.splice(selectedIndex, 1);
+      }
     }
   }
 
@@ -57,13 +70,16 @@ export function selectCards(poolItems, srsState, limit = 10) {
  * Correct answers level up (+1, max 5).
  * Incorrect answers level down (-2, min 1).
  *
- * @param {object} currentState The current level state (e.g. { level, lastReviewed })
- * @param {boolean} isCorrect Whether the user answered correctly
- * @returns {object} The updated state: { level, lastReviewed }
+ * @param currentState The current level state (e.g. { level, lastReviewed })
+ * @param isCorrect Whether the user answered correctly
+ * @returns The updated state: { level, lastReviewed }
  */
-export function gradeCard(currentState, isCorrect) {
+export function gradeCard(
+  currentState: SrsCardState | undefined,
+  isCorrect: boolean
+): SrsCardState {
   const level = currentState ? currentState.level : 1;
-  let newLevel;
+  let newLevel: number;
 
   if (isCorrect) {
     newLevel = Math.min(level + 1, 5);

@@ -1,5 +1,6 @@
 import { marked } from "marked";
 import crypto from "node:crypto";
+import type { CompileMarkdownOptions } from "../types";
 
 // Configure marked options
 marked.setOptions({
@@ -11,11 +12,14 @@ marked.setOptions({
  * Compiles a raw annotated markdown string (prose) into HTML with tooltips.
  * Converts inline `Char[Jyutping|Translation]` (with backticks) to tooltips.
  *
- * @param {string} text
- * @param {object} [options={}] Options object (e.g. { inline: true })
- * @returns {string} Compiled HTML
+ * @param text
+ * @param [options={}] Options object (e.g. { inline: true })
+ * @returns Compiled HTML
  */
-export function compileMarkdown(text, options = {}) {
+export function compileMarkdown(
+  text: string | null | undefined,
+  options: CompileMarkdownOptions = {}
+): string {
   if (!text) return "";
 
   // Regex to match: `Char[Jyutping|Translation]` (with backticks)
@@ -29,30 +33,30 @@ export function compileMarkdown(text, options = {}) {
   // Replace backtick-wrapped annotations
   let processedText = text.replace(
     inlineRegex,
-    (match, char, jyutping, translation) => {
+    (_match: string, char: string, jyutping: string, translation: string) => {
       const hash = crypto
         .createHash("sha256")
         .update(char)
         .digest("hex")
         .slice(0, 16);
       return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
-    },
+    }
   );
 
   // Replace plain annotations (without backticks)
   processedText = processedText.replace(
     blockRegex,
-    (match, char, jyutping, translation) => {
+    (_match: string, char: string, jyutping: string, translation: string) => {
       const hash = crypto
         .createHash("sha256")
         .update(char)
         .digest("hex")
         .slice(0, 16);
       return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
-    },
+    }
   );
 
-  const parseOptions = {};
+  const parseOptions: { breaks?: boolean } = {};
   if (options.breaks !== undefined) {
     parseOptions.breaks = options.breaks;
   }
@@ -62,12 +66,15 @@ export function compileMarkdown(text, options = {}) {
     ? marked.parseInline(processedText, parseOptions)
     : marked.parse(processedText, parseOptions);
 
+  /* v8 ignore next */
+  const htmlString = typeof rawHtml === "string" ? rawHtml : "";
+
   // Regex to match blockquote alerts: <blockquote><p>[!NOTE] ... </blockquote>
   const alertRegex =
     /<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]([\s\S]*?)<\/blockquote>/gi;
 
   // Replace blockquotes with div alert cards
-  return rawHtml.replace(alertRegex, (match, type, content) => {
+  return htmlString.replace(alertRegex, (_match: string, type: string, content: string) => {
     return `<div class="alert-box alert-${type.toLowerCase()}">
       <div class="alert-title">${type}</div>
       <div class="alert-content"><p>${content.trim()}</div>
@@ -79,17 +86,17 @@ export function compileMarkdown(text, options = {}) {
  * Compiles plain text annotations (without backticks) used in examples/dialogs.
  * Converts Char[Jyutping|Translation] to tooltip markup.
  *
- * @param {string} text
- * @returns {string} Compiled HTML
+ * @param text
+ * @returns Compiled HTML
  */
-export function compileAnnotations(text) {
+export function compileAnnotations(text: string | null | undefined): string {
   if (!text) return "";
 
   // Regex to match: Char[Jyutping|Translation] (without backticks)
   const blockRegex =
     /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
 
-  return text.replace(blockRegex, (match, char, jyutping, translation) => {
+  return text.replace(blockRegex, (_match: string, char: string, jyutping: string, translation: string) => {
     const hash = crypto
       .createHash("sha256")
       .update(char)

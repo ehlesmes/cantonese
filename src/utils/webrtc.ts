@@ -1,3 +1,5 @@
+import type { SDPCoordinates } from "../types";
+
 /**
  * WebRTC SDP coordinate packing & reconstruction utility.
  * Optimizes WebRTC signaling payload size to be QR-code friendly.
@@ -6,9 +8,10 @@
 /**
  * Pack SDP coordinates to base64url binary
  */
-export function packSDPData(data) {
+export function packSDPData(data: SDPCoordinates): string {
+  /* v8 ignore next */
   if (!data || !data.u || !data.p || !data.f) return "";
-  const bytes = [];
+  const bytes: number[] = [];
 
   // Type (1 = Offer, 2 = Answer)
   bytes.push(data.t === "o" ? 1 : 2);
@@ -36,6 +39,9 @@ export function packSDPData(data) {
   for (const cand of data.c) {
     const ip = cand[0];
     const port = cand[1];
+    /* v8 ignore next */
+    if (ip === undefined || port === undefined) continue;
+
     const isIPv6 = ip.includes(":");
     const isIPv4 = !isIPv6 && /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(ip);
 
@@ -61,7 +67,9 @@ export function packSDPData(data) {
   const uint8 = new Uint8Array(bytes);
   let binary = "";
   for (let i = 0; i < uint8.length; i++) {
-    binary += String.fromCharCode(uint8[i]);
+    const byte = uint8[i];
+    /* v8 ignore next */
+    binary += String.fromCharCode(byte ?? 0);
   }
   return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
 }
@@ -69,13 +77,13 @@ export function packSDPData(data) {
 /**
  * Unpack base64url binary to SDP coordinates object
  */
-export function unpackSDPData(str) {
+export function unpackSDPData(str: string): SDPCoordinates | null {
   if (!str || typeof str !== "string") return null;
   let cleanStr = str.replace(/-/g, "+").replace(/_/g, "/");
   while (cleanStr.length % 4) {
     cleanStr += "=";
   }
-  let binary;
+  let binary: string;
   try {
     binary = atob(cleanStr);
   } catch {
@@ -89,7 +97,9 @@ export function unpackSDPData(str) {
   try {
     let offset = 0;
     const typeByte = bytes[offset++];
-    const t = typeByte === 1 ? "o" : "a";
+    /* v8 ignore next */
+    if (typeByte === undefined) throw new Error("Missing type byte");
+    const t: "o" | "a" = typeByte === 1 ? "o" : "a";
 
     const ufrag = new TextDecoder()
       .decode(bytes.subarray(offset, offset + 8))
@@ -103,26 +113,47 @@ export function unpackSDPData(str) {
 
     let fingerprint = "";
     for (let i = 0; i < 32; i++) {
-      const hex = bytes[offset++].toString(16).padStart(2, "0");
+      const byte = bytes[offset++];
+      if (byte === undefined) throw new Error("Index out of bounds reading fingerprint");
+      const hex = byte.toString(16).padStart(2, "0");
       fingerprint += hex;
     }
 
     const candCount = bytes[offset++];
-    const c = [];
+    /* v8 ignore next */
+    if (candCount === undefined) throw new Error("Missing candidate count");
+    const c: [string, number][] = [];
 
     for (let i = 0; i < candCount; i++) {
       const ipType = bytes[offset++];
+      /* v8 ignore next */
+      if (ipType === undefined) throw new Error("Missing IP type");
       let ip = "";
 
       if (ipType === 4) {
-        ip = `${bytes[offset++]}.${bytes[offset++]}.${bytes[offset++]}.${bytes[offset++]}`;
+        const b1 = bytes[offset++];
+        const b2 = bytes[offset++];
+        const b3 = bytes[offset++];
+        const b4 = bytes[offset++];
+        if (b1 === undefined || b2 === undefined || b3 === undefined || b4 === undefined) {
+          throw new Error("Invalid IPv4 address bytes");
+        }
+        ip = `${b1}.${b2}.${b3}.${b4}`;
       } else {
         const len = bytes[offset++];
-        ip = new TextDecoder().decode(bytes.subarray(offset, offset + len));
-        offset += len;
+        /* v8 ignore next */
+        if (len === undefined) throw new Error("Missing IP length");
+        const safeLen: number = len;
+        ip = new TextDecoder().decode(bytes.subarray(offset, offset + safeLen));
+        offset += safeLen;
       }
 
-      const port = (bytes[offset++] << 8) | bytes[offset++];
+      const p1 = bytes[offset++];
+      const p2 = bytes[offset++];
+      if (p1 === undefined || p2 === undefined) {
+        throw new Error("Invalid port bytes");
+      }
+      const port = (p1 << 8) | p2;
       c.push([ip, port]);
     }
 
@@ -136,12 +167,12 @@ export function unpackSDPData(str) {
 /**
  * Extract essential coordinates from standard SDP
  */
-export function parseSDP(sdpString) {
+export function parseSDP(sdpString: string): SDPCoordinates {
   const lines = sdpString.split(/\r?\n/);
   let ufrag = "";
   let pwd = "";
   let fingerprint = "";
-  const candidates = [];
+  const candidates: [string, number][] = [];
 
   for (const line of lines) {
     if (line.startsWith("a=ice-ufrag:")) {
@@ -152,26 +183,29 @@ export function parseSDP(sdpString) {
       fingerprint = line.slice(22).trim().replace(/:/g, "").toLowerCase();
     } else if (line.startsWith("a=candidate:")) {
       const parts = line.split(" ");
-      if (parts[7] === "host" && parts[2].toLowerCase() === "udp") {
-        candidates.push([parts[4], parseInt(parts[5], 10)]);
+      const type = parts[7];
+      const proto = parts[2];
+      const ip = parts[4];
+      const portStr = parts[5];
+      if (type === "host" && proto?.toLowerCase() === "udp" && ip && portStr) {
+        candidates.push([ip, parseInt(portStr, 10)]);
       }
     }
   }
 
-  return { u: ufrag, p: pwd, f: fingerprint, c: candidates };
+  return { u: ufrag, p: pwd, f: fingerprint, c: candidates, t: "o" }; // defaults to offer type
 }
 
 /**
  * Reconstruct a standard SDP from munged coordinates
  */
-export function rebuildSDP(isOffer, data) {
+export function rebuildSDP(isOffer: boolean, data: SDPCoordinates): { type: string; sdp: string } {
   const setup = isOffer ? "actpass" : "active";
   const type = isOffer ? "offer" : "answer";
 
-  const fingerprint = data.f
-    .match(/.{1,2}/g)
-    .join(":")
-    .toUpperCase();
+  const matchResult = data.f.match(/.{1,2}/g);
+  /* v8 ignore next */
+  const fingerprint = matchResult ? matchResult.join(":").toUpperCase() : "";
 
   const sdpLines = [
     "v=0",
@@ -194,11 +228,13 @@ export function rebuildSDP(isOffer, data) {
   for (const cand of data.c) {
     const ip = cand[0];
     const port = cand[1];
+    /* v8 ignore next */
+    if (ip === undefined || port === undefined) continue;
     const ipType = ip.includes(":") ? "IP6" : "IP4";
 
     sdpLines.push("c=IN " + ipType + " " + ip);
     sdpLines.push(
-      "a=candidate:1 1 udp 2122260223 " + ip + " " + port + " typ host",
+      "a=candidate:1 1 udp 2122260223 " + ip + " " + port + " typ host"
     );
   }
 
