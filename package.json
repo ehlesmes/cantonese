@@ -5,6 +5,7 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:e2e:coverage": "rm -rf .nyc_output coverage-e2e && COVERAGE=true playwright test && npx nyc report --temp-dir .nyc_output --reporter text --reporter html --report-dir coverage-e2e",
     "validate": "node scripts/validate-format.js && node scripts/validate-portability.js",
     "validate:portability": "node scripts/validate-portability.js",
     "track": "node scripts/track-vocabulary.js",
@@ -18,7 +19,7 @@
     "vocab:eval": "node scripts/evaluate-coverage.js",
     "dev": "astro dev",
     "tts:generate": "node scripts/generate-tts.js",
-    "build": "node scripts/generate-version.js && node scripts/generate-tts.js && npm run vocab:verify-all && npm run validate && astro build",
+    "build": "node scripts/generate-version.js && node scripts/generate-tts.js && npm run vocab:verify-all && npm run validate && astro build --force",
     "preview": "astro preview",
     "deploy": "npm run build && gh-pages -d dist --dotfiles"
   },
@@ -30,6 +31,8 @@
     "gh-pages": "^6.3.0",
     "globals": "^17.7.0",
     "jsdom": "^29.1.1",
+    "nyc": "^18.0.0",
+    "vite-plugin-istanbul": "^9.0.1",
     "vitest": "^4.1.7"
   },
   "private": true,

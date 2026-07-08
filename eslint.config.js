@@ -24,6 +24,7 @@ module.exports = [
     files: [
       "**/*.test.js",
       "**/*.spec.js",
+      "tests/**/*.js",
       "src/**/*.js",
       "src/**/*.jsx",
       "playwright.config.js",

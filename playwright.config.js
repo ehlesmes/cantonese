@@ -18,9 +18,12 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev",
+    command:
+      process.env.COVERAGE === "true"
+        ? "npm run dev -- --force"
+        : "npm run dev",
     url: "http://localhost:4321/cantonese",
-    reuseExistingServer: true,
+    reuseExistingServer: !process.env.COVERAGE,
     timeout: 120000,
   },
 });

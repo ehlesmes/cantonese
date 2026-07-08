@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./coverage-fixture.js";
 
 test.describe("Review Board Legacy / String State Compatibility Tests", () => {
   test("should handle string-typed chapters in localStorage and load cards", async ({

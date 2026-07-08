@@ -1,6 +1,16 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./coverage-fixture.js";
 import path from "path";
 import os from "os";
+
+async function assertScreenshot(page, name) {
+  if (process.env.COVERAGE === "true") {
+    return;
+  }
+  await expect(page).toHaveScreenshot(name, {
+    fullPage: true,
+    maxDiffPixelRatio: 0.01,
+  });
+}
 
 test("Curriculum Index Visual Render Test", async ({ page }) => {
   // Navigate to set context
@@ -19,10 +29,7 @@ test("Curriculum Index Visual Render Test", async ({ page }) => {
   await page.waitForSelector("h1");
 
   // Playwright visual assertion against baseline image
-  await expect(page).toHaveScreenshot("curriculum-index.png", {
-    fullPage: true,
-    maxDiffPixelRatio: 0.01,
-  });
+  await assertScreenshot(page, "curriculum-index.png");
 });
 
 test("Chapter 1 Visual Render Test", async ({ page }) => {
@@ -40,10 +47,7 @@ test("Chapter 1 Visual Render Test", async ({ page }) => {
   await page.screenshot({ path: artifactScreenshotPath, fullPage: true });
 
   // Playwright visual assertion against baseline image
-  await expect(page).toHaveScreenshot("chapter-page.png", {
-    fullPage: true,
-    maxDiffPixelRatio: 0.01,
-  });
+  await assertScreenshot(page, "chapter-page.png");
 });
 
 test("Phrasebook Visual Render Test", async ({ page }) => {
@@ -72,10 +76,7 @@ test("Phrasebook Visual Render Test", async ({ page }) => {
   await page.waitForSelector("#stats-cards-count");
 
   // Verify dashboard visual rendering
-  await expect(page).toHaveScreenshot("review-dashboard.png", {
-    fullPage: true,
-    maxDiffPixelRatio: 0.01,
-  });
+  await assertScreenshot(page, "review-dashboard.png");
 
   // Start the session
   const startBtn = page.locator("#start-session-btn");
@@ -95,10 +96,7 @@ test("Phrasebook Visual Render Test", async ({ page }) => {
   await page.screenshot({ path: artifactScreenshotPath, fullPage: true });
 
   // Playwright visual assertion of the gameplay session
-  await expect(page).toHaveScreenshot("review-session.png", {
-    fullPage: true,
-    maxDiffPixelRatio: 0.01,
-  });
+  await assertScreenshot(page, "review-session.png");
 });
 
 test("Vocabulary Visual Render Test", async ({ page }) => {
@@ -127,10 +125,7 @@ test("Vocabulary Visual Render Test", async ({ page }) => {
   await page.waitForSelector("#stats-cards-count");
 
   // Verify dashboard visual rendering
-  await expect(page).toHaveScreenshot("vocabulary-dashboard.png", {
-    fullPage: true,
-    maxDiffPixelRatio: 0.01,
-  });
+  await assertScreenshot(page, "vocabulary-dashboard.png");
 
   // Start the session
   const startBtn = page.locator("#start-session-btn");
@@ -149,10 +144,7 @@ test("Vocabulary Visual Render Test", async ({ page }) => {
   await page.screenshot({ path: frontScreenshotPath, fullPage: true });
 
   // Assert flashcard front (only romanization on hover, translation hidden)
-  await expect(page).toHaveScreenshot("vocabulary-session-front.png", {
-    fullPage: true,
-    maxDiffPixelRatio: 0.01,
-  });
+  await assertScreenshot(page, "vocabulary-session-front.png");
 
   // Click Reveal Answer
   const revealBtn = page.locator("#flashcard-reveal-btn");
@@ -167,8 +159,5 @@ test("Vocabulary Visual Render Test", async ({ page }) => {
   await page.screenshot({ path: backScreenshotPath, fullPage: true });
 
   // Assert flashcard back (translation revealed)
-  await expect(page).toHaveScreenshot("vocabulary-session-back.png", {
-    fullPage: true,
-    maxDiffPixelRatio: 0.01,
-  });
+  await assertScreenshot(page, "vocabulary-session-back.png");
 });

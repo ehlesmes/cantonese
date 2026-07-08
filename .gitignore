@@ -9,3 +9,5 @@ test-results/
 .env
 public/version.json
 coverage/
+.nyc_output/
+coverage-e2e/

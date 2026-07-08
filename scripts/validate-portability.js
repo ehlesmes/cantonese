@@ -21,6 +21,8 @@ const IGNORED_DIRS = new Set([
   "coverage",
   "dist",
   ".astro",
+  ".nyc_output",
+  "coverage-e2e",
 ]);
 
 const IGNORED_FILES = new Set(["package-lock.json"]);

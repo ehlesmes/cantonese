@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./coverage-fixture.js";
 import { packSDPData } from "../src/utils/webrtc.js";
 
 test.describe("Progress Sync E2E Tests", () => {
@@ -138,5 +138,32 @@ test.describe("Progress Sync E2E Tests", () => {
     const syncConfirmNo = page.locator("#sync-confirm-no");
     await syncConfirmNo.click();
     await expect(confirmView).not.toBeVisible();
+  });
+
+  test("should show validation warning when pasting corrupted progress string", async ({
+    page,
+  }) => {
+    await page.goto("/cantonese");
+
+    // Open sync modal
+    const syncBtn = page.locator("#sync-trigger-btn");
+    await syncBtn.click();
+
+    // Toggle offline fallback
+    const offlineToggleBtn = page.locator("#sync-offline-toggle-btn");
+    await offlineToggleBtn.click();
+
+    // Paste corrupted progress string (e.g., random characters)
+    const importStringTextarea = page.locator("#sync-import-string");
+    await importStringTextarea.fill("corrupted-random-payload-value!");
+
+    // Submit import
+    const importSubmitBtn = page.locator("#sync-import-submit-btn");
+    await importSubmitBtn.click();
+
+    // Verify warning status is displayed and contains error text
+    const offlineError = page.locator("#sync-offline-error");
+    await expect(offlineError).toBeVisible();
+    await expect(offlineError).toContainText("Invalid sync code");
   });
 });

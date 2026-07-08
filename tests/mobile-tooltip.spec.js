@@ -1,4 +1,5 @@
-import { test, expect, devices } from "@playwright/test";
+import { test, expect } from "./coverage-fixture.js";
+import { devices } from "@playwright/test";
 
 test.use({
   ...devices["iPhone 12"], // Configure viewport and UA for iPhone 12
