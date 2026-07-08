@@ -13,71 +13,14 @@ const colors = {
   dim: "\x1b[2m",
 };
 
-function showUsage() {
-  console.log(`
-${colors.bold}${colors.cyan}Cantonese Chapter Vocabulary Consistency Checker${colors.reset}
-${colors.dim}Cross-references annotated chapter vocabulary against the master local dictionary.${colors.reset}
-
-${colors.bold}Usage:${colors.reset}
-  npm run vocab:verify -- <chapter_file_path>
-
-${colors.bold}Example:${colors.reset}
-  npm run vocab:verify -- content/01-greetings.md
-`);
-}
-
-function main() {
-  const chapterPath = process.argv[2];
-
-  if (!chapterPath) {
-    showUsage();
-    process.exit(1);
-  }
-
-  const absolutePath = path.resolve(chapterPath);
-  if (!fs.existsSync(absolutePath)) {
-    console.error(
-      `${colors.red}${colors.bold}ERROR: Chapter file not found at "${chapterPath}"${colors.reset}`,
-    );
-    process.exit(1);
-  }
-
-  const dictPath =
-    process.env.DICT_PATH || path.join(__dirname, "../content/dictionary.json");
-  if (!fs.existsSync(dictPath)) {
-    console.error(
-      `${colors.red}${colors.bold}ERROR: Master dictionary database not found at "${dictPath}"${colors.reset}`,
-    );
-    process.exit(1);
-  }
-
-  let dictionary;
-  try {
-    dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-  } catch (err) {
-    console.error(
-      `${colors.red}${colors.bold}ERROR: Failed to parse master dictionary:${colors.reset} ${err.message}`,
-    );
-    process.exit(1);
-  }
-
-  // Parse chapter data
+function verifyChapter(absolutePath, dictionary) {
   let chapterData;
   try {
     chapterData = parser.parseChapter(absolutePath);
   } catch (err) {
-    console.error(
-      `${colors.red}${colors.bold}ERROR: Failed to parse chapter file:${colors.reset} ${err.message}`,
-    );
-    process.exit(1);
+    throw new Error(`Failed to parse chapter file: ${err.message}`);
   }
 
-  const fileBasename = path.basename(absolutePath);
-  console.log(
-    `🔍 ${colors.bold}Checking vocabulary consistency in chapter:${colors.reset} ${colors.cyan}${fileBasename}${colors.reset}\n`,
-  );
-
-  // Extract all vocabulary units from the chapter
   const chapterUnits = [];
 
   for (const block of chapterData.blocks) {
@@ -113,16 +56,13 @@ function main() {
     }
   }
 
-  if (chapterUnits.length === 0) {
-    console.log(
-      `${colors.green}✓ No Cantonese vocabulary annotations found in this chapter.${colors.reset}\n`,
-    );
-    process.exit(0);
-  }
-
   const errors = [];
   const warnings = [];
   let passedCount = 0;
+
+  if (chapterUnits.length === 0) {
+    return { errors, warnings, passedCount };
+  }
 
   // Deduplicate chapter units to keep reports concise
   const uniqueUnitsMap = {};
@@ -224,46 +164,152 @@ function main() {
     }
   }
 
-  // Reporting results
-  if (errors.length > 0 || warnings.length > 0) {
-    if (errors.length > 0) {
-      console.error(
-        `${colors.red}${colors.bold}✗ Found ${errors.length} unregistered vocabulary error(s):${colors.reset}\n`,
-      );
-      for (const err of errors) {
+  return { errors, warnings, passedCount };
+}
+
+function runVerification({ contentDir, targetFile, dictPath }) {
+  if (!fs.existsSync(dictPath)) {
+    throw new Error(`Master dictionary database not found at "${dictPath}"`);
+  }
+
+  let dictionary;
+  try {
+    dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
+  } catch (err) {
+    throw new Error(`Failed to parse master dictionary: ${err.message}`);
+  }
+
+  let filesToProcess = [];
+
+  if (targetFile) {
+    const absolutePath = path.resolve(targetFile);
+    if (!fs.existsSync(absolutePath)) {
+      throw new Error(`Chapter file not found at "${targetFile}"`);
+    }
+    filesToProcess = [absolutePath];
+  } else {
+    if (!fs.existsSync(contentDir)) {
+      throw new Error(`Content directory not found at "${contentDir}"`);
+    }
+    const files = fs.readdirSync(contentDir);
+    const chapterFiles = files.filter(
+      (f) =>
+        f.endsWith(".md") &&
+        f !== "README.md" &&
+        f !== "curriculum.md" &&
+        f !== "vocabulary.md",
+    );
+    filesToProcess = chapterFiles.map((f) => path.join(contentDir, f));
+  }
+
+  const allErrors = {};
+  const allWarnings = {};
+  let totalPassed = 0;
+
+  for (const file of filesToProcess) {
+    const { errors, warnings, passedCount } = verifyChapter(file, dictionary);
+    const basename = path.basename(file);
+    if (errors.length > 0) allErrors[basename] = errors;
+    if (warnings.length > 0) allWarnings[basename] = warnings;
+    totalPassed += passedCount;
+  }
+
+  return { errors: allErrors, warnings: allWarnings, passedCount: totalPassed };
+}
+
+function main() {
+  const targetArg = process.argv[2];
+  const projectRoot = path.resolve(__dirname, "..");
+  const contentDir = path.join(projectRoot, "content");
+  const dictPath =
+    process.env.DICT_PATH || path.join(contentDir, "dictionary.json");
+
+  if (targetArg) {
+    console.log(
+      `🔍 ${colors.bold}Checking vocabulary consistency in chapter:${colors.reset} ${colors.cyan}${path.basename(
+        targetArg,
+      )}${colors.reset}\n`,
+    );
+  } else {
+    console.log(
+      `🔍 ${colors.bold}Checking vocabulary consistency in all chapters...${colors.reset}\n`,
+    );
+  }
+
+  let result;
+  try {
+    result = runVerification({ contentDir, targetFile: targetArg, dictPath });
+  } catch (err) {
+    console.error(
+      `${colors.red}${colors.bold}ERROR:${colors.reset} ${err.message}`,
+    );
+    process.exit(1);
+  }
+
+  const { errors, warnings, passedCount } = result;
+
+  const errorFiles = Object.keys(errors);
+  const warningFiles = Object.keys(warnings);
+
+  let totalErrors = 0;
+  let totalWarnings = 0;
+
+  if (errorFiles.length > 0 || warningFiles.length > 0) {
+    if (errorFiles.length > 0) {
+      for (const file of errorFiles) {
+        totalErrors += errors[file].length;
         console.error(
-          `  ${colors.red}•${colors.reset} ${colors.bold}${err.term}${colors.reset}\n    ${err.message}\n    ${colors.dim}${err.locations}${colors.reset}\n`,
+          `${colors.red}${colors.bold}✗ ${file}: Found ${errors[file].length} unregistered vocabulary error(s):${colors.reset}`,
         );
+        for (const err of errors[file]) {
+          console.error(
+            `  ${colors.red}•${colors.reset} ${colors.bold}${err.term}${colors.reset}\n    ${err.message}\n    ${colors.dim}${err.locations}${colors.reset}\n`,
+          );
+        }
       }
     }
 
-    if (warnings.length > 0) {
-      console.error(
-        `${colors.yellow}${colors.bold}⚠ Found ${warnings.length} translation divergence warning(s):${colors.reset}\n`,
-      );
-      for (const warn of warnings) {
+    if (warningFiles.length > 0) {
+      for (const file of warningFiles) {
+        totalWarnings += warnings[file].length;
         console.error(
-          `  ${colors.yellow}•${colors.reset} ${colors.bold}${warn.term}${colors.reset}\n    ${warn.message}\n    ${colors.dim}${warn.locations}${colors.reset}\n`,
+          `${colors.yellow}${colors.bold}⚠ ${file}: Found ${warnings[file].length} translation divergence warning(s):${colors.reset}`,
         );
+        for (const warn of warnings[file]) {
+          console.error(
+            `  ${colors.yellow}•${colors.reset} ${colors.bold}${warn.term}${colors.reset}\n    ${warn.message}\n    ${colors.dim}${warn.locations}${colors.reset}\n`,
+          );
+        }
       }
     }
 
     console.log(
-      `${colors.bold}Summary:${colors.reset} Passed: ${passedCount}, Errors: ${errors.length}, Warnings: ${warnings.length}\n`,
+      `${colors.bold}Summary:${colors.reset} Passed: ${passedCount}, Errors: ${totalErrors}, Warnings: ${totalWarnings}\n`,
     );
 
-    // Exit with 1 if there are critical registration errors
-    if (errors.length > 0) {
+    if (totalErrors > 0) {
       process.exit(1);
     }
   } else {
-    console.log(
-      `${colors.green}${colors.bold}✓ All ${passedCount} annotated vocabulary terms perfectly match the master local dictionary!${colors.reset}\n`,
-    );
+    if (targetArg) {
+      console.log(
+        `${colors.green}${colors.bold}✓ All ${passedCount} annotated vocabulary terms perfectly match the master local dictionary!${colors.reset}\n`,
+      );
+    } else {
+      console.log(
+        `${colors.green}${colors.bold}✓ All ${passedCount} annotated vocabulary terms across all chapters perfectly match the master local dictionary!${colors.reset}\n`,
+      );
+    }
   }
 
   process.exit(0);
 }
+
+module.exports = {
+  verifyChapter,
+  runVerification,
+  main,
+};
 
 if (require.main === module) {
   main();

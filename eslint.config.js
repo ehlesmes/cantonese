@@ -29,6 +29,7 @@ module.exports = [
       "playwright.config.js",
       "astro.config.mjs",
       "vitest.config.js",
+      "scripts/setup-tests.js",
     ],
     languageOptions: {
       sourceType: "module",

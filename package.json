@@ -12,7 +12,7 @@
     "vocab:register": "node scripts/register-word.js",
     "vocab:register-missing": "node scripts/register-missing.js",
     "vocab:verify": "node scripts/verify-chapter-vocab.js",
-    "vocab:verify-all": "for f in content/*.md; do if [ \"$f\" != \"content/README.md\" ] && [ \"$f\" != \"content/curriculum.md\" ] && [ \"$f\" != \"content/vocabulary.md\" ]; then node scripts/verify-chapter-vocab.js \"$f\" || exit 1; fi; done",
+    "vocab:verify-all": "node scripts/verify-chapter-vocab.js",
     "vocab:lookup": "node scripts/lookup.js",
     "vocab:build-ref": "node scripts/build-reference-list.js",
     "vocab:eval": "node scripts/evaluate-coverage.js",

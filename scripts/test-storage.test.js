@@ -38,8 +38,21 @@ describe("Storage Utilities Spec", () => {
     expect(getPhraseSRS()).toEqual({});
     expect(savePhraseSRS({ a: 1 })).toBe(false);
 
+    expect(getVocabSRS()).toEqual({});
+    expect(saveVocabSRS({ b: 2 })).toBe(false);
+
+    expect(() => clearAllProgress()).not.toThrow();
+
     // Restore window
     global.window = originalWindow;
+  });
+
+  test("should return empty array if unlocked chapters JSON parses to a non-array value", () => {
+    localStorage.setItem(
+      "cantonese_unlocked_chapters",
+      JSON.stringify({ notAnArray: true }),
+    );
+    expect(getUnlockedChapters()).toEqual([]);
   });
 
   test("should load and save unlocked chapters correctly", () => {

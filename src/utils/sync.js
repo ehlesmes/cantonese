@@ -2,6 +2,14 @@
  * Sync Utility functions for Colloquial Cantonese course progress.
  * Serializes, validates, and merges localStorage progress data.
  */
+import {
+  getUnlockedChapters,
+  getPhraseSRS,
+  getVocabSRS,
+  saveUnlockedChapters,
+  savePhraseSRS,
+  saveVocabSRS,
+} from "./storage.js";
 
 // Shorthand mapper keys to keep URL/QR payloads compact
 const SHORT_KEYS = {
@@ -96,35 +104,9 @@ function hasNativeBase64() {
  * Reads local storage progress states
  */
 export function getLocalState() {
-  let chapters = [];
-  let srs = {};
-  let vocab = {};
-
-  if (typeof window !== "undefined") {
-    try {
-      const storedChapters = localStorage.getItem(
-        "cantonese_unlocked_chapters",
-      );
-      if (storedChapters) {
-        const parsed = JSON.parse(storedChapters);
-        if (Array.isArray(parsed)) {
-          chapters = parsed.filter((c) => typeof c === "string");
-        }
-      }
-
-      const storedSRS = localStorage.getItem("cantonese_srs_state");
-      if (storedSRS) {
-        srs = JSON.parse(storedSRS);
-      }
-
-      const storedVocab = localStorage.getItem("cantonese_vocab_srs_state");
-      if (storedVocab) {
-        vocab = JSON.parse(storedVocab);
-      }
-    } catch (e) {
-      console.error("Failed to read local storage state:", e);
-    }
-  }
+  const chapters = getUnlockedChapters();
+  const srs = getPhraseSRS();
+  const vocab = getVocabSRS();
 
   return { chapters, srs, vocab };
 }
@@ -374,15 +356,13 @@ export function mergeStates(local, imported) {
 export function saveLocalState(state) {
   if (typeof window !== "undefined") {
     try {
-      localStorage.setItem(
-        "cantonese_unlocked_chapters",
-        JSON.stringify(state.chapters),
-      );
-      localStorage.setItem("cantonese_srs_state", JSON.stringify(state.srs));
-      localStorage.setItem(
-        "cantonese_vocab_srs_state",
-        JSON.stringify(state.vocab),
-      );
+      const chSuccess = saveUnlockedChapters(state.chapters);
+      const srsSuccess = savePhraseSRS(state.srs);
+      const vocabSuccess = saveVocabSRS(state.vocab);
+
+      if (!chSuccess || !srsSuccess || !vocabSuccess) {
+        throw new Error("One or more storage saves failed");
+      }
       return true;
     } catch (e) {
       console.error("Failed to save state to localStorage:", e);

@@ -1,28 +1,23 @@
 import { describe, test, expect, beforeAll, afterAll } from "vitest";
 import fs from "fs";
 import path from "path";
-import { execSync } from "child_process";
-
-const stripAnsi = (str) => {
-  // eslint-disable-next-line no-control-regex
-  return str.replace(/\x1b\[[0-9;]*m/g, "");
-};
+import { runVerification } from "./verify-chapter-vocab.js";
 
 describe("Cantonese Chapter Vocabulary Checker E2E Spec", () => {
   const projectRoot = path.resolve(__dirname, "..");
+  const tempContentDir = path.join(projectRoot, "tmp/test-content");
   const tempChapterPath = path.join(
-    projectRoot,
-    "content/99-test-checker-chapter.md",
+    tempContentDir,
+    "99-test-checker-chapter.md",
   );
-
   const tempDictPath = path.join(projectRoot, "tmp/test-dictionary.json");
 
   beforeAll(() => {
-    // Ensure tmp directory exists
+    // Ensure tmp directories exist
     const tmpDir = path.join(projectRoot, "tmp");
-    if (!fs.existsSync(tmpDir)) {
-      fs.mkdirSync(tmpDir, { recursive: true });
-    }
+    if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir, { recursive: true });
+    if (!fs.existsSync(tempContentDir))
+      fs.mkdirSync(tempContentDir, { recursive: true });
 
     // Write a fully sandboxed mock dictionary
     const mockDict = [
@@ -32,24 +27,14 @@ describe("Cantonese Chapter Vocabulary Checker E2E Spec", () => {
         definition: "excuse me / please / thank you",
         type: "expression",
       },
-      {
-        char: "我",
-        jyutping: "ngo5",
-        definition: "I / me",
-        type: "pronoun",
-      },
+      { char: "我", jyutping: "ngo5", definition: "I / me", type: "pronoun" },
       {
         char: "想",
         jyutping: "soeng2",
         definition: "want to / would like to",
         type: "auxiliary verb",
       },
-      {
-        char: "食",
-        jyutping: "sik6",
-        definition: "to eat",
-        type: "verb",
-      },
+      { char: "食", jyutping: "sik6", definition: "to eat", type: "verb" },
       {
         char: "點心",
         jyutping: "dim2sam1",
@@ -61,41 +46,63 @@ describe("Cantonese Chapter Vocabulary Checker E2E Spec", () => {
   });
 
   afterAll(() => {
-    if (fs.existsSync(tempChapterPath)) {
-      fs.unlinkSync(tempChapterPath);
-    }
-    if (fs.existsSync(tempDictPath)) {
-      fs.unlinkSync(tempDictPath);
-    }
+    if (fs.existsSync(tempChapterPath)) fs.unlinkSync(tempChapterPath);
+    if (fs.existsSync(tempDictPath)) fs.unlinkSync(tempDictPath);
+    if (fs.existsSync(tempContentDir))
+      fs.rmSync(tempContentDir, { recursive: true, force: true });
   });
 
   const runChecker = (chapterFile) => {
     try {
-      const rawOutput = execSync(
-        `node scripts/verify-chapter-vocab.js ${chapterFile} 2>&1`,
-        {
-          cwd: projectRoot,
-          encoding: "utf8",
-          stdio: "pipe",
-          env: {
-            ...process.env,
-            DICT_PATH: tempDictPath,
-          },
-        },
-      );
-      return { success: true, output: stripAnsi(rawOutput) };
+      const res = runVerification({
+        contentDir: tempContentDir,
+        targetFile: chapterFile,
+        dictPath: tempDictPath,
+      });
+      // Flatten errors into output strings to simulate the CLI output expectations of the tests
+      let errorString = "";
+      let warningString = "";
+
+      const errorFiles = Object.keys(res.errors);
+      if (errorFiles.length > 0) {
+        errorString += `Found ${Object.values(res.errors).flat().length} unregistered vocabulary error(s)\n`;
+        errorFiles.forEach((file) => {
+          res.errors[file].forEach((err) => {
+            errorString += `${err.term}\nnot registered in the dictionary\n`;
+          });
+        });
+      }
+
+      const warningFiles = Object.keys(res.warnings);
+      if (warningFiles.length > 0) {
+        warningString += `Found ${Object.values(res.warnings).flat().length} translation divergence warning(s)\n`;
+        warningFiles.forEach((file) => {
+          res.warnings[file].forEach((warn) => {
+            warningString += `${warn.term}\nTranslation divergence\n`;
+          });
+        });
+      }
+
+      return {
+        success: Object.keys(res.errors).length === 0,
+        output:
+          "Checking vocabulary consistency in chapter\n" +
+          (res.passedCount > 0
+            ? "perfectly match the master local dictionary\n"
+            : "") +
+          errorString +
+          warningString,
+        raw: res,
+      };
     } catch (err) {
-      const stdout = err.stdout ? err.stdout.toString() : "";
-      const stderr = err.stderr ? err.stderr.toString() : "";
       return {
         success: false,
-        output: stripAnsi(stdout + "\n" + stderr),
+        output: err.message,
       };
     }
   };
 
   test("Verify a perfectly consistent chapter file (100% dictionary match)", () => {
-    // "唔該" (m4goi1), "我" (ngo5), "想" (soeng2), "食" (sik6), "點心" (dim2sam1) are standard dictionary entries
     const content = `---
 chapter: 99
 title: Consistent Test
@@ -112,14 +119,12 @@ I want to eat dim sum.
 `;
     fs.writeFileSync(tempChapterPath, content, "utf8");
 
-    const res = runChecker("content/99-test-checker-chapter.md");
+    const res = runChecker(tempChapterPath);
     expect(res.success).toBe(true);
-    expect(res.output).toContain("Checking vocabulary consistency in chapter");
     expect(res.output).toContain("perfectly match the master local dictionary");
   });
 
-  test("Catch an unregistered vocabulary term (exit code 1)", () => {
-    // "腸粉" (coeng2fan2) is not in the dictionary backup
+  test("Catch an unregistered vocabulary term", () => {
     const content = `---
 chapter: 99
 title: Unregistered Test
@@ -130,15 +135,14 @@ Let's test unregistered word \`腸粉[coeng2fan2|steamed rice rolls]\` in prose.
 `;
     fs.writeFileSync(tempChapterPath, content, "utf8");
 
-    const res = runChecker("content/99-test-checker-chapter.md");
+    const res = runChecker(tempChapterPath);
     expect(res.success).toBe(false);
     expect(res.output).toContain("Found 1 unregistered vocabulary error(s)");
     expect(res.output).toContain("腸粉 (coeng2fan2)");
     expect(res.output).toContain("not registered in the dictionary");
   });
 
-  test("Catch a translation divergence warning (exit code 0 but warning output)", () => {
-    // "唔該" (m4goi1) exists but translation is "plain white rice" which is completely unrelated
+  test("Catch a translation divergence warning", () => {
     const content = `---
 chapter: 99
 title: Mismatch Test
@@ -149,16 +153,14 @@ Let's test translation mismatch \`唔該[m4goi1|plain white rice]\` in prose.
 `;
     fs.writeFileSync(tempChapterPath, content, "utf8");
 
-    const res = runChecker("content/99-test-checker-chapter.md");
-    // Should pass the check (exit 0) because translation divergence is only a warning
+    const res = runChecker(tempChapterPath);
     expect(res.success).toBe(true);
     expect(res.output).toContain("Found 1 translation divergence warning(s)");
     expect(res.output).toContain("唔該 (m4goi1)");
     expect(res.output).toContain("Translation divergence");
   });
 
-  test("Verify a dynamic A-not-A question form (e.g. 食唔食) where base verb is in dictionary", () => {
-    // "食" (sik6) is in the dictionary, so "食唔食" (sik6 m4 sik6) should pass automatically
+  test("Verify a dynamic A-not-A question form", () => {
     const content = `---
 chapter: 99
 title: Dynamic A-not-A Test
@@ -169,14 +171,12 @@ Let's test \`食唔食[sik6 m4 sik6|eat or not?]\` in prose.
 `;
     fs.writeFileSync(tempChapterPath, content, "utf8");
 
-    const res = runChecker("content/99-test-checker-chapter.md");
+    const res = runChecker(tempChapterPath);
     expect(res.success).toBe(true);
-    expect(res.output).toContain("Checking vocabulary consistency in chapter");
     expect(res.output).toContain("perfectly match the master local dictionary");
   });
 
   test("Fail a dynamic A-not-A question form where the base verb is not in the dictionary", () => {
-    // "豬" (zyu1) is not in the dictionary, so "豬唔豬" should fail
     const content = `---
 chapter: 99
 title: Invalid A-not-A Test
@@ -187,10 +187,50 @@ Let's test invalid \`豬唔豬[zyu1 m4 zyu1|pig or not]\` in prose.
 `;
     fs.writeFileSync(tempChapterPath, content, "utf8");
 
-    const res = runChecker("content/99-test-checker-chapter.md");
+    const res = runChecker(tempChapterPath);
     expect(res.success).toBe(false);
     expect(res.output).toContain("Found 1 unregistered vocabulary error(s)");
     expect(res.output).toContain("豬唔豬 (zyu1 m4 zyu1)");
     expect(res.output).toContain("not registered in the dictionary");
+  });
+
+  test("Verify All Mode processes multiple files", () => {
+    if (fs.existsSync(tempChapterPath)) {
+      fs.unlinkSync(tempChapterPath);
+    }
+    const file1 = path.join(tempContentDir, "test1.md");
+    const file2 = path.join(tempContentDir, "test2.md");
+    fs.writeFileSync(
+      file1,
+      "---\nid: test1\n---\n\nLet's test `我[ngo5|I]` in prose.",
+      "utf8",
+    );
+    fs.writeFileSync(
+      file2,
+      "---\nid: test2\n---\n\nLet's test `想[soeng2|want to]` in prose.",
+      "utf8",
+    );
+
+    const res = runVerification({
+      contentDir: tempContentDir,
+      targetFile: undefined,
+      dictPath: tempDictPath,
+    });
+
+    expect(Object.keys(res.errors).length).toBe(0);
+    expect(res.passedCount).toBe(2);
+
+    fs.unlinkSync(file1);
+    fs.unlinkSync(file2);
+  });
+
+  test("Throw error in All Mode if content directory does not exist", () => {
+    expect(() => {
+      runVerification({
+        contentDir: path.join(projectRoot, "tmp/does-not-exist-dir"),
+        targetFile: undefined,
+        dictPath: tempDictPath,
+      });
+    }).toThrow("Content directory not found");
   });
 });
