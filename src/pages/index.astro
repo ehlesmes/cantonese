@@ -32,50 +32,135 @@ const chapterEntries = chapters.map((c, index) => {
 ---
 
 <BaseLayout title="Curriculum Index" description="Colloquial Cantonese course reader and living curriculum roadmap.">
-  <div style="margin-bottom: 2rem;">
-    <span style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color);">
-      廣東話 Course Reader
-    </span>
-    <h1 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">Curriculum Index</h1>
-    <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4; font-style: italic; margin-bottom: 0;">
+  <div class="index-header">
+    <span class="index-subtitle">廣東話 Course Reader</span>
+    <h1 class="index-title">Curriculum Index</h1>
+    <p class="index-desc">
       A spiraled and integrated Cantonese learning curriculum. Select a chapter below to start reading.
     </p>
   </div>
 
-  <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+  <div class="chapters-list">
     {chapterEntries.map((chapter) => (
-      <div class="cantonese-example-card" data-chapter-card={chapter.id} style={`border-left-color: ${chapter.exists ? "var(--accent-color)" : "var(--border-color)"}; opacity: ${chapter.exists ? 1 : 0.6}; padding: 0.8rem 1rem; margin-bottom: 0;`}>
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.2rem;">
-          <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-            <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
-               Chapter {chapter.chapter}
-            </span>
+      <div class:list={["cantonese-example-card", "chapter-card", { "is-missing": !chapter.exists }]} data-chapter-card={chapter.id}>
+        <div class="chapter-card-header">
+          <div class="chapter-badge-group">
+            <span class="chapter-badge">Chapter {chapter.chapter}</span>
           </div>
           {!chapter.exists && (
-            <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); background: var(--border-color); padding: 0.1rem 0.4rem; border-radius: 3px;">
-              Coming Soon
-            </span>
+            <span class="coming-soon-badge">Coming Soon</span>
           )}
         </div>
         
         {chapter.exists ? (
-          <h3 style="margin: 0 0 0.4rem 0;">
-            <a href={`/cantonese/chapter/${chapter.id}/`} style="color: var(--text-color); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s ease;" onmouseover="this.style.borderColor='var(--text-color)'" onmouseout="this.style.borderColor='transparent'">
+          <h3 class="chapter-title">
+            <a href={`/cantonese/chapter/${chapter.id}/`} class="chapter-link">
               {chapter.title}
             </a>
           </h3>
         ) : (
-          <h3 style="margin: 0 0 0.4rem 0; color: var(--text-muted);">
+          <h3 class="chapter-title is-muted">
             {chapter.title}
           </h3>
         )}
         
-        <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0; line-height: 1.45;">
+        <p class="chapter-desc">
           {chapter.description || "No description available."}
         </p>
       </div>
     ))}
   </div>
+
+  <style>
+    .index-header {
+      margin-bottom: 2rem;
+    }
+    .index-subtitle {
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-color);
+    }
+    .index-title {
+      margin-top: 0.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .index-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+    .chapters-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .chapter-card {
+      border-left-color: var(--accent-color);
+      opacity: 1;
+      padding: 0.8rem 1rem;
+      margin-bottom: 0;
+    }
+    .chapter-card.is-missing {
+      border-left-color: var(--border-color);
+      opacity: 0.6;
+    }
+    .chapter-card.is-unlocked {
+      border-left-color: var(--secondary-color);
+    }
+    .chapter-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.2rem;
+    }
+    .chapter-badge-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .chapter-badge {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+    .coming-soon-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--border-color);
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+    }
+    .chapter-title {
+      margin: 0 0 0.4rem 0;
+    }
+    .chapter-title.is-muted {
+      color: var(--text-muted);
+    }
+    .chapter-link {
+      color: var(--text-color);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+    .chapter-link:hover {
+      border-color: var(--text-color);
+    }
+    .chapter-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.45;
+    }
+  </style>
 
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
@@ -96,7 +181,7 @@ const chapterEntries = chapters.map((c, index) => {
       cards.forEach(card => {
         const chId = card.getAttribute('data-chapter-card');
         if (unlocked.includes(chId)) {
-          card.style.borderLeftColor = 'var(--secondary-color)';
+          card.classList.add('is-unlocked');
         }
       });
     });

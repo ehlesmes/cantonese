@@ -714,4 +714,67 @@ a=candidate:2 1 tcp 2122260223 192.168.1.6 50001 typ host generation 0 ufrag moc
     const parsed = parseSDP(rawSDP);
     expect(parsed.c.length).toBe(0);
   });
+
+  test("deserializeState expands populated srs and vocab including discarding legacy ch keys", async () => {
+    const state = {
+      chapters: [],
+      srs: {
+        "phr-1": { level: 3, lastReviewed: 1000 },
+        "ch-legacy": { level: 1, lastReviewed: 0 },
+      },
+      vocab: { "v-1": { level: 2, lastReviewed: 2000 } },
+      timestamp: 0,
+    };
+    const serialized = await serializeState(state);
+    const deserialized = await deserializeState(serialized);
+    expect(deserialized.srs["phr-1"].level).toBe(3);
+    expect(deserialized.srs["ch-legacy"]).toBeUndefined();
+    expect(deserialized.vocab["v-1"].level).toBe(2);
+  });
+
+  test("unpackSDPData handles missing candidate count gracefully", () => {
+    const bytes = new Uint8Array(1 + 8 + 24 + 32);
+    bytes[0] = 1;
+    let binary = "";
+    for (let i = 0; i < bytes.length; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    const packed = btoa(binary)
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "");
+    expect(unpackSDPData(packed)).toBeNull();
+  });
+
+  test("unpackSDPData handles missing IP length gracefully", () => {
+    const bytes = new Uint8Array(1 + 8 + 24 + 32 + 1 + 1);
+    bytes[0] = 1;
+    bytes[65] = 1;
+    bytes[66] = 0;
+    let binary = "";
+    for (let i = 0; i < bytes.length; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    const packed = btoa(binary)
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "");
+    expect(unpackSDPData(packed)).toBeNull();
+  });
+
+  test("rebuildSDP skips candidates with undefined IP or port", () => {
+    const data = {
+      t: "o",
+      u: "u",
+      p: "p",
+      f: "f",
+      c: [
+        [undefined, 9999],
+        ["1.2.3.4", undefined],
+      ],
+    };
+    const result = rebuildSDP(true, data);
+    expect(result.sdp).not.toContain("1.2.3.4");
+    expect(result.sdp).not.toContain("9999");
+  });
 });

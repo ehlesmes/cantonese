@@ -9,7 +9,6 @@ import type { SDPCoordinates } from "../types";
  * Pack SDP coordinates to base64url binary
  */
 export function packSDPData(data: SDPCoordinates): string {
-  /* v8 ignore next */
   if (!data || !data.u || !data.p || !data.f) return "";
   const bytes: number[] = [];
 
@@ -39,7 +38,6 @@ export function packSDPData(data: SDPCoordinates): string {
   for (const cand of data.c) {
     const ip = cand[0];
     const port = cand[1];
-    /* v8 ignore next */
     if (ip === undefined || port === undefined) continue;
 
     const isIPv6 = ip.includes(":");
@@ -97,7 +95,6 @@ export function unpackSDPData(str: string): SDPCoordinates | null {
   try {
     let offset = 0;
     const typeByte = bytes[offset++];
-    /* v8 ignore next */
     if (typeByte === undefined) throw new Error("Missing type byte");
     const t: "o" | "a" = typeByte === 1 ? "o" : "a";
 
@@ -120,13 +117,11 @@ export function unpackSDPData(str: string): SDPCoordinates | null {
     }
 
     const candCount = bytes[offset++];
-    /* v8 ignore next */
     if (candCount === undefined) throw new Error("Missing candidate count");
     const c: [string, number][] = [];
 
     for (let i = 0; i < candCount; i++) {
       const ipType = bytes[offset++];
-      /* v8 ignore next */
       if (ipType === undefined) throw new Error("Missing IP type");
       let ip = "";
 
@@ -141,7 +136,6 @@ export function unpackSDPData(str: string): SDPCoordinates | null {
         ip = `${b1}.${b2}.${b3}.${b4}`;
       } else {
         const len = bytes[offset++];
-        /* v8 ignore next */
         if (len === undefined) throw new Error("Missing IP length");
         const safeLen: number = len;
         ip = new TextDecoder().decode(bytes.subarray(offset, offset + safeLen));
@@ -228,7 +222,6 @@ export function rebuildSDP(isOffer: boolean, data: SDPCoordinates): { type: stri
   for (const cand of data.c) {
     const ip = cand[0];
     const port = cand[1];
-    /* v8 ignore next */
     if (ip === undefined || port === undefined) continue;
     const ipType = ip.includes(":") ? "IP6" : "IP4";
 

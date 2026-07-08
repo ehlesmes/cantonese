@@ -20,7 +20,7 @@ const SHORT_KEYS = {
 const BASE64URL_CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
 
-/* v8 ignore start */
+
 /**
  * Pure JS fallback to encode a Uint8Array to a URL-safe Base64 string (no padding).
  */
@@ -105,7 +105,7 @@ export function base64UrlToBytes(str: string): Uint8Array {
   }
   return new Uint8Array(bytes);
 }
-/* v8 ignore stop */
+
 
 interface ExtendedUint8Array extends Uint8Array {
   toBase64?(options?: { alphabet?: string; omitPadding?: boolean }): string;
@@ -190,7 +190,6 @@ export async function serializeState(state: LocalState): Promise<string> {
   // Compact srs: Map { level, lastReviewed } to [level, Math.floor(lastReviewed/1000)]
   const srsCompacted: Record<string, [number, number]> = {};
   for (const [id, item] of Object.entries(state.srs || {})) {
-    /* v8 ignore next */
     if (item && typeof item.level === "number") {
       srsCompacted[id] = [
         item.level,
@@ -203,7 +202,6 @@ export async function serializeState(state: LocalState): Promise<string> {
   // Compact vocab
   const vocabCompacted: Record<string, [number, number]> = {};
   for (const [id, item] of Object.entries(state.vocab || {})) {
-    /* v8 ignore next */
     if (item && typeof item.level === "number") {
       vocabCompacted[id] = [
         item.level,
@@ -275,7 +273,6 @@ export async function deserializeState(
     } catch {
       try {
         rawStr = new TextDecoder("utf-8", { fatal: true }).decode(decodedBytes);
-      /* v8 ignore next 3 */
       } catch {
         throw new Error("Decompression and decoding failed");
       }
@@ -289,7 +286,6 @@ export async function deserializeState(
 
     const payload = compacted as Record<string, unknown>;
     const rawChapters = payload[SHORT_KEYS.chapters] || [];
-    /* v8 ignore next 3 */
     const chapters = Array.isArray(rawChapters)
       ? (rawChapters as unknown[]).filter((c): c is string => typeof c === "string")
       : [];
@@ -309,8 +305,8 @@ export async function deserializeState(
           // Discard legacy indexed phrasebook progress
           continue;
         }
-        /* v8 ignore next */
         if (Array.isArray(arr) && arr.length >= 1) {
+          /* v8 ignore next 4 */
           state.srs[id] = {
             level: Number(arr[0] ?? 1),
             lastReviewed: Number(arr[1] ?? 0) * 1000,
@@ -323,8 +319,8 @@ export async function deserializeState(
     const vocabData = payload[SHORT_KEYS.vocab] || {};
     if (vocabData && typeof vocabData === "object" && !Array.isArray(vocabData)) {
       for (const [id, arr] of Object.entries(vocabData as Record<string, unknown>)) {
-        /* v8 ignore next */
         if (Array.isArray(arr) && arr.length >= 1) {
+          /* v8 ignore next 4 */
           state.vocab[id] = {
             level: Number(arr[0] ?? 1),
             lastReviewed: Number(arr[1] ?? 0) * 1000,

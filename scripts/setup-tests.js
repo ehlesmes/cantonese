@@ -1,7 +1,6 @@
 /**
  * Global setup for Vitest to mock browser APIs and suppress JSDOM warnings.
  */
-import { vi } from "vitest";
 
 const localStorageMock = (function () {
   let store = {};

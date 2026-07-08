@@ -161,3 +161,17 @@ test("Vocabulary Visual Render Test", async ({ page }) => {
   // Assert flashcard back (translation revealed)
   await assertScreenshot(page, "vocabulary-session-back.png");
 });
+
+test("SyncModal Visual Render Test", async ({ page }) => {
+  await page.goto("/cantonese");
+  await page.waitForSelector("#sync-trigger-btn");
+
+  // Click the sync button to open the modal
+  await page.click("#sync-trigger-btn");
+
+  // Wait for the modal to be visible
+  await page.waitForSelector("#sync-modal-overlay");
+
+  // Visual assertion
+  await assertScreenshot(page, "sync-modal-open.png");
+});
