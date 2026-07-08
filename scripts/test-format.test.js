@@ -1,4 +1,4 @@
-import { describe, test, expect } from "vitest";
+import { describe, test, expect, vi } from "vitest";
 import fs from "fs";
 import path from "path";
 import { createRequire } from "module";
@@ -322,6 +322,117 @@ explanation: Missing block formatting.
   });
 });
 
+test("Validation - Frontmatter error conditions", () => {
+  const tempDir = fs.mkdtempSync(path.join(process.cwd(), "test-temp-fm-"));
+  const testFile = path.join(tempDir, "05-frontmatter.md");
+
+  // 1. Missing ID
+  fs.writeFileSync(
+    testFile,
+    "---\ntitle: Title\ndescription: Desc\n---\n",
+    "utf8",
+  );
+  let errors = validator.validateChapterFile(testFile);
+  expect(
+    errors.some((e) => e.message.includes('missing required key "id"')),
+  ).toBe(true);
+
+  // 2. ID is not a string
+  fs.writeFileSync(
+    testFile,
+    "---\nid: 123\ntitle: Title\ndescription: Desc\n---\n",
+    "utf8",
+  );
+  errors = validator.validateChapterFile(testFile);
+  expect(errors.some((e) => e.message.includes("value must be a string"))).toBe(
+    true,
+  );
+
+  // 3. Missing title
+  fs.writeFileSync(
+    testFile,
+    "---\nid: 05-frontmatter\ndescription: Desc\n---\n",
+    "utf8",
+  );
+  errors = validator.validateChapterFile(testFile);
+  expect(
+    errors.some((e) => e.message.includes('missing required key "title"')),
+  ).toBe(true);
+
+  // 4. Title is not a string
+  fs.writeFileSync(
+    testFile,
+    "---\nid: 05-frontmatter\ntitle: 123\ndescription: Desc\n---\n",
+    "utf8",
+  );
+  errors = validator.validateChapterFile(testFile);
+  expect(
+    errors.some((e) => e.message.includes('"title" must be a string')),
+  ).toBe(true);
+
+  // 5. Missing description
+  fs.writeFileSync(
+    testFile,
+    "---\nid: 05-frontmatter\ntitle: Title\n---\n",
+    "utf8",
+  );
+  errors = validator.validateChapterFile(testFile);
+  expect(
+    errors.some((e) =>
+      e.message.includes('missing required key "description"'),
+    ),
+  ).toBe(true);
+
+  // 6. Description is not a string
+  fs.writeFileSync(
+    testFile,
+    "---\nid: 05-frontmatter\ntitle: Title\ndescription: 123\n---\n",
+    "utf8",
+  );
+  errors = validator.validateChapterFile(testFile);
+  expect(
+    errors.some((e) => e.message.includes('"description" must be a string')),
+  ).toBe(true);
+
+  // 7. Curriculum entry mismatch
+  fs.writeFileSync(
+    testFile,
+    "---\nid: mismatch-id\ntitle: Title\ndescription: Desc\n---\n",
+    "utf8",
+  );
+  errors = validator.validateChapterFile(testFile, {
+    id: "expected-id",
+    title: "Title",
+    file: "05-frontmatter.md",
+  });
+  expect(
+    errors.some((e) =>
+      e.message.includes("does not match the curriculum definition"),
+    ),
+  ).toBe(true);
+
+  // 8. Curriculum title mismatch
+  fs.writeFileSync(
+    testFile,
+    "---\nid: expected-id\ntitle: Mismatched Title\ndescription: Desc\n---\n",
+    "utf8",
+  );
+  errors = validator.validateChapterFile(testFile, {
+    id: "expected-id",
+    title: "Expected Title",
+    file: "05-frontmatter.md",
+  });
+  expect(
+    errors.some((e) =>
+      e.message.includes("does not match the curriculum title"),
+    ),
+  ).toBe(true);
+
+  // Clean up
+  fs.unlinkSync(testFile);
+  fs.rmdirSync(tempDir);
+});
+
 test("Validation - Missing YAML block handles error", () => {
   const tempDir = fs.mkdtempSync(path.join(process.cwd(), "test-temp-"));
   const invalidFile = path.join(tempDir, "03-missing.md");
@@ -625,4 +736,367 @@ chapters:
 
   expect(resError.errors).toHaveLength(1);
   expect(resError.errors[0].message).toContain("exceeding the limit of 25");
+});
+
+test("runValidation - handles cantonese, dialog, and exercise blocks", () => {
+  const tempDir = fs.mkdtempSync(path.join(process.cwd(), "test-temp-blocks-"));
+  const currFile = path.join(tempDir, "curriculum.md");
+  const chapterFile = path.join(tempDir, "blocks.md");
+
+  const currMd = `---
+chapters:
+  - id: blocks
+    title: Blocks Chapter
+    file: blocks.md
+---
+`;
+  fs.writeFileSync(currFile, currMd, "utf8");
+
+  const chapterMd = `---
+id: blocks
+title: Blocks Chapter
+description: Test validation of all block types
+---
+### Cantonese Block
+\`\`\`cantonese
+我[ngo5|I] 去[heoi3|go] 學校[hok6haau6|school]。
+===
+I go to school.
+\`\`\`
+
+### Cantonese Block 2 (unannotated character)
+\`\`\`cantonese
+我[ngo5|I] 呀
+===
+I go
+\`\`\`
+
+### Cantonese Block 3 (Chinese character in English translation)
+\`\`\`cantonese
+我[ngo5|I]
+===
+I 呀
+\`\`\`
+
+### Cantonese Block 4 (invalid Jyutping in example annotation)
+\`\`\`cantonese
+我[ngo5-invalid|I]
+===
+I go
+\`\`\`
+
+### Dialog Block
+\`\`\`dialog
+A: 你[nei5|you] 好[hou2|good] 嗎[maa1|interrogative particle]？
+=== A: How are you?
+B: 我[ngo5|I] 幾[gei2|quite] 好[hou2|good]。
+=== B: I am pretty good.
+\`\`\`
+
+### Dialog Block 2 (unannotated character in speaker turn)
+\`\`\`dialog
+A: 我[ngo5|I] 呀
+=== A: I go
+\`\`\`
+
+### Dialog Block 3 (Chinese character in English translation line)
+\`\`\`dialog
+A: 我[ngo5|I]
+=== A: I 呀
+\`\`\`
+
+### Dialog Block 4 (invalid speaker prefix)
+\`\`\`dialog
+A我[ngo5|I]
+=== A: I
+\`\`\`
+
+### Dialog Block 5 (invalid Jyutping in speaker turn)
+\`\`\`dialog
+A: 我[ngo5-invalid|I]
+=== A: I
+\`\`\`
+
+### Dialog Block 6 (odd number of lines)
+\`\`\`dialog
+A: 我[ngo5|I]
+=== A: I
+B: 你[nei5|you]
+\`\`\`
+
+### Exercise Block 1 (valid)
+\`\`\`exercise
+question: 你[nei5|you] 去[heoi3|go] 邊度[bin1dou6|where]？
+answer: 我[ngo5|I] 去[heoi3|go] 學校[hok6haau6|school]。
+explanation: This is an explanation.
+\`\`\`
+
+### Exercise Block 2 (unrecognized key)
+\`\`\`exercise
+invalidKey: test
+question: 你[nei5|you] 去[heoi3|go] 邊度[bin1dou6|where]？
+answer: 我[ngo5|I] 去[heoi3|go] 學校[hok6haau6|school]。
+explanation: This is an explanation.
+\`\`\`
+
+### Exercise Block 3 (invalid Jyutping in field)
+\`\`\`exercise
+question: 你[nei5-invalid|you] 去[heoi3|go] 邊度[bin1dou6|where]？
+answer: 我[ngo5|I] 去[heoi3|go] 學校[hok6haau6|school]。
+explanation: This is an explanation.
+\`\`\`
+
+### Exercise Block 4 (missing required key)
+\`\`\`exercise
+question: 你[nei5|you] 去[heoi3|go] 邊度[bin1dou6|where]？
+answer: 我[ngo5|I] 去[heoi3|go] 學校[hok6haau6|school]。
+\`\`\`
+
+### Invalid Exercise Block (will trigger parsed YAML error)
+\`\`\`exercise
+invalid: content
+\`\`\`
+`;
+  fs.writeFileSync(chapterFile, chapterMd, "utf8");
+
+  // Mock parseYAML to throw on the invalid block content
+  const originalParseYAML = parser.parseYAML;
+  vi.spyOn(parser, "parseYAML").mockImplementation((str) => {
+    if (str.includes("invalid: content")) {
+      throw new Error("Mocked parsing error");
+    }
+    return originalParseYAML(str);
+  });
+
+  const res = validator.runValidation({
+    projectRoot: tempDir,
+    contentDir: tempDir,
+    curriculumPath: currFile,
+  });
+
+  fs.unlinkSync(chapterFile);
+  fs.unlinkSync(currFile);
+  fs.rmdirSync(tempDir);
+  vi.restoreAllMocks();
+
+  expect(res.errors).toHaveLength(12);
+  expect(res.errors[0].message).toContain("unannotated Chinese character");
+  expect(res.errors[0].message).toContain("inside cantonese block");
+
+  expect(res.errors[1].message).toContain("illegal Chinese character");
+  expect(res.errors[1].message).toContain("English translation section");
+
+  expect(res.errors[2].message).toContain("Invalid Jyutping format");
+  expect(res.errors[2].message).toContain("in example annotation");
+
+  expect(res.errors[3].message).toContain("unannotated Chinese character");
+  expect(res.errors[3].message).toContain("inside dialogue speaker turn");
+
+  expect(res.errors[4].message).toContain("illegal Chinese character");
+  expect(res.errors[4].message).toContain("Dialogue English translation line");
+
+  expect(res.errors[5].message).toContain(
+    "Dialogue speaker turn must start with a letter and colon",
+  );
+  expect(res.errors[6].message).toContain("in dialogue turn");
+  expect(res.errors[7].message).toContain("even number of lines");
+  expect(res.errors[8].message).toContain("unrecognized key");
+  expect(res.errors[9].message).toContain("inside exercise field");
+  expect(res.errors[10].message).toContain("missing required key");
+  expect(res.errors[11].message).toContain(
+    "Failed to parse YAML inside exercise block",
+  );
+});
+
+test("runValidation - handles curriculum.md parsing exception gracefully", () => {
+  const tempDir = fs.mkdtempSync(
+    path.join(process.cwd(), "test-temp-err-curr-"),
+  );
+  const currFile = path.join(tempDir, "curriculum.md");
+  fs.writeFileSync(currFile, "mock curriculum content", "utf8");
+
+  vi.spyOn(parser, "parseCurriculum").mockImplementationOnce(() => {
+    throw new Error("Mocked curriculum error");
+  });
+
+  const res = validator.runValidation({
+    projectRoot: tempDir,
+    contentDir: tempDir,
+    curriculumPath: currFile,
+  });
+
+  fs.unlinkSync(currFile);
+  fs.rmdirSync(tempDir);
+  vi.restoreAllMocks();
+
+  expect(res.errors).toHaveLength(1);
+  expect(res.errors[0].message).toContain("Failed to parse curriculum.md");
+});
+
+test("runValidation - handles parseChapter parsing exception gracefully", () => {
+  const tempDir = fs.mkdtempSync(
+    path.join(process.cwd(), "test-temp-err-chapter-"),
+  );
+  const currFile = path.join(tempDir, "curriculum.md");
+  const chapterFile = path.join(tempDir, "blocks.md");
+
+  const currMd = `---
+chapters:
+  - id: blocks
+    title: Blocks Chapter
+    file: blocks.md
+---
+`;
+  fs.writeFileSync(currFile, currMd, "utf8");
+  fs.writeFileSync(chapterFile, "mock content", "utf8");
+
+  vi.spyOn(parser, "parseChapter").mockImplementationOnce(() => {
+    throw new Error("Mocked chapter error");
+  });
+
+  const res = validator.runValidation({
+    projectRoot: tempDir,
+    contentDir: tempDir,
+    curriculumPath: currFile,
+  });
+
+  fs.unlinkSync(chapterFile);
+  fs.unlinkSync(currFile);
+  fs.rmdirSync(tempDir);
+  vi.restoreAllMocks();
+
+  expect(res.errors).toHaveLength(1);
+  expect(res.errors[0].message).toContain(
+    "Failed to parse chapter file: Mocked chapter error",
+  );
+});
+
+test("runValidation - handles parseChapter parsing exception on second pass gracefully", () => {
+  const tempDir = fs.mkdtempSync(
+    path.join(process.cwd(), "test-temp-err-chapter-pass2-"),
+  );
+  const currFile = path.join(tempDir, "curriculum.md");
+  const chapterFile = path.join(tempDir, "blocks.md");
+
+  const currMd = `---
+chapters:
+  - id: blocks
+    title: Blocks Chapter
+    file: blocks.md
+---
+`;
+  fs.writeFileSync(currFile, currMd, "utf8");
+  fs.writeFileSync(
+    chapterFile,
+    "---\nid: blocks\ntitle: Blocks Chapter\ndescription: Test\n---\n",
+    "utf8",
+  );
+
+  const originalParseChapter = parser.parseChapter;
+  let parseChapterCount = 0;
+  vi.spyOn(parser, "parseChapter").mockImplementation((filePath) => {
+    parseChapterCount++;
+    if (parseChapterCount === 2) {
+      throw new Error("Mocked chapter error during second pass");
+    }
+    return originalParseChapter(filePath);
+  });
+
+  const res = validator.runValidation({
+    projectRoot: tempDir,
+    contentDir: tempDir,
+    curriculumPath: currFile,
+  });
+
+  fs.unlinkSync(chapterFile);
+  fs.unlinkSync(currFile);
+  fs.rmdirSync(tempDir);
+  vi.restoreAllMocks();
+
+  expect(res.errors).toHaveLength(0); // Ignored and continues
+});
+
+test("main CLI - success execution path (full mode)", () => {
+  const originalExit = process.exit;
+  const originalLog = console.log;
+  const originalWarn = console.warn;
+  const originalError = console.error;
+  const originalArgv = process.argv;
+  const originalRunValidation = validator.runValidation;
+
+  let exitCode = null;
+  process.exit = (code) => {
+    exitCode = code;
+  };
+  process.argv = ["node", "validate-format.js"]; // Mock runValidation with a warning to cover the warning print branches
+  validator.runValidation = () => ({
+    errors: [],
+    warnings: [
+      { chapterId: "greetings", file: "content/greetings.md", count: 22 },
+    ],
+  });
+
+  let logOutput = "";
+  console.log = (msg) => {
+    logOutput += msg + "\n";
+  };
+  console.warn = (msg) => {
+    logOutput += msg + "\n";
+  };
+  console.error = () => {};
+
+  try {
+    validator.main();
+  } finally {
+    validator.runValidation = originalRunValidation;
+    process.exit = originalExit;
+    process.argv = originalArgv;
+    console.log = originalLog;
+    console.warn = originalWarn;
+    console.error = originalError;
+  }
+
+  expect(exitCode).toBe(0);
+  expect(logOutput).toContain("validation passed successfully");
+  expect(logOutput).toContain("Vocabulary Count Warning");
+});
+
+test("main CLI - target file argument validation failure mode", () => {
+  const originalExit = process.exit;
+  const originalError = console.error;
+  const originalArgv = process.argv;
+
+  let exitCode = null;
+  process.exit = (code) => {
+    exitCode = code;
+  };
+
+  // Write a temporary bad file to validate
+  const tempDir = fs.mkdtempSync(path.join(process.cwd(), "test-temp-cli-"));
+  const badFile = path.join(tempDir, "bad.md");
+  fs.writeFileSync(
+    badFile,
+    "---\nid: bad\ntitle: Bad\ndescription: test\n---\n詞\n",
+    "utf8",
+  ); // unannotated Chinese character
+
+  process.argv = ["node", "validate-format.js", badFile];
+
+  let errOutput = "";
+  console.error = (msg) => {
+    errOutput += msg + "\n";
+  };
+
+  try {
+    validator.main();
+  } finally {
+    fs.unlinkSync(badFile);
+    fs.rmdirSync(tempDir);
+    process.exit = originalExit;
+    process.argv = originalArgv;
+    console.error = originalError;
+  }
+
+  expect(exitCode).toBe(1);
+  expect(errOutput).toContain("Validation Failed");
 });

@@ -104,4 +104,73 @@ describe("Project Portability Validator Spec", () => {
       expect.stringContaining("Warning: Could not read file"),
     );
   });
+
+  test("main CLI - success execution path", () => {
+    const originalExit = process.exit;
+    const originalLog = console.log;
+    const originalRunCheck = portability.runCheck;
+
+    let exitCode = null;
+    process.exit = (code) => {
+      exitCode = code;
+    };
+
+    portability.runCheck = () => [];
+
+    let logOutput = "";
+    console.log = (msg) => {
+      logOutput += msg + "\n";
+    };
+
+    try {
+      portability.main();
+    } finally {
+      portability.runCheck = originalRunCheck;
+      process.exit = originalExit;
+      console.log = originalLog;
+    }
+
+    expect(exitCode).toBe(0);
+    expect(logOutput).toContain("Portability check passed successfully");
+  });
+
+  test("main CLI - failure execution path on invalid files", () => {
+    const originalExit = process.exit;
+    const originalError = console.error;
+
+    let exitCode = null;
+    process.exit = (code) => {
+      exitCode = code;
+    };
+
+    // Force readFileSync to return a forbidden path for some mock check
+    vi.spyOn(fs, "readdirSync").mockImplementation((dir) => {
+      if (dir === process.cwd()) {
+        return ["mock-portability-bad.md"];
+      }
+      return [];
+    });
+    vi.spyOn(fs, "statSync").mockImplementation(() => {
+      return { isDirectory: () => false };
+    });
+    vi.spyOn(fs, "readFileSync").mockImplementation(() => {
+      return "Hardcoded: /Us" + "ers/username/absolute";
+    });
+
+    let errOutput = "";
+    console.error = (msg) => {
+      errOutput += msg + "\n";
+    };
+
+    try {
+      portability.main();
+    } finally {
+      vi.restoreAllMocks();
+      process.exit = originalExit;
+      console.error = originalError;
+    }
+
+    expect(exitCode).toBe(1);
+    expect(errOutput).toContain("Portability Check Failed");
+  });
 });

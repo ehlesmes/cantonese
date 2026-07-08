@@ -542,7 +542,7 @@ function main() {
     );
   }
 
-  const { errors, warnings } = runValidation({
+  const { errors, warnings } = module.exports.runValidation({
     projectRoot,
     contentDir,
     curriculumPath,
@@ -597,12 +597,13 @@ function main() {
   }
 }
 
-if (require.main === module) {
-  main();
-}
-
 module.exports = {
   validateJyutping,
   validateChapterFile,
   runValidation,
+  main,
 };
+
+if (require.main === module) {
+  main();
+}

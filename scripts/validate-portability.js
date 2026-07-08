@@ -107,7 +107,7 @@ function main() {
     `${colors.cyan}${colors.bold}Running project portability and absolute path check...${colors.reset}\n`,
   );
 
-  const errors = runCheck(projectRoot);
+  const errors = module.exports.runCheck(projectRoot);
 
   if (errors.length > 0) {
     console.error(
@@ -143,11 +143,12 @@ function main() {
   }
 }
 
-if (require.main === module) {
-  main();
-}
-
 module.exports = {
   runCheck,
   FORBIDDEN_PATTERN,
+  main,
 };
+
+if (require.main === module) {
+  main();
+}
