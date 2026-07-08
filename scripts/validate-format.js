@@ -354,6 +354,11 @@ function validateChapterFile(filePath, curriculumEntry) {
           }
         }
       }
+    } else {
+      addError(
+        block.startLine,
+        `Unsupported code block type "${block.type}". Only "cantonese", "dialog", and "exercise" code blocks are allowed.`,
+      );
     }
   }
 
@@ -361,61 +366,58 @@ function validateChapterFile(filePath, curriculumEntry) {
 }
 
 /**
- * Main execution sequence
+ * Main execution orchestration logic (extract for unit testing)
  */
-function main() {
-  const targetArg = process.argv[2];
-
-  const projectRoot = path.resolve(__dirname, "..");
-  const contentDir = path.join(projectRoot, "content");
-  const curriculumPath = path.join(contentDir, "curriculum.md");
-
+function runValidation({
+  projectRoot,
+  contentDir,
+  curriculumPath,
+  targetFile,
+} = {}) {
   let curriculumChapters = [];
+  const errors = [];
+  const warnings = [];
+
   try {
     if (fs.existsSync(curriculumPath)) {
       curriculumChapters = parser.parseCurriculum(curriculumPath);
     }
   } catch (err) {
-    console.error(
-      `${colors.red}${colors.bold}ERROR: Failed to parse curriculum.md frontmatter chapter mapping:${colors.reset}`,
-    );
-    console.error(err.message);
-    process.exit(1);
+    errors.push({
+      file: path.relative(projectRoot, curriculumPath),
+      line: 0,
+      message: `Failed to parse curriculum.md frontmatter chapter mapping: ${err.message}`,
+    });
+    return { errors, warnings };
   }
 
-  let allErrors = [];
-
-  if (targetArg) {
+  if (targetFile) {
     // Single file validation mode
-    const filePath = path.resolve(targetArg);
+    const filePath = path.resolve(targetFile);
 
     if (!fs.existsSync(filePath)) {
-      console.error(
-        `${colors.red}${colors.bold}ERROR: File not found: "${targetArg}"${colors.reset}`,
-      );
-      process.exit(1);
+      errors.push({
+        file: path.relative(projectRoot, filePath),
+        line: 0,
+        message: `File not found: "${targetFile}"`,
+      });
+      return { errors, warnings };
     }
-
-    console.log(
-      `${colors.cyan}Validating single file: ${colors.bold}${path.relative(projectRoot, filePath)}${colors.reset}\n`,
-    );
 
     const basename = path.basename(filePath);
     const curriculumEntry = curriculumChapters.find((c) => c.file === basename);
 
     const fileErrors = validateChapterFile(filePath, curriculumEntry);
-    allErrors.push(...fileErrors);
+    errors.push(...fileErrors);
   } else {
     // Full validation mode
-    console.log(
-      `${colors.cyan}${colors.bold}Running chapter format validation in Full Mode...${colors.reset}\n`,
-    );
-
     if (!fs.existsSync(contentDir)) {
-      console.error(
-        `${colors.red}${colors.bold}ERROR: Content directory not found at "${contentDir}"${colors.reset}`,
-      );
-      process.exit(1);
+      errors.push({
+        file: path.relative(projectRoot, contentDir),
+        line: 0,
+        message: `Content directory not found at "${contentDir}"`,
+      });
+      return { errors, warnings };
     }
 
     // Read all md files in content directory
@@ -434,7 +436,7 @@ function main() {
       const curriculumEntry = curriculumChapters.find((c) => c.file === file);
 
       if (!curriculumEntry) {
-        allErrors.push({
+        errors.push({
           file: path.relative(projectRoot, fullPath),
           line: 0,
           message: `Chapter file "${file}" exists but is not registered in the content/curriculum.md frontmatter`,
@@ -442,12 +444,11 @@ function main() {
       }
 
       const fileErrors = validateChapterFile(fullPath, curriculumEntry);
-      allErrors.push(...fileErrors);
+      errors.push(...fileErrors);
     }
 
     // 3. Chronological Vocabulary Limit Verification
     const seenWords = new Set();
-    const chapterWarnings = [];
 
     for (const chapter of curriculumChapters) {
       const filePath = path.join(contentDir, chapter.file);
@@ -456,7 +457,7 @@ function main() {
       let chapterData;
       try {
         chapterData = parser.parseChapter(filePath);
-      } catch (err) {
+      } catch {
         continue;
       }
 
@@ -503,42 +504,72 @@ function main() {
 
       const newWordsCount = introducedInThisChapter.size;
       if (newWordsCount > 25) {
-        allErrors.push({
+        errors.push({
           file: path.relative(projectRoot, filePath),
           line: 0,
           message: `Chapter "${chapter.id}" introduces ${newWordsCount} new vocabulary words, exceeding the limit of 25. Please split this chapter.`,
         });
       } else if (newWordsCount > 20) {
-        chapterWarnings.push({
+        warnings.push({
           chapterId: chapter.id,
           file: path.relative(projectRoot, filePath),
           count: newWordsCount,
         });
       }
     }
+  }
 
-    if (chapterWarnings.length > 0) {
+  return { errors, warnings };
+}
+
+/**
+ * Main execution sequence
+ */
+function main() {
+  const targetArg = process.argv[2];
+
+  const projectRoot = path.resolve(__dirname, "..");
+  const contentDir = path.join(projectRoot, "content");
+  const curriculumPath = path.join(contentDir, "curriculum.md");
+
+  if (targetArg) {
+    console.log(
+      `${colors.cyan}Validating single file: ${colors.bold}${path.relative(projectRoot, path.resolve(targetArg))}${colors.reset}\n`,
+    );
+  } else {
+    console.log(
+      `${colors.cyan}${colors.bold}Running chapter format validation in Full Mode...${colors.reset}\n`,
+    );
+  }
+
+  const { errors, warnings } = runValidation({
+    projectRoot,
+    contentDir,
+    curriculumPath,
+    targetFile: targetArg,
+  });
+
+  if (warnings.length > 0) {
+    console.warn(
+      `${colors.yellow}${colors.bold}⚠ Vocabulary Count Warning(s):${colors.reset}\n`,
+    );
+    for (const warn of warnings) {
       console.warn(
-        `${colors.yellow}${colors.bold}⚠ Vocabulary Count Warning(s):${colors.reset}\n`,
+        `  ${colors.yellow}•${colors.reset} ${colors.bold}${warn.chapterId}${colors.reset} (${warn.file}) introduces ${warn.count} new words (warning threshold > 20, error threshold > 25).`,
       );
-      for (const warn of chapterWarnings) {
-        console.warn(
-          `  ${colors.yellow}•${colors.reset} ${colors.bold}${warn.chapterId}${colors.reset} (${warn.file}) introduces ${warn.count} new words (warning threshold > 20, error threshold > 25).`,
-        );
-      }
-      console.warn("");
     }
+    console.warn("");
   }
 
   // Report results
-  if (allErrors.length > 0) {
+  if (errors.length > 0) {
     console.error(
-      `${colors.red}${colors.bold}Validation Failed! Found ${allErrors.length} format error(s):${colors.reset}\n`,
+      `${colors.red}${colors.bold}Validation Failed! Found ${errors.length} format error(s):${colors.reset}\n`,
     );
 
     // Group errors by file
     const grouped = {};
-    for (const err of allErrors) {
+    for (const err of errors) {
       const relPath = path.relative(projectRoot, err.file);
       if (!grouped[relPath]) grouped[relPath] = [];
       grouped[relPath].push(err);
@@ -573,4 +604,5 @@ if (require.main === module) {
 module.exports = {
   validateJyutping,
   validateChapterFile,
+  runValidation,
 };

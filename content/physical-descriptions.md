@@ -43,9 +43,9 @@ When you want to describe a noun with a multi-syllable adjective or emphasize an
 attribute, you link them using
 `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`:
 
-```
-[Adjective] + 嘅 + [Noun]
-```
+> **Formula:** [Adjective] +
+> `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]` +
+> [Noun]
 
 - `靚[leng3|pretty / beautiful / handsome / high quality]`
   `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`
@@ -78,9 +78,9 @@ like "that", "which", or "who".
 In Cantonese, the modifying clause is placed **before** the noun and linked by
 `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`:
 
-```
-[Clause / Action] + 嘅 + [Noun]
-```
+> **Formula:** [Clause / Action] +
+> `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]` +
+> [Noun]
 
 Let's look at how this changes the word order:
 

@@ -8,4 +8,4 @@ dist/
 test-results/
 .env
 public/version.json
-
+coverage/

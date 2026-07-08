@@ -10,19 +10,7 @@ import { compileMarkdown } from "../../utils/markdown.js";
 export async function getStaticPaths() {
   const cjsRequire = createRequire(import.meta.url);
   const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
-  const parserCode = fs.readFileSync(parserPath, "utf8");
-
-  const parserModule = { exports: {} };
-  const runParser = new Function("exports", "require", "module", "__filename", "__dirname", parserCode);
-  runParser(
-    parserModule.exports,
-    cjsRequire,
-    parserModule,
-    parserPath,
-    path.dirname(parserPath)
-  );
-
-  const { parseCurriculum } = parserModule.exports;
+  const { parseCurriculum } = cjsRequire(parserPath);
   const curriculumPath = path.resolve("content/curriculum.md");
   const chapters = parseCurriculum(curriculumPath);
 
@@ -57,19 +45,7 @@ const { filePath, chapterNumber, allChapters } = Astro.props;
 // Load Chapter data
 const cjsRequire = createRequire(import.meta.url);
 const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
-const parserCode = fs.readFileSync(parserPath, "utf8");
-
-const parserModule = { exports: {} };
-const runParser = new Function("exports", "require", "module", "__filename", "__dirname", parserCode);
-runParser(
-  parserModule.exports,
-  cjsRequire,
-  parserModule,
-  parserPath,
-  path.dirname(parserPath)
-);
-
-const { parseChapter, parseYAML } = parserModule.exports;
+const { parseChapter, parseYAML } = cjsRequire(parserPath);
 const { frontmatter, blocks } = parseChapter(filePath);
 
 // Pre-process all blocks

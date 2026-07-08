@@ -1,14 +1,44 @@
-/* global document */
 import { test, expect, devices } from "@playwright/test";
 
 test.use({
   ...devices["iPhone 12"], // Viewport width: 390px
 });
 
-test("Mobile page should not have horizontal scroll", async ({ page }) => {
-  // Go to greetings chapter page
-  await page.goto("/cantonese/chapter/greetings");
-  await page.waitForSelector("h1");
+const pagesToTest = [
+  { name: "Home Page", path: "/cantonese" },
+  { name: "Chapter Page", path: "/cantonese/chapter/greetings" },
+  { name: "Phrasebook Page", path: "/cantonese/phrasebook" },
+  { name: "Vocabulary Page", path: "/cantonese/vocabulary" },
+  { name: "Advanced Page", path: "/cantonese/advanced" },
+];
+
+for (const targetPage of pagesToTest) {
+  test(`${targetPage.name} should not have horizontal scroll`, async ({
+    page,
+  }) => {
+    await page.goto(targetPage.path);
+    await page.waitForLoadState("domcontentloaded");
+
+    const clientWidth = await page.evaluate(
+      () => document.documentElement.clientWidth,
+    );
+    const scrollWidth = await page.evaluate(
+      () => document.documentElement.scrollWidth,
+    );
+
+    expect(scrollWidth).toBeLessThanOrEqual(clientWidth);
+  });
+}
+
+test("Sync Modal should not introduce horizontal scroll on mobile", async ({
+  page,
+}) => {
+  await page.goto("/cantonese");
+  await page.waitForSelector("#sync-trigger-btn");
+
+  // Open Sync Modal
+  await page.click("#sync-trigger-btn");
+  await page.waitForSelector("#sync-modal-overlay.open");
 
   const clientWidth = await page.evaluate(
     () => document.documentElement.clientWidth,
@@ -16,12 +46,6 @@ test("Mobile page should not have horizontal scroll", async ({ page }) => {
   const scrollWidth = await page.evaluate(
     () => document.documentElement.scrollWidth,
   );
-  const hasScroll = scrollWidth > clientWidth;
 
-  console.log(
-    `Mobile Viewport Width: ${clientWidth}px, Scrollable Width: ${scrollWidth}px`,
-  );
-
-  // The page should not exceed the mobile viewport bounds
-  expect(hasScroll).toBe(false);
+  expect(scrollWidth).toBeLessThanOrEqual(clientWidth);
 });

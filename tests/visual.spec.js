@@ -1,4 +1,3 @@
-/* global localStorage */
 import { test, expect } from "@playwright/test";
 import path from "path";
 import os from "os";

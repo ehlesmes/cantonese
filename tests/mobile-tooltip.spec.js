@@ -24,9 +24,9 @@ test("Vocab tooltip should not overflow viewport on mobile devices", async ({
   // Tap/Click the term to trigger the tooltip
   await term.click();
 
-  // Wait for the popover to be visible
+  // Wait for the popover to be visible and aligned
   await expect(popover).toBeVisible();
-  await page.waitForTimeout(200); // Wait for alignment script to run
+  await expect(popover).toHaveAttribute("style", /left|arrow-offset/);
 
   // Get bounding box dimensions
   const popoverRect = await popover.boundingBox();

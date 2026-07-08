@@ -25,9 +25,8 @@ express personal possession (e.g., "I have a phone") and existential presence
 To state that something exists in a specific place, Cantonese uses the following
 structure:
 
-```
-[Location] + 有 / 冇 + [Noun]
-```
+> **Formula:** [Location] + `有[jau5|to have / there is]` /
+> `冇[mou5|not to have / there is not]` + [Noun]
 
 This is equivalent to the English "There is/are..." or "There is/are no...".
 Unlike English, which uses "there is" as a dummy subject, Cantonese anchors the
@@ -76,9 +75,8 @@ always use `喺[hai2|at / in / on (locative preposition)]`.
 
 To state where a specific subject is located, use this structure:
 
-```
-[Subject] + 喺 + [Location]
-```
+> **Formula:** [Subject] + `喺[hai2|at / in / on (locative preposition)]` +
+> [Location]
 
 ```cantonese
 我[ngo5|I / me] 喺[hai2|at / in / on] 公司[gung1si1|company / office] 呀[aa3|sentence-final particle softening statements, making questions friendly]。

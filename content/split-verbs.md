@@ -39,9 +39,7 @@ or experiential
 `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']`—you
 must **split the compound** and insert the marker between the two parts:
 
-```
-[Verb Part] + [Aspect Marker] + [Object Part]
-```
+> **Formula:** [Verb Part] + [Aspect Marker] + [Object Part]
 
 Let's see how standard split-verbs behave when modified:
 
@@ -109,9 +107,8 @@ learner mistake to say `游水[jau4seoi2|to swim]`
 The correct structure is to repeat the verb part, and leave the object part at
 the end:
 
-```
-[Verb Part] + 唔 + [Verb Part] + [Object Part]
-```
+> **Formula:** [Verb Part] + `唔[m4|not / no (negative prefix)]` + [Verb Part] +
+> [Object Part]
 
 However, if you are asking about past completion or past experience involving an
 aspect marker (like `咗[zo2|completed]` or `過[gwo3|past experience]`), you
@@ -148,9 +145,9 @@ When you want to describe **how long** (duration) or **how many times**
 (frequency) you performed a split-verb action, the description of time or
 frequency must also split the verb and be placed between the two halves:
 
-```
-[Verb Part] + [Aspect Marker] + [Duration / Frequency] + [Object Part]
-```
+> **Formula:** [Verb Part] + [Aspect Marker] + [Duration / Frequency] + [Object
+>
+> > Part]
 
 ### 1. Specifying Duration
 

@@ -1,4 +1,3 @@
-/* global window, localStorage, TextEncoder, TextDecoder, CompressionStream, DecompressionStream, ReadableStream, Response */
 /**
  * Sync Utility functions for Colloquial Cantonese course progress.
  * Serializes, validates, and merges localStorage progress data.
@@ -207,7 +206,12 @@ export async function serializeState(state) {
   }
 
   const jsonStr = JSON.stringify(compacted);
-  const bytes = await compressData(jsonStr);
+  let bytes;
+  try {
+    bytes = await compressData(jsonStr);
+  } catch {
+    bytes = new TextEncoder().encode(jsonStr);
+  }
 
   if (hasNativeBase64()) {
     try {
@@ -258,7 +262,7 @@ export async function deserializeState(serializedStr) {
       rawStr = await decompressData(decodedBytes);
     } catch {
       try {
-        rawStr = new TextDecoder().decode(decodedBytes);
+        rawStr = new TextDecoder("utf-8", { fatal: true }).decode(decodedBytes);
       } catch {
         throw new Error("Decompression and decoding failed");
       }

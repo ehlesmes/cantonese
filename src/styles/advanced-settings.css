@@ -1,0 +1,208 @@
+/* Card layouts */
+.advanced-page .advanced-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.advanced-page .danger-card {
+  border-color: #feb2b2;
+  background-color: #fffaf0; /* Sleek tint for warning zone */
+}
+
+.advanced-page .section-title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.4rem;
+  font-size: 1.3rem;
+}
+
+.advanced-page .placeholder-msg {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 1rem;
+  text-align: center;
+  border: 1px dashed var(--border-color);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.01);
+}
+
+/* List rows */
+.advanced-page .chapter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.advanced-page .chapter-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.advanced-page .chapter-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.advanced-page .chapter-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  letter-spacing: 0.05em;
+}
+
+.advanced-page .chapter-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.advanced-page .chapter-counts {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.advanced-page .count-tag {
+  background-color: var(--border-color);
+  color: var(--text-color);
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+/* Buttons */
+.advanced-page .canto-btn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: none;
+}
+
+.advanced-page .canto-btn.secondary {
+  background-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.advanced-page .canto-btn.secondary:hover {
+  background-color: var(--text-muted);
+  color: var(--bg-color);
+}
+
+.advanced-page .canto-btn.danger {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.advanced-page .canto-btn.danger:hover {
+  background-color: #c53030;
+}
+
+.advanced-page .remove-btn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: white;
+  background-color: #e53e3e;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.advanced-page .remove-btn:hover {
+  background-color: #c53030;
+}
+
+/* Modal Overlay */
+.advanced-page .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(45, 33, 27, 0.45); /* HSL tinted backdrop */
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.advanced-page .modal-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.advanced-page .modal-content {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+}
+
+.advanced-page .modal-overlay.show .modal-content {
+  transform: scale(1);
+}
+
+/* Toast Notification */
+.advanced-page .toast-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 2000;
+  transform: translateY(1.5rem);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.advanced-page .toast-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.advanced-page .toast-notification.error {
+  border-left: 4px solid #e53e3e;
+}
+
+.advanced-page .toast-notification.success {
+  border-left: 4px solid var(--secondary-color);
+}

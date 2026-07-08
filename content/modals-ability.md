@@ -96,9 +96,8 @@ When you attach
 directly to the end of a verb, it indicates that the action is **physically
 ddoable, allowed, or ready**:
 
-```
-[Verb] + 得
-```
+> **Formula:** [Verb] +
+> `得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`
 
 - `食[sik6|to eat]`
   `得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`
@@ -124,9 +123,8 @@ To express that an action is **not allowed, forbidden, or physically
 bad/unsuitable to do**, place the negation particle `唔[m4|not]` before the
 verb, followed by `得[dak1|particle expressing permission/possibility]`:
 
-```
-唔 + [Verb] + 得
-```
+> **Formula:** `唔[m4|not / no (negative prefix)]` + [Verb] +
+> `得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`
 
 - `唔[m4|not]` `食[sik6|to eat]`
   `得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`

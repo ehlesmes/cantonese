@@ -26,9 +26,9 @@ The particle
 `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']`
 is placed **directly after the main verb**:
 
-```
-[Subject] + [Verb] + 過 + [Object]
-```
+> **Formula:** [Subject] + [Verb] +
+> `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']` +
+> [Object]
 
 Let's look at some examples:
 
@@ -51,9 +51,9 @@ To say that you **have never done** something, place
 `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']`
 after the verb!
 
-```
-[Subject] + 冇 + [Verb] + 過 + [Object]
-```
+> **Formula:** [Subject] + `冇[mou5|to not have / there is not]` + [Verb] +
+> `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']` +
+> [Object]
 
 ```cantonese
 我[ngo5|I / me] 冇[mou5|to not have / there is not] 飲[jam2|to drink] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 凍[dung3|cold / iced] 奶茶[naai5caa4|milk tea (typically Hong Kong-style)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。

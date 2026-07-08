@@ -1,4 +1,3 @@
-/* global __filename */
 const fs = require("fs");
 const path = require("path");
 
@@ -19,6 +18,9 @@ const IGNORED_DIRS = new Set([
   "node_modules",
   ".antigravitycli",
   "tmp",
+  "coverage",
+  "dist",
+  ".astro",
 ]);
 
 const IGNORED_FILES = new Set(["package-lock.json"]);

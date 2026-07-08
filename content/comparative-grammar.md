@@ -21,9 +21,7 @@ To express that something is "more" [adjective], or has the suffix "-er" (e.g.,
 "cheaper", "taller", "bigger"), spoken Cantonese attaches
 `啲[di1|a bit / some / comparative suffix]` directly after the adjective.
 
-```
-[Adjective] + 啲
-```
+> **Formula:** [Adjective] + `啲[di1|a bit / some / comparative suffix]`
 
 - `平[peng4|cheap / inexpensive]` `啲[di1|a bit / some / comparative suffix]` —
   cheaper / a bit cheaper
@@ -68,9 +66,9 @@ _(Note: In comparative structures, it functions as the word "than".)_
 
 The word order is:
 
-```
-[Subject A] + [Adjective] + 過 + [Subject B]
-```
+> **Formula:** [Subject A] + [Adjective] +
+> `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']` +
+> [Subject B]
 
 Notice that we do **not** use `啲[di1|a bit / some / comparative suffix]` in
 this basic direct structure because
@@ -101,9 +99,9 @@ To specify _how much_ one thing is more than another in a direct comparison,
 place the exact amount or a phrase like `好多[hou2do1|a lot / many / much]`
 **after the object of comparison**:
 
-```
-[Subject A] + [Adjective] + 過 + [Subject B] + [Amount]
-```
+> **Formula:** [Subject A] + [Adjective] +
+> `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']` +
+> [Subject B] + [Amount]
 
 ```cantonese
 佢[keoi5|he / she / it] 高[gou1|tall / high] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 我[ngo5|I / me] 好多[hou2do1|a lot / many / much] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
@@ -130,9 +128,8 @@ To express that A is the same as B, link them with
 `同[tung4|with / same as / and]` and add
 `一樣[jat1joeng6|same / alike / identical]` at the end:
 
-```
-[Subject A] + 同 + [Subject B] + 一樣 + (Adjective)
-```
+> **Formula:** [Subject A] + `同[tung4|with / same as / and]` + [Subject B] +
+> `一樣[jat1joeng6|same / alike / identical]` + (Adjective)
 
 ```cantonese
 呢[ni1|this] 對[deoi3|pair / couple (classifier for paired objects like shoes)] 鞋[haai4|shoes] 同[tung4|with / same as / and] 嗰[go2|that] 對[deoi3|pair / couple (classifier for paired objects like shoes)] 一樣[jat1joeng6|same / alike / identical] 靚[leng3|pretty / beautiful / handsome / high quality] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
@@ -151,9 +148,9 @@ I am the same height as him, obviously!
 To say that A is **not as [adjective] as** B, Cantonese uses a structure with
 `冇[mou5|to not have / there is not]` and `咁[gam3|so / such / to this degree]`:
 
-```
-[Subject A] + 冇 + [Subject B] + 咁 + [Adjective]
-```
+> **Formula:** [Subject A] + `冇[mou5|to not have / there is not]` + [Subject >
+>
+> > B] + `咁[gam3|so / such / to this degree]` + [Adjective]
 
 Literally, this reads: "A does not have B's degree of [adjective]."
 
@@ -176,9 +173,7 @@ Cheap clothes are not as pretty as expensive clothes, obviously!
 To express the absolute "most" of a quality (the superlative), place
 `最[zeoi3|most / superlative prefix]` directly before the adjective.
 
-```
-最 + [Adjective]
-```
+> **Formula:** `最[zeoi3|most / superlative prefix]` + [Adjective]
 
 - `最[zeoi3|most / superlative prefix]`
   `靚[leng3|pretty / beautiful / handsome / high quality]` — prettiest / most

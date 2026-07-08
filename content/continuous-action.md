@@ -25,9 +25,9 @@ _zhèngzài_.
 
 ### The Continuous Aspect Pattern
 
-```
-[Subject] + [Verb] + 緊 + [Object]
-```
+> **Formula:** [Subject] + [Verb] +
+> `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` +
+> [Object]
 
 Observe this basic structure in action:
 

@@ -35,9 +35,8 @@ B") is by placing `如果[jyu4gwo2|if]` at the start of the first clause, and
 placing `就[zau6|then / right away / immediately]` right before the verb in the
 second clause:
 
-```
-如果 [Condition] ， [Subject] 就 [Result]
-```
+> **Formula:** `如果[jyu4gwo2|if]` [Condition] ， [Subject]
+> `就[zau6|then / right away / immediately]` [Result]
 
 Let's look at some daily examples:
 

@@ -39,9 +39,7 @@ noun with a **spatial directional marker**.
 In English, we place prepositions _before_ the noun (e.g., "in the room"). In
 Cantonese, the spatial marker is placed **directly after** the noun:
 
-```
-喺 + [Noun] + [Spatial Marker]
-```
+> **Formula:** `喺[hai2|at / in / on]` + [Noun] + [Spatial Marker]
 
 Let's look at how this functions:
 

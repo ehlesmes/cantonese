@@ -1,7 +1,9 @@
 import { describe, test, expect } from "vitest";
 import fs from "fs";
 import path from "path";
-import parser from "./lib/parser";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const parser = require("./lib/parser");
 import validator from "./validate-format";
 
 describe("Chapter Format & Curriculum Validator Spec", () => {
@@ -30,6 +32,66 @@ answer: 食
     const parsed = parser.parseYAML(yaml);
     expect(parsed.question).toBe("Fill in the blank:\n我想 ____ 點心。");
     expect(parsed.answer).toBe("食");
+  });
+
+  test("YAML - Multiline block at the very end of YAML string", () => {
+    const yaml = `
+chapters:
+  - chapter: 1
+    description: |
+      This is a description
+      on multiple lines.`;
+    const parsed = parser.parseYAML(yaml);
+    expect(parsed.chapters[0].description).toBe(
+      "This is a description\non multiple lines.",
+    );
+  });
+
+  test("YAML - Flat multiline block at the very end of YAML string", () => {
+    const yaml = `
+title: Greetings
+description: |
+  Line 1
+  Line 2`;
+    const parsed = parser.parseYAML(yaml);
+    expect(parsed.description).toBe("Line 1\nLine 2");
+  });
+
+  test("YAML - Array of objects with last item ending in multiline block", () => {
+    const yaml = `
+chapters:
+  - chapter: 1
+    title: Basics
+  - chapter: 2
+    question: |
+      Double line
+      question`;
+    const parsed = parser.parseYAML(yaml);
+    expect(parsed.chapters[1].question).toBe("Double line\nquestion");
+  });
+
+  test("YAML - Multiline block with empty line followed by subsequent key in object", () => {
+    const yaml = `
+chapters:
+  - chapter: 1
+    description: |
+      First line
+      
+      Third line
+    title: Basics`;
+    const parsed = parser.parseYAML(yaml);
+    expect(parsed.chapters[0].description).toBe("First line\n\nThird line");
+    expect(parsed.chapters[0].title).toBe("Basics");
+  });
+
+  test("YAML - Quoted values parsing", () => {
+    const yaml = `
+key1: "value1 with double quotes"
+key2: 'value2 with single quotes'
+`;
+    const parsed = parser.parseYAML(yaml);
+    expect(parsed.key1).toBe("value1 with double quotes");
+    expect(parsed.key2).toBe("value2 with single quotes");
   });
 
   test("YAML - Array of objects parsing", () => {
@@ -258,4 +320,309 @@ explanation: Missing block formatting.
     );
     expect(exerciseChineseErr).toBeDefined();
   });
+});
+
+test("Validation - Missing YAML block handles error", () => {
+  const tempDir = fs.mkdtempSync(path.join(process.cwd(), "test-temp-"));
+  const invalidFile = path.join(tempDir, "03-missing.md");
+
+  // Create a markdown file with NO YAML block
+  const brokenMd = `# Content
+Just some text without frontmatter.`;
+
+  fs.writeFileSync(invalidFile, brokenMd, "utf8");
+
+  const errors = validator.validateChapterFile(invalidFile, {
+    chapter: 3,
+    id: "missing",
+    title: "Missing",
+    file: "03-missing.md",
+  });
+
+  fs.unlinkSync(invalidFile);
+  fs.rmdirSync(tempDir);
+
+  const yamlErr = errors.find((e) =>
+    e.message.includes("Missing YAML frontmatter block"),
+  );
+  expect(yamlErr).toBeDefined();
+});
+
+test("Jyutping - Invalid tone 7", () => {
+  expect(validator.validateJyutping("nei7")).toBeTruthy();
+});
+
+test("Jyutping - Punctuation inside jyutping", () => {
+  expect(validator.validateJyutping("nei5,hou2")).toBeTruthy();
+  expect(validator.validateJyutping("nei5-hou2-!")).toBeTruthy();
+});
+
+test("Curriculum Parsing - parses curriculum.md correctly", () => {
+  const tempDir = fs.mkdtempSync(path.join(process.cwd(), "test-temp-curr-"));
+  const currFile = path.join(tempDir, "curriculum.md");
+
+  const currMd = `---
+chapters:
+  - chapter: 0
+    title: Intro
+    file: 00-intro.md
+  - chapter: 1
+    title: Basics
+    file: 01-basics.md
+---
+# Course`;
+
+  fs.writeFileSync(currFile, currMd, "utf8");
+
+  const chapters = parser.parseCurriculum(currFile);
+  expect(chapters).toHaveLength(2);
+  expect(chapters[0].chapter).toBe(0);
+  expect(chapters[1].file).toBe("01-basics.md");
+
+  fs.unlinkSync(currFile);
+  fs.rmdirSync(tempDir);
+});
+
+test("Curriculum Parsing - parses real curriculum.md", () => {
+  const chapters = parser.parseCurriculum(
+    path.resolve("content/curriculum.md"),
+  );
+  expect(chapters.length).toBeGreaterThan(0);
+  expect(chapters[0].id).toBeDefined();
+});
+
+test("Parser - parseChapter directly covers all block types including other", () => {
+  const tempDir = fs.mkdtempSync(path.join(process.cwd(), "test-temp-parser-"));
+  const tempFile = path.join(tempDir, "05-parser-test.md");
+
+  const mdContent = `---
+chapter: 5
+title: Parser Direct Test
+---
+# Welcome
+\`\`\`cantonese
+你好[nei5hou2|hello]
+\`\`\`
+\`\`\`dialog
+A: 你好
+=== Hello
+\`\`\`
+\`\`\`exercise
+question: Test
+answer: Answer
+explanation: Explain
+\`\`\`
+\`\`\`python
+print("Hello other")
+\`\`\`
+`;
+  fs.writeFileSync(tempFile, mdContent, "utf8");
+  const data = parser.parseChapter(tempFile);
+  expect(data.frontmatter.chapter).toBe(5);
+  // Find the 'other' python block
+  const pythonBlock = data.blocks.find((b) => b.type === "other");
+  expect(pythonBlock).toBeDefined();
+  expect(pythonBlock.content).toContain('print("Hello other")');
+
+  fs.unlinkSync(tempFile);
+  fs.rmdirSync(tempDir);
+});
+
+test("Validation - reject other code block types", () => {
+  const tempDir = fs.mkdtempSync(path.join(process.cwd(), "test-temp-other-"));
+  const invalidFile = path.join(tempDir, "04-other.md");
+
+  const otherMd = `---
+chapter: 4
+title: Other Block
+description: Test other code blocks.
+---
+# Content
+\`\`\`javascript
+console.log('hello');
+\`\`\`
+`;
+  fs.writeFileSync(invalidFile, otherMd, "utf8");
+  const errors = validator.validateChapterFile(invalidFile, {
+    chapter: 4,
+    id: "other",
+    title: "Other Block",
+    file: "04-other.md",
+  });
+  fs.unlinkSync(invalidFile);
+  fs.rmdirSync(tempDir);
+
+  const otherErr = errors.find((e) =>
+    e.message.includes('Unsupported code block type "other"'),
+  );
+  expect(otherErr).toBeDefined();
+});
+
+test("Curriculum Parsing - handles missing frontmatter boundary gracefully", () => {
+  const tempDir = fs.mkdtempSync(
+    path.join(process.cwd(), "test-temp-curr-missing-"),
+  );
+  const currFile = path.join(tempDir, "curriculum.md");
+
+  const currMd = `
+chapters:
+  - chapter: 0
+    title: Intro
+    file: 00-intro.md
+`;
+
+  fs.writeFileSync(currFile, currMd, "utf8");
+
+  const chapters = parser.parseCurriculum(currFile);
+  expect(chapters).toEqual([]);
+
+  fs.unlinkSync(currFile);
+  fs.rmdirSync(tempDir);
+});
+
+test("Curriculum Parsing - handles unclosed frontmatter boundary gracefully", () => {
+  const tempDir = fs.mkdtempSync(
+    path.join(process.cwd(), "test-temp-curr-unclosed-"),
+  );
+  const currFile = path.join(tempDir, "curriculum.md");
+
+  const currMd = `---
+chapters:
+  - chapter: 0
+    title: Intro
+    file: 00-intro.md
+`;
+
+  fs.writeFileSync(currFile, currMd, "utf8");
+
+  const chapters = parser.parseCurriculum(currFile);
+  expect(chapters).toEqual([]);
+
+  fs.unlinkSync(currFile);
+  fs.rmdirSync(tempDir);
+});
+
+test("runValidation - handles missing content directory", () => {
+  const res = validator.runValidation({
+    projectRoot: process.cwd(),
+    contentDir: "./nonexistent-content-dir",
+    curriculumPath: "./nonexistent-content-dir/curriculum.md",
+  });
+  expect(res.errors).toHaveLength(1);
+  expect(res.errors[0].message).toContain("Content directory not found");
+});
+
+test("runValidation - handles missing single file mode file", () => {
+  const res = validator.runValidation({
+    projectRoot: process.cwd(),
+    curriculumPath: "./content/curriculum.md",
+    targetFile: "./nonexistent-file.md",
+  });
+  expect(res.errors).toHaveLength(1);
+  expect(res.errors[0].message).toContain("File not found");
+});
+
+test("runValidation - detects unregistered chapter file (orphan)", () => {
+  const tempDir = fs.mkdtempSync(path.join(process.cwd(), "test-temp-val-"));
+  const currFile = path.join(tempDir, "curriculum.md");
+  // Write empty curriculum
+  fs.writeFileSync(currFile, "---\nchapters:\n---\n", "utf8");
+
+  // Write an orphan chapter (match slug and ID to prevent validation errors)
+  const orphanFile = path.join(tempDir, "orphan.md");
+  fs.writeFileSync(
+    orphanFile,
+    "---\nid: orphan\ntitle: Orphan\ndescription: test\n---\n",
+    "utf8",
+  );
+
+  const res = validator.runValidation({
+    projectRoot: tempDir,
+    contentDir: tempDir,
+    curriculumPath: currFile,
+  });
+
+  fs.unlinkSync(orphanFile);
+  fs.unlinkSync(currFile);
+  fs.rmdirSync(tempDir);
+
+  expect(res.errors).toHaveLength(1);
+  expect(res.errors[0].message).toContain("exists but is not registered");
+});
+
+test("runValidation - detects vocabulary word count thresholds (warning vs error)", () => {
+  const tempDir = fs.mkdtempSync(
+    path.join(process.cwd(), "test-temp-vocab-limit-"),
+  );
+  const currFile = path.join(tempDir, "curriculum.md");
+
+  // 1. Test Warning (>20 words, <=25 words)
+  // We will generate 22 unique words in prose (wrap in backticks for prose validation)
+  let warningWords = "";
+  for (let i = 1; i <= 22; i++) {
+    warningWords += `\`字${i}[zi6|word${i}]\` `;
+  }
+
+  const currMdWarning = `---
+chapters:
+  - id: warn
+    title: Warning Chapter
+    file: warn.md
+---
+`;
+  fs.writeFileSync(currFile, currMdWarning, "utf8");
+  const warnFile = path.join(tempDir, "warn.md");
+  fs.writeFileSync(
+    warnFile,
+    `---\nid: warn\ntitle: Warning Chapter\ndescription: Test warning\n---\n${warningWords}`,
+    "utf8",
+  );
+
+  const resWarning = validator.runValidation({
+    projectRoot: tempDir,
+    contentDir: tempDir,
+    curriculumPath: currFile,
+  });
+
+  expect(resWarning.errors).toHaveLength(0);
+  expect(resWarning.warnings).toHaveLength(1);
+  expect(resWarning.warnings[0].chapterId).toBe("warn");
+  expect(resWarning.warnings[0].count).toBe(22);
+
+  fs.unlinkSync(warnFile);
+
+  // 2. Test Error (>25 words)
+  // Generate 27 unique words in prose (wrap in backticks for prose validation)
+  let errorWords = "";
+  for (let i = 1; i <= 27; i++) {
+    errorWords += `\`字${i}[zi6|word${i}]\` `;
+  }
+
+  const currMdError = `---
+chapters:
+  - id: err
+    title: Error Chapter
+    file: err.md
+---
+`;
+  fs.writeFileSync(currFile, currMdError, "utf8");
+  const errFile = path.join(tempDir, "err.md");
+  fs.writeFileSync(
+    errFile,
+    `---\nid: err\ntitle: Error Chapter\ndescription: Test error\n---\n${errorWords}`,
+    "utf8",
+  );
+
+  const resError = validator.runValidation({
+    projectRoot: tempDir,
+    contentDir: tempDir,
+    curriculumPath: currFile,
+  });
+
+  fs.unlinkSync(errFile);
+  fs.unlinkSync(currFile);
+  fs.rmdirSync(tempDir);
+
+  expect(resError.errors).toHaveLength(1);
+  expect(resError.errors[0].message).toContain("exceeding the limit of 25");
 });

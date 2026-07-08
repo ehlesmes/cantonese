@@ -75,10 +75,25 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     expect(html).toContain('data-audio-hash="');
   });
 
+  test("compileMarkdown should replace plain block annotations (without backticks)", () => {
+    const raw = "The greeting is 你好[nei5hou2|hello] in Cantonese.";
+    const html = compileMarkdown(raw);
+    expect(html).toContain(
+      '你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span>',
+    );
+    expect(html).toMatch(/data-audio-hash="[0-9a-f]{16}"/);
+  });
+
   test("compileAnnotations should not affect text without annotations", () => {
     const raw = "Excuse me, I want to buy this one.";
     const html = compileAnnotations(raw);
     expect(html).toBe(raw);
+  });
+
+  test("compileAnnotations should handle null or empty inputs gracefully", () => {
+    expect(compileAnnotations(null)).toBe("");
+    expect(compileAnnotations(undefined)).toBe("");
+    expect(compileAnnotations("")).toBe("");
   });
 
   test("compileMarkdown should support simple single-paragraph blockquote alerts", () => {
