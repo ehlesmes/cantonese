@@ -23,6 +23,7 @@ const IGNORED_DIRS = new Set([
   ".astro",
   ".nyc_output",
   "coverage-e2e",
+  "test-results",
 ]);
 
 const IGNORED_FILES = new Set(["package-lock.json"]);
@@ -152,8 +153,6 @@ function main() {
     process.exit(0);
   }
 }
-
-
 
 if (require.main === module) {
   main();

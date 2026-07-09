@@ -4,24 +4,28 @@ staged_md_files=$(git diff --cached --name-only --diff-filter=ACMR | grep '\.md$
 if [ -n "$staged_md_files" ]; then
   echo "Formatting staged markdown files to 80 characters..."
   # We use --prose-wrap always to ensure lines are wrapped at the print-width
-  prettier --prose-wrap always --print-width 80 --write $staged_md_files
+  npx prettier --prose-wrap always --print-width 80 --write $staged_md_files
   git add $staged_md_files
 fi
 
-# Get list of staged JavaScript files
-staged_js_files=$(git diff --cached --name-only --diff-filter=ACMR | grep '\.js$' || true)
+# Get list of staged JavaScript/TypeScript files
+staged_js_files=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(js|ts)$' || true)
 
 if [ -n "$staged_js_files" ]; then
-  echo "Formatting staged JavaScript files..."
-  prettier --write $staged_js_files
+  echo "Formatting staged JS/TS files..."
+  npx prettier --write $staged_js_files
   git add $staged_js_files
 
-  echo "Linting staged JavaScript files with ESLint..."
-  npx eslint $staged_js_files
+  # Only run eslint on JS/TS files that match config patterns
+  staged_lintable_files=$(echo "$staged_js_files" | grep -E '\.(js|ts)$' || true)
+  if [ -n "$staged_lintable_files" ]; then
+    echo "Linting staged files with ESLint..."
+    npx eslint --no-error-on-unmatched-pattern $staged_lintable_files
+  fi
 fi
 
 # Run Cantonese chapter format validator if curriculum or any chapter file is staged
-staged_chapters_or_curriculum=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^content/[0-9]{2}-.*\.md$|^content/curriculum\.md$' || true)
+staged_chapters_or_curriculum=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^content/.*\.md$' | grep -vE '^content/README\.md$|^content/vocabulary\.md$' || true)
 
 if [ -n "$staged_chapters_or_curriculum" ]; then
   echo "Validating Cantonese course content formatting and curriculum alignment..."
@@ -32,5 +36,11 @@ if [ -n "$staged_chapters_or_curriculum" ]; then
   git add content/vocabulary.json content/vocabulary.md
 fi
 
+echo "Typechecking codebase..."
+npm run typecheck
+
 echo "Verifying project portability (no hardcoded absolute paths)..."
 npx tsx scripts/validate-portability.ts
+
+echo "Running unit tests with coverage verification..."
+npx vitest run --coverage

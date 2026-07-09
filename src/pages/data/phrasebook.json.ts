@@ -1,26 +1,13 @@
 import fs from "fs";
 import path from "path";
-import crypto from "crypto";
 import { parseCurriculum, parseChapter } from "../../../scripts/lib/parser";
+import { getAudioHash } from "../../../src/utils/audio.js";
 
 import type { APIRoute } from "astro";
 
-function getCleanSpokenText(text: string | null | undefined): string {
-  if (!text) return "";
-  let cleaned = text;
-  const annotationRegex =
-    /`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g;
-  cleaned = cleaned.replace(annotationRegex, (_match, char) => char);
-  cleaned = cleaned.replace(/\[[^\]]+\]/g, "");
-  return cleaned.trim();
-}
-
-function getAudioHash(text: string | null | undefined): string {
-  const clean = getCleanSpokenText(text);
-  return crypto.createHash("sha256").update(clean).digest("hex").slice(0, 16);
-}
-
-function getTokenHashes(text: string | null | undefined): Record<string, string> {
+function getTokenHashes(
+  text: string | null | undefined,
+): Record<string, string> {
   const tokenHashes: Record<string, string> = {};
   if (!text) return tokenHashes;
   const blockRegex =
@@ -29,16 +16,14 @@ function getTokenHashes(text: string | null | undefined): Record<string, string>
   while ((match = blockRegex.exec(text)) !== null) {
     const char = match[1];
     if (!char) continue;
-    tokenHashes[char] = crypto
-      .createHash("sha256")
-      .update(char)
-      .digest("hex")
-      .slice(0, 16);
+    tokenHashes[char] = getAudioHash(char);
   }
   return tokenHashes;
 }
 
-function splitCantoneseTokens(cantoneseRaw: string | null | undefined): string[] {
+function splitCantoneseTokens(
+  cantoneseRaw: string | null | undefined,
+): string[] {
   if (!cantoneseRaw) return [];
   const spaced = cantoneseRaw.replace(/([，。！？、；：,?!;:])/g, " $1 ");
   const regex = /([^\s[]+\[[^\]]+\]|[^\s[]+)/g;
@@ -157,4 +142,4 @@ export const GET: APIRoute = async () => {
       "Content-Type": "application/json",
     },
   });
-}
+};

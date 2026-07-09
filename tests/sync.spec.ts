@@ -167,6 +167,49 @@ test.describe("Progress Sync E2E Tests", () => {
     await expect(offlineError).toBeVisible();
     await expect(offlineError).toContainText("Invalid sync code");
   });
+
+  test("should allow copying progress code to clipboard in offline fallback", async ({
+    page,
+    context,
+  }) => {
+    // Grant clipboard permissions
+    await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+
+    await page.goto("/cantonese");
+    await page.evaluate(() => {
+      localStorage.setItem(
+        "cantonese_unlocked_chapters",
+        JSON.stringify(["pronunciation-tones"]),
+      );
+    });
+
+    // Open sync modal
+    const syncBtn = page.locator("#sync-trigger-btn");
+    await syncBtn.click();
+
+    // Toggle offline fallback
+    const offlineToggleBtn = page.locator("#sync-offline-toggle-btn");
+    await offlineToggleBtn.click();
+
+    // Click copy button
+    const copyBtn = page.locator("#sync-copy-btn");
+    await expect(copyBtn).toBeVisible();
+    await copyBtn.click();
+
+    // Verify copy button text changes to "Copied!"
+    await expect(copyBtn).toHaveText("Copied!");
+
+    // Read clipboard text and compare to the text field value
+    const clipboardText = await page.evaluate(() =>
+      navigator.clipboard.readText(),
+    );
+    const exportStringValue = await page
+      .locator("#sync-export-string")
+      .inputValue();
+
+    expect(clipboardText).toBe(exportStringValue);
+    expect(clipboardText.length).toBeGreaterThan(10);
+  });
 });
 
 export {};

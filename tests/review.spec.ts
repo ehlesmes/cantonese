@@ -281,6 +281,84 @@ test.describe("Autoplay Audio Tests", () => {
     const ttsBtn = page.locator("#feedback-panel .tts-btn");
     await expect(ttsBtn).toHaveClass(/tts-playing/);
   });
+
+  test("should fallback to SpeechSynthesis when audio file playback fails", async ({
+    page,
+  }) => {
+    // 1. Seed localStorage and intercept __allExamples before page load to have a known short list
+    await page.addInitScript(() => {
+      localStorage.setItem(
+        "cantonese_unlocked_chapters",
+        JSON.stringify(["greetings"]),
+      );
+
+      // Force play to throw/reject to trigger fallback path
+      window.HTMLAudioElement.prototype.play = function () {
+        return Promise.reject(new Error("Playback blocked or file not found"));
+      };
+      window.HTMLAudioElement.prototype.pause = function () {};
+
+      // Track speechSynthesis speak calls
+      (window as any).speechSynthesisSpoken = [];
+      if (window.speechSynthesis) {
+        window.speechSynthesis.speak = (utterance: any) => {
+          (window as any).speechSynthesisSpoken.push(utterance.text);
+          // Trigger onend callback asynchronously if mock synthesis is used
+          if (utterance.onend) {
+            setTimeout(utterance.onend, 100);
+          }
+        };
+      }
+
+      const targetCard = {
+        id: "test-card-fallback",
+        chapter: "greetings",
+        chapterNumber: 1,
+        chapterTitle: "Greetings",
+        cantoneseRaw: "我[ngo5|I]",
+        english: "I",
+        tokens: ["我[ngo5|I]"],
+        type: "example",
+        audioHash: "mock-audio-hash",
+        tokenHashes: { 我: "hash-ngo" },
+      };
+
+      Object.defineProperty(window, "__allExamples", {
+        get() {
+          return [targetCard];
+        },
+        set() {},
+        configurable: true,
+      });
+    });
+
+    // 2. Go to phrasebook
+    await page.goto("/cantonese/phrasebook");
+    await page.waitForSelector("#stats-cards-count");
+
+    // 3. Start the session
+    await page.click("#start-session-btn");
+    await page.waitForSelector("#game-tokens-pool");
+
+    const getChip = (text: string) =>
+      page.locator("#game-tokens-pool .token-chip", { hasText: text });
+
+    // Assemble correct answer: "我"
+    await getChip("我").click();
+
+    // 4. Click check answer (which triggers autoplay play() which rejects, triggering fallback)
+    await page.click("#game-check-btn");
+    await page.waitForSelector("#feedback-panel");
+
+    // Wait a brief moment for the fallback path to execute
+    await page.waitForTimeout(200);
+
+    // 5. Assert that speechSynthesis was called with clean Cantonese text "我"
+    const spoken = await page.evaluate(
+      () => (window as any).speechSynthesisSpoken,
+    );
+    expect(spoken).toContain("我");
+  });
 });
 
 export {};

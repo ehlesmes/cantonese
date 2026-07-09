@@ -70,6 +70,28 @@ describe("DOM Utilities Spec", () => {
     expect(parent.childNodes[2]).toBe(child2);
   });
 
+  test("el() should create SVG elements with correct namespace, and HTML elements with default namespace", () => {
+    const svgTags = [
+      "svg",
+      "polyline",
+      "path",
+      "circle",
+      "polygon",
+      "rect",
+      "g",
+    ];
+    for (const tag of svgTags) {
+      const element = el(tag);
+      expect(element.namespaceURI).toBe("http://www.w3.org/2000/svg");
+    }
+
+    const htmlTags = ["div", "span", "button", "input"];
+    for (const tag of htmlTags) {
+      const element = el(tag);
+      expect(element.namespaceURI).toBe("http://www.w3.org/1999/xhtml");
+    }
+  });
+
   test("createChevronIcon() should return an SVG element", () => {
     const svg = createChevronIcon();
     expect(svg.tagName.toLowerCase()).toBe("svg");

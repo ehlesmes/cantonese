@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as crypto from "crypto";
-const parser = require("./lib/parser");
+import * as parser from "./lib/parser.js";
 
 function main() {
   const projectRoot = path.resolve(__dirname, "..");
@@ -20,7 +20,9 @@ function main() {
   try {
     chapters = parser.parseCurriculum(curriculumPath);
   } catch (err: any) {
-    console.error(`ERROR: Failed to parse curriculum.md: ${err instanceof Error ? err.message : String(err)}`);
+    console.error(
+      `ERROR: Failed to parse curriculum.md: ${err instanceof Error ? err.message : String(err)}`,
+    );
     process.exit(1);
   }
 
@@ -35,7 +37,9 @@ function main() {
     try {
       chapterData = parser.parseChapter(filePath);
     } catch (err: any) {
-      console.error(`ERROR: Failed to parse "${chapter.file}": ${err instanceof Error ? err.message : String(err)}`);
+      console.error(
+        `ERROR: Failed to parse "${chapter.file}": ${err instanceof Error ? err.message : String(err)}`,
+      );
       continue;
     }
 
@@ -82,7 +86,7 @@ function main() {
               .update(char)
               .digest("hex")
               .slice(0, 16),
-            firstIntroducedIn: chapterData.frontmatter.id || chapter.id,
+            firstIntroducedIn: chapterData.frontmatter?.id || chapter.id,
             occurrences: 1,
           };
         } else {
@@ -90,7 +94,9 @@ function main() {
 
           // Merge translations cleanly if they represent different nuances
           const existingTrans = vocabMap[key].translation;
-          const existingParts = existingTrans.split("/").map((s: string) => s.trim());
+          const existingParts = existingTrans
+            .split("/")
+            .map((s: string) => s.trim());
           const newParts = translation.split("/").map((s: string) => s.trim());
 
           const merged = [...existingParts];
@@ -120,7 +126,9 @@ function main() {
       `✓ Generated structured database: content/vocabulary.json (${sortedVocab.length} entries)`,
     );
   } catch (err: any) {
-    console.error(`ERROR: Failed to write vocabulary.json: ${err instanceof Error ? err.message : String(err)}`);
+    console.error(
+      `ERROR: Failed to write vocabulary.json: ${err instanceof Error ? err.message : String(err)}`,
+    );
     process.exit(1);
   }
 
@@ -141,7 +149,9 @@ This is an automatically generated vocabulary database compiled from all course 
     fs.writeFileSync(mdPath, mdContent, "utf8");
     console.log(`✓ Generated human glossary: content/vocabulary.md`);
   } catch (err: any) {
-    console.error(`ERROR: Failed to write vocabulary.md: ${err instanceof Error ? err.message : String(err)}`);
+    console.error(
+      `ERROR: Failed to write vocabulary.md: ${err instanceof Error ? err.message : String(err)}`,
+    );
     process.exit(1);
   }
 }

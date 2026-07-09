@@ -46,7 +46,9 @@ describe("Progress Sync Utility Spec", () => {
     // Check phrasebook srs
     expect(deserialized.srs["phr-11-1v3vktn"]).toBeDefined();
     expect(deserialized.srs["phr-11-1v3vktn"]?.level).toBe(2);
-    expect(deserialized.srs["phr-11-1v3vktn"]?.lastReviewed).toBe(1718985600000);
+    expect(deserialized.srs["phr-11-1v3vktn"]?.lastReviewed).toBe(
+      1718985600000,
+    );
     expect(deserialized.srs["phr-5-abcde"]?.level).toBe(5);
     expect(deserialized.srs["phr-5-abcde"]?.lastReviewed).toBe(1718985900000);
 
@@ -518,7 +520,9 @@ describe("WebRTC Utility Spec", () => {
     const packed = packSDPData(mdnsData);
     const unpacked = unpackSDPData(packed);
     if (!unpacked) throw new Error("Expected unpacked data");
-    expect(unpacked.c[0]?.[0]).toBe("1b3a4c5d-6e7f-8a9b-0c1d-2e3f4a5b6c7d.local");
+    expect(unpacked.c[0]?.[0]).toBe(
+      "1b3a4c5d-6e7f-8a9b-0c1d-2e3f4a5b6c7d.local",
+    );
     expect(unpacked.c[0]?.[1]).toBe(12345);
   });
 
@@ -648,7 +652,12 @@ a=candidate:1 1 udp 2122260223 192.168.1.5 50000 typ host generation 0 ufrag moc
     // @ts-expect-error Polyfill handling
     delete Uint8Array.fromBase64;
     try {
-      const state = { chapters: ["greetings"], srs: {}, vocab: {}, timestamp: 0 };
+      const state = {
+        chapters: ["greetings"],
+        srs: {},
+        vocab: {},
+        timestamp: 0,
+      };
       const serialized = await serializeState(state);
       const deserialized = await deserializeState(serialized);
       if (!deserialized) throw new Error("Should not be null");
@@ -828,6 +837,169 @@ a=candidate:2 1 tcp 2122260223 192.168.1.6 50001 typ host generation 0 ufrag moc
     const result = rebuildSDP(true, data);
     expect(result.sdp).not.toContain("1.2.3.4");
     expect(result.sdp).not.toContain("9999");
+  });
+
+  test("rebuildSDP handles null matchResult for empty fingerprint gracefully", () => {
+    const data: import("../src/types/index.js").SDPCoordinates = {
+      t: "o",
+      u: "u",
+      p: "p",
+      f: "", // empty fingerprint matches nothing for /.{1,2}/g
+      c: [],
+    };
+    const result = rebuildSDP(true, data);
+    expect(result.sdp).toContain("a=fingerprint:sha-256 ");
+  });
+
+  test("unpackSDPData handles missing ipType gracefully", () => {
+    const bytes = new Uint8Array(1 + 8 + 24 + 32 + 1); // type (1), ufrag (8), pwd (24), fingerprint (32), candCount (1)
+    bytes[0] = 1;
+    bytes[65] = 1; // candCount = 1, but no candidate bytes follow
+    let binary = "";
+    for (let i = 0; i < bytes.length; i++) {
+      binary += String.fromCharCode(bytes[i]!);
+    }
+    const packed = btoa(binary)
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "");
+    expect(unpackSDPData(packed)).toBeNull();
+  });
+});
+
+describe("Sync Utility Spec Additional Coverage", () => {
+  test("deserializeState handles Uint8Array.fromBase64 if defined", async () => {
+    const originalFromBase64 = (Uint8Array as any).fromBase64;
+    (Uint8Array as any).fromBase64 = vi.fn().mockImplementation(() => {
+      return new Uint8Array([123, 125]); // "{}" in ASCII
+    });
+
+    try {
+      const result = await deserializeState("any_base64_string");
+      expect(result).not.toBeNull();
+      expect((Uint8Array as any).fromBase64).toHaveBeenCalled();
+    } finally {
+      (Uint8Array as any).fromBase64 = originalFromBase64;
+    }
+  });
+
+  test("deserializeState handles Uint8Array.fromBase64 throwing error", async () => {
+    const originalFromBase64 = (Uint8Array as any).fromBase64;
+    (Uint8Array as any).fromBase64 = vi.fn().mockImplementation(() => {
+      throw new Error("mock error");
+    });
+
+    try {
+      const state = {
+        chapters: ["greetings"],
+        srs: {},
+        vocab: {},
+        timestamp: 0,
+      };
+      const serialized = await serializeState(state);
+      const deserialized = await deserializeState(serialized);
+      expect(deserialized).not.toBeNull();
+    } finally {
+      (Uint8Array as any).fromBase64 = originalFromBase64;
+    }
+  });
+
+  test("deserializeState handles malformed srs/vocab entry arrays gracefully", async () => {
+    const malformedPayload = {
+      c: [],
+      s: {
+        "phr-1": "not-an-array",
+        "phr-2": [],
+      },
+      v: {
+        "vocab-1": "not-an-array",
+        "vocab-2": [],
+      },
+      t: 1000,
+    };
+    const base64Str = btoa(JSON.stringify(malformedPayload))
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "");
+    const result = await deserializeState(base64Str);
+    expect(result).not.toBeNull();
+    expect(result?.srs).toEqual({});
+    expect(result?.vocab).toEqual({});
+  });
+
+  test("mergeStates handles missing or undefined localStore or importedStore stores gracefully", () => {
+    const local = {
+      chapters: [],
+      srs: undefined as any,
+      vocab: undefined as any,
+    };
+    const imported = {
+      chapters: [],
+      srs: undefined as any,
+      vocab: undefined as any,
+    };
+    const merged = mergeStates(local, imported);
+    expect(merged.srs).toEqual({});
+    expect(merged.vocab).toEqual({});
+  });
+
+  test("deserializeState handles missing elements in srs/vocab arrays", async () => {
+    const payload = {
+      c: [],
+      s: {
+        "phr-1": [null, 1000],
+        "phr-2": [3, null],
+      },
+      v: {
+        "vocab-1": [null, 2000],
+        "vocab-2": [4, null],
+      },
+      t: 1000,
+    };
+    const base64Str = btoa(JSON.stringify(payload))
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "");
+    const result = await deserializeState(base64Str);
+    expect(result).not.toBeNull();
+    expect(result?.srs["phr-1"]?.level).toBe(1);
+    expect(result?.srs["phr-2"]?.lastReviewed).toBe(0);
+    expect(result?.vocab["vocab-1"]?.level).toBe(1);
+    expect(result?.vocab["vocab-2"]?.lastReviewed).toBe(0);
+  });
+
+  test("serializeState handles items with missing lastReviewed or level gracefully", async () => {
+    const state = {
+      chapters: [],
+      srs: {
+        "phr-1": { level: 3, lastReviewed: undefined as any },
+        "phr-2": { level: undefined } as any,
+      },
+      vocab: {
+        "vocab-1": { level: 4, lastReviewed: 0 },
+        "vocab-2": { level: undefined } as any,
+      },
+    };
+    const serialized = await serializeState(state);
+    const deserialized = await deserializeState(serialized);
+    expect(deserialized).not.toBeNull();
+    expect(deserialized?.srs["phr-1"]?.lastReviewed).toBe(0);
+    expect(deserialized?.srs["phr-2"]).toBeUndefined();
+    expect(deserialized?.vocab["vocab-1"]?.lastReviewed).toBe(0);
+    expect(deserialized?.vocab["vocab-2"]).toBeUndefined();
+  });
+
+  test("serializeState handles undefined state.vocab or state.srs", async () => {
+    const state = {
+      chapters: [],
+      srs: undefined as any,
+      vocab: undefined as any,
+    };
+    const serialized = await serializeState(state);
+    const deserialized = await deserializeState(serialized);
+    expect(deserialized).not.toBeNull();
+    expect(deserialized?.srs).toEqual({});
+    expect(deserialized?.vocab).toEqual({});
   });
 });
 

@@ -16,13 +16,13 @@ export interface IdentifiableItem {
 export function selectCards<T extends IdentifiableItem>(
   poolItems: T[],
   srsState: SrsStateMap,
-  limit: number = 10
+  limit: number = 10,
 ): T[] {
   if (!poolItems || poolItems.length === 0) return [];
 
   const weightedPool = poolItems.map((item) => {
     const state = srsState[item.id];
-    const lvl = (state && typeof state.level === "number") ? state.level : 1;
+    const lvl = state && typeof state.level === "number" ? state.level : 1;
     // Lower level = higher weight
     const weight = 1 / Math.pow(lvl, 1.5);
     return { item, weight };
@@ -36,7 +36,7 @@ export function selectCards<T extends IdentifiableItem>(
     const totalWeight = tempPool.reduce((sum, el) => sum + el.weight, 0);
     if (totalWeight <= 0) break;
 
-    let r = Math.random() * totalWeight;
+    const r = Math.random() * totalWeight;
     let cumulative = 0;
     let selectedIndex = -1;
 
@@ -70,9 +70,12 @@ export function selectCards<T extends IdentifiableItem>(
  */
 export function gradeCard(
   currentState: SrsCardState | undefined,
-  isCorrect: boolean
+  isCorrect: boolean,
 ): SrsCardState {
-  const level = (currentState && typeof currentState.level === "number") ? currentState.level : 1;
+  const level =
+    currentState && typeof currentState.level === "number"
+      ? currentState.level
+      : 1;
   let newLevel: number;
 
   if (isCorrect) {

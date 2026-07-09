@@ -42,6 +42,7 @@
     "type-coverage": "^2.29.7",
     "typescript": "^5.9.3",
     "typescript-coverage-report": "^1.1.1",
+    "typescript-eslint": "^8.63.0",
     "vite-plugin-istanbul": "^9.0.1",
     "vitest": "^4.1.7"
   },

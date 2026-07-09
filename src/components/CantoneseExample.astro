@@ -1,6 +1,6 @@
 ---
 import { compileAnnotations } from "../utils/markdown.js";
-import crypto from "node:crypto";
+import { getAudioHash } from "../utils/audio.js";
 
 const { content } = Astro.props;
 
@@ -10,12 +10,8 @@ const translationRaw = parts[1] ? parts[1].trim() : "";
 
 const cantoneseHtml = compileAnnotations(cantoneseRaw);
 
-// Pre-calculate audio hash
-const cleanText = cantoneseRaw
-  .replace(/`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g, (match, char) => char)
-  .replace(/\[[^\]]+\]/g, "")
-  .trim();
-const audioHash = crypto.createHash("sha256").update(cleanText).digest("hex").slice(0, 16);
+// Pre-calculate audio hash using shared utility
+const audioHash = getAudioHash(cantoneseRaw);
 ---
 <div class="cantonese-example-card chapter-block">
   <div class="cantonese-sentence-container" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">

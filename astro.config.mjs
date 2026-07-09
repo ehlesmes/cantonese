@@ -12,7 +12,7 @@ export default defineConfig({
         istanbul({
           include: "src/client/**",
           exclude: ["node_modules", "tests/**"],
-          extension: [".js"],
+          extension: [".ts", ".js"],
           requireEnv: false,
         }),
     ].filter(Boolean),

@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
-const { validateJyutping } = require("./validate-format");
+import { validateJyutping } from "./validate-format.js";
 
 // Premium CLI output styles
 const colors = {

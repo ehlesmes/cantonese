@@ -1,36 +1,35 @@
 ---
 import { compileAnnotations } from "../utils/markdown.js";
-import crypto from "node:crypto";
+import { getAudioHash } from "../utils/audio.js";
+
+interface DialogueTurn {
+  speaker: string;
+  cantonese: string;
+  english: string;
+  audioHash?: string;
+}
 
 const { content } = Astro.props;
 
 const lines = content.split(/\r?\n/);
-const turns = [];
-let currentTurn = null;
-
-function getDialogueHash(cantoneseRaw) {
-  if (!cantoneseRaw) return "";
-  const cleanText = cantoneseRaw
-    .replace(/`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g, (match, char) => char)
-    .replace(/\[[^\]]+\]/g, "")
-    .trim();
-  return crypto.createHash("sha256").update(cleanText).digest("hex").slice(0, 16);
-}
+const turns: DialogueTurn[] = [];
+let currentTurn: DialogueTurn | null = null;
 
 for (let i = 0; i < lines.length; i++) {
   const line = lines[i];
+  if (line === undefined) continue;
   const trimmed = line.trim();
   if (!trimmed) continue;
 
   const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
   if (speakerMatch) {
     if (currentTurn) {
-      currentTurn.audioHash = getDialogueHash(currentTurn.cantonese);
+      currentTurn.audioHash = getAudioHash(currentTurn.cantonese);
       turns.push(currentTurn);
     }
     currentTurn = {
-      speaker: speakerMatch[1],
-      cantonese: speakerMatch[2],
+      speaker: speakerMatch[1] || "",
+      cantonese: speakerMatch[2] || "",
       english: "",
     };
   } else if (trimmed.startsWith("===")) {
@@ -45,7 +44,7 @@ for (let i = 0; i < lines.length; i++) {
 }
 
 if (currentTurn) {
-  currentTurn.audioHash = getDialogueHash(currentTurn.cantonese);
+  currentTurn.audioHash = getAudioHash(currentTurn.cantonese);
   turns.push(currentTurn);
 }
 ---

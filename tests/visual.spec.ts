@@ -1,6 +1,5 @@
 import { test, expect } from "./coverage-fixture.js";
 import path from "path";
-import os from "os";
 import type { Page } from "@playwright/test";
 
 async function assertScreenshot(page: Page, name: string) {
@@ -40,10 +39,10 @@ test("Chapter 1 Visual Render Test", async ({ page }) => {
   // Ensure content is loaded
   await page.waitForSelector("h1");
 
-  // Save a copy of the screenshot directly to the artifact folder for visual inspection
-  const artifactScreenshotPath = path.join(
-    os.homedir(),
-    ".gemini/antigravity/brain/acc6c718-7d3e-415c-8f61-e3b0e467ee2d/chapter1-screenshot.png",
+  // Save a copy of the screenshot directly to the test-results folder for visual inspection
+  const artifactScreenshotPath = path.resolve(
+    "test-results",
+    "chapter1-screenshot.png",
   );
   await page.screenshot({ path: artifactScreenshotPath, fullPage: true });
 
@@ -56,7 +55,7 @@ test("Phrasebook Visual Render Test", async ({ page }) => {
   await page.addInitScript(() => {
     let seed = 42;
     Math.random = () => {
-      let x = Math.sin(seed++) * 10000;
+      const x = Math.sin(seed++) * 10000;
       return x - Math.floor(x);
     };
   });
@@ -89,10 +88,10 @@ test("Phrasebook Visual Render Test", async ({ page }) => {
   await expect(firstChip).toBeVisible();
   await firstChip.click();
 
-  // Save copy of screenshot to artifacts directory for visual inspection
-  const artifactScreenshotPath = path.join(
-    os.homedir(),
-    ".gemini/antigravity/brain/8aac5a5b-96e0-4b82-a813-9b9820cfe4e2/phrasebook-session-screenshot.png",
+  // Save copy of screenshot to test-results folder for visual inspection
+  const artifactScreenshotPath = path.resolve(
+    "test-results",
+    "phrasebook-session-screenshot.png",
   );
   await page.screenshot({ path: artifactScreenshotPath, fullPage: true });
 
@@ -105,7 +104,7 @@ test("Vocabulary Visual Render Test", async ({ page }) => {
   await page.addInitScript(() => {
     let seed = 42;
     Math.random = () => {
-      let x = Math.sin(seed++) * 10000;
+      const x = Math.sin(seed++) * 10000;
       return x - Math.floor(x);
     };
   });
@@ -137,10 +136,10 @@ test("Vocabulary Visual Render Test", async ({ page }) => {
   const charEl = page.locator("#flashcard-character-container .vocab-term");
   await expect(charEl).toBeVisible();
 
-  // Save copy of screenshot to artifacts directory for visual inspection of vocab flashcard front
-  const frontScreenshotPath = path.join(
-    os.homedir(),
-    ".gemini/antigravity/brain/8aac5a5b-96e0-4b82-a813-9b9820cfe4e2/vocabulary-session-front-screenshot.png",
+  // Save copy of screenshot to test-results folder for visual inspection of vocab flashcard front
+  const frontScreenshotPath = path.resolve(
+    "test-results",
+    "vocabulary-session-front-screenshot.png",
   );
   await page.screenshot({ path: frontScreenshotPath, fullPage: true });
 
@@ -152,10 +151,10 @@ test("Vocabulary Visual Render Test", async ({ page }) => {
   await revealBtn.click();
   await page.waitForSelector("#flashcard-answer-section");
 
-  // Save copy of screenshot to artifacts directory for visual inspection of vocab flashcard back
-  const backScreenshotPath = path.join(
-    os.homedir(),
-    ".gemini/antigravity/brain/8aac5a5b-96e0-4b82-a813-9b9820cfe4e2/vocabulary-session-back-screenshot.png",
+  // Save copy of screenshot to test-results folder for visual inspection of vocab flashcard back
+  const backScreenshotPath = path.resolve(
+    "test-results",
+    "vocabulary-session-back-screenshot.png",
   );
   await page.screenshot({ path: backScreenshotPath, fullPage: true });
 

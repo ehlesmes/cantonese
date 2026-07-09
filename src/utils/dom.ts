@@ -15,23 +15,39 @@ export type ElementChild = Node | string | number | null | undefined;
 export function el(
   tag: string,
   props: ElementProps = {},
-  children: ElementChild[] = []
+  children: ElementChild[] = [],
 ): HTMLElement | SVGElement {
   let element: HTMLElement | SVGElement;
-  
+
   // SVG tags need namespace to render properly in HTML
-  if (tag === "svg" || tag === "polyline" || tag === "path" || tag === "circle") {
-    element = document.createElementNS("http://www.w3.org/2000/svg", tag) as SVGElement;
+  if (
+    tag === "svg" ||
+    tag === "polyline" ||
+    tag === "path" ||
+    tag === "circle" ||
+    tag === "polygon" ||
+    tag === "rect" ||
+    tag === "g"
+  ) {
+    element = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      tag,
+    ) as SVGElement;
   } else {
     element = document.createElement(tag);
   }
 
   for (const [k, v] of Object.entries(props)) {
     if (k.startsWith("on") && typeof v === "function") {
-      element.addEventListener(k.toLowerCase().substring(2), v as EventListenerOrEventListenerObject);
+      element.addEventListener(
+        k.toLowerCase().substring(2),
+        v as EventListenerOrEventListenerObject,
+      );
     } else if (k === "className") {
       if (element instanceof SVGElement) {
-        ((element as unknown) as { className: SVGAnimatedString }).className.baseVal = v as string;
+        (
+          element as unknown as { className: SVGAnimatedString }
+        ).className.baseVal = v as string;
       } else {
         element.className = v as string;
       }
@@ -43,7 +59,9 @@ export function el(
       }
     } else if (k === "dataset") {
       const htmlEl = element as HTMLElement;
-      for (const [dataKey, dataVal] of Object.entries(v as Record<string, string>)) {
+      for (const [dataKey, dataVal] of Object.entries(
+        v as Record<string, string>,
+      )) {
         htmlEl.dataset[dataKey] = dataVal;
       }
     } else if (k === "innerHTML") {
@@ -87,6 +105,6 @@ export function createChevronIcon(): HTMLElement | SVGElement {
       "stroke-linejoin": "round",
       style: "vertical-align: middle;",
     },
-    [el("polyline", { points: "9 18 15 12 9 6" })]
+    [el("polyline", { points: "9 18 15 12 9 6" })],
   );
 }
