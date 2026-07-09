@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
+import { evaluateCoverage } from "./lib/coverage-utils";
 
 // Premium CLI output styles
 const colors = {
@@ -36,7 +37,7 @@ const refWords: any[] = JSON.parse(fs.readFileSync(REF_PATH, "utf8"));
 const dictEntries: any[] = JSON.parse(fs.readFileSync(DICT_PATH, "utf8"));
 
 // Create a lookup set of characters taught in the course
-const taughtChars = new Set(dictEntries.map((entry: any) => entry.char.trim()));
+const taughtChars = new Set<string>(dictEntries.map((entry: any) => entry.char.trim()));
 
 console.log(
   `\n📊 ${colors.bold}${colors.cyan}Cantonese Curriculum Vocabulary Coverage Evaluation${colors.reset}`,
@@ -45,50 +46,10 @@ console.log(
   `${colors.dim}Evaluating course dictionary against the top 1000 spoken Cantonese words (Cifu)...${colors.reset}\n`,
 );
 
-let totalCovered = 0;
-const brackets = [
-  { name: "Top 100", startRank: 1, endRank: 100, covered: 0, total: 100 },
-  { name: "Top 100–300", startRank: 101, endRank: 300, covered: 0, total: 200 },
-  { name: "Top 300–500", startRank: 301, endRank: 500, covered: 0, total: 200 },
-  {
-    name: "Top 500–1000",
-    startRank: 501,
-    endRank: 1000,
-    covered: 0,
-    total: 500,
-  },
-];
-
-const missingWords = [];
-
-const variantMap: Record<string, string> = {
-  啊: "呀",
-  畀: "俾",
-  比: "俾",
-  左: "咗",
-  地: "哋",
-  重: "仲",
-};
-
-for (const ref of refWords) {
-  let isCovered = taughtChars.has(ref.char);
-  if (!isCovered && variantMap[ref.char]) {
-    isCovered = taughtChars.has(variantMap[ref.char]);
-  }
-
-  if (isCovered) {
-    totalCovered++;
-    // Add to bracket count
-    for (const b of brackets) {
-      if (ref.rank >= b.startRank && ref.rank <= b.endRank) {
-        b.covered++;
-        break;
-      }
-    }
-  } else {
-    missingWords.push(ref);
-  }
-}
+const { totalCovered, brackets, missingWords } = evaluateCoverage(
+  refWords,
+  taughtChars,
+);
 
 // 1. Overall Summary
 const overallPct = ((totalCovered / refWords.length) * 100).toFixed(1);
@@ -124,6 +85,7 @@ console.log(
 
 for (let i = 0; i < displayLimit; i++) {
   const word = missingWords[i];
+  if (word === undefined) continue;
   console.log(
     `${colors.magenta}${word.rank.toString().padStart(5)}${colors.reset}  ` +
       `${colors.bold}${colors.green}${word.char.padEnd(8)}${colors.reset}  ` +

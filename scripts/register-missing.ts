@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
-const parser = require("./lib/parser");
+import * as parser from "./lib/parser";
+import { findUnregisteredWords } from "./lib/register-utils";
 
 const colors = {
   reset: "\x1b[0m",
@@ -99,64 +100,7 @@ function main() {
     }
   }
 
-  const unregisteredMap: Record<string, any> = {};
-  for (const unit of chapterUnits) {
-    const char = unit.characters.trim();
-    const jyutping = unit.jyutping.trim();
-    const translation = unit.translation.trim();
-
-    // Look up exact match
-    const exactMatch = dictionary.find(
-      (entry: any) =>
-        entry.char === char &&
-        entry.jyutping.toLowerCase() === jyutping.toLowerCase(),
-    );
-
-    // Dynamic A-not-A question pattern resolution (matching verify-chapter-vocab.js)
-    let isAnotA = false;
-    if (char.length === 3 && char[1] === "唔" && char[0] === char[2]) {
-      const syllables = jyutping.split(/\s+/);
-      if (
-        syllables.length === 3 &&
-        syllables[1] === "m4" &&
-        syllables[0] === syllables[2]
-      ) {
-        const baseMatch = dictionary.find(
-          (entry: any) =>
-            entry.char === char[0] &&
-            entry.jyutping.toLowerCase() === syllables[0].toLowerCase(),
-        );
-        if (baseMatch) {
-          isAnotA = true;
-        }
-      }
-    }
-
-    if (!exactMatch && !isAnotA) {
-      const key = `${char}|${jyutping}`;
-      if (!unregisteredMap[key]) {
-        // Guess word type if the character is registered with a different pronunciation
-        const existingEntries = dictionary.filter(
-          (entry: any) => entry.char === char,
-        );
-        let guessedType = "TODO_TYPE";
-        if (existingEntries.length > 0) {
-          guessedType = existingEntries[0].type;
-        } else if (translation.toLowerCase().startsWith("to ")) {
-          guessedType = "verb";
-        }
-
-        unregisteredMap[key] = {
-          char,
-          jyutping,
-          definition: translation,
-          type: guessedType,
-        };
-      }
-    }
-  }
-
-  const unregisteredList = Object.values(unregisteredMap);
+  const unregisteredList = findUnregisteredWords(chapterUnits, dictionary);
 
   if (unregisteredList.length === 0) {
     console.log(

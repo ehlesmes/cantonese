@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
-const crypto = require("crypto");
+import { parseChapter, parseCurriculum } from "./lib/parser";
+import { getCleanSpokenText, escapeXml, getHash } from "./lib/tts-utils";
 
 // Premium CLI output styles
 const colors = {
@@ -53,7 +54,7 @@ if (process.env.SKIP_TTS === "true") {
 const key = process.env.AZURE_SPEECH_KEY || "";
 const region = process.env.AZURE_SPEECH_REGION || "";
 
-if (!key || !region) {
+if (!key || region === "") {
   console.log(
     `${colors.yellow}${colors.bold}WARNING: Azure Speech credentials missing.${colors.reset}`,
   );
@@ -66,55 +67,11 @@ if (!key || !region) {
   process.exit(0);
 }
 
-// 3. Resolve Paths & Require Parser
+// 3. Resolve Paths
 const projectRoot = path.resolve(__dirname, "..");
-const parserPath = path.resolve(projectRoot, "scripts/lib/parser.js");
-const { parseChapter, parseCurriculum } = require(parserPath);
-
 const outputDir = path.resolve(projectRoot, "public/audio/tts");
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
-}
-
-// Helper to strip annotations from Cantonese text
-function getCleanSpokenText(text: any) {
-  if (!text) return "";
-  let cleaned = text;
-
-  // Replace annotated blocks `Char[Jp|Trans]` with just Char
-  const annotationRegex =
-    /`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g;
-  cleaned = cleaned.replace(annotationRegex, (_match: string, char: string) => char);
-
-  // Clean any lingering bracket parameters
-  cleaned = cleaned.replace(/\[[^\]]+\]/g, "");
-
-  return cleaned.trim();
-}
-
-// XML Escaper for SSML payload
-function escapeXml(unsafe: string) {
-  return unsafe.replace(/[<>&'"]/g, (c) => {
-    switch (c) {
-      case "<":
-        return "&lt;";
-      case ">":
-        return "&gt;";
-      case "&":
-        return "&amp;";
-      case "'":
-        return "&apos;";
-      case '"':
-        return "&quot;";
-      default:
-        return c;
-    }
-  });
-}
-
-// SHA-256 Hashing helper matching client-side Web Crypto
-function getHash(text: string) {
-  return crypto.createHash("sha256").update(text).digest("hex").slice(0, 16);
 }
 
 // Promise delay helper
@@ -230,7 +187,8 @@ async function main() {
           if (!trimmed) continue;
           const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
           if (speakerMatch) {
-            const rawCantonese = speakerMatch[2].split("===")[0];
+            const speakerCanto = speakerMatch[2] || "";
+            const rawCantonese = speakerCanto.split("===")[0];
             const cleanText = getCleanSpokenText(rawCantonese);
             if (cleanText) spokenTexts.add(cleanText);
           }
