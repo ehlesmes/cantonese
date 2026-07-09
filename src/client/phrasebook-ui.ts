@@ -5,21 +5,19 @@ declare global {
 }
 
 import {
-
-
   getUnlockedChapters,
   getPhraseSRS,
   savePhraseSRS,
 } from "../utils/storage.js";
-import { selectCards, gradeCard } from "../utils/srs-engine.js";
 import { el, createChevronIcon } from "../utils/dom.js";
+import { checkPhraseAnswer } from "../utils/text.js";
+import { PracticeSession } from "../utils/practice-session.js";
 
 function getEl(id: string): HTMLElement {
   const el = document.getElementById(id);
   if (!el) throw new Error("Missing element: " + id);
   return el;
 }
-
 
 // Client-Side Helper to Compile Annotations inline without imports
 function compileAnnotationsClient(
@@ -43,10 +41,8 @@ function compileAnnotationsClient(
 let allExamples: any[] = [];
 let unlockedChapters: string[] = [];
 let srsState: Record<string, any> = {};
-let sessionCards: any[] = [];
-let currentCardIndex = 0;
+let session: PracticeSession<any> | null = null;
 let assembledTokenIndices: number[] = [];
-let sessionCorrectCount = 0;
 let currentGroupMode = "chapter"; // "chapter" or "level"
 
 // Fetch data and initialize
@@ -180,7 +176,8 @@ function renderDashboard() {
     if (itemState && itemState.level === 5) masteredCount++;
   });
 
-  if (statsChaptersEl) statsChaptersEl.textContent = String(unlockedChapters.length);
+  if (statsChaptersEl)
+    statsChaptersEl.textContent = String(unlockedChapters.length);
   if (statsCardsEl) statsCardsEl.textContent = String(poolItems.length);
   if (statsMasteredEl) statsMasteredEl.textContent = String(masteredCount);
 
@@ -279,7 +276,13 @@ function renderPoolDirectory() {
       container.appendChild(section);
     });
   } else {
-    const grouped: Record<number, any[]> = { 1: [], 2: [], 3: [], 4: [], 5: [] };
+    const grouped: Record<number, any[]> = {
+      1: [],
+      2: [],
+      3: [],
+      4: [],
+      5: [],
+    };
     poolItems.forEach((item: any) => {
       const state = srsState[item.id];
       const lvl = state ? state.level : 1;
@@ -378,7 +381,10 @@ function createItemCardElement(item: any) {
 
 // --- GAMEPLAY SESSION CONTROLS ---
 
-function startPracticeSession(chapterId: string | null = null, srsLevel: number | string | null = null) {
+function startPracticeSession(
+  chapterId: string | null = null,
+  srsLevel: number | string | null = null,
+) {
   let poolItems: any[] = [];
   if (typeof chapterId === "string" && chapterId) {
     poolItems = allExamples.filter((item: any) => item.chapter === chapterId);
@@ -407,9 +413,11 @@ function startPracticeSession(chapterId: string | null = null, srsLevel: number 
     return;
   }
 
-  sessionCards = selectCards(poolItems, srsState, 10);
-  currentCardIndex = 0;
-  sessionCorrectCount = 0;
+  session = new PracticeSession({
+    poolItems,
+    srsState,
+    limit: 10,
+  });
 
   getEl("dashboard-view").style.display = "none";
   getEl("session-view").style.display = "flex";
@@ -418,27 +426,28 @@ function startPracticeSession(chapterId: string | null = null, srsLevel: number 
   // Preload audio files for all cards in this session to eliminate playback latency
   if (window.preloadTexts) {
     window.preloadTexts(
-      sessionCards.map((c) => ({ text: c.cantoneseRaw, hash: c.audioHash })),
+      session.cards.map((c) => ({ text: c.cantoneseRaw, hash: c.audioHash })),
     );
   }
 
-  loadCard(currentCardIndex);
+  loadCard();
 }
 
-function loadCard(index: number) {
-  if (index >= sessionCards.length) {
+function loadCard() {
+  if (!session || session.isFinished()) {
     showSummary();
     return;
   }
 
-  const card = sessionCards[index];
+  const card = session.getCurrentCard()!;
   assembledTokenIndices = [];
 
+  const index = session.getCurrentIndex();
+  const progress = session.getProgress();
+
   getEl("session-progress-text").textContent =
-    `Card ${index + 1} of ${sessionCards.length}`;
-  const fillPercentage = (index / sessionCards.length) * 100;
-  getEl("session-progress-fill").style.width =
-    `${fillPercentage}%`;
+    `Card ${index + 1} of ${session.cards.length}`;
+  getEl("session-progress-fill").style.width = `${progress.percentage}%`;
 
   getEl("session-chapter-label").textContent =
     `Chapter ${card.chapter}: ${card.chapterTitle}`;
@@ -469,7 +478,9 @@ function renderGameplayBoards(poolIndices: number[]) {
   answerSlotsEl.innerHTML = "";
   tokensPoolEl.innerHTML = "";
 
-  const card = sessionCards[currentCardIndex];
+  if (!session) return;
+  const card = session.getCurrentCard();
+  if (!card) return;
 
   if (assembledTokenIndices.length === 0) {
     answerSlotsEl.appendChild(
@@ -488,7 +499,9 @@ function renderGameplayBoards(poolIndices: number[]) {
           assembledTokenIndices.splice(assembledIdx, 1);
 
           const currentPool = Array.from(tokensPoolEl.children)
-            .map((child) => parseInt(child.getAttribute("data-index") || "", 10))
+            .map((child) =>
+              parseInt(child.getAttribute("data-index") || "", 10),
+            )
             .filter((idx) => !Number.isNaN(idx));
 
           currentPool.push(origIdx);
@@ -526,7 +539,11 @@ function renderGameplayBoards(poolIndices: number[]) {
   }
 }
 
-function createTokenChip(rawToken: string, clickCallback: () => void, tokenHashes: Record<string, string> = {}) {
+function createTokenChip(
+  rawToken: string,
+  clickCallback: () => void,
+  tokenHashes: Record<string, string> = {},
+) {
   const chip = document.createElement("div");
   chip.className = "token-chip";
 
@@ -545,7 +562,9 @@ function createTokenChip(rawToken: string, clickCallback: () => void, tokenHashe
 }
 
 function resetCurrentCard() {
-  const card = sessionCards[currentCardIndex];
+  if (!session) return;
+  const card = session.getCurrentCard();
+  if (!card) return;
   assembledTokenIndices = [];
   const indices = card.tokens.map((_: any, i: number) => i);
   for (let i = indices.length - 1; i > 0; i--) {
@@ -556,7 +575,9 @@ function resetCurrentCard() {
 }
 
 function checkCurrentAnswer() {
-  const card = sessionCards[currentCardIndex];
+  if (!session) return;
+  const card = session.getCurrentCard();
+  if (!card) return;
   const correctIndicesCount = card.tokens.length;
 
   if (assembledTokenIndices.length !== correctIndicesCount) {
@@ -564,24 +585,14 @@ function checkCurrentAnswer() {
     return;
   }
 
-  let isCorrect = true;
-  for (let i = 0; i < correctIndicesCount; i++) {
-    const asmIdx = assembledTokenIndices[i];
-    if (asmIdx === undefined || typeof asmIdx !== "number" || card.tokens[asmIdx] !== card.tokens[i]) {
-      isCorrect = false;
-      break;
-    }
-  }
+  const userTokens = assembledTokenIndices.map((idx) => card.tokens[idx]);
+  const isCorrect = checkPhraseAnswer(userTokens, card.tokens);
 
   getEl("game-check-btn").style.display = "none";
   getEl("game-reset-btn").style.display = "none";
 
-  const updatedState = gradeCard(srsState[card.id], isCorrect);
-  srsState[card.id] = updatedState;
-
-  if (isCorrect) {
-    sessionCorrectCount++;
-  }
+  const updatedState = session.submitResponse(isCorrect).updatedCardState;
+  srsState = session.getUpdatedSrsState();
   saveState();
 
   const feedbackPanel = getEl("feedback-panel");
@@ -633,8 +644,7 @@ function checkCurrentAnswer() {
       "; color: #ffffff; border-radius: 4px; padding: 0.5rem 1.5rem; cursor: pointer; float: right;",
     textContent: "Next Card →",
     onClick: () => {
-      currentCardIndex++;
-      loadCard(currentCardIndex);
+      loadCard();
     },
   });
 
@@ -721,12 +731,14 @@ function checkCurrentAnswer() {
 }
 
 function showSummary() {
+  if (!session) return;
   getEl("session-view").style.display = "none";
   getEl("summary-view").style.display = "flex";
-  getEl("summary-score").textContent =
-    `${sessionCorrectCount} / ${sessionCards.length}`;
 
-  const scorePercentage = (sessionCorrectCount / sessionCards.length) * 100;
+  const results = session.getResults();
+  getEl("summary-score").textContent = `${results.correct} / ${results.total}`;
+
+  const scorePercentage = results.percentage;
   let msg =
     "Great practice! Spaced Repetition reinforces memory paths. Continue practicing regularly!";
   if (scorePercentage === 100) {

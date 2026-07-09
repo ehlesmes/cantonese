@@ -1,5 +1,9 @@
 import { describe, test, expect } from "vitest";
-import { getCleanSpokenText } from "../src/utils/text.js";
+import {
+  getCleanSpokenText,
+  isPunctuation,
+  checkPhraseAnswer,
+} from "../src/utils/text.js";
 
 describe("Cantonese Text Cleaner Utility", () => {
   test("returns empty string for null, undefined or empty input", () => {
@@ -40,5 +44,79 @@ describe("Cantonese Text Cleaner Utility", () => {
 
   test("trims leading and trailing whitespace", () => {
     expect(getCleanSpokenText("  你好[nei5hou2|hello]  ")).toBe("你好");
+  });
+});
+
+describe("isPunctuation Utility", () => {
+  test("returns true for standard Chinese punctuation", () => {
+    expect(isPunctuation("，")).toBe(true);
+    expect(isPunctuation("。")).toBe(true);
+    expect(isPunctuation("！")).toBe(true);
+    expect(isPunctuation("？")).toBe(true);
+    expect(isPunctuation("、")).toBe(true);
+    expect(isPunctuation("；")).toBe(true);
+    expect(isPunctuation("：")).toBe(true);
+  });
+
+  test("returns true for standard ASCII punctuation", () => {
+    expect(isPunctuation(",")).toBe(true);
+    expect(isPunctuation("?")).toBe(true);
+    expect(isPunctuation("!")).toBe(true);
+    expect(isPunctuation(";")).toBe(true);
+    expect(isPunctuation(":")).toBe(true);
+  });
+
+  test("returns false for non-punctuation tokens", () => {
+    expect(isPunctuation("你好")).toBe(false);
+    expect(isPunctuation("我[ngo5|I]")).toBe(false);
+    expect(isPunctuation("")).toBe(false);
+    expect(isPunctuation(null)).toBe(false);
+    expect(isPunctuation(undefined)).toBe(false);
+  });
+});
+
+describe("checkPhraseAnswer Utility", () => {
+  test("returns true for identical token lists", () => {
+    const user = ["我[ngo5|I]", "係[hai6|am]", "人[jan4|human]", "。"];
+    const expected = ["我[ngo5|I]", "係[hai6|am]", "人[jan4|human]", "。"];
+    expect(checkPhraseAnswer(user, expected)).toBe(true);
+  });
+
+  test("returns false for mismatched token list length", () => {
+    const user = ["我[ngo5|I]", "係[hai6|am]"];
+    const expected = ["我[ngo5|I]", "係[hai6|am]", "人[jan4|human]"];
+    expect(checkPhraseAnswer(user, expected)).toBe(false);
+  });
+
+  test("returns false for mismatched non-punctuation tokens", () => {
+    const user = ["你[nei5|you]", "係[hai6|am]"];
+    const expected = ["我[ngo5|I]", "係[hai6|am]"];
+    expect(checkPhraseAnswer(user, expected)).toBe(false);
+  });
+
+  test("returns true when equivalent punctuation marks are swapped", () => {
+    const user = [
+      "好[hou2|good]",
+      "！",
+      "我[ngo5|I]",
+      "，",
+      "多謝[do1ze6|thanks]",
+      "。",
+    ];
+    const expected = [
+      "好[hou2|good]",
+      "，",
+      "我[ngo5|I]",
+      "。",
+      "多謝[do1ze6|thanks]",
+      "！",
+    ];
+    expect(checkPhraseAnswer(user, expected)).toBe(true);
+  });
+
+  test("returns false if word positions are swapped even if punctuation is correct", () => {
+    const user = ["我[ngo5|I]", "好[hou2|good]", "。"];
+    const expected = ["好[hou2|good]", "我[ngo5|I]", "。"];
+    expect(checkPhraseAnswer(user, expected)).toBe(false);
   });
 });

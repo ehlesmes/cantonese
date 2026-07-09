@@ -19,3 +19,34 @@ export function getCleanSpokenText(text: string | null | undefined): string {
 
   return cleaned.trim();
 }
+
+/**
+ * Checks if a token represents one or more punctuation marks.
+ */
+export function isPunctuation(token: string | null | undefined): boolean {
+  if (!token) return false;
+  const clean = token.replace(/\[[^\]]+\]/g, "").trim();
+  return /^[，。！？、；：,?!;:]+$/.test(clean);
+}
+
+/**
+ * Compares two token lists, returning true if they match.
+ * Swapping equivalent punctuation marks is allowed.
+ */
+export function checkPhraseAnswer(
+  userTokens: string[],
+  expectedTokens: string[],
+): boolean {
+  if (userTokens.length !== expectedTokens.length) return false;
+  for (let i = 0; i < expectedTokens.length; i++) {
+    const userT = userTokens[i];
+    const correctT = expectedTokens[i];
+    if (userT !== correctT) {
+      if (isPunctuation(userT) && isPunctuation(correctT)) {
+        continue;
+      }
+      return false;
+    }
+  }
+  return true;
+}

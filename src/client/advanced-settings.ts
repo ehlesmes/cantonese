@@ -13,14 +13,16 @@ import {
   saveVocabSRS,
   clearAllProgress,
 } from "../utils/storage.js";
+import {
+  removeChapterProgressState,
+  cleanIncompleteProgressState,
+} from "../utils/storage-modifiers.js";
 
 function getEl(id: string): HTMLElement {
   const el = document.getElementById(id);
   if (!el) throw new Error("Missing element: " + id);
   return el;
 }
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   // Elements
@@ -142,18 +144,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Remove single chapter progress
-  function removeChapterProgress(chapterId: string, chNum: number, chTitle: string) {
-    currentUnlocked = currentUnlocked.filter((id) => id !== chapterId);
-
+  function removeChapterProgress(
+    chapterId: string,
+    chNum: number,
+    chTitle: string,
+  ) {
     const chapter = allChaptersData.find((ch: any) => ch.id === chapterId);
-    if (chapter) {
-      chapter.phrases.forEach((pid: string) => {
-        delete phraseSRS[pid];
-      });
-      chapter.vocab.forEach((vid: string) => {
-        delete vocabSRS[vid];
-      });
-    }
+    const chapterPhrases = chapter?.phrases || [];
+    const chapterVocab = chapter?.vocab || [];
+
+    const state = {
+      unlockedChapters: currentUnlocked,
+      phraseSrs: phraseSRS,
+      vocabSrs: vocabSRS,
+    };
+
+    const newState = removeChapterProgressState(state, chapterId, {
+      phrases: chapterPhrases,
+      vocab: chapterVocab,
+    });
+
+    currentUnlocked = newState.unlockedChapters;
+    phraseSRS = newState.phraseSrs;
+    vocabSRS = newState.vocabSrs;
 
     saveLocalStorage();
     renderCompletedChapters();
@@ -163,30 +176,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Clean incomplete chapters' data
   function cleanIncompleteData() {
     loadLocalStorage();
-    let cleanedPhrases = 0;
-    let cleanedVocab = 0;
 
-    allChaptersData.forEach((chapter: any) => {
-      if (!currentUnlocked.includes(chapter.id)) {
-        chapter.phrases.forEach((pid: string) => {
-          if (phraseSRS[pid]) {
-            delete phraseSRS[pid];
-            cleanedPhrases++;
-          }
-        });
-        chapter.vocab.forEach((vid: string) => {
-          if (vocabSRS[vid]) {
-            delete vocabSRS[vid];
-            cleanedVocab++;
-          }
-        });
-      }
-    });
+    const state = {
+      unlockedChapters: currentUnlocked,
+      phraseSrs: phraseSRS,
+      vocabSrs: vocabSRS,
+    };
+
+    const result = cleanIncompleteProgressState(state, allChaptersData);
+
+    currentUnlocked = result.newState.unlockedChapters;
+    phraseSRS = result.newState.phraseSrs;
+    vocabSRS = result.newState.vocabSrs;
 
     saveLocalStorage();
     renderCompletedChapters();
     showToast(
-      `Cleaned up ${cleanedPhrases} phrase and ${cleanedVocab} vocab orphaned records.`,
+      `Cleaned up ${result.cleanedPhrasesCount} phrase and ${result.cleanedVocabCount} vocab orphaned records.`,
     );
   }
 

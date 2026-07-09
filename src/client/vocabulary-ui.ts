@@ -1,5 +1,3 @@
-
-
 declare global {
   interface Window {
     __allVocab?: any[];
@@ -12,7 +10,7 @@ import {
   getVocabSRS,
   saveVocabSRS,
 } from "../utils/storage.js";
-import { selectCards, gradeCard } from "../utils/srs-engine.js";
+import { PracticeSession } from "../utils/practice-session.js";
 
 function getEl(id: string): HTMLElement {
   const el = document.getElementById(id);
@@ -20,14 +18,11 @@ function getEl(id: string): HTMLElement {
   return el;
 }
 
-
 // Global state and references
 let allVocab: any[] = [];
 let unlockedChapters: string[] = [];
 let vocabSRSState: Record<string, any> = {};
-let sessionCards: any[] = [];
-let currentCardIndex = 0;
-let sessionCorrectCount = 0;
+let session: PracticeSession<any> | null = null;
 let currentGroupMode = "chapter"; // "chapter" or "level"
 
 // Fetch data and initialize
@@ -166,7 +161,8 @@ function renderDashboard() {
     if (itemState && itemState.level === 5) masteredCount++;
   });
 
-  if (statsChaptersEl) statsChaptersEl.textContent = String(unlockedChapters.length);
+  if (statsChaptersEl)
+    statsChaptersEl.textContent = String(unlockedChapters.length);
   if (statsCardsEl) statsCardsEl.textContent = String(poolItems.length);
   if (statsMasteredEl) statsMasteredEl.textContent = String(masteredCount);
 
@@ -256,7 +252,13 @@ function renderPoolDirectory() {
       container.appendChild(section);
     });
   } else {
-    const grouped: Record<number, any[]> = { 1: [], 2: [], 3: [], 4: [], 5: [] };
+    const grouped: Record<number, any[]> = {
+      1: [],
+      2: [],
+      3: [],
+      4: [],
+      5: [],
+    };
     poolItems.forEach((item) => {
       const state = vocabSRSState[item.id];
       const lvl = state ? state.level : 1;
@@ -345,7 +347,10 @@ function createItemCardElement(item: any) {
 
 // --- GAMEPLAY SESSION CONTROLS ---
 
-function startPracticeSession(chapterId: string | null = null, srsLevel: number | string | null = null) {
+function startPracticeSession(
+  chapterId: string | null = null,
+  srsLevel: number | string | null = null,
+) {
   let poolItems = [];
   if (typeof chapterId === "string" && chapterId) {
     poolItems = allVocab.filter((item) => item.chapter === chapterId);
@@ -374,9 +379,11 @@ function startPracticeSession(chapterId: string | null = null, srsLevel: number 
     return;
   }
 
-  sessionCards = selectCards(poolItems, vocabSRSState, 10);
-  currentCardIndex = 0;
-  sessionCorrectCount = 0;
+  session = new PracticeSession({
+    poolItems,
+    srsState: vocabSRSState,
+    limit: 10,
+  });
 
   getEl("dashboard-view").style.display = "none";
   getEl("session-view").style.display = "flex";
@@ -385,26 +392,26 @@ function startPracticeSession(chapterId: string | null = null, srsLevel: number 
   // Preload audio files for all cards in this session to eliminate playback latency
   if (window.preloadTexts) {
     window.preloadTexts(
-      sessionCards.map((c) => ({ text: c.character, hash: c.hash })),
+      session.cards.map((c) => ({ text: c.character, hash: c.hash })),
     );
   }
 
-  loadCard(currentCardIndex);
+  loadCard();
 }
 
-function loadCard(index: number) {
-  if (index >= sessionCards.length) {
+function loadCard() {
+  if (!session || session.isFinished()) {
     showSummary();
     return;
   }
 
-  const card = sessionCards[index];
+  const card = session.getCurrentCard()!;
+  const index = session.getCurrentIndex();
+  const progress = session.getProgress();
 
   getEl("session-progress-text")!.textContent =
-    `Card ${index + 1} of ${sessionCards.length}`;
-  const fillPercentage = (index / sessionCards.length) * 100;
-  getEl("session-progress-fill").style.width =
-    `${fillPercentage}%`;
+    `Card ${index + 1} of ${session.cards.length}`;
+  getEl("session-progress-fill").style.width = `${progress.percentage}%`;
 
   getEl("session-chapter-label").textContent =
     `Chapter ${card.chapter}: ${card.chapterTitle}`;
@@ -419,8 +426,7 @@ function loadCard(index: number) {
   charContainer.innerHTML = `<span class="vocab-term" data-audio-hash="${card.hash || ""}">${card.character}<span class="tooltip-popover"><strong>${card.jyutping}</strong></span></span>`;
 
   // Set translation
-  getEl("flashcard-translation-text").textContent =
-    card.translation;
+  getEl("flashcard-translation-text").textContent = card.translation;
 }
 
 function revealAnswer() {
@@ -437,29 +443,24 @@ function revealAnswer() {
 }
 
 function gradeCardResponse(remembered: boolean) {
-  const card = sessionCards[currentCardIndex];
-
-  const updatedState = gradeCard(vocabSRSState[card.id], remembered);
-  vocabSRSState[card.id] = updatedState;
-
-  if (remembered) {
-    sessionCorrectCount++;
-  }
+  if (!session) return;
+  session.submitResponse(remembered);
+  vocabSRSState = session.getUpdatedSrsState();
   saveState();
 
   // Proceed immediately to the next card
-  currentCardIndex++;
-  loadCard(currentCardIndex);
+  loadCard();
 }
 
 function showSummary() {
+  if (!session) return;
   getEl("session-view").style.display = "none";
   getEl("summary-view").style.display = "flex";
 
-  getEl("summary-score").textContent =
-    `${sessionCorrectCount} / ${sessionCards.length}`;
+  const results = session.getResults();
+  getEl("summary-score").textContent = `${results.correct} / ${results.total}`;
 
-  const scorePercentage = (sessionCorrectCount / sessionCards.length) * 100;
+  const scorePercentage = results.percentage;
   let msg =
     "Great practice! Spaced Repetition reinforces memory paths. Continue practicing regularly!";
   if (scorePercentage === 100) {

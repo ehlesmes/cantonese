@@ -100,6 +100,67 @@ test.describe("Review Board Legacy / String State Compatibility Tests", () => {
     expect(feedbackText).toContain("SRS Level Up");
   });
 
+  test("should accept swapped punctuation marks (e.g., comma, period, exclamation mark)", async ({
+    page,
+  }) => {
+    // 1. Seed localStorage and intercept __allExamples before page load
+    await page.addInitScript(() => {
+      localStorage.setItem(
+        "cantonese_unlocked_chapters",
+        JSON.stringify(["greetings"]),
+      );
+
+      const targetCard = {
+        id: "test-card-punctuation",
+        chapter: "greetings",
+        chapterNumber: 1,
+        chapterTitle: "Greetings",
+        cantoneseRaw: "好[hou2|good]，我[ngo5|I]！",
+        english: "Good, me!",
+        tokens: ["好[hou2|good]", "，", "我[ngo5|I]", "！"],
+        type: "example",
+        audioHash: "mock-audio-hash",
+        tokenHashes: { 好: "hash-hou", 我: "hash-ngo" },
+      };
+
+      Object.defineProperty(window, "__allExamples", {
+        get() {
+          return [targetCard];
+        },
+        set() {},
+        configurable: true,
+      });
+    });
+
+    // 2. Go to review board
+    await page.goto("/cantonese/phrasebook");
+    await page.waitForSelector("#stats-cards-count");
+
+    // 3. Start the session
+    await page.click("#start-session-btn");
+    await page.waitForSelector("#game-tokens-pool");
+
+    // Scrambled pool locator helper
+    const getChip = (text: string) =>
+      page.locator("#game-tokens-pool .token-chip", { hasText: text });
+
+    // Click tokens in order, but swap the punctuation marks!
+    // Correct order: 好 -> ， -> 我 -> ！
+    // Swapped punctuation order: 好 -> ！ -> 我 -> ，
+    await getChip("好").click();
+    await getChip("！").click();
+    await getChip("我").click();
+    await getChip("，").click();
+
+    // 4. Click check answer
+    await page.click("#game-check-btn");
+
+    // Verify feedback panel shows success/correct (lenient check passed)
+    const feedbackText = await page.textContent("#feedback-panel");
+    expect(feedbackText).toContain("Correct!");
+    expect(feedbackText).toContain("SRS Level Up");
+  });
+
   test("should preserve scrambled order of pool tokens when deselecting a token", async ({
     page,
   }) => {
