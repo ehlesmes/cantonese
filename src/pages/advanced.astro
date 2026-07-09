@@ -2,14 +2,9 @@
 import fs from "fs";
 import fsPromises from "fs/promises";
 import path from "path";
-import { createRequire } from "module";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/advanced-settings.css";
-
-// Load scripts/lib/parser.js to parse curriculum and content
-const cjsRequire = createRequire(import.meta.url);
-const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
-const { parseCurriculum, parseChapter } = cjsRequire(parserPath);
+import { parseCurriculum, parseChapter } from "../../scripts/lib/parser";
 const curriculumPath = path.resolve("content/curriculum.md");
 const chapters = parseCurriculum(curriculumPath);
 
@@ -164,7 +159,7 @@ chapters.forEach((chapter, idx) => {
     <script is:inline define:vars={{ allChaptersData }}>
     window.__allChaptersData = allChaptersData;
   </script>
-  <script src="../client/advanced-settings.js"></script>
+  <script src="../client/advanced-settings.ts"></script>
   </div>
 </BaseLayout>
 

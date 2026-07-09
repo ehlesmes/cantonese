@@ -25,12 +25,12 @@ staged_chapters_or_curriculum=$(git diff --cached --name-only --diff-filter=ACMR
 
 if [ -n "$staged_chapters_or_curriculum" ]; then
   echo "Validating Cantonese course content formatting and curriculum alignment..."
-  node scripts/validate-format.js
+  npx tsx scripts/validate-format.ts
 
   echo "Updating vocabulary database and glossary..."
-  node scripts/track-vocabulary.js
+  npx tsx scripts/track-vocabulary.ts
   git add content/vocabulary.json content/vocabulary.md
 fi
 
 echo "Verifying project portability (no hardcoded absolute paths)..."
-node scripts/validate-portability.js
+npx tsx scripts/validate-portability.ts

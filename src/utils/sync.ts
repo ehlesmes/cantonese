@@ -16,10 +16,6 @@ const SHORT_KEYS = {
   timestamp: "t" as const,
 };
 
-// URL-safe Base64 character set
-const BASE64URL_CHARS =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
-
 
 /**
  * Fallback to encode a Uint8Array to a URL-safe Base64 string (no padding).

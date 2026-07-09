@@ -1,8 +1,15 @@
+
+function getEl(id: string): HTMLElement {
+  const el = document.getElementById(id);
+  if (!el) throw new Error("Missing element: " + id);
+  return el;
+}
+
+
+
 // Native Cantonese TTS Engine & Offline Audio Player
 let cantoVoice: SpeechSynthesisVoice | null = null;
-let activeUtterance: SpeechSynthesisUtterance | null = null;
 let activeBtn: HTMLElement | null = null;
-let activeAudio: HTMLAudioElement | null = null;
 
 function loadVoices() {
   if (!window.speechSynthesis) return;
@@ -16,12 +23,15 @@ function loadVoices() {
 
   if (hkVoices.length > 0) {
     // Prioritize Siri (best prosody), Premium (high quality), and Enhanced (high quality accessibility)
-    cantoVoice = hkVoices.find(v => v.name.toLowerCase().includes('siri')) ||
-                 hkVoices.find(v => v.name.toLowerCase().includes('premium')) ||
-                 hkVoices.find(v => v.name.toLowerCase().includes('enhanced')) ||
-                 hkVoices[0];
+    cantoVoice =
+      hkVoices.find(v => v.name.toLowerCase().includes('siri')) ||
+      hkVoices.find(v => v.name.toLowerCase().includes('premium')) ||
+      hkVoices.find(v => v.name.toLowerCase().includes('enhanced')) ||
+      hkVoices[0] || null;
     
-    console.log('Selected Cantonese Voice:', cantoVoice.name, '(', cantoVoice.lang, ')');
+    if (cantoVoice) {
+      console.log('Selected Cantonese Voice:', cantoVoice.name, '(', cantoVoice.lang, ')');
+    }
   } else {
     cantoVoice = null;
   }
@@ -117,7 +127,7 @@ function speakNativeFallback(text: string, onEndCallback?: () => void) {
     if (onEndCallback) onEndCallback();
   };
 
-  activeUtterance = utterance;
+
   window.speechSynthesis.speak(utterance);
 }
 
@@ -367,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupVisibilityPreloader();
 
   // --- Version Check and Update Logic ---
-  const updateIndicator = document.getElementById('update-indicator');
+  const updateIndicator = getEl('update-indicator');
   const metaTag = document.querySelector('meta[name="app-version"]');
   const currentVersion = metaTag ? metaTag.getAttribute('content') : 'development';
   let updateChecking = false;

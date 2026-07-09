@@ -3,10 +3,7 @@ import fs from "node:fs";
 import path from "path";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { createRequire } from "module";
-const cjsRequire = createRequire(import.meta.url);
-const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
-const { parseCurriculum, parseChapter } = cjsRequire(parserPath);
+import { parseCurriculum, parseChapter } from "../../scripts/lib/parser";
 const curriculumPath = path.resolve("content/curriculum.md");
 const chapters = parseCurriculum(curriculumPath);
 

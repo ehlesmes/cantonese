@@ -1,16 +1,14 @@
 ---
 import fs from "fs";
 import path from "path";
-import { createRequire } from "module";
+
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CantoneseExample from "../../components/CantoneseExample.astro";
 import DialogueBlock from "../../components/DialogueBlock.astro";
 import { compileMarkdown } from "../../utils/markdown.js";
 
 export async function getStaticPaths() {
-  const cjsRequire = createRequire(import.meta.url);
-  const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
-  const { parseCurriculum } = cjsRequire(parserPath);
+  const { parseCurriculum } = await import("../../../scripts/lib/parser");
   const curriculumPath = path.resolve("content/curriculum.md");
   const chapters = parseCurriculum(curriculumPath);
 
@@ -43,9 +41,7 @@ const { id } = Astro.params;
 const { filePath, chapterNumber, allChapters } = Astro.props;
 
 // Load Chapter data
-const cjsRequire = createRequire(import.meta.url);
-const parserPath = path.resolve(process.cwd(), "scripts/lib/parser.js");
-const { parseChapter, parseYAML } = cjsRequire(parserPath);
+const { parseChapter, parseYAML } = await import("../../../scripts/lib/parser");
 const { frontmatter, blocks } = parseChapter(filePath);
 
 // Pre-process all blocks
