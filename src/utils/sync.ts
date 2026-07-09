@@ -22,88 +22,30 @@ const BASE64URL_CHARS =
 
 
 /**
- * Pure JS fallback to encode a Uint8Array to a URL-safe Base64 string (no padding).
+ * Fallback to encode a Uint8Array to a URL-safe Base64 string (no padding).
  */
 export function bytesToBase64Url(bytes: Uint8Array): string {
-  let result = "";
-  const l = bytes.length;
-  for (let i = 0; i < l; i += 3) {
-    const b1 = bytes[i] ?? 0;
-    const b2 = i + 1 < l ? (bytes[i + 1] ?? 0) : NaN;
-    const b3 = i + 2 < l ? (bytes[i + 2] ?? 0) : NaN;
-
-    const enc1 = b1 >> 2;
-    const enc2 = ((b1 & 3) << 4) | (isNaN(b2) ? 0 : b2 >> 4);
-    const enc3 = isNaN(b2) ? NaN : ((b2 & 15) << 2) | (isNaN(b3) ? 0 : b3 >> 6);
-    const enc4 = isNaN(b3) ? NaN : b3 & 63;
-
-    const char1 = BASE64URL_CHARS[enc1];
-    const char2 = BASE64URL_CHARS[enc2];
-    const char3 = isNaN(enc3) ? "" : BASE64URL_CHARS[enc3];
-    const char4 = isNaN(enc4) ? "" : BASE64URL_CHARS[enc4];
-
-    if (char1 !== undefined && char2 !== undefined) {
-      result += char1 + char2;
-    }
-    if (char3) result += char3;
-    if (char4) result += char4;
+  let binary = "";
+  for (let i = 0; i < bytes.length; i++) {
+    binary += String.fromCharCode(bytes[i]!);
   }
-  return result;
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
 }
 
 /**
- * Pure JS fallback to decode a URL-safe Base64 string (without or with padding) into a Uint8Array.
+ * Fallback to decode a URL-safe Base64 string into a Uint8Array.
  */
 export function base64UrlToBytes(str: string): Uint8Array {
-  const cleanStr = str
-    .replace(/=/g, "")
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_");
-  const lookup: Record<string, number> = {};
-  for (let i = 0; i < BASE64URL_CHARS.length; i++) {
-    const char = BASE64URL_CHARS[i];
-    if (char !== undefined) {
-      lookup[char] = i;
-    }
+  let cleanStr = str.replace(/-/g, "+").replace(/_/g, "/");
+  while (cleanStr.length % 4) {
+    cleanStr += "=";
   }
-
-  const bytes: number[] = [];
-  const l = cleanStr.length;
-  for (let i = 0; i < l; i += 4) {
-    const char1 = cleanStr[i];
-    const char2 = cleanStr[i + 1];
-    const char3 = cleanStr[i + 2];
-    const char4 = cleanStr[i + 3];
-
-    if (char1 === undefined) break;
-
-    const enc1 = lookup[char1];
-    const enc2 = char2 !== undefined ? lookup[char2] : 0;
-    const enc3 = char3 !== undefined ? lookup[char3] : NaN;
-    const enc4 = char4 !== undefined ? lookup[char4] : NaN;
-
-    if (
-      enc1 === undefined ||
-      enc2 === undefined ||
-      (char3 !== undefined && enc3 === undefined) ||
-      (char4 !== undefined && enc4 === undefined)
-    ) {
-      throw new Error("Invalid Base64 character");
-    }
-
-    const b1 = (enc1 << 2) | (enc2 >> 4);
-    bytes.push(b1);
-
-    if (enc3 !== undefined && !isNaN(enc3)) {
-      const b2 = ((enc2 & 15) << 4) | (enc3 >> 2);
-      bytes.push(b2);
-      if (enc4 !== undefined && !isNaN(enc4)) {
-        const b3 = ((enc3 & 3) << 6) | enc4;
-        bytes.push(b3);
-      }
-    }
+  const binary = atob(cleanStr);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
   }
-  return new Uint8Array(bytes);
+  return bytes;
 }
 
 
@@ -189,8 +131,11 @@ export async function serializeState(state: LocalState): Promise<string> {
 
   // Compact srs: Map { level, lastReviewed } to [level, Math.floor(lastReviewed/1000)]
   const srsCompacted: Record<string, [number, number]> = {};
-  for (const [id, item] of Object.entries(state.srs || {})) {
-    if (item && typeof item.level === "number") {
+  const srsKeys = Object.keys(state.srs || {});
+  for (let i = 0; i < srsKeys.length; i++) {
+    const id = srsKeys[i]!;
+    const item = state.srs[id];
+    if (typeof item?.level === "number") {
       srsCompacted[id] = [
         item.level,
         item.lastReviewed ? Math.floor(item.lastReviewed / 1000) : 0,
@@ -201,8 +146,11 @@ export async function serializeState(state: LocalState): Promise<string> {
 
   // Compact vocab
   const vocabCompacted: Record<string, [number, number]> = {};
-  for (const [id, item] of Object.entries(state.vocab || {})) {
-    if (item && typeof item.level === "number") {
+  const vocabKeys = Object.keys(state.vocab || {});
+  for (let i = 0; i < vocabKeys.length; i++) {
+    const id = vocabKeys[i]!;
+    const item = state.vocab[id];
+    if (typeof item?.level === "number") {
       vocabCompacted[id] = [
         item.level,
         item.lastReviewed ? Math.floor(item.lastReviewed / 1000) : 0,
@@ -306,7 +254,6 @@ export async function deserializeState(
           continue;
         }
         if (Array.isArray(arr) && arr.length >= 1) {
-          /* v8 ignore next 4 */
           state.srs[id] = {
             level: Number(arr[0] ?? 1),
             lastReviewed: Number(arr[1] ?? 0) * 1000,
@@ -320,7 +267,6 @@ export async function deserializeState(
     if (vocabData && typeof vocabData === "object" && !Array.isArray(vocabData)) {
       for (const [id, arr] of Object.entries(vocabData as Record<string, unknown>)) {
         if (Array.isArray(arr) && arr.length >= 1) {
-          /* v8 ignore next 4 */
           state.vocab[id] = {
             level: Number(arr[0] ?? 1),
             lastReviewed: Number(arr[1] ?? 0) * 1000,

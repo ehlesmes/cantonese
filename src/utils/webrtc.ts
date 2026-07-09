@@ -33,15 +33,15 @@ export function packSDPData(data: SDPCoordinates): string {
   }
 
   // candidate count
-  bytes.push(data.c.length);
+  const validCandidates = data.c.filter(cand => cand[0] !== undefined && cand[1] !== undefined);
+  bytes.push(validCandidates.length);
 
-  for (const cand of data.c) {
-    const ip = cand[0];
-    const port = cand[1];
-    if (ip === undefined || port === undefined) continue;
+  for (const cand of validCandidates) {
+    const ip = cand[0]!;
+    const port = cand[1]!;
 
     const isIPv6 = ip.includes(":");
-    const isIPv4 = !isIPv6 && /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(ip);
+    const isIPv4 = !isIPv6 && /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(ip) && ip.split(".").every(p => parseInt(p, 10) <= 255);
 
     if (isIPv4) {
       bytes.push(4);
@@ -65,9 +65,8 @@ export function packSDPData(data: SDPCoordinates): string {
   const uint8 = new Uint8Array(bytes);
   let binary = "";
   for (let i = 0; i < uint8.length; i++) {
-    const byte = uint8[i];
-    /* v8 ignore next */
-    binary += String.fromCharCode(byte ?? 0);
+    const byte = uint8[i]!;
+    binary += String.fromCharCode(byte);
   }
   return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
 }
@@ -94,8 +93,7 @@ export function unpackSDPData(str: string): SDPCoordinates | null {
 
   try {
     let offset = 0;
-    const typeByte = bytes[offset++];
-    if (typeByte === undefined) throw new Error("Missing type byte");
+    const typeByte = bytes[offset++]!;
     const t: "o" | "a" = typeByte === 1 ? "o" : "a";
 
     const ufrag = new TextDecoder()
@@ -198,7 +196,6 @@ export function rebuildSDP(isOffer: boolean, data: SDPCoordinates): { type: stri
   const type = isOffer ? "offer" : "answer";
 
   const matchResult = data.f.match(/.{1,2}/g);
-  /* v8 ignore next */
   const fingerprint = matchResult ? matchResult.join(":").toUpperCase() : "";
 
   const sdpLines = [

@@ -22,7 +22,7 @@ export function selectCards<T extends IdentifiableItem>(
 
   const weightedPool = poolItems.map((item) => {
     const state = srsState[item.id];
-    const lvl = state ? state.level : 1;
+    const lvl = (state && typeof state.level === "number") ? state.level : 1;
     // Lower level = higher weight
     const weight = 1 / Math.pow(lvl, 1.5);
     return { item, weight };
@@ -41,24 +41,18 @@ export function selectCards<T extends IdentifiableItem>(
     let selectedIndex = -1;
 
     for (let j = 0; j < tempPool.length; j++) {
-      const element = tempPool[j];
-      /* v8 ignore next 8 */
-      if (element) {
-        cumulative += element.weight;
-        if (r <= cumulative) {
-          selectedIndex = j;
-          break;
-        }
+      const element = tempPool[j]!;
+      cumulative += element.weight;
+      if (r <= cumulative) {
+        selectedIndex = j;
+        break;
       }
     }
 
     if (selectedIndex !== -1) {
-      const selected = tempPool[selectedIndex];
-      /* v8 ignore next 4 */
-      if (selected) {
-        selectedCards.push(selected.item);
-        tempPool.splice(selectedIndex, 1);
-      }
+      const selected = tempPool[selectedIndex]!;
+      selectedCards.push(selected.item);
+      tempPool.splice(selectedIndex, 1);
     }
   }
 
@@ -78,7 +72,7 @@ export function gradeCard(
   currentState: SrsCardState | undefined,
   isCorrect: boolean
 ): SrsCardState {
-  const level = currentState ? currentState.level : 1;
+  const level = (currentState && typeof currentState.level === "number") ? currentState.level : 1;
   let newLevel: number;
 
   if (isCorrect) {

@@ -2,17 +2,13 @@ import { test, expect } from "./coverage-fixture.js";
 
 test.describe("Advanced Page Reset E2E Test", () => {
   test.beforeEach(async ({ page }) => {
-    // Directly navigate with trailing slash to avoid redirect context destruction
-    await page.goto("/cantonese/");
-    await page.waitForLoadState("domcontentloaded");
-
-    // Seed some progress first
-    await page.evaluate(() => {
-      localStorage.setItem(
+    // Seed some progress before navigation using addInitScript
+    await page.addInitScript(() => {
+      window.localStorage.setItem(
         "cantonese_unlocked_chapters",
         JSON.stringify(["pronunciation-tones", "greetings"]),
       );
-      localStorage.setItem(
+      window.localStorage.setItem(
         "cantonese_srs_state",
         JSON.stringify({ card1: { level: 2 } }),
       );
