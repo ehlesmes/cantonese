@@ -15,10 +15,10 @@ export interface UserProgress {
 
 // Compact Sync Structure for QR Codes and URL payloads
 export interface CompactSyncPayload {
-  c?: string[];                               // Unlocked Chapters (compact format)
-  s?: Record<string, [number, number]>;        // Phrase SRS map: [level, lastReviewed]
-  v?: Record<string, [number, number]>;        // Vocab SRS map: [level, lastReviewed]
-  t?: number;                                 // Timestamp
+  c?: string[]; // Unlocked Chapters (compact format)
+  s?: Record<string, [number, number]>; // Phrase SRS map: [level, lastReviewed]
+  v?: Record<string, [number, number]>; // Vocab SRS map: [level, lastReviewed]
+  t?: number; // Timestamp
 }
 
 // Lexicon and Vocabulary Definitions
@@ -56,6 +56,8 @@ export interface SemanticUnit {
   jyutping: string;
   translation: string;
   index: number;
+  startLine?: number;
+  blockType?: string;
 }
 
 // WebRTC coordination packet

@@ -3,6 +3,7 @@ import {
   validateRegisterEntry,
   sortDictionary,
   extractChapterUnits,
+  verifyChapterContent,
 } from "./lib/register-utils.js";
 
 describe("Lexicon Registrar Helpers", () => {
@@ -142,5 +143,100 @@ describe("Lexicon Registrar Helpers", () => {
     expect(units.map((u) => u.characters)).toContain("我");
     expect(units.map((u) => u.characters)).toContain("係");
     expect(units.map((u) => u.characters)).toContain("唔該");
+  });
+});
+
+describe("verifyChapterContent Utility", () => {
+  const dictionary = [
+    { char: "我", jyutping: "ngo5", definition: "I / me", type: "pronoun" },
+    {
+      char: "係",
+      jyutping: "hai6",
+      definition: "to be (am/is/are)",
+      type: "verb",
+    },
+    {
+      char: "人",
+      jyutping: "jan4",
+      definition: "person / human / people",
+      type: "noun",
+    },
+    { char: "去", jyutping: "heoi3", definition: "to go", type: "verb" },
+  ];
+
+  test("returns empty lists for chapter without units", () => {
+    const chapterData = { blocks: [] };
+    const res = verifyChapterContent(chapterData, dictionary);
+    expect(res).toEqual({ errors: [], warnings: [], passedCount: 0 });
+  });
+
+  test("passes for exact matches", () => {
+    const chapterData = {
+      blocks: [
+        {
+          type: "prose",
+          content: "`我[ngo5|I]` `係[hai6|am]` `人[jan4|human]`",
+          startLine: 1,
+        },
+      ],
+    };
+    const res = verifyChapterContent(chapterData, dictionary);
+    expect(res.errors.length).toBe(0);
+    expect(res.warnings.length).toBe(0);
+    expect(res.passedCount).toBe(3);
+  });
+
+  test("reports critical errors for unregistered terms", () => {
+    const chapterData = {
+      blocks: [{ type: "prose", content: "`鬼[gwai2|ghost]`", startLine: 1 }],
+    };
+    const res = verifyChapterContent(chapterData, dictionary);
+    expect(res.errors.length).toBe(1);
+    expect(res.errors[0]?.term).toBe("鬼 (gwai2)");
+    expect(res.errors[0]?.message).toContain(
+      "Term is introduced in chapter but not registered",
+    );
+  });
+
+  test("handles dynamic A-not-A question pattern resolution", () => {
+    // "去唔去" with jyutping "heoi3 m4 heoi3"
+    const chapterData1 = {
+      blocks: [
+        {
+          type: "prose",
+          content: "`去唔去[heoi3 m4 heoi3|go or not]`",
+          startLine: 1,
+        },
+      ],
+    };
+    const res1 = verifyChapterContent(chapterData1, dictionary);
+    expect(res1.errors.length).toBe(0);
+    expect(res1.passedCount).toBe(1);
+
+    // "食唔食" (base verb "食" not in dict)
+    const chapterData2 = {
+      blocks: [
+        {
+          type: "prose",
+          content: "`食唔食[sik6 m4 sik6|eat or not]`",
+          startLine: 1,
+        },
+      ],
+    };
+    const res2 = verifyChapterContent(chapterData2, dictionary);
+    expect(res2.errors.length).toBe(1);
+    expect(res2.errors[0]?.term).toBe("食唔食 (sik6 m4 sik6)");
+  });
+
+  test("checks semantics and flags translation divergence warning", () => {
+    // Divergence: definition is "to go", translation is "completely different word"
+    const chapterData = {
+      blocks: [{ type: "prose", content: "`去[heoi3|apple]`", startLine: 1 }],
+    };
+    const res = verifyChapterContent(chapterData, dictionary);
+    expect(res.errors.length).toBe(0);
+    expect(res.warnings.length).toBe(1);
+    expect(res.warnings[0]?.term).toBe("去 (heoi3)");
+    expect(res.warnings[0]?.message).toContain("Translation divergence");
   });
 });
