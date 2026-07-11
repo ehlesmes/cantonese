@@ -4,6 +4,7 @@ import {
   isPunctuation,
   checkPhraseAnswer,
   selectBestCantoneseVoice,
+  lookupDictionary,
 } from "../src/utils/text.js";
 
 describe("Cantonese Text Cleaner Utility", () => {
@@ -171,5 +172,82 @@ describe("selectBestCantoneseVoice Utility", () => {
     ];
     const best = selectBestCantoneseVoice(voices);
     expect(best?.name).toBe("Default Cantonese");
+  });
+});
+
+describe("lookupDictionary Utility", () => {
+  const dictionary = [
+    {
+      char: "唔該",
+      jyutping: "m4goi1",
+      definition: "excuse me / thank you",
+      type: "expression",
+      notes: "Use for service.",
+    },
+    {
+      char: "靚仔",
+      jyutping: "leng3zai2",
+      definition: "handsome boy",
+      type: "noun",
+    },
+    {
+      char: "靚女",
+      jyutping: "leng3neoi5",
+      definition: "pretty girl",
+      type: "noun",
+    },
+    {
+      char: "菠蘿包",
+      jyutping: "bo1lo1bun1",
+      definition: "pineapple bun",
+      type: "noun",
+      notes: "Contains no pineapple.",
+    },
+    {
+      char: "呀",
+      jyutping: "aa3",
+      definition: "aa sound particle",
+      type: "particle",
+    },
+  ];
+
+  test("returns empty array for empty or whitespace query", () => {
+    expect(lookupDictionary(dictionary, "")).toEqual([]);
+    expect(lookupDictionary(dictionary, "   ")).toEqual([]);
+  });
+
+  test("queries by Traditional Chinese char", () => {
+    const results = lookupDictionary(dictionary, "靚");
+    expect(results.length).toBe(2);
+    expect(results.map((r) => r.char)).toContain("靚仔");
+    expect(results.map((r) => r.char)).toContain("靚女");
+  });
+
+  test("queries by standard LSHK Jyutping with digits", () => {
+    const results = lookupDictionary(dictionary, "leng3za");
+    expect(results.length).toBe(1);
+    expect(results[0]?.char).toBe("靚仔");
+  });
+
+  test("queries by case-insensitive English definition/notes", () => {
+    const defResults = lookupDictionary(dictionary, "HANDSOME");
+    expect(defResults.length).toBe(1);
+    expect(defResults[0]?.char).toBe("靚仔");
+
+    const noteResults = lookupDictionary(dictionary, "pineapple");
+    expect(noteResults.length).toBe(1);
+    expect(noteResults[0]?.char).toBe("菠蘿包");
+  });
+
+  test("queries by toneless Jyutping", () => {
+    const results = lookupDictionary(dictionary, "mgoi");
+    expect(results.length).toBe(1);
+    expect(results[0]?.char).toBe("唔該");
+  });
+
+  test("deduplicates results matching both definition and toneless jyutping", () => {
+    const results = lookupDictionary(dictionary, "aa");
+    expect(results.length).toBe(1);
+    expect(results[0]?.char).toBe("呀");
   });
 });

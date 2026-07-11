@@ -1,4 +1,6 @@
 import type { SemanticUnit } from "../../src/types";
+import { validateJyutping } from "../validate-format.js";
+import * as parser from "./parser.js";
 
 export interface UnregisteredWord {
   char: string;
@@ -11,6 +13,8 @@ export interface DictionaryEntry {
   char: string;
   jyutping: string;
   type: string;
+  definition?: string;
+  notes?: string;
 }
 
 /**
@@ -85,4 +89,128 @@ export function findUnregisteredWords(
   }
 
   return Object.values(unregisteredMap);
+}
+
+export const VALID_TYPES = [
+  "pronoun",
+  "verb",
+  "adverb",
+  "noun",
+  "adjective",
+  "expression",
+  "classifier",
+  "conjunction",
+  "preposition",
+  "numeral",
+  "particle",
+  "auxiliary verb",
+];
+
+export function validateRegisterEntry(
+  entry: any,
+  dictionary: DictionaryEntry[],
+  batchKeys: Set<string>,
+  prefix = "",
+): { validEntry?: DictionaryEntry; error?: string } {
+  const character = (entry.char || entry.character || "").toString().trim();
+  const jyutping = (entry.jyutping || "").toString().trim();
+  const definition = (entry.definition || entry.def || entry.translation || "")
+    .toString()
+    .trim();
+  const type = (entry.type || "").toString().trim().toLowerCase();
+  const notes = (entry.notes || "").toString().trim();
+
+  if (!character) {
+    return { error: `${prefix}Character cannot be empty.` };
+  }
+
+  if (!jyutping) {
+    return { error: `${prefix}Jyutping cannot be empty.` };
+  }
+
+  const jpError = validateJyutping(jyutping);
+  if (jpError) {
+    return { error: `${prefix}${jpError}` };
+  }
+
+  if (!definition) {
+    return { error: `${prefix}Definition cannot be empty.` };
+  }
+
+  if (!VALID_TYPES.includes(type)) {
+    return {
+      error: `${prefix}Invalid word type "${entry.type}". Valid types are: ${VALID_TYPES.join(", ")}`,
+    };
+  }
+
+  const isDuplicateInDict = dictionary.some(
+    (dictEntry) =>
+      dictEntry.char === character && dictEntry.jyutping === jyutping,
+  );
+
+  if (isDuplicateInDict) {
+    return {
+      error: `${prefix}Word "${character}" with Jyutping "${jyutping}" is already registered in the dictionary.`,
+    };
+  }
+
+  const batchKey = `${character}|${jyutping}`;
+  if (batchKeys.has(batchKey)) {
+    return {
+      error: `${prefix}Duplicate entry for "${character}" with Jyutping "${jyutping}" found within the batch itself.`,
+    };
+  }
+
+  const newEntry: DictionaryEntry = {
+    char: character,
+    jyutping: jyutping,
+    definition: definition,
+    type: type,
+  };
+  if (notes) {
+    newEntry.notes = notes;
+  }
+
+  return { validEntry: newEntry };
+}
+
+export function sortDictionary(
+  dictionary: DictionaryEntry[],
+): DictionaryEntry[] {
+  return [...dictionary].sort((a, b) => {
+    const jpCompare = a.jyutping.localeCompare(b.jyutping);
+    if (jpCompare !== 0) return jpCompare;
+    return a.char.localeCompare(b.char);
+  });
+}
+
+export function extractChapterUnits(chapterData: { blocks: any[] }): any[] {
+  const chapterUnits = [];
+  for (const block of chapterData.blocks) {
+    let rawUnits = [];
+    if (block.type === "prose") {
+      rawUnits = parser.extractInlineUnits(block.content);
+    } else if (block.type === "cantonese" || block.type === "dialog") {
+      rawUnits = parser.extractBlockUnits(block.content);
+    } else if (block.type === "exercise") {
+      let exerciseData;
+      try {
+        exerciseData = parser.parseYAML(block.content);
+      } catch {
+        continue;
+      }
+      const fields = ["question", "answer", "explanation"];
+      for (const field of fields) {
+        if (exerciseData[field]) {
+          rawUnits.push(
+            ...parser.extractBlockUnits(String(exerciseData[field])),
+          );
+        }
+      }
+    }
+    for (const unit of rawUnits) {
+      chapterUnits.push(unit);
+    }
+  }
+  return chapterUnits;
 }

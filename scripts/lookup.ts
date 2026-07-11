@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
+import { lookupDictionary } from "../src/utils/text.js";
 
 // Premium CLI output styles
 const colors = {
@@ -108,53 +109,7 @@ function main() {
     const query = queries[i].trim();
     if (query === "") continue;
 
-    const hasChinese = /[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]/.test(query);
-    const hasDigits = /\d/.test(query);
-
-    let matches = [];
-
-    if (hasChinese) {
-      matches = dictionary.filter((entry: any) => entry.char.includes(query));
-    } else if (hasDigits) {
-      const normalizedQuery = query.toLowerCase().replace(/[- ]/g, "");
-      matches = dictionary.filter((entry: any) => {
-        const normalizedJp = entry.jyutping.toLowerCase().replace(/[- ]/g, "");
-        return normalizedJp.includes(normalizedQuery);
-      });
-    } else {
-      const lowerQuery = query.toLowerCase();
-
-      const englishMatches = dictionary.filter((entry: any) => {
-        const defMatch = entry.definition.toLowerCase().includes(lowerQuery);
-        const noteMatch = entry.notes
-          ? entry.notes.toLowerCase().includes(lowerQuery)
-          : false;
-        return defMatch || noteMatch;
-      });
-
-      const tonelessMatches = dictionary.filter((entry: any) => {
-        const tonelessJp = entry.jyutping
-          .toLowerCase()
-          .replace(/[1-6]/g, "")
-          .replace(/[- ]/g, "");
-        const normalizedQuery = lowerQuery.replace(/[- ]/g, "");
-        return (
-          tonelessJp === normalizedQuery || tonelessJp.includes(normalizedQuery)
-        );
-      });
-
-      const combined = [...englishMatches];
-      for (const entry of tonelessMatches) {
-        if (
-          !combined.some(
-            (e) => e.char === entry.char && e.jyutping === entry.jyutping,
-          )
-        ) {
-          combined.push(entry);
-        }
-      }
-      matches = combined;
-    }
+    const matches = lookupDictionary(dictionary, query);
 
     console.log(
       `  [${i + 1}/${queries.length}] ${colors.bold}Query:${colors.reset} "${colors.cyan}${query}${colors.reset}"`,

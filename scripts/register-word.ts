@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
-import { validateJyutping } from "./validate-format.js";
+import { validateRegisterEntry, sortDictionary } from "./lib/register-utils.js";
 
 // Premium CLI output styles
 const colors = {
@@ -12,21 +12,6 @@ const colors = {
   cyan: "\x1b[36m",
   dim: "\x1b[2m",
 };
-
-const VALID_TYPES = [
-  "pronoun",
-  "verb",
-  "adverb",
-  "noun",
-  "adjective",
-  "expression",
-  "classifier",
-  "conjunction",
-  "preposition",
-  "numeral",
-  "particle",
-  "auxiliary verb",
-];
 
 function showUsage() {
   console.log(`
@@ -152,87 +137,25 @@ function main() {
 
   const errors = [];
   const processedEntries = [];
-  const incomingKeys = new Set();
+  const incomingKeys = new Set<string>();
 
   for (let idx = 0; idx < batchEntries.length; idx++) {
     const entry = batchEntries[idx];
     const prefix = isBatch ? `Entry #${idx + 1}: ` : "";
 
-    const character = (entry.char || entry.character || "").toString().trim();
-    const jyutping = (entry.jyutping || "").toString().trim();
-    const definition = (
-      entry.definition ||
-      entry.def ||
-      entry.translation ||
-      ""
-    )
-      .toString()
-      .trim();
-    const type = (entry.type || "").toString().trim().toLowerCase();
-    const notes = (entry.notes || "").toString().trim();
-
-    if (!character) {
-      errors.push(`${prefix}Character cannot be empty.`);
-      continue;
-    }
-
-    if (!jyutping) {
-      errors.push(`${prefix}Jyutping cannot be empty.`);
-      continue;
-    }
-
-    const jpError = validateJyutping(jyutping);
-    if (jpError) {
-      errors.push(`${prefix}${jpError}`);
-      continue;
-    }
-
-    if (!definition) {
-      errors.push(`${prefix}Definition cannot be empty.`);
-      continue;
-    }
-
-    if (!VALID_TYPES.includes(type)) {
-      errors.push(
-        `${prefix}Invalid word type "${entry.type}". Valid types are: ${VALID_TYPES.join(", ")}`,
-      );
-      continue;
-    }
-
-    // Check duplicate in dictionary
-    const isDuplicateInDict = dictionary.some(
-      (dictEntry: any) =>
-        dictEntry.char === character && dictEntry.jyutping === jyutping,
+    const { validEntry, error } = validateRegisterEntry(
+      entry,
+      dictionary,
+      incomingKeys,
+      prefix,
     );
 
-    if (isDuplicateInDict) {
-      errors.push(
-        `${prefix}Word "${character}" with Jyutping "${jyutping}" is already registered in the dictionary.`,
-      );
-      continue;
+    if (error) {
+      errors.push(error);
+    } else if (validEntry) {
+      incomingKeys.add(`${validEntry.char}|${validEntry.jyutping}`);
+      processedEntries.push(validEntry);
     }
-
-    // Check duplicate within the batch
-    const batchKey = `${character}|${jyutping}`;
-    if (incomingKeys.has(batchKey)) {
-      errors.push(
-        `${prefix}Duplicate entry for "${character}" with Jyutping "${jyutping}" found within the batch itself.`,
-      );
-      continue;
-    }
-    incomingKeys.add(batchKey);
-
-    const newEntry: Record<string, any> = {
-      char: character,
-      jyutping: jyutping,
-      definition: definition,
-      type: type,
-    };
-    if (notes) {
-      newEntry.notes = notes;
-    }
-
-    processedEntries.push(newEntry);
   }
 
   if (errors.length > 0) {
@@ -250,11 +173,7 @@ function main() {
     dictionary.push(entry);
   }
 
-  dictionary.sort((a: any, b: any) => {
-    const jpCompare = a.jyutping.localeCompare(b.jyutping);
-    if (jpCompare !== 0) return jpCompare;
-    return a.char.localeCompare(b.char);
-  });
+  dictionary = sortDictionary(dictionary);
 
   // Write back
   try {

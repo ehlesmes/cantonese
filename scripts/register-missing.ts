@@ -1,7 +1,10 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as parser from "./lib/parser";
-import { findUnregisteredWords } from "./lib/register-utils";
+import {
+  findUnregisteredWords,
+  extractChapterUnits,
+} from "./lib/register-utils.js";
 
 const colors = {
   reset: "\x1b[0m",
@@ -72,33 +75,7 @@ function main() {
     process.exit(1);
   }
 
-  const chapterUnits = [];
-  for (const block of chapterData.blocks) {
-    let rawUnits = [];
-    if (block.type === "prose") {
-      rawUnits = parser.extractInlineUnits(block.content);
-    } else if (block.type === "cantonese" || block.type === "dialog") {
-      rawUnits = parser.extractBlockUnits(block.content);
-    } else if (block.type === "exercise") {
-      let exerciseData;
-      try {
-        exerciseData = parser.parseYAML(block.content);
-      } catch {
-        continue;
-      }
-      const fields = ["question", "answer", "explanation"];
-      for (const field of fields) {
-        if (exerciseData[field]) {
-          rawUnits.push(
-            ...parser.extractBlockUnits(String(exerciseData[field])),
-          );
-        }
-      }
-    }
-    for (const unit of rawUnits) {
-      chapterUnits.push(unit);
-    }
-  }
+  const chapterUnits = extractChapterUnits(chapterData);
 
   const unregisteredList = findUnregisteredWords(chapterUnits, dictionary);
 

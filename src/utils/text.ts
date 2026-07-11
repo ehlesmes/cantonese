@@ -86,3 +86,68 @@ export function selectBestCantoneseVoice<T extends MinimalVoiceInfo>(
 
   return hkVoices[0]!;
 }
+
+export interface DictionaryEntry {
+  char: string;
+  jyutping: string;
+  definition: string;
+  type?: string;
+  notes?: string;
+}
+
+/**
+ * Searches the Cantonese dictionary using different query matches.
+ */
+export function lookupDictionary(
+  dictionary: DictionaryEntry[],
+  query: string,
+): DictionaryEntry[] {
+  const trimmed = query.trim();
+  if (trimmed === "") return [];
+
+  const hasChinese = /[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]/.test(trimmed);
+  const hasDigits = /\d/.test(trimmed);
+
+  if (hasChinese) {
+    return dictionary.filter((entry) => entry.char.includes(trimmed));
+  } else if (hasDigits) {
+    const normalizedQuery = trimmed.toLowerCase().replace(/[- ]/g, "");
+    return dictionary.filter((entry) => {
+      const normalizedJp = entry.jyutping.toLowerCase().replace(/[- ]/g, "");
+      return normalizedJp.includes(normalizedQuery);
+    });
+  } else {
+    const lowerQuery = trimmed.toLowerCase();
+
+    const englishMatches = dictionary.filter((entry) => {
+      const defMatch = entry.definition.toLowerCase().includes(lowerQuery);
+      const noteMatch = entry.notes
+        ? entry.notes.toLowerCase().includes(lowerQuery)
+        : false;
+      return defMatch || noteMatch;
+    });
+
+    const tonelessMatches = dictionary.filter((entry) => {
+      const tonelessJp = entry.jyutping
+        .toLowerCase()
+        .replace(/[1-6]/g, "")
+        .replace(/[- ]/g, "");
+      const normalizedQuery = lowerQuery.replace(/[- ]/g, "");
+      return (
+        tonelessJp === normalizedQuery || tonelessJp.includes(normalizedQuery)
+      );
+    });
+
+    const combined = [...englishMatches];
+    for (const entry of tonelessMatches) {
+      if (
+        !combined.some(
+          (e) => e.char === entry.char && e.jyutping === entry.jyutping,
+        )
+      ) {
+        combined.push(entry);
+      }
+    }
+    return combined;
+  }
+}
