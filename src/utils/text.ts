@@ -50,3 +50,39 @@ export function checkPhraseAnswer(
   }
   return true;
 }
+
+export interface MinimalVoiceInfo {
+  name: string;
+  lang: string;
+}
+
+/**
+ * Selects the best Cantonese voice from a list based on priority.
+ */
+export function selectBestCantoneseVoice<T extends MinimalVoiceInfo>(
+  voices: T[],
+): T | null {
+  const hkVoices = voices.filter((v) => {
+    const lang = v.lang.toLowerCase();
+    return (
+      lang === "zh-hk" ||
+      lang === "zh-yue" ||
+      lang.replace("_", "-") === "zh-hk"
+    );
+  });
+
+  if (hkVoices.length === 0) return null;
+
+  const siri = hkVoices.find((v) => v.name.toLowerCase().includes("siri"));
+  if (siri) return siri;
+  const premium = hkVoices.find((v) =>
+    v.name.toLowerCase().includes("premium"),
+  );
+  if (premium) return premium;
+  const enhanced = hkVoices.find((v) =>
+    v.name.toLowerCase().includes("enhanced"),
+  );
+  if (enhanced) return enhanced;
+
+  return hkVoices[0]!;
+}

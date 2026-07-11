@@ -8,6 +8,8 @@ import {
   mergeStates,
   saveLocalState,
   getLocalState,
+  extractRTCToken,
+  calculateMergeMetrics,
 } from "../src/utils/sync.js";
 import {
   packSDPData,
@@ -1000,6 +1002,60 @@ describe("Sync Utility Spec Additional Coverage", () => {
     expect(deserialized).not.toBeNull();
     expect(deserialized?.srs).toEqual({});
     expect(deserialized?.vocab).toEqual({});
+  });
+
+  test("extractRTCToken parses URL search parameters or returns raw input", () => {
+    expect(extractRTCToken("raw_sdp_token")).toBe("raw_sdp_token");
+    expect(extractRTCToken("invalid-url-string")).toBe("invalid-url-string");
+    expect(
+      extractRTCToken("https://example.com/canto?rtc=extracted_token"),
+    ).toBe("extracted_token");
+    expect(extractRTCToken("https://example.com/canto?other=123")).toBe(
+      "https://example.com/canto?other=123",
+    );
+  });
+
+  test("calculateMergeMetrics computes accurate local vs merged metrics", () => {
+    const local = {
+      chapters: ["ch1"],
+      srs: { p1: { level: 2, lastReviewed: 100 } },
+      vocab: { v1: { level: 3, lastReviewed: 200 } },
+    };
+    const imported = {
+      chapters: ["ch1", "ch2"],
+      srs: {
+        p1: { level: 1, lastReviewed: 50 },
+        p2: { level: 4, lastReviewed: 300 },
+      },
+      vocab: {
+        v1: { level: 5, lastReviewed: 400 },
+      },
+    };
+    const metrics = calculateMergeMetrics(local, imported);
+    expect(metrics).toEqual({
+      chapters: { local: 1, merged: 2 },
+      phrases: { local: 1, merged: 2 },
+      vocab: { local: 1, merged: 1 },
+    });
+  });
+
+  test("calculateMergeMetrics handles missing srs and vocab maps gracefully", () => {
+    const local = {
+      chapters: [],
+      srs: undefined as any,
+      vocab: undefined as any,
+    };
+    const imported = {
+      chapters: [],
+      srs: undefined as any,
+      vocab: undefined as any,
+    };
+    const metrics = calculateMergeMetrics(local, imported);
+    expect(metrics).toEqual({
+      chapters: { local: 0, merged: 0 },
+      phrases: { local: 0, merged: 0 },
+      vocab: { local: 0, merged: 0 },
+    });
   });
 });
 

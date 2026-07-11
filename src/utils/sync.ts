@@ -16,7 +16,6 @@ const SHORT_KEYS = {
   timestamp: "t" as const,
 };
 
-
 /**
  * Fallback to encode a Uint8Array to a URL-safe Base64 string (no padding).
  */
@@ -44,16 +43,16 @@ export function base64UrlToBytes(str: string): Uint8Array {
   return bytes;
 }
 
-
 interface ExtendedUint8Array extends Uint8Array {
   toBase64?(options?: { alphabet?: string; omitPadding?: boolean }): string;
 }
 
 interface ExtendedUint8ArrayConstructor {
-  fromBase64?(str: string, options?: { alphabet?: string; lastChunkHandling?: string }): Uint8Array;
+  fromBase64?(
+    str: string,
+    options?: { alphabet?: string; lastChunkHandling?: string },
+  ): Uint8Array;
 }
-
-
 
 export interface LocalState {
   chapters: string[];
@@ -86,7 +85,10 @@ async function compressData(jsonStr: string): Promise<Uint8Array> {
       },
     });
     const compressedStream = stream.pipeThrough(
-      new CompressionStream("deflate") as unknown as TransformStream<Uint8Array, Uint8Array>
+      new CompressionStream("deflate") as unknown as TransformStream<
+        Uint8Array,
+        Uint8Array
+      >,
     );
     const buffer = await new Response(compressedStream).arrayBuffer();
     return new Uint8Array(buffer);
@@ -106,7 +108,10 @@ async function decompressData(bytes: Uint8Array): Promise<string> {
       },
     });
     const decompressedStream = stream.pipeThrough(
-      new DecompressionStream("deflate") as unknown as TransformStream<Uint8Array, Uint8Array>
+      new DecompressionStream("deflate") as unknown as TransformStream<
+        Uint8Array,
+        Uint8Array
+      >,
     );
     const buffer = await new Response(decompressedStream).arrayBuffer();
     return new TextDecoder().decode(buffer);
@@ -179,7 +184,7 @@ export async function serializeState(state: LocalState): Promise<string> {
  * Deserializes and validates a progress string back into a standard state object (handles Gzipped/raw formats)
  */
 export async function deserializeState(
-  serializedStr: string
+  serializedStr: string,
 ): Promise<LocalState | null> {
   if (typeof serializedStr !== "string" || !serializedStr.trim()) {
     return null;
@@ -224,27 +229,38 @@ export async function deserializeState(
     const compacted = JSON.parse(rawStr) as unknown;
 
     // Validate overall structure
-    if (!compacted || typeof compacted !== "object" || Array.isArray(compacted)) {
+    if (
+      !compacted ||
+      typeof compacted !== "object" ||
+      Array.isArray(compacted)
+    ) {
       throw new Error("Invalid payload structure");
     }
 
     const payload = compacted as Record<string, unknown>;
     const rawChapters = payload[SHORT_KEYS.chapters] || [];
     const chapters = Array.isArray(rawChapters)
-      ? (rawChapters as unknown[]).filter((c): c is string => typeof c === "string")
+      ? (rawChapters as unknown[]).filter(
+          (c): c is string => typeof c === "string",
+        )
       : [];
 
     const state: LocalState = {
       chapters,
       srs: {},
       vocab: {},
-      timestamp: typeof payload[SHORT_KEYS.timestamp] === "number" ? (payload[SHORT_KEYS.timestamp] as number) : 0,
+      timestamp:
+        typeof payload[SHORT_KEYS.timestamp] === "number"
+          ? (payload[SHORT_KEYS.timestamp] as number)
+          : 0,
     };
 
     // Expand srs: Map [level, timestamp] to { level, lastReviewed }
     const srsData = payload[SHORT_KEYS.srs] || {};
     if (srsData && typeof srsData === "object" && !Array.isArray(srsData)) {
-      for (const [id, arr] of Object.entries(srsData as Record<string, unknown>)) {
+      for (const [id, arr] of Object.entries(
+        srsData as Record<string, unknown>,
+      )) {
         if (id.startsWith("ch")) {
           // Discard legacy indexed phrasebook progress
           continue;
@@ -260,8 +276,14 @@ export async function deserializeState(
 
     // Expand vocab
     const vocabData = payload[SHORT_KEYS.vocab] || {};
-    if (vocabData && typeof vocabData === "object" && !Array.isArray(vocabData)) {
-      for (const [id, arr] of Object.entries(vocabData as Record<string, unknown>)) {
+    if (
+      vocabData &&
+      typeof vocabData === "object" &&
+      !Array.isArray(vocabData)
+    ) {
+      for (const [id, arr] of Object.entries(
+        vocabData as Record<string, unknown>,
+      )) {
         if (Array.isArray(arr) && arr.length >= 1) {
           state.vocab[id] = {
             level: Number(arr[0] ?? 1),
@@ -281,7 +303,10 @@ export async function deserializeState(
 /**
  * Smart-merges imported state with the current local state
  */
-export function mergeStates(local: LocalState, imported: LocalState): LocalState {
+export function mergeStates(
+  local: LocalState,
+  imported: LocalState,
+): LocalState {
   const merged: LocalState = {
     chapters: [],
     srs: {},
@@ -289,15 +314,17 @@ export function mergeStates(local: LocalState, imported: LocalState): LocalState
   };
 
   // Merge unlocked chapters (Union), filtering legacy numeric progress
-  const allChapters = [
-    ...local.chapters,
-    ...imported.chapters,
-  ].filter((c) => typeof c === "string");
+  const allChapters = [...local.chapters, ...imported.chapters].filter(
+    (c) => typeof c === "string",
+  );
 
   merged.chapters = [...new Set(allChapters)].sort();
 
   // Merge helper for key-value stores (latest timestamp wins)
-  const mergeStore = (localStore: SrsStateMap, importedStore: SrsStateMap): SrsStateMap => {
+  const mergeStore = (
+    localStore: SrsStateMap,
+    importedStore: SrsStateMap,
+  ): SrsStateMap => {
     const mergedStore: SrsStateMap = {};
     const allKeys = new Set([
       ...Object.keys(localStore || {}),
@@ -348,4 +375,39 @@ export function saveLocalState(state: LocalState): boolean {
     }
   }
   return false;
+}
+
+/**
+ * Extracts WebRTC token from a URL if possible, otherwise returns the raw string.
+ */
+export function extractRTCToken(tokenRaw: string): string {
+  try {
+    const url = new URL(tokenRaw);
+    return url.searchParams.get("rtc") || tokenRaw;
+  } catch {
+    return tokenRaw;
+  }
+}
+
+export interface MergeMetrics {
+  chapters: { local: number; merged: number };
+  phrases: { local: number; merged: number };
+  vocab: { local: number; merged: number };
+}
+
+/**
+ * Calculates local vs merged progress metrics for confirmation UI display.
+ */
+export function calculateMergeMetrics(
+  local: LocalState,
+  imported: LocalState,
+): MergeMetrics {
+  const merged = mergeStates(local, imported);
+  const countKeys = (obj: any) => Object.keys(obj || {}).length;
+
+  return {
+    chapters: { local: local.chapters.length, merged: merged.chapters.length },
+    phrases: { local: countKeys(local.srs), merged: countKeys(merged.srs) },
+    vocab: { local: countKeys(local.vocab), merged: countKeys(merged.vocab) },
+  };
 }

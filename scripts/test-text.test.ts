@@ -3,6 +3,7 @@ import {
   getCleanSpokenText,
   isPunctuation,
   checkPhraseAnswer,
+  selectBestCantoneseVoice,
 } from "../src/utils/text.js";
 
 describe("Cantonese Text Cleaner Utility", () => {
@@ -118,5 +119,57 @@ describe("checkPhraseAnswer Utility", () => {
     const user = ["我[ngo5|I]", "好[hou2|good]", "。"];
     const expected = ["好[hou2|good]", "我[ngo5|I]", "。"];
     expect(checkPhraseAnswer(user, expected)).toBe(false);
+  });
+});
+
+describe("selectBestCantoneseVoice Utility", () => {
+  test("returns null for empty list", () => {
+    expect(selectBestCantoneseVoice([])).toBeNull();
+  });
+
+  test("returns null if no Cantonese voices exist", () => {
+    const voices = [
+      { name: "Siri English", lang: "en-US" },
+      { name: "Google US English", lang: "en-US" },
+    ];
+    expect(selectBestCantoneseVoice(voices)).toBeNull();
+  });
+
+  test("finds Cantonese voices and prioritizes Siri", () => {
+    const voices = [
+      { name: "Google zh-HK", lang: "zh-HK" },
+      { name: "Siri zh-HK", lang: "zh-HK" },
+      { name: "Premium zh-HK", lang: "zh-HK" },
+    ];
+    const best = selectBestCantoneseVoice(voices);
+    expect(best?.name).toBe("Siri zh-HK");
+  });
+
+  test("prioritizes Premium if Siri is absent", () => {
+    const voices = [
+      { name: "Google zh-HK", lang: "zh-HK" },
+      { name: "Premium zh-HK", lang: "zh-HK" },
+      { name: "Enhanced zh-HK", lang: "zh-HK" },
+    ];
+    const best = selectBestCantoneseVoice(voices);
+    expect(best?.name).toBe("Premium zh-HK");
+  });
+
+  test("prioritizes Enhanced if Siri and Premium are absent", () => {
+    const voices = [
+      { name: "Google zh-HK", lang: "zh-hk" },
+      { name: "Enhanced zh-HK", lang: "zh-HK" },
+    ];
+    const best = selectBestCantoneseVoice(voices);
+    expect(best?.name).toBe("Enhanced zh-HK");
+  });
+
+  test("falls back to the first Cantonese voice if no custom names match", () => {
+    const voices = [
+      { name: "Default Cantonese", lang: "zh-HK" },
+      { name: "Standard Cantonese", lang: "zh_HK" },
+    ];
+    const best = selectBestCantoneseVoice(voices);
+    expect(best?.name).toBe("Default Cantonese");
   });
 });

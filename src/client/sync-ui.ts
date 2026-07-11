@@ -1,13 +1,13 @@
 import QRCode from "qrcode";
 import {
-
-
   getLocalState,
   mergeStates,
   saveLocalState,
   serializeState,
   deserializeState,
-  type LocalState
+  extractRTCToken,
+  calculateMergeMetrics,
+  type LocalState,
 } from "../utils/sync.js";
 import type { SDPCoordinates } from "../types/index.js";
 import { unpackSDPData } from "../utils/webrtc.js";
@@ -56,7 +56,6 @@ function getButtonElement(id: string): HTMLButtonElement {
   throw new Error("Missing button element: " + id);
 }
 
-
 function init() {
   // DOM Elements
   const overlay = getEl("sync-modal-overlay");
@@ -89,9 +88,7 @@ function init() {
   const answerQrLoadingText = getEl("answer-qr-loading-text");
 
   // Offline accordion elements
-  const syncOfflineToggleBtn = getEl(
-    "sync-offline-toggle-btn",
-  );
+  const syncOfflineToggleBtn = getEl("sync-offline-toggle-btn");
   const syncOfflineView = getEl("sync-offline-view");
   const syncOfflineCloseBtn = getEl("sync-offline-close-btn");
   const exportStringInput = getInputElement("sync-export-string");
@@ -102,12 +99,8 @@ function init() {
 
   // Confirm UI Elements
   const confirmView = getEl("sync-confirm-view");
-  const confirmChaptersLocal = getEl(
-    "confirm-chapters-local",
-  );
-  const confirmChaptersMerged = getEl(
-    "confirm-chapters-merged",
-  );
+  const confirmChaptersLocal = getEl("confirm-chapters-local");
+  const confirmChaptersMerged = getEl("confirm-chapters-merged");
   const confirmSrsLocal = getEl("confirm-srs-local");
   const confirmSrsMerged = getEl("confirm-srs-merged");
   const confirmVocabLocal = getEl("confirm-vocab-local");
@@ -299,21 +292,16 @@ function init() {
     },
   };
 
-  async function startWebRTCSync(isInitiator: boolean, remoteOfferData: SDPCoordinates | null = null) {
+  async function startWebRTCSync(
+    isInitiator: boolean,
+    remoteOfferData: SDPCoordinates | null = null,
+  ) {
     await startWebRTC(isInitiator, remoteOfferData, webrtcCallbacks);
   }
 
   async function handleScannedCode(tokenRaw: string) {
     try {
-      let token = tokenRaw;
-      try {
-        const url = new URL(tokenRaw);
-        const rtcParam = url.searchParams.get("rtc");
-        if (rtcParam) token = rtcParam;
-      } catch {
-        // Not a URL
-      }
-
+      const token = extractRTCToken(tokenRaw);
       const data = unpackSDPData(token);
       if (data && data.u && data.p && data.f) {
         if (data.t === "o") {
@@ -342,18 +330,16 @@ function init() {
     currentImportState = importedState;
     confirmStatusText.style.display = "none";
     const localState = getLocalState();
-    const merged = mergeStates(localState, importedState);
+    const metrics = calculateMergeMetrics(localState, importedState);
 
-    const countKeys = (obj: Record<string, unknown> | undefined) => Object.keys(obj || {}).length;
+    confirmChaptersLocal.textContent = String(metrics.chapters.local);
+    confirmChaptersMerged.textContent = String(metrics.chapters.merged);
 
-    confirmChaptersLocal.textContent = String(localState.chapters.length);
-    confirmChaptersMerged.textContent = String(merged.chapters.length);
+    confirmSrsLocal.textContent = String(metrics.phrases.local);
+    confirmSrsMerged.textContent = String(metrics.phrases.merged);
 
-    confirmSrsLocal.textContent = String(countKeys(localState.srs));
-    confirmSrsMerged.textContent = String(countKeys(merged.srs));
-
-    confirmVocabLocal.textContent = String(countKeys(localState.vocab));
-    confirmVocabMerged.textContent = String(countKeys(merged.vocab));
+    confirmVocabLocal.textContent = String(metrics.vocab.local);
+    confirmVocabMerged.textContent = String(metrics.vocab.merged);
 
     confirmView.style.display = "flex";
     overlay.classList.add("open");

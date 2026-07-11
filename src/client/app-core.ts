@@ -1,11 +1,11 @@
+import { selectBestCantoneseVoice } from "../utils/text.js";
+import { calculateTooltipShift } from "../utils/layout.js";
 
 function getEl(id: string): HTMLElement {
   const el = document.getElementById(id);
   if (!el) throw new Error("Missing element: " + id);
   return el;
 }
-
-
 
 // Native Cantonese TTS Engine & Offline Audio Player
 let cantoVoice: SpeechSynthesisVoice | null = null;
@@ -14,26 +14,15 @@ let activeBtn: HTMLElement | null = null;
 function loadVoices() {
   if (!window.speechSynthesis) return;
   const voices = window.speechSynthesis.getVoices();
-  
-  // Find all Cantonese voices
-  const hkVoices = voices.filter(v => {
-    const lang = v.lang.toLowerCase();
-    return lang === 'zh-hk' || lang === 'zh-yue' || lang.replace('_', '-') === 'zh-hk';
-  });
-
-  if (hkVoices.length > 0) {
-    // Prioritize Siri (best prosody), Premium (high quality), and Enhanced (high quality accessibility)
-    cantoVoice =
-      hkVoices.find(v => v.name.toLowerCase().includes('siri')) ||
-      hkVoices.find(v => v.name.toLowerCase().includes('premium')) ||
-      hkVoices.find(v => v.name.toLowerCase().includes('enhanced')) ||
-      hkVoices[0] || null;
-    
-    if (cantoVoice) {
-      console.log('Selected Cantonese Voice:', cantoVoice.name, '(', cantoVoice.lang, ')');
-    }
-  } else {
-    cantoVoice = null;
+  cantoVoice = selectBestCantoneseVoice(voices);
+  if (cantoVoice) {
+    console.log(
+      "Selected Cantonese Voice:",
+      cantoVoice.name,
+      "(",
+      cantoVoice.lang,
+      ")",
+    );
   }
 }
 
@@ -44,7 +33,7 @@ if (window.speechSynthesis) {
 
 function getCleanCantoneseText(element: Element) {
   const clone = element.cloneNode(true) as Element;
-  clone.querySelectorAll('.tooltip-popover').forEach(el => el.remove());
+  clone.querySelectorAll(".tooltip-popover").forEach((el) => el.remove());
   return clone.textContent?.trim() || "";
 }
 
@@ -53,9 +42,12 @@ async function getHashAsync(text: string) {
   if (window.crypto && window.crypto.subtle) {
     try {
       const msgUint8 = new TextEncoder().encode(text);
-      const hashBuffer = await window.crypto.subtle.digest('SHA-256', msgUint8);
+      const hashBuffer = await window.crypto.subtle.digest("SHA-256", msgUint8);
       const hashArray = Array.from(new Uint8Array(hashBuffer));
-      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 16);
+      return hashArray
+        .map((b) => b.toString(16).padStart(2, "0"))
+        .join("")
+        .slice(0, 16);
     } catch (err) {
       console.warn("Hashing failed, falling back:", err);
     }
@@ -70,7 +62,7 @@ function preloadAudio(text: string, hash?: string | null) {
   if (hash) {
     triggerPreload(hash);
   } else {
-    getHashAsync(text).then(asyncHash => {
+    getHashAsync(text).then((asyncHash) => {
       if (asyncHash) triggerPreload(asyncHash);
     });
   }
@@ -80,21 +72,21 @@ function triggerPreload(hash: string) {
   if (!hash || preloadedHashes.has(hash)) return;
   preloadedHashes.add(hash);
 
-  const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
-    ? import.meta.env.BASE_URL.slice(0, -1) 
+  const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL.slice(0, -1)
     : import.meta.env.BASE_URL;
-  
+
   // Creating and immediately discarding Audio element lets the browser's HTTP cache fetch it
   // and keeps the memory footprint clean (no decoder references held in a map).
   const tempAudio = new Audio(`${baseUrl}/audio/tts/${hash}.mp3`);
-  tempAudio.preload = 'auto';
+  tempAudio.preload = "auto";
 }
 
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   (window as any).preloadTexts = (items: any[]) => {
     if (Array.isArray(items)) {
-      items.forEach(item => {
-        if (item && typeof item === 'object') {
+      items.forEach((item) => {
+        if (item && typeof item === "object") {
           preloadAudio(item.text, item.hash);
         } else {
           preloadAudio(item);
@@ -115,7 +107,7 @@ function speakNativeFallback(text: string, onEndCallback?: () => void) {
   if (cantoVoice) {
     utterance.voice = cantoVoice;
   } else {
-    utterance.lang = 'zh-HK';
+    utterance.lang = "zh-HK";
   }
 
   utterance.rate = 0.85; // Slow down native playback speed too
@@ -127,13 +119,16 @@ function speakNativeFallback(text: string, onEndCallback?: () => void) {
     if (onEndCallback) onEndCallback();
   };
 
-
   window.speechSynthesis.speak(utterance);
 }
 
 let playbackAudio: HTMLAudioElement | null = null;
 
-async function speakText(text: string, hash?: string | null, onEndCallback?: () => void) {
+async function speakText(
+  text: string,
+  hash?: string | null,
+  onEndCallback?: () => void,
+) {
   // Cancel active native speech
   if (window.speechSynthesis) {
     window.speechSynthesis.cancel();
@@ -148,7 +143,7 @@ async function speakText(text: string, hash?: string | null, onEndCallback?: () 
 
   // Clean up styling on previous active elements
   if (activeBtn) {
-    activeBtn.classList.remove('tts-playing');
+    activeBtn.classList.remove("tts-playing");
     activeBtn = null;
   }
 
@@ -161,11 +156,11 @@ async function speakText(text: string, hash?: string | null, onEndCallback?: () 
     if (!playbackAudio) {
       playbackAudio = new Audio();
     }
-    
-    const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
-      ? import.meta.env.BASE_URL.slice(0, -1) 
+
+    const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+      ? import.meta.env.BASE_URL.slice(0, -1)
       : import.meta.env.BASE_URL;
-    
+
     playbackAudio.src = `${baseUrl}/audio/tts/${hash}.mp3`;
     playbackAudio.currentTime = 0;
     playbackAudio.playbackRate = 0.85;
@@ -174,12 +169,12 @@ async function speakText(text: string, hash?: string | null, onEndCallback?: () 
     const triggerFallback = () => {
       if (fallbackTriggered) return;
       fallbackTriggered = true;
-      
+
       if (playbackAudio) {
         playbackAudio.onended = null;
         playbackAudio.onerror = null;
       }
-      
+
       speakNativeFallback(text, onEndCallback);
     };
 
@@ -191,7 +186,7 @@ async function speakText(text: string, hash?: string | null, onEndCallback?: () 
       triggerFallback();
     };
 
-    playbackAudio.play().catch(err => {
+    playbackAudio.play().catch((err) => {
       console.warn("Audio play failed, using native fallback:", err);
       triggerFallback();
     });
@@ -201,41 +196,32 @@ async function speakText(text: string, hash?: string | null, onEndCallback?: () 
 }
 
 // Event delegation for TTS clicks
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // Keep tooltips within viewport boundaries
   function adjustTooltipPosition(vocabTerm: HTMLElement) {
-    const popover = vocabTerm.querySelector('.tooltip-popover') as HTMLElement;
+    const popover = vocabTerm.querySelector(".tooltip-popover") as HTMLElement;
     if (!popover) return;
 
     // Reset positioning to get natural layout dimensions
-    popover.style.left = '';
-    popover.style.removeProperty('--arrow-offset');
+    popover.style.left = "";
+    popover.style.removeProperty("--arrow-offset");
 
     const rect = popover.getBoundingClientRect();
-    const viewportWidth = window.innerWidth;
-    const padding = 12; // safe boundary from screen edges
+    const shift = calculateTooltipShift(rect, window.innerWidth, 12);
 
-    const overflowLeft = padding - rect.left;
-    const overflowRight = rect.right - (viewportWidth - padding);
-
-    if (overflowLeft > 0) {
-      // Shift right to avoid left edge clipping
-      popover.style.left = `calc(50% + ${overflowLeft}px)`;
-      popover.style.setProperty('--arrow-offset', `calc(50% - ${overflowLeft}px)`);
-    } else if (overflowRight > 0) {
-      // Shift left to avoid right edge clipping
-      popover.style.left = `calc(50% - ${overflowRight}px)`;
-      popover.style.setProperty('--arrow-offset', `calc(50% + ${overflowRight}px)`);
+    if (shift) {
+      popover.style.left = shift.leftStyle;
+      popover.style.setProperty("--arrow-offset", shift.arrowOffsetStyle);
     }
   }
 
   // Adjust position on hover (mouseover) or touchstart/click
   const handleTooltipEvent = (e: Event) => {
     const target = e.target as HTMLElement;
-    const vocabTerm = target.closest('.vocab-term') as HTMLElement;
+    const vocabTerm = target.closest(".vocab-term") as HTMLElement;
     if (vocabTerm) {
       adjustTooltipPosition(vocabTerm);
-      
+
       // Preload audio on hover/touch to minimize latency
       const text = getCleanCantoneseText(vocabTerm);
       const hash = vocabTerm.dataset.audioHash;
@@ -246,18 +232,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Preload play button audio on hover/touch
   const handleTtsButtonHover = (e: Event) => {
     const target = e.target as HTMLElement;
-    const ttsBtn = target.closest('.tts-btn') as HTMLElement;
+    const ttsBtn = target.closest(".tts-btn") as HTMLElement;
     if (ttsBtn) {
-      const exampleCard = ttsBtn.closest('.cantonese-example-card');
-      const dialogueTurn = ttsBtn.closest('.dialogue-turn');
-      
+      const exampleCard = ttsBtn.closest(".cantonese-example-card");
+      const dialogueTurn = ttsBtn.closest(".dialogue-turn");
+
       let targetEl: HTMLElement | null = null;
       if (exampleCard) {
-        targetEl = exampleCard.querySelector('.cantonese-sentence');
+        targetEl = exampleCard.querySelector(".cantonese-sentence");
       } else if (dialogueTurn) {
-        targetEl = dialogueTurn.querySelector('.dialogue-cantonese');
+        targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
       }
-      
+
       if (targetEl) {
         const text = getCleanCantoneseText(targetEl);
         const hash = ttsBtn.dataset.audioHash;
@@ -266,73 +252,83 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  document.body.addEventListener('mouseover', handleTooltipEvent, { passive: true });
-  document.body.addEventListener('touchstart', handleTooltipEvent, { passive: true });
-  document.body.addEventListener('click', handleTooltipEvent, { passive: true });
+  document.body.addEventListener("mouseover", handleTooltipEvent, {
+    passive: true,
+  });
+  document.body.addEventListener("touchstart", handleTooltipEvent, {
+    passive: true,
+  });
+  document.body.addEventListener("click", handleTooltipEvent, {
+    passive: true,
+  });
 
-  document.body.addEventListener('mouseover', handleTtsButtonHover, { passive: true });
-  document.body.addEventListener('touchstart', handleTtsButtonHover, { passive: true });
+  document.body.addEventListener("mouseover", handleTtsButtonHover, {
+    passive: true,
+  });
+  document.body.addEventListener("touchstart", handleTtsButtonHover, {
+    passive: true,
+  });
 
   // Handle Vocab Term Clicks
-  document.body.addEventListener('click', (e: Event) => {
+  document.body.addEventListener("click", (e: Event) => {
     const target = e.target as HTMLElement;
-    const vocabTerm = target.closest('.vocab-term') as HTMLElement;
+    const vocabTerm = target.closest(".vocab-term") as HTMLElement;
     if (vocabTerm) {
       e.stopPropagation();
-      
+
       const text = getCleanCantoneseText(vocabTerm);
       const hash = vocabTerm.dataset.audioHash;
-      
+
       // Skip playing sound or highlighting if the text consists only of punctuation marks
       if (/^[，。！？、；：,?!;:\s]+$/.test(text)) {
         return;
       }
-      
+
       speakText(text, hash, () => {
-        vocabTerm.classList.remove('tts-playing');
+        vocabTerm.classList.remove("tts-playing");
         if (activeBtn === vocabTerm) activeBtn = null;
       });
-      
+
       // Highlight vocab term
-      vocabTerm.classList.add('tts-playing');
+      vocabTerm.classList.add("tts-playing");
       activeBtn = vocabTerm;
-      
+
       // Backup removal in case onend doesn't trigger
       setTimeout(() => {
-        vocabTerm.classList.remove('tts-playing');
+        vocabTerm.classList.remove("tts-playing");
       }, 1200);
     }
   });
 
   // Handle Play Button Clicks
-  document.body.addEventListener('click', (e: Event) => {
+  document.body.addEventListener("click", (e: Event) => {
     const target = e.target as HTMLElement;
-    const ttsBtn = target.closest('.tts-btn') as HTMLElement;
+    const ttsBtn = target.closest(".tts-btn") as HTMLElement;
     if (ttsBtn) {
       e.stopPropagation();
-      
+
       // Find target text container (either Cantonese sentence or dialogue line)
-      const exampleCard = ttsBtn.closest('.cantonese-example-card');
-      const dialogueTurn = ttsBtn.closest('.dialogue-turn');
-      
+      const exampleCard = ttsBtn.closest(".cantonese-example-card");
+      const dialogueTurn = ttsBtn.closest(".dialogue-turn");
+
       let targetEl: HTMLElement | null = null;
       if (exampleCard) {
-        targetEl = exampleCard.querySelector('.cantonese-sentence');
+        targetEl = exampleCard.querySelector(".cantonese-sentence");
       } else if (dialogueTurn) {
-        targetEl = dialogueTurn.querySelector('.dialogue-cantonese');
+        targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
       }
-      
+
       if (targetEl) {
         const text = getCleanCantoneseText(targetEl);
         const hash = ttsBtn.dataset.audioHash;
-        
+
         speakText(text, hash, () => {
-          ttsBtn.classList.remove('tts-playing');
+          ttsBtn.classList.remove("tts-playing");
           if (activeBtn === ttsBtn) activeBtn = null;
         });
 
         // Highlight play button
-        ttsBtn.classList.add('tts-playing');
+        ttsBtn.classList.add("tts-playing");
         activeBtn = ttsBtn;
       }
     }
@@ -340,50 +336,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Observe tts-btn visibility and preload audio when they enter viewport (within 200px margin)
   function setupVisibilityPreloader() {
-    if (!('IntersectionObserver' in window)) return;
+    if (!("IntersectionObserver" in window)) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const ttsBtn = entry.target as HTMLElement;
-          observer.unobserve(ttsBtn);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const ttsBtn = entry.target as HTMLElement;
+            observer.unobserve(ttsBtn);
 
-          const exampleCard = ttsBtn.closest('.cantonese-example-card');
-          const dialogueTurn = ttsBtn.closest('.dialogue-turn');
-          
-          let targetEl: HTMLElement | null = null;
-          if (exampleCard) {
-            targetEl = exampleCard.querySelector('.cantonese-sentence');
-          } else if (dialogueTurn) {
-            targetEl = dialogueTurn.querySelector('.dialogue-cantonese');
+            const exampleCard = ttsBtn.closest(".cantonese-example-card");
+            const dialogueTurn = ttsBtn.closest(".dialogue-turn");
+
+            let targetEl: HTMLElement | null = null;
+            if (exampleCard) {
+              targetEl = exampleCard.querySelector(".cantonese-sentence");
+            } else if (dialogueTurn) {
+              targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
+            }
+
+            if (targetEl) {
+              const text = getCleanCantoneseText(targetEl);
+              const hash = ttsBtn.dataset.audioHash;
+              preloadAudio(text, hash);
+            }
           }
-          
-          if (targetEl) {
-            const text = getCleanCantoneseText(targetEl);
-            const hash = ttsBtn.dataset.audioHash;
-            preloadAudio(text, hash);
-          }
-        }
-      });
-    }, {
-      rootMargin: '200px 0px',
-      threshold: 0.0
-    });
+        });
+      },
+      {
+        rootMargin: "200px 0px",
+        threshold: 0.0,
+      },
+    );
 
-    document.querySelectorAll('.tts-btn').forEach(btn => observer.observe(btn));
+    document
+      .querySelectorAll(".tts-btn")
+      .forEach((btn) => observer.observe(btn));
   }
 
   // Initialize visibility observer
   setupVisibilityPreloader();
 
   // --- Version Check and Update Logic ---
-  const updateIndicator = getEl('update-indicator');
+  const updateIndicator = getEl("update-indicator");
   const metaTag = document.querySelector('meta[name="app-version"]');
-  const currentVersion = metaTag ? metaTag.getAttribute('content') : 'development';
+  const currentVersion = metaTag
+    ? metaTag.getAttribute("content")
+    : "development";
   let updateChecking = false;
 
   if (updateIndicator) {
-    updateIndicator.addEventListener('click', (e) => {
+    updateIndicator.addEventListener("click", (e) => {
       e.preventDefault();
       window.location.reload();
     });
@@ -391,28 +394,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function checkVersion() {
     // Skip check on local dev
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    if (
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1"
+    ) {
       return;
     }
-    if (currentVersion === 'development' || updateChecking) {
+    if (currentVersion === "development" || updateChecking) {
       return;
     }
 
     updateChecking = true;
     try {
-      const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
-        ? import.meta.env.BASE_URL.slice(0, -1) 
+      const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+        ? import.meta.env.BASE_URL.slice(0, -1)
         : import.meta.env.BASE_URL;
-      
+
       const response = await fetch(`${baseUrl}/version.json?t=${Date.now()}`);
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`);
       }
       const data = await response.json();
-      
+
       if (data && data.version && data.version !== currentVersion) {
         if (updateIndicator) {
-          updateIndicator.style.display = 'inline-flex';
+          updateIndicator.style.display = "inline-flex";
         }
       }
     } catch (err) {
@@ -427,8 +433,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(checkVersion, 5000);
 
   // 2. On tab visibility change
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') {
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
       checkVersion();
     }
   });
