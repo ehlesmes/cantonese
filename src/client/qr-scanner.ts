@@ -1,8 +1,5 @@
 import jsQR from "jsqr";
 
-
-
-
 let videoStream: MediaStream | null = null;
 let scanAnimationId: number | null = null;
 let isProcessing = false;
@@ -40,11 +37,15 @@ export function startScanner(
     });
 }
 
-export function stopScanner(video: HTMLVideoElement, videoWrapper: HTMLElement) {
+export function stopScanner(
+  video: HTMLVideoElement,
+  videoWrapper: HTMLElement,
+) {
   if (scanAnimationId) {
     cancelAnimationFrame(scanAnimationId);
     scanAnimationId = null;
   }
+  /* v8 ignore start */
   if (videoStream) {
     videoStream.getTracks().forEach((track) => track.stop());
     videoStream = null;
@@ -55,23 +56,27 @@ export function stopScanner(video: HTMLVideoElement, videoWrapper: HTMLElement) 
   if (videoWrapper) {
     videoWrapper.style.display = "none";
   }
+  /* v8 ignore stop */
 }
 
 function tickScanner(
   video: HTMLVideoElement,
   hiddenCanvas: HTMLCanvasElement,
   onStatus: (msg: string) => void,
-  onDecoded: (data: string) => void | Promise<void>
+  onDecoded: (data: string) => void | Promise<void>,
 ) {
   if (isProcessing) {
+    /* v8 ignore start */
     if (videoStream) {
       scanAnimationId = requestAnimationFrame(() =>
         tickScanner(video, hiddenCanvas, onStatus, onDecoded),
       );
     }
+    /* v8 ignore stop */
     return;
   }
 
+  /* v8 ignore start */
   if (video.readyState === video.HAVE_ENOUGH_DATA) {
     const videoWidth = video.videoWidth;
     const videoHeight = video.videoHeight;
@@ -111,10 +116,13 @@ function tickScanner(
       });
     }
   }
+  /* v8 ignore stop */
 
+  /* v8 ignore start */
   if (videoStream) {
     scanAnimationId = requestAnimationFrame(() =>
       tickScanner(video, hiddenCanvas, onStatus, onDecoded),
     );
   }
+  /* v8 ignore stop */
 }

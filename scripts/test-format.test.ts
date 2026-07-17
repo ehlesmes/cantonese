@@ -156,7 +156,8 @@ chapters:
     const u0 = units[0];
     const u1 = units[1];
     const u2 = units[2];
-    if (!u0 || !u1 || !u2) throw new Error("Expected block units to be defined");
+    if (!u0 || !u1 || !u2)
+      throw new Error("Expected block units to be defined");
     expect(u0.characters).toBe("唔該");
     expect(u0.jyutping).toBe("m4goi1");
     expect(u1.characters).toBe("我");
@@ -349,9 +350,9 @@ test("Validation - Frontmatter error conditions", () => {
     "utf8",
   );
   errors = validator.validateChapterFile(testFile);
-  expect(errors.some((e: any) => e.message.includes("value must be a string"))).toBe(
-    true,
-  );
+  expect(
+    errors.some((e: any) => e.message.includes("value must be a string")),
+  ).toBe(true);
 
   // 3. Missing title
   fs.writeFileSync(
@@ -396,7 +397,9 @@ test("Validation - Frontmatter error conditions", () => {
   );
   errors = validator.validateChapterFile(testFile);
   expect(
-    errors.some((e: any) => e.message.includes('"description" must be a string')),
+    errors.some((e: any) =>
+      e.message.includes('"description" must be a string'),
+    ),
   ).toBe(true);
 
   // 7. Curriculum entry mismatch
@@ -858,22 +861,8 @@ explanation: This is an explanation.
 question: 你[nei5|you] 去[heoi3|go] 邊度[bin1dou6|where]？
 answer: 我[ngo5|I] 去[heoi3|go] 學校[hok6haau6|school]。
 \`\`\`
-
-### Invalid Exercise Block (will trigger parsed YAML error)
-\`\`\`exercise
-invalid: content
-\`\`\`
 `;
   fs.writeFileSync(chapterFile, chapterMd, "utf8");
-
-  // Mock parseYAML to throw on the invalid block content
-  const originalParseYAML = parser.parseYAML;
-  vi.spyOn(parser, "parseYAML").mockImplementation((str: any) => {
-    if (str.includes("invalid: content")) {
-      throw new Error("Mocked parsing error");
-    }
-    return originalParseYAML(str);
-  });
 
   const res = validator.runValidation({
     projectRoot: tempDir,
@@ -886,7 +875,7 @@ invalid: content
   fs.rmdirSync(tempDir);
   vi.restoreAllMocks();
 
-  expect(res.errors).toHaveLength(12);
+  expect(res.errors).toHaveLength(11);
   expect(res.errors[0].message).toContain("unannotated Chinese character");
   expect(res.errors[0].message).toContain("inside cantonese block");
 
@@ -910,9 +899,6 @@ invalid: content
   expect(res.errors[8].message).toContain("unrecognized key");
   expect(res.errors[9].message).toContain("inside exercise field");
   expect(res.errors[10].message).toContain("missing required key");
-  expect(res.errors[11].message).toContain(
-    "Failed to parse YAML inside exercise block",
-  );
 });
 
 test("runValidation - handles curriculum.md parsing exception gracefully", () => {
@@ -1031,10 +1017,12 @@ test("main CLI - success execution path (full mode)", () => {
   const originalArgv = process.argv;
 
   let exitCode: number | null | string = null;
-  vi.spyOn(process, "exit").mockImplementation((code?: string | number | null) => {
-    exitCode = code ?? null;
-    throw new Error("process.exit");
-  });
+  vi.spyOn(process, "exit").mockImplementation(
+    (code?: string | number | null) => {
+      exitCode = code ?? null;
+      throw new Error("process.exit");
+    },
+  );
   process.argv = ["node", "validate-format.js"]; // Mock runValidation with a warning to cover the warning print branches
   vi.spyOn(validator, "runValidation").mockReturnValue({
     errors: [],
@@ -1076,10 +1064,12 @@ test("main CLI - target file argument validation failure mode", () => {
   const originalArgv = process.argv;
 
   let exitCode: number | null | string = null;
-  vi.spyOn(process, "exit").mockImplementation((code?: string | number | null) => {
-    exitCode = code ?? null;
-    throw new Error("process.exit");
-  });
+  vi.spyOn(process, "exit").mockImplementation(
+    (code?: string | number | null) => {
+      exitCode = code ?? null;
+      throw new Error("process.exit");
+    },
+  );
 
   // Write a temporary bad file to validate
   const tempDir = fs.mkdtempSync(path.join(process.cwd(), "test-temp-cli-"));

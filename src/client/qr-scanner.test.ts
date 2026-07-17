@@ -2,7 +2,7 @@
  * @vitest-environment jsdom
  */
 import { describe, test, expect, vi, beforeEach, afterEach } from "vitest";
-import { startScanner, stopScanner } from "../src/client/qr-scanner.js";
+import { startScanner, stopScanner } from "./qr-scanner.js";
 import jsQR from "jsqr";
 
 vi.mock("jsqr", () => ({
@@ -125,10 +125,15 @@ describe("QR Scanner Utility Spec", () => {
 
   test("tickScanner runs callback and handles sync/async return values gracefully", async () => {
     // Setup mock properties on HTMLMediaElement/video
+    Object.defineProperty(mockVideo, "HAVE_ENOUGH_DATA", {
+      writable: true,
+      configurable: true,
+      value: 4,
+    });
     Object.defineProperty(mockVideo, "readyState", {
       writable: true,
       configurable: true,
-      value: mockVideo.HAVE_ENOUGH_DATA,
+      value: 4,
     });
     Object.defineProperty(mockVideo, "videoWidth", {
       writable: true,
@@ -167,7 +172,8 @@ describe("QR Scanner Utility Spec", () => {
     mockVideo.dispatchEvent(new Event("loadedmetadata"));
 
     // Manually run the tick logic (requestAnimationFrame handler function)
-    const frameCallback = vi.mocked(window.requestAnimationFrame).mock.calls[0]?.[0] as unknown as Function;
+    const frameCallback = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as Function;
     expect(frameCallback).toBeDefined();
 
     // Call it to trigger single tick
@@ -198,7 +204,8 @@ describe("QR Scanner Utility Spec", () => {
     await new Promise(process.nextTick);
 
     mockVideo.dispatchEvent(new Event("loadedmetadata"));
-    const secondFrameCallback = vi.mocked(window.requestAnimationFrame).mock.calls[0]?.[0] as unknown as Function;
+    const secondFrameCallback = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as Function;
 
     // This should run without throwing a TypeError: Cannot read properties of undefined (reading 'finally')
     expect(() => secondFrameCallback()).not.toThrow();
@@ -206,10 +213,15 @@ describe("QR Scanner Utility Spec", () => {
   });
 
   test("should preserve aspect ratio and scale dimensions correctly for portrait video sources", async () => {
+    Object.defineProperty(mockVideo, "HAVE_ENOUGH_DATA", {
+      writable: true,
+      configurable: true,
+      value: 4,
+    });
     Object.defineProperty(mockVideo, "readyState", {
       writable: true,
       configurable: true,
-      value: mockVideo.HAVE_ENOUGH_DATA,
+      value: 4,
     });
     // Set portrait dimensions (height > width)
     Object.defineProperty(mockVideo, "videoWidth", {
@@ -229,13 +241,15 @@ describe("QR Scanner Utility Spec", () => {
     await new Promise(process.nextTick);
     mockVideo.dispatchEvent(new Event("loadedmetadata"));
 
-    const frameCallback = vi.mocked(window.requestAnimationFrame).mock.calls[0]?.[0] as unknown as Function;
+    const frameCallback = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as Function;
     vi.mocked(window.requestAnimationFrame).mockClear();
 
     frameCallback();
 
     // Verify callback was registered for requestAnimationFrame and run it to cover arrow body
-    const nextFrameArrowFn = vi.mocked(window.requestAnimationFrame).mock.calls[0]?.[0] as unknown as Function;
+    const nextFrameArrowFn = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as Function;
     expect(nextFrameArrowFn).toBeDefined();
     nextFrameArrowFn();
 
@@ -246,10 +260,15 @@ describe("QR Scanner Utility Spec", () => {
   });
 
   test("should prevent camera preview freezing by continuing frame scheduling during active scan processing", async () => {
+    Object.defineProperty(mockVideo, "HAVE_ENOUGH_DATA", {
+      writable: true,
+      configurable: true,
+      value: 4,
+    });
     Object.defineProperty(mockVideo, "readyState", {
       writable: true,
       configurable: true,
-      value: mockVideo.HAVE_ENOUGH_DATA,
+      value: 4,
     });
     Object.defineProperty(mockVideo, "videoWidth", {
       writable: true,
@@ -280,7 +299,8 @@ describe("QR Scanner Utility Spec", () => {
     await new Promise(process.nextTick);
     mockVideo.dispatchEvent(new Event("loadedmetadata"));
 
-    const frameCallback = vi.mocked(window.requestAnimationFrame).mock.calls[0]?.[0] as unknown as Function;
+    const frameCallback = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as Function;
 
     // 1. First tick triggers the scan
     frameCallback();
@@ -298,10 +318,120 @@ describe("QR Scanner Utility Spec", () => {
     expect(jsQR).not.toHaveBeenCalled();
 
     // Run the scheduled arrow function callback to cover the early return loop body
-    const freezePreventArrowFn =
-      vi.mocked(window.requestAnimationFrame).mock.calls[0]?.[0] as unknown as Function;
+    const freezePreventArrowFn = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as Function;
     expect(freezePreventArrowFn).toBeDefined();
     freezePreventArrowFn();
+  });
+
+  test("tickScanner missing branches", async () => {
+    // We need to call tickScanner directly to hit specific edge cases
+    // We will simulate the `videoStream` being null, `ctx` being null, and video dimensions being small.
+    // To do this, we import tickScanner or we trigger it via requestAnimationFrame.
+    // Since tickScanner is not exported, we will trigger it by starting and stopping to control state.
+
+    // 1. hit videoStream falsy during isProcessing
+    // 2. hit ctx falsy
+    // 3. hit videoWidth <= maxDim && videoHeight <= maxDim
+    // 4. hit videoStream falsy at the end of tickScanner
+
+    vi.mocked(jsQR).mockReturnValue(null);
+
+    // Mock getContext to return null for the first call
+    mockCanvas.getContext = vi
+      .fn()
+      .mockReturnValueOnce(null)
+      .mockReturnValue(mockContext);
+
+    // Mock both readyState and HAVE_ENOUGH_DATA to 4
+    Object.defineProperty(mockVideo, "HAVE_ENOUGH_DATA", {
+      configurable: true,
+      get: () => 4,
+    });
+    Object.defineProperty(mockVideo, "readyState", {
+      configurable: true,
+      get: () => 4,
+    });
+    // Set small dimensions
+    Object.defineProperty(mockVideo, "videoWidth", {
+      configurable: true,
+      get: () => 100,
+    });
+    Object.defineProperty(mockVideo, "videoHeight", {
+      configurable: true,
+      get: () => 100,
+    });
+
+    vi.mocked(jsQR).mockReturnValue(null);
+
+    // Mock getContext to return null for the first call
+    mockCanvas.getContext = vi
+      .fn()
+      .mockReturnValueOnce(null)
+      .mockReturnValue(mockContext);
+
+    // Call startScanner to initialize stream and get tick registered
+    startScanner(mockVideo, mockVideoWrapper, mockCanvas, vi.fn(), vi.fn());
+    await new Promise(process.nextTick);
+    mockVideo.dispatchEvent(new Event("loadedmetadata"));
+
+    const frameCallback = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as Function;
+    vi.mocked(window.requestAnimationFrame).mockClear();
+
+    // Call 1: ctx is null. Returns early without doing jsQR.
+    frameCallback();
+    expect(jsQR).not.toHaveBeenCalled();
+
+    // Call 2: normal call, small dimensions (<= 480).
+    frameCallback();
+
+    // Call 3: stopScanner makes videoStream null. Then frameCallback is called.
+    vi.mocked(window.requestAnimationFrame).mockClear();
+    stopScanner(mockVideo, mockVideoWrapper);
+    frameCallback();
+
+    // Check that requestAnimationFrame wasn't called again because videoStream is null
+    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+
+    // Call 4: isProcessing is true, and videoStream is null.
+    // We need to fake isProcessing = true. To do this, we need a successful scan.
+    let resolveScan: any;
+    const asyncCallback = vi.fn().mockImplementation(() => {
+      return new Promise((resolve) => {
+        resolveScan = resolve;
+      });
+    });
+
+    startScanner(
+      mockVideo,
+      mockVideoWrapper,
+      mockCanvas,
+      asyncCallback,
+      vi.fn(),
+    );
+    await new Promise(process.nextTick);
+    mockVideo.dispatchEvent(new Event("loadedmetadata"));
+    vi.mocked(jsQR).mockReturnValue({ data: "token" } as any);
+
+    const frameCallback3 = vi
+      .mocked(window.requestAnimationFrame)
+      .mock.calls.pop()?.[0] as unknown as Function;
+    vi.mocked(window.requestAnimationFrame).mockClear();
+
+    // trigger scan -> isProcessing = true
+    frameCallback3();
+    expect(asyncCallback).toHaveBeenCalled();
+    vi.mocked(window.requestAnimationFrame).mockClear();
+
+    // stopScanner -> videoStream = null
+    stopScanner(mockVideo, mockVideoWrapper);
+
+    // call tick -> hits isProcessing && !videoStream
+    frameCallback3();
+    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+
+    resolveScan();
   });
 });
 

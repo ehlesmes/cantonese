@@ -6,7 +6,7 @@ export default defineConfig({
     setupFiles: ["./scripts/setup-tests.ts"],
     coverage: {
       provider: "v8",
-      include: ["src/utils/**/*.ts"],
+      include: ["src/utils/**/*.ts", "scripts/lib/**/*.ts"],
       thresholds: {
         lines: 100,
         functions: 100,

@@ -2,8 +2,8 @@ import { describe, test, expect } from "vitest";
 import {
   removeChapterProgressState,
   cleanIncompleteProgressState,
-} from "../src/utils/storage-modifiers.js";
-import type { UserProgress } from "../src/types/index.js";
+} from "./storage-modifiers.js";
+import type { UserProgress } from "../types/index.js";
 
 describe("Storage Modifiers Utility", () => {
   const getInitialState = (): UserProgress => ({

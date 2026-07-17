@@ -1,5 +1,25 @@
 import { describe, test, expect } from "vitest";
-import { extractTTSStrings } from "./lib/tts-utils.js";
+import { extractTTSStrings, escapeXml, getHash } from "./tts-utils.js";
+
+describe("TTS Utils - escapeXml", () => {
+  test("escapes special characters", () => {
+    expect(escapeXml("<")).toBe("&lt;");
+    expect(escapeXml(">")).toBe("&gt;");
+    expect(escapeXml("&")).toBe("&amp;");
+    expect(escapeXml("'")).toBe("&apos;");
+    expect(escapeXml('"')).toBe("&quot;");
+  });
+
+  test("leaves normal text unchanged", () => {
+    expect(escapeXml("hello")).toBe("hello"); // hits default branch
+  });
+});
+
+describe("TTS Utils - getHash", () => {
+  test("returns hash string", () => {
+    expect(typeof getHash("test")).toBe("string");
+  });
+});
 
 describe("TTS Utils - extractTTSStrings", () => {
   test("extracts vocabulary strings matching chapter file", () => {
@@ -101,5 +121,38 @@ describe("TTS Utils - extractTTSStrings", () => {
 
     const strings = extractTTSStrings(chaptersData, vocabList, true);
     expect(strings).toContain("早晨");
+  });
+
+  test("extractSpokenTexts parses dialog without speaker", () => {
+    const chapterData = [
+      {
+        id: "test",
+        file: "test.md",
+        blocks: [{ type: "dialog", content: "   \njust dialog no speaker\n" }],
+      },
+    ];
+    const res = extractTTSStrings(chapterData, [], false);
+    expect(res).not.toContain("just dialog no speaker");
+  });
+
+  test("extractSpokenTexts gracefully handles missing inline matches", () => {
+    const chapterData = [
+      {
+        id: "test",
+        file: "test.md",
+        blocks: [{ type: "prose", content: "`broken[" }],
+      },
+    ];
+    const res = extractTTSStrings(chapterData, [], false);
+    expect(res).not.toContain("broken");
+  });
+
+  test("extractSpokenTexts handles fallback vocab without character", () => {
+    const res = extractTTSStrings(
+      [],
+      [{ character: "", jyutping: "", translation: "" }] as any,
+      true,
+    );
+    expect(res.length).toBe(0);
   });
 });

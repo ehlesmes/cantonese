@@ -10,7 +10,7 @@ import {
   getVocabSRS,
   saveVocabSRS,
   clearAllProgress,
-} from "../src/utils/storage.js";
+} from "./storage.js";
 
 describe("Storage Utilities Spec", () => {
   beforeEach(() => {

@@ -39,8 +39,20 @@ export function evaluateCoverage(
   let totalCovered = 0;
   const brackets: Bracket[] = [
     { name: "Top 100", startRank: 1, endRank: 100, covered: 0, total: 100 },
-    { name: "Top 100–300", startRank: 101, endRank: 300, covered: 0, total: 200 },
-    { name: "Top 300–500", startRank: 301, endRank: 500, covered: 0, total: 200 },
+    {
+      name: "Top 100–300",
+      startRank: 101,
+      endRank: 300,
+      covered: 0,
+      total: 200,
+    },
+    {
+      name: "Top 300–500",
+      startRank: 301,
+      endRank: 500,
+      covered: 0,
+      total: 200,
+    },
     {
       name: "Top 500–1000",
       startRank: 501,
@@ -56,9 +68,7 @@ export function evaluateCoverage(
     let isCovered = taughtChars.has(ref.char);
     if (!isCovered && variantMap[ref.char]) {
       const variant = variantMap[ref.char];
-      if (variant !== undefined) {
-        isCovered = taughtChars.has(variant);
-      }
+      isCovered = taughtChars.has(variant!);
     }
 
     if (isCovered) {

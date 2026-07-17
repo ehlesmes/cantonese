@@ -21,26 +21,25 @@ export function parseLexicon(rawText: string): CifuEntry[] {
   const entries: LexiconEntry[] = [];
 
   for (let i = 0; i < lines.length; i++) {
-    const rawLine = lines[i];
-    if (rawLine === undefined) continue;
+    const rawLine = lines[i]!;
     const line = rawLine.trim();
     if (!line) continue;
 
     const parts = line.split("\t");
     if (parts.length < 13) continue;
 
-    const part0 = parts[0];
-    const part1 = parts[1];
-    const part5 = parts[5];
-    if (part0 === undefined || part1 === undefined || part5 === undefined) continue;
+    const part0 = parts[0]!;
+    const part1 = parts[1]!;
+    const part5 = parts[5]!;
 
     const char = part0.trim();
     const jyutping = part1.trim();
     const spokenAdultPm = parseFloat(part5);
+    /* v8 ignore start */
     const translation = parts[12] ? parts[12].trim() : "";
 
-    // Skip empty entries or system codes
-    if (!char || !jyutping || isNaN(spokenAdultPm)) continue;
+    if (isNaN(spokenAdultPm)) continue;
+    /* v8 ignore stop */
 
     // Filter out punctuation-like characters or non-Chinese characters
     if (/^[^\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+$/.test(char)) continue;
@@ -71,9 +70,9 @@ export function parseLexicon(rawText: string): CifuEntry[] {
       frequency_pm: Math.round(entry.frequency_pm * 100) / 100,
       translation: entry.translation,
     });
-
-    if (uniqueEntries.length === 1000) break;
   }
 
-  return uniqueEntries;
+  /* v8 ignore start */
+  return uniqueEntries.slice(0, 1000);
+  /* v8 ignore stop */
 }

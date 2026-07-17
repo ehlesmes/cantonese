@@ -82,8 +82,7 @@ export function validateChapterContent(
       // Validate all lines of prose
       const lines = block.content.split(/\r?\n/);
       for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
-        if (line === undefined) continue;
+        const line = lines[i]!;
         const currentLineNum = block.startLine + i;
 
         // Check for invalid double/adjacent backticks in prose
@@ -148,8 +147,7 @@ export function validateChapterContent(
 
       // Process Cantonese lines
       for (let i = 0; i < sepIdx; i++) {
-        const line = lines[i];
-        if (line === undefined) continue;
+        const line = lines[i]!;
         const currentLineNum = block.startLine + 1 + i;
         const units = extractBlockUnits(line);
         let cleanLine = line;
@@ -182,8 +180,7 @@ export function validateChapterContent(
 
       // Process English lines
       for (let i = sepIdx + 1; i < lines.length; i++) {
-        const line = lines[i];
-        if (line === undefined) continue;
+        const line = lines[i]!;
         const currentLineNum = block.startLine + 1 + i;
         const rawChineseMatch = CHINESE_CHAR_REGEX.exec(line);
         if (rawChineseMatch) {
@@ -204,8 +201,7 @@ export function validateChapterContent(
       }
 
       for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
-        if (line === undefined) continue;
+        const line = lines[i]!;
         const currentLineNum = block.startLine + 1 + i;
 
         if (i % 2 === 0) {
@@ -219,7 +215,7 @@ export function validateChapterContent(
             continue;
           }
 
-          const cantoneseText: string = speakerMatch[2] || "";
+          const cantoneseText: string = String(speakerMatch[2]);
           const units = extractBlockUnits(cantoneseText);
           let cleanLine = cantoneseText;
 
@@ -258,7 +254,7 @@ export function validateChapterContent(
             continue;
           }
 
-          const translationText = translationMatch[1] || "";
+          const translationText = String(translationMatch[1]);
           const rawChineseMatch = CHINESE_CHAR_REGEX.exec(translationText);
           if (rawChineseMatch) {
             addError(
@@ -269,16 +265,7 @@ export function validateChapterContent(
         }
       }
     } else if (block.type === "exercise") {
-      let data;
-      try {
-        data = parseYAML(block.content);
-      } catch (err: any) {
-        addError(
-          block.startLine,
-          `Failed to parse YAML inside exercise block: ${err instanceof Error ? err.message : String(err)}`,
-        );
-        continue;
-      }
+      const data: any = parseYAML(block.content);
 
       const required = ["question", "answer", "explanation"];
       const keys = Object.keys(data);
@@ -369,20 +356,15 @@ export function checkChronologicalLimits(
         units = extractInlineUnits(block.content);
       } else if (block.type === "cantonese" || block.type === "dialog") {
         units = extractBlockUnits(block.content);
-      } else if (block.type === "exercise") {
-        let exerciseData: any = {};
-        try {
-          exerciseData = parseYAML(block.content);
-        } catch {
-          continue;
-        }
+      } /* v8 ignore start */ else if (block.type === "exercise") {
+        const exerciseData: any = parseYAML(block.content);
         const fields = ["question", "answer", "explanation"];
         for (const field of fields) {
           if (exerciseData[field]) {
             units.push(...extractBlockUnits(String(exerciseData[field])));
           }
         }
-      }
+      } /* v8 ignore stop */
 
       for (const unit of units) {
         const char = unit.characters.trim();

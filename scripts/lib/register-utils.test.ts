@@ -4,7 +4,8 @@ import {
   sortDictionary,
   extractChapterUnits,
   verifyChapterContent,
-} from "./lib/register-utils.js";
+  findUnregisteredWords,
+} from "./register-utils.js";
 
 describe("Lexicon Registrar Helpers", () => {
   const dictionary = [{ char: "唔該", jyutping: "m4goi1", type: "expression" }];
@@ -229,10 +230,32 @@ describe("verifyChapterContent Utility", () => {
         },
       ],
     };
-    const res = verifyChapterContent(chapterData, customDictionary);
-    expect(res.errors.length).toBe(0);
-    expect(res.warnings.length).toBe(0);
-    expect(res.passedCount).toBe(2);
+    const result = verifyChapterContent(chapterData, customDictionary);
+    expect(result.errors.length).toBe(0);
+    expect(result.passedCount).toBe(2);
+  });
+
+  test("handles exercise parseYAML errors gracefully", () => {
+    const chapterData = {
+      blocks: [{ type: "exercise", content: "invalid: [" }],
+    };
+    const chapterUnits = extractChapterUnits(chapterData as any);
+    const result = findUnregisteredWords(chapterUnits, []);
+    expect(result).toHaveLength(0);
+  });
+
+  test("deduplicates units spanning multiple different lines", () => {
+    const chapterData = {
+      blocks: [
+        { type: "prose", content: "`字[zi6|word]`", startLine: 1 },
+        { type: "prose", content: "`字[zi6|word]`", startLine: 1 }, // same line (ignored for lines push)
+        { type: "prose", content: "`字[zi6|word]`", startLine: 2 }, // different line (pushed)
+      ],
+    };
+    const dictionary: any[] = [{ char: "字", jyutping: "zi6", type: "noun" }];
+    const result = verifyChapterContent(chapterData, dictionary);
+    expect(result.errors).toHaveLength(0);
+    expect(result.passedCount).toBe(1); // deduplicated passed
   });
 
   test("reports critical errors for unregistered terms", () => {
@@ -287,5 +310,98 @@ describe("verifyChapterContent Utility", () => {
     expect(res.warnings.length).toBe(1);
     expect(res.warnings[0]?.term).toBe("去 (heoi3)");
     expect(res.warnings[0]?.message).toContain("Translation divergence");
+  });
+
+  test("should handle A-not-A pattern edge cases", () => {
+    // Missing m4
+    expect(
+      findUnregisteredWords(
+        [
+          {
+            characters: "食唔食",
+            jyutping: "sik6 m3 sik6",
+            translation: "eat",
+            raw: "",
+            index: 0,
+          },
+        ],
+        [{ char: "食", jyutping: "sik6", definition: "eat", type: "verb" }],
+      ),
+    ).toHaveLength(1);
+
+    // Mismatched syllables
+    expect(
+      findUnregisteredWords(
+        [
+          {
+            characters: "食唔飛",
+            jyutping: "sik6 m4 fei1",
+            translation: "eat",
+            raw: "",
+            index: 0,
+          },
+        ],
+        [
+          { char: "食", jyutping: "sik6", definition: "eat", type: "verb" },
+          { char: "飛", jyutping: "fei1", type: "verb" },
+        ],
+      ),
+    ).toHaveLength(1);
+
+    // Not length 3
+    expect(
+      findUnregisteredWords(
+        [
+          {
+            characters: "食唔",
+            jyutping: "sik6 m4",
+            translation: "eat",
+            raw: "",
+            index: 0,
+          },
+        ],
+        [{ char: "食", jyutping: "sik6", definition: "eat", type: "verb" }],
+      ),
+    ).toHaveLength(1);
+
+    // Base verb not in dictionary
+    expect(
+      findUnregisteredWords(
+        [
+          {
+            characters: "食唔食",
+            jyutping: "sik6 m4 sik6",
+            translation: "eat",
+            raw: "",
+            index: 0,
+          },
+        ],
+        [],
+      ),
+    ).toHaveLength(1);
+
+    // Using alt_jyutping for base verb
+    expect(
+      findUnregisteredWords(
+        [
+          {
+            characters: "食唔食",
+            jyutping: "sek6 m4 sek6",
+            translation: "eat",
+            raw: "",
+            index: 0,
+          },
+        ],
+        [
+          {
+            char: "食",
+            jyutping: "sik6",
+            alt_jyutping: ["sek6"],
+            definition: "eat",
+            type: "verb",
+          },
+        ],
+      ),
+    ).toHaveLength(0);
   });
 });

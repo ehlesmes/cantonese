@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { getAudioHash } from "../src/utils/audio.js";
+import { getAudioHash } from "./audio.js";
 
 describe("Cantonese Audio Hashing Utility", () => {
   test("returns hash for empty text", () => {

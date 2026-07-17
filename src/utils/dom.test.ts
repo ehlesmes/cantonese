@@ -2,11 +2,7 @@
  * @vitest-environment jsdom
  */
 import { describe, test, expect, vi } from "vitest";
-import {
-  el,
-  createChevronIcon,
-  compileAnnotationsClient,
-} from "../src/utils/dom.js";
+import { el, createChevronIcon, compileAnnotationsClient } from "./dom.js";
 
 describe("DOM Utilities Spec", () => {
   test("el() should construct a basic element", () => {

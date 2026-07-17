@@ -10,13 +10,8 @@ import {
   getLocalState,
   extractRTCToken,
   calculateMergeMetrics,
-} from "../src/utils/sync.js";
-import {
-  packSDPData,
-  unpackSDPData,
-  parseSDP,
-  rebuildSDP,
-} from "../src/utils/webrtc.js";
+} from "./sync.js";
+import { packSDPData, unpackSDPData, parseSDP, rebuildSDP } from "./webrtc.js";
 
 describe("Progress Sync Utility Spec", () => {
   test("serialization and deserialization roundtrip preserves progress state", async () => {
@@ -465,7 +460,7 @@ describe("Progress Sync Utility Spec", () => {
 
 describe("WebRTC Utility Spec", () => {
   test("packSDPData and unpackSDPData roundtrip", () => {
-    const sdpData: import("../src/types/index.js").SDPCoordinates = {
+    const sdpData: import("../types/index.js").SDPCoordinates = {
       t: "o",
       u: "12345678",
       p: "abc123def456",
@@ -481,7 +476,7 @@ describe("WebRTC Utility Spec", () => {
 
   test("packSDPData handles missing or undefined fields gracefully", () => {
     // @ts-expect-error Testing invalid input gracefully
-    const badData: import("../src/types/index.js").SDPCoordinates = { t: "o" }; // Missing u, p, f, c
+    const badData: import("../types/index.js").SDPCoordinates = { t: "o" }; // Missing u, p, f, c
     const packed = packSDPData(badData);
     expect(packed).toBe("");
 
@@ -498,7 +493,7 @@ describe("WebRTC Utility Spec", () => {
 
   test("unpackSDPData parses IPv6 candidates", () => {
     // 16 bytes for IPv6, length prefix is 16
-    const ipv6CandidateData: import("../src/types/index.js").SDPCoordinates = {
+    const ipv6CandidateData: import("../types/index.js").SDPCoordinates = {
       t: "o",
       u: "user",
       p: "pass",
@@ -512,7 +507,7 @@ describe("WebRTC Utility Spec", () => {
   });
 
   test("packSDPData and unpackSDPData handle mDNS hostnames", () => {
-    const mdnsData: import("../src/types/index.js").SDPCoordinates = {
+    const mdnsData: import("../types/index.js").SDPCoordinates = {
       t: "o",
       u: "user",
       p: "pass",
@@ -529,7 +524,7 @@ describe("WebRTC Utility Spec", () => {
   });
 
   test("packSDPData and unpackSDPData handle answer coordinates correctly", () => {
-    const answerData: import("../src/types/index.js").SDPCoordinates = {
+    const answerData: import("../types/index.js").SDPCoordinates = {
       t: "a",
       u: "user",
       p: "pass",
@@ -734,7 +729,7 @@ describe("WebRTC Utility Spec Errors", () => {
   });
 
   test("rebuildSDP handles offers and IPv6 candidates correctly", () => {
-    const ipv6Data: import("../src/types/index.js").SDPCoordinates = {
+    const ipv6Data: import("../types/index.js").SDPCoordinates = {
       t: "o",
       u: "user",
       p: "pass",
@@ -824,7 +819,7 @@ a=candidate:2 1 tcp 2122260223 192.168.1.6 50001 typ host generation 0 ufrag moc
   });
 
   test("rebuildSDP skips candidates with undefined IP or port", () => {
-    const data: import("../src/types/index.js").SDPCoordinates = {
+    const data: import("../types/index.js").SDPCoordinates = {
       t: "o",
       u: "u",
       p: "p",
@@ -842,7 +837,7 @@ a=candidate:2 1 tcp 2122260223 192.168.1.6 50001 typ host generation 0 ufrag moc
   });
 
   test("rebuildSDP handles null matchResult for empty fingerprint gracefully", () => {
-    const data: import("../src/types/index.js").SDPCoordinates = {
+    const data: import("../types/index.js").SDPCoordinates = {
       t: "o",
       u: "u",
       p: "p",

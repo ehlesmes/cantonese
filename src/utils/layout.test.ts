@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { calculateTooltipShift } from "../src/utils/layout.js";
+import { calculateTooltipShift } from "./layout.js";
 
 describe("Tooltip Positioning Layout Math", () => {
   test("returns null if tooltip is completely within viewport", () => {

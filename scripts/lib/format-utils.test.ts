@@ -3,7 +3,7 @@ import {
   validateJyutping,
   validateChapterContent,
   checkChronologicalLimits,
-} from "./lib/format-utils.js";
+} from "./format-utils.js";
 
 describe("Format Utils - validateJyutping", () => {
   test("accepts valid jyutping", () => {
@@ -82,6 +82,101 @@ describe("Format Utils - validateChapterContent", () => {
     const errors = validateChapterContent(chapterData, "01");
     expect(errors[0]?.message).toContain("even number of lines");
   });
+
+  test("validates prose edge cases", () => {
+    const chapterData = {
+      frontmatter: { id: "01", title: "T", description: "D" },
+      blocks: [
+        {
+          type: "prose",
+          content: "`` `唔該[m4goi|bad-jp]`",
+          startLine: 1,
+        },
+      ],
+    };
+    const errors = validateChapterContent(chapterData, "01");
+    expect(
+      errors.some((e) => e.message.includes("double/adjacent backticks")),
+    ).toBe(true);
+    expect(errors.some((e) => e.message.includes("Invalid Jyutping"))).toBe(
+      true,
+    );
+  });
+
+  test("validates cantonese edge cases", () => {
+    const chapterData = {
+      frontmatter: { id: "01", title: "T", description: "D" },
+      blocks: [
+        {
+          type: "cantonese",
+          content: "唔該[m4goi|bad-jp]\n===\n早",
+          startLine: 1,
+        },
+      ],
+    };
+    const errors = validateChapterContent(chapterData, "01");
+    expect(errors.some((e) => e.message.includes("Invalid Jyutping"))).toBe(
+      true,
+    );
+    expect(errors.some((e) => e.message.includes("illegal Chinese"))).toBe(
+      true,
+    );
+  });
+
+  test("validates dialog edge cases", () => {
+    const chapterData = {
+      frontmatter: { id: "01", title: "T", description: "D" },
+      blocks: [
+        {
+          type: "dialog",
+          content: "A: 唔該[m4goi|bad-jp]\n=== 早\nBadSpeakerTurn\n=== ",
+          startLine: 1,
+        },
+      ],
+    };
+    const errors = validateChapterContent(chapterData, "01");
+    expect(errors.some((e) => e.message.includes("Invalid Jyutping"))).toBe(
+      true,
+    );
+    expect(errors.some((e) => e.message.includes("illegal Chinese"))).toBe(
+      true,
+    );
+    expect(
+      errors.some((e) =>
+        e.message.includes("must start with a letter and colon"),
+      ),
+    ).toBe(true);
+  });
+
+  test("validates exercise edge cases", () => {
+    const chapterData = {
+      frontmatter: { id: "01", title: "T", description: "D" },
+      blocks: [
+        {
+          type: "exercise",
+          content: "invalid: yaml: [",
+          startLine: 1,
+        },
+        {
+          type: "exercise",
+          content: "question: A\nanswer: B\nexplanation: C\nextra: D",
+          startLine: 10,
+        },
+        {
+          type: "exercise",
+          content: "question: 早\nanswer: B\nexplanation: C",
+          startLine: 20,
+        },
+      ],
+    };
+    const errors = validateChapterContent(chapterData, "01");
+    expect(errors.some((e) => e.message.includes("unrecognized key"))).toBe(
+      true,
+    );
+    expect(
+      errors.some((e) => e.message.includes("unannotated Chinese character")),
+    ).toBe(true);
+  });
 });
 
 describe("Format Utils - checkChronologicalLimits", () => {
@@ -107,5 +202,19 @@ describe("Format Utils - checkChronologicalLimits", () => {
     expect(result.errors[0]?.message).toContain(
       "introduces 26 new vocabulary words, exceeding the limit of 25",
     );
+  });
+
+  test("handles missing exercise yaml gracefully", () => {
+    const curriculumChapters = [{ id: "01", file: "01.md" }];
+    const chaptersDataMap = {
+      "01.md": {
+        blocks: [{ type: "exercise", content: "invalid: [" }],
+      },
+    };
+    const result = checkChronologicalLimits(
+      curriculumChapters,
+      chaptersDataMap,
+    );
+    expect(result.errors.length).toBe(0);
   });
 });

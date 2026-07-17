@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { compileMarkdown, compileAnnotations } from "../src/utils/markdown.js";
+import { compileMarkdown, compileAnnotations } from "./markdown.js";
 import crypto from "crypto";
 
 describe("Markdown & Tooltip Compiling Utility", () => {

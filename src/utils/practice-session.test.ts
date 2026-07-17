@@ -1,6 +1,6 @@
 import { describe, test, expect } from "vitest";
-import { PracticeSession } from "../src/utils/practice-session.js";
-import type { SrsStateMap } from "../src/types/index.js";
+import { PracticeSession } from "./practice-session.js";
+import type { SrsStateMap } from "../types/index.js";
 
 describe("PracticeSession state engine", () => {
   const pool = [

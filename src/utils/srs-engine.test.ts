@@ -1,5 +1,5 @@
 import { describe, test, expect, vi } from "vitest";
-import { selectCards, gradeCard } from "../src/utils/srs-engine.js";
+import { selectCards, gradeCard } from "./srs-engine.js";
 
 function splitCantoneseTokens(cantoneseRaw: string) {
   if (!cantoneseRaw) return [];

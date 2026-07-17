@@ -5,7 +5,7 @@ import {
   checkPhraseAnswer,
   selectBestCantoneseVoice,
   lookupDictionary,
-} from "../src/utils/text.js";
+} from "./text.js";
 
 describe("Cantonese Text Cleaner Utility", () => {
   test("returns empty string for null, undefined or empty input", () => {
