@@ -191,9 +191,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     saveLocalStorage();
     renderCompletedChapters();
-    showToast(
-      `Cleaned up ${result.cleanedPhrasesCount} phrase and ${result.cleanedVocabCount} vocab orphaned records.`,
-    );
+
+    let msg = `Cleaned up ${result.cleanedPhrasesCount} phrase and ${result.cleanedVocabCount} vocab orphaned records.`;
+    if (result.addedPhrasesCount > 0 || result.addedVocabCount > 0) {
+      msg += ` Added ${result.addedPhrasesCount} phrase and ${result.addedVocabCount} vocab missing records.`;
+    }
+    showToast(msg);
   }
 
   // Clear all progress data

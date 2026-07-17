@@ -75,4 +75,35 @@ describe("Storage Modifiers Utility", () => {
     // 1 locked (v3) + 1 orphaned (v99) = 2
     expect(result.cleanedVocabCount).toBe(2);
   });
+
+  test("cleanIncompleteProgressState adds missing items for unlocked chapters", () => {
+    const state = {
+      unlockedChapters: ["chapter1"],
+      phraseSrs: {},
+      vocabSrs: {},
+    };
+
+    const allChapters = [
+      { id: "chapter1", phrases: ["p1", "p2"], vocab: ["v1"] },
+      { id: "chapter2", phrases: ["p3"], vocab: ["v2"] }, // locked
+    ];
+
+    const result = cleanIncompleteProgressState(state, allChapters);
+
+    expect(result.newState.unlockedChapters).toEqual(["chapter1"]);
+
+    // chapter1 is unlocked, so missing p1, p2, and v1 should be added
+    expect(result.newState.phraseSrs).toEqual({
+      p1: { level: 0, lastReviewed: 0 },
+      p2: { level: 0, lastReviewed: 0 },
+    });
+    expect(result.newState.vocabSrs).toEqual({
+      v1: { level: 0, lastReviewed: 0 },
+    });
+
+    expect(result.addedPhrasesCount).toBe(2);
+    expect(result.addedVocabCount).toBe(1);
+    expect(result.cleanedPhrasesCount).toBe(0);
+    expect(result.cleanedVocabCount).toBe(0);
+  });
 });

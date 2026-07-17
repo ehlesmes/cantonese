@@ -27,8 +27,8 @@ export function removeChapterProgressState(
 }
 
 /**
- * Cleans data for incomplete chapters (orphaned records).
- * Purely returns a new UserProgress state and the count of cleaned records.
+ * Cleans data for incomplete chapters (orphaned records) and ensures all items for unlocked chapters are present.
+ * Purely returns a new UserProgress state and the counts of modified records.
  */
 export function cleanIncompleteProgressState(
   state: UserProgress,
@@ -37,9 +37,13 @@ export function cleanIncompleteProgressState(
   newState: UserProgress;
   cleanedPhrasesCount: number;
   cleanedVocabCount: number;
+  addedPhrasesCount: number;
+  addedVocabCount: number;
 } {
   let cleanedPhrasesCount = 0;
   let cleanedVocabCount = 0;
+  let addedPhrasesCount = 0;
+  let addedVocabCount = 0;
   const newPhraseSrs = { ...state.phraseSrs };
   const newVocabSrs = { ...state.vocabSrs };
 
@@ -74,6 +78,19 @@ export function cleanIncompleteProgressState(
           cleanedVocabCount++;
         }
       });
+    } else {
+      chapter.phrases.forEach((pid) => {
+        if (!newPhraseSrs[pid]) {
+          newPhraseSrs[pid] = { level: 0, lastReviewed: 0 };
+          addedPhrasesCount++;
+        }
+      });
+      chapter.vocab.forEach((vid) => {
+        if (!newVocabSrs[vid]) {
+          newVocabSrs[vid] = { level: 0, lastReviewed: 0 };
+          addedVocabCount++;
+        }
+      });
     }
   });
 
@@ -85,5 +102,7 @@ export function cleanIncompleteProgressState(
     },
     cleanedPhrasesCount,
     cleanedVocabCount,
+    addedPhrasesCount,
+    addedVocabCount,
   };
 }
