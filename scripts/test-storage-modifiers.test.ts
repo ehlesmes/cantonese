@@ -43,8 +43,12 @@ describe("Storage Modifiers Utility", () => {
     expect(state.phraseSrs.p1).toBeDefined();
   });
 
-  test("cleanIncompleteProgressState deletes data for incomplete chapters", () => {
+  test("cleanIncompleteProgressState deletes data for incomplete chapters and orphaned keys", () => {
     const state = getInitialState();
+    // Add orphaned items to state
+    state.phraseSrs["p99"] = { level: 1, lastReviewed: 100 };
+    state.vocabSrs["v99"] = { level: 1, lastReviewed: 100 };
+
     // chapter1 is unlocked, chapter2 is unlocked, chapter3 is locked
     const allChapters = [
       { id: "chapter1", phrases: ["p1"], vocab: ["v1"] },
@@ -57,6 +61,7 @@ describe("Storage Modifiers Utility", () => {
 
     expect(result.newState.unlockedChapters).toEqual(["chapter1", "chapter2"]);
     // p3 and v3 should be removed since they belong to locked chapter3
+    // p99 and v99 should be removed because they are completely orphaned
     expect(result.newState.phraseSrs).toEqual({
       p1: { level: 2, lastReviewed: 100 },
       p2: { level: 3, lastReviewed: 200 },
@@ -65,7 +70,9 @@ describe("Storage Modifiers Utility", () => {
       v1: { level: 5, lastReviewed: 400 },
       v2: { level: 2, lastReviewed: 500 },
     });
-    expect(result.cleanedPhrasesCount).toBe(1);
-    expect(result.cleanedVocabCount).toBe(1);
+    // 1 locked (p3) + 1 orphaned (p99) = 2
+    expect(result.cleanedPhrasesCount).toBe(2);
+    // 1 locked (v3) + 1 orphaned (v99) = 2
+    expect(result.cleanedVocabCount).toBe(2);
   });
 });

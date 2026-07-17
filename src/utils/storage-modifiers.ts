@@ -43,6 +43,23 @@ export function cleanIncompleteProgressState(
   const newPhraseSrs = { ...state.phraseSrs };
   const newVocabSrs = { ...state.vocabSrs };
 
+  const allValidPhraseIds = new Set(allChapters.flatMap((ch) => ch.phrases));
+  const allValidVocabIds = new Set(allChapters.flatMap((ch) => ch.vocab));
+
+  Object.keys(newPhraseSrs).forEach((pid) => {
+    if (!allValidPhraseIds.has(pid)) {
+      delete newPhraseSrs[pid];
+      cleanedPhrasesCount++;
+    }
+  });
+
+  Object.keys(newVocabSrs).forEach((vid) => {
+    if (!allValidVocabIds.has(vid)) {
+      delete newVocabSrs[vid];
+      cleanedVocabCount++;
+    }
+  });
+
   allChapters.forEach((chapter) => {
     if (!state.unlockedChapters.includes(chapter.id)) {
       chapter.phrases.forEach((pid) => {
