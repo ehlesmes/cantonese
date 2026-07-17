@@ -12,6 +12,7 @@ export interface UnregisteredWord {
 export interface DictionaryEntry {
   char: string;
   jyutping: string;
+  alt_jyutping?: string[];
   type: string;
   definition?: string;
   notes?: string;
@@ -36,7 +37,10 @@ export function findUnregisteredWords(
     const exactMatch = dictionary.find(
       (entry) =>
         entry.char === char &&
-        entry.jyutping.toLowerCase() === jyutping.toLowerCase(),
+        (entry.jyutping.toLowerCase() === jyutping.toLowerCase() ||
+          entry.alt_jyutping?.some(
+            (alt) => alt.toLowerCase() === jyutping.toLowerCase(),
+          )),
     );
 
     // Dynamic A-not-A question pattern resolution
@@ -56,7 +60,10 @@ export function findUnregisteredWords(
         const baseMatch = dictionary.find(
           (entry) =>
             entry.char === char0 &&
-            entry.jyutping.toLowerCase() === syllables0.toLowerCase(),
+            (entry.jyutping.toLowerCase() === syllables0.toLowerCase() ||
+              entry.alt_jyutping?.some(
+                (alt) => alt.toLowerCase() === syllables0.toLowerCase(),
+              )),
         );
         if (baseMatch) {
           isAnotA = true;
@@ -118,6 +125,9 @@ export function validateRegisterEntry(
     .toString()
     .trim();
   const type = (entry.type || "").toString().trim().toLowerCase();
+  const alt_jyutping = Array.isArray(entry.alt_jyutping)
+    ? entry.alt_jyutping
+    : [];
   const notes = (entry.notes || "").toString().trim();
 
   if (!character) {
@@ -167,6 +177,9 @@ export function validateRegisterEntry(
     definition: definition,
     type: type,
   };
+  if (alt_jyutping.length > 0) {
+    newEntry.alt_jyutping = alt_jyutping;
+  }
   if (notes) {
     newEntry.notes = notes;
   }
@@ -264,7 +277,11 @@ export function verifyChapterContent(
     // Look up in dictionary by exact character and jyutping
     let dictMatch = dictionary.find(
       (entry: any) =>
-        entry.char === char && entry.jyutping.toLowerCase() === jyutping,
+        entry.char === char &&
+        (entry.jyutping.toLowerCase() === jyutping ||
+          entry.alt_jyutping?.some(
+            (alt: string) => alt.toLowerCase() === jyutping,
+          )),
     );
 
     // Dynamic A-not-A question pattern resolution
@@ -280,7 +297,10 @@ export function verifyChapterContent(
           const baseMatch = dictionary.find(
             (entry: any) =>
               entry.char === char[0] &&
-              entry.jyutping.toLowerCase() === syllables[0],
+              (entry.jyutping.toLowerCase() === syllables[0] ||
+                entry.alt_jyutping?.some(
+                  (alt: string) => alt.toLowerCase() === syllables[0],
+                )),
           );
           if (baseMatch) {
             // Mock a dictionary match for validation and semantic check

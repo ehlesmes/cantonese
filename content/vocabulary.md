@@ -92,8 +92,7 @@ This is an automatically generated vocabulary database compiled from all course 
 | **簽** | `cim1` | to sign | `flat-hunting` | 1 |
 | **潛水** | `cim4seoi2` | to lurk / go offline / go silent / to go offline | `social-media-slang` | 3 |
 | **千** | `cin1` | thousand | `flat-hunting` | 2 |
-| **錢** | `cin2` | money | `diner-ordering` | 8 |
-| **錢** | `cin4` | money | `convenience-store` | 21 |
+| **錢** | `cin4` | money | `convenience-store` | 29 |
 | **前邊** | `cin4bin1` | ahead / in front / up ahead | `street-landmarks` | 9 |
 | **前面** | `cin4min6` | in front / front side | `directions-spatial` | 1 |
 | **請** | `cing2` | to invite / request / treat / please / apply | `medical-slang` | 2 |

@@ -15,7 +15,7 @@ and the art of bargaining in Cantonese.
 
 In daily Cantonese life, handling money and pricing is highly colloquial and
 differs significantly from formal written Chinese. When asking for prices,
-instead of the formal `幾多[gei2do1|how much]` `錢[cin4|money]`, you will
+instead of the formal `幾多[gei2do1|how much]` `錢[cin2|money]`, you will
 frequently hear speakers use the shorter, snappier
 `幾錢[gei2 cin4|how much money]` in casual street environments.
 
@@ -96,7 +96,7 @@ A customer (`A`) set eyes on an item and tries to bargain with the stall owner
 (`B`).
 
 ```dialog
-A: 唔該[m4goi1|excuse me]，老闆[lou5baan2|boss / proprietor]，呢個[ni1go3|this one]幾多[gei2do1|how much] 錢[cin4|money] 呀[aa3|particle]？
+A: 唔該[m4goi1|excuse me]，老闆[lou5baan2|boss / proprietor]，呢個[ni1go3|this one]幾多[gei2do1|how much] 錢[cin2|money] 呀[aa3|particle]？
    === Excuse me, boss, how much is this one?
 B: 呢個[ni1go3|this one]好[hou2|very]靚[leng3|high quality]嘅[ge3|final assertive particle]，三[saam1|three]百[baak3|hundred]八[baat3|eight]。
    === This one is of very high quality, three hundred and eighty.
@@ -116,7 +116,7 @@ cashier (`B`).
 ```dialog
 A: 唔該[m4goi1|excuse me]，收銀[sau1 ngan2|cashier]喺[hai2|at]邊度[bin1dou6|where]呀[aa3|particle]？
    === Excuse me, where is the cashier?
-B: 收銀[sau1 ngan2|cashier]喺[hai2|at]呢度[ni1dou6|here]。你[nei5|you]想[soeng2|want to]點樣[dim2joeng6|how]俾[bei2|give]錢[cin4|money]？
+B: 收銀[sau1 ngan2|cashier]喺[hai2|at]呢度[ni1dou6|here]。你[nei5|you]想[soeng2|want to]點樣[dim2joeng6|how]俾[bei2|give]錢[cin2|money]？
    === The cashier is over here. How would you like to pay?
 A: 用[jung6|to use]八達通[baat3daat6tung1|Octopus card]得[dak1|can] 唔[m4|not] 得[dak1|can] 呀[aa3|particle]？
    === Is it okay to use an Octopus card?

@@ -38,13 +38,10 @@
   },
   {
     "char": "阿妹",
-    "jyutping": "aa3mui2",
-    "definition": "younger sister",
-    "type": "noun"
-  },
-  {
-    "char": "阿妹",
     "jyutping": "aa3mui6",
+    "alt_jyutping": [
+      "aa3mui2"
+    ],
     "definition": "younger sister",
     "type": "noun"
   },
@@ -591,13 +588,10 @@
   },
   {
     "char": "錢",
-    "jyutping": "cin2",
-    "definition": "money",
-    "type": "noun"
-  },
-  {
-    "char": "錢",
     "jyutping": "cin4",
+    "alt_jyutping": [
+      "cin2"
+    ],
     "definition": "money",
     "type": "noun"
   },

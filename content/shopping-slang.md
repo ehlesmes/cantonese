@@ -120,7 +120,7 @@ A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statemen
    === Hello there! Excuse me, I want to buy this one and that one.
 B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 呢個[ni1go3|this one] 係[hai6|to be (am/is/are) / yes] 可樂[ho2lok6|cola / Coke]，嗰個[go2go3|that one] 係[hai6|to be (am/is/are) / yes] 薯片[syu4pin2|potato chips / crisps]。
    === Sure. This one is Coke, that one is potato chips.
-A: 幾多[gei2do1|how many / how much] 錢[cin4|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 幾多[gei2do1|how many / how much] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === How much is it?
 B: 三十[saam1sap6|thirty] 蚊[man1|dollar (spoken Cantonese colloquial unit of currency)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 要唔要[jiu3 m4 jiu3|do you want / want or not (A-not-A question form)] 膠袋[gaau1doi2|plastic bag] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === It is thirty dollars. Do you want a plastic bag?

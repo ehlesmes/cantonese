@@ -705,19 +705,11 @@
   },
   {
     "character": "錢",
-    "jyutping": "cin2",
-    "translation": "money",
-    "hash": "2f7253a67200d0fc",
-    "firstIntroducedIn": "diner-ordering",
-    "occurrences": 8
-  },
-  {
-    "character": "錢",
     "jyutping": "cin4",
     "translation": "money",
     "hash": "2f7253a67200d0fc",
     "firstIntroducedIn": "convenience-store",
-    "occurrences": 21
+    "occurrences": 29
   },
   {
     "character": "前邊",

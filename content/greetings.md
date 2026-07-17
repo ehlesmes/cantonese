@@ -106,7 +106,7 @@ Here are some common family members you can use to describe relationships:
 - `阿哥[aa3go1|older brother]`: older brother
 - `家姐[gaa1ze1|older sister]`: older sister
 - `細佬[sai3lou2|younger brother]`: younger brother
-- `阿妹[aa3mui6|younger sister]`: younger sister
+- `阿妹[aa3mui2|younger sister]`: younger sister
 
 Using the possessive particle
 `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`,

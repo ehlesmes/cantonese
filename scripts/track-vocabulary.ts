@@ -14,7 +14,6 @@ function main() {
     process.exit(1);
   }
 
-  // 1. Load curriculum chapters
   const curriculumPath = path.join(contentDir, "curriculum.md");
   let chapters: any[] = [];
   try {
@@ -22,6 +21,18 @@ function main() {
   } catch (err: any) {
     console.error(
       `ERROR: Failed to parse curriculum.md: ${err instanceof Error ? err.message : String(err)}`,
+    );
+    process.exit(1);
+  }
+
+  // 1.5 Load Master Dictionary for Tone Sandhi Resolution
+  const dictPath = path.join(contentDir, "dictionary.json");
+  let dictionary: any[] = [];
+  try {
+    dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
+  } catch (err: any) {
+    console.error(
+      `ERROR: Failed to parse dictionary.json: ${err instanceof Error ? err.message : String(err)}`,
     );
     process.exit(1);
   }
@@ -73,13 +84,27 @@ function main() {
         const jyutping = unit.jyutping.trim().toLowerCase();
         const translation = unit.translation.trim();
 
-        // Unique compound key is character + jyutping to handle homographs & polyphones
-        const key = `${char}_${jyutping}`;
+        // Resolve Primary Jyutping for Tone Sandhi
+        let primaryJyutping = jyutping;
+        const dictMatch = dictionary.find(
+          (entry) =>
+            entry.char === char &&
+            (entry.jyutping.toLowerCase() === jyutping ||
+              entry.alt_jyutping?.some(
+                (alt: string) => alt.toLowerCase() === jyutping,
+              )),
+        );
+        if (dictMatch) {
+          primaryJyutping = dictMatch.jyutping.toLowerCase();
+        }
+
+        // Unique compound key is character + primary Jyutping to handle homographs & polyphones cleanly
+        const key = `${char}_${primaryJyutping}`;
 
         if (!vocabMap[key]) {
           vocabMap[key] = {
             character: char,
-            jyutping: jyutping,
+            jyutping: primaryJyutping,
             translation: translation,
             hash: crypto
               .createHash("sha256")
