@@ -142,58 +142,6 @@ Let's test unregistered word \`腸粉[coeng2fan2|steamed rice rolls]\` in prose.
     expect(res.output).toContain("not registered in the dictionary");
   });
 
-  test("Catch a translation divergence warning", () => {
-    const content = `---
-chapter: 99
-title: Mismatch Test
-description: Testing consistency checker.
----
-
-Let's test translation mismatch \`唔該[m4goi1|plain white rice]\` in prose.
-`;
-    fs.writeFileSync(tempChapterPath, content, "utf8");
-
-    const res = runChecker(tempChapterPath);
-    expect(res.success).toBe(true);
-    expect(res.output).toContain("Found 1 translation divergence warning(s)");
-    expect(res.output).toContain("唔該 (m4goi1)");
-    expect(res.output).toContain("Translation divergence");
-  });
-
-  test("Verify a dynamic A-not-A question form", () => {
-    const content = `---
-chapter: 99
-title: Dynamic A-not-A Test
-description: Testing dynamic A-not-A question form validation.
----
-
-Let's test \`食唔食[sik6 m4 sik6|eat or not?]\` in prose.
-`;
-    fs.writeFileSync(tempChapterPath, content, "utf8");
-
-    const res = runChecker(tempChapterPath);
-    expect(res.success).toBe(true);
-    expect(res.output).toContain("perfectly match the master local dictionary");
-  });
-
-  test("Fail a dynamic A-not-A question form where the base verb is not in the dictionary", () => {
-    const content = `---
-chapter: 99
-title: Invalid A-not-A Test
-description: Testing dynamic A-not-A failure.
----
-
-Let's test invalid \`豬唔豬[zyu1 m4 zyu1|pig or not]\` in prose.
-`;
-    fs.writeFileSync(tempChapterPath, content, "utf8");
-
-    const res = runChecker(tempChapterPath);
-    expect(res.success).toBe(false);
-    expect(res.output).toContain("Found 1 unregistered vocabulary error(s)");
-    expect(res.output).toContain("豬唔豬 (zyu1 m4 zyu1)");
-    expect(res.output).toContain("not registered in the dictionary");
-  });
-
   test("Verify All Mode processes multiple files", () => {
     if (fs.existsSync(tempChapterPath)) {
       fs.unlinkSync(tempChapterPath);

@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { parseChapter, parseCurriculum } from "./lib/parser";
-import { getCleanSpokenText, escapeXml, getHash } from "./lib/tts-utils";
+import { escapeXml, getHash, extractTTSStrings } from "./lib/tts-utils";
 
 // Premium CLI output styles
 const colors = {
@@ -78,7 +78,11 @@ if (!fs.existsSync(outputDir)) {
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // REST API synthesiser
-async function fetchSpeech(text: string, subscriptionKey: string, serviceRegion: string) {
+async function fetchSpeech(
+  text: string,
+  subscriptionKey: string,
+  serviceRegion: string,
+) {
   const url = `https://${serviceRegion}.tts.speech.microsoft.com/cognitiveservices/v1`;
 
   // Synthesize at standard 1.0x speed. Speed is controlled dynamically on client.
@@ -138,8 +142,6 @@ async function main() {
     }
   }
 
-  const spokenTexts = new Set<string>();
-
   // Load the full vocabulary list to match by chapter
   const vocabPath = path.resolve(projectRoot, "content/vocabulary.json");
   let vocabList = [];
@@ -152,7 +154,8 @@ async function main() {
   const chapters = parseCurriculum(curriculumPath);
 
   let chaptersProcessed = 0;
-  // Extract texts chapter-by-chapter in curriculum order
+  const chaptersData: any[] = [];
+
   for (const chapter of chapters) {
     if (chaptersProcessed >= maxChapters) {
       break;
@@ -161,70 +164,22 @@ async function main() {
     if (!fs.existsSync(filePath)) continue;
 
     chaptersProcessed++;
-
-    // A. Add vocabulary terms first introduced in this chapter
-    const chapterVocab = vocabList.filter(
-      (item: any) => item.firstIntroducedIn === chapter.file,
-    );
-    for (const item of chapterVocab) {
-      if (item.character) {
-        const cleanVocab = getCleanSpokenText(item.character);
-        if (cleanVocab) spokenTexts.add(cleanVocab);
-      }
-    }
-
-    // B. Add dialogue lines, examples, and prose annotations in the chapter
     const { blocks } = parseChapter(filePath);
-    for (const block of blocks) {
-      if (block.type === "cantonese") {
-        const parts = block.content.split("===");
-        const cleanCanto = getCleanSpokenText(parts[0]);
-        if (cleanCanto) spokenTexts.add(cleanCanto);
-      } else if (block.type === "dialog") {
-        const lines = block.content.split(/\r?\n/);
-        for (const line of lines) {
-          const trimmed = line.trim();
-          if (!trimmed) continue;
-          const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
-          if (speakerMatch) {
-            const speakerCanto = speakerMatch[2] || "";
-            const rawCantonese = speakerCanto.split("===")[0];
-            const cleanText = getCleanSpokenText(rawCantonese);
-            if (cleanText) spokenTexts.add(cleanText);
-          }
-        }
-      } else if (block.type === "prose") {
-        const inlineRegex =
-          /`([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`/g;
-        const blockRegex =
-          /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
-
-        let match;
-        while ((match = inlineRegex.exec(block.content)) !== null) {
-          if (match[1] !== undefined) spokenTexts.add(match[1]);
-        }
-        while ((match = blockRegex.exec(block.content)) !== null) {
-          if (match[1] !== undefined) spokenTexts.add(match[1]);
-        }
-      }
-    }
+    chaptersData.push({
+      id: chapter.id,
+      file: chapter.file,
+      blocks,
+    });
   }
 
-  // C. Fallback for any vocabulary terms that didn't match a chapter file
-  if (maxChapters === Infinity) {
-    for (const item of vocabList) {
-      if (item.character) {
-        const cleanVocab = getCleanSpokenText(item.character);
-        if (cleanVocab && !spokenTexts.has(cleanVocab)) {
-          spokenTexts.add(cleanVocab);
-        }
-      }
-    }
-  }
+  const uniqueList = extractTTSStrings(
+    chaptersData,
+    vocabList,
+    maxChapters === Infinity,
+  );
 
   // Arguments parsed at start of main()
 
-  const uniqueList = Array.from(spokenTexts);
   console.log(
     `Found ${colors.bold}${uniqueList.length}${colors.reset} unique Cantonese strings to verify.\n`,
   );

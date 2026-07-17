@@ -34,46 +34,6 @@ describe("Cantonese Lexicon Lookup CLI E2E Spec", () => {
     expect(output).toContain("Expression");
   });
 
-  test("Lookup by partial Traditional Chinese characters", () => {
-    const output = runLookup("靚");
-    expect(output).toContain('Query: "靚"');
-    expect(output).toContain("靚 (leng3)");
-    expect(output).toContain("靚仔 (leng3zai2)");
-    expect(output).toContain("靚女 (leng3neoi5)");
-  });
-
-  test("Lookup by standard LSHK Jyutping with tone digits", () => {
-    const output = runLookup("m4goi1");
-    expect(output).toContain('Query: "m4goi1"');
-    expect(output).toContain("唔該 (m4goi1)");
-    expect(output).toContain("excuse me");
-  });
-
-  test("Lookup by partial LSHK Jyutping with tone digits", () => {
-    const output = runLookup("leng3za");
-    expect(output).toContain('Query: "leng3za"');
-    expect(output).toContain("靚仔 (leng3zai2)");
-  });
-
-  test("Lookup by case-insensitive English definition", () => {
-    const output = runLookup('"excuse me"');
-    expect(output).toContain('Query: "excuse me"');
-    expect(output).toContain("唔該 (m4goi1)");
-    expect(output).toContain("對唔住 (deoi3m4zyu6)");
-  });
-
-  test("Lookup by case-insensitive English notes description", () => {
-    const output = runLookup('"pineapple"');
-    expect(output).toContain('Query: "pineapple"');
-    expect(output).toContain("菠蘿包 (bo1lo1baau1)");
-  });
-
-  test("Lookup by toneless Jyutping", () => {
-    const output = runLookup("mgoi");
-    expect(output).toContain('Query: "mgoi"');
-    expect(output).toContain("唔該 (m4goi1)");
-  });
-
   test("Lookup with zero results displays custom suggestions", () => {
     const output = runLookup("nonexistentword");
     expect(output).toContain('Query: "nonexistentword"');

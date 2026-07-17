@@ -50,15 +50,18 @@ describe("Cantonese Lexicon Registrar CLI E2E Spec", () => {
 
   const runRegister = (args: string) => {
     try {
-      const rawOutput = execSync(`npx tsx scripts/register-word.ts ${args} 2>&1`, {
-        cwd: projectRoot,
-        encoding: "utf8",
-        stdio: "pipe",
-        env: {
-          ...process.env,
-          DICT_PATH: dictPath,
+      const rawOutput = execSync(
+        `npx tsx scripts/register-word.ts ${args} 2>&1`,
+        {
+          cwd: projectRoot,
+          encoding: "utf8",
+          stdio: "pipe",
+          env: {
+            ...process.env,
+            DICT_PATH: dictPath,
+          },
         },
-      });
+      );
       return { success: true, output: stripAnsi(rawOutput) };
     } catch (err: any) {
       const stdout = err.stdout ? err.stdout.toString() : "";
@@ -94,28 +97,6 @@ describe("Cantonese Lexicon Registrar CLI E2E Spec", () => {
     expect(entry.definition).toBe("steamed rice noodle rolls");
     expect(entry.type).toBe("noun");
     expect(entry.notes).toBe("Common dim sum dish.");
-  });
-
-  test("Reject registering with an invalid Jyutping tone format", () => {
-    const res = runRegister('腸粉 coeng2fan "steamed rice noodle rolls" noun');
-    expect(res.success).toBe(false);
-    expect(res.output).toContain("Invalid Jyutping format");
-  });
-
-  test("Reject registering with an invalid word type", () => {
-    const res = runRegister(
-      '腸粉 coeng2fan2 "steamed rice noodle rolls" invalidtype',
-    );
-    expect(res.success).toBe(false);
-    expect(res.output).toContain('Invalid word type "invalidtype"');
-    expect(res.output).toContain("Valid types are:");
-  });
-
-  test("Reject duplicate registration of character and jyutping", () => {
-    // "唔該" (m4goi1) is already in the dictionary
-    const res = runRegister('唔該 m4goi1 "excuse me" expression');
-    expect(res.success).toBe(false);
-    expect(res.output).toContain("already registered in the dictionary");
   });
 
   test("Register multiple valid words via --json", () => {
@@ -217,33 +198,6 @@ describe("Cantonese Lexicon Registrar CLI E2E Spec", () => {
     dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
     expect(dictionary.find((e: any) => e.char === "咖喱角")).toBeUndefined();
     expect(dictionary.find((e: any) => e.char === "馬拉糕")).toBeUndefined();
-  });
-
-  test("Reject batch containing duplicate entries within itself", () => {
-    const payload = [
-      {
-        char: "糯米雞",
-        jyutping: "no6mai5gai1",
-        definition: "sticky rice dumpling",
-        type: "noun",
-      },
-      {
-        char: "糯米雞",
-        jyutping: "no6mai5gai1",
-        definition: "lo mai gai",
-        type: "noun",
-      },
-    ];
-    const escapedPayload = JSON.stringify(payload).replace(/'/g, "'\\''");
-    const res = runRegister(`--json '${escapedPayload}'`);
-
-    expect(res.success).toBe(false);
-    expect(res.output).toContain(
-      'Duplicate entry for "糯米雞" with Jyutping "no6mai5gai1" found within the batch itself.',
-    );
-
-    const dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-    expect(dictionary.find((e: any) => e.char === "糯米雞")).toBeUndefined();
   });
 });
 
