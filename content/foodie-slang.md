@@ -207,7 +207,7 @@ A: 你[nei5|you] 真係[zan1hai6|really] 鍾意[zung1ji3|like] 打卡[daa2kaa1|c
    === You really like taking photos for social media!
 C: 係[hai6|yes] 呀[aa3|particle]！ 我哋[ngo5dei6|we] 今日[gam1jat6|today] 飲[jam2|drink] 完[jyun4|finish] 嘢飲[je5jam2|drinks]，第日[dai6jat6|another day] 去[heoi3|go] 掃街[sou3gaai1|street food hunt] 玩[waan2|play] 啦[laa1|particle]！
    === Yes! After we finish our drinks today, let's go street-food hunting another day!
-A: 好[hou2|good] 呀[aa3|particle]，我哋[ngo5dei6|we] 去[heoi3|go] 掃街[sou3gaai1|street food hunt] 食[sik6|eat] 宵夜[siu1je2|late night snack] 啦[laa1|particle]！ 唔該[m4goi1|excuse me]，埋單[maai5daan1|pay bill] 啦[laa1|particle]！
+A: 好[hou2|good] 呀[aa3|particle]，我哋[ngo5dei6|we] 去[heoi3|go] 掃街[sou3gaai1|street food hunt] 食[sik6|eat] 宵夜[siu1je2|late night snack] 啦[laa1|particle]！ 唔該[m4goi1|excuse me]，埋單[maai4daan1|pay bill] 啦[laa1|particle]！
    === Great, let's go street-food hunting and eat late-night snacks! Excuse me, bill please!
 ```
 

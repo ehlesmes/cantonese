@@ -19,7 +19,7 @@ Let's dive in!
 
 To describe your living space, Cantonese uses these terms:
 
-- `客廳[haak3ting1|living room / parlor]`: The main living or sitting room.
+- `客廳[haak3teng1|living room / parlor]`: The main living or sitting room.
 - `睡房[seoi6fong2|bedroom]`: The bedroom.
 - `面積[min6zik1|area / size]`: The total size or area of a flat.
 - `實用面積[sat6jung6min6zik1|saleable area / net floor area]`: The net saleable
@@ -32,7 +32,7 @@ _Example Layout Description:_
 - `間[gaan1|measure word for rooms]` `屋[uk1|house/flat]` `有[jau5|to have]`
   `兩[loeng5|two]` `間[gaan1|measure word]` `睡房[seoi6fong2|bedroom]`
   `同[tung4|and]` `一[jat1|one]` `個[go3|measure word]`
-  `客廳[haak3ting1|living room]`，`實用面積[sat6jung6min6zik1|saleable area]`
+  `客廳[haak3teng1|living room]`，`實用面積[sat6jung6min6zik1|saleable area]`
   `五百[ng5baak3|five hundred]` `呎[cek3|square feet]`: The flat has two
   bedrooms and one living room, with a saleable area of five hundred square
   feet.
@@ -65,11 +65,11 @@ To describe how pleasant a neighborhood is, Cantonese speakers use these terms:
 Two friends (A and B) talk about an apartment that A has recently rented.
 
 ```dialog
-A: 我[ngo5|I / me] 啱啱[aam1aam1|just now / just / exactly] 租[zou1|to rent / lease] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 一[jat1|one] 間[gaan1|classifier for buildings / shops / rooms] 唐樓[tong4lau2|traditional low-rise walk-up building] 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 劏房[tong1fong2|subdivided flat / partitioned room] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+A: 我[ngo5|I / me] 啱啱[aam1aam1|just now / just / exactly] 租[zou1|to rent / lease] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 一[jat1|one] 間[gaan1|classifier for buildings / shops / rooms] 唐樓[tong4lau4|traditional low-rise walk-up building] 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 劏房[tong1fong2|subdivided flat / partitioned room] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === I just rented a subdivided flat in a traditional low-rise walk-up building.
-B: 吓[haa2|what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation]？唐樓[tong4lau2|traditional low-rise walk-up building] 冇[mou5|not to have / without] 升降機[sing1gong3gei1|elevator / lift] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！你[nei5|you] 唔[m4|not / no (negative prefix)] 覺得[gok3dak1|to feel / think] 辛苦[san1fu2|hard / toilsome / painstaking / exhausting] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？
+B: 吓[haa2|what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation]？唐樓[tong4lau4|traditional low-rise walk-up building] 冇[mou5|not to have / without] 升降機[sing1gong3gei1|elevator / lift] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！你[nei5|you] 唔[m4|not / no (negative prefix)] 覺得[gok3dak1|to feel / think] 辛苦[san1fu2|hard / toilsome / painstaking / exhausting] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？
    === What? Walk-up buildings don't have elevators! Don't you feel it is exhausting?
-A: 雖然[seoi1jin4|although / even though] 行[hang4|to walk / go] 樓梯[lau4tai1|stairs / staircase] 有[jau5|to have] 少少[siu2 siu2|a little bit / slightly] 辛苦[san1fu2|hard / toilsome / painstaking / exhausting]，不過[bat1gwo3|but / however] 租金[zou1gam1|rent payment / rental price] 平[peng4|cheap / inexpensive]，五[ng5|five] 千[cin1|thousand] 蚊[man1|dollar] 炸[zaa3|only (sentence-final particle)]！
+A: 雖然[seoi1jin4|although / even though] 行[hang4|to walk / go] 樓梯[lau4tai1|stairs / staircase] 有[jau5|to have] 少少[siu2 siu2|a little bit / slightly] 辛苦[san1fu2|hard / toilsome / painstaking / exhausting]，不過[bat1gwo3|but / however] 租金[zou1gam1|rent payment / rental price] 平[peng4|cheap / inexpensive]，五[ng5|five] 千[cin1|thousand] 蚊[man1|dollar] 咋[zaa3|only (sentence-final particle)]！
    === Although walking up the stairs is a bit exhausting, the rent is cheap—it's only five thousand dollars!
 B: 噉[gam2|then / in that case / so] 佢[keoi5|he / she / it] 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 面積[min6zik1|area / size] 係[hai6|to be (am/is/are) / yes] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 好[hou2|very / quite / extremely] 細[sai3|small / little / tiny] 呀[aa3|sentence-final particle softening statements, making questions friendly]？環境[waan4ging2|environment / surroundings] 靜[zing6|quiet / peaceful] 唔[m4|not / no (negative prefix)] 靜[zing6|quiet / peaceful] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Then is its size very small? Is the environment quiet?

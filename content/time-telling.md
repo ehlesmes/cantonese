@@ -134,8 +134,8 @@ number on the clock face represents one `字[zi6|five-minute interval]`:
 
 > [!NOTE] **No "Quarter" Word**: Unlike English or Mandarin, Cantonese does not
 > have a specific word for "a quarter past" or "a quarter to." Instead, you must
-> use `三個字[saam1 go3 zi6|15 minutes / a quarter]` and
-> `九個字[gau2 go3 zi6|45 minutes / three quarters]`.
+> use `三個字[saam1go3zi6|15 minutes / a quarter]` and
+> `九個字[gau2go3zi6|45 minutes / three quarters]`.
 
 To use this in a sentence, use the pattern: **[Hour] + [Number of intervals] +
 `個[go3|general measure word / individual / unit]` +
@@ -164,7 +164,7 @@ A: 唔該[m4goi1|excuse me]，請問[cing2man6|may I ask] 依家[ji1gaa1|now] �
    === Excuse me, may I ask what time it is now?
 B: 依家[ji1gaa1|now] 兩[loeng5|two / pair (used with classifiers)] 點[dim2|o'clock / hour] 半[bun3|half] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === It is 2:30 now.
-A: 兩[loeng5|two / pair (used with classifiers)] 點[dim2|o'clock / hour] 半[bun3|half] 呀[aa3|sentence-final particle softening statements, making questions friendly]？ 唔該[m4goi1|thank you]。
+A: 兩[loeng5|two / pair (used with classifiers)] 點[dim2|o'clock / hour] 半[bun3|half] 呀[aa4|sentence-final particle for questions]？ 唔該[m4goi1|thank you]。
    === 2:30? Thank you.
 B: 你[nei5|you] 想[soeng2|to want to] 幾點[gei2dim2|what time / when] 去[heoi3|to go] 飲[jam2|to drink] 咖啡[gaa3fe1|coffee] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === What time do you want to go drink coffee?
@@ -198,7 +198,7 @@ explanation: For 2:10, Cantonese telling time uses `兩[loeng5|two / pair (used 
 ```exercise
 question: |
   Fill in the blank to say "I eat pineapple buns at 3 o'clock sharp":
-  我[ngo5|I / me] 三[saam1|three] ________ 食[sik6|to eat] 菠蘿包[bo1lo1baau1|pineapple bun] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+  我[ngo5|I / me] 三[saam1|three] ________ 食[sik6|to eat] 菠蘿包[bo1lo4baau1|pineapple bun] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 answer: 點鐘[dim2zung1|o'clock]
 explanation: The term `點鐘[dim2zung1|o'clock]` is used to indicate o'clock, particularly when emphasizing a sharp or exact hour.
 ```

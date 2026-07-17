@@ -24,7 +24,7 @@ We will focus on three main areas:
    `返工[faan1gung1|to go to work]`, and `放工[fong3gung1|to finish work]`.
 2. **Slacking Off at the Office**: Learning local expressions for relaxing,
    procrastinating, and slacking off under the boss's radar using
-   `摸魚[mo2jyu2|to slack off]`, `蛇王[se4wong4|to slack off / avoid work]`, and
+   `摸魚[mo2jyu4|to slack off]`, `蛇王[se4wong4|to slack off / avoid work]`, and
    `Hea[hea1|to chill / slack off]`.
 3. **Overtime, Salaries, and Firing**: Expressing working overtime using
    `OT[o1ti1|to work overtime]`, discussing salaries with
@@ -76,21 +76,21 @@ I had a meal with my colleague at the company today.
 
 ---
 
-## 2. Slacking Off at the Office: `摸魚[mo2jyu2|to slack off]`, `蛇王[se4wong4|to slack off / avoid work]`, and `Hea[hea1|to chill / slack off]`
+## 2. Slacking Off at the Office: `摸魚[mo2jyu4|to slack off]`, `蛇王[se4wong4|to slack off / avoid work]`, and `Hea[hea1|to chill / slack off]`
 
 Every office culture has its ways of slacking off, and Cantonese is incredibly
 rich in terms describing these activities. If you are taking a break or
 procrastinating, you are likely doing one of the following:
 
-### 1. `摸魚[mo2jyu2|to slack off]` (Feeling for Fish)
+### 1. `摸魚[mo2jyu4|to slack off]` (Feeling for Fish)
 
 Derived from the Chinese idiom meaning "to catch fish in muddy waters,"
-`摸魚[mo2jyu2|to slack off]` refers to slacking off on the job, performing
+`摸魚[mo2jyu4|to slack off]` refers to slacking off on the job, performing
 personal tasks during work hours, or browsing the internet instead of doing
 actual work.
 
 ```cantonese
-佢[keoi5|he / she / it] 成日[seng4jat6|always] 喺[hai2|at] 公司[gung1si1|company] 摸魚[mo2jyu2|to slack off]。
+佢[keoi5|he / she / it] 成日[seng4jat6|always] 喺[hai2|at] 公司[gung1si1|company] 摸魚[mo2jyu4|to slack off]。
 ===
 He always slacks off at the company.
 ```
@@ -148,7 +148,7 @@ labor" or "manual work." When you want to request a pay raise, you use the verb
 `加[gaa1|to add / increase]` with `人工[jan4gung1|salary]`.
 
 ```cantonese
-老細[lou5sai3|boss] 幫[bong1|for] 我[ngo5|me] 加人工[gaa1jan4gung1|to get a raise] 啦[laa1|particle]！
+老細[lou5sai3|boss] 幫[bong1|for] 我[ngo5|me] 加咗人工[gaa1zo2jan4gung1|got a raise] 喇[laa3|particle]！
 ===
 The boss gave me a raise! (Or: The boss got me a raise!)
 ```
@@ -165,7 +165,7 @@ stir-fried, the rolling up of the sleeping mat was likened to a curled-up fried
 squid, and the term stuck as a metaphor for getting dismissed.
 
 ```cantonese
-佢[keoi5|he / she / it] 因為[jan1wai6|because] 喺[hai2|at] 公司[gung1si1|company] 蛇王[se4wong4|to slack off / avoid work]， 俾[bei2|by / to give] 老細[lou5sai3|boss] 炒魷魚[caau2jau4jyu2|to get fired] 咗[zo2|completed aspect] 啦[laa1|particle]！
+佢[keoi5|he / she / it] 因為[jan1wai6|because] 喺[hai2|at] 公司[gung1si1|company] 蛇王[se4wong4|to slack off / avoid work]， 俾[bei2|by / to give] 老細[lou5sai3|boss] 炒咗魷魚[caau2zo2jau4jyu2|to get fired] 喇[laa3|particle]！
 ===
 Because he slacked off at the company, he was fired by the boss!
 ```
@@ -197,11 +197,11 @@ during a coffee break, complain about their heavy workload, and share their
 wishes for a salary raise.
 
 ```dialog
-A: 你[nei5|you] 聽講[ting1gong2|to hear of / be told] 咗[zo2|completed aspect] 未[mei6|not yet] 呀[aa3|particle]？ 同事[tung4si6|colleague] 阿[aa3|prefix] David 俾[bei2|by / to give] 老細[lou5sai3|boss] 炒魷魚[caau2jau4jyu2|to get fired] 咗[zo2|completed aspect] 啦[laa1|particle]！
+A: 你[nei5|you] 聽講[ting1gong2|to hear of / be told] 未[mei6|not yet] 呀[aa3|particle]？ 同事[tung4si6|colleague] 阿[aa3|prefix] David 俾[bei2|by / to give] 老細[lou5sai3|boss] 炒咗魷魚[caau2zo2jau4jyu2|to get fired] 喇[laa3|particle]！
    === Have you heard yet? Our colleague David was fired by the boss!
 B: 點會[dim2wui5|how could] 呀[aa3|particle]？ 佢[keoi5|he] 做嘢[zou6je5|to work] 點會[dim2wui5|how could] 俾[bei2|by / to give] 老細[lou5sai3|boss] 炒[caau2|to stir-fry / speculate / fire] 㗎[gaa3|particle]？
    === How could that be? How could his work get him fired by the boss?
-A: 聽講[ting1gong2|to hear of / be told] 佢[keoi5|he] 喺[hai2|at] 公司[gung1si1|company] 唔[m4|not] 做嘢[zou6je5|to work]， 成日[seng4jat6|always] 摸魚[mo2jyu2|to slack off] 同埋[tung4maai4|and] 蛇王[se4wong4|to slack off / avoid work]。
+A: 聽講[ting1gong2|to hear of / be told] 佢[keoi5|he] 喺[hai2|at] 公司[gung1si1|company] 唔[m4|not] 做嘢[zou6je5|to work]， 成日[seng4jat6|always] 摸魚[mo2jyu4|to slack off] 同埋[tung4maai4|and] 蛇王[se4wong4|to slack off / avoid work]。
    === I heard he doesn't work at the company, and is always slacking off and avoiding work.
 B: 原來[jyun4loi4|as it turns out] 係[hai6|to be] 咁[gam3|so]！ 佢[keoi5|he] 真係[zan1hai6|really] 鍾意[zung1ji3|to like] Hea[hea1|to chill] 啦[laa1|particle]。 咁[gam3|then] 我哋[ngo5dei6|we] 聽日[ting1jat6|tomorrow] 使唔使[sai2 m4 sai2|need or not] OT[o1ti1|to work overtime] 呀[aa3|particle]？
    === So that's how it is! He really likes to chill. Then do we need to work overtime tomorrow?
@@ -241,7 +241,7 @@ explanation: |
 ```exercise
 question: |
   Which of the following Cantonese terms literally means "to stir-fry squid" but colloquially refers to getting fired?
-  A) 摸魚[mo2jyu2|to slack off]
+  A) 摸魚[mo2jyu4|to slack off]
   B) 蛇王[se4wong4|to slack off / avoid work]
   C) 炒魷魚[caau2jau4jyu2|to get fired]
 answer: C

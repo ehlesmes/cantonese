@@ -25,8 +25,8 @@ Hong Kongers use a variety of specialized terms for social media interactions:
 - `呃[aak1|to cheat / trick / fish]` `like[laaik1|likes (social media)]`:
   Literally meaning "cheating/fishing for likes" (posting attention-seeking
   photos or updates to harvest likes).
-- `些牙[se1aa4|to share (loanword)]`: To share a post or link (a direct phonetic
-  loanword from English "share").
+- `些牙[se1ngaa4|to share (loanword)]`: To share a post or link (a direct
+  phonetic loanword from English "share").
 - `科勞[fo1lou4|to follow (loanword)]`: To follow someone on social media
   (phonetic loanword from "follow").
 - `船[syun4|boat / ship]` `P[pi1|party (loanword)]`: A yacht party or boat
@@ -64,13 +64,13 @@ A girlfriend (A) complains to her boyfriend (B) about his texting habits.
 ```dialog
 A: 點解[dim2gaai2|why] 你[nei5|you] 今日[gam1jat6|today] 已讀不回[ji5duk6bat1wui4|read but not reply / ghost] 我[ngo5|I / me] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Why did you read and not reply to me today?
-B: 唔好意思[m4 hou2 ji3si1|sorry / excuse me] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I / me] 今日[gam1jat6|today] 好[hou2|very / quite / extremely] 忙[mong4|busy] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+B: 唔好意思[m4hou2ji3si1|sorry / excuse me] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I / me] 今日[gam1jat6|today] 好[hou2|very / quite / extremely] 忙[mong4|busy] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === I am so sorry, I was very busy today.
 A: 但係[daan6hai6|but / however] 你[nei5|you] 又[jau6|also / again] 喺[hai2|at / in / on] IG[ai1zi1|Instagram] Po[pou1|to post (social media loanword)] 相[soeng2|photo / picture] 呃[aak1|to cheat / trick / fish] like[laaik1|likes (social media)]？
    === But then you posted a photo on Instagram to fish for likes?
 B: 嗰個[go2go3|that one] 係[hai6|to be (am/is/are) / yes] 尋日[cam4jat6|yesterday] 影[jing2|photograph] 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 靚[leng3|pretty / beautiful / handsome] 相[soeng2|photo / picture] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
    === That was just a nice photo taken yesterday.
-A: 算啦[syun3 laa1|forget it]，你[nei5|you] 聽日[ting1jat6|tomorrow] 同[tung4|with / same as / and] 我[ngo5|I / me] 出街[ceot1gaai1|to go out] 放閃[fong3sim2|to show public displays of affection / show PDA] 補數[bou2sou3|to make up for it] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+A: 算啦[syun3laa1|forget it]，你[nei5|you] 聽日[ting1jat6|tomorrow] 同[tung4|with / same as / and] 我[ngo5|I / me] 出街[ceot1gaai1|to go out] 放閃[fong3sim2|to show public displays of affection / show PDA] 補數[bou2sou3|to make up for it] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
    === Forget it, you must go out with me tomorrow and show some PDA to make up for it!
 ```
 

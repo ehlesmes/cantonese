@@ -58,7 +58,7 @@ B: 係咩[hai6me1|really? / is that so?]？你哋[nei5dei6|you (plural)] 有冇[
    === Really? Did you guys drink?
 A: 有呀[jau5aa3|yes]！我哋[ngo5dei6|we / us] 仲[zung6|still / also / even more] 劈酒[pek3zau2|to drink heavily / drink competitively] 添[tim1|as well / also / particle]！David 飲[jam2|to drink] 得[dak1|particle expressing permission, possibility, capability, or adverbial degree] 太多[taai3do1|too much]，最後[zeoi3hau6|finally / at last / in the end] 醉[zeoi3|drunk] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]，仲[zung6|still / also / even more] 斷片[dyun6pin2|to blackout / memory lapse from drinking] 添[tim1|as well / also / particle]！
    === Yes! We even drank heavily! David drank too much, ended up drunk, and even blacked out!
-B: 哇[waa1|wow / whoa]！噉[gam2|then / in that case / so] 佢[keoi5|he / she / it] 今日[gam1jat6|today] 係唔係[hai6 m4 hai6|is it or not? / is that right? (A-not-A question form)] 覺得[gok3dak1|to feel / think] 鬼死咁[gwai2sei2gam3|extremely / awfully (pre-adjective intensifier)] 攰[gui6|tired / fatigued] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+B: 哇[waa1|wow / whoa]！噉[gam2|then / in that case / so] 佢[keoi5|he / she / it] 今日[gam1jat6|today] 係唔係[hai6m4hai6|is it or not? / is that right? (A-not-A question form)] 覺得[gok3dak1|to feel / think] 鬼死咁[gwai2sei2gam3|extremely / awfully (pre-adjective intensifier)] 攰[gui6|tired / fatigued] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Wow! Then does he feel extremely exhausted today?
 A: 係呀[hai6aa3|yes]，佢[keoi5|he / she / it] 今日[gam1jat6|today] 只係[zi2hai6|only / just] 想[soeng2|to want to / would like to / think] 喺[hai2|at / in / on] 屋企[uk1kei2|home] 聽歌[teng1go1|to listen to music] 同埋[tung4maai4|and / with / together with] 睇書[tai2syu1|to read books]，邊度[bin1dou6|where] 都[dou1|also / even / already] 唔[m4|not / no (negative prefix)] 想[soeng2|to want to / would like to / think] 去[heoi3|to go] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === Yes, today he only wants to listen to music and read books at home, he doesn't want to go anywhere.
@@ -94,7 +94,7 @@ explanation: |
 question: |
   Translate the following sentence into colloquial Cantonese:
   "Last night he drank too much and blacked out."
-answer: 佢[keoi5|he / she / it] 琴晚[kam4maan5|last night] 飲[jam2|to drink] 得[dak1|particle expressing permission, possibility, capability, or adverbial degree] 太多[taai3do1|too much] 斷片[dyun6pin2|to blackout / memory lapse from drinking] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+answer: 佢[keoi5|he / she / it] 琴晚[kam4maan5|last night] 飲[jam2|to drink] 得[dak1|particle expressing permission, possibility, capability, or adverbial degree] 太多[taai3do1|too much] 斷[dyun6|to snap/break] 咗[zo2|completed] 片[pin2|film/memory] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 explanation: |
   `佢[keoi5|he / she / it]` is "he", `琴晚[kam4maan5|last night]` is "last night", `飲[jam2|to drink] 得[dak1|particle expressing permission, possibility, capability, or adverbial degree] 太多[taai3do1|too much]` means "drank too much", `斷片[dyun6pin2|to blackout]` means "blacked out", and `咗[zo2|aspect particle]` is the completion marker.
 ```

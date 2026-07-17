@@ -27,8 +27,8 @@ shopping:
   including pants, skirts, ties, and necklaces.
   - Example: `呢[ni1|this]` `條[tiu4|measure word for long, thin objects]`
     `褲[fu3|pants / trousers]` (these pants)
-- `頂[deng2|measure word for hats]`: Exclusively used for hats and caps.
-  - Example: `呢[ni1|this]` `頂[deng2|measure word for hats]`
+- `頂[ding2|measure word for hats]`: Exclusively used for hats and caps.
+  - Example: `呢[ni1|this]` `頂[ding2|measure word for hats]`
     `帽[mou2|hat / cap]` (this hat)
 - `對[deoi3|pair / couple]`: Used for paired items like shoes, socks, or
   earrings.
@@ -50,7 +50,7 @@ A customer (A) is browsing clothing items in a shop and talks to the assistant
 ```dialog
 A: 唔該[m4goi1|excuse me]，我[ngo5|I / me] 想[soeng2|to want to / would like to] 睇[tai2|to look / see] 呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 同埋[tung4maai4|and / with] 呢[ni1|this] 條[tiu4|measure word for long, thin objects] 褲[fu3|pants / trousers] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === Excuse me, I want to look at this shirt and these pants.
-B: 好呀[hou2aa3|sure]！呢[ni1|this] 對[deoi3|pair / couple] 鞋[haai4|shoes] 都[dou1|also] 好[hou2|very] 靚[leng3|high quality] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]，你[nei5|you] 想唔想[soeng2 m4 soeng2|want or not (A-not-A question form)] 試[si3|to try / test] 埋[maai4|also / as well] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+B: 好呀[hou2aa3|sure]！呢[ni1|this] 對[deoi3|pair / couple] 鞋[haai4|shoes] 都[dou1|also] 好[hou2|very] 靚[leng3|pretty / beautiful / nice] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]，你[nei5|you] 想唔想[soeng2 m4 soeng2|want or not (A-not-A question form)] 試[si3|to try / test] 埋[maai4|also / as well] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Sure! This pair of shoes is also very nice, do you want to try them on too?
 A: 呢[ni1|this] 對[deoi3|pair / couple] 鞋[haai4|shoes] 太[taai3|too] 大[daai6|big] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。有冇[jau5mou5|have or not] 細[sai3|small] 啲[di1|a bit / some / comparative suffix] 嘅[ge3|possessive or linking particle]？
    === This pair of shoes is too big. Are there smaller ones?
@@ -70,7 +70,7 @@ question: |
   A) 件[gin6|measure word for clothes, matters, and items]
   B) 條[tiu4|measure word for long, thin objects]
   C) 對[deoi3|pair / couple]
-  D) 頂[deng2|measure word for hats]
+  D) 頂[ding2|measure word for hats]
 answer: C
 explanation: 對[deoi3|pair / couple] is the standard classifier for paired items like shoes or socks.
 ```
@@ -79,7 +79,7 @@ explanation: 對[deoi3|pair / couple] is the standard classifier for paired item
 question: |
   Which classifier is used for upper-body clothing like shirts and jackets?
   A) 條[tiu4|measure word for long, thin objects]
-  B) 頂[deng2|measure word for hats]
+  B) 頂[ding2|measure word for hats]
   C) 件[gin6|measure word for clothes, matters, and items]
 answer: C
 explanation: 件[gin6|measure word for clothes, matters, and items] is the correct classifier for shirts, jackets, and coats.
@@ -88,7 +88,7 @@ explanation: 件[gin6|measure word for clothes, matters, and items] is the corre
 ```exercise
 question: |
   Translate the following sentence into colloquial Cantonese:
-  "Excuse me, how much is this pants?"
+  "Excuse me, how much is these pants?"
 answer: 唔該[m4goi1|excuse me]，呢[ni1|this] 條[tiu4|measure word for long, thin objects] 褲[fu3|pants / trousers] 幾錢[gei2 cin2|how much money]呀[aa3|particle]？
 explanation: 唔該[m4goi1|excuse me] means "excuse me", 呢[ni1|this] is "this", 條[tiu4|measure word for long, thin objects] is the classifier for trousers (褲[fu3|pants / trousers]), and 幾錢[gei2 cin2|how much money] is the spoken form of "how much".
 ```

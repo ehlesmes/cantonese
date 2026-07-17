@@ -26,9 +26,9 @@ The process of finding and renting a flat involves specific vocabulary:
 - `業主[jip6zyu2|landlord / property owner]`: The landlord or property owner.
 - `租金[zou1gam1|rent payment / rental price]`: The monthly rent.
 - `按金[on3gam1|deposit]`: Security deposit.
-- `上期[soeng5kei4|rent paid in advance (first month rent)]`: First month of
+- `上期[soeng6kei4|rent paid in advance (first month rent)]`: First month of
   rent paid in advance.
-- `兩按一上[loeng5on3jat1soeng5|two months deposit and one month rent in advance]`:
+- `兩按一上[loeng5on3jat1soeng6|two months deposit and one month rent in advance]`:
   The standard Hong Kong upfront payment scheme.
 - `合約[hap6joek3|contract / agreement]`: The formal lease contract.
 - `佣金[jung2gam1|commission fee]`: Agency commission fee.
@@ -49,7 +49,7 @@ B: 冇[mou5|no] 問題[man6tai4|problem]！呢度[ni1dou6|here] 有[jau5|to have
    === No problem! There is a unit here. It has two rooms.
 A: 好似[hou2ci5|seem / seem like / as if] 幾[gei2|quite / pretty / fairly] 好[hou2|good / fine / very / quite] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！租金[zou1gam1|rent payment / rental price] 幾多[gei2do1|how much] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === That sounds pretty good! How much is the rent?
-B: 租金[zou1gam1|rent payment / rental price] 一[jat1|one] 萬[maan6|ten thousand] 五[ng5|five] 千[cin1|thousand] 蚊[man1|dollar] 一[jat1|one] 個[go3|general measure word / individual / unit] 月[jyut6|month]，要[jiu3|need] 兩按一上[loeng5on3jat1soeng5|two months deposit and one month rent in advance]，同埋[tung4maai4|and / with / together with] 簽[cim1|to sign] 合約[hap6joek3|contract] 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 時候[si4hau6|time / when] 俾[bei2|to give / by (passive marker) / let] 半[bun3|half] 個[go3|general measure word / individual / unit] 租金[zou1gam1|rent payment / rental price] 做[zou6|to do / make / perform] 佣金[jung2gam1|commission fee] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+B: 租金[zou1gam1|rent payment / rental price] 一[jat1|one] 萬[maan6|ten thousand] 五[ng5|five] 千[cin1|thousand] 蚊[man1|dollar] 一[jat1|one] 個[go3|general measure word / individual / unit] 月[jyut6|month]，要[jiu3|need] 兩按一上[loeng5on3jat1soeng6|two months deposit and one month rent in advance]，同埋[tung4maai4|and / with / together with] 簽[cim1|to sign] 合約[hap6joek3|contract] 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 時候[si4hau6|time / when] 俾[bei2|to give / by (passive marker) / let] 半[bun3|half] 個[go3|general measure word / individual / unit] 租金[zou1gam1|rent payment / rental price] 做[zou6|to do / make / perform] 佣金[jung2gam1|commission fee] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
    === The rent is fifteen thousand dollars a month. It requires two months deposit and one month rent in advance, and when signing the contract, you pay half a month's rent as a commission fee.
 A: 噉[gam2|then / in that case / so] 我哋[ngo5dei6|we / us] 幾時[gei2si4|when / what time] 可以[ho2ji5|can / may / possible] 去[heoi3|to go] 睇樓[tai2lau2|to view apartments / flats] 呀[aa3|sentence-final particle softening statements, making questions friendly]？我[ngo5|I / me] 想[soeng2|to want to / would like to] 睇[tai2|to watch / look / see / read] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 先[sin1|first / only then]。
    === Then when can we go to view the flat? I want to view it first.

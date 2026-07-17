@@ -12,8 +12,8 @@ Cantonese.
 
 We will learn how to use:
 
-1. `喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]`
-   (hearsay and unexpected realizations)
+1. `喎[wo3|sentence-final particle indicating surprise or warning]` (hearsay and
+   unexpected realizations)
 2. `喇[laa3|sentence-final particle indicating a change of state or already]`
    (change of state)
 3. `喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]`
@@ -21,10 +21,9 @@ We will learn how to use:
 
 ---
 
-## 1. Hearsay & Unexpected Realizations: `喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]`
+## 1. Hearsay & Unexpected Realizations: `喎[wo3|sentence-final particle indicating surprise or warning]`
 
-The particle
-`喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]`
+The particle `喎[wo3|sentence-final particle indicating surprise or warning]`
 has two primary functions that make it one of the most expressive particles in
 Cantonese:
 
@@ -55,13 +54,13 @@ previous expectations, or to warn someone about an immediate fact. For this
 usage, the particle is pronounced with a mid-flat tone (`wo3`):
 
 ```cantonese
-今日[gam1jat6|today] 真係[zan1hai6|really / truly] 好[hou2|good / fine / very / quite] 凍[dung3|cold / iced] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！
+今日[gam1jat6|today] 真係[zan1hai6|really / truly] 好[hou2|good / fine / very / quite] 凍[dung3|cold / iced] 喎[wo3|sentence-final particle indicating surprise or warning]！
 ===
 Oh, it is actually really cold today! (Contrary to what I expected!)
 ```
 
 ```cantonese
-小心[siu2sam1|careful / to be careful / take care] 啲[di1|a bit / some / comparative suffix] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！
+小心[siu2sam1|careful / to be careful / take care] 啲[di1|a bit / some / comparative suffix] 喎[wo3|sentence-final particle indicating surprise or warning]！
 ===
 Be careful! (Warning someone of a potential hazard)
 ```
@@ -122,8 +121,8 @@ is a classic example. It combines:
 
 1. `喇[laa3|sentence-final particle indicating a change of state or already]`
    (change of state)
-2. `喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]`
-   (surprise / warning)
+2. `喎[wo3|sentence-final particle indicating surprise or warning]` (surprise /
+   warning)
 
 When you layer them as
 `喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]`,
@@ -159,11 +158,11 @@ nearing the end of the work day, and they are gossiping about a late colleague
 and the boss's reaction.
 
 ```dialog
-A: Wing-kit，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa5|verbal suffix indicating a brief action or attempt]！已經[ji5ging1|already] 幾點[gei2dim2|what time / when] 呀[aa3|sentence-final particle softening statements, making questions friendly]？佢[keoi5|he / she / it] 仲[zung6|still / yet] 冇[mou5|to not have / there is not] 返[faan1|to return / go back / reverse] 公司[gung1si1|company / office] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！
+A: Wing-kit，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa5|verbal suffix indicating a brief action or attempt]！已經[ji5ging1|already] 幾點[gei2dim2|what time / when] 呀[aa3|sentence-final particle softening statements, making questions friendly]？佢[keoi5|he / she / it] 仲[zung6|still / yet] 冇[mou5|to not have / there is not] 返[faan1|to return / go back / reverse] 公司[gung1si1|company / office] 喎[wo3|sentence-final particle indicating surprise or warning]！
    === Wing-kit, take a look! What time is it already? Apparently, he still hasn't returned to the office!
 B: 佢[keoi5|he / she / it] 遲到[ci4dou3|to be late / arrive late] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 兩[loeng5|two / pair (used with classifiers)] 個[go3|general measure word / individual / unit] 鐘頭[zung1tau4|hour] 喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]！老闆[lou5baan2|boss / proprietor] 真係[zan1hai6|really / truly] 嬲[nau1|angry / mad] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 喇[laa3|sentence-final particle indicating a change of state or already]！
    === He is late by two hours already! The boss is really angry now!
-A: 係[hai6|to be (am/is/are) / yes] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？佢[keoi5|he / she / it] 尋日[cam4jat6|yesterday] 話[waa6|to say / tell / words / speech] 今日[gam1jat6|today] 放假[fong3gaa3|to have a holiday / day off] 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]！
+A: 係[hai6|to be (am/is/are) / yes] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？佢[keoi5|he / she / it] 尋日[cam4jat6|yesterday] 話[waa6|to say / tell / words / speech] 今日[gam1jat6|today] 放假[fong3gaa3|to have a holiday / day off] 喎[wo3|sentence-final particle indicating surprise or warning]！
    === Is that so? He said yesterday that apparently today is his day off!
 B: 佢[keoi5|he / she / it] 記錯[gei3co3|remembered incorrectly] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]！今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 佢[keoi5|he / she / it] 放假[fong3gaa3|to have a holiday / day off] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
    === He just remembered it incorrectly! Today is obviously not his day off!
@@ -193,10 +192,10 @@ explanation: The SFP 喇[laa3|sentence-final particle indicating a change of sta
 question: |
   Which SFP is used to indicate reported speech (hearsay) or surprise/unexpected realizations?
   A) 喇[laa3|sentence-final particle indicating a change of state or already]
-  B) 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning]
+  B) 喎[wo3|sentence-final particle indicating surprise or warning]
   C) 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]
 answer: B
-explanation: The SFP 喎[wo3|sentence-final particle indicating reported speech, surprise, or warning] is used for reported speech, unexpected realizations, or warnings.
+explanation: The SFP 喎[wo3|sentence-final particle indicating surprise or warning] is used for reported speech, unexpected realizations, or warnings.
 ```
 
 ```exercise

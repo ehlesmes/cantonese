@@ -40,7 +40,7 @@ two characters, not at the end:
   `手[sau2|hand]`
 
 ```cantonese
-我哋[ngo5dei6|we / us] 已經[ji5ging1|already] 分[fan1|to divide / separate / split] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 手[sau2|hand] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+我哋[ngo5dei6|we / us] 已經[ji5ging1|already] 分[fan1|to divide / separate / split] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 手[sau2|hand] 喇[laa3|sentence-final particle indicating a change of state or already]。
 ===
 We have already broken up.
 ```
@@ -77,11 +77,11 @@ Two university friends, Sau-han (A) and Wing-kit (B), talk about their
 classmate.
 
 ```dialog
-A: 喂[wai2|hey!]，你[nei5|you] 聽日[ting1jat6|tomorrow] 去唔去[heoi3 m4 heoi3|go or not] 去街[heoi3gaai1|go out / go on a date] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 喂[wai2|hey!]，你[nei5|you] 聽日[ting1jat6|tomorrow] 去唔去[heoi3m4heoi3|go or not] 街[gaai1|street] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Hey, are you going out tomorrow?
 B: 去街[heoi3gaai1|go out / go on a date]？ 我[ngo5|I / me] 單身[daan1san1|single] 㗎[gaa3|sentence-final particle asserting a point, combination of ge3 and aa3] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！ 同[tung4|with / and] 邊個[bin1go3|who] 去[heoi3|to go] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Go out? Obviously I am single! Who am I going with?
-A: 聽講[ting1gong2|hear say] David 尋日[cam4jat6|yesterday] 表[biu2|to confess] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 白[baak6|love]，成功[sing1gung1|successfully] 出[ceot1|to leave] Pool[pu1|singles pool (student slang)] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+A: 聽講[ting1gong2|hear say] David 尋日[cam4jat6|yesterday] 表[biu2|to confess] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 白[baak6|clear / explain]，成功[sing1gung1|successfully] 出[ceot1|to leave] Pool[pu1|singles pool (student slang)] 喇[laa3|sentence-final particle indicating a change of state or already]！
    === I heard David confessed yesterday and successfully left the singles pool!
 B: 哇[waa1|wow / whoa]！ 真係[zan1hai6|really / truly] 甜[tim4|sweet / romantic] 爆[baau3|extremely] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 佢[keoi5|he / she / it] 終於[zung1jyu1|finally] 拍[paak3|to clap / pat / beat] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 拖[to1|to pull / drag / tow] 喇[laa3|sentence-final particle indicating a change of state or already]！
    === Wow! That's extremely sweet! He's finally dating someone!
@@ -111,7 +111,7 @@ explanation: |
 ```exercise
 question: |
   Fill in the blanks to say "We have already broken up" in Cantonese:
-  我哋[ngo5dei6|we / us] 已經[ji5ging1|already] ________ 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] ________ 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+  我哋[ngo5dei6|we / us] 已經[ji5ging1|already] ________ 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] ________ 喇[laa3|sentence-final particle indicating a change of state or already]。
 answer: 分[fan1|to divide / separate / split] / 手[sau2|hand]
 explanation: |
   The verb `分手[fan1sau2|to break up]` is a split-verb. To form the completed aspect, the marker `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` is placed between `分[fan1|to divide / separate / split]` and `手[sau2|hand]`.
@@ -121,7 +121,7 @@ explanation: |
 question: |
   Translate the following sentence into Cantonese with correct annotations:
   "He confessed yesterday."
-answer: 佢[keoi5|he / she / it] 尋日[cam4jat6|yesterday] 表[biu2|to confess] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 白[baak6|love]。
+answer: 佢[keoi5|he / she / it] 尋日[cam4jat6|yesterday] 表[biu2|to confess] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 白[baak6|clear / explain]。
 explanation: |
   The verb `表白[biu2baak6|to confess one's love]` is a split-verb. To say "confessed", the completion aspect marker `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` is placed between `表[biu2|to show]` and `白[baak6|clearly]`.
 ```

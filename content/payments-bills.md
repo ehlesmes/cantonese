@@ -36,8 +36,8 @@ Cantonese:
 - `借[ze3|to borrow / lend]`: To borrow or lend. The direction depends on the
   structure:
   - `問[man6|to ask]` `人[jan4|person / people]`
-    `借錢[ze3cin2|to borrow/lend money]`: To borrow money _from_ someone.
-  - `借錢[ze3cin2|to borrow/lend money]` `俾[bei2|to give / for / let / allow]`
+    `借錢[ze3cin4|to borrow/lend money]`: To borrow money _from_ someone.
+  - `借錢[ze3cin4|to borrow/lend money]` `俾[bei2|to give / for / let / allow]`
     `人[jan4|person / people]`: To lend money _to_ someone.
 - `還[waan4|to return / repay]`: To return borrowed money or repay a loan.
 - `跑數[paau2sou3|to hit a sales target / chase sales numbers]`: To chase sales
@@ -58,9 +58,9 @@ A: 係呀[hai6aa3|yes]，依家[ji1gaa1|now] 供樓[gung1lau2|to pay a mortgage]
    === Yes, paying a mortgage is really expensive now. Luckily, salary payments are quite punctual every month.
 B: 係呀[hai6aa3|yes]，但係[daan6hai6|but] 扣除[kau3ceoi4|to deduct] 強積金[koeng5zik1gam1|MPF / mandatory provident fund] 之後[zi1hau6|after / afterwards]，都[dou1|also / even / already] 冇[mou5|to not have / there is not] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 一[jat1|one] 截[zit6|section / chunk / length] 喇[laa3|sentence-final particle indicating a change of state or already]！
    === Indeed, but after deducting MPF, a chunk of it is gone already!
-A: David 尋日[cam4jat6|yesterday] 問[man6|to ask / inquire] 我[ngo5|I / me] 借錢[ze3cin2|to borrow/lend money] 添[tim1|as well / also / particle]，我[ngo5|I / me] 都[dou1|also / even / already] 唔[m4|not / no (negative prefix)] 知[zi1|to know / be aware of] 借唔借[ze3 m4 ze3|lend or not (A-not-A form)] 俾[bei2|to give / for / let / allow] 佢[keoi5|he / she / it] 好[hou2|good / fine / very / quite]。
+A: David 尋日[cam4jat6|yesterday] 問[man6|to ask / inquire] 我[ngo5|I / me] 借錢[ze3cin4|to borrow/lend money] 添[tim1|as well / also / particle]，我[ngo5|I / me] 都[dou1|also / even / already] 唔[m4|not / no (negative prefix)] 知[zi1|to know / be aware of] 借唔借[ze3m4ze3|lend or not (A-not-A form)] 俾[bei2|to give / for / let / allow] 佢[keoi5|he / she / it] 好[hou2|good / fine / very / quite]。
    === David even asked to borrow money from me yesterday, I don't know whether I should lend it to him.
-B: 佢[keoi5|he / she / it] 上次[soeng6ci3|last time] 借[ze3|to borrow / lend] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 錢[cin2|money] 都[dou1|also / even / already] 仲[zung6|still / also / even more] 未[mei6|not yet] 還[waan4|to return / repay] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+B: 佢[keoi5|he / she / it] 上次[soeng6ci3|last time] 借[ze3|to borrow / lend] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 錢[cin4|money] 都[dou1|also / even / already] 仲[zung6|still / also / even more] 未[mei6|not yet] 還[waan4|to return / repay] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
    === He hasn't even repaid the money he borrowed last time!
 ```
 
@@ -85,9 +85,9 @@ explanation: |
 question: |
   Fill in the blanks to say "to borrow money from someone" in Cantonese:
   ______ 人[jan4|person / people] ______。
-answer: 問[man6|to ask] / 借錢[ze3cin2|to borrow/lend money]
+answer: 問[man6|to ask] / 借錢[ze3cin4|to borrow/lend money]
 explanation: |
-  To borrow money from someone, you use the structure `問[man6|to ask] 人[jan4|person / people] 借錢[ze3cin2|to borrow/lend money]`.
+  To borrow money from someone, you use the structure `問[man6|to ask] 人[jan4|person / people] 借錢[ze3cin4|to borrow/lend money]`.
 ```
 
 ```exercise

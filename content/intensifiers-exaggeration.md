@@ -141,8 +141,7 @@ pre-adjective intensifiers that completely change the rhythm of the sentence.
 `鬼死咁[gwai2sei2gam3|extremely / awfully]` is a highly colloquial, expressive
 pre-adjective intensifier. It translates literally to something like
 "ghost-dead-so", and is used to emphasize that a condition is striking or
-overwhelming. It is frequently shortened to `鬼咁[gwai2gam3|extremely]` or
-`死咁[sei2gam3|extremely]`.
+overwhelming. It is frequently shortened to `鬼咁[gwai2gam3|extremely]`.
 
 - **Structure**: `鬼死咁[gwai2sei2gam3|extremely / awfully]` + `[Adjective]`
 
@@ -230,7 +229,7 @@ A: 你[nei5|you] 今日[gam1jat6|today] 返工[faan1gung1|to go to work] 忙[mon
    === Were you busy at work today?
 B: 忙[mong4|busy] 爆[baau3|explosively] 呀[aa3|particle]！ 我[ngo5|I] 攰[gui6|tired] 死[sei2|extremely] 啦[laa1|particle]！ 所有[so2jau5|all] 工作[gung1zok3|work] 都[dou1|also] 要[jiu3|need] 今日[gam1jat6|today] 搞掂[gaau2dim6|done]！
    === Extremely busy! I'm tired to death! All the work had to be completed today!
-A: 真係[zan1hai6|really] 辛苦[san1fu2|exhausting] 你[nei5|you] 啦[laa1|particle]！ 不如[bat1jyu4|how about] 一齊[jat1cai4|together] 食[sik6|to eat] 嘢食[je5sik6|food] 啦[laa1|particle]？
+A: 真係[zan1hai6|really] 辛苦[san1fu2|exhausting] 你[nei5|you] 啦[laa1|particle]！ 不如[bat1jyu4|how about] 一齊[jat1cai4|together] 食[sik6|to eat] 嘢[je5|things / food] 啦[laa1|particle]？
    === Really exhausting for you! How about eating food together?
 B: 好[hou2|good] 呀[aa3|particle]！ 呢度[ni1dou6|here] 嘅[ge3|possessive particle] 蛋撻[daan6taat1|egg tart] 最[zeoi3|most] 正[zeng3|excellent]， 頂呱呱[ding2gwaa1gwaa1|top-notch] 呀[aa3|particle]！
    === Sure! The egg tarts here are the best, they are top-notch!

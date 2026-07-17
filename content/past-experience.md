@@ -80,7 +80,7 @@ Here is some essential vocabulary related to schooling and exams:
 - `讀書[duk6syu1|to study / to read]` — studying / to study
 - `考試[haau2si3|exam / to take an exam]` — exams / to take an exam
 - `走堂[zau2tong4|to skip class / cut class]` — skipping class
-- `英文[jing1man2|English language]` — English language
+- `英文[jing1man4|English language]` — English language
 
 ---
 
@@ -100,9 +100,9 @@ A: 喂[wai2|hey / hello (typically answering phone or calling for attention)]，
    === Hey, Sau-han! Have you studied at university before?
 B: 我[ngo5|I / me] 讀[duk6|to study / read (aloud)] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 呀[aa3|sentence-final particle softening statements, making questions friendly]。我[ngo5|I / me] 好[hou2|good / fine / very / quite] 鍾意[zung1ji3|to like / prefer] 讀書[duk6syu1|to study / to read] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === I have studied before. I really like studying, obviously!
-A: 噉[gam2|then / in that case / so] 你[nei5|you] 識唔識[sik1 m4 sik1|do you know how to (A-not-A question form)] 講[gong2|to speak / say / talk] 英文[jing1man2|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 噉[gam2|then / in that case / so] 你[nei5|you] 識唔識[sik1 m4 sik1|do you know how to (A-not-A question form)] 講[gong2|to speak / say / talk] 英文[jing1man4|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === In that case, do you know how to speak English?
-B: 我[ngo5|I / me] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I / me] 只係[zi2hai6|only / just] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 同埋[tung4maai4|and / with / together with] 英文[jing1man2|English language] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
+B: 我[ngo5|I / me] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I / me] 只係[zi2hai6|only / just] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa6|Cantonese language] 同埋[tung4maai4|and / with / together with] 英文[jing1man4|English language] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
    === I know how to speak it; I only know how to speak Cantonese and English.
 A: 噉[gam2|then / in that case / so] 你[nei5|you] 走[zau2|to run / leave / escape] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 堂[tong4|class / hall] 未[mei6|not yet / have not] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Then have you skipped class before?

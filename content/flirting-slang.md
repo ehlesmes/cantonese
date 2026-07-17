@@ -18,7 +18,7 @@ for crushes and unrequited admiration.
 
 ### Crushes & Ideals
 
-- `暗戀[am3lyun2|to crush on / love secretly]`: To have a secret crush on
+- `暗戀[ngam3lyun2|to crush on / love secretly]`: To have a secret crush on
   someone.
 - `女神[neoi5san4|goddess / ideal woman]`: An ideal woman or female crush.
 - `男神[naam4san4|male god / ideal man]`: An ideal man or male crush.
@@ -41,7 +41,7 @@ One of the most unique local slang metaphors is:
 Two classmates discuss a friend's romantic situation.
 
 ```dialog
-A: 喂[wai2|hey!]，你[nei5|you] 係咪[hai6mai6|is or not (A-not-A question form)] 暗戀[am3lyun2|to crush on / love secretly] 佢[keoi5|he / she / it] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 喂[wai3|hey!]，你[nei5|you] 係咪[hai6mai6|is or not (A-not-A question form)] 暗戀[ngam3lyun2|to crush on / love secretly] 佢[keoi5|he / she / it] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Hey, do you have a secret crush on her?
 B: 係呀[hai6aa3|yes]，佢[keoi5|he / she / it] 係[hai6|to be (am/is/are) / yes] 我[ngo5|I / me] 嘅[ge3|possessive or linking particle] 女神[neoi5san4|goddess / ideal woman] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
    === Yes, she is my goddess, obviously!
@@ -83,7 +83,7 @@ explanation: |
 question: |
   Fill in the blank with the correct verb for "to have a secret crush on":
   我[ngo5|I] ________ 咗[zo2|completed] 佢[keoi5|him/her] 好耐[hou2noi6|a long time] 喇[laa3|SFP]。
-answer: 暗戀[am3lyun2|to crush on / love secretly]
+answer: 暗戀[ngam3lyun2|to crush on / love secretly]
 explanation: |
-  `暗戀[am3lyun2|to crush on / love secretly]` is the standard colloquial Cantonese term for having a secret crush on someone.
+  `暗戀[ngam3lyun2|to crush on / love secretly]` is the standard colloquial Cantonese term for having a secret crush on someone.
 ```

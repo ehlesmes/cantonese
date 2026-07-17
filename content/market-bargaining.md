@@ -15,9 +15,9 @@ and the art of bargaining in Cantonese.
 
 In daily Cantonese life, handling money and pricing is highly colloquial and
 differs significantly from formal written Chinese. When asking for prices,
-instead of the formal `幾多[gei2do1|how much]` `錢[cin2|money]`, you will
+instead of the formal `幾多[gei2do1|how much]` `錢[cin4|money]`, you will
 frequently hear speakers use the shorter, snappier
-`幾錢[gei2 cin2|how much money]` in casual street environments.
+`幾錢[gei2 cin4|how much money]` in casual street environments.
 
 ### The Units of Currency
 
@@ -35,15 +35,18 @@ To talk about currency, spoken Cantonese employs unique units:
 Cantonese speakers love efficiency, which shows in pricing shortcuts:
 
 - `個[go3|general measure word / individual / unit]` represents a dollar when
-  followed by decimal values. The most common is `半[bun3|half]` ($1.5 is
+  followed by decimal values. The most common is `半[bun3|half]`
+  ($1.5 is
   `個[go3|general measure word / individual / unit]` `半[bun3|half]`), but it
   applies to others like `個[go3|general measure word / individual / unit]`
-  `二[ji6|two]` ($1.2) or `個[go3|general measure word / individual / unit]`
-  `六[luk6|six]` ($1.6). Note that for values of $2 and above, the number must
-  precede `個[go3|general measure word / individual / unit]` (e.g., $2.5 is
+  `二[ji6|two]` ($1.2)
+  or `個[go3|general measure word / individual / unit]` `六[luk6|six]`
+  ($1.6). Note that for values of $2 and above, the number must precede
+  `個[go3|general measure word / individual / unit]` (e.g.,
+  $2.5 is
   `兩[loeng5|two / pair (used with classifiers)]`
-  `個[go3|general measure word / individual / unit]` `半[bun3|half]`, $3.5 is
-  `三[saam1|three]` `個[go3|general measure word / individual / unit]`
+  `個[go3|general measure word / individual / unit]` `半[bun3|half]`, $3.5
+  is `三[saam1|three]` `個[go3|general measure word / individual / unit]`
   `半[bun3|half]`).
 - When counting two of a currency unit, always use
   `兩[loeng5|two / pair (used with classifiers)]` instead of `二[ji6|two]`.
@@ -93,7 +96,7 @@ A customer (`A`) set eyes on an item and tries to bargain with the stall owner
 (`B`).
 
 ```dialog
-A: 唔該[m4goi1|excuse me]，老闆[lou5baan2|boss / proprietor]，呢個[ni1go3|this one]幾多[gei2do1|how much] 錢[cin2|money] 呀[aa3|particle]？
+A: 唔該[m4goi1|excuse me]，老闆[lou5baan2|boss / proprietor]，呢個[ni1go3|this one]幾多[gei2do1|how much] 錢[cin4|money] 呀[aa3|particle]？
    === Excuse me, boss, how much is this one?
 B: 呢個[ni1go3|this one]好[hou2|very]靚[leng3|high quality]嘅[ge3|final assertive particle]，三[saam1|three]百[baak3|hundred]八[baat3|eight]。
    === This one is of very high quality, three hundred and eighty.
@@ -113,7 +116,7 @@ cashier (`B`).
 ```dialog
 A: 唔該[m4goi1|excuse me]，收銀[sau1 ngan2|cashier]喺[hai2|at]邊度[bin1dou6|where]呀[aa3|particle]？
    === Excuse me, where is the cashier?
-B: 收銀[sau1 ngan2|cashier]喺[hai2|at]呢度[ni1dou6|here]。你[nei5|you]想[soeng2|want to]點樣[dim2joeng6|how]俾[bei2|give]錢[cin2|money]？
+B: 收銀[sau1 ngan2|cashier]喺[hai2|at]呢度[ni1dou6|here]。你[nei5|you]想[soeng2|want to]點樣[dim2joeng6|how]俾[bei2|give]錢[cin4|money]？
    === The cashier is over here. How would you like to pay?
 A: 用[jung6|to use]八達通[baat3daat6tung1|Octopus card]得[dak1|can] 唔[m4|not] 得[dak1|can] 呀[aa3|particle]？
    === Is it okay to use an Octopus card?
@@ -154,6 +157,6 @@ explanation: 蚊[man1|dollar] is the standard spoken unit of currency in Cantone
 question: |
   Translate the following sentence into colloquial Cantonese:
   "Excuse me, how much is this one?"
-answer: 唔該[m4goi1|excuse me]，呢個[ni1go3|this one]幾錢[gei2 cin2|how much money]呀[aa3|particle]？
-explanation: 唔該[m4goi1|excuse me] means "excuse me", 呢個[ni1go3|this one] is "this one", 幾錢[gei2 cin2|how much money] is the short spoken form of "how much money", and 呀[aa3|particle] is the SFP.
+answer: 唔該[m4goi1|excuse me]，呢個[ni1go3|this one]幾錢[gei2 cin4|how much money]呀[aa3|particle]？
+explanation: 唔該[m4goi1|excuse me] means "excuse me", 呢個[ni1go3|this one] is "this one", 幾錢[gei2 cin4|how much money] is the short spoken form of "how much money", and 呀[aa3|particle] is the SFP.
 ```

@@ -29,7 +29,7 @@ sports, driving, cooking, and academic subjects.
   `講[gong2|to speak / say / talk]` `廣東話[gwong2dung1waa2|Cantonese language]`
   — I can (know how to) speak Cantonese.
 - `我[ngo5|I / me]` `識[sik1|to know / speak (a language) / have a skill]`
-  `講[gong2|to speak / say / talk]` `英文[jing1man2|English language]` — I can
+  `講[gong2|to speak / say / talk]` `英文[jing1man4|English language]` — I can
   (know how to) speak English.
 - `我[ngo5|I / me]` `識[sik1|to know / speak (a language) / have a skill]`
   `揸車[zaa1ce1|to drive a car / drive]` — I can (know how to) drive a car.
@@ -38,7 +38,7 @@ To negate this, place `唔[m4|not / not / no (negative prefix)]` before
 `識[sik1|to know / speak (a language) / have a skill]`:
 
 ```cantonese
-我[ngo5|I / me] 唔[m4|not / not / no (negative prefix)] 識[sik1|to know / speak (a language) / have a skill] 寫[se2|to write] 英文[jing1man2|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 唔[m4|not / not / no (negative prefix)] 識[sik1|to know / speak (a language) / have a skill] 寫[se2|to write] 英文[jing1man4|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I do not know how to write English.
 ```
@@ -94,7 +94,7 @@ directly to the end of verbs to show whether an action is physically possible.
 When you attach
 `得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`
 directly to the end of a verb, it indicates that the action is **physically
-ddoable, allowed, or ready**:
+doable, allowed, or ready**:
 
 > **Formula:** [Verb] +
 > `得[dak1|particle expressing permission, possibility, capability, or adverbial degree]`

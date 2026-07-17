@@ -62,7 +62,7 @@ Two friends (A and B) discuss their recent stock market gains and losses over
 coffee.
 
 ```dialog
-A: 你[nei5|you] 最近[zeoi3gan6|recently / lately] 炒股[caau2gu2|to speculate in stocks / trade stocks] 賺[zaan6|to earn / profit / make money] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 你[nei5|you] 最近[zeoi3gan6|recently / lately] 炒股[caau2gu2|to speculate in stocks / trade stocks] 賺[zaan6|to earn / profit / make money] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 錢[cin4|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Have you made money speculating in stocks recently?
 B: 唔[m4|not / no (negative prefix)] 講[gong2|to speak / say / talk] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！我[ngo5|I / me] 買入[maai5jap6|to buy in / purchase shares] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 港股[gong2gu2|Hong Kong stocks / HK shares]，佢[keoi5|he / she / it] 跌[dit3|to fall / drop / decline] 得[dak1|particle expressing permission, possibility, capability, or adverbial degree] 咁[gam3|so / such / like this] 慘[caam2|miserable / pitiful / tragic] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']，我[ngo5|I / me] 全部[cyun4bou6|all / entirely] 蟹[haai5|stuck / trapped in a losing stock (slang)] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
    === Don't talk about it! I bought Hong Kong stocks, and they fell so miserably that all of my shares are stuck!
@@ -113,7 +113,7 @@ explanation: |
 question: |
   Translate the following sentence into colloquial Cantonese with correct annotations:
   "He sold US stocks today and made money."
-answer: 佢[keoi5|he / she / it] 今日[gam1jat6|today] 賣出[maai6ceot1|to sell out / sell shares] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 美股[mei5gu2|US stocks / US shares] 賺[zaan6|to earn / profit / make money] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+answer: 佢[keoi5|he / she / it] 今日[gam1jat6|today] 賣出[maai6ceot1|to sell out / sell shares] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 美股[mei5gu2|US stocks / US shares] 賺[zaan6|to earn / profit / make money] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 錢[cin4|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 explanation: |
-  `佢[keoi5|he / she / it]` is "he", `今日[gam1jat6|today]` is "today", `賣出[maai6ceot1|to sell out / sell shares]` `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` is "sold", `美股[mei5gu2|US stocks]`, `賺[zaan6|to earn / profit / make money]` `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` `錢[cin2|money]` is "made money", and `呀[aa3|sentence-final particle softening statements, making questions friendly]` is the softening particle.
+  `佢[keoi5|he / she / it]` is "he", `今日[gam1jat6|today]` is "today", `賣出[maai6ceot1|to sell out / sell shares]` `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` is "sold", `美股[mei5gu2|US stocks]`, `賺[zaan6|to earn / profit / make money]` `咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]` `錢[cin4|money]` is "made money", and `呀[aa3|sentence-final particle softening statements, making questions friendly]` is the softening particle.
 ```

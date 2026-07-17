@@ -54,7 +54,7 @@ Let's look at how this functions:
 Let's study these within full sentences:
 
 ```cantonese
-個[go3|general measure word] 電話[din6waa2|telephone / phone] 喺[hai2|at / in / on] 電腦[din6nou5|computer] 上面[soeng6min6|above / on top of / upper side] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+部[bou6|classifier for machines and devices] 電話[din6waa2|telephone / phone] 喺[hai2|at / in / on] 電腦[din6nou5|computer] 上面[soeng6min6|above / on top of / upper side] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 The phone is on top of the computer.
 ```
@@ -96,7 +96,7 @@ I am looking for my keys.
 
 > [!NOTE] The particle `緊[gan2|progressive aspect marker (action in progress)]`
 > is the continuous aspect marker, acting like "-ing" in English to show the
-> action is currently in progress. We will cover this in detail in Chapter 5.
+> action is currently in progress. We will cover this in detail in Chapter 8.
 
 ---
 
@@ -161,7 +161,7 @@ A: 吓[haa2|what]？ 冇[mou5|not have] 呀[aa3|particle]！ 電腦[din6nou5|com
    === What? It's not there! There is no wallet on top of the computer.
 B: 喺[hai2|at / in / on] 電腦[din6nou5|computer] 後面[hau6min6|behind] 囉[lo1|obviousness particle]！ 睇[tai2|to look / see] 咗[zo2|completed] 未[mei6|not yet] 呀[aa3|particle]？
    === It is behind the computer, obviously! Have you looked yet?
-A: 搵[wan2|to find / look for / search] 咗[zo2|completed] 啦[laa1|particle]，有[jau5|to have] 呀[aa3|particle]！ 多謝[do1ze6|thank you]！
+A: 搵[wan2|to find / look for] 到[dou2|resultative complement indicating success] 啦[laa3|particle]，有[jau5|to have] 呀[aa3|particle]！ 唔該[m4goi1|thank you]！
    === I looked and found it! Thank you!
 A: 同埋[tung4maai4|and] 我[ngo5|I] 條[tiu4|classifier for long, thin objects] 鎖匙[so2si4|key] 呢[ne1|particle]？ 喺[hai2|at / in / on] 邊度[bin1dou6|where] 呀[aa3|particle]？
    === And what about my keys? Where are they?
@@ -171,11 +171,17 @@ A: 廚房[cyu4fong2|kitchen] 邊度[bin1dou6|where] 呀[aa3|particle]？
    === Where in the kitchen?
 B: 喺[hai2|at / in / on] 咖啡[gaa3fe1|coffee] 隔籬[gaak3lei4|next to] 囉[lo1|obviousness particle]！
    === Next to the coffee, obviously!
-A: 搞掂[gaau2dim6|done]！ 搵[wan2|to find / look for / search] 咗[zo2|completed] 啦[laa1|particle]。 我[ngo5|I] 去[heoi3|to go] 公司[gung1si1|company] 啦[laa1|particle]，拜拜[baai1baai3|bye-bye]！
+A: 搞掂[gaau2dim6|done]！ 搵[wan2|to find / look for] 到[dou2|resultative complement indicating success] 啦[laa3|particle]。 我[ngo5|I] 去[heoi3|to go] 公司[gung1si1|company] 啦[laa3|particle]，拜拜[baai1baai3|bye-bye]！
    === Got it! Found them. I'm going to the office now, bye-bye!
 B: 拜拜[baai1baai3|bye-bye]！
    === Bye-bye!
 ```
+
+> [!NOTE] In Cantonese, `搵[wan2|to search]` just means "to search" or "to look
+> for". If you say `搵咗[wan2zo2|searched]`, it only means "I looked" (but
+> doesn't imply you found it). To say you successfully found something, you must
+> add the resultative complement `到[dou2|resultative complement]`, making it
+> `搵到[wan2dou2|to successfully find]`.
 
 ---
 
@@ -205,6 +211,6 @@ explanation: The sentence-final particle 囉[lo1|sentence-final particle showing
 
 ```exercise
 question: Translate "Where is my phone? Is it next to the computer?" into Cantonese with correct annotations.
-answer: 我[ngo5|I] 個[go3|unit] 電話[din6waa2|phone] 喺[hai2|at] 邊度[bin1dou6|where] 呀[aa3|particle]？ 喺[hai2|at] 電腦[din6nou5|computer] 隔籬[gaak3lei4|next to] 呀[aa3|particle]？
-explanation: 我[ngo5|I / me] 個[go3|general measure word / individual / unit] 電話[din6waa2|telephone / phone] means "my phone"; 喺[hai2|at / in / on (locative preposition)] anchors the location; 邊度[bin1dou6|where] is used for "where"; and 隔籬[gaak3lei4|next to / beside / neighbor] indicates next to the 電腦[din6nou5|computer].
+answer: 我[ngo5|I] 部[bou6|classifier for machines and devices] 電話[din6waa2|phone] 喺[hai2|at] 邊度[bin1dou6|where] 呀[aa3|particle]？ 喺[hai2|at] 電腦[din6nou5|computer] 隔籬[gaak3lei4|next to] 呀[aa3|particle]？
+explanation: 我[ngo5|I / me] 部[bou6|classifier for machines and devices] 電話[din6waa2|telephone / phone] means "my phone"; 喺[hai2|at / in / on (locative preposition)] anchors the location; 邊度[bin1dou6|where] is used for "where"; and 隔籬[gaak3lei4|next to / beside / neighbor] indicates next to the 電腦[din6nou5|computer].
 ```

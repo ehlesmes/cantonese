@@ -66,7 +66,7 @@ Apparently, they are swimming right now!
 - Object Part: `歌[go1|song]`
 
 ```cantonese
-你[nei5|you] 聽[teng1|to listen / hear] 吓[haa2|what / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation]！ 佢[keoi5|he / she / it] 唱[coeng3|to sing] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 歌[go1|song] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+你[nei5|you] 聽[teng1|to listen / hear] 吓[haa5|verbal measure word indicating brief action / a bit]！ 佢[keoi5|he / she / it] 唱[coeng3|to sing] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 歌[go1|song] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
 ===
 Take a listen! She is singing a song!
 ```
@@ -91,7 +91,7 @@ I went jogging. (Note: Here, "jogging" is a noun phrase following "went," so no 
 ```
 
 ```cantonese
-我[ngo5|I / me] 跑[paau2|to run] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 步[bou6|step / pace] 喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]！ 聽日[ting1jat6|tomorrow] 先[sin1|first / only then] 傾[king1|to talk / chat] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+我[ngo5|I / me] 跑[paau2|to run] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 步[bou6|step / pace] 喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]！ 聽日[ting1jat6|tomorrow] 先[sin1|first / only then] 傾[king1|to talk / chat] 喇[laa3|sentence-final particle indicating a change of state or already]！
 ===
 I am jogging right now! Let's chat tomorrow instead!
 ```
@@ -182,7 +182,7 @@ Sau-han (A) and Wing-kit (B) are talking on Saturday about their weekend plans.
 ```dialog
 A: Wing-kit，你[nei5|you] 今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 去[heoi3|to go] 游水[jau4seoi2|to swim] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？
    === Wing-kit, aren't you going swimming today?
-B: 我[ngo5|I / me] 尋日[cam4jat6|yesterday] 已經[ji5ging1|already] 游[jau4|to swim] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 水[seoi2|water] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 今日[gam1jat6|today] 我[ngo5|I / me] 想[soeng2|to want to / would like to] 去[heoi3|to go] 跑步[paau2bou6|to run / jog]。 你[nei5|you] 呢[ne1|sentence-final particle for queries, 'how about?']？
+B: 我[ngo5|I / me] 尋日[cam4jat6|yesterday] 已經[ji5ging1|already] 游[jau4|to swim] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 水[seoi2|water] 喇[laa3|sentence-final particle indicating a change of state or already]！ 今日[gam1jat6|today] 我[ngo5|I / me] 想[soeng2|to want to / would like to] 去[heoi3|to go] 跑步[paau2bou6|to run / jog]。 你[nei5|you] 呢[ne1|sentence-final particle for queries, 'how about?']？
    === I already swam yesterday! Today I want to go jogging. How about you?
 A: 我[ngo5|I / me] 想[soeng2|to want to / would like to] 去[heoi3|to go] 唱歌[coeng3go1|to sing] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 你[nei5|you] 唱唔唱[coeng3 m4 coeng3|do you sing (A-not-A question form)] 歌[go1|song] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === I want to go sing. Are you singing?

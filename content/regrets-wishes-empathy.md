@@ -4,7 +4,7 @@ title: "Regrets, Wishes & Empathy"
 description: >
   Master spoken structures to express past regrets using zou2zi1 and hau6fui3,
   make warm wishes using hei1mong6 and zuk1, and express deep empathy and
-  comfort using caam2, zit6do6, sam1tung3, and fong3sam1.
+  comfort using caam2, zit3do6, sam1tung3, and fong3sam1.
 ---
 
 In this lesson, we will focus on the emotional heart of daily communication:
@@ -19,10 +19,10 @@ We will focus on four main communicative areas:
 1. **Expressing Past Regrets**:
    `早知[zou2zi1|had I known earlier / if only I knew]` and
    `後悔[hau6fui3|to regret]`.
-2. **Formulating Wishes & Hopes**: `希望[hei1mong6|to hope / wish / hope]` and
+2. **Formulating Wishes & Hopes**: `希望[hei1mong6|to hope / wish]` and
    `祝[zuk1|to wish / congratulate]`.
 3. **Spoken Empathy & Compassion**: `慘[caam2|miserable / pitiful / tragic]`,
-   `折墮[zit6do6|miserable / wretched / in a pitiful state]`,
+   `折墮[zit3do6|miserable / wretched / in a pitiful state]`,
    `心痛[sam1tung3|to feel distressed / feel for someone]`, and
    `好彩[hou2coi2|luckily / fortunately]`.
 4. **Offering Reassurance & Support**:
@@ -89,25 +89,25 @@ I truly regret it.
 
 ---
 
-## 2. Formulating Wishes & Hopes: `希望[hei1mong6|to hope / wish / hope]` & `祝[zuk1|to wish / congratulate]`
+## 2. Formulating Wishes & Hopes: `希望[hei1mong6|to hope / wish]` & `祝[zuk1|to wish / congratulate]`
 
 Cantonese distinguishes between wishing for something yourself
-(`希望[hei1mong6|to hope / wish / hope]`) and conveying warm wishes directly to
-someone else (`祝[zuk1|to wish / congratulate]`).
+(`希望[hei1mong6|to hope / wish]`) and conveying warm wishes directly to someone
+else (`祝[zuk1|to wish / congratulate]`).
 
-### 1. Personal Aspirations: `希望[hei1mong6|to hope / wish / hope]`
+### 1. Personal Aspirations: `希望[hei1mong6|to hope / wish]`
 
-Use `希望[hei1mong6|to hope / wish / hope]` as a verb to describe your personal
-goals, expectations, or positive outlooks.
+Use `希望[hei1mong6|to hope / wish]` as a verb to describe your personal goals,
+expectations, or positive outlooks.
 
 ```cantonese
-我[ngo5|I / me] 希望[hei1mong6|to hope / wish / hope] 遲啲[ci4di1|later / later on] 可以[ho2ji5|can / may / possible] 喺[hai2|at / in / on (locative preposition)] 香港[hoeng1gong2|Hong Kong] 搵[wan2|to find / look for / seek] 一[jat1|one] 份[fan6|measure word for jobs, publications, portions] 工[gung1|work / job]。
+我[ngo5|I / me] 希望[hei1mong6|to hope / wish] 遲啲[ci4di1|later / later on] 可以[ho2ji5|can / may / possible] 喺[hai2|at / in / on (locative preposition)] 香港[hoeng1gong2|Hong Kong] 搵[wan2|to find / look for / seek] 一[jat1|one] 份[fan6|measure word for jobs, publications, portions] 工[gung1|work / job]。
 ===
 I hope that later on I can find a job in Hong Kong.
 ```
 
 ```cantonese
-希望[hei1mong6|to hope / wish / hope] 你[nei5|you] 快[faai3|fast / quick / rapid] 啲[di1|a bit / some / comparative suffix] 好返[hou2faan1|to recover / get well] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+希望[hei1mong6|to hope / wish] 你[nei5|you] 快[faai3|fast / quick / rapid] 啲[di1|a bit / some / comparative suffix] 好返[hou2faan1|to recover / get well] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
 ===
 I hope you recover a bit faster.
 ```
@@ -131,7 +131,7 @@ I wish you a happy birthday!
 
 ---
 
-## 3. Spoken Empathy & Compassion: `慘[caam2|miserable / pitiful / tragic]`, `折墮[zit6do6|miserable / wretched / in a pitiful state]`, `心痛[sam1tung3|to feel distressed / feel for someone]`, & `好彩[hou2coi2|luckily / fortunately]`
+## 3. Spoken Empathy & Compassion: `慘[caam2|miserable / pitiful / tragic]`, `折墮[zit3do6|miserable / wretched / in a pitiful state]`, `心痛[sam1tung3|to feel distressed / feel for someone]`, & `好彩[hou2coi2|luckily / fortunately]`
 
 To express genuine empathy, Cantonese speakers rely on specific local
 descriptors and emotional markers:
@@ -139,10 +139,10 @@ descriptors and emotional markers:
 - `慘[caam2|miserable / pitiful / tragic]`: Pitiful, tragic, or sad. Often used
   as `真係[zan1hai6|really / truly]` `慘[caam2|miserable / pitiful / tragic]` to
   say "How tragic!" or "That's so pitiful!".
-- `折墮[zit6do6|miserable / wretched / in a pitiful state]`: A highly colloquial
+- `折墮[zit3do6|miserable / wretched / in a pitiful state]`: A highly colloquial
   and dramatic term for a wretched, miserable, or highly unfortunate state
   (sometimes used humorously or to emphasize extreme hardship).
-  > [!WARNING] `折墮[zit6do6|miserable / wretched / in a pitiful state]` is
+  > [!WARNING] `折墮[zit3do6|miserable / wretched / in a pitiful state]` is
   > highly dramatic and often self-deprecating. Use it cautiously: while you can
   > use it to complain about your own situation, using it casually to describe
   > someone else's misfortune can sound offensive or deeply insensitive.
@@ -168,10 +168,10 @@ Her company fired her, she is really so pitiful!
 He got sick, it's really pitiful.
 ```
 
-### 2. Wretched Circumstances: `折墮[zit6do6|miserable / wretched / in a pitiful state]`
+### 2. Wretched Circumstances: `折墮[zit3do6|miserable / wretched / in a pitiful state]`
 
 ```cantonese
-冇[mou5|not to have / without / there is not] 錢[cin2|money] 去[heoi3|to go] 旅行[leoi5hang4|to travel] 真係[zan1hai6|really / truly] 折墮[zit6do6|miserable / wretched / in a pitiful state] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+冇[mou5|not to have / without / there is not] 錢[cin2|money] 去[heoi3|to go] 旅行[leoi5hang4|to travel] 真係[zan1hai6|really / truly] 折墮[zit3do6|miserable / wretched / in a pitiful state] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
 ===
 Having no money to travel is really wretched, obviously!
 ```
@@ -253,9 +253,9 @@ A: 聽[teng1|to listen / hear / obey] 你[nei5|you] 講[gong2|to speak / say / t
    === Hearing you talk about the firing stuff, I also feel really distressed for you.
 B: 原本[jyun4bun2|originally / original] 我[ngo5|I / me] 都[dou1|also / both / all] 好[hou2|good / fine / very / quite] 後悔[hau6fui3|to regret] 冇[mou5|not to have / without / there is not] 做[zou6|to do / make / perform] 好[hou2|good / fine / very / quite] 呢[ni1|this] 份[fan6|measure word for jobs, publications, portions] 工[gung1|work / job]。 早知[zou2zi1|had I known earlier / if only I knew] 佢哋[keoi5dei6|they / them] 會[wui5|will / would / can / know how to / meet] 炒[caau2|to stir-fry / speculate / fire] 我[ngo5|I / me] 魷魚[jau4jyu2|squid]， 我[ngo5|I / me] 就[zau6|then / right away / immediately] 唔[m4|not / no (negative prefix)] 做[zou6|to do / make / perform] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
    === Originally I also really regretted not doing this job well. Had I known they would fire me, I wouldn't have done it!
-A: 係[hai6|to be] 呀[aa3|sentence-final particle softening statements, making questions friendly]， 冇[mou5|not to have / without / there is not] 錢[cin2|money] 真係[zan1hai6|really / truly] 好[hou2|good / fine / very / quite] 慘[caam2|miserable / pitiful / tragic]、 好[hou2|good / fine / very / quite] 折墮[zit6do6|miserable / wretched / in a pitiful state] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 既然[gei3jin4|since / given that] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 魷魚[jau4jyu2|squid]， 你[nei5|you] 就[zau6|then / right away / immediately] 放心[fong3sam1|to feel relieved / set one's mind at ease] hea[hea1|to chill / hang out / slack off / procrastinate] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 你[nei5|you] 放心[fong3sam1|to feel relieved / set one's mind at ease] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]， 我[ngo5|I / me] 會[wui5|will / would / can / know how to / meet] 安慰[on1wai3|to comfort / console] 你[nei5|you]、 支持[zi1ci4|to support] 你[nei5|you] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle]。
+A: 係[hai6|to be] 呀[aa3|sentence-final particle softening statements, making questions friendly]， 冇[mou5|not to have / without / there is not] 錢[cin2|money] 真係[zan1hai6|really / truly] 好[hou2|good / fine / very / quite] 慘[caam2|miserable / pitiful / tragic]、 好[hou2|good / fine / very / quite] 折墮[zit3do6|miserable / wretched / in a pitiful state] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 既然[gei3jin4|since / given that] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 魷魚[jau4jyu2|squid]， 你[nei5|you] 就[zau6|then / right away / immediately] 放心[fong3sam1|to feel relieved / set one's mind at ease] hea[hea1|to chill / hang out / slack off / procrastinate] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 你[nei5|you] 放心[fong3sam1|to feel relieved / set one's mind at ease] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]， 我[ngo5|I / me] 會[wui5|will / would / can / know how to / meet] 安慰[on1wai3|to comfort / console] 你[nei5|you]、 支持[zi1ci4|to support] 你[nei5|you] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle]。
    === Yes indeed, having no money is really miserable and wretched, obviously! Since you got fired, just rest assured and chill! Please set your mind at ease, I will comfort you and support you.
-B: 多謝[do1ze6|thank you (for a gift)] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 好彩[hou2coi2|luckily / fortunately] 我[ngo5|I / me] 有[jau5|to have / there is] 你[nei5|you] 呢個[ni1go3|this one] 朋友[pang4jau5|friend] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]！ 我[ngo5|I / me] 希望[hei1mong6|to hope / wish / hope] 遲啲[ci4di1|later / later on] 可以[ho2ji5|can / may / possible] 去[heoi3|to go] 旅行[leoi5hang4|to travel] 玩[waan2|to play / have fun / enjoy]。
+B: 多謝[do1ze6|thank you (for a gift)] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 好彩[hou2coi2|luckily / fortunately] 我[ngo5|I / me] 有[jau5|to have / there is] 你[nei5|you] 呢個[ni1go3|this one] 朋友[pang4jau5|friend] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]！ 我[ngo5|I / me] 希望[hei1mong6|to hope / wish] 遲啲[ci4di1|later / later on] 可以[ho2ji5|can / may / possible] 去[heoi3|to go] 旅行[leoi5hang4|to travel] 玩[waan2|to play / have fun / enjoy]。
    === Thank you! Luckily I just have you as a friend! I hope that later on I can go travel and have fun.
 A: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 祝[zuk1|to wish / congratulate] 你[nei5|you] 玩[waan2|to play / have fun / enjoy] 得[dak1|particle expressing permission, possibility, capability, or adverbial degree] 開心[hoi1sam1|happy / glad / cheerful] 啲[di1|a bit / some / comparative suffix] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
    === Sure! I wish you a happier time playing!
@@ -290,9 +290,9 @@ explanation: |
 question: |
   Which of the following adjectives is used colloquially in Cantonese to express a wretched, miserable, or pitiful state of affairs?
   A) 開心[hoi1sam1|happy / glad / cheerful]
-  B) 折墮[zit6do6|miserable / wretched / in a pitiful state]
+  B) 折墮[zit3do6|miserable / wretched / in a pitiful state]
   C) 放心[fong3sam1|to feel relieved / set one's mind at ease]
 answer: B
 explanation: |
-  `折墮[zit6do6|miserable / wretched / in a pitiful state]` is a highly colloquial Cantonese adjective expressing extreme wretchedness or a miserable state of affairs. Option A means "happy", and Option C means "to feel relieved".
+  `折墮[zit3do6|miserable / wretched / in a pitiful state]` is a highly colloquial Cantonese adjective expressing extreme wretchedness or a miserable state of affairs. Option A means "happy", and Option C means "to feel relieved".
 ```

@@ -85,7 +85,7 @@ I am at the office.
 ```
 
 ```cantonese
-佢[keoi5|he / she / it] 喺[hai2|at / in / on] 學校[hok6haau6|school] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+佢[keoi5|he / she / it] 喺[hai2|at / in / on] 學校[hok6haau6|school] 呀[aa3|sentence-final particle softening statements]。
 ===
 She is at school.
 ```
@@ -115,7 +115,7 @@ Below is a simple dialogue where A is looking for their keys and B indicates
 where they are.
 
 ```dialog
-A: 唔該[m4goi1|excuse me]，你[nei5|you] 有冇[jau5mou5|is there / do you have] 見[gin3|see] 我[ngo5|I / me] 個[go3|unit] 銀包[ngan4baau1|wallet] 呀[aa3|particle]？
+A: 唔該[m4goi1|excuse me]，你[nei5|you] 有冇[jau5mou5|is there / do you have] 見[gin3|see] 到[dou2|verb complement indicating success] 我[ngo5|I / me] 個[go3|unit] 銀包[ngan4baau1|wallet] 呀[aa3|particle]？
    === Excuse me, have you seen my wallet?
 B: 你[nei5|you] 個[go3|unit] 銀包[ngan4baau1|wallet] 喺[hai2|at / in / on] 呢度[ni1dou6|here] 呀[aa3|particle]。
    === Your wallet is here.
@@ -127,7 +127,7 @@ A: 廚房[cyu4fong2|kitchen] 喺[hai2|at / in / on] 邊度[bin1dou6|where] 呀[a
    === Where is the kitchen?
 B: 喺[hai2|at / in / on] 嗰度[go2dou6|there] 呀[aa3|particle]。
    === It is there.
-A: 搞掂[gaau2dim6|done]！ 搵[wan2|to find / look for / search] 咗[zo2|completed] 啦[laa1|particle]。 拜拜[baai1baai3|bye-bye]！
+A: 搞掂[gaau2dim6|done]！ 搵[wan2|to search] 到[dou2|verb complement indicating success] 啦[laa3|particle indicating change of state]。 拜拜[baai1baai3|bye-bye]！
    === Got it! Found them. Bye-bye!
 B: 拜拜[baai1baai3|bye-bye]！
    === Bye-bye!

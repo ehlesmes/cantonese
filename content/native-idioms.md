@@ -9,7 +9,7 @@ description: >
 
 In this chapter, we will explore some of the most widely used and colorful
 Cantonese **Native Idioms**
-(`俗語[zuk1jyu5|colloquial expression / slang / idiom]`).
+(`俗語[zuk6jyu5|colloquial expression / slang / idiom]`).
 
 Many of these idioms are structurally split-verbs, which means they follow the
 exact same grammatical rules of separation we learned in the previous chapter.
@@ -94,7 +94,7 @@ Whoa, the boss fired him already!
 ### 6. Four-Character Idioms & Color Terms
 
 Cantonese also uses `四[sei3|four]` `字[zi6|character]`
-`俗語[zuk1jyu5|idiomatic expressions]` and color-based idioms to express vivid
+`俗語[zuk6jyu5|idiomatic expressions]` and color-based idioms to express vivid
 imagery:
 
 - `人山人海[jan4saan1jan4hoi2|crowded / huge crowds of people]` (Mountains of

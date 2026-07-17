@@ -42,7 +42,7 @@ Observe a simple polite exchange:
 ```dialog
 A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 早晨[zou2san4|good morning]！
    === Hello there! Good morning!
-B: 早晨[zou2san4|good morning]！ 你[nei5|you] 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+B: 早晨[zou2san4|good morning]！ 你[nei5|you] 好[hou2|good / fine / very / quite] 嗎[maa3|question particle]？
    === Good morning! How are you?
 ```
 
@@ -106,7 +106,7 @@ Here are some common family members you can use to describe relationships:
 - `阿哥[aa3go1|older brother]`: older brother
 - `家姐[gaa1ze1|older sister]`: older sister
 - `細佬[sai3lou2|younger brother]`: younger brother
-- `阿妹[aa3mui2|younger sister]`: younger sister
+- `阿妹[aa3mui6|younger sister]`: younger sister
 
 Using the possessive particle
 `嘅[ge3|possessive particle / nominalizing particle / final assertive particle]`,
@@ -133,7 +133,7 @@ A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statemen
    === Hello there! I am David.
 B: 早晨[zou2san4|good morning]！ 我[ngo5|I] 係[hai6|to be (am/is/are) / yes] Mary。 呢個[ni1go3|this one / this] 係[hai6|to be (am/is/are) / yes] 我[ngo5|I] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 阿哥[aa3go1|older brother]。
    === Good morning! I am Mary. This is my older brother.
-A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 佢哋[keoi5dei6|they / them] 係[hai6|to be (am/is/are) / yes] 你哋[nei5dei6|you (plural)] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 佢哋[keoi5dei6|they / them] 係[hai6|to be (am/is/are) / yes] 你哋[nei5dei6|you (plural)] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend] 呀[aa4|sentence-final particle softening questions]？
    === Hello there! Are they your friends?
 B: 係[hai6|to be (am/is/are) / yes]呀[aa3|sentence-final particle softening statements, making questions friendly]，佢哋[keoi5dei6|they / them] 係[hai6|to be (am/is/are) / yes] 我哋[ngo5dei6|we / us] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend]。
    === Yes, they are our friends.

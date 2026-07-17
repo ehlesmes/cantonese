@@ -15,8 +15,8 @@ Let's dive in!
 
 ## 1. Minibus Shouting Etiquette
 
-Riding a minibus (`紅[hung4|red]` `VAN[man1|minibus (loanword)]` or
-`綠[luk6|green]` `VAN[man1|minibus (loanword)]`) is a quintessential Hong Kong
+Riding a minibus (`紅[hung4|red]` `VAN[van1|minibus (loanword)]` or
+`綠[luk6|green]` `VAN[van1|minibus (loanword)]`) is a quintessential Hong Kong
 experience. Unlike double-decker buses, minibuses do not have stop buttons or
 automated announcements. Instead, passengers must shout out to the
 `司機[si1gei1|driver]` when they want to request a stop.
@@ -51,7 +51,7 @@ A passenger (A) is trying to get to the subway station quickly and coordinates
 with the minibus driver (B).
 
 ```dialog
-A: 唔該[m4goi1|please]，我[ngo5|I / me] 趕時間[gon2si4gaan3|in a hurry / rushing for time]，請問[cing2man6|may I ask] 架[gaa3|general measure word / individual / unit / classifier for vehicles] 車[ce1|car / vehicle] 去[heoi3|to go] 地鐵站[dei6tit3zaam6|MTR station / subway station] 要[jiu3|need] 幾耐[gei2noi6|how long (time)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 唔該[m4goi1|please]，我[ngo5|I / me] 趕時間[gon2si4gaan1|in a hurry / rushing for time]，請問[cing2man6|may I ask] 架[gaa3|classifier for vehicles] 車[ce1|car / vehicle] 去[heoi3|to go] 地鐵站[dei6tit3zaam6|MTR station / subway station] 要[jiu3|need] 幾耐[gei2noi6|how long (time)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Excuse me, I am in a hurry. May I ask how long it takes for this vehicle to get to the MTR station?
 B: 前邊[cin4bin1|ahead / in front / up ahead] 塞車[sak1ce1|traffic jam / heavy traffic] 呀[aa3|sentence-final particle softening statements, making questions friendly]，大約[daai6joek3|approximately] 十[sap6|ten] 分鐘[fan1zung1|minutes] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
    === There is a traffic jam up ahead, about ten minutes.

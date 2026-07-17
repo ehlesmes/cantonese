@@ -10,7 +10,7 @@ Now that you have learned how to tell the time and express schedules, it is time
 to talk about what is happening _right now_ in the present moment. In this
 chapter, we will learn how to describe ongoing actions using the continuous
 aspect suffix, navigate verb-object splitting rules, and pick up the iconic
-local slang verb `Hea[hea1|to chill / hang out / slack off / procrastinate]` to
+local slang verb `Hea[hea3|to chill / hang out / slack off / procrastinate]` to
 talk about slacking off.
 
 ---
@@ -63,7 +63,7 @@ of a verb and a default noun object (Verb-Object pairs). Examples include:
 Let's look at how these are split in everyday speech:
 
 ```cantonese
-我[ngo5|I / me] 返[faan1|to return / go back / reverse] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 返[faan1|to return / go back] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I am working (in the process of going to/doing work).
 ```
@@ -82,14 +82,14 @@ A typhoon is raging outside right now!
 
 ---
 
-## 3. The Ultimate Slang: `Hea[hea1|to chill / hang out / slack off / procrastinate]`
+## 3. The Ultimate Slang: `Hea[hea3|to chill / hang out / slack off / procrastinate]`
 
 One of the most famous and beloved colloquial words in modern Cantonese is the
-verb `Hea[hea1|to chill / hang out / slack off / procrastinate]`. It has no
+verb `Hea[hea3|to chill / hang out / slack off / procrastinate]`. It has no
 standard Chinese character (the English letters "Hea" are universally written by
 locals in text messages).
 
-`Hea[hea1|to chill / hang out / slack off / procrastinate]` can mean:
+`Hea[hea3|to chill / hang out / slack off / procrastinate]` can mean:
 
 1. **To chill or hang out** lazily without a specific purpose.
 2. **To slack off** or procrastinate on the job or at school.
@@ -105,7 +105,7 @@ What are you doing right now?
 ```
 
 ```cantonese
-我[ngo5|I / me] Hea[hea1|to chill / hang out / slack off / procrastinate] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+我[ngo5|I / me] Hea[hea3|to chill / hang out / slack off / procrastinate] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
 ===
 I am chilling out, obviously!
 ```
@@ -120,15 +120,15 @@ room while Ka-ho is busy working.
 ```dialog
 A: 喂[wai2|hey!]，Wing-yan！ 你[nei5|you] 做[zou6|to do / make / perform] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what / what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Hey, Wing-yan! What are you doing right now?
-B: 我[ngo5|I / me] 喺[hai2|at / in / on] 房[fong2|room / bedroom] 入面[jap6min6|inside] Hea[hea1|to chill / hang out / slack off / procrastinate] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 你[nei5|you] 呢[ne1|how about]？
+B: 我[ngo5|I / me] 喺[hai2|at / in / on] 房[fong2|room / bedroom] 入面[jap6min6|inside] Hea[hea3|to chill / hang out / slack off / procrastinate] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 你[nei5|you] 呢[ne1|how about]？
    === I'm chilling out inside my room, obviously! How about you?
-A: 我[ngo5|I / me] 返[faan1|to return / go back / reverse] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]，好[hou2|very] 忙[mong4|busy] 呀[aa3|particle]！
+A: 我[ngo5|I / me] 返[faan1|to return / go back] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]，好[hou2|very] 忙[mong4|busy] 呀[aa3|particle]！
    === I'm working right now, I'm very busy!
-B: 吓[haa2|sentence-final particle expressing surprise]？ 依家[ji1gaa1|now] 幾點[gei2dim2|what time] 呀[aa3|particle]？
+B: 吓[haa2|interjection expressing surprise]？ 依家[ji1gaa1|now] 幾點[gei2dim2|what time] 呀[aa3|particle]？
    === What? What time is it now?
 A: 依家[ji1gaa1|now] 下晝[haa6zau3|afternoon / in the afternoon] 四[sei3|four] 點[dim2|o'clock / hour] 半[bun3|half] 啦[laa1|sentence-final particle]！ 我[ngo5|I / me] 仲[zung6|still / yet] 做[zou6|to do] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 嘢[je5|thing / stuff] 呀[aa3|particle]。
    === It's 4:30 in the afternoon already! I'm still doing work.
-B: 噉[gam2|then] 你[nei5|you] 慢慢[maan6maan6|slowly] 做[zou6|to do] 啦[laa1|particle]，我[ngo5|I / me] 繼續[gai3zuk6|to continue / go on] Hea[hea1|to chill / hang out / slack off / procrastinate] 啦[laa1|particle]，拜拜[baai1baai3|bye-bye]！
+B: 噉[gam2|then] 你[nei5|you] 慢慢[maan6maan6|slowly] 做[zou6|to do] 啦[laa1|particle]，我[ngo5|I / me] 繼續[gai3zuk6|to continue / go on] Hea[hea3|to chill / hang out / slack off / procrastinate] 啦[laa1|particle]，拜拜[baai1baai3|bye-bye]！
    === Well, take your time working then. I'll continue chilling, bye-bye!
 A: 拜拜[baai1baai3|bye-bye]！
    === Bye-bye!
@@ -151,17 +151,17 @@ explanation: The continuous aspect suffix `緊[gan2|verbal aspect suffix indicat
 ```exercise
 question: |
   Translate the following sentence into colloquial Cantonese: "We are slacking off/chilling out right now."
-  A) 我哋[ngo5dei6|we / us] Hea[hea1|to chill / hang out / slack off / procrastinate] 咗[zo2|completed aspect suffix] 呀[aa3|particle]。
-  B) 我哋[ngo5dei6|we / us] Hea[hea1|to chill / hang out / slack off / procrastinate] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 呀[aa3|particle]。
+  A) 我哋[ngo5dei6|we / us] Hea[hea3|to chill / hang out / slack off / procrastinate] 咗[zo2|completed aspect suffix] 呀[aa3|particle]。
+  B) 我哋[ngo5dei6|we / us] Hea[hea3|to chill / hang out / slack off / procrastinate] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 呀[aa3|particle]。
   C) 我哋[ngo5dei6|we / us] 休息[jau1sik1|to rest] 咗[zo2|completed aspect suffix] 呀[aa3|particle]。
 answer: B
-explanation: "Chilling out/slacking off right now" combines the slang verb `Hea[hea1|to chill / hang out / slack off / procrastinate]` with the continuous aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]`. Option B is correct.
+explanation: "Chilling out/slacking off right now" combines the slang verb `Hea[hea3|to chill / hang out / slack off / procrastinate]` with the continuous aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]`. Option B is correct.
 ```
 
 ```exercise
 question: |
   Correct the error in the sentence "He is working right now":
-  佢[keoi5|he / she / it] 返工[faan1gung1|to go to work / be at work] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 呀[aa3|sentence-final particle].
-answer: 佢[keoi5|he / she / it] 返[faan1|to return / go back / reverse] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
-explanation: `返工[faan1gung1|to go to work / be at work]` is a verb-object compound verb. The aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` must split the compound and be placed directly between the verb `返[faan1|to return / go back / reverse]` and the object `工[gung1|work / job]`.
+  佢[keoi5|he / she / it] 返工[faan1gung1|to go to work / be at work] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 呀[aa3|sentence-final particle]。
+answer: 佢[keoi5|he / she / it] 返[faan1|to return / go back] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+explanation: `返工[faan1gung1|to go to work / be at work]` is a verb-object compound verb. The aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` must split the compound and be placed directly between the verb `返[faan1|to return / go back]` and the object `工[gung1|work / job]`.
 ```

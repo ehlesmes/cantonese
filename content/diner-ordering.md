@@ -9,9 +9,9 @@ description: >
 
 Now that you can handle convenience store transactions and count currency, it is
 time to experience the culinary heart of Hong Kong: the iconic
-`茶餐廳[caa4caan1teng1|Hong Kong style café / diner]`.
+`茶餐廳[caa4caan1ting1|Hong Kong style café / diner]`.
 
-A `茶餐廳[caa4caan1teng1|Hong Kong style café / diner]` is a fast-paced,
+A `茶餐廳[caa4caan1ting1|Hong Kong style café / diner]` is a fast-paced,
 high-efficiency neighborhood eatery serving local comfort foods, sweet pastries,
 and unique fusion drinks. In this lesson, you will learn to order food like a
 local, specify options like hot or cold using
@@ -26,7 +26,7 @@ Let's dive in!
 
 ## 1. The Diner Lexicon: Core Drinks & Snacks
 
-To get started at a `茶餐廳[caa4caan1teng1|Hong Kong style café / diner]`, you
+To get started at a `茶餐廳[caa4caan1ting1|Hong Kong style café / diner]`, you
 must know the core staples. These items are loved by locals and represent the
 fusion food culture of Hong Kong:
 
@@ -35,7 +35,7 @@ fusion food culture of Hong Kong:
 - `咖啡[gaa3fe1|coffee (loanword)]`: Strong local-style coffee.
 - `鴛鴦[jyun1joeng1|yuanyang (drink mixing coffee and milk tea)]`: An iconic
   blend of seven parts milk tea and three parts coffee.
-- `檸茶[leng4caa4|lemon tea]`: Black tea served with fresh slices of lemon.
+- `檸茶[ning4caa4|lemon tea]`: Black tea served with fresh slices of lemon.
 - `菠蘿包[bo1lo1baau1|pineapple bun (sweet crusted bun, usually containing no pineapple)]`:
   A sweet, fluffy bun topped with a crunchy, sugary crust resembling a pineapple
   skin.
@@ -91,7 +91,7 @@ You can use `定[ding6|or (used exclusively in alternative questions)]` to
 connect complete noun phrases or full actions:
 
 ```cantonese
-你[nei5|you] 想[soeng2|to want to / would like to / think] 飲[jam2|to drink] 咖啡[gaa3fe1|coffee (loanword)] 定[ding6|or (used exclusively in alternative questions)] 檸茶[leng4caa4|lemon tea] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+你[nei5|you] 想[soeng2|to want to / would like to / think] 飲[jam2|to drink] 咖啡[gaa3fe1|coffee (loanword)] 定[ding6|or (used exclusively in alternative questions)] 檸茶[ning4caa4|lemon tea] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 ===
 Do you want to drink coffee or lemon tea?
 ```
@@ -140,7 +140,7 @@ Let's look at full ordering examples combining quantities, temperatures, and
 foods:
 
 ```cantonese
-我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 一[jat1|one] 杯[bui1|cup / glass / mug (classifier for drinks)] 凍[dung3|cold / iced] 檸茶[leng4caa4|lemon tea] 同埋[tung4maai4|and / with / together with] 兩[loeng5|two / pair (used with classifiers)] 個[go3|general measure word / individual / unit] 蛋撻[daan6taat1|egg tart] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 一[jat1|one] 杯[bui1|cup / glass / mug (classifier for drinks)] 凍[dung3|cold / iced] 檸茶[ning4caa4|lemon tea] 同埋[tung4maai4|and / with / together with] 兩[loeng5|two / pair (used with classifiers)] 個[go3|general measure word / individual / unit] 蛋撻[daan6taat1|egg tart] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I would like to have a glass of iced lemon tea and two egg tarts.
 ```
@@ -174,7 +174,7 @@ say "thank you," and their usage depends entirely on the situation.
 Observe how they are used at the table:
 
 ```cantonese
-唔該[m4goi1|excuse me / please / thank you (for service or help)]，我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 埋單[maai5daan1|to pay the bill] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+唔該[m4goi1|excuse me / please / thank you (for service or help)]，我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 埋單[maai4daan1|to pay the bill] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 Excuse me, I would like to pay the bill.
 ```
@@ -216,7 +216,7 @@ A: 我[ngo5|I] 要[jiu3|to want] 凍[dung3|cold] 嘅[ge3|particle]。 唔該[m4g
    === I want the cold one. Thank you!
 B: 好[hou2|good]，一[jat1|one] 個[go3|unit] 菠蘿包[bo1lo1baau1|pineapple bun]，一[jat1|one] 杯[bui1|cup] 凍[dung3|cold] 奶茶[naai5caa4|milk tea]。
    === Okay, one pineapple bun, one cup of cold milk tea.
-A: 唔該[m4goi1|excuse me]，我[ngo5|I] 想[soeng2|to want to] 埋單[maai5daan1|to pay the bill] 啦[laa1|particle]。 幾多[gei2do1|how much] 錢[cin2|money] 呀[aa3|particle]？
+A: 唔該[m4goi1|excuse me]，我[ngo5|I] 想[soeng2|to want to] 埋單[maai4daan1|to pay the bill] 啦[laa1|particle]。 幾多[gei2do1|how much] 錢[cin2|money] 呀[aa3|particle]？
    === Excuse me, I want to pay the bill. How much is it?
 B: 三十[saam1sap6|thirty] 蚊[man1|dollar] 啦[laa1|particle]，唔該[m4goi1|excuse me]。
    === It is thirty dollars, thank you.

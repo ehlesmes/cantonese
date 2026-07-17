@@ -20,7 +20,7 @@ Let's learn some useful vocabulary for describing people and what they wear:
 - `靚仔[leng3zai2|handsome boy / handsome]` — handsome
 - `靚女[leng3neoi5|pretty girl / beautiful]` — pretty / beautiful
 - `高[gou1|tall / high]` — tall
-- `矮[ngai2|short (in height)]` — short (in height)
+- `矮[ai2|short (in height)]` — short (in height)
 - `戴[daai3|to wear (accessories like glasses, hats, watches)]`
   `眼鏡[ngaan5geng2|glasses]` — wearing glasses
 - `衫[saam1|clothes / clothing / shirt]` — clothes / shirt

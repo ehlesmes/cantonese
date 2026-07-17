@@ -2,10 +2,10 @@
   {
     "character": "呀",
     "jyutping": "aa3",
-    "translation": "particle / sentence-final particle softening statements, making questions friendly / sentence-final particle / particle softening statements, making questions friendly",
+    "translation": "particle / sentence-final particle softening statements, making questions friendly / sentence-final particle softening statements / sentence-final particle / particle softening statements, making questions friendly",
     "hash": "03fe6b38e7fc21ba",
     "firstIntroducedIn": "pronunciation-vowels",
-    "occurrences": 450
+    "occurrences": 446
   },
   {
     "character": "阿",
@@ -41,11 +41,19 @@
   },
   {
     "character": "阿妹",
-    "jyutping": "aa3mui2",
+    "jyutping": "aa3mui6",
     "translation": "younger sister",
     "hash": "b9cade467ab934f8",
     "firstIntroducedIn": "greetings",
     "occurrences": 1
+  },
+  {
+    "character": "呀",
+    "jyutping": "aa4",
+    "translation": "sentence-final particle softening questions / sentence-final particle for questions / particle",
+    "hash": "03fe6b38e7fc21ba",
+    "firstIntroducedIn": "greetings",
+    "occurrences": 4
   },
   {
     "character": "哎呀",
@@ -53,6 +61,14 @@
     "translation": "interjection of surprise or annoyance",
     "hash": "8932f78df5376aaf",
     "firstIntroducedIn": "daily-schedules",
+    "occurrences": 2
+  },
+  {
+    "character": "矮",
+    "jyutping": "aai2",
+    "translation": "short (in height)",
+    "hash": "6e8ab5cc6e7855ab",
+    "firstIntroducedIn": "comparative-grammar",
     "occurrences": 2
   },
   {
@@ -80,6 +96,14 @@
     "occurrences": 3
   },
   {
+    "character": "晏晝",
+    "jyutping": "aan3zau3",
+    "translation": "noon / afternoon",
+    "hash": "252b3bafb1a2729e",
+    "firstIntroducedIn": "daily-schedules",
+    "occurrences": 1
+  },
+  {
     "character": "IG",
     "jyutping": "ai1zi1",
     "translation": "Instagram / Instagram (slang)",
@@ -88,12 +112,12 @@
     "occurrences": 5
   },
   {
-    "character": "暗戀",
-    "jyutping": "am3lyun2",
-    "translation": "to crush on / love secretly",
-    "hash": "2c96f9e005c08252",
-    "firstIntroducedIn": "flirting-slang",
-    "occurrences": 4
+    "character": "矮",
+    "jyutping": "ai2",
+    "translation": "short (in height)",
+    "hash": "6e8ab5cc6e7855ab",
+    "firstIntroducedIn": "physical-descriptions",
+    "occurrences": 1
   },
   {
     "character": "嘔",
@@ -137,7 +161,7 @@
   },
   {
     "character": "百分之十",
-    "jyutping": "baak3fan6zi1sap6",
+    "jyutping": "baak3fan1zi1sap6",
     "translation": "ten percent",
     "hash": "30c4a7f019ba207b",
     "firstIntroducedIn": "smart-home",
@@ -146,7 +170,7 @@
   {
     "character": "白",
     "jyutping": "baak6",
-    "translation": "love / clearly",
+    "translation": "clear / explain / clearly",
     "hash": "3366645622a78090",
     "firstIntroducedIn": "relationship-codes",
     "occurrences": 3
@@ -232,12 +256,20 @@
     "occurrences": 43
   },
   {
+    "character": "畀人",
+    "jyutping": "bei2jan4",
+    "translation": "by someone (passive marker)",
+    "hash": "42cf770a13063f27",
+    "firstIntroducedIn": "narrative-cohesion",
+    "occurrences": 1
+  },
+  {
     "character": "病",
     "jyutping": "beng6",
-    "translation": "sick / illness / to be sick / disease",
+    "translation": "sick / illness",
     "hash": "bd0fd6c08f85085f",
     "firstIntroducedIn": "regrets-wishes-empathy",
-    "occurrences": 2
+    "occurrences": 1
   },
   {
     "character": "病假",
@@ -288,6 +320,14 @@
     "occurrences": 1
   },
   {
+    "character": "病",
+    "jyutping": "bing6",
+    "translation": "to be sick / illness / disease",
+    "hash": "bd0fd6c08f85085f",
+    "firstIntroducedIn": "sickness-symptoms",
+    "occurrences": 1
+  },
+  {
     "character": "表",
     "jyutping": "biu2",
     "translation": "to confess / to show",
@@ -309,7 +349,15 @@
     "translation": "pineapple bun (sweet crusted bun, usually containing no pineapple) / pineapple bun",
     "hash": "5b1649848440dae3",
     "firstIntroducedIn": "diner-ordering",
-    "occurrences": 14
+    "occurrences": 12
+  },
+  {
+    "character": "菠蘿包",
+    "jyutping": "bo1lo4baau1",
+    "translation": "pineapple bun",
+    "hash": "5b1649848440dae3",
+    "firstIntroducedIn": "time-telling",
+    "occurrences": 2
   },
   {
     "character": "幫",
@@ -346,10 +394,10 @@
   {
     "character": "部",
     "jyutping": "bou6",
-    "translation": "measure word for machines / phones",
+    "translation": "classifier for machines and devices / measure word for machines / phones",
     "hash": "1ecd10d4a775e7b9",
-    "firstIntroducedIn": "passives-focus-indirect",
-    "occurrences": 2
+    "firstIntroducedIn": "directions-spatial",
+    "occurrences": 5
   },
   {
     "character": "杯",
@@ -412,8 +460,16 @@
     "jyutping": "caa4caan1teng1",
     "translation": "Hong Kong style café / diner / Hong Kong style cafe",
     "hash": "a7a92e70681e5417",
+    "firstIntroducedIn": "dining-slang",
+    "occurrences": 8
+  },
+  {
+    "character": "茶餐廳",
+    "jyutping": "caa4caan1ting1",
+    "translation": "Hong Kong style café / diner",
+    "hash": "a7a92e70681e5417",
     "firstIntroducedIn": "diner-ordering",
-    "occurrences": 11
+    "occurrences": 3
   },
   {
     "character": "茶走",
@@ -461,7 +517,15 @@
     "translation": "to get fired / lay off / fire someone",
     "hash": "4aa920008190ec31",
     "firstIntroducedIn": "native-idioms",
-    "occurrences": 14
+    "occurrences": 12
+  },
+  {
+    "character": "炒咗魷魚",
+    "jyutping": "caau2zo2jau4jyu2",
+    "translation": "to get fired",
+    "hash": "41c4a6ada8e7b2a0",
+    "firstIntroducedIn": "workplace-slang",
+    "occurrences": 2
   },
   {
     "character": "尋日",
@@ -644,8 +708,16 @@
     "jyutping": "cin2",
     "translation": "money",
     "hash": "2f7253a67200d0fc",
+    "firstIntroducedIn": "diner-ordering",
+    "occurrences": 8
+  },
+  {
+    "character": "錢",
+    "jyutping": "cin4",
+    "translation": "money",
+    "hash": "2f7253a67200d0fc",
     "firstIntroducedIn": "convenience-store",
-    "occurrences": 29
+    "occurrences": 21
   },
   {
     "character": "前邊",
@@ -792,14 +864,6 @@
     "occurrences": 4
   },
   {
-    "character": "傳",
-    "jyutping": "cyun4",
-    "translation": "to send / transmit / pass on",
-    "hash": "0a9e67d76eb750ed",
-    "firstIntroducedIn": "smart-living",
-    "occurrences": 2
-  },
-  {
     "character": "全部",
     "jyutping": "cyun4bou6",
     "translation": "all / entirely",
@@ -832,14 +896,6 @@
     "occurrences": 1
   },
   {
-    "character": "打麻雀",
-    "jyutping": "daa2 maa4zoek3",
-    "translation": "to play Mahjong",
-    "hash": "9736d19a5fec5cf4",
-    "firstIntroducedIn": "leisure-hobbies",
-    "occurrences": 2
-  },
-  {
     "character": "打折",
     "jyutping": "daa2 zit3",
     "translation": "to give a discount",
@@ -869,7 +925,23 @@
     "translation": "to check-in / take photos at trendy spots / check-in",
     "hash": "317a0db94b5b8216",
     "firstIntroducedIn": "foodie-slang",
-    "occurrences": 8
+    "occurrences": 4
+  },
+  {
+    "character": "打卡",
+    "jyutping": "daa2kaat1",
+    "translation": "to check-in / take photos at trendy spots",
+    "hash": "317a0db94b5b8216",
+    "firstIntroducedIn": "leisure-hobbies",
+    "occurrences": 4
+  },
+  {
+    "character": "打麻雀",
+    "jyutping": "daa2maa4zoek3",
+    "translation": "to play Mahjong",
+    "hash": "9736d19a5fec5cf4",
+    "firstIntroducedIn": "leisure-hobbies",
+    "occurrences": 2
   },
   {
     "character": "打算",
@@ -981,7 +1053,15 @@
     "translation": "egg tart",
     "hash": "5007ebd5123b18d5",
     "firstIntroducedIn": "diner-ordering",
-    "occurrences": 15
+    "occurrences": 12
+  },
+  {
+    "character": "蛋撻",
+    "jyutping": "daan6taat3",
+    "translation": "egg tart",
+    "hash": "5007ebd5123b18d5",
+    "firstIntroducedIn": "dining-slang",
+    "occurrences": 3
   },
   {
     "character": "搭",
@@ -1026,7 +1106,7 @@
   {
     "character": "得",
     "jyutping": "dak1",
-    "translation": "particle expressing permission, possibility, capability, or adverbial degree / particle expressing permission / possibility / ready to go / able to go / can / capability / okay / permissible",
+    "translation": "particle expressing permission, possibility, capability, or adverbial degree / particle expressing permission / possibility / ready to go / able to go / okay / fine / acceptable / can / capability / permissible",
     "hash": "71b1ed11149d6a5c",
     "firstIntroducedIn": "modals-ability",
     "occurrences": 36
@@ -1126,14 +1206,6 @@
     "hash": "e48ae3a0e0eaf83a",
     "firstIntroducedIn": "directions-spatial",
     "occurrences": 11
-  },
-  {
-    "character": "頂",
-    "jyutping": "deng2",
-    "translation": "measure word for hats",
-    "hash": "094a14694a144024",
-    "firstIntroducedIn": "shopping-classifiers",
-    "occurrences": 4
   },
   {
     "character": "對",
@@ -1256,6 +1328,14 @@
     "occurrences": 4
   },
   {
+    "character": "頂",
+    "jyutping": "ding2",
+    "translation": "measure word for hats",
+    "hash": "094a14694a144024",
+    "firstIntroducedIn": "shopping-classifiers",
+    "occurrences": 4
+  },
+  {
     "character": "頂呱呱",
     "jyutping": "ding2gwaa1gwaa1",
     "translation": "top-notch",
@@ -1317,7 +1397,7 @@
     "translation": "thank you / thank you (for a gift, compliment, or hospitality) / thank you (for a gift)",
     "hash": "e3e638f07e45f592",
     "firstIntroducedIn": "shopping-slang",
-    "occurrences": 16
+    "occurrences": 15
   },
   {
     "character": "都",
@@ -1330,10 +1410,10 @@
   {
     "character": "到",
     "jyutping": "dou2",
-    "translation": "can manage to / successfully do / resultative complement indicating success",
+    "translation": "verb complement indicating success / resultative complement indicating success / resultative complement / can manage to / successfully do",
     "hash": "b56f36b529dbcd62",
-    "firstIntroducedIn": "modals-ability",
-    "occurrences": 5
+    "firstIntroducedIn": "existential-presence",
+    "occurrences": 10
   },
   {
     "character": "到",
@@ -1416,12 +1496,20 @@
     "occurrences": 3
   },
   {
+    "character": "斷",
+    "jyutping": "dyun6",
+    "translation": "to snap/break",
+    "hash": "6ea3316917588819",
+    "firstIntroducedIn": "bar-slang",
+    "occurrences": 1
+  },
+  {
     "character": "斷片",
     "jyutping": "dyun6pin2",
     "translation": "to blackout / memory lapse from drinking",
     "hash": "c2c1a1532d49d875",
     "firstIntroducedIn": "bar-slang",
-    "occurrences": 5
+    "occurrences": 4
   },
   {
     "character": "FB",
@@ -1464,14 +1552,6 @@
     "occurrences": 4
   },
   {
-    "character": "WhatsApp",
-    "jyutping": "ep1si1ep1",
-    "translation": "WhatsApp / to WhatsApp someone",
-    "hash": "6a40edf1fc87a29f",
-    "firstIntroducedIn": "smart-living",
-    "occurrences": 4
-  },
-  {
     "character": "花生",
     "jyutping": "faa1sang1",
     "translation": "peanut",
@@ -1498,18 +1578,10 @@
   {
     "character": "返",
     "jyutping": "faan1",
-    "translation": "to return / go back / reverse",
+    "translation": "to return / go back / reverse / to go to / back / again",
     "hash": "954154be93628367",
     "firstIntroducedIn": "continuous-action",
-    "occurrences": 9
-  },
-  {
-    "character": "返唔返",
-    "jyutping": "faan1 m4 faan1",
-    "translation": "to return or not (A-not-A question form)",
-    "hash": "61cdf411685d071d",
-    "firstIntroducedIn": "medical-slang",
-    "occurrences": 1
+    "occurrences": 10
   },
   {
     "character": "返工",
@@ -1517,7 +1589,15 @@
     "translation": "to go to work / be at work / go to work / at work",
     "hash": "895e1317401fbc4d",
     "firstIntroducedIn": "daily-schedules",
-    "occurrences": 28
+    "occurrences": 27
+  },
+  {
+    "character": "返唔返",
+    "jyutping": "faan1m4faan1",
+    "translation": "to return or not (A-not-A question form)",
+    "hash": "61cdf411685d071d",
+    "firstIntroducedIn": "medical-slang",
+    "occurrences": 1
   },
   {
     "character": "反而",
@@ -1558,14 +1638,6 @@
     "hash": "57cd0e78c7f93b31",
     "firstIntroducedIn": "sickness-symptoms",
     "occurrences": 6
-  },
-  {
-    "character": "發送",
-    "jyutping": "faat3sung3",
-    "translation": "to send / transmit",
-    "hash": "8fe35c364ec1a38b",
-    "firstIntroducedIn": "smart-living",
-    "occurrences": 1
   },
   {
     "character": "分",
@@ -1773,7 +1845,7 @@
     "translation": "to get a raise",
     "hash": "69d8ddfcaa978d29",
     "firstIntroducedIn": "workplace-slang",
-    "occurrences": 6
+    "occurrences": 5
   },
   {
     "character": "加拿大",
@@ -1798,6 +1870,14 @@
     "hash": "eb6476721a76ac38",
     "firstIntroducedIn": "greetings",
     "occurrences": 2
+  },
+  {
+    "character": "加咗人工",
+    "jyutping": "gaa1zo2jan4gung1",
+    "translation": "got a raise",
+    "hash": "f9417c38bee6ed5c",
+    "firstIntroducedIn": "workplace-slang",
+    "occurrences": 1
   },
   {
     "character": "假",
@@ -1826,7 +1906,7 @@
   {
     "character": "架",
     "jyutping": "gaa3",
-    "translation": "general measure word / individual / unit / classifier for vehicles",
+    "translation": "classifier for vehicles",
     "hash": "a4e3967302ebc751",
     "firstIntroducedIn": "minibus-etiquette",
     "occurrences": 1
@@ -1861,7 +1941,7 @@
     "translation": "street",
     "hash": "261c23b558433a27",
     "firstIntroducedIn": "pronunciation-vowels",
-    "occurrences": 8
+    "occurrences": 9
   },
   {
     "character": "介紹",
@@ -1944,16 +2024,24 @@
     "occurrences": 5
   },
   {
+    "character": "咁",
+    "jyutping": "gam2",
+    "translation": "like this",
+    "hash": "665466e7335ff16d",
+    "firstIntroducedIn": "rhetorical-questions",
+    "occurrences": 2
+  },
+  {
     "character": "噉",
     "jyutping": "gam2",
     "translation": "then / in that case / so / like this",
     "hash": "5a2c27b12c9f01b6",
     "firstIntroducedIn": "existential-presence",
-    "occurrences": 32
+    "occurrences": 31
   },
   {
     "character": "咁樣",
-    "jyutping": "gam2joeng2",
+    "jyutping": "gam2joeng6",
     "translation": "like this / in this way / this way",
     "hash": "a42ebcf5e136a2dc",
     "firstIntroducedIn": "convenience-store",
@@ -1978,10 +2066,10 @@
   {
     "character": "咁",
     "jyutping": "gam3",
-    "translation": "so / such / to this degree / like this / then",
+    "translation": "so / such / to this degree / then / that / like this",
     "hash": "665466e7335ff16d",
     "firstIntroducedIn": "comparative-grammar",
-    "occurrences": 21
+    "occurrences": 20
   },
   {
     "character": "跟住",
@@ -2025,7 +2113,7 @@
   },
   {
     "character": "九個字",
-    "jyutping": "gau2 go3 zi6",
+    "jyutping": "gau2go3zi6",
     "translation": "45 minutes / three quarters",
     "hash": "bf7a72886fa99c5e",
     "firstIntroducedIn": "time-telling",
@@ -2041,11 +2129,19 @@
   },
   {
     "character": "嘅",
+    "jyutping": "ge2",
+    "translation": "sentence-final particle expressing doubt, curiosity, or surprise",
+    "hash": "6ddec4a1f3da9adc",
+    "firstIntroducedIn": "narrative-cohesion",
+    "occurrences": 1
+  },
+  {
+    "character": "嘅",
     "jyutping": "ge3",
     "translation": "particle / possessive particle / nominalizing particle / final assertive particle / modifier / possessive or linking particle / sentence-final particle asserting a fact",
     "hash": "6ddec4a1f3da9adc",
     "firstIntroducedIn": "pronunciation-vowels",
-    "occurrences": 86
+    "occurrences": 85
   },
   {
     "character": "基金",
@@ -2068,8 +2164,16 @@
     "jyutping": "gei2 cin2",
     "translation": "how much money",
     "hash": "da6c9c56360587d8",
+    "firstIntroducedIn": "shopping-classifiers",
+    "occurrences": 2
+  },
+  {
+    "character": "幾錢",
+    "jyutping": "gei2 cin4",
+    "translation": "how much money",
+    "hash": "da6c9c56360587d8",
     "firstIntroducedIn": "market-bargaining",
-    "occurrences": 5
+    "occurrences": 3
   },
   {
     "character": "幾晏",
@@ -2213,7 +2317,7 @@
     "translation": "general measure word / individual / unit / measure word for general items / measure word / general classifier / classifier",
     "hash": "1fd3686a0aec5234",
     "firstIntroducedIn": "convenience-store",
-    "occurrences": 76
+    "occurrences": 72
   },
   {
     "character": "覺得",
@@ -2225,11 +2329,19 @@
   },
   {
     "character": "趕時間",
+    "jyutping": "gon2si4gaan1",
+    "translation": "in a hurry / rushing for time",
+    "hash": "38550cdb539e9e6f",
+    "firstIntroducedIn": "minibus-etiquette",
+    "occurrences": 1
+  },
+  {
+    "character": "趕時間",
     "jyutping": "gon2si4gaan3",
     "translation": "in a hurry / rushing for time",
     "hash": "38550cdb539e9e6f",
     "firstIntroducedIn": "street-landmarks",
-    "occurrences": 2
+    "occurrences": 1
   },
   {
     "character": "講",
@@ -2309,7 +2421,7 @@
     "translation": "work / job",
     "hash": "bb6a90660bf98c4d",
     "firstIntroducedIn": "continuous-action",
-    "occurrences": 8
+    "occurrences": 9
   },
   {
     "character": "供樓",
@@ -2370,7 +2482,7 @@
   {
     "character": "過",
     "jyutping": "gwo3",
-    "translation": "experience / to pass / cross / verbal aspect suffix indicating past experience / 'have done before' / past experience / to pass or cross",
+    "translation": "experience / to pass / cross / verbal aspect suffix indicating past experience / 'have done before' / than / past experience / to pass or cross",
     "hash": "6cb8e149007e4b27",
     "firstIntroducedIn": "directions-spatial",
     "occurrences": 38
@@ -2386,10 +2498,18 @@
   {
     "character": "過馬路",
     "jyutping": "gwo3maa5lou6",
-    "translation": "to cross the road / cross the road",
+    "translation": "cross the road",
     "hash": "60211c9d18bd198d",
+    "firstIntroducedIn": "street-landmarks",
+    "occurrences": 1
+  },
+  {
+    "character": "過十字路口",
+    "jyutping": "gwo3sap6zi6lou6hau2",
+    "translation": "to cross the intersection / cross the intersection",
+    "hash": "dfb1969fdb200d6b",
     "firstIntroducedIn": "taxi-directions",
-    "occurrences": 5
+    "occurrences": 4
   },
   {
     "character": "廣東話",
@@ -2397,7 +2517,15 @@
     "translation": "Cantonese language",
     "hash": "0d87fe3a0d124758",
     "firstIntroducedIn": "identity-negation",
-    "occurrences": 9
+    "occurrences": 8
+  },
+  {
+    "character": "廣東話",
+    "jyutping": "gwong2dung1waa6",
+    "translation": "Cantonese language",
+    "hash": "0d87fe3a0d124758",
+    "firstIntroducedIn": "past-experience",
+    "occurrences": 1
   },
   {
     "character": "哈",
@@ -2418,18 +2546,18 @@
   {
     "character": "吓",
     "jyutping": "haa2",
-    "translation": "what / sentence-final particle expressing surprise / sentence-final particle or interjection expressing doubt, surprise, or asking for confirmation / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
+    "translation": "what / interjection expressing surprise / sentence-final particle or interjection expressing doubt, surprise, or asking for confirmation / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
     "hash": "deb370778121caeb",
     "firstIntroducedIn": "pronunciation-vowels",
-    "occurrences": 17
+    "occurrences": 16
   },
   {
     "character": "吓",
     "jyutping": "haa5",
-    "translation": "verbal suffix indicating a brief or casual action / briefly / verbal suffix indicating a brief action or attempt",
+    "translation": "verbal suffix indicating a brief or casual action / briefly / verbal suffix indicating a brief action or attempt / verbal measure word indicating brief action / a bit",
     "hash": "deb370778121caeb",
     "firstIntroducedIn": "past-experience",
-    "occurrences": 10
+    "occurrences": 11
   },
   {
     "character": "下場",
@@ -2481,7 +2609,7 @@
   },
   {
     "character": "客廳",
-    "jyutping": "haak3ting1",
+    "jyutping": "haak3teng1",
     "translation": "living room / parlor",
     "hash": "04dcbe7fd7efb63c",
     "firstIntroducedIn": "neighborhood-slang",
@@ -2502,6 +2630,14 @@
     "hash": "693878e585544c37",
     "firstIntroducedIn": "banking-savings",
     "occurrences": 5
+  },
+  {
+    "character": "行",
+    "jyutping": "haang4",
+    "translation": "to walk",
+    "hash": "4cc7b00050cb1c21",
+    "firstIntroducedIn": "street-landmarks",
+    "occurrences": 1
   },
   {
     "character": "行到",
@@ -2573,7 +2709,7 @@
     "translation": "is it or not / is it or not? / is that right? (A-not-A question form)",
     "hash": "3703f811798ebc1a",
     "firstIntroducedIn": "identity-negation",
-    "occurrences": 8
+    "occurrences": 6
   },
   {
     "character": "係呀",
@@ -2590,6 +2726,14 @@
     "hash": "6332006ab57fb2c4",
     "firstIntroducedIn": "sickness-symptoms",
     "occurrences": 6
+  },
+  {
+    "character": "係唔係",
+    "jyutping": "hai6m4hai6",
+    "translation": "is it or not? / is that right? (A-not-A question form)",
+    "hash": "3703f811798ebc1a",
+    "firstIntroducedIn": "bar-slang",
+    "occurrences": 2
   },
   {
     "character": "係咪",
@@ -2636,8 +2780,8 @@
     "jyutping": "hang4",
     "translation": "to walk / go / run (a machine)",
     "hash": "4cc7b00050cb1c21",
-    "firstIntroducedIn": "street-landmarks",
-    "occurrences": 5
+    "firstIntroducedIn": "modals-ability",
+    "occurrences": 4
   },
   {
     "character": "合約",
@@ -2684,8 +2828,16 @@
     "jyutping": "hea1",
     "translation": "to chill / hang out / slack off / procrastinate",
     "hash": "f8f7251f86132005",
+    "firstIntroducedIn": "narrative-cohesion",
+    "occurrences": 8
+  },
+  {
+    "character": "Hea",
+    "jyutping": "hea3",
+    "translation": "to chill / hang out / slack off / procrastinate",
+    "hash": "f8f7251f86132005",
     "firstIntroducedIn": "continuous-action",
-    "occurrences": 18
+    "occurrences": 10
   },
   {
     "character": "希望",
@@ -2704,20 +2856,20 @@
     "occurrences": 87
   },
   {
-    "character": "去唔去",
-    "jyutping": "heoi3 m4 heoi3",
-    "translation": "go or not",
-    "hash": "0682ea67e23c2af3",
-    "firstIntroducedIn": "relationship-codes",
-    "occurrences": 1
-  },
-  {
     "character": "去街",
     "jyutping": "heoi3gaai1",
     "translation": "go out / go on a date",
     "hash": "f4d590acad85ebb7",
     "firstIntroducedIn": "relationship-codes",
-    "occurrences": 3
+    "occurrences": 2
+  },
+  {
+    "character": "去唔去",
+    "jyutping": "heoi3m4heoi3",
+    "translation": "go or not",
+    "hash": "0682ea67e23c2af3",
+    "firstIntroducedIn": "relationship-codes",
+    "occurrences": 1
   },
   {
     "character": "可以",
@@ -2770,7 +2922,7 @@
   {
     "character": "開",
     "jyutping": "hoi1",
-    "translation": "to write (a prescription) / prescribe / open / start",
+    "translation": "to write (a prescription) / prescribe / open / start / to open / turn on",
     "hash": "320d1ab4f80f5960",
     "firstIntroducedIn": "clinic-visit",
     "occurrences": 7
@@ -2836,8 +2988,8 @@
     "jyutping": "hou2 m4 hou2",
     "translation": "is that good",
     "hash": "48de2c04d0167466",
-    "firstIntroducedIn": "daily-schedules",
-    "occurrences": 2
+    "firstIntroducedIn": "smart-living",
+    "occurrences": 1
   },
   {
     "character": "好呀",
@@ -2880,10 +3032,10 @@
     "occurrences": 2
   },
   {
-    "character": "好好",
-    "jyutping": "hou2hou2",
+    "character": "好好哋",
+    "jyutping": "hou2hou2dei2",
     "translation": "well / properly",
-    "hash": "e17ff9efa32e2234",
+    "hash": "274f5bb2684384ef",
     "firstIntroducedIn": "medical-slang",
     "occurrences": 1
   },
@@ -2893,6 +3045,14 @@
     "translation": "delicious (for drinks)",
     "hash": "0ca8e3d622156f69",
     "firstIntroducedIn": "dining-slang",
+    "occurrences": 1
+  },
+  {
+    "character": "好唔好",
+    "jyutping": "hou2m4hou2",
+    "translation": "is that good",
+    "hash": "48de2c04d0167466",
+    "firstIntroducedIn": "daily-schedules",
     "occurrences": 1
   },
   {
@@ -3226,10 +3386,10 @@
   {
     "character": "嘢",
     "jyutping": "je5",
-    "translation": "thing / stuff / matter",
+    "translation": "thing / stuff / matter / things / food",
     "hash": "7d9002c80604d193",
     "firstIntroducedIn": "continuous-action",
-    "occurrences": 9
+    "occurrences": 10
   },
   {
     "character": "野餐",
@@ -3253,7 +3413,7 @@
     "translation": "food / snacks / things to eat",
     "hash": "fc4cbc08507c6540",
     "firstIntroducedIn": "dining-slang",
-    "occurrences": 10
+    "occurrences": 9
   },
   {
     "character": "夜晚",
@@ -3353,11 +3513,19 @@
   },
   {
     "character": "嚴重",
-    "jyutping": "jim4zung6",
+    "jyutping": "jim4cung5",
     "translation": "serious / severe / grave",
     "hash": "f421b698eb0588a7",
     "firstIntroducedIn": "sickness-symptoms",
-    "occurrences": 3
+    "occurrences": 1
+  },
+  {
+    "character": "嚴重",
+    "jyutping": "jim4zung6",
+    "translation": "serious / severe / grave",
+    "hash": "f421b698eb0588a7",
+    "firstIntroducedIn": "clinic-visit",
+    "occurrences": 2
   },
   {
     "character": "然後",
@@ -3396,8 +3564,16 @@
     "jyutping": "jing1man2",
     "translation": "English language",
     "hash": "348ea84c60466c77",
+    "firstIntroducedIn": "comparative-grammar",
+    "occurrences": 1
+  },
+  {
+    "character": "英文",
+    "jyutping": "jing1man4",
+    "translation": "English language",
+    "hash": "348ea84c60466c77",
     "firstIntroducedIn": "identity-negation",
-    "occurrences": 8
+    "occurrences": 7
   },
   {
     "character": "影",
@@ -3669,15 +3845,23 @@
     "translation": "particle / sentence-final particle suggesting, requesting, or encouraging action / sentence-final particle / particle suggesting, requesting, or encouraging action",
     "hash": "0f8dc412bb3bb862",
     "firstIntroducedIn": "pronunciation-vowels",
-    "occurrences": 161
+    "occurrences": 143
+  },
+  {
+    "character": "啦",
+    "jyutping": "laa3",
+    "translation": "particle indicating completed action or change of state / sentence-final particle indicating completed action or change of state / particle indicating change of state / particle",
+    "hash": "0f8dc412bb3bb862",
+    "firstIntroducedIn": "dining-slang",
+    "occurrences": 8
   },
   {
     "character": "喇",
     "jyutping": "laa3",
-    "translation": "sentence-final particle indicating a change of state or already / SFP",
+    "translation": "sentence-final particle indicating a change of state or already / particle / SFP / sentence-final particle for changes of state",
     "hash": "dd97a52ee13a5e39",
     "firstIntroducedIn": "street-landmarks",
-    "occurrences": 30
+    "occurrences": 39
   },
   {
     "character": "喇喎",
@@ -3778,7 +3962,7 @@
   {
     "character": "靚",
     "jyutping": "leng3",
-    "translation": "beautiful / high quality / pretty / handsome / good-looking",
+    "translation": "beautiful / high quality / pretty / handsome / good-looking / nice",
     "hash": "168a014bf2316380",
     "firstIntroducedIn": "dining-slang",
     "occurrences": 14
@@ -3800,14 +3984,6 @@
     "occurrences": 13
   },
   {
-    "character": "檸茶",
-    "jyutping": "leng4caa4",
-    "translation": "lemon tea",
-    "hash": "0abcfdbc640f94d3",
-    "firstIntroducedIn": "diner-ordering",
-    "occurrences": 3
-  },
-  {
     "character": "旅行",
     "jyutping": "leoi5hang4",
     "translation": "to travel",
@@ -3817,7 +3993,7 @@
   },
   {
     "character": "連",
-    "jyutping": "lin5",
+    "jyutping": "lin4",
     "translation": "to connect / link",
     "hash": "6c618abc0b6c9ec3",
     "firstIntroducedIn": "device-basics",
@@ -3865,7 +4041,7 @@
   },
   {
     "character": "兩按一上",
-    "jyutping": "loeng5on3jat1soeng5",
+    "jyutping": "loeng5on3jat1soeng6",
     "translation": "two months deposit and one month rent in advance",
     "hash": "b1d5dd7b1739b8ee",
     "firstIntroducedIn": "flat-hunting",
@@ -3972,16 +4148,8 @@
     "jyutping": "m4 gan2jiu3",
     "translation": "it doesn't matter / never mind / it's okay",
     "hash": "ff273a0908a7f9ef",
-    "firstIntroducedIn": "identity-negation",
-    "occurrences": 2
-  },
-  {
-    "character": "唔好意思",
-    "jyutping": "m4 hou2 ji3si1",
-    "translation": "sorry / excuse me",
-    "hash": "ab0cd711981d910e",
-    "firstIntroducedIn": "social-media-slang",
-    "occurrences": 2
+    "firstIntroducedIn": "neighborhood-slang",
+    "occurrences": 1
   },
   {
     "character": "唔單止",
@@ -4010,10 +4178,10 @@
   {
     "character": "唔緊要",
     "jyutping": "m4gan2jiu3",
-    "translation": "never mind",
+    "translation": "it doesn't matter / never mind / it's okay",
     "hash": "ff273a0908a7f9ef",
-    "firstIntroducedIn": "intensifiers-exaggeration",
-    "occurrences": 1
+    "firstIntroducedIn": "identity-negation",
+    "occurrences": 2
   },
   {
     "character": "唔該",
@@ -4021,7 +4189,7 @@
     "translation": "excuse me / thank you / please / thank you (for service) / thank you (for service or help)",
     "hash": "c2555d3a8da0fdd7",
     "firstIntroducedIn": "convenience-store",
-    "occurrences": 68
+    "occurrences": 69
   },
   {
     "character": "唔該晒",
@@ -4056,6 +4224,14 @@
     "occurrences": 3
   },
   {
+    "character": "唔好意思",
+    "jyutping": "m4hou2ji3si1",
+    "translation": "sorry / excuse me",
+    "hash": "ab0cd711981d910e",
+    "firstIntroducedIn": "social-media-slang",
+    "occurrences": 2
+  },
+  {
     "character": "唔使",
     "jyutping": "m4sai2",
     "translation": "no need / not necessary / need not / no need to",
@@ -4078,6 +4254,14 @@
     "hash": "3c5f7c8548f99602",
     "firstIntroducedIn": "rhetorical-questions",
     "occurrences": 16
+  },
+  {
+    "character": "嗎",
+    "jyutping": "maa3",
+    "translation": "question particle",
+    "hash": "fa474ee4a665e443",
+    "firstIntroducedIn": "greetings",
+    "occurrences": 1
   },
   {
     "character": "嘛",
@@ -4104,20 +4288,20 @@
     "occurrences": 2
   },
   {
+    "character": "埋單",
+    "jyutping": "maai4daan1",
+    "translation": "to pay the bill / pay bill",
+    "hash": "34d7192cf28355d1",
+    "firstIntroducedIn": "diner-ordering",
+    "occurrences": 4
+  },
+  {
     "character": "買",
     "jyutping": "maai5",
     "translation": "to buy / buy",
     "hash": "9a56a4f7b1211a27",
     "firstIntroducedIn": "convenience-store",
     "occurrences": 24
-  },
-  {
-    "character": "埋單",
-    "jyutping": "maai5daan1",
-    "translation": "to pay the bill / pay bill",
-    "hash": "34d7192cf28355d1",
-    "firstIntroducedIn": "diner-ordering",
-    "occurrences": 4
   },
   {
     "character": "買入",
@@ -4189,7 +4373,7 @@
     "translation": "minibus (loanword)",
     "hash": "f9a9880a923410a2",
     "firstIntroducedIn": "public-transit",
-    "occurrences": 4
+    "occurrences": 2
   },
   {
     "character": "蚊",
@@ -4297,7 +4481,7 @@
   },
   {
     "character": "摸魚",
-    "jyutping": "mo2jyu2",
+    "jyutping": "mo2jyu4",
     "translation": "to slack off",
     "hash": "499fc46368aeba1a",
     "firstIntroducedIn": "workplace-slang",
@@ -4321,7 +4505,7 @@
   },
   {
     "character": "網絡",
-    "jyutping": "mong5lok6",
+    "jyutping": "mong5lok3",
     "translation": "internet / network",
     "hash": "75b111587f1f73e6",
     "firstIntroducedIn": "device-basics",
@@ -4361,7 +4545,7 @@
   },
   {
     "character": "冇問題",
-    "jyutping": "mou5 man6tai4",
+    "jyutping": "mou5man6tai4",
     "translation": "no problem",
     "hash": "40a9b9c307316166",
     "firstIntroducedIn": "smart-living",
@@ -4466,10 +4650,10 @@
   {
     "character": "呢",
     "jyutping": "ne1",
-    "translation": "question particle / sentence-final particle for queries (how about / what about) / particle / how about / sentence-final particle for queries, 'how about?' / sentence-final particle for queries or friendly follow-ups / sentence-final particle for queries, gentle pause, or contrast",
+    "translation": "question particle / sentence-final particle for queries (how about / what about) / particle / how about / sentence-final particle for queries, 'how about?' / sentence-final particle for queries or friendly follow-ups / sentence-final particle for questions and pauses / sentence-final particle for queries, gentle pause, or contrast",
     "hash": "02811cec0b734158",
     "firstIntroducedIn": "identity-negation",
-    "occurrences": 14
+    "occurrences": 15
   },
   {
     "character": "你",
@@ -4520,14 +4704,6 @@
     "occurrences": 1
   },
   {
-    "character": "晏晝",
-    "jyutping": "ngaan3zau3",
-    "translation": "noon / afternoon",
-    "hash": "252b3bafb1a2729e",
-    "firstIntroducedIn": "daily-schedules",
-    "occurrences": 1
-  },
-  {
     "character": "眼鏡",
     "jyutping": "ngaan5geng2",
     "translation": "glasses",
@@ -4536,12 +4712,12 @@
     "occurrences": 3
   },
   {
-    "character": "矮",
-    "jyutping": "ngai2",
-    "translation": "short (in height)",
-    "hash": "6e8ab5cc6e7855ab",
-    "firstIntroducedIn": "physical-descriptions",
-    "occurrences": 3
+    "character": "暗戀",
+    "jyutping": "ngam3lyun2",
+    "translation": "to crush on / love secretly",
+    "hash": "2c96f9e005c08252",
+    "firstIntroducedIn": "flirting-slang",
+    "occurrences": 4
   },
   {
     "character": "銀包",
@@ -4597,7 +4773,7 @@
     "translation": "this",
     "hash": "02811cec0b734158",
     "firstIntroducedIn": "comparative-grammar",
-    "occurrences": 26
+    "occurrences": 25
   },
   {
     "character": "呢度",
@@ -4614,6 +4790,14 @@
     "hash": "730bcaa66436879d",
     "firstIntroducedIn": "greetings",
     "occurrences": 29
+  },
+  {
+    "character": "檸茶",
+    "jyutping": "ning4caa4",
+    "translation": "lemon tea",
+    "hash": "0abcfdbc640f94d3",
+    "firstIntroducedIn": "diner-ordering",
+    "occurrences": 3
   },
   {
     "character": "尿袋",
@@ -4770,10 +4954,10 @@
   {
     "character": "片",
     "jyutping": "pin2",
-    "translation": "video / movie / short clip",
+    "translation": "film / memory / video / movie / short clip",
     "hash": "43991cbbf5ea0e83",
-    "firstIntroducedIn": "smart-living",
-    "occurrences": 2
+    "firstIntroducedIn": "bar-slang",
+    "occurrences": 3
   },
   {
     "character": "平時",
@@ -4849,7 +5033,7 @@
   },
   {
     "character": "三個字",
-    "jyutping": "saam1 go3 zi6",
+    "jyutping": "saam1go3zi6",
     "translation": "15 minutes / a quarter",
     "hash": "419a2e99c4362243",
     "firstIntroducedIn": "time-telling",
@@ -5084,8 +5268,16 @@
     "jyutping": "se1aa4",
     "translation": "to share (loanword)",
     "hash": "94ae0b07f937c02a",
+    "firstIntroducedIn": "smart-living",
+    "occurrences": 2
+  },
+  {
+    "character": "些牙",
+    "jyutping": "se1ngaa4",
+    "translation": "to share (loanword)",
+    "hash": "94ae0b07f937c02a",
     "firstIntroducedIn": "social-media-slang",
-    "occurrences": 3
+    "occurrences": 1
   },
   {
     "character": "寫",
@@ -5120,14 +5312,6 @@
     "occurrences": 10
   },
   {
-    "character": "死咁",
-    "jyutping": "sei2gam3",
-    "translation": "extremely",
-    "hash": "0a05a2ef61d61f12",
-    "firstIntroducedIn": "intensifiers-exaggeration",
-    "occurrences": 1
-  },
-  {
     "character": "死機",
     "jyutping": "sei2gei1",
     "translation": "device freeze / crash / device crash",
@@ -5142,6 +5326,14 @@
     "hash": "754a9d5828d502f1",
     "firstIntroducedIn": "convenience-store",
     "occurrences": 9
+  },
+  {
+    "character": "send",
+    "jyutping": "sen1",
+    "translation": "to send (loanword)",
+    "hash": "27ce1d1bf4270020",
+    "firstIntroducedIn": "smart-living",
+    "occurrences": 3
   },
   {
     "character": "成日",
@@ -5437,7 +5629,7 @@
     "translation": "a little bit / slightly",
     "hash": "99d43a01eb1c8576",
     "firstIntroducedIn": "neighborhood-slang",
-    "occurrences": 3
+    "occurrences": 2
   },
   {
     "character": "少冰",
@@ -5453,6 +5645,14 @@
     "translation": "careful / to be careful / take care",
     "hash": "f5261ae14a3d7d90",
     "firstIntroducedIn": "state-change-particles",
+    "occurrences": 1
+  },
+  {
+    "character": "少少",
+    "jyutping": "siu2siu2",
+    "translation": "a little bit / slightly",
+    "hash": "99d43a01eb1c8576",
+    "firstIntroducedIn": "sickness-symptoms",
     "occurrences": 1
   },
   {
@@ -5536,14 +5736,6 @@
     "occurrences": 1
   },
   {
-    "character": "上期",
-    "jyutping": "soeng5kei4",
-    "translation": "rent paid in advance (first month rent)",
-    "hash": "2823616a99f2bcb6",
-    "firstIntroducedIn": "flat-hunting",
-    "occurrences": 1
-  },
-  {
     "character": "上網",
     "jyutping": "soeng5mong5",
     "translation": "to go online / surf the internet",
@@ -5557,6 +5749,14 @@
     "translation": "last time",
     "hash": "f664edd9036b794e",
     "firstIntroducedIn": "payments-bills",
+    "occurrences": 1
+  },
+  {
+    "character": "上期",
+    "jyutping": "soeng6kei4",
+    "translation": "rent paid in advance (first month rent)",
+    "hash": "2823616a99f2bcb6",
+    "firstIntroducedIn": "flat-hunting",
     "occurrences": 1
   },
   {
@@ -5613,7 +5813,15 @@
     "translation": "forget it / let it be",
     "hash": "6ca54c6bbca885e5",
     "firstIntroducedIn": "market-bargaining",
-    "occurrences": 3
+    "occurrences": 2
+  },
+  {
+    "character": "算啦",
+    "jyutping": "syun3laa1",
+    "translation": "forget it",
+    "hash": "6ca54c6bbca885e5",
+    "firstIntroducedIn": "social-media-slang",
+    "occurrences": 1
   },
   {
     "character": "船",
@@ -5649,7 +5857,7 @@
   },
   {
     "character": "睇西醫",
-    "jyutping": "tai2 sai1ji1",
+    "jyutping": "tai2 sai1 ji1",
     "translation": "to see a Western doctor",
     "hash": "c3517e5f693e2a80",
     "firstIntroducedIn": "clinic-visit",
@@ -5657,7 +5865,7 @@
   },
   {
     "character": "睇中醫",
-    "jyutping": "tai2 zung1ji1",
+    "jyutping": "tai2 zung1 ji1",
     "translation": "to see a Chinese doctor",
     "hash": "103c58a614711192",
     "firstIntroducedIn": "clinic-visit",
@@ -5760,6 +5968,14 @@
     "occurrences": 3
   },
   {
+    "character": "聽落",
+    "jyutping": "teng1lok6",
+    "translation": "sounds like",
+    "hash": "899bcc10b11e135d",
+    "firstIntroducedIn": "clinic-visit",
+    "occurrences": 1
+  },
+  {
     "character": "添",
     "jyutping": "tim1",
     "translation": "particle indicating in addition / as well / furthermore / also / particle",
@@ -5828,8 +6044,8 @@
     "jyutping": "ting1lok6",
     "translation": "sounds like",
     "hash": "899bcc10b11e135d",
-    "firstIntroducedIn": "clinic-visit",
-    "occurrences": 2
+    "firstIntroducedIn": "medical-slang",
+    "occurrences": 1
   },
   {
     "character": "跳",
@@ -5893,7 +6109,15 @@
     "translation": "traditional low-rise walk-up building",
     "hash": "1b6acf7ccd79c503",
     "firstIntroducedIn": "housing-types",
-    "occurrences": 6
+    "occurrences": 4
+  },
+  {
+    "character": "唐樓",
+    "jyutping": "tong4lau4",
+    "translation": "traditional low-rise walk-up building",
+    "hash": "1b6acf7ccd79c503",
+    "firstIntroducedIn": "neighborhood-slang",
+    "occurrences": 2
   },
   {
     "character": "套房",
@@ -5966,6 +6190,14 @@
     "hash": "310dfa7b5f440519",
     "firstIntroducedIn": "leisure-hobbies",
     "occurrences": 3
+  },
+  {
+    "character": "VAN",
+    "jyutping": "van1",
+    "translation": "minibus (loanword)",
+    "hash": "f9a9880a923410a2",
+    "firstIntroducedIn": "minibus-etiquette",
+    "occurrences": 2
   },
   {
     "character": "哇",
@@ -6045,15 +6277,15 @@
     "translation": "hey / hey! / hello (typically answering phone or calling for attention)",
     "hash": "ea8ea533443d8196",
     "firstIntroducedIn": "pronunciation-vowels",
-    "occurrences": 11
+    "occurrences": 9
   },
   {
     "character": "喂",
     "jyutping": "wai3",
-    "translation": "hey / hello",
+    "translation": "hey / hello / hey!",
     "hash": "ea8ea533443d8196",
     "firstIntroducedIn": "comparative-grammar",
-    "occurrences": 1
+    "occurrences": 3
   },
   {
     "character": "為咗",
@@ -6082,10 +6314,18 @@
   {
     "character": "搵",
     "jyutping": "wan2",
-    "translation": "to find / look for / search / seek",
+    "translation": "to search / to find / look for / search / seek",
     "hash": "2b87a3a54753322f",
     "firstIntroducedIn": "existential-presence",
-    "occurrences": 8
+    "occurrences": 9
+  },
+  {
+    "character": "搵到",
+    "jyutping": "wan2dou2",
+    "translation": "to successfully find",
+    "hash": "54b0bd09130de789",
+    "firstIntroducedIn": "directions-spatial",
+    "occurrences": 1
   },
   {
     "character": "搵樓",
@@ -6104,6 +6344,14 @@
     "occurrences": 5
   },
   {
+    "character": "搵咗",
+    "jyutping": "wan2zo2",
+    "translation": "searched",
+    "hash": "d06406cda8e14ffc",
+    "firstIntroducedIn": "directions-spatial",
+    "occurrences": 1
+  },
+  {
     "character": "運動",
     "jyutping": "wan6dung6",
     "translation": "sports / exercise",
@@ -6112,9 +6360,17 @@
     "occurrences": 1
   },
   {
+    "character": "WhatsApp",
+    "jyutping": "wat1sep1",
+    "translation": "WhatsApp / to WhatsApp someone",
+    "hash": "6a40edf1fc87a29f",
+    "firstIntroducedIn": "smart-living",
+    "occurrences": 4
+  },
+  {
     "character": "喎",
     "jyutping": "wo3",
-    "translation": "sentence-final particle indicating reported speech, surprise, or warning",
+    "translation": "sentence-final particle indicating reported speech, surprise, or warning / sentence-final particle indicating surprise or warning",
     "hash": "1ff378d570f74ddf",
     "firstIntroducedIn": "nuance-particles",
     "occurrences": 20
@@ -6160,6 +6416,14 @@
     "occurrences": 1
   },
   {
+    "character": "碗",
+    "jyutping": "wun2",
+    "translation": "bowl",
+    "hash": "41bb76350c7ec2d8",
+    "firstIntroducedIn": "dining-slang",
+    "occurrences": 1
+  },
+  {
     "character": "揸車",
     "jyutping": "zaa1ce1",
     "translation": "to drive a car / drive",
@@ -6168,10 +6432,10 @@
     "occurrences": 8
   },
   {
-    "character": "炸",
+    "character": "咋",
     "jyutping": "zaa3",
     "translation": "only (sentence-final particle)",
-    "hash": "34c5155a43fbfd7a",
+    "hash": "ebc210e64638f430",
     "firstIntroducedIn": "neighborhood-slang",
     "occurrences": 1
   },
@@ -6312,20 +6576,20 @@
     "occurrences": 2
   },
   {
-    "character": "借唔借",
-    "jyutping": "ze3 m4 ze3",
-    "translation": "lend or not (A-not-A form)",
-    "hash": "0d4a1b15cb2f1677",
-    "firstIntroducedIn": "payments-bills",
-    "occurrences": 1
-  },
-  {
     "character": "借錢",
-    "jyutping": "ze3cin2",
+    "jyutping": "ze3cin4",
     "translation": "to borrow / lend money",
     "hash": "83175b4f3555c229",
     "firstIntroducedIn": "payments-bills",
     "occurrences": 5
+  },
+  {
+    "character": "借唔借",
+    "jyutping": "ze3m4ze3",
+    "translation": "lend or not (A-not-A form)",
+    "hash": "0d4a1b15cb2f1677",
+    "firstIntroducedIn": "payments-bills",
+    "occurrences": 1
   },
   {
     "character": "隻",
@@ -6528,20 +6792,20 @@
     "occurrences": 2
   },
   {
+    "character": "折墮",
+    "jyutping": "zit3do6",
+    "translation": "miserable / wretched / in a pitiful state",
+    "hash": "a2ccf392ef9a228b",
+    "firstIntroducedIn": "regrets-wishes-empathy",
+    "occurrences": 9
+  },
+  {
     "character": "截",
     "jyutping": "zit6",
     "translation": "section / chunk / length",
     "hash": "4a8bf6613ec7dc01",
     "firstIntroducedIn": "payments-bills",
     "occurrences": 1
-  },
-  {
-    "character": "折墮",
-    "jyutping": "zit6do6",
-    "translation": "miserable / wretched / in a pitiful state",
-    "hash": "a2ccf392ef9a228b",
-    "firstIntroducedIn": "regrets-wishes-empathy",
-    "occurrences": 9
   },
   {
     "character": "朝早",
@@ -6557,7 +6821,7 @@
     "translation": "verbal aspect suffix indicating completed action (perfective aspect) / completed action marker / completed / completed aspect suffix / completed aspect / aspect particle",
     "hash": "3fe6f903d92c0632",
     "firstIntroducedIn": "dining-slang",
-    "occurrences": 126
+    "occurrences": 120
   },
   {
     "character": "左",
@@ -6681,7 +6945,7 @@
   },
   {
     "character": "俗語",
-    "jyutping": "zuk1jyu5",
+    "jyutping": "zuk6jyu5",
     "translation": "colloquial expression / slang / idiom / idiomatic expressions",
     "hash": "eac0952f0cc9c6a6",
     "firstIntroducedIn": "native-idioms",

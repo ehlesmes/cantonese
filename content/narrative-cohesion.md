@@ -56,7 +56,7 @@ Because she was sad yesterday, therefore she went to have fun.
 Another example:
 
 ```cantonese
-因為[jan1wai6|because] 我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 想[soeng2|to want to / would like to / think] 返工[faan1gung1|to go to work / be at work]， 所以[so2ji5|therefore / so] 打算[daa2syun3|to plan / intend / plan] 放假[fong3gaa3|to have a holiday / day off]。
+因為[jan1wai6|because] 我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 想[soeng2|to want to / would like to / think] 返工[faan1gung1|to go to work / be at work]， 所以[so2ji5|therefore / so] 打算[daa2syun3|to plan / intend] 放假[fong3gaa3|to have a holiday / day off]。
 ===
 Because I don't want to go to work, I plan to take a holiday.
 ```
@@ -86,7 +86,7 @@ Although the food here is very beautiful, it is really expensive, obviously!
 Another example:
 
 ```cantonese
-雖然[seoi1jin4|although / even though] 佢[keoi5|he / she / it] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 魷魚[jau4jyu2|squid]， 但係[daan6hai6|but / however] 佢[keoi5|he / she / it] 都[dou1|also / both / all] 好[hou2|good / fine / very / quite] 開心[hoi1sam1|happy / glad / cheerful] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+雖然[seoi1jin4|although / even though] 佢[keoi5|he / she / it] 畀人[bei2jan4|by someone (passive marker)] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 魷魚[jau4jyu2|squid]， 但係[daan6hai6|but / however] 佢[keoi5|he / she / it] 都[dou1|also / both / all] 好[hou2|good / fine / very / quite] 開心[hoi1sam1|happy / glad / cheerful] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 Although she got fired, she is still very happy.
 ```
@@ -226,10 +226,10 @@ Wing-kit (A) meets Sau-han (B) at a local cafe during working hours. He is
 surprised to see her slacking off on a weekday.
 
 ```dialog
-A: 雖然[seoi1jin4|although / even though] 今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 係[hai6|to be] 星期六[sing1kei4luk6|Saturday]， 但係[daan6hai6|but / however] 你[nei5|you] 都[dou1|also / both / all] 唔[m4|not / no (negative prefix)] 返工[faan1gung1|to go to work / be at work] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle]？ 點解[dim2gaai2|why / how come] 你[nei5|you] 喺[hai2|at / in / on (locative preposition)] 呢度[ni1dou6|here] Hea[hea1|to chill / hang out / slack off / procrastinate] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 雖然[seoi1jin4|although / even though] 今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 係[hai6|to be] 星期六[sing1kei4luk6|Saturday]， 但係[daan6hai6|but / however] 你[nei5|you] 都[dou1|also / both / all] 唔[m4|not / no (negative prefix)] 返工[faan1gung1|to go to work / be at work] 嘅[ge2|sentence-final particle expressing doubt, curiosity, or surprise]？ 點解[dim2gaai2|why / how come] 你[nei5|you] 喺[hai2|at / in / on (locative preposition)] 呢度[ni1dou6|here] Hea[hea1|to chill / hang out / slack off / procrastinate] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Although today is not Saturday, you are still not working? Why are you chilling here?
 B: 因為[jan1wai6|because] 我[ngo5|I / me] 公司[gung1si1|company / office] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 我[ngo5|I / me] 魷魚[jau4jyu2|squid] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
-   === Because my company fired me yesterday, obviously!
+   === Because my company fired me, obviously!
 A: 吓[haa2|sentence-final particle expressing surprise, disbelief, or seeking quick confirmation]？！ 炒魷魚[caau2jau4jyu2|to get fired / lay off / fire someone] 呀[aa3|sentence-final particle softening statements, making questions friendly]？ 你[nei5|you] 原本[jyun4bun2|originally / original] 唔開心[m4hoi1sam1|sad / unhappy] 諗住[nam2zyu6|to intend / plan / think of] 喊[haam3|to cry / weep] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === What?! Fired? Were you originally sad and planning to cry?
 B: 原本[jyun4bun2|originally / original] 係[hai6|to be] 有[jau5|to have / there is] 啲[di1|some / a little / plural or possessive particle] 唔開心[m4hoi1sam1|sad / unhappy] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle]。 但係[daan6hai6|but / however] 我[ngo5|I / me] 唔單止[m4daan1zi2|not only] 冇[mou5|not to have / without / there is not] 喊[haam3|to cry / weep]， 反而[faan2ji4|on the contrary / instead] 好[hou2|good / fine / very / quite] 開心[hoi1sam1|happy / glad / cheerful] 添[tim1|particle indicating in addition / as well / furthermore]！

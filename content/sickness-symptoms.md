@@ -20,7 +20,7 @@ Let's dive in!
 
 Spoken Cantonese uses direct terms for physical ailments:
 
-- `病[beng6|to be sick / illness / disease]`: To be sick or have an illness.
+- `病[bing6|to be sick / illness / disease]`: To be sick or have an illness.
 - `唔舒服[m4syu1fuk6|uncomfortable / unwell / sick]`: Unwell, sick, or feeling
   physically uncomfortable.
 - `發燒[faat3siu1|to have a fever]`: To run a fever.
@@ -43,7 +43,7 @@ Spoken Cantonese uses direct terms for physical ailments:
   stomach flu.
 - `熱氣[jit6hei3|internal heat / inflammation]`: "Yeet hay," a traditional
   concept of internal heat or inflammation.
-- `嚴重[jim4zung6|serious / severe / grave]`: Serious or severe.
+- `嚴重[jim4cung5|serious / severe / grave]`: Serious or severe.
 - `傳染[cyun4jim5|to infect / infectious / contagious]`: To infect, or to be
   contagious.
 - `係咁[hai6gam2|continuously / constantly]`: Continuously, constantly, keep
@@ -66,7 +66,7 @@ B: 係呀[hai6aa3|yes]，我[ngo5|I / me] 今日[gam1jat6|today] 係咁[hai6gam2
    === Yes, I keep coughing and having a runny nose continuously today, looks like I caught a cold.
 A: 噉[gam2|then / in that case / so] 你[nei5|you] 有冇[jau5mou5|have or not (A-not-A question form)] 發燒[faat3siu1|to run a fever] 同埋[tung4maai4|and / with / together with] 喉嚨痛[hau4lung4tung3|sore throat] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Then do you have a fever and sore throat?
-B: 有[jau5|to have] 少少[siu2 siu2|a little bit / slightly] 頭痛[tau4tung3|headache]，但係[daan6hai6|but] 冇[mou5|to not have / there is not] 發燒[faat3siu1|to have a fever]。
+B: 有[jau5|to have] 少少[siu2siu2|a little bit / slightly] 頭痛[tau4tung3|headache]，但係[daan6hai6|but] 冇[mou5|to not have / there is not] 發燒[faat3siu1|to have a fever]。
    === I have a slight headache, but no fever.
 ```
 

@@ -27,7 +27,7 @@ To express that something is "more" [adjective], or has the suffix "-er" (e.g.,
   cheaper / a bit cheaper
 - `高[gou1|tall / high]` `啲[di1|a bit / some / comparative suffix]` — taller /
   a bit taller
-- `矮[ngai2|short (in height)]` `啲[di1|a bit / some / comparative suffix]` —
+- `矮[aai2|short (in height)]` `啲[di1|a bit / some / comparative suffix]` —
   shorter / a bit shorter
 - `大[daai6|big / large / great]` `啲[di1|a bit / some / comparative suffix]` —
   bigger / a bit bigger
@@ -53,12 +53,12 @@ Walk a bit faster!
 
 ---
 
-## 2. Direct Comparisons: `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']`
+## 2. Direct Comparisons: `過[gwo3|than / verbal aspect suffix indicating past experience]`
 
 When you want to compare two objects directly (e.g., "A is more [adjective] than
 B"), Cantonese uses
-`過[gwo3|verbal aspect suffix indicating past experience / 'have done before']`
-as the comparison marker.
+`過[gwo3|than / verbal aspect suffix indicating past experience]` as the
+comparison marker.
 
 _(Note: In comparative structures, it functions as the word "than".)_
 
@@ -67,28 +67,28 @@ _(Note: In comparative structures, it functions as the word "than".)_
 The word order is:
 
 > **Formula:** [Subject A] + [Adjective] +
-> `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']` +
-> [Subject B]
+> `過[gwo3|than / verbal aspect suffix indicating past experience]` + [Subject
+> B]
 
 Notice that we do **not** use `啲[di1|a bit / some / comparative suffix]` in
 this basic direct structure because
-`過[gwo3|verbal aspect suffix indicating past experience / 'have done before']`
-already carries the comparative meaning!
+`過[gwo3|than / verbal aspect suffix indicating past experience]` already
+carries the comparative meaning!
 
 ```cantonese
-我[ngo5|I / me] 高[gou1|tall / high] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 高[gou1|tall / high] 過[gwo3|than / verbal aspect suffix indicating past experience] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I am taller than you.
 ```
 
 ```cantonese
-呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 貴[gwai3|expensive] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 貴[gwai3|expensive] 過[gwo3|than / verbal aspect suffix indicating past experience] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
 ===
 This shirt is more expensive than that one, obviously!
 ```
 
 ```cantonese
-講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 難[naan4|difficult / hard] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 講[gong2|to speak / say / talk] 英文[jing1man2|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa2|Cantonese language] 難[naan4|difficult / hard] 過[gwo3|than / verbal aspect suffix indicating past experience] 講[gong2|to speak / say / talk] 英文[jing1man2|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 Speaking Cantonese is more difficult than speaking English.
 ```
@@ -100,17 +100,17 @@ place the exact amount or a phrase like `好多[hou2do1|a lot / many / much]`
 **after the object of comparison**:
 
 > **Formula:** [Subject A] + [Adjective] +
-> `過[gwo3|verbal aspect suffix indicating past experience / 'have done before']` +
-> [Subject B] + [Amount]
+> `過[gwo3|than / verbal aspect suffix indicating past experience]` + [Subject
+> B] + [Amount]
 
 ```cantonese
-佢[keoi5|he / she / it] 高[gou1|tall / high] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 我[ngo5|I / me] 好多[hou2do1|a lot / many / much] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+佢[keoi5|he / she / it] 高[gou1|tall / high] 過[gwo3|than / verbal aspect suffix indicating past experience] 我[ngo5|I / me] 好多[hou2do1|a lot / many / much] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 He is a lot taller than me.
 ```
 
 ```cantonese
-呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 貴[gwai3|expensive] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 一百[jat1baak3|one hundred] 蚊[man1|dollar (spoken Cantonese colloquial unit of currency)] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 貴[gwai3|expensive] 過[gwo3|than / verbal aspect suffix indicating past experience] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 一百[jat1baak3|one hundred] 蚊[man1|dollar (spoken Cantonese colloquial unit of currency)] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
 ===
 This shirt is one hundred dollars more expensive than that one, obviously!
 ```
@@ -148,9 +148,8 @@ I am the same height as him, obviously!
 To say that A is **not as [adjective] as** B, Cantonese uses a structure with
 `冇[mou5|to not have / there is not]` and `咁[gam3|so / such / to this degree]`:
 
-> **Formula:** [Subject A] + `冇[mou5|to not have / there is not]` + [Subject >
->
-> > B] + `咁[gam3|so / such / to this degree]` + [Adjective]
+> **Formula:** [Subject A] + `冇[mou5|to not have / there is not]` + [Subject
+> B] + `咁[gam3|so / such / to this degree]` + [Adjective]
 
 Literally, this reads: "A does not have B's degree of [adjective]."
 
@@ -210,9 +209,9 @@ A: Sau-han，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa5|verba
    === Sau-han, take a look! That guy is very handsome!
 B: 邊[bin1|which] 個[go3|general measure word] 呀[aa3|sentence-final particle softening statements, making questions friendly]？戴[daai3|to wear (accessories like glasses, hats, watches)] 眼鏡[ngaan5geng2|glasses] 嗰[go2|that] 個[go3|general measure word] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Which one? The one wearing glasses?
-A: 係[hai6|to be (am/is/are) / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]。佢[keoi5|he / she / it] 高[gou1|tall / high] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 你[nei5|you] 好多[hou2do1|a lot / many / much] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+A: 係[hai6|to be (am/is/are) / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]。佢[keoi5|he / she / it] 高[gou1|tall / high] 過[gwo3|than / verbal aspect suffix indicating past experience] 你[nei5|you] 好多[hou2do1|a lot / many / much] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === He is a lot taller than you, obviously!
-B: 喂[wai3|hey / hello]！我[ngo5|I / me] 冇[mou5|to not have / there is not] 佢[keoi5|he / she / it] 咁[gam3|so / such / to this degree] 高[gou1|tall / high]，但係[daan6hai6|but / however] 我[ngo5|I / me] 唔[m4|not (negation particle)] 矮[ngai2|short (in height)] 呀[aa3|sentence-final particle softening statements, making questions friendly]！同埋[tung4maai4|and / with / together with / also] 佢[keoi5|he / she / it] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 冇[mou5|to not have / there is not] 我[ngo5|I / me] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 咁[gam3|so / such / to this degree] 靚[leng3|pretty / beautiful / handsome / high quality] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+B: 喂[wai3|hey / hello]！我[ngo5|I / me] 冇[mou5|to not have / there is not] 佢[keoi5|he / she / it] 咁[gam3|so / such / to this degree] 高[gou1|tall / high]，但係[daan6hai6|but / however] 我[ngo5|I / me] 唔[m4|not (negation particle)] 矮[aai2|short (in height)] 呀[aa3|sentence-final particle softening statements, making questions friendly]！同埋[tung4maai4|and / with / together with / also] 佢[keoi5|he / she / it] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 冇[mou5|to not have / there is not] 我[ngo5|I / me] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 咁[gam3|so / such / to this degree] 靚[leng3|pretty / beautiful / handsome / high quality] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === Hey! I am not as tall as him, but I am not short! And his shirt is not as nice as my shirt, obviously!
 A: 係[hai6|to be (am/is/are) / yes] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action] 係[hai6|to be (am/is/are) / yes] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。你[nei5|you] 最[zeoi3|most / superlative prefix] 靚仔[leng3zai2|handsome boy / handsome] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
    === Yeah, yeah. You are the most handsome!
@@ -228,10 +227,10 @@ Review comparatives and superlatives in Cantonese:
 question: |
   Which of the following sentences correctly expresses "This shirt is cheaper than that shirt"?
   A) 呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 平[peng4|cheap / inexpensive] 啲[di1|a bit / some / comparative suffix] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
-  B) 呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 平[peng4|cheap / inexpensive] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+  B) 呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 平[peng4|cheap / inexpensive] 過[gwo3|than / verbal aspect suffix indicating past experience] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
   C) 呢[ni1|this] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 同[tung4|with / same as / and] 嗰[go2|that] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 一樣[jat1joeng6|same / alike / identical] 平[peng4|cheap / inexpensive] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 answer: B
-explanation: Direct comparisons between two items are formed using the marker 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] in the structure [Subject A] + [Adjective] + 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] + [Subject B]. Option A incorrectly layers 啲[di1|a bit / some / comparative suffix] without the comparison preposition. Option C says they are the same price.
+explanation: Direct comparisons between two items are formed using the marker 過[gwo3|than / verbal aspect suffix indicating past experience] in the structure [Subject A] + [Adjective] + 過[gwo3|than / verbal aspect suffix indicating past experience] + [Subject B]. Option A incorrectly layers 啲[di1|a bit / some / comparative suffix] without the comparison preposition. Option C says they are the same price.
 ```
 
 ```exercise

@@ -30,7 +30,7 @@ the hour:
 
 - `朝早[ziu1zou2|morning / in the morning]` — Morning (typically 6:00 AM – 12:00
   PM)
-- `晏晝[ngaan3zau3|noon / afternoon]` — Noon / Afternoon (typically 12:00 PM –
+- `晏晝[aan3zau3|noon / afternoon]` — Noon / Afternoon (typically 12:00 PM –
   6:00 PM) (Interchangeable with `下晝[haa6zau3|afternoon / in the afternoon]`)
 - `下晝[haa6zau3|afternoon / in the afternoon]` — Afternoon (typically 12:00 PM
   – 6:00 PM)
@@ -49,7 +49,7 @@ I go to work at 9:00 AM.
 ```
 
 ```cantonese
-佢[keoi5|he / she / it] 下晝[haa6zau3|afternoon / in the afternoon] 三[saam1|three] 點[dim2|o'clock / hour] 半[bun3|half] 食[sik6|to eat] 菠蘿包[bo1lo1baau1|pineapple bun] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+佢[keoi5|he / she / it] 下晝[haa6zau3|afternoon / in the afternoon] 三[saam1|three] 點[dim2|o'clock / hour] 半[bun3|half] 食[sik6|to eat] 菠蘿包[bo1lo4baau1|pineapple bun] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 He eats a pineapple bun at 3:30 PM.
 ```
@@ -99,7 +99,7 @@ A: 依家[ji1gaa1|now] 下晝[haa6zau3|afternoon / in the afternoon] 三[saam1|t
    === It's 3:30 in the afternoon already! Do you have a day off today?
 B: 係呀[hai6aa3|yes]！ 加上[gaa1soeng5|moreover / plus] 出面[ceot1min6|outside] 落雨[lok6jyu5|to rain / raining]，我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 想[soeng2|to want to / would like to] 出街[ceot1gaai1|to go out]。
    === Yes! Plus it is raining outside, I don't want to go out.
-A: 哎呀[aai1jaa3|interjection of surprise or annoyance]！ 落雨[lok6jyu5|to rain / raining] 都[dou1|also / even / already] 可以[ho2ji5|can / may / possible] 出街[ceot1gaai1|to go out] 㗎[gaa3|sentence-final particle asserting a point, combination of ge3 and aa3]！ 我哋[ngo5dei6|we / us] 下晝[haa6zau3|afternoon / in the afternoon] 四[sei3|four] 點[dim2|o'clock / hour] 三[saam1|three] 個[go3|general measure word / individual / unit] 字[zi6|five-minute interval] 去[heoi3|to go] 飲[jam2|to drink] 咖啡[gaa3fe1|coffee]，好唔好[hou2 m4 hou2|is that good] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 哎呀[aai1jaa3|interjection of surprise or annoyance]！ 落雨[lok6jyu5|to rain / raining] 都[dou1|also / even / already] 可以[ho2ji5|can / may / possible] 出街[ceot1gaai1|to go out] 㗎[gaa3|sentence-final particle asserting a point, combination of ge3 and aa3]！ 我哋[ngo5dei6|we / us] 下晝[haa6zau3|afternoon / in the afternoon] 四[sei3|four] 點[dim2|o'clock / hour] 三[saam1|three] 個[go3|general measure word / individual / unit] 字[zi6|five-minute interval] 去[heoi3|to go] 飲[jam2|to drink] 咖啡[gaa3fe1|coffee]，好唔好[hou2m4hou2|is that good] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Oh come on! Even if it is raining you can still go out! Let's go drink coffee at 4:15 PM, is that good?
 B: 好[hou2|good / fine / very / quite] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。喺[hai2|at / in / on] 邊度[bin1dou6|where] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Fine. Where at?

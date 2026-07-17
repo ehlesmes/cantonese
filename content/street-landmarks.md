@@ -55,7 +55,7 @@ A: 唔該[m4goi1|please]，請問[cing2man6|may I ask] 地鐵站[dei6tit3zaam6|M
    === Excuse me, may I ask how to get to the MTR station?
 B: 你[nei5|you] 喺[hai2|at / in / on] 呢度[ni1dou6|here] 直行[zik6haang4|go straight]，行到[haang4dou3|walk to] 前邊[cin4bin1|ahead / in front / up ahead] 路口[lou6hau2|intersection / junction] 轉右[zyun2jau6|turn right] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
    === You go straight from here, and when you walk to the intersection ahead, turn right.
-A: 轉右[zyun2jau6|turn right] 之後[zi1hau6|after]，仲[zung6|still] 要[jiu3|need] 行[hang4|to walk / go / run (a machine)] 幾耐[gei2noi6|how long (time)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 轉右[zyun2jau6|turn right] 之後[zi1hau6|after]，仲[zung6|still] 要[jiu3|need] 行[haang4|to walk] 幾耐[gei2noi6|how long (time)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === After turning right, how much longer do I still need to walk?
 B: 轉右[zyun2jau6|turn right] 之後[zi1hau6|after] 過馬路[gwo3maa5lou6|cross the road]，喺[hai2|at / in / on] 巴士站[baa1si2zaam6|bus stop] 隔籬[gaak3lei4|next to / beside / neighbor] 就[zau6|then] 係[hai6|to be (am/is/are) / yes] 地鐵站[dei6tit3zaam6|MTR station / subway station] 喇[laa3|sentence-final particle indicating a change of state or already]。
    === After turning right, cross the road, and right next to the bus stop is the MTR station.

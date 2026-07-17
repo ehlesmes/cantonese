@@ -32,7 +32,7 @@ plain white rice** (because it is pure white and clean).
 To order a plate of char siu with white rice, you can naturally say:
 
 ```cantonese
-我[ngo5|I / me] 要[jiu3|to want / need / must / demand] 一[jat1|one] 碟[dip6|plate / dish (classifier for food dishes)] 叉燒[caa1siu1|barbecued pork / char siu] 同埋[tung4maai4|and / with / together with] 一[jat1|one] 個[go3|general measure word / individual / unit] 靚仔[leng3zai2|handsome boy / plain white rice (restaurant slang)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 要[jiu3|to want / need / must / demand] 一[jat1|one] 碟[dip6|plate / dish (classifier for food dishes)] 叉燒[caa1siu1|barbecued pork / char siu] 同埋[tung4maai4|and / with / together with] 一[jat1|one] 碗[wun2|bowl] 靚仔[leng3zai2|handsome boy / plain white rice (restaurant slang)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I want a plate of barbecued pork and a bowl of plain white rice.
 ```
@@ -145,11 +145,11 @@ A: 你[nei5|you] 好[hou2|very] 嬲[nau1|angry / mad] 呀[aa3|particle]？
    === Are you very angry?
 B: 係[hai6|yes] 呀[aa3|particle]，我[ngo5|I] 好[hou2|very] 攰[gui6|tired / exhausted] 同埋[tung4maai4|and / with / together with] 好[hou2|very] 悶[mun6|bored / boring / stuffy] 呀[aa3|particle]。 我[ngo5|I] 想[soeng2|to want to] 食[sik6|to eat] 嘢食[je5sik6|food]。
    === Yes, I am very tired and very bored. I want to eat food.
-A: 你[nei5|you] 想[soeng2|to want to] 食[sik6|to eat] 蛋撻[daan6taat1|egg tart] 定[ding6|or] 菠蘿包[bo1lo1baau1|pineapple bun] 呀[aa3|particle]？
+A: 你[nei5|you] 想[soeng2|to want to] 食[sik6|to eat] 蛋撻[daan6taat3|egg tart] 定[ding6|or] 菠蘿包[bo1lo1baau1|pineapple bun] 呀[aa3|particle]？
    === Do you want to eat an egg tart or a pineapple bun?
-B: 我[ngo5|I] 要[jiu3|to want] 兩[loeng5|two] 個[go3|unit] 蛋撻[daan6taat1|egg tart] 啦[laa1|particle]！
+B: 我[ngo5|I] 要[jiu3|to want] 兩[loeng5|two] 個[go3|unit] 蛋撻[daan6taat3|egg tart] 啦[laa1|particle]！
    === I want two egg tarts!
-A: 搞掂[gaau2dim6|done] 啦[laa1|particle]！ 呢度[ni1dou6|here] 呀[aa3|particle]。
+A: 搞掂[gaau2dim6|done] 啦[laa3|particle indicating completed action or change of state]！ 呢度[ni1dou6|here] 呀[aa3|particle]。
    === Done! Here it is.
 B: 多謝[do1ze6|thank you]！ 我[ngo5|I] 而家[ji4gaa1|now] 好[hou2|very] 開心[hoi1sam1|happy / joyous] 呀[aa3|particle]！
    === Thank you! I am very happy now!
@@ -173,15 +173,15 @@ B: 好[hou2|good]，一[jat1|one] 個[go3|unit] 菠蘿包[bo1lo1baau1|pineapple 
    === Okay, one pineapple bun, one cup of cold milk tea.
 A: 唔該[m4goi1|excuse me]，我[ngo5|I] 嘅[ge3|particle] 菠蘿包[bo1lo1baau1|pineapple bun] 搞掂[gaau2dim6|done] 咗[zo2|completed] 未[mei6|not yet] 呀[aa3|particle]？
    === Excuse me, is my pineapple bun ready yet?
-B: 搞掂[gaau2dim6|done] 咗[zo2|completed] 啦[laa1|particle]！ 呢度[ni1dou6|here] 呀[aa3|particle]，唔該[m4goi1|excuse me]！
+B: 搞掂[gaau2dim6|done] 咗[zo2|completed] 啦[laa3|particle indicating completed action or change of state]！ 呢度[ni1dou6|here] 呀[aa3|particle]，唔該[m4goi1|excuse me]！
    === It is ready! Here it is, thank you!
 A: 好[hou2|very] 靚[leng3|beautiful / high quality] 呀[aa3|particle]！ 多謝[do1ze6|thank you]！
    === It looks very beautiful! Thank you!
 B: 你[nei5|you] 飲[jam2|to drink] 咗[zo2|completed] 凍[dung3|cold] 奶茶[naai5caa4|milk tea] 未[mei6|not yet] 呀[aa3|particle]？
    === Have you drunk the cold milk tea yet?
-A: 飲[jam2|to drink] 咗[zo2|completed] 啦[laa1|particle]，好飲[hou2jam2|delicious (for drinks)] 呀[aa3|particle]！
+A: 飲[jam2|to drink] 咗[zo2|completed] 啦[laa3|particle indicating completed action or change of state]，好飲[hou2jam2|delicious (for drinks)] 呀[aa3|particle]！
    === Yes, I drank it, it is delicious!
-A: 唔該[m4goi1|excuse me]，我[ngo5|I]想[soeng2|to want to] 埋單[maai5daan1|to pay the bill] 啦[laa1|particle]。 幾多[gei2do1|how much] 錢[cin2|money] 呀[aa3|particle]？
+A: 唔該[m4goi1|excuse me]，我[ngo5|I]想[soeng2|to want to] 埋單[maai4daan1|to pay the bill] 啦[laa1|particle]。 幾多[gei2do1|how much] 錢[cin2|money] 呀[aa3|particle]？
    === Excuse me, I want to pay the bill. How much is it?
 B: 三十[saam1sap6|thirty] 蚊[man1|dollar] 啦[laa1|particle]，唔該[m4goi1|excuse me]。
    === It is thirty dollars, thank you.
@@ -202,8 +202,8 @@ Review the food culture and completed actions introduced in this chapter:
 ```exercise
 question: |
   Fill in the blanks to say "I have already eaten the egg tart!":
-  我[ngo5|I] 食[sik6|to eat]________ 蛋撻[daan6taat1|egg tart] ________！
-answer: 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] / 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]
+  我[ngo5|I] 食[sik6|to eat]________ 蛋撻[daan6taat3|egg tart] ________！
+answer: 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] / 啦[laa3|sentence-final particle indicating completed action or change of state]
 explanation: To mark a completed event, we attach the suffix 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] directly behind the verb 食[sik6|to eat], and end the statement with the softening/asserting particle 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action].
 ```
 

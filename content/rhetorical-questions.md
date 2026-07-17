@@ -117,10 +117,10 @@ How could you not believe me?
 ```
 
 A very common standalone phrase is combining `點會[dim2wui5|how could]` with
-`咁[gam3|so / like this]`:
+`咁[gam2|like this]`:
 
 ```cantonese
-點會[dim2wui5|how could] 咁[gam3|so / like this] 㗎[gaa3|particle]？
+點會[dim2wui5|how could] 咁[gam2|like this] 㗎[gaa3|particle]？
 ===
 How could it be like this?
 ```
@@ -176,7 +176,7 @@ A: 你[nei5|you] 去[heoi3|go] 問[man6|ask] 佢[keoi5|he / she / it] 啦[laa1|p
    === You go ask him! I didn't say it wrong!
 B: 好[hou2|good] 呀[aa3|particle]！ 如果[jyu4gwo2|if] 係[hai6|to be] 假[gaa2|fake / false] 嘅[ge3|particle]， 你[nei5|you] 請[ceng2|treat] 我[ngo5|me] 食[sik6|to eat] 菠蘿包[bo1lo1baau1|pineapple bun] 啦[laa1|particle]！
    === Great! If it is fake, you treat me to eat pineapple buns!
-A: 冇[mou5|have not] 問題[man6tai4|problem]！ 真[zan1|real / true] 嘅[ge3|particle] 就[zau6|then] 得[dak1|particle expressing permission, possibility, capability, or adverbial degree] 啦[laa1|particle]！
+A: 冇[mou5|have not] 問題[man6tai4|problem]！ 真[zan1|real / true] 嘅[ge3|particle] 就[zau6|then] 得[dak1|okay / fine / acceptable] 啦[laa1|particle]！
    === No problem! If it's true, then it's fine!
 ```
 

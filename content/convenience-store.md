@@ -55,14 +55,14 @@ I need this one.
 
 ---
 
-## 2. Pointing Things Out & Connecting Items: `呢個[ni1go3|this one]`, `嗰個[go2go3|that one]`, `咁樣[gam2joeng2|like this / in this way / this way]`, and `同埋[tung4maai4|and / with / together with]`
+## 2. Pointing Things Out & Connecting Items: `呢個[ni1go3|this one]`, `嗰個[go2go3|that one]`, `咁樣[gam2joeng6|like this / in this way / this way]`, and `同埋[tung4maai4|and / with / together with]`
 
 If you do not know the name of an object in a shop, you can simply point and use
 these high-frequency demonstrative pronouns:
 
 - `呢個[ni1go3|this one]`: Used for items close to you.
 - `嗰個[go2go3|that one]`: Used for items further away.
-- `咁樣[gam2joeng2|like this / in this way / this way]`: Used when describing
+- `咁樣[gam2joeng6|like this / in this way / this way]`: Used when describing
   choices, indicating "like this" or "this way".
 
 To connect two nouns together, like saying "and" in English, use the conjunction
@@ -83,7 +83,7 @@ I will take this one and that one!
 ```
 
 ```cantonese
-我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 咁樣[gam2joeng2|like this / in this way / this way] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 嘢飲[je5jam2|drinks / beverages] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 咁樣[gam2joeng6|like this / in this way / this way] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 嘢飲[je5jam2|drinks / beverages] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I would like to have a drink like this.
 ```
@@ -95,17 +95,17 @@ I would like to have a drink like this.
 ### Asking "How much?"
 
 To ask how much an item costs, we use `幾多[gei2do1|how many / how much]` and
-`錢[cin2|money]`. Together, `幾多[gei2do1|how many / how much]` `錢[cin2|money]`
+`錢[cin4|money]`. Together, `幾多[gei2do1|how many / how much]` `錢[cin4|money]`
 is the standard phrase for "How much is it?":
 
 ```cantonese
-呢個[ni1go3|this one] 幾多[gei2do1|how many / how much] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+呢個[ni1go3|this one] 幾多[gei2do1|how many / how much] 錢[cin4|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 ===
 How much is this one?
 ```
 
 ```cantonese
-嗰個[go2go3|that one] 幾多[gei2do1|how many / how much] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+嗰個[go2go3|that one] 幾多[gei2do1|how many / how much] 錢[cin4|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 ===
 How much is that one?
 ```
@@ -187,7 +187,7 @@ A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statemen
    === Hello there! Excuse me, I want to buy this one and that one.
 B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 呢個[ni1go3|this one] 係[hai6|to be (am/is/are) / yes] 可樂[ho2lok6|cola / Coke]，嗰個[go2go3|that one] 係[hai6|to be (am/is/are) / yes] 薯片[syu4pin2|potato chips / crisps]。
    === Sure. This one is Coke, that one is potato chips.
-A: 幾多[gei2do1|how many / how much] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 幾多[gei2do1|how many / how much] 錢[cin4|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === How much is it?
 B: 三十[saam1sap6|thirty] 蚊[man1|dollar (spoken Cantonese colloquial unit of currency)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === It is thirty dollars.

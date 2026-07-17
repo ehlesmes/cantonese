@@ -20,7 +20,7 @@ Here are the basic commands for navigating streets in Cantonese:
 - `直行[zik6haang4|to go straight]`: Go straight ahead.
 - `轉左[zyun2zo2|to turn left]`: Turn left.
 - `轉右[zyun2jau6|to turn right]`: Turn right.
-- `過馬路[gwo3maa5lou6|to cross the road]`: Cross the street.
+- `過十字路口[gwo3sap6zi6lou6hau2|to cross the intersection]`: Cross the street.
 
 To link these directions together sequentially, use
 `然後[jin4hau6|then / afterwards]`:
@@ -42,11 +42,11 @@ B: 好[hou2|good]，然後[jin4hau6|then] 呢[ne1|particle]？
    === Okay, then what?
 A: 然後[jin4hau6|then] 轉左[zyun2zo2|turn left] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
    === Then turn left.
-B: 喺[hai2|at / in / on] 呢度[ni1dou6|here] 轉左[zyun2zo2|turn left] 呀[aa3|particle]？
+B: 喺[hai2|at / in / on] 呢度[ni1dou6|here] 轉左[zyun2zo2|turn left] 呀[aa4|particle]？
    === Turn left here?
-A: 唔係[m4hai6|no / not be]，過馬路[gwo3maa5lou6|cross the road] 之後[zi1hau6|after] 先[sin1|first / only then] 轉左[zyun2zo2|turn left] 呀[aa3|particle]。
+A: 唔係[m4hai6|no / not be]，過十字路口[gwo3sap6zi6lou6hau2|cross the intersection] 之後[zi1hau6|after] 先[sin1|first / only then] 轉左[zyun2zo2|turn left] 呀[aa3|particle]。
    === No, turn left only after crossing the road.
-B: 收到[sau1dou2|got it]！ 然後[jin4hau6|then] 轉右[zyun2jau6|turn right] 呀[aa3|particle]？
+B: 收到[sau1dou2|got it]！ 然後[jin4hau6|then] 轉右[zyun2jau6|turn right] 呀[aa4|particle]？
    === Got it! Then turn right?
 A: 係[hai6|yes] 呀[aa3|particle]，轉右[zyun2jau6|turn right] 啦[laa1|particle]，唔該[m4goi1|thank you]。
    === Yes, turn right, thank you.
@@ -72,8 +72,8 @@ question: |
   Which of the following is the correct Cantonese phrase for "to cross the road"?
   A) 轉左[zyun2zo2|turn left]
   B) 直行[zik6haang4|go straight]
-  C) 過馬路[gwo3maa5lou6|cross the road]
+  C) 過十字路口[gwo3sap6zi6lou6hau2|cross the intersection]
   D) 轉右[zyun2jau6|turn right]
 answer: C
-explanation: `過馬路[gwo3maa5lou6|to cross the road]` is the standard Cantonese verb phrase for crossing the street.
+explanation: `過十字路口[gwo3sap6zi6lou6hau2|to cross the intersection]` is the standard Cantonese verb phrase for crossing the street.
 ```

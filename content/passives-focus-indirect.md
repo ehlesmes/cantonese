@@ -167,7 +167,7 @@ thought you were at work, but you are not"), Cantonese uses the verb
 `以為[ji5wai4|to mistakenly think / assume / believe]`.
 
 ```cantonese
-我[ngo5|I / me] 以為[ji5wai4|to mistakenly think / assume / believe] 你[nei5|you] 返工[faan1gung1|to go to work / be at work] 緊[gan2|continuous aspect particle indicating action in progress]。
+我[ngo5|I / me] 以為[ji5wai4|to mistakenly think / assume / believe] 你[nei5|you] 返[faan1|to go to] 緊[gan2|continuous aspect particle indicating action in progress] 工[gung1|work]。
 ===
 I mistakenly thought you were working.
 ```
@@ -185,7 +185,7 @@ A: 你[nei5|you] 點解[dim2gaai2|why / how come] 咁[gam3|so / such / to this d
    === Why are you so tired?
 B: 好[hou2|good / fine / very / quite] 慘[caam2|miserable / pitiful / tragic] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I / me] 部[bou6|measure word for machines/phones] 電話[din6waa2|telephone / phone] 俾[bei2|by / to give] 人[jan4|person / people / human] 偷[tau1|to steal] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]！
    === So miserable! My phone was stolen by someone!
-A: 真係[zan1hai6|really / truly] 慘[caam2|miserable / pitiful / tragic] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 之後[zi1hau6|afterwards / after] 呢[ni1|this]？
+A: 真係[zan1hai6|really / truly] 慘[caam2|miserable / pitiful / tragic] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 之後[zi1hau6|afterwards / after] 呢[ne1|sentence-final particle for questions and pauses]？
    === That's really pitiful! And then?
 B: 之後[zi1hau6|afterwards / after] 我[ngo5|I / me] 返工[faan1gung1|to go to work / be at work] 遲到[ci4dou3|to be late / arrive late]， 又[jau6|again / also] 俾[bei2|by / to give] 老細[lou5sai3|boss / employer (colloquial)] 話[waa6|to say / tell / words / speech] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]！
    === Afterward I arrived late to work, and I was scolded by the boss again!
