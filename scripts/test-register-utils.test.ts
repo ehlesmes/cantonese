@@ -113,6 +113,28 @@ describe("Lexicon Registrar Helpers", () => {
     });
   });
 
+  test("validateRegisterEntry returns valid entry with alt_jyutping", () => {
+    const batchKeys = new Set<string>();
+    const res = validateRegisterEntry(
+      {
+        char: "錢",
+        jyutping: "cin4",
+        alt_jyutping: ["cin2"],
+        definition: "money",
+        type: "noun",
+      },
+      dictionary,
+      batchKeys,
+    );
+    expect(res.validEntry).toEqual({
+      char: "錢",
+      jyutping: "cin4",
+      alt_jyutping: ["cin2"],
+      definition: "money",
+      type: "noun",
+    });
+  });
+
   test("sortDictionary orders by jyutping, then char", () => {
     const data = [
       { char: "腸粉", jyutping: "coeng2fan2", type: "noun" },
@@ -184,6 +206,33 @@ describe("verifyChapterContent Utility", () => {
     expect(res.errors.length).toBe(0);
     expect(res.warnings.length).toBe(0);
     expect(res.passedCount).toBe(3);
+  });
+
+  test("passes for alt_jyutping matches (Tone Sandhi)", () => {
+    const customDictionary = [
+      ...dictionary,
+      {
+        char: "錢",
+        jyutping: "cin4",
+        alt_jyutping: ["cin2"],
+        definition: "money",
+        type: "noun",
+      },
+    ];
+
+    const chapterData = {
+      blocks: [
+        {
+          type: "prose",
+          content: "`錢[cin2|money]` `錢[cin4|money]`",
+          startLine: 1,
+        },
+      ],
+    };
+    const res = verifyChapterContent(chapterData, customDictionary);
+    expect(res.errors.length).toBe(0);
+    expect(res.warnings.length).toBe(0);
+    expect(res.passedCount).toBe(2);
   });
 
   test("reports critical errors for unregistered terms", () => {
