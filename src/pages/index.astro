@@ -1,31 +1,15 @@
 ---
-import fs from "node:fs";
 import path from "path";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { parseCurriculum, parseChapter } from "../../scripts/lib/parser";
-const curriculumPath = path.resolve("content/curriculum.md");
+import { parseCurriculum, buildCurriculumIndex } from "../../scripts/lib/parser";
+
+const contentDir = path.resolve("content");
+const curriculumPath = path.join(contentDir, "curriculum.md");
 const chapters = parseCurriculum(curriculumPath);
 
 // Prepare chapter entries with exist status and description
-const chapterEntries = chapters.map((c, index) => {
-  const fileExists = fs.existsSync(path.resolve("content", c.file));
-  let description = "";
-  if (fileExists) {
-    try {
-      const chapterData = parseChapter(path.resolve("content", c.file));
-      description = chapterData.frontmatter?.description || "";
-    } catch (e) {
-      console.error(`Failed to parse chapter description for ${c.file}:`, e);
-    }
-  }
-  return {
-    ...c,
-    chapter: index,
-    exists: fileExists,
-    description: description.trim() || "Topic outline and learning materials coming soon."
-  };
-});
+const chapterEntries = buildCurriculumIndex(contentDir, chapters);
 ---
 
 <BaseLayout title="Curriculum Index" description="Colloquial Cantonese course reader and living curriculum roadmap.">

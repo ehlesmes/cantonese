@@ -10,6 +10,8 @@ import { PracticeSession } from "../utils/practice-session.js";
 import {
   filterPracticeItems,
   groupItemsForDirectory,
+  filterByUnlockedChapters,
+  countMasteredItems,
 } from "../utils/srs-engine.js";
 import {
   el,
@@ -23,9 +25,7 @@ import type {
   SrsStateMap,
 } from "../types/index.js";
 
-type PracticeItem =
-  | (ClientVocab & { _practiceType: "vocab" })
-  | (ClientExample & { _practiceType: "phrase" });
+type PracticeItem = ClientVocab | ClientExample;
 
 function getEl(id: string): HTMLElement {
   const el = document.getElementById(id);
@@ -34,8 +34,8 @@ function getEl(id: string): HTMLElement {
 }
 
 // Global state
-let allVocab: (ClientVocab & { _practiceType: "vocab" })[] = [];
-let allPhrases: (ClientExample & { _practiceType: "phrase" })[] = [];
+let allVocab: ClientVocab[] = [];
+let allPhrases: ClientExample[] = [];
 let unlockedChapters: string[] = [];
 let vocabSrsState: SrsStateMap = {};
 let phraseSrsState: SrsStateMap = {};
@@ -43,8 +43,8 @@ let session: PracticeSession<PracticeItem> | null = null;
 let assembledTokenIndices: number[] = [];
 
 // Dashboard view state
-let currentGroupMode = "chapter"; // "chapter" or "level"
-let currentTabMode = "vocab"; // "vocab" or "phrase"
+let currentGroupMode: "chapter" | "level" = "chapter";
+let currentTabMode: "vocab" | "phrase" = "vocab";
 
 // Fetch data and initialize
 async function initialize() {
@@ -78,8 +78,8 @@ async function initialize() {
       }
     }
 
-    allVocab = rawVocab.map((v) => ({ ...v, _practiceType: "vocab" }));
-    allPhrases = rawPhrases.map((p) => ({ ...p, _practiceType: "phrase" }));
+    allVocab = rawVocab;
+    allPhrases = rawPhrases;
 
     loadState();
     renderDashboard();
@@ -213,15 +213,13 @@ function renderDashboard() {
   const statsCardsEl = getEl("stats-cards-count");
   const statsMasteredEl = getEl("stats-mastered-count");
 
-  const combinedItems = [...allVocab, ...allPhrases].filter((item) =>
-    unlockedChapters.includes(item.chapter),
+  const combinedItems = filterByUnlockedChapters(
+    [...allVocab, ...allPhrases],
+    unlockedChapters,
   );
   const combinedSrs = getCombinedSrsState();
 
-  let masteredCount = 0;
-  combinedItems.forEach((item) => {
-    if (combinedSrs[item.id]?.level === 5) masteredCount++;
-  });
+  const masteredCount = countMasteredItems(combinedItems, combinedSrs);
 
   statsChaptersEl.textContent = String(unlockedChapters.length);
   statsCardsEl.textContent = String(combinedItems.length);
@@ -234,10 +232,9 @@ function renderPoolDirectory() {
   const container = getEl("review-items-list-container");
   container.innerHTML = "";
 
-  const poolToRender = currentTabMode === "vocab" ? allVocab : allPhrases;
-  const poolItems = poolToRender.filter((item) =>
-    unlockedChapters.includes(item.chapter),
-  );
+  const poolToRender: PracticeItem[] =
+    currentTabMode === "vocab" ? allVocab : allPhrases;
+  const poolItems = filterByUnlockedChapters(poolToRender, unlockedChapters);
   const currentSrsState =
     currentTabMode === "vocab" ? vocabSrsState : phraseSrsState;
 
@@ -257,7 +254,7 @@ function renderPoolDirectory() {
   const groupedResult = groupItemsForDirectory(
     poolItems,
     currentSrsState,
-    currentGroupMode as "chapter" | "level",
+    currentGroupMode,
   );
 
   if (groupedResult.type === "chapter") {
@@ -288,9 +285,7 @@ function renderPoolDirectory() {
         className: "directory-group-content review-items-container",
       });
       group.items.forEach((item) => {
-        content.appendChild(
-          createItemCardElement(item as PracticeItem, currentSrsState),
-        );
+        content.appendChild(createItemCardElement(item, currentSrsState));
       });
 
       header.addEventListener("click", () => {
@@ -337,9 +332,7 @@ function renderPoolDirectory() {
         className: "directory-group-content review-items-container",
       });
       items.forEach((item) => {
-        content.appendChild(
-          createItemCardElement(item as PracticeItem, currentSrsState),
-        );
+        content.appendChild(createItemCardElement(item, currentSrsState));
       });
 
       header.addEventListener("click", () => {
@@ -368,7 +361,7 @@ function createItemCardElement(item: PracticeItem, stateMap: SrsStateMap) {
   const textContainer = el("div", { className: "review-item-text" });
 
   const cantoDiv = el("div", { className: "review-item-canto" });
-  if (item._practiceType === "vocab") {
+  if (item.practiceType === "vocab") {
     cantoDiv.innerHTML = `<span class="vocab-term" data-audio-hash="">${item.character}<span class="tooltip-popover"><strong>${item.jyutping}</strong><br/>${item.translation}</span></span>`;
   } else {
     cantoDiv.innerHTML = compileAnnotationsClient(
@@ -379,7 +372,7 @@ function createItemCardElement(item: PracticeItem, stateMap: SrsStateMap) {
   }
 
   const engDiv = el("div", { className: "review-item-english" });
-  if (item._practiceType === "vocab") {
+  if (item.practiceType === "vocab") {
     engDiv.textContent = `${item.jyutping} — ${item.translation}`;
   } else {
     engDiv.textContent = item.english;
@@ -431,7 +424,7 @@ function startPracticeSession(
   if (window.preloadTexts) {
     window.preloadTexts(
       session.cards.map((c) => {
-        if (c._practiceType === "vocab") return { text: c.character, hash: "" };
+        if (c.practiceType === "vocab") return { text: c.character, hash: "" };
         return { text: c.cantoneseRaw, hash: c.audioHash };
       }),
     );
@@ -463,7 +456,7 @@ function loadCard() {
   feedbackPanel.style.display = "none";
   feedbackPanel.innerHTML = "";
 
-  if (card._practiceType === "vocab") {
+  if (card.practiceType === "vocab") {
     // Setup Vocab
     getEl("vocab-ui-container").style.display = "block";
     getEl("flashcard-answer-section").style.display = "none";
@@ -505,7 +498,7 @@ function gradeCardResponse(remembered: boolean) {
 
   const res = session.submitResponse(remembered);
 
-  if (card._practiceType === "vocab") {
+  if (card.practiceType === "vocab") {
     vocabSrsState[card.id] = res.updatedCardState!;
   } else {
     phraseSrsState[card.id] = res.updatedCardState!;
@@ -526,7 +519,7 @@ function renderGameplayBoards(poolIndices: number[]) {
 
   if (!session) return;
   const card = session.getCurrentCard();
-  if (!card || card._practiceType !== "phrase") return;
+  if (!card || card.practiceType !== "phrase") return;
 
   if (assembledTokenIndices.length === 0) {
     answerSlotsEl.appendChild(
@@ -606,7 +599,7 @@ function createTokenChip(
 function resetCurrentCard() {
   if (!session) return;
   const card = session.getCurrentCard();
-  if (!card || card._practiceType !== "phrase") return;
+  if (!card || card.practiceType !== "phrase") return;
 
   assembledTokenIndices = [];
   const indices = session.getShuffledIndices(card.tokens.length);
@@ -616,7 +609,7 @@ function resetCurrentCard() {
 function checkCurrentAnswer() {
   if (!session) return;
   const card = session.getCurrentCard();
-  if (!card || card._practiceType !== "phrase") return;
+  if (!card || card.practiceType !== "phrase") return;
 
   if (assembledTokenIndices.length !== card.tokens.length) {
     alert("Please use all tokens to assemble the sentence before checking.");

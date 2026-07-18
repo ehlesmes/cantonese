@@ -42,6 +42,7 @@ export const GET: APIRoute = async () => {
     const chMeta = chaptersMeta.find((c) => c.id === item.firstIntroducedIn);
     return {
       id: `vocab-${item.character}_${item.jyutping.replace(/\s+/g, "")}`,
+      practiceType: "vocab",
       character: item.character,
       jyutping: item.jyutping,
       translation: item.translation,

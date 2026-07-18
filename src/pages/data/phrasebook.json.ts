@@ -1,6 +1,10 @@
 import fs from "fs";
 import path from "path";
 import { parseCurriculum, parseChapter } from "../../../scripts/lib/parser";
+import {
+  parseDialogueBlock,
+  parseExampleBlock,
+} from "../../../src/utils/markdown";
 import { getAudioHash } from "../../../src/utils/audio.js";
 
 import type { APIRoute } from "astro";
@@ -56,6 +60,7 @@ interface ExampleItem {
   chapter: string;
   chapterNumber: number;
   chapterTitle: string;
+  practiceType: "phrase";
   cantoneseRaw: string;
   english: string;
   tokens: string[];
@@ -80,9 +85,9 @@ export const GET: APIRoute = async () => {
 
         for (const block of blocks) {
           if (block.type === "cantonese") {
-            const parts = block.content.split("===");
-            const cantoneseRaw = parts[0] ? parts[0].trim() : "";
-            const english = parts[1] ? parts[1].trim() : "";
+            const { cantoneseRaw, translationRaw: english } = parseExampleBlock(
+              block.content,
+            );
 
             if (cantoneseRaw && english) {
               const tokens = splitCantoneseTokens(cantoneseRaw);
@@ -91,6 +96,7 @@ export const GET: APIRoute = async () => {
                 chapter: chapter.id,
                 chapterNumber: idx,
                 chapterTitle: chapter.title,
+                practiceType: "phrase",
                 cantoneseRaw,
                 english,
                 tokens,
@@ -100,65 +106,23 @@ export const GET: APIRoute = async () => {
               });
             }
           } else if (block.type === "dialog") {
-            const lines = block.content.split(/\r?\n/);
-            let currentTurn: ExampleItem | null = null;
-
-            for (const line of lines) {
-              const trimmed = line.trim();
-              if (!trimmed) continue;
-
-              const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
-              if (speakerMatch) {
-                if (
-                  currentTurn &&
-                  currentTurn.cantoneseRaw &&
-                  currentTurn.english
-                ) {
-                  currentTurn.audioHash = getAudioHash(
-                    currentTurn.cantoneseRaw,
-                  );
-                  currentTurn.tokenHashes = getTokenHashes(
-                    currentTurn.cantoneseRaw,
-                  );
-                  allExamples.push(currentTurn);
-                }
-                const rawCanto = speakerMatch[2] || "";
-                currentTurn = {
-                  id: getStablePhraseId(rawCanto),
+            const turns = parseDialogueBlock(block.content);
+            for (const turn of turns) {
+              if (turn.cantonese && turn.english) {
+                allExamples.push({
+                  id: getStablePhraseId(turn.cantonese),
                   chapter: chapter.id,
                   chapterNumber: idx,
                   chapterTitle: chapter.title,
-                  cantoneseRaw: rawCanto,
-                  english: "",
-                  tokens: splitCantoneseTokens(rawCanto),
+                  practiceType: "phrase",
+                  cantoneseRaw: turn.cantonese,
+                  english: turn.english,
+                  tokens: splitCantoneseTokens(turn.cantonese),
                   type: "dialog",
-                  audioHash: "",
-                  tokenHashes: {},
-                };
-              } else if (trimmed.startsWith("===")) {
-                if (currentTurn) {
-                  currentTurn.english = trimmed.slice(3).trim();
-                }
-              } else {
-                if (currentTurn) {
-                  currentTurn.cantoneseRaw += " " + trimmed;
-                  currentTurn.tokens = splitCantoneseTokens(
-                    currentTurn.cantoneseRaw,
-                  );
-                  currentTurn.id = getStablePhraseId(currentTurn.cantoneseRaw);
-                }
+                  audioHash: getAudioHash(turn.cantonese),
+                  tokenHashes: getTokenHashes(turn.cantonese),
+                });
               }
-            }
-            if (
-              currentTurn &&
-              currentTurn.cantoneseRaw &&
-              currentTurn.english
-            ) {
-              currentTurn.audioHash = getAudioHash(currentTurn.cantoneseRaw);
-              currentTurn.tokenHashes = getTokenHashes(
-                currentTurn.cantoneseRaw,
-              );
-              allExamples.push(currentTurn);
             }
           }
         }

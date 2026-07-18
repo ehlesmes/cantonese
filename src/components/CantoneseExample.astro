@@ -1,12 +1,10 @@
 ---
-import { compileAnnotations } from "../utils/markdown.js";
+import { compileAnnotations, parseExampleBlock } from "../utils/markdown.js";
 import { getAudioHash } from "../utils/audio.js";
 
 const { content } = Astro.props;
 
-const parts = content.split("===");
-const cantoneseRaw = parts[0] ? parts[0].trim() : "";
-const translationRaw = parts[1] ? parts[1].trim() : "";
+const { cantoneseRaw, translationRaw } = parseExampleBlock(content);
 
 const cantoneseHtml = compileAnnotations(cantoneseRaw);
 

@@ -1,5 +1,10 @@
 import { describe, test, expect } from "vitest";
-import { compileMarkdown, compileAnnotations } from "./markdown.js";
+import {
+  compileMarkdown,
+  compileAnnotations,
+  parseDialogueBlock,
+  parseExampleBlock,
+} from "./markdown.js";
 import crypto from "crypto";
 
 describe("Markdown & Tooltip Compiling Utility", () => {
@@ -117,6 +122,63 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     );
     expect(html).toContain("<ul>");
     expect(html).toContain("<li>List Item 1</li>");
+  });
+});
+
+describe("Markdown parsing tools", () => {
+  test("parseDialogueBlock parses simple dialogue", () => {
+    const raw = `A: 你好[nei5hou2|hello]\n=== Hello\nB: 早晨[zou2san4|good morning]\n=== Good morning`;
+    const turns = parseDialogueBlock(raw);
+    expect(turns.length).toBe(2);
+    expect(turns[0]?.speaker).toBe("A");
+    expect(turns[0]?.cantonese).toBe("你好[nei5hou2|hello]");
+    expect(turns[0]?.english).toBe("Hello");
+  });
+
+  test("parseExampleBlock parses correctly", () => {
+    const raw = `你好 === Hello`;
+    const result = parseExampleBlock(raw);
+    expect(result.cantoneseRaw).toBe("你好");
+    expect(result.translationRaw).toBe("Hello");
+  });
+
+  test("parseExampleBlock handles missing english translation", () => {
+    const raw = `你好`;
+    const result = parseExampleBlock(raw);
+    expect(result.cantoneseRaw).toBe("你好");
+    expect(result.translationRaw).toBe("");
+  });
+
+  test("parseExampleBlock handles missing cantonese", () => {
+    const raw = `=== Hello`;
+    const result = parseExampleBlock(raw);
+    expect(result.cantoneseRaw).toBe("");
+    expect(result.translationRaw).toBe("Hello");
+  });
+
+  test("parseDialogueBlock returns empty array for empty or speakerless string", () => {
+    expect(parseDialogueBlock("Just some dangling text")).toEqual([]);
+  });
+
+  test("parseDialogueBlock ignores dangling text without speaker", () => {
+    const raw = `Dangling text before speaker\n   \nA: Hello\n=== English`;
+    const turns = parseDialogueBlock(raw);
+    expect(turns.length).toBe(1);
+    expect(turns[0]?.cantonese).toBe("Hello");
+    expect(turns[0]?.english).toBe("English");
+  });
+
+  test("parseDialogueBlock ignores dangling english translation", () => {
+    const raw = `=== Dangling English\nA: Hello\n=== English`;
+    const turns = parseDialogueBlock(raw);
+    expect(turns.length).toBe(1);
+    expect(turns[0]?.english).toBe("English");
+  });
+
+  test("parseDialogueBlock handles multi-line cantonese", () => {
+    const raw = `A: Hello\nWorld\n=== Hello World`;
+    const turns = parseDialogueBlock(raw);
+    expect(turns[0]?.cantonese).toBe("Hello World");
   });
 });
 

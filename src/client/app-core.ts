@@ -1,4 +1,4 @@
-import { selectBestCantoneseVoice } from "../utils/text.js";
+import { selectBestCantoneseVoice, isPunctuationOnly } from "../utils/text.js";
 import { calculateTooltipShift } from "../utils/layout.js";
 
 function getEl(id: string): HTMLElement {
@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const hash = vocabTerm.dataset.audioHash;
 
       // Skip playing sound or highlighting if the text consists only of punctuation marks
-      if (/^[，。！？、；：,?!;:\s]+$/.test(text)) {
+      if (isPunctuationOnly(text)) {
         return;
       }
 

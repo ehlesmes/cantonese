@@ -2,6 +2,7 @@ import { describe, test, expect } from "vitest";
 import {
   getCleanSpokenText,
   isPunctuation,
+  isPunctuationOnly,
   checkPhraseAnswer,
   selectBestCantoneseVoice,
   lookupDictionary,
@@ -249,5 +250,14 @@ describe("lookupDictionary Utility", () => {
     const results = lookupDictionary(dictionary, "aa");
     expect(results.length).toBe(1);
     expect(results[0]?.char).toBe("呀");
+  });
+});
+
+describe("isPunctuationOnly", () => {
+  test("detects only punctuation and spaces", () => {
+    expect(isPunctuationOnly("，。 ！？")).toBe(true);
+    expect(isPunctuationOnly("你好")).toBe(false);
+    expect(isPunctuationOnly("")).toBe(false);
+    expect(isPunctuationOnly(null)).toBe(false);
   });
 });

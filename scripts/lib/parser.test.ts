@@ -1,6 +1,11 @@
 import fs from "fs";
 import { describe, test, expect, vi } from "vitest";
-import { parseYAML, parseChapter, parseCurriculum } from "./parser.js";
+import {
+  parseYAML,
+  parseChapter,
+  parseCurriculum,
+  buildCurriculumIndex,
+} from "./parser.js";
 
 vi.mock("fs");
 
@@ -82,5 +87,52 @@ describe("Parser - parseCurriculum edge cases", () => {
     vi.spyOn(fs, "readFileSync").mockReturnValue("no frontmatter");
     const result2 = parseCurriculum("dummy.md");
     expect(result2).toEqual([]);
+  });
+});
+
+describe("buildCurriculumIndex", () => {
+  test("merges data and handles missing files gracefully", () => {
+    vi.spyOn(fs, "existsSync").mockReturnValue(false);
+    const chapters = [
+      { id: "test", file: "test.md", title: "Test", chapter: 0 },
+    ];
+    const result = buildCurriculumIndex("content", chapters);
+    expect(result[0]?.exists).toBe(false);
+    expect(result[0]?.description).toBe(
+      "Topic outline and learning materials coming soon.",
+    );
+  });
+
+  test("extracts description if file exists", () => {
+    vi.spyOn(fs, "existsSync").mockReturnValue(true);
+    vi.spyOn(fs, "readFileSync").mockReturnValue(
+      "---\ndescription: 'A test description'\n---\nContent",
+    );
+    const chapters = [
+      { id: "test", file: "test.md", title: "Test", chapter: 0 },
+    ];
+    const result = buildCurriculumIndex("content", chapters);
+    expect(result[0]?.exists).toBe(true);
+    expect(result[0]?.description).toBe("A test description");
+  });
+
+  test("handles parse errors gracefully", () => {
+    vi.spyOn(fs, "existsSync").mockReturnValue(true);
+    vi.spyOn(fs, "readFileSync").mockImplementation(() => {
+      throw new Error("Read error");
+    });
+
+    const consoleSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+
+    const chapters = [
+      { id: "test", file: "test.md", title: "Test", chapter: 0 },
+    ];
+    const result = buildCurriculumIndex("content", chapters);
+    expect(result[0]?.exists).toBe(true);
+    expect(result[0]?.description).toBe(
+      "Topic outline and learning materials coming soon.",
+    );
+
+    consoleSpy.mockRestore();
   });
 });

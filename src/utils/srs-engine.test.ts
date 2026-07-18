@@ -1,5 +1,10 @@
 import { describe, test, expect, vi } from "vitest";
-import { selectCards, gradeCard } from "./srs-engine.js";
+import {
+  selectCards,
+  gradeCard,
+  filterByUnlockedChapters,
+  countMasteredItems,
+} from "./srs-engine.js";
 
 function splitCantoneseTokens(cantoneseRaw: string) {
   if (!cantoneseRaw) return [];
@@ -131,12 +136,48 @@ describe("Spaced Repetition System (SRS) Engine Spec", () => {
 
 describe("SRS Engine Data Transformation Utilities", () => {
   const mockPool = [
-    { id: "1", chapter: "ch1", chapterTitle: "Ch 1", chapterNumber: 1 },
-    { id: "2", chapter: "ch1", chapterTitle: "Ch 1", chapterNumber: 1 },
-    { id: "3", chapter: "ch2", chapterTitle: "Ch 2", chapterNumber: 2 },
-    { id: "4", chapter: "ch3", chapterTitle: "Ch 3", chapterNumber: 3 },
-    { id: "5", chapter: "ch4", chapterTitle: "Ch 4", chapterNumber: 4 }, // No SRS state
-    { id: "6", chapter: "ch4", chapterTitle: "Ch 4", chapterNumber: 4 }, // Level 999
+    {
+      id: "1",
+      chapter: "ch1",
+      chapterTitle: "Ch 1",
+      chapterNumber: 1,
+      practiceType: "vocab" as const,
+    },
+    {
+      id: "2",
+      chapter: "ch1",
+      chapterTitle: "Ch 1",
+      chapterNumber: 1,
+      practiceType: "vocab" as const,
+    },
+    {
+      id: "3",
+      chapter: "ch2",
+      chapterTitle: "Ch 2",
+      chapterNumber: 2,
+      practiceType: "vocab" as const,
+    },
+    {
+      id: "4",
+      chapter: "ch3",
+      chapterTitle: "Ch 3",
+      chapterNumber: 3,
+      practiceType: "vocab" as const,
+    },
+    {
+      id: "5",
+      chapter: "ch4",
+      chapterTitle: "Ch 4",
+      chapterNumber: 4,
+      practiceType: "vocab" as const,
+    }, // No SRS state
+    {
+      id: "6",
+      chapter: "ch4",
+      chapterTitle: "Ch 4",
+      chapterNumber: 4,
+      practiceType: "vocab" as const,
+    }, // Level 999
   ];
 
   const mockSrsState = {
@@ -205,5 +246,38 @@ describe("SRS Engine Data Transformation Utilities", () => {
     const indices = getShuffledIndices(5);
     expect(indices.length).toBe(5);
     expect([...indices].sort((a, b) => a - b)).toEqual([0, 1, 2, 3, 4]);
+  });
+});
+
+describe("SRS Filtering Utilities", () => {
+  test("filterByUnlockedChapters works", () => {
+    const pool = [
+      {
+        id: "1",
+        chapter: "ch1",
+        chapterTitle: "",
+        chapterNumber: 1,
+        practiceType: "vocab" as const,
+      },
+      {
+        id: "2",
+        chapter: "ch2",
+        chapterTitle: "",
+        chapterNumber: 2,
+        practiceType: "vocab" as const,
+      },
+    ];
+    const filtered = filterByUnlockedChapters(pool, ["ch1"]);
+    expect(filtered.length).toBe(1);
+    expect(filtered[0]?.id).toBe("1");
+  });
+
+  test("countMasteredItems works", () => {
+    const items = [{ id: "1" }, { id: "2" }];
+    const state = {
+      "1": { level: 5, lastReviewed: 0 },
+      "2": { level: 4, lastReviewed: 0 },
+    };
+    expect(countMasteredItems(items, state)).toBe(1);
   });
 });

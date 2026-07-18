@@ -46,7 +46,7 @@ test.describe("Dashboard Tabs", () => {
           character: "我",
           jyutping: "ngo5",
           translation: "I",
-          _practiceType: "vocab",
+          practiceType: "vocab",
         },
       ];
       const mockPhrase = [
@@ -60,7 +60,7 @@ test.describe("Dashboard Tabs", () => {
           tokens: ["我[ngo5|I]"],
           audioHash: "",
           tokenHashes: {},
-          _practiceType: "phrase",
+          practiceType: "phrase",
         },
       ];
 
@@ -120,6 +120,7 @@ test.describe("Practice Session UI and Grading", () => {
           audioHash: "",
           tokenHashes: {},
           type: "example",
+          practiceType: "phrase",
         },
       ];
 
@@ -185,6 +186,7 @@ test.describe("Practice Session UI and Grading", () => {
           audioHash: "",
           tokenHashes: {},
           type: "example",
+          practiceType: "phrase",
         },
       ];
 
@@ -244,6 +246,7 @@ test.describe("Practice Session UI and Grading", () => {
           jyutping: "ngo5",
           translation: "I",
           type: "vocab",
+          practiceType: "vocab",
         },
         {
           id: "v2",
@@ -254,6 +257,7 @@ test.describe("Practice Session UI and Grading", () => {
           jyutping: "hou2",
           translation: "Good",
           type: "vocab",
+          practiceType: "vocab",
         },
       ];
 
@@ -311,6 +315,7 @@ test.describe("Practice Session UI and Grading", () => {
           jyutping: "ngo5",
           translation: "I",
           type: "vocab",
+          practiceType: "vocab",
         },
       ];
       const mockPhrase = [
@@ -325,6 +330,7 @@ test.describe("Practice Session UI and Grading", () => {
           audioHash: "",
           tokenHashes: {},
           type: "phrase",
+          practiceType: "phrase",
         },
       ];
 
@@ -398,6 +404,7 @@ test.describe("Edge Cases", () => {
         type: "example",
         audioHash: "",
         tokenHashes: {},
+        practiceType: "phrase",
       };
       Object.defineProperty(window, "__allExamples", {
         get() {
@@ -443,6 +450,7 @@ test.describe("Edge Cases", () => {
         type: "example",
         audioHash: "",
         tokenHashes: {},
+        practiceType: "phrase",
       };
       Object.defineProperty(window, "__allExamples", {
         get() {
@@ -490,6 +498,7 @@ test.describe("Edge Cases", () => {
         type: "example",
         audioHash: "",
         tokenHashes: {},
+        practiceType: "phrase",
       };
       Object.defineProperty(window, "__allExamples", {
         get() {

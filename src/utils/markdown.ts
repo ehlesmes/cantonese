@@ -18,7 +18,7 @@ marked.setOptions({
  */
 export function compileMarkdown(
   text: string | null | undefined,
-  options: CompileMarkdownOptions = {}
+  options: CompileMarkdownOptions = {},
 ): string {
   if (!text) return "";
 
@@ -40,7 +40,7 @@ export function compileMarkdown(
         .digest("hex")
         .slice(0, 16);
       return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
-    }
+    },
   );
 
   // Replace plain annotations (without backticks)
@@ -53,7 +53,7 @@ export function compileMarkdown(
         .digest("hex")
         .slice(0, 16);
       return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
-    }
+    },
   );
 
   const parseOptions: { breaks?: boolean } = {};
@@ -70,12 +70,15 @@ export function compileMarkdown(
     /<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]([\s\S]*?)<\/blockquote>/gi;
 
   // Replace blockquotes with div alert cards
-  return htmlString.replace(alertRegex, (_match: string, type: string, content: string) => {
-    return `<div class="alert-box alert-${type.toLowerCase()}">
+  return htmlString.replace(
+    alertRegex,
+    (_match: string, type: string, content: string) => {
+      return `<div class="alert-box alert-${type.toLowerCase()}">
       <div class="alert-title">${type}</div>
       <div class="alert-content"><p>${content.trim()}</div>
     </div>`;
-  });
+    },
+  );
 }
 
 /**
@@ -92,12 +95,82 @@ export function compileAnnotations(text: string | null | undefined): string {
   const blockRegex =
     /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
 
-  return text.replace(blockRegex, (_match: string, char: string, jyutping: string, translation: string) => {
-    const hash = crypto
-      .createHash("sha256")
-      .update(char)
-      .digest("hex")
-      .slice(0, 16);
-    return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
-  });
+  return text.replace(
+    blockRegex,
+    (_match: string, char: string, jyutping: string, translation: string) => {
+      const hash = crypto
+        .createHash("sha256")
+        .update(char)
+        .digest("hex")
+        .slice(0, 16);
+      return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
+    },
+  );
+}
+
+export interface DialogueTurn {
+  speaker: string;
+  cantonese: string;
+  english: string;
+}
+
+/**
+ * Parses a raw dialogue block string into an array of structured turns.
+ *
+ * @param content The raw string from the markdown file.
+ * @returns Array of DialogueTurn objects.
+ */
+export function parseDialogueBlock(content: string): DialogueTurn[] {
+  const lines = content.split(/\r?\n/);
+  const turns: DialogueTurn[] = [];
+  let currentTurn: DialogueTurn | null = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]!;
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+
+    const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
+    if (speakerMatch) {
+      if (currentTurn) {
+        turns.push(currentTurn);
+      }
+      currentTurn = {
+        speaker: speakerMatch[1]!,
+        cantonese: speakerMatch[2]!,
+        english: "",
+      };
+    } else if (trimmed.startsWith("===")) {
+      if (currentTurn) {
+        currentTurn.english = trimmed.slice(3).trim();
+      }
+    } else {
+      if (currentTurn) {
+        currentTurn.cantonese += " " + trimmed;
+      }
+    }
+  }
+
+  if (currentTurn) {
+    turns.push(currentTurn);
+  }
+
+  return turns;
+}
+
+/**
+ * Parses a raw example block string into Cantonese and English parts.
+ *
+ * @param content The raw string from the markdown file.
+ * @returns Object with cantoneseRaw and translationRaw.
+ */
+export function parseExampleBlock(content: string): {
+  cantoneseRaw: string;
+  translationRaw: string;
+} {
+  const parts = content.split("===");
+  return {
+    cantoneseRaw: parts[0] ? parts[0].trim() : "",
+    translationRaw: parts[1] ? parts[1].trim() : "",
+  };
 }

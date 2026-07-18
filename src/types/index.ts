@@ -81,22 +81,24 @@ export interface CompileMarkdownOptions {
 }
 
 // Client-side UI Data Models
-export interface ClientVocab {
+export interface PracticeItemBase {
   id: string;
+  chapter: string;
+  chapterNumber: number;
+  chapterTitle: string;
+  practiceType: "vocab" | "phrase";
+}
+
+export interface ClientVocab extends PracticeItemBase {
+  practiceType: "vocab";
   character: string;
   jyutping: string;
   translation: string;
-  chapter: string;
-  chapterNumber: number;
-  chapterTitle: string;
   occurrences: number;
 }
 
-export interface ClientExample {
-  id: string;
-  chapter: string;
-  chapterNumber: number;
-  chapterTitle: string;
+export interface ClientExample extends PracticeItemBase {
+  practiceType: "phrase";
   cantoneseRaw: string;
   english: string;
   tokens: string[];

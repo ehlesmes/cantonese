@@ -1,4 +1,5 @@
 import * as fs from "fs";
+import * as path from "path";
 import type {
   RawParsedChapter,
   ParsedBlock,
@@ -340,6 +341,54 @@ function extractBlockUnits(text: string): SemanticUnit[] {
     });
   }
   return matches;
+}
+
+export interface CurriculumIndexEntry extends CurriculumChapter {
+  chapter: number;
+  exists: boolean;
+  description: string;
+}
+
+/**
+ * Builds the curriculum index array by merging CurriculumChapter entries with their parsed frontmatter descriptions.
+ * Checks for file existence and supplies defaults if the chapter file is missing.
+ *
+ * @param contentDir The directory path containing the chapter markdown files.
+ * @param chapters The array of CurriculumChapter objects (from parseCurriculum).
+ * @returns Array of CurriculumIndexEntry objects.
+ */
+export function buildCurriculumIndex(
+  contentDir: string,
+  chapters: CurriculumChapter[],
+): CurriculumIndexEntry[] {
+  return chapters.map((c, index) => {
+    const filePath = path.resolve(contentDir, c.file);
+    const fileExists = fs.existsSync(filePath);
+    let description = "";
+
+    if (fileExists) {
+      try {
+        const chapterData = parseChapter(filePath);
+        if (
+          chapterData.frontmatter &&
+          typeof chapterData.frontmatter.description === "string"
+        ) {
+          description = chapterData.frontmatter.description;
+        }
+      } catch (e) {
+        console.error(`Failed to parse chapter description for ${c.file}:`, e);
+      }
+    }
+
+    return {
+      ...c,
+      chapter: index,
+      exists: fileExists,
+      description:
+        description.trim() ||
+        "Topic outline and learning materials coming soon.",
+    };
+  });
 }
 
 export { parseYAML, extractInlineUnits, extractBlockUnits, CHINESE_CHAR_REGEX };

@@ -30,6 +30,14 @@ export function isPunctuation(token: string | null | undefined): boolean {
 }
 
 /**
+ * Checks if the entire string consists only of punctuation marks and whitespace.
+ */
+export function isPunctuationOnly(text: string | null | undefined): boolean {
+  if (!text) return false;
+  return /^[，。！？、；：,?!;:\s]+$/.test(text);
+}
+
+/**
  * Compares two token lists, returning true if they match.
  * Swapping equivalent punctuation marks is allowed.
  */

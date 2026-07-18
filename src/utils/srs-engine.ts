@@ -1,4 +1,4 @@
-import type { SrsCardState, SrsStateMap } from "../types";
+import type { SrsCardState, SrsStateMap, PracticeItemBase } from "../types";
 
 export interface IdentifiableItem {
   id: string;
@@ -90,12 +90,6 @@ export function gradeCard(
   };
 }
 
-export interface PracticeItemBase extends IdentifiableItem {
-  chapter: string;
-  chapterTitle: string;
-  chapterNumber: number;
-}
-
 /**
  * Filters a pool of practice items based on SRS level or chapter constraints.
  */
@@ -184,4 +178,30 @@ export function getShuffledIndices(length: number): number[] {
     indices[j] = temp;
   }
   return indices;
+}
+
+/**
+ * Filters a pool of items to only include those belonging to unlocked chapters.
+ */
+export function filterByUnlockedChapters<T extends PracticeItemBase>(
+  poolItems: T[],
+  unlockedChapters: string[],
+): T[] {
+  return poolItems.filter((item) => unlockedChapters.includes(item.chapter));
+}
+
+/**
+ * Counts the number of items in the pool that have reached the mastered level (level 5).
+ */
+export function countMasteredItems<T extends IdentifiableItem>(
+  poolItems: T[],
+  srsState: SrsStateMap,
+): number {
+  let count = 0;
+  for (const item of poolItems) {
+    if (srsState[item.id]?.level === 5) {
+      count++;
+    }
+  }
+  return count;
 }

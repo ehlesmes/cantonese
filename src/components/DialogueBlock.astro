@@ -1,52 +1,19 @@
 ---
-import { compileAnnotations } from "../utils/markdown.js";
+import { compileAnnotations, parseDialogueBlock } from "../utils/markdown.js";
+import type { DialogueTurn } from "../utils/markdown.js";
 import { getAudioHash } from "../utils/audio.js";
 
-interface DialogueTurn {
-  speaker: string;
-  cantonese: string;
-  english: string;
+interface DialogueTurnWithAudio extends DialogueTurn {
   audioHash?: string;
 }
 
 const { content } = Astro.props;
 
-const lines = content.split(/\r?\n/);
-const turns: DialogueTurn[] = [];
-let currentTurn: DialogueTurn | null = null;
-
-for (let i = 0; i < lines.length; i++) {
-  const line = lines[i];
-  if (line === undefined) continue;
-  const trimmed = line.trim();
-  if (!trimmed) continue;
-
-  const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
-  if (speakerMatch) {
-    if (currentTurn) {
-      currentTurn.audioHash = getAudioHash(currentTurn.cantonese);
-      turns.push(currentTurn);
-    }
-    currentTurn = {
-      speaker: speakerMatch[1] || "",
-      cantonese: speakerMatch[2] || "",
-      english: "",
-    };
-  } else if (trimmed.startsWith("===")) {
-    if (currentTurn) {
-      currentTurn.english = trimmed.slice(3).trim();
-    }
-  } else {
-    if (currentTurn) {
-      currentTurn.cantonese += " " + trimmed;
-    }
-  }
-}
-
-if (currentTurn) {
-  currentTurn.audioHash = getAudioHash(currentTurn.cantonese);
-  turns.push(currentTurn);
-}
+const parsedTurns = parseDialogueBlock(content);
+const turns: DialogueTurnWithAudio[] = parsedTurns.map((turn) => ({
+  ...turn,
+  audioHash: getAudioHash(turn.cantonese),
+}));
 ---
 <div class="dialogue-card chapter-block">
   {turns.map(turn => (
