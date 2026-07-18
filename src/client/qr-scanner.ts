@@ -11,6 +11,15 @@ export function startScanner(
   onStatus: (msg: string) => void,
   onDecoded: (data: string) => void | Promise<void>,
 ) {
+  if (videoStream) {
+    videoStream.getTracks().forEach((track) => track.stop());
+    videoStream = null;
+  }
+  if (scanAnimationId) {
+    cancelAnimationFrame(scanAnimationId);
+    scanAnimationId = null;
+  }
+
   onStatus("Accessing camera...");
   videoWrapper.style.display = "none";
 
@@ -45,7 +54,6 @@ export function stopScanner(
     cancelAnimationFrame(scanAnimationId);
     scanAnimationId = null;
   }
-  /* v8 ignore start */
   if (videoStream) {
     videoStream.getTracks().forEach((track) => track.stop());
     videoStream = null;
@@ -56,7 +64,6 @@ export function stopScanner(
   if (videoWrapper) {
     videoWrapper.style.display = "none";
   }
-  /* v8 ignore stop */
 }
 
 function tickScanner(
@@ -66,17 +73,13 @@ function tickScanner(
   onDecoded: (data: string) => void | Promise<void>,
 ) {
   if (isProcessing) {
-    /* v8 ignore start */
     if (videoStream) {
       scanAnimationId = requestAnimationFrame(() =>
         tickScanner(video, hiddenCanvas, onStatus, onDecoded),
       );
     }
-    /* v8 ignore stop */
     return;
   }
-
-  /* v8 ignore start */
   if (video.readyState === video.HAVE_ENOUGH_DATA) {
     const videoWidth = video.videoWidth;
     const videoHeight = video.videoHeight;
@@ -116,13 +119,9 @@ function tickScanner(
       });
     }
   }
-  /* v8 ignore stop */
-
-  /* v8 ignore start */
   if (videoStream) {
     scanAnimationId = requestAnimationFrame(() =>
       tickScanner(video, hiddenCanvas, onStatus, onDecoded),
     );
   }
-  /* v8 ignore stop */
 }

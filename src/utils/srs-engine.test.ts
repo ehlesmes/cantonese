@@ -129,4 +129,81 @@ describe("Spaced Repetition System (SRS) Engine Spec", () => {
   });
 });
 
-export {};
+describe("SRS Engine Data Transformation Utilities", () => {
+  const mockPool = [
+    { id: "1", chapter: "ch1", chapterTitle: "Ch 1", chapterNumber: 1 },
+    { id: "2", chapter: "ch1", chapterTitle: "Ch 1", chapterNumber: 1 },
+    { id: "3", chapter: "ch2", chapterTitle: "Ch 2", chapterNumber: 2 },
+    { id: "4", chapter: "ch3", chapterTitle: "Ch 3", chapterNumber: 3 },
+    { id: "5", chapter: "ch4", chapterTitle: "Ch 4", chapterNumber: 4 }, // No SRS state
+    { id: "6", chapter: "ch4", chapterTitle: "Ch 4", chapterNumber: 4 }, // Level 999
+  ];
+
+  const mockSrsState = {
+    "1": { level: 1, lastReviewed: 0 },
+    "2": { level: 3, lastReviewed: 0 },
+    "3": { level: 1, lastReviewed: 0 },
+    "4": { level: 5, lastReviewed: 0 },
+    "6": { level: 999, lastReviewed: 0 },
+  };
+
+  test("filterPracticeItems by chapterId", async () => {
+    const { filterPracticeItems } = await import("./srs-engine.js");
+    const result = filterPracticeItems(mockPool, ["ch1", "ch2"], mockSrsState, {
+      chapterId: "ch1",
+    });
+    expect(result.length).toBe(2);
+    expect(result.map((r) => r.id)).toEqual(["1", "2"]);
+  });
+
+  test("filterPracticeItems by srsLevel", async () => {
+    const { filterPracticeItems } = await import("./srs-engine.js");
+    const result = filterPracticeItems(
+      mockPool,
+      ["ch1", "ch2", "ch4"],
+      mockSrsState,
+      { srsLevel: 1 },
+    );
+    expect(result.length).toBe(3);
+    expect(result.map((r) => r.id)).toEqual(["1", "3", "5"]); // 5 falls back to level 1
+  });
+
+  test("filterPracticeItems by unlockedChapters only", async () => {
+    const { filterPracticeItems } = await import("./srs-engine.js");
+    const result = filterPracticeItems(
+      mockPool,
+      ["ch1", "ch2", "ch4"],
+      mockSrsState,
+    );
+    expect(result.length).toBe(5);
+    expect(result.map((r) => r.id)).toEqual(["1", "2", "3", "5", "6"]);
+  });
+
+  test("groupItemsForDirectory by chapter", async () => {
+    const { groupItemsForDirectory } = await import("./srs-engine.js");
+    const result = groupItemsForDirectory(mockPool, mockSrsState, "chapter");
+    expect(result.type).toBe("chapter");
+    if (result.type === "chapter") {
+      expect(result.sortedChapterIds).toEqual(["ch1", "ch2", "ch3", "ch4"]);
+      expect(result.grouped["ch1"]?.items.length).toBe(2);
+    }
+  });
+
+  test("groupItemsForDirectory by level", async () => {
+    const { groupItemsForDirectory } = await import("./srs-engine.js");
+    const result = groupItemsForDirectory(mockPool, mockSrsState, "level");
+    expect(result.type).toBe("level");
+    if (result.type === "level") {
+      expect(result.grouped[1]?.length).toBe(3); // 1, 3, 5
+      expect(result.grouped[3]?.length).toBe(1);
+      expect(result.grouped[5]?.length).toBe(1);
+    }
+  });
+
+  test("getShuffledIndices generates valid indices array", async () => {
+    const { getShuffledIndices } = await import("./srs-engine.js");
+    const indices = getShuffledIndices(5);
+    expect(indices.length).toBe(5);
+    expect([...indices].sort((a, b) => a - b)).toEqual([0, 1, 2, 3, 4]);
+  });
+});

@@ -89,4 +89,15 @@ export class PracticeSession<T extends IdentifiableItem> {
       srsState: this.srsState,
     };
   }
+
+  getShuffledIndices(length: number): number[] {
+    const indices = Array.from({ length }, (_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = indices[i]!;
+      indices[i] = indices[j]!;
+      indices[j] = temp;
+    }
+    return indices;
+  }
 }

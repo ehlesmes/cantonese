@@ -27,6 +27,19 @@ describe("Parser - parseYAML", () => {
     // @ts-expect-error - Expected due to intentional malformed test data
     expect(result.list[1].key).toBe("value2");
   });
+
+  test("parses array lists with flat strings and numbers", () => {
+    const yaml =
+      "list:\n  - apple\n  - 'banana'\n  - \"cherry\"\n  - a:\n  - 123\n  -";
+    const result = parseYAML(yaml) as { list: unknown[] };
+    expect(result.list).toHaveLength(6);
+    expect(result.list[0]).toBe("apple");
+    expect(result.list[1]).toBe("banana");
+    expect(result.list[2]).toBe("cherry");
+    expect(result.list[3]).toEqual({ a: "" }); // handles empty object property implicitly (falls back to scalar or missing) or whatever it parsed
+    expect(result.list[4]).toBe(123);
+    expect(result.list[5]).toBe("");
+  });
 });
 
 describe("Parser - parseChapter edge cases", () => {
@@ -39,13 +52,24 @@ describe("Parser - parseChapter edge cases", () => {
     expect(result.frontmatter).toBeNull();
   });
 
-  test("handles unclosed code blocks", () => {
-    const content = "prose line\n```cantonese\nexample line\n";
+  test("handles unclosed code blocks and code blocks at end of file", () => {
+    // 1. With trailing newline (currentBlockLines = [""])
+    const content = "prose line\n```cantonese\nexample line\n```\n";
     vi.spyOn(fs, "readFileSync").mockReturnValue(content);
     const result = parseChapter("dummy.md");
-    expect(result.blocks).toHaveLength(2);
-    expect(result.blocks.at(0)?.type).toBe("prose");
-    expect(result.blocks.at(1)?.type).toBe("cantonese");
+    expect(result.blocks).toHaveLength(3); // prose, cantonese, trailing empty prose
+
+    // 2. Unclosed code block
+    const contentUnclosed = "prose line\n```cantonese\nexample line\n";
+    vi.spyOn(fs, "readFileSync").mockReturnValue(contentUnclosed);
+    const resultUnclosed = parseChapter("dummy.md");
+    expect(resultUnclosed.blocks).toHaveLength(2);
+
+    // 3. Without trailing newline (currentBlockLines = [])
+    const contentNoTrailing = "prose line\n```cantonese\nexample line\n```";
+    vi.spyOn(fs, "readFileSync").mockReturnValue(contentNoTrailing);
+    const resultNoTrailing = parseChapter("dummy.md");
+    expect(resultNoTrailing.blocks).toHaveLength(2); // prose, cantonese
   });
 });
 

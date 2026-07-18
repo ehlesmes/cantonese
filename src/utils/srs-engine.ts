@@ -89,3 +89,99 @@ export function gradeCard(
     lastReviewed: Date.now(),
   };
 }
+
+export interface PracticeItemBase extends IdentifiableItem {
+  chapter: string;
+  chapterTitle: string;
+  chapterNumber: number;
+}
+
+/**
+ * Filters a pool of practice items based on SRS level or chapter constraints.
+ */
+export function filterPracticeItems<T extends PracticeItemBase>(
+  poolItems: T[],
+  unlockedChapters: string[],
+  srsState: SrsStateMap,
+  options?: { chapterId?: string | null; srsLevel?: number | string | null },
+): T[] {
+  const { chapterId, srsLevel } = options || {};
+  if (typeof chapterId === "string" && chapterId) {
+    return poolItems.filter((item) => item.chapter === chapterId);
+  } else if (
+    srsLevel !== undefined &&
+    srsLevel !== null &&
+    !Number.isNaN(Number(srsLevel))
+  ) {
+    return poolItems.filter((item) => {
+      const lvl = srsState[item.id]?.level ?? 1;
+      return lvl === Number(srsLevel);
+    });
+  } else {
+    return poolItems.filter((item) => unlockedChapters.includes(item.chapter));
+  }
+}
+
+export interface GroupedByChapter<T> {
+  title: string;
+  chapterNumber: number;
+  items: T[];
+}
+
+/**
+ * Groups practice items for directory rendering by either chapter or SRS level.
+ */
+export function groupItemsForDirectory<T extends PracticeItemBase>(
+  poolItems: T[],
+  srsState: SrsStateMap,
+  mode: "chapter" | "level",
+) {
+  if (mode === "chapter") {
+    const grouped: Record<string, GroupedByChapter<T>> = {};
+    poolItems.forEach((item) => {
+      let group = grouped[item.chapter];
+      if (!group) {
+        group = {
+          title: item.chapterTitle,
+          chapterNumber: item.chapterNumber,
+          items: [],
+        };
+        grouped[item.chapter] = group;
+      }
+      group.items.push(item);
+    });
+    const sortedChapterIds = Object.keys(grouped).sort(
+      (a, b) => grouped[a]!.chapterNumber - grouped[b]!.chapterNumber,
+    );
+    return { type: "chapter" as const, grouped, sortedChapterIds };
+  } else {
+    const grouped: Record<number, T[]> = {
+      1: [],
+      2: [],
+      3: [],
+      4: [],
+      5: [],
+    };
+    poolItems.forEach((item) => {
+      const lvl = srsState[item.id]?.level ?? 1;
+      if (grouped[lvl]) {
+        grouped[lvl].push(item);
+      }
+    });
+    return { type: "level" as const, grouped };
+  }
+}
+
+/**
+ * Generates an array of indices from 0 to length - 1, shuffled using Fisher-Yates.
+ */
+export function getShuffledIndices(length: number): number[] {
+  const indices = Array.from({ length }, (_, i) => i);
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = indices[i]!;
+    indices[i] = indices[j]!;
+    indices[j] = temp;
+  }
+  return indices;
+}

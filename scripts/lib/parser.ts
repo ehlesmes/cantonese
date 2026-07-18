@@ -60,8 +60,8 @@ function parseYAML(yamlStr: string): Record<string, unknown> {
     const trimmed = line.trim();
 
     // Array item list start: e.g. "- chapter: 0"
-    if (trimmed.startsWith("- ")) {
-      const itemContent = trimmed.slice(2).trim();
+    if (trimmed.startsWith("- ") || trimmed === "-") {
+      const itemContent = trimmed === "-" ? "" : trimmed.slice(2).trim();
 
       if (!arrayList) {
         arrayKey = currentKey || "chapters";
@@ -72,25 +72,35 @@ function parseYAML(yamlStr: string): Record<string, unknown> {
       currentObject = {};
       arrayList.push(currentObject);
 
-      /* v8 ignore start */
-      if (itemContent) {
-        const colonIndex = itemContent.indexOf(":");
-        if (colonIndex !== -1) {
-          const k = itemContent.slice(0, colonIndex).trim();
-          let v = itemContent.slice(colonIndex + 1).trim();
+      const colonIndex = itemContent.indexOf(":");
+      if (colonIndex !== -1) {
+        const k = itemContent.slice(0, colonIndex).trim();
+        let v = itemContent.slice(colonIndex + 1).trim();
 
-          if (
-            (v.startsWith('"') && v.endsWith('"')) ||
-            (v.startsWith("'") && v.endsWith("'"))
-          ) {
-            v = v.slice(1, -1);
-          }
-
-          const parsedVal = v !== "" && !isNaN(Number(v)) ? parseInt(v, 10) : v;
-          currentObject[k] = parsedVal;
+        if (
+          (v.startsWith('"') && v.endsWith('"')) ||
+          (v.startsWith("'") && v.endsWith("'"))
+        ) {
+          v = v.slice(1, -1);
         }
+
+        const parsedVal = v !== "" && !isNaN(Number(v)) ? parseInt(v, 10) : v;
+        currentObject[k] = parsedVal;
+      } else {
+        let v = itemContent;
+        if (
+          (v.startsWith('"') && v.endsWith('"')) ||
+          (v.startsWith("'") && v.endsWith("'"))
+        ) {
+          v = v.slice(1, -1);
+        }
+        const parsedVal = v !== "" && !isNaN(Number(v)) ? parseInt(v, 10) : v;
+        arrayList[arrayList.length - 1] = parsedVal as unknown as Record<
+          string,
+          unknown
+        >;
+        currentObject = null;
       }
-      /* v8 ignore stop */
       continue;
     }
 
@@ -222,7 +232,6 @@ export function parseChapter(filePath: string): RawParsedChapter {
   }
 
   // Flush any lingering multiline block
-  /* v8 ignore start */
   if (currentBlockLines.length > 0) {
     blocks.push({
       type: inBlock ? currentBlockType : "prose",
@@ -231,7 +240,6 @@ export function parseChapter(filePath: string): RawParsedChapter {
       endLine: bodyStartLine + bodyLines.length - 1,
     });
   }
-  /* v8 ignore stop */
 
   return {
     frontmatter,

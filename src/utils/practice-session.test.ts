@@ -121,4 +121,14 @@ describe("PracticeSession state engine", () => {
     expect(session.getCorrectCount()).toBe(2);
     expect(Object.keys(session.getUpdatedSrsState()).length).toBe(3);
   });
+
+  test("generates shuffled indices", () => {
+    const session = new PracticeSession({
+      poolItems: [],
+      srsState: {},
+    });
+    const indices = session.getShuffledIndices(5);
+    expect(indices.length).toBe(5);
+    expect([...indices].sort((a, b) => a - b)).toEqual([0, 1, 2, 3, 4]);
+  });
 });

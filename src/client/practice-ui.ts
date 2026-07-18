@@ -8,6 +8,10 @@ import {
 } from "../utils/storage.js";
 import { PracticeSession } from "../utils/practice-session.js";
 import {
+  filterPracticeItems,
+  groupItemsForDirectory,
+} from "../utils/srs-engine.js";
+import {
   el,
   createChevronIcon,
   compileAnnotationsClient,
@@ -250,30 +254,15 @@ function renderPoolDirectory() {
     return;
   }
 
-  if (currentGroupMode === "chapter") {
-    const grouped: Record<
-      string,
-      { title: string; chapterNumber: number; items: PracticeItem[] }
-    > = {};
-    poolItems.forEach((item) => {
-      let group = grouped[item.chapter];
-      if (!group) {
-        group = {
-          title: item.chapterTitle,
-          chapterNumber: item.chapterNumber,
-          items: [],
-        };
-        grouped[item.chapter] = group;
-      }
-      group.items.push(item);
-    });
+  const groupedResult = groupItemsForDirectory(
+    poolItems,
+    currentSrsState,
+    currentGroupMode as "chapter" | "level",
+  );
 
-    const sortedChapterIds = Object.keys(grouped).sort(
-      (a, b) => grouped[a]!.chapterNumber - grouped[b]!.chapterNumber,
-    );
-
-    sortedChapterIds.forEach((chId) => {
-      const group = grouped[chId]!;
+  if (groupedResult.type === "chapter") {
+    groupedResult.sortedChapterIds.forEach((chId) => {
+      const group = groupedResult.grouped[chId]!;
       const section = el("div", { className: "directory-section" });
 
       const reviewBtn = el("button", {
@@ -299,7 +288,9 @@ function renderPoolDirectory() {
         className: "directory-group-content review-items-container",
       });
       group.items.forEach((item) => {
-        content.appendChild(createItemCardElement(item, currentSrsState));
+        content.appendChild(
+          createItemCardElement(item as PracticeItem, currentSrsState),
+        );
       });
 
       header.addEventListener("click", () => {
@@ -317,20 +308,8 @@ function renderPoolDirectory() {
       container.appendChild(section);
     });
   } else {
-    const grouped: Record<number, PracticeItem[]> = {
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-    };
-    poolItems.forEach((item) => {
-      const lvl = currentSrsState[item.id]?.level ?? 1;
-      grouped[lvl]?.push(item);
-    });
-
     for (let lvl = 1; lvl <= 5; lvl++) {
-      const items = grouped[lvl];
+      const items = groupedResult.grouped[lvl];
       if (!items || items.length === 0) continue;
 
       const section = el("div", { className: "directory-section" });
@@ -358,7 +337,9 @@ function renderPoolDirectory() {
         className: "directory-group-content review-items-container",
       });
       items.forEach((item) => {
-        content.appendChild(createItemCardElement(item, currentSrsState));
+        content.appendChild(
+          createItemCardElement(item as PracticeItem, currentSrsState),
+        );
       });
 
       header.addEventListener("click", () => {
@@ -424,21 +405,12 @@ function startPracticeSession(
   srsLevel: number | string | null = null,
 ) {
   const allCombined = [...allVocab, ...allPhrases];
-  let poolItems: PracticeItem[] = [];
-
-  if (typeof chapterId === "string" && chapterId) {
-    poolItems = allCombined.filter((item) => item.chapter === chapterId);
-  } else if (srsLevel !== null && !Number.isNaN(Number(srsLevel))) {
-    const combinedSrs = getCombinedSrsState();
-    poolItems = allCombined.filter((item) => {
-      const lvl = combinedSrs[item.id]?.level ?? 1;
-      return lvl === Number(srsLevel);
-    });
-  } else {
-    poolItems = allCombined.filter((item) =>
-      unlockedChapters.includes(item.chapter),
-    );
-  }
+  const poolItems = filterPracticeItems(
+    allCombined,
+    unlockedChapters,
+    getCombinedSrsState(),
+    { chapterId, srsLevel },
+  );
 
   if (poolItems.length === 0) {
     alert("No items matched the criteria to review.");
@@ -508,15 +480,7 @@ function loadCard() {
     getEl("game-reset-btn").style.display = "inline-flex";
 
     assembledTokenIndices = [];
-    const indices = card.tokens.map((_: string, i: number) => i);
-
-    for (let i = indices.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const tempI = indices[i]!;
-      const tempJ = indices[j]!;
-      indices[i] = tempJ;
-      indices[j] = tempI;
-    }
+    const indices = session.getShuffledIndices(card.tokens.length);
 
     renderGameplayBoards(indices);
   }
@@ -645,14 +609,7 @@ function resetCurrentCard() {
   if (!card || card._practiceType !== "phrase") return;
 
   assembledTokenIndices = [];
-  const indices = card.tokens.map((_: string, i: number) => i);
-  for (let i = indices.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const tempI = indices[i]!;
-    const tempJ = indices[j]!;
-    indices[i] = tempJ;
-    indices[j] = tempI;
-  }
+  const indices = session.getShuffledIndices(card.tokens.length);
   renderGameplayBoards(indices);
 }
 

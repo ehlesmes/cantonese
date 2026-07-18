@@ -84,8 +84,12 @@ function triggerPreload(hash: string) {
 
   // Creating and immediately discarding Audio element lets the browser's HTTP cache fetch it
   // and keeps the memory footprint clean (no decoder references held in a map).
-  const tempAudio = new Audio(`${baseUrl}/audio/tts/${hash}.mp3`);
-  tempAudio.preload = "auto";
+  // UPDATE: We now use fetch with low priority instead to avoid initializing hardware media decoders.
+  fetch(`${baseUrl}/audio/tts/${hash}.mp3`, {
+    priority: "low" as RequestPriority,
+  }).catch((err) => {
+    console.debug("Preload failed:", err);
+  });
 }
 
 if (typeof window !== "undefined") {
@@ -441,9 +445,14 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(checkVersion, 5000);
 
   // 2. On tab visibility change
+  let visibilityTimeout: ReturnType<typeof setTimeout> | null = null;
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") {
-      checkVersion();
+      if (visibilityTimeout) clearTimeout(visibilityTimeout);
+      visibilityTimeout = setTimeout(() => {
+        checkVersion();
+        visibilityTimeout = null;
+      }, 2000); // 2 second debounce
     }
   });
 
