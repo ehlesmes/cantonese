@@ -1,15 +1,7 @@
 import type { SDPCoordinates } from "../types/index.js";
 import { packSDPData, parseSDP, rebuildSDP } from "../utils/webrtc.js";
-import {
-
-
-  getLocalState,
-  serializeState,
-  deserializeState,
-  type LocalState
-} from "../utils/sync.js";
-
-
+import { serializeState, deserializeState } from "../utils/sync.js";
+import { getLocalState, type LocalState } from "./sys/storage.js";
 
 let pc: RTCPeerConnection | null = null;
 let dc: RTCDataChannel | null = null;
@@ -34,10 +26,15 @@ export function cleanupWebRTC() {
   localRole = null;
 }
 
-export async function startWebRTC(isInitiator: boolean, remoteOfferData: SDPCoordinates | null, callbacks: WebRTCCallbacks) {
+export async function startWebRTC(
+  isInitiator: boolean,
+  remoteOfferData: SDPCoordinates | null,
+  callbacks: WebRTCCallbacks,
+) {
   cleanupWebRTC();
   localRole = isInitiator ? "initiator" : "receiver";
-  const { onStatusUpdate, onQRReady, onAnswerReady, onSyncDataReceived } = callbacks;
+  const { onStatusUpdate, onQRReady, onAnswerReady, onSyncDataReceived } =
+    callbacks;
 
   try {
     pc = new RTCPeerConnection({ iceServers: [] });
@@ -79,7 +76,9 @@ export async function startWebRTC(isInitiator: boolean, remoteOfferData: SDPCoor
     } else {
       if (remoteOfferData) {
         const rebuiltOffer = rebuildSDP(true, remoteOfferData);
-        await pc.setRemoteDescription(new RTCSessionDescription({ type: "offer", sdp: rebuiltOffer.sdp }));
+        await pc.setRemoteDescription(
+          new RTCSessionDescription({ type: "offer", sdp: rebuiltOffer.sdp }),
+        );
       }
 
       pc.ondatachannel = (event) => {
@@ -106,12 +105,17 @@ export async function startWebRTC(isInitiator: boolean, remoteOfferData: SDPCoor
   }
 }
 
-export async function acceptAnswer(data: SDPCoordinates, callbacks: Pick<WebRTCCallbacks, "onStatusUpdate">) {
+export async function acceptAnswer(
+  data: SDPCoordinates,
+  callbacks: Pick<WebRTCCallbacks, "onStatusUpdate">,
+) {
   const { onStatusUpdate } = callbacks;
   if (localRole === "initiator" && pc) {
     onStatusUpdate("Connecting peer...");
     const rebuiltAnswer = rebuildSDP(false, data);
-    await pc.setRemoteDescription(new RTCSessionDescription({ type: "answer", sdp: rebuiltAnswer.sdp }));
+    await pc.setRemoteDescription(
+      new RTCSessionDescription({ type: "answer", sdp: rebuiltAnswer.sdp }),
+    );
   }
 }
 
@@ -128,7 +132,11 @@ async function gatherCandidates(): Promise<void> {
   });
 }
 
-function setupDataChannel(channel: RTCDataChannel, onStatusUpdate: WebRTCCallbacks["onStatusUpdate"], onSyncDataReceived: WebRTCCallbacks["onSyncDataReceived"]) {
+function setupDataChannel(
+  channel: RTCDataChannel,
+  onStatusUpdate: WebRTCCallbacks["onStatusUpdate"],
+  onSyncDataReceived: WebRTCCallbacks["onSyncDataReceived"],
+) {
   channel.onopen = async () => {
     console.log("WebRTC Data Channel open!");
     onStatusUpdate("Exchanging progress...");

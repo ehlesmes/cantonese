@@ -5,7 +5,7 @@ import {
   saveVocabSRS,
   getPhraseSRS,
   savePhraseSRS,
-} from "../utils/storage.js";
+} from "./sys/storage.js";
 import { PracticeSession } from "../utils/practice-session.js";
 import {
   filterPracticeItems,
@@ -13,11 +13,8 @@ import {
   filterByUnlockedChapters,
   countMasteredItems,
 } from "../utils/srs-engine.js";
-import {
-  el,
-  createChevronIcon,
-  compileAnnotationsClient,
-} from "../utils/dom.js";
+import { compileAnnotationsClient } from "../utils/dom.js";
+import { el, createChevronIcon } from "./sys/dom.js";
 import { checkPhraseAnswer } from "../utils/text.js";
 import type {
   ClientVocab,

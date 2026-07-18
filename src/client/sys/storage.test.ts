@@ -10,6 +10,8 @@ import {
   getVocabSRS,
   saveVocabSRS,
   clearAllProgress,
+  getLocalState,
+  saveLocalState,
 } from "./storage.js";
 
 describe("Storage Utilities Spec", () => {
@@ -137,6 +139,96 @@ describe("Storage Utilities Spec", () => {
       expect.stringContaining("Failed to save vocab SRS state"),
       expect.any(Error),
     );
+  });
+
+  describe("Compound Local State Storage", () => {
+    test("saveLocalState writes merged state to localStorage", () => {
+      if (typeof localStorage === "undefined" || !localStorage.clear) {
+        let store: Record<string, string> = {};
+        global.localStorage = {
+          getItem: (key: string) => store[key] || null,
+          setItem: (key: string, value: unknown) =>
+            (store[key] = String(value)),
+          removeItem: (key: string) => delete store[key],
+          clear: () => (store = {}),
+          length: 0,
+          key: () => null,
+        } as Storage;
+      }
+      localStorage.clear();
+      const state = {
+        chapters: ["chap1"],
+        srs: { "phr-1": { level: 1, lastReviewed: 12345 } },
+        vocab: { "vocab-1": { level: 2, lastReviewed: 67890 } },
+      };
+
+      const success = saveLocalState(state);
+      expect(success).toBe(true);
+
+      expect(localStorage.getItem("cantonese_unlocked_chapters")).toContain(
+        "chap1",
+      );
+      expect(localStorage.getItem("cantonese_srs_state")).toContain("phr-1");
+      expect(localStorage.getItem("cantonese_vocab_srs_state")).toContain(
+        "vocab-1",
+      );
+    });
+
+    test("saveLocalState handles QuotaExceededError and returns false", () => {
+      vi.spyOn(global.localStorage, "setItem").mockImplementation(() => {
+        throw new Error("QuotaExceededError");
+      });
+
+      const state = { chapters: [], srs: {}, vocab: {} };
+      const success = saveLocalState(state);
+      expect(success).toBe(false);
+
+      vi.restoreAllMocks();
+    });
+
+    test("saveLocalState returns false when window is undefined", () => {
+      const originalWindow = global.window;
+      // @ts-expect-error Testing SSR fallback
+      delete global.window;
+
+      const state = { chapters: [], srs: {}, vocab: {} };
+      const success = saveLocalState(state);
+      expect(success).toBe(false);
+
+      global.window = originalWindow;
+    });
+
+    test("getLocalState retrieves data from localStorage", () => {
+      localStorage.clear();
+      localStorage.setItem(
+        "cantonese_unlocked_chapters",
+        JSON.stringify(["chap1"]),
+      );
+      localStorage.setItem(
+        "cantonese_srs_state",
+        JSON.stringify({ "phr-1": { level: 2 } }),
+      );
+      localStorage.setItem(
+        "cantonese_vocab_srs_state",
+        JSON.stringify({ "v-1": { level: 3 } }),
+      );
+
+      const localState = getLocalState();
+      expect(localState.chapters).toEqual(["chap1"]);
+      expect(localState.srs["phr-1"]?.level).toBe(2);
+      expect(localState.vocab["v-1"]?.level).toBe(3);
+    });
+
+    test("getLocalState handles exceptions and returns defaults", () => {
+      vi.spyOn(global.localStorage, "getItem").mockImplementation(() => {
+        throw new Error("Localstorage read block");
+      });
+      const localState = getLocalState();
+      expect(localState.chapters).toEqual([]);
+      expect(localState.srs).toEqual({});
+      expect(localState.vocab).toEqual({});
+      vi.restoreAllMocks();
+    });
   });
 });
 

@@ -6,7 +6,7 @@ import {
   savePhraseSRS,
   saveVocabSRS,
   clearAllProgress,
-} from "../utils/storage.js";
+} from "./sys/storage.js";
 import {
   removeChapterProgressState,
   cleanIncompleteProgressState,

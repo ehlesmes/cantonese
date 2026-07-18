@@ -22,8 +22,12 @@ from side effects.
 
 - **What goes here**: UI rendering, event handling, file reading/writing,
   network requests, state persistence.
-- **Where**: UI components (e.g. `.astro` files), Client scripts (e.g.
-  `src/client/*.ts`), CLI runners (e.g. `scripts/*.ts`).
+- **Where**:
+  - **System APIs**: `src/client/sys/*.ts` (Isolated side-effects,
+    `localStorage`, `WebRTC`, manual DOM creation). **MUST** have 100% coverage
+    using mocks.
+  - **UI Layer**: UI components (e.g. `.astro` files), Client scripts (e.g.
+    `src/client/*.ts`), CLI runners (e.g. `scripts/*.ts`).
 - **Rules**:
   - Keep it as "dumb" as possible.
   - Delegate all complex logic and data transformation to the functional core.

@@ -1,12 +1,5 @@
 import type { SrsStateMap, CompactSyncPayload } from "../types";
-import {
-  getUnlockedChapters,
-  getPhraseSRS,
-  getVocabSRS,
-  saveUnlockedChapters,
-  savePhraseSRS,
-  saveVocabSRS,
-} from "./storage.js";
+import type { LocalState } from "../client/sys/storage.js";
 
 // Shorthand mapper keys to keep URL/QR payloads compact
 const SHORT_KEYS = {
@@ -52,24 +45,6 @@ interface ExtendedUint8ArrayConstructor {
     str: string,
     options?: { alphabet?: string; lastChunkHandling?: string },
   ): Uint8Array;
-}
-
-export interface LocalState {
-  chapters: string[];
-  srs: SrsStateMap;
-  vocab: SrsStateMap;
-  timestamp?: number;
-}
-
-/**
- * Reads local storage progress states
- */
-export function getLocalState(): LocalState {
-  const chapters = getUnlockedChapters();
-  const srs = getPhraseSRS();
-  const vocab = getVocabSRS();
-
-  return { chapters, srs, vocab };
 }
 
 /**
@@ -353,28 +328,6 @@ export function mergeStates(
   merged.vocab = mergeStore(local.vocab, imported.vocab);
 
   return merged;
-}
-
-/**
- * Saves merged progress back into local storage
- */
-export function saveLocalState(state: LocalState): boolean {
-  if (typeof window !== "undefined") {
-    try {
-      const chSuccess = saveUnlockedChapters(state.chapters);
-      const srsSuccess = savePhraseSRS(state.srs);
-      const vocabSuccess = saveVocabSRS(state.vocab);
-
-      if (!chSuccess || !srsSuccess || !vocabSuccess) {
-        throw new Error("One or more storage saves failed");
-      }
-      return true;
-    } catch (e) {
-      console.error("Failed to save state to localStorage:", e);
-      return false;
-    }
-  }
-  return false;
 }
 
 /**

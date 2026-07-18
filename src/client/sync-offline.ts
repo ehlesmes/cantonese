@@ -1,12 +1,5 @@
-import {
-
-
-  getLocalState,
-  serializeState,
-  deserializeState,
-  type LocalState
-} from "../utils/sync.js";
-
+import { serializeState, deserializeState } from "../utils/sync.js";
+import { getLocalState, type LocalState } from "./sys/storage.js";
 
 export function initOfflineFallback({
   exportStringInput,

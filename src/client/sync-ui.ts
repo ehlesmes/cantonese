@@ -1,14 +1,16 @@
 import QRCode from "qrcode";
 import {
-  getLocalState,
   mergeStates,
-  saveLocalState,
   serializeState,
   deserializeState,
   extractRTCToken,
   calculateMergeMetrics,
-  type LocalState,
 } from "../utils/sync.js";
+import {
+  getLocalState,
+  saveLocalState,
+  type LocalState,
+} from "./sys/storage.js";
 import type { SDPCoordinates } from "../types/index.js";
 import { unpackSDPData } from "../utils/webrtc.js";
 import {

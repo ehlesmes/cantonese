@@ -1,4 +1,4 @@
-import type { SrsStateMap } from "../types";
+import type { SrsStateMap } from "../../types/index.js";
 
 export function getUnlockedChapters(): string[] {
   if (typeof window === "undefined") return [];
@@ -89,4 +89,44 @@ export function clearAllProgress(): void {
   localStorage.removeItem("cantonese_unlocked_chapters");
   localStorage.removeItem("cantonese_srs_state");
   localStorage.removeItem("cantonese_vocab_srs_state");
+}
+
+export interface LocalState {
+  chapters: string[];
+  srs: SrsStateMap;
+  vocab: SrsStateMap;
+  timestamp?: number;
+}
+
+/**
+ * Reads local storage progress states
+ */
+export function getLocalState(): LocalState {
+  const chapters = getUnlockedChapters();
+  const srs = getPhraseSRS();
+  const vocab = getVocabSRS();
+
+  return { chapters, srs, vocab };
+}
+
+/**
+ * Saves merged progress back into local storage
+ */
+export function saveLocalState(state: LocalState): boolean {
+  if (typeof window !== "undefined") {
+    try {
+      const chSuccess = saveUnlockedChapters(state.chapters);
+      const srsSuccess = savePhraseSRS(state.srs);
+      const vocabSuccess = saveVocabSRS(state.vocab);
+
+      if (!chSuccess || !srsSuccess || !vocabSuccess) {
+        throw new Error("One or more storage saves failed");
+      }
+      return true;
+    } catch (e) {
+      console.error("Failed to save state to localStorage:", e);
+      return false;
+    }
+  }
+  return false;
 }
