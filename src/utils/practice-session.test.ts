@@ -95,4 +95,30 @@ describe("PracticeSession state engine", () => {
     expect(results.total).toBe(0);
     expect(results.percentage).toBe(0);
   });
+
+  test("handles mixed item types (vocab and phrases) in a unified queue", () => {
+    type MixedItem = { id: string; type: "vocab" | "phrase"; content: string };
+    const mixedPool: MixedItem[] = [
+      { id: "v1", type: "vocab", content: "Word 1" },
+      { id: "p1", type: "phrase", content: "Phrase 1" },
+      { id: "v2", type: "vocab", content: "Word 2" },
+    ];
+
+    const session = new PracticeSession<MixedItem>({
+      poolItems: mixedPool,
+      srsState: {},
+      limit: 3,
+    });
+
+    expect(session.cards.length).toBe(3);
+
+    // Process all cards
+    session.submitResponse(true);
+    session.submitResponse(false);
+    session.submitResponse(true);
+
+    expect(session.isFinished()).toBe(true);
+    expect(session.getCorrectCount()).toBe(2);
+    expect(Object.keys(session.getUpdatedSrsState()).length).toBe(3);
+  });
 });

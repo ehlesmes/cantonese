@@ -8,9 +8,7 @@ const { title, description = "Colloquial Cantonese course" } = Astro.props;
 
 const pathname = Astro.url.pathname;
 const isHome = pathname === "/cantonese" || pathname === "/cantonese/";
-const isPhrasebook = pathname.startsWith("/cantonese/phrasebook");
-const isVocabulary = pathname.startsWith("/cantonese/vocabulary");
-
+const isPractice = pathname.startsWith("/cantonese/practice");
 
 // Read version at build time
 let buildVersion = "development";
@@ -40,9 +38,7 @@ try {
         <div class="site-nav">
           <a href="/cantonese/" class:list={["nav-link", { active: isHome }]}>Home</a>
           <span class="nav-separator">|</span>
-          <a href="/cantonese/phrasebook/" class:list={["nav-link", { active: isPhrasebook }]}>Phrasebook</a>
-          <span class="nav-separator">|</span>
-          <a href="/cantonese/vocabulary/" class:list={["nav-link", { active: isVocabulary }]}>Vocabulary</a>
+          <a href="/cantonese/practice/" class:list={["nav-link", { active: isPractice }]}>Practice</a>
           <span class="nav-separator">|</span>
           <button id="sync-trigger-btn" class="nav-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">

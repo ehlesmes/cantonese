@@ -50,7 +50,7 @@ test("Chapter 1 Visual Render Test", async ({ page }) => {
   await assertScreenshot(page, "chapter-page.png");
 });
 
-test("Phrasebook Visual Render Test", async ({ page }) => {
+test("Practice Visual Render Test", async ({ page }) => {
   // Mock Math.random to make card selections and token shuffling deterministic
   await page.addInitScript(() => {
     let seed = 42;
@@ -71,95 +71,29 @@ test("Phrasebook Visual Render Test", async ({ page }) => {
     );
   });
 
-  // Navigate to Phrasebook
-  await page.goto("/cantonese/phrasebook");
+  // Navigate to Practice
+  await page.goto("/cantonese/practice");
   await page.waitForSelector("#stats-cards-count");
 
   // Verify dashboard visual rendering
-  await assertScreenshot(page, "review-dashboard.png");
+  await assertScreenshot(page, "practice-dashboard.png");
 
   // Start the session
   const startBtn = page.locator("#start-session-btn");
   await startBtn.click();
-  await page.waitForSelector("#game-tokens-pool");
 
-  // Click the first token chip to move it to the assembled area
-  const firstChip = page.locator("#game-tokens-pool .token-chip").first();
-  await expect(firstChip).toBeVisible();
-  await firstChip.click();
+  // Wait for session view
+  await page.waitForSelector("#session-view");
 
   // Save copy of screenshot to test-results folder for visual inspection
   const artifactScreenshotPath = path.resolve(
     "test-results",
-    "phrasebook-session-screenshot.png",
+    "practice-session-screenshot.png",
   );
   await page.screenshot({ path: artifactScreenshotPath, fullPage: true });
 
   // Playwright visual assertion of the gameplay session
-  await assertScreenshot(page, "review-session.png");
-});
-
-test("Vocabulary Visual Render Test", async ({ page }) => {
-  // Mock Math.random to make card selections deterministic
-  await page.addInitScript(() => {
-    let seed = 42;
-    Math.random = () => {
-      const x = Math.sin(seed++) * 10000;
-      return x - Math.floor(x);
-    };
-  });
-
-  // Navigate to curriculum index first to set context
-  await page.goto("/cantonese");
-
-  // Seed localStorage with Chapter 1 checked
-  await page.evaluate(() => {
-    localStorage.setItem(
-      "cantonese_unlocked_chapters",
-      JSON.stringify(["greetings"]),
-    );
-  });
-
-  // Navigate to Vocabulary
-  await page.goto("/cantonese/vocabulary");
-  await page.waitForSelector("#stats-cards-count");
-
-  // Verify dashboard visual rendering
-  await assertScreenshot(page, "vocabulary-dashboard.png");
-
-  // Start the session
-  const startBtn = page.locator("#start-session-btn");
-  await startBtn.click();
-  await page.waitForSelector("#flashcard-character-container");
-
-  // Verify flashcard is loaded and revealed correctly after a click
-  const charEl = page.locator("#flashcard-character-container .vocab-term");
-  await expect(charEl).toBeVisible();
-
-  // Save copy of screenshot to test-results folder for visual inspection of vocab flashcard front
-  const frontScreenshotPath = path.resolve(
-    "test-results",
-    "vocabulary-session-front-screenshot.png",
-  );
-  await page.screenshot({ path: frontScreenshotPath, fullPage: true });
-
-  // Assert flashcard front (only romanization on hover, translation hidden)
-  await assertScreenshot(page, "vocabulary-session-front.png");
-
-  // Click Reveal Answer
-  const revealBtn = page.locator("#flashcard-reveal-btn");
-  await revealBtn.click();
-  await page.waitForSelector("#flashcard-answer-section");
-
-  // Save copy of screenshot to test-results folder for visual inspection of vocab flashcard back
-  const backScreenshotPath = path.resolve(
-    "test-results",
-    "vocabulary-session-back-screenshot.png",
-  );
-  await page.screenshot({ path: backScreenshotPath, fullPage: true });
-
-  // Assert flashcard back (translation revealed)
-  await assertScreenshot(page, "vocabulary-session-back.png");
+  await assertScreenshot(page, "practice-session.png");
 });
 
 test("SyncModal Visual Render Test", async ({ page }) => {

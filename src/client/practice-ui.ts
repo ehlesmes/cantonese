@@ -1,15 +1,27 @@
+/// <reference types="vite/client" />
 import {
   getUnlockedChapters,
+  getVocabSRS,
+  saveVocabSRS,
   getPhraseSRS,
   savePhraseSRS,
 } from "../utils/storage.js";
+import { PracticeSession } from "../utils/practice-session.js";
 import {
   el,
   createChevronIcon,
   compileAnnotationsClient,
 } from "../utils/dom.js";
 import { checkPhraseAnswer } from "../utils/text.js";
-import { PracticeSession } from "../utils/practice-session.js";
+import type {
+  ClientVocab,
+  ClientExample,
+  SrsStateMap,
+} from "../types/index.js";
+
+type PracticeItem =
+  | (ClientVocab & { _practiceType: "vocab" })
+  | (ClientExample & { _practiceType: "phrase" });
 
 function getEl(id: string): HTMLElement {
   const el = document.getElementById(id);
@@ -17,31 +29,53 @@ function getEl(id: string): HTMLElement {
   return el;
 }
 
-import type { ClientExample, SrsStateMap } from "../types/index.js";
-
-// Global state and references
-let allExamples: ClientExample[] = [];
+// Global state
+let allVocab: (ClientVocab & { _practiceType: "vocab" })[] = [];
+let allPhrases: (ClientExample & { _practiceType: "phrase" })[] = [];
 let unlockedChapters: string[] = [];
-let srsState: SrsStateMap = {};
-let session: PracticeSession<ClientExample> | null = null;
+let vocabSrsState: SrsStateMap = {};
+let phraseSrsState: SrsStateMap = {};
+let session: PracticeSession<PracticeItem> | null = null;
 let assembledTokenIndices: number[] = [];
+
+// Dashboard view state
 let currentGroupMode = "chapter"; // "chapter" or "level"
+let currentTabMode = "vocab"; // "vocab" or "phrase"
 
 // Fetch data and initialize
 async function initialize() {
   try {
-    if (typeof window !== "undefined" && window.__allExamples) {
-      allExamples = window.__allExamples;
+    let rawVocab: ClientVocab[] = [];
+    let rawPhrases: ClientExample[] = [];
+
+    if (
+      typeof window !== "undefined" &&
+      window.__allVocab &&
+      window.__allExamples
+    ) {
+      rawVocab = window.__allVocab;
+      rawPhrases = window.__allExamples;
     } else {
       const baseUrl = import.meta.env.BASE_URL.endsWith("/")
         ? import.meta.env.BASE_URL
         : import.meta.env.BASE_URL + "/";
-      const response = await fetch(`${baseUrl}data/phrasebook.json`);
-      allExamples = (await response.json()) as ClientExample[];
+
+      const [vocabRes, phraseRes] = await Promise.all([
+        fetch(`${baseUrl}data/vocabulary.json`),
+        fetch(`${baseUrl}data/phrasebook.json`),
+      ]);
+
+      rawVocab = (await vocabRes.json()) as ClientVocab[];
+      rawPhrases = (await phraseRes.json()) as ClientExample[];
+
       if (typeof window !== "undefined") {
-        window.__allExamples = allExamples;
+        window.__allVocab = rawVocab;
+        window.__allExamples = rawPhrases;
       }
     }
+
+    allVocab = rawVocab.map((v) => ({ ...v, _practiceType: "vocab" }));
+    allPhrases = rawPhrases.map((p) => ({ ...p, _practiceType: "phrase" }));
 
     loadState();
     renderDashboard();
@@ -53,84 +87,112 @@ async function initialize() {
 
 function loadState() {
   unlockedChapters = getUnlockedChapters();
-  srsState = getPhraseSRS();
+  vocabSrsState = getVocabSRS();
+  phraseSrsState = getPhraseSRS();
 }
 
 function saveState() {
-  savePhraseSRS(srsState);
+  saveVocabSRS(vocabSrsState);
+  savePhraseSRS(phraseSrsState);
+}
+
+function getCombinedSrsState(): SrsStateMap {
+  return { ...vocabSrsState, ...phraseSrsState };
 }
 
 function setupEventListeners() {
-  // Bind Start Game Button
-  const startBtn = getEl("start-session-btn");
-  if (startBtn)
-    startBtn.addEventListener("click", () => startPracticeSession());
+  // Tabs
+  const tabVocab = getEl("tab-vocab-btn");
+  const tabPhrase = getEl("tab-phrase-btn");
 
-  // Bind Quit Button
-  const quitBtn = getEl("session-quit-btn");
-  if (quitBtn) quitBtn.addEventListener("click", quitSession);
+  tabVocab.addEventListener("click", () => {
+    tabVocab.classList.add("active");
+    tabVocab.style.color = "var(--accent-color)";
+    tabVocab.style.borderBottom = "2px solid var(--accent-color)";
 
-  // Bind Summary Buttons
-  const summaryDashBtn = getEl("summary-dashboard-btn");
-  if (summaryDashBtn) summaryDashBtn.addEventListener("click", exitSession);
+    tabPhrase.classList.remove("active");
+    tabPhrase.style.color = "var(--text-muted)";
+    tabPhrase.style.borderBottom = "none";
 
-  const summaryRetryBtn = getEl("summary-retry-btn");
-  if (summaryRetryBtn) {
-    summaryRetryBtn.addEventListener("click", () => {
-      exitSession();
-      startPracticeSession();
-    });
-  }
+    currentTabMode = "vocab";
+    renderPoolDirectory();
+  });
 
-  // Bind Reset/Check Gameplay Buttons
-  const resetBtn = getEl("game-reset-btn");
-  if (resetBtn) resetBtn.addEventListener("click", resetCurrentCard);
+  tabPhrase.addEventListener("click", () => {
+    tabPhrase.classList.add("active");
+    tabPhrase.style.color = "var(--accent-color)";
+    tabPhrase.style.borderBottom = "2px solid var(--accent-color)";
 
-  const checkBtn = getEl("game-check-btn");
-  if (checkBtn) checkBtn.addEventListener("click", checkCurrentAnswer);
+    tabVocab.classList.remove("active");
+    tabVocab.style.color = "var(--text-muted)";
+    tabVocab.style.borderBottom = "none";
 
-  // Bind Directory Grouping Tabs
+    currentTabMode = "phrase";
+    renderPoolDirectory();
+  });
+
+  // Group Tabs
   const groupChapterBtn = getEl("group-by-chapter-btn");
   const groupLevelBtn = getEl("group-by-level-btn");
 
-  if (groupChapterBtn && groupLevelBtn) {
-    groupChapterBtn.addEventListener("click", () => {
-      groupChapterBtn.classList.add("active");
-      groupLevelBtn.classList.remove("active");
-      currentGroupMode = "chapter";
-      renderPoolDirectory();
-    });
-    groupLevelBtn.addEventListener("click", () => {
-      groupLevelBtn.classList.add("active");
-      groupChapterBtn.classList.remove("active");
-      currentGroupMode = "level";
-      renderPoolDirectory();
-    });
-  }
+  groupChapterBtn.addEventListener("click", () => {
+    groupChapterBtn.classList.add("active");
+    groupLevelBtn.classList.remove("active");
+    currentGroupMode = "chapter";
+    renderPoolDirectory();
+  });
 
-  // Bind Expand/Collapse All Button
+  groupLevelBtn.addEventListener("click", () => {
+    groupLevelBtn.classList.add("active");
+    groupChapterBtn.classList.remove("active");
+    currentGroupMode = "level";
+    renderPoolDirectory();
+  });
+
+  // Expand / Collapse
   const expandCollapseBtn = getEl("expand-collapse-all-btn");
-  if (expandCollapseBtn) {
-    expandCollapseBtn.addEventListener("click", () => {
-      const total = document.querySelectorAll(".directory-section").length;
-      const collapsed = document.querySelectorAll(
-        ".directory-section.collapsed",
-      ).length;
-      const sections = document.querySelectorAll(".directory-section");
+  expandCollapseBtn.addEventListener("click", () => {
+    const total = document.querySelectorAll(".directory-section").length;
+    const collapsed = document.querySelectorAll(
+      ".directory-section.collapsed",
+    ).length;
+    const sections = document.querySelectorAll(".directory-section");
 
-      if (collapsed === total) {
-        sections.forEach((s) => s.classList.remove("collapsed"));
-      } else {
-        sections.forEach((s) => s.classList.add("collapsed"));
-      }
-      updateExpandCollapseAllButton();
-    });
-  }
+    if (collapsed === total) {
+      sections.forEach((s) => s.classList.remove("collapsed"));
+    } else {
+      sections.forEach((s) => s.classList.add("collapsed"));
+    }
+    updateExpandCollapseAllButton();
+  });
+
+  // Session Start / Stop
+  getEl("start-session-btn").addEventListener("click", () =>
+    startPracticeSession(),
+  );
+  getEl("session-quit-btn").addEventListener("click", quitSession);
+  getEl("summary-dashboard-btn").addEventListener("click", exitSession);
+  getEl("summary-retry-btn").addEventListener("click", () => {
+    exitSession();
+    startPracticeSession();
+  });
+
+  // Vocab UI binds
+  getEl("flashcard-reveal-btn").addEventListener("click", revealAnswer);
+  getEl("grade-forgot-btn").addEventListener("click", () =>
+    gradeCardResponse(false),
+  );
+  getEl("grade-remembered-btn").addEventListener("click", () =>
+    gradeCardResponse(true),
+  );
+
+  // Phrase UI binds
+  getEl("game-reset-btn").addEventListener("click", resetCurrentCard);
+  getEl("game-check-btn").addEventListener("click", checkCurrentAnswer);
 }
 
 function updateExpandCollapseAllButton() {
   const btn = getEl("expand-collapse-all-btn");
-  if (!btn) return;
   const total = document.querySelectorAll(".directory-section").length;
   const collapsed = document.querySelectorAll(
     ".directory-section.collapsed",
@@ -142,41 +204,40 @@ function updateExpandCollapseAllButton() {
   }
 }
 
-// Renders stats and list
 function renderDashboard() {
   const statsChaptersEl = getEl("stats-chapters-count");
   const statsCardsEl = getEl("stats-cards-count");
   const statsMasteredEl = getEl("stats-mastered-count");
 
-  const poolItems = allExamples.filter((item: ClientExample) =>
+  const combinedItems = [...allVocab, ...allPhrases].filter((item) =>
     unlockedChapters.includes(item.chapter),
   );
+  const combinedSrs = getCombinedSrsState();
 
   let masteredCount = 0;
-  poolItems.forEach((item: ClientExample) => {
-    const itemState = srsState[item.id];
-    if (itemState && itemState.level === 5) masteredCount++;
+  combinedItems.forEach((item) => {
+    if (combinedSrs[item.id]?.level === 5) masteredCount++;
   });
 
-  if (statsChaptersEl)
-    statsChaptersEl.textContent = String(unlockedChapters.length);
-  if (statsCardsEl) statsCardsEl.textContent = String(poolItems.length);
-  if (statsMasteredEl) statsMasteredEl.textContent = String(masteredCount);
+  statsChaptersEl.textContent = String(unlockedChapters.length);
+  statsCardsEl.textContent = String(combinedItems.length);
+  statsMasteredEl.textContent = String(masteredCount);
 
   renderPoolDirectory();
 }
 
-// Renders list
 function renderPoolDirectory() {
   const container = getEl("review-items-list-container");
-  if (!container) return;
+  container.innerHTML = "";
 
-  const poolItems = allExamples.filter((item: ClientExample) =>
+  const poolToRender = currentTabMode === "vocab" ? allVocab : allPhrases;
+  const poolItems = poolToRender.filter((item) =>
     unlockedChapters.includes(item.chapter),
   );
+  const currentSrsState =
+    currentTabMode === "vocab" ? vocabSrsState : phraseSrsState;
 
   if (poolItems.length === 0) {
-    container.innerHTML = "";
     container.appendChild(
       el("p", {
         style:
@@ -189,15 +250,12 @@ function renderPoolDirectory() {
     return;
   }
 
-  container.innerHTML = "";
-
-  container.innerHTML = "";
   if (currentGroupMode === "chapter") {
     const grouped: Record<
       string,
-      { title: string; chapterNumber: number; items: ClientExample[] }
+      { title: string; chapterNumber: number; items: PracticeItem[] }
     > = {};
-    poolItems.forEach((item: ClientExample) => {
+    poolItems.forEach((item) => {
       let group = grouped[item.chapter];
       if (!group) {
         group = {
@@ -210,24 +268,18 @@ function renderPoolDirectory() {
       group.items.push(item);
     });
 
-    const sortedChapterIds = Object.keys(grouped).sort((a, b) => {
-      const groupA = grouped[a];
-      const groupB = grouped[b];
-      if (!groupA || !groupB) return 0;
-      return groupA.chapterNumber - groupB.chapterNumber;
-    });
+    const sortedChapterIds = Object.keys(grouped).sort(
+      (a, b) => grouped[a]!.chapterNumber - grouped[b]!.chapterNumber,
+    );
 
     sortedChapterIds.forEach((chId) => {
-      const group = grouped[chId];
-      if (!group) return;
-      const section = document.createElement("div");
-      section.className = "directory-section";
+      const group = grouped[chId]!;
+      const section = el("div", { className: "directory-section" });
 
       const reviewBtn = el("button", {
         className: "small-btn",
         textContent: "Review",
       });
-
       const header = el("div", { className: "directory-group-header" }, [
         el("div", { className: "header-left" }, [
           createChevronIcon(),
@@ -243,20 +295,18 @@ function renderPoolDirectory() {
         reviewBtn,
       ]);
 
-      const content = document.createElement("div");
-      content.className = "directory-group-content review-items-container";
-
-      group.items.forEach((item: ClientExample) => {
-        content.appendChild(createItemCardElement(item));
+      const content = el("div", {
+        className: "directory-group-content review-items-container",
+      });
+      group.items.forEach((item) => {
+        content.appendChild(createItemCardElement(item, currentSrsState));
       });
 
-      // Toggle collapse on header click
       header.addEventListener("click", () => {
         section.classList.toggle("collapsed");
         updateExpandCollapseAllButton();
       });
 
-      // Stop click propagation on review button and trigger session
       reviewBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         startPracticeSession(chId, null);
@@ -267,32 +317,28 @@ function renderPoolDirectory() {
       container.appendChild(section);
     });
   } else {
-    const grouped: Record<number, ClientExample[]> = {
+    const grouped: Record<number, PracticeItem[]> = {
       1: [],
       2: [],
       3: [],
       4: [],
       5: [],
     };
-    poolItems.forEach((item: ClientExample) => {
-      const state = srsState[item.id];
-      const lvl = state ? state.level : 1;
-      const group = grouped[lvl];
-      if (group) group.push(item);
+    poolItems.forEach((item) => {
+      const lvl = currentSrsState[item.id]?.level ?? 1;
+      grouped[lvl]?.push(item);
     });
 
     for (let lvl = 1; lvl <= 5; lvl++) {
       const items = grouped[lvl];
       if (!items || items.length === 0) continue;
 
-      const section = document.createElement("div");
-      section.className = "directory-section";
+      const section = el("div", { className: "directory-section" });
 
       const reviewBtn = el("button", {
         className: "small-btn",
         textContent: "Review",
       });
-
       const header = el("div", { className: "directory-group-header" }, [
         el("div", { className: "header-left" }, [
           createChevronIcon(),
@@ -308,20 +354,18 @@ function renderPoolDirectory() {
         reviewBtn,
       ]);
 
-      const content = document.createElement("div");
-      content.className = "directory-group-content review-items-container";
-
-      items.forEach((item: ClientExample) => {
-        content.appendChild(createItemCardElement(item));
+      const content = el("div", {
+        className: "directory-group-content review-items-container",
+      });
+      items.forEach((item) => {
+        content.appendChild(createItemCardElement(item, currentSrsState));
       });
 
-      // Toggle collapse on header click
       header.addEventListener("click", () => {
         section.classList.toggle("collapsed");
         updateExpandCollapseAllButton();
       });
 
-      // Stop click propagation on review button and trigger session
       reviewBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         startPracticeSession(null, lvl);
@@ -336,80 +380,74 @@ function renderPoolDirectory() {
   updateExpandCollapseAllButton();
 }
 
-// Helper to generate a single directory item card
-function createItemCardElement(item: ClientExample) {
-  const state = srsState[item.id];
-  const lvl = state ? state.level : 1;
+function createItemCardElement(item: PracticeItem, stateMap: SrsStateMap) {
+  const lvl = stateMap[item.id]?.level ?? 1;
 
-  const card = document.createElement("div");
-  card.className = "review-item-card";
+  const card = el("div", { className: "review-item-card" });
+  const textContainer = el("div", { className: "review-item-text" });
 
-  const textContainer = document.createElement("div");
-  textContainer.className = "review-item-text";
+  const cantoDiv = el("div", { className: "review-item-canto" });
+  if (item._practiceType === "vocab") {
+    cantoDiv.innerHTML = `<span class="vocab-term" data-audio-hash="">${item.character}<span class="tooltip-popover"><strong>${item.jyutping}</strong><br/>${item.translation}</span></span>`;
+  } else {
+    cantoDiv.innerHTML = compileAnnotationsClient(
+      item.cantoneseRaw,
+      false,
+      item.tokenHashes,
+    );
+  }
 
-  const cantoDiv = document.createElement("div");
-  cantoDiv.className = "review-item-canto";
-  cantoDiv.innerHTML = compileAnnotationsClient(
-    item.cantoneseRaw,
-    false,
-    item.tokenHashes,
-  );
-
-  const engDiv = document.createElement("div");
-  engDiv.className = "review-item-english";
-  engDiv.textContent = item.english;
+  const engDiv = el("div", { className: "review-item-english" });
+  if (item._practiceType === "vocab") {
+    engDiv.textContent = `${item.jyutping} — ${item.translation}`;
+  } else {
+    engDiv.textContent = item.english;
+  }
 
   textContainer.appendChild(cantoDiv);
   textContainer.appendChild(engDiv);
 
-  const badge = document.createElement("span");
-  badge.className = `srs-level-badge srs-level-${lvl}`;
-  badge.textContent = `Lvl ${lvl}`;
+  const badge = el("span", {
+    className: `srs-level-badge srs-level-${lvl}`,
+    textContent: `Lvl ${lvl}`,
+  });
 
   card.appendChild(textContainer);
   card.appendChild(badge);
   return card;
 }
 
-// --- GAMEPLAY SESSION CONTROLS ---
+// --- SESSION LOGIC ---
 
 function startPracticeSession(
   chapterId: string | null = null,
   srsLevel: number | string | null = null,
 ) {
-  let poolItems: ClientExample[] = [];
+  const allCombined = [...allVocab, ...allPhrases];
+  let poolItems: PracticeItem[] = [];
+
   if (typeof chapterId === "string" && chapterId) {
-    poolItems = allExamples.filter(
-      (item: ClientExample) => item.chapter === chapterId,
-    );
+    poolItems = allCombined.filter((item) => item.chapter === chapterId);
   } else if (srsLevel !== null && !Number.isNaN(Number(srsLevel))) {
-    poolItems = allExamples.filter((item: ClientExample) => {
-      const state = srsState[item.id];
-      const lvl = state ? state.level : 1;
+    const combinedSrs = getCombinedSrsState();
+    poolItems = allCombined.filter((item) => {
+      const lvl = combinedSrs[item.id]?.level ?? 1;
       return lvl === Number(srsLevel);
     });
   } else {
-    poolItems = allExamples.filter((item: ClientExample) =>
+    poolItems = allCombined.filter((item) =>
       unlockedChapters.includes(item.chapter),
     );
   }
 
   if (poolItems.length === 0) {
-    if (typeof chapterId === "string") {
-      alert("This chapter has no phrases to review.");
-    } else if (srsLevel !== null) {
-      alert(`You have no phrases at SRS Level ${srsLevel} to review.`);
-    } else {
-      alert(
-        "Your review pool is empty. Mark chapters as completed to start practice.",
-      );
-    }
+    alert("No items matched the criteria to review.");
     return;
   }
 
-  session = new PracticeSession({
+  session = new PracticeSession<PracticeItem>({
     poolItems,
-    srsState,
+    srsState: getCombinedSrsState(),
     limit: 10,
   });
 
@@ -417,10 +455,13 @@ function startPracticeSession(
   getEl("session-view").style.display = "flex";
   getEl("summary-view").style.display = "none";
 
-  // Preload audio files for all cards in this session to eliminate playback latency
+  // Preload audio
   if (window.preloadTexts) {
     window.preloadTexts(
-      session.cards.map((c) => ({ text: c.cantoneseRaw, hash: c.audioHash })),
+      session.cards.map((c) => {
+        if (c._practiceType === "vocab") return { text: c.character, hash: "" };
+        return { text: c.cantoneseRaw, hash: c.audioHash };
+      }),
     );
   }
 
@@ -434,41 +475,83 @@ function loadCard() {
   }
 
   const card = session.getCurrentCard()!;
-  assembledTokenIndices = [];
-
   const index = session.getCurrentIndex();
   const progress = session.getProgress();
 
   getEl("session-progress-text").textContent =
     `Card ${index + 1} of ${session.cards.length}`;
   getEl("session-progress-fill").style.width = `${progress.percentage}%`;
-
   getEl("session-chapter-label").textContent =
     `Chapter ${card.chapter}: ${card.chapterTitle}`;
-  getEl("session-english-prompt").textContent = card.english;
 
+  // Hide both UIs initially
+  getEl("vocab-ui-container").style.display = "none";
+  getEl("phrase-ui-container").style.display = "none";
   const feedbackPanel = getEl("feedback-panel");
   feedbackPanel.style.display = "none";
   feedbackPanel.innerHTML = "";
 
-  getEl("game-check-btn").style.display = "inline-flex";
-  getEl("game-reset-btn").style.display = "inline-flex";
+  if (card._practiceType === "vocab") {
+    // Setup Vocab
+    getEl("vocab-ui-container").style.display = "block";
+    getEl("flashcard-answer-section").style.display = "none";
+    getEl("flashcard-reveal-btn").style.display = "block";
 
-  const originalTokens = card.tokens;
-  const indices = originalTokens.map((_: string, i: number) => i);
+    const charContainer = getEl("flashcard-character-container");
+    charContainer.innerHTML = `<span class="vocab-term" data-audio-hash="">${card.character}<span class="tooltip-popover"><strong>${card.jyutping}</strong></span></span>`;
+    getEl("flashcard-translation-text").textContent = card.translation;
+  } else {
+    // Setup Phrase
+    getEl("phrase-ui-container").style.display = "block";
+    getEl("session-english-prompt").textContent = card.english;
+    getEl("game-check-btn").style.display = "inline-flex";
+    getEl("game-reset-btn").style.display = "inline-flex";
 
-  for (let i = indices.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const tempI = indices[i];
-    const tempJ = indices[j];
-    if (tempI !== undefined && tempJ !== undefined) {
+    assembledTokenIndices = [];
+    const indices = card.tokens.map((_: string, i: number) => i);
+
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tempI = indices[i]!;
+      const tempJ = indices[j]!;
       indices[i] = tempJ;
       indices[j] = tempI;
     }
+
+    renderGameplayBoards(indices);
+  }
+}
+
+// --- VOCAB LOGIC ---
+
+function revealAnswer() {
+  getEl("flashcard-answer-section").style.display = "block";
+  getEl("flashcard-reveal-btn").style.display = "none";
+
+  const termEl = document.querySelector(
+    "#flashcard-character-container .vocab-term",
+  );
+  if (termEl instanceof HTMLElement) termEl.click();
+}
+
+function gradeCardResponse(remembered: boolean) {
+  if (!session) return;
+  const card = session.getCurrentCard();
+  if (!card) return;
+
+  const res = session.submitResponse(remembered);
+
+  if (card._practiceType === "vocab") {
+    vocabSrsState[card.id] = res.updatedCardState!;
+  } else {
+    phraseSrsState[card.id] = res.updatedCardState!;
   }
 
-  renderGameplayBoards(indices);
+  saveState();
+  loadCard();
 }
+
+// --- PHRASE LOGIC ---
 
 function renderGameplayBoards(poolIndices: number[]) {
   const answerSlotsEl = getEl("game-answer-slots");
@@ -479,7 +562,7 @@ function renderGameplayBoards(poolIndices: number[]) {
 
   if (!session) return;
   const card = session.getCurrentCard();
-  if (!card) return;
+  if (!card || card._practiceType !== "phrase") return;
 
   if (assembledTokenIndices.length === 0) {
     answerSlotsEl.appendChild(
@@ -492,18 +575,16 @@ function renderGameplayBoards(poolIndices: number[]) {
   } else {
     assembledTokenIndices.forEach((origIdx: number, assembledIdx: number) => {
       const rawToken = card.tokens[origIdx];
-      if (rawToken === undefined) return;
+      if (!rawToken) return;
       const chip = createTokenChip(
         rawToken,
         () => {
           assembledTokenIndices.splice(assembledIdx, 1);
-
           const currentPool = Array.from(tokensPoolEl.children)
             .map((child) =>
               parseInt(child.getAttribute("data-index") || "", 10),
             )
             .filter((idx) => !Number.isNaN(idx));
-
           currentPool.push(origIdx);
           renderGameplayBoards(currentPool);
         },
@@ -524,7 +605,7 @@ function renderGameplayBoards(poolIndices: number[]) {
   } else {
     poolIndices.forEach((origIdx: number) => {
       const rawToken = card.tokens[origIdx];
-      if (rawToken === undefined) return;
+      if (!rawToken) return;
       const chip = createTokenChip(
         rawToken,
         () => {
@@ -547,35 +628,30 @@ function createTokenChip(
 ) {
   const chip = document.createElement("div");
   chip.className = "token-chip";
-
   const inner = document.createElement("div");
   inner.className = "vocab-term";
   inner.innerHTML = compileAnnotationsClient(rawToken, true, tokenHashes);
-
   chip.appendChild(inner);
-
   chip.addEventListener("click", (e) => {
     e.preventDefault();
     clickCallback();
   });
-
   return chip;
 }
 
 function resetCurrentCard() {
   if (!session) return;
   const card = session.getCurrentCard();
-  if (!card) return;
+  if (!card || card._practiceType !== "phrase") return;
+
   assembledTokenIndices = [];
   const indices = card.tokens.map((_: string, i: number) => i);
   for (let i = indices.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    const tempI = indices[i];
-    const tempJ = indices[j];
-    if (tempI !== undefined && tempJ !== undefined) {
-      indices[i] = tempJ;
-      indices[j] = tempI;
-    }
+    const tempI = indices[i]!;
+    const tempJ = indices[j]!;
+    indices[i] = tempJ;
+    indices[j] = tempI;
   }
   renderGameplayBoards(indices);
 }
@@ -583,10 +659,9 @@ function resetCurrentCard() {
 function checkCurrentAnswer() {
   if (!session) return;
   const card = session.getCurrentCard();
-  if (!card) return;
-  const correctIndicesCount = card.tokens.length;
+  if (!card || card._practiceType !== "phrase") return;
 
-  if (assembledTokenIndices.length !== correctIndicesCount) {
+  if (assembledTokenIndices.length !== card.tokens.length) {
     alert("Please use all tokens to assemble the sentence before checking.");
     return;
   }
@@ -596,13 +671,14 @@ function checkCurrentAnswer() {
     const token = card.tokens[idx];
     if (token !== undefined) userTokens.push(token);
   }
+
   const isCorrect = checkPhraseAnswer(userTokens, card.tokens);
 
   getEl("game-check-btn").style.display = "none";
   getEl("game-reset-btn").style.display = "none";
 
-  const updatedState = session.submitResponse(isCorrect).updatedCardState;
-  srsState = session.getUpdatedSrsState();
+  const res = session.submitResponse(isCorrect);
+  phraseSrsState[card.id] = res.updatedCardState!;
   saveState();
 
   const feedbackPanel = getEl("feedback-panel");
@@ -653,9 +729,7 @@ function checkCurrentAnswer() {
       (isCorrect ? "var(--secondary-color)" : "var(--accent-color)") +
       "; color: #ffffff; border-radius: 4px; padding: 0.5rem 1.5rem; cursor: pointer; float: right;",
     textContent: "Next Card →",
-    onClick: () => {
-      loadCard();
-    },
+    onClick: () => loadCard(),
   });
 
   const cardHtml = el("div", { className: "alert-content" }, [
@@ -668,7 +742,7 @@ function checkCurrentAnswer() {
             textContent: assembledTokenIndices
               .map((idx) => {
                 const raw = card.tokens[idx];
-                if (raw === undefined) return "";
+                if (!raw) return "";
                 const m = raw.match(/^([^[]+)/);
                 return m ? m[1] : raw;
               })
@@ -683,7 +757,6 @@ function checkCurrentAnswer() {
           textContent: "Correct Structure:",
         })
       : null,
-
     el(
       "div",
       {
@@ -726,21 +799,19 @@ function checkCurrentAnswer() {
           ? "color: var(--secondary-color);"
           : "color: var(--accent-color);",
         textContent: isCorrect
-          ? `Correct! (SRS Level Up to ${updatedState?.level ?? 1})`
-          : `Incorrect (SRS Level Down to ${updatedState?.level ?? 1})`,
+          ? `Correct! (SRS Level Up to ${res.updatedCardState?.level ?? 1})`
+          : `Incorrect (SRS Level Down to ${res.updatedCardState?.level ?? 1})`,
       }),
       cardHtml,
     ],
   );
 
-  feedbackPanel.innerHTML = "";
   feedbackPanel.appendChild(alertBox);
 
-  // Automatically play pronunciation audio
-  if (ttsBtn instanceof HTMLElement) {
-    ttsBtn.click();
-  }
+  if (ttsBtn instanceof HTMLElement) ttsBtn.click();
 }
+
+// --- SUMMARY LOGIC ---
 
 function showSummary() {
   if (!session) return;
@@ -755,7 +826,7 @@ function showSummary() {
     "Great practice! Spaced Repetition reinforces memory paths. Continue practicing regularly!";
   if (scorePercentage === 100) {
     msg =
-      "Perfect score! You have fully mastered these sentences. Keep adding new chapters!";
+      "Perfect score! You have fully mastered these cards. Keep adding new chapters!";
   } else if (scorePercentage >= 80) {
     msg =
       "Excellent job! Most structures are secure. A little more practice will lock in the rest.";
