@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { parseCurriculum } from "../../../scripts/lib/parser";
+import { getStableVocabId } from "../../utils/text";
 import type { APIRoute } from "astro";
 
 interface CurriculumChapter {
@@ -41,7 +42,7 @@ export const GET: APIRoute = async () => {
   const allVocab = allVocabRaw.map((item) => {
     const chMeta = chaptersMeta.find((c) => c.id === item.firstIntroducedIn);
     return {
-      id: `vocab-${item.character}_${item.jyutping.replace(/\s+/g, "")}`,
+      id: getStableVocabId(item.character, item.jyutping),
       practiceType: "vocab",
       character: item.character,
       jyutping: item.jyutping,

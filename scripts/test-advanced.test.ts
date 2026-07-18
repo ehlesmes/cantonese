@@ -1,20 +1,7 @@
 import { describe, test, expect } from "vitest";
+import { getStablePhraseId } from "../src/utils/text";
 
 // Ported ID generator logic to match advanced.astro
-function getStablePhraseId(text: string) {
-  const clean = text
-    .replace(
-      /`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g,
-      "$1",
-    )
-    .replace(/[^\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9]/g, "");
-  let hash = 5381;
-  for (let i = 0; i < clean.length; i++) {
-    hash = (hash * 33) ^ clean.charCodeAt(i);
-  }
-  const hashStr = (hash >>> 0).toString(36);
-  return `phr-${clean.length}-${hashStr}`;
-}
 
 // Pure function simulation of removeChapterProgress
 function removeChapterProgressPure(

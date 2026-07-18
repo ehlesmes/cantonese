@@ -5,7 +5,7 @@ import path from "path";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CantoneseExample from "../../components/CantoneseExample.astro";
 import DialogueBlock from "../../components/DialogueBlock.astro";
-import { compileMarkdown } from "../../utils/markdown.js";
+import { compileMarkdown, parseExerciseBlock } from "../../utils/markdown.js";
 
 export async function getStaticPaths() {
   const { parseCurriculum } = await import("../../../scripts/lib/parser");
@@ -66,13 +66,9 @@ const processedBlocks = blocks.map((block) => {
   }
   if (block.type === "exercise") {
     try {
-      const exercise = parseYAML(block.content);
-      const displayQuestion = exercise.question.replace(new RegExp("_{2,}", "g"), "____");
       return {
         type: "exercise",
-        questionHtml: compileMarkdown(displayQuestion, { breaks: true }),
-        answerHtml: compileMarkdown(exercise.answer, { inline: true }),
-        explanationHtml: compileMarkdown(exercise.explanation),
+        ...parseExerciseBlock(block.content, parseYAML),
       };
     } catch (e) {
       console.error("Failed to parse exercise block:", e);

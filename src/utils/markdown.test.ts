@@ -4,6 +4,7 @@ import {
   compileAnnotations,
   parseDialogueBlock,
   parseExampleBlock,
+  parseExerciseBlock,
 } from "./markdown.js";
 import crypto from "crypto";
 
@@ -179,6 +180,47 @@ describe("Markdown parsing tools", () => {
     const raw = `A: Hello\nWorld\n=== Hello World`;
     const turns = parseDialogueBlock(raw);
     expect(turns[0]?.cantonese).toBe("Hello World");
+  });
+});
+
+describe("parseExerciseBlock", () => {
+  test("parseExerciseBlock replaces multiple underscores with blanks and compiles HTML", () => {
+    const rawYaml = `
+question: Fill in the blank: 我___食飯.
+answer: 唔[m4|not]
+explanation: M4 is used to negate verbs.
+    `.trim();
+
+    const mockParseYAML = (str: string) => {
+      expect(str).toBe(rawYaml);
+      return {
+        question: "Fill in the blank: 我___食飯.",
+        answer: "唔[m4|not]",
+        explanation: "M4 is used to negate verbs.",
+      };
+    };
+
+    const result = parseExerciseBlock(rawYaml, mockParseYAML);
+    expect(result.questionHtml).toContain("我____食飯.");
+    expect(result.answerHtml).toContain("m4");
+    expect(result.explanationHtml).toContain("M4 is used to negate verbs");
+  });
+
+  test("parseExerciseBlock handles missing optional fields gracefully", () => {
+    const rawYaml = `question: Hello`;
+    const mockParseYAML = () => ({ question: "Hello" });
+    const result = parseExerciseBlock(rawYaml, mockParseYAML);
+    expect(result.questionHtml).toContain("Hello");
+    expect(result.answerHtml).toBe("");
+    expect(result.explanationHtml).toBe("");
+  });
+
+  test("parseExerciseBlock handles totally empty object gracefully", () => {
+    const mockParseYAML = () => ({});
+    const result = parseExerciseBlock("", mockParseYAML);
+    expect(result.questionHtml).toBe("");
+    expect(result.answerHtml).toBe("");
+    expect(result.explanationHtml).toBe("");
   });
 });
 

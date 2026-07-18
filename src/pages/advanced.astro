@@ -5,29 +5,10 @@ import path from "path";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/advanced-settings.css";
 import { parseCurriculum, parseChapter } from "../../scripts/lib/parser";
+import { getStablePhraseId, getStableVocabId } from "../utils/text";
+import { parseExampleBlock } from "../utils/markdown";
 const curriculumPath = path.resolve("content/curriculum.md");
 const chapters = parseCurriculum(curriculumPath);
-
-function getCleanSpokenText(text) {
-  if (!text) return "";
-  let cleaned = text;
-  const annotationRegex =
-    /`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g;
-  cleaned = cleaned.replace(annotationRegex, (match, char) => char);
-  cleaned = cleaned.replace(/\[[^\]]+\]/g, "");
-  return cleaned.trim();
-}
-
-function getStablePhraseId(text) {
-  const clean = text.replace(/`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g, "$1")
-                    .replace(/[^\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9]/g, '');
-  let hash = 5381;
-  for (let i = 0; i < clean.length; i++) {
-    hash = (hash * 33) ^ clean.charCodeAt(i);
-  }
-  const hashStr = (hash >>> 0).toString(36);
-  return `phr-${clean.length}-${hashStr}`;
-}
 
 // Load vocabulary.json database
 const vocabPath = path.resolve("content/vocabulary.json");
@@ -46,9 +27,7 @@ chapters.forEach((chapter, idx) => {
       const { blocks } = parseChapter(filePath);
       for (const block of blocks) {
         if (block.type === "cantonese") {
-          const parts = block.content.split("===");
-          const cantoneseRaw = parts[0] ? parts[0].trim() : "";
-          const english = parts[1] ? parts[1].trim() : "";
+          const { cantoneseRaw, translationRaw: english } = parseExampleBlock(block.content);
           if (cantoneseRaw && english) {
             phraseIds.push(getStablePhraseId(cantoneseRaw));
           }
@@ -62,7 +41,7 @@ chapters.forEach((chapter, idx) => {
   // Filter vocabulary associated with this chapter
   const vocabIds = allVocabRaw
     .filter(item => item.firstIntroducedIn === chapter.id)
-    .map(item => `vocab-${item.character}_${item.jyutping.replace(/\s+/g, "")}`);
+    .map(item => getStableVocabId(item.character, item.jyutping));
 
   allChaptersData.push({
     id: chapter.id,

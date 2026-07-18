@@ -159,3 +159,29 @@ export function lookupDictionary(
     return combined;
   }
 }
+
+/**
+ * Generates a stable ID for a phrase based on its text content.
+ * Cleans formatting annotations and hashes the remaining string.
+ */
+export function getStablePhraseId(text: string): string {
+  const clean = text
+    .replace(
+      /`?([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`?/g,
+      "$1",
+    )
+    .replace(/[^\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9]/g, "");
+  let hash = 5381;
+  for (let i = 0; i < clean.length; i++) {
+    hash = (hash * 33) ^ clean.charCodeAt(i);
+  }
+  const hashStr = (hash >>> 0).toString(36);
+  return `phr-${clean.length}-${hashStr}`;
+}
+
+/**
+ * Generates a stable ID for a vocabulary item based on character and jyutping.
+ */
+export function getStableVocabId(character: string, jyutping: string): string {
+  return `vocab-${character}_${jyutping.replace(/\s+/g, "")}`;
+}

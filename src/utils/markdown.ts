@@ -174,3 +174,35 @@ export function parseExampleBlock(content: string): {
     translationRaw: parts[1] ? parts[1].trim() : "",
   };
 }
+
+export interface ParsedExercise {
+  questionHtml: string;
+  answerHtml: string;
+  explanationHtml: string;
+}
+
+export interface RawExercise {
+  question?: string;
+  answer?: string;
+  explanation?: string;
+}
+
+/**
+ * Parses an exercise block string and compiles it to HTML.
+ * @param content The raw YAML string from the markdown block.
+ * @param parseYAML A dependency-injected function to parse the YAML string.
+ */
+export function parseExerciseBlock(
+  content: string,
+  parseYAML: (str: string) => Record<string, unknown>,
+): ParsedExercise {
+  const exercise = parseYAML(content) as unknown as RawExercise;
+  // Imperative UI manipulation pushed into the functional core
+  const displayQuestion = (exercise.question || "").replace(/_{2,}/g, "____");
+
+  return {
+    questionHtml: compileMarkdown(displayQuestion, { breaks: true }),
+    answerHtml: compileMarkdown(exercise.answer || "", { inline: true }),
+    explanationHtml: compileMarkdown(exercise.explanation || ""),
+  };
+}

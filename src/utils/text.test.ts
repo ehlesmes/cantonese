@@ -6,6 +6,8 @@ import {
   checkPhraseAnswer,
   selectBestCantoneseVoice,
   lookupDictionary,
+  getStablePhraseId,
+  getStableVocabId,
 } from "./text.js";
 
 describe("Cantonese Text Cleaner Utility", () => {
@@ -259,5 +261,21 @@ describe("isPunctuationOnly", () => {
     expect(isPunctuationOnly("你好")).toBe(false);
     expect(isPunctuationOnly("")).toBe(false);
     expect(isPunctuationOnly(null)).toBe(false);
+  });
+});
+
+describe("ID Generators", () => {
+  test("getStablePhraseId generates correct and stable IDs", () => {
+    const text1 = "我[ngo5|I] 唔[m4|not]";
+    const text2 = "我 唔"; // annotations stripped
+    const id1 = getStablePhraseId(text1);
+    const id2 = getStablePhraseId(text2);
+    expect(id1).toBe(id2);
+    expect(id1).toMatch(/^phr-\d+-[a-z0-9]+$/);
+  });
+
+  test("getStableVocabId generates stable vocabulary IDs", () => {
+    const id = getStableVocabId("你好", "nei5 hou2");
+    expect(id).toBe("vocab-你好_nei5hou2");
   });
 });
