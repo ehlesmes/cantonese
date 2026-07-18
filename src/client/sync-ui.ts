@@ -19,7 +19,7 @@ import {
   acceptAnswer,
   localRole,
 } from "./webrtc-sync.js";
-import { startScanner, stopScanner } from "./qr-scanner.js";
+import { startScanner, stopScanner } from "./sys/qr-scanner.js";
 import { initOfflineFallback } from "./sync-offline.js";
 
 function getEl(id: string): HTMLElement {

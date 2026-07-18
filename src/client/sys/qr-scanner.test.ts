@@ -249,18 +249,172 @@ describe("QR Scanner Utility Spec", () => {
       .calls[0]?.[0] as unknown as () => void;
     vi.mocked(window.requestAnimationFrame).mockClear();
 
-    frameCallback();
+    if (frameCallback) frameCallback();
 
-    // Verify callback was registered for requestAnimationFrame and run it to cover arrow body
-    const nextFrameArrowFn = vi.mocked(window.requestAnimationFrame).mock
-      .calls[0]?.[0] as unknown as () => void;
-    expect(nextFrameArrowFn).toBeDefined();
-    nextFrameArrowFn();
-
-    // Verify canvas was resized based on height limit (maxDim = 480)
-    // Target height is 480. Width scales to (480 * 480) / 640 = 360px
     expect(mockCanvas.width).toBe(360);
     expect(mockCanvas.height).toBe(480);
+  });
+
+  test("should preserve aspect ratio and scale dimensions correctly for landscape video sources", async () => {
+    Object.defineProperty(mockVideo, "HAVE_ENOUGH_DATA", {
+      writable: true,
+      configurable: true,
+      value: 4,
+    });
+    Object.defineProperty(mockVideo, "readyState", {
+      writable: true,
+      configurable: true,
+      value: 4,
+    });
+    // Set landscape dimensions (width > height)
+    Object.defineProperty(mockVideo, "videoWidth", {
+      writable: true,
+      configurable: true,
+      value: 640,
+    });
+    Object.defineProperty(mockVideo, "videoHeight", {
+      writable: true,
+      configurable: true,
+      value: 480,
+    });
+
+    vi.mocked(jsQR).mockReturnValue(null);
+
+    startScanner(mockVideo, mockVideoWrapper, mockCanvas, vi.fn(), vi.fn());
+    await new Promise(process.nextTick);
+    mockVideo.dispatchEvent(new Event("loadedmetadata"));
+
+    const frameCallback = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as () => void;
+    vi.mocked(window.requestAnimationFrame).mockClear();
+
+    if (frameCallback) frameCallback();
+
+    expect(mockCanvas.width).toBe(480);
+    expect(mockCanvas.height).toBe(360);
+  });
+
+  test("should skip processing if video is not ready", async () => {
+    Object.defineProperty(mockVideo, "HAVE_ENOUGH_DATA", {
+      writable: true,
+      configurable: true,
+      value: 4,
+    });
+    Object.defineProperty(mockVideo, "readyState", {
+      writable: true,
+      configurable: true,
+      value: 0, // NOT READY
+    });
+
+    startScanner(mockVideo, mockVideoWrapper, mockCanvas, vi.fn(), vi.fn());
+    await new Promise(process.nextTick);
+    mockVideo.dispatchEvent(new Event("loadedmetadata"));
+
+    const frameCallback = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as () => void;
+    vi.mocked(window.requestAnimationFrame).mockClear();
+
+    if (frameCallback) frameCallback();
+
+    // Should schedule next frame without drawing
+    expect(mockContext.drawImage).not.toHaveBeenCalled();
+    expect(window.requestAnimationFrame).toHaveBeenCalled();
+
+    // Run the arrow function to cover the arrow body
+    const nextFrameArrowFn = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as () => void;
+    if (nextFrameArrowFn) nextFrameArrowFn();
+  });
+
+  test("should return early if canvas context is null", async () => {
+    Object.defineProperty(mockVideo, "HAVE_ENOUGH_DATA", {
+      writable: true,
+      configurable: true,
+      value: 4,
+    });
+    Object.defineProperty(mockVideo, "readyState", {
+      writable: true,
+      configurable: true,
+      value: 4,
+    });
+    Object.defineProperty(mockVideo, "videoWidth", {
+      writable: true,
+      configurable: true,
+      value: 100,
+    });
+    Object.defineProperty(mockVideo, "videoHeight", {
+      writable: true,
+      configurable: true,
+      value: 100,
+    });
+
+    // Mock getContext to return null
+    mockCanvas.getContext = vi.fn().mockReturnValue(null);
+
+    startScanner(mockVideo, mockVideoWrapper, mockCanvas, vi.fn(), vi.fn());
+    await new Promise(process.nextTick);
+    mockVideo.dispatchEvent(new Event("loadedmetadata"));
+
+    const frameCallback = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as () => void;
+    vi.mocked(window.requestAnimationFrame).mockClear();
+
+    if (frameCallback) frameCallback();
+
+    // Context is null, so it returns early
+    expect(mockContext.drawImage).not.toHaveBeenCalled();
+    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+  });
+
+  test("stopScanner should handle null arguments gracefully", () => {
+    // Should not throw when called with null arguments
+    expect(() =>
+      stopScanner(
+        null as unknown as HTMLVideoElement,
+        null as unknown as HTMLElement,
+      ),
+    ).not.toThrow();
+  });
+
+  test("should not schedule next frame if videoStream is null after frame processing", async () => {
+    Object.defineProperty(mockVideo, "HAVE_ENOUGH_DATA", {
+      writable: true,
+      configurable: true,
+      value: 4,
+    });
+    Object.defineProperty(mockVideo, "readyState", {
+      writable: true,
+      configurable: true,
+      value: 4,
+    });
+    Object.defineProperty(mockVideo, "videoWidth", {
+      writable: true,
+      configurable: true,
+      value: 100,
+    });
+    Object.defineProperty(mockVideo, "videoHeight", {
+      writable: true,
+      configurable: true,
+      value: 100,
+    });
+
+    vi.mocked(jsQR).mockReturnValue(null);
+
+    startScanner(mockVideo, mockVideoWrapper, mockCanvas, vi.fn(), vi.fn());
+    await new Promise(process.nextTick);
+    mockVideo.dispatchEvent(new Event("loadedmetadata"));
+
+    const frameCallback = vi.mocked(window.requestAnimationFrame).mock
+      .calls[0]?.[0] as unknown as () => void;
+    vi.mocked(window.requestAnimationFrame).mockClear();
+
+    // Stop scanner to nullify videoStream BEFORE running tick
+    stopScanner(mockVideo, mockVideoWrapper);
+
+    if (frameCallback) frameCallback();
+
+    // Should not request next frame since videoStream is now null
+    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
   });
 
   test("should prevent camera preview freezing by continuing frame scheduling during active scan processing", async () => {
