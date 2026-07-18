@@ -20,15 +20,15 @@ function getStablePhraseId(text: string) {
 function removeChapterProgressPure(
   chapterId: string,
   currentUnlocked: string[],
-  phraseSRS: Record<string, any>,
-  vocabSRS: Record<string, any>,
-  allChaptersData: any[],
+  phraseSRS: Record<string, unknown>,
+  vocabSRS: Record<string, unknown>,
+  allChaptersData: { id: string; phrases: string[]; vocab: string[] }[],
 ) {
   const updatedUnlocked = currentUnlocked.filter((id) => id !== chapterId);
   const updatedPhraseSRS = { ...phraseSRS };
   const updatedVocabSRS = { ...vocabSRS };
 
-  const chapter = allChaptersData.find((ch: any) => ch.id === chapterId);
+  const chapter = allChaptersData.find((ch) => ch.id === chapterId);
   if (chapter) {
     chapter.phrases.forEach((pid: string) => {
       delete updatedPhraseSRS[pid];
@@ -47,16 +47,16 @@ function removeChapterProgressPure(
 // Pure function simulation of cleanIncompleteData
 function cleanIncompleteDataPure(
   currentUnlocked: string[],
-  phraseSRS: Record<string, any>,
-  vocabSRS: Record<string, any>,
-  allChaptersData: any[],
+  phraseSRS: Record<string, unknown>,
+  vocabSRS: Record<string, unknown>,
+  allChaptersData: { id: string; phrases: string[]; vocab: string[] }[],
 ) {
   const updatedPhraseSRS = { ...phraseSRS };
   const updatedVocabSRS = { ...vocabSRS };
   let cleanedPhrases = 0;
   let cleanedVocab = 0;
 
-  allChaptersData.forEach((chapter: any) => {
+  allChaptersData.forEach((chapter) => {
     if (!currentUnlocked.includes(chapter.id)) {
       chapter.phrases.forEach((pid: string) => {
         if (updatedPhraseSRS[pid]) {

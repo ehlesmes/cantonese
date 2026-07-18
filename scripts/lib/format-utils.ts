@@ -4,6 +4,7 @@ import {
   extractBlockUnits,
   parseYAML,
 } from "./parser.js";
+import type { SemanticUnit, RawParsedChapter } from "../../src/types";
 
 /**
  * Validates a single Jyutping syllable.
@@ -20,11 +21,11 @@ export function validateJyutping(jyutping: string) {
  * Validates a single chapter markdown content in memory.
  */
 export function validateChapterContent(
-  chapterData: any,
+  chapterData: RawParsedChapter,
   filenameSlug: string,
-  curriculumEntry?: any,
+  curriculumEntry?: { id: string; title: string },
 ) {
-  const errors: any[] = [];
+  const errors: { line: number; message: string }[] = [];
   const addError = (line: number, msg: string) =>
     errors.push({ line, message: msg });
 
@@ -98,7 +99,7 @@ export function validateChapterContent(
         let cleanLine = line;
 
         // Sort right-to-left to keep indices accurate during replacement
-        units.sort((a: any, b: any) => b.index - a.index);
+        units.sort((a: SemanticUnit, b: SemanticUnit) => b.index - a.index);
         for (const unit of units) {
           // Check Jyutping
           const jpError = validateJyutping(unit.jyutping);
@@ -152,7 +153,7 @@ export function validateChapterContent(
         const units = extractBlockUnits(line);
         let cleanLine = line;
 
-        units.sort((a: any, b: any) => b.index - a.index);
+        units.sort((a: SemanticUnit, b: SemanticUnit) => b.index - a.index);
         for (const unit of units) {
           const jpError = validateJyutping(unit.jyutping);
           if (jpError) {
@@ -219,7 +220,7 @@ export function validateChapterContent(
           const units = extractBlockUnits(cantoneseText);
           let cleanLine = cantoneseText;
 
-          units.sort((a: any, b: any) => b.index - a.index);
+          units.sort((a: SemanticUnit, b: SemanticUnit) => b.index - a.index);
           for (const unit of units) {
             const jpError = validateJyutping(unit.jyutping);
             if (jpError) {
@@ -265,7 +266,7 @@ export function validateChapterContent(
         }
       }
     } else if (block.type === "exercise") {
-      const data: any = parseYAML(block.content);
+      const data = parseYAML(block.content) as Record<string, unknown>;
 
       const required = ["question", "answer", "explanation"];
       const keys = Object.keys(data);
@@ -295,7 +296,7 @@ export function validateChapterContent(
           const units = extractBlockUnits(valStr);
 
           let cleanVal = valStr;
-          units.sort((a: any, b: any) => b.index - a.index);
+          units.sort((a: SemanticUnit, b: SemanticUnit) => b.index - a.index);
 
           for (const unit of units) {
             const jpError = validateJyutping(unit.jyutping);
@@ -337,11 +338,11 @@ export function validateChapterContent(
  * Checks chronological vocabulary limits in memory.
  */
 export function checkChronologicalLimits(
-  curriculumChapters: any[],
-  chaptersDataMap: Record<string, any>,
+  curriculumChapters: { file: string; id: string }[],
+  chaptersDataMap: Record<string, RawParsedChapter>,
 ) {
-  const errors: any[] = [];
-  const warnings: any[] = [];
+  const errors: { file: string; message: string }[] = [];
+  const warnings: { chapterId: string; file: string; count: number }[] = [];
   const seenWords = new Set<string>();
 
   for (const chapter of curriculumChapters) {
@@ -351,20 +352,23 @@ export function checkChronologicalLimits(
     const introducedInThisChapter = new Set<string>();
 
     for (const block of chapterData.blocks) {
-      let units: any[] = [];
+      let units: SemanticUnit[] = [];
       if (block.type === "prose") {
         units = extractInlineUnits(block.content);
       } else if (block.type === "cantonese" || block.type === "dialog") {
         units = extractBlockUnits(block.content);
-      } /* v8 ignore start */ else if (block.type === "exercise") {
-        const exerciseData: any = parseYAML(block.content);
+      } else if (block.type === "exercise") {
+        const exerciseData = parseYAML(block.content) as Record<
+          string,
+          unknown
+        >;
         const fields = ["question", "answer", "explanation"];
         for (const field of fields) {
           if (exerciseData[field]) {
             units.push(...extractBlockUnits(String(exerciseData[field])));
           }
         }
-      } /* v8 ignore stop */
+      }
 
       for (const unit of units) {
         const char = unit.characters.trim();

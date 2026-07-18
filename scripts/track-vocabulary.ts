@@ -2,6 +2,17 @@ import * as fs from "fs";
 import * as path from "path";
 import * as crypto from "crypto";
 import * as parser from "./lib/parser.js";
+import type { DictionaryEntry } from "./lib/register-utils.js";
+import type { SemanticUnit } from "../src/types/index.js";
+
+interface VocabTrackingItem {
+  character: string;
+  jyutping: string;
+  translation: string;
+  hash: string;
+  firstIntroducedIn: string;
+  occurrences: number;
+}
 
 function main() {
   const projectRoot = path.resolve(__dirname, "..");
@@ -15,10 +26,10 @@ function main() {
   }
 
   const curriculumPath = path.join(contentDir, "curriculum.md");
-  let chapters: any[] = [];
+  let chapters: { file: string; id: string }[] = [];
   try {
     chapters = parser.parseCurriculum(curriculumPath);
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(
       `ERROR: Failed to parse curriculum.md: ${err instanceof Error ? err.message : String(err)}`,
     );
@@ -27,17 +38,19 @@ function main() {
 
   // 1.5 Load Master Dictionary for Tone Sandhi Resolution
   const dictPath = path.join(contentDir, "dictionary.json");
-  let dictionary: any[] = [];
+  let dictionary: DictionaryEntry[] = [];
   try {
-    dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-  } catch (err: any) {
+    dictionary = JSON.parse(
+      fs.readFileSync(dictPath, "utf8"),
+    ) as DictionaryEntry[];
+  } catch (err: unknown) {
     console.error(
       `ERROR: Failed to parse dictionary.json: ${err instanceof Error ? err.message : String(err)}`,
     );
     process.exit(1);
   }
 
-  const vocabMap: Record<string, any> = {};
+  const vocabMap: Record<string, VocabTrackingItem> = {};
 
   // 2. Parse every chapter in chronological order
   for (const chapter of chapters) {
@@ -47,7 +60,7 @@ function main() {
     let chapterData;
     try {
       chapterData = parser.parseChapter(filePath);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(
         `ERROR: Failed to parse "${chapter.file}": ${err instanceof Error ? err.message : String(err)}`,
       );
@@ -55,7 +68,7 @@ function main() {
     }
 
     for (const block of chapterData.blocks) {
-      let units: any[] = [];
+      let units: SemanticUnit[] = [];
 
       if (block.type === "prose") {
         units = parser.extractInlineUnits(block.content);
@@ -82,7 +95,12 @@ function main() {
       for (const unit of units) {
         const char = unit.characters.trim();
         const jyutping = unit.jyutping.trim().toLowerCase();
-        const translation = unit.translation.trim();
+        let translation = "";
+        if (Array.isArray(unit.translation)) {
+          translation = unit.translation.join(" / ");
+        } else if (typeof unit.translation === "string") {
+          translation = unit.translation;
+        }
 
         // Resolve Primary Jyutping for Tone Sandhi
         let primaryJyutping = jyutping;
@@ -91,7 +109,7 @@ function main() {
             entry.char === char &&
             (entry.jyutping.toLowerCase() === jyutping ||
               entry.alt_jyutping?.some(
-                (alt: string) => alt.toLowerCase() === jyutping,
+                (alt) => alt.toLowerCase() === jyutping,
               )),
         );
         if (dictMatch) {
@@ -111,7 +129,10 @@ function main() {
               .update(char)
               .digest("hex")
               .slice(0, 16),
-            firstIntroducedIn: chapterData.frontmatter?.id || chapter.id,
+            firstIntroducedIn:
+              typeof chapterData.frontmatter?.id === "string"
+                ? chapterData.frontmatter.id
+                : chapter.id,
             occurrences: 1,
           };
         } else {
@@ -122,7 +143,9 @@ function main() {
           const existingParts = existingTrans
             .split("/")
             .map((s: string) => s.trim());
-          const newParts = translation.split("/").map((s: string) => s.trim());
+          const newParts: string[] = translation
+            .split("/")
+            .map((s: string) => s.trim());
 
           const merged = [...existingParts];
           for (const np of newParts) {
@@ -138,7 +161,7 @@ function main() {
   }
 
   // 3. Sort vocabulary alphabetically by Jyutping, then by Character
-  const sortedVocab = Object.values(vocabMap).sort((a: any, b: any) => {
+  const sortedVocab = Object.values(vocabMap).sort((a, b) => {
     const jpCompare = a.jyutping.localeCompare(b.jyutping);
     if (jpCompare !== 0) return jpCompare;
     return a.character.localeCompare(b.character);
@@ -150,7 +173,7 @@ function main() {
     console.log(
       `✓ Generated structured database: content/vocabulary.json (${sortedVocab.length} entries)`,
     );
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(
       `ERROR: Failed to write vocabulary.json: ${err instanceof Error ? err.message : String(err)}`,
     );
@@ -166,14 +189,14 @@ This is an automatically generated vocabulary database compiled from all course 
 | :--- | :--- | :--- | :--- | :--- |
 `;
 
-  for (const item of sortedVocab as any[]) {
+  for (const item of sortedVocab) {
     mdContent += `| **${item.character}** | \`${item.jyutping}\` | ${item.translation} | \`${item.firstIntroducedIn}\` | ${item.occurrences} |\n`;
   }
 
   try {
     fs.writeFileSync(mdPath, mdContent, "utf8");
     console.log(`✓ Generated human glossary: content/vocabulary.md`);
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(
       `ERROR: Failed to write vocabulary.md: ${err instanceof Error ? err.message : String(err)}`,
     );

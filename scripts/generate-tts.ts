@@ -1,7 +1,13 @@
 import * as fs from "fs";
 import * as path from "path";
 import { parseChapter, parseCurriculum } from "./lib/parser";
-import { escapeXml, getHash, extractTTSStrings } from "./lib/tts-utils";
+import {
+  escapeXml,
+  getHash,
+  extractTTSStrings,
+  type TtsVocabItem,
+} from "./lib/tts-utils";
+import type { ParsedBlock } from "../src/types";
 
 // Premium CLI output styles
 const colors = {
@@ -144,9 +150,11 @@ async function main() {
 
   // Load the full vocabulary list to match by chapter
   const vocabPath = path.resolve(projectRoot, "content/vocabulary.json");
-  let vocabList = [];
+  let vocabList: TtsVocabItem[] = [];
   if (fs.existsSync(vocabPath)) {
-    vocabList = JSON.parse(fs.readFileSync(vocabPath, "utf8"));
+    vocabList = JSON.parse(
+      fs.readFileSync(vocabPath, "utf8"),
+    ) as TtsVocabItem[];
   }
 
   // Load curriculum chapters
@@ -154,7 +162,8 @@ async function main() {
   const chapters = parseCurriculum(curriculumPath);
 
   let chaptersProcessed = 0;
-  const chaptersData: any[] = [];
+  const chaptersData: { id: string; file: string; blocks: ParsedBlock[] }[] =
+    [];
 
   for (const chapter of chapters) {
     if (chaptersProcessed >= maxChapters) {
@@ -168,7 +177,7 @@ async function main() {
     chaptersData.push({
       id: chapter.id,
       file: chapter.file,
-      blocks,
+      blocks: blocks as ParsedBlock[],
     });
   }
 
@@ -217,9 +226,9 @@ async function main() {
 
       // Delay 100ms between calls to stay well within API rate limits
       await delay(100);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(
-        `${colors.red}Failed to generate TTS for "${text}": ${err.message}${colors.reset}`,
+        `${colors.red}Failed to generate TTS for "${text}": ${(err as Error).message}${colors.reset}`,
       );
       failedCount++;
     }
@@ -243,7 +252,7 @@ async function main() {
   }
 }
 
-main().catch((err: any) => {
+main().catch((err: unknown) => {
   console.error(`${colors.red}Pipeline crashed:${colors.reset}`, err);
   process.exit(1);
 });

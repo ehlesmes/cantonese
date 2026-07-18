@@ -403,7 +403,8 @@ export function calculateMergeMetrics(
   imported: LocalState,
 ): MergeMetrics {
   const merged = mergeStates(local, imported);
-  const countKeys = (obj: any) => Object.keys(obj || {}).length;
+  const countKeys = (obj: Record<string, unknown> | null | undefined) =>
+    Object.keys(obj || {}).length;
 
   return {
     chapters: { local: local.chapters.length, merged: merged.chapters.length },

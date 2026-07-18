@@ -360,10 +360,16 @@ test.describe("Autoplay Audio Tests", () => {
       window.HTMLAudioElement.prototype.pause = function () {};
 
       // Track speechSynthesis speak calls
-      (window as any).speechSynthesisSpoken = [];
+      (
+        window as unknown as { speechSynthesisSpoken: string[] }
+      ).speechSynthesisSpoken = [];
       if (window.speechSynthesis) {
-        window.speechSynthesis.speak = (utterance: any) => {
-          (window as any).speechSynthesisSpoken.push(utterance.text);
+        window.speechSynthesis.speak = (
+          utterance: SpeechSynthesisUtterance,
+        ) => {
+          (
+            window as unknown as { speechSynthesisSpoken: string[] }
+          ).speechSynthesisSpoken.push(utterance.text);
           // Trigger onend callback asynchronously if mock synthesis is used
           if (utterance.onend) {
             setTimeout(utterance.onend, 100);
@@ -416,7 +422,9 @@ test.describe("Autoplay Audio Tests", () => {
 
     // 5. Assert that speechSynthesis was called with clean Cantonese text "我"
     const spoken = await page.evaluate(
-      () => (window as any).speechSynthesisSpoken,
+      () =>
+        (window as unknown as { speechSynthesisSpoken: string[] })
+          .speechSynthesisSpoken,
     );
     expect(spoken).toContain("我");
   });

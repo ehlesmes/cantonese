@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { lookupDictionary } from "../src/utils/text.js";
+import type { DictionaryEntry } from "../src/utils/text.js";
 
 // Premium CLI output styles
 const colors = {
@@ -46,7 +47,7 @@ function main() {
     process.exit(0);
   }
 
-  let queries = [];
+  let queries: string[] = [];
 
   if (args[0] === "--json") {
     const jsonStr = args[1];
@@ -57,13 +58,13 @@ function main() {
       process.exit(1);
     }
     try {
-      queries = JSON.parse(jsonStr);
+      queries = JSON.parse(jsonStr) as string[];
       if (!Array.isArray(queries)) {
         throw new Error("Input must be a JSON array of query strings");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(
-        `${colors.red}${colors.bold}ERROR: Failed to parse batch JSON:${colors.reset} ${err.message}`,
+        `${colors.red}${colors.bold}ERROR: Failed to parse batch JSON:${colors.reset} ${(err as Error).message}`,
       );
       process.exit(1);
     }
@@ -88,12 +89,14 @@ function main() {
     process.exit(1);
   }
 
-  let dictionary;
+  let dictionary: DictionaryEntry[];
   try {
-    dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-  } catch (err: any) {
+    dictionary = JSON.parse(
+      fs.readFileSync(dictPath, "utf8"),
+    ) as DictionaryEntry[];
+  } catch (err: unknown) {
     console.error(
-      `${colors.red}${colors.bold}ERROR: Failed to parse dictionary database:${colors.reset} ${err.message}`,
+      `${colors.red}${colors.bold}ERROR: Failed to parse dictionary database:${colors.reset} ${(err as Error).message}`,
     );
     process.exit(1);
   }
@@ -106,7 +109,7 @@ function main() {
   );
 
   for (let i = 0; i < queries.length; i++) {
-    const query = queries[i].trim();
+    const query = queries[i]!.trim();
     if (query === "") continue;
 
     const matches = lookupDictionary(dictionary, query);
@@ -127,23 +130,24 @@ function main() {
     );
 
     for (const entry of matches) {
-      const typeLabel = entry.type
-        ? `${colors.magenta}${entry.type.charAt(0).toUpperCase() + entry.type.slice(1)}${colors.reset}`
+      const typeLabel = entry!.type
+        ? `${colors.magenta}${entry!.type.charAt(0).toUpperCase() + entry!.type.slice(1)}${colors.reset}`
         : "Word";
 
       console.log(
-        `      ✨ ${colors.green}${colors.bold}${entry.char}${colors.reset} (${colors.yellow}${entry.jyutping}${colors.reset}) — ${typeLabel}`,
+        `      ✨ ${colors.green}${colors.bold}${entry.char}${colors.reset} (${colors.yellow}${entry!.jyutping}${colors.reset}) — ${typeLabel}`,
       );
       console.log(
-        `         ${colors.bold}• Definition:${colors.reset} ${entry.definition}`,
+        `         ${colors.bold}• Definition:${colors.reset} ${entry!.definition}`,
       );
 
-      if (entry.notes) {
+      if (entry!.notes) {
         console.log(
-          `         ${colors.bold}• Notes:${colors.reset}      ${colors.dim}${entry.notes}${colors.reset}`,
+          `         ${colors.bold}• Notes:${colors.reset}      ${colors.dim}${entry!.notes}${colors.reset}`,
         );
       }
-      console.log("");
+      if (!entry) continue;
+      if (!entry) continue;
     }
   }
 }

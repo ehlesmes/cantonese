@@ -100,7 +100,7 @@ function runCheck(projectRoot: string) {
           });
         }
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(
         `${colors.yellow}Warning: Could not read file "${path.relative(projectRoot, file)}": ${err instanceof Error ? err.message : String(err)}${colors.reset}`,
       );
@@ -123,7 +123,10 @@ function main() {
     );
 
     // Group by file
-    const grouped: Record<string, any[]> = {};
+    const grouped: Record<
+      string,
+      { file: string; line: number; match: string; content: string }[]
+    > = {};
     for (const err of errors) {
       const fileGroup = grouped[err.file] || [];
       fileGroup.push(err);

@@ -1,7 +1,10 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as parser from "./lib/parser";
-import { verifyChapterContent } from "./lib/register-utils.js";
+import {
+  verifyChapterContent,
+  type DictionaryEntry,
+} from "./lib/register-utils.js";
 
 // Premium CLI output styles
 const colors = {
@@ -14,11 +17,20 @@ const colors = {
   dim: "\x1b[2m",
 };
 
-export function verifyChapter(absolutePath: string, dictionary: any[]) {
+export interface VerificationIssue {
+  term: string;
+  message: string;
+  locations: string;
+}
+
+export function verifyChapter(
+  absolutePath: string,
+  dictionary: DictionaryEntry[],
+) {
   let chapterData;
   try {
     chapterData = parser.parseChapter(absolutePath);
-  } catch (err: any) {
+  } catch (err: unknown) {
     throw new Error(
       `Failed to parse chapter file: ${err instanceof Error ? err.message : String(err)}`,
     );
@@ -40,10 +52,12 @@ export function runVerification({
     throw new Error(`Master dictionary database not found at "${dictPath}"`);
   }
 
-  let dictionary;
+  let dictionary: DictionaryEntry[];
   try {
-    dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-  } catch (err: any) {
+    dictionary = JSON.parse(
+      fs.readFileSync(dictPath, "utf8"),
+    ) as DictionaryEntry[];
+  } catch (err: unknown) {
     throw new Error(
       `Failed to parse master dictionary: ${err instanceof Error ? err.message : String(err)}`,
     );
@@ -72,8 +86,8 @@ export function runVerification({
     filesToProcess = chapterFiles.map((f: string) => path.join(contentDir, f));
   }
 
-  const allErrors: Record<string, any[]> = {};
-  const allWarnings: Record<string, any[]> = {};
+  const allErrors: Record<string, VerificationIssue[]> = {};
+  const allWarnings: Record<string, VerificationIssue[]> = {};
   let totalPassed = 0;
 
   for (const file of filesToProcess) {
@@ -109,7 +123,7 @@ export function main() {
   let result;
   try {
     result = runVerification({ contentDir, targetFile: targetArg, dictPath });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(
       `${colors.red}${colors.bold}ERROR:${colors.reset} ${err instanceof Error ? err.message : String(err)}`,
     );

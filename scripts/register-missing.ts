@@ -4,6 +4,7 @@ import * as parser from "./lib/parser";
 import {
   findUnregisteredWords,
   extractChapterUnits,
+  type DictionaryEntry,
 } from "./lib/register-utils.js";
 
 const colors = {
@@ -57,10 +58,12 @@ function main() {
 
   let dictionary;
   try {
-    dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-  } catch (err: any) {
+    dictionary = JSON.parse(
+      fs.readFileSync(dictPath, "utf8"),
+    ) as DictionaryEntry[];
+  } catch (err: unknown) {
     console.error(
-      `${colors.red}${colors.bold}ERROR: Failed to parse master dictionary:${colors.reset} ${err.message}`,
+      `${colors.red}${colors.bold}ERROR: Failed to parse master dictionary:${colors.reset} ${(err as Error).message}`,
     );
     process.exit(1);
   }
@@ -68,9 +71,10 @@ function main() {
   let chapterData;
   try {
     chapterData = parser.parseChapter(absolutePath);
-  } catch (err: any) {
+    if (!chapterData.frontmatter) throw new Error("Missing frontmatter");
+  } catch (err: unknown) {
     console.error(
-      `${colors.red}${colors.bold}ERROR: Failed to parse chapter file:${colors.reset} ${err.message}`,
+      `${colors.red}${colors.bold}ERROR: Failed to parse chapter file:${colors.reset} ${(err as Error).message}`,
     );
     process.exit(1);
   }

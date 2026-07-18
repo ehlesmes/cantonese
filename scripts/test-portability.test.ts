@@ -8,9 +8,21 @@ vi.mock("fs", async (importOriginal) => {
   const actual = await importOriginal<typeof import("fs")>();
   return {
     ...actual,
-    readFileSync: vi.fn().mockImplementation((...args: any[]) => (actual.readFileSync as any)(...args)),
-    readdirSync: vi.fn().mockImplementation((...args: any[]) => (actual.readdirSync as any)(...args)),
-    statSync: vi.fn().mockImplementation((...args: any[]) => (actual.statSync as any)(...args)),
+    readFileSync: vi
+      .fn()
+      .mockImplementation((...args: Parameters<typeof fs.readFileSync>) =>
+        actual.readFileSync(...args),
+      ),
+    readdirSync: vi
+      .fn()
+      .mockImplementation((...args: Parameters<typeof fs.readdirSync>) =>
+        actual.readdirSync(...args),
+      ),
+    statSync: vi
+      .fn()
+      .mockImplementation((...args: Parameters<typeof fs.statSync>) =>
+        actual.statSync(...args),
+      ),
   };
 });
 
@@ -103,7 +115,10 @@ describe("Project Portability Validator Spec", () => {
       if (typeof filePath === "string" && filePath.includes("read-error.md")) {
         throw new Error("Simulated permission denied");
       }
-      return actualFs.readFileSync(filePath as any, options as any);
+      return actualFs.readFileSync(
+        filePath as Parameters<typeof actualFs.readFileSync>[0],
+        options as Parameters<typeof actualFs.readFileSync>[1],
+      );
     });
 
     const consoleSpy = vi.spyOn(console, "error").mockImplementation(() => {});
@@ -126,10 +141,12 @@ describe("Project Portability Validator Spec", () => {
     const originalLog = console.log;
 
     let exitCode: number | null | string = null;
-    vi.spyOn(process, "exit").mockImplementation((code?: string | number | null) => {
-      exitCode = code ?? null;
-      throw new Error("process.exit");
-    });
+    vi.spyOn(process, "exit").mockImplementation(
+      (code?: string | number | null) => {
+        exitCode = code ?? null;
+        throw new Error("process.exit");
+      },
+    );
 
     vi.spyOn(portability, "runCheck").mockReturnValue([]);
 
@@ -140,8 +157,8 @@ describe("Project Portability Validator Spec", () => {
 
     try {
       portability.main();
-    } catch (e: any) {
-      if (e.message !== "process.exit") throw e;
+    } catch (e: unknown) {
+      if (e instanceof Error && e.message !== "process.exit") throw e;
     } finally {
       process.exit = originalExit;
       console.log = originalLog;
@@ -157,21 +174,27 @@ describe("Project Portability Validator Spec", () => {
     const originalError = console.error;
 
     let exitCode: number | null | string = null;
-    vi.spyOn(process, "exit").mockImplementation((code?: string | number | null) => {
-      exitCode = code ?? null;
-      throw new Error("process.exit");
-    });
+    vi.spyOn(process, "exit").mockImplementation(
+      (code?: string | number | null) => {
+        exitCode = code ?? null;
+        throw new Error("process.exit");
+      },
+    );
 
     // Force readFileSync to return a forbidden path for some mock check
-    vi.mocked(fs.readdirSync).mockImplementation((() => {
-      return ["mock-portability-bad.md"];
-    }) as any);
-    vi.mocked(fs.statSync).mockImplementation((() => {
-      return { isDirectory: () => false };
-    }) as any);
-    vi.mocked(fs.readFileSync).mockImplementation((() => {
+    vi.mocked(fs.readdirSync).mockImplementation(() => {
+      return ["mock-portability-bad.md"] as unknown as ReturnType<
+        typeof fs.readdirSync
+      >;
+    });
+    vi.mocked(fs.statSync).mockImplementation(() => {
+      return { isDirectory: () => false } as unknown as ReturnType<
+        typeof fs.statSync
+      >;
+    });
+    vi.mocked(fs.readFileSync).mockImplementation(() => {
       return "Hardcoded: /Us" + "ers/username/absolute";
-    }) as any);
+    });
 
     let errOutput = "";
     console.error = (msg) => {
@@ -180,8 +203,8 @@ describe("Project Portability Validator Spec", () => {
 
     try {
       portability.main();
-    } catch (e: any) {
-      if (e.message !== "process.exit") throw e;
+    } catch (e: unknown) {
+      if (e instanceof Error && e.message !== "process.exit") throw e;
     } finally {
       vi.restoreAllMocks();
       process.exit = originalExit;

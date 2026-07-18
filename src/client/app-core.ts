@@ -58,6 +58,12 @@ async function getHashAsync(text: string) {
 // Audio preloading utilities (uses native browser cache, discards elements to prevent leaks)
 const preloadedHashes = new Set<string>();
 
+declare global {
+  interface Window {
+    getCoreState: () => Record<string, unknown>;
+  }
+}
+
 function preloadAudio(text: string, hash?: string | null) {
   if (hash) {
     triggerPreload(hash);
@@ -83,7 +89,9 @@ function triggerPreload(hash: string) {
 }
 
 if (typeof window !== "undefined") {
-  (window as any).preloadTexts = (items: any[]) => {
+  window.preloadTexts = (
+    items: (string | { text: string; hash: string })[],
+  ) => {
     if (Array.isArray(items)) {
       items.forEach((item) => {
         if (item && typeof item === "object") {
@@ -414,7 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`);
       }
-      const data = await response.json();
+      const data = (await response.json()) as { version?: string };
 
       if (data && data.version && data.version !== currentVersion) {
         if (updateIndicator) {

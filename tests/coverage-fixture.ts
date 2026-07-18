@@ -2,7 +2,11 @@ import { test as baseTest } from "@playwright/test";
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-declare global { interface Window { __coverage__?: any; } }
+declare global {
+  interface Window {
+    __coverage__?: Record<string, unknown>;
+  }
+}
 
 export const test = baseTest.extend({
   page: async ({ page }, use, testInfo) => {
@@ -12,7 +16,8 @@ export const test = baseTest.extend({
     // 2. Capture coverage after the test finishes
     if (process.env.COVERAGE === "true") {
       try {
-        const coverage = await page.evaluate(() => window.__coverage__);
+        const coverage = (await page.evaluate(() => window.__coverage__)) as
+          Record<string, unknown> | undefined;
         if (coverage) {
           const nycDir = path.resolve(".nyc_output");
           if (!fs.existsSync(nycDir)) {

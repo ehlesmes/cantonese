@@ -61,7 +61,13 @@ describe("DOM Utilities Spec", () => {
   test("el() should nest children correctly, ignoring nulls", () => {
     const child1 = el("span", { textContent: "1" });
     const child2 = el("span", { textContent: "2" });
-    const parent = el("div", {}, [child1, null, "TextNode", {} as any, child2]);
+    const parent = el("div", {}, [
+      child1,
+      null,
+      "TextNode",
+      {} as unknown as HTMLElement,
+      child2,
+    ]);
 
     expect(parent.childNodes.length).toBe(3);
     expect(parent.childNodes[0]).toBe(child1);

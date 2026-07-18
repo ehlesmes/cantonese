@@ -1,6 +1,22 @@
 /**
  * @vitest-environment jsdom
  */
+declare global {
+  interface Uint8Array {
+    toBase64?:
+      | ((options?: { alphabet?: string; omitPadding?: boolean }) => string)
+      | undefined;
+  }
+  interface Uint8ArrayConstructor {
+    fromBase64?:
+      | ((
+          str: string,
+          options?: { alphabet?: string; lastChunkHandling?: string },
+        ) => Uint8Array)
+      | undefined;
+  }
+}
+
 import { describe, test, expect, vi } from "vitest";
 import {
   serializeState,
@@ -118,13 +134,9 @@ describe("Progress Sync Utility Spec", () => {
 
   test("fallback serialization and deserialization roundtrip (pure JS) preserves progress state", async () => {
     // Temporarily delete native methods to force fallback code execution
-    // @ts-expect-error Polyfill handling
     const origToBase64 = Uint8Array.prototype.toBase64;
-    // @ts-expect-error Polyfill handling
     const origFromBase64 = Uint8Array.fromBase64;
-    // @ts-expect-error Polyfill handling
     delete Uint8Array.prototype.toBase64;
-    // @ts-expect-error Polyfill handling
     delete Uint8Array.fromBase64;
 
     try {
@@ -154,9 +166,7 @@ describe("Progress Sync Utility Spec", () => {
       expect(deserialized.vocab["vocab-smart-quote-’"]?.level).toBe(4);
     } finally {
       // Restore native methods
-      // @ts-expect-error Polyfill handling
       Uint8Array.prototype.toBase64 = origToBase64;
-      // @ts-expect-error Polyfill handling
       Uint8Array.fromBase64 = origFromBase64;
     }
   });
@@ -404,10 +414,10 @@ describe("Progress Sync Utility Spec", () => {
 
   test("saveLocalState writes merged state to localStorage", () => {
     if (typeof localStorage === "undefined" || !localStorage.clear) {
-      let store: Record<string, any> = {};
+      let store: Record<string, string> = {};
       global.localStorage = {
         getItem: (key: string) => store[key] || null,
-        setItem: (key: string, value: any) => (store[key] = value.toString()),
+        setItem: (key: string, value: unknown) => (store[key] = String(value)),
         removeItem: (key: string) => delete store[key],
         clear: () => (store = {}),
         length: 0,
@@ -640,13 +650,9 @@ a=candidate:1 1 udp 2122260223 192.168.1.5 50000 typ host generation 0 ufrag moc
   });
 
   test("serialization and deserialization use fallback base64 functions when native support is missing", async () => {
-    // @ts-expect-error Polyfill handling
     const originalToBase64 = Uint8Array.prototype.toBase64;
-    // @ts-expect-error Polyfill handling
     const originalFromBase64 = Uint8Array.fromBase64;
-    // @ts-expect-error Polyfill handling
     delete Uint8Array.prototype.toBase64;
-    // @ts-expect-error Polyfill handling
     delete Uint8Array.fromBase64;
     try {
       const state = {
@@ -660,9 +666,7 @@ a=candidate:1 1 udp 2122260223 192.168.1.5 50000 typ host generation 0 ufrag moc
       if (!deserialized) throw new Error("Should not be null");
       expect(deserialized.chapters).toEqual(["greetings"]);
     } finally {
-      // @ts-expect-error Polyfill handling
       Uint8Array.prototype.toBase64 = originalToBase64;
-      // @ts-expect-error Polyfill handling
       Uint8Array.fromBase64 = originalFromBase64;
     }
   });
@@ -866,25 +870,36 @@ a=candidate:2 1 tcp 2122260223 192.168.1.6 50001 typ host generation 0 ufrag moc
 
 describe("Sync Utility Spec Additional Coverage", () => {
   test("deserializeState handles Uint8Array.fromBase64 if defined", async () => {
-    const originalFromBase64 = (Uint8Array as any).fromBase64;
-    (Uint8Array as any).fromBase64 = vi.fn().mockImplementation(() => {
-      return new Uint8Array([123, 125]); // "{}" in ASCII
-    });
+    const originalFromBase64 = (
+      Uint8Array as unknown as { fromBase64?: unknown }
+    ).fromBase64;
+    (Uint8Array as unknown as { fromBase64?: unknown }).fromBase64 = vi
+      .fn()
+      .mockImplementation(() => {
+        return new Uint8Array([123, 125]); // "{}" in ASCII
+      });
 
     try {
       const result = await deserializeState("any_base64_string");
       expect(result).not.toBeNull();
-      expect((Uint8Array as any).fromBase64).toHaveBeenCalled();
+      expect(
+        (Uint8Array as unknown as { fromBase64?: unknown }).fromBase64,
+      ).toHaveBeenCalled();
     } finally {
-      (Uint8Array as any).fromBase64 = originalFromBase64;
+      (Uint8Array as unknown as { fromBase64?: unknown }).fromBase64 =
+        originalFromBase64;
     }
   });
 
   test("deserializeState handles Uint8Array.fromBase64 throwing error", async () => {
-    const originalFromBase64 = (Uint8Array as any).fromBase64;
-    (Uint8Array as any).fromBase64 = vi.fn().mockImplementation(() => {
-      throw new Error("mock error");
-    });
+    const originalFromBase64 = (
+      Uint8Array as unknown as { fromBase64?: unknown }
+    ).fromBase64;
+    (Uint8Array as unknown as { fromBase64?: unknown }).fromBase64 = vi
+      .fn()
+      .mockImplementation(() => {
+        throw new Error("mock error");
+      });
 
     try {
       const state = {
@@ -897,7 +912,8 @@ describe("Sync Utility Spec Additional Coverage", () => {
       const deserialized = await deserializeState(serialized);
       expect(deserialized).not.toBeNull();
     } finally {
-      (Uint8Array as any).fromBase64 = originalFromBase64;
+      (Uint8Array as unknown as { fromBase64?: unknown }).fromBase64 =
+        originalFromBase64;
     }
   });
 
@@ -927,13 +943,25 @@ describe("Sync Utility Spec Additional Coverage", () => {
   test("mergeStates handles missing or undefined localStore or importedStore stores gracefully", () => {
     const local = {
       chapters: [],
-      srs: undefined as any,
-      vocab: undefined as any,
+      srs: undefined as unknown as Record<
+        string,
+        { level: number; lastReviewed: number }
+      >,
+      vocab: undefined as unknown as Record<
+        string,
+        { level: number; lastReviewed: number }
+      >,
     };
     const imported = {
       chapters: [],
-      srs: undefined as any,
-      vocab: undefined as any,
+      srs: undefined as unknown as Record<
+        string,
+        { level: number; lastReviewed: number }
+      >,
+      vocab: undefined as unknown as Record<
+        string,
+        { level: number; lastReviewed: number }
+      >,
     };
     const merged = mergeStates(local, imported);
     expect(merged.srs).toEqual({});
@@ -969,12 +997,18 @@ describe("Sync Utility Spec Additional Coverage", () => {
     const state = {
       chapters: [],
       srs: {
-        "phr-1": { level: 3, lastReviewed: undefined as any },
-        "phr-2": { level: undefined } as any,
+        "phr-1": { level: 3, lastReviewed: undefined as unknown as number },
+        "phr-2": {
+          level: undefined as unknown as number,
+          lastReviewed: undefined as unknown as number,
+        },
       },
       vocab: {
         "vocab-1": { level: 4, lastReviewed: 0 },
-        "vocab-2": { level: undefined } as any,
+        "vocab-2": {
+          level: undefined as unknown as number,
+          lastReviewed: undefined as unknown as number,
+        },
       },
     };
     const serialized = await serializeState(state);
@@ -989,8 +1023,14 @@ describe("Sync Utility Spec Additional Coverage", () => {
   test("serializeState handles undefined state.vocab or state.srs", async () => {
     const state = {
       chapters: [],
-      srs: undefined as any,
-      vocab: undefined as any,
+      srs: undefined as unknown as Record<
+        string,
+        { level: number; lastReviewed: number }
+      >,
+      vocab: undefined as unknown as Record<
+        string,
+        { level: number; lastReviewed: number }
+      >,
     };
     const serialized = await serializeState(state);
     const deserialized = await deserializeState(serialized);
@@ -1037,13 +1077,25 @@ describe("Sync Utility Spec Additional Coverage", () => {
   test("calculateMergeMetrics handles missing srs and vocab maps gracefully", () => {
     const local = {
       chapters: [],
-      srs: undefined as any,
-      vocab: undefined as any,
+      srs: undefined as unknown as Record<
+        string,
+        { level: number; lastReviewed: number }
+      >,
+      vocab: undefined as unknown as Record<
+        string,
+        { level: number; lastReviewed: number }
+      >,
     };
     const imported = {
       chapters: [],
-      srs: undefined as any,
-      vocab: undefined as any,
+      srs: undefined as unknown as Record<
+        string,
+        { level: number; lastReviewed: number }
+      >,
+      vocab: undefined as unknown as Record<
+        string,
+        { level: number; lastReviewed: number }
+      >,
     };
     const metrics = calculateMergeMetrics(local, imported);
     expect(metrics).toEqual({

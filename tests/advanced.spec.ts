@@ -167,8 +167,13 @@ test.describe("Advanced Page Reset E2E Test", () => {
       };
     });
 
-    const phrParsed = srsState.phr ? JSON.parse(srsState.phr) : {};
-    const vocabParsed = srsState.vocab ? JSON.parse(srsState.vocab) : {};
+    const phrParsed = (srsState.phr ? JSON.parse(srsState.phr) : {}) as Record<
+      string,
+      unknown
+    >;
+    const vocabParsed = (
+      srsState.vocab ? JSON.parse(srsState.vocab) : {}
+    ) as Record<string, unknown>;
 
     // Completed tones is kept, incomplete shopping is cleaned
     expect(phrParsed["phr-tones-card"]).toBeDefined();

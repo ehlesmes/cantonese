@@ -1,6 +1,11 @@
 import * as fs from "fs";
 import * as path from "path";
-import { validateRegisterEntry, sortDictionary } from "./lib/register-utils.js";
+import {
+  validateRegisterEntry,
+  sortDictionary,
+  type RawEntry,
+  type DictionaryEntry,
+} from "./lib/register-utils.js";
 
 // Premium CLI output styles
 const colors = {
@@ -36,7 +41,7 @@ ${colors.bold}Examples:${colors.reset}
 function main() {
   const args = process.argv.slice(2);
 
-  let batchEntries = [];
+  let batchEntries: RawEntry[] = [];
   let isBatch = false;
 
   const jsonFlagIndex = args.indexOf("--json");
@@ -52,13 +57,13 @@ function main() {
       process.exit(1);
     }
     try {
-      batchEntries = JSON.parse(jsonStr);
+      batchEntries = JSON.parse(jsonStr) as RawEntry[];
       if (!Array.isArray(batchEntries)) {
         batchEntries = [batchEntries];
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(
-        `${colors.red}${colors.bold}ERROR: Failed to parse --json string:${colors.reset} ${err.message}`,
+        `${colors.red}${colors.bold}ERROR: Failed to parse --json string:${colors.reset} ${(err as Error).message}`,
       );
       process.exit(1);
     }
@@ -80,13 +85,13 @@ function main() {
     }
     try {
       const content = fs.readFileSync(resolvedPath, "utf8");
-      batchEntries = JSON.parse(content);
+      batchEntries = JSON.parse(content) as RawEntry[];
       if (!Array.isArray(batchEntries)) {
         batchEntries = [batchEntries];
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(
-        `${colors.red}${colors.bold}ERROR: Failed to parse JSON file at "${resolvedPath}":${colors.reset} ${err.message}`,
+        `${colors.red}${colors.bold}ERROR: Failed to parse JSON file at "${resolvedPath}":${colors.reset} ${(err as Error).message}`,
       );
       process.exit(1);
     }
@@ -127,10 +132,12 @@ function main() {
 
   let dictionary;
   try {
-    dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-  } catch (err: any) {
+    dictionary = JSON.parse(
+      fs.readFileSync(dictPath, "utf8"),
+    ) as DictionaryEntry[];
+  } catch (err: unknown) {
     console.error(
-      `${colors.red}${colors.bold}ERROR: Failed to parse dictionary:${colors.reset} ${err.message}`,
+      `${colors.red}${colors.bold}ERROR: Failed to parse dictionary:${colors.reset} ${(err as Error).message}`,
     );
     process.exit(1);
   }
@@ -140,7 +147,7 @@ function main() {
   const incomingKeys = new Set<string>();
 
   for (let idx = 0; idx < batchEntries.length; idx++) {
-    const entry = batchEntries[idx];
+    const entry = batchEntries[idx]!;
     const prefix = isBatch ? `Entry #${idx + 1}: ` : "";
 
     const { validEntry, error } = validateRegisterEntry(
@@ -191,9 +198,9 @@ function main() {
       }
     }
     console.log("");
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(
-      `${colors.red}${colors.bold}ERROR: Failed to write to dictionary.json:${colors.reset} ${err.message}`,
+      `${colors.red}${colors.bold}ERROR: Failed to write to dictionary.json:${colors.reset} ${(err as Error).message}`,
     );
     process.exit(1);
   }

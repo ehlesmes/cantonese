@@ -8,8 +8,8 @@ const localStorageMock = (function () {
     getItem(key: string) {
       return store[key] || null;
     },
-    setItem(key: string, value: any) {
-      store[key] = value.toString();
+    setItem(key: string, value: string | number | boolean) {
+      store[key] = String(value);
     },
     removeItem(key: string) {
       delete store[key];

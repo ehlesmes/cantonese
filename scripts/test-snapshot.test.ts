@@ -9,7 +9,7 @@ describe("HTML Render Snapshot Tests", () => {
     const { blocks } = parseChapter(filePath);
 
     const renderedBlocks = blocks
-      .map((block: any) => {
+      .map((block: { type: string; content: string }) => {
         if (block.type === "prose") {
           return {
             type: "prose",

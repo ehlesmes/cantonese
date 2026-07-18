@@ -63,9 +63,10 @@ describe("Cantonese Lexicon Registrar CLI E2E Spec", () => {
         },
       );
       return { success: true, output: stripAnsi(rawOutput) };
-    } catch (err: any) {
-      const stdout = err.stdout ? err.stdout.toString() : "";
-      const stderr = err.stderr ? err.stderr.toString() : "";
+    } catch (err: unknown) {
+      const execErr = err as { stdout?: Buffer; stderr?: Buffer };
+      const stdout = execErr.stdout ? execErr.stdout.toString() : "";
+      const stderr = execErr.stderr ? execErr.stderr.toString() : "";
       return {
         success: false,
         output: stripAnsi(stdout + "\n" + stderr),
@@ -90,13 +91,19 @@ describe("Cantonese Lexicon Registrar CLI E2E Spec", () => {
     expect(res.output).toContain("腸粉 (coeng2fan2) — noun");
 
     // Read dictionary to verify sorting and inclusion
-    const dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-    const entry = dictionary.find((e: any) => e.char === "腸粉");
+    const dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8")) as {
+      char: string;
+      jyutping: string;
+      definition: string;
+      type: string;
+      notes?: string;
+    }[];
+    const entry = dictionary.find((e) => e.char === "腸粉");
     expect(entry).toBeDefined();
-    expect(entry.jyutping).toBe("coeng2fan2");
-    expect(entry.definition).toBe("steamed rice noodle rolls");
-    expect(entry.type).toBe("noun");
-    expect(entry.notes).toBe("Common dim sum dish.");
+    expect(entry!.jyutping).toBe("coeng2fan2");
+    expect(entry!.definition).toBe("steamed rice noodle rolls");
+    expect(entry!.type).toBe("noun");
+    expect(entry!.notes).toBe("Common dim sum dish.");
   });
 
   test("Register multiple valid words via --json", () => {
@@ -122,13 +129,19 @@ describe("Cantonese Lexicon Registrar CLI E2E Spec", () => {
     expect(res.output).toContain("芝士 (zi1si2) — noun");
     expect(res.output).toContain("紅豆冰 (hung4dau2bing1) — noun");
 
-    const dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-    const entry1 = dictionary.find((e: any) => e.char === "芝士");
-    const entry2 = dictionary.find((e: any) => e.char === "紅豆冰");
+    const dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8")) as {
+      char: string;
+      jyutping: string;
+      definition: string;
+      type: string;
+      notes?: string;
+    }[];
+    const entry1 = dictionary.find((e) => e.char === "芝士");
+    const entry2 = dictionary.find((e) => e.char === "紅豆冰");
     expect(entry1).toBeDefined();
-    expect(entry1.jyutping).toBe("zi1si2");
+    expect(entry1!.jyutping).toBe("zi1si2");
     expect(entry2).toBeDefined();
-    expect(entry2.jyutping).toBe("hung4dau2bing1");
+    expect(entry2!.jyutping).toBe("hung4dau2bing1");
   });
 
   test("Register multiple valid words via --file", () => {
@@ -156,13 +169,19 @@ describe("Cantonese Lexicon Registrar CLI E2E Spec", () => {
       expect(res.output).toContain("蝦餃 (haa1gaau2) — noun");
       expect(res.output).toContain("春卷 (ceon1gyun2) — noun");
 
-      const dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-      const entry1 = dictionary.find((e: any) => e.char === "蝦餃");
-      const entry2 = dictionary.find((e: any) => e.char === "春卷");
+      const dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8")) as {
+        char: string;
+        jyutping: string;
+        definition: string;
+        type: string;
+        notes?: string;
+      }[];
+      const entry1 = dictionary.find((e) => e.char === "蝦餃");
+      const entry2 = dictionary.find((e) => e.char === "春卷");
       expect(entry1).toBeDefined();
-      expect(entry1.jyutping).toBe("haa1gaau2");
+      expect(entry1!.jyutping).toBe("haa1gaau2");
       expect(entry2).toBeDefined();
-      expect(entry2.jyutping).toBe("ceon1gyun2");
+      expect(entry2!.jyutping).toBe("ceon1gyun2");
     } finally {
       if (fs.existsSync(tempFilePath)) {
         fs.unlinkSync(tempFilePath);
@@ -171,8 +190,10 @@ describe("Cantonese Lexicon Registrar CLI E2E Spec", () => {
   });
 
   test("Reject batch with mixed valid and invalid entries (transactional rollback)", () => {
-    let dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-    expect(dictionary.find((e: any) => e.char === "咖喱角")).toBeUndefined();
+    let dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8")) as {
+      char: string;
+    }[];
+    expect(dictionary.find((e) => e.char === "咖喱角")).toBeUndefined();
 
     const payload = [
       {
@@ -195,9 +216,11 @@ describe("Cantonese Lexicon Registrar CLI E2E Spec", () => {
     expect(res.output).toContain("ERROR: Batch registration failed");
     expect(res.output).toContain("maa5laai1gou");
 
-    dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8"));
-    expect(dictionary.find((e: any) => e.char === "咖喱角")).toBeUndefined();
-    expect(dictionary.find((e: any) => e.char === "馬拉糕")).toBeUndefined();
+    dictionary = JSON.parse(fs.readFileSync(dictPath, "utf8")) as {
+      char: string;
+    }[];
+    expect(dictionary.find((e) => e.char === "咖喱角")).toBeUndefined();
+    expect(dictionary.find((e) => e.char === "馬拉糕")).toBeUndefined();
   });
 });
 

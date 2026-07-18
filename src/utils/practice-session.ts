@@ -1,5 +1,5 @@
 import { selectCards, gradeCard, type IdentifiableItem } from "./srs-engine.js";
-import type { SrsStateMap } from "../types/index.js";
+import type { SrsStateMap, SrsCardState } from "../types/index.js";
 
 export interface SessionConfig<T> {
   poolItems: T[];
@@ -48,7 +48,7 @@ export class PracticeSession<T extends IdentifiableItem> {
   }
 
   submitResponse(isCorrect: boolean): {
-    updatedCardState: any;
+    updatedCardState: SrsCardState | null;
     nextCard: T | undefined;
     isFinished: boolean;
   } {

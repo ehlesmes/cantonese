@@ -10,12 +10,12 @@ vi.mock("jsqr", () => ({
 }));
 
 describe("QR Scanner Utility Spec", () => {
-  let mockVideo: any;
-  let mockVideoWrapper: any;
-  let mockCanvas: any;
-  let mockContext: any;
-  let mockStream: any;
-  let originalMediaDevices: any;
+  let mockVideo: HTMLVideoElement;
+  let mockVideoWrapper: HTMLDivElement;
+  let mockCanvas: HTMLCanvasElement;
+  let mockContext: CanvasRenderingContext2D;
+  let mockStream: MediaStream;
+  let originalMediaDevices: MediaDevices;
 
   beforeEach(() => {
     // 1. Create mock DOM elements
@@ -29,13 +29,13 @@ describe("QR Scanner Utility Spec", () => {
         width: 1,
         height: 1,
       }),
-    };
+    } as unknown as CanvasRenderingContext2D;
     mockCanvas.getContext = vi.fn().mockReturnValue(mockContext);
 
     // 2. Mock getUserMedia and stream
     mockStream = {
       getTracks: vi.fn().mockReturnValue([{ stop: vi.fn() }]),
-    };
+    } as unknown as MediaStream;
 
     originalMediaDevices = navigator.mediaDevices;
     Object.defineProperty(navigator, "mediaDevices", {
@@ -118,7 +118,7 @@ describe("QR Scanner Utility Spec", () => {
     stopScanner(mockVideo, mockVideoWrapper);
 
     const track = mockStream.getTracks()[0];
-    expect(track.stop).toHaveBeenCalled();
+    expect(track!.stop).toHaveBeenCalled();
     expect(mockVideo.srcObject).toBeNull();
     expect(mockVideoWrapper.style.display).toBe("none");
   });
@@ -147,11 +147,13 @@ describe("QR Scanner Utility Spec", () => {
     });
 
     // Simulate successful QR code detection
-    vi.mocked(jsQR).mockReturnValue({ data: "scanned-token-payload" } as any);
+    vi.mocked(jsQR).mockReturnValue({
+      data: "scanned-token-payload",
+    } as unknown as import("jsqr").QRCode);
 
     // 1. Test asynchronous callback (resolves after delay)
     const onStatus = vi.fn();
-    let resolvePromise: ((value: any) => void) | undefined;
+    let resolvePromise: ((value: unknown) => void) | undefined;
     const asyncCallback = vi.fn().mockImplementation(() => {
       return new Promise((resolve) => {
         resolvePromise = resolve;
@@ -173,7 +175,7 @@ describe("QR Scanner Utility Spec", () => {
 
     // Manually run the tick logic (requestAnimationFrame handler function)
     const frameCallback = vi.mocked(window.requestAnimationFrame).mock
-      .calls[0]?.[0] as unknown as Function;
+      .calls[0]?.[0] as unknown as () => void;
     expect(frameCallback).toBeDefined();
 
     // Call it to trigger single tick
@@ -188,7 +190,9 @@ describe("QR Scanner Utility Spec", () => {
 
     // 2. Test synchronous callback (returns undefined immediately)
     vi.mocked(jsQR).mockClear();
-    vi.mocked(jsQR).mockReturnValue({ data: "second-token" } as any);
+    vi.mocked(jsQR).mockReturnValue({
+      data: "second-token",
+    } as unknown as import("jsqr").QRCode);
 
     const syncCallback = vi.fn().mockReturnValue(undefined);
 
@@ -205,7 +209,7 @@ describe("QR Scanner Utility Spec", () => {
 
     mockVideo.dispatchEvent(new Event("loadedmetadata"));
     const secondFrameCallback = vi.mocked(window.requestAnimationFrame).mock
-      .calls[0]?.[0] as unknown as Function;
+      .calls[0]?.[0] as unknown as () => void;
 
     // This should run without throwing a TypeError: Cannot read properties of undefined (reading 'finally')
     expect(() => secondFrameCallback()).not.toThrow();
@@ -242,14 +246,14 @@ describe("QR Scanner Utility Spec", () => {
     mockVideo.dispatchEvent(new Event("loadedmetadata"));
 
     const frameCallback = vi.mocked(window.requestAnimationFrame).mock
-      .calls[0]?.[0] as unknown as Function;
+      .calls[0]?.[0] as unknown as () => void;
     vi.mocked(window.requestAnimationFrame).mockClear();
 
     frameCallback();
 
     // Verify callback was registered for requestAnimationFrame and run it to cover arrow body
     const nextFrameArrowFn = vi.mocked(window.requestAnimationFrame).mock
-      .calls[0]?.[0] as unknown as Function;
+      .calls[0]?.[0] as unknown as () => void;
     expect(nextFrameArrowFn).toBeDefined();
     nextFrameArrowFn();
 
@@ -282,7 +286,9 @@ describe("QR Scanner Utility Spec", () => {
     });
 
     // Simulate successful QR code detection
-    vi.mocked(jsQR).mockReturnValue({ data: "scanned-token" } as any);
+    vi.mocked(jsQR).mockReturnValue({
+      data: "scanned-token",
+    } as unknown as import("jsqr").QRCode);
 
     // Return a promise that remains unresolved during the test duration
     const asyncCallback = vi.fn().mockImplementation(() => {
@@ -300,7 +306,7 @@ describe("QR Scanner Utility Spec", () => {
     mockVideo.dispatchEvent(new Event("loadedmetadata"));
 
     const frameCallback = vi.mocked(window.requestAnimationFrame).mock
-      .calls[0]?.[0] as unknown as Function;
+      .calls[0]?.[0] as unknown as () => void;
 
     // 1. First tick triggers the scan
     frameCallback();
@@ -319,7 +325,7 @@ describe("QR Scanner Utility Spec", () => {
 
     // Run the scheduled arrow function callback to cover the early return loop body
     const freezePreventArrowFn = vi.mocked(window.requestAnimationFrame).mock
-      .calls[0]?.[0] as unknown as Function;
+      .calls[0]?.[0] as unknown as () => void;
     expect(freezePreventArrowFn).toBeDefined();
     freezePreventArrowFn();
   });
@@ -376,7 +382,7 @@ describe("QR Scanner Utility Spec", () => {
     mockVideo.dispatchEvent(new Event("loadedmetadata"));
 
     const frameCallback = vi.mocked(window.requestAnimationFrame).mock
-      .calls[0]?.[0] as unknown as Function;
+      .calls[0]?.[0] as unknown as () => void;
     vi.mocked(window.requestAnimationFrame).mockClear();
 
     // Call 1: ctx is null. Returns early without doing jsQR.
@@ -396,7 +402,7 @@ describe("QR Scanner Utility Spec", () => {
 
     // Call 4: isProcessing is true, and videoStream is null.
     // We need to fake isProcessing = true. To do this, we need a successful scan.
-    let resolveScan: any;
+    let resolveScan: (value: unknown) => void = () => {};
     const asyncCallback = vi.fn().mockImplementation(() => {
       return new Promise((resolve) => {
         resolveScan = resolve;
@@ -412,11 +418,13 @@ describe("QR Scanner Utility Spec", () => {
     );
     await new Promise(process.nextTick);
     mockVideo.dispatchEvent(new Event("loadedmetadata"));
-    vi.mocked(jsQR).mockReturnValue({ data: "token" } as any);
+    vi.mocked(jsQR).mockReturnValue({
+      data: "token",
+    } as unknown as import("jsqr").QRCode);
 
     const frameCallback3 = vi
       .mocked(window.requestAnimationFrame)
-      .mock.calls.pop()?.[0] as unknown as Function;
+      .mock.calls.pop()?.[0] as unknown as () => void;
     vi.mocked(window.requestAnimationFrame).mockClear();
 
     // trigger scan -> isProcessing = true
@@ -431,7 +439,7 @@ describe("QR Scanner Utility Spec", () => {
     frameCallback3();
     expect(window.requestAnimationFrame).not.toHaveBeenCalled();
 
-    resolveScan();
+    resolveScan(undefined);
   });
 });
 

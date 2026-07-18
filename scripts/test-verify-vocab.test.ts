@@ -67,7 +67,7 @@ describe("Cantonese Chapter Vocabulary Checker E2E Spec", () => {
       if (errorFiles.length > 0) {
         errorString += `Found ${Object.values(res.errors).flat().length} unregistered vocabulary error(s)\n`;
         errorFiles.forEach((file) => {
-          res.errors[file]?.forEach((err: any) => {
+          res.errors[file]?.forEach((err) => {
             errorString += `${err.term}\nnot registered in the dictionary\n`;
           });
         });
@@ -77,7 +77,7 @@ describe("Cantonese Chapter Vocabulary Checker E2E Spec", () => {
       if (warningFiles.length > 0) {
         warningString += `Found ${Object.values(res.warnings).flat().length} translation divergence warning(s)\n`;
         warningFiles.forEach((file) => {
-          res.warnings[file]?.forEach((warn: any) => {
+          res.warnings[file]?.forEach((warn) => {
             warningString += `${warn.term}\nTranslation divergence\n`;
           });
         });
@@ -94,7 +94,7 @@ describe("Cantonese Chapter Vocabulary Checker E2E Spec", () => {
           warningString,
         raw: res,
       };
-    } catch (err: any) {
+    } catch (err: unknown) {
       return {
         success: false,
         output: err instanceof Error ? err.message : String(err),

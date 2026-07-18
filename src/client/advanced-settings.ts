@@ -1,9 +1,3 @@
-declare global {
-  interface Window {
-    __allChaptersData?: any[];
-  }
-}
-
 import {
   getUnlockedChapters,
   getPhraseSRS,
@@ -24,6 +18,8 @@ function getEl(id: string): HTMLElement {
   return el;
 }
 
+import type { ClientChapterData, SrsStateMap } from "../types/index.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   // Elements
   const completedList = getEl("completed-chapters-list");
@@ -37,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const allChaptersData = window.__allChaptersData || [];
   let currentUnlocked: string[] = [];
-  let phraseSRS: Record<string, any> = {};
-  let vocabSRS: Record<string, any> = {};
+  let phraseSRS: SrsStateMap = {};
+  let vocabSRS: SrsStateMap = {};
   let pendingResetAction: (() => void) | null = null;
 
   // Toast notification helper
@@ -75,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Count SRS records for a chapter
-  function getSRSCountForChapter(chapterData: any) {
+  function getSRSCountForChapter(chapterData: ClientChapterData) {
     let phraseCount = 0;
     let vocabCount = 0;
 
@@ -94,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderCompletedChapters() {
     loadLocalStorage();
 
-    const completedChapters = allChaptersData.filter((ch: any) =>
+    const completedChapters = allChaptersData.filter((ch: ClientChapterData) =>
       currentUnlocked.includes(ch.id),
     );
 
@@ -108,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     completedList.innerHTML = "";
-    completedChapters.forEach((chapter: any) => {
+    completedChapters.forEach((chapter: ClientChapterData) => {
       const srsCounts = getSRSCountForChapter(chapter);
 
       const card = document.createElement("div");
@@ -149,7 +145,9 @@ document.addEventListener("DOMContentLoaded", () => {
     chNum: number,
     chTitle: string,
   ) {
-    const chapter = allChaptersData.find((ch: any) => ch.id === chapterId);
+    const chapter = allChaptersData.find(
+      (ch: ClientChapterData) => ch.id === chapterId,
+    );
     const chapterPhrases = chapter?.phrases || [];
     const chapterVocab = chapter?.vocab || [];
 

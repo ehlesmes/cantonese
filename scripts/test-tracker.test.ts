@@ -45,7 +45,8 @@ describe("Vocabulary Tracker E2E Spec", () => {
     }
 
     if (hasCurriculumBackup) {
-      if (curriculumBackup !== null) fs.writeFileSync(curriculumPath, curriculumBackup, "utf8");
+      if (curriculumBackup !== null)
+        fs.writeFileSync(curriculumPath, curriculumBackup, "utf8");
     }
   });
 
@@ -103,21 +104,29 @@ And test homograph \`調[diu6|melody]\`.
         cwd: projectRoot,
         stdio: "pipe",
       });
-    } catch (err: any) {
+    } catch (err: unknown) {
       // Clean up before failing
       if (fs.existsSync(testFile1)) fs.unlinkSync(testFile1);
       if (fs.existsSync(testFile2)) fs.unlinkSync(testFile2);
-      throw new Error(`Failed to execute track-vocabulary.ts: ${err instanceof Error ? err.message : String(err)}`);
+      throw new Error(
+        `Failed to execute track-vocabulary.ts: ${(err as Error).message}`,
+      );
     }
 
     try {
       // Read the generated JSON database
       expect(fs.existsSync(jsonPath)).toBe(true);
-      const db = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+      const db = JSON.parse(fs.readFileSync(jsonPath, "utf8")) as {
+        character: string;
+        jyutping: string;
+        translation: string;
+        firstIntroducedIn: string;
+        occurrences: number;
+      }[];
 
       // Filter out any other vocabulary if the repo currently has other files
       const testEntries = db.filter(
-        (item: any) =>
+        (item) =>
           item.firstIntroducedIn === "test-vocab-one" ||
           item.firstIntroducedIn === "test-vocab-two",
       );
@@ -127,29 +136,29 @@ And test homograph \`調[diu6|melody]\`.
 
       // 2. Homograph tiu4 check
       const tiu4 = testEntries.find(
-        (item: any) => item.character === "調" && item.jyutping === "tiu4",
+        (item) => item.character === "調" && item.jyutping === "tiu4",
       );
       expect(tiu4).toBeDefined();
-      expect(tiu4.translation).toBe("to adjust");
-      expect(tiu4.firstIntroducedIn).toBe("test-vocab-one");
-      expect(tiu4.occurrences).toBe(1);
+      expect(tiu4!.translation).toBe("to adjust");
+      expect(tiu4!.firstIntroducedIn).toBe("test-vocab-one");
+      expect(tiu4!.occurrences).toBe(1);
 
       // 3. Homograph diu6 check
       const diu6 = testEntries.find(
-        (item: any) => item.character === "調" && item.jyutping === "diu6",
+        (item) => item.character === "調" && item.jyutping === "diu6",
       );
       expect(diu6).toBeDefined();
-      expect(diu6.translation).toBe("melody");
-      expect(diu6.firstIntroducedIn).toBe("test-vocab-two");
-      expect(diu6.occurrences).toBe(1);
+      expect(diu6!.translation).toBe("melody");
+      expect(diu6!.firstIntroducedIn).toBe("test-vocab-two");
+      expect(diu6!.occurrences).toBe(1);
 
       // 4. "爸爸" check (should merge translation nuances and register first introduced file)
-      const hello = testEntries.find((item: any) => item.character === "爸爸");
+      const hello = testEntries.find((item) => item.character === "爸爸");
       expect(hello).toBeDefined();
-      expect(hello.firstIntroducedIn).toBe("test-vocab-one");
-      expect(hello.occurrences).toBe(2);
-      expect(hello.translation).toContain("father");
-      expect(hello.translation).toContain("dad");
+      expect(hello!.firstIntroducedIn).toBe("test-vocab-one");
+      expect(hello!.occurrences).toBe(2);
+      expect(hello!.translation).toContain("father");
+      expect(hello!.translation).toContain("dad");
     } finally {
       // Always Clean up temporary files
       if (fs.existsSync(testFile1)) fs.unlinkSync(testFile1);

@@ -1,5 +1,9 @@
 import * as fs from "fs";
-import type { SemanticUnit } from "../../src/types";
+import type {
+  RawParsedChapter,
+  ParsedBlock,
+  SemanticUnit,
+} from "../../src/types";
 
 /**
  * Parses a standard YAML string into a JavaScript object.
@@ -9,19 +13,19 @@ import type { SemanticUnit } from "../../src/types";
  * @param {string} yamlStr
  * @returns {object}
  */
-function parseYAML(yamlStr: any) {
+function parseYAML(yamlStr: string): Record<string, unknown> {
   const lines = yamlStr.split(/\r?\n/);
-  const result: Record<string, any> = {};
+  const result: Record<string, unknown> = {};
   let currentKey = "";
   let currentBlockValue: string | null = null;
   let currentBlockIndent = 0;
 
   let arrayKey = null;
-  let arrayList: any[] | null = null;
-  let currentObject: Record<string, any> | null = null;
+  let arrayList: Record<string, unknown>[] | null = null;
+  let currentObject: Record<string, unknown> | null = null;
 
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
+    const line = lines[i]!;
 
     // Skip empty lines unless inside a multiline block
     if (line.trim() === "") {
@@ -82,7 +86,7 @@ function parseYAML(yamlStr: any) {
             v = v.slice(1, -1);
           }
 
-          const parsedVal = v !== "" && !isNaN(v) ? parseInt(v, 10) : v;
+          const parsedVal = v !== "" && !isNaN(Number(v)) ? parseInt(v, 10) : v;
           currentObject[k] = parsedVal;
         }
       }
@@ -110,7 +114,7 @@ function parseYAML(yamlStr: any) {
         v = v.slice(1, -1);
       }
 
-      const parsedVal = v !== "" && !isNaN(v) ? parseInt(v, 10) : v;
+      const parsedVal = v !== "" && !isNaN(Number(v)) ? parseInt(v, 10) : v;
 
       if (currentObject) {
         currentObject[k] = parsedVal;
@@ -135,12 +139,12 @@ function parseYAML(yamlStr: any) {
 }
 
 /**
- * Parses a chapter markdown file into structured metadata and blocks.
+ * Parses a chapter markdown file.
  *
  * @param {string} filePath
- * @returns {object} { frontmatter, blocks }
+ * @returns {RawParsedChapter}
  */
-function parseChapter(filePath: any) {
+export function parseChapter(filePath: string): RawParsedChapter {
   const content = fs.readFileSync(filePath, "utf8");
   const lines = content.split(/\r?\n/);
 
@@ -164,10 +168,10 @@ function parseChapter(filePath: any) {
   }
 
   const frontmatter = hasFrontmatter ? parseYAML(frontmatterStr) : null;
-  const blocks = [];
+  const blocks: ParsedBlock[] = [];
 
   let inBlock = false;
-  let currentBlockType = "prose";
+  let currentBlockType: ParsedBlock["type"] = "prose";
   let currentBlockLines = [];
   let currentBlockStartLine = bodyStartLine;
 
@@ -235,13 +239,20 @@ function parseChapter(filePath: any) {
   };
 }
 
+export interface CurriculumChapter {
+  id: string;
+  file: string;
+  title: string;
+  chapter?: number;
+}
+
 /**
  * Parses curriculum.md frontmatter for official chapter entries.
  *
  * @param {string} filePath
- * @returns {Array<object>}
+ * @returns {Array<CurriculumChapter>}
  */
-function parseCurriculum(filePath: string) {
+export function parseCurriculum(filePath: string): CurriculumChapter[] {
   const content = fs.readFileSync(filePath, "utf8");
   const lines = content.split(/\r?\n/);
 
@@ -255,8 +266,10 @@ function parseCurriculum(filePath: string) {
     }
     if (endIdx !== -1) {
       const frontmatterStr = lines.slice(1, endIdx).join("\n");
-      const frontmatter: any = parseYAML(frontmatterStr);
-      return frontmatter.chapters || [];
+      const frontmatter = parseYAML(frontmatterStr);
+      return Array.isArray(frontmatter.chapters)
+        ? (frontmatter.chapters as unknown as CurriculumChapter[])
+        : [];
     }
   }
   return [];
@@ -321,11 +334,4 @@ function extractBlockUnits(text: string): SemanticUnit[] {
   return matches;
 }
 
-export {
-  parseYAML,
-  parseChapter,
-  parseCurriculum,
-  extractInlineUnits,
-  extractBlockUnits,
-  CHINESE_CHAR_REGEX,
-};
+export { parseYAML, extractInlineUnits, extractBlockUnits, CHINESE_CHAR_REGEX };

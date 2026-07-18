@@ -17,13 +17,6 @@ module.exports = tseslint.config(
   ...tseslint.configs.recommended,
   {
     rules: {
-      "no-unused-vars": "off", // Handled by @typescript-eslint
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        { vars: "all", args: "none" },
-      ],
-      "@typescript-eslint/no-var-requires": "error",
-      "@typescript-eslint/no-explicit-any": "off", // Keep flexible for this migration
       "no-console": "off",
       "no-debugger": "error",
       "prefer-const": "error",
@@ -35,6 +28,29 @@ module.exports = tseslint.config(
         ...globals.node,
         ...globals.browser,
       },
+    },
+  },
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
+    },
+    rules: {
+      "no-unused-vars": "off", // Handled by @typescript-eslint
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { vars: "all", args: "after-used" },
+      ],
+      "@typescript-eslint/no-var-requires": "error",
+      "@typescript-eslint/no-explicit-any": "error",
+      "@typescript-eslint/no-unsafe-assignment": "error",
+      "@typescript-eslint/no-unsafe-member-access": "error",
+      "@typescript-eslint/no-unsafe-argument": "error",
+      "@typescript-eslint/no-unsafe-return": "error",
+      "@typescript-eslint/no-unsafe-call": "error",
     },
   },
   {

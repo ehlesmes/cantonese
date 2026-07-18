@@ -48,7 +48,7 @@ describe("PracticeSession state engine", () => {
     const resA = session.submitResponse(true);
     expect(session.getCorrectCount()).toBe(1);
     expect(session.getCurrentIndex()).toBe(1);
-    expect(resA.updatedCardState.level).toBe(srsState[cardA.id]!.level + 1);
+    expect(resA.updatedCardState!.level).toBe(srsState[cardA.id]!.level + 1);
 
     // Verify second card
     const cardB = session.getCurrentCard()!;

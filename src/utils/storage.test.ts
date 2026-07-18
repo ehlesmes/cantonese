@@ -18,7 +18,7 @@ describe("Storage Utilities Spec", () => {
       let store: Record<string, string> = {};
       global.localStorage = {
         getItem: (key: string) => store[key] || null,
-        setItem: (key: string, value: any) => (store[key] = value.toString()),
+        setItem: (key: string, value: unknown) => (store[key] = String(value)),
         removeItem: (key: string) => delete store[key],
         clear: () => (store = {}),
         length: 0,

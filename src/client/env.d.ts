@@ -8,11 +8,9 @@ interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
 
-declare global {
-  interface Window {
-    __allExamples?: any[];
-    __allVocab?: any[];
-    __allChaptersData?: any[];
-    preloadTexts?: (args: any[]) => void;
-  }
+interface Window {
+  __allExamples?: import("../types/index.js").ClientExample[];
+  __allVocab?: import("../types/index.js").ClientVocab[];
+  __allChaptersData?: import("../types/index.js").ClientChapterData[];
+  preloadTexts?: (items: (string | { text: string; hash: string })[]) => void;
 }

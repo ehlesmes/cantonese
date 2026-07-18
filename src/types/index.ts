@@ -50,6 +50,11 @@ export interface ParsedChapter {
   blocks: ParsedBlock[];
 }
 
+export interface RawParsedChapter {
+  frontmatter: Record<string, unknown> | null;
+  blocks: ParsedBlock[];
+}
+
 export interface SemanticUnit {
   raw: string;
   characters: string;
@@ -73,4 +78,37 @@ export interface SDPCoordinates {
 export interface CompileMarkdownOptions {
   inline?: boolean;
   breaks?: boolean;
+}
+
+// Client-side UI Data Models
+export interface ClientVocab {
+  id: string;
+  character: string;
+  jyutping: string;
+  translation: string;
+  chapter: string;
+  chapterNumber: number;
+  chapterTitle: string;
+  occurrences: number;
+}
+
+export interface ClientExample {
+  id: string;
+  chapter: string;
+  chapterNumber: number;
+  chapterTitle: string;
+  cantoneseRaw: string;
+  english: string;
+  tokens: string[];
+  type: "example" | "dialog";
+  audioHash: string;
+  tokenHashes: Record<string, string>;
+}
+
+export interface ClientChapterData {
+  id: string;
+  number: number;
+  title: string;
+  phrases: string[];
+  vocab: string[];
 }

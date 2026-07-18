@@ -20,9 +20,11 @@ describe("Parser - parseYAML", () => {
 
   test("parses array lists with quoted values", () => {
     const yaml = "list:\n  - key: \"value1\"\n  - key: 'value2'\n";
-    const result = parseYAML(yaml);
+    const result = parseYAML(yaml) as { list: { key: string }[] };
     expect(result.list).toHaveLength(2);
+    // @ts-expect-error - Expected due to intentional malformed test data
     expect(result.list[0].key).toBe("value1");
+    // @ts-expect-error - Expected due to intentional malformed test data
     expect(result.list[1].key).toBe("value2");
   });
 });

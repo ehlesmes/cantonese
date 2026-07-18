@@ -58,6 +58,7 @@ describe("Format Utils - validateChapterContent", () => {
       ],
     };
 
+    // @ts-expect-error - Expected due to intentional malformed test data
     const errors = validateChapterContent(chapterData, "01");
     expect(errors.length).toBe(1);
     expect(errors[0]?.message).toContain(
@@ -79,6 +80,7 @@ describe("Format Utils - validateChapterContent", () => {
     };
 
     // Odd number of lines in dialog
+    // @ts-expect-error - Expected due to intentional malformed test data
     const errors = validateChapterContent(chapterData, "01");
     expect(errors[0]?.message).toContain("even number of lines");
   });
@@ -94,6 +96,7 @@ describe("Format Utils - validateChapterContent", () => {
         },
       ],
     };
+    // @ts-expect-error - Expected due to intentional malformed test data
     const errors = validateChapterContent(chapterData, "01");
     expect(
       errors.some((e) => e.message.includes("double/adjacent backticks")),
@@ -114,6 +117,7 @@ describe("Format Utils - validateChapterContent", () => {
         },
       ],
     };
+    // @ts-expect-error - Expected due to intentional malformed test data
     const errors = validateChapterContent(chapterData, "01");
     expect(errors.some((e) => e.message.includes("Invalid Jyutping"))).toBe(
       true,
@@ -134,6 +138,7 @@ describe("Format Utils - validateChapterContent", () => {
         },
       ],
     };
+    // @ts-expect-error - Expected due to intentional malformed test data
     const errors = validateChapterContent(chapterData, "01");
     expect(errors.some((e) => e.message.includes("Invalid Jyutping"))).toBe(
       true,
@@ -169,6 +174,7 @@ describe("Format Utils - validateChapterContent", () => {
         },
       ],
     };
+    // @ts-expect-error - Expected due to intentional malformed test data
     const errors = validateChapterContent(chapterData, "01");
     expect(errors.some((e) => e.message.includes("unrecognized key"))).toBe(
       true,
@@ -196,6 +202,7 @@ describe("Format Utils - checkChronologicalLimits", () => {
 
     const result = checkChronologicalLimits(
       curriculumChapters,
+      // @ts-expect-error - Expected due to intentional malformed test data
       chaptersDataMap,
     );
     expect(result.errors.length).toBe(1);
@@ -213,8 +220,27 @@ describe("Format Utils - checkChronologicalLimits", () => {
     };
     const result = checkChronologicalLimits(
       curriculumChapters,
+      // @ts-expect-error - Expected due to intentional malformed test data
       chaptersDataMap,
     );
     expect(result.errors.length).toBe(0);
+  });
+  test("should handle exercise blocks correctly", () => {
+    const chapters = [{ file: "ch1.yaml", id: "ch1" }];
+    const map = {
+      "ch1.yaml": {
+        metadata: {},
+        blocks: [
+          {
+            type: "exercise",
+            content: "question: 你好\nanswer: 大家好\nexplanation: nothing",
+          },
+          { type: "unknown", content: "unknown" },
+        ],
+      },
+    };
+    // @ts-expect-error - mock data
+    const result = checkChronologicalLimits(chapters, map);
+    expect(result.errors).toHaveLength(0);
   });
 });

@@ -1,9 +1,3 @@
-declare global {
-  interface Window {
-    __allVocab?: any[];
-    preloadTexts?: (args: any[]) => void;
-  }
-}
 /// <reference types="vite/client" />
 import {
   getUnlockedChapters,
@@ -18,11 +12,13 @@ function getEl(id: string): HTMLElement {
   return el;
 }
 
+import type { ClientVocab, SrsStateMap } from "../types/index.js";
+
 // Global state and references
-let allVocab: any[] = [];
+let allVocab: ClientVocab[] = [];
 let unlockedChapters: string[] = [];
-let vocabSRSState: Record<string, any> = {};
-let session: PracticeSession<any> | null = null;
+let vocabSRSState: SrsStateMap = {};
+let session: PracticeSession<ClientVocab> | null = null;
 let currentGroupMode = "chapter"; // "chapter" or "level"
 
 // Fetch data and initialize
@@ -35,7 +31,7 @@ async function initialize() {
         ? import.meta.env.BASE_URL
         : import.meta.env.BASE_URL + "/";
       const response = await fetch(`${baseUrl}data/vocabulary.json`);
-      allVocab = await response.json();
+      allVocab = (await response.json()) as ClientVocab[];
       if (typeof window !== "undefined") {
         window.__allVocab = allVocab;
       }
@@ -193,24 +189,33 @@ function renderPoolDirectory() {
   `;
 
   if (currentGroupMode === "chapter") {
-    const grouped: Record<string, any> = {};
+    const grouped: Record<
+      string,
+      { title: string; chapterNumber: number; items: ClientVocab[] }
+    > = {};
     poolItems.forEach((item) => {
-      if (!grouped[item.chapter]) {
-        grouped[item.chapter] = {
+      let group = grouped[item.chapter];
+      if (!group) {
+        group = {
           title: item.chapterTitle,
           chapterNumber: item.chapterNumber,
           items: [],
         };
+        grouped[item.chapter] = group;
       }
-      grouped[item.chapter].items.push(item);
+      group.items.push(item);
     });
 
     const sortedChapterIds = Object.keys(grouped).sort((a, b) => {
-      return grouped[a].chapterNumber - grouped[b].chapterNumber;
+      const groupA = grouped[a];
+      const groupB = grouped[b];
+      if (!groupA || !groupB) return 0;
+      return groupA.chapterNumber - groupB.chapterNumber;
     });
 
     sortedChapterIds.forEach((chId) => {
       const group = grouped[chId];
+      if (!group) return;
       const section = document.createElement("div");
       section.className = "directory-section";
 
@@ -228,7 +233,7 @@ function renderPoolDirectory() {
       const content = document.createElement("div");
       content.className = "directory-group-content review-items-container";
 
-      group.items.forEach((item: any) => {
+      group.items.forEach((item: ClientVocab) => {
         content.appendChild(createItemCardElement(item));
       });
 
@@ -252,7 +257,7 @@ function renderPoolDirectory() {
       container.appendChild(section);
     });
   } else {
-    const grouped: Record<number, any[]> = {
+    const grouped: Record<number, ClientVocab[]> = {
       1: [],
       2: [],
       3: [],
@@ -262,7 +267,8 @@ function renderPoolDirectory() {
     poolItems.forEach((item) => {
       const state = vocabSRSState[item.id];
       const lvl = state ? state.level : 1;
-      if (grouped[lvl]) grouped[lvl].push(item);
+      const group = grouped[lvl];
+      if (group) group.push(item);
     });
 
     for (let lvl = 1; lvl <= 5; lvl++) {
@@ -286,7 +292,7 @@ function renderPoolDirectory() {
       const content = document.createElement("div");
       content.className = "directory-group-content review-items-container";
 
-      items.forEach((item: any) => {
+      items.forEach((item: ClientVocab) => {
         content.appendChild(createItemCardElement(item));
       });
 
@@ -315,7 +321,7 @@ function renderPoolDirectory() {
 }
 
 // Helper to generate a single directory item card
-function createItemCardElement(item: any) {
+function createItemCardElement(item: ClientVocab) {
   const state = vocabSRSState[item.id];
   const lvl = state ? state.level : 1;
 
@@ -327,7 +333,7 @@ function createItemCardElement(item: any) {
 
   const cantoDiv = document.createElement("div");
   cantoDiv.className = "review-item-canto";
-  cantoDiv.innerHTML = `<span class="vocab-term" data-audio-hash="${item.hash || ""}">${item.character}<span class="tooltip-popover"><strong>${item.jyutping}</strong><br/>${item.translation}</span></span>`;
+  cantoDiv.innerHTML = `<span class="vocab-term" data-audio-hash="">${item.character}<span class="tooltip-popover"><strong>${item.jyutping}</strong><br/>${item.translation}</span></span>`;
 
   const engDiv = document.createElement("div");
   engDiv.className = "review-item-english";
@@ -351,7 +357,7 @@ function startPracticeSession(
   chapterId: string | null = null,
   srsLevel: number | string | null = null,
 ) {
-  let poolItems = [];
+  let poolItems: ClientVocab[] = [];
   if (typeof chapterId === "string" && chapterId) {
     poolItems = allVocab.filter((item) => item.chapter === chapterId);
   } else if (srsLevel !== null && !Number.isNaN(Number(srsLevel))) {
@@ -392,7 +398,7 @@ function startPracticeSession(
   // Preload audio files for all cards in this session to eliminate playback latency
   if (window.preloadTexts) {
     window.preloadTexts(
-      session.cards.map((c) => ({ text: c.character, hash: c.hash })),
+      session.cards.map((c) => ({ text: c.character, hash: "" })),
     );
   }
 
@@ -423,7 +429,7 @@ function loadCard() {
   // Load character with hover tooltip showing only Jyutping
   const charContainer = getEl("flashcard-character-container");
   if (!charContainer) return;
-  charContainer.innerHTML = `<span class="vocab-term" data-audio-hash="${card.hash || ""}">${card.character}<span class="tooltip-popover"><strong>${card.jyutping}</strong></span></span>`;
+  charContainer.innerHTML = `<span class="vocab-term" data-audio-hash="">${card.character}<span class="tooltip-popover"><strong>${card.jyutping}</strong></span></span>`;
 
   // Set translation
   getEl("flashcard-translation-text").textContent = card.translation;

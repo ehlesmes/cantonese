@@ -35,11 +35,9 @@ export function parseLexicon(rawText: string): CifuEntry[] {
     const char = part0.trim();
     const jyutping = part1.trim();
     const spokenAdultPm = parseFloat(part5);
-    /* v8 ignore start */
     const translation = parts[12] ? parts[12].trim() : "";
 
     if (isNaN(spokenAdultPm)) continue;
-    /* v8 ignore stop */
 
     // Filter out punctuation-like characters or non-Chinese characters
     if (/^[^\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+$/.test(char)) continue;
@@ -72,7 +70,5 @@ export function parseLexicon(rawText: string): CifuEntry[] {
     });
   }
 
-  /* v8 ignore start */
   return uniqueEntries.slice(0, 1000);
-  /* v8 ignore stop */
 }

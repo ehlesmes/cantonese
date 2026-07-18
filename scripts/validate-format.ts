@@ -6,6 +6,7 @@ import {
   checkChronologicalLimits,
   validateJyutping,
 } from "./lib/format-utils";
+import type { RawParsedChapter } from "../src/types";
 
 // Premium CLI output styles
 const colors = {
@@ -25,8 +26,11 @@ const colors = {
  * @param {object} [curriculumEntry] Associated curriculum mapping entry if available
  * @returns {Array<object>} List of errors
  */
-function validateChapterFile(filePath: string, curriculumEntry?: any) {
-  const errors: any[] = [];
+function validateChapterFile(
+  filePath: string,
+  curriculumEntry?: { id: string; title: string },
+) {
+  const errors: { file: string; line: number; message: string }[] = [];
   const addError = (line: number, msg: string) =>
     errors.push({ file: filePath, line, message: msg });
 
@@ -36,7 +40,7 @@ function validateChapterFile(filePath: string, curriculumEntry?: any) {
   let chapterData;
   try {
     chapterData = parser.parseChapter(filePath);
-  } catch (err: any) {
+  } catch (err: unknown) {
     addError(
       0,
       `Failed to parse chapter file: ${err instanceof Error ? err.message : String(err)}`,
@@ -70,15 +74,15 @@ function runValidation({
   curriculumPath?: string;
   targetFile?: string | undefined;
 } = {}) {
-  let curriculumChapters: any[] = [];
-  const errors: any[] = [];
-  const warnings: any[] = [];
+  let curriculumChapters: { id: string; file: string; title: string }[] = [];
+  const errors: { file: string; line: number; message: string }[] = [];
+  const warnings: { chapterId: string; file: string; count: number }[] = [];
 
   try {
     if (fs.existsSync(curriculumPath)) {
       curriculumChapters = parser.parseCurriculum(curriculumPath);
     }
-  } catch (err: any) {
+  } catch (err: unknown) {
     errors.push({
       file:
         projectRoot && curriculumPath
@@ -104,9 +108,7 @@ function runValidation({
     }
 
     const basename = path.basename(filePath);
-    const curriculumEntry = curriculumChapters.find(
-      (c: any) => c.file === basename,
-    );
+    const curriculumEntry = curriculumChapters.find((c) => c.file === basename);
 
     const fileErrors = validateChapterFile(filePath, curriculumEntry);
     errors.push(...fileErrors);
@@ -134,9 +136,7 @@ function runValidation({
     // 2. Validate each chapter file
     for (const file of chapterFiles) {
       const fullPath = path.join(contentDir, file);
-      const curriculumEntry = curriculumChapters.find(
-        (c: any) => c.file === file,
-      );
+      const curriculumEntry = curriculumChapters.find((c) => c.file === file);
 
       if (!curriculumEntry) {
         errors.push({
@@ -151,7 +151,7 @@ function runValidation({
     }
 
     // 3. Chronological Vocabulary Limit Verification
-    const chaptersDataMap: Record<string, any> = {};
+    const chaptersDataMap: Record<string, RawParsedChapter> = {};
     for (const chapter of curriculumChapters) {
       const filePath = path.join(contentDir, chapter.file);
       if (fs.existsSync(filePath)) {
@@ -235,7 +235,10 @@ function main() {
     );
 
     // Group errors by file
-    const grouped: Record<string, any[]> = {};
+    const grouped: Record<
+      string,
+      { file: string; line: number; message: string }[]
+    > = {};
     for (const err of errors) {
       const relPath = path.relative(projectRoot, err.file);
       if (!grouped[relPath]) grouped[relPath] = [];

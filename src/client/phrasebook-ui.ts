@@ -1,9 +1,3 @@
-declare global {
-  interface Window {
-    __allExamples?: any[];
-  }
-}
-
 import {
   getUnlockedChapters,
   getPhraseSRS,
@@ -23,11 +17,13 @@ function getEl(id: string): HTMLElement {
   return el;
 }
 
+import type { ClientExample, SrsStateMap } from "../types/index.js";
+
 // Global state and references
-let allExamples: any[] = [];
+let allExamples: ClientExample[] = [];
 let unlockedChapters: string[] = [];
-let srsState: Record<string, any> = {};
-let session: PracticeSession<any> | null = null;
+let srsState: SrsStateMap = {};
+let session: PracticeSession<ClientExample> | null = null;
 let assembledTokenIndices: number[] = [];
 let currentGroupMode = "chapter"; // "chapter" or "level"
 
@@ -41,7 +37,7 @@ async function initialize() {
         ? import.meta.env.BASE_URL
         : import.meta.env.BASE_URL + "/";
       const response = await fetch(`${baseUrl}data/phrasebook.json`);
-      allExamples = await response.json();
+      allExamples = (await response.json()) as ClientExample[];
       if (typeof window !== "undefined") {
         window.__allExamples = allExamples;
       }
@@ -152,12 +148,12 @@ function renderDashboard() {
   const statsCardsEl = getEl("stats-cards-count");
   const statsMasteredEl = getEl("stats-mastered-count");
 
-  const poolItems = allExamples.filter((item: any) =>
+  const poolItems = allExamples.filter((item: ClientExample) =>
     unlockedChapters.includes(item.chapter),
   );
 
   let masteredCount = 0;
-  poolItems.forEach((item: any) => {
+  poolItems.forEach((item: ClientExample) => {
     const itemState = srsState[item.id];
     if (itemState && itemState.level === 5) masteredCount++;
   });
@@ -175,7 +171,7 @@ function renderPoolDirectory() {
   const container = getEl("review-items-list-container");
   if (!container) return;
 
-  const poolItems = allExamples.filter((item: any) =>
+  const poolItems = allExamples.filter((item: ClientExample) =>
     unlockedChapters.includes(item.chapter),
   );
 
@@ -197,24 +193,33 @@ function renderPoolDirectory() {
 
   container.innerHTML = "";
   if (currentGroupMode === "chapter") {
-    const grouped: Record<string, any> = {};
-    poolItems.forEach((item: any) => {
-      if (!grouped[item.chapter]) {
-        grouped[item.chapter] = {
+    const grouped: Record<
+      string,
+      { title: string; chapterNumber: number; items: ClientExample[] }
+    > = {};
+    poolItems.forEach((item: ClientExample) => {
+      let group = grouped[item.chapter];
+      if (!group) {
+        group = {
           title: item.chapterTitle,
           chapterNumber: item.chapterNumber,
           items: [],
         };
+        grouped[item.chapter] = group;
       }
-      grouped[item.chapter].items.push(item);
+      group.items.push(item);
     });
 
     const sortedChapterIds = Object.keys(grouped).sort((a, b) => {
-      return grouped[a].chapterNumber - grouped[b].chapterNumber;
+      const groupA = grouped[a];
+      const groupB = grouped[b];
+      if (!groupA || !groupB) return 0;
+      return groupA.chapterNumber - groupB.chapterNumber;
     });
 
     sortedChapterIds.forEach((chId) => {
       const group = grouped[chId];
+      if (!group) return;
       const section = document.createElement("div");
       section.className = "directory-section";
 
@@ -241,7 +246,7 @@ function renderPoolDirectory() {
       const content = document.createElement("div");
       content.className = "directory-group-content review-items-container";
 
-      group.items.forEach((item: any) => {
+      group.items.forEach((item: ClientExample) => {
         content.appendChild(createItemCardElement(item));
       });
 
@@ -262,17 +267,18 @@ function renderPoolDirectory() {
       container.appendChild(section);
     });
   } else {
-    const grouped: Record<number, any[]> = {
+    const grouped: Record<number, ClientExample[]> = {
       1: [],
       2: [],
       3: [],
       4: [],
       5: [],
     };
-    poolItems.forEach((item: any) => {
+    poolItems.forEach((item: ClientExample) => {
       const state = srsState[item.id];
       const lvl = state ? state.level : 1;
-      if (grouped[lvl]) grouped[lvl].push(item);
+      const group = grouped[lvl];
+      if (group) group.push(item);
     });
 
     for (let lvl = 1; lvl <= 5; lvl++) {
@@ -305,7 +311,7 @@ function renderPoolDirectory() {
       const content = document.createElement("div");
       content.className = "directory-group-content review-items-container";
 
-      items.forEach((item: any) => {
+      items.forEach((item: ClientExample) => {
         content.appendChild(createItemCardElement(item));
       });
 
@@ -331,7 +337,7 @@ function renderPoolDirectory() {
 }
 
 // Helper to generate a single directory item card
-function createItemCardElement(item: any) {
+function createItemCardElement(item: ClientExample) {
   const state = srsState[item.id];
   const lvl = state ? state.level : 1;
 
@@ -371,17 +377,19 @@ function startPracticeSession(
   chapterId: string | null = null,
   srsLevel: number | string | null = null,
 ) {
-  let poolItems: any[] = [];
+  let poolItems: ClientExample[] = [];
   if (typeof chapterId === "string" && chapterId) {
-    poolItems = allExamples.filter((item: any) => item.chapter === chapterId);
+    poolItems = allExamples.filter(
+      (item: ClientExample) => item.chapter === chapterId,
+    );
   } else if (srsLevel !== null && !Number.isNaN(Number(srsLevel))) {
-    poolItems = allExamples.filter((item: any) => {
+    poolItems = allExamples.filter((item: ClientExample) => {
       const state = srsState[item.id];
       const lvl = state ? state.level : 1;
       return lvl === Number(srsLevel);
     });
   } else {
-    poolItems = allExamples.filter((item: any) =>
+    poolItems = allExamples.filter((item: ClientExample) =>
       unlockedChapters.includes(item.chapter),
     );
   }
@@ -447,11 +455,16 @@ function loadCard() {
   getEl("game-reset-btn").style.display = "inline-flex";
 
   const originalTokens = card.tokens;
-  const indices = originalTokens.map((_: any, i: number) => i);
+  const indices = originalTokens.map((_: string, i: number) => i);
 
   for (let i = indices.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [indices[i], indices[j]] = [indices[j], indices[i]];
+    const tempI = indices[i];
+    const tempJ = indices[j];
+    if (tempI !== undefined && tempJ !== undefined) {
+      indices[i] = tempJ;
+      indices[j] = tempI;
+    }
   }
 
   renderGameplayBoards(indices);
@@ -479,6 +492,7 @@ function renderGameplayBoards(poolIndices: number[]) {
   } else {
     assembledTokenIndices.forEach((origIdx: number, assembledIdx: number) => {
       const rawToken = card.tokens[origIdx];
+      if (rawToken === undefined) return;
       const chip = createTokenChip(
         rawToken,
         () => {
@@ -510,6 +524,7 @@ function renderGameplayBoards(poolIndices: number[]) {
   } else {
     poolIndices.forEach((origIdx: number) => {
       const rawToken = card.tokens[origIdx];
+      if (rawToken === undefined) return;
       const chip = createTokenChip(
         rawToken,
         () => {
@@ -552,10 +567,15 @@ function resetCurrentCard() {
   const card = session.getCurrentCard();
   if (!card) return;
   assembledTokenIndices = [];
-  const indices = card.tokens.map((_: any, i: number) => i);
+  const indices = card.tokens.map((_: string, i: number) => i);
   for (let i = indices.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [indices[i], indices[j]] = [indices[j], indices[i]];
+    const tempI = indices[i];
+    const tempJ = indices[j];
+    if (tempI !== undefined && tempJ !== undefined) {
+      indices[i] = tempJ;
+      indices[j] = tempI;
+    }
   }
   renderGameplayBoards(indices);
 }
@@ -571,7 +591,11 @@ function checkCurrentAnswer() {
     return;
   }
 
-  const userTokens = assembledTokenIndices.map((idx) => card.tokens[idx]);
+  const userTokens: string[] = [];
+  for (const idx of assembledTokenIndices) {
+    const token = card.tokens[idx];
+    if (token !== undefined) userTokens.push(token);
+  }
   const isCorrect = checkPhraseAnswer(userTokens, card.tokens);
 
   getEl("game-check-btn").style.display = "none";
@@ -644,9 +668,11 @@ function checkCurrentAnswer() {
             textContent: assembledTokenIndices
               .map((idx) => {
                 const raw = card.tokens[idx];
+                if (raw === undefined) return "";
                 const m = raw.match(/^([^[]+)/);
                 return m ? m[1] : raw;
               })
+              .filter(Boolean)
               .join(" "),
           }),
         ])
@@ -700,8 +726,8 @@ function checkCurrentAnswer() {
           ? "color: var(--secondary-color);"
           : "color: var(--accent-color);",
         textContent: isCorrect
-          ? `Correct! (SRS Level Up to ${updatedState.level})`
-          : `Incorrect (SRS Level Down to ${updatedState.level})`,
+          ? `Correct! (SRS Level Up to ${updatedState?.level ?? 1})`
+          : `Incorrect (SRS Level Down to ${updatedState?.level ?? 1})`,
       }),
       cardHtml,
     ],

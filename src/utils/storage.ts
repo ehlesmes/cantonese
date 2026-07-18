@@ -5,9 +5,9 @@ export function getUnlockedChapters(): string[] {
   try {
     const stored = localStorage.getItem("cantonese_unlocked_chapters");
     if (stored) {
-      const parsed = JSON.parse(stored) as unknown;
+      const parsed: unknown = JSON.parse(stored);
       return Array.isArray(parsed)
-        ? (parsed as unknown[]).filter((c): c is string => typeof c === "string")
+        ? parsed.filter((c: unknown): c is string => typeof c === "string")
         : [];
     }
   } catch (e) {
@@ -21,7 +21,7 @@ export function saveUnlockedChapters(chapters: string[]): boolean {
   try {
     localStorage.setItem(
       "cantonese_unlocked_chapters",
-      JSON.stringify(chapters)
+      JSON.stringify(chapters),
     );
     return true;
   } catch (e) {
@@ -35,7 +35,7 @@ export function getPhraseSRS(): SrsStateMap {
   try {
     const stored = localStorage.getItem("cantonese_srs_state");
     if (stored) {
-      const parsed = JSON.parse(stored) as unknown;
+      const parsed: unknown = JSON.parse(stored);
       if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
         return parsed as SrsStateMap;
       }
@@ -62,7 +62,7 @@ export function getVocabSRS(): SrsStateMap {
   try {
     const stored = localStorage.getItem("cantonese_vocab_srs_state");
     if (stored) {
-      const parsed = JSON.parse(stored) as unknown;
+      const parsed: unknown = JSON.parse(stored);
       if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
         return parsed as SrsStateMap;
       }

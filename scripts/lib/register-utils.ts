@@ -1,4 +1,8 @@
-import type { SemanticUnit } from "../../src/types";
+import type {
+  SemanticUnit,
+  ParsedBlock,
+  RawParsedChapter,
+} from "../../src/types";
 import { validateJyutping } from "./format-utils.js";
 import * as parser from "./parser.js";
 
@@ -71,7 +75,6 @@ export function findUnregisteredWords(
 
     if (!exactMatch && !isAnotA) {
       const key = `${char}|${jyutping}`;
-      /* v8 ignore start */
       if (!unregisteredMap[key]) {
         // Guess word type if the character is registered with a different pronunciation
         const existingEntries = dictionary.filter(
@@ -91,7 +94,6 @@ export function findUnregisteredWords(
           type: guessedType,
         };
       }
-      /* v8 ignore stop */
     }
   }
 
@@ -113,8 +115,20 @@ export const VALID_TYPES = [
   "auxiliary verb",
 ];
 
+export interface RawEntry {
+  char?: unknown;
+  character?: unknown;
+  jyutping?: unknown;
+  definition?: unknown;
+  def?: unknown;
+  translation?: unknown;
+  type?: unknown;
+  alt_jyutping?: unknown;
+  notes?: unknown;
+}
+
 export function validateRegisterEntry(
-  entry: any,
+  entry: RawEntry,
   dictionary: DictionaryEntry[],
   batchKeys: Set<string>,
   prefix = "",
@@ -126,7 +140,7 @@ export function validateRegisterEntry(
     .trim();
   const type = (entry.type || "").toString().trim().toLowerCase();
   const alt_jyutping = Array.isArray(entry.alt_jyutping)
-    ? entry.alt_jyutping
+    ? (entry.alt_jyutping as string[])
     : [];
   const notes = (entry.notes || "").toString().trim();
 
@@ -197,16 +211,21 @@ export function sortDictionary(
   });
 }
 
-export function extractChapterUnits(chapterData: { blocks: any[] }): any[] {
-  const chapterUnits = [];
+export function extractChapterUnits(chapterData: {
+  blocks: ParsedBlock[];
+}): SemanticUnit[] {
+  const chapterUnits: SemanticUnit[] = [];
   for (const block of chapterData.blocks) {
-    let rawUnits = [];
+    let rawUnits: SemanticUnit[] = [];
     if (block.type === "prose") {
       rawUnits = parser.extractInlineUnits(block.content);
     } else if (block.type === "cantonese" || block.type === "dialog") {
       rawUnits = parser.extractBlockUnits(block.content);
     } else if (block.type === "exercise") {
-      const exerciseData: any = parser.parseYAML(block.content);
+      const exerciseData = parser.parseYAML(block.content) as Record<
+        string,
+        unknown
+      >;
       const fields = ["question", "answer", "explanation"];
       for (const field of fields) {
         if (exerciseData[field]) {
@@ -228,13 +247,17 @@ export function extractChapterUnits(chapterData: { blocks: any[] }): any[] {
 }
 
 export function verifyChapterContent(
-  chapterData: { blocks: any[] },
+  chapterData: RawParsedChapter,
   dictionary: DictionaryEntry[],
-): { errors: any[]; warnings: any[]; passedCount: number } {
+): {
+  errors: { term: string; message: string; locations: string }[];
+  warnings: { term: string; message: string; locations: string }[];
+  passedCount: number;
+} {
   const chapterUnits = extractChapterUnits(chapterData);
 
-  const errors: any[] = [];
-  const warnings: any[] = [];
+  const errors: { term: string; message: string; locations: string }[] = [];
+  const warnings: { term: string; message: string; locations: string }[] = [];
   let passedCount = 0;
 
   if (chapterUnits.length === 0) {
@@ -242,14 +265,17 @@ export function verifyChapterContent(
   }
 
   // Deduplicate chapter units to keep reports concise
-  const uniqueUnitsMap: Record<string, any> = {};
+  const uniqueUnitsMap: Record<
+    string,
+    SemanticUnit & { occurrences: number; lines: number[] }
+  > = {};
   for (const unit of chapterUnits) {
     const key = `${unit.characters}_${unit.jyutping}`;
     if (!uniqueUnitsMap[key]) {
       uniqueUnitsMap[key] = {
         ...unit,
         occurrences: 1,
-        lines: [unit.startLine],
+        lines: [unit.startLine!],
       };
     } else {
       uniqueUnitsMap[key].occurrences++;
@@ -271,7 +297,7 @@ export function verifyChapterContent(
 
     // Look up in dictionary by exact character and jyutping
     let dictMatch = dictionary.find(
-      (entry: any) =>
+      (entry) =>
         entry.char === char &&
         (entry.jyutping.toLowerCase() === jyutping ||
           entry.alt_jyutping?.some(
@@ -281,7 +307,6 @@ export function verifyChapterContent(
 
     // Dynamic A-not-A question pattern resolution
     if (!dictMatch) {
-      /* v8 ignore start */
       if (char.length === 3 && char[1] === "唔" && char[0] === char[2]) {
         const syllables = jyutping.split(/\s+/);
         if (
@@ -291,7 +316,7 @@ export function verifyChapterContent(
         ) {
           // Verify the base verb exists in dictionary
           const baseMatch = dictionary.find(
-            (entry: any) =>
+            (entry) =>
               entry.char === char[0] &&
               (entry.jyutping.toLowerCase() === syllables[0] ||
                 entry.alt_jyutping?.some(
@@ -309,7 +334,6 @@ export function verifyChapterContent(
           }
         }
       }
-      /* v8 ignore stop */
     }
 
     const locations = `[Block starting line(s): ${unit.lines.join(", ")}]`;

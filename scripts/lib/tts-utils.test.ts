@@ -48,6 +48,7 @@ describe("TTS Utils - extractTTSStrings", () => {
       },
     ];
 
+    // @ts-expect-error - Expected due to intentional malformed test data
     const strings = extractTTSStrings(chaptersData, [], false);
     expect(strings).toContain("早晨");
   });
@@ -67,6 +68,7 @@ describe("TTS Utils - extractTTSStrings", () => {
       },
     ];
 
+    // @ts-expect-error - Expected due to intentional malformed test data
     const strings = extractTTSStrings(chaptersData, [], false);
     expect(strings).toContain("你好");
     expect(strings).toContain("早晨");
@@ -87,6 +89,7 @@ describe("TTS Utils - extractTTSStrings", () => {
       },
     ];
 
+    // @ts-expect-error - Expected due to intentional malformed test data
     const strings = extractTTSStrings(chaptersData, [], false);
     expect(strings).toContain("唔該");
     expect(strings).toContain("靚仔");
@@ -110,13 +113,14 @@ describe("TTS Utils - extractTTSStrings", () => {
       },
     ];
 
+    // @ts-expect-error - Expected due to intentional malformed test data
     const strings = extractTTSStrings(chaptersData, [], false);
     expect(strings.length).toBe(1);
     expect(strings[0]).toBe("早晨");
   });
 
   test("includes fallback vocab when flag is true", () => {
-    const chaptersData: any[] = [];
+    const chaptersData: Parameters<typeof extractTTSStrings>[0] = [];
     const vocabList = [{ character: "早晨", firstIntroducedIn: "01-intro.md" }];
 
     const strings = extractTTSStrings(chaptersData, vocabList, true);
@@ -131,8 +135,51 @@ describe("TTS Utils - extractTTSStrings", () => {
         blocks: [{ type: "dialog", content: "   \njust dialog no speaker\n" }],
       },
     ];
+    // @ts-expect-error - Expected due to intentional malformed test data
     const res = extractTTSStrings(chapterData, [], false);
     expect(res).not.toContain("just dialog no speaker");
+  });
+
+  test("extractSpokenTexts ignores empty clean spoken text", () => {
+    const chapters: Parameters<typeof extractTTSStrings>[0] = [
+      {
+        file: "ch1.yaml",
+        id: "ch1",
+        blocks: [
+          {
+            type: "cantonese",
+            content: "[ignore]===",
+            startLine: 1,
+            endLine: 1,
+          },
+          { type: "cantonese", content: "你好===", startLine: 2, endLine: 2 },
+          {
+            type: "dialog",
+            content: "A: [ignore]===\nB: 再見===",
+            startLine: 3,
+            endLine: 4,
+          },
+          {
+            type: "exercise",
+            content: "question: answer",
+            startLine: 5,
+            endLine: 5,
+          }, // covers non-prose else branch
+        ],
+      },
+    ];
+
+    const result = extractTTSStrings(
+      chapters,
+      [
+        { character: "[ignore]", firstIntroducedIn: "ch1.yaml" }, // covers line 60 empty cleanVocab inside chapterVocab
+        { firstIntroducedIn: "ch1.yaml" }, // covers line 58 undefined character
+      ],
+      true,
+    );
+    expect(result).not.toContain("[ignore]");
+    expect(result).toContain("你好");
+    expect(result).toContain("再見");
   });
 
   test("extractSpokenTexts gracefully handles missing inline matches", () => {
@@ -143,6 +190,7 @@ describe("TTS Utils - extractTTSStrings", () => {
         blocks: [{ type: "prose", content: "`broken[" }],
       },
     ];
+    // @ts-expect-error - Expected due to intentional malformed test data
     const res = extractTTSStrings(chapterData, [], false);
     expect(res).not.toContain("broken");
   });
@@ -150,9 +198,14 @@ describe("TTS Utils - extractTTSStrings", () => {
   test("extractSpokenTexts handles fallback vocab without character", () => {
     const res = extractTTSStrings(
       [],
-      [{ character: "", jyutping: "", translation: "" }] as any,
+      [
+        { character: "", jyutping: "", translation: "" },
+      ] as unknown as Parameters<typeof extractTTSStrings>[1],
       true,
     );
     expect(res.length).toBe(0);
+  });
+  test("should pass normal characters unchanged", () => {
+    expect(escapeXml("hello")).toBe("hello");
   });
 });
