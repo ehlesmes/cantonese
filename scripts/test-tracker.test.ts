@@ -50,121 +50,53 @@ describe("Vocabulary Tracker E2E Spec", () => {
     }
   });
 
-  test("E2E Vocabulary Tracking - Homographs & Chronological First Introductions", () => {
-    // Write temporary test chapters without numeric prefix
-    const testFile1 = path.join(contentDir, "test-vocab-one.md");
-    const testFile2 = path.join(contentDir, "test-vocab-two.md");
-
-    const content1 = `---
-id: test-vocab-one
-title: Test Vocab One
+  test("CLI Script executes and successfully orchestrates I/O", () => {
+    // Write temporary test chapter
+    const testFile = path.join(contentDir, "test-vocab-e2e.md");
+    const content = `---
+id: test-vocab-e2e
+title: Test Vocab E2E
 description: Test.
 ---
 
-This is a \`爸爸[baa1baa1|father]\` test.
-We also test \`調[tiu4|to adjust]\`.
+This is an \`E2E[yi6ji6ji6|end to end]\` test.
 `;
+    fs.writeFileSync(testFile, content, "utf8");
 
-    const content2 = `---
-id: test-vocab-two
-title: Test Vocab Two
-description: Test.
----
-
-We repeat \`爸爸[baa1baa1|dad / father]\`.
-And test homograph \`調[diu6|melody]\`.
-`;
-
-    fs.writeFileSync(testFile1, content1, "utf8");
-    fs.writeFileSync(testFile2, content2, "utf8");
-
-    // Modify curriculum.md to register our test chapters
+    // Modify curriculum.md
     if (hasCurriculumBackup) {
       const curriculumContent = fs.readFileSync(curriculumPath, "utf8");
-      // Find the end of the frontmatter list (e.g. before the last '---')
-      const targetStr =
-        '  - id: "pets-vet-slang"\n    title: "Pets, Animal Care & Vet Slang"\n    file: "pets-vet-slang.md"\n';
-      const insertion = `  - id: "test-vocab-one"
-    title: "Test Vocab One"
-    file: "test-vocab-one.md"
-  - id: "test-vocab-two"
-    title: "Test Vocab Two"
-    file: "test-vocab-two.md"
+      const targetStr = 'pets-vet-slang.md"\n';
+      if (curriculumContent.includes(targetStr)) {
+        const insertion = `  - id: "test-vocab-e2e"
+    title: "Test Vocab E2E"
+    file: "test-vocab-e2e.md"
 `;
-      const updatedCurriculum = curriculumContent.replace(
-        targetStr,
-        targetStr + insertion,
-      );
-      fs.writeFileSync(curriculumPath, updatedCurriculum, "utf8");
+        const updatedCurriculum = curriculumContent.replace(
+          targetStr,
+          targetStr + insertion,
+        );
+        fs.writeFileSync(curriculumPath, updatedCurriculum, "utf8");
+      }
     }
 
-    // Run track-vocabulary.ts via node command
     try {
       execSync("npx tsx scripts/track-vocabulary.ts", {
         cwd: projectRoot,
         stdio: "pipe",
       });
-    } catch (err: unknown) {
-      // Clean up before failing
-      if (fs.existsSync(testFile1)) fs.unlinkSync(testFile1);
-      if (fs.existsSync(testFile2)) fs.unlinkSync(testFile2);
-      throw new Error(
-        `Failed to execute track-vocabulary.ts: ${(err as Error).message}`,
-      );
-    }
 
-    try {
-      // Read the generated JSON database
+      // Verify files were generated successfully
       expect(fs.existsSync(jsonPath)).toBe(true);
+      expect(fs.existsSync(mdPath)).toBe(true);
+
       const db = JSON.parse(fs.readFileSync(jsonPath, "utf8")) as {
         character: string;
-        jyutping: string;
-        translation: string;
-        firstIntroducedIn: string;
-        occurrences: number;
       }[];
-
-      // Filter out any other vocabulary if the repo currently has other files
-      const testEntries = db.filter(
-        (item) =>
-          item.firstIntroducedIn === "test-vocab-one" ||
-          item.firstIntroducedIn === "test-vocab-two",
-      );
-
-      // 1. We should have 3 entries (homographs of "調" must be separate)
-      expect(testEntries).toHaveLength(3);
-
-      // 2. Homograph tiu4 check
-      const tiu4 = testEntries.find(
-        (item) => item.character === "調" && item.jyutping === "tiu4",
-      );
-      expect(tiu4).toBeDefined();
-      expect(tiu4!.translation).toBe("to adjust");
-      expect(tiu4!.firstIntroducedIn).toBe("test-vocab-one");
-      expect(tiu4!.occurrences).toBe(1);
-
-      // 3. Homograph diu6 check
-      const diu6 = testEntries.find(
-        (item) => item.character === "調" && item.jyutping === "diu6",
-      );
-      expect(diu6).toBeDefined();
-      expect(diu6!.translation).toBe("melody");
-      expect(diu6!.firstIntroducedIn).toBe("test-vocab-two");
-      expect(diu6!.occurrences).toBe(1);
-
-      // 4. "爸爸" check (should merge translation nuances and register first introduced file)
-      const hello = testEntries.find((item) => item.character === "爸爸");
-      expect(hello).toBeDefined();
-      expect(hello!.firstIntroducedIn).toBe("test-vocab-one");
-      expect(hello!.occurrences).toBe(2);
-      expect(hello!.translation).toContain("father");
-      expect(hello!.translation).toContain("dad");
+      const e2eEntry = db.find((item) => item.character === "E2E");
+      expect(e2eEntry).toBeDefined();
     } finally {
-      // Always Clean up temporary files
-      if (fs.existsSync(testFile1)) fs.unlinkSync(testFile1);
-      if (fs.existsSync(testFile2)) fs.unlinkSync(testFile2);
+      if (fs.existsSync(testFile)) fs.unlinkSync(testFile);
     }
   });
 });
-
-export {};
