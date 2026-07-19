@@ -4,9 +4,10 @@ import * as parser from "./lib/parser";
 import { DictionaryEntryArraySchema } from "../src/utils/schemas";
 import {
   findUnregisteredWords,
-  extractChapterUnits,
   type DictionaryEntry,
+  type UnregisteredWord,
 } from "./lib/register-utils.js";
+import { extractChapterUnits } from "./lib/verify-vocab-utils.js";
 
 const colors = {
   reset: "\x1b[0m",
@@ -95,18 +96,14 @@ function main() {
     `🔍 Found ${colors.bold}${unregisteredList.length}${colors.reset} unregistered vocabulary word(s).\n`,
   );
 
-  // Write to a temporary file for batch registration convenience
-  const tmpDir = path.join(__dirname, "../tmp");
-  if (!fs.existsSync(tmpDir)) {
-    fs.mkdirSync(tmpDir, { recursive: true });
-  }
-  const draftPath = path.join(tmpDir, "register-missing-draft.json");
-  fs.writeFileSync(
-    draftPath,
-    JSON.stringify(unregisteredList, null, 2),
-    "utf8",
-  );
+  const draftPath = writeDraftFile(unregisteredList);
+  logNextSteps(draftPath, unregisteredList);
+}
 
+function logNextSteps(
+  draftPath: string,
+  unregisteredList: UnregisteredWord[],
+): void {
   console.log(
     `${colors.yellow}Generated registration draft JSON file at:${colors.reset}`,
   );
@@ -123,6 +120,20 @@ ${colors.cyan}${colors.bold}Next Steps:${colors.reset}
   3. Register the draft:
      ${colors.bold}npm run vocab:register -- --file tmp/register-missing-draft.json${colors.reset}
 `);
+}
+
+function writeDraftFile(unregisteredList: UnregisteredWord[]): string {
+  const tmpDir = path.join(__dirname, "../tmp");
+  if (!fs.existsSync(tmpDir)) {
+    fs.mkdirSync(tmpDir, { recursive: true });
+  }
+  const draftPath = path.join(tmpDir, "register-missing-draft.json");
+  fs.writeFileSync(
+    draftPath,
+    JSON.stringify(unregisteredList, null, 2),
+    "utf8",
+  );
+  return draftPath;
 }
 
 if (require.main === module) {

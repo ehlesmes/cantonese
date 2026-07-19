@@ -9,6 +9,42 @@ export interface ElementProps {
 
 export type ElementChild = Node | string | number | null | undefined;
 
+export function getEl(id: string): HTMLElement {
+  const el = document.getElementById(id);
+  if (el) return el;
+  throw new Error("Missing DOM element: " + id);
+}
+
+export function getInputElement(id: string): HTMLInputElement {
+  const el = document.getElementById(id);
+  if (el instanceof HTMLInputElement) return el;
+  throw new Error("Missing input element: " + id);
+}
+
+export function getTextAreaElement(id: string): HTMLTextAreaElement {
+  const el = document.getElementById(id);
+  if (el instanceof HTMLTextAreaElement) return el;
+  throw new Error("Missing textarea element: " + id);
+}
+
+export function getCanvasElement(id: string): HTMLCanvasElement {
+  const el = document.getElementById(id);
+  if (el instanceof HTMLCanvasElement) return el;
+  throw new Error("Missing canvas element: " + id);
+}
+
+export function getVideoElement(id: string): HTMLVideoElement {
+  const el = document.getElementById(id);
+  if (el instanceof HTMLVideoElement) return el;
+  throw new Error("Missing video element: " + id);
+}
+
+export function getButtonElement(id: string): HTMLButtonElement {
+  const el = document.getElementById(id);
+  if (el instanceof HTMLButtonElement) return el;
+  throw new Error("Missing button element: " + id);
+}
+
 function createElementByTag(tag: string): HTMLElement | SVGElement {
   if (
     tag === "svg" ||

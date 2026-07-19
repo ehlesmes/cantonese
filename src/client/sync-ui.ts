@@ -21,42 +21,14 @@ import {
 } from "./webrtc-sync.js";
 import { startScanner, stopScanner } from "./sys/qr-scanner.js";
 import { initOfflineFallback } from "./sync-offline.js";
-
-function getEl(id: string): HTMLElement {
-  const el = document.getElementById(id);
-  if (el) return el;
-  throw new Error("Missing DOM element: " + id);
-}
-
-function getInputElement(id: string): HTMLInputElement {
-  const el = document.getElementById(id);
-  if (el instanceof HTMLInputElement) return el;
-  throw new Error("Missing input element: " + id);
-}
-
-function getTextAreaElement(id: string): HTMLTextAreaElement {
-  const el = document.getElementById(id);
-  if (el instanceof HTMLTextAreaElement) return el;
-  throw new Error("Missing textarea element: " + id);
-}
-
-function getCanvasElement(id: string): HTMLCanvasElement {
-  const el = document.getElementById(id);
-  if (el instanceof HTMLCanvasElement) return el;
-  throw new Error("Missing canvas element: " + id);
-}
-
-function getVideoElement(id: string): HTMLVideoElement {
-  const el = document.getElementById(id);
-  if (el instanceof HTMLVideoElement) return el;
-  throw new Error("Missing video element: " + id);
-}
-
-function getButtonElement(id: string): HTMLButtonElement {
-  const el = document.getElementById(id);
-  if (el instanceof HTMLButtonElement) return el;
-  throw new Error("Missing button element: " + id);
-}
+import {
+  getEl,
+  getInputElement,
+  getTextAreaElement,
+  getCanvasElement,
+  getVideoElement,
+  getButtonElement,
+} from "./sys/dom.js";
 
 class SyncUIController {
   // DOM Elements
@@ -361,10 +333,7 @@ class SyncUIController {
             "Progress successfully merged! Reloading...";
           this.confirmStatusText.style.color = "#34c759";
           this.confirmStatusText.style.display = "block";
-
-          setTimeout(() => {
-            window.location.reload();
-          }, 1500);
+          setTimeout(() => window.location.reload(), 1500);
         } else {
           this.confirmStatusText.textContent =
             "Failed to write progress to local storage.";
@@ -424,12 +393,8 @@ class SyncUIController {
 }
 
 export function init() {
-  const controller = new SyncUIController();
-  controller.init();
+  new SyncUIController().init();
 }
-
-if (document.readyState === "loading") {
+if (document.readyState === "loading")
   document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
+else init();

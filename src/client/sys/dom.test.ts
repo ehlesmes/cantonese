@@ -2,7 +2,17 @@
  * @vitest-environment jsdom
  */
 import { describe, test, expect, vi } from "vitest";
-import { el, createChevronIcon, createPlayIcon } from "./dom.js";
+import {
+  el,
+  createChevronIcon,
+  createPlayIcon,
+  getEl,
+  getInputElement,
+  getTextAreaElement,
+  getCanvasElement,
+  getVideoElement,
+  getButtonElement,
+} from "./dom.js";
 
 describe("Sys DOM Utilities Spec", () => {
   test("el() should construct a basic element", () => {
@@ -10,6 +20,38 @@ describe("Sys DOM Utilities Spec", () => {
     expect(div.tagName).toBe("DIV");
     expect(div.className).toBe("test-class");
     expect(div.textContent).toBe("Hello");
+  });
+
+  test("Type-safe getters should return correct elements or throw", () => {
+    document.body.innerHTML = `
+      <div id="test-div"></div>
+      <input id="test-input" />
+      <textarea id="test-textarea"></textarea>
+      <canvas id="test-canvas"></canvas>
+      <video id="test-video"></video>
+      <button id="test-button"></button>
+    `;
+    expect(getEl("test-div")).toBeInstanceOf(HTMLElement);
+    expect(() => getEl("missing")).toThrow("Missing DOM element: missing");
+
+    expect(getInputElement("test-input")).toBeInstanceOf(HTMLInputElement);
+    expect(() => getInputElement("test-div")).toThrow();
+    expect(() => getInputElement("missing")).toThrow();
+
+    expect(getTextAreaElement("test-textarea")).toBeInstanceOf(
+      HTMLTextAreaElement,
+    );
+    expect(() => getTextAreaElement("test-div")).toThrow();
+
+    expect(getCanvasElement("test-canvas")).toBeInstanceOf(HTMLCanvasElement);
+    expect(() => getCanvasElement("test-div")).toThrow();
+
+    expect(getVideoElement("test-video")).toBeInstanceOf(HTMLVideoElement);
+    expect(() => getVideoElement("test-div")).toThrow();
+
+    expect(getButtonElement("test-button")).toBeInstanceOf(HTMLButtonElement);
+    expect(() => getButtonElement("test-div")).toThrow();
+    document.body.innerHTML = "";
   });
 
   test("el() should handle innerHTML", () => {

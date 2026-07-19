@@ -1,10 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
-import * as parser from "./lib/parser";
-import {
-  verifyChapterContent,
-  type DictionaryEntry,
-} from "./lib/register-utils.js";
+import * as parser from "./lib/parser.js";
+import { verifyChapterContent } from "./lib/verify-vocab-utils.js";
+import type { DictionaryEntry } from "./lib/register-utils.js";
 
 // Premium CLI output styles
 const colors = {

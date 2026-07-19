@@ -2,10 +2,12 @@ import { describe, test, expect } from "vitest";
 import {
   validateRegisterEntry,
   sortDictionary,
-  extractChapterUnits,
-  verifyChapterContent,
   findUnregisteredWords,
 } from "./register-utils.js";
+import {
+  extractChapterUnits,
+  verifyChapterContent,
+} from "./verify-vocab-utils.js";
 
 describe("Lexicon Registrar Helpers", () => {
   const dictionary = [{ char: "唔該", jyutping: "m4goi1", type: "expression" }];

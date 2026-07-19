@@ -2,6 +2,7 @@ const js = require("@eslint/js");
 const globals = require("globals");
 const tseslint = require("typescript-eslint");
 const importPlugin = require("eslint-plugin-import");
+const eslintConfigPrettier = require("eslint-config-prettier");
 
 module.exports = tseslint.config(
   {
@@ -24,6 +25,8 @@ module.exports = tseslint.config(
       complexity: ["error", 12],
       "max-depth": ["error", 4],
       "max-nested-callbacks": ["error", 3],
+      "max-lines": ["error", 400],
+      "max-lines-per-function": ["error", 80],
       "import/first": "error",
     },
     plugins: {
@@ -75,6 +78,9 @@ module.exports = tseslint.config(
       complexity: "off",
       "max-depth": "off",
       "max-nested-callbacks": "off",
+      "max-lines": "off",
+      "max-lines-per-function": "off",
     },
   },
+  eslintConfigPrettier,
 );
