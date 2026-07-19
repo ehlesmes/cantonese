@@ -39,7 +39,8 @@ function validateChapterFile(
 
   let chapterData;
   try {
-    chapterData = parser.parseChapter(filePath);
+    const content = fs.readFileSync(filePath, "utf8");
+    chapterData = parser.parseChapter(content);
   } catch (err: unknown) {
     addError(
       0,
@@ -135,7 +136,8 @@ function validateAllChapters(
     const filePath = path.join(contentDir, chapter.file);
     if (fs.existsSync(filePath)) {
       try {
-        chaptersDataMap[chapter.file] = parser.parseChapter(filePath);
+        const content = fs.readFileSync(filePath, "utf8");
+        chaptersDataMap[chapter.file] = parser.parseChapter(content);
       } catch {
         // ignore
       }
@@ -183,7 +185,8 @@ function runValidation({
 
   try {
     if (fs.existsSync(curriculumPath)) {
-      curriculumChapters = parser.parseCurriculum(curriculumPath);
+      const content = fs.readFileSync(curriculumPath, "utf8");
+      curriculumChapters = parser.parseCurriculum(content);
     }
   } catch (err: unknown) {
     errors.push({

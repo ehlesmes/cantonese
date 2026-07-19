@@ -29,7 +29,8 @@ export function verifyChapter(
 ) {
   let chapterData;
   try {
-    chapterData = parser.parseChapter(absolutePath);
+    const content = fs.readFileSync(absolutePath, "utf8");
+    chapterData = parser.parseChapter(content);
   } catch (err: unknown) {
     throw new Error(
       `Failed to parse chapter file: ${err instanceof Error ? err.message : String(err)}`,

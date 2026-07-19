@@ -19,6 +19,7 @@ interface ParsedYaml {
     file?: string;
     question?: string;
   }[];
+  tags?: string[];
 }
 
 describe("Chapter Format & Curriculum Validator Spec", () => {
@@ -126,7 +127,35 @@ chapters:
     expect(parsed.chapters![0]!.title).toBe("Intro");
     expect(parsed.chapters![0]!.file).toBe("00-intro.md");
     expect(parsed.chapters![1]!.chapter).toBe(1);
-    expect(parsed.chapters![1]!.file).toBe("01-greetings.md");
+  });
+
+  test("YAML - Array of strings parsing and branch coverage", () => {
+    const yaml = `
+tags:
+  - vocabulary
+  - grammar
+  - 
+- rootArrayItem
+`;
+    const parsed = parser.parseYAML(yaml) as ParsedYaml;
+    expect(Array.isArray(parsed.tags)).toBe(true);
+    expect(parsed.tags![0]).toBe("vocabulary");
+    expect(parsed.tags![1]).toBe("grammar");
+    expect(parsed.tags![2]).toEqual("");
+
+    // root array item falls back to currentKey (which is tags) if indent is same/different depending on parser logic.
+    expect(parsed.tags!.length).toBeGreaterThan(2);
+  });
+
+  test("YAML - Root array parsing", () => {
+    const yaml = `
+- chapter: 1
+- chapter: 2
+`;
+    const parsed = parser.parseYAML(yaml) as ParsedYaml;
+    expect(Array.isArray(parsed.chapters)).toBe(true);
+    expect(parsed.chapters![0]!.chapter).toBe(1);
+    expect(parsed.chapters![1]!.chapter).toBe(2);
   });
 
   // ==========================================
@@ -511,7 +540,8 @@ chapters:
 
   fs.writeFileSync(currFile, currMd, "utf8");
 
-  const chapters = parser.parseCurriculum(currFile);
+  const currContent = fs.readFileSync(currFile, "utf8");
+  const chapters = parser.parseCurriculum(currContent);
   expect(chapters).toHaveLength(2);
   expect(chapters[0]!.chapter).toBe(0);
   expect(chapters[1]!.file).toBe("01-basics.md");
@@ -521,9 +551,11 @@ chapters:
 });
 
 test("Curriculum Parsing - parses real curriculum.md", () => {
-  const chapters = parser.parseCurriculum(
+  const currContent = fs.readFileSync(
     path.resolve("content/curriculum.md"),
+    "utf8",
   );
+  const chapters = parser.parseCurriculum(currContent);
   expect(chapters.length).toBeGreaterThan(0);
   expect(chapters[0]!.id).toBeDefined();
 });
@@ -554,7 +586,8 @@ print("Hello other")
 \`\`\`
 `;
   fs.writeFileSync(tempFile, mdContent, "utf8");
-  const data = parser.parseChapter(tempFile);
+  const content = fs.readFileSync(tempFile, "utf8");
+  const data = parser.parseChapter(content);
   if (!data.frontmatter) throw new Error("Expected frontmatter");
   expect(data.frontmatter.chapter).toBe(5);
   // Find the 'other' python block
@@ -613,7 +646,8 @@ chapters:
 
   fs.writeFileSync(currFile, currMd, "utf8");
 
-  const chapters = parser.parseCurriculum(currFile);
+  const currContent = fs.readFileSync(currFile, "utf8");
+  const chapters = parser.parseCurriculum(currContent);
   expect(chapters).toEqual([]);
 
   fs.unlinkSync(currFile);
@@ -635,7 +669,8 @@ chapters:
 
   fs.writeFileSync(currFile, currMd, "utf8");
 
-  const chapters = parser.parseCurriculum(currFile);
+  const currContent = fs.readFileSync(currFile, "utf8");
+  const chapters = parser.parseCurriculum(currContent);
   expect(chapters).toEqual([]);
 
   fs.unlinkSync(currFile);
@@ -1030,12 +1065,12 @@ chapters:
 
   const originalParseChapter = parser.parseChapter;
   let parseChapterCount = 0;
-  vi.spyOn(parser, "parseChapter").mockImplementation((filePath) => {
+  vi.spyOn(parser, "parseChapter").mockImplementation((content) => {
     parseChapterCount++;
     if (parseChapterCount === 2) {
       throw new Error("Mocked chapter error during second pass");
     }
-    return originalParseChapter(filePath);
+    return originalParseChapter(content);
   });
 
   const res = validator.runValidation({

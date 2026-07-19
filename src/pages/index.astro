@@ -4,12 +4,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import { parseCurriculum, buildCurriculumIndex } from "../../scripts/lib/parser";
 
+import fs from "fs";
 const contentDir = path.resolve("content");
 const curriculumPath = path.join(contentDir, "curriculum.md");
-const chapters = parseCurriculum(curriculumPath);
+const currContent = fs.readFileSync(curriculumPath, "utf8");
+const chapters = parseCurriculum(currContent);
+
+// Read all chapter contents
+const chapterContents: Record<string, string | null> = {};
+for (const chapter of chapters) {
+  const filePath = path.join(contentDir, chapter.file);
+  try {
+    chapterContents[chapter.file] = fs.readFileSync(filePath, "utf8");
+  } catch {
+    chapterContents[chapter.file] = null;
+  }
+}
 
 // Prepare chapter entries with exist status and description
-const chapterEntries = buildCurriculumIndex(contentDir, chapters);
+const chapterEntries = buildCurriculumIndex(chapters, chapterContents);
 ---
 
 <BaseLayout title="Curriculum Index" description="Colloquial Cantonese course reader and living curriculum roadmap.">

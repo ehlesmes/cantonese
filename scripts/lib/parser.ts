@@ -1,5 +1,3 @@
-import * as fs from "fs";
-import * as path from "path";
 import type {
   RawParsedChapter,
   ParsedBlock,
@@ -251,8 +249,7 @@ function parseChapterBlocks(
  * @param {string} filePath
  * @returns {RawParsedChapter}
  */
-export function parseChapter(filePath: string): RawParsedChapter {
-  const content = fs.readFileSync(filePath, "utf8");
+export function parseChapter(content: string): RawParsedChapter {
   const lines = content.split(/\r?\n/);
 
   const { frontmatterStr, bodyStartLine, hasFrontmatter } =
@@ -280,8 +277,7 @@ export interface CurriculumChapter {
  * @param {string} filePath
  * @returns {Array<CurriculumChapter>}
  */
-export function parseCurriculum(filePath: string): CurriculumChapter[] {
-  const content = fs.readFileSync(filePath, "utf8");
+export function parseCurriculum(content: string): CurriculumChapter[] {
   const lines = content.split(/\r?\n/);
 
   if (lines[0] === "---") {
@@ -377,32 +373,31 @@ export interface CurriculumIndexEntry extends CurriculumChapter {
  * @returns Array of CurriculumIndexEntry objects.
  */
 export function buildCurriculumIndex(
-  contentDir: string,
   chapters: CurriculumChapter[],
+  chapterContents: Record<string, string | null>,
 ): CurriculumIndexEntry[] {
   return chapters.map((c, index) => {
-    const filePath = path.resolve(contentDir, c.file);
-    const fileExists = fs.existsSync(filePath);
+    const content = chapterContents[c.file];
     let description = "";
 
-    if (fileExists) {
+    if (content) {
       try {
-        const chapterData = parseChapter(filePath);
+        const chapterData = parseChapter(content);
         if (
           chapterData.frontmatter &&
           typeof chapterData.frontmatter.description === "string"
         ) {
           description = chapterData.frontmatter.description;
         }
-      } catch (e) {
-        console.error(`Failed to parse chapter description for ${c.file}:`, e);
+      } catch {
+        // Pure function, ignore parsing errors for descriptions
       }
     }
 
     return {
       ...c,
       chapter: index,
-      exists: fileExists,
+      exists: !!content,
       description:
         description.trim() ||
         "Topic outline and learning materials coming soon.",

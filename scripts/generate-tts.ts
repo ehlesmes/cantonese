@@ -222,7 +222,8 @@ async function main() {
   }
 
   const curriculumPath = path.resolve(projectRoot, "content/curriculum.md");
-  const chapters = parseCurriculum(curriculumPath);
+  const currContent = fs.readFileSync(curriculumPath, "utf8");
+  const chapters = parseCurriculum(currContent);
 
   let chaptersProcessed = 0;
   const chaptersData: { id: string; file: string; blocks: ParsedBlock[] }[] =
@@ -235,7 +236,8 @@ async function main() {
     if (!fs.existsSync(filePath)) continue;
 
     chaptersProcessed++;
-    const { blocks } = parseChapter(filePath);
+    const chapterContent = fs.readFileSync(filePath, "utf8");
+    const { blocks } = parseChapter(chapterContent);
     chaptersData.push({
       id: chapter.id,
       file: chapter.file,

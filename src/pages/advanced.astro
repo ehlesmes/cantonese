@@ -7,51 +7,31 @@ import "../styles/advanced-settings.css";
 import { parseCurriculum, parseChapter } from "../../scripts/lib/parser";
 import { getStablePhraseId, getStableVocabId } from "../utils/text";
 import { parseExampleBlock } from "../utils/markdown";
+import { compileAdvancedChapterData } from "../utils/chapter-utils";
 const curriculumPath = path.resolve("content/curriculum.md");
-const chapters = parseCurriculum(curriculumPath);
+const currContent = fs.readFileSync(curriculumPath, "utf8");
+const chapters = parseCurriculum(currContent);
 
 // Load vocabulary.json database
 const vocabPath = path.resolve("content/vocabulary.json");
 const allVocabRaw = JSON.parse(await fsPromises.readFile(vocabPath, "utf8"));
 
-// Compile chapter items mapping
-const allChaptersData = [];
-chapters.forEach((chapter, idx) => {
-  const file = chapter.file;
-  const filePath = path.resolve("content", file);
-  const fileExists = fs.existsSync(filePath);
-  
-  const phraseIds = [];
-  if (fileExists) {
+// Prepare chapter contents
+const chapterContents: Record<string, any> = {};
+chapters.forEach((chapter) => {
+  const filePath = path.resolve("content", chapter.file);
+  if (fs.existsSync(filePath)) {
     try {
-      const { blocks } = parseChapter(filePath);
-      for (const block of blocks) {
-        if (block.type === "cantonese") {
-          const { cantoneseRaw, translationRaw: english } = parseExampleBlock(block.content);
-          if (cantoneseRaw && english) {
-            phraseIds.push(getStablePhraseId(cantoneseRaw));
-          }
-        }
-      }
+      const content = fs.readFileSync(filePath, "utf8");
+      chapterContents[chapter.file] = parseChapter(content);
     } catch (e) {
       console.error(`Failed to parse chapter ${chapter.id} for advanced page:`, e);
     }
   }
-
-  // Filter vocabulary associated with this chapter
-  const vocabIds = allVocabRaw
-    .filter(item => item.firstIntroducedIn === chapter.id)
-    .map(item => getStableVocabId(item.character, item.jyutping));
-
-  allChaptersData.push({
-    id: chapter.id,
-    title: chapter.title,
-    number: idx,
-    exists: fileExists,
-    phrases: phraseIds,
-    vocab: vocabIds
-  });
 });
+
+// Compile chapter items mapping
+const allChaptersData = compileAdvancedChapterData(chapters, allVocabRaw, chapterContents);
 ---
 
 <BaseLayout title="Advanced Settings" description="Developer settings to inspect and manually manage local storage course progress.">

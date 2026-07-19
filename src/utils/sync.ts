@@ -241,8 +241,7 @@ export async function deserializeState(
           ? (payload[SHORT_KEYS.timestamp] as number)
           : 0,
     };
-  } catch (e) {
-    console.error("Failed to deserialize progress state:", e);
+  } catch {
     return null;
   }
 }

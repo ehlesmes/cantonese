@@ -108,8 +108,9 @@ function extractExamplesFromBlock(
 
 export const GET: APIRoute = async () => {
   const curriculumPath = path.resolve("content/curriculum.md");
+  const curriculumContent = fs.readFileSync(curriculumPath, "utf8");
   const chapters = parseCurriculum(
-    curriculumPath,
+    curriculumContent,
   ) as unknown as CurriculumChapter[];
 
   const allExamples: ExampleItem[] = chapters.flatMap((chapter, idx) => {
@@ -118,7 +119,8 @@ export const GET: APIRoute = async () => {
       return [];
     }
 
-    const { blocks } = parseChapter(filePath);
+    const content = fs.readFileSync(filePath, "utf8");
+    const { blocks } = parseChapter(content);
     return blocks.flatMap((block) =>
       extractExamplesFromBlock(block, chapter, idx),
     );

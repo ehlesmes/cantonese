@@ -5,12 +5,13 @@ import path from "path";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CantoneseExample from "../../components/CantoneseExample.astro";
 import DialogueBlock from "../../components/DialogueBlock.astro";
-import { compileMarkdown, parseExerciseBlock } from "../../utils/markdown.js";
+import { processChapterBlocks, calculateNavigation } from "../../utils/chapter-utils.js";
 
 export async function getStaticPaths() {
   const { parseCurriculum } = await import("../../../scripts/lib/parser");
   const curriculumPath = path.resolve("content/curriculum.md");
-  const chapters = parseCurriculum(curriculumPath);
+  const curriculumContent = fs.readFileSync(curriculumPath, "utf8");
+  const chapters = parseCurriculum(curriculumContent);
 
   const paths = [];
   for (let i = 0; i < chapters.length; i++) {
@@ -42,48 +43,14 @@ const { filePath, chapterNumber, allChapters } = Astro.props;
 
 // Load Chapter data
 const { parseChapter, parseYAML } = await import("../../../scripts/lib/parser");
-const { frontmatter, blocks } = parseChapter(filePath);
+const chapterContent = fs.readFileSync(filePath, "utf8");
+const { frontmatter, blocks } = parseChapter(chapterContent);
 
 // Pre-process all blocks
-const processedBlocks = blocks.map((block) => {
-  if (block.type === "prose") {
-    return {
-      type: "prose",
-      html: compileMarkdown(block.content),
-    };
-  }
-  if (block.type === "cantonese") {
-    return {
-      type: "cantonese",
-      content: block.content,
-    };
-  }
-  if (block.type === "dialog") {
-    return {
-      type: "dialog",
-      content: block.content,
-    };
-  }
-  if (block.type === "exercise") {
-    try {
-      return {
-        type: "exercise",
-        ...parseExerciseBlock(block.content, parseYAML),
-      };
-    } catch (e) {
-      console.error("Failed to parse exercise block:", e);
-      return null;
-    }
-  }
-  return null;
-}).filter(Boolean);
+const processedBlocks = processChapterBlocks(blocks, parseYAML);
 
 // Find navigation links
-const existingChapters = allChapters.filter(c => c.exists);
-const currentIndex = existingChapters.findIndex(c => c.id === id);
-
-const prevChapter = currentIndex > 0 ? existingChapters[currentIndex - 1] : null;
-const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapters[currentIndex + 1] : null;
+const { prevChapter, nextChapter } = calculateNavigation(allChapters, id);
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>

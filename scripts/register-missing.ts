@@ -70,7 +70,8 @@ function main() {
 
   let chapterData;
   try {
-    chapterData = parser.parseChapter(absolutePath);
+    const content = fs.readFileSync(absolutePath, "utf8");
+    chapterData = parser.parseChapter(content);
     if (!chapterData.frontmatter) throw new Error("Missing frontmatter");
   } catch (err: unknown) {
     console.error(

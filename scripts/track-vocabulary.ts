@@ -12,7 +12,8 @@ function loadCurriculumChapters(
   curriculumPath: string,
 ): { file: string; id: string }[] {
   try {
-    return parser.parseCurriculum(curriculumPath);
+    const content = fs.readFileSync(curriculumPath, "utf8");
+    return parser.parseCurriculum(content);
   } catch (err: unknown) {
     console.error(
       `ERROR: Failed to parse curriculum.md: ${err instanceof Error ? err.message : String(err)}`,
@@ -42,7 +43,8 @@ function parseAllChapters(
     if (!fs.existsSync(filePath)) continue;
 
     try {
-      const chapterData = parser.parseChapter(filePath);
+      const chapterContent = fs.readFileSync(filePath, "utf8");
+      const chapterData = parser.parseChapter(chapterContent);
       parsedChapters.push({ curriculumId: chapter.id, chapterData });
     } catch (err: unknown) {
       console.error(

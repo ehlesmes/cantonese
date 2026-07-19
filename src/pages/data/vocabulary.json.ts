@@ -20,7 +20,8 @@ interface VocabItem {
 
 export const GET: APIRoute = async () => {
   const curriculumPath = path.resolve("content/curriculum.md");
-  const chapters = parseCurriculum(curriculumPath);
+  const curriculumContent = fs.readFileSync(curriculumPath, "utf8");
+  const chapters = parseCurriculum(curriculumContent);
 
   const chaptersMeta = (chapters as unknown as CurriculumChapter[]).map(
     (c, index: number) => {

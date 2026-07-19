@@ -189,8 +189,7 @@ export function unpackSDPData(str: string): SDPCoordinates | null {
 
     const candParsed = unpackCandidates(bytes, offset);
     return { t, u, p, f, c: candParsed.c };
-  } catch (err) {
-    console.warn("Parse failed:", err);
+  } catch {
     return null;
   }
 }
