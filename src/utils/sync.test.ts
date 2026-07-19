@@ -24,7 +24,10 @@ import {
   mergeStates,
   extractRTCToken,
   calculateMergeMetrics,
+  decompressPayload,
+  parseSrsMap,
 } from "./sync.js";
+import { TextEncoder } from "util";
 import { packSDPData, unpackSDPData, parseSDP, rebuildSDP } from "./webrtc.js";
 
 describe("Progress Sync Utility Spec", () => {
@@ -1013,6 +1016,55 @@ describe("Sync Utility Spec Additional Coverage", () => {
       chapters: { local: 0, merged: 0 },
       phrases: { local: 0, merged: 0 },
       vocab: { local: 0, merged: 0 },
+    });
+  });
+});
+
+describe("Functional Core parsing functions", () => {
+  describe("parseSrsMap", () => {
+    test("should parse standard srs map correctly", () => {
+      const rawData = {
+        "phrase-1": [2, 12345],
+        "phrase-2": [3],
+      };
+      const result = parseSrsMap(rawData);
+      expect(result).toEqual({
+        "phrase-1": { level: 2, lastReviewed: 12345000 },
+        "phrase-2": { level: 3, lastReviewed: 0 },
+      });
+    });
+
+    test("should skip legacy ids if requested", () => {
+      const rawData = {
+        "phrase-1": [1, 1],
+        "ch-1": [5, 5],
+      };
+      const result = parseSrsMap(rawData, true);
+      expect(result).toEqual({
+        "phrase-1": { level: 1, lastReviewed: 1000 },
+      });
+      expect(result["ch-1"]).toBeUndefined();
+    });
+
+    test("should handle invalid shapes gracefully", () => {
+      expect(parseSrsMap(null)).toEqual({});
+      expect(parseSrsMap([])).toEqual({});
+      expect(parseSrsMap("invalid")).toEqual({});
+
+      const rawData = {
+        "phrase-1": "not-an-array",
+        "phrase-2": [], // empty array
+      };
+      expect(parseSrsMap(rawData)).toEqual({});
+    });
+  });
+
+  describe("decompressPayload", () => {
+    test("should parse uncompressed JSON strings", async () => {
+      const text = JSON.stringify({ chapters: ["ch1"] });
+      const bytes = new TextEncoder().encode(text);
+      const result = await decompressPayload(bytes);
+      expect(result).toBe(text);
     });
   });
 });

@@ -208,62 +208,115 @@ async function speakText(
 }
 
 // Event delegation for TTS clicks
-document.addEventListener("DOMContentLoaded", () => {
-  // Keep tooltips within viewport boundaries
-  function adjustTooltipPosition(vocabTerm: HTMLElement) {
-    const popover = vocabTerm.querySelector(".tooltip-popover") as HTMLElement;
-    if (!popover) return;
+function adjustTooltipPosition(vocabTerm: HTMLElement) {
+  const popover = vocabTerm.querySelector(".tooltip-popover") as HTMLElement;
+  if (!popover) return;
 
-    // Reset positioning to get natural layout dimensions
-    popover.style.left = "";
-    popover.style.removeProperty("--arrow-offset");
+  popover.style.left = "";
+  popover.style.removeProperty("--arrow-offset");
 
-    const rect = popover.getBoundingClientRect();
-    const shift = calculateTooltipShift(rect, window.innerWidth, 12);
+  const rect = popover.getBoundingClientRect();
+  const shift = calculateTooltipShift(rect, window.innerWidth, 12);
 
-    if (shift) {
-      popover.style.left = shift.leftStyle;
-      popover.style.setProperty("--arrow-offset", shift.arrowOffsetStyle);
-    }
+  if (shift) {
+    popover.style.left = shift.leftStyle;
+    popover.style.setProperty("--arrow-offset", shift.arrowOffsetStyle);
   }
+}
 
-  // Adjust position on hover (mouseover) or touchstart/click
-  const handleTooltipEvent = (e: Event) => {
-    const target = e.target as HTMLElement;
-    const vocabTerm = target.closest(".vocab-term") as HTMLElement;
-    if (vocabTerm) {
-      adjustTooltipPosition(vocabTerm);
+function handleTooltipEvent(e: Event) {
+  const target = e.target as HTMLElement;
+  const vocabTerm = target.closest(".vocab-term") as HTMLElement;
+  if (vocabTerm) {
+    adjustTooltipPosition(vocabTerm);
 
-      // Preload audio on hover/touch to minimize latency
-      const text = getCleanCantoneseText(vocabTerm);
-      const hash = vocabTerm.dataset.audioHash;
+    const text = getCleanCantoneseText(vocabTerm);
+    const hash = vocabTerm.dataset.audioHash;
+    preloadAudio(text, hash);
+  }
+}
+
+function handleTtsButtonHover(e: Event) {
+  const target = e.target as HTMLElement;
+  const ttsBtn = target.closest(".tts-btn") as HTMLElement;
+  if (ttsBtn) {
+    const exampleCard = ttsBtn.closest(".cantonese-example-card");
+    const dialogueTurn = ttsBtn.closest(".dialogue-turn");
+
+    let targetEl: HTMLElement | null = null;
+    if (exampleCard) {
+      targetEl = exampleCard.querySelector(".cantonese-sentence");
+    } else if (dialogueTurn) {
+      targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
+    }
+
+    if (targetEl) {
+      const text = getCleanCantoneseText(targetEl);
+      const hash = ttsBtn.dataset.audioHash;
       preloadAudio(text, hash);
     }
-  };
+  }
+}
 
-  // Preload play button audio on hover/touch
-  const handleTtsButtonHover = (e: Event) => {
-    const target = e.target as HTMLElement;
-    const ttsBtn = target.closest(".tts-btn") as HTMLElement;
-    if (ttsBtn) {
-      const exampleCard = ttsBtn.closest(".cantonese-example-card");
-      const dialogueTurn = ttsBtn.closest(".dialogue-turn");
+function handleVocabTermClick(e: Event) {
+  const target = e.target as HTMLElement;
+  const vocabTerm = target.closest(".vocab-term") as HTMLElement;
+  if (vocabTerm) {
+    e.stopPropagation();
 
-      let targetEl: HTMLElement | null = null;
-      if (exampleCard) {
-        targetEl = exampleCard.querySelector(".cantonese-sentence");
-      } else if (dialogueTurn) {
-        targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
-      }
+    const text = getCleanCantoneseText(vocabTerm);
+    const hash = vocabTerm.dataset.audioHash;
 
-      if (targetEl) {
-        const text = getCleanCantoneseText(targetEl);
-        const hash = ttsBtn.dataset.audioHash;
-        preloadAudio(text, hash);
-      }
+    if (isPunctuationOnly(text)) {
+      return;
     }
-  };
 
+    speakText(text, hash, () => {
+      vocabTerm.classList.remove("tts-playing");
+      if (activeBtn === vocabTerm) activeBtn = null;
+    });
+
+    vocabTerm.classList.add("tts-playing");
+    activeBtn = vocabTerm;
+
+    setTimeout(() => {
+      vocabTerm.classList.remove("tts-playing");
+    }, 1200);
+  }
+}
+
+function handleTtsButtonClick(e: Event) {
+  const target = e.target as HTMLElement;
+  const ttsBtn = target.closest(".tts-btn") as HTMLElement;
+  if (ttsBtn) {
+    e.stopPropagation();
+
+    const exampleCard = ttsBtn.closest(".cantonese-example-card");
+    const dialogueTurn = ttsBtn.closest(".dialogue-turn");
+
+    let targetEl: HTMLElement | null = null;
+    if (exampleCard) {
+      targetEl = exampleCard.querySelector(".cantonese-sentence");
+    } else if (dialogueTurn) {
+      targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
+    }
+
+    if (targetEl) {
+      const text = getCleanCantoneseText(targetEl);
+      const hash = ttsBtn.dataset.audioHash;
+
+      speakText(text, hash, () => {
+        ttsBtn.classList.remove("tts-playing");
+        if (activeBtn === ttsBtn) activeBtn = null;
+      });
+
+      ttsBtn.classList.add("tts-playing");
+      activeBtn = ttsBtn;
+    }
+  }
+}
+
+function initTooltips() {
   document.body.addEventListener("mouseover", handleTooltipEvent, {
     passive: true,
   });
@@ -273,123 +326,57 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", handleTooltipEvent, {
     passive: true,
   });
+}
 
+function initTtsHover() {
   document.body.addEventListener("mouseover", handleTtsButtonHover, {
     passive: true,
   });
   document.body.addEventListener("touchstart", handleTtsButtonHover, {
     passive: true,
   });
+}
 
-  // Handle Vocab Term Clicks
-  document.body.addEventListener("click", (e: Event) => {
-    const target = e.target as HTMLElement;
-    const vocabTerm = target.closest(".vocab-term") as HTMLElement;
-    if (vocabTerm) {
-      e.stopPropagation();
+function initClickHandlers() {
+  document.body.addEventListener("click", handleVocabTermClick);
+  document.body.addEventListener("click", handleTtsButtonClick);
+}
 
-      const text = getCleanCantoneseText(vocabTerm);
-      const hash = vocabTerm.dataset.audioHash;
+function setupVisibilityPreloader() {
+  if (!("IntersectionObserver" in window)) return;
 
-      // Skip playing sound or highlighting if the text consists only of punctuation marks
-      if (isPunctuationOnly(text)) {
-        return;
-      }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const ttsBtn = entry.target as HTMLElement;
+          observer.unobserve(ttsBtn);
 
-      speakText(text, hash, () => {
-        vocabTerm.classList.remove("tts-playing");
-        if (activeBtn === vocabTerm) activeBtn = null;
-      });
+          const exampleCard = ttsBtn.closest(".cantonese-example-card");
+          const dialogueTurn = ttsBtn.closest(".dialogue-turn");
 
-      // Highlight vocab term
-      vocabTerm.classList.add("tts-playing");
-      activeBtn = vocabTerm;
-
-      // Backup removal in case onend doesn't trigger
-      setTimeout(() => {
-        vocabTerm.classList.remove("tts-playing");
-      }, 1200);
-    }
-  });
-
-  // Handle Play Button Clicks
-  document.body.addEventListener("click", (e: Event) => {
-    const target = e.target as HTMLElement;
-    const ttsBtn = target.closest(".tts-btn") as HTMLElement;
-    if (ttsBtn) {
-      e.stopPropagation();
-
-      // Find target text container (either Cantonese sentence or dialogue line)
-      const exampleCard = ttsBtn.closest(".cantonese-example-card");
-      const dialogueTurn = ttsBtn.closest(".dialogue-turn");
-
-      let targetEl: HTMLElement | null = null;
-      if (exampleCard) {
-        targetEl = exampleCard.querySelector(".cantonese-sentence");
-      } else if (dialogueTurn) {
-        targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
-      }
-
-      if (targetEl) {
-        const text = getCleanCantoneseText(targetEl);
-        const hash = ttsBtn.dataset.audioHash;
-
-        speakText(text, hash, () => {
-          ttsBtn.classList.remove("tts-playing");
-          if (activeBtn === ttsBtn) activeBtn = null;
-        });
-
-        // Highlight play button
-        ttsBtn.classList.add("tts-playing");
-        activeBtn = ttsBtn;
-      }
-    }
-  });
-
-  // Observe tts-btn visibility and preload audio when they enter viewport (within 200px margin)
-  function setupVisibilityPreloader() {
-    if (!("IntersectionObserver" in window)) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const ttsBtn = entry.target as HTMLElement;
-            observer.unobserve(ttsBtn);
-
-            const exampleCard = ttsBtn.closest(".cantonese-example-card");
-            const dialogueTurn = ttsBtn.closest(".dialogue-turn");
-
-            let targetEl: HTMLElement | null = null;
-            if (exampleCard) {
-              targetEl = exampleCard.querySelector(".cantonese-sentence");
-            } else if (dialogueTurn) {
-              targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
-            }
-
-            if (targetEl) {
-              const text = getCleanCantoneseText(targetEl);
-              const hash = ttsBtn.dataset.audioHash;
-              preloadAudio(text, hash);
-            }
+          let targetEl: HTMLElement | null = null;
+          if (exampleCard) {
+            targetEl = exampleCard.querySelector(".cantonese-sentence");
+          } else if (dialogueTurn) {
+            targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
           }
-        });
-      },
-      {
-        rootMargin: "200px 0px",
-        threshold: 0.0,
-      },
-    );
 
-    document
-      .querySelectorAll(".tts-btn")
-      .forEach((btn) => observer.observe(btn));
-  }
+          if (targetEl) {
+            const text = getCleanCantoneseText(targetEl);
+            const hash = ttsBtn.dataset.audioHash;
+            preloadAudio(text, hash);
+          }
+        }
+      });
+    },
+    { rootMargin: "200px 0px", threshold: 0.0 },
+  );
 
-  // Initialize visibility observer
-  setupVisibilityPreloader();
+  document.querySelectorAll(".tts-btn").forEach((btn) => observer.observe(btn));
+}
 
-  // --- Version Check and Update Logic ---
+function initVersionCheck() {
   const updateIndicator = getEl("update-indicator");
   const metaTag = document.querySelector('meta[name="app-version"]');
   const currentVersion = metaTag
@@ -405,16 +392,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function checkVersion() {
-    // Skip check on local dev
     if (
       window.location.hostname === "localhost" ||
       window.location.hostname === "127.0.0.1"
-    ) {
+    )
       return;
-    }
-    if (currentVersion === "development" || updateChecking) {
-      return;
-    }
+    if (currentVersion === "development" || updateChecking) return;
 
     updateChecking = true;
     try {
@@ -423,15 +406,11 @@ document.addEventListener("DOMContentLoaded", () => {
         : import.meta.env.BASE_URL;
 
       const response = await fetch(`${baseUrl}/version.json?t=${Date.now()}`);
-      if (!response.ok) {
-        throw new Error(`HTTP error ${response.status}`);
-      }
+      if (!response.ok) throw new Error(`HTTP error ${response.status}`);
       const data = (await response.json()) as { version?: string };
 
       if (data && data.version && data.version !== currentVersion) {
-        if (updateIndicator) {
-          updateIndicator.style.display = "inline-flex";
-        }
+        if (updateIndicator) updateIndicator.style.display = "inline-flex";
       }
     } catch (err) {
       console.warn("Failed to check version:", err);
@@ -440,11 +419,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Run checks
-  // 1. On page load (delay to prioritize core load)
   setTimeout(checkVersion, 5000);
 
-  // 2. On tab visibility change
   let visibilityTimeout: ReturnType<typeof setTimeout> | null = null;
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") {
@@ -452,10 +428,17 @@ document.addEventListener("DOMContentLoaded", () => {
       visibilityTimeout = setTimeout(() => {
         checkVersion();
         visibilityTimeout = null;
-      }, 2000); // 2 second debounce
+      }, 2000);
     }
   });
 
-  // 3. Periodic check (every 5 minutes)
   setInterval(checkVersion, 5 * 60 * 1000);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initTooltips();
+  initTtsHover();
+  initClickHandlers();
+  setupVisibilityPreloader();
+  initVersionCheck();
 });

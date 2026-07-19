@@ -158,6 +158,42 @@ export async function serializeState(state: LocalState): Promise<string> {
 /**
  * Deserializes and validates a progress string back into a standard state object (handles Gzipped/raw formats)
  */
+export async function decompressPayload(
+  decodedBytes: Uint8Array,
+): Promise<string> {
+  try {
+    return await decompressData(decodedBytes);
+  } catch {
+    try {
+      return new TextDecoder("utf-8", { fatal: true }).decode(decodedBytes);
+    } catch {
+      throw new Error("Decompression and decoding failed");
+    }
+  }
+}
+
+export function parseSrsMap(
+  rawData: unknown,
+  skipLegacyId: boolean = false,
+): SrsStateMap {
+  const result: SrsStateMap = {};
+  if (rawData && typeof rawData === "object" && !Array.isArray(rawData)) {
+    for (const [id, arr] of Object.entries(
+      rawData as Record<string, unknown>,
+    )) {
+      if (skipLegacyId && id.startsWith("ch")) continue;
+
+      if (Array.isArray(arr) && arr.length >= 1) {
+        result[id] = {
+          level: Number(arr[0] ?? 1),
+          lastReviewed: Number(arr[1] ?? 0) * 1000,
+        };
+      }
+    }
+  }
+  return result;
+}
+
 export async function deserializeState(
   serializedStr: string,
 ): Promise<LocalState | null> {
@@ -166,16 +202,15 @@ export async function deserializeState(
   }
 
   try {
-    // Normalize string: convert space (which URLSearchParams decodes '+' as) to '+'
-    // and standardize to URL-safe characters
     const cleanStr = serializedStr
       .trim()
-      .replace(/ /g, "+") // Handle spaces decoded from URLSearchParams
+      .replace(/ /g, "+")
       .replace(/\+/g, "-")
       .replace(/\//g, "_");
 
     let decodedBytes: Uint8Array | undefined;
     const uint8Const = Uint8Array as unknown as ExtendedUint8ArrayConstructor;
+
     if (typeof uint8Const.fromBase64 === "function") {
       try {
         decodedBytes = uint8Const.fromBase64(cleanStr, {
@@ -191,19 +226,9 @@ export async function deserializeState(
       decodedBytes = base64UrlToBytes(cleanStr);
     }
 
-    let rawStr: string;
-    try {
-      rawStr = await decompressData(decodedBytes);
-    } catch {
-      try {
-        rawStr = new TextDecoder("utf-8", { fatal: true }).decode(decodedBytes);
-      } catch {
-        throw new Error("Decompression and decoding failed");
-      }
-    }
+    const rawStr = await decompressPayload(decodedBytes);
     const compacted = JSON.parse(rawStr) as unknown;
 
-    // Validate overall structure
     if (
       !compacted ||
       typeof compacted !== "object" ||
@@ -214,61 +239,22 @@ export async function deserializeState(
 
     const payload = compacted as Record<string, unknown>;
     const rawChapters = payload[SHORT_KEYS.chapters] || [];
+
     const chapters = Array.isArray(rawChapters)
       ? (rawChapters as unknown[]).filter(
           (c): c is string => typeof c === "string",
         )
       : [];
 
-    const state: LocalState = {
+    return {
       chapters,
-      srs: {},
-      vocab: {},
+      srs: parseSrsMap(payload[SHORT_KEYS.srs], true),
+      vocab: parseSrsMap(payload[SHORT_KEYS.vocab], false),
       timestamp:
         typeof payload[SHORT_KEYS.timestamp] === "number"
           ? (payload[SHORT_KEYS.timestamp] as number)
           : 0,
     };
-
-    // Expand srs: Map [level, timestamp] to { level, lastReviewed }
-    const srsData = payload[SHORT_KEYS.srs] || {};
-    if (srsData && typeof srsData === "object" && !Array.isArray(srsData)) {
-      for (const [id, arr] of Object.entries(
-        srsData as Record<string, unknown>,
-      )) {
-        if (id.startsWith("ch")) {
-          // Discard legacy indexed phrasebook progress
-          continue;
-        }
-        if (Array.isArray(arr) && arr.length >= 1) {
-          state.srs[id] = {
-            level: Number(arr[0] ?? 1),
-            lastReviewed: Number(arr[1] ?? 0) * 1000,
-          };
-        }
-      }
-    }
-
-    // Expand vocab
-    const vocabData = payload[SHORT_KEYS.vocab] || {};
-    if (
-      vocabData &&
-      typeof vocabData === "object" &&
-      !Array.isArray(vocabData)
-    ) {
-      for (const [id, arr] of Object.entries(
-        vocabData as Record<string, unknown>,
-      )) {
-        if (Array.isArray(arr) && arr.length >= 1) {
-          state.vocab[id] = {
-            level: Number(arr[0] ?? 1),
-            lastReviewed: Number(arr[1] ?? 0) * 1000,
-          };
-        }
-      }
-    }
-
-    return state;
   } catch (e) {
     console.error("Failed to deserialize progress state:", e);
     return null;

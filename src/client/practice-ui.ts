@@ -490,6 +490,46 @@ function gradeCardResponse(remembered: boolean) {
 
 // --- PHRASE LOGIC ---
 
+function createAssembledToken(
+  origIdx: number,
+  assembledIdx: number,
+  rawToken: string,
+  tokenHashes: Record<string, string>,
+  tokensPoolEl: HTMLElement,
+) {
+  return createTokenChip(
+    rawToken,
+    () => {
+      assembledTokenIndices.splice(assembledIdx, 1);
+      const currentPool = Array.from(tokensPoolEl.children)
+        .map((child) => parseInt(child.getAttribute("data-index") || "", 10))
+        .filter((idx) => !Number.isNaN(idx));
+      currentPool.push(origIdx);
+      renderGameplayBoards(currentPool);
+    },
+    tokenHashes,
+  );
+}
+
+function createPoolToken(
+  origIdx: number,
+  rawToken: string,
+  tokenHashes: Record<string, string>,
+  poolIndices: number[],
+) {
+  const chip = createTokenChip(
+    rawToken,
+    () => {
+      assembledTokenIndices.push(origIdx);
+      const newPool = poolIndices.filter((idx) => idx !== origIdx);
+      renderGameplayBoards(newPool);
+    },
+    tokenHashes,
+  );
+  chip.setAttribute("data-index", String(origIdx));
+  return chip;
+}
+
 function renderGameplayBoards(poolIndices: number[]) {
   const answerSlotsEl = getEl("game-answer-slots");
   const tokensPoolEl = getEl("game-tokens-pool");
@@ -513,21 +553,15 @@ function renderGameplayBoards(poolIndices: number[]) {
     assembledTokenIndices.forEach((origIdx: number, assembledIdx: number) => {
       const rawToken = card.tokens[origIdx];
       if (!rawToken) return;
-      const chip = createTokenChip(
-        rawToken,
-        () => {
-          assembledTokenIndices.splice(assembledIdx, 1);
-          const currentPool = Array.from(tokensPoolEl.children)
-            .map((child) =>
-              parseInt(child.getAttribute("data-index") || "", 10),
-            )
-            .filter((idx) => !Number.isNaN(idx));
-          currentPool.push(origIdx);
-          renderGameplayBoards(currentPool);
-        },
-        card.tokenHashes,
+      answerSlotsEl.appendChild(
+        createAssembledToken(
+          origIdx,
+          assembledIdx,
+          rawToken,
+          card.tokenHashes,
+          tokensPoolEl,
+        ),
       );
-      answerSlotsEl.appendChild(chip);
     });
   }
 
@@ -543,17 +577,9 @@ function renderGameplayBoards(poolIndices: number[]) {
     poolIndices.forEach((origIdx: number) => {
       const rawToken = card.tokens[origIdx];
       if (!rawToken) return;
-      const chip = createTokenChip(
-        rawToken,
-        () => {
-          assembledTokenIndices.push(origIdx);
-          const newPool = poolIndices.filter((idx) => idx !== origIdx);
-          renderGameplayBoards(newPool);
-        },
-        card.tokenHashes,
+      tokensPoolEl.appendChild(
+        createPoolToken(origIdx, rawToken, card.tokenHashes, poolIndices),
       );
-      chip.setAttribute("data-index", String(origIdx));
-      tokensPoolEl.appendChild(chip);
     });
   }
 }

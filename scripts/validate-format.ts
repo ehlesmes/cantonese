@@ -63,6 +63,109 @@ function validateChapterFile(
 /**
  * Main execution orchestration logic (extract for unit testing)
  */
+function validateSingleFile(
+  targetFile: string,
+  curriculumChapters: { id: string; file: string; title: string }[],
+  projectRoot: string,
+) {
+  const errors: { file: string; line: number; message: string }[] = [];
+  const filePath = path.resolve(targetFile);
+
+  if (!fs.existsSync(filePath)) {
+    errors.push({
+      file: path.relative(projectRoot, filePath),
+      line: 0,
+      message: `File not found: "${targetFile}"`,
+    });
+    return { errors, warnings: [] };
+  }
+
+  const basename = path.basename(filePath);
+  const curriculumEntry = curriculumChapters.find((c) => c.file === basename);
+  const fileErrors = validateChapterFile(filePath, curriculumEntry);
+  errors.push(...fileErrors);
+
+  return { errors, warnings: [] };
+}
+
+function validateAllChapters(
+  contentDir: string,
+  curriculumChapters: { id: string; file: string; title: string }[],
+  projectRoot: string,
+) {
+  const errors: { file: string; line: number; message: string }[] = [];
+  const warnings: { chapterId: string; file: string; count: number }[] = [];
+
+  if (!fs.existsSync(contentDir)) {
+    errors.push({
+      file: path.relative(projectRoot, contentDir),
+      line: 0,
+      message: `Content directory not found at "${contentDir}"`,
+    });
+    return { errors, warnings };
+  }
+
+  const files = fs.readdirSync(contentDir);
+  const chapterFiles = files.filter(
+    (f: string) =>
+      f.endsWith(".md") &&
+      f !== "README.md" &&
+      f !== "curriculum.md" &&
+      f !== "vocabulary.md",
+  );
+
+  for (const file of chapterFiles) {
+    const fullPath = path.join(contentDir, file);
+    const curriculumEntry = curriculumChapters.find((c) => c.file === file);
+
+    if (!curriculumEntry) {
+      errors.push({
+        file: path.relative(projectRoot, fullPath),
+        line: 0,
+        message: `Chapter file "${file}" exists but is not registered in the content/curriculum.md frontmatter`,
+      });
+    }
+
+    const fileErrors = validateChapterFile(fullPath, curriculumEntry);
+    errors.push(...fileErrors);
+  }
+
+  const chaptersDataMap: Record<string, RawParsedChapter> = {};
+  for (const chapter of curriculumChapters) {
+    const filePath = path.join(contentDir, chapter.file);
+    if (fs.existsSync(filePath)) {
+      try {
+        chaptersDataMap[chapter.file] = parser.parseChapter(filePath);
+      } catch {
+        // ignore
+      }
+    }
+  }
+
+  const limitsRes = checkChronologicalLimits(
+    curriculumChapters,
+    chaptersDataMap,
+  );
+
+  for (const err of limitsRes.errors) {
+    errors.push({
+      file: path.relative(projectRoot, path.join(contentDir, err.file)),
+      line: 0,
+      message: err.message,
+    });
+  }
+
+  for (const warn of limitsRes.warnings) {
+    warnings.push({
+      chapterId: warn.chapterId,
+      file: path.relative(projectRoot, path.join(contentDir, warn.file)),
+      count: warn.count,
+    });
+  }
+
+  return { errors, warnings };
+}
+
 function runValidation({
   projectRoot = "",
   contentDir = "",
@@ -95,98 +198,10 @@ function runValidation({
   }
 
   if (targetFile) {
-    // Single file validation mode
-    const filePath = path.resolve(targetFile);
-
-    if (!fs.existsSync(filePath)) {
-      errors.push({
-        file: path.relative(projectRoot, filePath),
-        line: 0,
-        message: `File not found: "${targetFile}"`,
-      });
-      return { errors, warnings };
-    }
-
-    const basename = path.basename(filePath);
-    const curriculumEntry = curriculumChapters.find((c) => c.file === basename);
-
-    const fileErrors = validateChapterFile(filePath, curriculumEntry);
-    errors.push(...fileErrors);
+    return validateSingleFile(targetFile, curriculumChapters, projectRoot);
   } else {
-    // Full validation mode
-    if (!fs.existsSync(contentDir)) {
-      errors.push({
-        file: path.relative(projectRoot, contentDir),
-        line: 0,
-        message: `Content directory not found at "${contentDir}"`,
-      });
-      return { errors, warnings };
-    }
-
-    // Read all md files in content directory
-    const files = fs.readdirSync(contentDir);
-    const chapterFiles = files.filter(
-      (f: string) =>
-        f.endsWith(".md") &&
-        f !== "README.md" &&
-        f !== "curriculum.md" &&
-        f !== "vocabulary.md",
-    );
-
-    // 2. Validate each chapter file
-    for (const file of chapterFiles) {
-      const fullPath = path.join(contentDir, file);
-      const curriculumEntry = curriculumChapters.find((c) => c.file === file);
-
-      if (!curriculumEntry) {
-        errors.push({
-          file: path.relative(projectRoot, fullPath),
-          line: 0,
-          message: `Chapter file "${file}" exists but is not registered in the content/curriculum.md frontmatter`,
-        });
-      }
-
-      const fileErrors = validateChapterFile(fullPath, curriculumEntry);
-      errors.push(...fileErrors);
-    }
-
-    // 3. Chronological Vocabulary Limit Verification
-    const chaptersDataMap: Record<string, RawParsedChapter> = {};
-    for (const chapter of curriculumChapters) {
-      const filePath = path.join(contentDir, chapter.file);
-      if (fs.existsSync(filePath)) {
-        try {
-          chaptersDataMap[chapter.file] = parser.parseChapter(filePath);
-        } catch {
-          // ignore
-        }
-      }
-    }
-
-    const limitsRes = checkChronologicalLimits(
-      curriculumChapters,
-      chaptersDataMap,
-    );
-
-    // Map paths correctly
-    for (const err of limitsRes.errors) {
-      errors.push({
-        file: path.relative(projectRoot, path.join(contentDir, err.file)),
-        line: 0,
-        message: err.message,
-      });
-    }
-
-    for (const warn of limitsRes.warnings) {
-      warnings.push({
-        chapterId: warn.chapterId,
-        file: path.relative(projectRoot, path.join(contentDir, warn.file)),
-        count: warn.count,
-      });
-    }
+    return validateAllChapters(contentDir, curriculumChapters, projectRoot);
   }
-
-  return { errors, warnings };
 }
 
 /**

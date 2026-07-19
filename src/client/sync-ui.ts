@@ -113,16 +113,25 @@ function init() {
 
   let currentImportState: LocalState | null = null;
 
-  // Modal Control
-  window.addEventListener("click", (e) => {
-    if (e.target instanceof Element) {
-      const triggerBtn = e.target.closest("#sync-trigger-btn");
-      if (triggerBtn) {
-        e.preventDefault();
-        openModal();
+  function setupModalNavigation() {
+    window.addEventListener("click", (e) => {
+      if (e.target instanceof Element) {
+        const triggerBtn = e.target.closest("#sync-trigger-btn");
+        if (triggerBtn) {
+          e.preventDefault();
+          openModal();
+        }
       }
-    }
-  });
+    });
+
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeModal();
+    });
+
+    tabShowBtn.addEventListener("click", () => switchTab("show"));
+    tabScanBtn.addEventListener("click", () => switchTab("scan"));
+  }
 
   function openModal() {
     overlay.classList.add("open");
@@ -139,11 +148,6 @@ function init() {
     hideConfirmView();
     cleanupWebRTC();
   }
-
-  closeBtn.addEventListener("click", closeModal);
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) closeModal();
-  });
 
   function updateStatus(text: string, isError = false) {
     syncStatusText.textContent = text;
@@ -182,34 +186,36 @@ function init() {
     }
   }
 
-  tabShowBtn.addEventListener("click", () => switchTab("show"));
-  tabScanBtn.addEventListener("click", () => switchTab("scan"));
+  function setupManualSync() {
+    syncOfflineToggleBtn.addEventListener("click", async () => {
+      getEl("sync-main-view").style.display = "none";
+      syncOfflineView.style.display = "flex";
+      stopScanner(video, videoWrapper);
 
-  // Toggle offline view
-  syncOfflineToggleBtn.addEventListener("click", async () => {
-    getEl("sync-main-view").style.display = "none";
-    syncOfflineView.style.display = "flex";
-    stopScanner(video, videoWrapper);
+      const localState = getLocalState();
+      exportStringInput.value = await serializeState(localState);
+    });
 
-    // Populate offline export code
-    const localState = getLocalState();
-    exportStringInput.value = await serializeState(localState);
-  });
+    syncOfflineCloseBtn.addEventListener("click", () => {
+      syncOfflineView.style.display = "none";
+      getEl("sync-main-view").style.display = "flex";
+      resetSync();
+    });
 
-  syncOfflineCloseBtn.addEventListener("click", () => {
-    syncOfflineView.style.display = "none";
-    getEl("sync-main-view").style.display = "flex";
-    resetSync();
-  });
+    initOfflineFallback({
+      exportStringInput,
+      copyBtn,
+      importStringTextarea,
+      importSubmitBtn,
+      syncOfflineError,
+      onImportState: (state: LocalState) => showConfirmView(state),
+    });
 
-  initOfflineFallback({
-    exportStringInput,
-    copyBtn,
-    importStringTextarea,
-    importSubmitBtn,
-    syncOfflineError,
-    onImportState: (state: LocalState) => showConfirmView(state),
-  });
+    syncResetBtn.addEventListener("click", () => {
+      resetSync();
+      startWebRTCSync(true);
+    });
+  }
 
   // Reset sync state
   function resetSync() {
@@ -229,11 +235,6 @@ function init() {
     stopScanner(video, videoWrapper);
     switchTab("show");
   }
-
-  syncResetBtn.addEventListener("click", () => {
-    resetSync();
-    startWebRTCSync(true);
-  });
 
   const webrtcCallbacks = {
     onStatusUpdate: updateStatus,
@@ -354,83 +355,91 @@ function init() {
     importStringTextarea.value = "";
   }
 
-  confirmNoBtn.addEventListener("click", hideConfirmView);
+  function setupConfirmScreen() {
+    confirmNoBtn.addEventListener("click", hideConfirmView);
 
-  confirmYesBtn.addEventListener("click", () => {
-    if (currentImportState) {
-      confirmStatusText.style.display = "none";
-      const localState = getLocalState();
-      const merged = mergeStates(localState, currentImportState);
+    confirmYesBtn.addEventListener("click", () => {
+      if (currentImportState) {
+        confirmStatusText.style.display = "none";
+        const localState = getLocalState();
+        const merged = mergeStates(localState, currentImportState);
 
-      const success = saveLocalState(merged);
-      if (success) {
-        const cleanUrl = new URL(window.location.href);
-        cleanUrl.searchParams.delete("rtc");
-        cleanUrl.searchParams.delete("import");
-        window.history.replaceState({}, document.title, cleanUrl.toString());
+        const success = saveLocalState(merged);
+        if (success) {
+          const cleanUrl = new URL(window.location.href);
+          cleanUrl.searchParams.delete("rtc");
+          cleanUrl.searchParams.delete("import");
+          window.history.replaceState({}, document.title, cleanUrl.toString());
 
-        confirmStatusText.textContent =
-          "Progress successfully merged! Reloading...";
-        confirmStatusText.style.color = "#34c759"; // Success green
-        confirmStatusText.style.display = "block";
+          confirmStatusText.textContent =
+            "Progress successfully merged! Reloading...";
+          confirmStatusText.style.color = "#34c759"; // Success green
+          confirmStatusText.style.display = "block";
 
-        setTimeout(() => {
-          window.location.reload();
-        }, 1500);
-      } else {
-        confirmStatusText.textContent =
-          "Failed to write progress to local storage.";
-        confirmStatusText.style.color = "#ff3b30"; // Error red
-        confirmStatusText.style.display = "block";
-      }
-    }
-  });
-
-  // Handle incoming URL parameters on initial load
-  const params = new URLSearchParams(window.location.search);
-  const rtcParam = params.get("rtc");
-  if (rtcParam) {
-    const cleanUrl = new URL(window.location.href);
-    cleanUrl.searchParams.delete("rtc");
-    window.history.replaceState({}, document.title, cleanUrl.toString());
-
-    (async () => {
-      try {
-        const data = unpackSDPData(rtcParam);
-        if (data && data.t === "o") {
-          overlay.classList.add("open");
-          overlay.setAttribute("aria-hidden", "false");
-          resetSync();
-
-          switchTab("scan");
-          scannerSection.style.display = "none";
-          answerQrSection.style.display = "flex";
-          scanInstructions.style.display = "none";
-
-          updateStatus("Scanned Offer URL. Generating Answer...");
-          await startWebRTCSync(false, data);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
+        } else {
+          confirmStatusText.textContent =
+            "Failed to write progress to local storage.";
+          confirmStatusText.style.color = "#ff3b30"; // Error red
+          confirmStatusText.style.display = "block";
         }
-      } catch (e) {
-        console.error("Failed to parse incoming RTC offer:", e);
       }
-    })();
+    });
   }
 
-  const importParam = params.get("import");
-  if (importParam) {
-    (async () => {
-      const state = await deserializeState(importParam);
-      if (state) {
-        setTimeout(() => {
-          showConfirmView(state);
-        }, 300);
-      } else {
-        const cleanUrl = new URL(window.location.href);
-        cleanUrl.searchParams.delete("import");
-        window.history.replaceState({}, document.title, cleanUrl.toString());
-      }
-    })();
+  function checkForImportQuery() {
+    const params = new URLSearchParams(window.location.search);
+    const rtcParam = params.get("rtc");
+    if (rtcParam) {
+      const cleanUrl = new URL(window.location.href);
+      cleanUrl.searchParams.delete("rtc");
+      window.history.replaceState({}, document.title, cleanUrl.toString());
+
+      (async () => {
+        try {
+          const data = unpackSDPData(rtcParam);
+          if (data && data.t === "o") {
+            overlay.classList.add("open");
+            overlay.setAttribute("aria-hidden", "false");
+            resetSync();
+
+            switchTab("scan");
+            scannerSection.style.display = "none";
+            answerQrSection.style.display = "flex";
+            scanInstructions.style.display = "none";
+
+            updateStatus("Scanned Offer URL. Generating Answer...");
+            await startWebRTCSync(false, data);
+          }
+        } catch (e) {
+          console.error("Failed to parse incoming RTC offer:", e);
+        }
+      })();
+    }
+
+    const importParam = params.get("import");
+    if (importParam) {
+      (async () => {
+        const state = await deserializeState(importParam);
+        if (state) {
+          setTimeout(() => {
+            showConfirmView(state);
+          }, 300);
+        } else {
+          const cleanUrl = new URL(window.location.href);
+          cleanUrl.searchParams.delete("import");
+          window.history.replaceState({}, document.title, cleanUrl.toString());
+        }
+      })();
+    }
   }
+
+  setupModalNavigation();
+  setupManualSync();
+  setupConfirmScreen();
+  checkForImportQuery();
 }
 
 if (document.readyState === "loading") {
