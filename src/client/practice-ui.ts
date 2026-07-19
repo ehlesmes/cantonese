@@ -274,6 +274,62 @@ function createDirectorySection(
 
   return section as HTMLElement;
 }
+function renderEmptyDirectoryState(container: HTMLElement) {
+  container.appendChild(
+    el("p", {
+      style:
+        "font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem;",
+      textContent:
+        "No items available. Mark chapters as completed to populate your review pool.",
+    }),
+  );
+  updateExpandCollapseAllButton();
+}
+
+function renderChapterGroup(
+  container: HTMLElement,
+  groupedResult: Extract<
+    ReturnType<typeof groupItemsForDirectory<PracticeItem>>,
+    { type: "chapter" }
+  >,
+  currentSrsState: SrsStateMap,
+) {
+  groupedResult.sortedChapterIds.forEach((chId: string) => {
+    const group = groupedResult.grouped[chId]!;
+    const section = createDirectorySection(
+      `Chapter ${group.chapterNumber}: ${group.title}`,
+      group.items.length,
+      group.items,
+      currentSrsState,
+      () => startPracticeSession(chId, null),
+    );
+    container.appendChild(section);
+  });
+}
+
+function renderLevelGroup(
+  container: HTMLElement,
+  groupedResult: Extract<
+    ReturnType<typeof groupItemsForDirectory<PracticeItem>>,
+    { type: "level" }
+  >,
+  currentSrsState: SrsStateMap,
+) {
+  for (let lvl = 1; lvl <= 5; lvl++) {
+    const items = groupedResult.grouped[lvl];
+    if (!items || items.length === 0) continue;
+
+    const section = createDirectorySection(
+      `SRS Level ${lvl}`,
+      items.length,
+      items,
+      currentSrsState,
+      () => startPracticeSession(null, lvl),
+    );
+    container.appendChild(section);
+  }
+}
+
 function renderPoolDirectory() {
   const container = getEl("review-items-list-container");
   container.innerHTML = "";
@@ -285,16 +341,7 @@ function renderPoolDirectory() {
     currentTabMode === "vocab" ? vocabSrsState : phraseSrsState;
 
   if (poolItems.length === 0) {
-    container.appendChild(
-      el("p", {
-        style:
-          "font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem;",
-        textContent:
-          "No items available. Mark chapters as completed to populate your review pool.",
-      }),
-    );
-    updateExpandCollapseAllButton();
-    return;
+    return renderEmptyDirectoryState(container);
   }
 
   const groupedResult = groupItemsForDirectory(
@@ -304,31 +351,9 @@ function renderPoolDirectory() {
   );
 
   if (groupedResult.type === "chapter") {
-    groupedResult.sortedChapterIds.forEach((chId) => {
-      const group = groupedResult.grouped[chId]!;
-      const section = createDirectorySection(
-        `Chapter ${group.chapterNumber}: ${group.title}`,
-        group.items.length,
-        group.items,
-        currentSrsState,
-        () => startPracticeSession(chId, null),
-      );
-      container.appendChild(section);
-    });
+    renderChapterGroup(container, groupedResult, currentSrsState);
   } else {
-    for (let lvl = 1; lvl <= 5; lvl++) {
-      const items = groupedResult.grouped[lvl];
-      if (!items || items.length === 0) continue;
-
-      const section = createDirectorySection(
-        `SRS Level ${lvl}`,
-        items.length,
-        items,
-        currentSrsState,
-        () => startPracticeSession(null, lvl),
-      );
-      container.appendChild(section);
-    }
+    renderLevelGroup(container, groupedResult, currentSrsState);
   }
 
   updateExpandCollapseAllButton();
@@ -530,17 +555,11 @@ function createPoolToken(
   return chip;
 }
 
-function renderGameplayBoards(poolIndices: number[]) {
-  const answerSlotsEl = getEl("game-answer-slots");
-  const tokensPoolEl = getEl("game-tokens-pool");
-
-  answerSlotsEl.innerHTML = "";
-  tokensPoolEl.innerHTML = "";
-
-  if (!session) return;
-  const card = session.getCurrentCard();
-  if (!card || card.practiceType !== "phrase") return;
-
+function renderAnswerSlotsState(
+  answerSlotsEl: HTMLElement,
+  tokensPoolEl: HTMLElement,
+  card: ClientExample,
+) {
   if (assembledTokenIndices.length === 0) {
     answerSlotsEl.appendChild(
       el("span", {
@@ -564,7 +583,13 @@ function renderGameplayBoards(poolIndices: number[]) {
       );
     });
   }
+}
 
+function renderTokensPoolState(
+  tokensPoolEl: HTMLElement,
+  card: ClientExample,
+  poolIndices: number[],
+) {
   if (poolIndices.length === 0) {
     tokensPoolEl.appendChild(
       el("span", {
@@ -582,6 +607,21 @@ function renderGameplayBoards(poolIndices: number[]) {
       );
     });
   }
+}
+
+function renderGameplayBoards(poolIndices: number[]) {
+  const answerSlotsEl = getEl("game-answer-slots");
+  const tokensPoolEl = getEl("game-tokens-pool");
+
+  answerSlotsEl.innerHTML = "";
+  tokensPoolEl.innerHTML = "";
+
+  if (!session) return;
+  const card = session.getCurrentCard();
+  if (!card || card.practiceType !== "phrase") return;
+
+  renderAnswerSlotsState(answerSlotsEl, tokensPoolEl, card);
+  renderTokensPoolState(tokensPoolEl, card, poolIndices);
 }
 
 function createTokenChip(
@@ -612,6 +652,40 @@ function resetCurrentCard() {
   renderGameplayBoards(indices);
 }
 
+function buildFeedbackNextBtn(isCorrect: boolean, onNextClick: () => void) {
+  return el("button", {
+    id: "next-card-btn",
+    style:
+      "margin-top: 1rem; font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; border: none; background-color: " +
+      (isCorrect ? "var(--secondary-color)" : "var(--accent-color)") +
+      "; color: #ffffff; border-radius: 4px; padding: 0.5rem 1.5rem; cursor: pointer; float: right;",
+    textContent: "Next Card →",
+    onClick: onNextClick,
+  });
+}
+
+function buildFeedbackIncorrectOrder(
+  card: ClientExample,
+  assembledTokenIndices: number[],
+) {
+  return el("div", { style: "font-size: 0.95rem; margin-bottom: 0.6rem;" }, [
+    el("strong", { textContent: "Your Order" }),
+    document.createTextNode(": "),
+    el("span", {
+      style: "color: var(--accent-color);",
+      textContent: assembledTokenIndices
+        .map((idx) => {
+          const raw = card.tokens[idx];
+          if (!raw) return "";
+          const m = raw.match(/^([^[]+)/);
+          return m ? m[1] : raw;
+        })
+        .filter(Boolean)
+        .join(" "),
+    }),
+  ]);
+}
+
 function createFeedbackAlert(
   card: ClientExample,
   isCorrect: boolean,
@@ -636,34 +710,11 @@ function createFeedbackAlert(
     [createPlayIcon()],
   );
 
-  const nextBtn = el("button", {
-    id: "next-card-btn",
-    style:
-      "margin-top: 1rem; font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; border: none; background-color: " +
-      (isCorrect ? "var(--secondary-color)" : "var(--accent-color)") +
-      "; color: #ffffff; border-radius: 4px; padding: 0.5rem 1.5rem; cursor: pointer; float: right;",
-    textContent: "Next Card →",
-    onClick: onNextClick,
-  });
+  const nextBtn = buildFeedbackNextBtn(isCorrect, onNextClick);
 
   const cardHtml = el("div", { className: "alert-content" }, [
     !isCorrect
-      ? el("div", { style: "font-size: 0.95rem; margin-bottom: 0.6rem;" }, [
-          el("strong", { textContent: "Your Order" }),
-          document.createTextNode(": "),
-          el("span", {
-            style: "color: var(--accent-color);",
-            textContent: assembledTokenIndices
-              .map((idx) => {
-                const raw = card.tokens[idx];
-                if (!raw) return "";
-                const m = raw.match(/^([^[]+)/);
-                return m ? m[1] : raw;
-              })
-              .filter(Boolean)
-              .join(" "),
-          }),
-        ])
+      ? buildFeedbackIncorrectOrder(card, assembledTokenIndices)
       : null,
     !isCorrect
       ? el("div", {
@@ -696,7 +747,7 @@ function createFeedbackAlert(
     el("div", { style: "clear: both;" }),
   ]);
 
-  const alertBox = el(
+  return el(
     "div",
     {
       className: isCorrect
@@ -718,9 +769,7 @@ function createFeedbackAlert(
       }),
       cardHtml,
     ],
-  );
-
-  return alertBox as HTMLElement;
+  ) as HTMLElement;
 }
 
 function checkCurrentAnswer() {

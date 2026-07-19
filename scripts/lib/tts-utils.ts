@@ -57,36 +57,51 @@ function extractFromVocabList(
   }
 }
 
-function extractFromBlock(block: ParsedBlock, spokenTexts: Set<string>) {
-  if (block.type === "cantonese") {
-    const parts = block.content.split("===");
-    const cleanCanto = getCleanSpokenText(parts[0]);
-    if (cleanCanto) spokenTexts.add(cleanCanto);
-  } else if (block.type === "dialog") {
-    const lines = block.content.split(/\r?\n/);
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed) continue;
-      const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
-      if (speakerMatch) {
-        const speakerCanto = speakerMatch[2] as string;
-        const rawCantonese = speakerCanto.split("===")[0]!;
-        const cleanText = getCleanSpokenText(rawCantonese);
-        if (cleanText) spokenTexts.add(cleanText);
-      }
-    }
-  } else if (block.type === "prose") {
-    const inlineRegex =
-      /`([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`/g;
-    const blockRegex =
-      /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
+function extractFromDialogBlock(content: string, spokenTexts: Set<string>) {
+  const lines = content.split(/\r?\n/);
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+    const speakerMatch = trimmed.match(/^([A-Za-z]):\s*(.*)$/);
+    if (!speakerMatch) continue;
 
-    let match;
-    while ((match = inlineRegex.exec(block.content)) !== null) {
-      spokenTexts.add(match[1]!);
+    const speakerCanto = speakerMatch[2] as string;
+    const rawCantonese = speakerCanto.split("===")[0]!;
+    const cleanText = getCleanSpokenText(rawCantonese);
+    if (cleanText) spokenTexts.add(cleanText);
+  }
+}
+
+function extractFromProseBlock(content: string, spokenTexts: Set<string>) {
+  const inlineRegex =
+    /`([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]`/g;
+  const blockRegex =
+    /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
+
+  let match;
+  while ((match = inlineRegex.exec(content)) !== null) {
+    spokenTexts.add(match[1]!);
+  }
+  while ((match = blockRegex.exec(content)) !== null) {
+    spokenTexts.add(match[1]!);
+  }
+}
+
+function extractFromBlock(block: ParsedBlock, spokenTexts: Set<string>) {
+  switch (block.type) {
+    case "cantonese": {
+      const parts = block.content.split("===");
+      const cleanCanto = getCleanSpokenText(parts[0]);
+      if (cleanCanto) spokenTexts.add(cleanCanto);
+      break;
     }
-    while ((match = blockRegex.exec(block.content)) !== null) {
-      spokenTexts.add(match[1]!);
+    case "dialog": {
+      extractFromDialogBlock(block.content, spokenTexts);
+      break;
+    }
+    case "prose": {
+      extractFromProseBlock(block.content, spokenTexts);
+      break;
     }
   }
 }

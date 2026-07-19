@@ -24,8 +24,8 @@ import { initOfflineFallback } from "./sync-offline.js";
 
 function getEl(id: string): HTMLElement {
   const el = document.getElementById(id);
-  if (!el) throw new Error("Missing element: " + id);
-  return el;
+  if (el) return el;
+  throw new Error("Missing DOM element: " + id);
 }
 
 function getInputElement(id: string): HTMLInputElement {
@@ -58,311 +58,297 @@ function getButtonElement(id: string): HTMLButtonElement {
   throw new Error("Missing button element: " + id);
 }
 
-function init() {
+class SyncUIController {
   // DOM Elements
-  const overlay = getEl("sync-modal-overlay");
-  const closeBtn = getEl("sync-modal-close");
+  private overlay = getEl("sync-modal-overlay");
+  private closeBtn = getEl("sync-modal-close");
+  private tabShowBtn = getEl("tab-show-btn");
+  private tabScanBtn = getEl("tab-scan-btn");
+  private tabShowContent = getEl("sync-tab-show-content");
+  private tabScanContent = getEl("sync-tab-scan-content");
+  private syncStatusText = getEl("sync-status-text");
+  private syncQrWrapper = getEl("sync-qr-wrapper");
+  private qrCanvas = getCanvasElement("sync-qr-canvas");
+  private qrLoadingText = getEl("qr-loading-text");
+  private syncResetBtn = getEl("sync-reset-btn");
+  private scannerSection = getEl("scanner-section");
+  private videoWrapper = getEl("scanner-preview-wrapper");
+  private video = getVideoElement("sync-video");
+  private hiddenCanvas = getCanvasElement("sync-hidden-canvas");
+  private scannerStatus = getEl("scanner-status");
+  private scanInstructions = getEl("scan-instructions");
+  private answerQrSection = getEl("answer-qr-section");
+  private answerQrCanvas = getCanvasElement("answer-qr-canvas");
+  private answerQrLoadingText = getEl("answer-qr-loading-text");
+  private syncOfflineToggleBtn = getEl("sync-offline-toggle-btn");
+  private syncOfflineView = getEl("sync-offline-view");
+  private syncOfflineCloseBtn = getEl("sync-offline-close-btn");
+  private exportStringInput = getInputElement("sync-export-string");
+  private copyBtn = getButtonElement("sync-copy-btn");
+  private importStringTextarea = getTextAreaElement("sync-import-string");
+  private importSubmitBtn = getButtonElement("sync-import-submit-btn");
+  private syncOfflineError = getEl("sync-offline-error");
+  private confirmView = getEl("sync-confirm-view");
+  private confirmChaptersLocal = getEl("confirm-chapters-local");
+  private confirmChaptersMerged = getEl("confirm-chapters-merged");
+  private confirmSrsLocal = getEl("confirm-srs-local");
+  private confirmSrsMerged = getEl("confirm-srs-merged");
+  private confirmVocabLocal = getEl("confirm-vocab-local");
+  private confirmVocabMerged = getEl("confirm-vocab-merged");
+  private confirmYesBtn = getEl("sync-confirm-yes");
+  private confirmNoBtn = getEl("sync-confirm-no");
+  private confirmStatusText = getEl("confirm-status-text");
 
-  // Tab Navigation Elements
-  const tabShowBtn = getEl("tab-show-btn");
-  const tabScanBtn = getEl("tab-scan-btn");
-  const tabShowContent = getEl("sync-tab-show-content");
-  const tabScanContent = getEl("sync-tab-scan-content");
+  private currentImportState: LocalState | null = null;
 
-  // Main UI Elements
-  const syncStatusText = getEl("sync-status-text");
-  const syncQrWrapper = getEl("sync-qr-wrapper");
-  const qrCanvas = getCanvasElement("sync-qr-canvas");
-  const qrLoadingText = getEl("qr-loading-text");
-  const syncResetBtn = getEl("sync-reset-btn");
+  public init() {
+    this.setupModalNavigation();
+    this.setupManualSync();
+    this.setupConfirmScreen();
+    this.checkForImportQuery();
+  }
 
-  // Scanner Elements
-  const scannerSection = getEl("scanner-section");
-  const videoWrapper = getEl("scanner-preview-wrapper");
-  const video = getVideoElement("sync-video");
-  const hiddenCanvas = getCanvasElement("sync-hidden-canvas");
-  const scannerStatus = getEl("scanner-status");
-  const scanInstructions = getEl("scan-instructions");
-
-  // Answer QR Elements (inside Scan tab)
-  const answerQrSection = getEl("answer-qr-section");
-  const answerQrCanvas = getCanvasElement("answer-qr-canvas");
-  const answerQrLoadingText = getEl("answer-qr-loading-text");
-
-  // Offline accordion elements
-  const syncOfflineToggleBtn = getEl("sync-offline-toggle-btn");
-  const syncOfflineView = getEl("sync-offline-view");
-  const syncOfflineCloseBtn = getEl("sync-offline-close-btn");
-  const exportStringInput = getInputElement("sync-export-string");
-  const copyBtn = getButtonElement("sync-copy-btn");
-  const importStringTextarea = getTextAreaElement("sync-import-string");
-  const importSubmitBtn = getButtonElement("sync-import-submit-btn");
-  const syncOfflineError = getEl("sync-offline-error");
-
-  // Confirm UI Elements
-  const confirmView = getEl("sync-confirm-view");
-  const confirmChaptersLocal = getEl("confirm-chapters-local");
-  const confirmChaptersMerged = getEl("confirm-chapters-merged");
-  const confirmSrsLocal = getEl("confirm-srs-local");
-  const confirmSrsMerged = getEl("confirm-srs-merged");
-  const confirmVocabLocal = getEl("confirm-vocab-local");
-  const confirmVocabMerged = getEl("confirm-vocab-merged");
-  const confirmYesBtn = getEl("sync-confirm-yes");
-  const confirmNoBtn = getEl("sync-confirm-no");
-  const confirmStatusText = getEl("confirm-status-text");
-
-  let currentImportState: LocalState | null = null;
-
-  function setupModalNavigation() {
+  private setupModalNavigation() {
     window.addEventListener("click", (e) => {
       if (e.target instanceof Element) {
         const triggerBtn = e.target.closest("#sync-trigger-btn");
         if (triggerBtn) {
           e.preventDefault();
-          openModal();
+          this.openModal();
         }
       }
     });
 
-    closeBtn.addEventListener("click", closeModal);
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) closeModal();
+    this.closeBtn.addEventListener("click", () => this.closeModal());
+    this.overlay.addEventListener("click", (e) => {
+      if (e.target === this.overlay) this.closeModal();
     });
 
-    tabShowBtn.addEventListener("click", () => switchTab("show"));
-    tabScanBtn.addEventListener("click", () => switchTab("scan"));
+    this.tabShowBtn.addEventListener("click", () => this.switchTab("show"));
+    this.tabScanBtn.addEventListener("click", () => this.switchTab("scan"));
   }
 
-  function openModal() {
-    overlay.classList.add("open");
-    overlay.setAttribute("aria-hidden", "false");
-    resetSync();
-    // Offerer: Generate WebRTC Offer instantly on modal open
-    startWebRTCSync(true);
+  private openModal() {
+    this.overlay.classList.add("open");
+    this.overlay.setAttribute("aria-hidden", "false");
+    this.resetSync();
+    this.startWebRTCSync(true);
   }
 
-  function closeModal() {
-    overlay.classList.remove("open");
-    overlay.setAttribute("aria-hidden", "true");
-    stopScanner(video, videoWrapper);
-    hideConfirmView();
+  private closeModal() {
+    this.overlay.classList.remove("open");
+    this.overlay.setAttribute("aria-hidden", "true");
+    stopScanner(this.video, this.videoWrapper);
+    this.hideConfirmView();
     cleanupWebRTC();
   }
 
-  function updateStatus(text: string, isError = false) {
-    syncStatusText.textContent = text;
-    syncStatusText.style.color = isError ? "#ff3b30" : "var(--accent-color)";
+  private updateStatus(text: string, isError = false) {
+    this.syncStatusText.textContent = text;
+    this.syncStatusText.style.color = isError
+      ? "#ff3b30"
+      : "var(--accent-color)";
   }
 
-  // Tab Switching
-  function switchTab(tab: "show" | "scan") {
+  private switchTab(tab: "show" | "scan") {
     if (tab === "show") {
-      tabShowBtn.classList.add("active");
-      tabShowBtn.setAttribute("aria-selected", "true");
-      tabScanBtn.classList.remove("active");
-      tabScanBtn.setAttribute("aria-selected", "false");
-      tabShowContent.style.display = "flex";
-      tabScanContent.style.display = "none";
-      stopScanner(video, videoWrapper);
+      this.tabShowBtn.classList.add("active");
+      this.tabShowBtn.setAttribute("aria-selected", "true");
+      this.tabScanBtn.classList.remove("active");
+      this.tabScanBtn.setAttribute("aria-selected", "false");
+      this.tabShowContent.style.display = "flex";
+      this.tabScanContent.style.display = "none";
+      stopScanner(this.video, this.videoWrapper);
     } else {
-      tabShowBtn.classList.remove("active");
-      tabShowBtn.setAttribute("aria-selected", "false");
-      tabScanBtn.classList.add("active");
-      tabScanBtn.setAttribute("aria-selected", "true");
-      tabShowContent.style.display = "none";
-      tabScanContent.style.display = "flex";
-      // Auto-start scanner if not showing an answer QR
-      if (answerQrSection.style.display !== "flex") {
+      this.tabShowBtn.classList.remove("active");
+      this.tabShowBtn.setAttribute("aria-selected", "false");
+      this.tabScanBtn.classList.add("active");
+      this.tabScanBtn.setAttribute("aria-selected", "true");
+      this.tabShowContent.style.display = "none";
+      this.tabScanContent.style.display = "flex";
+
+      if (this.answerQrSection.style.display !== "flex") {
         startScanner(
-          video,
-          videoWrapper,
-          hiddenCanvas,
+          this.video,
+          this.videoWrapper,
+          this.hiddenCanvas,
           (status: string) => {
-            scannerStatus.textContent = status;
+            this.scannerStatus.textContent = status;
           },
-          handleScannedCode,
+          (code) => this.handleScannedCode(code),
         );
       }
     }
   }
 
-  function setupManualSync() {
-    syncOfflineToggleBtn.addEventListener("click", async () => {
+  private setupManualSync() {
+    this.syncOfflineToggleBtn.addEventListener("click", async () => {
       getEl("sync-main-view").style.display = "none";
-      syncOfflineView.style.display = "flex";
-      stopScanner(video, videoWrapper);
+      this.syncOfflineView.style.display = "flex";
+      stopScanner(this.video, this.videoWrapper);
 
       const localState = getLocalState();
-      exportStringInput.value = await serializeState(localState);
+      this.exportStringInput.value = await serializeState(localState);
     });
 
-    syncOfflineCloseBtn.addEventListener("click", () => {
-      syncOfflineView.style.display = "none";
+    this.syncOfflineCloseBtn.addEventListener("click", () => {
+      this.syncOfflineView.style.display = "none";
       getEl("sync-main-view").style.display = "flex";
-      resetSync();
+      this.resetSync();
     });
 
     initOfflineFallback({
-      exportStringInput,
-      copyBtn,
-      importStringTextarea,
-      importSubmitBtn,
-      syncOfflineError,
-      onImportState: (state: LocalState) => showConfirmView(state),
+      exportStringInput: this.exportStringInput,
+      copyBtn: this.copyBtn,
+      importStringTextarea: this.importStringTextarea,
+      importSubmitBtn: this.importSubmitBtn,
+      syncOfflineError: this.syncOfflineError,
+      onImportState: (state: LocalState) => this.showConfirmView(state),
     });
 
-    syncResetBtn.addEventListener("click", () => {
-      resetSync();
-      startWebRTCSync(true);
+    this.syncResetBtn.addEventListener("click", () => {
+      this.resetSync();
+      this.startWebRTCSync(true);
     });
   }
 
-  // Reset sync state
-  function resetSync() {
+  private resetSync() {
     cleanupWebRTC();
-    updateStatus("Preparing WebRTC connection...");
-    syncQrWrapper.style.display = "none";
-    syncResetBtn.style.display = "none";
+    this.updateStatus("Preparing WebRTC connection...");
+    this.syncQrWrapper.style.display = "none";
+    this.syncResetBtn.style.display = "none";
 
-    // Reset Scan tab sub-elements to scanning mode
-    scannerSection.style.display = "flex";
-    answerQrSection.style.display = "none";
-    scanInstructions.style.display = "block";
+    this.scannerSection.style.display = "flex";
+    this.answerQrSection.style.display = "none";
+    this.scanInstructions.style.display = "block";
 
-    // Hide offline error
-    syncOfflineError.style.display = "none";
+    this.syncOfflineError.style.display = "none";
 
-    stopScanner(video, videoWrapper);
-    switchTab("show");
+    stopScanner(this.video, this.videoWrapper);
+    this.switchTab("show");
   }
 
-  const webrtcCallbacks = {
-    onStatusUpdate: updateStatus,
-    onQRReady: (url: string) => {
-      qrCanvas.style.display = "none";
-      qrLoadingText.style.display = "block";
-      qrLoadingText.textContent = "Generating QR code...";
-      syncQrWrapper.style.display = "flex";
+  private getWebrtcCallbacks() {
+    return {
+      onStatusUpdate: (text: string, err?: boolean) =>
+        this.updateStatus(text, err),
+      onQRReady: (url: string) => {
+        this.qrCanvas.style.display = "none";
+        this.qrLoadingText.style.display = "block";
+        this.qrLoadingText.textContent = "Generating QR code...";
+        this.syncQrWrapper.style.display = "flex";
 
-      QRCode.toCanvas(
-        qrCanvas,
-        url,
-        {
-          width: 200,
-          margin: 1,
-          errorCorrectionLevel: "L",
-        },
-        (err) => {
-          if (err) {
-            qrLoadingText.textContent = "Failed to generate QR";
-          } else {
-            qrLoadingText.style.display = "none";
-            qrCanvas.style.display = "block";
-            updateStatus("Waiting for connection...");
-          }
-        },
-      );
-      syncResetBtn.style.display = "block";
-    },
-    onAnswerReady: (token: string) => {
-      answerQrCanvas.style.display = "none";
-      answerQrLoadingText.style.display = "block";
-      answerQrLoadingText.textContent = "Generating Answer QR...";
-      syncResetBtn.style.display = "block";
+        QRCode.toCanvas(
+          this.qrCanvas,
+          url,
+          { width: 200, margin: 1, errorCorrectionLevel: "L" },
+          (err) => {
+            if (err) {
+              this.qrLoadingText.textContent = "Failed to generate QR";
+            } else {
+              this.qrLoadingText.style.display = "none";
+              this.qrCanvas.style.display = "block";
+              this.updateStatus("Waiting for connection...");
+            }
+          },
+        );
+        this.syncResetBtn.style.display = "block";
+      },
+      onAnswerReady: (token: string) => {
+        this.answerQrCanvas.style.display = "none";
+        this.answerQrLoadingText.style.display = "block";
+        this.answerQrLoadingText.textContent = "Generating Answer QR...";
+        this.syncResetBtn.style.display = "block";
 
-      QRCode.toCanvas(
-        answerQrCanvas,
-        token,
-        {
-          width: 200,
-          margin: 1,
-          errorCorrectionLevel: "L",
-        },
-        (err) => {
-          if (err) {
-            answerQrLoadingText.textContent = "Failed to generate QR";
-          } else {
-            answerQrLoadingText.style.display = "none";
-            answerQrCanvas.style.display = "block";
-            updateStatus("Answer generated. Scan it on your other device.");
-          }
-        },
-      );
-    },
-    onSyncDataReceived: (state: LocalState) => {
-      closeModal();
-      showConfirmView(state);
-    },
-  };
+        QRCode.toCanvas(
+          this.answerQrCanvas,
+          token,
+          { width: 200, margin: 1, errorCorrectionLevel: "L" },
+          (err) => {
+            if (err) {
+              this.answerQrLoadingText.textContent = "Failed to generate QR";
+            } else {
+              this.answerQrLoadingText.style.display = "none";
+              this.answerQrCanvas.style.display = "block";
+              this.updateStatus(
+                "Answer generated. Scan it on your other device.",
+              );
+            }
+          },
+        );
+      },
+      onSyncDataReceived: (state: LocalState) => {
+        this.closeModal();
+        this.showConfirmView(state);
+      },
+    };
+  }
 
-  async function startWebRTCSync(
+  private async startWebRTCSync(
     isInitiator: boolean,
     remoteOfferData: SDPCoordinates | null = null,
   ) {
-    await startWebRTC(isInitiator, remoteOfferData, webrtcCallbacks);
+    await startWebRTC(isInitiator, remoteOfferData, this.getWebrtcCallbacks());
   }
 
-  async function handleScannedCode(tokenRaw: string) {
+  private async handleScannedCode(tokenRaw: string) {
     try {
       const token = extractRTCToken(tokenRaw);
       const data = unpackSDPData(token);
       if (data && data.u && data.p && data.f) {
         if (data.t === "o") {
-          stopScanner(video, videoWrapper);
-          scannerSection.style.display = "none";
-          answerQrSection.style.display = "flex";
-          scanInstructions.style.display = "none";
+          stopScanner(this.video, this.videoWrapper);
+          this.scannerSection.style.display = "none";
+          this.answerQrSection.style.display = "flex";
+          this.scanInstructions.style.display = "none";
 
-          await startWebRTCSync(false, data);
+          await this.startWebRTCSync(false, data);
         } else if (data.t === "a" && localRole === "initiator") {
-          stopScanner(video, videoWrapper);
-          await acceptAnswer(data, webrtcCallbacks);
+          stopScanner(this.video, this.videoWrapper);
+          await acceptAnswer(data, this.getWebrtcCallbacks());
         }
       } else {
-        scannerStatus.textContent =
+        this.scannerStatus.textContent =
           "Invalid sync code format. Keep scanning...";
       }
     } catch (err) {
       console.error("Scan decode error:", err);
-      scannerStatus.textContent = "Scan decode error. Keep scanning...";
+      this.scannerStatus.textContent = "Scan decode error. Keep scanning...";
     }
   }
 
-  // Confirmation Screen Control
-  function showConfirmView(importedState: LocalState) {
-    currentImportState = importedState;
-    confirmStatusText.style.display = "none";
+  private showConfirmView(importedState: LocalState) {
+    this.currentImportState = importedState;
+    this.confirmStatusText.style.display = "none";
     const localState = getLocalState();
     const metrics = calculateMergeMetrics(localState, importedState);
 
-    confirmChaptersLocal.textContent = String(metrics.chapters.local);
-    confirmChaptersMerged.textContent = String(metrics.chapters.merged);
+    this.confirmChaptersLocal.textContent = String(metrics.chapters.local);
+    this.confirmChaptersMerged.textContent = String(metrics.chapters.merged);
+    this.confirmSrsLocal.textContent = String(metrics.phrases.local);
+    this.confirmSrsMerged.textContent = String(metrics.phrases.merged);
+    this.confirmVocabLocal.textContent = String(metrics.vocab.local);
+    this.confirmVocabMerged.textContent = String(metrics.vocab.merged);
 
-    confirmSrsLocal.textContent = String(metrics.phrases.local);
-    confirmSrsMerged.textContent = String(metrics.phrases.merged);
-
-    confirmVocabLocal.textContent = String(metrics.vocab.local);
-    confirmVocabMerged.textContent = String(metrics.vocab.merged);
-
-    confirmView.style.display = "flex";
-    overlay.classList.add("open");
+    this.confirmView.style.display = "flex";
+    this.overlay.classList.add("open");
   }
 
-  function hideConfirmView() {
-    confirmView.style.display = "none";
-    confirmStatusText.style.display = "none";
-    currentImportState = null;
-    importStringTextarea.value = "";
+  private hideConfirmView() {
+    this.confirmView.style.display = "none";
+    this.confirmStatusText.style.display = "none";
+    this.currentImportState = null;
+    this.importStringTextarea.value = "";
   }
 
-  function setupConfirmScreen() {
-    confirmNoBtn.addEventListener("click", hideConfirmView);
+  private setupConfirmScreen() {
+    this.confirmNoBtn.addEventListener("click", () => this.hideConfirmView());
 
-    confirmYesBtn.addEventListener("click", () => {
-      if (currentImportState) {
-        confirmStatusText.style.display = "none";
+    this.confirmYesBtn.addEventListener("click", () => {
+      if (this.currentImportState) {
+        this.confirmStatusText.style.display = "none";
         const localState = getLocalState();
-        const merged = mergeStates(localState, currentImportState);
+        const merged = mergeStates(localState, this.currentImportState);
 
         const success = saveLocalState(merged);
         if (success) {
@@ -371,25 +357,25 @@ function init() {
           cleanUrl.searchParams.delete("import");
           window.history.replaceState({}, document.title, cleanUrl.toString());
 
-          confirmStatusText.textContent =
+          this.confirmStatusText.textContent =
             "Progress successfully merged! Reloading...";
-          confirmStatusText.style.color = "#34c759"; // Success green
-          confirmStatusText.style.display = "block";
+          this.confirmStatusText.style.color = "#34c759";
+          this.confirmStatusText.style.display = "block";
 
           setTimeout(() => {
             window.location.reload();
           }, 1500);
         } else {
-          confirmStatusText.textContent =
+          this.confirmStatusText.textContent =
             "Failed to write progress to local storage.";
-          confirmStatusText.style.color = "#ff3b30"; // Error red
-          confirmStatusText.style.display = "block";
+          this.confirmStatusText.style.color = "#ff3b30";
+          this.confirmStatusText.style.display = "block";
         }
       }
     });
   }
 
-  function checkForImportQuery() {
+  private checkForImportQuery() {
     const params = new URLSearchParams(window.location.search);
     const rtcParam = params.get("rtc");
     if (rtcParam) {
@@ -401,17 +387,17 @@ function init() {
         try {
           const data = unpackSDPData(rtcParam);
           if (data && data.t === "o") {
-            overlay.classList.add("open");
-            overlay.setAttribute("aria-hidden", "false");
-            resetSync();
+            this.overlay.classList.add("open");
+            this.overlay.setAttribute("aria-hidden", "false");
+            this.resetSync();
 
-            switchTab("scan");
-            scannerSection.style.display = "none";
-            answerQrSection.style.display = "flex";
-            scanInstructions.style.display = "none";
+            this.switchTab("scan");
+            this.scannerSection.style.display = "none";
+            this.answerQrSection.style.display = "flex";
+            this.scanInstructions.style.display = "none";
 
-            updateStatus("Scanned Offer URL. Generating Answer...");
-            await startWebRTCSync(false, data);
+            this.updateStatus("Scanned Offer URL. Generating Answer...");
+            await this.startWebRTCSync(false, data);
           }
         } catch (e) {
           console.error("Failed to parse incoming RTC offer:", e);
@@ -425,7 +411,7 @@ function init() {
         const state = await deserializeState(importParam);
         if (state) {
           setTimeout(() => {
-            showConfirmView(state);
+            this.showConfirmView(state);
           }, 300);
         } else {
           const cleanUrl = new URL(window.location.href);
@@ -435,11 +421,11 @@ function init() {
       })();
     }
   }
+}
 
-  setupModalNavigation();
-  setupManualSync();
-  setupConfirmScreen();
-  checkForImportQuery();
+export function init() {
+  const controller = new SyncUIController();
+  controller.init();
 }
 
 if (document.readyState === "loading") {

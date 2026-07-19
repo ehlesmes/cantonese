@@ -11,7 +11,6 @@ import {
   removeChapterProgressState,
   cleanIncompleteProgressState,
 } from "../utils/storage-modifiers.js";
-
 import type { ClientChapterData, SrsStateMap } from "../types/index.js";
 
 function getEl(id: string): HTMLElement {
@@ -20,82 +19,81 @@ function getEl(id: string): HTMLElement {
   return el;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Elements
-  const completedList = getEl("completed-chapters-list");
-  const cleanIncompleteBtn = getEl("clean-incomplete-btn");
-  const clearAllBtn = getEl("clear-all-btn");
-  const confirmModal = getEl("confirm-modal");
-  const confirmMsg = getEl("confirm-message");
-  const modalCancelBtn = getEl("modal-cancel-btn");
-  const modalConfirmBtn = getEl("modal-confirm-btn");
-  const toast = getEl("toast");
+class AdvancedSettingsController {
+  private completedList = getEl("completed-chapters-list");
+  private cleanIncompleteBtn = getEl("clean-incomplete-btn");
+  private clearAllBtn = getEl("clear-all-btn");
+  private confirmModal = getEl("confirm-modal");
+  private confirmMsg = getEl("confirm-message");
+  private modalCancelBtn = getEl("modal-cancel-btn");
+  private modalConfirmBtn = getEl("modal-confirm-btn");
+  private toast = getEl("toast");
 
-  const allChaptersData = window.__allChaptersData || [];
-  let currentUnlocked: string[] = [];
-  let phraseSRS: SrsStateMap = {};
-  let vocabSRS: SrsStateMap = {};
-  let pendingResetAction: (() => void) | null = null;
+  private allChaptersData: ClientChapterData[] = window.__allChaptersData || [];
+  private currentUnlocked: string[] = [];
+  private phraseSRS: SrsStateMap = {};
+  private vocabSRS: SrsStateMap = {};
+  private pendingResetAction: (() => void) | null = null;
 
-  // Toast notification helper
-  function showToast(message: string, type = "success") {
-    toast.textContent = message;
-    toast.className = `toast-notification show ${type}`;
+  public init() {
+    this.setupEventListeners();
+    this.renderCompletedChapters();
+  }
+
+  private showToast(message: string, type = "success") {
+    this.toast.textContent = message;
+    this.toast.className = `toast-notification show ${type}`;
     setTimeout(() => {
-      toast.className = "toast-notification";
+      this.toast.className = "toast-notification";
     }, 3000);
   }
 
-  // Load state using centralized storage
-  function loadLocalStorage() {
+  private loadLocalStorage() {
     try {
-      currentUnlocked = getUnlockedChapters();
-      phraseSRS = getPhraseSRS();
-      vocabSRS = getVocabSRS();
+      this.currentUnlocked = getUnlockedChapters();
+      this.phraseSRS = getPhraseSRS();
+      this.vocabSRS = getVocabSRS();
     } catch (e) {
       console.error("LocalStorage load failed:", e);
-      showToast("Failed to load local storage state", "error");
+      this.showToast("Failed to load local storage state", "error");
     }
   }
 
-  // Save state using centralized storage
-  function saveLocalStorage() {
+  private saveLocalStorage() {
     try {
-      saveUnlockedChapters(currentUnlocked);
-      savePhraseSRS(phraseSRS);
-      saveVocabSRS(vocabSRS);
+      saveUnlockedChapters(this.currentUnlocked);
+      savePhraseSRS(this.phraseSRS);
+      saveVocabSRS(this.vocabSRS);
     } catch (e) {
       console.error("LocalStorage save failed:", e);
-      showToast("Failed to save to local storage", "error");
+      this.showToast("Failed to save to local storage", "error");
     }
   }
 
-  // Count SRS records for a chapter
-  function getSRSCountForChapter(chapterData: ClientChapterData) {
+  private getSRSCountForChapter(chapterData: ClientChapterData) {
     let phraseCount = 0;
     let vocabCount = 0;
 
     chapterData.phrases.forEach((pid: string) => {
-      if (phraseSRS[pid]) phraseCount++;
+      if (this.phraseSRS[pid]) phraseCount++;
     });
 
     chapterData.vocab.forEach((vid: string) => {
-      if (vocabSRS[vid]) vocabCount++;
+      if (this.vocabSRS[vid]) vocabCount++;
     });
 
     return { phrases: phraseCount, vocab: vocabCount };
   }
 
-  // Render completed chapters list
-  function renderCompletedChapters() {
-    loadLocalStorage();
+  private renderCompletedChapters() {
+    this.loadLocalStorage();
 
-    const completedChapters = allChaptersData.filter((ch: ClientChapterData) =>
-      currentUnlocked.includes(ch.id),
+    const completedChapters = this.allChaptersData.filter(
+      (ch: ClientChapterData) => this.currentUnlocked.includes(ch.id),
     );
 
     if (completedChapters.length === 0) {
-      completedList.innerHTML = `
+      this.completedList.innerHTML = `
         <div class="placeholder-msg">
           No chapters are currently marked as completed.
         </div>
@@ -103,9 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    completedList.innerHTML = "";
+    this.completedList.innerHTML = "";
     completedChapters.forEach((chapter: ClientChapterData) => {
-      const srsCounts = getSRSCountForChapter(chapter);
+      const srsCounts = this.getSRSCountForChapter(chapter);
 
       const card = document.createElement("div");
       card.className = "chapter-row";
@@ -126,35 +124,33 @@ document.addEventListener("DOMContentLoaded", () => {
         </button>
       `;
 
-      // Wire up delete event
       card.querySelector(".remove-btn")?.addEventListener("click", () => {
         const chId = chapter.id;
-        confirmMsg.textContent = `Are you sure you want to remove all progress for Chapter ${chapter.number}: "${chapter.title}"? This will mark it incomplete and remove its SRS progress.`;
-        pendingResetAction = () =>
-          removeChapterProgress(chId, chapter.number, chapter.title);
-        openModal();
+        this.confirmMsg.textContent = `Are you sure you want to remove all progress for Chapter ${chapter.number}: "${chapter.title}"? This will mark it incomplete and remove its SRS progress.`;
+        this.pendingResetAction = () =>
+          this.removeChapterProgress(chId, chapter.number, chapter.title);
+        this.openModal();
       });
 
-      completedList.appendChild(card);
+      this.completedList.appendChild(card);
     });
   }
 
-  // Remove single chapter progress
-  function removeChapterProgress(
+  private removeChapterProgress(
     chapterId: string,
     chNum: number,
     chTitle: string,
   ) {
-    const chapter = allChaptersData.find(
+    const chapter = this.allChaptersData.find(
       (ch: ClientChapterData) => ch.id === chapterId,
     );
     const chapterPhrases = chapter?.phrases || [];
     const chapterVocab = chapter?.vocab || [];
 
     const state = {
-      unlockedChapters: currentUnlocked,
-      phraseSrs: phraseSRS,
-      vocabSrs: vocabSRS,
+      unlockedChapters: this.currentUnlocked,
+      phraseSrs: this.phraseSRS,
+      vocabSrs: this.vocabSRS,
     };
 
     const newState = removeChapterProgressState(state, chapterId, {
@@ -162,93 +158,95 @@ document.addEventListener("DOMContentLoaded", () => {
       vocab: chapterVocab,
     });
 
-    currentUnlocked = newState.unlockedChapters;
-    phraseSRS = newState.phraseSrs;
-    vocabSRS = newState.vocabSrs;
+    this.currentUnlocked = newState.unlockedChapters;
+    this.phraseSRS = newState.phraseSrs;
+    this.vocabSRS = newState.vocabSrs;
 
-    saveLocalStorage();
-    renderCompletedChapters();
-    showToast(`Progress removed for Chapter ${chNum}: "${chTitle}"`);
+    this.saveLocalStorage();
+    this.renderCompletedChapters();
+    this.showToast(`Progress removed for Chapter ${chNum}: "${chTitle}"`);
   }
 
-  // Clean incomplete chapters' data
-  function cleanIncompleteData() {
-    loadLocalStorage();
+  private cleanIncompleteData() {
+    this.loadLocalStorage();
 
     const state = {
-      unlockedChapters: currentUnlocked,
-      phraseSrs: phraseSRS,
-      vocabSrs: vocabSRS,
+      unlockedChapters: this.currentUnlocked,
+      phraseSrs: this.phraseSRS,
+      vocabSrs: this.vocabSRS,
     };
 
-    const result = cleanIncompleteProgressState(state, allChaptersData);
+    const result = cleanIncompleteProgressState(state, this.allChaptersData);
 
-    currentUnlocked = result.newState.unlockedChapters;
-    phraseSRS = result.newState.phraseSrs;
-    vocabSRS = result.newState.vocabSrs;
+    this.currentUnlocked = result.newState.unlockedChapters;
+    this.phraseSRS = result.newState.phraseSrs;
+    this.vocabSRS = result.newState.vocabSrs;
 
-    saveLocalStorage();
-    renderCompletedChapters();
+    this.saveLocalStorage();
+    this.renderCompletedChapters();
 
     let msg = `Cleaned up ${result.cleanedPhrasesCount} phrase and ${result.cleanedVocabCount} vocab orphaned records.`;
     if (result.addedPhrasesCount > 0 || result.addedVocabCount > 0) {
       msg += ` Added ${result.addedPhrasesCount} phrase and ${result.addedVocabCount} vocab missing records.`;
     }
-    showToast(msg);
+    this.showToast(msg);
   }
 
-  // Clear all progress data
-  function clearAllProgressData() {
+  private clearAllProgressData() {
     clearAllProgress();
-    currentUnlocked = [];
-    phraseSRS = {};
-    vocabSRS = {};
+    this.currentUnlocked = [];
+    this.phraseSRS = {};
+    this.vocabSRS = {};
 
-    renderCompletedChapters();
-    showToast("All progress data cleared successfully.", "success");
+    this.renderCompletedChapters();
+    this.showToast("All progress data cleared successfully.", "success");
 
     setTimeout(() => {
       window.location.reload();
     }, 1000);
   }
 
-  // Modal helper functions
-  function openModal() {
-    confirmModal.setAttribute("aria-hidden", "false");
-    confirmModal.classList.add("show");
+  private openModal() {
+    this.confirmModal.setAttribute("aria-hidden", "false");
+    this.confirmModal.classList.add("show");
   }
 
-  // Explicitly define closeModal so it can be called cleanly
-  function closeModal() {
-    confirmModal.setAttribute("aria-hidden", "true");
-    confirmModal.classList.remove("show");
-    pendingResetAction = null;
+  private closeModal() {
+    this.confirmModal.setAttribute("aria-hidden", "true");
+    this.confirmModal.classList.remove("show");
+    this.pendingResetAction = null;
   }
 
-  // Event Listeners
-  modalCancelBtn.addEventListener("click", closeModal);
+  private setupEventListeners() {
+    this.modalCancelBtn.addEventListener("click", () => this.closeModal());
 
-  modalConfirmBtn.addEventListener("click", () => {
-    if (pendingResetAction) {
-      pendingResetAction();
-    }
-    closeModal();
+    this.modalConfirmBtn.addEventListener("click", () => {
+      if (this.pendingResetAction) {
+        this.pendingResetAction();
+      }
+      this.closeModal();
+    });
+
+    this.cleanIncompleteBtn.addEventListener("click", () => {
+      this.confirmMsg.textContent =
+        "Are you sure you want to clean up all spaced repetition (SRS) records for chapters that are NOT marked as completed? This will discard your learning progress on those items.";
+      this.pendingResetAction = () => this.cleanIncompleteData();
+      this.openModal();
+    });
+
+    this.clearAllBtn.addEventListener("click", () => {
+      this.confirmMsg.textContent =
+        "CRITICAL: Are you sure you want to delete all Cantonese progress and SRS learning history? This will reset all completed chapters, vocabulary cards, and phrasebook stats. This cannot be undone.";
+      this.pendingResetAction = () => this.clearAllProgressData();
+      this.openModal();
+    });
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    new AdvancedSettingsController().init();
   });
-
-  cleanIncompleteBtn.addEventListener("click", () => {
-    confirmMsg.textContent =
-      "Are you sure you want to clean up all spaced repetition (SRS) records for chapters that are NOT marked as completed? This will discard your learning progress on those items.";
-    pendingResetAction = cleanIncompleteData;
-    openModal();
-  });
-
-  clearAllBtn.addEventListener("click", () => {
-    confirmMsg.textContent =
-      "CRITICAL: Are you sure you want to delete all Cantonese progress and SRS learning history? This will reset all completed chapters, vocabulary cards, and phrasebook stats. This cannot be undone.";
-    pendingResetAction = clearAllProgressData;
-    openModal();
-  });
-
-  // Initial Render
-  renderCompletedChapters();
-});
+} else {
+  new AdvancedSettingsController().init();
+}

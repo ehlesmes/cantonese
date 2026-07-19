@@ -22,6 +22,8 @@ module.exports = tseslint.config(
       "no-debugger": "error",
       "prefer-const": "error",
       complexity: ["error", 12],
+      "max-depth": ["error", 4],
+      "max-nested-callbacks": ["error", 3],
       "import/first": "error",
     },
     plugins: {
@@ -71,6 +73,8 @@ module.exports = tseslint.config(
     rules: {
       "@typescript-eslint/no-unsafe-function-type": "off",
       complexity: "off",
+      "max-depth": "off",
+      "max-nested-callbacks": "off",
     },
   },
 );
