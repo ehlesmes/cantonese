@@ -136,75 +136,93 @@ function speakNativeFallback(text: string, onEndCallback?: () => void) {
 
 let playbackAudio: HTMLAudioElement | null = null;
 
-async function speakText(
-  text: string,
-  hash?: string | null,
-  onEndCallback?: () => void,
-) {
-  // Cancel active native speech
+function cleanupPreviousSpeech() {
   if (window.speechSynthesis) {
     window.speechSynthesis.cancel();
   }
-
-  // Cancel any currently playing offline audio
   if (playbackAudio) {
     playbackAudio.pause();
     playbackAudio.onended = null;
     playbackAudio.onerror = null;
   }
-
-  // Clean up styling on previous active elements
   if (activeBtn) {
     activeBtn.classList.remove("tts-playing");
     activeBtn = null;
   }
+}
 
-  // Fallback to async hashing if hash is not provided synchronously
+function playAudioWithFallback(
+  hash: string,
+  text: string,
+  onEndCallback?: () => void,
+) {
+  if (!playbackAudio) {
+    playbackAudio = new Audio();
+  }
+
+  const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL.slice(0, -1)
+    : import.meta.env.BASE_URL;
+
+  playbackAudio.src = `${baseUrl}/audio/tts/${hash}.mp3`;
+  playbackAudio.currentTime = 0;
+  playbackAudio.playbackRate = 0.85;
+
+  let fallbackTriggered = false;
+  const triggerFallback = () => {
+    if (fallbackTriggered) return;
+    fallbackTriggered = true;
+
+    if (playbackAudio) {
+      playbackAudio.onended = null;
+      playbackAudio.onerror = null;
+    }
+
+    speakNativeFallback(text, onEndCallback);
+  };
+
+  playbackAudio.onended = () => {
+    if (onEndCallback) onEndCallback();
+  };
+
+  playbackAudio.onerror = () => {
+    triggerFallback();
+  };
+
+  playbackAudio.play().catch((err) => {
+    console.warn("Audio play failed, using native fallback:", err);
+    triggerFallback();
+  });
+}
+
+async function speakText(
+  text: string,
+  hash?: string | null,
+  onEndCallback?: () => void,
+) {
+  cleanupPreviousSpeech();
+
   if (!hash) {
     hash = await getHashAsync(text);
   }
 
   if (hash) {
-    if (!playbackAudio) {
-      playbackAudio = new Audio();
-    }
-
-    const baseUrl = import.meta.env.BASE_URL.endsWith("/")
-      ? import.meta.env.BASE_URL.slice(0, -1)
-      : import.meta.env.BASE_URL;
-
-    playbackAudio.src = `${baseUrl}/audio/tts/${hash}.mp3`;
-    playbackAudio.currentTime = 0;
-    playbackAudio.playbackRate = 0.85;
-
-    let fallbackTriggered = false;
-    const triggerFallback = () => {
-      if (fallbackTriggered) return;
-      fallbackTriggered = true;
-
-      if (playbackAudio) {
-        playbackAudio.onended = null;
-        playbackAudio.onerror = null;
-      }
-
-      speakNativeFallback(text, onEndCallback);
-    };
-
-    playbackAudio.onended = () => {
-      if (onEndCallback) onEndCallback();
-    };
-
-    playbackAudio.onerror = () => {
-      triggerFallback();
-    };
-
-    playbackAudio.play().catch((err) => {
-      console.warn("Audio play failed, using native fallback:", err);
-      triggerFallback();
-    });
+    playAudioWithFallback(hash, text, onEndCallback);
   } else {
     speakNativeFallback(text, onEndCallback);
   }
+}
+
+function getTargetElementFromTtsBtn(ttsBtn: HTMLElement): HTMLElement | null {
+  const exampleCard = ttsBtn.closest(".cantonese-example-card");
+  if (exampleCard) {
+    return exampleCard.querySelector(".cantonese-sentence") as HTMLElement;
+  }
+  const dialogueTurn = ttsBtn.closest(".dialogue-turn");
+  if (dialogueTurn) {
+    return dialogueTurn.querySelector(".dialogue-cantonese") as HTMLElement;
+  }
+  return null;
 }
 
 // Event delegation for TTS clicks
@@ -229,7 +247,6 @@ function handleTooltipEvent(e: Event) {
   const vocabTerm = target.closest(".vocab-term") as HTMLElement;
   if (vocabTerm) {
     adjustTooltipPosition(vocabTerm);
-
     const text = getCleanCantoneseText(vocabTerm);
     const hash = vocabTerm.dataset.audioHash;
     preloadAudio(text, hash);
@@ -240,16 +257,7 @@ function handleTtsButtonHover(e: Event) {
   const target = e.target as HTMLElement;
   const ttsBtn = target.closest(".tts-btn") as HTMLElement;
   if (ttsBtn) {
-    const exampleCard = ttsBtn.closest(".cantonese-example-card");
-    const dialogueTurn = ttsBtn.closest(".dialogue-turn");
-
-    let targetEl: HTMLElement | null = null;
-    if (exampleCard) {
-      targetEl = exampleCard.querySelector(".cantonese-sentence");
-    } else if (dialogueTurn) {
-      targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
-    }
-
+    const targetEl = getTargetElementFromTtsBtn(ttsBtn);
     if (targetEl) {
       const text = getCleanCantoneseText(targetEl);
       const hash = ttsBtn.dataset.audioHash;
@@ -291,16 +299,7 @@ function handleTtsButtonClick(e: Event) {
   if (ttsBtn) {
     e.stopPropagation();
 
-    const exampleCard = ttsBtn.closest(".cantonese-example-card");
-    const dialogueTurn = ttsBtn.closest(".dialogue-turn");
-
-    let targetEl: HTMLElement | null = null;
-    if (exampleCard) {
-      targetEl = exampleCard.querySelector(".cantonese-sentence");
-    } else if (dialogueTurn) {
-      targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
-    }
-
+    const targetEl = getTargetElementFromTtsBtn(ttsBtn);
     if (targetEl) {
       const text = getCleanCantoneseText(targetEl);
       const hash = ttsBtn.dataset.audioHash;
@@ -352,16 +351,7 @@ function setupVisibilityPreloader() {
           const ttsBtn = entry.target as HTMLElement;
           observer.unobserve(ttsBtn);
 
-          const exampleCard = ttsBtn.closest(".cantonese-example-card");
-          const dialogueTurn = ttsBtn.closest(".dialogue-turn");
-
-          let targetEl: HTMLElement | null = null;
-          if (exampleCard) {
-            targetEl = exampleCard.querySelector(".cantonese-sentence");
-          } else if (dialogueTurn) {
-            targetEl = dialogueTurn.querySelector(".dialogue-cantonese");
-          }
-
+          const targetEl = getTargetElementFromTtsBtn(ttsBtn);
           if (targetEl) {
             const text = getCleanCantoneseText(targetEl);
             const hash = ttsBtn.dataset.audioHash;
@@ -374,6 +364,35 @@ function setupVisibilityPreloader() {
   );
 
   document.querySelectorAll(".tts-btn").forEach((btn) => observer.observe(btn));
+}
+
+async function fetchVersionAndCheck(
+  currentVersion: string,
+  updateIndicator: HTMLElement | null,
+) {
+  if (
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1"
+  ) {
+    return;
+  }
+  if (currentVersion === "development") return;
+
+  try {
+    const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+      ? import.meta.env.BASE_URL.slice(0, -1)
+      : import.meta.env.BASE_URL;
+
+    const response = await fetch(`${baseUrl}/version.json?t=${Date.now()}`);
+    if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+    const data = (await response.json()) as { version?: string };
+
+    if (data?.version && data.version !== currentVersion) {
+      if (updateIndicator) updateIndicator.style.display = "inline-flex";
+    }
+  } catch (err) {
+    console.warn("Failed to check version:", err);
+  }
 }
 
 function initVersionCheck() {
@@ -392,31 +411,13 @@ function initVersionCheck() {
   }
 
   async function checkVersion() {
-    if (
-      window.location.hostname === "localhost" ||
-      window.location.hostname === "127.0.0.1"
-    )
-      return;
-    if (currentVersion === "development" || updateChecking) return;
-
+    if (updateChecking) return;
     updateChecking = true;
-    try {
-      const baseUrl = import.meta.env.BASE_URL.endsWith("/")
-        ? import.meta.env.BASE_URL.slice(0, -1)
-        : import.meta.env.BASE_URL;
-
-      const response = await fetch(`${baseUrl}/version.json?t=${Date.now()}`);
-      if (!response.ok) throw new Error(`HTTP error ${response.status}`);
-      const data = (await response.json()) as { version?: string };
-
-      if (data && data.version && data.version !== currentVersion) {
-        if (updateIndicator) updateIndicator.style.display = "inline-flex";
-      }
-    } catch (err) {
-      console.warn("Failed to check version:", err);
-    } finally {
-      updateChecking = false;
-    }
+    await fetchVersionAndCheck(
+      currentVersion || "development",
+      updateIndicator,
+    );
+    updateChecking = false;
   }
 
   setTimeout(checkVersion, 5000);

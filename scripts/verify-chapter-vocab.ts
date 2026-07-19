@@ -101,6 +101,80 @@ export function runVerification({
   return { errors: allErrors, warnings: allWarnings, passedCount: totalPassed };
 }
 
+function printErrors(errors: Record<string, VerificationIssue[]>): number {
+  let totalErrors = 0;
+  const errorFiles = Object.keys(errors);
+  if (errorFiles.length > 0) {
+    for (const file of errorFiles) {
+      const fileErrors = errors[file] || [];
+      totalErrors += fileErrors.length;
+      console.error(
+        `${colors.red}${colors.bold}✗ ${file}: Found ${fileErrors.length} unregistered vocabulary error(s):${colors.reset}`,
+      );
+      for (const err of fileErrors) {
+        console.error(
+          `  ${colors.red}•${colors.reset} ${colors.bold}${err.term}${colors.reset}\n    ${err.message}\n    ${colors.dim}${err.locations}${colors.reset}\n`,
+        );
+      }
+    }
+  }
+  return totalErrors;
+}
+
+function printWarnings(warnings: Record<string, VerificationIssue[]>): number {
+  let totalWarnings = 0;
+  const warningFiles = Object.keys(warnings);
+  if (warningFiles.length > 0) {
+    for (const file of warningFiles) {
+      const fileWarnings = warnings[file] || [];
+      totalWarnings += fileWarnings.length;
+      console.error(
+        `${colors.yellow}${colors.bold}⚠ ${file}: Found ${fileWarnings.length} translation divergence warning(s):${colors.reset}`,
+      );
+      for (const warn of fileWarnings) {
+        console.error(
+          `  ${colors.yellow}•${colors.reset} ${colors.bold}${warn.term}${colors.reset}\n    ${warn.message}\n    ${colors.dim}${warn.locations}${colors.reset}\n`,
+        );
+      }
+    }
+  }
+  return totalWarnings;
+}
+
+function handleResults(
+  result: {
+    errors: Record<string, VerificationIssue[]>;
+    warnings: Record<string, VerificationIssue[]>;
+    passedCount: number;
+  },
+  targetArg: string | undefined,
+) {
+  const { errors, warnings, passedCount } = result;
+
+  const totalErrors = printErrors(errors);
+  const totalWarnings = printWarnings(warnings);
+
+  if (totalErrors > 0 || totalWarnings > 0) {
+    console.log(
+      `${colors.bold}Summary:${colors.reset} Passed: ${passedCount}, Errors: ${totalErrors}, Warnings: ${totalWarnings}\n`,
+    );
+
+    if (totalErrors > 0) {
+      process.exit(1);
+    }
+  } else {
+    if (targetArg) {
+      console.log(
+        `${colors.green}${colors.bold}✓ All ${passedCount} annotated vocabulary terms perfectly match the master local dictionary!${colors.reset}\n`,
+      );
+    } else {
+      console.log(
+        `${colors.green}${colors.bold}✓ All ${passedCount} annotated vocabulary terms across all chapters perfectly match the master local dictionary!${colors.reset}\n`,
+      );
+    }
+  }
+}
+
 export function main() {
   const targetArg = process.argv[2];
   const projectRoot = path.resolve(__dirname, "..");
@@ -130,64 +204,7 @@ export function main() {
     process.exit(1);
   }
 
-  const { errors, warnings, passedCount } = result;
-
-  const errorFiles = Object.keys(errors);
-  const warningFiles = Object.keys(warnings);
-
-  let totalErrors = 0;
-  let totalWarnings = 0;
-
-  if (errorFiles.length > 0 || warningFiles.length > 0) {
-    if (errorFiles.length > 0) {
-      for (const file of errorFiles) {
-        const fileErrors = errors[file] || [];
-        totalErrors += fileErrors.length;
-        console.error(
-          `${colors.red}${colors.bold}✗ ${file}: Found ${fileErrors.length} unregistered vocabulary error(s):${colors.reset}`,
-        );
-        for (const err of fileErrors) {
-          console.error(
-            `  ${colors.red}•${colors.reset} ${colors.bold}${err.term}${colors.reset}\n    ${err.message}\n    ${colors.dim}${err.locations}${colors.reset}\n`,
-          );
-        }
-      }
-    }
-
-    if (warningFiles.length > 0) {
-      for (const file of warningFiles) {
-        const fileWarnings = warnings[file] || [];
-        totalWarnings += fileWarnings.length;
-        console.error(
-          `${colors.yellow}${colors.bold}⚠ ${file}: Found ${fileWarnings.length} translation divergence warning(s):${colors.reset}`,
-        );
-        for (const warn of fileWarnings) {
-          console.error(
-            `  ${colors.yellow}•${colors.reset} ${colors.bold}${warn.term}${colors.reset}\n    ${warn.message}\n    ${colors.dim}${warn.locations}${colors.reset}\n`,
-          );
-        }
-      }
-    }
-
-    console.log(
-      `${colors.bold}Summary:${colors.reset} Passed: ${passedCount}, Errors: ${totalErrors}, Warnings: ${totalWarnings}\n`,
-    );
-
-    if (totalErrors > 0) {
-      process.exit(1);
-    }
-  } else {
-    if (targetArg) {
-      console.log(
-        `${colors.green}${colors.bold}✓ All ${passedCount} annotated vocabulary terms perfectly match the master local dictionary!${colors.reset}\n`,
-      );
-    } else {
-      console.log(
-        `${colors.green}${colors.bold}✓ All ${passedCount} annotated vocabulary terms across all chapters perfectly match the master local dictionary!${colors.reset}\n`,
-      );
-    }
-  }
-
+  handleResults(result, targetArg);
   process.exit(0);
 }
 

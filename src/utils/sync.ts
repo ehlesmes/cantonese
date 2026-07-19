@@ -94,46 +94,49 @@ async function decompressData(bytes: Uint8Array): Promise<string> {
   throw new Error("DecompressionStream is not supported by this browser");
 }
 
+function compactSrsMap(
+  srsMap: SrsStateMap | undefined,
+): Record<string, [number, number]> {
+  const compacted: Record<string, [number, number]> = {};
+  const keys = Object.keys(srsMap || {});
+  for (let i = 0; i < keys.length; i++) {
+    const id = keys[i]!;
+    const item = srsMap![id];
+    if (typeof item?.level === "number") {
+      compacted[id] = [
+        item.level,
+        item.lastReviewed ? Math.floor(item.lastReviewed / 1000) : 0,
+      ];
+    }
+  }
+  return compacted;
+}
+
+function decodeBase64UrlBytes(cleanStr: string): Uint8Array {
+  const uint8Const = Uint8Array as unknown as ExtendedUint8ArrayConstructor;
+  if (typeof uint8Const.fromBase64 === "function") {
+    try {
+      return uint8Const.fromBase64(cleanStr, {
+        alphabet: "base64url",
+        lastChunkHandling: "loose",
+      });
+    } catch {
+      // Fallback
+    }
+  }
+  return base64UrlToBytes(cleanStr);
+}
+
 /**
  * Compacts and serializes progress state into a URL-safe Base64 string (Gzipped)
  */
 export async function serializeState(state: LocalState): Promise<string> {
   const compacted: CompactSyncPayload = {
     [SHORT_KEYS.chapters]: state.chapters,
-    [SHORT_KEYS.srs]: {},
-    [SHORT_KEYS.vocab]: {},
+    [SHORT_KEYS.srs]: compactSrsMap(state.srs),
+    [SHORT_KEYS.vocab]: compactSrsMap(state.vocab),
     [SHORT_KEYS.timestamp]: Date.now(),
   };
-
-  // Compact srs: Map { level, lastReviewed } to [level, Math.floor(lastReviewed/1000)]
-  const srsCompacted: Record<string, [number, number]> = {};
-  const srsKeys = Object.keys(state.srs || {});
-  for (let i = 0; i < srsKeys.length; i++) {
-    const id = srsKeys[i]!;
-    const item = state.srs[id];
-    if (typeof item?.level === "number") {
-      srsCompacted[id] = [
-        item.level,
-        item.lastReviewed ? Math.floor(item.lastReviewed / 1000) : 0,
-      ];
-    }
-  }
-  compacted[SHORT_KEYS.srs] = srsCompacted;
-
-  // Compact vocab
-  const vocabCompacted: Record<string, [number, number]> = {};
-  const vocabKeys = Object.keys(state.vocab || {});
-  for (let i = 0; i < vocabKeys.length; i++) {
-    const id = vocabKeys[i]!;
-    const item = state.vocab[id];
-    if (typeof item?.level === "number") {
-      vocabCompacted[id] = [
-        item.level,
-        item.lastReviewed ? Math.floor(item.lastReviewed / 1000) : 0,
-      ];
-    }
-  }
-  compacted[SHORT_KEYS.vocab] = vocabCompacted;
 
   const jsonStr = JSON.stringify(compacted);
   let bytes: Uint8Array;
@@ -208,24 +211,7 @@ export async function deserializeState(
       .replace(/\+/g, "-")
       .replace(/\//g, "_");
 
-    let decodedBytes: Uint8Array | undefined;
-    const uint8Const = Uint8Array as unknown as ExtendedUint8ArrayConstructor;
-
-    if (typeof uint8Const.fromBase64 === "function") {
-      try {
-        decodedBytes = uint8Const.fromBase64(cleanStr, {
-          alphabet: "base64url",
-          lastChunkHandling: "loose",
-        });
-      } catch {
-        // Fallback
-      }
-    }
-
-    if (!decodedBytes) {
-      decodedBytes = base64UrlToBytes(cleanStr);
-    }
-
+    const decodedBytes = decodeBase64UrlBytes(cleanStr);
     const rawStr = await decompressPayload(decodedBytes);
     const compacted = JSON.parse(rawStr) as unknown;
 

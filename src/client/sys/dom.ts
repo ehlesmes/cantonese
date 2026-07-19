@@ -9,17 +9,7 @@ export interface ElementProps {
 
 export type ElementChild = Node | string | number | null | undefined;
 
-/**
- * Pure DOM utilities for declarative element construction.
- */
-export function el(
-  tag: string,
-  props: ElementProps = {},
-  children: ElementChild[] = [],
-): HTMLElement | SVGElement {
-  let element: HTMLElement | SVGElement;
-
-  // SVG tags need namespace to render properly in HTML
+function createElementByTag(tag: string): HTMLElement | SVGElement {
   if (
     tag === "svg" ||
     tag === "polyline" ||
@@ -29,14 +19,40 @@ export function el(
     tag === "rect" ||
     tag === "g"
   ) {
-    element = document.createElementNS(
+    return document.createElementNS(
       "http://www.w3.org/2000/svg",
       tag,
     ) as SVGElement;
-  } else {
-    element = document.createElement(tag);
   }
+  return document.createElement(tag);
+}
 
+function applyClassName(element: HTMLElement | SVGElement, v: unknown) {
+  if (element instanceof SVGElement) {
+    element.setAttribute("class", String(v));
+  } else {
+    element.className = v as string;
+  }
+}
+
+function applyStyle(element: HTMLElement | SVGElement, v: unknown) {
+  if (typeof v === "string") {
+    element.style.cssText = v;
+  } else {
+    Object.assign(element.style, v as object);
+  }
+}
+
+function applyDataset(element: HTMLElement | SVGElement, v: unknown) {
+  const htmlEl = element as HTMLElement;
+  for (const [dataKey, dataVal] of Object.entries(
+    v as Record<string, string>,
+  )) {
+    htmlEl.dataset[dataKey] = dataVal;
+  }
+}
+
+function applyProps(element: HTMLElement | SVGElement, props: ElementProps) {
   for (const [k, v] of Object.entries(props)) {
     if (k.startsWith("on") && typeof v === "function") {
       element.addEventListener(
@@ -44,24 +60,11 @@ export function el(
         v as EventListenerOrEventListenerObject,
       );
     } else if (k === "className") {
-      if (element instanceof SVGElement) {
-        element.setAttribute("class", String(v));
-      } else {
-        element.className = v as string;
-      }
+      applyClassName(element, v);
     } else if (k === "style") {
-      if (typeof v === "string") {
-        element.style.cssText = v;
-      } else {
-        Object.assign(element.style, v as object);
-      }
+      applyStyle(element, v);
     } else if (k === "dataset") {
-      const htmlEl = element as HTMLElement;
-      for (const [dataKey, dataVal] of Object.entries(
-        v as Record<string, string>,
-      )) {
-        htmlEl.dataset[dataKey] = dataVal;
-      }
+      applyDataset(element, v);
     } else if (k === "innerHTML") {
       element.innerHTML = v as string;
     } else if (k === "textContent") {
@@ -72,7 +75,12 @@ export function el(
       }
     }
   }
+}
 
+function appendChildren(
+  element: HTMLElement | SVGElement,
+  children: ElementChild[],
+) {
   for (const child of children) {
     if (child == null) continue;
     if (typeof child === "string" || typeof child === "number") {
@@ -81,7 +89,19 @@ export function el(
       element.appendChild(child);
     }
   }
+}
 
+/**
+ * Pure DOM utilities for declarative element construction.
+ */
+export function el(
+  tag: string,
+  props: ElementProps = {},
+  children: ElementChild[] = [],
+): HTMLElement | SVGElement {
+  const element = createElementByTag(tag);
+  applyProps(element, props);
+  appendChildren(element, children);
   return element;
 }
 

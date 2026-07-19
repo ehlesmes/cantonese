@@ -1,7 +1,11 @@
 import * as crypto from "crypto";
 import * as parser from "./parser.js";
 import type { DictionaryEntry } from "./register-utils.js";
-import type { SemanticUnit, RawParsedChapter } from "../../src/types/index.js";
+import type {
+  SemanticUnit,
+  RawParsedChapter,
+  ParsedBlock,
+} from "../../src/types/index.js";
 
 export interface VocabTrackingItem {
   character: string;
@@ -57,6 +61,65 @@ export function generateHash(char: string): string {
   return crypto.createHash("sha256").update(char).digest("hex").slice(0, 16);
 }
 
+function extractUnitsFromBlock(block: ParsedBlock): SemanticUnit[] {
+  let units: SemanticUnit[] = [];
+
+  if (block.type === "prose") {
+    units = parser.extractInlineUnits(block.content);
+  } else if (block.type === "cantonese" || block.type === "dialog") {
+    units = parser.extractBlockUnits(block.content);
+  } else if (block.type === "exercise") {
+    let exerciseData: Record<string, unknown> | null = null;
+    try {
+      exerciseData = parser.parseYAML(block.content) as Record<string, unknown>;
+    } catch {
+      return units;
+    }
+    const fields = ["question", "answer", "explanation"];
+    for (const field of fields) {
+      if (exerciseData && exerciseData[field]) {
+        units.push(...parser.extractBlockUnits(String(exerciseData[field])));
+      }
+    }
+  }
+
+  return units;
+}
+
+function updateVocabMap(
+  vocabMap: Record<string, VocabTrackingItem>,
+  unit: SemanticUnit,
+  chapter: ChapterInput,
+  dictionary: DictionaryEntry[],
+): void {
+  const char = unit.characters.trim();
+  const jyutping = unit.jyutping.trim().toLowerCase();
+  const translation = unit.translation;
+
+  const primaryJyutping = resolvePrimaryJyutping(char, jyutping, dictionary);
+  const key = `${char}_${primaryJyutping}`;
+
+  if (!vocabMap[key]) {
+    vocabMap[key] = {
+      character: char,
+      jyutping: primaryJyutping,
+      translation: translation,
+      hash: generateHash(char),
+      firstIntroducedIn:
+        typeof chapter.chapterData.frontmatter?.id === "string"
+          ? chapter.chapterData.frontmatter.id
+          : chapter.curriculumId,
+      occurrences: 1,
+    };
+  } else {
+    vocabMap[key].occurrences++;
+    vocabMap[key].translation = mergeTranslations(
+      vocabMap[key].translation,
+      translation,
+    );
+  }
+}
+
 export function compileVocabularyMap(
   chapters: ChapterInput[],
   dictionary: DictionaryEntry[],
@@ -65,63 +128,10 @@ export function compileVocabularyMap(
 
   for (const chapter of chapters) {
     for (const block of chapter.chapterData.blocks) {
-      let units: SemanticUnit[] = [];
-
-      if (block.type === "prose") {
-        units = parser.extractInlineUnits(block.content);
-      } else if (block.type === "cantonese" || block.type === "dialog") {
-        units = parser.extractBlockUnits(block.content);
-      } else if (block.type === "exercise") {
-        let exerciseData: Record<string, unknown> | null = null;
-        try {
-          exerciseData = parser.parseYAML(block.content) as Record<
-            string,
-            unknown
-          >;
-        } catch {
-          continue;
-        }
-        const fields = ["question", "answer", "explanation"];
-        for (const field of fields) {
-          if (exerciseData && exerciseData[field]) {
-            units.push(
-              ...parser.extractBlockUnits(String(exerciseData[field])),
-            );
-          }
-        }
-      }
+      const units = extractUnitsFromBlock(block);
 
       for (const unit of units) {
-        const char = unit.characters.trim();
-        const jyutping = unit.jyutping.trim().toLowerCase();
-        const translation = unit.translation;
-
-        const primaryJyutping = resolvePrimaryJyutping(
-          char,
-          jyutping,
-          dictionary,
-        );
-        const key = `${char}_${primaryJyutping}`;
-
-        if (!vocabMap[key]) {
-          vocabMap[key] = {
-            character: char,
-            jyutping: primaryJyutping,
-            translation: translation,
-            hash: generateHash(char),
-            firstIntroducedIn:
-              typeof chapter.chapterData.frontmatter?.id === "string"
-                ? chapter.chapterData.frontmatter.id
-                : chapter.curriculumId,
-            occurrences: 1,
-          };
-        } else {
-          vocabMap[key].occurrences++;
-          vocabMap[key].translation = mergeTranslations(
-            vocabMap[key].translation,
-            translation,
-          );
-        }
+        updateVocabMap(vocabMap, unit, chapter, dictionary);
       }
     }
   }

@@ -38,9 +38,10 @@ ${colors.bold}Examples:${colors.reset}
 `);
 }
 
-function main() {
-  const args = process.argv.slice(2);
-
+function parseBatchEntries(args: string[]): {
+  batchEntries: RawEntry[];
+  isBatch: boolean;
+} {
   let batchEntries: RawEntry[] = [];
   let isBatch = false;
 
@@ -58,9 +59,7 @@ function main() {
     }
     try {
       batchEntries = JSON.parse(jsonStr) as RawEntry[];
-      if (!Array.isArray(batchEntries)) {
-        batchEntries = [batchEntries];
-      }
+      if (!Array.isArray(batchEntries)) batchEntries = [batchEntries];
     } catch (err: unknown) {
       console.error(
         `${colors.red}${colors.bold}ERROR: Failed to parse --json string:${colors.reset} ${(err as Error).message}`,
@@ -86,9 +85,7 @@ function main() {
     try {
       const content = fs.readFileSync(resolvedPath, "utf8");
       batchEntries = JSON.parse(content) as RawEntry[];
-      if (!Array.isArray(batchEntries)) {
-        batchEntries = [batchEntries];
-      }
+      if (!Array.isArray(batchEntries)) batchEntries = [batchEntries];
     } catch (err: unknown) {
       console.error(
         `${colors.red}${colors.bold}ERROR: Failed to parse JSON file at "${resolvedPath}":${colors.reset} ${(err as Error).message}`,
@@ -96,7 +93,6 @@ function main() {
       process.exit(1);
     }
   } else {
-    // Positional parameters
     if (args.length < 4) {
       showUsage();
       process.exit(1);
@@ -113,16 +109,10 @@ function main() {
     ];
   }
 
-  if (batchEntries.length === 0) {
-    console.error(
-      `${colors.red}${colors.bold}ERROR: The batch list is empty.${colors.reset}`,
-    );
-    process.exit(1);
-  }
+  return { batchEntries, isBatch };
+}
 
-  const dictPath =
-    process.env.DICT_PATH || path.join(__dirname, "../content/dictionary.json");
-
+function loadDictionary(dictPath: string): DictionaryEntry[] {
   if (!fs.existsSync(dictPath)) {
     console.error(
       `${colors.red}${colors.bold}ERROR: Dictionary database not found at "${dictPath}"${colors.reset}`,
@@ -130,18 +120,21 @@ function main() {
     process.exit(1);
   }
 
-  let dictionary;
   try {
-    dictionary = JSON.parse(
-      fs.readFileSync(dictPath, "utf8"),
-    ) as DictionaryEntry[];
+    return JSON.parse(fs.readFileSync(dictPath, "utf8")) as DictionaryEntry[];
   } catch (err: unknown) {
     console.error(
       `${colors.red}${colors.bold}ERROR: Failed to parse dictionary:${colors.reset} ${(err as Error).message}`,
     );
     process.exit(1);
   }
+}
 
+function processEntries(
+  batchEntries: RawEntry[],
+  dictionary: DictionaryEntry[],
+  isBatch: boolean,
+) {
   const errors = [];
   const processedEntries = [];
   const incomingKeys = new Set<string>();
@@ -175,14 +168,14 @@ function main() {
     process.exit(1);
   }
 
-  // Add and sort dictionary
-  for (const entry of processedEntries) {
-    dictionary.push(entry);
-  }
+  return processedEntries;
+}
 
-  dictionary = sortDictionary(dictionary);
-
-  // Write back
+function writeAndPrintDictionary(
+  dictPath: string,
+  dictionary: DictionaryEntry[],
+  processedEntries: DictionaryEntry[],
+) {
   try {
     fs.writeFileSync(dictPath, JSON.stringify(dictionary, null, 2), "utf8");
     console.log(
@@ -204,6 +197,32 @@ function main() {
     );
     process.exit(1);
   }
+}
+
+function main() {
+  const args = process.argv.slice(2);
+  const { batchEntries, isBatch } = parseBatchEntries(args);
+
+  if (batchEntries.length === 0) {
+    console.error(
+      `${colors.red}${colors.bold}ERROR: The batch list is empty.${colors.reset}`,
+    );
+    process.exit(1);
+  }
+
+  const dictPath =
+    process.env.DICT_PATH || path.join(__dirname, "../content/dictionary.json");
+  let dictionary = loadDictionary(dictPath);
+
+  const processedEntries = processEntries(batchEntries, dictionary, isBatch);
+
+  for (const entry of processedEntries) {
+    dictionary.push(entry);
+  }
+
+  dictionary = sortDictionary(dictionary);
+
+  writeAndPrintDictionary(dictPath, dictionary, processedEntries);
 }
 
 if (require.main === module) {

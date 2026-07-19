@@ -6,159 +6,163 @@ import type {
   SemanticUnit,
 } from "../../src/types";
 
+interface YamlState {
+  result: Record<string, unknown>;
+  currentKey: string;
+  currentBlockValue: string | null;
+  currentBlockIndent: number;
+  arrayKey: string | null;
+  arrayList: Record<string, unknown>[] | null;
+  currentObject: Record<string, unknown> | null;
+}
+
+function parseYamlValue(v: string): unknown {
+  if (
+    (v.startsWith('"') && v.endsWith('"')) ||
+    (v.startsWith("'") && v.endsWith("'"))
+  ) {
+    v = v.slice(1, -1);
+  }
+  return v !== "" && !isNaN(Number(v)) ? parseInt(v, 10) : v;
+}
+
+function processYamlMultilineBlock(
+  state: YamlState,
+  line: string,
+  indent: number,
+): boolean {
+  if (state.currentBlockValue === null) return false;
+
+  if (indent > state.currentBlockIndent) {
+    state.currentBlockValue += line.slice(state.currentBlockIndent + 2) + "\n";
+    return true;
+  } else {
+    const val = state.currentBlockValue.trim();
+    if (state.currentObject) {
+      state.currentObject[state.currentKey] = val;
+    } else {
+      state.result[state.currentKey] = val;
+    }
+    state.currentBlockValue = null;
+    state.currentBlockIndent = 0;
+    state.currentKey = "";
+    return false;
+  }
+}
+
+function parseYamlArrayItem(state: YamlState, trimmed: string) {
+  const itemContent = trimmed === "-" ? "" : trimmed.slice(2).trim();
+
+  if (!state.arrayList) {
+    state.arrayKey = state.currentKey || "chapters";
+    state.arrayList = [];
+    state.result[state.arrayKey] = state.arrayList;
+  }
+
+  state.currentObject = {};
+  state.arrayList.push(state.currentObject);
+
+  const colonIndex = itemContent.indexOf(":");
+  if (colonIndex !== -1) {
+    const k = itemContent.slice(0, colonIndex).trim();
+    const v = itemContent.slice(colonIndex + 1).trim();
+    state.currentObject[k] = parseYamlValue(v);
+  } else {
+    state.arrayList[state.arrayList.length - 1] = parseYamlValue(
+      itemContent,
+    ) as Record<string, unknown>;
+    state.currentObject = null;
+  }
+}
+
+function parseYamlStandardKeyValue(
+  state: YamlState,
+  trimmed: string,
+  indent: number,
+): boolean {
+  const colonIndex = trimmed.indexOf(":");
+  if (colonIndex === -1) return false;
+
+  const k = trimmed.slice(0, colonIndex).trim();
+  const v = trimmed.slice(colonIndex + 1).trim();
+
+  if (v === "|" || v === ">") {
+    state.currentKey = k;
+    state.currentBlockValue = "";
+    state.currentBlockIndent = indent;
+    return true;
+  }
+
+  const parsedVal = parseYamlValue(v);
+
+  if (state.currentObject) {
+    state.currentObject[k] = parsedVal;
+  } else {
+    state.result[k] = parsedVal;
+    state.currentKey = k;
+  }
+  return true;
+}
+
+function flushYamlBlock(state: YamlState) {
+  if (state.currentBlockValue !== null) {
+    const val = state.currentBlockValue.trim();
+    if (state.currentObject) {
+      state.currentObject[state.currentKey] = val;
+    } else {
+      state.result[state.currentKey] = val;
+    }
+  }
+}
+
 /**
  * Parses a standard YAML string into a JavaScript object.
- * Supports flat key-values, integers, single/double quotes,
- * multiline strings using '|', and arrays of objects starting with '-'.
- *
- * @param {string} yamlStr
- * @returns {object}
  */
 function parseYAML(yamlStr: string): Record<string, unknown> {
   const lines = yamlStr.split(/\r?\n/);
-  const result: Record<string, unknown> = {};
-  let currentKey = "";
-  let currentBlockValue: string | null = null;
-  let currentBlockIndent = 0;
-
-  let arrayKey = null;
-  let arrayList: Record<string, unknown>[] | null = null;
-  let currentObject: Record<string, unknown> | null = null;
+  const state: YamlState = {
+    result: {},
+    currentKey: "",
+    currentBlockValue: null,
+    currentBlockIndent: 0,
+    arrayKey: null,
+    arrayList: null,
+    currentObject: null,
+  };
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]!;
 
-    // Skip empty lines unless inside a multiline block
     if (line.trim() === "") {
-      if (currentBlockValue !== null) {
-        currentBlockValue += "\n";
+      if (state.currentBlockValue !== null) {
+        state.currentBlockValue += "\n";
       }
       continue;
     }
 
     const indent = line.search(/\S/);
 
-    // Process ongoing multiline block
-    if (currentBlockValue !== null) {
-      if (indent > currentBlockIndent) {
-        // Keep the content past the block indent indentation
-        currentBlockValue += line.slice(currentBlockIndent + 2) + "\n";
-        continue;
-      } else {
-        // Block ended, save the accumulated string
-        const val = currentBlockValue.trim();
-        if (currentObject) {
-          currentObject[currentKey] = val;
-        } else {
-          result[currentKey] = val;
-        }
-        currentBlockValue = null;
-        currentBlockIndent = 0;
-        currentKey = "";
-      }
-    }
+    if (processYamlMultilineBlock(state, line, indent)) continue;
 
     const trimmed = line.trim();
 
-    // Array item list start: e.g. "- chapter: 0"
     if (trimmed.startsWith("- ") || trimmed === "-") {
-      const itemContent = trimmed === "-" ? "" : trimmed.slice(2).trim();
-
-      if (!arrayList) {
-        arrayKey = currentKey || "chapters";
-        arrayList = [];
-        result[arrayKey] = arrayList;
-      }
-
-      currentObject = {};
-      arrayList.push(currentObject);
-
-      const colonIndex = itemContent.indexOf(":");
-      if (colonIndex !== -1) {
-        const k = itemContent.slice(0, colonIndex).trim();
-        let v = itemContent.slice(colonIndex + 1).trim();
-
-        if (
-          (v.startsWith('"') && v.endsWith('"')) ||
-          (v.startsWith("'") && v.endsWith("'"))
-        ) {
-          v = v.slice(1, -1);
-        }
-
-        const parsedVal = v !== "" && !isNaN(Number(v)) ? parseInt(v, 10) : v;
-        currentObject[k] = parsedVal;
-      } else {
-        let v = itemContent;
-        if (
-          (v.startsWith('"') && v.endsWith('"')) ||
-          (v.startsWith("'") && v.endsWith("'"))
-        ) {
-          v = v.slice(1, -1);
-        }
-        const parsedVal = v !== "" && !isNaN(Number(v)) ? parseInt(v, 10) : v;
-        arrayList[arrayList.length - 1] = parsedVal as unknown as Record<
-          string,
-          unknown
-        >;
-        currentObject = null;
-      }
+      parseYamlArrayItem(state, trimmed);
       continue;
     }
 
-    // Standard key-value parsing
-    const colonIndex = trimmed.indexOf(":");
-    if (colonIndex !== -1) {
-      const k = trimmed.slice(0, colonIndex).trim();
-      let v = trimmed.slice(colonIndex + 1).trim();
-
-      if (v === "|" || v === ">") {
-        currentKey = k;
-        currentBlockValue = "";
-        currentBlockIndent = indent;
-        continue;
-      }
-
-      if (
-        (v.startsWith('"') && v.endsWith('"')) ||
-        (v.startsWith("'") && v.endsWith("'"))
-      ) {
-        v = v.slice(1, -1);
-      }
-
-      const parsedVal = v !== "" && !isNaN(Number(v)) ? parseInt(v, 10) : v;
-
-      if (currentObject) {
-        currentObject[k] = parsedVal;
-      } else {
-        result[k] = parsedVal;
-        currentKey = k; // track in case array items follow
-      }
-    }
+    parseYamlStandardKeyValue(state, trimmed, indent);
   }
 
-  // Flush any lingering multiline block
-  if (currentBlockValue !== null) {
-    const val = currentBlockValue.trim();
-    if (currentObject) {
-      currentObject[currentKey] = val;
-    } else {
-      result[currentKey] = val;
-    }
-  }
-
-  return result;
+  flushYamlBlock(state);
+  return state.result;
 }
 
-/**
- * Parses a chapter markdown file.
- *
- * @param {string} filePath
- * @returns {RawParsedChapter}
- */
-export function parseChapter(filePath: string): RawParsedChapter {
-  const content = fs.readFileSync(filePath, "utf8");
-  const lines = content.split(/\r?\n/);
-
+function extractFrontmatter(lines: string[]): {
+  frontmatterStr: string;
+  bodyStartLine: number;
+  hasFrontmatter: boolean;
+} {
   let frontmatterStr = "";
   let bodyStartLine = 1;
   let hasFrontmatter = false;
@@ -177,16 +181,18 @@ export function parseChapter(filePath: string): RawParsedChapter {
       hasFrontmatter = true;
     }
   }
+  return { frontmatterStr, bodyStartLine, hasFrontmatter };
+}
 
-  const frontmatter = hasFrontmatter ? parseYAML(frontmatterStr) : null;
+function parseChapterBlocks(
+  bodyLines: string[],
+  bodyStartLine: number,
+): ParsedBlock[] {
   const blocks: ParsedBlock[] = [];
-
   let inBlock = false;
   let currentBlockType: ParsedBlock["type"] = "prose";
-  let currentBlockLines = [];
+  let currentBlockLines: string[] = [];
   let currentBlockStartLine = bodyStartLine;
-
-  const bodyLines = hasFrontmatter ? lines.slice(bodyStartLine - 1) : lines;
 
   for (let i = 0; i < bodyLines.length; i++) {
     const lineNum = bodyStartLine + i;
@@ -194,7 +200,6 @@ export function parseChapter(filePath: string): RawParsedChapter {
 
     if (line.startsWith("```")) {
       if (inBlock) {
-        // End code block
         blocks.push({
           type: currentBlockType,
           content: currentBlockLines.join("\n"),
@@ -206,7 +211,6 @@ export function parseChapter(filePath: string): RawParsedChapter {
         currentBlockLines = [];
         currentBlockStartLine = lineNum + 1;
       } else {
-        // Push preceding prose block
         if (currentBlockLines.length > 0) {
           blocks.push({
             type: "prose",
@@ -215,8 +219,6 @@ export function parseChapter(filePath: string): RawParsedChapter {
             endLine: lineNum - 1,
           });
         }
-
-        // Start code block
         inBlock = true;
         const lang = line.slice(3).trim();
         if (lang === "cantonese" || lang === "dialog" || lang === "exercise") {
@@ -232,7 +234,6 @@ export function parseChapter(filePath: string): RawParsedChapter {
     }
   }
 
-  // Flush any lingering multiline block
   if (currentBlockLines.length > 0) {
     blocks.push({
       type: inBlock ? currentBlockType : "prose",
@@ -241,6 +242,24 @@ export function parseChapter(filePath: string): RawParsedChapter {
       endLine: bodyStartLine + bodyLines.length - 1,
     });
   }
+  return blocks;
+}
+
+/**
+ * Parses a chapter markdown file.
+ *
+ * @param {string} filePath
+ * @returns {RawParsedChapter}
+ */
+export function parseChapter(filePath: string): RawParsedChapter {
+  const content = fs.readFileSync(filePath, "utf8");
+  const lines = content.split(/\r?\n/);
+
+  const { frontmatterStr, bodyStartLine, hasFrontmatter } =
+    extractFrontmatter(lines);
+  const frontmatter = hasFrontmatter ? parseYAML(frontmatterStr) : null;
+  const bodyLines = hasFrontmatter ? lines.slice(bodyStartLine - 1) : lines;
+  const blocks = parseChapterBlocks(bodyLines, bodyStartLine);
 
   return {
     frontmatter,

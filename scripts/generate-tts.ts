@@ -118,14 +118,12 @@ async function fetchSpeech(
   return Buffer.from(arrayBuffer);
 }
 
-// 4. Main execution
-async function main() {
-  console.log(
-    `${colors.cyan}${colors.bold}=== Starting TTS Generation Pipeline ===${colors.reset}`,
-  );
+interface TTSArgs {
+  limit: number;
+  maxChapters: number;
+}
 
-  // Parse command-line arguments
-  const args = process.argv.slice(2);
+function parseArgs(args: string[]): TTSArgs {
   let limit = Infinity;
   const limitIdx = args.findIndex((arg) => arg === "--limit" || arg === "-l");
   if (limitIdx !== -1) {
@@ -148,51 +146,20 @@ async function main() {
     }
   }
 
-  // Load the full vocabulary list to match by chapter
-  const vocabPath = path.resolve(projectRoot, "content/vocabulary.json");
-  let vocabList: TtsVocabItem[] = [];
-  if (fs.existsSync(vocabPath)) {
-    vocabList = JSON.parse(
-      fs.readFileSync(vocabPath, "utf8"),
-    ) as TtsVocabItem[];
-  }
+  return { limit, maxChapters };
+}
 
-  // Load curriculum chapters
-  const curriculumPath = path.resolve(projectRoot, "content/curriculum.md");
-  const chapters = parseCurriculum(curriculumPath);
-
-  let chaptersProcessed = 0;
-  const chaptersData: { id: string; file: string; blocks: ParsedBlock[] }[] =
-    [];
-
-  for (const chapter of chapters) {
-    if (chaptersProcessed >= maxChapters) {
-      break;
-    }
-    const filePath = path.resolve(projectRoot, "content", chapter.file);
-    if (!fs.existsSync(filePath)) continue;
-
-    chaptersProcessed++;
-    const { blocks } = parseChapter(filePath);
-    chaptersData.push({
-      id: chapter.id,
-      file: chapter.file,
-      blocks: blocks as ParsedBlock[],
-    });
-  }
-
-  const uniqueList = extractTTSStrings(
-    chaptersData,
-    vocabList,
-    maxChapters === Infinity,
-  );
-
-  // Arguments parsed at start of main()
-
-  console.log(
-    `Found ${colors.bold}${uniqueList.length}${colors.reset} unique Cantonese strings to verify.\n`,
-  );
-
+async function generateAudioForStrings(
+  uniqueList: string[],
+  limit: number,
+  outputDir: string,
+  key: string,
+  region: string,
+): Promise<{
+  skippedCount: number;
+  generatedCount: number;
+  failedCount: number;
+}> {
   let skippedCount = 0;
   let generatedCount = 0;
   let failedCount = 0;
@@ -200,6 +167,7 @@ async function main() {
   for (let i = 0; i < uniqueList.length; i++) {
     const text = uniqueList[i];
     if (text === undefined) continue;
+
     const hash = getHash(text);
     const filename = `${hash}.mp3`;
     const filePath = path.resolve(outputDir, filename);
@@ -224,7 +192,6 @@ async function main() {
       fs.writeFileSync(filePath, audioBuffer);
       generatedCount++;
 
-      // Delay 100ms between calls to stay well within API rate limits
       await delay(100);
     } catch (err: unknown) {
       console.error(
@@ -233,6 +200,61 @@ async function main() {
       failedCount++;
     }
   }
+
+  return { skippedCount, generatedCount, failedCount };
+}
+
+// 4. Main execution
+async function main() {
+  console.log(
+    `${colors.cyan}${colors.bold}=== Starting TTS Generation Pipeline ===${colors.reset}`,
+  );
+
+  const args = process.argv.slice(2);
+  const { limit, maxChapters } = parseArgs(args);
+
+  const vocabPath = path.resolve(projectRoot, "content/vocabulary.json");
+  let vocabList: TtsVocabItem[] = [];
+  if (fs.existsSync(vocabPath)) {
+    vocabList = JSON.parse(
+      fs.readFileSync(vocabPath, "utf8"),
+    ) as TtsVocabItem[];
+  }
+
+  const curriculumPath = path.resolve(projectRoot, "content/curriculum.md");
+  const chapters = parseCurriculum(curriculumPath);
+
+  let chaptersProcessed = 0;
+  const chaptersData: { id: string; file: string; blocks: ParsedBlock[] }[] =
+    [];
+
+  for (const chapter of chapters) {
+    if (chaptersProcessed >= maxChapters) break;
+
+    const filePath = path.resolve(projectRoot, "content", chapter.file);
+    if (!fs.existsSync(filePath)) continue;
+
+    chaptersProcessed++;
+    const { blocks } = parseChapter(filePath);
+    chaptersData.push({
+      id: chapter.id,
+      file: chapter.file,
+      blocks: blocks as ParsedBlock[],
+    });
+  }
+
+  const uniqueList = extractTTSStrings(
+    chaptersData,
+    vocabList,
+    maxChapters === Infinity,
+  );
+
+  console.log(
+    `Found ${colors.bold}${uniqueList.length}${colors.reset} unique Cantonese strings to verify.\n`,
+  );
+
+  const { skippedCount, generatedCount, failedCount } =
+    await generateAudioForStrings(uniqueList, limit, outputDir, key, region);
 
   console.log(
     `\n${colors.green}${colors.bold}=== TTS Pipeline Completed ===${colors.reset}`,

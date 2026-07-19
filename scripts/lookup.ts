@@ -39,16 +39,8 @@ ${colors.bold}Examples:${colors.reset}
 /**
  * Main execution function.
  */
-function main() {
-  const args = process.argv.slice(2);
-
-  if (args.length === 0) {
-    showUsage();
-    process.exit(0);
-  }
-
+function parseQueries(args: string[]): string[] {
   let queries: string[] = [];
-
   if (args[0] === "--json") {
     const jsonStr = args[1];
     if (!jsonStr) {
@@ -71,14 +63,10 @@ function main() {
   } else {
     queries = args.map((q) => q.trim()).filter((q) => q !== "");
   }
+  return queries;
+}
 
-  if (queries.length === 0) {
-    showUsage();
-    process.exit(0);
-  }
-
-  const dictPath = path.join(__dirname, "../content/dictionary.json");
-
+function loadDictionary(dictPath: string): DictionaryEntry[] {
   if (!fs.existsSync(dictPath)) {
     console.error(
       `${colors.red}${colors.bold}ERROR: Local dictionary database not found at "${dictPath}"${colors.reset}`,
@@ -89,17 +77,78 @@ function main() {
     process.exit(1);
   }
 
-  let dictionary: DictionaryEntry[];
   try {
-    dictionary = JSON.parse(
-      fs.readFileSync(dictPath, "utf8"),
-    ) as DictionaryEntry[];
+    return JSON.parse(fs.readFileSync(dictPath, "utf8")) as DictionaryEntry[];
   } catch (err: unknown) {
     console.error(
       `${colors.red}${colors.bold}ERROR: Failed to parse dictionary database:${colors.reset} ${(err as Error).message}`,
     );
     process.exit(1);
   }
+}
+
+function printMatches(
+  query: string,
+  matches: DictionaryEntry[],
+  i: number,
+  total: number,
+) {
+  console.log(
+    `  [${i + 1}/${total}] ${colors.bold}Query:${colors.reset} "${colors.cyan}${query}${colors.reset}"`,
+  );
+
+  if (matches.length === 0) {
+    console.log(
+      `    ${colors.yellow}✗ No matching entries found in the dictionary.${colors.reset}\n`,
+    );
+    return;
+  }
+
+  console.log(
+    `    ${colors.dim}Found ${matches.length} matching ${matches.length === 1 ? "entry" : "entries"}:${colors.reset}\n`,
+  );
+
+  for (const entry of matches) {
+    if (!entry) continue;
+    const typeLabel = entry.type
+      ? `${colors.magenta}${entry.type.charAt(0).toUpperCase() + entry.type.slice(1)}${colors.reset}`
+      : "Word";
+
+    console.log(
+      `      ✨ ${colors.green}${colors.bold}${entry.char}${colors.reset} (${colors.yellow}${entry.jyutping}${colors.reset}) — ${typeLabel}`,
+    );
+    console.log(
+      `         ${colors.bold}• Definition:${colors.reset} ${entry.definition}`,
+    );
+
+    if (entry.notes) {
+      console.log(
+        `         ${colors.bold}• Notes:${colors.reset}      ${colors.dim}${entry.notes}${colors.reset}`,
+      );
+    }
+  }
+}
+
+/**
+ * Main execution function.
+ */
+function main() {
+  const args = process.argv.slice(2);
+
+  if (args.length === 0) {
+    showUsage();
+    process.exit(0);
+  }
+
+  const queries = parseQueries(args);
+
+  if (queries.length === 0) {
+    showUsage();
+    process.exit(0);
+  }
+
+  const dictPath = path.join(__dirname, "../content/dictionary.json");
+  const dictionary = loadDictionary(dictPath);
 
   console.log(
     `\n🔍 ${colors.bold}${colors.cyan}Cantonese Lexicon Lookup${colors.reset}`,
@@ -113,42 +162,7 @@ function main() {
     if (query === "") continue;
 
     const matches = lookupDictionary(dictionary, query);
-
-    console.log(
-      `  [${i + 1}/${queries.length}] ${colors.bold}Query:${colors.reset} "${colors.cyan}${query}${colors.reset}"`,
-    );
-
-    if (matches.length === 0) {
-      console.log(
-        `    ${colors.yellow}✗ No matching entries found in the dictionary.${colors.reset}\n`,
-      );
-      continue;
-    }
-
-    console.log(
-      `    ${colors.dim}Found ${matches.length} matching ${matches.length === 1 ? "entry" : "entries"}:${colors.reset}\n`,
-    );
-
-    for (const entry of matches) {
-      const typeLabel = entry!.type
-        ? `${colors.magenta}${entry!.type.charAt(0).toUpperCase() + entry!.type.slice(1)}${colors.reset}`
-        : "Word";
-
-      console.log(
-        `      ✨ ${colors.green}${colors.bold}${entry.char}${colors.reset} (${colors.yellow}${entry!.jyutping}${colors.reset}) — ${typeLabel}`,
-      );
-      console.log(
-        `         ${colors.bold}• Definition:${colors.reset} ${entry!.definition}`,
-      );
-
-      if (entry!.notes) {
-        console.log(
-          `         ${colors.bold}• Notes:${colors.reset}      ${colors.dim}${entry!.notes}${colors.reset}`,
-        );
-      }
-      if (!entry) continue;
-      if (!entry) continue;
-    }
+    printMatches(query, matches, i, queries.length);
   }
 }
 

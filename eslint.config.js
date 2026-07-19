@@ -20,6 +20,7 @@ module.exports = tseslint.config(
       "no-console": "off",
       "no-debugger": "error",
       "prefer-const": "error",
+      complexity: ["error", 12],
     },
     languageOptions: {
       ecmaVersion: 2022,
@@ -64,6 +65,7 @@ module.exports = tseslint.config(
     files: ["**/*.test.ts", "**/*.spec.ts"],
     rules: {
       "@typescript-eslint/no-unsafe-function-type": "off",
+      complexity: "off",
     },
   },
 );
