@@ -14,7 +14,7 @@ import {
   countMasteredItems,
 } from "../utils/srs-engine.js";
 import { compileAnnotationsClient } from "../utils/dom.js";
-import { el, createChevronIcon } from "./sys/dom.js";
+import { el, createChevronIcon, createPlayIcon } from "./sys/dom.js";
 import { checkPhraseAnswer } from "../utils/text.js";
 import type {
   ClientVocab,
@@ -224,7 +224,56 @@ function renderDashboard() {
 
   renderPoolDirectory();
 }
+function createDirectorySection(
+  title: string,
+  count: number,
+  items: PracticeItem[],
+  currentSrsState: SrsStateMap,
+  onReviewClick: () => void,
+): HTMLElement {
+  const section = el("div", { className: "directory-section" });
 
+  const reviewBtn = el("button", {
+    className: "small-btn",
+    textContent: "Review",
+  });
+  const header = el("div", { className: "directory-group-header" }, [
+    el("div", { className: "header-left" }, [
+      createChevronIcon(),
+      el("span", {
+        className: "group-title",
+        textContent: title,
+      }),
+      el("span", {
+        className: "item-count-badge",
+        textContent: String(count),
+      }),
+    ]),
+    reviewBtn,
+  ]);
+
+  const content = el("div", {
+    className: "directory-group-content review-items-container",
+  });
+  items.forEach((item) => {
+    content.appendChild(createItemCardElement(item, currentSrsState));
+  });
+
+  header.addEventListener("click", () => {
+    section.classList.toggle("collapsed");
+    updateExpandCollapseAllButton();
+  });
+
+  reviewBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    onReviewClick();
+  });
+
+  section.appendChild(header);
+  section.appendChild(content);
+
+  return section as HTMLElement;
+}
 function renderPoolDirectory() {
   const container = getEl("review-items-list-container");
   container.innerHTML = "";
@@ -257,46 +306,13 @@ function renderPoolDirectory() {
   if (groupedResult.type === "chapter") {
     groupedResult.sortedChapterIds.forEach((chId) => {
       const group = groupedResult.grouped[chId]!;
-      const section = el("div", { className: "directory-section" });
-
-      const reviewBtn = el("button", {
-        className: "small-btn",
-        textContent: "Review",
-      });
-      const header = el("div", { className: "directory-group-header" }, [
-        el("div", { className: "header-left" }, [
-          createChevronIcon(),
-          el("span", {
-            className: "group-title",
-            textContent: `Chapter ${group.chapterNumber}: ${group.title}`,
-          }),
-          el("span", {
-            className: "item-count-badge",
-            textContent: String(group.items.length),
-          }),
-        ]),
-        reviewBtn,
-      ]);
-
-      const content = el("div", {
-        className: "directory-group-content review-items-container",
-      });
-      group.items.forEach((item) => {
-        content.appendChild(createItemCardElement(item, currentSrsState));
-      });
-
-      header.addEventListener("click", () => {
-        section.classList.toggle("collapsed");
-        updateExpandCollapseAllButton();
-      });
-
-      reviewBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        startPracticeSession(chId, null);
-      });
-
-      section.appendChild(header);
-      section.appendChild(content);
+      const section = createDirectorySection(
+        `Chapter ${group.chapterNumber}: ${group.title}`,
+        group.items.length,
+        group.items,
+        currentSrsState,
+        () => startPracticeSession(chId, null),
+      );
       container.appendChild(section);
     });
   } else {
@@ -304,46 +320,13 @@ function renderPoolDirectory() {
       const items = groupedResult.grouped[lvl];
       if (!items || items.length === 0) continue;
 
-      const section = el("div", { className: "directory-section" });
-
-      const reviewBtn = el("button", {
-        className: "small-btn",
-        textContent: "Review",
-      });
-      const header = el("div", { className: "directory-group-header" }, [
-        el("div", { className: "header-left" }, [
-          createChevronIcon(),
-          el("span", {
-            className: "group-title",
-            textContent: `SRS Level ${lvl}`,
-          }),
-          el("span", {
-            className: "item-count-badge",
-            textContent: String(items.length),
-          }),
-        ]),
-        reviewBtn,
-      ]);
-
-      const content = el("div", {
-        className: "directory-group-content review-items-container",
-      });
-      items.forEach((item) => {
-        content.appendChild(createItemCardElement(item, currentSrsState));
-      });
-
-      header.addEventListener("click", () => {
-        section.classList.toggle("collapsed");
-        updateExpandCollapseAllButton();
-      });
-
-      reviewBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        startPracticeSession(null, lvl);
-      });
-
-      section.appendChild(header);
-      section.appendChild(content);
+      const section = createDirectorySection(
+        `SRS Level ${lvl}`,
+        items.length,
+        items,
+        currentSrsState,
+        () => startPracticeSession(null, lvl),
+      );
       container.appendChild(section);
     }
   }
@@ -603,59 +586,17 @@ function resetCurrentCard() {
   renderGameplayBoards(indices);
 }
 
-function checkCurrentAnswer() {
-  if (!session) return;
-  const card = session.getCurrentCard();
-  if (!card || card.practiceType !== "phrase") return;
-
-  if (assembledTokenIndices.length !== card.tokens.length) {
-    alert("Please use all tokens to assemble the sentence before checking.");
-    return;
-  }
-
-  const userTokens: string[] = [];
-  for (const idx of assembledTokenIndices) {
-    const token = card.tokens[idx];
-    if (token !== undefined) userTokens.push(token);
-  }
-
-  const isCorrect = checkPhraseAnswer(userTokens, card.tokens);
-
-  getEl("game-check-btn").style.display = "none";
-  getEl("game-reset-btn").style.display = "none";
-
-  const res = session.submitResponse(isCorrect);
-  phraseSrsState[card.id] = res.updatedCardState!;
-  saveState();
-
-  const feedbackPanel = getEl("feedback-panel");
-  feedbackPanel.style.display = "block";
-  feedbackPanel.innerHTML = "";
-
+function createFeedbackAlert(
+  card: ClientExample,
+  isCorrect: boolean,
+  assembledTokenIndices: number[],
+  newSrsLevel: number,
+  onNextClick: () => void,
+): HTMLElement {
   const compiledCantoHtml = compileAnnotationsClient(
     card.cantoneseRaw,
     false,
     card.tokenHashes,
-  );
-
-  const playIcon = el(
-    "svg",
-    {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "0 0 24 24",
-      width: "20",
-      height: "20",
-      fill: "none",
-      stroke: "currentColor",
-      "stroke-width": "2",
-      "stroke-linecap": "round",
-      "stroke-linejoin": "round",
-    },
-    [
-      el("polygon", { points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5" }),
-      el("path", { d: "M15.54 8.46a5 5 0 0 1 0 7.07" }),
-      el("path", { d: "M19.07 4.93a10 10 0 0 1 0 14.14" }),
-    ],
   );
 
   const ttsBtn = el(
@@ -666,7 +607,7 @@ function checkCurrentAnswer() {
       title: "Listen",
       "aria-label": "Listen",
     },
-    [playIcon],
+    [createPlayIcon()],
   );
 
   const nextBtn = el("button", {
@@ -676,7 +617,7 @@ function checkCurrentAnswer() {
       (isCorrect ? "var(--secondary-color)" : "var(--accent-color)") +
       "; color: #ffffff; border-radius: 4px; padding: 0.5rem 1.5rem; cursor: pointer; float: right;",
     textContent: "Next Card →",
-    onClick: () => loadCard(),
+    onClick: onNextClick,
   });
 
   const cardHtml = el("div", { className: "alert-content" }, [
@@ -746,14 +687,56 @@ function checkCurrentAnswer() {
           ? "color: var(--secondary-color);"
           : "color: var(--accent-color);",
         textContent: isCorrect
-          ? `Correct! (SRS Level Up to ${res.updatedCardState?.level ?? 1})`
-          : `Incorrect (SRS Level Down to ${res.updatedCardState?.level ?? 1})`,
+          ? `Correct! (SRS Level Up to ${newSrsLevel})`
+          : `Incorrect (SRS Level Down to ${newSrsLevel})`,
       }),
       cardHtml,
     ],
   );
 
+  return alertBox as HTMLElement;
+}
+
+function checkCurrentAnswer() {
+  if (!session) return;
+  const card = session.getCurrentCard();
+  if (!card || card.practiceType !== "phrase") return;
+
+  if (assembledTokenIndices.length !== card.tokens.length) {
+    alert("Please use all tokens to assemble the sentence before checking.");
+    return;
+  }
+
+  const userTokens: string[] = [];
+  for (const idx of assembledTokenIndices) {
+    const token = card.tokens[idx];
+    if (token !== undefined) userTokens.push(token);
+  }
+
+  const isCorrect = checkPhraseAnswer(userTokens, card.tokens);
+
+  getEl("game-check-btn").style.display = "none";
+  getEl("game-reset-btn").style.display = "none";
+
+  const res = session.submitResponse(isCorrect);
+  phraseSrsState[card.id] = res.updatedCardState!;
+  saveState();
+
+  const feedbackPanel = getEl("feedback-panel");
+  feedbackPanel.style.display = "block";
+  feedbackPanel.innerHTML = "";
+
+  const newLevel = res.updatedCardState?.level ?? 1;
+  const alertBox = createFeedbackAlert(
+    card,
+    isCorrect,
+    assembledTokenIndices,
+    newLevel,
+    () => loadCard(),
+  );
+
   feedbackPanel.appendChild(alertBox);
+  const ttsBtn = alertBox.querySelector(".tts-btn");
 
   if (ttsBtn instanceof HTMLElement) ttsBtn.click();
 }

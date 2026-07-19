@@ -106,3 +106,28 @@ export function createChevronIcon(): HTMLElement | SVGElement {
     [el("polyline", { points: "9 18 15 12 9 6" })],
   );
 }
+
+/**
+ * Reusable play icon SVG element.
+ */
+export function createPlayIcon(): HTMLElement | SVGElement {
+  return el(
+    "svg",
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      width: "20",
+      height: "20",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+    [
+      el("polygon", { points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5" }),
+      el("path", { d: "M15.54 8.46a5 5 0 0 1 0 7.07" }),
+      el("path", { d: "M19.07 4.93a10 10 0 0 1 0 14.14" }),
+    ],
+  );
+}

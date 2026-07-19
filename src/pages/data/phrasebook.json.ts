@@ -55,66 +55,74 @@ interface ExampleItem {
   tokenHashes: Record<string, string>;
 }
 
+function extractExamplesFromBlock(
+  block: { type: string; content: string },
+  chapter: CurriculumChapter,
+  chapterNumber: number,
+): ExampleItem[] {
+  const examples: ExampleItem[] = [];
+
+  if (block.type === "cantonese") {
+    const { cantoneseRaw, translationRaw: english } = parseExampleBlock(
+      block.content,
+    );
+
+    if (cantoneseRaw && english) {
+      examples.push({
+        id: getStablePhraseId(cantoneseRaw),
+        chapter: chapter.id,
+        chapterNumber,
+        chapterTitle: chapter.title,
+        practiceType: "phrase",
+        cantoneseRaw,
+        english,
+        tokens: splitCantoneseTokens(cantoneseRaw),
+        type: "example",
+        audioHash: getAudioHash(cantoneseRaw),
+        tokenHashes: getTokenHashes(cantoneseRaw),
+      });
+    }
+  } else if (block.type === "dialog") {
+    const turns = parseDialogueBlock(block.content);
+    for (const turn of turns) {
+      if (turn.cantonese && turn.english) {
+        examples.push({
+          id: getStablePhraseId(turn.cantonese),
+          chapter: chapter.id,
+          chapterNumber,
+          chapterTitle: chapter.title,
+          practiceType: "phrase",
+          cantoneseRaw: turn.cantonese,
+          english: turn.english,
+          tokens: splitCantoneseTokens(turn.cantonese),
+          type: "dialog",
+          audioHash: getAudioHash(turn.cantonese),
+          tokenHashes: getTokenHashes(turn.cantonese),
+        });
+      }
+    }
+  }
+
+  return examples;
+}
+
 export const GET: APIRoute = async () => {
   const curriculumPath = path.resolve("content/curriculum.md");
-  const chapters = parseCurriculum(curriculumPath);
-  const allExamples: ExampleItem[] = [];
+  const chapters = parseCurriculum(
+    curriculumPath,
+  ) as unknown as CurriculumChapter[];
 
-  (chapters as unknown as CurriculumChapter[]).forEach(
-    (chapter, idx: number) => {
-      const file = chapter.file;
-      const filePath = path.resolve("content", file);
-      const fileExists = fs.existsSync(filePath);
+  const allExamples: ExampleItem[] = chapters.flatMap((chapter, idx) => {
+    const filePath = path.resolve("content", chapter.file);
+    if (!fs.existsSync(filePath)) {
+      return [];
+    }
 
-      if (fileExists) {
-        const { blocks } = parseChapter(filePath);
-
-        for (const block of blocks) {
-          if (block.type === "cantonese") {
-            const { cantoneseRaw, translationRaw: english } = parseExampleBlock(
-              block.content,
-            );
-
-            if (cantoneseRaw && english) {
-              const tokens = splitCantoneseTokens(cantoneseRaw);
-              allExamples.push({
-                id: getStablePhraseId(cantoneseRaw),
-                chapter: chapter.id,
-                chapterNumber: idx,
-                chapterTitle: chapter.title,
-                practiceType: "phrase",
-                cantoneseRaw,
-                english,
-                tokens,
-                type: "example",
-                audioHash: getAudioHash(cantoneseRaw),
-                tokenHashes: getTokenHashes(cantoneseRaw),
-              });
-            }
-          } else if (block.type === "dialog") {
-            const turns = parseDialogueBlock(block.content);
-            for (const turn of turns) {
-              if (turn.cantonese && turn.english) {
-                allExamples.push({
-                  id: getStablePhraseId(turn.cantonese),
-                  chapter: chapter.id,
-                  chapterNumber: idx,
-                  chapterTitle: chapter.title,
-                  practiceType: "phrase",
-                  cantoneseRaw: turn.cantonese,
-                  english: turn.english,
-                  tokens: splitCantoneseTokens(turn.cantonese),
-                  type: "dialog",
-                  audioHash: getAudioHash(turn.cantonese),
-                  tokenHashes: getTokenHashes(turn.cantonese),
-                });
-              }
-            }
-          }
-        }
-      }
-    },
-  );
+    const { blocks } = parseChapter(filePath);
+    return blocks.flatMap((block) =>
+      extractExamplesFromBlock(block, chapter, idx),
+    );
+  });
 
   return new Response(JSON.stringify(allExamples), {
     headers: {

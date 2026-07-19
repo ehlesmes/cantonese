@@ -2,7 +2,7 @@
  * @vitest-environment jsdom
  */
 import { describe, test, expect, vi } from "vitest";
-import { el, createChevronIcon } from "./dom.js";
+import { el, createChevronIcon, createPlayIcon } from "./dom.js";
 
 describe("Sys DOM Utilities Spec", () => {
   test("el() should construct a basic element", () => {
@@ -98,10 +98,18 @@ describe("Sys DOM Utilities Spec", () => {
     }
   });
 
-  test("createChevronIcon() should return an SVG element", () => {
-    const svg = createChevronIcon();
-    expect(svg.tagName.toLowerCase()).toBe("svg");
-    expect(svg.getAttribute("class")).toBe("chevron-icon");
-    expect(svg.querySelector("polyline")).not.toBeNull();
+  test("createChevronIcon() should build a chevron SVG", () => {
+    const icon = createChevronIcon();
+    expect(icon.tagName.toLowerCase()).toBe("svg");
+    expect(icon.getAttribute("viewBox")).toBe("0 0 24 24");
+    expect(icon.classList.contains("chevron-icon")).toBe(true);
+    expect(icon.childNodes.length).toBe(1); // polyline
+  });
+
+  test("createPlayIcon() should build a play SVG", () => {
+    const icon = createPlayIcon();
+    expect(icon.tagName.toLowerCase()).toBe("svg");
+    expect(icon.getAttribute("viewBox")).toBe("0 0 24 24");
+    expect(icon.childNodes.length).toBe(3); // polygon, path, path
   });
 });

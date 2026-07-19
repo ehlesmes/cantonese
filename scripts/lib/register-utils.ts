@@ -211,39 +211,39 @@ export function sortDictionary(
   });
 }
 
+function extractExerciseUnits(content: string): SemanticUnit[] {
+  const exerciseData = parser.parseYAML(content) as Record<string, unknown>;
+  const fields = ["question", "answer", "explanation"];
+  return fields.flatMap((field) => {
+    if (exerciseData[field]) {
+      return parser.extractBlockUnits(String(exerciseData[field]));
+    }
+    return [];
+  });
+}
+
+function extractUnitsFromBlock(block: ParsedBlock): SemanticUnit[] {
+  let rawUnits: SemanticUnit[] = [];
+
+  if (block.type === "prose") {
+    rawUnits = parser.extractInlineUnits(block.content);
+  } else if (block.type === "cantonese" || block.type === "dialog") {
+    rawUnits = parser.extractBlockUnits(block.content);
+  } else if (block.type === "exercise") {
+    rawUnits = extractExerciseUnits(block.content);
+  }
+
+  return rawUnits.map((unit) => ({
+    ...unit,
+    startLine: block.startLine,
+    blockType: block.type,
+  }));
+}
+
 export function extractChapterUnits(chapterData: {
   blocks: ParsedBlock[];
 }): SemanticUnit[] {
-  const chapterUnits: SemanticUnit[] = [];
-  for (const block of chapterData.blocks) {
-    let rawUnits: SemanticUnit[] = [];
-    if (block.type === "prose") {
-      rawUnits = parser.extractInlineUnits(block.content);
-    } else if (block.type === "cantonese" || block.type === "dialog") {
-      rawUnits = parser.extractBlockUnits(block.content);
-    } else if (block.type === "exercise") {
-      const exerciseData = parser.parseYAML(block.content) as Record<
-        string,
-        unknown
-      >;
-      const fields = ["question", "answer", "explanation"];
-      for (const field of fields) {
-        if (exerciseData[field]) {
-          rawUnits.push(
-            ...parser.extractBlockUnits(String(exerciseData[field])),
-          );
-        }
-      }
-    }
-    for (const unit of rawUnits) {
-      chapterUnits.push({
-        ...unit,
-        startLine: block.startLine,
-        blockType: block.type,
-      });
-    }
-  }
-  return chapterUnits;
+  return chapterData.blocks.flatMap(extractUnitsFromBlock);
 }
 
 export function verifyChapterContent(
