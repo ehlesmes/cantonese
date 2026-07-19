@@ -112,4 +112,32 @@ describe("Sys DOM Utilities Spec", () => {
     expect(icon.getAttribute("viewBox")).toBe("0 0 24 24");
     expect(icon.childNodes.length).toBe(3); // polygon, path, path
   });
+
+  test("applyStyle handles null and non-object", () => {
+    // Should not throw
+    const div1 = el("div", { style: null as unknown as string });
+    expect(div1.style.cssText).toBe("");
+
+    const div2 = el("div", { style: 123 as unknown as string });
+    expect(div2.style.cssText).toBe("");
+  });
+
+  test("applyDataset ignores null and undefined entries", () => {
+    // Should safely ignore null dataset and null/undefined values
+    const div = el("div", {
+      dataset: null as unknown as Record<string, string>,
+    });
+    expect(Object.keys(div.dataset).length).toBe(0);
+
+    const div2 = el("div", {
+      dataset: {
+        valid: "yes",
+        invalid1: null as unknown as string,
+        invalid2: undefined as unknown as string,
+      },
+    });
+    expect(div2.dataset.valid).toBe("yes");
+    expect(div2.dataset.invalid1).toBeUndefined();
+    expect(div2.dataset.invalid2).toBeUndefined();
+  });
 });

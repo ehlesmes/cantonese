@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as parser from "./lib/parser";
+import { DictionaryEntryArraySchema } from "../src/utils/schemas";
 import {
   findUnregisteredWords,
   extractChapterUnits,
@@ -56,11 +57,10 @@ function main() {
     process.exit(1);
   }
 
-  let dictionary;
+  let dictionary: DictionaryEntry[];
   try {
-    dictionary = JSON.parse(
-      fs.readFileSync(dictPath, "utf8"),
-    ) as DictionaryEntry[];
+    const rawDict = JSON.parse(fs.readFileSync(dictPath, "utf8")) as unknown;
+    dictionary = DictionaryEntryArraySchema.parse(rawDict) as DictionaryEntry[];
   } catch (err: unknown) {
     console.error(
       `${colors.red}${colors.bold}ERROR: Failed to parse master dictionary:${colors.reset} ${(err as Error).message}`,

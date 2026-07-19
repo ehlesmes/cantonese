@@ -5,6 +5,7 @@ import {
   compileAdvancedChapterData,
   processChapterBlocks,
   calculateNavigation,
+  buildChapterPaths,
 } from "./chapter-utils";
 
 vi.mock("./markdown", () => ({
@@ -138,5 +139,48 @@ describe("chapter-utils Spec", () => {
     const nav4 = calculateNavigation(allChapters, "99");
     expect(nav4.prevChapter).toBeNull();
     expect(nav4.nextChapter).toBeNull();
+  });
+
+  test("buildChapterPaths correctly generates paths for Astro", () => {
+    const entries = [
+      {
+        id: "chap-1",
+        title: "Chapter 1",
+        file: "01.md",
+        chapter: 0,
+        exists: true,
+      },
+      {
+        id: "chap-2",
+        title: "Chapter 2",
+        file: "02.md",
+        chapter: 1,
+        exists: false,
+      },
+      {
+        id: "chap-3",
+        title: "Chapter 3",
+        file: "03.md",
+        chapter: 2,
+        exists: true,
+      },
+    ] as unknown as import("../../scripts/lib/parser").CurriculumIndexEntry[];
+
+    const pathJoin = (p1: string, p2: string) => `${p1}/${p2}`;
+
+    const paths = buildChapterPaths(entries, "/fake/content", pathJoin);
+
+    expect(paths).toHaveLength(2);
+
+    // First existing chapter
+    expect(paths[0]!.params.id).toBe("chap-1");
+    expect(paths[0]!.props.filePath).toBe("/fake/content/01.md");
+    expect(paths[0]!.props.chapterNumber).toBe(0);
+    expect(paths[0]!.props.allChapters).toHaveLength(3);
+
+    // Second existing chapter
+    expect(paths[1]!.params.id).toBe("chap-3");
+    expect(paths[1]!.props.filePath).toBe("/fake/content/03.md");
+    expect(paths[1]!.props.chapterNumber).toBe(2);
   });
 });

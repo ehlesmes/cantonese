@@ -8,34 +8,25 @@ import DialogueBlock from "../../components/DialogueBlock.astro";
 import { processChapterBlocks, calculateNavigation } from "../../utils/chapter-utils.js";
 
 export async function getStaticPaths() {
-  const { parseCurriculum } = await import("../../../scripts/lib/parser");
+  const { parseCurriculum, buildCurriculumIndex } = await import("../../../scripts/lib/parser");
+  const { buildChapterPaths } = await import("../../utils/chapter-utils.js");
   const curriculumPath = path.resolve("content/curriculum.md");
   const curriculumContent = fs.readFileSync(curriculumPath, "utf8");
   const chapters = parseCurriculum(curriculumContent);
 
-  const paths = [];
-  for (let i = 0; i < chapters.length; i++) {
-    const chapter = chapters[i];
-    const file = chapter.file;
-    const filePath = path.resolve("content", file);
-    if (fs.existsSync(filePath)) {
-      const id = chapter.id;
-      paths.push({
-        params: { id },
-        props: {
-          filePath,
-          chapterNumber: i,
-          allChapters: chapters.map((c, index) => ({
-            chapter: index,
-            title: c.title,
-            id: c.id,
-            exists: fs.existsSync(path.resolve("content", c.file))
-          }))
-        }
-      });
+  const contentDir = path.resolve("content");
+  const chapterContents: Record<string, string | null> = {};
+  for (const chapter of chapters) {
+    const filePath = path.join(contentDir, chapter.file);
+    try {
+      chapterContents[chapter.file] = fs.readFileSync(filePath, "utf8");
+    } catch {
+      chapterContents[chapter.file] = null;
     }
   }
-  return paths;
+
+  const entries = buildCurriculumIndex(chapters, chapterContents);
+  return buildChapterPaths(entries, contentDir, path.join);
 }
 
 const { id } = Astro.params;

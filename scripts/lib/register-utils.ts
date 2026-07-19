@@ -256,7 +256,7 @@ export function sortDictionary(
 }
 
 function extractExerciseUnits(content: string): SemanticUnit[] {
-  const exerciseData = parser.parseYAML(content) as Record<string, unknown>;
+  const exerciseData = parser.parseYAML(content);
   const fields = ["question", "answer", "explanation"];
   return fields.flatMap((field) => {
     if (exerciseData[field]) {

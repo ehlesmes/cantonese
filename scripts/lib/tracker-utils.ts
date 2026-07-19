@@ -71,7 +71,7 @@ function extractUnitsFromBlock(block: ParsedBlock): SemanticUnit[] {
   } else if (block.type === "exercise") {
     let exerciseData: Record<string, unknown> | null = null;
     try {
-      exerciseData = parser.parseYAML(block.content) as Record<string, unknown>;
+      exerciseData = parser.parseYAML(block.content);
     } catch {
       return units;
     }

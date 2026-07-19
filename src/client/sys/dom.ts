@@ -31,24 +31,25 @@ function applyClassName(element: HTMLElement | SVGElement, v: unknown) {
   if (element instanceof SVGElement) {
     element.setAttribute("class", String(v));
   } else {
-    element.className = v as string;
+    element.className = String(v);
   }
 }
 
 function applyStyle(element: HTMLElement | SVGElement, v: unknown) {
   if (typeof v === "string") {
     element.style.cssText = v;
-  } else {
-    Object.assign(element.style, v as object);
+  } else if (typeof v === "object" && v !== null) {
+    Object.assign(element.style, v);
   }
 }
 
 function applyDataset(element: HTMLElement | SVGElement, v: unknown) {
+  if (typeof v !== "object" || v === null) return;
   const htmlEl = element as HTMLElement;
-  for (const [dataKey, dataVal] of Object.entries(
-    v as Record<string, string>,
-  )) {
-    htmlEl.dataset[dataKey] = dataVal;
+  for (const [dataKey, dataVal] of Object.entries(v)) {
+    if (dataVal !== undefined && dataVal !== null) {
+      htmlEl.dataset[dataKey] = String(dataVal);
+    }
   }
 }
 
@@ -66,7 +67,7 @@ function applyProps(element: HTMLElement | SVGElement, props: ElementProps) {
     } else if (k === "dataset") {
       applyDataset(element, v);
     } else if (k === "innerHTML") {
-      element.innerHTML = v as string;
+      element.innerHTML = String(v);
     } else if (k === "textContent") {
       element.textContent = String(v);
     } else {

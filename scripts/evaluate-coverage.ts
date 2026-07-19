@@ -1,7 +1,10 @@
 import * as fs from "fs";
 import * as path from "path";
-import { evaluateCoverage, type RefWord } from "./lib/coverage-utils";
-import type { DictionaryEntry } from "./lib/register-utils";
+import { evaluateCoverage } from "./lib/coverage-utils";
+import {
+  DictionaryEntryArraySchema,
+  RefWordArraySchema,
+} from "../src/utils/schemas";
 
 // Premium CLI output styles
 const colors = {
@@ -34,12 +37,12 @@ if (!fs.existsSync(DICT_PATH)) {
   process.exit(1);
 }
 
-const refWords: RefWord[] = JSON.parse(
-  fs.readFileSync(REF_PATH, "utf8"),
-) as RefWord[];
-const dictEntries: DictionaryEntry[] = JSON.parse(
-  fs.readFileSync(DICT_PATH, "utf8"),
-) as DictionaryEntry[];
+const refWords = RefWordArraySchema.parse(
+  JSON.parse(fs.readFileSync(REF_PATH, "utf8")),
+);
+const dictEntries = DictionaryEntryArraySchema.parse(
+  JSON.parse(fs.readFileSync(DICT_PATH, "utf8")),
+);
 
 // Create a lookup set of characters taught in the course
 const taughtChars = new Set<string>(

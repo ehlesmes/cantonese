@@ -4,7 +4,10 @@ import {
   compileMarkdown,
   parseExerciseBlock,
 } from "./markdown";
-import type { CurriculumChapter } from "../../scripts/lib/parser";
+import type {
+  CurriculumChapter,
+  CurriculumIndexEntry,
+} from "../../scripts/lib/parser";
 import type { ParsedBlock, RawParsedChapter } from "../types";
 
 interface VocabItem {
@@ -160,4 +163,49 @@ export function calculateNavigation<T extends ChapterExistence>(
     prevChapter: prevChapter ?? null,
     nextChapter: nextChapter ?? null,
   };
+}
+
+export interface ChapterStaticPath {
+  params: { id: string };
+  props: {
+    filePath: string;
+    chapterNumber: number;
+    allChapters: {
+      chapter: number;
+      title: string;
+      id: string;
+      exists: boolean;
+    }[];
+  };
+}
+
+/**
+ * Builds the static paths array for Astro's getStaticPaths.
+ */
+export function buildChapterPaths(
+  entries: CurriculumIndexEntry[],
+  contentDir: string,
+  pathJoin: (p1: string, p2: string) => string,
+): ChapterStaticPath[] {
+  const allChapters = entries.map((c) => ({
+    chapter: c.chapter,
+    title: c.title,
+    id: c.id,
+    exists: c.exists,
+  }));
+
+  const paths: ChapterStaticPath[] = [];
+  for (const entry of entries) {
+    if (entry.exists) {
+      paths.push({
+        params: { id: entry.id },
+        props: {
+          filePath: pathJoin(contentDir, entry.file),
+          chapterNumber: entry.chapter,
+          allChapters,
+        },
+      });
+    }
+  }
+  return paths;
 }

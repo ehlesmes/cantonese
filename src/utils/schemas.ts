@@ -36,14 +36,35 @@ export const RawExerciseSchema = z
 
 export const DictionaryEntrySchema = z
   .object({
-    id: z.string(),
+    char: z.string(),
+    jyutping: z.string(),
+    definition: z.string(),
+    type: z.string().optional(),
+    notes: z.string().optional(),
+  })
+  .passthrough();
+
+export const DictionaryEntryArraySchema = z.array(DictionaryEntrySchema);
+
+export const RefWordSchema = z
+  .object({
+    char: z.string(),
+    rank: z.number(),
+    jyutping: z.string(),
+    translation: z.string(),
+  })
+  .passthrough();
+
+export const RefWordArraySchema = z.array(RefWordSchema);
+
+export const VocabItemSchema = z
+  .object({
     character: z.string(),
     jyutping: z.string(),
     translation: z.string(),
-    type: z.string().optional(),
-    notes: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    firstIntroducedIn: z.string().optional(),
-    occurrences: z.number().optional(),
+    firstIntroducedIn: z.string(),
+    occurrences: z.array(z.string()).optional(),
   })
   .passthrough();
+
+export const VocabItemArraySchema = z.array(VocabItemSchema);

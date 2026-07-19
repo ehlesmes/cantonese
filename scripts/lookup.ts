@@ -1,5 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
+import { DictionaryEntryArraySchema } from "../src/utils/schemas";
+import { z } from "zod";
 import { lookupDictionary } from "../src/utils/text.js";
 import type { DictionaryEntry } from "../src/utils/text.js";
 
@@ -50,7 +52,7 @@ function parseQueries(args: string[]): string[] {
       process.exit(1);
     }
     try {
-      queries = JSON.parse(jsonStr) as string[];
+      queries = z.array(z.string()).parse(JSON.parse(jsonStr));
       if (!Array.isArray(queries)) {
         throw new Error("Input must be a JSON array of query strings");
       }
@@ -78,7 +80,9 @@ function loadDictionary(dictPath: string): DictionaryEntry[] {
   }
 
   try {
-    return JSON.parse(fs.readFileSync(dictPath, "utf8")) as DictionaryEntry[];
+    return DictionaryEntryArraySchema.parse(
+      JSON.parse(fs.readFileSync(dictPath, "utf8")),
+    ) as DictionaryEntry[];
   } catch (err: unknown) {
     console.error(
       `${colors.red}${colors.bold}ERROR: Failed to parse dictionary database:${colors.reset} ${(err as Error).message}`,
