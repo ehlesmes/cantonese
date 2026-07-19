@@ -1,4 +1,6 @@
 import { marked } from "marked";
+import { RawExerciseSchema } from "./schemas";
+import { z } from "zod";
 import crypto from "node:crypto";
 import type { CompileMarkdownOptions } from "../types";
 
@@ -181,11 +183,7 @@ export interface ParsedExercise {
   explanationHtml: string;
 }
 
-export interface RawExercise {
-  question?: string;
-  answer?: string;
-  explanation?: string;
-}
+export type RawExercise = z.infer<typeof RawExerciseSchema>;
 
 /**
  * Parses an exercise block string and compiles it to HTML.
@@ -196,7 +194,12 @@ export function parseExerciseBlock(
   content: string,
   parseYAML: (str: string) => Record<string, unknown>,
 ): ParsedExercise {
-  const exercise = parseYAML(content) as unknown as RawExercise;
+  let exercise: RawExercise = {};
+  try {
+    exercise = RawExerciseSchema.parse(parseYAML(content));
+  } catch (e) {
+    console.error("Failed to parse exercise block:", e);
+  }
   // Imperative UI manipulation pushed into the functional core
   const displayQuestion = (exercise.question || "").replace(/_{2,}/g, "____");
 

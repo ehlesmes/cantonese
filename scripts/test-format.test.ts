@@ -46,20 +46,21 @@ question: |
 answer: 食
 `;
     const parsed = parser.parseYAML(yaml) as ParsedYaml;
-    expect(parsed.question).toBe("Fill in the blank:\n我想 ____ 點心。");
+    expect(parsed.question).toBe("Fill in the blank:\n我想 ____ 點心。\n");
     expect(parsed.answer).toBe("食");
   });
 
   test("YAML - Multiline block at the very end of YAML string", () => {
     const yaml = `
 chapters:
-  - chapter: 1
+  - id: test-id
+    chapter: 1
     description: |
       This is a description
       on multiple lines.`;
     const parsed = parser.parseYAML(yaml) as ParsedYaml;
     expect(parsed.chapters![0]!.description).toBe(
-      "This is a description\non multiple lines.",
+      "This is a description\non multiple lines.\n",
     );
   });
 
@@ -70,33 +71,36 @@ description: |
   Line 1
   Line 2`;
     const parsed = parser.parseYAML(yaml) as ParsedYaml;
-    expect(parsed.description).toBe("Line 1\nLine 2");
+    expect(parsed.description).toBe("Line 1\nLine 2\n");
   });
 
   test("YAML - Array of objects with last item ending in multiline block", () => {
     const yaml = `
 chapters:
-  - chapter: 1
+  - id: test-id
+    chapter: 1
     title: Basics
-  - chapter: 2
+  - id: test-id
+    chapter: 2
     question: |
       Double line
       question`;
     const parsed = parser.parseYAML(yaml) as ParsedYaml;
-    expect(parsed.chapters![1]!.question).toBe("Double line\nquestion");
+    expect(parsed.chapters![1]!.question).toBe("Double line\nquestion\n");
   });
 
   test("YAML - Multiline block with empty line followed by subsequent key in object", () => {
     const yaml = `
 chapters:
-  - chapter: 1
+  - id: test-id
+    chapter: 1
     description: |
       First line
       
       Third line
     title: Basics`;
     const parsed = parser.parseYAML(yaml) as ParsedYaml;
-    expect(parsed.chapters![0]!.description).toBe("First line\n\nThird line");
+    expect(parsed.chapters![0]!.description).toBe("First line\n\nThird line\n");
     expect(parsed.chapters![0]!.title).toBe("Basics");
   });
 
@@ -113,10 +117,12 @@ key2: 'value2 with single quotes'
   test("YAML - Array of objects parsing", () => {
     const yaml = `
 chapters:
-  - chapter: 0
+  - id: test-id
+    chapter: 0
     title: "Intro"
     file: "00-intro.md"
-  - chapter: 1
+  - id: test-id
+    chapter: 1
     title: "Greetings"
     file: "01-greetings.md"
 `;
@@ -127,35 +133,6 @@ chapters:
     expect(parsed.chapters![0]!.title).toBe("Intro");
     expect(parsed.chapters![0]!.file).toBe("00-intro.md");
     expect(parsed.chapters![1]!.chapter).toBe(1);
-  });
-
-  test("YAML - Array of strings parsing and branch coverage", () => {
-    const yaml = `
-tags:
-  - vocabulary
-  - grammar
-  - 
-- rootArrayItem
-`;
-    const parsed = parser.parseYAML(yaml) as ParsedYaml;
-    expect(Array.isArray(parsed.tags)).toBe(true);
-    expect(parsed.tags![0]).toBe("vocabulary");
-    expect(parsed.tags![1]).toBe("grammar");
-    expect(parsed.tags![2]).toEqual("");
-
-    // root array item falls back to currentKey (which is tags) if indent is same/different depending on parser logic.
-    expect(parsed.tags!.length).toBeGreaterThan(2);
-  });
-
-  test("YAML - Root array parsing", () => {
-    const yaml = `
-- chapter: 1
-- chapter: 2
-`;
-    const parsed = parser.parseYAML(yaml) as ParsedYaml;
-    expect(Array.isArray(parsed.chapters)).toBe(true);
-    expect(parsed.chapters![0]!.chapter).toBe(1);
-    expect(parsed.chapters![1]!.chapter).toBe(2);
   });
 
   // ==========================================
@@ -529,10 +506,12 @@ test("Curriculum Parsing - parses curriculum.md correctly", () => {
 
   const currMd = `---
 chapters:
-  - chapter: 0
+  - id: test-id
+    chapter: 0
     title: Intro
     file: 00-intro.md
-  - chapter: 1
+  - id: test-id
+    chapter: 1
     title: Basics
     file: 01-basics.md
 ---
@@ -639,7 +618,8 @@ test("Curriculum Parsing - handles missing frontmatter boundary gracefully", () 
 
   const currMd = `
 chapters:
-  - chapter: 0
+  - id: test-id
+    chapter: 0
     title: Intro
     file: 00-intro.md
 `;
@@ -662,7 +642,8 @@ test("Curriculum Parsing - handles unclosed frontmatter boundary gracefully", ()
 
   const currMd = `---
 chapters:
-  - chapter: 0
+  - id: test-id
+    chapter: 0
     title: Intro
     file: 00-intro.md
 `;

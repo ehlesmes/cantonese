@@ -241,7 +241,7 @@ function validateDialogBlock(block: BlockData, addError: AddErrorFn) {
 }
 
 function validateExerciseBlock(block: BlockData, addError: AddErrorFn) {
-  const data = parseYAML(block.content) as Record<string, unknown>;
+  const data = parseYAML(block.content);
   const required = ["question", "answer", "explanation"];
   const keys = Object.keys(data);
 
@@ -332,7 +332,7 @@ function extractUnitsFromBlock(block: BlockData): SemanticUnit[] {
   } else if (block.type === "cantonese" || block.type === "dialog") {
     units = extractBlockUnits(block.content);
   } else if (block.type === "exercise") {
-    const exerciseData = parseYAML(block.content) as Record<string, unknown>;
+    const exerciseData = parseYAML(block.content);
     const fields = ["question", "answer", "explanation"];
     for (const field of fields) {
       if (exerciseData[field]) {

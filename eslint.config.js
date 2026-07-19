@@ -1,6 +1,7 @@
 const js = require("@eslint/js");
 const globals = require("globals");
 const tseslint = require("typescript-eslint");
+const importPlugin = require("eslint-plugin-import");
 
 module.exports = tseslint.config(
   {
@@ -21,6 +22,10 @@ module.exports = tseslint.config(
       "no-debugger": "error",
       "prefer-const": "error",
       complexity: ["error", 12],
+      "import/first": "error",
+    },
+    plugins: {
+      import: importPlugin,
     },
     languageOptions: {
       ecmaVersion: 2022,

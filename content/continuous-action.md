@@ -155,7 +155,8 @@ question: |
   B) 我哋[ngo5dei6|we / us] Hea[hea3|to chill / hang out / slack off / procrastinate] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 呀[aa3|particle]。
   C) 我哋[ngo5dei6|we / us] 休息[jau1sik1|to rest] 咗[zo2|completed aspect suffix] 呀[aa3|particle]。
 answer: B
-explanation: "Chilling out/slacking off right now" combines the slang verb `Hea[hea3|to chill / hang out / slack off / procrastinate]` with the continuous aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]`. Option B is correct.
+explanation: |
+  "Chilling out/slacking off right now" combines the slang verb `Hea[hea3|to chill / hang out / slack off / procrastinate]` with the continuous aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]`. Option B is correct.
 ```
 
 ```exercise
@@ -163,5 +164,6 @@ question: |
   Correct the error in the sentence "He is working right now":
   佢[keoi5|he / she / it] 返工[faan1gung1|to go to work / be at work] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 呀[aa3|sentence-final particle]。
 answer: 佢[keoi5|he / she / it] 返[faan1|to return / go back] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
-explanation: `返工[faan1gung1|to go to work / be at work]` is a verb-object compound verb. The aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` must split the compound and be placed directly between the verb `返[faan1|to return / go back]` and the object `工[gung1|work / job]`.
+explanation: |
+  `返工[faan1gung1|to go to work / be at work]` is a verb-object compound verb. The aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` must split the compound and be placed directly between the verb `返[faan1|to return / go back]` and the object `工[gung1|work / job]`.
 ```

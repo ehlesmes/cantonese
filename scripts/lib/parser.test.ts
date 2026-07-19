@@ -12,7 +12,7 @@ describe("Parser - parseYAML", () => {
 key2: value2
 key3 value3`; // missing colon
     const result = parseYAML(yaml);
-    expect(result).toEqual({ key1: "value1", key2: "value2" }); // key3 is ignored
+    expect(result).toEqual({}); // standard yaml parser throws, returning fallback {}
   });
 
   test("handles empty string gracefully", () => {

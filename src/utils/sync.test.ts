@@ -1,6 +1,19 @@
 /**
  * @vitest-environment jsdom
  */
+import { describe, test, expect, vi } from "vitest";
+import {
+  serializeState,
+  deserializeState,
+  mergeStates,
+  extractRTCToken,
+  calculateMergeMetrics,
+  decompressPayload,
+  parseSrsMap,
+} from "./sync.js";
+import { TextEncoder } from "util";
+import { packSDPData, unpackSDPData, parseSDP, rebuildSDP } from "./webrtc.js";
+
 declare global {
   interface Uint8Array {
     toBase64?:
@@ -16,19 +29,6 @@ declare global {
       | undefined;
   }
 }
-
-import { describe, test, expect, vi } from "vitest";
-import {
-  serializeState,
-  deserializeState,
-  mergeStates,
-  extractRTCToken,
-  calculateMergeMetrics,
-  decompressPayload,
-  parseSrsMap,
-} from "./sync.js";
-import { TextEncoder } from "util";
-import { packSDPData, unpackSDPData, parseSDP, rebuildSDP } from "./webrtc.js";
 
 describe("Progress Sync Utility Spec", () => {
   test("serialization and deserialization roundtrip preserves progress state", async () => {

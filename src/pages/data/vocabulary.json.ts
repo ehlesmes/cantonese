@@ -2,13 +2,8 @@ import fs from "fs";
 import path from "path";
 import { parseCurriculum } from "../../../scripts/lib/parser";
 import { getStableVocabId } from "../../utils/text";
+import { CurriculumIndexSchema } from "../../utils/schemas";
 import type { APIRoute } from "astro";
-
-interface CurriculumChapter {
-  id: string;
-  file: string;
-  title: string;
-}
 
 interface VocabItem {
   character: string;
@@ -23,7 +18,7 @@ export const GET: APIRoute = async () => {
   const curriculumContent = fs.readFileSync(curriculumPath, "utf8");
   const chapters = parseCurriculum(curriculumContent);
 
-  const chaptersMeta = (chapters as unknown as CurriculumChapter[]).map(
+  const chaptersMeta = CurriculumIndexSchema.parse(chapters).map(
     (c, index: number) => {
       const fileExists = fs.existsSync(path.resolve("content", c.file));
       return {

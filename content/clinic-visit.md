@@ -69,7 +69,7 @@ Test your understanding of doctor visits and treatments in Cantonese.
 question: |
   Fill in the blank with the correct verb phrase for "to take medicine":
   你[nei5|you] 記得[gei3dak1|remember] 每日[mui5jat6|every day] ______ 呀[aa3|sentence-final particle softening statements, making questions friendly]。
-answer:食藥[sik6joek6|to take medicine]
+answer: 食藥[sik6joek6|to take medicine]
 explanation: |
   `食藥[sik6joek6|to take medicine]` literally translates to "eat medicine" and is the standard Cantonese phrase for taking medication.
 ```

@@ -112,7 +112,8 @@ question: |
   C) They have different tones.
   D) `街[gaai1|street]` starts with a different initial consonant than `雞[gai1|chicken]`.
 answer: B
-explanation: `街[gaai1|street]` and `雞[gai1|chicken]` have the same initial and tone, but differ in vowel length: `街[gaai1|street]` uses the long open vowel `aa`, whereas `雞[gai1|chicken]` uses the short clipped vowel `a`.
+explanation: |
+  `街[gaai1|street]` and `雞[gai1|chicken]` have the same initial and tone, but differ in vowel length: `街[gaai1|street]` uses the long open vowel `aa`, whereas `雞[gai1|chicken]` uses the short clipped vowel `a`.
 ```
 
 ```exercise

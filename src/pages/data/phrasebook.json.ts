@@ -7,6 +7,7 @@ import {
 } from "../../../src/utils/markdown";
 import { getAudioHash } from "../../../src/utils/audio.js";
 import { getStablePhraseId } from "../../../src/utils/text.js";
+import { CurriculumIndexSchema } from "../../utils/schemas";
 
 import type { APIRoute } from "astro";
 
@@ -109,9 +110,8 @@ function extractExamplesFromBlock(
 export const GET: APIRoute = async () => {
   const curriculumPath = path.resolve("content/curriculum.md");
   const curriculumContent = fs.readFileSync(curriculumPath, "utf8");
-  const chapters = parseCurriculum(
-    curriculumContent,
-  ) as unknown as CurriculumChapter[];
+  const chapters = parseCurriculum(curriculumContent);
+  CurriculumIndexSchema.parse(chapters);
 
   const allExamples: ExampleItem[] = chapters.flatMap((chapter, idx) => {
     const filePath = path.resolve("content", chapter.file);

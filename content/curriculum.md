@@ -168,6 +168,9 @@ chapters:
   - id: "pets-vet-slang"
     title: "Pets, Animal Care & Vet Slang"
     file: "pets-vet-slang.md"
+  - id: "test-vocab-e2e"
+    title: "Test Vocab E2E"
+    file: "test-vocab-e2e.md"
 ---
 
 # Colloquial Cantonese Course: Living Curriculum Roadmap

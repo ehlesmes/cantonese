@@ -3,157 +3,26 @@ import type {
   ParsedBlock,
   SemanticUnit,
 } from "../../src/types";
+import { parse as parseYamlLib } from "yaml";
+import {
+  CurriculumIndexSchema,
+  CurriculumChapterSchema,
+} from "../../src/utils/schemas.js";
 
-interface YamlState {
-  result: Record<string, unknown>;
-  currentKey: string;
-  currentBlockValue: string | null;
-  currentBlockIndent: number;
-  arrayKey: string | null;
-  arrayList: Record<string, unknown>[] | null;
-  currentObject: Record<string, unknown> | null;
-}
-
-function parseYamlValue(v: string): unknown {
-  if (
-    (v.startsWith('"') && v.endsWith('"')) ||
-    (v.startsWith("'") && v.endsWith("'"))
-  ) {
-    v = v.slice(1, -1);
-  }
-  return v !== "" && !isNaN(Number(v)) ? parseInt(v, 10) : v;
-}
-
-function processYamlMultilineBlock(
-  state: YamlState,
-  line: string,
-  indent: number,
-): boolean {
-  if (state.currentBlockValue === null) return false;
-
-  if (indent > state.currentBlockIndent) {
-    state.currentBlockValue += line.slice(state.currentBlockIndent + 2) + "\n";
-    return true;
-  } else {
-    const val = state.currentBlockValue.trim();
-    if (state.currentObject) {
-      state.currentObject[state.currentKey] = val;
-    } else {
-      state.result[state.currentKey] = val;
-    }
-    state.currentBlockValue = null;
-    state.currentBlockIndent = 0;
-    state.currentKey = "";
-    return false;
-  }
-}
-
-function parseYamlArrayItem(state: YamlState, trimmed: string) {
-  const itemContent = trimmed === "-" ? "" : trimmed.slice(2).trim();
-
-  if (!state.arrayList) {
-    state.arrayKey = state.currentKey || "chapters";
-    state.arrayList = [];
-    state.result[state.arrayKey] = state.arrayList;
-  }
-
-  state.currentObject = {};
-  state.arrayList.push(state.currentObject);
-
-  const colonIndex = itemContent.indexOf(":");
-  if (colonIndex !== -1) {
-    const k = itemContent.slice(0, colonIndex).trim();
-    const v = itemContent.slice(colonIndex + 1).trim();
-    state.currentObject[k] = parseYamlValue(v);
-  } else {
-    state.arrayList[state.arrayList.length - 1] = parseYamlValue(
-      itemContent,
-    ) as Record<string, unknown>;
-    state.currentObject = null;
-  }
-}
-
-function parseYamlStandardKeyValue(
-  state: YamlState,
-  trimmed: string,
-  indent: number,
-): boolean {
-  const colonIndex = trimmed.indexOf(":");
-  if (colonIndex === -1) return false;
-
-  const k = trimmed.slice(0, colonIndex).trim();
-  const v = trimmed.slice(colonIndex + 1).trim();
-
-  if (v === "|" || v === ">") {
-    state.currentKey = k;
-    state.currentBlockValue = "";
-    state.currentBlockIndent = indent;
-    return true;
-  }
-
-  const parsedVal = parseYamlValue(v);
-
-  if (state.currentObject) {
-    state.currentObject[k] = parsedVal;
-  } else {
-    state.result[k] = parsedVal;
-    state.currentKey = k;
-  }
-  return true;
-}
-
-function flushYamlBlock(state: YamlState) {
-  if (state.currentBlockValue !== null) {
-    const val = state.currentBlockValue.trim();
-    if (state.currentObject) {
-      state.currentObject[state.currentKey] = val;
-    } else {
-      state.result[state.currentKey] = val;
-    }
-  }
-}
+import { z } from "zod";
 
 /**
  * Parses a standard YAML string into a JavaScript object.
  */
 function parseYAML(yamlStr: string): Record<string, unknown> {
-  const lines = yamlStr.split(/\r?\n/);
-  const state: YamlState = {
-    result: {},
-    currentKey: "",
-    currentBlockValue: null,
-    currentBlockIndent: 0,
-    arrayKey: null,
-    arrayList: null,
-    currentObject: null,
-  };
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i]!;
-
-    if (line.trim() === "") {
-      if (state.currentBlockValue !== null) {
-        state.currentBlockValue += "\n";
-      }
-      continue;
-    }
-
-    const indent = line.search(/\S/);
-
-    if (processYamlMultilineBlock(state, line, indent)) continue;
-
-    const trimmed = line.trim();
-
-    if (trimmed.startsWith("- ") || trimmed === "-") {
-      parseYamlArrayItem(state, trimmed);
-      continue;
-    }
-
-    parseYamlStandardKeyValue(state, trimmed, indent);
+  try {
+    const result: unknown = parseYamlLib(yamlStr);
+    return typeof result === "object" && result !== null
+      ? (result as Record<string, unknown>)
+      : {};
+  } catch {
+    return {};
   }
-
-  flushYamlBlock(state);
-  return state.result;
 }
 
 function extractFrontmatter(lines: string[]): {
@@ -182,63 +51,71 @@ function extractFrontmatter(lines: string[]): {
   return { frontmatterStr, bodyStartLine, hasFrontmatter };
 }
 
+function createBlock(
+  type: ParsedBlock["type"],
+  lines: string[],
+  startLine: number,
+  endLine: number,
+): ParsedBlock {
+  return {
+    type,
+    content: lines.join("\n"),
+    startLine,
+    endLine,
+  };
+}
+
+function determineBlockType(lang: string): ParsedBlock["type"] {
+  return lang === "cantonese" || lang === "dialog" || lang === "exercise"
+    ? lang
+    : "other";
+}
+
 function parseChapterBlocks(
   bodyLines: string[],
   bodyStartLine: number,
 ): ParsedBlock[] {
   const blocks: ParsedBlock[] = [];
   let inBlock = false;
-  let currentBlockType: ParsedBlock["type"] = "prose";
-  let currentBlockLines: string[] = [];
-  let currentBlockStartLine = bodyStartLine;
+  let type: ParsedBlock["type"] = "prose";
+  let lines: string[] = [];
+  let startLine = bodyStartLine;
 
   for (let i = 0; i < bodyLines.length; i++) {
     const lineNum = bodyStartLine + i;
     const line = bodyLines[i]!;
 
-    if (line.startsWith("```")) {
-      if (inBlock) {
-        blocks.push({
-          type: currentBlockType,
-          content: currentBlockLines.join("\n"),
-          startLine: currentBlockStartLine,
-          endLine: lineNum,
-        });
-        inBlock = false;
-        currentBlockType = "prose";
-        currentBlockLines = [];
-        currentBlockStartLine = lineNum + 1;
-      } else {
-        if (currentBlockLines.length > 0) {
-          blocks.push({
-            type: "prose",
-            content: currentBlockLines.join("\n"),
-            startLine: currentBlockStartLine,
-            endLine: lineNum - 1,
-          });
-        }
-        inBlock = true;
-        const lang = line.slice(3).trim();
-        if (lang === "cantonese" || lang === "dialog" || lang === "exercise") {
-          currentBlockType = lang;
-        } else {
-          currentBlockType = "other";
-        }
-        currentBlockLines = [];
-        currentBlockStartLine = lineNum;
-      }
+    if (!line.startsWith("```")) {
+      lines.push(line);
+      continue;
+    }
+
+    if (inBlock) {
+      blocks.push(createBlock(type, lines, startLine, lineNum));
+      inBlock = false;
+      type = "prose";
+      lines = [];
+      startLine = lineNum + 1;
     } else {
-      currentBlockLines.push(line);
+      if (lines.length > 0) {
+        blocks.push(createBlock("prose", lines, startLine, lineNum - 1));
+      }
+      inBlock = true;
+      type = determineBlockType(line.slice(3).trim());
+      lines = [];
+      startLine = lineNum;
     }
   }
 
-  if (currentBlockLines.length > 0) {
-    blocks.push({
-      type: inBlock ? currentBlockType : "prose",
-      content: currentBlockLines.join("\n"),
-      startLine: currentBlockStartLine,
-      endLine: bodyStartLine + bodyLines.length - 1,
-    });
+  if (lines.length > 0) {
+    blocks.push(
+      createBlock(
+        inBlock ? type : "prose",
+        lines,
+        startLine,
+        bodyStartLine + bodyLines.length - 1,
+      ),
+    );
   }
   return blocks;
 }
@@ -264,12 +141,7 @@ export function parseChapter(content: string): RawParsedChapter {
   };
 }
 
-export interface CurriculumChapter {
-  id: string;
-  file: string;
-  title: string;
-  chapter?: number;
-}
+export type CurriculumChapter = z.infer<typeof CurriculumChapterSchema>;
 
 /**
  * Parses curriculum.md frontmatter for official chapter entries.
@@ -291,9 +163,12 @@ export function parseCurriculum(content: string): CurriculumChapter[] {
     if (endIdx !== -1) {
       const frontmatterStr = lines.slice(1, endIdx).join("\n");
       const frontmatter = parseYAML(frontmatterStr);
-      return Array.isArray(frontmatter.chapters)
-        ? (frontmatter.chapters as unknown as CurriculumChapter[])
-        : [];
+      try {
+        return CurriculumIndexSchema.parse(frontmatter.chapters);
+      } catch (e) {
+        console.error("Failed to parse curriculum YAML:", e);
+        return [];
+      }
     }
   }
   return [];

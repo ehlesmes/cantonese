@@ -1,6 +1,8 @@
 import { getCleanSpokenText as sharedCleanText } from "../../src/utils/text.js";
 import type { ParsedBlock } from "../../src/types";
 
+import { getAudioHash as sharedGetAudioHash } from "../../src/utils/audio.js";
+
 export interface TtsVocabItem {
   firstIntroducedIn?: string;
   character?: string;
@@ -28,8 +30,6 @@ const XML_ESCAPES: Record<string, string> = {
 export function escapeXml(unsafe: string): string {
   return unsafe.replace(/[<>&'"]/g, (c) => XML_ESCAPES[c] as string);
 }
-
-import { getAudioHash as sharedGetAudioHash } from "../../src/utils/audio.js";
 
 /**
  * Generates a SHA-256 hash matching client-side Web Crypto and slices it to 16 characters.

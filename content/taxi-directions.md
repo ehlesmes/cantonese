@@ -75,5 +75,6 @@ question: |
   C) 過十字路口[gwo3sap6zi6lou6hau2|cross the intersection]
   D) 轉右[zyun2jau6|turn right]
 answer: C
-explanation: `過十字路口[gwo3sap6zi6lou6hau2|to cross the intersection]` is the standard Cantonese verb phrase for crossing the street.
+explanation: |
+  `過十字路口[gwo3sap6zi6lou6hau2|to cross the intersection]` is the standard Cantonese verb phrase for crossing the street.
 ```

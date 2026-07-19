@@ -224,7 +224,8 @@ explanation: 識[sik1|to know / speak (a language) / have a skill] is the modal 
 ```
 
 ```exercise
-question: Translate the following sentence into colloquial Cantonese with correct annotations: "I cannot hear what you are saying."
+question: |
+  Translate the following sentence into colloquial Cantonese with correct annotations: "I cannot hear what you are saying."
 answer: 我[ngo5|I / me] 聽[teng1|to listen / hear / obey] 唔到[m4dou2|cannot / unable to manage to / fail to] 你[nei5|you] 講[gong2|to speak / say / talk] 咩嘢[me1je5|what / what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 explanation: 聽[teng1|to listen / hear / obey] 唔到[m4dou2|cannot / unable to manage to / fail to] is the potential suffix structure representing the physical inability to hear.
 ```

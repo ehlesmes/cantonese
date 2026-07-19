@@ -2,6 +2,8 @@ import { describe, test, expect, vi } from "vitest";
 import * as fs from "fs";
 import * as path from "path";
 
+import * as portability from "./validate-portability";
+
 const actualFs = await vi.importActual<typeof import("fs")>("fs");
 
 vi.mock("fs", async (importOriginal) => {
@@ -25,8 +27,6 @@ vi.mock("fs", async (importOriginal) => {
       ),
   };
 });
-
-import * as portability from "./validate-portability";
 
 describe("Project Portability Validator Spec", () => {
   test("FORBIDDEN_PATTERN matches typical absolute paths", () => {

@@ -1,4 +1,4 @@
-import { describe, test, expect } from "vitest";
+import { describe, test, expect, vi } from "vitest";
 import {
   compileMarkdown,
   compileAnnotations,
@@ -204,6 +204,21 @@ explanation: M4 is used to negate verbs.
     expect(result.questionHtml).toContain("我____食飯.");
     expect(result.answerHtml).toContain("m4");
     expect(result.explanationHtml).toContain("M4 is used to negate verbs");
+  });
+
+  test("parseExerciseBlock handles parsing exception gracefully", () => {
+    const rawYaml = "invalid: [";
+    const mockParseYAML = () => {
+      throw new Error("YAML Parsing failed");
+    };
+
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const result = parseExerciseBlock(rawYaml, mockParseYAML);
+    expect(spy).toHaveBeenCalled();
+    expect(result.questionHtml).toBe("");
+    expect(result.answerHtml).toBe("");
+    expect(result.explanationHtml).toBe("");
+    spy.mockRestore();
   });
 
   test("parseExerciseBlock handles missing optional fields gracefully", () => {

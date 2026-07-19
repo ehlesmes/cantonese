@@ -12,13 +12,13 @@ import {
   cleanIncompleteProgressState,
 } from "../utils/storage-modifiers.js";
 
+import type { ClientChapterData, SrsStateMap } from "../types/index.js";
+
 function getEl(id: string): HTMLElement {
   const el = document.getElementById(id);
   if (!el) throw new Error("Missing element: " + id);
   return el;
 }
-
-import type { ClientChapterData, SrsStateMap } from "../types/index.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Elements
