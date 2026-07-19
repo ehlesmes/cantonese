@@ -143,25 +143,16 @@ const chapterEntries = buildCurriculumIndex(contentDir, chapters);
     }
   </style>
 
-  <script is:inline>
+  <script>
+    import { getUnlockedChapters } from "../../client/sys/storage";
+
     document.addEventListener('DOMContentLoaded', () => {
-      let unlocked = [];
-      try {
-        const stored = localStorage.getItem('cantonese_unlocked_chapters');
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed)) {
-            unlocked = parsed.filter(c => typeof c === "string");
-          }
-        }
-      } catch (e) {
-        console.error('Failed to parse unlocked chapters:', e);
-      }
+      const unlocked = getUnlockedChapters();
       
       const cards = document.querySelectorAll('[data-chapter-card]');
       cards.forEach(card => {
         const chId = card.getAttribute('data-chapter-card');
-        if (unlocked.includes(chId)) {
+        if (chId && unlocked.includes(chId)) {
           card.classList.add('is-unlocked');
         }
       });

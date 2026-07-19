@@ -142,51 +142,35 @@ const nextChapter = currentIndex < existingChapters.length - 1 ? existingChapter
     </label>
   </div>
 
-  <script is:inline>
+  <script>
+    import { getUnlockedChapters, saveUnlockedChapters } from "../../../client/sys/storage";
+
     document.addEventListener('DOMContentLoaded', () => {
-      const checkbox = document.getElementById('review-pool-checkbox');
+      const checkbox = document.getElementById('review-pool-checkbox') as HTMLInputElement;
       if (!checkbox) return;
       
       const chapterId = checkbox.getAttribute('data-chapter');
-      
-      // Load current unlocked chapters
-      let unlocked = [];
-      try {
-        const stored = localStorage.getItem('cantonese_unlocked_chapters');
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed)) {
-            unlocked = parsed.filter(c => typeof c === "string");
-          }
-        }
-      } catch (e) {
-        console.error('Failed to parse unlocked chapters:', e);
-      }
+      if (!chapterId) return;
       
       // Set initial checkbox state
+      const unlocked = getUnlockedChapters();
       checkbox.checked = unlocked.includes(chapterId);
       
       // Listen for changes
       checkbox.addEventListener('change', () => {
         try {
-          const stored = localStorage.getItem('cantonese_unlocked_chapters');
-          let currentUnlocked = [];
-          if (stored) {
-            const parsed = JSON.parse(stored);
-            if (Array.isArray(parsed)) {
-              currentUnlocked = parsed.filter(c => typeof c === "string");
-            }
-          }
+          const currentUnlocked = getUnlockedChapters();
           
+          let updatedUnlocked;
           if (checkbox.checked) {
-            if (!currentUnlocked.includes(chapterId)) {
-              currentUnlocked.push(chapterId);
-            }
+            updatedUnlocked = currentUnlocked.includes(chapterId) 
+              ? currentUnlocked 
+              : [...currentUnlocked, chapterId];
           } else {
-            currentUnlocked = currentUnlocked.filter(slug => slug !== chapterId);
+            updatedUnlocked = currentUnlocked.filter(slug => slug !== chapterId);
           }
           
-          localStorage.setItem('cantonese_unlocked_chapters', JSON.stringify(currentUnlocked));
+          saveUnlockedChapters(updatedUnlocked);
         } catch (e) {
           console.error('Failed to update review pool:', e);
         }
