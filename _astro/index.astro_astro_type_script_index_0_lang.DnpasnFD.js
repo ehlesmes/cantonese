@@ -1,0 +1,1 @@
+import{a as d}from"./storage.C_5pKCl7.js";document.addEventListener("DOMContentLoaded",()=>{const c=d();document.querySelectorAll("[data-chapter-card]").forEach(t=>{const e=t.getAttribute("data-chapter-card");e&&c.includes(e)&&t.classList.add("is-unlocked")})});
