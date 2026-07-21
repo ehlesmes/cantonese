@@ -44,14 +44,14 @@ const processedBlocks = await processChapterBlocks(blocks, parseYAML);
 const { prevChapter, nextChapter } = calculateNavigation(allChapters, id);
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter!.title} description={frontmatter!.description}>
   <div style="margin-bottom: 2rem;">
     <span style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color);">
       Chapter {chapterNumber}
     </span>
-    <h1 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">{frontmatter.title}</h1>
+    <h1 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">{frontmatter!.title}</h1>
     <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4; font-style: italic; margin-bottom: 0;">
-      {frontmatter.description}
+      {frontmatter!.description}
     </p>
   </div>
 
@@ -101,7 +101,7 @@ const { prevChapter, nextChapter } = calculateNavigation(allChapters, id);
   </div>
 
   <script>
-    import { getUnlockedChapters, saveUnlockedChapters } from "../../../client/sys/storage";
+    import { getUnlockedChapters, saveUnlockedChapters } from "../../client/sys/storage";
 
     document.addEventListener('DOMContentLoaded', () => {
       const checkbox = document.getElementById('review-pool-checkbox') as HTMLInputElement;

@@ -5,8 +5,6 @@ import path from "path";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/advanced-settings.css";
 import { parseCurriculum, parseChapter } from "../../scripts/lib/parser";
-import { getStablePhraseId, getStableVocabId } from "../utils/text";
-import { parseExampleBlock } from "../utils/markdown";
 import { compileAdvancedChapterData } from "../utils/chapter-utils";
 const curriculumPath = path.resolve("content/curriculum.md");
 const currContent = fs.readFileSync(curriculumPath, "utf8");

@@ -23,7 +23,7 @@
     "build": "npm run typecheck && tsx scripts/generate-version.ts && tsx scripts/generate-tts.ts && npm run vocab:verify-all && npm run validate && astro build --force",
     "preview": "astro preview",
     "deploy": "npm run build && gh-pages -d dist --dotfiles",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && astro check",
     "type-coverage": "type-coverage --detail --at-least 100"
   },
   "devDependencies": {
