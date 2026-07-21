@@ -33,3 +33,12 @@ from side effects.
   - Delegate all complex logic and data transformation to the functional core.
   - Do NOT parse raw strings manually inside a UI component; pass them to a
     utility function and render the output.
+
+## Zero Warnings & Hints Policy
+
+- **Astro Check & TypeScript**: All code must pass `astro check` and
+  `npm run typecheck` with absolutely zero errors, zero warnings, and **zero
+  hints**.
+- **Enforcement**: If you run a typecheck or build and see any hints (e.g.,
+  deprecated methods, unused imports, outdated JSDoc tags), you MUST fix them
+  before committing. Do not leave "harmless" hints in the codebase.
