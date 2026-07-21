@@ -53,7 +53,7 @@ of a verb and a default noun object (Verb-Object pairs). Examples include:
 - `食飯[sik6faan6|to eat a meal]` (literally "eat rice")
 - `返工[faan1gung1|to go to work]` (literally "return to work")
 - `落雨[lok6jyu5|to rain]` (literally "fall rain")
-- `打風[daa2fung1|typhoon / to have a typhoon]` (literally "hit wind")
+- `打風[daa2fung1|to have a typhoon]` (literally "hit wind")
 
 > [!IMPORTANT] **Splitting Rule**: When using the aspect marker
 > `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]`,
@@ -99,7 +99,7 @@ When combined with our continuous aspect marker, it describes the ultimate state
 of chilling out:
 
 ```cantonese
-你[nei5|you] 做[zou6|to do / make / perform] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what / what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+你[nei5|you] 做[zou6|to do / make / perform] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 ===
 What are you doing right now?
 ```
@@ -118,7 +118,7 @@ Ka-ho (A) calls Wing-yan (B) to see what she is doing. B is slacking off in her
 room while Ka-ho is busy working.
 
 ```dialog
-A: 喂[wai2|hey!]，Wing-yan！ 你[nei5|you] 做[zou6|to do / make / perform] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what / what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 喂[wai2|hey!]，Wing-yan！ 你[nei5|you] 做[zou6|to do / make / perform] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Hey, Wing-yan! What are you doing right now?
 B: 我[ngo5|I / me] 喺[hai2|at / in / on] 房[fong2|room / bedroom] 入面[jap6min6|inside] Hea[hea3|to chill / hang out / slack off / procrastinate] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 你[nei5|you] 呢[ne1|how about]？
    === I'm chilling out inside my room, obviously! How about you?
@@ -126,7 +126,7 @@ A: 我[ngo5|I / me] 返[faan1|to return / go back] 緊[gan2|verbal aspect suffix
    === I'm working right now, I'm very busy!
 B: 吓[haa2|interjection expressing surprise]？ 依家[ji1gaa1|now] 幾點[gei2dim2|what time] 呀[aa3|particle]？
    === What? What time is it now?
-A: 依家[ji1gaa1|now] 下晝[haa6zau3|afternoon / in the afternoon] 四[sei3|four] 點[dim2|o'clock / hour] 半[bun3|half] 啦[laa1|sentence-final particle]！ 我[ngo5|I / me] 仲[zung6|still / yet] 做[zou6|to do] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 嘢[je5|thing / stuff] 呀[aa3|particle]。
+A: 依家[ji1gaa1|now] 下晝[haa6zau3|in the afternoon] 四[sei3|four] 點[dim2|o'clock / hour] 半[bun3|half] 啦[laa1|sentence-final particle]！ 我[ngo5|I / me] 仲[zung6|still / yet] 做[zou6|to do] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 嘢[je5|thing / stuff] 呀[aa3|particle]。
    === It's 4:30 in the afternoon already! I'm still doing work.
 B: 噉[gam2|then] 你[nei5|you] 慢慢[maan6maan6|slowly] 做[zou6|to do] 啦[laa1|particle]，我[ngo5|I / me] 繼續[gai3zuk6|to continue / go on] Hea[hea3|to chill / hang out / slack off / procrastinate] 啦[laa1|particle]，拜拜[baai1baai3|bye-bye]！
    === Well, take your time working then. I'll continue chilling, bye-bye!

@@ -39,7 +39,9 @@
   {
     "char": "阿妹",
     "jyutping": "aa3mui6",
-    "alt_jyutping": ["aa3mui2"],
+    "alt_jyutping": [
+      "aa3mui2"
+    ],
     "definition": "younger sister",
     "type": "noun"
   },
@@ -64,13 +66,13 @@
   {
     "char": "呃",
     "jyutping": "aak1",
-    "definition": "to cheat / trick / fish",
+    "definition": "to cheat / trick",
     "type": "verb"
   },
   {
     "char": "啱啱",
     "jyutping": "aam1aam1",
-    "definition": "just now / just / exactly",
+    "definition": "just now / exactly",
     "type": "adverb"
   },
   {
@@ -130,7 +132,7 @@
   {
     "char": "拜拜",
     "jyutping": "baai1baai3",
-    "definition": "bye-bye / goodbye (loanword)",
+    "definition": "bye-bye",
     "type": "expression"
   },
   {
@@ -160,13 +162,13 @@
   {
     "char": "扮",
     "jyutping": "baan6",
-    "definition": "to dress up / act / pretend",
+    "definition": "to pretend / dress up",
     "type": "verb"
   },
   {
     "char": "扮嘢",
     "jyutping": "baan6je5",
-    "definition": "to pretend / show off / act",
+    "definition": "to pretend / show off",
     "type": "verb"
   },
   {
@@ -196,7 +198,7 @@
   {
     "char": "爆升",
     "jyutping": "baau3sing1",
-    "definition": "to skyrocket / experience explosive growth",
+    "definition": "to experience explosive growth",
     "type": "verb"
   },
   {
@@ -232,7 +234,7 @@
   {
     "char": "病",
     "jyutping": "beng6",
-    "definition": "to be sick / illness / disease",
+    "definition": "to be sick",
     "type": "noun"
   },
   {
@@ -256,7 +258,7 @@
   {
     "char": "邊個",
     "jyutping": "bin1go3",
-    "definition": "who / which one",
+    "definition": "who / which",
     "type": "pronoun"
   },
   {
@@ -274,7 +276,7 @@
   {
     "char": "病",
     "jyutping": "bing6",
-    "definition": "to be sick / illness / disease",
+    "definition": "to be sick",
     "type": "noun"
   },
   {
@@ -359,7 +361,7 @@
   {
     "char": "半夜",
     "jyutping": "bun3je6",
-    "definition": "midnight / middle of the night",
+    "definition": "middle of the night",
     "type": "noun"
   },
   {
@@ -545,7 +547,7 @@
   {
     "char": "遲啲",
     "jyutping": "ci4di1",
-    "definition": "later / later on",
+    "definition": "later on",
     "type": "adverb"
   },
   {
@@ -587,14 +589,16 @@
   {
     "char": "錢",
     "jyutping": "cin4",
-    "alt_jyutping": ["cin2"],
+    "alt_jyutping": [
+      "cin2"
+    ],
     "definition": "money",
     "type": "noun"
   },
   {
     "char": "前邊",
     "jyutping": "cin4bin1",
-    "definition": "ahead / in front / up ahead",
+    "definition": "up ahead / in front",
     "type": "noun"
   },
   {
@@ -642,7 +646,7 @@
   {
     "char": "坐",
     "jyutping": "co5",
-    "definition": "to sit / sit down",
+    "definition": "sit down",
     "type": "verb"
   },
   {
@@ -750,7 +754,7 @@
   {
     "char": "打風",
     "jyutping": "daa2fung1",
-    "definition": "typhoon / to have a typhoon",
+    "definition": "to have a typhoon",
     "type": "verb"
   },
   {
@@ -762,13 +766,13 @@
   {
     "char": "打卡",
     "jyutping": "daa2kaa1",
-    "definition": "to check-in / take photos at trendy spots",
+    "definition": "to check-in",
     "type": "verb"
   },
   {
     "char": "打卡",
     "jyutping": "daa2kaat1",
-    "definition": "to check-in / take photos at trendy spots",
+    "definition": "to check-in",
     "type": "verb"
   },
   {
@@ -780,7 +784,7 @@
   {
     "char": "打算",
     "jyutping": "daa2syun3",
-    "definition": "to plan / intend / plan",
+    "definition": "to plan / intend",
     "type": "verb"
   },
   {
@@ -846,7 +850,7 @@
   {
     "char": "單位",
     "jyutping": "daan1wai2",
-    "definition": "unit / flat / apartment",
+    "definition": "apartment",
     "type": "noun"
   },
   {
@@ -907,7 +911,7 @@
   {
     "char": "得閒",
     "jyutping": "dak1haan4",
-    "definition": "free / having spare time",
+    "definition": "free (spare time)",
     "type": "adjective"
   },
   {
@@ -925,13 +929,13 @@
   {
     "char": "燈位",
     "jyutping": "dang1wai2",
-    "definition": "traffic light / intersection with lights",
+    "definition": "traffic light",
     "type": "noun"
   },
   {
     "char": "等",
     "jyutping": "dang2",
-    "definition": "to wait / wait for",
+    "definition": "wait for",
     "type": "verb"
   },
   {
@@ -991,7 +995,7 @@
   {
     "char": "地鐵站",
     "jyutping": "dei6tit3zaam6",
-    "definition": "MTR station / subway station",
+    "definition": "MTR station",
     "type": "noun"
   },
   {
@@ -1047,13 +1051,13 @@
   {
     "char": "點解",
     "jyutping": "dim2gaai2",
-    "definition": "why / how come",
+    "definition": "why",
     "type": "pronoun"
   },
   {
     "char": "點樣",
     "jyutping": "dim2joeng6",
-    "definition": "how / in what way",
+    "definition": "how",
     "type": "pronoun"
   },
   {
@@ -1096,7 +1100,7 @@
   {
     "char": "電話",
     "jyutping": "din6waa2",
-    "definition": "telephone / phone",
+    "definition": "phone",
     "type": "noun"
   },
   {
@@ -1133,7 +1137,7 @@
   {
     "char": "定期",
     "jyutping": "ding6kei4",
-    "definition": "fixed deposit / term deposit",
+    "definition": "fixed deposit",
     "type": "noun"
   },
   {
@@ -1145,13 +1149,13 @@
   {
     "char": "跌",
     "jyutping": "dit3",
-    "definition": "to fall / drop / decline",
+    "definition": "to drop",
     "type": "verb"
   },
   {
     "char": "多",
     "jyutping": "do1",
-    "definition": "many / much / more",
+    "definition": "many / much",
     "type": "adjective"
   },
   {
@@ -1200,7 +1204,7 @@
   {
     "char": "讀書",
     "jyutping": "duk6syu1",
-    "definition": "to study / to read",
+    "definition": "to study",
     "type": "verb"
   },
   {
@@ -1278,7 +1282,7 @@
   {
     "char": "WhatsApp",
     "jyutping": "ep1si1ep1",
-    "definition": "WhatsApp / to WhatsApp someone",
+    "definition": "to WhatsApp someone",
     "type": "verb"
   },
   {
@@ -1338,7 +1342,7 @@
   {
     "char": "發夢",
     "jyutping": "faat3mung6",
-    "definition": "to dream / daydream / dream",
+    "definition": "to dream / daydream",
     "type": "verb"
   },
   {
@@ -1683,13 +1687,13 @@
   {
     "char": "咁樣",
     "jyutping": "gam2joeng2",
-    "definition": "like this / in this way / this way",
+    "definition": "like this / in this way",
     "type": "expression"
   },
   {
     "char": "咁樣",
     "jyutping": "gam2joeng6",
-    "definition": "like this / in this way / this way",
+    "definition": "like this / in this way",
     "type": "expression"
   },
   {
@@ -1775,7 +1779,7 @@
   {
     "char": "基金",
     "jyutping": "gei1gam1",
-    "definition": "fund / mutual fund",
+    "definition": "mutual fund",
     "type": "noun"
   },
   {
@@ -2120,7 +2124,7 @@
   {
     "char": "下晝",
     "jyutping": "haa6zau3",
-    "definition": "afternoon / in the afternoon",
+    "definition": "in the afternoon",
     "type": "noun"
   },
   {
@@ -2162,7 +2166,7 @@
   {
     "char": "慳",
     "jyutping": "haan1",
-    "definition": "to save (money/time) / cut down / economize",
+    "definition": "to save (money / time) / cut down / economize",
     "type": "verb"
   },
   {
@@ -2198,7 +2202,7 @@
   {
     "char": "考試",
     "jyutping": "haau2si3",
-    "definition": "exam / to take an exam",
+    "definition": "to take an exam",
     "type": "noun"
   },
   {
@@ -2216,7 +2220,7 @@
   {
     "char": "係",
     "jyutping": "hai6",
-    "definition": "to be (am/is/are) / yes",
+    "definition": "to be (am / is / are) / yes",
     "type": "verb"
   },
   {
@@ -2331,7 +2335,7 @@
   {
     "char": "希望",
     "jyutping": "hei1mong6",
-    "definition": "to hope / wish / hope",
+    "definition": "to hope / wish",
     "type": "verb"
   },
   {
@@ -2434,7 +2438,7 @@
   {
     "char": "行",
     "jyutping": "hong4",
-    "definition": "profession / line of business / firm / row / line",
+    "definition": "profession / line of business / firm / row",
     "type": "noun"
   },
   {
@@ -2458,7 +2462,7 @@
   {
     "char": "好似",
     "jyutping": "hou2ci5",
-    "definition": "seem / seem like / as if",
+    "definition": "seem like / as if",
     "type": "verb"
   },
   {
@@ -2740,7 +2744,7 @@
   {
     "char": "右",
     "jyutping": "jau6",
-    "definition": "right / right side",
+    "definition": "right side",
     "type": "noun"
   },
   {
@@ -2758,7 +2762,7 @@
   {
     "char": "野餐",
     "jyutping": "je5caan1",
-    "definition": "to go on a picnic / picnic",
+    "definition": "to go on a picnic",
     "type": "verb"
   },
   {
@@ -2776,7 +2780,7 @@
   {
     "char": "夜晚",
     "jyutping": "je6maan5",
-    "definition": "night / evening / at night",
+    "definition": "at night / evening",
     "type": "noun"
   },
   {
@@ -3041,7 +3045,7 @@
   {
     "char": "咳",
     "jyutping": "kat1",
-    "definition": "to cough / cough",
+    "definition": "to cough",
     "type": "verb"
   },
   {
@@ -3077,7 +3081,7 @@
   {
     "char": "Cap圖",
     "jyutping": "kep1tou4",
-    "definition": "to take a screenshot / screenshot (slang)",
+    "definition": "to take a screenshot",
     "type": "verb"
   },
   {
@@ -3216,7 +3220,7 @@
   {
     "char": "靚仔",
     "jyutping": "leng3zai2",
-    "definition": "handsome boy / handsome man / handsome",
+    "definition": "handsome boy / handsome man",
     "type": "noun"
   },
   {
@@ -3631,7 +3635,7 @@
   {
     "char": "咩嘢",
     "jyutping": "me1je5",
-    "definition": "what / what kind of thing",
+    "definition": "what kind of thing",
     "type": "pronoun"
   },
   {
@@ -3991,7 +3995,7 @@
   {
     "char": "OT",
     "jyutping": "o1ti1",
-    "definition": "to work overtime / overtime",
+    "definition": "to work overtime",
     "type": "verb"
   },
   {
@@ -4063,7 +4067,7 @@
   {
     "char": "PayMe",
     "jyutping": "pei1mi1",
-    "definition": "PayMe / to transfer money via PayMe",
+    "definition": "to transfer money via PayMe",
     "type": "noun"
   },
   {
@@ -4081,7 +4085,7 @@
   {
     "char": "平啲",
     "jyutping": "peng4 di1",
-    "definition": "cheaper / a bit cheaper",
+    "definition": "a bit cheaper",
     "type": "adjective"
   },
   {
@@ -4677,7 +4681,7 @@
   {
     "char": "小心",
     "jyutping": "siu2sam1",
-    "definition": "careful / to be careful / take care",
+    "definition": "to be careful / take care",
     "type": "verb"
   },
   {
@@ -4701,7 +4705,7 @@
   {
     "char": "鎖",
     "jyutping": "so2",
-    "definition": "to lock / lock",
+    "definition": "to lock",
     "type": "verb"
   },
   {
@@ -5103,7 +5107,7 @@
   {
     "char": "同埋",
     "jyutping": "tung4maai4",
-    "definition": "and / with / together with",
+    "definition": "and / together with",
     "type": "conjunction"
   },
   {
@@ -5133,7 +5137,7 @@
   {
     "char": "屋企人",
     "jyutping": "uk1kei2jan4",
-    "definition": "family members / family",
+    "definition": "family members",
     "type": "noun"
   },
   {
@@ -5211,7 +5215,7 @@
   {
     "char": "為咗",
     "jyutping": "wai6zo2",
-    "definition": "for / for the sake of / in order to",
+    "definition": "for the sake of / in order to",
     "type": "preposition"
   },
   {
@@ -5271,7 +5275,7 @@
   {
     "char": "WhatsApp",
     "jyutping": "wat1sep1",
-    "definition": "WhatsApp / to WhatsApp someone",
+    "definition": "to WhatsApp someone",
     "type": "verb"
   },
   {
@@ -5315,7 +5319,7 @@
   {
     "char": "揸車",
     "jyutping": "zaa1ce1",
-    "definition": "to drive a car / drive",
+    "definition": "to drive a car",
     "type": "verb"
   },
   {
@@ -5623,7 +5627,7 @@
   {
     "char": "朝早",
     "jyutping": "ziu1zou2",
-    "definition": "morning / in the morning",
+    "definition": "in the morning",
     "type": "noun"
   },
   {
@@ -5636,7 +5640,7 @@
   {
     "char": "左",
     "jyutping": "zo2",
-    "definition": "left / left side",
+    "definition": "left side",
     "type": "noun"
   },
   {
@@ -5816,7 +5820,7 @@
   {
     "char": "煮嘢食",
     "jyutping": "zyu2je5sik6",
-    "definition": "to cook / cook food",
+    "definition": "cook food",
     "type": "verb"
   },
   {

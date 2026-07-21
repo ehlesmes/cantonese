@@ -53,7 +53,7 @@ You can use it to reassure someone that you are "just" a student or "only" doing
 a basic job:
 
 ```cantonese
-我[ngo5|I / me] 係[hai6|to be (am/is/are) / yes] 學生[hok6saang1|student] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
+我[ngo5|I / me] 係[hai6|to be (am / is / are) / yes] 學生[hok6saang1|student] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
 ===
 I am only a student (nothing more).
 ```
@@ -91,7 +91,7 @@ Today is a holiday, so the office is obviously closed!
 It is often used to assert what is natural or expected based on relationships:
 
 ```cantonese
-你[nei5|you] 係[hai6|to be (am/is/are) / yes] 佢[keoi5|he / she / it] 朋友[pang4jau5|friend]，你[nei5|you] 應該[jing1goi1|should / ought to] 知[zi1|to know / be aware of] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
+你[nei5|you] 係[hai6|to be (am / is / are) / yes] 佢[keoi5|he / she / it] 朋友[pang4jau5|friend]，你[nei5|you] 應該[jing1goi1|should / ought to] 知[zi1|to know / be aware of] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
 ===
 You are their friend, so you should obviously know!
 ```
@@ -134,7 +134,7 @@ Sau-han (A) and Wing-kit (B) discuss their schedule.
 ```dialog
 A: 你[nei5|you] 去[heoi3|to go] 邊度[bin1dou6|where] 呀[aa3|sentence-final particle softening statements, making questions friendly]？去[heoi3|to go] 買嘢[maai5je5|to buy things / shop] 吓[haa2|sentence-final particle or interjection expressing doubt, surprise, or asking for confirmation]？
    === Where are you going? Going shopping, really?
-B: 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I / me] 去[heoi3|to go] 返工[faan1gung1|to go to work / be at work] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
+B: 唔[m4|not / no (negative prefix)] 係[hai6|to be (am / is / are) / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I / me] 去[heoi3|to go] 返工[faan1gung1|to go to work / be at work] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
    === No, I'm just going to work.
 A: 今日[gam1jat6|today] 放假[fong3gaa3|to have a holiday / day off]，公司[gung1si1|company / office] 唔[m4|not / no (negative prefix)] 返工[faan1gung1|to go to work / be at work] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
    === Today is a holiday, the office is obviously closed!
@@ -153,7 +153,7 @@ question: |
   Translate the following sentence into Cantonese using correct semantic annotations:
   "I am only a student."
   (Hint: Use the downplaying particle to emphasize "only")
-answer: 我[ngo5|I / me] 係[hai6|to be (am/is/are) / yes] 學生[hok6saang1|student] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
+answer: 我[ngo5|I / me] 係[hai6|to be (am / is / are) / yes] 學生[hok6saang1|student] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
 explanation: The SFP 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something] is attached to the end of a sentence to downplay a statement, meaning "only" or "just".
 ```
 

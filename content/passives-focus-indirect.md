@@ -69,7 +69,7 @@ My wallet was stolen by someone! (Literally: "My wallet by someone stolen!")
 ```
 
 ```cantonese
-我[ngo5|I / me] 部[bou6|measure word for machines/phones] 電話[din6waa2|telephone / phone] 俾[bei2|by / to give] 人哋[jan4dei6|others / other people] 打爛[da2laan6|to break / smash / shatter] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]。
+我[ngo5|I / me] 部[bou6|measure word for machines/phones] 電話[din6waa2|phone] 俾[bei2|by / to give] 人哋[jan4dei6|others / other people] 打爛[da2laan6|to break / smash / shatter] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]。
 ===
 My phone was smashed by others.
 ```
@@ -181,9 +181,9 @@ B explains that his phone was stolen and he was scolded by the boss, but then
 reveals a surprising workplace twist.
 
 ```dialog
-A: 你[nei5|you] 點解[dim2gaai2|why / how come] 咁[gam3|so / such / to this degree] 攰[gui6|tired / exhausted] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 你[nei5|you] 點解[dim2gaai2|why] 咁[gam3|so / such / to this degree] 攰[gui6|tired / exhausted] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Why are you so tired?
-B: 好[hou2|good / fine / very / quite] 慘[caam2|miserable / pitiful / tragic] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I / me] 部[bou6|measure word for machines/phones] 電話[din6waa2|telephone / phone] 俾[bei2|by / to give] 人[jan4|person / people / human] 偷[tau1|to steal] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]！
+B: 好[hou2|good / fine / very / quite] 慘[caam2|miserable / pitiful / tragic] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I / me] 部[bou6|measure word for machines/phones] 電話[din6waa2|phone] 俾[bei2|by / to give] 人[jan4|person / people / human] 偷[tau1|to steal] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]！
    === So miserable! My phone was stolen by someone!
 A: 真係[zan1hai6|really / truly] 慘[caam2|miserable / pitiful / tragic] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 之後[zi1hau6|afterwards / after] 呢[ne1|sentence-final particle for questions and pauses]？
    === That's really pitiful! And then?

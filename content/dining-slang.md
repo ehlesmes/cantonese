@@ -32,7 +32,7 @@ plain white rice** (because it is pure white and clean).
 To order a plate of char siu with white rice, you can naturally say:
 
 ```cantonese
-我[ngo5|I / me] 要[jiu3|to want / need / must / demand] 一[jat1|one] 碟[dip6|plate / dish (classifier for food dishes)] 叉燒[caa1siu1|barbecued pork / char siu] 同埋[tung4maai4|and / with / together with] 一[jat1|one] 碗[wun2|bowl] 靚仔[leng3zai2|handsome boy / plain white rice (restaurant slang)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 要[jiu3|to want / need / must / demand] 一[jat1|one] 碟[dip6|plate / dish (classifier for food dishes)] 叉燒[caa1siu1|barbecued pork / char siu] 同埋[tung4maai4|and / together with] 一[jat1|one] 碗[wun2|bowl] 靚仔[leng3zai2|handsome boy / plain white rice (restaurant slang)] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I want a plate of barbecued pork and a bowl of plain white rice.
 ```
@@ -143,7 +143,7 @@ Here is a short exchange illustrating these new words.
 ```dialog
 A: 你[nei5|you] 好[hou2|very] 嬲[nau1|angry / mad] 呀[aa3|particle]？
    === Are you very angry?
-B: 係[hai6|yes] 呀[aa3|particle]，我[ngo5|I] 好[hou2|very] 攰[gui6|tired / exhausted] 同埋[tung4maai4|and / with / together with] 好[hou2|very] 悶[mun6|bored / boring / stuffy] 呀[aa3|particle]。 我[ngo5|I] 想[soeng2|to want to] 食[sik6|to eat] 嘢食[je5sik6|food]。
+B: 係[hai6|yes] 呀[aa3|particle]，我[ngo5|I] 好[hou2|very] 攰[gui6|tired / exhausted] 同埋[tung4maai4|and / together with] 好[hou2|very] 悶[mun6|bored / boring / stuffy] 呀[aa3|particle]。 我[ngo5|I] 想[soeng2|to want to] 食[sik6|to eat] 嘢食[je5sik6|food]。
    === Yes, I am very tired and very bored. I want to eat food.
 A: 你[nei5|you] 想[soeng2|to want to] 食[sik6|to eat] 蛋撻[daan6taat3|egg tart] 定[ding6|or] 菠蘿包[bo1lo1baau1|pineapple bun] 呀[aa3|particle]？
    === Do you want to eat an egg tart or a pineapple bun?

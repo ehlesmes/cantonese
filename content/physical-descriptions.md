@@ -17,7 +17,7 @@ Let's dive in!
 
 Let's learn some useful vocabulary for describing people and what they wear:
 
-- `靚仔[leng3zai2|handsome boy / handsome]` — handsome
+- `靚仔[leng3zai2|handsome boy]` — handsome
 - `靚女[leng3neoi5|pretty girl / beautiful]` — pretty / beautiful
 - `高[gou1|tall / high]` — tall
 - `矮[ai2|short (in height)]` — short (in height)
@@ -120,7 +120,7 @@ A: 唔該[m4goi1|excuse me]，你[nei5|you] 睇[tai2|to look / see / watch / rea
    === Excuse me, take a look! Who is that boy wearing glasses?
 B: 佢[keoi5|he] 係[hai6|is] 我[ngo5|I / me] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend] 呀[aa3|particle]。 佢[keoi5|he] 著[zoek3|to wear (clothes)] 緊[gan2|progressive aspect] 藍色[laam4sik1|blue color] 嘅[ge3|modifier] 衫[saam1|clothes / clothing / shirt] 呀[aa3|particle]。
    === He is my friend. He is wearing a blue shirt.
-A: 佢[keoi5|he] 好[hou2|very] 靚仔[leng3zai2|handsome boy / handsome] 呀[aa3|particle]！ 隔籬[gaak3lei4|next to] 嗰[go2|that] 個[go3|unit] 著[zoek3|to wear] 裙[kwan4|skirt / dress] 嘅[ge3|modifier] 靚女[leng3neoi5|pretty girl / beautiful] 都[dou1|also] 係[hai6|is] 你[nei5|you] 嘅[ge3|modifier] 朋友[pang4jau5|friend] 呀[aa3|particle]？
+A: 佢[keoi5|he] 好[hou2|very] 靚仔[leng3zai2|handsome boy] 呀[aa3|particle]！ 隔籬[gaak3lei4|next to] 嗰[go2|that] 個[go3|unit] 著[zoek3|to wear] 裙[kwan4|skirt / dress] 嘅[ge3|modifier] 靚女[leng3neoi5|pretty girl / beautiful] 都[dou1|also] 係[hai6|is] 你[nei5|you] 嘅[ge3|modifier] 朋友[pang4jau5|friend] 呀[aa3|particle]？
    === He is very handsome! Is that pretty girl next to him wearing a dress also your friend?
 B: 係[hai6|yes] 呀[aa3|particle]！
    === Yes!

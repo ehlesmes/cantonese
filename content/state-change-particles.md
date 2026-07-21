@@ -60,7 +60,7 @@ Oh, it is actually really cold today! (Contrary to what I expected!)
 ```
 
 ```cantonese
-小心[siu2sam1|careful / to be careful / take care] 啲[di1|a bit / some / comparative suffix] 喎[wo3|sentence-final particle indicating surprise or warning]！
+小心[siu2sam1|to be careful / take care] 啲[di1|a bit / some / comparative suffix] 喎[wo3|sentence-final particle indicating surprise or warning]！
 ===
 Be careful! (Warning someone of a potential hazard)
 ```
@@ -162,9 +162,9 @@ A: Wing-kit，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa5|verb
    === Wing-kit, take a look! What time is it already? Apparently, he still hasn't returned to the office!
 B: 佢[keoi5|he / she / it] 遲到[ci4dou3|to be late / arrive late] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 兩[loeng5|two / pair (used with classifiers)] 個[go3|general measure word / individual / unit] 鐘頭[zung1tau4|hour] 喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]！老闆[lou5baan2|boss / proprietor] 真係[zan1hai6|really / truly] 嬲[nau1|angry / mad] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 喇[laa3|sentence-final particle indicating a change of state or already]！
    === He is late by two hours already! The boss is really angry now!
-A: 係[hai6|to be (am/is/are) / yes] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？佢[keoi5|he / she / it] 尋日[cam4jat6|yesterday] 話[waa6|to say / tell / words / speech] 今日[gam1jat6|today] 放假[fong3gaa3|to have a holiday / day off] 喎[wo3|sentence-final particle indicating surprise or warning]！
+A: 係[hai6|to be (am / is / are) / yes] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？佢[keoi5|he / she / it] 尋日[cam4jat6|yesterday] 話[waa6|to say / tell / words / speech] 今日[gam1jat6|today] 放假[fong3gaa3|to have a holiday / day off] 喎[wo3|sentence-final particle indicating surprise or warning]！
    === Is that so? He said yesterday that apparently today is his day off!
-B: 佢[keoi5|he / she / it] 記錯[gei3co3|remembered incorrectly] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]！今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 佢[keoi5|he / she / it] 放假[fong3gaa3|to have a holiday / day off] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
+B: 佢[keoi5|he / she / it] 記錯[gei3co3|remembered incorrectly] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]！今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am / is / are) / yes] 佢[keoi5|he / she / it] 放假[fong3gaa3|to have a holiday / day off] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
    === He just remembered it incorrectly! Today is obviously not his day off!
 A: 噉[gam2|then / in that case / so] 佢[keoi5|he / she / it] 應該[jing1goi1|should / ought to] 快[faai3|fast / quick / rapid] 啲[di1|a bit / some / comparative suffix] 返[faan1|to return / go back / reverse] 公司[gung1si1|company / office] 喇[laa3|sentence-final particle indicating a change of state or already]！
    === In that case, he should return to the office a bit faster!

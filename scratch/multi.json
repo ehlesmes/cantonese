@@ -1,0 +1,2627 @@
+[
+  {
+    "char": "呀",
+    "jp": "aa4",
+    "trans": "sentence-final particle softening questions / sentence-final particle for questions"
+  },
+  {
+    "char": "呃",
+    "jp": "aak1",
+    "trans": "to cheat / trick / fish"
+  },
+  {
+    "char": "啱啱",
+    "jp": "aam1aam1",
+    "trans": "just now / recently / exactly"
+  },
+  {
+    "char": "晏晝",
+    "jp": "aan3zau3",
+    "trans": "noon / afternoon"
+  },
+  {
+    "char": "嘔",
+    "jp": "au2",
+    "trans": "to vomit / throw up"
+  },
+  {
+    "char": "拜拜",
+    "jp": "baai1baai3",
+    "trans": "bye-bye / goodbye (loanword)"
+  },
+  {
+    "char": "白",
+    "jp": "baak6",
+    "trans": "clear / explain / clearly"
+  },
+  {
+    "char": "扮",
+    "jp": "baan6",
+    "trans": "to dress up / act / pretend"
+  },
+  {
+    "char": "扮嘢",
+    "jp": "baan6je5",
+    "trans": "to pretend / show off / act"
+  },
+  {
+    "char": "爆",
+    "jp": "baau3",
+    "trans": "explosively / extremely (post-adjective intensifier)"
+  },
+  {
+    "char": "爆數據",
+    "jp": "baau3 sou3geoi3",
+    "trans": "exceed data limit / to exceed mobile data limit (slang)"
+  },
+  {
+    "char": "爆升",
+    "jp": "baau3sing1",
+    "trans": "to skyrocket / experience explosive growth"
+  },
+  {
+    "char": "不過",
+    "jp": "bat1gwo3",
+    "trans": "but / however"
+  },
+  {
+    "char": "俾",
+    "jp": "bei2",
+    "trans": "to give / by (passive marker) / let / for / allow"
+  },
+  {
+    "char": "病",
+    "jp": "beng6",
+    "trans": "sick / illness"
+  },
+  {
+    "char": "邊個",
+    "jp": "bin1go3",
+    "trans": "who / which one"
+  },
+  {
+    "char": "兵",
+    "jp": "bing1",
+    "trans": "platonic admirer who is led on (literally 'soldier') / soldier"
+  },
+  {
+    "char": "病",
+    "jp": "bing6",
+    "trans": "to be sick / illness / disease"
+  },
+  {
+    "char": "表",
+    "jp": "biu2",
+    "trans": "to confess / to show"
+  },
+  {
+    "char": "幫",
+    "jp": "bong1",
+    "trans": "to help / assist / for / on behalf of"
+  },
+  {
+    "char": "幫手",
+    "jp": "bong1sau2",
+    "trans": "to help out / assist / lend a hand"
+  },
+  {
+    "char": "步",
+    "jp": "bou6",
+    "trans": "step / pace"
+  },
+  {
+    "char": "部",
+    "jp": "bou6",
+    "trans": "classifier for machines and devices / measure word for machines / phones"
+  },
+  {
+    "char": "杯",
+    "jp": "bui1",
+    "trans": "cup / glass / mug (classifier for drinks)"
+  },
+  {
+    "char": "半夜",
+    "jp": "bun3je6",
+    "trans": "midnight / middle of the night"
+  },
+  {
+    "char": "差唔多",
+    "jp": "caa1m4do1",
+    "trans": "almost / about / more or less"
+  },
+  {
+    "char": "叉燒",
+    "jp": "caa1siu1",
+    "trans": "barbecued pork / char siu"
+  },
+  {
+    "char": "茶餐廳",
+    "jp": "caa4caan1teng1",
+    "trans": "Hong Kong style café / diner"
+  },
+  {
+    "char": "茶餐廳",
+    "jp": "caa4caan1ting1",
+    "trans": "Hong Kong style café / diner"
+  },
+  {
+    "char": "慘",
+    "jp": "caam2",
+    "trans": "miserable / pitiful / tragic"
+  },
+  {
+    "char": "插頭",
+    "jp": "caap3tau4",
+    "trans": "electrical socket / plug"
+  },
+  {
+    "char": "炒",
+    "jp": "caau2",
+    "trans": "to stir-fry / speculate / fire"
+  },
+  {
+    "char": "炒股",
+    "jp": "caau2gu2",
+    "trans": "to speculate in stocks / trade stocks"
+  },
+  {
+    "char": "炒魷魚",
+    "jp": "caau2jau4jyu2",
+    "trans": "to get fired / lay off / fire someone"
+  },
+  {
+    "char": "車",
+    "jp": "ce1",
+    "trans": "car / vehicle"
+  },
+  {
+    "char": "呎",
+    "jp": "cek3",
+    "trans": "square foot / square feet"
+  },
+  {
+    "char": "吹",
+    "jp": "ceoi1",
+    "trans": "to blow / boast"
+  },
+  {
+    "char": "吹水",
+    "jp": "ceoi1seoi2",
+    "trans": "to chat / shoot the breeze / gossip"
+  },
+  {
+    "char": "出",
+    "jp": "ceot1",
+    "trans": "to exit / go out / to leave"
+  },
+  {
+    "char": "出軌",
+    "jp": "ceot1gwai2",
+    "trans": "to cheat / have an affair / infidelity"
+  },
+  {
+    "char": "出糧",
+    "jp": "ceot1loeng4",
+    "trans": "getting paid one's salary / salary"
+  },
+  {
+    "char": "出太陽",
+    "jp": "ceot1taai3joeng4",
+    "trans": "the sun comes out / sunny"
+  },
+  {
+    "char": "次",
+    "jp": "ci3",
+    "trans": "time / occurrence (classifier)"
+  },
+  {
+    "char": "廁所",
+    "jp": "ci3so2",
+    "trans": "toilet / restroom"
+  },
+  {
+    "char": "遲啲",
+    "jp": "ci4di1",
+    "trans": "later on / later on"
+  },
+  {
+    "char": "遲到",
+    "jp": "ci4dou3",
+    "trans": "to arrive late / to be late"
+  },
+  {
+    "char": "潛水",
+    "jp": "cim4seoi2",
+    "trans": "to lurk / to go offline / go silent"
+  },
+  {
+    "char": "前邊",
+    "jp": "cin4bin1",
+    "trans": "up ahead / in front / up ahead"
+  },
+  {
+    "char": "前面",
+    "jp": "cin4min6",
+    "trans": "in front / front side"
+  },
+  {
+    "char": "請",
+    "jp": "cing2",
+    "trans": "to invite / request / treat / please / apply"
+  },
+  {
+    "char": "請假",
+    "jp": "cing2gaa3",
+    "trans": "to apply for leave / request time off / request leave"
+  },
+  {
+    "char": "潮濕",
+    "jp": "ciu4sap1",
+    "trans": "humid / damp / moist"
+  },
+  {
+    "char": "錯",
+    "jp": "co3",
+    "trans": "wrong / incorrect / mistake"
+  },
+  {
+    "char": "腸胃炎",
+    "jp": "coeng4wai6jim4",
+    "trans": "gastroenteritis / stomach flu"
+  },
+  {
+    "char": "全部",
+    "jp": "cyun4bou6",
+    "trans": "all / entirely"
+  },
+  {
+    "char": "傳染",
+    "jp": "cyun4jim5",
+    "trans": "to infect / infectious / contagious"
+  },
+  {
+    "char": "打爛",
+    "jp": "da2laan6",
+    "trans": "to break / smash / shatter"
+  },
+  {
+    "char": "打",
+    "jp": "daa2",
+    "trans": "to beat / hit / strike"
+  },
+  {
+    "char": "打風",
+    "jp": "daa2fung1",
+    "trans": "to have a typhoon / to have a typhoon"
+  },
+  {
+    "char": "打卡",
+    "jp": "daa2kaa1",
+    "trans": "to check-in / take photos at trendy spots"
+  },
+  {
+    "char": "打卡",
+    "jp": "daa2kaat1",
+    "trans": "to check-in / take photos at trendy spots"
+  },
+  {
+    "char": "打算",
+    "jp": "daa2syun3",
+    "trans": "to plan / intend / plan"
+  },
+  {
+    "char": "帶",
+    "jp": "daai3",
+    "trans": "to bring / carry"
+  },
+  {
+    "char": "大",
+    "jp": "daai6",
+    "trans": "big / large / great"
+  },
+  {
+    "char": "大家",
+    "jp": "daai6gaa1",
+    "trans": "everyone / all of us"
+  },
+  {
+    "char": "大鱷",
+    "jp": "daai6ngok6",
+    "trans": "market shark / big player / market crocodile"
+  },
+  {
+    "char": "大聲",
+    "jp": "daai6sing1",
+    "trans": "loudly / loud voice"
+  },
+  {
+    "char": "單",
+    "jp": "daan1",
+    "trans": "bill / receipt / sheet"
+  },
+  {
+    "char": "單位",
+    "jp": "daan1wai2",
+    "trans": "unit / flat / apartment"
+  },
+  {
+    "char": "但係",
+    "jp": "daan6hai6",
+    "trans": "but / however"
+  },
+  {
+    "char": "搭",
+    "jp": "daap3",
+    "trans": "to take / ride"
+  },
+  {
+    "char": "搭車",
+    "jp": "daap3ce1",
+    "trans": "to take transit / ride a vehicle"
+  },
+  {
+    "char": "搭枱",
+    "jp": "daap3toi2",
+    "trans": "to share a table with strangers / share table"
+  },
+  {
+    "char": "第日",
+    "jp": "dai6jat6",
+    "trans": "another day / some day in the future"
+  },
+  {
+    "char": "得",
+    "jp": "dak1",
+    "trans": "particle expressing permission, possibility, capability, or adverbial degree / ready to go / able to go / okay / fine / acceptable / can / permissible"
+  },
+  {
+    "char": "得閒",
+    "jp": "dak1haan4",
+    "trans": "free / having spare time"
+  },
+  {
+    "char": "得滯",
+    "jp": "dak1zai6",
+    "trans": "too / excessively"
+  },
+  {
+    "char": "燈",
+    "jp": "dang1",
+    "trans": "light / lamp"
+  },
+  {
+    "char": "燈位",
+    "jp": "dang1wai2",
+    "trans": "traffic light / intersection with lights"
+  },
+  {
+    "char": "特價",
+    "jp": "dat6 gaa3",
+    "trans": "special price / bargain price"
+  },
+  {
+    "char": "抖",
+    "jp": "dau2",
+    "trans": "to rest / take a break"
+  },
+  {
+    "char": "抖吓",
+    "jp": "dau2haa5",
+    "trans": "to rest a bit / take a brief break"
+  },
+  {
+    "char": "地鐵",
+    "jp": "dei6tit3",
+    "trans": "MTR / subway"
+  },
+  {
+    "char": "地鐵站",
+    "jp": "dei6tit3zaam6",
+    "trans": "MTR station / subway station"
+  },
+  {
+    "char": "對",
+    "jp": "deoi3",
+    "trans": "pair / couple (classifier for paired objects like shoes)"
+  },
+  {
+    "char": "啲",
+    "jp": "di1",
+    "trans": "a bit / some / comparative suffix / a little / plural or possessive particle / more"
+  },
+  {
+    "char": "點",
+    "jp": "dim2",
+    "trans": "o'clock / hour"
+  },
+  {
+    "char": "點呀",
+    "jp": "dim2aa3",
+    "trans": "how is it? / how are things? / what's up?"
+  },
+  {
+    "char": "點解",
+    "jp": "dim2gaai2",
+    "trans": "why / how come"
+  },
+  {
+    "char": "點樣",
+    "jp": "dim2joeng6",
+    "trans": "how / in what way"
+  },
+  {
+    "char": "點會",
+    "jp": "dim2wui5",
+    "trans": "how could / how can"
+  },
+  {
+    "char": "電話",
+    "jp": "din6waa2",
+    "trans": "telephone / phone"
+  },
+  {
+    "char": "頂住",
+    "jp": "ding2zyu6",
+    "trans": "to hold on / hang in there / endure"
+  },
+  {
+    "char": "定期",
+    "jp": "ding6kei4",
+    "trans": "fixed deposit / term deposit"
+  },
+  {
+    "char": "碟",
+    "jp": "dip6",
+    "trans": "plate / dish (classifier for food dishes)"
+  },
+  {
+    "char": "跌",
+    "jp": "dit3",
+    "trans": "to fall / drop / decline"
+  },
+  {
+    "char": "多",
+    "jp": "do1",
+    "trans": "many / much / more"
+  },
+  {
+    "char": "都",
+    "jp": "dou1",
+    "trans": "also / even / already / both / all"
+  },
+  {
+    "char": "到",
+    "jp": "dou2",
+    "trans": "verb complement indicating success / resultative complement indicating success / can manage to / successfully do"
+  },
+  {
+    "char": "到",
+    "jp": "dou3",
+    "trans": "to arrive / until / to the point of"
+  },
+  {
+    "char": "到極",
+    "jp": "dou3gik6",
+    "trans": "extremely / to the absolute limit / to the limit"
+  },
+  {
+    "char": "度",
+    "jp": "dou6",
+    "trans": "degree (temperature / angle) / place (short for ni1dou6 / go2dou6)"
+  },
+  {
+    "char": "讀",
+    "jp": "duk6",
+    "trans": "to study / read (aloud)"
+  },
+  {
+    "char": "讀書",
+    "jp": "duk6syu1",
+    "trans": "to study / to read"
+  },
+  {
+    "char": "凍",
+    "jp": "dung3",
+    "trans": "cold / iced / freezing"
+  },
+  {
+    "char": "嘟",
+    "jp": "dut1",
+    "trans": "to tap a card / scan / beep"
+  },
+  {
+    "char": "短訊",
+    "jp": "dyun2seon3",
+    "trans": "text message / SMS"
+  },
+  {
+    "char": "斷",
+    "jp": "dyun6",
+    "trans": "to snap/break"
+  },
+  {
+    "char": "斷片",
+    "jp": "dyun6pin2",
+    "trans": "to blackout / memory lapse from drinking"
+  },
+  {
+    "char": "AA制",
+    "jp": "ei1ei1zai3",
+    "trans": "going Dutch / splitting the bill"
+  },
+  {
+    "char": "App",
+    "jp": "ep1",
+    "trans": "mobile application / app"
+  },
+  {
+    "char": "快",
+    "jp": "faai3",
+    "trans": "fast / quick / rapid"
+  },
+  {
+    "char": "快樂",
+    "jp": "faai3lok6",
+    "trans": "happy / joyful"
+  },
+  {
+    "char": "返",
+    "jp": "faan1",
+    "trans": "to return / go back / reverse / to go to / again"
+  },
+  {
+    "char": "返工",
+    "jp": "faan1gung1",
+    "trans": "to go to work / be at work"
+  },
+  {
+    "char": "反而",
+    "jp": "faan2ji4",
+    "trans": "on the contrary / instead"
+  },
+  {
+    "char": "飯",
+    "jp": "faan6",
+    "trans": "cooked rice / meal"
+  },
+  {
+    "char": "發",
+    "jp": "faat3",
+    "trans": "to emit / generate / dream / develop"
+  },
+  {
+    "char": "發夢",
+    "jp": "faat3mung6",
+    "trans": "to dream / daydream / dream"
+  },
+  {
+    "char": "發燒",
+    "jp": "faat3siu1",
+    "trans": "to have a fever / to run a fever"
+  },
+  {
+    "char": "分",
+    "jp": "fan1",
+    "trans": "minute / cent / separate / to divide / split"
+  },
+  {
+    "char": "分鐘",
+    "jp": "fan1zung1",
+    "trans": "minute / minutes"
+  },
+  {
+    "char": "飛機王",
+    "jp": "fei1gei1wong4",
+    "trans": "chronic flake / person who always stands others up"
+  },
+  {
+    "char": "非常",
+    "jp": "fei1soeng4",
+    "trans": "very / extremely"
+  },
+  {
+    "char": "火牛",
+    "jp": "fo2ngau4",
+    "trans": "power adapter / charger (slang)"
+  },
+  {
+    "char": "房",
+    "jp": "fong2",
+    "trans": "room / bedroom"
+  },
+  {
+    "char": "放",
+    "jp": "fong3",
+    "trans": "to release / let go / to put / place"
+  },
+  {
+    "char": "放飛機",
+    "jp": "fong3fei1gei1",
+    "trans": "to stand someone up / break a promise"
+  },
+  {
+    "char": "放假",
+    "jp": "fong3gaa3",
+    "trans": "to have a holiday / day off"
+  },
+  {
+    "char": "放心",
+    "jp": "fong3sam1",
+    "trans": "to feel relieved / set one's mind at ease"
+  },
+  {
+    "char": "放閃",
+    "jp": "fong3sim2",
+    "trans": "to show public displays of affection / show PDA"
+  },
+  {
+    "char": "褲",
+    "jp": "fu3",
+    "trans": "pants / trousers"
+  },
+  {
+    "char": "附近",
+    "jp": "fu6gan6",
+    "trans": "nearby / neighborhood"
+  },
+  {
+    "char": "父母",
+    "jp": "fu6mou5",
+    "trans": "parents / father and mother"
+  },
+  {
+    "char": "覆",
+    "jp": "fuk1",
+    "trans": "to reply / write back"
+  },
+  {
+    "char": "風",
+    "jp": "fung1",
+    "trans": "wind / typhoon"
+  },
+  {
+    "char": "加",
+    "jp": "gaa1",
+    "trans": "to add / increase"
+  },
+  {
+    "char": "加上",
+    "jp": "gaa1soeng5",
+    "trans": "moreover / plus"
+  },
+  {
+    "char": "假",
+    "jp": "gaa2",
+    "trans": "fake / false"
+  },
+  {
+    "char": "假使",
+    "jp": "gaa2si2",
+    "trans": "if / in case / supposing"
+  },
+  {
+    "char": "㗎",
+    "jp": "gaa3",
+    "trans": "sentence-final particle asserting a point, combination of ge3 and aa3 / sentence-final particle indicating assertion or emphasis"
+  },
+  {
+    "char": "介紹",
+    "jp": "gaai3siu6",
+    "trans": "to introduce / recommend"
+  },
+  {
+    "char": "隔籬",
+    "jp": "gaak3lei4",
+    "trans": "next to / beside / neighbor"
+  },
+  {
+    "char": "減價",
+    "jp": "gaam2 gaa3",
+    "trans": "to reduce price / go on sale"
+  },
+  {
+    "char": "間",
+    "jp": "gaan1",
+    "trans": "classifier for buildings / shops / measure word for rooms, houses, buildings"
+  },
+  {
+    "char": "搞掂",
+    "jp": "gaau2dim6",
+    "trans": "done / finished / settled / resolved"
+  },
+  {
+    "char": "繼續",
+    "jp": "gai3zuk6",
+    "trans": "to continue / go on"
+  },
+  {
+    "char": "噉",
+    "jp": "gam2",
+    "trans": "then / in that case / so / like this"
+  },
+  {
+    "char": "咁樣",
+    "jp": "gam2joeng6",
+    "trans": "like this / in this way / this way"
+  },
+  {
+    "char": "噉樣",
+    "jp": "gam2joeng6",
+    "trans": "in this way / like this / this pattern"
+  },
+  {
+    "char": "感冒",
+    "jp": "gam2mou6",
+    "trans": "common cold / to catch a cold"
+  },
+  {
+    "char": "咁",
+    "jp": "gam3",
+    "trans": "so / such / to this degree / then / that / like this"
+  },
+  {
+    "char": "跟住",
+    "jp": "gan1zyu6",
+    "trans": "and then / next / follow"
+  },
+  {
+    "char": "緊",
+    "jp": "gan2",
+    "trans": "progressive aspect marker (action in progress) / verbal aspect suffix indicating an action in progress (continuous aspect) / continuous aspect particle indicating action in progress"
+  },
+  {
+    "char": "近",
+    "jp": "gan6",
+    "trans": "near / close"
+  },
+  {
+    "char": "九個字",
+    "jp": "gau2go3zi6",
+    "trans": "45 minutes / three quarters"
+  },
+  {
+    "char": "夠",
+    "jp": "gau3",
+    "trans": "enough / sufficient"
+  },
+  {
+    "char": "嘅",
+    "jp": "ge3",
+    "trans": "possessive particle / nominalizing particle / final assertive particle / modifier / possessive or linking particle / sentence-final particle asserting a fact"
+  },
+  {
+    "char": "基金",
+    "jp": "gei1gam1",
+    "trans": "mutual fund / mutual fund"
+  },
+  {
+    "char": "幾",
+    "jp": "gei2",
+    "trans": "quite / pretty / fairly"
+  },
+  {
+    "char": "幾點",
+    "jp": "gei2dim2",
+    "trans": "what time / when"
+  },
+  {
+    "char": "幾多",
+    "jp": "gei2do1",
+    "trans": "how many / how much"
+  },
+  {
+    "char": "幾時",
+    "jp": "gei2si4",
+    "trans": "when / what time"
+  },
+  {
+    "char": "既然",
+    "jp": "gei3jin4",
+    "trans": "since / given that"
+  },
+  {
+    "char": "極",
+    "jp": "gik6",
+    "trans": "extremely / to the limit"
+  },
+  {
+    "char": "檢查",
+    "jp": "gim2caa4",
+    "trans": "to examine / check / inspect"
+  },
+  {
+    "char": "見",
+    "jp": "gin3",
+    "trans": "to see / meet"
+  },
+  {
+    "char": "叫",
+    "jp": "giu3",
+    "trans": "to be called / to call"
+  },
+  {
+    "char": "個",
+    "jp": "go3",
+    "trans": "general measure word / individual / unit / measure word for general items / general classifier"
+  },
+  {
+    "char": "覺得",
+    "jp": "gok3dak1",
+    "trans": "to feel / think"
+  },
+  {
+    "char": "趕時間",
+    "jp": "gon2si4gaan1",
+    "trans": "in a hurry / rushing for time"
+  },
+  {
+    "char": "趕時間",
+    "jp": "gon2si4gaan3",
+    "trans": "in a hurry / rushing for time"
+  },
+  {
+    "char": "講",
+    "jp": "gong2",
+    "trans": "to speak / say / talk"
+  },
+  {
+    "char": "港股",
+    "jp": "gong2gu2",
+    "trans": "Hong Kong stocks / HK shares"
+  },
+  {
+    "char": "高",
+    "jp": "gou1",
+    "trans": "tall / high"
+  },
+  {
+    "char": "估",
+    "jp": "gu2",
+    "trans": "to guess / estimate / think"
+  },
+  {
+    "char": "股票",
+    "jp": "gu2piu3",
+    "trans": "stock / share"
+  },
+  {
+    "char": "攰",
+    "jp": "gui6",
+    "trans": "tired / exhausted / fatigued"
+  },
+  {
+    "char": "局",
+    "jp": "guk6",
+    "trans": "gathering / social event / plan"
+  },
+  {
+    "char": "工",
+    "jp": "gung1",
+    "trans": "work / job"
+  },
+  {
+    "char": "供樓",
+    "jp": "gung1lau2",
+    "trans": "to pay a mortgage / paying mortgage"
+  },
+  {
+    "char": "公司",
+    "jp": "gung1si1",
+    "trans": "company / office"
+  },
+  {
+    "char": "鬼死咁",
+    "jp": "gwai2sei2gam3",
+    "trans": "extremely / awfully (pre-adjective intensifier)"
+  },
+  {
+    "char": "過",
+    "jp": "gwo3",
+    "trans": "verbal aspect suffix indicating past experience / to pass or cross / cross / 'have done before' / than"
+  },
+  {
+    "char": "吓",
+    "jp": "haa2",
+    "trans": "what / interjection expressing surprise / sentence-final particle or interjection expressing doubt, surprise, or asking for confirmation / sentence-final particle expressing surprise, disbelief, or seeking quick confirmation"
+  },
+  {
+    "char": "吓",
+    "jp": "haa5",
+    "trans": "verbal suffix indicating a brief or casual action / briefly / verbal suffix indicating a brief action or attempt / verbal measure word indicating brief action / a bit"
+  },
+  {
+    "char": "下場",
+    "jp": "haa6coeng4",
+    "trans": "next venue / afterparty / next round"
+  },
+  {
+    "char": "下面",
+    "jp": "haa6min6",
+    "trans": "below / under / lower side"
+  },
+  {
+    "char": "下晝",
+    "jp": "haa6zau3",
+    "trans": "in the afternoon / in the afternoon"
+  },
+  {
+    "char": "蟹",
+    "jp": "haai5",
+    "trans": "stuck at a loss / trapped in a losing stock (slang) / crab"
+  },
+  {
+    "char": "客廳",
+    "jp": "haak3teng1",
+    "trans": "living room / parlor"
+  },
+  {
+    "char": "喊",
+    "jp": "haam3",
+    "trans": "to cry / weep"
+  },
+  {
+    "char": "慳",
+    "jp": "haan1",
+    "trans": "to save (money / time) / cut down / economize"
+  },
+  {
+    "char": "行到",
+    "jp": "haang4dou3",
+    "trans": "walk until / walk to"
+  },
+  {
+    "char": "行山",
+    "jp": "haang4saan1",
+    "trans": "to go hiking / climb mountains"
+  },
+  {
+    "char": "考試",
+    "jp": "haau2si3",
+    "trans": "to take an exam / to take an exam"
+  },
+  {
+    "char": "喺",
+    "jp": "hai2",
+    "trans": "at / in / on (locative preposition)"
+  },
+  {
+    "char": "喺度",
+    "jp": "hai2dou6",
+    "trans": "here / in the middle of doing something"
+  },
+  {
+    "char": "係",
+    "jp": "hai6",
+    "trans": "to be (am / is / are) / yes"
+  },
+  {
+    "char": "係唔係",
+    "jp": "hai6 m4 hai6",
+    "trans": "is it or not? / is that right? (A-not-A question form)"
+  },
+  {
+    "char": "係咁",
+    "jp": "hai6gam2",
+    "trans": "continuously / constantly"
+  },
+  {
+    "char": "係唔係",
+    "jp": "hai6m4hai6",
+    "trans": "is it or not? / is that right? (A-not-A question form)"
+  },
+  {
+    "char": "係咩",
+    "jp": "hai6me1",
+    "trans": "really? / is that so?"
+  },
+  {
+    "char": "黑",
+    "jp": "hak1",
+    "trans": "black / dark / bad luck"
+  },
+  {
+    "char": "黑面",
+    "jp": "hak1min6",
+    "trans": "to have a dark expression / angry face"
+  },
+  {
+    "char": "行",
+    "jp": "hang4",
+    "trans": "to walk / go / run (a machine)"
+  },
+  {
+    "char": "合約",
+    "jp": "hap6joek3",
+    "trans": "contract / agreement"
+  },
+  {
+    "char": "後面",
+    "jp": "hau6min6",
+    "trans": "behind / back side"
+  },
+  {
+    "char": "hea",
+    "jp": "hea1",
+    "trans": "to chill / hang out / slack off / procrastinate"
+  },
+  {
+    "char": "Hea",
+    "jp": "hea1",
+    "trans": "to chill / hang out / slack off / procrastinate"
+  },
+  {
+    "char": "Hea",
+    "jp": "hea3",
+    "trans": "to chill / hang out / slack off / procrastinate"
+  },
+  {
+    "char": "希望",
+    "jp": "hei1mong6",
+    "trans": "to hope / wish / hope"
+  },
+  {
+    "char": "去街",
+    "jp": "heoi3gaai1",
+    "trans": "go out / go on a date"
+  },
+  {
+    "char": "可以",
+    "jp": "ho2ji5",
+    "trans": "can / may / possible / able to"
+  },
+  {
+    "char": "可樂",
+    "jp": "ho2lok6",
+    "trans": "cola / Coke"
+  },
+  {
+    "char": "可唔可以",
+    "jp": "ho2m4ho2ji5",
+    "trans": "can or cannot / may or may not (A-not-A question form)"
+  },
+  {
+    "char": "向",
+    "jp": "hoeng3",
+    "trans": "towards / to"
+  },
+  {
+    "char": "開",
+    "jp": "hoi1",
+    "trans": "to write (a prescription) / prescribe / to open / start / turn on"
+  },
+  {
+    "char": "開始",
+    "jp": "hoi1ci2",
+    "trans": "to start / begin"
+  },
+  {
+    "char": "開關",
+    "jp": "hoi1gwaan1",
+    "trans": "switch / to turn on or off"
+  },
+  {
+    "char": "開心",
+    "jp": "hoi1sam1",
+    "trans": "happy / joyous / glad / cheerful"
+  },
+  {
+    "char": "開市",
+    "jp": "hoi1si5",
+    "trans": "market opens / market opening"
+  },
+  {
+    "char": "好",
+    "jp": "hou2",
+    "trans": "good / fine / very / quite / extremely / okay"
+  },
+  {
+    "char": "好似",
+    "jp": "hou2ci5",
+    "trans": "seem like / seem like / as if / looks like / seems"
+  },
+  {
+    "char": "好彩",
+    "jp": "hou2coi2",
+    "trans": "luckily / fortunately"
+  },
+  {
+    "char": "好多",
+    "jp": "hou2do1",
+    "trans": "a lot of / many / much"
+  },
+  {
+    "char": "好返",
+    "jp": "hou2faan1",
+    "trans": "to recover / get well"
+  },
+  {
+    "char": "好好哋",
+    "jp": "hou2hou2dei2",
+    "trans": "well / properly"
+  },
+  {
+    "char": "好玩",
+    "jp": "hou2waan2",
+    "trans": "fun / enjoyable"
+  },
+  {
+    "char": "好住",
+    "jp": "hou2zyu6",
+    "trans": "nice to live in / comfortable to reside"
+  },
+  {
+    "char": "毫",
+    "jp": "hou4",
+    "trans": "ten cents / dime"
+  },
+  {
+    "char": "毫子",
+    "jp": "hou4 zi2",
+    "trans": "ten-cent coin / dime"
+  },
+  {
+    "char": "飲茶",
+    "jp": "jam2caa4",
+    "trans": "to drink tea / go for dim sum / eat dim sum"
+  },
+  {
+    "char": "飲酒",
+    "jp": "jam2zau2",
+    "trans": "to drink alcohol / have a drink"
+  },
+  {
+    "char": "人",
+    "jp": "jan4",
+    "trans": "person / people / human / others"
+  },
+  {
+    "char": "人哋",
+    "jp": "jan4dei6",
+    "trans": "others / other people"
+  },
+  {
+    "char": "人山人海",
+    "jp": "jan4saan1jan4hoi2",
+    "trans": "crowded / huge crowds of people"
+  },
+  {
+    "char": "一定",
+    "jp": "jat1ding6",
+    "trans": "certainly / definitely"
+  },
+  {
+    "char": "一樣",
+    "jp": "jat1joeng6",
+    "trans": "same / alike / identical"
+  },
+  {
+    "char": "日",
+    "jp": "jat6",
+    "trans": "day / sun / date"
+  },
+  {
+    "char": "日頭",
+    "jp": "jat6tau2",
+    "trans": "daytime / day"
+  },
+  {
+    "char": "休息",
+    "jp": "jau1sik1",
+    "trans": "to rest / take a break"
+  },
+  {
+    "char": "有",
+    "jp": "jau5",
+    "trans": "to have / there is / there are / possess"
+  },
+  {
+    "char": "有錢",
+    "jp": "jau5cin2",
+    "trans": "rich / wealthy / have money"
+  },
+  {
+    "char": "有冇",
+    "jp": "jau5mou5",
+    "trans": "is there / do you have (A-not-A question form) / have or not (A-not-A question form)"
+  },
+  {
+    "char": "又",
+    "jp": "jau6",
+    "trans": "also / again"
+  },
+  {
+    "char": "右",
+    "jp": "jau6",
+    "trans": "right / right side"
+  },
+  {
+    "char": "嘢",
+    "jp": "je5",
+    "trans": "thing / stuff / matter / things / food"
+  },
+  {
+    "char": "野餐",
+    "jp": "je5caan1",
+    "trans": "to go on a picnic / picnic"
+  },
+  {
+    "char": "嘢飲",
+    "jp": "je5jam2",
+    "trans": "drinks / beverages"
+  },
+  {
+    "char": "嘢食",
+    "jp": "je5sik6",
+    "trans": "food / snacks / things to eat"
+  },
+  {
+    "char": "夜晚",
+    "jp": "je6maan5",
+    "trans": "night / evening / at night"
+  },
+  {
+    "char": "夜蒲",
+    "jp": "je6pou4",
+    "trans": "night clubbing / nightlife / to club at night"
+  },
+  {
+    "char": "依家",
+    "jp": "ji1gaa1",
+    "trans": "now / currently"
+  },
+  {
+    "char": "醫生",
+    "jp": "ji1sang1",
+    "trans": "doctor / medical practitioner"
+  },
+  {
+    "char": "醫生紙",
+    "jp": "ji1sang1zi2",
+    "trans": "doctor's sick leave certificate / medical note"
+  },
+  {
+    "char": "而家",
+    "jp": "ji4gaa1",
+    "trans": "now / currently"
+  },
+  {
+    "char": "已讀不回",
+    "jp": "ji5duk6bat1wui4",
+    "trans": "read but not reply / ghost / read without replying"
+  },
+  {
+    "char": "以為",
+    "jp": "ji5wai4",
+    "trans": "to mistakenly think / assume / believe"
+  },
+  {
+    "char": "嚴重",
+    "jp": "jim4cung5",
+    "trans": "serious / severe / grave"
+  },
+  {
+    "char": "嚴重",
+    "jp": "jim4zung6",
+    "trans": "serious / severe / grave"
+  },
+  {
+    "char": "然後",
+    "jp": "jin4hau6",
+    "trans": "then / afterwards"
+  },
+  {
+    "char": "應該",
+    "jp": "jing1goi1",
+    "trans": "should / ought to"
+  },
+  {
+    "char": "英國",
+    "jp": "jing1gwok3",
+    "trans": "United Kingdom / Britain"
+  },
+  {
+    "char": "業主",
+    "jp": "jip6zyu2",
+    "trans": "landlord / property owner"
+  },
+  {
+    "char": "熱氣",
+    "jp": "jit6hei3",
+    "trans": "internal heat / inflammation"
+  },
+  {
+    "char": "要求",
+    "jp": "jiu1kau4",
+    "trans": "to require / requirement"
+  },
+  {
+    "char": "要",
+    "jp": "jiu3",
+    "trans": "to want / need / must / demand / have to / require"
+  },
+  {
+    "char": "要唔要",
+    "jp": "jiu3 m4 jiu3",
+    "trans": "do you want / want or not (A-not-A question form) / do you need to (A-not-A question form)"
+  },
+  {
+    "char": "約",
+    "jp": "joek3",
+    "trans": "to make an appointment / invite"
+  },
+  {
+    "char": "藥",
+    "jp": "joek6",
+    "trans": "medicine / drug"
+  },
+  {
+    "char": "如果",
+    "jp": "jyu4gwo2",
+    "trans": "if / in case"
+  },
+  {
+    "char": "完",
+    "jp": "jyun4",
+    "trans": "finish / finished / complete"
+  },
+  {
+    "char": "原本",
+    "jp": "jyun4bun2",
+    "trans": "originally / original"
+  },
+  {
+    "char": "咳",
+    "jp": "kat1",
+    "trans": "to cough / cough"
+  },
+  {
+    "char": "其實",
+    "jp": "kei4sat6",
+    "trans": "actually / in fact / as a matter of fact"
+  },
+  {
+    "char": "佢",
+    "jp": "keoi5",
+    "trans": "he / she / it / him / her"
+  },
+  {
+    "char": "佢哋",
+    "jp": "keoi5dei6",
+    "trans": "they / them"
+  },
+  {
+    "char": "Cap圖",
+    "jp": "kep1tou4",
+    "trans": "to take a screenshot / screenshot (slang)"
+  },
+  {
+    "char": "傾",
+    "jp": "king1",
+    "trans": "to talk / chat"
+  },
+  {
+    "char": "強積金",
+    "jp": "koeng5zik1gam1",
+    "trans": "MPF / mandatory provident fund"
+  },
+  {
+    "char": "裙",
+    "jp": "kwan4",
+    "trans": "skirt / dress"
+  },
+  {
+    "char": "啦",
+    "jp": "laa3",
+    "trans": "sentence-final particle indicating completed action or change of state / particle indicating change of state"
+  },
+  {
+    "char": "喇",
+    "jp": "laa3",
+    "trans": "sentence-final particle indicating a change of state or already / SFP / sentence-final particle for changes of state"
+  },
+  {
+    "char": "冷氣",
+    "jp": "laang5hei3",
+    "trans": "air conditioning / AC"
+  },
+  {
+    "char": "樓",
+    "jp": "lau2",
+    "trans": "building / flat / apartment / floor"
+  },
+  {
+    "char": "留言",
+    "jp": "lau4jin4",
+    "trans": "to leave a message / comment"
+  },
+  {
+    "char": "樓梯",
+    "jp": "lau4tai1",
+    "trans": "stairs / staircase"
+  },
+  {
+    "char": "嚟",
+    "jp": "lei4",
+    "trans": "to come / sentence-final particle indicating that something is in a certain state"
+  },
+  {
+    "char": "利息",
+    "jp": "lei6sik1",
+    "trans": "interest (on loan / deposit)"
+  },
+  {
+    "char": "靚",
+    "jp": "leng3",
+    "trans": "beautiful / high quality / pretty / handsome / good-looking / nice"
+  },
+  {
+    "char": "靚女",
+    "jp": "leng3neoi5",
+    "trans": "pretty girl / beautiful"
+  },
+  {
+    "char": "靚仔",
+    "jp": "leng3zai2",
+    "trans": "handsome boy / handsome man / handsome / plain white rice (restaurant slang)"
+  },
+  {
+    "char": "連",
+    "jp": "lin4",
+    "trans": "to connect / link"
+  },
+  {
+    "char": "凌晨",
+    "jp": "ling4san4",
+    "trans": "early morning / before dawn"
+  },
+  {
+    "char": "囉",
+    "jp": "lo1",
+    "trans": "sentence-final particle showing obviousness, resignation, or 'of course' / obviousness particle"
+  },
+  {
+    "char": "攞",
+    "jp": "lo2",
+    "trans": "to fetch / take / to get"
+  },
+  {
+    "char": "兩",
+    "jp": "loeng5",
+    "trans": "two / pair (used with classifiers)"
+  },
+  {
+    "char": "落",
+    "jp": "lok6",
+    "trans": "to descend / to fall / drop / get off / rain"
+  },
+  {
+    "char": "落雨",
+    "jp": "lok6jyu5",
+    "trans": "to rain / raining"
+  },
+  {
+    "char": "老闆",
+    "jp": "lou5baan2",
+    "trans": "boss / proprietor"
+  },
+  {
+    "char": "老細",
+    "jp": "lou5sai3",
+    "trans": "boss / employer (colloquial)"
+  },
+  {
+    "char": "路口",
+    "jp": "lou6hau2",
+    "trans": "intersection / junction"
+  },
+  {
+    "char": "錄音",
+    "jp": "luk6jam1",
+    "trans": "voice recording / to record audio"
+  },
+  {
+    "char": "唔",
+    "jp": "m4",
+    "trans": "not (negation particle) / no (negative prefix)"
+  },
+  {
+    "char": "唔緊要",
+    "jp": "m4 gan2jiu3",
+    "trans": "it doesn't matter / never mind / it's okay"
+  },
+  {
+    "char": "唔得",
+    "jp": "m4dak1",
+    "trans": "cannot / not allowed / physically bad to do"
+  },
+  {
+    "char": "唔到",
+    "jp": "m4dou2",
+    "trans": "cannot / unable to manage to / fail to"
+  },
+  {
+    "char": "唔緊要",
+    "jp": "m4gan2jiu3",
+    "trans": "it doesn't matter / never mind / it's okay"
+  },
+  {
+    "char": "唔該",
+    "jp": "m4goi1",
+    "trans": "excuse me / thank you (for service or help) / please"
+  },
+  {
+    "char": "唔係",
+    "jp": "m4hai6",
+    "trans": "no / not be / not so / that's not the case"
+  },
+  {
+    "char": "唔開心",
+    "jp": "m4hoi1sam1",
+    "trans": "sad / unhappy"
+  },
+  {
+    "char": "唔好",
+    "jp": "m4hou2",
+    "trans": "don't / do not / should not"
+  },
+  {
+    "char": "唔好意思",
+    "jp": "m4hou2ji3si1",
+    "trans": "sorry / excuse me"
+  },
+  {
+    "char": "唔使",
+    "jp": "m4sai2",
+    "trans": "no need to / not necessary / need not"
+  },
+  {
+    "char": "唔舒服",
+    "jp": "m4syu1fuk6",
+    "trans": "uncomfortable / unwell / sick"
+  },
+  {
+    "char": "麻煩",
+    "jp": "maa4faan4",
+    "trans": "troublesome / bothersome"
+  },
+  {
+    "char": "埋",
+    "jp": "maai4",
+    "trans": "also / as well"
+  },
+  {
+    "char": "埋單",
+    "jp": "maai4daan1",
+    "trans": "to pay the bill / pay bill"
+  },
+  {
+    "char": "買入",
+    "jp": "maai5jap6",
+    "trans": "to buy in / purchase shares"
+  },
+  {
+    "char": "買嘢",
+    "jp": "maai5je5",
+    "trans": "to buy things / shop"
+  },
+  {
+    "char": "賣出",
+    "jp": "maai6ceot1",
+    "trans": "to sell out / sell shares"
+  },
+  {
+    "char": "問",
+    "jp": "man6",
+    "trans": "to ask / inquire"
+  },
+  {
+    "char": "問題",
+    "jp": "man6tai4",
+    "trans": "problem / question / issue"
+  },
+  {
+    "char": "乜",
+    "jp": "mat1",
+    "trans": "how / why / rhetorical prefix / what"
+  },
+  {
+    "char": "咩",
+    "jp": "me1",
+    "trans": "sentence-final particle expressing rhetorical doubt, surprise, or sarcasm / what / rhetorical final particle indicating doubt / interrogative particle"
+  },
+  {
+    "char": "咩嘢",
+    "jp": "me1je5",
+    "trans": "what kind of thing / what kind of thing"
+  },
+  {
+    "char": "美股",
+    "jp": "mei5gu2",
+    "trans": "US stocks / US shares"
+  },
+  {
+    "char": "美國",
+    "jp": "mei5gwok3",
+    "trans": "United States / America"
+  },
+  {
+    "char": "未",
+    "jp": "mei6",
+    "trans": "not yet / have not"
+  },
+  {
+    "char": "面",
+    "jp": "min6",
+    "trans": "face / surface"
+  },
+  {
+    "char": "面積",
+    "jp": "min6zik1",
+    "trans": "area / size"
+  },
+  {
+    "char": "網",
+    "jp": "mong5",
+    "trans": "internet / net / network"
+  },
+  {
+    "char": "網絡",
+    "jp": "mong5lok3",
+    "trans": "internet / network"
+  },
+  {
+    "char": "帽",
+    "jp": "mou2",
+    "trans": "hat / cap"
+  },
+  {
+    "char": "冇",
+    "jp": "mou5",
+    "trans": "not to have / without / there is not / to not have / have not / no"
+  },
+  {
+    "char": "門口",
+    "jp": "mun4hau2",
+    "trans": "doorway / entrance"
+  },
+  {
+    "char": "悶",
+    "jp": "mun6",
+    "trans": "bored / boring / stuffy"
+  },
+  {
+    "char": "男神",
+    "jp": "naam4san4",
+    "trans": "male god / ideal man"
+  },
+  {
+    "char": "男仔",
+    "jp": "naam4zai2",
+    "trans": "boy / young man"
+  },
+  {
+    "char": "難",
+    "jp": "naan4",
+    "trans": "difficult / hard"
+  },
+  {
+    "char": "諗住",
+    "jp": "nam2zyu6",
+    "trans": "to intend / plan / think of"
+  },
+  {
+    "char": "嬲",
+    "jp": "nau1",
+    "trans": "angry / mad"
+  },
+  {
+    "char": "呢",
+    "jp": "ne1",
+    "trans": "question particle / sentence-final particle for queries, 'how about?' / what about) / sentence-final particle for queries or friendly follow-ups / sentence-final particle for questions and pauses / sentence-final particle for queries, gentle pause, or contrast"
+  },
+  {
+    "char": "你",
+    "jp": "nei5",
+    "trans": "you / your"
+  },
+  {
+    "char": "你好",
+    "jp": "nei5hou2",
+    "trans": "hello / hi"
+  },
+  {
+    "char": "女神",
+    "jp": "neoi5san4",
+    "trans": "goddess / ideal woman"
+  },
+  {
+    "char": "暗戀",
+    "jp": "ngam3lyun2",
+    "trans": "to crush on / love secretly"
+  },
+  {
+    "char": "銀包",
+    "jp": "ngan4baau1",
+    "trans": "wallet / purse"
+  },
+  {
+    "char": "我",
+    "jp": "ngo5",
+    "trans": "I / me"
+  },
+  {
+    "char": "我哋",
+    "jp": "ngo5dei6",
+    "trans": "we / us"
+  },
+  {
+    "char": "外星人",
+    "jp": "ngoi6sing1jan4",
+    "trans": "alien / extraterrestrial"
+  },
+  {
+    "char": "呢度",
+    "jp": "ni1dou6",
+    "trans": "here / this place"
+  },
+  {
+    "char": "呢個",
+    "jp": "ni1go3",
+    "trans": "this one / this"
+  },
+  {
+    "char": "努力",
+    "jp": "nou5lik6",
+    "trans": "to make an effort / try hard"
+  },
+  {
+    "char": "痾",
+    "jp": "o1",
+    "trans": "to have diarrhea / excrete"
+  },
+  {
+    "char": "安慰",
+    "jp": "on1wai3",
+    "trans": "to comfort / console"
+  },
+  {
+    "char": "按",
+    "jp": "on3",
+    "trans": "to press / push / according to"
+  },
+  {
+    "char": "拍",
+    "jp": "paak3",
+    "trans": "to clap / pat / beat"
+  },
+  {
+    "char": "拍拖",
+    "jp": "paak3to1",
+    "trans": "to date / go steady"
+  },
+  {
+    "char": "跑步",
+    "jp": "paau2bou6",
+    "trans": "to run / jog"
+  },
+  {
+    "char": "跑數",
+    "jp": "paau2sou3",
+    "trans": "to hit a sales target / chase sales numbers"
+  },
+  {
+    "char": "PayMe",
+    "jp": "pei1mi1",
+    "trans": "PayMe / to transfer money via PayMe"
+  },
+  {
+    "char": "劈酒",
+    "jp": "pek3zau2",
+    "trans": "to drink heavily / drink competitively"
+  },
+  {
+    "char": "平",
+    "jp": "peng4",
+    "trans": "cheap / inexpensive"
+  },
+  {
+    "char": "片",
+    "jp": "pin2",
+    "trans": "film / memory / video / movie / short clip"
+  },
+  {
+    "char": "平時",
+    "jp": "ping4si4",
+    "trans": "normally / usually"
+  },
+  {
+    "char": "蒲",
+    "jp": "pou4",
+    "trans": "to hang out / go clubbing"
+  },
+  {
+    "char": "陪",
+    "jp": "pui4",
+    "trans": "to accompany / keep someone company"
+  },
+  {
+    "char": "衫",
+    "jp": "saam1",
+    "trans": "clothes / clothing / shirt"
+  },
+  {
+    "char": "三個字",
+    "jp": "saam1go3zi6",
+    "trans": "15 minutes / a quarter"
+  },
+  {
+    "char": "散戶",
+    "jp": "saan2wu6",
+    "trans": "retail investor / small investor"
+  },
+  {
+    "char": "使",
+    "jp": "sai2",
+    "trans": "to need / use"
+  },
+  {
+    "char": "使唔使",
+    "jp": "sai2m4sai2",
+    "trans": "need or not / do you need (A-not-A question form)"
+  },
+  {
+    "char": "細",
+    "jp": "sai3",
+    "trans": "small / little / tiny"
+  },
+  {
+    "char": "塞車",
+    "jp": "sak1ce1",
+    "trans": "traffic jam / heavy traffic"
+  },
+  {
+    "char": "心痛",
+    "jp": "sam1tung3",
+    "trans": "to feel distressed / feel for someone"
+  },
+  {
+    "char": "甚至",
+    "jp": "sam6zi3",
+    "trans": "even / so much so that"
+  },
+  {
+    "char": "辛苦",
+    "jp": "san1fu2",
+    "trans": "exhausting / painstaking / painstakingly / hard / tiring / toilsome"
+  },
+  {
+    "char": "身家",
+    "jp": "san1gaa1",
+    "trans": "net worth / personal fortune"
+  },
+  {
+    "char": "實用面積",
+    "jp": "sat6jung6min6zik1",
+    "trans": "saleable area / net floor area"
+  },
+  {
+    "char": "收",
+    "jp": "sau1",
+    "trans": "to receive / accept / collect"
+  },
+  {
+    "char": "收唔收",
+    "jp": "sau1 m4 sau1",
+    "trans": "do you accept / accept or not (A-not-A question form)"
+  },
+  {
+    "char": "收工",
+    "jp": "sau1gung1",
+    "trans": "to finish work for the day / get off work"
+  },
+  {
+    "char": "收市",
+    "jp": "sau1si5",
+    "trans": "market closes / market closing"
+  },
+  {
+    "char": "蛇王",
+    "jp": "se4wong4",
+    "trans": "to slack off / avoid work"
+  },
+  {
+    "char": "射波",
+    "jp": "se6bo1",
+    "trans": "to fake sick / call in sick falsely / play truant"
+  },
+  {
+    "char": "死",
+    "jp": "sei2",
+    "trans": "extremely / to death"
+  },
+  {
+    "char": "死機",
+    "jp": "sei2gei1",
+    "trans": "device freeze / device crash"
+  },
+  {
+    "char": "雖然",
+    "jp": "seoi1jin4",
+    "trans": "although / even though"
+  },
+  {
+    "char": "詩",
+    "jp": "si1",
+    "trans": "poem / poetry"
+  },
+  {
+    "char": "試",
+    "jp": "si3",
+    "trans": "to try / test"
+  },
+  {
+    "char": "時",
+    "jp": "si4",
+    "trans": "time / hour"
+  },
+  {
+    "char": "時候",
+    "jp": "si4hau6",
+    "trans": "time / when"
+  },
+  {
+    "char": "市",
+    "jp": "si5",
+    "trans": "market / city"
+  },
+  {
+    "char": "事",
+    "jp": "si6",
+    "trans": "matter / business / affair"
+  },
+  {
+    "char": "息",
+    "jp": "sik1",
+    "trans": "interest / dividend"
+  },
+  {
+    "char": "熄",
+    "jp": "sik1",
+    "trans": "to turn off / extinguish (a light, device, etc.)"
+  },
+  {
+    "char": "識",
+    "jp": "sik1",
+    "trans": "know how to / speak (a language) / have a skill / be familiar with"
+  },
+  {
+    "char": "識唔識",
+    "jp": "sik1 m4 sik1",
+    "trans": "do you know how to (A-not-A question form) / know or not (A-not-A question form)"
+  },
+  {
+    "char": "食",
+    "jp": "sik6",
+    "trans": "to eat / to take"
+  },
+  {
+    "char": "食花生",
+    "jp": "sik6faa1sang1",
+    "trans": "to sit back and watch drama / spectate"
+  },
+  {
+    "char": "食飯",
+    "jp": "sik6faan6",
+    "trans": "to eat a meal / dine / have dinner"
+  },
+  {
+    "char": "閃",
+    "jp": "sim2",
+    "trans": "flashy / showing PDA"
+  },
+  {
+    "char": "先",
+    "jp": "sin1",
+    "trans": "first / only then / beforehand"
+  },
+  {
+    "char": "升",
+    "jp": "sing1",
+    "trans": "to rise / go up"
+  },
+  {
+    "char": "升降機",
+    "jp": "sing1gong3gei1",
+    "trans": "elevator / lift"
+  },
+  {
+    "char": "聲控",
+    "jp": "sing1hung3",
+    "trans": "voice control / voice-controlled"
+  },
+  {
+    "char": "蝕",
+    "jp": "sit6",
+    "trans": "to lose money / suffer a loss / deficit"
+  },
+  {
+    "char": "少少",
+    "jp": "siu2 siu2",
+    "trans": "a little bit / slightly"
+  },
+  {
+    "char": "小心",
+    "jp": "siu2sam1",
+    "trans": "careful / to be careful / take care"
+  },
+  {
+    "char": "少少",
+    "jp": "siu2siu2",
+    "trans": "a little bit / slightly"
+  },
+  {
+    "char": "鎖",
+    "jp": "so2",
+    "trans": "to lock / lock"
+  },
+  {
+    "char": "所有",
+    "jp": "so2jau5",
+    "trans": "all / every"
+  },
+  {
+    "char": "所以",
+    "jp": "so2ji5",
+    "trans": "therefore / so"
+  },
+  {
+    "char": "鎖匙",
+    "jp": "so2si4",
+    "trans": "key / keys"
+  },
+  {
+    "char": "想",
+    "jp": "soeng2",
+    "trans": "to want to / would like to / think"
+  },
+  {
+    "char": "相",
+    "jp": "soeng2",
+    "trans": "photo / picture"
+  },
+  {
+    "char": "上網",
+    "jp": "soeng5mong5",
+    "trans": "to go online / surf the internet"
+  },
+  {
+    "char": "上面",
+    "jp": "soeng6min6",
+    "trans": "above / on top of / upper side"
+  },
+  {
+    "char": "掃街",
+    "jp": "sou3gaai1",
+    "trans": "to go street food hunting / street-snacking / street food hunt"
+  },
+  {
+    "char": "送",
+    "jp": "sung3",
+    "trans": "to give as a gift / include for free"
+  },
+  {
+    "char": "薯片",
+    "jp": "syu4pin2",
+    "trans": "potato chips / crisps"
+  },
+  {
+    "char": "算啦",
+    "jp": "syun3 laa1",
+    "trans": "forget it / let it be"
+  },
+  {
+    "char": "船",
+    "jp": "syun4",
+    "trans": "ferry / boat / ship"
+  },
+  {
+    "char": "太",
+    "jp": "taai3",
+    "trans": "too / extremely"
+  },
+  {
+    "char": "睇",
+    "jp": "tai2",
+    "trans": "to look / see / to watch / read"
+  },
+  {
+    "char": "睇戲",
+    "jp": "tai2hei3",
+    "trans": "to watch movies / see a play / to watch a movie"
+  },
+  {
+    "char": "睇樓",
+    "jp": "tai2lau2",
+    "trans": "to view apartments / flats"
+  },
+  {
+    "char": "頭先",
+    "jp": "tau4sin1",
+    "trans": "just now / a moment ago"
+  },
+  {
+    "char": "頭暈",
+    "jp": "tau4wan4",
+    "trans": "dizzy / lightheaded"
+  },
+  {
+    "char": "投資",
+    "jp": "tau4zi1",
+    "trans": "to invest / investment"
+  },
+  {
+    "char": "聽",
+    "jp": "teng1",
+    "trans": "to listen / hear / obey"
+  },
+  {
+    "char": "添",
+    "jp": "tim1",
+    "trans": "particle indicating in addition / as well / furthermore / also"
+  },
+  {
+    "char": "甜",
+    "jp": "tim4",
+    "trans": "sweet / romantic"
+  },
+  {
+    "char": "天晴",
+    "jp": "tin1cing4",
+    "trans": "sunny / clear sky"
+  },
+  {
+    "char": "天橋",
+    "jp": "tin1kiu4",
+    "trans": "pedestrian flyover / footbridge"
+  },
+  {
+    "char": "聽講",
+    "jp": "ting1gong2",
+    "trans": "to hear of / be told / hear say"
+  },
+  {
+    "char": "跳",
+    "jp": "tiu3",
+    "trans": "to jump / leap / dance"
+  },
+  {
+    "char": "條",
+    "jp": "tiu4",
+    "trans": "classifier for long, thin objects / measure word for long, thin objects"
+  },
+  {
+    "char": "拖",
+    "jp": "to1",
+    "trans": "to pull / drag / tow"
+  },
+  {
+    "char": "劏房",
+    "jp": "tong1fong2",
+    "trans": "subdivided flat / partitioned room"
+  },
+  {
+    "char": "堂",
+    "jp": "tong4",
+    "trans": "class / hall"
+  },
+  {
+    "char": "套房",
+    "jp": "tou3fong2",
+    "trans": "studio flat / ensuite bedroom"
+  },
+  {
+    "char": "肚痛",
+    "jp": "tou5tung3",
+    "trans": "stomach ache / abdominal pain"
+  },
+  {
+    "char": "通常",
+    "jp": "tung1soeng4",
+    "trans": "usually / generally"
+  },
+  {
+    "char": "同",
+    "jp": "tung4",
+    "trans": "with / same as / and"
+  },
+  {
+    "char": "同埋",
+    "jp": "tung4maai4",
+    "trans": "and / together with / together with / also"
+  },
+  {
+    "char": "屋",
+    "jp": "uk1",
+    "trans": "house / room / flat / home"
+  },
+  {
+    "char": "屋苑",
+    "jp": "uk1jyun2",
+    "trans": "housing estate / complex"
+  },
+  {
+    "char": "屋企",
+    "jp": "uk1kei2",
+    "trans": "home / house"
+  },
+  {
+    "char": "哇",
+    "jp": "waa1",
+    "trans": "wow / whoa"
+  },
+  {
+    "char": "話",
+    "jp": "waa6",
+    "trans": "to say / tell / words / speech / speak / talk / to scold"
+  },
+  {
+    "char": "話俾",
+    "jp": "waa6bei2",
+    "trans": "to tell / say to"
+  },
+  {
+    "char": "或者",
+    "jp": "waak6ze2",
+    "trans": "perhaps / or"
+  },
+  {
+    "char": "玩",
+    "jp": "waan2",
+    "trans": "to play / have fun / enjoy"
+  },
+  {
+    "char": "還",
+    "jp": "waan4",
+    "trans": "to return / repay"
+  },
+  {
+    "char": "環境",
+    "jp": "waan4ging2",
+    "trans": "environment / surroundings"
+  },
+  {
+    "char": "WiFi",
+    "jp": "wai1faai1",
+    "trans": "Wi-Fi / wireless internet"
+  },
+  {
+    "char": "喂",
+    "jp": "wai2",
+    "trans": "hey! / hello (typically answering phone or calling for attention)"
+  },
+  {
+    "char": "喂",
+    "jp": "wai3",
+    "trans": "hey! / hello"
+  },
+  {
+    "char": "溫",
+    "jp": "wan1",
+    "trans": "to revise / review"
+  },
+  {
+    "char": "溫書",
+    "jp": "wan1syu1",
+    "trans": "to revise / study"
+  },
+  {
+    "char": "搵",
+    "jp": "wan2",
+    "trans": "to search / to find / look for / seek"
+  },
+  {
+    "char": "搵樓",
+    "jp": "wan2lau2",
+    "trans": "to look for apartments / flat-hunting"
+  },
+  {
+    "char": "運動",
+    "jp": "wan6dung6",
+    "trans": "sports / exercise"
+  },
+  {
+    "char": "WhatsApp",
+    "jp": "wat1sep1",
+    "trans": "to WhatsApp someone / to WhatsApp someone"
+  },
+  {
+    "char": "喎",
+    "jp": "wo3",
+    "trans": "sentence-final particle indicating reported speech, surprise, or warning / sentence-final particle indicating surprise or warning"
+  },
+  {
+    "char": "戶口",
+    "jp": "wu6hau2",
+    "trans": "account (bank / online)"
+  },
+  {
+    "char": "會",
+    "jp": "wui5",
+    "trans": "will / would / can / be able to / know how to / meet"
+  },
+  {
+    "char": "揸車",
+    "jp": "zaa1ce1",
+    "trans": "to drive a car / drive"
+  },
+  {
+    "char": "站",
+    "jp": "zaam6",
+    "trans": "station / stop"
+  },
+  {
+    "char": "賺",
+    "jp": "zaan6",
+    "trans": "to earn / profit / make money"
+  },
+  {
+    "char": "找",
+    "jp": "zaau2",
+    "trans": "to give change / look for / seek"
+  },
+  {
+    "char": "真",
+    "jp": "zan1",
+    "trans": "real / true"
+  },
+  {
+    "char": "真係",
+    "jp": "zan1hai6",
+    "trans": "really / truly"
+  },
+  {
+    "char": "周圍",
+    "jp": "zau1wai4",
+    "trans": "around / surroundings"
+  },
+  {
+    "char": "走",
+    "jp": "zau2",
+    "trans": "to run / to leave / escape / go / remove"
+  },
+  {
+    "char": "酒吧",
+    "jp": "zau2baa1",
+    "trans": "bar / pub"
+  },
+  {
+    "char": "走甜",
+    "jp": "zau2tim4",
+    "trans": "no sugar / unsweetened"
+  },
+  {
+    "char": "走堂",
+    "jp": "zau2tong4",
+    "trans": "to skip class / cut class"
+  },
+  {
+    "char": "就",
+    "jp": "zau6",
+    "trans": "then / right away / immediately"
+  },
+  {
+    "char": "就快",
+    "jp": "zau6faai3",
+    "trans": "soon / about to"
+  },
+  {
+    "char": "就可以",
+    "jp": "zau6ho2ji5",
+    "trans": "then can / can easily"
+  },
+  {
+    "char": "借",
+    "jp": "ze3",
+    "trans": "to borrow / lend"
+  },
+  {
+    "char": "借錢",
+    "jp": "ze3cin4",
+    "trans": "to borrow / lend money"
+  },
+  {
+    "char": "隻",
+    "jp": "zek3",
+    "trans": "classifier for animals / measure word for animals or objects in pairs / general measure word / individual / unit"
+  },
+  {
+    "char": "正",
+    "jp": "zeng3",
+    "trans": "excellent / awesome / great"
+  },
+  {
+    "char": "最",
+    "jp": "zeoi3",
+    "trans": "most / superlative prefix"
+  },
+  {
+    "char": "最近",
+    "jp": "zeoi3gan6",
+    "trans": "recently / lately"
+  },
+  {
+    "char": "最後",
+    "jp": "zeoi3hau6",
+    "trans": "finally / at last / in the end"
+  },
+  {
+    "char": "最好",
+    "jp": "zeoi3hou2",
+    "trans": "best / preferably"
+  },
+  {
+    "char": "準時",
+    "jp": "zeon2si4",
+    "trans": "punctual / on time"
+  },
+  {
+    "char": "知",
+    "jp": "zi1",
+    "trans": "to know / be aware of"
+  },
+  {
+    "char": "知道",
+    "jp": "zi1dou3",
+    "trans": "to know / be aware of"
+  },
+  {
+    "char": "之後",
+    "jp": "zi1hau6",
+    "trans": "after / afterwards"
+  },
+  {
+    "char": "只係",
+    "jp": "zi2hai6",
+    "trans": "only / just"
+  },
+  {
+    "char": "智能",
+    "jp": "zi3nang4",
+    "trans": "smart / intelligent (tech)"
+  },
+  {
+    "char": "字",
+    "jp": "zi6",
+    "trans": "five-minute interval / word / character"
+  },
+  {
+    "char": "自己",
+    "jp": "zi6gei2",
+    "trans": "oneself / own / self"
+  },
+  {
+    "char": "即係",
+    "jp": "zik1hai6",
+    "trans": "that is / namely / in other words / meaning"
+  },
+  {
+    "char": "直落",
+    "jp": "zik6lok6",
+    "trans": "to continue onto another venue / next round without stopping"
+  },
+  {
+    "char": "靜",
+    "jp": "zing6",
+    "trans": "quiet / peaceful"
+  },
+  {
+    "char": "折墮",
+    "jp": "zit3do6",
+    "trans": "miserable / wretched / in a pitiful state"
+  },
+  {
+    "char": "截",
+    "jp": "zit6",
+    "trans": "section / chunk / length"
+  },
+  {
+    "char": "朝早",
+    "jp": "ziu1zou2",
+    "trans": "in the morning / in the morning"
+  },
+  {
+    "char": "咗",
+    "jp": "zo2",
+    "trans": "verbal aspect suffix indicating completed action (perfective aspect) / completed action marker / completed aspect suffix / aspect particle"
+  },
+  {
+    "char": "左",
+    "jp": "zo2",
+    "trans": "left / left side"
+  },
+  {
+    "char": "租",
+    "jp": "zou1",
+    "trans": "to rent / lease"
+  },
+  {
+    "char": "租金",
+    "jp": "zou1gam1",
+    "trans": "rent payment / rental price"
+  },
+  {
+    "char": "租客",
+    "jp": "zou1haak3",
+    "trans": "tenant / renter"
+  },
+  {
+    "char": "早日康復",
+    "jp": "zou2jat6hong1fuk6",
+    "trans": "recover soon / speedy recovery"
+  },
+  {
+    "char": "早知",
+    "jp": "zou2zi1",
+    "trans": "had I known earlier / if only I knew"
+  },
+  {
+    "char": "做",
+    "jp": "zou6",
+    "trans": "to do / make / perform"
+  },
+  {
+    "char": "做嘢",
+    "jp": "zou6je5",
+    "trans": "to work / do things"
+  },
+  {
+    "char": "做運動",
+    "jp": "zou6wan6dung6",
+    "trans": "to exercise / do sports"
+  },
+  {
+    "char": "祝",
+    "jp": "zuk1",
+    "trans": "to wish / congratulate"
+  },
+  {
+    "char": "俗語",
+    "jp": "zuk6jyu5",
+    "trans": "colloquial expression / slang / idiom / idiomatic expressions"
+  },
+  {
+    "char": "鐘",
+    "jp": "zung1",
+    "trans": "clock / bell / hour / o'clock / time"
+  },
+  {
+    "char": "鍾意",
+    "jp": "zung1ji3",
+    "trans": "to like / prefer / love"
+  },
+  {
+    "char": "中",
+    "jp": "zung3",
+    "trans": "to win / to hit / catch (an illness)"
+  },
+  {
+    "char": "仲",
+    "jp": "zung6",
+    "trans": "still / yet / also / even more"
+  },
+  {
+    "char": "仲有",
+    "jp": "zung6jau5",
+    "trans": "furthermore / additionally / also"
+  },
+  {
+    "char": "住",
+    "jp": "zyu6",
+    "trans": "to live / stay"
+  },
+  {
+    "char": "轉頭",
+    "jp": "zyun2tau4",
+    "trans": "later / in a moment"
+  }
+]

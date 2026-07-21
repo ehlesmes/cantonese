@@ -116,9 +116,9 @@ Below is a realistic interaction between a customer (A) and a convenience store
 clerk (B) in Hong Kong.
 
 ```dialog
-A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 唔該[m4goi1|excuse me / thank you]，我[ngo5|I] 想[soeng2|to want to / would like to / think] 買[maai5|to buy] 呢個[ni1go3|this one] 同埋[tung4maai4|and / with / together with] 嗰個[go2go3|that one]。
+A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 唔該[m4goi1|excuse me / thank you]，我[ngo5|I] 想[soeng2|to want to / would like to / think] 買[maai5|to buy] 呢個[ni1go3|this one] 同埋[tung4maai4|and / together with] 嗰個[go2go3|that one]。
    === Hello there! Excuse me, I want to buy this one and that one.
-B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 呢個[ni1go3|this one] 係[hai6|to be (am/is/are) / yes] 可樂[ho2lok6|cola / Coke]，嗰個[go2go3|that one] 係[hai6|to be (am/is/are) / yes] 薯片[syu4pin2|potato chips / crisps]。
+B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 呢個[ni1go3|this one] 係[hai6|to be (am / is / are) / yes] 可樂[ho2lok6|cola / Coke]，嗰個[go2go3|that one] 係[hai6|to be (am / is / are) / yes] 薯片[syu4pin2|potato chips / crisps]。
    === Sure. This one is Coke, that one is potato chips.
 A: 幾多[gei2do1|how many / how much] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === How much is it?
@@ -132,9 +132,9 @@ A: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softenin
    === Okay. Also, I want to buy a bus ticket.
 B: 冇[mou5|not to have / without / there is not] 問題[man6tai4|problem / question / issue]！ 搞掂[gaau2dim6|done / finished / settled / resolved] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 多謝[do1ze6|thank you (for a gift, compliment, or hospitality)]！
    === No problem! All done! Thank you!
-A: 唔該[m4goi1|excuse me / please / thank you (for service or help)]！ 拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
+A: 唔該[m4goi1|excuse me / please / thank you (for service or help)]！ 拜拜[baai1baai3|bye-bye]！
    === Thanks! Bye-bye!
-B: 拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
+B: 拜拜[baai1baai3|bye-bye]！
    === Bye-bye!
 ```
 

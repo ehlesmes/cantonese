@@ -151,7 +151,7 @@ In a city that never sleeps, dinner is rarely the final meal.
 or family, usually between 10 PM and 2 AM. Common options include claypot rice,
 hot pot, local desserts, or dim sum at midnight.
 
-### Modern Rituals: `相機食先[soeng2gei1sik6sin1|camera eats first (taking pictures of food before eating)]` & `打卡[daa2kaa1|to check-in / take photos at trendy spots]`
+### Modern Rituals: `相機食先[soeng2gei1sik6sin1|camera eats first (taking pictures of food before eating)]` & `打卡[daa2kaa1|to check-in]`
 
 Before anyone takes a bite of their beautifully presented food, someone will
 inevitably shout
@@ -159,10 +159,8 @@ inevitably shout
 It is a humorous modern expression representing the cultural habit of
 photographing dishes for social media.
 
-This is closely related to
-`打卡[daa2kaa1|to check-in / take photos at trendy spots]`. Originally meaning
-to punch a timecard at work,
-`打卡[daa2kaa1|to check-in / take photos at trendy spots]` is now the colloquial
+This is closely related to `打卡[daa2kaa1|to check-in]`. Originally meaning to
+punch a timecard at work, `打卡[daa2kaa1|to check-in]` is now the colloquial
 verb for visiting trendy cafés, restaurants, or scenic spots specifically to
 take aesthetic photos and check-in online.
 

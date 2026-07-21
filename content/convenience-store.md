@@ -55,18 +55,18 @@ I need this one.
 
 ---
 
-## 2. Pointing Things Out & Connecting Items: `呢個[ni1go3|this one]`, `嗰個[go2go3|that one]`, `咁樣[gam2joeng6|like this / in this way / this way]`, and `同埋[tung4maai4|and / with / together with]`
+## 2. Pointing Things Out & Connecting Items: `呢個[ni1go3|this one]`, `嗰個[go2go3|that one]`, `咁樣[gam2joeng6|like this / in this way]`, and `同埋[tung4maai4|and / together with]`
 
 If you do not know the name of an object in a shop, you can simply point and use
 these high-frequency demonstrative pronouns:
 
 - `呢個[ni1go3|this one]`: Used for items close to you.
 - `嗰個[go2go3|that one]`: Used for items further away.
-- `咁樣[gam2joeng6|like this / in this way / this way]`: Used when describing
-  choices, indicating "like this" or "this way".
+- `咁樣[gam2joeng6|like this / in this way]`: Used when describing choices,
+  indicating "like this" or "this way".
 
 To connect two nouns together, like saying "and" in English, use the conjunction
-`同埋[tung4maai4|and / with / together with]`.
+`同埋[tung4maai4|and / together with]`.
 
 Observe how these are used to make simple requests:
 
@@ -77,13 +77,13 @@ I want to buy this one.
 ```
 
 ```cantonese
-我[ngo5|I / me] 要[jiu3|to want / need / must / demand] 呢個[ni1go3|this one] 同埋[tung4maai4|and / with / together with] 嗰個[go2go3|that one] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+我[ngo5|I / me] 要[jiu3|to want / need / must / demand] 呢個[ni1go3|this one] 同埋[tung4maai4|and / together with] 嗰個[go2go3|that one] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
 ===
 I will take this one and that one!
 ```
 
 ```cantonese
-我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 咁樣[gam2joeng6|like this / in this way / this way] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 嘢飲[je5jam2|drinks / beverages] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 咁樣[gam2joeng6|like this / in this way] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 嘢飲[je5jam2|drinks / beverages] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I would like to have a drink like this.
 ```
@@ -183,9 +183,9 @@ Below is a simple interaction between a customer (A) and a convenience store
 clerk (B) in Hong Kong.
 
 ```dialog
-A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 唔該[m4goi1|excuse me]，我[ngo5|I] 想[soeng2|to want to / would like to / think] 買[maai5|to buy] 呢個[ni1go3|this one] 同埋[tung4maai4|and / with / together with] 嗰個[go2go3|that one]。
+A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 唔該[m4goi1|excuse me]，我[ngo5|I] 想[soeng2|to want to / would like to / think] 買[maai5|to buy] 呢個[ni1go3|this one] 同埋[tung4maai4|and / together with] 嗰個[go2go3|that one]。
    === Hello there! Excuse me, I want to buy this one and that one.
-B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 呢個[ni1go3|this one] 係[hai6|to be (am/is/are) / yes] 可樂[ho2lok6|cola / Coke]，嗰個[go2go3|that one] 係[hai6|to be (am/is/are) / yes] 薯片[syu4pin2|potato chips / crisps]。
+B: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 呢個[ni1go3|this one] 係[hai6|to be (am / is / are) / yes] 可樂[ho2lok6|cola / Coke]，嗰個[go2go3|that one] 係[hai6|to be (am / is / are) / yes] 薯片[syu4pin2|potato chips / crisps]。
    === Sure. This one is Coke, that one is potato chips.
 A: 幾多[gei2do1|how many / how much] 錢[cin2|money] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === How much is it?
@@ -193,7 +193,7 @@ B: 三十[saam1sap6|thirty] 蚊[man1|dollar (spoken Cantonese colloquial unit of
    === It is thirty dollars.
 A: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 唔該[m4goi1|thank you]！
    === Okay. Thank you!
-B: 拜拜[baai1baai3|bye-bye / goodbye (loanword)]！
+B: 拜拜[baai1baai3|bye-bye]！
    === Bye-bye!
 ```
 
@@ -216,6 +216,6 @@ explanation: When counting currency or items with a classifier like 蚊[man1|dol
 
 ```exercise
 question: Translate "Excuse me, I would like to buy Coke and potato chips." into Cantonese with correct annotations.
-answer: 唔該[m4goi1|excuse me]，我[ngo5|I] 想[soeng2|to want to / would like to / think] 買[maai5|to buy] 可樂[ho2lok6|cola / Coke] 同埋[tung4maai4|and / with / together with] 薯片[syu4pin2|potato chips / crisps]。
-explanation: 唔該[m4goi1|excuse me] is used for 'excuse me' or 'please'; 想[soeng2|to want to / would like to / think] is the softening auxiliary verb; 同埋[tung4maai4|and / with / together with] is used to connect nouns.
+answer: 唔該[m4goi1|excuse me]，我[ngo5|I] 想[soeng2|to want to / would like to / think] 買[maai5|to buy] 可樂[ho2lok6|cola / Coke] 同埋[tung4maai4|and / together with] 薯片[syu4pin2|potato chips / crisps]。
+explanation: 唔該[m4goi1|excuse me] is used for 'excuse me' or 'please'; 想[soeng2|to want to / would like to / think] is the softening auxiliary verb; 同埋[tung4maai4|and / together with] is used to connect nouns.
 ```

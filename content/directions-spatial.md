@@ -29,9 +29,8 @@ noun with a **spatial directional marker**.
 - `前面[cin4min6|in front / front side]`: In front of, ahead.
 - `後面[hau6min6|behind / back side]`: Behind, at the back of.
 - `隔籬[gaak3lei4|next to / beside / neighbor]`: Next to, beside.
-- `左[zo2|left / left side]` / `左邊[zo2bin1|left side]`: Left / left side.
-- `右[jau6|right / right side]` / `右邊[jau6bin1|right side]`: Right / right
-  side.
+- `左[zo2|left side]` / `左邊[zo2bin1|left side]`: Left / left side.
+- `右[jau6|right side]` / `右邊[jau6bin1|right side]`: Right / right side.
 - `中間[zung1gaan1|middle]`: Middle, in between.
 
 ### The Spatial Marker Pattern
@@ -48,13 +47,13 @@ Let's look at how this functions:
 - "On top of the computer": `喺[hai2|at / in / on]` `電腦[din6nou5|computer]`
   `上面[soeng6min6|above / on top of / upper side]`
 - "Next to the MTR station": `喺[hai2|at / in / on]`
-  `地鐵站[dei6tit3zaam6|MTR station / subway station]`
+  `地鐵站[dei6tit3zaam6|MTR station]`
   `隔籬[gaak3lei4|next to / beside / neighbor]`
 
 Let's study these within full sentences:
 
 ```cantonese
-部[bou6|classifier for machines and devices] 電話[din6waa2|telephone / phone] 喺[hai2|at / in / on] 電腦[din6nou5|computer] 上面[soeng6min6|above / on top of / upper side] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+部[bou6|classifier for machines and devices] 電話[din6waa2|phone] 喺[hai2|at / in / on] 電腦[din6nou5|computer] 上面[soeng6min6|above / on top of / upper side] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 The phone is on top of the computer.
 ```
@@ -212,5 +211,5 @@ explanation: The sentence-final particle 囉[lo1|sentence-final particle showing
 ```exercise
 question: Translate "Where is my phone? Is it next to the computer?" into Cantonese with correct annotations.
 answer: 我[ngo5|I] 部[bou6|classifier for machines and devices] 電話[din6waa2|phone] 喺[hai2|at] 邊度[bin1dou6|where] 呀[aa3|particle]？ 喺[hai2|at] 電腦[din6nou5|computer] 隔籬[gaak3lei4|next to] 呀[aa3|particle]？
-explanation: 我[ngo5|I / me] 部[bou6|classifier for machines and devices] 電話[din6waa2|telephone / phone] means "my phone"; 喺[hai2|at / in / on (locative preposition)] anchors the location; 邊度[bin1dou6|where] is used for "where"; and 隔籬[gaak3lei4|next to / beside / neighbor] indicates next to the 電腦[din6nou5|computer].
+explanation: 我[ngo5|I / me] 部[bou6|classifier for machines and devices] 電話[din6waa2|phone] means "my phone"; 喺[hai2|at / in / on (locative preposition)] anchors the location; 邊度[bin1dou6|where] is used for "where"; and 隔籬[gaak3lei4|next to / beside / neighbor] indicates next to the 電腦[din6nou5|computer].
 ```

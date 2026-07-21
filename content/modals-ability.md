@@ -32,13 +32,13 @@ sports, driving, cooking, and academic subjects.
   `講[gong2|to speak / say / talk]` `英文[jing1man4|English language]` — I can
   (know how to) speak English.
 - `我[ngo5|I / me]` `識[sik1|to know / speak (a language) / have a skill]`
-  `揸車[zaa1ce1|to drive a car / drive]` — I can (know how to) drive a car.
+  `揸車[zaa1ce1|to drive a car]` — I can (know how to) drive a car.
 
-To negate this, place `唔[m4|not / not / no (negative prefix)]` before
+To negate this, place `唔[m4|not / no (negative prefix)]` before
 `識[sik1|to know / speak (a language) / have a skill]`:
 
 ```cantonese
-我[ngo5|I / me] 唔[m4|not / not / no (negative prefix)] 識[sik1|to know / speak (a language) / have a skill] 寫[se2|to write] 英文[jing1man4|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 識[sik1|to know / speak (a language) / have a skill] 寫[se2|to write] 英文[jing1man4|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I do not know how to write English.
 ```
@@ -57,11 +57,10 @@ to do something or it is **situationally possible** (e.g. schedules align).
   situationally) go travel today.
 
 To negate permission or situational ability, place
-`唔[m4|not / not / no (negative prefix)]` before
-`可以[ho2ji5|can / may / possible]`:
+`唔[m4|not / no (negative prefix)]` before `可以[ho2ji5|can / may / possible]`:
 
 ```cantonese
-呢度[ni1dou6|here] 唔[m4|not / not / no (negative prefix)] 可以[ho2ji5|can / may / possible] 揸車[zaa1ce1|to drive a car / drive] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+呢度[ni1dou6|here] 唔[m4|not / no (negative prefix)] 可以[ho2ji5|can / may / possible] 揸車[zaa1ce1|to drive a car] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
 ===
 You cannot drive a car here, obviously!
 ```
@@ -76,7 +75,7 @@ Use `會[wui5|will / would / can / be able to]` to express **future actions**
   tomorrow.
 
 ```cantonese
-我[ngo5|I / me] 唔[m4|not / not / no (negative prefix)] 會[wui5|will / would / can / be able to] 去[heoi3|to go] 日本[jat6bun2|Japan] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 會[wui5|will / would / can / be able to] 去[heoi3|to go] 日本[jat6bun2|Japan] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
 ===
 I will not go to Japan.
 ```
@@ -181,7 +180,7 @@ I cannot go to Japan tomorrow.
 ```
 
 ```cantonese
-我[ngo5|I / me] 聽[teng1|to listen / hear / obey] 唔到[m4dou2|cannot / unable to manage to / fail to] 你[nei5|you] 講[gong2|to speak / say / talk] 咩嘢[me1je5|what / what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 聽[teng1|to listen / hear / obey] 唔到[m4dou2|cannot / unable to manage to / fail to] 你[nei5|you] 講[gong2|to speak / say / talk] 咩嘢[me1je5|what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I cannot hear what you are saying.
 ```
@@ -193,11 +192,11 @@ I cannot hear what you are saying.
 Below is a dialogue illustrating modals and potential suffixes.
 
 ```dialog
-A: 你[nei5|you] 識唔識[sik1 m4 sik1|do you know how to (A-not-A question form)] 揸車[zaa1ce1|to drive a car / drive] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 你[nei5|you] 識唔識[sik1 m4 sik1|do you know how to (A-not-A question form)] 揸車[zaa1ce1|to drive a car] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Do you know how to drive a car?
-B: 我[ngo5|I / me] 識[sik1|to know / speak (a language) / have a skill] 揸車[zaa1ce1|to drive a car / drive] 呀[aa3|particle]，但係[daan6hai6|but / however] 我[ngo5|I / me] 今日[gam1jat6|today] 去[heoi3|to go] 唔到[m4dou2|cannot / unable to manage to / fail to] 嗰度[go2dou6|there] 呀[aa3|particle]。
+B: 我[ngo5|I / me] 識[sik1|to know / speak (a language) / have a skill] 揸車[zaa1ce1|to drive a car] 呀[aa3|particle]，但係[daan6hai6|but / however] 我[ngo5|I / me] 今日[gam1jat6|today] 去[heoi3|to go] 唔到[m4dou2|cannot / unable to manage to / fail to] 嗰度[go2dou6|there] 呀[aa3|particle]。
    === I know how to drive, but I cannot manage to go there today.
-A: 點解[dim2gaai2|why / how come] 呀[aa3|particle]？ 呢度[ni1dou6|here] 唔[m4|not] 可以[ho2ji5|can / may / possible] 揸車[zaa1ce1|to drive a car / drive] 呀[aa3|particle]？
+A: 點解[dim2gaai2|why] 呀[aa3|particle]？ 呢度[ni1dou6|here] 唔[m4|not] 可以[ho2ji5|can / may / possible] 揸車[zaa1ce1|to drive a car] 呀[aa3|particle]？
    === Why? Are you not allowed to drive here?
 B: 唔係[m4hai6|no]，因為[jan1wai6|because] 塞車[sak1ce1|traffic jam / heavy traffic] 呀[aa3|particle]，我[ngo5|I / me] 行[hang4|to walk / go / run (a machine)] 唔到[m4dou2|cannot / unable to manage to / fail to] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === No, because of a traffic jam, I cannot manage to move (walk/go), obviously!
@@ -216,9 +215,9 @@ Review the modals of ability and potential suffixes:
 ```exercise
 question: |
   Which of the following sentences correctly translates "I can drive a car" (expressing a learned skill) into Cantonese?
-  A) 我[ngo5|I / me] 可以[ho2ji5|can / may / possible] 揸車[zaa1ce1|to drive a car / drive] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
-  B) 我[ngo5|I / me] 識[sik1|to know / speak (a language) / have a skill] 揸車[zaa1ce1|to drive a car / drive] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
-  C) 我[ngo5|I / me] 會[wui5|will / would / can / be able to] 揸車[zaa1ce1|to drive a car / drive] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+  A) 我[ngo5|I / me] 可以[ho2ji5|can / may / possible] 揸車[zaa1ce1|to drive a car] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+  B) 我[ngo5|I / me] 識[sik1|to know / speak (a language) / have a skill] 揸車[zaa1ce1|to drive a car] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+  C) 我[ngo5|I / me] 會[wui5|will / would / can / be able to] 揸車[zaa1ce1|to drive a car] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 answer: B
 explanation: 識[sik1|to know / speak (a language) / have a skill] is the modal verb used specifically for learned skills or abilities like driving. 可以[ho2ji5|can / may / possible] refers to situational permission or possibility, and 會[wui5|will / would / can / be able to] expresses future likelihood or tendency.
 ```
@@ -226,6 +225,6 @@ explanation: 識[sik1|to know / speak (a language) / have a skill] is the modal 
 ```exercise
 question: |
   Translate the following sentence into colloquial Cantonese with correct annotations: "I cannot hear what you are saying."
-answer: 我[ngo5|I / me] 聽[teng1|to listen / hear / obey] 唔到[m4dou2|cannot / unable to manage to / fail to] 你[nei5|you] 講[gong2|to speak / say / talk] 咩嘢[me1je5|what / what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+answer: 我[ngo5|I / me] 聽[teng1|to listen / hear / obey] 唔到[m4dou2|cannot / unable to manage to / fail to] 你[nei5|you] 講[gong2|to speak / say / talk] 咩嘢[me1je5|what kind of thing] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 explanation: 聽[teng1|to listen / hear / obey] 唔到[m4dou2|cannot / unable to manage to / fail to] is the potential suffix structure representing the physical inability to hear.
 ```

@@ -48,9 +48,50 @@ export function mergeTranslations(
   const existingParts = existingTrans.split("/").map((s) => s.trim());
   const newParts = newTrans.split("/").map((s) => s.trim());
   const merged = [...existingParts];
+
+  const getCore = (s: string) =>
+    s
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "") // remove accents
+      .replace(/\s*[([].*?[)\]]\s*/g, " ") // remove parentheses
+      .replace(/^to\s+/, "") // remove leading "to "
+      .replace(/[^\w\s]/g, "") // remove punctuation
+      .replace(/\s+/g, " ")
+      .trim();
+
   for (const np of newParts) {
-    const lowerNp = np.toLowerCase();
-    if (!merged.some((ep) => ep.toLowerCase() === lowerNp)) {
+    const coreNp = getCore(np);
+    if (!coreNp) continue;
+
+    let handled = false;
+    for (let i = 0; i < merged.length; i++) {
+      const ep = merged[i]!;
+      const coreEp = getCore(ep);
+      if (!coreEp) continue;
+
+      if (coreEp === coreNp) {
+        if (np.length > ep.length) {
+          merged[i] = np;
+        }
+        handled = true;
+        break;
+      }
+
+      const regexNp = new RegExp(`\\b${coreNp}\\b`, "i");
+      const regexEp = new RegExp(`\\b${coreEp}\\b`, "i");
+
+      if (regexNp.test(coreEp)) {
+        handled = true;
+        break;
+      } else if (regexEp.test(coreNp)) {
+        merged[i] = np;
+        handled = true;
+        break;
+      }
+    }
+
+    if (!handled) {
       merged.push(np);
     }
   }

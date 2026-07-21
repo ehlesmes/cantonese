@@ -43,13 +43,13 @@ Two classmates discuss a friend's romantic situation.
 ```dialog
 A: 喂[wai3|hey!]，你[nei5|you] 係咪[hai6mai6|is or not (A-not-A question form)] 暗戀[ngam3lyun2|to crush on / love secretly] 佢[keoi5|he / she / it] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Hey, do you have a secret crush on her?
-B: 係呀[hai6aa3|yes]，佢[keoi5|he / she / it] 係[hai6|to be (am/is/are) / yes] 我[ngo5|I / me] 嘅[ge3|possessive or linking particle] 女神[neoi5san4|goddess / ideal woman] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
+B: 係呀[hai6aa3|yes]，佢[keoi5|he / she / it] 係[hai6|to be (am / is / are) / yes] 我[ngo5|I / me] 嘅[ge3|possessive or linking particle] 女神[neoi5san4|goddess / ideal woman] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
    === Yes, she is my goddess, obviously!
 A: 噉[gam2|then / in that case / so] 你[nei5|you] 有冇[jau5mou5|have or not (A-not-A question form)] 幫[bong1|to help / for] 佢[keoi5|he / she / it] 買[maai5|to buy] 嘢食[je5sik6|food] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === In that case, did you help her buy food?
 B: 有呀[jau5aa3|yes]，我[ngo5|I / me] 成日[seng4jat6|always] 幫[bong1|to help / for] 佢[keoi5|he / she / it] 做嘢[zou6je5|do things / work] 㗎[gaa3|sentence-final particle indicating assertion or emphasis]。
    === Yes, I always do favors for her.
-A: 哈哈[haa1haa1|haha]！ 你[nei5|you] 真係[zan1hai6|really / truly] 係[hai6|to be (am/is/are) / yes] 佢[keoi5|he / she / it] 嘅[ge3|possessive or linking particle] 兵[bing1|platonic admirer who is led on (literally 'soldier')] 喇[laa3|sentence-final particle indicating a change of state or already]！佢[keoi5|he / she / it] 最[zeoi3|most] 鍾意[zung1ji3|to like / love / prefer] 收兵[sau1bing1|to collect platonic admirers] 㗎啦[gaa3laa1|sentence-final particle combination indicating strong assertion or finality]！
+A: 哈哈[haa1haa1|haha]！ 你[nei5|you] 真係[zan1hai6|really / truly] 係[hai6|to be (am / is / are) / yes] 佢[keoi5|he / she / it] 嘅[ge3|possessive or linking particle] 兵[bing1|platonic admirer who is led on (literally 'soldier')] 喇[laa3|sentence-final particle indicating a change of state or already]！佢[keoi5|he / she / it] 最[zeoi3|most] 鍾意[zung1ji3|to like / love / prefer] 收兵[sau1bing1|to collect platonic admirers] 㗎啦[gaa3laa1|sentence-final particle combination indicating strong assertion or finality]！
    === Haha! You are really her soldier! She loves collecting admirers most!
 ```
 

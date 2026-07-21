@@ -180,7 +180,7 @@ I have sung three times already!
 Sau-han (A) and Wing-kit (B) are talking on Saturday about their weekend plans.
 
 ```dialog
-A: Wing-kit，你[nei5|you] 今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 去[heoi3|to go] 游水[jau4seoi2|to swim] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？
+A: Wing-kit，你[nei5|you] 今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am / is / are) / yes] 去[heoi3|to go] 游水[jau4seoi2|to swim] 咩[me1|sentence-final particle expressing rhetorical doubt, surprise, or sarcasm]？
    === Wing-kit, aren't you going swimming today?
 B: 我[ngo5|I / me] 尋日[cam4jat6|yesterday] 已經[ji5ging1|already] 游[jau4|to swim] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 水[seoi2|water] 喇[laa3|sentence-final particle indicating a change of state or already]！ 今日[gam1jat6|today] 我[ngo5|I / me] 想[soeng2|to want to / would like to] 去[heoi3|to go] 跑步[paau2bou6|to run / jog]。 你[nei5|you] 呢[ne1|sentence-final particle for queries, 'how about?']？
    === I already swam yesterday! Today I want to go jogging. How about you?

@@ -50,7 +50,7 @@ Cantonese:
 Two friends discuss mortgages, salary payments, and loaning money.
 
 ```dialog
-A: 你[nei5|you] 最近[zeoi3gan6|recently / lately] 忙[mong4|busy] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what / what kind of] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 你[nei5|you] 最近[zeoi3gan6|recently / lately] 忙[mong4|busy] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what kind of] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === What have you been busy with recently?
 B: 我[ngo5|I / me] 要[jiu3|need] 供樓[gung1lau2|to pay a mortgage] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]，所以[so2ji5|so / therefore] 要[jiu3|need] 努力[nou5lik6|to make an effort / try hard] 跑數[paau2sou3|to hit a sales target / chase sales numbers] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === I need to pay a mortgage, so I have to work hard to hit my sales target, obviously!

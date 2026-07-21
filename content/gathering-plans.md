@@ -35,7 +35,7 @@ Here is the essential vocabulary for organizing and describing social events:
   breeze, or gossip with friends.
 - `潛水[cim4seoi2|to go offline / go silent]`: To go offline, disappear from
   chat groups, or go silent (literally "to dive/snorkel").
-- `得閒[dak1haan4|free / having spare time]`: Free, having spare time.
+- `得閒[dak1haan4|free (spare time)]`: Free, having spare time.
 - `AA制[ei1ei1zai3|going Dutch / splitting the bill]`: Going Dutch or splitting
   the bill evenly among the group.
 
@@ -46,9 +46,9 @@ Here is the essential vocabulary for organizing and describing social events:
 Two friends, Sau-han (A) and Wing-kit (B), discuss their plans for Saturday.
 
 ```dialog
-A: 星期六[sing1kei4luk6|Saturday] 你[nei5|you] 得閒[dak1haan4|free / having spare time] 唔[m4|not / no (negative prefix)] 得閒[dak1haan4|free / having spare time] 呀[aa3|sentence-final particle softening statements, making questions friendly]？我哋[ngo5dei6|we / us] 有[jau5|to have] 個[go3|general measure word / individual / unit] 唱[coeng3|to sing]K 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 局[guk6|gathering / social event / plan] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+A: 星期六[sing1kei4luk6|Saturday] 你[nei5|you] 得閒[dak1haan4|free (spare time)] 唔[m4|not / no (negative prefix)] 得閒[dak1haan4|free (spare time)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？我哋[ngo5dei6|we / us] 有[jau5|to have] 個[go3|general measure word / individual / unit] 唱[coeng3|to sing]K 嘅[ge3|possessive particle / sentence-final particle asserting a fact] 局[guk6|gathering / social event / plan] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === Are you free this Saturday? We have a karaoke gathering plan.
-B: 唱[coeng3|to sing]K 呀[aa3|sentence-final particle softening statements, making questions friendly]？好呀[hou2aa3|sure]！有[jau5|to have] 邊個[bin1go3|who / which one] 去[heoi3|to go] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+B: 唱[coeng3|to sing]K 呀[aa3|sentence-final particle softening statements, making questions friendly]？好呀[hou2aa3|sure]！有[jau5|to have] 邊個[bin1go3|who / which] 去[heoi3|to go] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Karaoke? Sure! Who is going?
 A: 我哋[ngo5dei6|we / us] 差唔多[caa1m4do1|almost / about / more or less] 十[sap6|ten] 個[go3|general measure word / individual / unit] 人[jan4|person / people] 去[heoi3|to go] 呀[aa3|sentence-final particle softening statements, making questions friendly]。不過[bat1gwo3|but / however] David 成日[seng4jat6|always] 放飛機[fong3fei1gei1|to stand someone up / break a promise]，真係[zan1hai6|really / truly] 飛機王[fei1gei1wong4|chronic flake / person who always stands others up] 嚟[lei4|sentence-final particle indicating that something is in a certain state] 嘅[ge3|possessive particle / sentence-final particle asserting a fact]！
    === Almost ten of us are going. But David always stands people up, he is really a chronic flake!

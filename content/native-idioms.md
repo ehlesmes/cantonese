@@ -36,7 +36,7 @@ idioms:
 We are shooting the breeze at the Hong Kong style café.
 ```
 
-### 2. Pretending or Showing Off: `扮嘢[baan6je5|to pretend / show off / act]`
+### 2. Pretending or Showing Off: `扮嘢[baan6je5|to pretend / show off]`
 
 - **Literal meaning**: "Dressing up things"
 - **Colloquial usage**: Pretending, showing off, playing dumb, or acting like
@@ -44,7 +44,7 @@ We are shooting the breeze at the Hong Kong style café.
 - **Splitting example**:
 
 ```cantonese
-佢[keoi5|he / she / it] 真係[zan1hai6|really / truly] 扮[baan6|to dress up / act / pretend] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 嘢[je5|thing / stuff / matter] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+佢[keoi5|he / she / it] 真係[zan1hai6|really / truly] 扮[baan6|to pretend / dress up] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 嘢[je5|thing / stuff / matter] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
 ===
 He is really just pretending / showing off, obviously!
 ```
@@ -128,7 +128,7 @@ B: 係呀[hai6aa3|yes]！ 佢[keoi5|he / she / it] 尋日[cam4jat6|yesterday] �
    === Yes! Yesterday he said he would definitely come, and today he stood us up again, obviously!
 A: 我[ngo5|I / me] 話[waa6|to say / speak / talk] 俾[bei2|to give / by (passive marker) / let] 你[nei5|you] 聽[teng1|to listen / hear] 呀[aa3|sentence-final particle softening statements, making questions friendly]，老闆[lou5baan2|boss / proprietor] 啱啱[aam1aam1|just now / recently] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] David 魷魚[jau4jyu2|squid] 喇喎[laa3wo3|sentence-final particle combination indicating warning, sudden realization, or change of state]！
    === Let me tell you: the boss just fired David!
-B: 哇[waa1|wow / whoa]！ 真係[zan1hai6|really] 㗎[gaa4|particle]？ 佢[keoi5|he / she / it] 平時[ping4si4|normally / usually] 好[hou2|very / quite / extremely] 鍾意[zung1ji3|to like / love / prefer] 扮嘢[baan6je5|to pretend / show off / act] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
+B: 哇[waa1|wow / whoa]！ 真係[zan1hai6|really] 㗎[gaa4|particle]？ 佢[keoi5|he / she / it] 平時[ping4si4|normally / usually] 好[hou2|very / quite / extremely] 鍾意[zung1ji3|to like / love / prefer] 扮嘢[baan6je5|to pretend / show off] 嘛[maa3|sentence-final particle indicating a statement is an obvious truth or reminder]！
    === Wow! Really? He normally likes to pretend/show off so much, obviously!
 A: 係呀[hai6aa3|yes]，今日[gam1jat6|today] David 又[jau6|again / also] 遲到[ci4dou3|to be late / arrive late]，老闆[lou5baan2|boss / proprietor] 真係[zan1hai6|really / truly] 黑[hak1|black / dark / bad luck] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 面[min6|face / surface] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === Yes, David was late again today, the boss was showing a really dark/angry face!
@@ -168,7 +168,7 @@ explanation: |
 question: |
   Translate the following sentence into Cantonese with correct semantic annotations:
   "He is really just pretending / showing off, obviously!"
-answer: 佢[keoi5|he / she / it] 真係[zan1hai6|really / truly] 扮[baan6|to dress up / act / pretend] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 嘢[je5|thing / stuff / matter] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+answer: 佢[keoi5|he / she / it] 真係[zan1hai6|really / truly] 扮[baan6|to pretend / dress up] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 嘢[je5|thing / stuff / matter] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
 explanation: |
-  `扮嘢[baan6je5|to pretend / show off / act]` (literally "pretending things") is a split-verb. To express continuous action, the marker `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` splits the compound, giving `扮[baan6|to dress up / act / pretend]` `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` `嘢[je5|thing / stuff / matter]`.
+  `扮嘢[baan6je5|to pretend / show off]` (literally "pretending things") is a split-verb. To express continuous action, the marker `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` splits the compound, giving `扮[baan6|to pretend / dress up]` `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` `嘢[je5|thing / stuff / matter]`.
 ```

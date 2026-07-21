@@ -101,7 +101,7 @@ Use `希望[hei1mong6|to hope / wish]` as a verb to describe your personal goals
 expectations, or positive outlooks.
 
 ```cantonese
-我[ngo5|I / me] 希望[hei1mong6|to hope / wish] 遲啲[ci4di1|later / later on] 可以[ho2ji5|can / may / possible] 喺[hai2|at / in / on (locative preposition)] 香港[hoeng1gong2|Hong Kong] 搵[wan2|to find / look for / seek] 一[jat1|one] 份[fan6|measure word for jobs, publications, portions] 工[gung1|work / job]。
+我[ngo5|I / me] 希望[hei1mong6|to hope / wish] 遲啲[ci4di1|later on] 可以[ho2ji5|can / may / possible] 喺[hai2|at / in / on (locative preposition)] 香港[hoeng1gong2|Hong Kong] 搵[wan2|to find / look for / seek] 一[jat1|one] 份[fan6|measure word for jobs, publications, portions] 工[gung1|work / job]。
 ===
 I hope that later on I can find a job in Hong Kong.
 ```
@@ -163,7 +163,7 @@ Her company fired her, she is really so pitiful!
 ```
 
 ```cantonese
-佢[keoi5|he / she / it] 病[beng6|sick / illness] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]， 真係[zan1hai6|really / truly] 慘[caam2|miserable / pitiful / tragic] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+佢[keoi5|he / she / it] 病[beng6|sick] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]， 真係[zan1hai6|really / truly] 慘[caam2|miserable / pitiful / tragic] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 He got sick, it's really pitiful.
 ```
@@ -224,7 +224,7 @@ Please set your mind at ease, I will support you.
 ### 2. Comforting a Friend: `安慰[on1wai3|to comfort / console]`
 
 ```cantonese
-我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 識[sik1|to know / know how to / be familiar with] 安慰[on1wai3|to comfort / console] 佢[keoi5|he / she / it] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 識[sik1|know how to / be familiar with] 安慰[on1wai3|to comfort / console] 佢[keoi5|he / she / it] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I don't know how to comfort her.
 ```
@@ -235,7 +235,7 @@ To offer direct emotional support and tell someone not to be sad, you can use
 these comforting phrases:
 
 ```cantonese
-唔好[m4hou2|don't / do not] 唔開心[m4hoi1sam1|sad / unhappy] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。 我哋[ngo5dei6|we / us] 喺[hai2|at / in / on (locative preposition)] 度[dou6|degree / place (short for ni1dou6/go2dou6)] 陪[pui4|to accompany / keep someone company] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+唔好[m4hou2|don't / do not] 唔開心[m4hoi1sam1|sad / unhappy] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。 我哋[ngo5dei6|we / us] 喺[hai2|at / in / on (locative preposition)] 度[dou6|degree / place (short for ni1dou6 / go2dou6)] 陪[pui4|to accompany / keep someone company] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 Don't be sad. We are here for you (accompanying you).
 ```
@@ -255,7 +255,7 @@ B: 原本[jyun4bun2|originally / original] 我[ngo5|I / me] 都[dou1|also / both
    === Originally I also really regretted not doing this job well. Had I known they would fire me, I wouldn't have done it!
 A: 係[hai6|to be] 呀[aa3|sentence-final particle softening statements, making questions friendly]， 冇[mou5|not to have / without / there is not] 錢[cin2|money] 真係[zan1hai6|really / truly] 好[hou2|good / fine / very / quite] 慘[caam2|miserable / pitiful / tragic]、 好[hou2|good / fine / very / quite] 折墮[zit3do6|miserable / wretched / in a pitiful state] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 既然[gei3jin4|since / given that] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 魷魚[jau4jyu2|squid]， 你[nei5|you] 就[zau6|then / right away / immediately] 放心[fong3sam1|to feel relieved / set one's mind at ease] hea[hea1|to chill / hang out / slack off / procrastinate] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 你[nei5|you] 放心[fong3sam1|to feel relieved / set one's mind at ease] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]， 我[ngo5|I / me] 會[wui5|will / would / can / know how to / meet] 安慰[on1wai3|to comfort / console] 你[nei5|you]、 支持[zi1ci4|to support] 你[nei5|you] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle]。
    === Yes indeed, having no money is really miserable and wretched, obviously! Since you got fired, just rest assured and chill! Please set your mind at ease, I will comfort you and support you.
-B: 多謝[do1ze6|thank you (for a gift)] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 好彩[hou2coi2|luckily / fortunately] 我[ngo5|I / me] 有[jau5|to have / there is] 你[nei5|you] 呢個[ni1go3|this one] 朋友[pang4jau5|friend] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]！ 我[ngo5|I / me] 希望[hei1mong6|to hope / wish] 遲啲[ci4di1|later / later on] 可以[ho2ji5|can / may / possible] 去[heoi3|to go] 旅行[leoi5hang4|to travel] 玩[waan2|to play / have fun / enjoy]。
+B: 多謝[do1ze6|thank you (for a gift)] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 好彩[hou2coi2|luckily / fortunately] 我[ngo5|I / me] 有[jau5|to have / there is] 你[nei5|you] 呢個[ni1go3|this one] 朋友[pang4jau5|friend] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]！ 我[ngo5|I / me] 希望[hei1mong6|to hope / wish] 遲啲[ci4di1|later on] 可以[ho2ji5|can / may / possible] 去[heoi3|to go] 旅行[leoi5hang4|to travel] 玩[waan2|to play / have fun / enjoy]。
    === Thank you! Luckily I just have you as a friend! I hope that later on I can go travel and have fun.
 A: 好[hou2|good / fine / very / quite] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 祝[zuk1|to wish / congratulate] 你[nei5|you] 玩[waan2|to play / have fun / enjoy] 得[dak1|particle expressing permission, possibility, capability, or adverbial degree] 開心[hoi1sam1|happy / glad / cheerful] 啲[di1|a bit / some / comparative suffix] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
    === Sure! I wish you a happier time playing!

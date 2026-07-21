@@ -19,12 +19,11 @@ Second, we will explore hypothetical conditions using
 scenarios.
 
 Third, we will master how to talk about our future intentions and dreams using
-`打算[daa2syun3|to plan / intend / plan]` and
-`希望[hei1mong6|to hope / wish / hope]`.
+`打算[daa2syun3|to plan / intend]` and `希望[hei1mong6|to hope / wish]`.
 
 Finally, we will study the authentic local expression
-`發夢[faat3mung6|to dream / daydream / dream]` and see how to use it to inject
-humor and native flavor into your conversations.
+`發夢[faat3mung6|to dream / daydream]` and see how to use it to inject humor and
+native flavor into your conversations.
 
 ---
 
@@ -95,43 +94,43 @@ Supposing there were aliens, we would run away!
 ## 3. Planning & Hopes: Concrete vs. Aspirational
 
 When discussing the future, Cantonese distinguishes between concrete plans
-(`打算[daa2syun3|to plan / intend / plan]`) and emotional aspirations or wishes
-(`希望[hei1mong6|to hope / wish / hope]`).
+(`打算[daa2syun3|to plan / intend]`) and emotional aspirations or wishes
+(`希望[hei1mong6|to hope / wish]`).
 
 To describe when these actions will happen, you can use time-related terms like
 `第日[dai6jat6|another day / some day in the future]` (some day / in the future)
-or `遲啲[ci4di1|later / later on]` (later on).
+or `遲啲[ci4di1|later on]` (later on).
 
-### 1. Making Concrete Plans: `打算[daa2syun3|to plan / intend / plan]`
+### 1. Making Concrete Plans: `打算[daa2syun3|to plan / intend]`
 
-Use `打算[daa2syun3|to plan / intend / plan]` for plans you have already decided
-on or are actively arranging.
+Use `打算[daa2syun3|to plan / intend]` for plans you have already decided on or
+are actively arranging.
 
 ```cantonese
-我[ngo5|I / me] 打算[daa2syun3|to plan / intend / plan] 遲啲[ci4di1|later / later on] 去[heoi3|to go] 香港[hoeng1gong2|Hong Kong] 返工[faan1gung1|to go to work / be at work]。
+我[ngo5|I / me] 打算[daa2syun3|to plan / intend] 遲啲[ci4di1|later on] 去[heoi3|to go] 香港[hoeng1gong2|Hong Kong] 返工[faan1gung1|to go to work / be at work]。
 ===
 I plan to go to Hong Kong to work later on.
 ```
 
 ```cantonese
-我哋[ngo5dei6|we / us] 打算[daa2syun3|to plan / intend / plan] 聽日[ting1jat6|tomorrow] 去[heoi3|to go] 睇戲[tai2hei3|to watch movies / see a play]。
+我哋[ngo5dei6|we / us] 打算[daa2syun3|to plan / intend] 聽日[ting1jat6|tomorrow] 去[heoi3|to go] 睇戲[tai2hei3|to watch movies / see a play]。
 ===
 We plan to go watch a movie tomorrow.
 ```
 
-### 2. Expressing Hopes & Wishes: `希望[hei1mong6|to hope / wish / hope]`
+### 2. Expressing Hopes & Wishes: `希望[hei1mong6|to hope / wish]`
 
-Use `希望[hei1mong6|to hope / wish / hope]` for future scenarios that you want
-to happen but do not have full control over.
+Use `希望[hei1mong6|to hope / wish]` for future scenarios that you want to
+happen but do not have full control over.
 
 ```cantonese
-我[ngo5|I / me] 希望[hei1mong6|to hope / wish / hope] 第日[dai6jat6|another day / some day in the future] 可以[ho2ji5|can / may / possible] 喺[hai2|at / in / on (locative preposition)] 香港[hoeng1gong2|Hong Kong] 買[maai5|to buy] 書[syu1|book] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 希望[hei1mong6|to hope / wish] 第日[dai6jat6|another day / some day in the future] 可以[ho2ji5|can / may / possible] 喺[hai2|at / in / on (locative preposition)] 香港[hoeng1gong2|Hong Kong] 買[maai5|to buy] 書[syu1|book] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I hope that in the future I can buy books in Hong Kong.
 ```
 
 ```cantonese
-佢[keoi5|he / she / it] 希望[hei1mong6|to hope / wish / hope] 搵[wan2|to find / search / look for] 到[dou2|can manage to / successfully do] 新[san1|new] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+佢[keoi5|he / she / it] 希望[hei1mong6|to hope / wish] 搵[wan2|to find / search / look for] 到[dou2|can manage to / successfully do] 新[san1|new] 工[gung1|work / job] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 He hopes to find a new job.
 ```
@@ -140,8 +139,7 @@ He hopes to find a new job.
 
 ## 4. Spoken Cantonese Slang: Daydreaming
 
-The verb `發夢[faat3mung6|to dream / daydream / dream]` is structurally a
-split-verb:
+The verb `發夢[faat3mung6|to dream / daydream]` is structurally a split-verb:
 
 - Verb Part: `發[faat3|to emit / generate / dream / develop]`
 - Object Part: `夢[mung6|dream]`
@@ -165,7 +163,7 @@ Are you standing here daydreaming? (Or "Are you dreaming?")
 ```
 
 ```cantonese
-你[nei5|you] 估[gu2|to guess / estimate / think] 佢[keoi5|he / she / it] 會[wui5|will / can / able to] 幫[bong1|to help / assist] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]？ 發夢[faat3mung6|to dream / daydream / dream] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+你[nei5|you] 估[gu2|to guess / estimate / think] 佢[keoi5|he / she / it] 會[wui5|will / can / able to] 幫[bong1|to help / assist] 你[nei5|you] 呀[aa3|sentence-final particle softening statements, making questions friendly]？ 發夢[faat3mung6|to dream / daydream] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
 ===
 You think he will help you? In your dreams!
 ```
@@ -179,11 +177,11 @@ imagining what they would do if they won the Mark Six lottery
 (`六合彩[luk6hap6coi2|Mark Six (Hong Kong lottery)]`).
 
 ```dialog
-A: 如果[jyu4gwo2|if] 你[nei5|you] 中[zung3|to win] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 六合彩[luk6hap6coi2|Mark Six (Hong Kong lottery)]， 你[nei5|you] 有[jau5|to have / there is] 咩[me1|what / sentence-final particle expressing rhetorical doubt, surprise, or sarcasm] 打算[daa2syun3|to plan / intend / plan] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 如果[jyu4gwo2|if] 你[nei5|you] 中[zung3|to win] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 六合彩[luk6hap6coi2|Mark Six (Hong Kong lottery)]， 你[nei5|you] 有[jau5|to have / there is] 咩[me1|what / sentence-final particle expressing rhetorical doubt, surprise, or sarcasm] 打算[daa2syun3|to plan / intend] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === If you won the Mark Six, what plans do you have?
-B: 假使[gaa2si2|if / in case / supposing] 我[ngo5|I / me] 中[zung3|to win] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]， 我[ngo5|I / me] 就[zau6|then / right away / immediately] 唔[m4|not / no (negative prefix)] 返工[faan1gung1|to go to work / be at work] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 遲啲[ci4di1|later / later on] 去[heoi3|to go] 香港[hoeng1gong2|Hong Kong] 玩[waan2|to play / have fun / enjoy] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 你[nei5|you] 呢[ne1|how about / sentence-final particle for queries or friendly follow-ups]？
+B: 假使[gaa2si2|if / in case / supposing] 我[ngo5|I / me] 中[zung3|to win] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]， 我[ngo5|I / me] 就[zau6|then / right away / immediately] 唔[m4|not / no (negative prefix)] 返工[faan1gung1|to go to work / be at work] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 遲啲[ci4di1|later on] 去[heoi3|to go] 香港[hoeng1gong2|Hong Kong] 玩[waan2|to play / have fun / enjoy] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 你[nei5|you] 呢[ne1|how about / sentence-final particle for queries or friendly follow-ups]？
    === Supposing I won, I wouldn't go to work, obviously! I want to go to Hong Kong to have fun later on! How about you?
-A: 我[ngo5|I / me] 打算[daa2syun3|to plan / intend / plan] 買[maai5|to buy] 好[hou2|good / fine / very / quite] 多[do1|many / much / more] 書[syu1|book]。 我[ngo5|I / me] 希望[hei1mong6|to hope / wish / hope] 第日[dai6jat6|another day / some day in the future] 可以[ho2ji5|can / may / possible] 喺[hai2|at / in / on (locative preposition)] 香港[hoeng1gong2|Hong Kong] 睇書[tai2syu1|to read books] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+A: 我[ngo5|I / me] 打算[daa2syun3|to plan / intend] 買[maai5|to buy] 好[hou2|good / fine / very / quite] 多[do1|many / much] 書[syu1|book]。 我[ngo5|I / me] 希望[hei1mong6|to hope / wish] 第日[dai6jat6|another day / some day in the future] 可以[ho2ji5|can / may / possible] 喺[hai2|at / in / on (locative preposition)] 香港[hoeng1gong2|Hong Kong] 睇書[tai2syu1|to read books] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === I plan to buy a lot of books. I hope that in the future I can read books in Hong Kong.
 B: 哇[waa1|wow / whoa]！ 你[nei5|you] 真係[zan1hai6|really / truly] 喺[hai2|at / in / on (locative preposition)] 呢度[ni1dou6|here] 發[faat3|to emit / generate / dream / develop] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 夢[mung6|dream] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 中[zung3|to win] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 六合彩[luk6hap6coi2|Mark Six (Hong Kong lottery)] 先[sin1|first / only then] 講[gong2|to speak / say / talk] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
    === Whoa! You are really here daydreaming, obviously! Talk about it only after you win the Mark Six!
@@ -211,7 +209,7 @@ question: |
   你[nei5|you] 喺[hai2|at / in / on (locative preposition)] 呢度[ni1dou6|here] 發[faat3|to emit / generate / dream / develop] ________ 夢[mung6|dream] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 answer: 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]
 explanation: |
-  The verb `發夢[faat3mung6|to dream / daydream / dream]` is a split-verb. To express continuous action, the progressive aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` must be inserted between `發[faat3|to emit / generate / dream / develop]` and `夢[mung6|dream]`, yielding `發[faat3|to emit / generate / dream / develop]` `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` `夢[mung6|dream]`.
+  The verb `發夢[faat3mung6|to dream / daydream]` is a split-verb. To express continuous action, the progressive aspect suffix `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` must be inserted between `發[faat3|to emit / generate / dream / develop]` and `夢[mung6|dream]`, yielding `發[faat3|to emit / generate / dream / develop]` `緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)]` `夢[mung6|dream]`.
 ```
 
 ```exercise

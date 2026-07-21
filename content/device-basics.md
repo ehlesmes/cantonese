@@ -39,7 +39,7 @@ To describe daily web browsing and computer situations, spoken Cantonese uses:
 Two friends discuss connectivity issues in a cafe.
 
 ```dialog
-A: 你[nei5|you] 喺度[hai2dou6|here / in the middle of doing something] 做[zou6|to do / make / perform] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what / what kind of] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 你[nei5|you] 喺度[hai2dou6|here / in the middle of doing something] 做[zou6|to do / make / perform] 緊[gan2|verbal aspect suffix indicating an action in progress (continuous aspect)] 咩嘢[me1je5|what kind of] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === What are you doing here?
 B: 我[ngo5|I / me] 想[soeng2|to want to / would like to] 上網[soeng5mong5|to go online / surf the internet] 下載[haa6zoi3|to download] 嘢[je5|thing / stuff]，但係[daan6hai6|but] 呢度[ni1dou6|here] 嘅[ge3|possessive or linking particle] WiFi[wai1faai1|Wi-Fi / wireless internet] 網絡[mong5lok3|internet / network] 好[hou2|very] 慢[maan6|slow] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === I want to go online to download something, but the Wi-Fi network here is very slow.

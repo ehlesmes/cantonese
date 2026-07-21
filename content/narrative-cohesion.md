@@ -108,7 +108,7 @@ Structure:
 Let's look at an example:
 
 ```cantonese
-佢[keoi5|he / she / it] 唔單止[m4daan1zi2|not only] 有錢[jau5cin2|rich / wealthy / have money]， 仲[zung6|still / yet] 好[hou2|good / fine / very / quite] 識[sik1|to know / know how to / be familiar with] 玩[waan2|to play / have fun / enjoy] 添[tim1|particle indicating in addition / as well / furthermore]！
+佢[keoi5|he / she / it] 唔單止[m4daan1zi2|not only] 有錢[jau5cin2|rich / wealthy / have money]， 仲[zung6|still / yet] 好[hou2|good / fine / very / quite] 識[sik1|know how to / be familiar with] 玩[waan2|to play / have fun / enjoy] 添[tim1|particle indicating in addition / as well / furthermore]！
 ===
 Not only is he rich, he also really knows how to have fun!
 ```
@@ -213,7 +213,7 @@ I went to buy clothes, and then went to drink tea.
 ### 5. Clarification & Fact Clarification: `其實[kei4sat6|actually / in fact / as a matter of fact]`
 
 ```cantonese
-其實[kei4sat6|actually / in fact / as a matter of fact] 我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am/is/are) / yes] 唔開心[m4hoi1sam1|sad / unhappy]， 我[ngo5|I / me] 只係[zi2hai6|only / just] 攰[gui6|tired] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
+其實[kei4sat6|actually / in fact / as a matter of fact] 我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 係[hai6|to be (am / is / are) / yes] 唔開心[m4hoi1sam1|sad / unhappy]， 我[ngo5|I / me] 只係[zi2hai6|only / just] 攰[gui6|tired] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
 ===
 Actually, I am not sad, I am only tired.
 ```
@@ -226,7 +226,7 @@ Wing-kit (A) meets Sau-han (B) at a local cafe during working hours. He is
 surprised to see her slacking off on a weekday.
 
 ```dialog
-A: 雖然[seoi1jin4|although / even though] 今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 係[hai6|to be] 星期六[sing1kei4luk6|Saturday]， 但係[daan6hai6|but / however] 你[nei5|you] 都[dou1|also / both / all] 唔[m4|not / no (negative prefix)] 返工[faan1gung1|to go to work / be at work] 嘅[ge2|sentence-final particle expressing doubt, curiosity, or surprise]？ 點解[dim2gaai2|why / how come] 你[nei5|you] 喺[hai2|at / in / on (locative preposition)] 呢度[ni1dou6|here] Hea[hea1|to chill / hang out / slack off / procrastinate] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 雖然[seoi1jin4|although / even though] 今日[gam1jat6|today] 唔[m4|not / no (negative prefix)] 係[hai6|to be] 星期六[sing1kei4luk6|Saturday]， 但係[daan6hai6|but / however] 你[nei5|you] 都[dou1|also / both / all] 唔[m4|not / no (negative prefix)] 返工[faan1gung1|to go to work / be at work] 嘅[ge2|sentence-final particle expressing doubt, curiosity, or surprise]？ 點解[dim2gaai2|why] 你[nei5|you] 喺[hai2|at / in / on (locative preposition)] 呢度[ni1dou6|here] Hea[hea1|to chill / hang out / slack off / procrastinate] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Although today is not Saturday, you are still not working? Why are you chilling here?
 B: 因為[jan1wai6|because] 我[ngo5|I / me] 公司[gung1si1|company / office] 炒[caau2|to stir-fry / speculate / fire] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 我[ngo5|I / me] 魷魚[jau4jyu2|squid] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === Because my company fired me, obviously!
@@ -234,11 +234,11 @@ A: 吓[haa2|sentence-final particle expressing surprise, disbelief, or seeking q
    === What?! Fired? Were you originally sad and planning to cry?
 B: 原本[jyun4bun2|originally / original] 係[hai6|to be] 有[jau5|to have / there is] 啲[di1|some / a little / plural or possessive particle] 唔開心[m4hoi1sam1|sad / unhappy] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle]。 但係[daan6hai6|but / however] 我[ngo5|I / me] 唔單止[m4daan1zi2|not only] 冇[mou5|not to have / without / there is not] 喊[haam3|to cry / weep]， 反而[faan2ji4|on the contrary / instead] 好[hou2|good / fine / very / quite] 開心[hoi1sam1|happy / glad / cheerful] 添[tim1|particle indicating in addition / as well / furthermore]！
    === Originally I was indeed a bit sad. But not only did I not cry, on the contrary, I am very happy!
-A: 點解[dim2gaai2|why / how come] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 點解[dim2gaai2|why] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Why?
 B: 既然[gei3jin4|since / given that] 我[ngo5|I / me] 唔[m4|not / no (negative prefix)] 使[sai2|to need / use] 返工[faan1gung1|to go to work / be at work]， 噉[gam2|then / in that case / so] 我[ngo5|I / me] 就[zau6|then / right away / immediately] 可以[ho2ji5|can / may / possible] 去[heoi3|to go] 旅行[leoi5hang4|to travel] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！ 我[ngo5|I / me] 甚至[sam6zi3|even / so much so that] 諗住[nam2zyu6|to intend / plan / think of] 去[heoi3|to go] 香港[hoeng1gong2|Hong Kong] 玩[waan2|to play / have fun / enjoy] 兩[loeng5|two / pair (used with classifiers)] 個[go3|general measure word / individual / unit] 星期[sing1kei4|week] 添[tim1|particle indicating in addition / as well / furthermore]！
    === Since I don't have to work, then I can go travel, obviously! I even intend to go to Hong Kong to play for two weeks!
-A: 哇[waa1|wow / whoa]！ 你[nei5|you] 唔單止[m4daan1zi2|not only] 好似[hou2ci5|seem / seem like / as if] 有錢[jau5cin2|rich / wealthy / have money] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]， 仲[zung6|still / yet] 好[hou2|good / fine / very / quite] 識[sik1|to know / know how to / be familiar with] Hea[hea1|to chill / hang out / slack off / procrastinate] 添[tim1|particle indicating in addition / as well / furthermore]！
+A: 哇[waa1|wow / whoa]！ 你[nei5|you] 唔單止[m4daan1zi2|not only] 好似[hou2ci5|seem like / as if] 有錢[jau5cin2|rich / wealthy / have money] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)]， 仲[zung6|still / yet] 好[hou2|good / fine / very / quite] 識[sik1|know how to / be familiar with] Hea[hea1|to chill / hang out / slack off / procrastinate] 添[tim1|particle indicating in addition / as well / furthermore]！
    === Wow! Not only do you seem to have become rich, but you also really know how to chill!
 ```
 
@@ -261,7 +261,7 @@ explanation: |
 ```exercise
 question: |
   Fill in the blank with the correct connective meaning "not only" in Cantonese:
-  佢[keoi5|he / she / it] ________ 有錢[jau5cin2|rich / wealthy / have money]， 仲[zung6|still / yet] 好[hou2|good / fine / very / quite] 識[sik1|to know / know how to / be familiar with] 玩[waan2|to play / have fun / enjoy] 添[tim1|particle indicating in addition / as well / furthermore]！
+  佢[keoi5|he / she / it] ________ 有錢[jau5cin2|rich / wealthy / have money]， 仲[zung6|still / yet] 好[hou2|good / fine / very / quite] 識[sik1|know how to / be familiar with] 玩[waan2|to play / have fun / enjoy] 添[tim1|particle indicating in addition / as well / furthermore]！
 answer: 唔單止[m4daan1zi2|not only]
 explanation: |
   The incremental addition pattern is `唔單止[m4daan1zi2|not only] ... 仲[zung6|still / yet] ... 添[tim1|particle indicating in addition / as well / furthermore]`. It is used to express "not only... but also... as well".

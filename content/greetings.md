@@ -34,8 +34,7 @@ Hello there!
 
 - `早晨[zou2san4|good morning]`: The standard way to say "good morning."
 - `早唞[zou2tau2|good night]`: Used when going to bed.
-- `拜拜[baai1baai3|bye-bye / goodbye (loanword)]`: The most common colloquial
-  way to say goodbye.
+- `拜拜[baai1baai3|bye-bye]`: The most common colloquial way to say goodbye.
 
 Observe a simple polite exchange:
 
@@ -74,13 +73,13 @@ acts as a group marker:
 ### The Equative `係[hai6|to be]`
 
 To express "to be" (am, is, are), use the verb
-`係[hai6|to be (am/is/are) / yes]`. The standard sentence structure is:
-**Subject + `係[hai6|to be (am/is/are) / yes]` + Identity/Noun**
+`係[hai6|to be (am / is / are) / yes]`. The standard sentence structure is:
+**Subject + `係[hai6|to be (am / is / are) / yes]` + Identity/Noun**
 
 For example:
 
 ```cantonese
-我[ngo5|I / me] 係[hai6|to be (am/is/are) / yes] 香港[hoeng1gong2|Hong Kong] 人[jan4|person / people / human]。
+我[ngo5|I / me] 係[hai6|to be (am / is / are) / yes] 香港[hoeng1gong2|Hong Kong] 人[jan4|person / people / human]。
 ===
 I am a Hong Konger.
 ```
@@ -93,7 +92,7 @@ possessive particle
 after a pronoun or noun:
 
 ```cantonese
-佢哋[keoi5dei6|they / them] 係[hai6|to be (am/is/are) / yes] 我哋[ngo5dei6|we / us] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend]。
+佢哋[keoi5dei6|they / them] 係[hai6|to be (am / is / are) / yes] 我哋[ngo5dei6|we / us] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend]。
 ===
 They are our friends.
 ```
@@ -113,13 +112,13 @@ Using the possessive particle
 you can introduce your family members:
 
 ```cantonese
-呢個[ni1go3|this one / this] 係[hai6|to be (am/is/are) / yes] 我[ngo5|I / me] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 阿哥[aa3go1|older brother]。
+呢個[ni1go3|this one] 係[hai6|to be (am / is / are) / yes] 我[ngo5|I / me] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 阿哥[aa3go1|older brother]。
 ===
 This is my older brother.
 ```
 
 ```cantonese
-佢[keoi5|he / she / it] 係[hai6|to be (am/is/are) / yes] 我[ngo5|I / me] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 家姐[gaa1ze1|older sister]。
+佢[keoi5|he / she / it] 係[hai6|to be (am / is / are) / yes] 我[ngo5|I / me] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 家姐[gaa1ze1|older sister]。
 ===
 She is my older sister.
 ```
@@ -129,13 +128,13 @@ She is my older sister.
 ## 3. Conversational Dialogue
 
 ```dialog
-A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I] 係[hai6|to be (am/is/are) / yes] David。
+A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 我[ngo5|I] 係[hai6|to be (am / is / are) / yes] David。
    === Hello there! I am David.
-B: 早晨[zou2san4|good morning]！ 我[ngo5|I] 係[hai6|to be (am/is/are) / yes] Mary。 呢個[ni1go3|this one / this] 係[hai6|to be (am/is/are) / yes] 我[ngo5|I] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 阿哥[aa3go1|older brother]。
+B: 早晨[zou2san4|good morning]！ 我[ngo5|I] 係[hai6|to be (am / is / are) / yes] Mary。 呢個[ni1go3|this one] 係[hai6|to be (am / is / are) / yes] 我[ngo5|I] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 阿哥[aa3go1|older brother]。
    === Good morning! I am Mary. This is my older brother.
-A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 佢哋[keoi5dei6|they / them] 係[hai6|to be (am/is/are) / yes] 你哋[nei5dei6|you (plural)] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend] 呀[aa4|sentence-final particle softening questions]？
+A: 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]！ 佢哋[keoi5dei6|they / them] 係[hai6|to be (am / is / are) / yes] 你哋[nei5dei6|you (plural)] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend] 呀[aa4|sentence-final particle softening questions]？
    === Hello there! Are they your friends?
-B: 係[hai6|to be (am/is/are) / yes]呀[aa3|sentence-final particle softening statements, making questions friendly]，佢哋[keoi5dei6|they / them] 係[hai6|to be (am/is/are) / yes] 我哋[ngo5dei6|we / us] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend]。
+B: 係[hai6|to be (am / is / are) / yes]呀[aa3|sentence-final particle softening statements, making questions friendly]，佢哋[keoi5dei6|they / them] 係[hai6|to be (am / is / are) / yes] 我哋[ngo5dei6|we / us] 嘅[ge3|possessive particle / nominalizing particle / final assertive particle] 朋友[pang4jau5|friend]。
    === Yes, they are our friends.
 ```
 
@@ -149,13 +148,13 @@ question: |
   A) 你好[nei5hou2|hello / hi]
   B) 你好[nei5hou2|hello / hi]呀[aa3|sentence-final particle softening statements, making questions friendly]
   C) 早晨[zou2san4|good morning]
-  D) 拜拜[baai1baai3|bye-bye / goodbye (loanword)]
+  D) 拜拜[baai1baai3|bye-bye]
 answer: B
 explanation: While 你好[nei5hou2|hello / hi] is correct, adding the friendly softening particle 呀[aa3|sentence-final particle softening statements, making questions friendly] makes it sound much warmer and more natural to native speakers.
 ```
 
 ```exercise
 question: Translate "We are friends." into colloquial Cantonese using proper annotations.
-answer: 我哋[ngo5dei6|we / us] 係[hai6|to be (am/is/are) / yes] 朋友[pang4jau5|friend]。
-explanation: 我哋[ngo5dei6|we / us] is the plural pronoun for "we/us", 係[hai6|to be (am/is/are) / yes] is the equative verb, and 朋友[pang4jau5|friend] means friend/friends.
+answer: 我哋[ngo5dei6|we / us] 係[hai6|to be (am / is / are) / yes] 朋友[pang4jau5|friend]。
+explanation: 我哋[ngo5dei6|we / us] is the plural pronoun for "we/us", 係[hai6|to be (am / is / are) / yes] is the equative verb, and 朋友[pang4jau5|friend] means friend/friends.
 ```

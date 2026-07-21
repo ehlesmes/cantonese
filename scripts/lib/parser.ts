@@ -123,8 +123,8 @@ function parseChapterBlocks(
 /**
  * Parses a chapter markdown file.
  *
- * @param {string} filePath
- * @returns {RawParsedChapter}
+ * @param content The raw markdown content
+ * @returns Parsed chapter data
  */
 export function parseChapter(content: string): RawParsedChapter {
   const lines = content.split(/\r?\n/);
@@ -146,8 +146,8 @@ export type CurriculumChapter = z.infer<typeof CurriculumChapterSchema>;
 /**
  * Parses curriculum.md frontmatter for official chapter entries.
  *
- * @param {string} filePath
- * @returns {Array<CurriculumChapter>}
+ * @param content The raw markdown content
+ * @returns List of official chapter entries
  */
 export function parseCurriculum(content: string): CurriculumChapter[] {
   const lines = content.split(/\r?\n/);

@@ -22,9 +22,9 @@ const colors = {
 /**
  * Validates a single chapter markdown file.
  *
- * @param {string} filePath Absolute or relative path to the file
- * @param {object} [curriculumEntry] Associated curriculum mapping entry if available
- * @returns {Array<object>} List of errors
+ * @param filePath Absolute or relative path to the file
+ * @param curriculumEntry Associated curriculum mapping entry if available
+ * @returns List of errors
  */
 function validateChapterFile(
   filePath: string,

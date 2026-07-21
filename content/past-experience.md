@@ -77,8 +77,8 @@ Where have you been before?
 Here is some essential vocabulary related to schooling and exams:
 
 - `大學[daai6hok6|university]` — university
-- `讀書[duk6syu1|to study / to read]` — studying / to study
-- `考試[haau2si3|exam / to take an exam]` — exams / to take an exam
+- `讀書[duk6syu1|to study]` — studying / to study
+- `考試[haau2si3|to take an exam]` — exams / to take an exam
 - `走堂[zau2tong4|to skip class / cut class]` — skipping class
 - `英文[jing1man4|English language]` — English language
 
@@ -98,19 +98,19 @@ modal verbs, past experience markers, and potential suffixes.
 ```dialog
 A: 喂[wai2|hey / hello (typically answering phone or calling for attention)]，Sau-han！你[nei5|you] 讀[duk6|to study / read (aloud)] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 大學[daai6hok6|university] 未[mei6|not yet / have not] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Hey, Sau-han! Have you studied at university before?
-B: 我[ngo5|I / me] 讀[duk6|to study / read (aloud)] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 呀[aa3|sentence-final particle softening statements, making questions friendly]。我[ngo5|I / me] 好[hou2|good / fine / very / quite] 鍾意[zung1ji3|to like / prefer] 讀書[duk6syu1|to study / to read] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+B: 我[ngo5|I / me] 讀[duk6|to study / read (aloud)] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 呀[aa3|sentence-final particle softening statements, making questions friendly]。我[ngo5|I / me] 好[hou2|good / fine / very / quite] 鍾意[zung1ji3|to like / prefer] 讀書[duk6syu1|to study] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === I have studied before. I really like studying, obviously!
 A: 噉[gam2|then / in that case / so] 你[nei5|you] 識唔識[sik1 m4 sik1|do you know how to (A-not-A question form)] 講[gong2|to speak / say / talk] 英文[jing1man4|English language] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === In that case, do you know how to speak English?
-B: 我[ngo5|I / me] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I / me] 只係[zi2hai6|only / just] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa6|Cantonese language] 同埋[tung4maai4|and / with / together with] 英文[jing1man4|English language] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
+B: 我[ngo5|I / me] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 呀[aa3|sentence-final particle softening statements, making questions friendly]，我[ngo5|I / me] 只係[zi2hai6|only / just] 識[sik1|to know / speak (a language) / have a skill] 講[gong2|to speak / say / talk] 廣東話[gwong2dung1waa6|Cantonese language] 同埋[tung4maai4|and / together with] 英文[jing1man4|English language] 啫[ze1|sentence-final particle meaning 'only', 'just', or downplaying something]。
    === I know how to speak it; I only know how to speak Cantonese and English.
 A: 噉[gam2|then / in that case / so] 你[nei5|you] 走[zau2|to run / leave / escape] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 堂[tong4|class / hall] 未[mei6|not yet / have not] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Then have you skipped class before?
-B: 我[ngo5|I / me] 冇[mou5|to not have / there is not] 走[zau2|to run / leave / escape] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 堂[tong4|class / hall] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 你[nei5|you] 聽日[ting1jat6|tomorrow] 要唔要[jiu3 m4 jiu3|do you need to (A-not-A question form)] 考試[haau2si3|exam / to take an exam] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+B: 我[ngo5|I / me] 冇[mou5|to not have / there is not] 走[zau2|to run / leave / escape] 過[gwo3|verbal aspect suffix indicating past experience / 'have done before'] 堂[tong4|class / hall] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 你[nei5|you] 聽日[ting1jat6|tomorrow] 要唔要[jiu3 m4 jiu3|do you need to (A-not-A question form)] 考試[haau2si3|to take an exam] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === I have never skipped class before! Do you need to take an exam tomorrow?
 A: 要[jiu3|to want / need] 呀[aa3|sentence-final particle softening statements, making questions friendly]！我[ngo5|I / me] 今日[gam1jat6|today] 溫[wan1|to revise / review] 唔到[m4dou2|cannot / unable to manage to / fail to] 書[syu1|book] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']。
    === Yes, I do! But I cannot manage to study today, obviously.
-B: 點解[dim2gaai2|why / how come] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+B: 點解[dim2gaai2|why] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Why?
 A: 因為[jan1wai6|because] 我[ngo5|I / me] 唔舒服[m4syu1fuk6|uncomfortable / unwell / sick]，睇[tai2|to look / see / watch / read] 唔到[m4dou2|cannot / unable to manage to / fail to] 字[zi6|word / character] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
    === Because I am feeling unwell; I cannot manage to read the words.

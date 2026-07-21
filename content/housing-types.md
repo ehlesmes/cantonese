@@ -40,7 +40,7 @@ When looking for a place to live, you will encounter various housing options:
 ## 2. Conversational Dialogue: Building Styles
 
 ```dialog
-A: 你[nei5|you] 喺[hai2|at / in / on] 香港[hoeng1gong2|Hong Kong] 住[zyu6|to live / stay] 咩嘢[me1je5|what / what kind of] 樓[lau2|building / flat / apartment / floor] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 你[nei5|you] 喺[hai2|at / in / on] 香港[hoeng1gong2|Hong Kong] 住[zyu6|to live / stay] 咩嘢[me1je5|what kind of] 樓[lau2|building / flat / apartment / floor] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === What kind of building do you live in in Hong Kong?
 B: 我[ngo5|I / me] 住[zyu6|to live / stay] 公屋[gung1uk1|public housing] 呀[aa3|sentence-final particle softening statements, making questions friendly]。 你[nei5|you] 呢[ne1|sentence-final particle for queries (how about / what about)]？
    === I live in public housing. How about you?

@@ -97,7 +97,7 @@ Do you want to drink coffee or lemon tea?
 ```
 
 ```cantonese
-呢個[ni1go3|this one] 係[hai6|to be (am/is/are) / yes] 菠蘿包[bo1lo1baau1|pineapple bun (sweet crusted bun, usually containing no pineapple)] 定[ding6|or (used exclusively in alternative questions)] 蛋撻[daan6taat1|egg tart] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+呢個[ni1go3|this one] 係[hai6|to be (am / is / are) / yes] 菠蘿包[bo1lo1baau1|pineapple bun (sweet crusted bun, usually containing no pineapple)] 定[ding6|or (used exclusively in alternative questions)] 蛋撻[daan6taat1|egg tart] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
 ===
 Is this a pineapple bun or an egg tart?
 ```
@@ -140,7 +140,7 @@ Let's look at full ordering examples combining quantities, temperatures, and
 foods:
 
 ```cantonese
-我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 一[jat1|one] 杯[bui1|cup / glass / mug (classifier for drinks)] 凍[dung3|cold / iced] 檸茶[ning4caa4|lemon tea] 同埋[tung4maai4|and / with / together with] 兩[loeng5|two / pair (used with classifiers)] 個[go3|general measure word / individual / unit] 蛋撻[daan6taat1|egg tart] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
+我[ngo5|I / me] 想[soeng2|to want to / would like to / think] 要[jiu3|to want / need / must / demand] 一[jat1|one] 杯[bui1|cup / glass / mug (classifier for drinks)] 凍[dung3|cold / iced] 檸茶[ning4caa4|lemon tea] 同埋[tung4maai4|and / together with] 兩[loeng5|two / pair (used with classifiers)] 個[go3|general measure word / individual / unit] 蛋撻[daan6taat1|egg tart] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I would like to have a glass of iced lemon tea and two egg tarts.
 ```

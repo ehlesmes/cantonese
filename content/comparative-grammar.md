@@ -177,8 +177,8 @@ To express the absolute "most" of a quality (the superlative), place
 - `最[zeoi3|most / superlative prefix]`
   `靚[leng3|pretty / beautiful / handsome / high quality]` — prettiest / most
   beautiful
-- `最[zeoi3|most / superlative prefix]`
-  `靚仔[leng3zai2|handsome boy / handsome]` — most handsome
+- `最[zeoi3|most / superlative prefix]` `靚仔[leng3zai2|handsome boy]` — most
+  handsome
 - `最[zeoi3|most / superlative prefix]` `平[peng4|cheap / inexpensive]` —
   cheapest
 - `最[zeoi3|most / superlative prefix]` `大[daai6|big / large / great]` —
@@ -205,15 +205,15 @@ I like eating dim sum the most!
 Wing-kit (A) and Sau-han (B) are people-watching from a cafe in Mong Kok.
 
 ```dialog
-A: Sau-han，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa5|verbal suffix indicating a brief action or attempt]！嗰[go2|that] 個[go3|general measure word] 男仔[naam4zai2|boy / young man] 好[hou2|good / fine / very / quite] 靚仔[leng3zai2|handsome boy / handsome] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
+A: Sau-han，你[nei5|you] 睇[tai2|to look / see / watch / read] 吓[haa5|verbal suffix indicating a brief action or attempt]！嗰[go2|that] 個[go3|general measure word] 男仔[naam4zai2|boy / young man] 好[hou2|good / fine / very / quite] 靚仔[leng3zai2|handsome boy] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
    === Sau-han, take a look! That guy is very handsome!
 B: 邊[bin1|which] 個[go3|general measure word] 呀[aa3|sentence-final particle softening statements, making questions friendly]？戴[daai3|to wear (accessories like glasses, hats, watches)] 眼鏡[ngaan5geng2|glasses] 嗰[go2|that] 個[go3|general measure word] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Which one? The one wearing glasses?
-A: 係[hai6|to be (am/is/are) / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]。佢[keoi5|he / she / it] 高[gou1|tall / high] 過[gwo3|than / verbal aspect suffix indicating past experience] 你[nei5|you] 好多[hou2do1|a lot / many / much] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+A: 係[hai6|to be (am / is / are) / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]。佢[keoi5|he / she / it] 高[gou1|tall / high] 過[gwo3|than / verbal aspect suffix indicating past experience] 你[nei5|you] 好多[hou2do1|a lot / many / much] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === He is a lot taller than you, obviously!
-B: 喂[wai3|hey / hello]！我[ngo5|I / me] 冇[mou5|to not have / there is not] 佢[keoi5|he / she / it] 咁[gam3|so / such / to this degree] 高[gou1|tall / high]，但係[daan6hai6|but / however] 我[ngo5|I / me] 唔[m4|not (negation particle)] 矮[aai2|short (in height)] 呀[aa3|sentence-final particle softening statements, making questions friendly]！同埋[tung4maai4|and / with / together with / also] 佢[keoi5|he / she / it] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 冇[mou5|to not have / there is not] 我[ngo5|I / me] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 咁[gam3|so / such / to this degree] 靚[leng3|pretty / beautiful / handsome / high quality] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
+B: 喂[wai3|hey / hello]！我[ngo5|I / me] 冇[mou5|to not have / there is not] 佢[keoi5|he / she / it] 咁[gam3|so / such / to this degree] 高[gou1|tall / high]，但係[daan6hai6|but / however] 我[ngo5|I / me] 唔[m4|not (negation particle)] 矮[aai2|short (in height)] 呀[aa3|sentence-final particle softening statements, making questions friendly]！同埋[tung4maai4|and / together with / also] 佢[keoi5|he / she / it] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 冇[mou5|to not have / there is not] 我[ngo5|I / me] 件[gin6|measure word for clothes, matters, and items] 衫[saam1|clothes / clothing / shirt] 咁[gam3|so / such / to this degree] 靚[leng3|pretty / beautiful / handsome / high quality] 囉[lo1|sentence-final particle showing obviousness, resignation, or 'of course']！
    === Hey! I am not as tall as him, but I am not short! And his shirt is not as nice as my shirt, obviously!
-A: 係[hai6|to be (am/is/are) / yes] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action] 係[hai6|to be (am/is/are) / yes] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。你[nei5|you] 最[zeoi3|most / superlative prefix] 靚仔[leng3zai2|handsome boy / handsome] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+A: 係[hai6|to be (am / is / are) / yes] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action] 係[hai6|to be (am / is / are) / yes] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。你[nei5|you] 最[zeoi3|most / superlative prefix] 靚仔[leng3zai2|handsome boy] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
    === Yeah, yeah. You are the most handsome!
 ```
 

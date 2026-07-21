@@ -44,6 +44,27 @@ describe("Tracker Utils", () => {
     test("should ignore duplicates", () => {
       expect(mergeTranslations("father", "father")).toBe("father");
     });
+
+    test("should handle empty or punctuation-only strings", () => {
+      expect(mergeTranslations("hello", "!")).toBe("hello");
+      expect(mergeTranslations("!", "hello")).toBe("! / hello");
+    });
+
+    test("should keep the longer string when core meanings are identical", () => {
+      expect(mergeTranslations("eat", "to eat")).toBe("to eat");
+    });
+
+    test("should keep the existing string if the new string is a substring of it", () => {
+      expect(
+        mergeTranslations("exceed mobile data limit", "mobile data limit"),
+      ).toBe("exceed mobile data limit");
+    });
+
+    test("should replace the existing string if it is a substring of the new string", () => {
+      expect(
+        mergeTranslations("mobile data limit", "exceed mobile data limit"),
+      ).toBe("exceed mobile data limit");
+    });
   });
 
   describe("compileVocabularyMap", () => {
