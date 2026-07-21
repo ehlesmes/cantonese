@@ -63,7 +63,7 @@ export const VocabItemSchema = z
     jyutping: z.string(),
     translation: z.string(),
     firstIntroducedIn: z.string(),
-    occurrences: z.array(z.string()).optional(),
+    occurrences: z.number().optional(),
   })
   .passthrough();
 

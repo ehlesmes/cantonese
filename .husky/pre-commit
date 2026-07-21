@@ -44,3 +44,6 @@ npx tsx scripts/validate-portability.ts
 
 echo "Running unit tests with coverage verification..."
 npx vitest run --coverage
+
+echo "Verifying Astro build..."
+npx astro build
