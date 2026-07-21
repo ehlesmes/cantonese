@@ -6,6 +6,7 @@ import {
   compileVocabularyMap,
   generateVocabularyMarkdown,
   type ChapterInput,
+  type VocabTrackingItem,
 } from "./lib/tracker-utils.js";
 
 function loadCurriculumChapters(
@@ -55,10 +56,7 @@ function parseAllChapters(
   return parsedChapters;
 }
 
-function writeJsonOutput(
-  jsonPath: string,
-  sortedVocab: ReturnType<typeof compileVocabularyMap>,
-) {
+function writeJsonOutput(jsonPath: string, sortedVocab: VocabTrackingItem[]) {
   try {
     fs.writeFileSync(jsonPath, JSON.stringify(sortedVocab, null, 2), "utf8");
     console.log(
@@ -72,10 +70,7 @@ function writeJsonOutput(
   }
 }
 
-function writeMarkdownOutput(
-  mdPath: string,
-  sortedVocab: ReturnType<typeof compileVocabularyMap>,
-) {
+function writeMarkdownOutput(mdPath: string, sortedVocab: VocabTrackingItem[]) {
   const mdContent = generateVocabularyMarkdown(sortedVocab);
   try {
     fs.writeFileSync(mdPath, mdContent, "utf8");
@@ -88,7 +83,7 @@ function writeMarkdownOutput(
   }
 }
 
-function main() {
+async function main() {
   const projectRoot = path.resolve(__dirname, "..");
   const contentDir = path.join(projectRoot, "content");
   const jsonPath = path.join(contentDir, "vocabulary.json");
@@ -106,14 +101,17 @@ function main() {
 
   const parsedChapters = parseAllChapters(contentDir, chapters);
 
-  const sortedVocab = compileVocabularyMap(parsedChapters, dictionary);
+  const sortedVocab = await compileVocabularyMap(parsedChapters, dictionary);
 
   writeJsonOutput(jsonPath, sortedVocab);
   writeMarkdownOutput(mdPath, sortedVocab);
 }
 
 if (require.main === module) {
-  main();
+  main().catch((err) => {
+    console.error(`ERROR: ${err instanceof Error ? err.message : String(err)}`);
+    process.exit(1);
+  });
 }
 
 export {};

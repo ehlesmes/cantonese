@@ -81,13 +81,13 @@ export function cleanIncompleteProgressState(
     } else {
       chapter.phrases.forEach((pid) => {
         if (!newPhraseSrs[pid]) {
-          newPhraseSrs[pid] = { level: 0, lastReviewed: 0 };
+          newPhraseSrs[pid] = { level: 0 };
           addedPhrasesCount++;
         }
       });
       chapter.vocab.forEach((vid) => {
         if (!newVocabSrs[vid]) {
-          newVocabSrs[vid] = { level: 0, lastReviewed: 0 };
+          newVocabSrs[vid] = { level: 0 };
           addedVocabCount++;
         }
       });

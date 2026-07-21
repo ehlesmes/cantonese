@@ -1,40 +1,18 @@
 import fs from "fs";
 import path from "path";
-import { parseCurriculum, parseChapter } from "../../../scripts/lib/parser";
+import { parseCurriculum, parseChapter } from "../../../scripts/lib/parser.js";
 import {
   parseDialogueBlock,
   parseExampleBlock,
-} from "../../../src/utils/markdown";
-import { getAudioHash } from "../../../src/utils/audio.js";
-import { getStablePhraseId } from "../../../src/utils/text.js";
-import { CurriculumIndexSchema } from "../../utils/schemas";
+} from "../../../src/utils/markdown.js";
+import { getAudioHash, getTokenHashes } from "../../../src/utils/audio.js";
+import {
+  getStablePhraseId,
+  splitCantoneseTokens,
+} from "../../../src/utils/text.js";
+import { CurriculumIndexSchema } from "../../utils/schemas.js";
 
 import type { APIRoute } from "astro";
-
-function getTokenHashes(
-  text: string | null | undefined,
-): Record<string, string> {
-  const tokenHashes: Record<string, string> = {};
-  if (!text) return tokenHashes;
-  const blockRegex =
-    /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
-  let match;
-  while ((match = blockRegex.exec(text)) !== null) {
-    const char = match[1];
-    if (!char) continue;
-    tokenHashes[char] = getAudioHash(char);
-  }
-  return tokenHashes;
-}
-
-function splitCantoneseTokens(
-  cantoneseRaw: string | null | undefined,
-): string[] {
-  if (!cantoneseRaw) return [];
-  const spaced = cantoneseRaw.replace(/([，。！？、；：,?!;:])/g, " $1 ");
-  const regex = /([^\s[]+\[[^\]]+\]|[^\s[]+)/g;
-  return spaced.match(regex) || [];
-}
 
 interface CurriculumChapter {
   id: string;
@@ -56,11 +34,11 @@ interface ExampleItem {
   tokenHashes: Record<string, string>;
 }
 
-function extractExamplesFromBlock(
+async function extractExamplesFromBlock(
   block: { type: string; content: string },
   chapter: CurriculumChapter,
   chapterNumber: number,
-): ExampleItem[] {
+): Promise<ExampleItem[]> {
   const examples: ExampleItem[] = [];
 
   if (block.type === "cantonese") {
@@ -79,8 +57,8 @@ function extractExamplesFromBlock(
         english,
         tokens: splitCantoneseTokens(cantoneseRaw),
         type: "example",
-        audioHash: getAudioHash(cantoneseRaw),
-        tokenHashes: getTokenHashes(cantoneseRaw),
+        audioHash: await getAudioHash(cantoneseRaw),
+        tokenHashes: await getTokenHashes(cantoneseRaw),
       });
     }
   } else if (block.type === "dialog") {
@@ -97,8 +75,8 @@ function extractExamplesFromBlock(
           english: turn.english,
           tokens: splitCantoneseTokens(turn.cantonese),
           type: "dialog",
-          audioHash: getAudioHash(turn.cantonese),
-          tokenHashes: getTokenHashes(turn.cantonese),
+          audioHash: await getAudioHash(turn.cantonese),
+          tokenHashes: await getTokenHashes(turn.cantonese),
         });
       }
     }
@@ -113,7 +91,7 @@ export const GET: APIRoute = async () => {
   const chapters = parseCurriculum(curriculumContent);
   CurriculumIndexSchema.parse(chapters);
 
-  const allExamples: ExampleItem[] = chapters.flatMap((chapter, idx) => {
+  const extractPromises = chapters.flatMap((chapter, idx) => {
     const filePath = path.resolve("content", chapter.file);
     if (!fs.existsSync(filePath)) {
       return [];
@@ -121,10 +99,11 @@ export const GET: APIRoute = async () => {
 
     const content = fs.readFileSync(filePath, "utf8");
     const { blocks } = parseChapter(content);
-    return blocks.flatMap((block) =>
-      extractExamplesFromBlock(block, chapter, idx),
-    );
+    return blocks.map((block) => extractExamplesFromBlock(block, chapter, idx));
   });
+
+  const nestedExamples = await Promise.all(extractPromises);
+  const allExamples = nestedExamples.flat();
 
   return new Response(JSON.stringify(allExamples), {
     headers: {

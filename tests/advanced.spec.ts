@@ -20,7 +20,7 @@ test.describe("Advanced Page Reset E2E Test", () => {
   }) => {
     // Navigate to advanced settings page
     await page.goto("/cantonese/advanced");
-    await page.waitForSelector(".remove-btn");
+    await expect(page.locator(".remove-btn").first()).toBeVisible();
 
     // Click clear progress button
     await page.locator("#clear-all-btn").click();
@@ -49,7 +49,7 @@ test.describe("Advanced Page Reset E2E Test", () => {
 
   test("should allow canceling progress reset dialog", async ({ page }) => {
     await page.goto("/cantonese/advanced");
-    await page.waitForSelector(".remove-btn");
+    await expect(page.locator(".remove-btn").first()).toBeVisible();
 
     // Click clear progress button
     await page.locator("#clear-all-btn").click();
@@ -77,7 +77,7 @@ test.describe("Advanced Page Reset E2E Test", () => {
     page,
   }) => {
     await page.goto("/cantonese/advanced");
-    await page.waitForSelector(".remove-btn");
+    await expect(page.locator(".remove-btn").first()).toBeVisible();
 
     // Click the first "Remove Progress" button (for pronunciation-tones)
     const removeBtns = page.locator(".remove-btn");
@@ -147,7 +147,7 @@ test.describe("Advanced Page Reset E2E Test", () => {
     });
 
     await page.goto("/cantonese/advanced");
-    await page.waitForSelector("#clean-incomplete-btn");
+    await expect(page.locator("#clean-incomplete-btn")).toBeVisible();
 
     // Click clean incomplete button
     await page.locator("#clean-incomplete-btn").click();

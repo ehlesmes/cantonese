@@ -587,6 +587,16 @@ p {
   color: var(--secondary-color);
   border: 1px solid rgba(91, 122, 92, 0.25);
 }
+.srs-level-6 {
+  background-color: rgba(33, 97, 140, 0.15);
+  color: #21618c;
+  border: 1px solid rgba(33, 97, 140, 0.25);
+}
+.srs-level-7 {
+  background-color: rgba(108, 52, 131, 0.15);
+  color: #6c3483;
+  border: 1px solid rgba(108, 52, 131, 0.25);
+}
 
 /* Flashcard Specific Styling */
 .flashcard-card {

@@ -1,12 +1,14 @@
 import * as fs from "fs";
 import * as path from "path";
-import { parseChapter, parseCurriculum } from "./lib/parser";
+import { parseChapter, parseCurriculum } from "./lib/parser.js";
 import {
   escapeXml,
   getHash,
   extractTTSStrings,
+  loadEnv,
+  parseArgs,
   type TtsVocabItem,
-} from "./lib/tts-utils";
+} from "./lib/tts-utils.js";
 import type { ParsedBlock } from "../src/types";
 
 // Premium CLI output styles
@@ -20,33 +22,9 @@ const colors = {
   cyan: "\x1b[36m",
 };
 
-// 1. Safe .env Loader
-function loadEnv() {
-  const envPath = path.resolve(__dirname, "../.env");
-  if (fs.existsSync(envPath)) {
-    const content = fs.readFileSync(envPath, "utf8");
-    const lines = content.split(/\r?\n/);
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed || trimmed.startsWith("#")) continue;
-      const eqIdx = trimmed.indexOf("=");
-      if (eqIdx !== -1) {
-        const k = trimmed.slice(0, eqIdx).trim();
-        let v = trimmed.slice(eqIdx + 1).trim();
-        // Strip quotes if present
-        if (
-          (v.startsWith('"') && v.endsWith('"')) ||
-          (v.startsWith("'") && v.endsWith("'"))
-        ) {
-          v = v.slice(1, -1);
-        }
-        process.env[k] = v;
-      }
-    }
-  }
-}
-
-loadEnv();
+// 3. Resolve Paths
+const projectRoot = path.resolve(__dirname, "..");
+loadEnv(projectRoot);
 
 // Check if TTS generation is explicitly requested to be skipped
 if (process.env.SKIP_TTS === "true") {
@@ -73,8 +51,6 @@ if (!key || region === "") {
   process.exit(0);
 }
 
-// 3. Resolve Paths
-const projectRoot = path.resolve(__dirname, "..");
 const outputDir = path.resolve(projectRoot, "public/audio/tts");
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
@@ -118,37 +94,6 @@ async function fetchSpeech(
   return Buffer.from(arrayBuffer);
 }
 
-interface TTSArgs {
-  limit: number;
-  maxChapters: number;
-}
-
-function parseArgs(args: string[]): TTSArgs {
-  let limit = Infinity;
-  const limitIdx = args.findIndex((arg) => arg === "--limit" || arg === "-l");
-  if (limitIdx !== -1) {
-    const limitVal = args[limitIdx + 1];
-    if (limitVal !== undefined) {
-      limit = parseInt(limitVal, 10);
-      if (isNaN(limit)) limit = Infinity;
-    }
-  }
-
-  let maxChapters = Infinity;
-  const chaptersIdx = args.findIndex(
-    (arg) => arg === "--chapters" || arg === "-c",
-  );
-  if (chaptersIdx !== -1) {
-    const chaptersVal = args[chaptersIdx + 1];
-    if (chaptersVal !== undefined) {
-      maxChapters = parseInt(chaptersVal, 10);
-      if (isNaN(maxChapters)) maxChapters = Infinity;
-    }
-  }
-
-  return { limit, maxChapters };
-}
-
 async function generateAudioForStrings(
   uniqueList: string[],
   limit: number,
@@ -168,7 +113,7 @@ async function generateAudioForStrings(
     const text = uniqueList[i];
     if (text === undefined) continue;
 
-    const hash = getHash(text);
+    const hash = await getHash(text);
     const filename = `${hash}.mp3`;
     const filePath = path.resolve(outputDir, filename);
 

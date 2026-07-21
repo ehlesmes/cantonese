@@ -2,7 +2,11 @@ import { describe, test, expect, vi } from "vitest";
 import * as fs from "fs";
 import * as path from "path";
 
-import * as portability from "./validate-portability";
+import * as portability from "./validate-portability.js";
+import {
+  FORBIDDEN_PATTERN,
+  getFilesRecursive,
+} from "./lib/portability-utils.js";
 
 const actualFs = await vi.importActual<typeof import("fs")>("fs");
 
@@ -29,20 +33,14 @@ vi.mock("fs", async (importOriginal) => {
 });
 
 describe("Project Portability Validator Spec", () => {
-  test("FORBIDDEN_PATTERN matches typical absolute paths", () => {
-    // Dynamically construct path strings to avoid triggering the raw file scanner
-    const testFileUri = ["file:", "", "", "Users", "edwardlesmes"].join("/");
-    const testUsersPath =
-      "Referencing " + ["", "Users", "username", "Projects"].join("/");
-    const testHomePath = ["", "home", "ubuntu", "course"].join("/");
+  test("FORBIDDEN_PATTERN matches absolute paths", () => {
+    expect(FORBIDDEN_PATTERN.test("file:///Users/a")).toBe(true);
+    expect(FORBIDDEN_PATTERN.test("/Users/a")).toBe(true);
+    expect(FORBIDDEN_PATTERN.test("/home/a")).toBe(true);
 
-    expect(portability.FORBIDDEN_PATTERN.test(testFileUri)).toBe(true);
-    expect(portability.FORBIDDEN_PATTERN.test(testUsersPath)).toBe(true);
-    expect(portability.FORBIDDEN_PATTERN.test(testHomePath)).toBe(true);
+    expect(FORBIDDEN_PATTERN.test("./relative/path/a")).toBe(false);
     expect(
-      portability.FORBIDDEN_PATTERN.test(
-        "Relative path scripts/prompts/README.md",
-      ),
+      FORBIDDEN_PATTERN.test("Relative path scripts/prompts/README.md"),
     ).toBe(false);
   });
 
@@ -133,6 +131,31 @@ describe("Project Portability Validator Spec", () => {
     expect(consoleSpy).toHaveBeenCalledWith(
       expect.stringContaining("Warning: Could not read file"),
     );
+    vi.restoreAllMocks();
+  });
+
+  test("getFilesRecursive ignores statSync errors", () => {
+    const tempDir = path.join(__dirname, "tmp_portability_stat_error");
+    if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir);
+    const testFile = path.join(tempDir, "stat-error.md");
+    fs.writeFileSync(testFile, "Clean contents", "utf8");
+
+    // We imported getFilesRecursive at the top
+
+    vi.mocked(fs.statSync).mockImplementation((filePath) => {
+      if (typeof filePath === "string" && filePath.includes("stat-error.md")) {
+        throw new Error("Simulated stat error");
+      }
+      return actualFs.statSync(
+        filePath as Parameters<typeof actualFs.statSync>[0],
+      );
+    });
+
+    const files = getFilesRecursive(tempDir);
+    expect(files).toHaveLength(0); // Because the file stat failed, it's skipped
+
+    fs.unlinkSync(testFile);
+    fs.rmdirSync(tempDir);
     vi.restoreAllMocks();
   });
 

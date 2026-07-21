@@ -3,6 +3,7 @@ import {
   validateRegisterEntry,
   sortDictionary,
   findUnregisteredWords,
+  processEntries,
 } from "./register-utils.js";
 import {
   extractChapterUnits,
@@ -169,6 +170,47 @@ describe("Lexicon Registrar Helpers", () => {
     expect(units.map((u) => u.characters)).toContain("我");
     expect(units.map((u) => u.characters)).toContain("係");
     expect(units.map((u) => u.characters)).toContain("唔該");
+  });
+
+  test("processEntries processes batches of entries", () => {
+    const data = [
+      {
+        character: "唔該",
+        jyutping: "m4goi1",
+        type: "expression",
+        translation: "thanks",
+      }, // Valid duplicate dict
+      {
+        character: "腸粉",
+        jyutping: "coeng2fan2",
+        type: "noun",
+        translation: "rolls",
+      }, // Valid new
+      {
+        character: "腸粉",
+        jyutping: "coeng2fan2",
+        type: "noun",
+        translation: "duplicate",
+      }, // Invalid duplicate batch
+      { character: "", jyutping: "", type: "", translation: "" }, // Invalid
+    ];
+    const { processedEntries, errors } = processEntries(data, dictionary, true);
+    expect(processedEntries).toHaveLength(1);
+    expect(processedEntries[0]?.char).toBe("腸粉");
+    expect(errors.length).toBeGreaterThan(0);
+    expect(errors.some((e) => e.includes("already registered"))).toBe(true);
+    expect(errors.some((e) => e.includes("within the batch itself"))).toBe(
+      true,
+    );
+    expect(errors.some((e) => e.includes("Character cannot be empty"))).toBe(
+      true,
+    );
+  });
+
+  test("processEntries processes single entry without batch prefix", () => {
+    const data = [{ character: "", jyutping: "", type: "", translation: "" }];
+    const { errors } = processEntries(data, [], false);
+    expect(errors[0]).not.toContain("Entry #");
   });
 });
 

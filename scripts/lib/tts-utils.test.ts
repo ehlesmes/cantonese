@@ -1,5 +1,14 @@
 import { describe, test, expect } from "vitest";
-import { extractTTSStrings, escapeXml, getHash } from "./tts-utils.js";
+import {
+  extractTTSStrings,
+  escapeXml,
+  getHash,
+  loadEnv,
+  parseArgs,
+} from "./tts-utils.js";
+import * as fs from "fs";
+import * as path from "path";
+import * as os from "os";
 
 describe("TTS Utils - escapeXml", () => {
   test("escapes special characters", () => {
@@ -16,8 +25,50 @@ describe("TTS Utils - escapeXml", () => {
 });
 
 describe("TTS Utils - getHash", () => {
-  test("returns hash string", () => {
-    expect(typeof getHash("test")).toBe("string");
+  test("returns hash string", async () => {
+    expect(typeof (await getHash("test"))).toBe("string");
+  });
+});
+
+describe("TTS Utils - loadEnv & parseArgs", () => {
+  test("loadEnv reads and parses .env file", () => {
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "tts-test-"));
+    const envPath = path.join(tmpDir, ".env");
+    fs.writeFileSync(
+      envPath,
+      "TEST_KEY=test_value\nTEST_QUOTED=\"quoted\"\n#comment\n\n  \nNO_VALUE=\nTEST_SINGLE='single'\nNO_EQUAL_SIGN\nMIXED=\"mismatched'\n",
+    );
+    loadEnv(tmpDir);
+    expect(process.env.TEST_KEY).toBe("test_value");
+    expect(process.env.TEST_QUOTED).toBe("quoted");
+    expect(process.env.TEST_SINGLE).toBe("single");
+    expect(process.env.NO_VALUE).toBe("");
+    expect(process.env.MIXED).toBe("\"mismatched'");
+    fs.rmSync(tmpDir, { recursive: true, force: true });
+  });
+
+  test("loadEnv ignores missing .env file", () => {
+    expect(() => loadEnv("/non/existent/path/for/env")).not.toThrow();
+  });
+
+  test("parseArgs parses arguments", () => {
+    expect(parseArgs(["--limit", "10", "-c", "5"])).toEqual({
+      limit: 10,
+      maxChapters: 5,
+    });
+    expect(parseArgs(["-l", "bad", "--chapters", "bad"])).toEqual({
+      limit: Infinity,
+      maxChapters: Infinity,
+    });
+    expect(parseArgs([])).toEqual({ limit: Infinity, maxChapters: Infinity });
+    expect(parseArgs(["-l"])).toEqual({
+      limit: Infinity,
+      maxChapters: Infinity,
+    });
+    expect(parseArgs(["--chapters"])).toEqual({
+      limit: Infinity,
+      maxChapters: Infinity,
+    });
   });
 });
 

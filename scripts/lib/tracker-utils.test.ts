@@ -47,7 +47,7 @@ describe("Tracker Utils", () => {
   });
 
   describe("compileVocabularyMap", () => {
-    test("should correctly track vocabulary, handle homographs, and chronological first introductions", () => {
+    test("should correctly track vocabulary, handle homographs, and chronological first introductions", async () => {
       const dictionary: DictionaryEntry[] = [
         {
           char: "調",
@@ -86,7 +86,10 @@ describe("Tracker Utils", () => {
         } as unknown as RawParsedChapter,
       };
 
-      const result = compileVocabularyMap([chapter1, chapter2], dictionary);
+      const result = await compileVocabularyMap(
+        [chapter1, chapter2],
+        dictionary,
+      );
 
       // Homographs tiu4 and diu6 should be separate
       expect(result).toHaveLength(3);
@@ -114,7 +117,7 @@ describe("Tracker Utils", () => {
       expect(baabaa!.translation).toBe("father / dad");
     });
 
-    test("should handle exercise blocks with valid and invalid YAML", () => {
+    test("should handle exercise blocks with valid and invalid YAML", async () => {
       const chapter: ChapterInput = {
         curriculumId: "test-exercise",
         chapterData: {
@@ -133,7 +136,7 @@ describe("Tracker Utils", () => {
         } as unknown as RawParsedChapter,
       };
 
-      const result = compileVocabularyMap([chapter], []);
+      const result = await compileVocabularyMap([chapter], []);
 
       expect(result).toHaveLength(3);
       expect(result.find((r) => r.character === "好")).toBeDefined();
@@ -141,7 +144,7 @@ describe("Tracker Utils", () => {
       expect(result.find((r) => r.character === "明白")).toBeDefined();
     });
 
-    test("should handle sorting with same jyutping but different character", () => {
+    test("should handle sorting with same jyutping but different character", async () => {
       const chapter: ChapterInput = {
         curriculumId: "test-sort",
         chapterData: {
@@ -155,14 +158,14 @@ describe("Tracker Utils", () => {
         } as unknown as RawParsedChapter,
       };
 
-      const result = compileVocabularyMap([chapter], []);
+      const result = await compileVocabularyMap([chapter], []);
 
       expect(result).toHaveLength(2);
       expect(result[0]!.character).toBe("A");
       expect(result[1]!.character).toBe("B");
     });
 
-    test("should handle cantonese and dialog blocks", () => {
+    test("should handle cantonese and dialog blocks", async () => {
       const chapter: ChapterInput = {
         curriculumId: "test-blocks",
         chapterData: {
@@ -180,7 +183,7 @@ describe("Tracker Utils", () => {
         } as unknown as RawParsedChapter,
       };
 
-      const result = compileVocabularyMap([chapter], []);
+      const result = await compileVocabularyMap([chapter], []);
 
       expect(result).toHaveLength(4);
       expect(result.find((r) => r.character === "我")).toBeDefined();
@@ -209,12 +212,12 @@ describe("Tracker Utils", () => {
         } as unknown as RawParsedChapter,
       };
 
-      const result = compileVocabularyMap([chapter], []);
+      const result = await compileVocabularyMap([chapter], []);
       expect(result).toHaveLength(0);
       spy.mockRestore();
     });
 
-    test("should ignore unknown block types and fallback to curriculumId if frontmatter id is missing", () => {
+    test("should ignore unknown block types and fallback to curriculumId if frontmatter id is missing", async () => {
       const chapter: ChapterInput = {
         curriculumId: "fallback-id",
         chapterData: {
@@ -232,7 +235,7 @@ describe("Tracker Utils", () => {
         } as unknown as RawParsedChapter,
       };
 
-      const result = compileVocabularyMap([chapter], []);
+      const result = await compileVocabularyMap([chapter], []);
       expect(result).toHaveLength(1);
       expect(result[0]!.firstIntroducedIn).toBe("fallback-id");
       expect(result[0]!.character).toBe("我");

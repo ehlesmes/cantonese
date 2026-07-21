@@ -109,7 +109,7 @@ test.describe("Progress Sync E2E Tests", () => {
       JSON.stringify({
         c: ["pronunciation-tones", "greetings", "dining-out"],
         s: {},
-        v: { "vocab-你好_neihhou": [3, 1718985600] },
+        v: { "vocab-你好_neihhou": 3 },
         t: 1718985600,
       }),
     ).toString("base64");

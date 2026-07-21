@@ -1,5 +1,10 @@
 import * as fs from "fs";
 import * as path from "path";
+import {
+  getFilesRecursive,
+  validatePortabilityLine,
+  type PortabilityError,
+} from "./lib/portability-utils.js";
 
 // Premium CLI output styles
 const colors = {
@@ -12,76 +17,13 @@ const colors = {
   cyan: "\x1b[36m",
 };
 
-// Ignore lists
-const IGNORED_DIRS = new Set([
-  ".git",
-  "node_modules",
-  ".antigravitycli",
-  "tmp",
-  "coverage",
-  "dist",
-  ".astro",
-  ".nyc_output",
-  "coverage-e2e",
-  "test-results",
-]);
-
-const IGNORED_FILES = new Set(["package-lock.json"]);
-
-// Allowed extensions to scan (to avoid scanning binaries or huge lock files)
-const SCAN_EXTENSIONS = new Set([
-  ".js",
-  ".md",
-  ".json",
-  ".yml",
-  ".yaml",
-  ".css",
-  ".html",
-  ".config",
-]);
-
-// Forbidden absolute path pattern
-// This matches:
-// 1. file:///
-// 2. /Users/...
-// 3. /home/...
-const FORBIDDEN_PATTERN = /(file:\/\/\/|\/Users\/|\/home\/)/i;
-
-/**
- * Recursively gets all files in a directory
- * @param {string} dir
- * @returns {Array<string>} list of files
- */
-function getFilesRecursive(dir: string): string[] {
-  let results: string[] = [];
-  const list = fs.readdirSync(dir);
-  for (const file of list) {
-    if (IGNORED_DIRS.has(file)) continue;
-    const fullPath = path.join(dir, file);
-    try {
-      const stat = fs.statSync(fullPath);
-      if (stat && stat.isDirectory()) {
-        results = results.concat(getFilesRecursive(fullPath));
-      } else {
-        if (IGNORED_FILES.has(file)) continue;
-        if (SCAN_EXTENSIONS.has(path.extname(file))) {
-          results.push(fullPath);
-        }
-      }
-    } catch {
-      continue;
-    }
-  }
-  return results;
-}
-
 function runCheck(projectRoot: string) {
   const files = getFilesRecursive(projectRoot);
-  const errors = [];
+  const errors: PortabilityError[] = [];
 
   for (const file of files) {
     // Skip this script itself to avoid false positives on its own regex definition
-    if (file === __filename) continue;
+    if (file === __filename || file.endsWith("portability-utils.ts")) continue;
 
     try {
       const content = fs.readFileSync(file, "utf8");
@@ -90,15 +32,7 @@ function runCheck(projectRoot: string) {
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
         if (line === undefined) continue;
-        const match = FORBIDDEN_PATTERN.exec(line);
-        if (match) {
-          errors.push({
-            file: path.relative(projectRoot, file),
-            line: i + 1,
-            match: match[0],
-            content: line.trim(),
-          });
-        }
+        validatePortabilityLine(line, i, projectRoot, file, errors);
       }
     } catch (err: unknown) {
       console.error(
@@ -161,4 +95,4 @@ if (require.main === module) {
   main();
 }
 
-export { runCheck, FORBIDDEN_PATTERN, main };
+export { runCheck, main };

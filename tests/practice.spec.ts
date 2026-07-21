@@ -14,7 +14,7 @@ test.describe("Practice Board Legacy / String State Compatibility Tests", () => 
     });
 
     await page.goto("/cantonese/practice");
-    await page.waitForSelector("#stats-cards-count");
+    await expect(page.locator("#stats-cards-count")).toBeVisible();
 
     await expect(page.locator("#stats-chapters-count")).toHaveText("2");
     const storedAfterLoad = await page.evaluate(() =>
@@ -77,7 +77,7 @@ test.describe("Dashboard Tabs", () => {
     });
 
     await page.goto("/cantonese/practice");
-    await page.waitForSelector(".review-item-card");
+    await expect(page.locator(".review-item-card").first()).toBeVisible();
 
     // By default, vocabulary is selected
     await expect(page.locator("#tab-vocab-btn")).toHaveClass(/active/);
@@ -86,7 +86,7 @@ test.describe("Dashboard Tabs", () => {
     );
 
     // Click phrases
-    await page.click("#tab-phrase-btn");
+    await page.locator("#tab-phrase-btn").click();
     await expect(page.locator("#tab-phrase-btn")).toHaveClass(/active/);
     await expect(page.locator("#review-items-list-container")).toContainText(
       "I Phrase",
@@ -105,7 +105,7 @@ test.describe("Practice Session UI and Grading", () => {
       );
       localStorage.setItem(
         "cantonese_srs_state",
-        JSON.stringify({ p1: { level: 2, lastReviewed: 0 } }),
+        JSON.stringify({ p1: { level: 2 } }),
       );
 
       const mockPhrase = [
@@ -137,8 +137,8 @@ test.describe("Practice Session UI and Grading", () => {
     });
 
     await page.goto("/cantonese/practice");
-    await page.click("#start-session-btn");
-    await page.waitForSelector("#phrase-ui-container");
+    await page.locator("#start-session-btn").click();
+    await expect(page.locator("#phrase-ui-container")).toBeVisible();
 
     const getChip = (text: string) =>
       page.locator("#game-tokens-pool .token-chip", { hasText: text });
@@ -147,11 +147,12 @@ test.describe("Practice Session UI and Grading", () => {
     await getChip("唔").click();
     await getChip("我").click();
 
-    await page.click("#game-check-btn");
+    await page.locator("#game-check-btn").click();
 
-    const feedbackText = await page.textContent("#feedback-panel");
-    expect(feedbackText).toContain("Incorrect");
-    expect(feedbackText).toContain("SRS Level Down to 1");
+    await expect(page.locator("#feedback-panel")).toContainText("Incorrect");
+    await expect(page.locator("#feedback-panel")).toContainText(
+      "SRS Level Down to 1",
+    );
 
     // Verify localStorage updated correctly
     const srs = await page.evaluate(
@@ -171,7 +172,7 @@ test.describe("Practice Session UI and Grading", () => {
       );
       localStorage.setItem(
         "cantonese_srs_state",
-        JSON.stringify({ p1: { level: 1, lastReviewed: 0 } }),
+        JSON.stringify({ p1: { level: 1 } }),
       );
 
       const mockPhrase = [
@@ -203,8 +204,8 @@ test.describe("Practice Session UI and Grading", () => {
     });
 
     await page.goto("/cantonese/practice");
-    await page.click("#start-session-btn");
-    await page.waitForSelector("#phrase-ui-container");
+    await page.locator("#start-session-btn").click();
+    await expect(page.locator("#phrase-ui-container")).toBeVisible();
 
     const getChip = (text: string) =>
       page.locator("#game-tokens-pool .token-chip", { hasText: text });
@@ -213,11 +214,12 @@ test.describe("Practice Session UI and Grading", () => {
     await getChip("我").click();
     await getChip("唔").click();
 
-    await page.click("#game-check-btn");
+    await page.locator("#game-check-btn").click();
 
-    const feedbackText = await page.textContent("#feedback-panel");
-    expect(feedbackText).toContain("Correct!");
-    expect(feedbackText).toContain("SRS Level Up to 2");
+    await expect(page.locator("#feedback-panel")).toContainText("Correct!");
+    await expect(page.locator("#feedback-panel")).toContainText(
+      "SRS Level Up to 2",
+    );
   });
 
   test("vocabulary flashcard remember/forgot grading updates SRS", async ({
@@ -231,8 +233,8 @@ test.describe("Practice Session UI and Grading", () => {
       localStorage.setItem(
         "cantonese_vocab_srs_state",
         JSON.stringify({
-          v1: { level: 2, lastReviewed: 0 },
-          v2: { level: 1, lastReviewed: 0 },
+          v1: { level: 2 },
+          v2: { level: 1 },
         }),
       );
 
@@ -274,19 +276,17 @@ test.describe("Practice Session UI and Grading", () => {
     });
 
     await page.goto("/cantonese/practice");
-    await page.click("#start-session-btn");
-    await page.waitForSelector("#vocab-ui-container");
+    await page.locator("#start-session-btn").click();
+    await expect(page.locator("#vocab-ui-container")).toBeVisible();
 
     // First card: Reveal and Forgot
-    await page.click("#flashcard-reveal-btn");
-    await page.waitForSelector("#grade-forgot-btn");
-    await page.click("#grade-forgot-btn");
+    await page.locator("#flashcard-reveal-btn").click();
+    await page.locator("#grade-forgot-btn").click();
 
     // Second card: Reveal and Remembered
-    await page.waitForSelector("#flashcard-reveal-btn");
-    await page.click("#flashcard-reveal-btn");
-    await page.waitForSelector("#grade-remembered-btn");
-    await page.click("#grade-remembered-btn");
+    await expect(page.locator("#flashcard-reveal-btn")).toBeVisible();
+    await page.locator("#flashcard-reveal-btn").click();
+    await page.locator("#grade-remembered-btn").click();
 
     // Verify localStorage updated correctly
     const srs = await page.evaluate(
@@ -347,35 +347,32 @@ test.describe("Practice Session UI and Grading", () => {
     });
 
     await page.goto("/cantonese/practice");
-    await page.click("#start-session-btn");
+    await page.locator("#start-session-btn").click();
 
     // Either UI might render first. We just need to play through the 2 cards.
     let sawVocab = false;
     let sawPhrase = false;
 
     for (let i = 0; i < 2; i++) {
-      const vocabVisible = await page.evaluate(
-        () =>
-          document.getElementById("vocab-ui-container")?.style.display ===
-          "block",
-      );
-      const phraseVisible = await page.evaluate(
-        () =>
-          document.getElementById("phrase-ui-container")?.style.display ===
-          "block",
-      );
+      await expect(page.locator(".practice-ui-container.show")).toBeVisible();
+      const vocabVisible = await page
+        .locator("#vocab-ui-container")
+        .isVisible();
+      const phraseVisible = await page
+        .locator("#phrase-ui-container")
+        .isVisible();
 
       expect(vocabVisible !== phraseVisible).toBe(true); // XOR
 
       if (vocabVisible) {
         sawVocab = true;
-        await page.click("#flashcard-reveal-btn");
-        await page.click("#grade-remembered-btn");
+        await page.locator("#flashcard-reveal-btn").click();
+        await page.locator("#grade-remembered-btn").click();
       } else {
         sawPhrase = true;
         await page.locator("#game-tokens-pool .token-chip").first().click();
-        await page.click("#game-check-btn");
-        await page.click("#next-card-btn");
+        await page.locator("#game-check-btn").click();
+        await page.locator("#next-card-btn").click();
       }
     }
 
@@ -419,7 +416,7 @@ test.describe("Edge Cases", () => {
     });
 
     await page.goto("/cantonese/practice");
-    await page.click("#start-session-btn");
+    await page.locator("#start-session-btn").click();
 
     const getChip = (text: string) =>
       page.locator("#game-tokens-pool .token-chip", { hasText: text });
@@ -428,9 +425,8 @@ test.describe("Edge Cases", () => {
     await getChip("我").first().click();
     await getChip("唔").click();
 
-    await page.click("#game-check-btn");
-    const feedbackText = await page.textContent("#feedback-panel");
-    expect(feedbackText).toContain("Correct!");
+    await page.locator("#game-check-btn").click();
+    await expect(page.locator("#feedback-panel")).toContainText("Correct!");
   });
 
   test("should accept swapped punctuation marks", async ({ page }) => {
@@ -465,7 +461,7 @@ test.describe("Edge Cases", () => {
     });
 
     await page.goto("/cantonese/practice");
-    await page.click("#start-session-btn");
+    await page.locator("#start-session-btn").click();
 
     const getChip = (text: string) =>
       page.locator("#game-tokens-pool .token-chip", { hasText: text });
@@ -474,9 +470,8 @@ test.describe("Edge Cases", () => {
     await getChip("我").click();
     await getChip("，").click();
 
-    await page.click("#game-check-btn");
-    const feedbackText = await page.textContent("#feedback-panel");
-    expect(feedbackText).toContain("Correct!");
+    await page.locator("#game-check-btn").click();
+    await expect(page.locator("#feedback-panel")).toContainText("Correct!");
   });
 
   test("should preserve scrambled order of pool tokens when deselecting a token", async ({
@@ -513,7 +508,7 @@ test.describe("Edge Cases", () => {
     });
 
     await page.goto("/cantonese/practice");
-    await page.click("#start-session-btn");
+    await page.locator("#start-session-btn").click();
 
     const initialChips = await page
       .locator("#game-tokens-pool .token-chip")

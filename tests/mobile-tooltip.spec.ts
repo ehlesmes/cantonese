@@ -10,7 +10,7 @@ test("Vocab tooltip should not overflow viewport on mobile devices", async ({
 }) => {
   // Go to Chapter 1
   await page.goto("/cantonese/chapter/greetings");
-  await page.waitForSelector("h1");
+  await expect(page.locator("h1").first()).toBeVisible();
 
   // Find a vocabulary term close to the left edge
   const term = page.locator(".vocab-term", { hasText: "拜拜" }).first();

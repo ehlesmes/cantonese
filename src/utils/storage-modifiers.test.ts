@@ -9,14 +9,14 @@ describe("Storage Modifiers Utility", () => {
   const getInitialState = (): UserProgress => ({
     unlockedChapters: ["chapter1", "chapter2"],
     phraseSrs: {
-      p1: { level: 2, lastReviewed: 100 },
-      p2: { level: 3, lastReviewed: 200 },
-      p3: { level: 1, lastReviewed: 300 },
+      p1: { level: 2 },
+      p2: { level: 3 },
+      p3: { level: 1 },
     },
     vocabSrs: {
-      v1: { level: 5, lastReviewed: 400 },
-      v2: { level: 2, lastReviewed: 500 },
-      v3: { level: 4, lastReviewed: 600 },
+      v1: { level: 7 },
+      v2: { level: 2 },
+      v3: { level: 4 },
     },
   });
 
@@ -31,11 +31,11 @@ describe("Storage Modifiers Utility", () => {
 
     expect(newState.unlockedChapters).toEqual(["chapter2"]);
     expect(newState.phraseSrs).toEqual({
-      p2: { level: 3, lastReviewed: 200 },
+      p2: { level: 3 },
     });
     expect(newState.vocabSrs).toEqual({
-      v1: { level: 5, lastReviewed: 400 },
-      v3: { level: 4, lastReviewed: 600 },
+      v1: { level: 7 },
+      v3: { level: 4 },
     });
 
     // Ensure original state was not mutated (pure function check)
@@ -46,8 +46,8 @@ describe("Storage Modifiers Utility", () => {
   test("cleanIncompleteProgressState deletes data for incomplete chapters and orphaned keys", () => {
     const state = getInitialState();
     // Add orphaned items to state
-    state.phraseSrs["p99"] = { level: 1, lastReviewed: 100 };
-    state.vocabSrs["v99"] = { level: 1, lastReviewed: 100 };
+    state.phraseSrs["p99"] = { level: 1 };
+    state.vocabSrs["v99"] = { level: 1 };
 
     // chapter1 is unlocked, chapter2 is unlocked, chapter3 is locked
     const allChapters = [
@@ -63,12 +63,12 @@ describe("Storage Modifiers Utility", () => {
     // p3 and v3 should be removed since they belong to locked chapter3
     // p99 and v99 should be removed because they are completely orphaned
     expect(result.newState.phraseSrs).toEqual({
-      p1: { level: 2, lastReviewed: 100 },
-      p2: { level: 3, lastReviewed: 200 },
+      p1: { level: 2 },
+      p2: { level: 3 },
     });
     expect(result.newState.vocabSrs).toEqual({
-      v1: { level: 5, lastReviewed: 400 },
-      v2: { level: 2, lastReviewed: 500 },
+      v1: { level: 7 },
+      v2: { level: 2 },
     });
     // 1 locked (p3) + 1 orphaned (p99) = 2
     expect(result.cleanedPhrasesCount).toBe(2);
@@ -94,11 +94,11 @@ describe("Storage Modifiers Utility", () => {
 
     // chapter1 is unlocked, so missing p1, p2, and v1 should be added
     expect(result.newState.phraseSrs).toEqual({
-      p1: { level: 0, lastReviewed: 0 },
-      p2: { level: 0, lastReviewed: 0 },
+      p1: { level: 0 },
+      p2: { level: 0 },
     });
     expect(result.newState.vocabSrs).toEqual({
-      v1: { level: 0, lastReviewed: 0 },
+      v1: { level: 0 },
     });
 
     expect(result.addedPhrasesCount).toBe(2);

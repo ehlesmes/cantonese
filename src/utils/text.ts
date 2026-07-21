@@ -21,6 +21,28 @@ export function getCleanSpokenText(text: string | null | undefined): string {
 }
 
 /**
+ * Splits a raw cantonese string (with annotations) into an array of tokens.
+ * Separates punctuation marks into their own tokens.
+ */
+export function splitCantoneseTokens(
+  cantoneseRaw: string | null | undefined,
+): string[] {
+  if (!cantoneseRaw) return [];
+  const spaced = cantoneseRaw.replace(/([，。！？、；：,?!;:])/g, " $1 ");
+  const regex = /([^\s[]+\[[^\]]+\]|[^\s[]+)/g;
+  return spaced.match(regex) || [];
+}
+
+/**
+ * Extracts just the character/word from an annotated token (e.g. `Char[Jp|Eng]` -> `Char`).
+ */
+export function stripAnnotations(token: string | null | undefined): string {
+  if (!token) return "";
+  const match = token.match(/^([^[]+)/);
+  return match ? match[1]! : token;
+}
+
+/**
  * Checks if a token represents one or more punctuation marks.
  */
 export function isPunctuation(token: string | null | undefined): boolean {

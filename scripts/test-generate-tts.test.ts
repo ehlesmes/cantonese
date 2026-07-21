@@ -43,10 +43,10 @@ describe("TTS Utility Functions Spec", () => {
   });
 
   describe("getHash", () => {
-    test("generates stable 16-character SHA-256 hash", () => {
+    test("generates stable 16-character SHA-256 hash", async () => {
       const text = "你好";
-      const hash1 = getHash(text);
-      const hash2 = getHash(text);
+      const hash1 = await getHash(text);
+      const hash2 = await getHash(text);
 
       expect(hash1).toHaveLength(16);
       expect(hash1).toBe(hash2);

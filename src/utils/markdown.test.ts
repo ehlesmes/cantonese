@@ -1,4 +1,4 @@
-import { describe, test, expect, vi } from "vitest";
+import { describe, test, expect } from "vitest";
 import {
   compileMarkdown,
   compileAnnotations,
@@ -9,9 +9,9 @@ import {
 import crypto from "crypto";
 
 describe("Markdown & Tooltip Compiling Utility", () => {
-  test("compileMarkdown should output correct data-audio-hash matching SHA-256", () => {
+  test("compileMarkdown should output correct data-audio-hash matching SHA-256", async () => {
     const raw = "The greeting is `你好[nei5hou2|hello]` in Cantonese.";
-    const html = compileMarkdown(raw);
+    const html = await compileMarkdown(raw);
     const expectedHash = crypto
       .createHash("sha256")
       .update("你好")
@@ -20,16 +20,16 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     expect(html).toContain(`data-audio-hash="${expectedHash}"`);
   });
 
-  test("compileMarkdown should parse standard bold and headers", () => {
+  test("compileMarkdown should parse standard bold and headers", async () => {
     const raw = "# Hello\nThis is **bold** text.";
-    const html = compileMarkdown(raw);
+    const html = await compileMarkdown(raw);
     expect(html).toContain("<h1>Hello</h1>");
     expect(html).toContain("<strong>bold</strong>");
   });
 
-  test("compileMarkdown should convert inline annotations inside backticks to HTML tooltips with data-audio-hash", () => {
+  test("compileMarkdown should convert inline annotations inside backticks to HTML tooltips with data-audio-hash", async () => {
     const raw = "The greeting is `你好[nei5hou2|hello]` in Cantonese.";
-    const html = compileMarkdown(raw);
+    const html = await compileMarkdown(raw);
     expect(html).toContain(
       '你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span>',
     );
@@ -37,9 +37,9 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     expect(html).not.toContain("`你好");
   });
 
-  test("compileMarkdown should support inline compilation without wrapping in paragraph tags", () => {
+  test("compileMarkdown should support inline compilation without wrapping in paragraph tags", async () => {
     const raw = "The greeting is `你好[nei5hou2|hello]` in Cantonese.";
-    const html = compileMarkdown(raw, { inline: true });
+    const html = await compileMarkdown(raw, { inline: true });
     expect(html).toContain(
       '你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span>',
     );
@@ -48,16 +48,16 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     expect(html).not.toContain("</p>");
   });
 
-  test("compileMarkdown should support breaks option to preserve line breaks", () => {
+  test("compileMarkdown should support breaks option to preserve line breaks", async () => {
     const raw = "Line 1\nLine 2";
-    const html = compileMarkdown(raw, { breaks: true });
+    const html = await compileMarkdown(raw, { breaks: true });
     expect(html).toContain("<br>");
   });
 
-  test("compileMarkdown should support English alphanumeric and punctuated words as Cantonese terms", () => {
+  test("compileMarkdown should support English alphanumeric and punctuated words as Cantonese terms", async () => {
     const raw =
       "I check my `IG[ai1zi1|Instagram]` and connect to `Wi-Fi[wai1faai1|Wi-Fi]`. Let's `OT[ou1ti1|overtime]`.";
-    const html = compileMarkdown(raw);
+    const html = await compileMarkdown(raw);
     expect(html).toContain(
       'IG<span class="tooltip-popover"><strong>ai1zi1</strong><br/>Instagram</span></span>',
     );
@@ -69,9 +69,9 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     );
   });
 
-  test("compileAnnotations should convert block annotations without backticks", () => {
+  test("compileAnnotations should convert block annotations without backticks", async () => {
     const raw = "唔該[m4goi1|excuse me]，我[ngo5|I]想買呢個。";
-    const html = compileAnnotations(raw);
+    const html = await compileAnnotations(raw);
     expect(html).toContain(
       '唔該<span class="tooltip-popover"><strong>m4goi1</strong><br/>excuse me</span></span>',
     );
@@ -81,30 +81,30 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     expect(html).toContain('data-audio-hash="');
   });
 
-  test("compileMarkdown should replace plain block annotations (without backticks)", () => {
+  test("compileMarkdown should replace plain block annotations (without backticks)", async () => {
     const raw = "The greeting is 你好[nei5hou2|hello] in Cantonese.";
-    const html = compileMarkdown(raw);
+    const html = await compileMarkdown(raw);
     expect(html).toContain(
       '你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span>',
     );
     expect(html).toMatch(/data-audio-hash="[0-9a-f]{16}"/);
   });
 
-  test("compileAnnotations should not affect text without annotations", () => {
+  test("compileAnnotations should not affect text without annotations", async () => {
     const raw = "Excuse me, I want to buy this one.";
-    const html = compileAnnotations(raw);
+    const html = await compileAnnotations(raw);
     expect(html).toBe(raw);
   });
 
-  test("compileAnnotations should handle null or empty inputs gracefully", () => {
-    expect(compileAnnotations(null)).toBe("");
-    expect(compileAnnotations(undefined)).toBe("");
-    expect(compileAnnotations("")).toBe("");
+  test("compileAnnotations should handle null or empty inputs gracefully", async () => {
+    expect(await compileAnnotations(null)).toBe("");
+    expect(await compileAnnotations(undefined)).toBe("");
+    expect(await compileAnnotations("")).toBe("");
   });
 
-  test("compileMarkdown should support simple single-paragraph blockquote alerts", () => {
+  test("compileMarkdown should support simple single-paragraph blockquote alerts", async () => {
     const raw = "> [!NOTE]\n> This is a note.";
-    const html = compileMarkdown(raw);
+    const html = await compileMarkdown(raw);
     expect(html).toContain('<div class="alert-box alert-note">');
     expect(html).toContain('<div class="alert-title">NOTE</div>');
     expect(html).toContain(
@@ -112,10 +112,10 @@ describe("Markdown & Tooltip Compiling Utility", () => {
     );
   });
 
-  test("compileMarkdown should support multi-paragraph and list elements nested inside blockquote alerts", () => {
+  test("compileMarkdown should support multi-paragraph and list elements nested inside blockquote alerts", async () => {
     const raw =
       "> [!IMPORTANT] **Alert Header**\n> Rest of sentence.\n>\n> - List Item 1\n> - List Item 2";
-    const html = compileMarkdown(raw);
+    const html = await compileMarkdown(raw);
     expect(html).toContain('<div class="alert-box alert-important">');
     expect(html).toContain('<div class="alert-title">IMPORTANT</div>');
     expect(html).toContain(
@@ -184,7 +184,7 @@ describe("Markdown parsing tools", () => {
 });
 
 describe("parseExerciseBlock", () => {
-  test("parseExerciseBlock replaces multiple underscores with blanks and compiles HTML", () => {
+  test("parseExerciseBlock replaces multiple underscores with blanks and compiles HTML", async () => {
     const rawYaml = `
 question: Fill in the blank: 我___食飯.
 answer: 唔[m4|not]
@@ -200,39 +200,36 @@ explanation: M4 is used to negate verbs.
       };
     };
 
-    const result = parseExerciseBlock(rawYaml, mockParseYAML);
+    const result = await parseExerciseBlock(rawYaml, mockParseYAML);
     expect(result.questionHtml).toContain("我____食飯.");
     expect(result.answerHtml).toContain("m4");
     expect(result.explanationHtml).toContain("M4 is used to negate verbs");
   });
 
-  test("parseExerciseBlock handles parsing exception gracefully", () => {
+  test("parseExerciseBlock handles parsing exception gracefully by returning empty object", async () => {
     const rawYaml = "invalid: [";
     const mockParseYAML = () => {
       throw new Error("YAML Parsing failed");
     };
 
-    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
-    const result = parseExerciseBlock(rawYaml, mockParseYAML);
-    expect(spy).toHaveBeenCalled();
+    const result = await parseExerciseBlock(rawYaml, mockParseYAML);
     expect(result.questionHtml).toBe("");
     expect(result.answerHtml).toBe("");
     expect(result.explanationHtml).toBe("");
-    spy.mockRestore();
   });
 
-  test("parseExerciseBlock handles missing optional fields gracefully", () => {
+  test("parseExerciseBlock handles missing optional fields gracefully", async () => {
     const rawYaml = `question: Hello`;
     const mockParseYAML = () => ({ question: "Hello" });
-    const result = parseExerciseBlock(rawYaml, mockParseYAML);
+    const result = await parseExerciseBlock(rawYaml, mockParseYAML);
     expect(result.questionHtml).toContain("Hello");
     expect(result.answerHtml).toBe("");
     expect(result.explanationHtml).toBe("");
   });
 
-  test("parseExerciseBlock handles totally empty object gracefully", () => {
+  test("parseExerciseBlock handles totally empty object gracefully", async () => {
     const mockParseYAML = () => ({});
-    const result = parseExerciseBlock("", mockParseYAML);
+    const result = await parseExerciseBlock("", mockParseYAML);
     expect(result.questionHtml).toBe("");
     expect(result.answerHtml).toBe("");
     expect(result.explanationHtml).toBe("");

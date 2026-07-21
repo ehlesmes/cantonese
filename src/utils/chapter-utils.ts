@@ -97,44 +97,46 @@ export type ProcessedBlockType =
 /**
  * Pre-processes markdown blocks for the chapter page.
  */
-export function processChapterBlocks(
+export async function processChapterBlocks(
   blocks: ParsedBlock[],
   parseYAML: (yaml: string) => Record<string, unknown>,
-): ProcessedBlockType[] {
-  return blocks
-    .map((block) => {
-      if (block.type === "prose") {
+): Promise<ProcessedBlockType[]> {
+  const processedPromises = blocks.map(async (block) => {
+    if (block.type === "prose") {
+      return {
+        type: "prose",
+        html: await compileMarkdown(block.content),
+      } as ProcessedProseBlock;
+    }
+    if (block.type === "cantonese") {
+      return {
+        type: "cantonese",
+        content: block.content,
+      } as ProcessedCantoneseBlock;
+    }
+    if (block.type === "dialog") {
+      return {
+        type: "dialog",
+        content: block.content,
+      } as ProcessedDialogBlock;
+    }
+    if (block.type === "exercise") {
+      try {
+        const parsedEx = await parseExerciseBlock(block.content, parseYAML);
         return {
-          type: "prose",
-          html: compileMarkdown(block.content),
-        } as ProcessedProseBlock;
+          type: "exercise",
+          ...parsedEx,
+        } as ProcessedExerciseBlock;
+      } catch {
+        // Pure function, do not log console.error directly
+        return null;
       }
-      if (block.type === "cantonese") {
-        return {
-          type: "cantonese",
-          content: block.content,
-        } as ProcessedCantoneseBlock;
-      }
-      if (block.type === "dialog") {
-        return {
-          type: "dialog",
-          content: block.content,
-        } as ProcessedDialogBlock;
-      }
-      if (block.type === "exercise") {
-        try {
-          return {
-            type: "exercise",
-            ...parseExerciseBlock(block.content, parseYAML),
-          } as ProcessedExerciseBlock;
-        } catch {
-          // Pure function, do not log console.error directly
-          return null;
-        }
-      }
-      return null;
-    })
-    .filter((b): b is ProcessedBlockType => b !== null);
+    }
+    return null;
+  });
+
+  const resolved = await Promise.all(processedPromises);
+  return resolved.filter((b): b is ProcessedBlockType => b !== null);
 }
 
 interface ChapterExistence {

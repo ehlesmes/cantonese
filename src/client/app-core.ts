@@ -1,6 +1,7 @@
 import { selectBestCantoneseVoice, isPunctuationOnly } from "../utils/text.js";
 import { calculateTooltipShift } from "../utils/layout.js";
 import { initVersionCheck } from "./version-check.js";
+import { getAudioHash } from "../utils/audio.js";
 
 // Native Cantonese TTS Engine & Offline Audio Player
 let cantoVoice: SpeechSynthesisVoice | null = null;
@@ -32,24 +33,6 @@ function getCleanCantoneseText(element: Element) {
   return clone.textContent?.trim() || "";
 }
 
-// Browser SHA-256 Hashing fallback (only used if data-audio-hash is missing)
-async function getHashAsync(text: string) {
-  if (window.crypto && window.crypto.subtle) {
-    try {
-      const msgUint8 = new TextEncoder().encode(text);
-      const hashBuffer = await window.crypto.subtle.digest("SHA-256", msgUint8);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      return hashArray
-        .map((b) => b.toString(16).padStart(2, "0"))
-        .join("")
-        .slice(0, 16);
-    } catch (err) {
-      console.warn("Hashing failed, falling back:", err);
-    }
-  }
-  return null;
-}
-
 // Audio preloading utilities (uses native browser cache, discards elements to prevent leaks)
 const preloadedHashes = new Set<string>();
 
@@ -63,7 +46,7 @@ function preloadAudio(text: string, hash?: string | null) {
   if (hash) {
     triggerPreload(hash);
   } else {
-    getHashAsync(text).then((asyncHash) => {
+    getAudioHash(text).then((asyncHash) => {
       if (asyncHash) triggerPreload(asyncHash);
     });
   }
@@ -198,7 +181,7 @@ async function speakText(
   cleanupPreviousSpeech();
 
   if (!hash) {
-    hash = await getHashAsync(text);
+    hash = await getAudioHash(text);
   }
 
   if (hash) {

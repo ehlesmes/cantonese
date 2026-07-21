@@ -1,7 +1,67 @@
+import * as fs from "fs";
+import * as path from "path";
 import { getCleanSpokenText as sharedCleanText } from "../../src/utils/text.js";
 import type { ParsedBlock } from "../../src/types";
 
 import { getAudioHash as sharedGetAudioHash } from "../../src/utils/audio.js";
+
+// 1. Safe .env Loader
+export function loadEnv(projectRoot: string) {
+  const envPath = path.resolve(projectRoot, ".env");
+  if (fs.existsSync(envPath)) {
+    const content = fs.readFileSync(envPath, "utf8");
+    const lines = content.split(/\r?\n/);
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed === "") continue;
+      if (trimmed.startsWith("#")) continue;
+      const eqIdx = trimmed.indexOf("=");
+      if (eqIdx !== -1) {
+        const k = trimmed.slice(0, eqIdx).trim();
+        let v = trimmed.slice(eqIdx + 1).trim();
+        // Strip quotes if present
+        if (
+          (v.startsWith('"') && v.endsWith('"')) ||
+          (v.startsWith("'") && v.endsWith("'"))
+        ) {
+          v = v.slice(1, -1);
+        }
+        process.env[k] = v;
+      }
+    }
+  }
+}
+
+export interface TTSArgs {
+  limit: number;
+  maxChapters: number;
+}
+
+export function parseArgs(args: string[]): TTSArgs {
+  let limit = Infinity;
+  const limitIdx = args.findIndex((arg) => arg === "--limit" || arg === "-l");
+  if (limitIdx !== -1) {
+    const limitVal = args[limitIdx + 1];
+    if (limitVal !== undefined) {
+      limit = parseInt(limitVal, 10);
+      if (isNaN(limit)) limit = Infinity;
+    }
+  }
+
+  let maxChapters = Infinity;
+  const chaptersIdx = args.findIndex(
+    (arg) => arg === "--chapters" || arg === "-c",
+  );
+  if (chaptersIdx !== -1) {
+    const chaptersVal = args[chaptersIdx + 1];
+    if (chaptersVal !== undefined) {
+      maxChapters = parseInt(chaptersVal, 10);
+      if (isNaN(maxChapters)) maxChapters = Infinity;
+    }
+  }
+
+  return { limit, maxChapters };
+}
 
 export interface TtsVocabItem {
   firstIntroducedIn?: string;
@@ -34,8 +94,8 @@ export function escapeXml(unsafe: string): string {
 /**
  * Generates a SHA-256 hash matching client-side Web Crypto and slices it to 16 characters.
  */
-export function getHash(text: string): string {
-  return sharedGetAudioHash(text);
+export async function getHash(text: string): Promise<string> {
+  return await sharedGetAudioHash(text);
 }
 
 function extractFromVocabList(

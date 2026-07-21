@@ -9,7 +9,6 @@ export interface IdentifiableItem {
  * Lower level items are weighted more heavily so they appear more frequently.
  *
  * @param poolItems Items available for review (e.g. phrases or vocab)
- * @param srsState Map of item IDs to their { level, lastReviewed } states
  * @param limit Maximum number of items to select for the session
  * @returns Selected items
  */
@@ -17,14 +16,15 @@ export function selectCards<T extends IdentifiableItem>(
   poolItems: T[],
   srsState: SrsStateMap,
   limit: number = 10,
+  randomizer: () => number = Math.random,
 ): T[] {
   if (!poolItems || poolItems.length === 0) return [];
 
   const weightedPool = poolItems.map((item) => {
     const state = srsState[item.id];
     const lvl = state && typeof state.level === "number" ? state.level : 1;
-    // Lower level = higher weight
-    const weight = 1 / Math.pow(lvl, 1.5);
+    // Lower level = higher weight (Base 3 exponential decay)
+    const weight = 1 / Math.pow(3, lvl - 1);
     return { item, weight };
   });
 
@@ -36,7 +36,7 @@ export function selectCards<T extends IdentifiableItem>(
     const totalWeight = tempPool.reduce((sum, el) => sum + el.weight, 0);
     if (totalWeight <= 0) break;
 
-    const r = Math.random() * totalWeight;
+    const r = randomizer() * totalWeight;
     let cumulative = 0;
     let selectedIndex = -1;
 
@@ -64,9 +64,9 @@ export function selectCards<T extends IdentifiableItem>(
  * Correct answers level up (+1, max 5).
  * Incorrect answers level down (-2, min 1).
  *
- * @param currentState The current level state (e.g. { level, lastReviewed })
+ * @param currentState The current level state (e.g. { level })
  * @param isCorrect Whether the user answered correctly
- * @returns The updated state: { level, lastReviewed }
+ * @returns The updated state: { level }
  */
 export function gradeCard(
   currentState: SrsCardState | undefined,
@@ -79,14 +79,13 @@ export function gradeCard(
   let newLevel: number;
 
   if (isCorrect) {
-    newLevel = Math.min(level + 1, 5);
+    newLevel = Math.min(level + 1, 7);
   } else {
-    newLevel = Math.max(level - 2, 1);
+    newLevel = Math.max(level - 1, 1);
   }
 
   return {
     level: newLevel,
-    lastReviewed: Date.now(),
   };
 }
 
@@ -155,6 +154,8 @@ export function groupItemsForDirectory<T extends PracticeItemBase>(
       3: [],
       4: [],
       5: [],
+      6: [],
+      7: [],
     };
     poolItems.forEach((item) => {
       const lvl = srsState[item.id]?.level ?? 1;
@@ -169,10 +170,13 @@ export function groupItemsForDirectory<T extends PracticeItemBase>(
 /**
  * Generates an array of indices from 0 to length - 1, shuffled using Fisher-Yates.
  */
-export function getShuffledIndices(length: number): number[] {
+export function getShuffledIndices(
+  length: number,
+  randomizer: () => number = Math.random,
+): number[] {
   const indices = Array.from({ length }, (_, i) => i);
   for (let i = indices.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(randomizer() * (i + 1));
     const temp = indices[i]!;
     indices[i] = indices[j]!;
     indices[j] = temp;
@@ -199,7 +203,7 @@ export function countMasteredItems<T extends IdentifiableItem>(
 ): number {
   let count = 0;
   for (const item of poolItems) {
-    if (srsState[item.id]?.level === 5) {
+    if (srsState[item.id]?.level === 7) {
       count++;
     }
   }

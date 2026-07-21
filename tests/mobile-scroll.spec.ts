@@ -35,11 +35,11 @@ test("Sync Modal should not introduce horizontal scroll on mobile", async ({
   page,
 }) => {
   await page.goto("/cantonese");
-  await page.waitForSelector("#sync-trigger-btn");
+  await expect(page.locator("#sync-trigger-btn")).toBeVisible();
 
   // Open Sync Modal
-  await page.click("#sync-trigger-btn");
-  await page.waitForSelector("#sync-modal-overlay.open");
+  await page.locator("#sync-trigger-btn").click();
+  await expect(page.locator("#sync-modal-overlay")).toHaveClass(/open/);
 
   const clientWidth = await page.evaluate(
     () => document.documentElement.clientWidth,

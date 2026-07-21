@@ -6,10 +6,10 @@ const { content } = Astro.props;
 
 const { cantoneseRaw, translationRaw } = parseExampleBlock(content);
 
-const cantoneseHtml = compileAnnotations(cantoneseRaw);
+const cantoneseHtml = await compileAnnotations(cantoneseRaw);
 
 // Pre-calculate audio hash using shared utility
-const audioHash = getAudioHash(cantoneseRaw);
+const audioHash = await getAudioHash(cantoneseRaw);
 ---
 <div class="cantonese-example-card chapter-block">
   <div class="cantonese-sentence-container" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">

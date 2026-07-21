@@ -83,7 +83,7 @@ describe("chapter-utils Spec", () => {
     expect(res[0]!.phrases).toEqual([]);
   });
 
-  test("processChapterBlocks parses blocks correctly", () => {
+  test("processChapterBlocks parses blocks correctly", async () => {
     const blocks = [
       { type: "prose", content: "Prose" },
       { type: "cantonese", content: "Cantonese" },
@@ -94,7 +94,7 @@ describe("chapter-utils Spec", () => {
     ] as unknown as ParsedBlock[];
 
     const parseYAML = vi.fn();
-    const res = processChapterBlocks(blocks, parseYAML);
+    const res = await processChapterBlocks(blocks, parseYAML);
 
     expect(res).toHaveLength(4);
     expect(res[0]!.type).toBe("prose");

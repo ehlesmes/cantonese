@@ -1,7 +1,6 @@
 // Spaced Repetition System (SRS) State
 export interface SrsCardState {
   level: number;
-  lastReviewed: number;
 }
 
 export type SrsStateMap = Record<string, SrsCardState>;
@@ -16,8 +15,8 @@ export interface UserProgress {
 // Compact Sync Structure for QR Codes and URL payloads
 export interface CompactSyncPayload {
   c?: string[]; // Unlocked Chapters (compact format)
-  s?: Record<string, [number, number]>; // Phrase SRS map: [level, lastReviewed]
-  v?: Record<string, [number, number]>; // Vocab SRS map: [level, lastReviewed]
+  s?: Record<string, number>; // Phrase SRS map: level
+  v?: Record<string, number>; // Vocab SRS map: level
   t?: number; // Timestamp
 }
 

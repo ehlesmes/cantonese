@@ -165,8 +165,7 @@ export function parseCurriculum(content: string): CurriculumChapter[] {
       const frontmatter = parseYAML(frontmatterStr);
       try {
         return CurriculumIndexSchema.parse(frontmatter.chapters);
-      } catch (e) {
-        console.error("Failed to parse curriculum YAML:", e);
+      } catch {
         return [];
       }
     }

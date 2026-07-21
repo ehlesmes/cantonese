@@ -8,6 +8,8 @@ import {
   lookupDictionary,
   getStablePhraseId,
   getStableVocabId,
+  splitCantoneseTokens,
+  stripAnnotations,
 } from "./text.js";
 
 describe("Cantonese Text Cleaner Utility", () => {
@@ -49,6 +51,31 @@ describe("Cantonese Text Cleaner Utility", () => {
 
   test("trims leading and trailing whitespace", () => {
     expect(getCleanSpokenText("  你好[nei5hou2|hello]  ")).toBe("你好");
+  });
+});
+
+describe("splitCantoneseTokens and stripAnnotations Utilities", () => {
+  test("splitCantoneseTokens splits by whitespace and isolates punctuation", () => {
+    expect(splitCantoneseTokens(null)).toEqual([]);
+    expect(splitCantoneseTokens("   ")).toEqual([]); // No match
+    const tokens = splitCantoneseTokens(
+      "我[ngo5|I] 係[hai6|am] 香港人[hoeng1gong2jan4|Hong Konger]。",
+    );
+    expect(tokens).toEqual([
+      "我[ngo5|I]",
+      "係[hai6|am]",
+      "香港人[hoeng1gong2jan4|Hong Konger]",
+      "。",
+    ]);
+  });
+
+  test("stripAnnotations removes bracketed content", () => {
+    expect(stripAnnotations(null)).toBe("");
+    expect(stripAnnotations("香港人[hoeng1gong2jan4|Hong Konger]")).toBe(
+      "香港人",
+    );
+    expect(stripAnnotations("香港人")).toBe("香港人");
+    expect(stripAnnotations("[invalid]")).toBe("[invalid]"); // Regex fails to match group 1
   });
 });
 

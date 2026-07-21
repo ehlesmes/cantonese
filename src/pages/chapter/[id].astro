@@ -38,7 +38,7 @@ const chapterContent = fs.readFileSync(filePath, "utf8");
 const { frontmatter, blocks } = parseChapter(chapterContent);
 
 // Pre-process all blocks
-const processedBlocks = processChapterBlocks(blocks, parseYAML);
+const processedBlocks = await processChapterBlocks(blocks, parseYAML);
 
 // Find navigation links
 const { prevChapter, nextChapter } = calculateNavigation(allChapters, id);

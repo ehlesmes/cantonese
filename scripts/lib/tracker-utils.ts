@@ -1,5 +1,5 @@
-import * as crypto from "crypto";
 import * as parser from "./parser.js";
+import { getAudioHash } from "../../src/utils/audio.js";
 import type { DictionaryEntry } from "./register-utils.js";
 import type {
   SemanticUnit,
@@ -57,8 +57,8 @@ export function mergeTranslations(
   return merged.join(" / ");
 }
 
-export function generateHash(char: string): string {
-  return crypto.createHash("sha256").update(char).digest("hex").slice(0, 16);
+export async function generateHash(char: string): Promise<string> {
+  return await getAudioHash(char);
 }
 
 function extractUnitsFromBlock(block: ParsedBlock): SemanticUnit[] {
@@ -86,12 +86,12 @@ function extractUnitsFromBlock(block: ParsedBlock): SemanticUnit[] {
   return units;
 }
 
-function updateVocabMap(
+async function updateVocabMap(
   vocabMap: Record<string, VocabTrackingItem>,
   unit: SemanticUnit,
   chapter: ChapterInput,
   dictionary: DictionaryEntry[],
-): void {
+): Promise<void> {
   const char = unit.characters.trim();
   const jyutping = unit.jyutping.trim().toLowerCase();
   const translation = unit.translation;
@@ -104,7 +104,7 @@ function updateVocabMap(
       character: char,
       jyutping: primaryJyutping,
       translation: translation,
-      hash: generateHash(char),
+      hash: await generateHash(char),
       firstIntroducedIn:
         typeof chapter.chapterData.frontmatter?.id === "string"
           ? chapter.chapterData.frontmatter.id
@@ -120,10 +120,10 @@ function updateVocabMap(
   }
 }
 
-export function compileVocabularyMap(
+export async function compileVocabularyMap(
   chapters: ChapterInput[],
   dictionary: DictionaryEntry[],
-): VocabTrackingItem[] {
+): Promise<VocabTrackingItem[]> {
   const vocabMap: Record<string, VocabTrackingItem> = {};
 
   for (const chapter of chapters) {
@@ -131,7 +131,7 @@ export function compileVocabularyMap(
       const units = extractUnitsFromBlock(block);
 
       for (const unit of units) {
-        updateVocabMap(vocabMap, unit, chapter, dictionary);
+        await updateVocabMap(vocabMap, unit, chapter, dictionary);
       }
     }
   }

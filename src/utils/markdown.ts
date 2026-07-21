@@ -1,7 +1,7 @@
 import { marked } from "marked";
-import { RawExerciseSchema } from "./schemas";
+import { RawExerciseSchema } from "./schemas.js";
 import { z } from "zod";
-import crypto from "node:crypto";
+import { getAudioHash } from "./audio.js";
 import type { CompileMarkdownOptions } from "../types";
 
 // Configure marked options
@@ -9,6 +9,20 @@ marked.setOptions({
   gfm: true,
   breaks: false,
 });
+
+async function replaceAsync(
+  str: string,
+  regex: RegExp,
+  asyncFn: (match: string, ...args: string[]) => Promise<string>,
+) {
+  const promises: Promise<string>[] = [];
+  str.replace(regex, (match: string, ...args: unknown[]) => {
+    promises.push(asyncFn(match, ...(args.slice(0, -2) as string[])));
+    return match;
+  });
+  const data = await Promise.all(promises);
+  return str.replace(regex, () => data.shift()!);
+}
 
 /**
  * Compiles a raw annotated markdown string (prose) into HTML with tooltips.
@@ -18,10 +32,10 @@ marked.setOptions({
  * @param [options={}] Options object (e.g. { inline: true })
  * @returns Compiled HTML
  */
-export function compileMarkdown(
+export async function compileMarkdown(
   text: string | null | undefined,
   options: CompileMarkdownOptions = {},
-): string {
+): Promise<string> {
   if (!text) return "";
 
   // Regex to match: `Char[Jyutping|Translation]` (with backticks)
@@ -32,31 +46,18 @@ export function compileMarkdown(
   const blockRegex =
     /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
 
-  // Replace backtick-wrapped annotations
-  let processedText = text.replace(
-    inlineRegex,
-    (_match: string, char: string, jyutping: string, translation: string) => {
-      const hash = crypto
-        .createHash("sha256")
-        .update(char)
-        .digest("hex")
-        .slice(0, 16);
-      return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
-    },
-  );
+  const replacer = async (
+    _match: string,
+    char: string,
+    jyutping: string,
+    translation: string,
+  ) => {
+    const hash = await getAudioHash(char);
+    return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
+  };
 
-  // Replace plain annotations (without backticks)
-  processedText = processedText.replace(
-    blockRegex,
-    (_match: string, char: string, jyutping: string, translation: string) => {
-      const hash = crypto
-        .createHash("sha256")
-        .update(char)
-        .digest("hex")
-        .slice(0, 16);
-      return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
-    },
-  );
+  let processedText = await replaceAsync(text, inlineRegex, replacer);
+  processedText = await replaceAsync(processedText, blockRegex, replacer);
 
   const parseOptions: { breaks?: boolean } = {};
   if (options.breaks !== undefined) {
@@ -90,21 +91,25 @@ export function compileMarkdown(
  * @param text
  * @returns Compiled HTML
  */
-export function compileAnnotations(text: string | null | undefined): string {
+export async function compileAnnotations(
+  text: string | null | undefined,
+): Promise<string> {
   if (!text) return "";
 
   // Regex to match: Char[Jyutping|Translation] (without backticks)
   const blockRegex =
     /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaffA-Za-z0-9.-]+)\[([^\]\n|]+)\|([^\]\n]+)\]/g;
 
-  return text.replace(
+  return await replaceAsync(
+    text,
     blockRegex,
-    (_match: string, char: string, jyutping: string, translation: string) => {
-      const hash = crypto
-        .createHash("sha256")
-        .update(char)
-        .digest("hex")
-        .slice(0, 16);
+    async (
+      _match: string,
+      char: string,
+      jyutping: string,
+      translation: string,
+    ) => {
+      const hash = await getAudioHash(char);
       return `<span class="vocab-term" data-audio-hash="${hash}">${char}<span class="tooltip-popover"><strong>${jyutping}</strong><br/>${translation}</span></span>`;
     },
   );
@@ -190,22 +195,22 @@ export type RawExercise = z.infer<typeof RawExerciseSchema>;
  * @param content The raw YAML string from the markdown block.
  * @param parseYAML A dependency-injected function to parse the YAML string.
  */
-export function parseExerciseBlock(
+export async function parseExerciseBlock(
   content: string,
   parseYAML: (str: string) => Record<string, unknown>,
-): ParsedExercise {
+): Promise<ParsedExercise> {
   let exercise: RawExercise = {};
   try {
     exercise = RawExerciseSchema.parse(parseYAML(content));
-  } catch (e) {
-    console.error("Failed to parse exercise block:", e);
+  } catch {
+    return { questionHtml: "", answerHtml: "", explanationHtml: "" };
   }
   // Imperative UI manipulation pushed into the functional core
   const displayQuestion = (exercise.question || "").replace(/_{2,}/g, "____");
 
   return {
-    questionHtml: compileMarkdown(displayQuestion, { breaks: true }),
-    answerHtml: compileMarkdown(exercise.answer || "", { inline: true }),
-    explanationHtml: compileMarkdown(exercise.explanation || ""),
+    questionHtml: await compileMarkdown(displayQuestion, { breaks: true }),
+    answerHtml: await compileMarkdown(exercise.answer || "", { inline: true }),
+    explanationHtml: await compileMarkdown(exercise.explanation || ""),
   };
 }

@@ -29,8 +29,8 @@ describe("PracticeSession state engine", () => {
 
   test("progresses indices and updates scores correctly on submitResponse", () => {
     const srsState: SrsStateMap = {
-      card1: { level: 1, lastReviewed: 0 },
-      card2: { level: 2, lastReviewed: 0 },
+      card1: { level: 1 },
+      card2: { level: 2 },
     };
     const session = new PracticeSession({
       poolItems: pool.slice(0, 2),

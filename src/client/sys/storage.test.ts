@@ -41,10 +41,10 @@ describe("Storage Utilities Spec", () => {
     expect(saveUnlockedChapters(["test"])).toBe(false);
 
     expect(getPhraseSRS()).toEqual({});
-    expect(savePhraseSRS({ a: { level: 1, lastReviewed: 0 } })).toBe(false);
+    expect(savePhraseSRS({ a: { level: 1 } })).toBe(false);
 
     expect(getVocabSRS()).toEqual({});
-    expect(saveVocabSRS({ b: { level: 2, lastReviewed: 0 } })).toBe(false);
+    expect(saveVocabSRS({ b: { level: 2 } })).toBe(false);
 
     expect(() => clearAllProgress()).not.toThrow();
 
@@ -83,7 +83,7 @@ describe("Storage Utilities Spec", () => {
   });
 
   test("should load and save Phrase SRS state correctly", () => {
-    const state = { "phrase-1": { level: 2, lastReviewed: 0 } };
+    const state = { "phrase-1": { level: 2 } };
     expect(savePhraseSRS(state)).toBe(true);
     expect(getPhraseSRS()).toEqual(state);
   });
@@ -106,8 +106,8 @@ describe("Storage Utilities Spec", () => {
 
   test("should clear all progress", () => {
     saveUnlockedChapters(["c1"]);
-    savePhraseSRS({ p1: { level: 1, lastReviewed: 0 } });
-    saveVocabSRS({ v1: { level: 1, lastReviewed: 0 } });
+    savePhraseSRS({ p1: { level: 1 } });
+    saveVocabSRS({ v1: { level: 1 } });
 
     clearAllProgress();
 
@@ -128,13 +128,13 @@ describe("Storage Utilities Spec", () => {
       expect.any(Error),
     );
 
-    expect(savePhraseSRS({ p1: { level: 1, lastReviewed: 0 } })).toBe(false);
+    expect(savePhraseSRS({ p1: { level: 1 } })).toBe(false);
     expect(spy).toHaveBeenCalledWith(
       expect.stringContaining("Failed to save phrase SRS state"),
       expect.any(Error),
     );
 
-    expect(saveVocabSRS({ v1: { level: 1, lastReviewed: 0 } })).toBe(false);
+    expect(saveVocabSRS({ v1: { level: 1 } })).toBe(false);
     expect(spy).toHaveBeenCalledWith(
       expect.stringContaining("Failed to save vocab SRS state"),
       expect.any(Error),
@@ -158,8 +158,8 @@ describe("Storage Utilities Spec", () => {
       localStorage.clear();
       const state = {
         chapters: ["chap1"],
-        srs: { "phr-1": { level: 1, lastReviewed: 12345 } },
-        vocab: { "vocab-1": { level: 2, lastReviewed: 67890 } },
+        srs: { "phr-1": { level: 1 } },
+        vocab: { "vocab-1": { level: 2 } },
       };
 
       const success = saveLocalState(state);

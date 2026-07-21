@@ -26,7 +26,7 @@ test("Curriculum Index Visual Render Test", async ({ page }) => {
 
   // Reload to apply local storage changes
   await page.goto("/cantonese");
-  await page.waitForSelector("h1");
+  await expect(page.locator("h1").first()).toBeVisible();
 
   // Playwright visual assertion against baseline image
   await assertScreenshot(page, "curriculum-index.png");
@@ -37,7 +37,7 @@ test("Chapter 1 Visual Render Test", async ({ page }) => {
   await page.goto("/cantonese/chapter/greetings");
 
   // Ensure content is loaded
-  await page.waitForSelector("h1");
+  await expect(page.locator("h1").first()).toBeVisible();
 
   // Save a copy of the screenshot directly to the test-results folder for visual inspection
   const artifactScreenshotPath = path.resolve(
@@ -73,7 +73,7 @@ test("Practice Visual Render Test", async ({ page }) => {
 
   // Navigate to Practice
   await page.goto("/cantonese/practice");
-  await page.waitForSelector("#stats-cards-count");
+  await expect(page.locator("#stats-cards-count")).toBeVisible();
 
   // Verify dashboard visual rendering
   await assertScreenshot(page, "practice-dashboard.png");
@@ -83,7 +83,7 @@ test("Practice Visual Render Test", async ({ page }) => {
   await startBtn.click();
 
   // Wait for session view
-  await page.waitForSelector("#session-view");
+  await expect(page.locator("#session-view")).toBeVisible();
 
   // Save copy of screenshot to test-results folder for visual inspection
   const artifactScreenshotPath = path.resolve(
@@ -98,13 +98,13 @@ test("Practice Visual Render Test", async ({ page }) => {
 
 test("SyncModal Visual Render Test", async ({ page }) => {
   await page.goto("/cantonese");
-  await page.waitForSelector("#sync-trigger-btn");
+  await expect(page.locator("#sync-trigger-btn")).toBeVisible();
 
   // Click the sync button to open the modal
   await page.click("#sync-trigger-btn");
 
   // Wait for the modal to be visible
-  await page.waitForSelector("#sync-modal-overlay");
+  await expect(page.locator("#sync-modal-overlay")).toBeVisible();
 
   // Visual assertion
   await assertScreenshot(page, "sync-modal-open.png");

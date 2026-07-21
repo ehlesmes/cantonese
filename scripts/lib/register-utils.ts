@@ -249,3 +249,34 @@ export function sortDictionary(
     return a.char.localeCompare(b.char);
   });
 }
+
+export function processEntries(
+  batchEntries: RawEntry[],
+  dictionary: DictionaryEntry[],
+  isBatch: boolean,
+): { processedEntries: DictionaryEntry[]; errors: string[] } {
+  const errors: string[] = [];
+  const processedEntries: DictionaryEntry[] = [];
+  const incomingKeys = new Set<string>();
+
+  for (let idx = 0; idx < batchEntries.length; idx++) {
+    const entry = batchEntries[idx]!;
+    const prefix = isBatch ? `Entry #${idx + 1}: ` : "";
+
+    const { validEntry, error } = validateRegisterEntry(
+      entry,
+      dictionary,
+      incomingKeys,
+      prefix,
+    );
+
+    if (error) {
+      errors.push(error);
+    } else {
+      incomingKeys.add(`${validEntry!.char}|${validEntry!.jyutping}`);
+      processedEntries.push(validEntry!);
+    }
+  }
+
+  return { processedEntries, errors };
+}

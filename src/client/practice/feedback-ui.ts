@@ -2,6 +2,7 @@ import { el, createPlayIcon } from "../sys/dom.js";
 import { compileAnnotationsClient } from "../../utils/dom.js";
 import type { ClientExample } from "../../types/index.js";
 import { state } from "./state.js";
+import { stripAnnotations } from "../../utils/text.js";
 
 export function buildFeedbackNextBtn(
   isCorrect: boolean,
@@ -27,9 +28,7 @@ export function buildFeedbackIncorrectOrder(card: ClientExample) {
       textContent: state.assembledTokenIndices
         .map((idx) => {
           const raw = card.tokens[idx];
-          if (!raw) return "";
-          const m = raw.match(/^([^[]+)/);
-          return m ? m[1] : raw;
+          return stripAnnotations(raw);
         })
         .filter(Boolean)
         .join(" "),

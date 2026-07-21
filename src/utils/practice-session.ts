@@ -5,6 +5,7 @@ export interface SessionConfig<T> {
   poolItems: T[];
   srsState: SrsStateMap;
   limit?: number;
+  randomizer?: () => number;
 }
 
 export class PracticeSession<T extends IdentifiableItem> {
@@ -12,13 +13,16 @@ export class PracticeSession<T extends IdentifiableItem> {
   private currentIndex = 0;
   private correctCount = 0;
   private srsState: SrsStateMap;
+  private randomizer: () => number;
 
   constructor(config: SessionConfig<T>) {
     this.srsState = { ...config.srsState };
+    this.randomizer = config.randomizer ?? Math.random;
     this.cards = selectCards(
       config.poolItems,
       this.srsState,
       config.limit ?? 10,
+      this.randomizer,
     );
   }
 
@@ -93,7 +97,7 @@ export class PracticeSession<T extends IdentifiableItem> {
   getShuffledIndices(length: number): number[] {
     const indices = Array.from({ length }, (_, i) => i);
     for (let i = indices.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j = Math.floor(this.randomizer() * (i + 1));
       const temp = indices[i]!;
       indices[i] = indices[j]!;
       indices[j] = temp;

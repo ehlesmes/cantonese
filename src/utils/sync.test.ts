@@ -35,12 +35,12 @@ describe("Progress Sync Utility Spec", () => {
     const originalState = {
       chapters: ["pronunciation-tones", "greetings", "dining-out"],
       srs: {
-        "phr-11-1v3vktn": { level: 2, lastReviewed: 1718985600000 },
-        "phr-5-abcde": { level: 5, lastReviewed: 1718985900000 },
+        "phr-11-1v3vktn": { level: 2 },
+        "phr-5-abcde": { level: 5 },
       },
       vocab: {
-        "vocab-你好_neihhou": { level: 1, lastReviewed: 1718985700000 },
-        "vocab-smart-quote-’": { level: 4, lastReviewed: 1718985800000 },
+        "vocab-你好_neihhou": { level: 1 },
+        "vocab-smart-quote-’": { level: 4 },
       },
     };
 
@@ -60,42 +60,15 @@ describe("Progress Sync Utility Spec", () => {
     // Check phrasebook srs
     expect(deserialized.srs["phr-11-1v3vktn"]).toBeDefined();
     expect(deserialized.srs["phr-11-1v3vktn"]?.level).toBe(2);
-    expect(deserialized.srs["phr-11-1v3vktn"]?.lastReviewed).toBe(
-      1718985600000,
-    );
+
     expect(deserialized.srs["phr-5-abcde"]?.level).toBe(5);
-    expect(deserialized.srs["phr-5-abcde"]?.lastReviewed).toBe(1718985900000);
 
     // Check vocabulary srs
     expect(deserialized.vocab["vocab-你好_neihhou"]).toBeDefined();
     expect(deserialized.vocab["vocab-你好_neihhou"]?.level).toBe(1);
-    expect(deserialized.vocab["vocab-你好_neihhou"]?.lastReviewed).toBe(
-      1718985700000,
-    );
+
     expect(deserialized.vocab["vocab-smart-quote-’"]).toBeDefined();
     expect(deserialized.vocab["vocab-smart-quote-’"]?.level).toBe(4);
-    expect(deserialized.vocab["vocab-smart-quote-’"]?.lastReviewed).toBe(
-      1718985800000,
-    );
-  });
-
-  test("serialization and deserialization roundtrip handles missing lastReviewed timestamp", async () => {
-    const originalState = {
-      chapters: ["greetings"],
-      srs: {
-        "phr-1": { level: 2, lastReviewed: 0 },
-      },
-      vocab: {
-        "v-1": { level: 3, lastReviewed: 0 },
-      },
-    };
-
-    const serialized = await serializeState(originalState);
-    const deserialized = await deserializeState(serialized);
-    expect(deserialized).not.toBeNull();
-    if (!deserialized) throw new Error("Should not be null");
-    expect(deserialized.srs["phr-1"]?.lastReviewed).toBe(0);
-    expect(deserialized.vocab["v-1"]?.lastReviewed).toBe(0);
   });
 
   test("deserializeState handles missing or invalid chapters property gracefully", async () => {
@@ -144,11 +117,11 @@ describe("Progress Sync Utility Spec", () => {
       const originalState = {
         chapters: ["pronunciation-tones", "greetings", "dining-out"],
         srs: {
-          "phr-11-1v3vktn": { level: 2, lastReviewed: 1718985600000 },
+          "phr-11-1v3vktn": { level: 2 },
         },
         vocab: {
-          "vocab-你好_neihhou": { level: 1, lastReviewed: 1718985700000 },
-          "vocab-smart-quote-’": { level: 4, lastReviewed: 1718985800000 },
+          "vocab-你好_neihhou": { level: 1 },
+          "vocab-smart-quote-’": { level: 4 },
         },
       };
 
@@ -176,7 +149,7 @@ describe("Progress Sync Utility Spec", () => {
     const originalState = {
       chapters: ["pronunciation-tones", "greetings"],
       srs: {
-        "phr-11-1v3vktn": { level: 2, lastReviewed: 1718985600000 },
+        "phr-11-1v3vktn": { level: 2 },
       },
       vocab: {},
     };
@@ -250,7 +223,7 @@ describe("Progress Sync Utility Spec", () => {
   test("deserialization handles missing/truncated SRS and vocab arrays correctly", async () => {
     const compacted = {
       c: [],
-      s: { "phr-1": [4] }, // Missing index 1 (lastReviewed)
+      s: { "phr-1": [4] },
       v: { "v-1": [3] }, // Missing index 1
       t: 1234567890,
     };
@@ -262,8 +235,8 @@ describe("Progress Sync Utility Spec", () => {
     const deserialized = await deserializeState(base64Plain);
     expect(deserialized).not.toBeNull();
     if (!deserialized) throw new Error("Should not be null");
-    expect(deserialized.srs["phr-1"]).toEqual({ level: 4, lastReviewed: 0 });
-    expect(deserialized.vocab["v-1"]).toEqual({ level: 3, lastReviewed: 0 });
+    expect(deserialized.srs["phr-1"]).toEqual({ level: 4 });
+    expect(deserialized.vocab["v-1"]).toEqual({ level: 3 });
   });
 
   test("deserialization fallback to TextDecoder when DecompressionStream is missing", async () => {
@@ -315,8 +288,8 @@ describe("Progress Sync Utility Spec", () => {
     const originalState = {
       chapters: ["pronunciation-tones"],
       srs: {
-        "ch0-1": { level: 2, lastReviewed: 1718985600 },
-        "phr-11-1v3vktn": { level: 2, lastReviewed: 1718985600 },
+        "ch0-1": { level: 2 },
+        "phr-11-1v3vktn": { level: 2 },
       },
       vocab: {},
     };
@@ -353,58 +326,48 @@ describe("Progress Sync Utility Spec", () => {
       chapters: ["pronunciation-tones"],
       srs: {
         // Laptop reviewed this more recently (yesterday vs last week)
-        "item-conflict-local-newer": { level: 2, lastReviewed: 1718985600000 },
+        "item-conflict-local-newer": { level: 2 },
         // Phone reviewed this more recently
         "item-conflict-imported-newer": {
           level: 1,
-          lastReviewed: 1718900000000,
         },
         // Unique to laptop
-        "item-local-only": { level: 4, lastReviewed: 1718985600000 },
+        "item-local-only": { level: 4 },
       },
       vocab: {
-        "vocab-conflict-local-newer": { level: 3, lastReviewed: 1718985600000 },
+        "vocab-conflict-local-newer": { level: 3 },
         "vocab-conflict-imported-newer": {
           level: 1,
-          lastReviewed: 1718900000000,
         },
-        "vocab-local-only": { level: 5, lastReviewed: 1718985600000 },
+        "vocab-local-only": { level: 5 },
       },
     };
 
     const imported = {
       chapters: ["pronunciation-tones"],
       srs: {
-        "item-conflict-local-newer": { level: 5, lastReviewed: 1718900000000 }, // older
+        "item-conflict-local-newer": { level: 5 }, // older
         "item-conflict-imported-newer": {
           level: 3,
-          lastReviewed: 1718985600000,
         }, // newer
         // Unique to phone
-        "item-imported-only": { level: 2, lastReviewed: 1718900000000 },
+        "item-imported-only": { level: 2 },
       },
       vocab: {
-        "vocab-conflict-local-newer": { level: 5, lastReviewed: 1718900000000 },
+        "vocab-conflict-local-newer": { level: 5 },
         "vocab-conflict-imported-newer": {
           level: 3,
-          lastReviewed: 1718985600000,
         },
-        "vocab-imported-only": { level: 2, lastReviewed: 1718900000000 },
+        "vocab-imported-only": { level: 2 },
       },
     };
 
     const merged = mergeStates(local, imported);
 
     // Verify phrasebook srs merging
-    expect(merged.srs["item-conflict-local-newer"]?.level).toBe(2); // local won
-    expect(merged.srs["item-conflict-local-newer"]?.lastReviewed).toBe(
-      1718985600000,
-    );
+    expect(merged.srs["item-conflict-local-newer"]?.level).toBe(5); // imported won (higher level)
 
     expect(merged.srs["item-conflict-imported-newer"]?.level).toBe(3); // imported won
-    expect(merged.srs["item-conflict-imported-newer"]?.lastReviewed).toBe(
-      1718985600000,
-    );
 
     expect(merged.srs["item-local-only"]?.level).toBe(4);
     expect(merged.srs["item-imported-only"]?.level).toBe(2);
@@ -530,21 +493,6 @@ a=candidate:1 1 udp 2122260223 192.168.1.5 50000 typ host generation 0 ufrag moc
   test("deserializeState handles invalid base64 characters gracefully", async () => {
     const result = await deserializeState("invalid!!!");
     expect(result).toBeNull();
-  });
-
-  test("mergeStates merges stores without lastReviewed timestamps correctly", () => {
-    const local = {
-      chapters: [],
-      srs: { "phr-1": { level: 2, lastReviewed: 0 } },
-      vocab: {},
-    };
-    const imported = {
-      chapters: [],
-      srs: { "phr-1": { level: 4, lastReviewed: 0 } },
-      vocab: {},
-    };
-    const merged = mergeStates(local, imported);
-    expect(merged.srs["phr-1"]?.level).toBe(4);
   });
 
   test("mergeStates handles missing properties on local/imported states gracefully", () => {
@@ -686,10 +634,10 @@ a=candidate:2 1 tcp 2122260223 192.168.1.6 50001 typ host generation 0 ufrag moc
     const state = {
       chapters: [],
       srs: {
-        "phr-1": { level: 3, lastReviewed: 1000 },
-        "ch-legacy": { level: 1, lastReviewed: 0 },
+        "phr-1": { level: 3 },
+        "ch-legacy": { level: 1 },
       },
-      vocab: { "v-1": { level: 2, lastReviewed: 2000 } },
+      vocab: { "v-1": { level: 2 } },
       timestamp: 0,
     };
     const serialized = await serializeState(state);
@@ -857,25 +805,13 @@ describe("Sync Utility Spec Additional Coverage", () => {
   test("mergeStates handles missing or undefined localStore or importedStore stores gracefully", () => {
     const local = {
       chapters: [],
-      srs: undefined as unknown as Record<
-        string,
-        { level: number; lastReviewed: number }
-      >,
-      vocab: undefined as unknown as Record<
-        string,
-        { level: number; lastReviewed: number }
-      >,
+      srs: undefined as unknown as Record<string, { level: number }>,
+      vocab: undefined as unknown as Record<string, { level: number }>,
     };
     const imported = {
       chapters: [],
-      srs: undefined as unknown as Record<
-        string,
-        { level: number; lastReviewed: number }
-      >,
-      vocab: undefined as unknown as Record<
-        string,
-        { level: number; lastReviewed: number }
-      >,
+      srs: undefined as unknown as Record<string, { level: number }>,
+      vocab: undefined as unknown as Record<string, { level: number }>,
     };
     const merged = mergeStates(local, imported);
     expect(merged.srs).toEqual({});
@@ -902,49 +838,15 @@ describe("Sync Utility Spec Additional Coverage", () => {
     const result = await deserializeState(base64Str);
     expect(result).not.toBeNull();
     expect(result?.srs["phr-1"]?.level).toBe(1);
-    expect(result?.srs["phr-2"]?.lastReviewed).toBe(0);
-    expect(result?.vocab["vocab-1"]?.level).toBe(1);
-    expect(result?.vocab["vocab-2"]?.lastReviewed).toBe(0);
-  });
 
-  test("serializeState handles items with missing lastReviewed or level gracefully", async () => {
-    const state = {
-      chapters: [],
-      srs: {
-        "phr-1": { level: 3, lastReviewed: undefined as unknown as number },
-        "phr-2": {
-          level: undefined as unknown as number,
-          lastReviewed: undefined as unknown as number,
-        },
-      },
-      vocab: {
-        "vocab-1": { level: 4, lastReviewed: 0 },
-        "vocab-2": {
-          level: undefined as unknown as number,
-          lastReviewed: undefined as unknown as number,
-        },
-      },
-    };
-    const serialized = await serializeState(state);
-    const deserialized = await deserializeState(serialized);
-    expect(deserialized).not.toBeNull();
-    expect(deserialized?.srs["phr-1"]?.lastReviewed).toBe(0);
-    expect(deserialized?.srs["phr-2"]).toBeUndefined();
-    expect(deserialized?.vocab["vocab-1"]?.lastReviewed).toBe(0);
-    expect(deserialized?.vocab["vocab-2"]).toBeUndefined();
+    expect(result?.vocab["vocab-1"]?.level).toBe(1);
   });
 
   test("serializeState handles undefined state.vocab or state.srs", async () => {
     const state = {
       chapters: [],
-      srs: undefined as unknown as Record<
-        string,
-        { level: number; lastReviewed: number }
-      >,
-      vocab: undefined as unknown as Record<
-        string,
-        { level: number; lastReviewed: number }
-      >,
+      srs: undefined as unknown as Record<string, { level: number }>,
+      vocab: undefined as unknown as Record<string, { level: number }>,
     };
     const serialized = await serializeState(state);
     const deserialized = await deserializeState(serialized);
@@ -967,17 +869,17 @@ describe("Sync Utility Spec Additional Coverage", () => {
   test("calculateMergeMetrics computes accurate local vs merged metrics", () => {
     const local = {
       chapters: ["ch1"],
-      srs: { p1: { level: 2, lastReviewed: 100 } },
-      vocab: { v1: { level: 3, lastReviewed: 200 } },
+      srs: { p1: { level: 2 } },
+      vocab: { v1: { level: 3 } },
     };
     const imported = {
       chapters: ["ch1", "ch2"],
       srs: {
-        p1: { level: 1, lastReviewed: 50 },
-        p2: { level: 4, lastReviewed: 300 },
+        p1: { level: 1 },
+        p2: { level: 4 },
       },
       vocab: {
-        v1: { level: 5, lastReviewed: 400 },
+        v1: { level: 5 },
       },
     };
     const metrics = calculateMergeMetrics(local, imported);
@@ -991,25 +893,13 @@ describe("Sync Utility Spec Additional Coverage", () => {
   test("calculateMergeMetrics handles missing srs and vocab maps gracefully", () => {
     const local = {
       chapters: [],
-      srs: undefined as unknown as Record<
-        string,
-        { level: number; lastReviewed: number }
-      >,
-      vocab: undefined as unknown as Record<
-        string,
-        { level: number; lastReviewed: number }
-      >,
+      srs: undefined as unknown as Record<string, { level: number }>,
+      vocab: undefined as unknown as Record<string, { level: number }>,
     };
     const imported = {
       chapters: [],
-      srs: undefined as unknown as Record<
-        string,
-        { level: number; lastReviewed: number }
-      >,
-      vocab: undefined as unknown as Record<
-        string,
-        { level: number; lastReviewed: number }
-      >,
+      srs: undefined as unknown as Record<string, { level: number }>,
+      vocab: undefined as unknown as Record<string, { level: number }>,
     };
     const metrics = calculateMergeMetrics(local, imported);
     expect(metrics).toEqual({
@@ -1029,8 +919,8 @@ describe("Functional Core parsing functions", () => {
       };
       const result = parseSrsMap(rawData);
       expect(result).toEqual({
-        "phrase-1": { level: 2, lastReviewed: 12345000 },
-        "phrase-2": { level: 3, lastReviewed: 0 },
+        "phrase-1": { level: 2 },
+        "phrase-2": { level: 3 },
       });
     });
 
@@ -1041,7 +931,7 @@ describe("Functional Core parsing functions", () => {
       };
       const result = parseSrsMap(rawData, true);
       expect(result).toEqual({
-        "phrase-1": { level: 1, lastReviewed: 1000 },
+        "phrase-1": { level: 1 },
       });
       expect(result["ch-1"]).toBeUndefined();
     });
@@ -1066,6 +956,23 @@ describe("Functional Core parsing functions", () => {
       const result = await decompressPayload(bytes);
       expect(result).toBe(text);
     });
+  });
+
+  test("serializeProgress should gracefully handle invalid SRS item values", async () => {
+    const invalidState = {
+      chapters: [],
+      srs: {
+        badItem: { level: "not-a-number" },
+        missingLevel: {},
+        nullItem: null,
+      },
+      vocab: {},
+      timestamp: 0,
+    };
+    // @ts-expect-error - testing invalid data
+    const b64 = await serializeState(invalidState);
+    const parsed = await deserializeState(b64);
+    expect(parsed?.srs).toEqual({}); // Should filter out invalid items
   });
 });
 

@@ -96,17 +96,14 @@ async function decompressData(bytes: Uint8Array): Promise<string> {
 
 function compactSrsMap(
   srsMap: SrsStateMap | undefined,
-): Record<string, [number, number]> {
-  const compacted: Record<string, [number, number]> = {};
+): Record<string, number> {
+  const compacted: Record<string, number> = {};
   const keys = Object.keys(srsMap || {});
   for (let i = 0; i < keys.length; i++) {
     const id = keys[i]!;
     const item = srsMap![id];
     if (typeof item?.level === "number") {
-      compacted[id] = [
-        item.level,
-        item.lastReviewed ? Math.floor(item.lastReviewed / 1000) : 0,
-      ];
+      compacted[id] = item.level;
     }
   }
   return compacted;
@@ -130,12 +127,15 @@ function decodeBase64UrlBytes(cleanStr: string): Uint8Array {
 /**
  * Compacts and serializes progress state into a URL-safe Base64 string (Gzipped)
  */
-export async function serializeState(state: LocalState): Promise<string> {
+export async function serializeState(
+  state: LocalState,
+  timestamp: number = Date.now(),
+): Promise<string> {
   const compacted: CompactSyncPayload = {
     [SHORT_KEYS.chapters]: state.chapters,
     [SHORT_KEYS.srs]: compactSrsMap(state.srs),
     [SHORT_KEYS.vocab]: compactSrsMap(state.vocab),
-    [SHORT_KEYS.timestamp]: Date.now(),
+    [SHORT_KEYS.timestamp]: timestamp,
   };
 
   const jsonStr = JSON.stringify(compacted);
@@ -181,15 +181,16 @@ export function parseSrsMap(
 ): SrsStateMap {
   const result: SrsStateMap = {};
   if (rawData && typeof rawData === "object" && !Array.isArray(rawData)) {
-    for (const [id, arr] of Object.entries(
+    for (const [id, val] of Object.entries(
       rawData as Record<string, unknown>,
     )) {
       if (skipLegacyId && id.startsWith("ch")) continue;
 
-      if (Array.isArray(arr) && arr.length >= 1) {
+      if (typeof val === "number") {
+        result[id] = { level: val };
+      } else if (Array.isArray(val) && val.length >= 1) {
         result[id] = {
-          level: Number(arr[0] ?? 1),
-          lastReviewed: Number(arr[1] ?? 0) * 1000,
+          level: Number(val[0] ?? 1),
         };
       }
     }
@@ -241,7 +242,8 @@ export async function deserializeState(
           ? (payload[SHORT_KEYS.timestamp] as number)
           : 0,
     };
-  } catch {
+  } catch (err) {
+    console.error("Deserialize error:", err);
     return null;
   }
 }
@@ -282,10 +284,10 @@ export function mergeStates(
       const importedItem = importedStore?.[id];
 
       if (localItem && importedItem) {
-        // Both exist: choose the one with the latest lastReviewed timestamp
-        const localTime = localItem.lastReviewed || 0;
-        const importedTime = importedItem.lastReviewed || 0;
-        mergedStore[id] = importedTime >= localTime ? importedItem : localItem;
+        // Both exist: since we don't have timestamps anymore, keep the highest level
+        mergedStore[id] = {
+          level: Math.max(localItem.level, importedItem.level),
+        };
       } else {
         // Only one exists: keep it
         const item = importedItem || localItem;

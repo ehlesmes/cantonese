@@ -44,25 +44,24 @@ describe("Review Board Space Split Utility", () => {
 
 // Test the Spaced Repetition (SRS) Engine imported production functions
 describe("Spaced Repetition System (SRS) Engine Spec", () => {
-  test("gradeCard should increment level up to maximum of 5 on correct answers", () => {
-    const state1 = { level: 1, lastReviewed: 0 };
+  test("gradeCard should increment level up to maximum of 7 on correct answers", () => {
+    const state1 = { level: 1 };
     const graded1 = gradeCard(state1, true);
     expect(graded1.level).toBe(2);
-    expect(graded1.lastReviewed).toBeGreaterThan(0);
 
-    const state5 = { level: 5, lastReviewed: 0 };
-    const graded5 = gradeCard(state5, true);
-    expect(graded5.level).toBe(5); // caps at 5
+    const state7 = { level: 7 };
+    const graded7 = gradeCard(state7, true);
+    expect(graded7.level).toBe(7); // caps at 7
   });
 
-  test("gradeCard should decrement level by 2 down to minimum of 1 on incorrect answers", () => {
-    const state4 = { level: 4, lastReviewed: 0 };
+  test("gradeCard should decrement level by 1 down to minimum of 1 on incorrect answers", () => {
+    const state4 = { level: 4 };
     const graded4 = gradeCard(state4, false);
-    expect(graded4.level).toBe(2);
+    expect(graded4.level).toBe(3);
 
-    const state2 = { level: 2, lastReviewed: 0 };
-    const graded2 = gradeCard(state2, false);
-    expect(graded2.level).toBe(1); // floor is 1
+    const state1 = { level: 1 };
+    const graded1 = gradeCard(state1, false);
+    expect(graded1.level).toBe(1); // floor is 1
   });
 
   test("gradeCard should handle undefined/null initial state gracefully", () => {
@@ -84,13 +83,13 @@ describe("Spaced Repetition System (SRS) Engine Spec", () => {
     expect(selectCards(null, {})).toEqual([]);
   });
 
-  test("selectCards weighting should prioritize lower-level items", () => {
+  test("selectCards weighting should prioritize lower-level items using exponential decay", () => {
     // Set up a large simulation to verify lower-level items are selected more frequently
     const pool = [{ id: "easy" }, { id: "hard" }];
-    // easy card is level 5 (low weight), hard card is level 1 (high weight)
+    // easy card is level 7 (low weight), hard card is level 1 (high weight)
     const srsState = {
-      easy: { level: 5, lastReviewed: 0 },
-      hard: { level: 1, lastReviewed: 0 },
+      easy: { level: 7 },
+      hard: { level: 1 },
     };
 
     let hardCount = 0;
@@ -105,16 +104,16 @@ describe("Spaced Repetition System (SRS) Engine Spec", () => {
       }
     }
 
-    // Level 1 weight is 1.0, Level 5 weight is 1 / 5^1.5 ≈ 0.089.
-    // Level 1 should be picked roughly 11x more often than Level 5.
-    expect(hardCount).toBeGreaterThan(easyCount * 5);
+    // Level 1 weight is 1.0, Level 7 weight is 1 / 3^6 ≈ 0.00137
+    // Level 1 should be picked roughly 729x more often than Level 7.
+    expect(hardCount).toBeGreaterThan(easyCount * 50);
   });
 
   test("should handle corrupted cards with zero or invalid weights without looping infinitely", () => {
     const pool = [{ id: "corrupted-1" }, { id: "corrupted-2" }];
     const srsState = {
-      "corrupted-1": { level: Infinity, lastReviewed: 0 },
-      "corrupted-2": { level: Infinity, lastReviewed: 0 },
+      "corrupted-1": { level: Infinity },
+      "corrupted-2": { level: Infinity },
     };
     expect(selectCards(pool, srsState, 2)).toEqual([]);
   });
@@ -181,11 +180,11 @@ describe("SRS Engine Data Transformation Utilities", () => {
   ];
 
   const mockSrsState = {
-    "1": { level: 1, lastReviewed: 0 },
-    "2": { level: 3, lastReviewed: 0 },
-    "3": { level: 1, lastReviewed: 0 },
-    "4": { level: 5, lastReviewed: 0 },
-    "6": { level: 999, lastReviewed: 0 },
+    "1": { level: 1 },
+    "2": { level: 3 },
+    "3": { level: 1 },
+    "4": { level: 7 },
+    "6": { level: 999 },
   };
 
   test("filterPracticeItems by chapterId", async () => {
@@ -237,7 +236,7 @@ describe("SRS Engine Data Transformation Utilities", () => {
     if (result.type === "level") {
       expect(result.grouped[1]?.length).toBe(3); // 1, 3, 5
       expect(result.grouped[3]?.length).toBe(1);
-      expect(result.grouped[5]?.length).toBe(1);
+      expect(result.grouped[7]?.length).toBe(1);
     }
   });
 
@@ -275,8 +274,8 @@ describe("SRS Filtering Utilities", () => {
   test("countMasteredItems works", () => {
     const items = [{ id: "1" }, { id: "2" }];
     const state = {
-      "1": { level: 5, lastReviewed: 0 },
-      "2": { level: 4, lastReviewed: 0 },
+      "1": { level: 7 },
+      "2": { level: 4 },
     };
     expect(countMasteredItems(items, state)).toBe(1);
   });

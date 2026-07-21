@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
 import {
-  validateRegisterEntry,
   sortDictionary,
+  processEntries,
   type RawEntry,
   type DictionaryEntry,
 } from "./lib/register-utils.js";
@@ -130,47 +130,6 @@ function loadDictionary(dictPath: string): DictionaryEntry[] {
   }
 }
 
-function processEntries(
-  batchEntries: RawEntry[],
-  dictionary: DictionaryEntry[],
-  isBatch: boolean,
-) {
-  const errors = [];
-  const processedEntries = [];
-  const incomingKeys = new Set<string>();
-
-  for (let idx = 0; idx < batchEntries.length; idx++) {
-    const entry = batchEntries[idx]!;
-    const prefix = isBatch ? `Entry #${idx + 1}: ` : "";
-
-    const { validEntry, error } = validateRegisterEntry(
-      entry,
-      dictionary,
-      incomingKeys,
-      prefix,
-    );
-
-    if (error) {
-      errors.push(error);
-    } else if (validEntry) {
-      incomingKeys.add(`${validEntry.char}|${validEntry.jyutping}`);
-      processedEntries.push(validEntry);
-    }
-  }
-
-  if (errors.length > 0) {
-    console.error(
-      `${colors.red}${colors.bold}ERROR: Batch registration failed due to the following validation errors:${colors.reset}`,
-    );
-    for (const err of errors) {
-      console.error(`  ${colors.red}✗${colors.reset} ${err}`);
-    }
-    process.exit(1);
-  }
-
-  return processedEntries;
-}
-
 function writeAndPrintDictionary(
   dictPath: string,
   dictionary: DictionaryEntry[],
@@ -214,7 +173,21 @@ function main() {
     process.env.DICT_PATH || path.join(__dirname, "../content/dictionary.json");
   let dictionary = loadDictionary(dictPath);
 
-  const processedEntries = processEntries(batchEntries, dictionary, isBatch);
+  const { processedEntries, errors } = processEntries(
+    batchEntries,
+    dictionary,
+    isBatch,
+  );
+
+  if (errors.length > 0) {
+    console.error(
+      `${colors.red}${colors.bold}ERROR: Batch registration failed due to the following validation errors:${colors.reset}`,
+    );
+    for (const err of errors) {
+      console.error(`  ${colors.red}✗${colors.reset} ${err}`);
+    }
+    process.exit(1);
+  }
 
   for (const entry of processedEntries) {
     dictionary.push(entry);

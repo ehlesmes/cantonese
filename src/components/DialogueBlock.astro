@@ -5,15 +5,21 @@ import { getAudioHash } from "../utils/audio.js";
 
 interface DialogueTurnWithAudio extends DialogueTurn {
   audioHash?: string;
+  compiledHtml?: string;
 }
 
 const { content } = Astro.props;
 
 const parsedTurns = parseDialogueBlock(content);
-const turns: DialogueTurnWithAudio[] = parsedTurns.map((turn) => ({
-  ...turn,
-  audioHash: getAudioHash(turn.cantonese),
-}));
+const turns: DialogueTurnWithAudio[] = [];
+
+for (const turn of parsedTurns) {
+  turns.push({
+    ...turn,
+    audioHash: await getAudioHash(turn.cantonese),
+    compiledHtml: await compileAnnotations(turn.cantonese),
+  });
+}
 ---
 <div class="dialogue-card chapter-block">
   {turns.map(turn => (
@@ -21,7 +27,7 @@ const turns: DialogueTurnWithAudio[] = parsedTurns.map((turn) => ({
       <div class="dialogue-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
         <div class="dialogue-content-wrapper">
           <span class="dialogue-speaker">{turn.speaker}:</span>
-          <div class="dialogue-cantonese" set:html={compileAnnotations(turn.cantonese)} />
+          <div class="dialogue-cantonese" set:html={turn.compiledHtml} />
         </div>
         <button class="tts-btn" data-audio-hash={turn.audioHash} title="Listen to line" aria-label="Listen to line">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
