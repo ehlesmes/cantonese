@@ -35,22 +35,22 @@ The six standard tones are:
 
 - **Tone 1 (High Flat / 55)**: High level pitch. Sounds like saying "Aha!" in
   realization.
-  - Example: `詩[si1|poem / poetry]`
+  - Example: `詩[si1|poem]`
 - **Tone 2 (High Rising / 35)**: Starts mid, rises high. Sounds like asking a
   question: "What?"
   - Example: `史[si2|history]`
 - **Tone 3 (Mid Flat / 33)**: Neutral, mid level. Sounds like stating a
   matter-of-fact: "Okay."
-  - Example: `試[si3|to try / test]`
+  - Example: `試[si3|to try]`
 - **Tone 4 (Low Falling / 21)**: Low, dropping pitch. Sounds like grunting in
   disappointment: "Oh..."
-  - Example: `時[si4|time / hour]`
+  - Example: `時[si4|time]`
 - **Tone 5 (Low Rising / 23)**: Starts low, rises slightly. Sounds like a
   hesitant question: "Really?"
   - Example: `市[si5|market / city]`
 - **Tone 6 (Low Flat / 22)**: Deep, flat level pitch. Sounds like a low,
   assertive monotone: "Yep."
-  - Example: `事[si6|matter / business / affair]`
+  - Example: `事[si6|matter]`
 
 ### The "si" Tone Series
 
@@ -58,7 +58,7 @@ To practice hearing the six tones sequentially, native speakers often recite the
 classic "si" sequence. Practice repeating these six words in order:
 
 ```cantonese
-詩[si1|poem] 史[si2|history] 試[si3|to try] 時[si4|time] 市[si5|market] 事[si6|matter]
+詩[si1|poem] 史[si2|history] 試[si3|to try] 時[si4|time] 市[si5|market / city] 事[si6|matter]
 ===
 Poem, history, to try, time, market, matter
 ```

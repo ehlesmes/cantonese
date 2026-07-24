@@ -62,7 +62,7 @@ it**:
     immediately).
 - **`-t` Ending**: Place your tongue behind your teeth to block the air, but do
   not make a "tuh" sound.
-  - Example: `日[jat6|day / sun]` in `今日[gam1jat6|today]`.
+  - Example: `日[jat6|day]` in `今日[gam1jat6|today]`.
 - **`-k` Ending**: Block the air at the back of your throat, but do not make a
   "kuh" sound.
   - Example: `食[sik6|to eat]`.
@@ -70,30 +70,30 @@ it**:
 Practice pronouncing these unreleased stops naturally:
 
 ```cantonese
-我[ngo5|I] 想[soeng2|want to] 食[sik6|to eat] 十[sap6|ten] 隻[zek3|classifier for animals] 雞[gai1|chicken]。
+我[ngo5|I] 想[soeng2|to want to] 食[sik6|to eat] 十[sap6|ten] 隻[zek3|classifier for animals] 雞[gai1|chicken]。
 ===
 I want to eat ten chickens.
 ```
 
 ---
 
-## 3. Spoken Exclamations: `喂[wai2|hey]` and `吓[haa2|what]`
+## 3. Spoken Exclamations: `喂[wai2|hey! / hello]` and `吓[haa2|interjection expressing surprise]`
 
 Cantonese conversations are incredibly dynamic and expressive, filled with
 emotional particles and exclamations that immediately convey the speaker's tone.
 Two of the most high-frequency exclamations are:
 
-1.  `喂[wai2|hey]`: Used to grab someone's attention, answer the phone
+1.  `喂[wai2|hey! / hello]`: Used to grab someone's attention, answer the phone
     ("hello?"), or express mild, friendly annoyance.
-2.  `吓[haa2|what]`: Used to express surprise, confusion, disbelief, or to ask
-    someone to repeat themselves.
+2.  `吓[haa2|interjection expressing surprise]`: Used to express surprise,
+    confusion, disbelief, or to ask someone to repeat themselves.
 
 Observe how these are naturally integrated in a conversational exchange:
 
 ```dialog
-A: 喂[wai2|hey]，你[nei5|you] 食[sik6|to eat] 唔[m4|not] 食[sik6|to eat] 雞[gai1|chicken] 呀[aa3|particle]？
+A: 喂[wai2|hey! / hello]，你[nei5|you] 食[sik6|to eat] 唔[m4|not] 食[sik6|to eat] 雞[gai1|chicken] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Hey, do you eat chicken?
-B: 吓[haa2|what]？ 唔[m4|not] 食[sik6|to eat] 啦[laa1|particle]，我[ngo5|I] 唔[m4|not] 食[sik6|to eat] 嘅[ge3|particle]。
+B: 吓[haa2|interjection expressing surprise]？ 唔[m4|not] 食[sik6|to eat] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]，我[ngo5|I] 唔[m4|not] 食[sik6|to eat] 嘅[ge3|possessive / linking particle]。
    === What? No, I don't eat it.
 ```
 
@@ -119,6 +119,6 @@ explanation: |
 ```exercise
 question: |
   Translate the exclamation "Hey!" used to get someone's attention in Cantonese:
-answer: 喂[wai2|hey]
-explanation: 喂[wai2|hey] is the standard conversational exclamation to call someone or grab their attention.
+answer: 喂[wai2|hey! / hello]
+explanation: 喂[wai2|hey! / hello] is the standard conversational exclamation to call someone or grab their attention.
 ```

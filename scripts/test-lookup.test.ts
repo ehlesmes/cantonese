@@ -30,7 +30,7 @@ describe("Cantonese Lexicon Lookup CLI E2E Spec", () => {
     const output = runLookup("唔該");
     expect(output).toContain('Query: "唔該"');
     expect(output).toContain("唔該 (m4goi1)");
-    expect(output).toContain("excuse me / please / thank you");
+    expect(output).toContain("thank you / please");
     expect(output).toContain("Expression");
   });
 

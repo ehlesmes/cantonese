@@ -25,19 +25,20 @@ automated announcements. Instead, passengers must shout out to the
 
 To request a stop, use this formula:
 
-- `唔該[m4goi1|please]` + Landmark/Location + `有落[jau5lok6|stop here please]`
+- `唔該[m4goi1|thank you / please]` + Landmark/Location +
+  `有落[jau5lok6|stop here please]`
 
 ### Common Stop Request Expressions
 
 Here are the most common phrases passengers shout on a minibus:
 
-- `唔該[m4goi1|please]` `前邊[cin4bin1|ahead]`
+- `唔該[m4goi1|thank you / please]` `前邊[cin4bin1|in front]`
   `有落[jau5lok6|stop here please]`: Stop up ahead, please.
-- `唔該[m4goi1|please]` `路口[lou6hau2|intersection]`
+- `唔該[m4goi1|thank you / please]` `路口[lou6hau2|intersection]`
   `有落[jau5lok6|stop here please]`: Stop at the intersection, please.
-- `唔該[m4goi1|please]` `燈位[dang1wai2|traffic light]`
+- `唔該[m4goi1|thank you / please]` `燈位[dang1wai2|traffic light]`
   `有落[jau5lok6|stop here please]`: Stop at the traffic light, please.
-- `唔該[m4goi1|please]` `地鐵站[dei6tit3zaam6|MTR station]`
+- `唔該[m4goi1|thank you / please]` `地鐵站[dei6tit3zaam6|MTR station]`
   `有落[jau5lok6|stop here please]`: Stop at the MTR station, please.
 
 To get on a vehicle, use `上車[soeng5ce1|to get on a vehicle]`, and to get off,
@@ -51,13 +52,13 @@ A passenger (A) is trying to get to the subway station quickly and coordinates
 with the minibus driver (B).
 
 ```dialog
-A: 唔該[m4goi1|please]，我[ngo5|I / me] 趕時間[gon2si4gaan1|in a hurry / rushing for time]，請問[cing2man6|may I ask] 架[gaa3|classifier for vehicles] 車[ce1|car / vehicle] 去[heoi3|to go] 地鐵站[dei6tit3zaam6|MTR station] 要[jiu3|need] 幾耐[gei2noi6|how long (time)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
+A: 唔該[m4goi1|thank you / please]，我[ngo5|I] 趕時間[gon2si4gaan1|in a hurry]，請問[cing2man6|may I ask] 架[gaa3|classifier for vehicles] 車[ce1|car] 去[heoi3|go] 地鐵站[dei6tit3zaam6|MTR station] 要[jiu3|to want / need] 幾耐[gei2noi6|how long (time)] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Excuse me, I am in a hurry. May I ask how long it takes for this vehicle to get to the MTR station?
-B: 前邊[cin4bin1|up ahead / in front] 塞車[sak1ce1|traffic jam / heavy traffic] 呀[aa3|sentence-final particle softening statements, making questions friendly]，大約[daai6joek3|approximately] 十[sap6|ten] 分鐘[fan1zung1|minutes] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+B: 前邊[cin4bin1|in front] 塞車[sak1ce1|traffic jam] 呀[aa3|sentence-final particle softening statements, making questions friendly]，大約[daai6joek3|approximately] 十[sap6|ten] 分鐘[fan1zung1|minute] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
    === There is a traffic jam up ahead, about ten minutes.
-A: 噉[gam2|then / in that case / so] 我[ngo5|I / me] 喺[hai2|at / in / on] 前邊[cin4bin1|up ahead / in front] 天橋[tin1kiu4|pedestrian flyover / footbridge] 落車[lok6ce1|to get off a vehicle] 行路[haang4lou6|to walk] 過去[gwo3heoi3|to go over] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。唔該[m4goi1|please] 司機[si1gei1|driver]，天橋[tin1kiu4|pedestrian flyover / footbridge] 有落[jau5lok6|stop here please]！
+A: 噉[gam2|like this / then] 我[ngo5|I] 喺[hai2|at / in / on] 前邊[cin4bin1|in front] 天橋[tin1kiu4|footbridge] 落車[lok6ce1|to get off a vehicle] 行路[haang4lou6|to walk] 過去[gwo3heoi3|to go over] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。唔該[m4goi1|thank you / please] 司機[si1gei1|driver]，天橋[tin1kiu4|footbridge] 有落[jau5lok6|stop here please]！
    === Then I will get off at the pedestrian flyover ahead and walk over. Thanks, driver. Please stop at the pedestrian flyover!
-B: 收到[sau1dou2|got it]！呢度[ni1dou6|here] 唔[m4|not / no (negative prefix)] 可以[ho2ji5|can / may / possible] 落車[lok6ce1|to get off a vehicle]，過[gwo3|to pass / cross] 咗[zo2|verbal aspect suffix indicating completed action (perfective aspect)] 燈位[dang1wai2|traffic light] 先[sin1|first / only then] 俾[bei2|to give / by (passive marker) / let] 你[nei5|you] 落[lok6|to descend / fall / drop / get off] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
+B: 收到[sau1dou2|got it]！呢度[ni1dou6|here] 唔[m4|not] 可以[ho2ji5|can] 落車[lok6ce1|to get off a vehicle]，過[gwo3|past experience marker / to cross / than] 咗[zo2|completed action marker] 燈位[dang1wai2|traffic light] 先[sin1|first] 俾[bei2|to give / by (passive) / let] 你[nei5|you] 落[lok6|to descend] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。
    === Got it! I cannot let you off here. I will let you off after we pass the traffic light.
 ```
 
@@ -70,19 +71,19 @@ Test your understanding of minibus stop requests and commands.
 ```exercise
 question: |
   Which of the following is the iconic Cantonese phrase shouted to minibus drivers to request a stop?
-  A) 唔該[m4goi1|please] 轉車[zyun2ce1|to transfer]
-  B) 唔該[m4goi1|please] 有落[jau5lok6|stop here please]
-  C) 唔該[m4goi1|please] 塞車[sak1ce1|traffic jam]
-  D) 唔該[m4goi1|please] 遲到[ci4dou3|to arrive late]
+  A) 唔該[m4goi1|thank you / please] 轉車[zyun2ce1|to transfer]
+  B) 唔該[m4goi1|thank you / please] 有落[jau5lok6|stop here please]
+  C) 唔該[m4goi1|thank you / please] 塞車[sak1ce1|traffic jam]
+  D) 唔該[m4goi1|thank you / please] 遲到[ci4dou3|to be late]
 answer: B
 explanation: |
-  `唔該[m4goi1|please] 有落[jau5lok6|stop here please]` is the standard colloquial phrase used to request a stop on Hong Kong minibuses.
+  `唔該[m4goi1|thank you / please] 有落[jau5lok6|stop here please]` is the standard colloquial phrase used to request a stop on Hong Kong minibuses.
 ```
 
 ```exercise
 question: |
   Fill in the blank with the correct term for "to get off a vehicle":
-  我[ngo5|I / me] 喺[hai2|at / in / on] 前邊[cin4bin1|up ahead / in front] ______。
+  我[ngo5|I] 喺[hai2|at / in / on] 前邊[cin4bin1|in front] ______。
 answer: 落車[lok6ce1|to get off a vehicle]
 explanation: |
   `落車[lok6ce1|to get off a vehicle]` is the correct verb meaning "to get off a vehicle" (literally "descend car").

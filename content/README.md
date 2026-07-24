@@ -57,8 +57,8 @@ examples/exercises)
 
 - The basic greeting in Cantonese is `你好[nei5hou2|hello]`.
 - To ask for service or say thank you for help, use
-  `唔該[m4goi1|excuse me / please / thank you]`.
-- Multiple choice options can use plain format: `A) 你好[nei5hou2|hello / hi]`
+  `唔該[m4goi1|thank you / please]`.
+- Multiple choice options can use plain format: `A) 你好[nei5hou2|hello]`
 
 ### Formatting Rules
 
@@ -84,7 +84,7 @@ line containing exactly `===`.
 
 ````markdown
 ```cantonese
-唔該[m4goi1|excuse me]，我[ngo5|I]想[soeng2|want to]買[maai5|buy]呢個[ni1go3|this one]。
+唔該[m4goi1|thank you / please]，我[ngo5|I]想[soeng2|to want to]買[maai5|buy]呢個[ni1go3|this one]。
 ===
 Excuse me, I want to buy this one.
 ```
@@ -109,9 +109,9 @@ Cantonese annotated line and its corresponding English translation:
 
 ````markdown
 ```dialog
-A: 唔該[m4goi1|excuse me]，我[ngo5|I]想[soeng2|want to]買[maai5|buy]呢個[ni1go3|this one]。
+A: 唔該[m4goi1|thank you / please]，我[ngo5|I]想[soeng2|to want to]買[maai5|buy]呢個[ni1go3|this one]。
    === Excuse me, I want to buy this one.
-B: 好啊[hou2aa3|sure]，呢個[ni1go3|this one]三十[saam1sap6|thirty]蚊[man1|dollars]。
+B: 好啊[hou2aa3|sure]，呢個[ni1go3|this one]三十[saam1sap6|thirty]蚊[man1|dollar]。
    === Sure, this one is thirty dollars.
 ```
 ````
@@ -146,11 +146,11 @@ only three fields:
 ```exercise
 question: |
   Which of the following is the most natural way to say "Thank you" when someone gives you a gift?
-  A) 唔該[m4goi1|excuse me / thank you for service]
-  B) 多謝[do1ze6|thank you for a gift]
+  A) 唔該[m4goi1|thank you / please]
+  B) 多謝[do1ze6|thank you]
   C) 唔使客氣[m4sai2 haak3hei3|you are welcome]
 answer: B
-explanation: 多謝[do1ze6|thank you for a gift] is used for gifts, compliments, or concrete favors. 唔該[m4goi1|excuse me / thank you for service] is reserved for services or help.
+explanation: 多謝[do1ze6|thank you] is used for gifts, compliments, or concrete favors. 唔該[m4goi1|thank you / please] is reserved for services or help.
 ```
 ````
 
@@ -160,7 +160,7 @@ explanation: 多謝[do1ze6|thank you for a gift] is used for gifts, compliments,
 ```exercise
 question: |
   Fill in the blank with the correct verb for "to eat":
-  我[ngo5|I]想[soeng2|want to] ____ 點心[dim2sam1|dim sum]。
+  我[ngo5|I]想[soeng2|to want to] ____ 點心[dim2sam1|dim sum]。
 answer: 食[sik6|to eat]
 explanation: 食[sik6|to eat] is the colloquial Cantonese verb for "to eat" (equivalent to Mandarin 吃 chī).
 ```
@@ -171,8 +171,8 @@ explanation: 食[sik6|to eat] is the colloquial Cantonese verb for "to eat" (equ
 ````markdown
 ```exercise
 question: Translate "Excuse me, I want to buy this one." into Cantonese.
-answer: 唔該[m4goi1|excuse me]，我[ngo5|I]想[soeng2|want to]買[maai5|buy]呢個[ni1go3|this one]。
-explanation: 唔該[m4goi1|excuse me] is used for "excuse me", 我[ngo5|I] is "I", 想[soeng2|want to] is "want to", 買[maai5|buy] is "buy", and 呢個[ni1go3|this one] is "this one".
+answer: 唔該[m4goi1|thank you / please]，我[ngo5|I]想[soeng2|to want to]買[maai5|buy]呢個[ni1go3|this one]。
+explanation: 唔該[m4goi1|thank you / please] is used for "excuse me", 我[ngo5|I] is "I", 想[soeng2|to want to] is "want to", 買[maai5|buy] is "buy", and 呢個[ni1go3|this one] is "this one".
 ```
 ````
 
@@ -181,9 +181,9 @@ explanation: 唔該[m4goi1|excuse me] is used for "excuse me", 我[ngo5|I] is "I
 ## 7. Linguistic & Formatting Standards
 
 1. **Colloquial and Spoken Focus**: Avoid formal written Chinese vocabulary
-   (e.g. 書面語). Prioritize everyday spoken terms (e.g., use `佢[keoi5|he/she]`
-   instead of `他`, `靚[leng3|pretty]` instead of `漂亮`, `喺[hai2|at/in]`
-   instead of `在`).
+   (e.g. 書面語). Prioritize everyday spoken terms (e.g., use
+   `佢[keoi5|he / she / it]` instead of `他`, `靚[leng3|beautiful]` instead of
+   `漂亮`, `喺[hai2|at / in / on]` instead of `在`).
 2. **Jyutping Accuracy**: Double-check all tones (1-6). Ensure compound words
    like `呢個[ni1go3]` are represented as single units (no spaces in
    romanization) to keep hover annotations clear.

@@ -24,7 +24,7 @@ We will focus on three main areas:
    `返工[faan1gung1|to go to work]`, and `放工[fong3gung1|to finish work]`.
 2. **Slacking Off at the Office**: Learning local expressions for relaxing,
    procrastinating, and slacking off under the boss's radar using
-   `摸魚[mo2jyu4|to slack off]`, `蛇王[se4wong4|to slack off / avoid work]`, and
+   `摸魚[mo2jyu4|to slack off]`, `蛇王[se4wong4|to slack off]`, and
    `Hea[hea1|to chill / slack off]`.
 3. **Overtime, Salaries, and Firing**: Expressing working overtime using
    `OT[o1ti1|to work overtime]`, discussing salaries with
@@ -58,13 +58,13 @@ several high-frequency verbs:
 Let's look at how to put these together in natural conversation:
 
 ```cantonese
-我哋[ngo5dei6|we] 日日[jat6jat6|every day] 返工[faan1gung1|to go to work] 都[dou1|also] 係[hai6|to be] 為咗[wai6zo2|for] 搵食[wan2sik6|to make a living] 啫[ze1|only / just]。
+我哋[ngo5dei6|we] 日日[jat6jat6|every day] 返工[faan1gung1|to go to work] 都[dou1|also / all] 係[hai6|to be / yes] 為咗[wai6zo2|for] 搵食[wan2sik6|to make a living] 啫[ze1|only / just]。
 ===
 We go to work every day just to make a living.
 ```
 
 ```cantonese
-我[ngo5|I] 今日[gam1jat6|today] 同[tung4|with] 同事[tung4si6|colleague] 喺[hai2|at] 公司[gung1si1|company] 食[sik6|to eat] 飯[faan6|rice / meal]。
+我[ngo5|I] 今日[gam1jat6|today] 同[tung4|with / and] 同事[tung4si6|colleague] 喺[hai2|at / in / on] 公司[gung1si1|company] 食[sik6|to eat] 飯[faan6|cooked rice / meal]。
 ===
 I had a meal with my colleague at the company today.
 ```
@@ -76,7 +76,7 @@ I had a meal with my colleague at the company today.
 
 ---
 
-## 2. Slacking Off at the Office: `摸魚[mo2jyu4|to slack off]`, `蛇王[se4wong4|to slack off / avoid work]`, and `Hea[hea1|to chill / slack off]`
+## 2. Slacking Off at the Office: `摸魚[mo2jyu4|to slack off]`, `蛇王[se4wong4|to slack off]`, and `Hea[hea1|to chill / slack off]`
 
 Every office culture has its ways of slacking off, and Cantonese is incredibly
 rich in terms describing these activities. If you are taking a break or
@@ -90,20 +90,20 @@ personal tasks during work hours, or browsing the internet instead of doing
 actual work.
 
 ```cantonese
-佢[keoi5|he / she / it] 成日[seng4jat6|always] 喺[hai2|at] 公司[gung1si1|company] 摸魚[mo2jyu4|to slack off]。
+佢[keoi5|he / she / it] 成日[seng4jat6|always] 喺[hai2|at / in / on] 公司[gung1si1|company] 摸魚[mo2jyu4|to slack off]。
 ===
 He always slacks off at the company.
 ```
 
-### 2. `蛇王[se4wong4|to slack off / avoid work]` (Snake King)
+### 2. `蛇王[se4wong4|to slack off]` (Snake King)
 
-A highly colloquial Cantonese term, `蛇王[se4wong4|to slack off / avoid work]`
-literally means "Snake King." In the workplace, it is used as a verb meaning to
-dodge work, sneak out for a long tea break, or avoid assignments. A person who
-is a serial slacker is often called a "snake."
+A highly colloquial Cantonese term, `蛇王[se4wong4|to slack off]` literally
+means "Snake King." In the workplace, it is used as a verb meaning to dodge
+work, sneak out for a long tea break, or avoid assignments. A person who is a
+serial slacker is often called a "snake."
 
 ```cantonese
-老細[lou5sai3|boss] 唔[m4|not] 喺度[hai2dou6|here]， 我哋[ngo5dei6|we] 一齊[jat1cai4|together] 蛇王[se4wong4|to slack off / avoid work] 啦[laa1|particle]！
+老細[lou5sai3|boss] 唔[m4|not] 喺度[hai2dou6|here / doing something]， 我哋[ngo5dei6|we] 一齊[jat1cai4|together] 蛇王[se4wong4|to slack off] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
 ===
 The boss is not here, let's slack off together!
 ```
@@ -116,7 +116,7 @@ alphabet. It is incredibly versatile and can mean to hang out, chill, do things
 half-heartedly, or loiter around.
 
 ```cantonese
-佢[keoi5|he / she / it] 今日[gam1jat6|today] 唔[m4|not] 想[soeng2|want to] 做嘢[zou6je5|to work]， 只係[zi2hai6|only] 想[soeng2|want to] Hea[hea1|to chill]。
+佢[keoi5|he / she / it] 今日[gam1jat6|today] 唔[m4|not] 想[soeng2|to want to] 做嘢[zou6je5|to work]， 只係[zi2hai6|only] 想[soeng2|to want to] Hea[hea1|to chill / slack off]。
 ===
 He doesn't want to work today; he only wants to chill.
 ```
@@ -135,7 +135,7 @@ extremely common. Cantonese speakers simply use the English initials "OT" as a
 loanword. It can function as both a verb ("to OT") and a noun ("doing OT").
 
 ```cantonese
-我[ngo5|I] 今日[gam1jat6|today] 要[jiu3|need] OT[o1ti1|to work overtime] 呀[aa3|particle]！
+我[ngo5|I] 今日[gam1jat6|today] 要[jiu3|to want / need] OT[o1ti1|to work overtime] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
 ===
 I have to work overtime today!
 ```
@@ -144,11 +144,11 @@ I have to work overtime today!
 
 The word for salary is `人工[jan4gung1|salary]`, which literally means "human
 labor" or "manual work." When you want to request a pay raise, you use the verb
-`加人工[gaa1jan4gung1|to get a raise]`, which combines
-`加[gaa1|to add / increase]` with `人工[jan4gung1|salary]`.
+`加人工[gaa1jan4gung1|to get a raise]`, which combines `加[gaa1|to add]` with
+`人工[jan4gung1|salary]`.
 
 ```cantonese
-老細[lou5sai3|boss] 幫[bong1|for] 我[ngo5|me] 加咗人工[gaa1zo2jan4gung1|got a raise] 喇[laa3|particle]！
+老細[lou5sai3|boss] 幫[bong1|to help] 我[ngo5|I] 加咗人工[gaa1zo2jan4gung1|got a raise] 喇[laa3|sentence-final particle for change of state]！
 ===
 The boss gave me a raise! (Or: The boss got me a raise!)
 ```
@@ -165,7 +165,7 @@ stir-fried, the rolling up of the sleeping mat was likened to a curled-up fried
 squid, and the term stuck as a metaphor for getting dismissed.
 
 ```cantonese
-佢[keoi5|he / she / it] 因為[jan1wai6|because] 喺[hai2|at] 公司[gung1si1|company] 蛇王[se4wong4|to slack off / avoid work]， 俾[bei2|by / to give] 老細[lou5sai3|boss] 炒咗魷魚[caau2zo2jau4jyu2|to get fired] 喇[laa3|particle]！
+佢[keoi5|he / she / it] 因為[jan1wai6|because] 喺[hai2|at / in / on] 公司[gung1si1|company] 蛇王[se4wong4|to slack off]， 俾[bei2|to give / by (passive) / let] 老細[lou5sai3|boss] 炒咗魷魚[caau2zo2jau4jyu2|to get fired] 喇[laa3|sentence-final particle for change of state]！
 ===
 Because he slacked off at the company, he was fired by the boss!
 ```
@@ -177,13 +177,13 @@ When an employee decides to leave on their own terms, they
 better pay), they `跳槽[tiu3cou4|to job hop]` (literally "jumping troughs").
 
 ```cantonese
-我[ngo5|I] 聽日[ting1jat6|tomorrow] 會[wui5|will] 辭職[ci4zik1|to resign] 呀[aa3|particle]。
+我[ngo5|I] 聽日[ting1jat6|tomorrow] 會[wui5|will / can] 辭職[ci4zik1|to resign] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 ===
 I will resign tomorrow.
 ```
 
 ```cantonese
-佢[keoi5|he] 跳槽[tiu3cou4|to job hop] 去[heoi3|to go to] 咗[zo2|completed aspect] 第間[dai6gaan1|another] 公司[gung1si1|company]。
+佢[keoi5|he / she / it] 跳槽[tiu3cou4|to job hop] 去[heoi3|go] 咗[zo2|completed action marker] 第間[dai6gaan1|another] 公司[gung1si1|company]。
 ===
 He job hopped to another company.
 ```
@@ -197,19 +197,19 @@ during a coffee break, complain about their heavy workload, and share their
 wishes for a salary raise.
 
 ```dialog
-A: 你[nei5|you] 聽講[ting1gong2|to hear of / be told] 未[mei6|not yet] 呀[aa3|particle]？ 同事[tung4si6|colleague] 阿[aa3|prefix] David 俾[bei2|by / to give] 老細[lou5sai3|boss] 炒咗魷魚[caau2zo2jau4jyu2|to get fired] 喇[laa3|particle]！
+A: 你[nei5|you] 聽講[ting1gong2|to hear of] 未[mei6|not yet] 呀[aa3|sentence-final particle softening statements, making questions friendly]？ 同事[tung4si6|colleague] 阿[aa3|prefix] David 俾[bei2|to give / by (passive) / let] 老細[lou5sai3|boss] 炒咗魷魚[caau2zo2jau4jyu2|to get fired] 喇[laa3|sentence-final particle for change of state]！
    === Have you heard yet? Our colleague David was fired by the boss!
-B: 點會[dim2wui5|how could] 呀[aa3|particle]？ 佢[keoi5|he] 做嘢[zou6je5|to work] 點會[dim2wui5|how could] 俾[bei2|by / to give] 老細[lou5sai3|boss] 炒[caau2|to stir-fry / speculate / fire] 㗎[gaa3|particle]？
+B: 點會[dim2wui5|how could] 呀[aa3|sentence-final particle softening statements, making questions friendly]？ 佢[keoi5|he / she / it] 做嘢[zou6je5|to work] 點會[dim2wui5|how could] 俾[bei2|to give / by (passive) / let] 老細[lou5sai3|boss] 炒[caau2|to stir-fry / speculate / fire] 㗎[gaa3|sentence-final particle indicating assertion]？
    === How could that be? How could his work get him fired by the boss?
-A: 聽講[ting1gong2|to hear of / be told] 佢[keoi5|he] 喺[hai2|at] 公司[gung1si1|company] 唔[m4|not] 做嘢[zou6je5|to work]， 成日[seng4jat6|always] 摸魚[mo2jyu4|to slack off] 同埋[tung4maai4|and] 蛇王[se4wong4|to slack off / avoid work]。
+A: 聽講[ting1gong2|to hear of] 佢[keoi5|he / she / it] 喺[hai2|at / in / on] 公司[gung1si1|company] 唔[m4|not] 做嘢[zou6je5|to work]， 成日[seng4jat6|always] 摸魚[mo2jyu4|to slack off] 同埋[tung4maai4|and] 蛇王[se4wong4|to slack off]。
    === I heard he doesn't work at the company, and is always slacking off and avoiding work.
-B: 原來[jyun4loi4|as it turns out] 係[hai6|to be] 咁[gam3|so]！ 佢[keoi5|he] 真係[zan1hai6|really] 鍾意[zung1ji3|to like] Hea[hea1|to chill] 啦[laa1|particle]。 咁[gam3|then] 我哋[ngo5dei6|we] 聽日[ting1jat6|tomorrow] 使唔使[sai2 m4 sai2|need or not] OT[o1ti1|to work overtime] 呀[aa3|particle]？
+B: 原來[jyun4loi4|as it turns out] 係[hai6|to be / yes] 咁[gam3|so / to this degree]！ 佢[keoi5|he / she / it] 真係[zan1hai6|really] 鍾意[zung1ji3|to like] Hea[hea1|to chill / slack off] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]。 咁[gam3|so / to this degree] 我哋[ngo5dei6|we] 聽日[ting1jat6|tomorrow] 使唔使[sai2 m4 sai2|need or not] OT[o1ti1|to work overtime] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === So that's how it is! He really likes to chill. Then do we need to work overtime tomorrow?
-A: 要[jiu3|need] 呀[aa3|particle]！ 老細[lou5sai3|boss] 話[waa6|to say / tell / words / speech] 今日[gam1jat6|today] 嘅[ge3|possessive particle] 工作[gung1zok3|work] 全部[cyun4bou6|all] 都[dou1|also] 要[jiu3|need] 搞掂[gaau2dim6|done]。 我[ngo5|I] 攰[gui6|tired] 死[sei2|extremely] 啦[laa1|particle]！
+A: 要[jiu3|to want / need] 呀[aa3|sentence-final particle softening statements, making questions friendly]！ 老細[lou5sai3|boss] 話[waa6|to say] 今日[gam1jat6|today] 嘅[ge3|possessive / linking particle] 工作[gung1zok3|work] 全部[cyun4bou6|all] 都[dou1|also / all] 要[jiu3|to want / need] 搞掂[gaau2dim6|done]。 我[ngo5|I] 攰[gui6|tired] 死[sei2|to death / extremely] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
    === Yes indeed! The boss said today's work all needs to be finished. I'm tired to death!
-B: 係[hai6|to be] 呀[aa3|particle]， 辛苦[san1fu2|painstaking] 啦[laa1|particle]！ 我[ngo5|I] 都[dou1|also] 想[soeng2|to want to / would like to / think] 加人工[gaa1jan4gung1|to get a raise] 呀[aa3|particle softening statements, making questions friendly]！
+B: 係[hai6|to be / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]， 辛苦[san1fu2|exhausting] 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！ 我[ngo5|I] 都[dou1|also / all] 想[soeng2|to want to] 加人工[gaa1jan4gung1|to get a raise] 呀[aa3|sentence-final particle softening statements, making questions friendly]！
    === Yeah, exhausting indeed! I also want to get a raise for myself!
-A: 係[hai6|to be] 呀[aa3|particle]， 如果[jyu4gwo2|if] 有[jau5|have] 錢[cin2|money]， 我哋[ngo5dei6|we] 點會[dim2wui5|how could] 成日[seng4jat6|always] 辛苦[san1fu2|painstakingly] 返工[faan1gung1|go to work] 呀[aa3|particle]？
+A: 係[hai6|to be / yes] 呀[aa3|sentence-final particle softening statements, making questions friendly]， 如果[jyu4gwo2|if] 有[jau5|to have / there is] 錢[cin2|money]， 我哋[ngo5dei6|we] 點會[dim2wui5|how could] 成日[seng4jat6|always] 辛苦[san1fu2|exhausting] 返工[faan1gung1|to go to work] 呀[aa3|sentence-final particle softening statements, making questions friendly]？
    === Indeed, if we had money, how could we always go to work so hard?
 ```
 
@@ -224,25 +224,25 @@ question: |
   Translate the following sentence into Cantonese using correct semantic annotations:
   "I have to work overtime today!"
   (Hint: Use ngo5 for "I", gam1jat6 for "today", jiu3 for "need", o1ti1 for "to work overtime", and aa3 for final particle)
-answer: 我[ngo5|I] 今日[gam1jat6|today] 要[jiu3|need] OT[o1ti1|to work overtime] 呀[aa3|particle softening statements, making questions friendly]。
+answer: 我[ngo5|I] 今日[gam1jat6|today] 要[jiu3|to want / need] OT[o1ti1|to work overtime] 呀[aa3|sentence-final particle softening statements, making questions friendly]。
 explanation: |
-  In Cantonese, working overtime is represented by the English loanword initials `OT[o1ti1|to work overtime]`. The auxiliary verb `要[jiu3|need / have to]` goes before `OT`.
+  In Cantonese, working overtime is represented by the English loanword initials `OT[o1ti1|to work overtime]`. The auxiliary verb `要[jiu3|to want / need]` goes before `OT`.
 ```
 
 ```exercise
 question: |
   Fill in the blank with the correct slang verb to say "to slack off" (literally meaning 'snake king'):
-  我哋[ngo5dei6|we] 唔好[m4hou2|don't] ________ 啦[laa1|particle suggesting, requesting, or encouraging action]！
-answer: 蛇王[se4wong4|to slack off / avoid work]
+  我哋[ngo5dei6|we] 唔好[m4hou2|don't] ________ 啦[laa1|sentence-final particle suggesting, requesting, or encouraging action]！
+answer: 蛇王[se4wong4|to slack off]
 explanation: |
-  `蛇王[se4wong4|to slack off / avoid work]` (Snake King) is a highly common Cantonese verb for avoiding work or slacking off.
+  `蛇王[se4wong4|to slack off]` (Snake King) is a highly common Cantonese verb for avoiding work or slacking off.
 ```
 
 ```exercise
 question: |
   Which of the following Cantonese terms literally means "to stir-fry squid" but colloquially refers to getting fired?
   A) 摸魚[mo2jyu4|to slack off]
-  B) 蛇王[se4wong4|to slack off / avoid work]
+  B) 蛇王[se4wong4|to slack off]
   C) 炒魷魚[caau2jau4jyu2|to get fired]
 answer: C
 explanation: |

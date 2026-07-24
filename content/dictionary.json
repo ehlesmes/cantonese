@@ -48,7 +48,7 @@
   {
     "char": "呀",
     "jyutping": "aa4",
-    "definition": "sentence-final particle softening questions",
+    "definition": "sentence-final particle for questions",
     "type": "particle"
   },
   {
@@ -66,13 +66,13 @@
   {
     "char": "呃",
     "jyutping": "aak1",
-    "definition": "to cheat / trick",
+    "definition": "to cheat",
     "type": "verb"
   },
   {
     "char": "啱啱",
     "jyutping": "aam1aam1",
-    "definition": "just now / exactly",
+    "definition": "just now",
     "type": "adverb"
   },
   {
@@ -84,13 +84,13 @@
   {
     "char": "晏晝",
     "jyutping": "aan3zau3",
-    "definition": "noon / afternoon",
+    "definition": "afternoon",
     "type": "noun"
   },
   {
     "char": "IG",
     "jyutping": "ai1zi1",
-    "definition": "Instagram (slang)",
+    "definition": "Instagram",
     "type": "noun"
   },
   {
@@ -108,7 +108,7 @@
   {
     "char": "嘔",
     "jyutping": "au2",
-    "definition": "to vomit / throw up",
+    "definition": "to vomit",
     "type": "verb"
   },
   {
@@ -120,7 +120,7 @@
   {
     "char": "巴士",
     "jyutping": "baa1si2",
-    "definition": "bus (loanword)",
+    "definition": "bus",
     "type": "noun"
   },
   {
@@ -156,19 +156,19 @@
   {
     "char": "白",
     "jyutping": "baak6",
-    "definition": "love / clearly / white",
+    "definition": "clear / to explain",
     "type": "noun"
   },
   {
     "char": "扮",
     "jyutping": "baan6",
-    "definition": "to pretend / dress up",
+    "definition": "to pretend",
     "type": "verb"
   },
   {
     "char": "扮嘢",
     "jyutping": "baan6je5",
-    "definition": "to pretend / show off",
+    "definition": "to show off",
     "type": "verb"
   },
   {
@@ -180,31 +180,31 @@
   {
     "char": "八達通",
     "jyutping": "baat3daat6tung1",
-    "definition": "Octopus card (Hong Kong contact-less smart card)",
+    "definition": "Octopus card",
     "type": "noun"
   },
   {
     "char": "爆",
     "jyutping": "baau3",
-    "definition": "explosively / extremely (post-adjective intensifier)",
+    "definition": "extremely",
     "type": "adverb"
   },
   {
     "char": "爆數據",
     "jyutping": "baau3 sou3geoi3",
-    "definition": "to exceed mobile data limit (slang)",
+    "definition": "to exceed data limit",
     "type": "verb"
   },
   {
     "char": "爆升",
     "jyutping": "baau3sing1",
-    "definition": "to experience explosive growth",
+    "definition": "to skyrocket",
     "type": "verb"
   },
   {
     "char": "不過",
     "jyutping": "bat1gwo3",
-    "definition": "but / however",
+    "definition": "but",
     "type": "conjunction"
   },
   {
@@ -222,7 +222,7 @@
   {
     "char": "俾",
     "jyutping": "bei2",
-    "definition": "to give / for / let / allow",
+    "definition": "to give / by (passive) / let",
     "type": "verb"
   },
   {
@@ -264,7 +264,7 @@
   {
     "char": "兵",
     "jyutping": "bing1",
-    "definition": "platonic admirer who is led on (literally 'soldier')",
+    "definition": "platonic admirer / soldier",
     "type": "noun"
   },
   {
@@ -282,7 +282,7 @@
   {
     "char": "表",
     "jyutping": "biu2",
-    "definition": "to confess / express",
+    "definition": "to confess / show",
     "type": "verb"
   },
   {
@@ -294,7 +294,7 @@
   {
     "char": "菠蘿包",
     "jyutping": "bo1lo1baau1",
-    "definition": "pineapple bun (sweet crusted bun, usually containing no pineapple)",
+    "definition": "pineapple bun",
     "type": "noun"
   },
   {
@@ -312,13 +312,13 @@
   {
     "char": "幫",
     "jyutping": "bong1",
-    "definition": "to help / for / on behalf of",
+    "definition": "to help",
     "type": "verb"
   },
   {
     "char": "幫手",
     "jyutping": "bong1sau2",
-    "definition": "to help / lend a hand",
+    "definition": "to help out",
     "type": "verb"
   },
   {
@@ -330,19 +330,19 @@
   {
     "char": "步",
     "jyutping": "bou6",
-    "definition": "step / pace",
+    "definition": "step",
     "type": "noun"
   },
   {
     "char": "部",
     "jyutping": "bou6",
-    "definition": "measure word for machines, vehicles, phones, and books",
+    "definition": "classifier for machines",
     "type": "classifier"
   },
   {
     "char": "杯",
     "jyutping": "bui1",
-    "definition": "cup / glass / mug (classifier for drinks)",
+    "definition": "cup",
     "type": "classifier"
   },
   {
@@ -367,13 +367,13 @@
   {
     "char": "差唔多",
     "jyutping": "caa1m4do1",
-    "definition": "almost / about / more or less",
+    "definition": "almost",
     "type": "adverb"
   },
   {
     "char": "叉燒",
     "jyutping": "caa1siu1",
-    "definition": "barbecued pork / char siu",
+    "definition": "char siu",
     "type": "noun"
   },
   {
@@ -385,25 +385,25 @@
   {
     "char": "茶餐廳",
     "jyutping": "caa4caan1teng1",
-    "definition": "Hong Kong style café / diner",
+    "definition": "Hong Kong style café",
     "type": "noun"
   },
   {
     "char": "茶餐廳",
     "jyutping": "caa4caan1ting1",
-    "definition": "Hong Kong style café / diner",
+    "definition": "Hong Kong style café",
     "type": "noun"
   },
   {
     "char": "茶走",
     "jyutping": "caa4zau2",
-    "definition": "milk tea with condensed milk instead of evaporated milk and sugar",
+    "definition": "tea with condensed milk",
     "type": "noun"
   },
   {
     "char": "慘",
     "jyutping": "caam2",
-    "definition": "miserable / pitiful / tragic",
+    "definition": "miserable",
     "type": "adjective"
   },
   {
@@ -415,7 +415,7 @@
   {
     "char": "插頭",
     "jyutping": "caap3tau4",
-    "definition": "electrical socket / plug",
+    "definition": "electrical plug",
     "type": "noun"
   },
   {
@@ -427,13 +427,13 @@
   {
     "char": "炒股",
     "jyutping": "caau2gu2",
-    "definition": "to speculate in stocks / trade stocks",
+    "definition": "to trade stocks",
     "type": "verb"
   },
   {
     "char": "炒魷魚",
     "jyutping": "caau2jau4jyu2",
-    "definition": "to get fired / lay off / fire someone",
+    "definition": "to get fired",
     "type": "verb"
   },
   {
@@ -463,13 +463,13 @@
   {
     "char": "車",
     "jyutping": "ce1",
-    "definition": "car / vehicle",
+    "definition": "car",
     "type": "noun"
   },
   {
     "char": "呎",
     "jyutping": "cek3",
-    "definition": "square foot / feet",
+    "definition": "square foot",
     "type": "noun"
   },
   {
@@ -487,13 +487,13 @@
   {
     "char": "吹水",
     "jyutping": "ceoi1seoi2",
-    "definition": "to chat / shoot the breeze / gossip",
+    "definition": "to chat / gossip",
     "type": "verb"
   },
   {
     "char": "出",
     "jyutping": "ceot1",
-    "definition": "to exit / go out / leave",
+    "definition": "to exit",
     "type": "verb"
   },
   {
@@ -505,7 +505,7 @@
   {
     "char": "出軌",
     "jyutping": "ceot1gwai2",
-    "definition": "to cheat / have an affair / infidelity",
+    "definition": "to have an affair",
     "type": "verb"
   },
   {
@@ -517,7 +517,7 @@
   {
     "char": "出糧",
     "jyutping": "ceot1loeng4",
-    "definition": "to get paid / receive salary",
+    "definition": "salary",
     "type": "verb"
   },
   {
@@ -529,19 +529,19 @@
   {
     "char": "出太陽",
     "jyutping": "ceot1taai3joeng4",
-    "definition": "the sun comes out / sunny",
+    "definition": "sunny",
     "type": "expression"
   },
   {
     "char": "次",
     "jyutping": "ci3",
-    "definition": "time / occurrence (classifier)",
+    "definition": "time (occurrence)",
     "type": "classifier"
   },
   {
     "char": "廁所",
     "jyutping": "ci3so2",
-    "definition": "toilet / restroom",
+    "definition": "toilet",
     "type": "noun"
   },
   {
@@ -553,7 +553,7 @@
   {
     "char": "遲到",
     "jyutping": "ci4dou3",
-    "definition": "to be late / arrive late",
+    "definition": "to be late",
     "type": "verb"
   },
   {
@@ -577,7 +577,7 @@
   {
     "char": "潛水",
     "jyutping": "cim4seoi2",
-    "definition": "to lurk / go offline / go silent",
+    "definition": "to go silent / lurk",
     "type": "verb"
   },
   {
@@ -598,25 +598,25 @@
   {
     "char": "前邊",
     "jyutping": "cin4bin1",
-    "definition": "up ahead / in front",
+    "definition": "in front",
     "type": "noun"
   },
   {
     "char": "前面",
     "jyutping": "cin4min6",
-    "definition": "in front / front side",
+    "definition": "in front",
     "type": "noun"
   },
   {
     "char": "請",
     "jyutping": "cing2",
-    "definition": "to apply for / request / invite / treat / please",
+    "definition": "to invite / request / treat",
     "type": "verb"
   },
   {
     "char": "請假",
     "jyutping": "cing2gaa3",
-    "definition": "to apply for leave / request time off",
+    "definition": "to request leave",
     "type": "verb"
   },
   {
@@ -634,13 +634,13 @@
   {
     "char": "潮濕",
     "jyutping": "ciu4sap1",
-    "definition": "humid / damp / moist",
+    "definition": "humid",
     "type": "adjective"
   },
   {
     "char": "錯",
     "jyutping": "co3",
-    "definition": "wrong / incorrect / mistake",
+    "definition": "wrong",
     "type": "adjective"
   },
   {
@@ -682,7 +682,7 @@
   {
     "char": "腸胃炎",
     "jyutping": "coeng4wai6jim4",
-    "definition": "gastroenteritis / stomach flu",
+    "definition": "stomach flu",
     "type": "noun"
   },
   {
@@ -718,25 +718,25 @@
   {
     "char": "全部",
     "jyutping": "cyun4bou6",
-    "definition": "all / entirely",
+    "definition": "all",
     "type": "adverb"
   },
   {
     "char": "傳染",
     "jyutping": "cyun4jim5",
-    "definition": "to infect / infectious / contagious",
+    "definition": "to infect / contagious",
     "type": "verb"
   },
   {
     "char": "打爛",
     "jyutping": "da2laan6",
-    "definition": "to break / smash / shatter",
+    "definition": "to break",
     "type": "verb"
   },
   {
     "char": "打",
     "jyutping": "daa2",
-    "definition": "to beat / hit / strike",
+    "definition": "to hit",
     "type": "verb"
   },
   {
@@ -766,7 +766,7 @@
   {
     "char": "打卡",
     "jyutping": "daa2kaa1",
-    "definition": "to check-in",
+    "definition": "check-in",
     "type": "verb"
   },
   {
@@ -784,13 +784,13 @@
   {
     "char": "打算",
     "jyutping": "daa2syun3",
-    "definition": "to plan / intend",
+    "definition": "to plan",
     "type": "verb"
   },
   {
     "char": "帶",
     "jyutping": "daai3",
-    "definition": "to bring / carry",
+    "definition": "to bring",
     "type": "verb"
   },
   {
@@ -802,13 +802,13 @@
   {
     "char": "大",
     "jyutping": "daai6",
-    "definition": "big / large / great",
+    "definition": "big",
     "type": "adjective"
   },
   {
     "char": "大家",
     "jyutping": "daai6gaa1",
-    "definition": "everyone / all of us",
+    "definition": "everyone",
     "type": "pronoun"
   },
   {
@@ -826,19 +826,19 @@
   {
     "char": "大鱷",
     "jyutping": "daai6ngok6",
-    "definition": "market shark / big player",
+    "definition": "market shark",
     "type": "noun"
   },
   {
     "char": "大聲",
     "jyutping": "daai6sing1",
-    "definition": "loud voice / loudly",
+    "definition": "loudly",
     "type": "adverb"
   },
   {
     "char": "單",
     "jyutping": "daan1",
-    "definition": "bill / receipt / sheet",
+    "definition": "bill / receipt",
     "type": "noun"
   },
   {
@@ -856,7 +856,7 @@
   {
     "char": "但係",
     "jyutping": "daan6hai6",
-    "definition": "but / however",
+    "definition": "but",
     "type": "conjunction"
   },
   {
@@ -874,19 +874,19 @@
   {
     "char": "搭",
     "jyutping": "daap3",
-    "definition": "to take / ride",
+    "definition": "to ride",
     "type": "verb"
   },
   {
     "char": "搭車",
     "jyutping": "daap3ce1",
-    "definition": "to take transit / ride a vehicle",
+    "definition": "to take transit",
     "type": "verb"
   },
   {
     "char": "搭枱",
     "jyutping": "daap3toi2",
-    "definition": "to share a table with strangers",
+    "definition": "to share a table",
     "type": "verb"
   },
   {
@@ -898,13 +898,13 @@
   {
     "char": "第日",
     "jyutping": "dai6jat6",
-    "definition": "another day / some day in the future",
+    "definition": "another day",
     "type": "noun"
   },
   {
     "char": "得",
     "jyutping": "dak1",
-    "definition": "can / okay / permissible / particle expressing permission, possibility, capability, or adverbial degree",
+    "definition": "okay / can / ready",
     "type": "particle",
     "notes": "Used in potential structures (verb + 得 + adjective/complement) meaning 'can'."
   },
@@ -917,13 +917,13 @@
   {
     "char": "得滯",
     "jyutping": "dak1zai6",
-    "definition": "too / excessively (post-adjective intensifier)",
+    "definition": "excessively",
     "type": "adverb"
   },
   {
     "char": "燈",
     "jyutping": "dang1",
-    "definition": "light / lamp",
+    "definition": "light",
     "type": "noun"
   },
   {
@@ -935,7 +935,7 @@
   {
     "char": "等",
     "jyutping": "dang2",
-    "definition": "wait for",
+    "definition": "wait",
     "type": "verb"
   },
   {
@@ -947,19 +947,19 @@
   {
     "char": "特價",
     "jyutping": "dat6 gaa3",
-    "definition": "special price / bargain price",
+    "definition": "special price",
     "type": "noun"
   },
   {
     "char": "抖",
     "jyutping": "dau2",
-    "definition": "to rest / take a break",
+    "definition": "to rest",
     "type": "verb"
   },
   {
     "char": "抖吓",
     "jyutping": "dau2haa5",
-    "definition": "to rest a bit / take a brief break",
+    "definition": "to rest a bit",
     "type": "verb"
   },
   {
@@ -1007,7 +1007,7 @@
   {
     "char": "對",
     "jyutping": "deoi3",
-    "definition": "pair / couple (classifier for paired objects like shoes)",
+    "definition": "pair (classifier)",
     "type": "classifier"
   },
   {
@@ -1020,13 +1020,13 @@
   {
     "char": "啲",
     "jyutping": "di1",
-    "definition": "a bit / some / comparative suffix",
+    "definition": "a bit / some",
     "type": "particle"
   },
   {
     "char": "的士",
     "jyutping": "dik1si2",
-    "definition": "taxi (loanword)",
+    "definition": "taxi",
     "type": "noun"
   },
   {
@@ -1038,14 +1038,14 @@
   {
     "char": "點",
     "jyutping": "dim2",
-    "definition": "o'clock / hour",
+    "definition": "o'clock",
     "type": "classifier",
     "notes": "Used after numerals to indicate hours (e.g. 兩點)."
   },
   {
     "char": "點呀",
     "jyutping": "dim2aa3",
-    "definition": "how is it? / how are things? / what's up?",
+    "definition": "what's up?",
     "type": "expression"
   },
   {
@@ -1069,7 +1069,7 @@
   {
     "char": "點會",
     "jyutping": "dim2wui5",
-    "definition": "how could / how can",
+    "definition": "how could",
     "type": "pronoun"
   },
   {
@@ -1106,7 +1106,7 @@
   {
     "char": "叮叮",
     "jyutping": "ding1ding1",
-    "definition": "tram (colloquial)",
+    "definition": "tram",
     "type": "noun"
   },
   {
@@ -1124,13 +1124,13 @@
   {
     "char": "頂住",
     "jyutping": "ding2zyu6",
-    "definition": "to hold on / hang in there / endure",
+    "definition": "to endure",
     "type": "verb"
   },
   {
     "char": "定",
     "jyutping": "ding6",
-    "definition": "or (used exclusively in alternative questions)",
+    "definition": "or",
     "type": "conjunction",
     "notes": "Example: A定B? (A or B?)"
   },
@@ -1143,7 +1143,7 @@
   {
     "char": "碟",
     "jyutping": "dip6",
-    "definition": "plate / dish (classifier for food dishes)",
+    "definition": "plate (classifier)",
     "type": "classifier"
   },
   {
@@ -1155,50 +1155,50 @@
   {
     "char": "多",
     "jyutping": "do1",
-    "definition": "many / much",
+    "definition": "many",
     "type": "adjective"
   },
   {
     "char": "多謝",
     "jyutping": "do1ze6",
-    "definition": "thank you (for a gift, compliment, or hospitality)",
+    "definition": "thank you",
     "type": "expression",
     "notes": "Used when receiving tangible items, gifts, money, or compliments."
   },
   {
     "char": "都",
     "jyutping": "dou1",
-    "definition": "also / both / all",
+    "definition": "also / all",
     "type": "adverb"
   },
   {
     "char": "到",
     "jyutping": "dou2",
-    "definition": "can manage to / successfully do",
+    "definition": "successfully do (verb complement)",
     "type": "particle"
   },
   {
     "char": "到",
     "jyutping": "dou3",
-    "definition": "to arrive at / reach / to / structural particle introducing degree, result, or point of",
+    "definition": "to arrive / until",
     "type": "verb"
   },
   {
     "char": "到極",
     "jyutping": "dou3gik6",
-    "definition": "extremely / to the absolute limit",
+    "definition": "extremely",
     "type": "adverb"
   },
   {
     "char": "度",
     "jyutping": "dou6",
-    "definition": "place / location / degree",
+    "definition": "degree / place",
     "type": "noun"
   },
   {
     "char": "讀",
     "jyutping": "duk6",
-    "definition": "to study / read (aloud)",
+    "definition": "to study / read aloud",
     "type": "verb"
   },
   {
@@ -1210,7 +1210,7 @@
   {
     "char": "凍",
     "jyutping": "dung3",
-    "definition": "cold / iced",
+    "definition": "cold",
     "type": "adjective"
   },
   {
@@ -1222,13 +1222,13 @@
   {
     "char": "嘟",
     "jyutping": "dut1",
-    "definition": "to tap a card / scan / beep",
+    "definition": "to tap a card",
     "type": "verb"
   },
   {
     "char": "短訊",
     "jyutping": "dyun2seon3",
-    "definition": "text message / SMS",
+    "definition": "text message",
     "type": "noun"
   },
   {
@@ -1240,25 +1240,25 @@
   {
     "char": "斷",
     "jyutping": "dyun6",
-    "definition": "to snap/break",
+    "definition": "to snap",
     "type": "verb"
   },
   {
     "char": "斷片",
     "jyutping": "dyun6pin2",
-    "definition": "to blackout / memory lapse from drinking",
+    "definition": "to blackout",
     "type": "verb"
   },
   {
     "char": "FB",
     "jyutping": "ef1bi1",
-    "definition": "Facebook (slang)",
+    "definition": "Facebook",
     "type": "noun"
   },
   {
     "char": "AA制",
     "jyutping": "ei1ei1zai3",
-    "definition": "going Dutch / splitting the bill",
+    "definition": "splitting the bill",
     "type": "expression"
   },
   {
@@ -1276,7 +1276,7 @@
   {
     "char": "App",
     "jyutping": "ep1",
-    "definition": "mobile application / app",
+    "definition": "app",
     "type": "noun"
   },
   {
@@ -1294,25 +1294,25 @@
   {
     "char": "快",
     "jyutping": "faai3",
-    "definition": "fast / quick / rapid",
+    "definition": "fast",
     "type": "adjective"
   },
   {
     "char": "快樂",
     "jyutping": "faai3lok6",
-    "definition": "happy / joyful",
+    "definition": "happy",
     "type": "adjective"
   },
   {
     "char": "返",
     "jyutping": "faan1",
-    "definition": "to return / go back / reverse",
+    "definition": "to return",
     "type": "verb"
   },
   {
     "char": "返工",
     "jyutping": "faan1gung1",
-    "definition": "to go to work / be at work",
+    "definition": "to go to work",
     "type": "verb"
   },
   {
@@ -1324,7 +1324,7 @@
   {
     "char": "反而",
     "jyutping": "faan2ji4",
-    "definition": "on the contrary / instead",
+    "definition": "instead",
     "type": "conjunction"
   },
   {
@@ -1336,13 +1336,13 @@
   {
     "char": "發",
     "jyutping": "faat3",
-    "definition": "to emit / generate / dream / develop",
+    "definition": "to emit / dream",
     "type": "verb"
   },
   {
     "char": "發夢",
     "jyutping": "faat3mung6",
-    "definition": "to dream / daydream",
+    "definition": "to daydream",
     "type": "verb"
   },
   {
@@ -1360,7 +1360,7 @@
   {
     "char": "分",
     "jyutping": "fan1",
-    "definition": "minute / to divide / separate / split",
+    "definition": "minute / to divide",
     "type": "classifier",
     "notes": "Used after numerals to indicate minutes, or as a verb meaning to divide/separate."
   },
@@ -1398,13 +1398,13 @@
   {
     "char": "飛機王",
     "jyutping": "fei1gei1wong4",
-    "definition": "chronic flake / person who always stands others up",
+    "definition": "chronic flake",
     "type": "noun"
   },
   {
     "char": "非常",
     "jyutping": "fei1soeng4",
-    "definition": "very / extremely",
+    "definition": "very",
     "type": "adverb"
   },
   {
@@ -1422,7 +1422,7 @@
   {
     "char": "火牛",
     "jyutping": "fo2ngau4",
-    "definition": "power adapter / charger (slang)",
+    "definition": "power adapter",
     "type": "noun"
   },
   {
@@ -1434,25 +1434,25 @@
   {
     "char": "房",
     "jyutping": "fong2",
-    "definition": "room / bedroom",
+    "definition": "room",
     "type": "noun"
   },
   {
     "char": "放",
     "jyutping": "fong3",
-    "definition": "to release / let go / put",
+    "definition": "to release / place",
     "type": "verb"
   },
   {
     "char": "放飛機",
     "jyutping": "fong3fei1gei1",
-    "definition": "to stand someone up / break a promise",
+    "definition": "to stand someone up",
     "type": "verb"
   },
   {
     "char": "放假",
     "jyutping": "fong3gaa3",
-    "definition": "to have a holiday / day off",
+    "definition": "to have a day off",
     "type": "verb"
   },
   {
@@ -1464,49 +1464,49 @@
   {
     "char": "放心",
     "jyutping": "fong3sam1",
-    "definition": "to feel relieved / set one's mind at ease",
+    "definition": "to feel relieved",
     "type": "verb"
   },
   {
     "char": "放閃",
     "jyutping": "fong3sim2",
-    "definition": "to show public displays of affection / show PDA",
+    "definition": "to show PDA",
     "type": "verb"
   },
   {
     "char": "褲",
     "jyutping": "fu3",
-    "definition": "pants / trousers",
+    "definition": "pants",
     "type": "noun"
   },
   {
     "char": "附近",
     "jyutping": "fu6gan6",
-    "definition": "nearby / neighborhood",
+    "definition": "nearby",
     "type": "noun"
   },
   {
     "char": "父母",
     "jyutping": "fu6mou5",
-    "definition": "parents / father and mother",
+    "definition": "parents",
     "type": "noun"
   },
   {
     "char": "覆",
     "jyutping": "fuk1",
-    "definition": "to reply / write back",
+    "definition": "to reply",
     "type": "verb"
   },
   {
     "char": "風",
     "jyutping": "fung1",
-    "definition": "wind / typhoon",
+    "definition": "wind",
     "type": "noun"
   },
   {
     "char": "加",
     "jyutping": "gaa1",
-    "definition": "to add / increase",
+    "definition": "to add",
     "type": "verb"
   },
   {
@@ -1530,7 +1530,7 @@
   {
     "char": "加上",
     "jyutping": "gaa1soeng5",
-    "definition": "moreover / plus",
+    "definition": "moreover",
     "type": "conjunction"
   },
   {
@@ -1548,19 +1548,19 @@
   {
     "char": "假",
     "jyutping": "gaa2",
-    "definition": "fake / false / artificial",
+    "definition": "fake",
     "type": "adjective"
   },
   {
     "char": "假使",
     "jyutping": "gaa2si2",
-    "definition": "if / in case / supposing",
+    "definition": "if",
     "type": "conjunction"
   },
   {
     "char": "㗎",
     "jyutping": "gaa3",
-    "definition": "sentence-final particle conveying assertion or questioning past events",
+    "definition": "sentence-final particle indicating assertion",
     "type": "particle"
   },
   {
@@ -1572,7 +1572,7 @@
   {
     "char": "咖啡",
     "jyutping": "gaa3fe1",
-    "definition": "coffee (loanword)",
+    "definition": "coffee",
     "type": "noun"
   },
   {
@@ -1602,13 +1602,13 @@
   {
     "char": "介紹",
     "jyutping": "gaai3siu6",
-    "definition": "to introduce / recommend",
+    "definition": "to introduce",
     "type": "verb"
   },
   {
     "char": "隔籬",
     "jyutping": "gaak3lei4",
-    "definition": "next to / beside / neighbor",
+    "definition": "next to",
     "type": "noun"
   },
   {
@@ -1620,13 +1620,13 @@
   {
     "char": "減價",
     "jyutping": "gaam2 gaa3",
-    "definition": "to reduce price / go on sale",
+    "definition": "to go on sale",
     "type": "verb"
   },
   {
     "char": "間",
     "jyutping": "gaan1",
-    "definition": "classifier for buildings / shops / rooms",
+    "definition": "classifier for buildings",
     "type": "classifier"
   },
   {
@@ -1638,7 +1638,7 @@
   {
     "char": "搞掂",
     "jyutping": "gaau2dim6",
-    "definition": "done / finished / settled / resolved",
+    "definition": "done",
     "type": "adjective",
     "notes": "Extremely common colloquial Cantonese slang for completing a task."
   },
@@ -1651,7 +1651,7 @@
   {
     "char": "繼續",
     "jyutping": "gai3zuk6",
-    "definition": "to continue / go on",
+    "definition": "to continue",
     "type": "verb"
   },
   {
@@ -1675,7 +1675,7 @@
   {
     "char": "噉",
     "jyutping": "gam2",
-    "definition": "then / in that case / so",
+    "definition": "like this / then",
     "type": "conjunction"
   },
   {
@@ -1693,44 +1693,44 @@
   {
     "char": "咁樣",
     "jyutping": "gam2joeng6",
-    "definition": "like this / in this way",
+    "definition": "like this",
     "type": "expression"
   },
   {
     "char": "噉樣",
     "jyutping": "gam2joeng6",
-    "definition": "in this way / like this / this pattern",
+    "definition": "like this",
     "type": "adverb"
   },
   {
     "char": "感冒",
     "jyutping": "gam2mou6",
-    "definition": "common cold / to catch a cold",
+    "definition": "common cold",
     "type": "noun"
   },
   {
     "char": "咁",
     "jyutping": "gam3",
-    "definition": "so / such / to this degree",
+    "definition": "so / to this degree",
     "type": "adverb"
   },
   {
     "char": "跟住",
     "jyutping": "gan1zyu6",
-    "definition": "and then / next / follow",
+    "definition": "and then",
     "type": "conjunction"
   },
   {
     "char": "緊",
     "jyutping": "gan2",
-    "definition": "verbal aspect suffix indicating an action in progress (continuous aspect)",
+    "definition": "continuous aspect marker",
     "type": "particle",
     "notes": "Attaches directly to verbs to show ongoing action (equivalent to Mandarin 正在 zhèngzài)."
   },
   {
     "char": "近",
     "jyutping": "gan6",
-    "definition": "near / close",
+    "definition": "near",
     "type": "adjective"
   },
   {
@@ -1754,13 +1754,13 @@
   {
     "char": "九個字",
     "jyutping": "gau2go3zi6",
-    "definition": "45 minutes / three quarters",
+    "definition": "45 minutes",
     "type": "noun"
   },
   {
     "char": "夠",
     "jyutping": "gau3",
-    "definition": "enough / sufficient",
+    "definition": "enough",
     "type": "adjective"
   },
   {
@@ -1772,7 +1772,7 @@
   {
     "char": "嘅",
     "jyutping": "ge3",
-    "definition": "possessive particle / nominalizing particle / final assertive particle",
+    "definition": "possessive / linking particle",
     "type": "particle",
     "notes": "Indicates possession (like 's, equivalent to Mandarin 的 de) or asserts a state."
   },
@@ -1785,7 +1785,7 @@
   {
     "char": "幾",
     "jyutping": "gei2",
-    "definition": "quite / pretty / fairly",
+    "definition": "quite",
     "type": "adverb"
   },
   {
@@ -1815,7 +1815,7 @@
   {
     "char": "幾點",
     "jyutping": "gei2dim2",
-    "definition": "what time / when",
+    "definition": "what time",
     "type": "pronoun",
     "notes": "Question word asking for the time."
   },
@@ -1834,7 +1834,7 @@
   {
     "char": "幾時",
     "jyutping": "gei2si4",
-    "definition": "when / what time",
+    "definition": "when",
     "type": "pronoun"
   },
   {
@@ -1852,19 +1852,19 @@
   {
     "char": "既然",
     "jyutping": "gei3jin4",
-    "definition": "since / given that",
+    "definition": "since",
     "type": "conjunction"
   },
   {
     "char": "極",
     "jyutping": "gik6",
-    "definition": "extremely / to the limit",
+    "definition": "extremely",
     "type": "adverb"
   },
   {
     "char": "檢查",
     "jyutping": "gim2caa4",
-    "definition": "to examine / check / inspect",
+    "definition": "to examine",
     "type": "verb"
   },
   {
@@ -1888,7 +1888,7 @@
   {
     "char": "叫",
     "jyutping": "giu3",
-    "definition": "to be called / to call",
+    "definition": "to be called / call",
     "type": "verb"
   },
   {
@@ -1918,7 +1918,7 @@
   {
     "char": "個",
     "jyutping": "go3",
-    "definition": "general measure word / individual / unit",
+    "definition": "general classifier",
     "type": "classifier"
   },
   {
@@ -1930,19 +1930,19 @@
   {
     "char": "趕時間",
     "jyutping": "gon2si4gaan1",
-    "definition": "in a hurry / rushing for time",
+    "definition": "in a hurry",
     "type": "expression"
   },
   {
     "char": "趕時間",
     "jyutping": "gon2si4gaan3",
-    "definition": "in a hurry / rushing for time",
+    "definition": "in a hurry",
     "type": "expression"
   },
   {
     "char": "講",
     "jyutping": "gong2",
-    "definition": "to speak / say / talk",
+    "definition": "to speak",
     "type": "verb"
   },
   {
@@ -1954,37 +1954,37 @@
   {
     "char": "港股",
     "jyutping": "gong2gu2",
-    "definition": "Hong Kong stocks / HK shares",
+    "definition": "Hong Kong stocks",
     "type": "noun"
   },
   {
     "char": "高",
     "jyutping": "gou1",
-    "definition": "tall / high",
+    "definition": "tall",
     "type": "adjective"
   },
   {
     "char": "估",
     "jyutping": "gu2",
-    "definition": "to guess / estimate",
+    "definition": "to guess",
     "type": "verb"
   },
   {
     "char": "股票",
     "jyutping": "gu2piu3",
-    "definition": "stock / share",
+    "definition": "stock",
     "type": "noun"
   },
   {
     "char": "攰",
     "jyutping": "gui6",
-    "definition": "tired / exhausted",
+    "definition": "tired",
     "type": "adjective"
   },
   {
     "char": "局",
     "jyutping": "guk6",
-    "definition": "gathering / social event / plan",
+    "definition": "gathering",
     "type": "noun"
   },
   {
@@ -1996,19 +1996,19 @@
   {
     "char": "工",
     "jyutping": "gung1",
-    "definition": "work / job",
+    "definition": "job",
     "type": "noun"
   },
   {
     "char": "供樓",
     "jyutping": "gung1lau2",
-    "definition": "to pay mortgage (on property)",
+    "definition": "to pay a mortgage",
     "type": "verb"
   },
   {
     "char": "公司",
     "jyutping": "gung1si1",
-    "definition": "company / office",
+    "definition": "company",
     "type": "noun"
   },
   {
@@ -2032,7 +2032,7 @@
   {
     "char": "鬼死咁",
     "jyutping": "gwai2sei2gam3",
-    "definition": "extremely / awfully (pre-adjective intensifier)",
+    "definition": "awfully",
     "type": "adverb"
   },
   {
@@ -2044,7 +2044,7 @@
   {
     "char": "過",
     "jyutping": "gwo3",
-    "definition": "verbal aspect suffix indicating past experience / 'have done before' / to pass or cross",
+    "definition": "past experience marker / to cross / than",
     "type": "particle",
     "notes": "Attaches directly to verbs to denote experiential aspect (equivalent to Mandarin 过 guo)."
   },
@@ -2063,7 +2063,7 @@
   {
     "char": "過十字路口",
     "jyutping": "gwo3sap6zi6lou6hau2",
-    "definition": "to cross the intersection",
+    "definition": "cross the intersection",
     "type": "verb"
   },
   {
@@ -2099,26 +2099,26 @@
   {
     "char": "吓",
     "jyutping": "haa2",
-    "definition": "sentence-final particle expressing surprise, disbelief, or seeking quick confirmation",
+    "definition": "interjection expressing surprise",
     "type": "particle",
     "notes": "Can also be used as an independent exclamation ('What?!')."
   },
   {
     "char": "吓",
     "jyutping": "haa5",
-    "definition": "verbal suffix indicating a brief action or attempt",
+    "definition": "brief action marker",
     "type": "particle"
   },
   {
     "char": "下場",
     "jyutping": "haa6coeng4",
-    "definition": "next venue / afterparty / next round",
+    "definition": "afterparty",
     "type": "noun"
   },
   {
     "char": "下面",
     "jyutping": "haa6min6",
-    "definition": "below / under / lower side",
+    "definition": "below",
     "type": "noun"
   },
   {
@@ -2142,13 +2142,13 @@
   {
     "char": "蟹",
     "jyutping": "haai5",
-    "definition": "stuck / trapped in a losing stock (slang)",
+    "definition": "crab / trapped in a losing stock",
     "type": "adjective"
   },
   {
     "char": "客廳",
     "jyutping": "haak3teng1",
-    "definition": "living room / parlor",
+    "definition": "living room",
     "type": "noun"
   },
   {
@@ -2160,13 +2160,13 @@
   {
     "char": "喊",
     "jyutping": "haam3",
-    "definition": "to cry / weep",
+    "definition": "to cry",
     "type": "verb"
   },
   {
     "char": "慳",
     "jyutping": "haan1",
-    "definition": "to save (money / time) / cut down / economize",
+    "definition": "to save (money or time)",
     "type": "verb"
   },
   {
@@ -2196,7 +2196,7 @@
   {
     "char": "行山",
     "jyutping": "haang4saan1",
-    "definition": "to go hiking / climb mountains",
+    "definition": "to go hiking",
     "type": "verb"
   },
   {
@@ -2208,25 +2208,25 @@
   {
     "char": "喺",
     "jyutping": "hai2",
-    "definition": "at / in / on (location) / locative preposition",
+    "definition": "at / in / on",
     "type": "preposition"
   },
   {
     "char": "喺度",
     "jyutping": "hai2dou6",
-    "definition": "here / present / in the middle of doing something",
+    "definition": "here / doing something",
     "type": "expression"
   },
   {
     "char": "係",
     "jyutping": "hai6",
-    "definition": "to be (am / is / are) / yes",
+    "definition": "to be / yes",
     "type": "verb"
   },
   {
     "char": "係唔係",
     "jyutping": "hai6 m4 hai6",
-    "definition": "is it or not? / is that right? (A-not-A question form)",
+    "definition": "is it?",
     "type": "expression"
   },
   {
@@ -2238,13 +2238,13 @@
   {
     "char": "係咁",
     "jyutping": "hai6gam2",
-    "definition": "continuously / constantly",
+    "definition": "continuously",
     "type": "adverb"
   },
   {
     "char": "係唔係",
     "jyutping": "hai6m4hai6",
-    "definition": "is it or not? / is that right? (A-not-A question form)",
+    "definition": "is it?",
     "type": "expression"
   },
   {
@@ -2256,7 +2256,7 @@
   {
     "char": "係咩",
     "jyutping": "hai6me1",
-    "definition": "really? / is that so?",
+    "definition": "really?",
     "type": "expression"
   },
   {
@@ -2268,19 +2268,19 @@
   {
     "char": "黑",
     "jyutping": "hak1",
-    "definition": "black / dark / unlucky / sinister",
+    "definition": "black",
     "type": "adjective"
   },
   {
     "char": "黑面",
     "jyutping": "hak1min6",
-    "definition": "to pull a long face / look angry",
+    "definition": "angry face",
     "type": "verb"
   },
   {
     "char": "行",
     "jyutping": "hang4",
-    "definition": "to walk / go / run (a machine)",
+    "definition": "to walk",
     "type": "verb"
   },
   {
@@ -2292,7 +2292,7 @@
   {
     "char": "合約",
     "jyutping": "hap6joek3",
-    "definition": "contract / agreement",
+    "definition": "contract",
     "type": "noun"
   },
   {
@@ -2310,44 +2310,44 @@
   {
     "char": "後面",
     "jyutping": "hau6min6",
-    "definition": "behind / back side",
+    "definition": "behind",
     "type": "noun"
   },
   {
     "char": "hea",
     "jyutping": "hea1",
-    "definition": "to chill / hang out / slack off / procrastinate",
+    "definition": "to chill / slack off",
     "type": "verb"
   },
   {
     "char": "Hea",
     "jyutping": "hea1",
-    "definition": "to chill / hang out / slack off / procrastinate",
+    "definition": "to chill / slack off",
     "type": "verb",
     "notes": "A very popular modern Cantonese slang word with no direct Chinese character."
   },
   {
     "char": "Hea",
     "jyutping": "hea3",
-    "definition": "to chill / hang out / slack off / procrastinate",
+    "definition": "to chill / slack off",
     "type": "verb"
   },
   {
     "char": "希望",
     "jyutping": "hei1mong6",
-    "definition": "to hope / wish",
+    "definition": "to hope",
     "type": "verb"
   },
   {
     "char": "去",
     "jyutping": "heoi3",
-    "definition": "to go",
+    "definition": "go",
     "type": "verb"
   },
   {
     "char": "去街",
     "jyutping": "heoi3gaai1",
-    "definition": "go out / go on a date / walk on the street",
+    "definition": "to go out",
     "type": "verb"
   },
   {
@@ -2359,20 +2359,20 @@
   {
     "char": "可以",
     "jyutping": "ho2ji5",
-    "definition": "can / may / possible",
+    "definition": "can",
     "type": "auxiliary verb",
     "notes": "Indicates permission or situational capability."
   },
   {
     "char": "可樂",
     "jyutping": "ho2lok6",
-    "definition": "cola / Coke",
+    "definition": "cola",
     "type": "noun"
   },
   {
     "char": "可唔可以",
     "jyutping": "ho2m4ho2ji5",
-    "definition": "can or cannot / may or may not (A-not-A question form)",
+    "definition": "can you?",
     "type": "expression"
   },
   {
@@ -2390,37 +2390,37 @@
   {
     "char": "向",
     "jyutping": "hoeng3",
-    "definition": "towards / to",
+    "definition": "towards",
     "type": "preposition"
   },
   {
     "char": "開",
     "jyutping": "hoi1",
-    "definition": "to write (a prescription) / prescribe / open / start",
+    "definition": "to open / turn on / prescribe",
     "type": "verb"
   },
   {
     "char": "開始",
     "jyutping": "hoi1ci2",
-    "definition": "to start / begin",
+    "definition": "to start",
     "type": "verb"
   },
   {
     "char": "開關",
     "jyutping": "hoi1gwaan1",
-    "definition": "switch / to turn on or off",
+    "definition": "switch",
     "type": "noun"
   },
   {
     "char": "開心",
     "jyutping": "hoi1sam1",
-    "definition": "happy / glad / cheerful",
+    "definition": "happy",
     "type": "adjective"
   },
   {
     "char": "開市",
     "jyutping": "hoi1si5",
-    "definition": "market opens / market opening",
+    "definition": "market opening",
     "type": "verb"
   },
   {
@@ -2444,7 +2444,7 @@
   {
     "char": "好",
     "jyutping": "hou2",
-    "definition": "good / fine / very / quite",
+    "definition": "good / very",
     "type": "adjective"
   },
   {
@@ -2462,25 +2462,25 @@
   {
     "char": "好似",
     "jyutping": "hou2ci5",
-    "definition": "seem like / as if",
+    "definition": "seems like",
     "type": "verb"
   },
   {
     "char": "好彩",
     "jyutping": "hou2coi2",
-    "definition": "luckily / fortunately",
+    "definition": "luckily",
     "type": "adverb"
   },
   {
     "char": "好多",
     "jyutping": "hou2do1",
-    "definition": "a lot / many / much",
+    "definition": "a lot of",
     "type": "adjective"
   },
   {
     "char": "好返",
     "jyutping": "hou2faan1",
-    "definition": "to recover / get well",
+    "definition": "to recover",
     "type": "verb"
   },
   {
@@ -2492,7 +2492,7 @@
   {
     "char": "好好哋",
     "jyutping": "hou2hou2dei2",
-    "definition": "well / properly",
+    "definition": "properly",
     "type": "expression"
   },
   {
@@ -2516,25 +2516,25 @@
   {
     "char": "好玩",
     "jyutping": "hou2waan2",
-    "definition": "fun / enjoyable",
+    "definition": "fun",
     "type": "adjective"
   },
   {
     "char": "好住",
     "jyutping": "hou2zyu6",
-    "definition": "nice to live in / comfortable to reside",
+    "definition": "comfortable to live in",
     "type": "adjective"
   },
   {
     "char": "毫",
     "jyutping": "hou4",
-    "definition": "ten cents / dime",
+    "definition": "ten cents",
     "type": "classifier"
   },
   {
     "char": "毫子",
     "jyutping": "hou4 zi2",
-    "definition": "ten-cent coin / dime",
+    "definition": "ten-cent coin",
     "type": "noun"
   },
   {
@@ -2558,19 +2558,19 @@
   {
     "char": "飲",
     "jyutping": "jam2",
-    "definition": "to drink",
+    "definition": "drink",
     "type": "verb"
   },
   {
     "char": "飲茶",
     "jyutping": "jam2caa4",
-    "definition": "to drink tea / go for dim sum / yum cha",
+    "definition": "to have dim sum",
     "type": "verb"
   },
   {
     "char": "飲酒",
     "jyutping": "jam2zau2",
-    "definition": "to drink alcohol / have a drink",
+    "definition": "to drink alcohol",
     "type": "verb"
   },
   {
@@ -2582,13 +2582,13 @@
   {
     "char": "人",
     "jyutping": "jan4",
-    "definition": "person / people / human",
+    "definition": "person",
     "type": "noun"
   },
   {
     "char": "人哋",
     "jyutping": "jan4dei6",
-    "definition": "others / other people",
+    "definition": "other people",
     "type": "pronoun"
   },
   {
@@ -2600,7 +2600,7 @@
   {
     "char": "人山人海",
     "jyutping": "jan4saan1jan4hoi2",
-    "definition": "huge crowds of people (people mountain people sea)",
+    "definition": "crowded",
     "type": "expression"
   },
   {
@@ -2630,19 +2630,19 @@
   {
     "char": "一定",
     "jyutping": "jat1ding6",
-    "definition": "definitely / certainly",
+    "definition": "definitely",
     "type": "adverb"
   },
   {
     "char": "一樣",
     "jyutping": "jat1joeng6",
-    "definition": "same / alike / identical",
+    "definition": "same",
     "type": "adjective"
   },
   {
     "char": "日",
     "jyutping": "jat6",
-    "definition": "day / sun",
+    "definition": "day",
     "type": "noun"
   },
   {
@@ -2666,13 +2666,13 @@
   {
     "char": "日頭",
     "jyutping": "jat6tau2",
-    "definition": "daytime / day",
+    "definition": "daytime",
     "type": "noun"
   },
   {
     "char": "休息",
     "jyutping": "jau1sik1",
-    "definition": "to rest / take a break",
+    "definition": "to rest",
     "type": "verb"
   },
   {
@@ -2696,7 +2696,7 @@
   {
     "char": "有",
     "jyutping": "jau5",
-    "definition": "to have / possess / there is / there are",
+    "definition": "to have / there is",
     "type": "verb"
   },
   {
@@ -2714,7 +2714,7 @@
   {
     "char": "有錢",
     "jyutping": "jau5cin2",
-    "definition": "rich / wealthy / have money",
+    "definition": "rich",
     "type": "adjective"
   },
   {
@@ -2726,7 +2726,7 @@
   {
     "char": "有冇",
     "jyutping": "jau5mou5",
-    "definition": "is there / do you have (A-not-A question form)",
+    "definition": "do you have?",
     "type": "expression"
   },
   {
@@ -2738,7 +2738,7 @@
   {
     "char": "又",
     "jyutping": "jau6",
-    "definition": "again / also",
+    "definition": "also / again",
     "type": "adverb"
   },
   {
@@ -2756,7 +2756,7 @@
   {
     "char": "嘢",
     "jyutping": "je5",
-    "definition": "thing / stuff / matter",
+    "definition": "thing",
     "type": "noun"
   },
   {
@@ -2768,44 +2768,44 @@
   {
     "char": "嘢飲",
     "jyutping": "je5jam2",
-    "definition": "drinks / beverages",
+    "definition": "drinks",
     "type": "noun"
   },
   {
     "char": "嘢食",
     "jyutping": "je5sik6",
-    "definition": "snacks / food / things to eat",
+    "definition": "food",
     "type": "noun"
   },
   {
     "char": "夜晚",
     "jyutping": "je6maan5",
-    "definition": "at night / evening",
+    "definition": "at night",
     "type": "noun"
   },
   {
     "char": "夜蒲",
     "jyutping": "je6pou4",
-    "definition": "night clubbing / nightlife / to club at night",
+    "definition": "night clubbing",
     "type": "verb"
   },
   {
     "char": "依家",
     "jyutping": "ji1gaa1",
-    "definition": "now / currently",
+    "definition": "now",
     "type": "noun",
     "notes": "Colloquial variant of 而家."
   },
   {
     "char": "醫生",
     "jyutping": "ji1sang1",
-    "definition": "doctor / medical practitioner",
+    "definition": "doctor",
     "type": "noun"
   },
   {
     "char": "醫生紙",
     "jyutping": "ji1sang1zi2",
-    "definition": "doctor's sick leave certificate / medical note",
+    "definition": "medical note",
     "type": "noun"
   },
   {
@@ -2817,13 +2817,13 @@
   {
     "char": "而家",
     "jyutping": "ji4gaa1",
-    "definition": "now / currently",
+    "definition": "now",
     "type": "noun"
   },
   {
     "char": "已讀不回",
     "jyutping": "ji5duk6bat1wui4",
-    "definition": "read but not reply / ghost",
+    "definition": "to leave on read",
     "type": "verb"
   },
   {
@@ -2835,7 +2835,7 @@
   {
     "char": "以為",
     "jyutping": "ji5wai4",
-    "definition": "to mistakenly think / assume / believe",
+    "definition": "to mistakenly think",
     "type": "verb"
   },
   {
@@ -2853,19 +2853,19 @@
   {
     "char": "嚴重",
     "jyutping": "jim4cung5",
-    "definition": "serious / severe / grave",
+    "definition": "severe",
     "type": "adjective"
   },
   {
     "char": "嚴重",
     "jyutping": "jim4zung6",
-    "definition": "serious / severe / grave",
+    "definition": "severe",
     "type": "adjective"
   },
   {
     "char": "然後",
     "jyutping": "jin4hau6",
-    "definition": "then / afterwards",
+    "definition": "then",
     "type": "conjunction"
   },
   {
@@ -2877,13 +2877,13 @@
   {
     "char": "應該",
     "jyutping": "jing1goi1",
-    "definition": "should / ought to",
+    "definition": "should",
     "type": "auxiliary verb"
   },
   {
     "char": "英國",
     "jyutping": "jing1gwok3",
-    "definition": "United Kingdom / Britain",
+    "definition": "United Kingdom",
     "type": "noun"
   },
   {
@@ -2913,7 +2913,7 @@
   {
     "char": "業主",
     "jyutping": "jip6zyu2",
-    "definition": "landlord / property owner",
+    "definition": "landlord",
     "type": "noun"
   },
   {
@@ -2925,31 +2925,31 @@
   {
     "char": "熱氣",
     "jyutping": "jit6hei3",
-    "definition": "internal heat / inflammation / heaty",
+    "definition": "internal heat",
     "type": "noun"
   },
   {
     "char": "要求",
     "jyutping": "jiu1kau4",
-    "definition": "to require / requirement",
+    "definition": "requirement",
     "type": "verb"
   },
   {
     "char": "要",
     "jyutping": "jiu3",
-    "definition": "to want / need / must / demand",
+    "definition": "to want / need",
     "type": "auxiliary verb"
   },
   {
     "char": "約",
     "jyutping": "joek3",
-    "definition": "to make an appointment / invite",
+    "definition": "to make an appointment",
     "type": "verb"
   },
   {
     "char": "藥",
     "jyutping": "joek6",
-    "definition": "medicine / drug",
+    "definition": "medicine",
     "type": "noun"
   },
   {
@@ -2979,7 +2979,7 @@
   {
     "char": "如果",
     "jyutping": "jyu4gwo2",
-    "definition": "if / in case",
+    "definition": "if",
     "type": "conjunction"
   },
   {
@@ -2991,19 +2991,19 @@
   {
     "char": "鴛鴦",
     "jyutping": "jyun1joeng1",
-    "definition": "yuanyang (drink mixing coffee and milk tea)",
+    "definition": "yuanyang",
     "type": "noun"
   },
   {
     "char": "完",
     "jyutping": "jyun4",
-    "definition": "to finish / complete / after",
+    "definition": "finished",
     "type": "verb"
   },
   {
     "char": "原本",
     "jyutping": "jyun4bun2",
-    "definition": "originally / original",
+    "definition": "originally",
     "type": "adverb"
   },
   {
@@ -3063,7 +3063,7 @@
   {
     "char": "其實",
     "jyutping": "kei4sat6",
-    "definition": "actually / in fact / as a matter of fact",
+    "definition": "actually",
     "type": "adverb"
   },
   {
@@ -3075,7 +3075,7 @@
   {
     "char": "佢哋",
     "jyutping": "keoi5dei6",
-    "definition": "they / them",
+    "definition": "they",
     "type": "pronoun"
   },
   {
@@ -3087,19 +3087,19 @@
   {
     "char": "傾",
     "jyutping": "king1",
-    "definition": "to talk / chat / lean",
+    "definition": "to chat",
     "type": "verb"
   },
   {
     "char": "強積金",
     "jyutping": "koeng5zik1gam1",
-    "definition": "MPF / Mandatory Provident Fund",
+    "definition": "MPF",
     "type": "noun"
   },
   {
     "char": "裙",
     "jyutping": "kwan4",
-    "definition": "skirt / dress",
+    "definition": "skirt",
     "type": "noun"
   },
   {
@@ -3112,13 +3112,13 @@
   {
     "char": "啦",
     "jyutping": "laa3",
-    "definition": "particle indicating completed action or change of state",
+    "definition": "sentence-final particle for change of state",
     "type": "particle"
   },
   {
     "char": "喇",
     "jyutping": "laa3",
-    "definition": "sentence-final particle indicating a change of state or already",
+    "definition": "sentence-final particle for change of state",
     "type": "particle"
   },
   {
@@ -3148,7 +3148,7 @@
   {
     "char": "冷氣",
     "jyutping": "laang5hei3",
-    "definition": "air conditioning / AC",
+    "definition": "air conditioning",
     "type": "noun"
   },
   {
@@ -3160,7 +3160,7 @@
   {
     "char": "樓",
     "jyutping": "lau2",
-    "definition": "building / flat / apartment / floor",
+    "definition": "building / flat",
     "type": "noun"
   },
   {
@@ -3172,31 +3172,31 @@
   {
     "char": "留言",
     "jyutping": "lau4jin4",
-    "definition": "to leave a message / comment",
+    "definition": "to leave a message",
     "type": "verb"
   },
   {
     "char": "樓梯",
     "jyutping": "lau4tai1",
-    "definition": "stairs / staircase",
+    "definition": "stairs",
     "type": "noun"
   },
   {
     "char": "嚟",
     "jyutping": "lei4",
-    "definition": "to come",
+    "definition": "to come / sentence-final particle",
     "type": "verb"
   },
   {
     "char": "嚟",
     "jyutping": "lei4",
-    "definition": "sentence-final particle indicating that something is in a certain state",
+    "definition": "to come / sentence-final particle",
     "type": "particle"
   },
   {
     "char": "利息",
     "jyutping": "lei6sik1",
-    "definition": "interest (on loan/deposit)",
+    "definition": "interest",
     "type": "noun"
   },
   {
@@ -3208,25 +3208,25 @@
   {
     "char": "靚",
     "jyutping": "leng3",
-    "definition": "pretty / beautiful / handsome / high quality",
+    "definition": "beautiful",
     "type": "adjective"
   },
   {
     "char": "靚女",
     "jyutping": "leng3neoi5",
-    "definition": "pretty girl / beautiful woman / beauty",
+    "definition": "pretty girl",
     "type": "noun"
   },
   {
     "char": "靚仔",
     "jyutping": "leng3zai2",
-    "definition": "handsome boy / handsome man",
+    "definition": "handsome boy / plain white rice",
     "type": "noun"
   },
   {
     "char": "靚仔",
     "jyutping": "leng3zai2",
-    "definition": "handsome boy / plain white rice (restaurant slang)",
+    "definition": "handsome boy / plain white rice",
     "type": "noun",
     "notes": "Double meaning: standard colloquial term for handsome guy, but in茶餐廳 it means plain steamed white rice."
   },
@@ -3245,7 +3245,7 @@
   {
     "char": "連",
     "jyutping": "lin4",
-    "definition": "to connect / link",
+    "definition": "to connect",
     "type": "verb"
   },
   {
@@ -3263,26 +3263,26 @@
   {
     "char": "凌晨",
     "jyutping": "ling4san4",
-    "definition": "early morning / before dawn",
+    "definition": "early morning",
     "type": "noun"
   },
   {
     "char": "囉",
     "jyutping": "lo1",
-    "definition": "sentence-final particle showing obviousness, resignation, or 'of course'",
+    "definition": "sentence-final particle for obviousness",
     "type": "particle",
     "notes": "Implies that something is completely obvious, or shows a resigned state."
   },
   {
     "char": "攞",
     "jyutping": "lo2",
-    "definition": "to get / take / fetch",
+    "definition": "to fetch",
     "type": "verb"
   },
   {
     "char": "兩",
     "jyutping": "loeng5",
-    "definition": "two / pair (used with classifiers)",
+    "definition": "two",
     "type": "numeral"
   },
   {
@@ -3300,7 +3300,7 @@
   {
     "char": "落",
     "jyutping": "lok6",
-    "definition": "to get off / descend / go down",
+    "definition": "to descend",
     "type": "verb"
   },
   {
@@ -3318,7 +3318,7 @@
   {
     "char": "老闆",
     "jyutping": "lou5baan2",
-    "definition": "boss / proprietor",
+    "definition": "boss",
     "type": "noun"
   },
   {
@@ -3336,13 +3336,13 @@
   {
     "char": "老細",
     "jyutping": "lou5sai3",
-    "definition": "boss / employer (colloquial)",
+    "definition": "boss",
     "type": "noun"
   },
   {
     "char": "路口",
     "jyutping": "lou6hau2",
-    "definition": "intersection / junction",
+    "definition": "intersection",
     "type": "noun"
   },
   {
@@ -3372,19 +3372,19 @@
   {
     "char": "錄音",
     "jyutping": "luk6jam1",
-    "definition": "voice recording / to record audio",
+    "definition": "voice recording",
     "type": "noun"
   },
   {
     "char": "唔",
     "jyutping": "m4",
-    "definition": "not / no (negative prefix)",
+    "definition": "not",
     "type": "adverb"
   },
   {
     "char": "唔緊要",
     "jyutping": "m4 gan2jiu3",
-    "definition": "it doesn't matter / never mind / it's okay",
+    "definition": "it doesn't matter",
     "type": "expression"
   },
   {
@@ -3402,26 +3402,26 @@
   {
     "char": "唔得",
     "jyutping": "m4dak1",
-    "definition": "cannot / not allowed / physically bad to do",
+    "definition": "cannot",
     "type": "expression"
   },
   {
     "char": "唔到",
     "jyutping": "m4dou2",
-    "definition": "cannot / unable to manage to / fail to",
+    "definition": "cannot",
     "type": "particle",
     "notes": "Potential suffix indicating inability to achieve or complete an action."
   },
   {
     "char": "唔緊要",
     "jyutping": "m4gan2jiu3",
-    "definition": "never mind / it doesn't matter",
+    "definition": "it doesn't matter",
     "type": "expression"
   },
   {
     "char": "唔該",
     "jyutping": "m4goi1",
-    "definition": "excuse me / please / thank you (for service or help)",
+    "definition": "thank you / please",
     "type": "expression",
     "notes": "Used for services, requests, or showing gratitude for helpful actions."
   },
@@ -3434,31 +3434,31 @@
   {
     "char": "唔係",
     "jyutping": "m4hai6",
-    "definition": "no / not so / that's not the case",
+    "definition": "no / is not",
     "type": "expression"
   },
   {
     "char": "唔開心",
     "jyutping": "m4hoi1sam1",
-    "definition": "sad / unhappy",
+    "definition": "sad",
     "type": "adjective"
   },
   {
     "char": "唔好",
     "jyutping": "m4hou2",
-    "definition": "don't / should not",
+    "definition": "don't",
     "type": "auxiliary verb"
   },
   {
     "char": "唔好意思",
     "jyutping": "m4hou2ji3si1",
-    "definition": "sorry / excuse me",
+    "definition": "excuse me / sorry",
     "type": "expression"
   },
   {
     "char": "唔使",
     "jyutping": "m4sai2",
-    "definition": "no need / not necessary",
+    "definition": "no need to",
     "type": "adverb"
   },
   {
@@ -3470,13 +3470,13 @@
   {
     "char": "唔舒服",
     "jyutping": "m4syu1fuk6",
-    "definition": "uncomfortable / unwell / sick",
+    "definition": "unwell",
     "type": "adjective"
   },
   {
     "char": "唔通",
     "jyutping": "m4tung1",
-    "definition": "could it be that / don't tell me that",
+    "definition": "could it be",
     "type": "conjunction"
   },
   {
@@ -3501,7 +3501,7 @@
   {
     "char": "麻煩",
     "jyutping": "maa4faan4",
-    "definition": "troublesome / bothersome",
+    "definition": "troublesome",
     "type": "adjective"
   },
   {
@@ -3513,7 +3513,7 @@
   {
     "char": "埋",
     "jyutping": "maai4",
-    "definition": "also / as well / including",
+    "definition": "also",
     "type": "particle"
   },
   {
@@ -3525,7 +3525,7 @@
   {
     "char": "買",
     "jyutping": "maai5",
-    "definition": "to buy",
+    "definition": "buy",
     "type": "verb"
   },
   {
@@ -3538,13 +3538,13 @@
   {
     "char": "買入",
     "jyutping": "maai5jap6",
-    "definition": "to buy in / purchase shares",
+    "definition": "to buy in",
     "type": "verb"
   },
   {
     "char": "買嘢",
     "jyutping": "maai5je5",
-    "definition": "to buy things / shop",
+    "definition": "to shop",
     "type": "verb"
   },
   {
@@ -3556,7 +3556,7 @@
   {
     "char": "賣出",
     "jyutping": "maai6ceot1",
-    "definition": "to sell out / sell shares",
+    "definition": "to sell out",
     "type": "verb"
   },
   {
@@ -3598,25 +3598,25 @@
   {
     "char": "蚊",
     "jyutping": "man1",
-    "definition": "dollar (spoken Cantonese colloquial unit of currency)",
+    "definition": "dollar",
     "type": "classifier"
   },
   {
     "char": "問",
     "jyutping": "man6",
-    "definition": "to ask / inquire",
+    "definition": "to ask",
     "type": "verb"
   },
   {
     "char": "問題",
     "jyutping": "man6tai4",
-    "definition": "problem / question / issue",
+    "definition": "problem / question",
     "type": "noun"
   },
   {
     "char": "乜",
     "jyutping": "mat1",
-    "definition": "what / how / why / rhetorical prefix",
+    "definition": "what",
     "type": "pronoun"
   },
   {
@@ -3628,7 +3628,7 @@
   {
     "char": "咩",
     "jyutping": "me1",
-    "definition": "sentence-final particle expressing rhetorical doubt, surprise, or sarcasm",
+    "definition": "sentence-final particle for doubt / what",
     "type": "particle",
     "notes": "Used to ask a rhetorical question expressing skepticism ('Is it really?')."
   },
@@ -3641,19 +3641,19 @@
   {
     "char": "美股",
     "jyutping": "mei5gu2",
-    "definition": "US stocks / US shares",
+    "definition": "US stocks",
     "type": "noun"
   },
   {
     "char": "美國",
     "jyutping": "mei5gwok3",
-    "definition": "United States / America",
+    "definition": "United States",
     "type": "noun"
   },
   {
     "char": "未",
     "jyutping": "mei6",
-    "definition": "not yet / have not",
+    "definition": "not yet",
     "type": "adverb"
   },
   {
@@ -3665,13 +3665,13 @@
   {
     "char": "面",
     "jyutping": "min6",
-    "definition": "face / side / surface",
+    "definition": "face",
     "type": "noun"
   },
   {
     "char": "面積",
     "jyutping": "min6zik1",
-    "definition": "area / size",
+    "definition": "area",
     "type": "noun"
   },
   {
@@ -3707,13 +3707,13 @@
   {
     "char": "網",
     "jyutping": "mong5",
-    "definition": "internet / net / network",
+    "definition": "internet",
     "type": "noun"
   },
   {
     "char": "網絡",
     "jyutping": "mong5lok3",
-    "definition": "internet / network",
+    "definition": "network",
     "type": "noun"
   },
   {
@@ -3731,13 +3731,13 @@
   {
     "char": "帽",
     "jyutping": "mou2",
-    "definition": "hat / cap",
+    "definition": "hat",
     "type": "noun"
   },
   {
     "char": "冇",
     "jyutping": "mou5",
-    "definition": "not to have / without / there is not",
+    "definition": "to not have",
     "type": "verb"
   },
   {
@@ -3779,13 +3779,13 @@
   {
     "char": "門口",
     "jyutping": "mun4hau2",
-    "definition": "doorway / entrance",
+    "definition": "doorway",
     "type": "noun"
   },
   {
     "char": "悶",
     "jyutping": "mun6",
-    "definition": "boring / bored",
+    "definition": "bored / boring",
     "type": "adjective"
   },
   {
@@ -3797,25 +3797,25 @@
   {
     "char": "奶茶",
     "jyutping": "naai5caa4",
-    "definition": "milk tea (typically Hong Kong-style)",
+    "definition": "milk tea",
     "type": "noun"
   },
   {
     "char": "男神",
     "jyutping": "naam4san4",
-    "definition": "male god / ideal man",
+    "definition": "ideal man",
     "type": "noun"
   },
   {
     "char": "男仔",
     "jyutping": "naam4zai2",
-    "definition": "boy / young man",
+    "definition": "boy",
     "type": "noun"
   },
   {
     "char": "難",
     "jyutping": "naan4",
-    "definition": "difficult / hard",
+    "definition": "difficult",
     "type": "adjective"
   },
   {
@@ -3827,19 +3827,19 @@
   {
     "char": "諗住",
     "jyutping": "nam2zyu6",
-    "definition": "to intend / plan / think of",
+    "definition": "to intend",
     "type": "verb"
   },
   {
     "char": "嬲",
     "jyutping": "nau1",
-    "definition": "angry / mad",
+    "definition": "angry",
     "type": "adjective"
   },
   {
     "char": "呢",
     "jyutping": "ne1",
-    "definition": "sentence-final particle for queries (how about / what about)",
+    "definition": "sentence-final particle for queries",
     "type": "particle"
   },
   {
@@ -3857,13 +3857,13 @@
   {
     "char": "你好",
     "jyutping": "nei5hou2",
-    "definition": "hello / hi",
+    "definition": "hello",
     "type": "expression"
   },
   {
     "char": "女神",
     "jyutping": "neoi5san4",
-    "definition": "goddess / ideal woman",
+    "definition": "ideal woman",
     "type": "noun"
   },
   {
@@ -3905,13 +3905,13 @@
   {
     "char": "暗戀",
     "jyutping": "ngam3lyun2",
-    "definition": "to crush on / love secretly",
+    "definition": "to have a crush on",
     "type": "verb"
   },
   {
     "char": "銀包",
     "jyutping": "ngan4baau1",
-    "definition": "wallet / purse",
+    "definition": "wallet",
     "type": "noun"
   },
   {
@@ -3923,13 +3923,13 @@
   {
     "char": "我",
     "jyutping": "ngo5",
-    "definition": "I / me",
+    "definition": "I",
     "type": "pronoun"
   },
   {
     "char": "我哋",
     "jyutping": "ngo5dei6",
-    "definition": "we / us",
+    "definition": "we",
     "type": "pronoun"
   },
   {
@@ -3941,7 +3941,7 @@
   {
     "char": "外星人",
     "jyutping": "ngoi6sing1jan4",
-    "definition": "alien / extraterrestrial",
+    "definition": "alien",
     "type": "noun"
   },
   {
@@ -3971,13 +3971,13 @@
   {
     "char": "尿袋",
     "jyutping": "niu6doi2",
-    "definition": "portable power bank (slang)",
+    "definition": "power bank",
     "type": "noun"
   },
   {
     "char": "努力",
     "jyutping": "nou5lik6",
-    "definition": "to make an effort / try hard",
+    "definition": "to try hard",
     "type": "verb"
   },
   {
@@ -3989,7 +3989,7 @@
   {
     "char": "痾",
     "jyutping": "o1",
-    "definition": "to have diarrhea / excrete",
+    "definition": "to excrete",
     "type": "verb"
   },
   {
@@ -4001,13 +4001,13 @@
   {
     "char": "安慰",
     "jyutping": "on1wai3",
-    "definition": "to comfort / console",
+    "definition": "to comfort",
     "type": "verb"
   },
   {
     "char": "按",
     "jyutping": "on3",
-    "definition": "to press / push / according to",
+    "definition": "to press / according to",
     "type": "verb"
   },
   {
@@ -4031,13 +4031,13 @@
   {
     "char": "拍",
     "jyutping": "paak3",
-    "definition": "to clap / pat / beat / take pictures",
+    "definition": "to clap",
     "type": "verb"
   },
   {
     "char": "拍拖",
     "jyutping": "paak3to1",
-    "definition": "to date / go steady",
+    "definition": "to date",
     "type": "verb"
   },
   {
@@ -4049,13 +4049,13 @@
   {
     "char": "跑步",
     "jyutping": "paau2bou6",
-    "definition": "to run / jog",
+    "definition": "to run",
     "type": "verb"
   },
   {
     "char": "跑數",
     "jyutping": "paau2sou3",
-    "definition": "to hit a sales target / chase sales numbers",
+    "definition": "to hit a sales target",
     "type": "verb"
   },
   {
@@ -4067,19 +4067,19 @@
   {
     "char": "PayMe",
     "jyutping": "pei1mi1",
-    "definition": "to transfer money via PayMe",
+    "definition": "PayMe",
     "type": "noun"
   },
   {
     "char": "劈酒",
     "jyutping": "pek3zau2",
-    "definition": "to drink heavily / drink competitively",
+    "definition": "to drink heavily",
     "type": "verb"
   },
   {
     "char": "平",
     "jyutping": "peng4",
-    "definition": "cheap / inexpensive",
+    "definition": "cheap",
     "type": "adjective"
   },
   {
@@ -4103,13 +4103,13 @@
   {
     "char": "片",
     "jyutping": "pin2",
-    "definition": "video / movie / short clip",
+    "definition": "video / movie",
     "type": "noun"
   },
   {
     "char": "平時",
     "jyutping": "ping4si4",
-    "definition": "usually / ordinarily / in normal times",
+    "definition": "usually",
     "type": "adverb"
   },
   {
@@ -4127,7 +4127,7 @@
   {
     "char": "蒲",
     "jyutping": "pou4",
-    "definition": "to hang out / go clubbing",
+    "definition": "to go clubbing",
     "type": "verb"
   },
   {
@@ -4139,7 +4139,7 @@
   {
     "char": "陪",
     "jyutping": "pui4",
-    "definition": "to accompany / keep someone company",
+    "definition": "to accompany",
     "type": "verb"
   },
   {
@@ -4163,7 +4163,7 @@
   {
     "char": "衫",
     "jyutping": "saam1",
-    "definition": "clothes / clothing / shirt",
+    "definition": "clothes",
     "type": "noun"
   },
   {
@@ -4175,7 +4175,7 @@
   {
     "char": "三個字",
     "jyutping": "saam1go3zi6",
-    "definition": "15 minutes / a quarter",
+    "definition": "15 minutes",
     "type": "noun"
   },
   {
@@ -4187,7 +4187,7 @@
   {
     "char": "散戶",
     "jyutping": "saan2wu6",
-    "definition": "retail investor / small investor",
+    "definition": "retail investor",
     "type": "noun"
   },
   {
@@ -4217,13 +4217,13 @@
   {
     "char": "使唔使",
     "jyutping": "sai2m4sai2",
-    "definition": "need or not / do you need (A-not-A question form)",
+    "definition": "do you need?",
     "type": "expression"
   },
   {
     "char": "細",
     "jyutping": "sai3",
-    "definition": "small / little / tiny",
+    "definition": "small",
     "type": "adjective"
   },
   {
@@ -4235,7 +4235,7 @@
   {
     "char": "塞車",
     "jyutping": "sak1ce1",
-    "definition": "traffic jam / heavy traffic",
+    "definition": "traffic jam",
     "type": "verb"
   },
   {
@@ -4247,13 +4247,13 @@
   {
     "char": "心痛",
     "jyutping": "sam1tung3",
-    "definition": "to feel distressed / feel for someone",
+    "definition": "to feel distressed",
     "type": "verb"
   },
   {
     "char": "甚至",
     "jyutping": "sam6zi3",
-    "definition": "even / so much so that",
+    "definition": "even",
     "type": "conjunction"
   },
   {
@@ -4265,13 +4265,13 @@
   {
     "char": "辛苦",
     "jyutping": "san1fu2",
-    "definition": "hard / toilsome / painstaking / exhausting",
+    "definition": "exhausting",
     "type": "adjective"
   },
   {
     "char": "身家",
     "jyutping": "san1gaa1",
-    "definition": "net worth / personal fortune",
+    "definition": "net worth",
     "type": "noun"
   },
   {
@@ -4301,13 +4301,13 @@
   {
     "char": "實用面積",
     "jyutping": "sat6jung6min6zik1",
-    "definition": "saleable area / net floor area",
+    "definition": "saleable area",
     "type": "noun"
   },
   {
     "char": "收",
     "jyutping": "sau1",
-    "definition": "to receive / accept / collect",
+    "definition": "to receive",
     "type": "verb"
   },
   {
@@ -4319,7 +4319,7 @@
   {
     "char": "收兵",
     "jyutping": "sau1bing1",
-    "definition": "to collect platonic admirers (literally 'collect soldiers')",
+    "definition": "to collect platonic admirers",
     "type": "verb"
   },
   {
@@ -4331,13 +4331,13 @@
   {
     "char": "收工",
     "jyutping": "sau1gung1",
-    "definition": "to finish work for the day / get off work",
+    "definition": "to get off work",
     "type": "verb"
   },
   {
     "char": "收市",
     "jyutping": "sau1si5",
-    "definition": "market closes / market closing",
+    "definition": "market closes",
     "type": "verb"
   },
   {
@@ -4373,20 +4373,20 @@
   {
     "char": "蛇王",
     "jyutping": "se4wong4",
-    "definition": "to slack off / avoid work / literally 'snake king'",
+    "definition": "to slack off",
     "type": "verb"
   },
   {
     "char": "射波",
     "jyutping": "se6bo1",
-    "definition": "to fake sick / call in sick falsely / play truant",
+    "definition": "to fake sick",
     "type": "verb",
     "notes": "Literally 'to shoot a ball', a popular Hong Kong slang term."
   },
   {
     "char": "死",
     "jyutping": "sei2",
-    "definition": "extremely / awfully (intensifier)",
+    "definition": "to death / extremely",
     "type": "adverb"
   },
   {
@@ -4398,7 +4398,7 @@
   {
     "char": "死機",
     "jyutping": "sei2gei1",
-    "definition": "to crash / freeze (device)",
+    "definition": "device crash",
     "type": "verb"
   },
   {
@@ -4428,7 +4428,7 @@
   {
     "char": "雖然",
     "jyutping": "seoi1jin4",
-    "definition": "although / even though",
+    "definition": "although",
     "type": "conjunction"
   },
   {
@@ -4470,7 +4470,7 @@
   {
     "char": "詩",
     "jyutping": "si1",
-    "definition": "poem / poetry",
+    "definition": "poem",
     "type": "noun"
   },
   {
@@ -4500,7 +4500,7 @@
   {
     "char": "試",
     "jyutping": "si3",
-    "definition": "to try / test",
+    "definition": "to try",
     "type": "verb"
   },
   {
@@ -4512,7 +4512,7 @@
   {
     "char": "時",
     "jyutping": "si4",
-    "definition": "time / hour",
+    "definition": "time",
     "type": "noun"
   },
   {
@@ -4530,7 +4530,7 @@
   {
     "char": "時候",
     "jyutping": "si4hau6",
-    "definition": "time / when",
+    "definition": "time",
     "type": "noun"
   },
   {
@@ -4542,25 +4542,25 @@
   {
     "char": "事",
     "jyutping": "si6",
-    "definition": "matter / business / affair",
+    "definition": "matter",
     "type": "noun"
   },
   {
     "char": "息",
     "jyutping": "sik1",
-    "definition": "interest / dividend",
+    "definition": "interest",
     "type": "noun"
   },
   {
     "char": "熄",
     "jyutping": "sik1",
-    "definition": "to turn off / extinguish (a light, device, etc.)",
+    "definition": "to turn off",
     "type": "verb"
   },
   {
     "char": "識",
     "jyutping": "sik1",
-    "definition": "to know / speak (a language) / have a skill",
+    "definition": "to know how to",
     "type": "verb"
   },
   {
@@ -4572,13 +4572,13 @@
   {
     "char": "食花生",
     "jyutping": "sik6faa1sang1",
-    "definition": "to sit back and watch drama / spectate",
+    "definition": "to spectate drama",
     "type": "verb"
   },
   {
     "char": "食飯",
     "jyutping": "sik6faan6",
-    "definition": "to eat a meal / have dinner",
+    "definition": "to eat a meal",
     "type": "verb"
   },
   {
@@ -4602,20 +4602,20 @@
   {
     "char": "先",
     "jyutping": "sin1",
-    "definition": "first / beforehand / only then",
+    "definition": "first",
     "type": "adverb",
     "notes": "Placed after verbs to mean first, or indicating only then in sequential actions."
   },
   {
     "char": "升",
     "jyutping": "sing1",
-    "definition": "to rise / go up",
+    "definition": "to rise",
     "type": "verb"
   },
   {
     "char": "升降機",
     "jyutping": "sing1gong3gei1",
-    "definition": "elevator / lift",
+    "definition": "elevator",
     "type": "noun"
   },
   {
@@ -4627,7 +4627,7 @@
   {
     "char": "聲控",
     "jyutping": "sing1hung3",
-    "definition": "voice-controlled / voice control",
+    "definition": "voice control",
     "type": "adjective"
   },
   {
@@ -4651,7 +4651,7 @@
   {
     "char": "蝕",
     "jyutping": "sit6",
-    "definition": "to lose money / suffer a loss / deficit",
+    "definition": "to lose money",
     "type": "verb"
   },
   {
@@ -4669,7 +4669,7 @@
   {
     "char": "少少",
     "jyutping": "siu2 siu2",
-    "definition": "a little bit / slightly",
+    "definition": "a little bit",
     "type": "adverb"
   },
   {
@@ -4681,13 +4681,13 @@
   {
     "char": "小心",
     "jyutping": "siu2sam1",
-    "definition": "to be careful / take care",
+    "definition": "to be careful",
     "type": "verb"
   },
   {
     "char": "少少",
     "jyutping": "siu2siu2",
-    "definition": "a little bit / slightly",
+    "definition": "a little bit",
     "type": "adverb"
   },
   {
@@ -4711,37 +4711,37 @@
   {
     "char": "所有",
     "jyutping": "so2jau5",
-    "definition": "all / every",
+    "definition": "all",
     "type": "adjective"
   },
   {
     "char": "所以",
     "jyutping": "so2ji5",
-    "definition": "therefore / so",
+    "definition": "therefore",
     "type": "conjunction"
   },
   {
     "char": "鎖匙",
     "jyutping": "so2si4",
-    "definition": "key / keys",
+    "definition": "key",
     "type": "noun"
   },
   {
     "char": "想",
     "jyutping": "soeng2",
-    "definition": "to want to / would like to / think",
+    "definition": "to want to",
     "type": "auxiliary verb"
   },
   {
     "char": "相",
     "jyutping": "soeng2",
-    "definition": "photo / picture",
+    "definition": "photo",
     "type": "noun"
   },
   {
     "char": "相機食先",
     "jyutping": "soeng2gei1sik6sin1",
-    "definition": "camera eats first (taking pictures of food before eating)",
+    "definition": "camera eats first",
     "type": "expression"
   },
   {
@@ -4759,7 +4759,7 @@
   {
     "char": "上網",
     "jyutping": "soeng5mong5",
-    "definition": "to go online / surf the internet",
+    "definition": "to go online",
     "type": "verb"
   },
   {
@@ -4777,13 +4777,13 @@
   {
     "char": "上面",
     "jyutping": "soeng6min6",
-    "definition": "above / on top of / upper side",
+    "definition": "above",
     "type": "noun"
   },
   {
     "char": "掃街",
     "jyutping": "sou3gaai1",
-    "definition": "to go street food hunting / street-snacking",
+    "definition": "to hunt for street food",
     "type": "verb"
   },
   {
@@ -4795,7 +4795,7 @@
   {
     "char": "送",
     "jyutping": "sung3",
-    "definition": "to give as a gift / include for free",
+    "definition": "to give as a gift",
     "type": "verb"
   },
   {
@@ -4807,13 +4807,13 @@
   {
     "char": "薯片",
     "jyutping": "syu4pin2",
-    "definition": "potato chips / crisps",
+    "definition": "potato chips",
     "type": "noun"
   },
   {
     "char": "算啦",
     "jyutping": "syun3 laa1",
-    "definition": "forget it / let it be",
+    "definition": "forget it",
     "type": "expression"
   },
   {
@@ -4831,7 +4831,7 @@
   {
     "char": "太",
     "jyutping": "taai3",
-    "definition": "too / extremely",
+    "definition": "too",
     "type": "adverb"
   },
   {
@@ -4843,7 +4843,7 @@
   {
     "char": "睇",
     "jyutping": "tai2",
-    "definition": "to look / see / watch / read",
+    "definition": "to look / watch",
     "type": "verb"
   },
   {
@@ -4879,7 +4879,7 @@
   {
     "char": "睇波",
     "jyutping": "tai2bo1",
-    "definition": "to watch ball games (e.g. soccer)",
+    "definition": "to watch ball games",
     "type": "verb"
   },
   {
@@ -4897,7 +4897,7 @@
   {
     "char": "睇樓",
     "jyutping": "tai2lau2",
-    "definition": "to view apartments / flats",
+    "definition": "to view apartments",
     "type": "verb"
   },
   {
@@ -4915,7 +4915,7 @@
   {
     "char": "頭先",
     "jyutping": "tau4sin1",
-    "definition": "just now / a moment ago",
+    "definition": "just now",
     "type": "adverb"
   },
   {
@@ -4927,19 +4927,19 @@
   {
     "char": "頭暈",
     "jyutping": "tau4wan4",
-    "definition": "dizzy / lightheaded",
+    "definition": "dizzy",
     "type": "adjective"
   },
   {
     "char": "投資",
     "jyutping": "tau4zi1",
-    "definition": "to invest / investment",
+    "definition": "to invest",
     "type": "verb"
   },
   {
     "char": "聽",
     "jyutping": "teng1",
-    "definition": "to listen / hear / obey",
+    "definition": "to listen",
     "type": "verb"
   },
   {
@@ -4957,7 +4957,7 @@
   {
     "char": "添",
     "jyutping": "tim1",
-    "definition": "particle indicating in addition / as well / furthermore",
+    "definition": "particle indicating addition",
     "type": "particle"
   },
   {
@@ -4969,7 +4969,7 @@
   {
     "char": "天晴",
     "jyutping": "tin1cing4",
-    "definition": "sunny / clear sky",
+    "definition": "sunny",
     "type": "adjective"
   },
   {
@@ -4981,7 +4981,7 @@
   {
     "char": "天橋",
     "jyutping": "tin1kiu4",
-    "definition": "pedestrian flyover / footbridge",
+    "definition": "footbridge",
     "type": "noun"
   },
   {
@@ -4993,7 +4993,7 @@
   {
     "char": "聽講",
     "jyutping": "ting1gong2",
-    "definition": "to hear of / be told",
+    "definition": "to hear of",
     "type": "verb"
   },
   {
@@ -5011,7 +5011,7 @@
   {
     "char": "跳",
     "jyutping": "tiu3",
-    "definition": "to jump / leap / dance",
+    "definition": "to jump",
     "type": "verb"
   },
   {
@@ -5029,19 +5029,19 @@
   {
     "char": "條",
     "jyutping": "tiu4",
-    "definition": "measure word for long, thin objects",
+    "definition": "classifier for long, thin objects",
     "type": "classifier"
   },
   {
     "char": "拖",
     "jyutping": "to1",
-    "definition": "to pull / drag / tow / delay",
+    "definition": "to pull",
     "type": "verb"
   },
   {
     "char": "劏房",
     "jyutping": "tong1fong2",
-    "definition": "subdivided flat / partitioned room",
+    "definition": "subdivided flat",
     "type": "noun"
   },
   {
@@ -5053,7 +5053,7 @@
   {
     "char": "堂",
     "jyutping": "tong4",
-    "definition": "class / hall",
+    "definition": "class",
     "type": "noun"
   },
   {
@@ -5071,7 +5071,7 @@
   {
     "char": "套房",
     "jyutping": "tou3fong2",
-    "definition": "studio flat / ensuite bedroom",
+    "definition": "studio flat",
     "type": "noun"
   },
   {
@@ -5083,19 +5083,19 @@
   {
     "char": "肚痛",
     "jyutping": "tou5tung3",
-    "definition": "stomach ache / abdominal pain",
+    "definition": "stomach ache",
     "type": "noun"
   },
   {
     "char": "通常",
     "jyutping": "tung1soeng4",
-    "definition": "usually / generally",
+    "definition": "usually",
     "type": "adverb"
   },
   {
     "char": "同",
     "jyutping": "tung4",
-    "definition": "with / same as / and",
+    "definition": "with / and",
     "type": "preposition"
   },
   {
@@ -5107,7 +5107,7 @@
   {
     "char": "同埋",
     "jyutping": "tung4maai4",
-    "definition": "and / together with",
+    "definition": "and",
     "type": "conjunction"
   },
   {
@@ -5119,19 +5119,19 @@
   {
     "char": "屋",
     "jyutping": "uk1",
-    "definition": "house / room",
+    "definition": "house",
     "type": "noun"
   },
   {
     "char": "屋苑",
     "jyutping": "uk1jyun2",
-    "definition": "housing estate / residential complex",
+    "definition": "housing estate",
     "type": "noun"
   },
   {
     "char": "屋企",
     "jyutping": "uk1kei2",
-    "definition": "home / house",
+    "definition": "home",
     "type": "noun"
   },
   {
@@ -5149,19 +5149,19 @@
   {
     "char": "哇",
     "jyutping": "waa1",
-    "definition": "wow / whoa",
+    "definition": "wow",
     "type": "expression"
   },
   {
     "char": "話",
     "jyutping": "waa6",
-    "definition": "to say / tell / words / speech",
+    "definition": "to say",
     "type": "verb"
   },
   {
     "char": "話俾",
     "jyutping": "waa6bei2",
-    "definition": "to tell / say to",
+    "definition": "to tell",
     "type": "verb"
   },
   {
@@ -5173,25 +5173,25 @@
   {
     "char": "玩",
     "jyutping": "waan2",
-    "definition": "to play / have fun / enjoy",
+    "definition": "to play",
     "type": "verb"
   },
   {
     "char": "還",
     "jyutping": "waan4",
-    "definition": "to return / repay",
+    "definition": "to return",
     "type": "verb"
   },
   {
     "char": "環境",
     "jyutping": "waan4ging2",
-    "definition": "environment / surroundings",
+    "definition": "environment",
     "type": "noun"
   },
   {
     "char": "WiFi",
     "jyutping": "wai1faai1",
-    "definition": "Wi-Fi / wireless internet",
+    "definition": "Wi-Fi",
     "type": "noun"
   },
   {
@@ -5203,13 +5203,13 @@
   {
     "char": "喂",
     "jyutping": "wai2",
-    "definition": "hey / hello (typically answering phone or calling for attention)",
+    "definition": "hey! / hello",
     "type": "expression"
   },
   {
     "char": "喂",
     "jyutping": "wai3",
-    "definition": "hey / hello",
+    "definition": "hey! / hello",
     "type": "expression"
   },
   {
@@ -5221,19 +5221,19 @@
   {
     "char": "溫",
     "jyutping": "wan1",
-    "definition": "to revise / review",
+    "definition": "to revise",
     "type": "verb"
   },
   {
     "char": "溫書",
     "jyutping": "wan1syu1",
-    "definition": "to revise / study",
+    "definition": "to study",
     "type": "verb"
   },
   {
     "char": "搵",
     "jyutping": "wan2",
-    "definition": "to find / look for / seek",
+    "definition": "to search / find",
     "type": "verb"
   },
   {
@@ -5251,7 +5251,7 @@
   {
     "char": "搵樓",
     "jyutping": "wan2lau2",
-    "definition": "to look for apartments / flat-hunting",
+    "definition": "to look for apartments",
     "type": "verb"
   },
   {
@@ -5275,13 +5275,13 @@
   {
     "char": "WhatsApp",
     "jyutping": "wat1sep1",
-    "definition": "to WhatsApp someone",
+    "definition": "WhatsApp",
     "type": "verb"
   },
   {
     "char": "喎",
     "jyutping": "wo3",
-    "definition": "sentence-final particle indicating reported speech, surprise, or warning",
+    "definition": "sentence-final particle for surprise or warning",
     "type": "particle",
     "notes": "Used to convey that information is hearsay, or to point out something unexpected."
   },
@@ -5294,19 +5294,19 @@
   {
     "char": "旺角",
     "jyutping": "wong6gok3",
-    "definition": "Mong Kok (popular shopping district in Hong Kong)",
+    "definition": "Mong Kok",
     "type": "noun"
   },
   {
     "char": "戶口",
     "jyutping": "wu6hau2",
-    "definition": "account (bank/online)",
+    "definition": "account",
     "type": "noun"
   },
   {
     "char": "會",
     "jyutping": "wui5",
-    "definition": "will / would / can / be able to",
+    "definition": "will / can",
     "type": "auxiliary verb",
     "notes": "Commonly used for future probability, likelihood, or capability."
   },
@@ -5337,31 +5337,31 @@
   {
     "char": "站",
     "jyutping": "zaam6",
-    "definition": "station / stop",
+    "definition": "station",
     "type": "noun"
   },
   {
     "char": "賺",
     "jyutping": "zaan6",
-    "definition": "to earn / profit / make money",
+    "definition": "to earn",
     "type": "verb"
   },
   {
     "char": "找",
     "jyutping": "zaau2",
-    "definition": "to give change / look for / seek",
+    "definition": "to seek / give change",
     "type": "verb"
   },
   {
     "char": "真",
     "jyutping": "zan1",
-    "definition": "real / true / genuine",
+    "definition": "real / true",
     "type": "adjective"
   },
   {
     "char": "真係",
     "jyutping": "zan1hai6",
-    "definition": "really / truly",
+    "definition": "really",
     "type": "adverb"
   },
   {
@@ -5373,19 +5373,19 @@
   {
     "char": "周圍",
     "jyutping": "zau1wai4",
-    "definition": "around / surroundings",
+    "definition": "around",
     "type": "noun"
   },
   {
     "char": "走",
     "jyutping": "zau2",
-    "definition": "to leave / go / run",
+    "definition": "to leave",
     "type": "verb"
   },
   {
     "char": "酒吧",
     "jyutping": "zau2baa1",
-    "definition": "bar / pub",
+    "definition": "bar",
     "type": "noun"
   },
   {
@@ -5397,37 +5397,37 @@
   {
     "char": "走甜",
     "jyutping": "zau2tim4",
-    "definition": "no sugar / unsweetened",
+    "definition": "unsweetened",
     "type": "adjective"
   },
   {
     "char": "走堂",
     "jyutping": "zau2tong4",
-    "definition": "to skip class / cut class",
+    "definition": "to skip class",
     "type": "verb"
   },
   {
     "char": "就",
     "jyutping": "zau6",
-    "definition": "then / right away / immediately",
+    "definition": "then",
     "type": "adverb"
   },
   {
     "char": "就快",
     "jyutping": "zau6faai3",
-    "definition": "soon / quickly / about to",
+    "definition": "soon",
     "type": "adverb"
   },
   {
     "char": "就可以",
     "jyutping": "zau6ho2ji5",
-    "definition": "then can / can easily",
+    "definition": "then can",
     "type": "expression"
   },
   {
     "char": "啫",
     "jyutping": "ze1",
-    "definition": "sentence-final particle meaning 'only', 'just', or downplaying something",
+    "definition": "only / just",
     "type": "particle",
     "notes": "Equivalent to 'only' or 'just' to reassure or downplay significance."
   },
@@ -5446,7 +5446,7 @@
   {
     "char": "借錢",
     "jyutping": "ze3cin4",
-    "definition": "to borrow/lend money",
+    "definition": "to borrow money",
     "type": "verb"
   },
   {
@@ -5458,19 +5458,19 @@
   {
     "char": "隻",
     "jyutping": "zek3",
-    "definition": "measure word for animals or objects in pairs",
+    "definition": "classifier for animals",
     "type": "classifier"
   },
   {
     "char": "正",
     "jyutping": "zeng3",
-    "definition": "excellent / awesome / great",
+    "definition": "excellent",
     "type": "adjective"
   },
   {
     "char": "最",
     "jyutping": "zeoi3",
-    "definition": "most / superlative prefix",
+    "definition": "most",
     "type": "adverb"
   },
   {
@@ -5482,31 +5482,31 @@
   {
     "char": "最近",
     "jyutping": "zeoi3gan6",
-    "definition": "recently / lately",
+    "definition": "recently",
     "type": "adverb"
   },
   {
     "char": "最後",
     "jyutping": "zeoi3hau6",
-    "definition": "finally / at last / in the end",
+    "definition": "finally",
     "type": "adverb"
   },
   {
     "char": "最好",
     "jyutping": "zeoi3hou2",
-    "definition": "best / preferably",
+    "definition": "best",
     "type": "adverb"
   },
   {
     "char": "準時",
     "jyutping": "zeon2si4",
-    "definition": "punctual / on time",
+    "definition": "punctual",
     "type": "adjective"
   },
   {
     "char": "知",
     "jyutping": "zi1",
-    "definition": "to know / be aware of",
+    "definition": "to know",
     "type": "verb"
   },
   {
@@ -5518,7 +5518,7 @@
   {
     "char": "知道",
     "jyutping": "zi1dou3",
-    "definition": "to know / be aware of",
+    "definition": "to know",
     "type": "verb"
   },
   {
@@ -5530,19 +5530,19 @@
   {
     "char": "之後",
     "jyutping": "zi1hau6",
-    "definition": "afterwards / after / later",
+    "definition": "after",
     "type": "conjunction"
   },
   {
     "char": "只係",
     "jyutping": "zi2hai6",
-    "definition": "only / just",
+    "definition": "only",
     "type": "adverb"
   },
   {
     "char": "智能",
     "jyutping": "zi3nang4",
-    "definition": "smart / intelligent (tech)",
+    "definition": "smart",
     "type": "adjective"
   },
   {
@@ -5566,38 +5566,38 @@
   {
     "char": "字",
     "jyutping": "zi6",
-    "definition": "five-minute interval / character / word",
+    "definition": "word / five-minute interval",
     "type": "noun",
     "notes": "Used in telling time, e.g. 三個字 means 15 minutes."
   },
   {
     "char": "自己",
     "jyutping": "zi6gei2",
-    "definition": "oneself / own / self",
+    "definition": "oneself",
     "type": "pronoun"
   },
   {
     "char": "即係",
     "jyutping": "zik1hai6",
-    "definition": "that is / namely / in other words / meaning",
+    "definition": "that is / meaning",
     "type": "conjunction"
   },
   {
     "char": "直行",
     "jyutping": "zik6haang4",
-    "definition": "to go straight",
+    "definition": "go straight",
     "type": "verb"
   },
   {
     "char": "直落",
     "jyutping": "zik6lok6",
-    "definition": "to continue onto another venue / next round without stopping",
+    "definition": "to continue onto another venue",
     "type": "verb"
   },
   {
     "char": "靜",
     "jyutping": "zing6",
-    "definition": "quiet / peaceful",
+    "definition": "quiet",
     "type": "adjective"
   },
   {
@@ -5609,13 +5609,13 @@
   {
     "char": "折墮",
     "jyutping": "zit3do6",
-    "definition": "miserable / wretched / in a pitiful state",
+    "definition": "miserable",
     "type": "adjective"
   },
   {
     "char": "截",
     "jyutping": "zit6",
-    "definition": "section / chunk / length",
+    "definition": "section",
     "type": "classifier"
   },
   {
@@ -5633,7 +5633,7 @@
   {
     "char": "咗",
     "jyutping": "zo2",
-    "definition": "verbal aspect suffix indicating completed action (perfective aspect)",
+    "definition": "completed action marker",
     "type": "particle",
     "notes": "Attaches directly to verbs to show completion (equivalent to Mandarin 了 le)."
   },
@@ -5652,7 +5652,7 @@
   {
     "char": "著",
     "jyutping": "zoek3",
-    "definition": "to wear (clothes)",
+    "definition": "to wear",
     "type": "verb"
   },
   {
@@ -5676,25 +5676,25 @@
   {
     "char": "租",
     "jyutping": "zou1",
-    "definition": "to rent / lease",
+    "definition": "to rent",
     "type": "verb"
   },
   {
     "char": "租金",
     "jyutping": "zou1gam1",
-    "definition": "rent payment / rental price",
+    "definition": "rent",
     "type": "noun"
   },
   {
     "char": "租客",
     "jyutping": "zou1haak3",
-    "definition": "tenant / renter",
+    "definition": "tenant",
     "type": "noun"
   },
   {
     "char": "早日康復",
     "jyutping": "zou2jat6hong1fuk6",
-    "definition": "recover soon / speedy recovery",
+    "definition": "speedy recovery",
     "type": "expression"
   },
   {
@@ -5712,31 +5712,31 @@
   {
     "char": "早知",
     "jyutping": "zou2zi1",
-    "definition": "had I known earlier / if only I knew",
+    "definition": "had I known earlier",
     "type": "adverb"
   },
   {
     "char": "做",
     "jyutping": "zou6",
-    "definition": "to do / make / perform",
+    "definition": "to do",
     "type": "verb"
   },
   {
     "char": "做嘢",
     "jyutping": "zou6je5",
-    "definition": "to work / do things / do stuff",
+    "definition": "to work",
     "type": "verb"
   },
   {
     "char": "做運動",
     "jyutping": "zou6wan6dung6",
-    "definition": "to exercise / do sports",
+    "definition": "to exercise",
     "type": "verb"
   },
   {
     "char": "祝",
     "jyutping": "zuk1",
-    "definition": "to wish / congratulate",
+    "definition": "to wish",
     "type": "verb"
   },
   {
@@ -5748,13 +5748,13 @@
   {
     "char": "俗語",
     "jyutping": "zuk6jyu5",
-    "definition": "colloquial expression / slang / idiom",
+    "definition": "slang / idiom",
     "type": "noun"
   },
   {
     "char": "鐘",
     "jyutping": "zung1",
-    "definition": "clock / bell / hour",
+    "definition": "clock",
     "type": "noun"
   },
   {
@@ -5772,7 +5772,7 @@
   {
     "char": "鍾意",
     "jyutping": "zung1ji3",
-    "definition": "to like / prefer",
+    "definition": "to like",
     "type": "verb"
   },
   {
@@ -5790,7 +5790,7 @@
   {
     "char": "中",
     "jyutping": "zung3",
-    "definition": "to hit / win (a lottery)",
+    "definition": "to win / catch an illness",
     "type": "verb"
   },
   {
@@ -5802,7 +5802,7 @@
   {
     "char": "仲有",
     "jyutping": "zung6jau5",
-    "definition": "furthermore / additionally / also",
+    "definition": "furthermore",
     "type": "conjunction"
   },
   {
@@ -5826,31 +5826,31 @@
   {
     "char": "住",
     "jyutping": "zyu6",
-    "definition": "to live / reside / dwell",
+    "definition": "to live / stay",
     "type": "verb"
   },
   {
     "char": "轉車",
     "jyutping": "zyun2ce1",
-    "definition": "to transfer (vehicles)",
+    "definition": "to transfer",
     "type": "verb"
   },
   {
     "char": "轉右",
     "jyutping": "zyun2jau6",
-    "definition": "to turn right",
+    "definition": "turn right",
     "type": "verb"
   },
   {
     "char": "轉頭",
     "jyutping": "zyun2tau4",
-    "definition": "later / in a moment",
+    "definition": "later",
     "type": "adverb"
   },
   {
     "char": "轉左",
     "jyutping": "zyun2zo2",
-    "definition": "to turn left",
+    "definition": "turn left",
     "type": "verb"
   },
   {

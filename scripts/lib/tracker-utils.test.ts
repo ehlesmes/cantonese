@@ -1,7 +1,6 @@
-import { describe, test, expect } from "vitest";
+import { describe, test, expect, vi } from "vitest";
 import {
   resolvePrimaryJyutping,
-  mergeTranslations,
   compileVocabularyMap,
   generateVocabularyMarkdown,
   type ChapterInput,
@@ -27,43 +26,6 @@ describe("Tracker Utils", () => {
 
     test("should keep original if not found", () => {
       expect(resolvePrimaryJyutping("爸", "baa1", dictionary)).toBe("baa1");
-    });
-  });
-
-  describe("mergeTranslations", () => {
-    test("should merge unique translation nuances", () => {
-      expect(mergeTranslations("father / dad", "papa / dad")).toBe(
-        "father / dad / papa",
-      );
-    });
-
-    test("should handle single translations", () => {
-      expect(mergeTranslations("father", "dad")).toBe("father / dad");
-    });
-
-    test("should ignore duplicates", () => {
-      expect(mergeTranslations("father", "father")).toBe("father");
-    });
-
-    test("should handle empty or punctuation-only strings", () => {
-      expect(mergeTranslations("hello", "!")).toBe("hello");
-      expect(mergeTranslations("!", "hello")).toBe("! / hello");
-    });
-
-    test("should keep the longer string when core meanings are identical", () => {
-      expect(mergeTranslations("eat", "to eat")).toBe("to eat");
-    });
-
-    test("should keep the existing string if the new string is a substring of it", () => {
-      expect(
-        mergeTranslations("exceed mobile data limit", "mobile data limit"),
-      ).toBe("exceed mobile data limit");
-    });
-
-    test("should replace the existing string if it is a substring of the new string", () => {
-      expect(
-        mergeTranslations("mobile data limit", "exceed mobile data limit"),
-      ).toBe("exceed mobile data limit");
     });
   });
 
@@ -135,7 +97,34 @@ describe("Tracker Utils", () => {
       expect(baabaa).toBeDefined();
       expect(baabaa!.firstIntroducedIn).toBe("test-vocab-one");
       expect(baabaa!.occurrences).toBe(2);
-      expect(baabaa!.translation).toBe("father / dad");
+      expect(baabaa!.translation).toBe("father");
+    });
+
+    test("should warn when there is a translation mismatch", async () => {
+      const consoleSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+      const chapter: ChapterInput = {
+        curriculumId: "test-mismatch",
+        chapterData: {
+          frontmatter: { id: "test-mismatch" },
+          blocks: [
+            {
+              type: "prose",
+              content:
+                "`爸爸[baa1baa1|father]` `爸爸[baa1baa1|father]` `爸爸[baa1baa1|dad]`",
+            },
+          ],
+        } as unknown as RawParsedChapter,
+      };
+
+      const result = await compileVocabularyMap([chapter], []);
+
+      expect(result).toHaveLength(1);
+      expect(consoleSpy).toHaveBeenCalledWith(
+        'Translation mismatch for 爸爸 [baa1baa1]: "father" vs "dad"',
+      );
+
+      consoleSpy.mockRestore();
     });
 
     test("should handle exercise blocks with valid and invalid YAML", async () => {

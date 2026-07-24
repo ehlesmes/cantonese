@@ -10,8 +10,8 @@ Cantonese conversational particles from day one to sound natural, polite, and
 culturally authentic.</p>
 <hr>
 <h2>1. Natural Greetings</h2>
-<p>To say hello in Cantonese, the standard phrase is <span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello / hi</span></span>.
-However, in casual, everyday speech, saying just <span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello / hi</span></span> can
+<p>To say hello in Cantonese, the standard phrase is <span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span>.
+However, in casual, everyday speech, saying just <span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span> can
 sound a bit formal or detached. To make it sound warm and friendly, native
 speakers almost always append the softening particle
 <span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>
@@ -20,7 +20,7 @@ to the end:</p>
     "type": "prose",
   },
   {
-    "html": "<span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello / hi</span></span><span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>！
+    "html": "<span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span><span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>！
 ===
 Hello there!",
     "type": "cantonese",
@@ -37,35 +37,35 @@ Hello there!",
     "type": "prose",
   },
   {
-    "html": "A: <span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello / hi</span></span><span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>！ <span class="vocab-term" data-audio-hash="119af509ad0770c5">早晨<span class="tooltip-popover"><strong>zou2san4</strong><br/>good morning</span></span>！
+    "html": "A: <span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span><span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>！ <span class="vocab-term" data-audio-hash="119af509ad0770c5">早晨<span class="tooltip-popover"><strong>zou2san4</strong><br/>good morning</span></span>！
    === Hello there! Good morning!
-B: <span class="vocab-term" data-audio-hash="119af509ad0770c5">早晨<span class="tooltip-popover"><strong>zou2san4</strong><br/>good morning</span></span>！ <span class="vocab-term" data-audio-hash="a0c7716669b5ded0">你<span class="tooltip-popover"><strong>nei5</strong><br/>you</span></span> <span class="vocab-term" data-audio-hash="f867f34178594f89">好<span class="tooltip-popover"><strong>hou2</strong><br/>good / fine / very / quite</span></span> <span class="vocab-term" data-audio-hash="fa474ee4a665e443">嗎<span class="tooltip-popover"><strong>maa3</strong><br/>question particle</span></span>？
+B: <span class="vocab-term" data-audio-hash="119af509ad0770c5">早晨<span class="tooltip-popover"><strong>zou2san4</strong><br/>good morning</span></span>！ <span class="vocab-term" data-audio-hash="a0c7716669b5ded0">你<span class="tooltip-popover"><strong>nei5</strong><br/>you</span></span> <span class="vocab-term" data-audio-hash="f867f34178594f89">好<span class="tooltip-popover"><strong>hou2</strong><br/>good / very</span></span> <span class="vocab-term" data-audio-hash="fa474ee4a665e443">嗎<span class="tooltip-popover"><strong>maa3</strong><br/>question particle</span></span>？
    === Good morning! How are you?",
     "type": "dialog",
   },
   {
     "html": "<hr>
-<h2>2. Personal Pronouns &amp; The Equative Verb <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be</span></span></h2>
+<h2>2. Personal Pronouns &amp; The Equative Verb <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span></h2>
 <h3>Pronouns</h3>
 <p>Cantonese pronouns are extremely logical and consistent. To make any singular
 pronoun plural, you simply attach the suffix <span class="vocab-term" data-audio-hash="fe9438051c80b6ab">哋<span class="tooltip-popover"><strong>dei6</strong><br/>plural suffix</span></span>, which
 acts as a group marker:</p>
 <ul>
 <li><strong>Singular Pronouns</strong>:<ul>
-<li><span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I / me</span></span>: &quot;I&quot; or &quot;me&quot;</li>
+<li><span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span>: &quot;I&quot; or &quot;me&quot;</li>
 <li><span class="vocab-term" data-audio-hash="a0c7716669b5ded0">你<span class="tooltip-popover"><strong>nei5</strong><br/>you</span></span>: &quot;you&quot;</li>
 <li><span class="vocab-term" data-audio-hash="7379f21b80edca33">佢<span class="tooltip-popover"><strong>keoi5</strong><br/>he / she / it</span></span>: &quot;he&quot;, &quot;she&quot;, or &quot;it&quot;</li>
 </ul>
 </li>
 <li><strong>Plural Pronouns</strong>:<ul>
-<li><span class="vocab-term" data-audio-hash="771583ea755aab41">我哋<span class="tooltip-popover"><strong>ngo5dei6</strong><br/>we / us</span></span>: &quot;we&quot; or &quot;us&quot;</li>
+<li><span class="vocab-term" data-audio-hash="771583ea755aab41">我哋<span class="tooltip-popover"><strong>ngo5dei6</strong><br/>we</span></span>: &quot;we&quot; or &quot;us&quot;</li>
 <li><span class="vocab-term" data-audio-hash="a23d45e1195dc3e3">你哋<span class="tooltip-popover"><strong>nei5dei6</strong><br/>you (plural)</span></span>: &quot;you (plural)&quot;</li>
-<li><span class="vocab-term" data-audio-hash="d7b451126e595e8a">佢哋<span class="tooltip-popover"><strong>keoi5dei6</strong><br/>they / them</span></span>: &quot;they&quot; or &quot;them&quot;</li>
+<li><span class="vocab-term" data-audio-hash="d7b451126e595e8a">佢哋<span class="tooltip-popover"><strong>keoi5dei6</strong><br/>they</span></span>: &quot;they&quot; or &quot;them&quot;</li>
 </ul>
 </li>
 <li><strong>General &amp; Reference Pronouns</strong>:<ul>
 <li><span class="vocab-term" data-audio-hash="16b54b7ab3b5e984">大家<span class="tooltip-popover"><strong>daai6gaa1</strong><br/>everyone</span></span>: &quot;everyone&quot;</li>
-<li><span class="vocab-term" data-audio-hash="fb43354d2aaece51">自己<span class="tooltip-popover"><strong>zi6gei2</strong><br/>oneself / own / self</span></span>: &quot;oneself / own&quot;</li>
+<li><span class="vocab-term" data-audio-hash="fb43354d2aaece51">自己<span class="tooltip-popover"><strong>zi6gei2</strong><br/>oneself</span></span>: &quot;oneself / own&quot;</li>
 </ul>
 </li>
 </ul>
@@ -74,31 +74,30 @@ acts as a group marker:</p>
       <div class="alert-content"><p>Cantonese does not differentiate gender in its spoken pronouns. The
 word <span class="vocab-term" data-audio-hash="7379f21b80edca33">佢<span class="tooltip-popover"><strong>keoi5</strong><br/>he / she / it</span></span> is used for &quot;he&quot;, &quot;she&quot;, and &quot;it&quot; alike.</p></div>
     </div>
-<h3>The Equative <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be</span></span></h3>
-<p>To express &quot;to be&quot; (am, is, are), use the verb
-<span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span>. The standard sentence structure is:
-<strong>Subject + <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span> + Identity/Noun</strong></p>
+<h3>The Equative <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span></h3>
+<p>To express &quot;to be&quot; (am, is, are), use the verb <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span>. The
+standard sentence structure is: <strong>Subject + <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span> +
+Identity/Noun</strong></p>
 <p>For example:</p>
 ",
     "type": "prose",
   },
   {
-    "html": "<span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I / me</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span> <span class="vocab-term" data-audio-hash="d448d143c4e04eb6">香港<span class="tooltip-popover"><strong>hoeng1gong2</strong><br/>Hong Kong</span></span> <span class="vocab-term" data-audio-hash="50f5d65d57290f75">人<span class="tooltip-popover"><strong>jan4</strong><br/>person / people / human</span></span>。
+    "html": "<span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span> <span class="vocab-term" data-audio-hash="d448d143c4e04eb6">香港<span class="tooltip-popover"><strong>hoeng1gong2</strong><br/>Hong Kong</span></span> <span class="vocab-term" data-audio-hash="50f5d65d57290f75">人<span class="tooltip-popover"><strong>jan4</strong><br/>person</span></span>。
 ===
 I am a Hong Konger.",
     "type": "cantonese",
   },
   {
-    "html": "<h3>The Possessive Particle <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive particle</span></span></h3>
+    "html": "<h3>The Possessive Particle <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive / linking particle</span></span></h3>
 <p>To show possession or relationship (like &quot;&#39;s&quot; or &quot;of&quot; in English), attach the
-possessive particle
-<span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive particle / nominalizing particle / final assertive particle</span></span>
-after a pronoun or noun:</p>
+possessive particle <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive / linking particle</span></span> after a pronoun or
+noun:</p>
 ",
     "type": "prose",
   },
   {
-    "html": "<span class="vocab-term" data-audio-hash="d7b451126e595e8a">佢哋<span class="tooltip-popover"><strong>keoi5dei6</strong><br/>they / them</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span> <span class="vocab-term" data-audio-hash="771583ea755aab41">我哋<span class="tooltip-popover"><strong>ngo5dei6</strong><br/>we / us</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive particle / nominalizing particle / final assertive particle</span></span> <span class="vocab-term" data-audio-hash="677aad1a0ee44cd6">朋友<span class="tooltip-popover"><strong>pang4jau5</strong><br/>friend</span></span>。
+    "html": "<span class="vocab-term" data-audio-hash="d7b451126e595e8a">佢哋<span class="tooltip-popover"><strong>keoi5dei6</strong><br/>they</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span> <span class="vocab-term" data-audio-hash="771583ea755aab41">我哋<span class="tooltip-popover"><strong>ngo5dei6</strong><br/>we</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive / linking particle</span></span> <span class="vocab-term" data-audio-hash="677aad1a0ee44cd6">朋友<span class="tooltip-popover"><strong>pang4jau5</strong><br/>friend</span></span>。
 ===
 They are our friends.",
     "type": "cantonese",
@@ -107,20 +106,19 @@ They are our friends.",
     "html": "<h3>Family &amp; Kinship Vocabulary</h3>
 <p>Here are some common family members you can use to describe relationships:</p>
 <ul>
-<li><span class="vocab-term" data-audio-hash="37042cdb90ebde28">父母<span class="tooltip-popover"><strong>fu6mou5</strong><br/>parents / father and mother</span></span>: parents</li>
+<li><span class="vocab-term" data-audio-hash="37042cdb90ebde28">父母<span class="tooltip-popover"><strong>fu6mou5</strong><br/>parents</span></span>: parents</li>
 <li><span class="vocab-term" data-audio-hash="85bf74961e252a34">阿哥<span class="tooltip-popover"><strong>aa3go1</strong><br/>older brother</span></span>: older brother</li>
 <li><span class="vocab-term" data-audio-hash="eb6476721a76ac38">家姐<span class="tooltip-popover"><strong>gaa1ze1</strong><br/>older sister</span></span>: older sister</li>
 <li><span class="vocab-term" data-audio-hash="b3fec4eebec79120">細佬<span class="tooltip-popover"><strong>sai3lou2</strong><br/>younger brother</span></span>: younger brother</li>
 <li><span class="vocab-term" data-audio-hash="b9cade467ab934f8">阿妹<span class="tooltip-popover"><strong>aa3mui2</strong><br/>younger sister</span></span>: younger sister</li>
 </ul>
-<p>Using the possessive particle
-<span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive particle / nominalizing particle / final assertive particle</span></span>,
-you can introduce your family members:</p>
+<p>Using the possessive particle <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive / linking particle</span></span>, you can
+introduce your family members:</p>
 ",
     "type": "prose",
   },
   {
-    "html": "<span class="vocab-term" data-audio-hash="730bcaa66436879d">呢個<span class="tooltip-popover"><strong>ni1go3</strong><br/>this one</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span> <span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I / me</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive particle / nominalizing particle / final assertive particle</span></span> <span class="vocab-term" data-audio-hash="85bf74961e252a34">阿哥<span class="tooltip-popover"><strong>aa3go1</strong><br/>older brother</span></span>。
+    "html": "<span class="vocab-term" data-audio-hash="730bcaa66436879d">呢個<span class="tooltip-popover"><strong>ni1go3</strong><br/>this one</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span> <span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive / linking particle</span></span> <span class="vocab-term" data-audio-hash="85bf74961e252a34">阿哥<span class="tooltip-popover"><strong>aa3go1</strong><br/>older brother</span></span>。
 ===
 This is my older brother.",
     "type": "cantonese",
@@ -130,7 +128,7 @@ This is my older brother.",
     "type": "prose",
   },
   {
-    "html": "<span class="vocab-term" data-audio-hash="7379f21b80edca33">佢<span class="tooltip-popover"><strong>keoi5</strong><br/>he / she / it</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span> <span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I / me</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive particle / nominalizing particle / final assertive particle</span></span> <span class="vocab-term" data-audio-hash="eb6476721a76ac38">家姐<span class="tooltip-popover"><strong>gaa1ze1</strong><br/>older sister</span></span>。
+    "html": "<span class="vocab-term" data-audio-hash="7379f21b80edca33">佢<span class="tooltip-popover"><strong>keoi5</strong><br/>he / she / it</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span> <span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive / linking particle</span></span> <span class="vocab-term" data-audio-hash="eb6476721a76ac38">家姐<span class="tooltip-popover"><strong>gaa1ze1</strong><br/>older sister</span></span>。
 ===
 She is my older sister.",
     "type": "cantonese",
@@ -142,13 +140,13 @@ She is my older sister.",
     "type": "prose",
   },
   {
-    "html": "A: <span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello / hi</span></span><span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>！ <span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span> David。
+    "html": "A: <span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span><span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>！ <span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span> David。
    === Hello there! I am David.
-B: <span class="vocab-term" data-audio-hash="119af509ad0770c5">早晨<span class="tooltip-popover"><strong>zou2san4</strong><br/>good morning</span></span>！ <span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span> Mary。 <span class="vocab-term" data-audio-hash="730bcaa66436879d">呢個<span class="tooltip-popover"><strong>ni1go3</strong><br/>this one</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span> <span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive particle / nominalizing particle / final assertive particle</span></span> <span class="vocab-term" data-audio-hash="85bf74961e252a34">阿哥<span class="tooltip-popover"><strong>aa3go1</strong><br/>older brother</span></span>。
+B: <span class="vocab-term" data-audio-hash="119af509ad0770c5">早晨<span class="tooltip-popover"><strong>zou2san4</strong><br/>good morning</span></span>！ <span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span> Mary。 <span class="vocab-term" data-audio-hash="730bcaa66436879d">呢個<span class="tooltip-popover"><strong>ni1go3</strong><br/>this one</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span> <span class="vocab-term" data-audio-hash="b70bb4acc0484cf0">我<span class="tooltip-popover"><strong>ngo5</strong><br/>I</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive / linking particle</span></span> <span class="vocab-term" data-audio-hash="85bf74961e252a34">阿哥<span class="tooltip-popover"><strong>aa3go1</strong><br/>older brother</span></span>。
    === Good morning! I am Mary. This is my older brother.
-A: <span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello / hi</span></span><span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>！ <span class="vocab-term" data-audio-hash="d7b451126e595e8a">佢哋<span class="tooltip-popover"><strong>keoi5dei6</strong><br/>they / them</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span> <span class="vocab-term" data-audio-hash="a23d45e1195dc3e3">你哋<span class="tooltip-popover"><strong>nei5dei6</strong><br/>you (plural)</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive particle / nominalizing particle / final assertive particle</span></span> <span class="vocab-term" data-audio-hash="677aad1a0ee44cd6">朋友<span class="tooltip-popover"><strong>pang4jau5</strong><br/>friend</span></span> <span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa4</strong><br/>sentence-final particle softening questions</span></span>？
+A: <span class="vocab-term" data-audio-hash="670d9743542cae3e">你好<span class="tooltip-popover"><strong>nei5hou2</strong><br/>hello</span></span><span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>！ <span class="vocab-term" data-audio-hash="d7b451126e595e8a">佢哋<span class="tooltip-popover"><strong>keoi5dei6</strong><br/>they</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span> <span class="vocab-term" data-audio-hash="a23d45e1195dc3e3">你哋<span class="tooltip-popover"><strong>nei5dei6</strong><br/>you (plural)</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive / linking particle</span></span> <span class="vocab-term" data-audio-hash="677aad1a0ee44cd6">朋友<span class="tooltip-popover"><strong>pang4jau5</strong><br/>friend</span></span> <span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa4</strong><br/>sentence-final particle for questions</span></span>？
    === Hello there! Are they your friends?
-B: <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span><span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>，<span class="vocab-term" data-audio-hash="d7b451126e595e8a">佢哋<span class="tooltip-popover"><strong>keoi5dei6</strong><br/>they / them</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be (am / is / are) / yes</span></span> <span class="vocab-term" data-audio-hash="771583ea755aab41">我哋<span class="tooltip-popover"><strong>ngo5dei6</strong><br/>we / us</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive particle / nominalizing particle / final assertive particle</span></span> <span class="vocab-term" data-audio-hash="677aad1a0ee44cd6">朋友<span class="tooltip-popover"><strong>pang4jau5</strong><br/>friend</span></span>。
+B: <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span><span class="vocab-term" data-audio-hash="03fe6b38e7fc21ba">呀<span class="tooltip-popover"><strong>aa3</strong><br/>sentence-final particle softening statements, making questions friendly</span></span>，<span class="vocab-term" data-audio-hash="d7b451126e595e8a">佢哋<span class="tooltip-popover"><strong>keoi5dei6</strong><br/>they</span></span> <span class="vocab-term" data-audio-hash="cfcbbb219389def4">係<span class="tooltip-popover"><strong>hai6</strong><br/>to be / yes</span></span> <span class="vocab-term" data-audio-hash="771583ea755aab41">我哋<span class="tooltip-popover"><strong>ngo5dei6</strong><br/>we</span></span> <span class="vocab-term" data-audio-hash="6ddec4a1f3da9adc">嘅<span class="tooltip-popover"><strong>ge3</strong><br/>possessive / linking particle</span></span> <span class="vocab-term" data-audio-hash="677aad1a0ee44cd6">朋友<span class="tooltip-popover"><strong>pang4jau5</strong><br/>friend</span></span>。
    === Yes, they are our friends.",
     "type": "dialog",
   },

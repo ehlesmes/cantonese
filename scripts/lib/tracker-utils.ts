@@ -41,63 +41,6 @@ export function resolvePrimaryJyutping(
   return primaryJyutping;
 }
 
-export function mergeTranslations(
-  existingTrans: string,
-  newTrans: string,
-): string {
-  const existingParts = existingTrans.split("/").map((s) => s.trim());
-  const newParts = newTrans.split("/").map((s) => s.trim());
-  const merged = [...existingParts];
-
-  const getCore = (s: string) =>
-    s
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "") // remove accents
-      .replace(/\s*[([].*?[)\]]\s*/g, " ") // remove parentheses
-      .replace(/^to\s+/, "") // remove leading "to "
-      .replace(/[^\w\s]/g, "") // remove punctuation
-      .replace(/\s+/g, " ")
-      .trim();
-
-  for (const np of newParts) {
-    const coreNp = getCore(np);
-    if (!coreNp) continue;
-
-    let handled = false;
-    for (let i = 0; i < merged.length; i++) {
-      const ep = merged[i]!;
-      const coreEp = getCore(ep);
-      if (!coreEp) continue;
-
-      if (coreEp === coreNp) {
-        if (np.length > ep.length) {
-          merged[i] = np;
-        }
-        handled = true;
-        break;
-      }
-
-      const regexNp = new RegExp(`\\b${coreNp}\\b`, "i");
-      const regexEp = new RegExp(`\\b${coreEp}\\b`, "i");
-
-      if (regexNp.test(coreEp)) {
-        handled = true;
-        break;
-      } else if (regexEp.test(coreNp)) {
-        merged[i] = np;
-        handled = true;
-        break;
-      }
-    }
-
-    if (!handled) {
-      merged.push(np);
-    }
-  }
-  return merged.join(" / ");
-}
-
 export async function generateHash(char: string): Promise<string> {
   return await getAudioHash(char);
 }
@@ -154,10 +97,11 @@ async function updateVocabMap(
     };
   } else {
     vocabMap[key].occurrences++;
-    vocabMap[key].translation = mergeTranslations(
-      vocabMap[key].translation,
-      translation,
-    );
+    if (vocabMap[key].translation !== translation) {
+      console.warn(
+        `Translation mismatch for ${char} [${primaryJyutping}]: "${vocabMap[key].translation}" vs "${translation}"`,
+      );
+    }
   }
 }
 

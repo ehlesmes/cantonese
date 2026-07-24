@@ -154,7 +154,7 @@ describe("Progress Sync Utility Spec", () => {
       vocab: {},
     };
 
-    const serialized = await serializeState(originalState);
+    const serialized = await serializeState(originalState, 1721782680000);
 
     // Convert any URL-safe '-' back to '+' (or standard base64 '+') and replace with spaces
     // to simulate standard browser URLSearchParams parsing.
